@@ -27,10 +27,4 @@ public class LoginController
         }
         return "redirect:/login?logout";
     }
-
-    @RequestMapping(value = {"/", "/home" }, method = RequestMethod.GET)
-    public String homePage(ModelMap model) {
-        model.addAttribute("greeting", "Hi, Welcome to my site");
-        return "dashboard";
-    }
 }
