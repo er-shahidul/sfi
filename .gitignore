@@ -1,0 +1,13 @@
+### Maven template
+target/
+sfi.iml
+
+### Config file
+src/main/resources/application.properties
+
+### Upload file
+src/main/webapp/uploads/
+
+### IDE config
+.idea
+.settings
