@@ -52,84 +52,84 @@
 
                             </div>
                         </div>
-                        <div class="col-sm-9">
-                            {% block sonata_page_content %}
-                            <section class="content-header">
-                                {% block sonata_page_content_header %}
-                                {% block sonata_page_content_nav %}
-                                {% if _tab_menu is not empty or _actions is not empty %}
-                                <nav class="navbar navbar-default" role="navigation">
-                                    {% block tab_menu_navbar_header %}
-                                    {% if _navbar_title is not empty %}
-                                    <div class="navbar-header">
-                                        <span class="navbar-brand">{{ _navbar_title|raw }}</span>
-                                    </div>
-                                    {% endif %}
-                                    {% endblock %}
-                                    <div class="container-fluid">
-                                        <div class="navbar-left">
-                                            {% if _tab_menu is not empty %}
-                                            {{ _tab_menu|raw }}
-                                            {% endif %}
-                                        </div>
+                        <%--<div class="col-sm-9">--%>
+                            <%--{% block sonata_page_content %}--%>
+                            <%--<section class="content-header">--%>
+                                <%--{% block sonata_page_content_header %}--%>
+                                <%--{% block sonata_page_content_nav %}--%>
+                                <%--{% if _tab_menu is not empty or _actions is not empty %}--%>
+                                <%--<nav class="navbar navbar-default" role="navigation">--%>
+                                    <%--{% block tab_menu_navbar_header %}--%>
+                                    <%--{% if _navbar_title is not empty %}--%>
+                                    <%--<div class="navbar-header">--%>
+                                        <%--<span class="navbar-brand">{{ _navbar_title|raw }}</span>--%>
+                                    <%--</div>--%>
+                                    <%--{% endif %}--%>
+                                    <%--{% endblock %}--%>
+                                    <%--<div class="container-fluid">--%>
+                                        <%--<div class="navbar-left">--%>
+                                            <%--{% if _tab_menu is not empty %}--%>
+                                            <%--{{ _tab_menu|raw }}--%>
+                                            <%--{% endif %}--%>
+                                        <%--</div>--%>
 
-                                        {% if _actions|replace({ '<li>': '', '</li>': '' })|trim is not empty %}
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li class="dropdown sonata-actions">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'link_actions'|trans({}, 'SonataAdminBundle') }} <b class="caret"></b></a>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    {{ _actions|raw }}
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        {% endif %}
-                                    </div>
-                                </nav>
-                                {% endif %}
-                                {% endblock sonata_page_content_nav %}
+                                        <%--{% if _actions|replace({ '<li>': '', '</li>': '' })|trim is not empty %}--%>
+                                        <%--<ul class="nav navbar-nav navbar-right">--%>
+                                            <%--<li class="dropdown sonata-actions">--%>
+                                                <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'link_actions'|trans({}, 'SonataAdminBundle') }} <b class="caret"></b></a>--%>
+                                                <%--<ul class="dropdown-menu" role="menu">--%>
+                                                    <%--{{ _actions|raw }}--%>
+                                                <%--</ul>--%>
+                                            <%--</li>--%>
+                                        <%--</ul>--%>
+                                        <%--{% endif %}--%>
+                                    <%--</div>--%>
+                                <%--</nav>--%>
+                                <%--{% endif %}--%>
+                                <%--{% endblock sonata_page_content_nav %}--%>
 
-                                {% endblock sonata_page_content_header %}
-                            </section>
+                                <%--{% endblock sonata_page_content_header %}--%>
+                            <%--</section>--%>
 
-                            <section class="content">
-                                {% block sonata_admin_content %}
+                            <%--<section class="content">--%>
+                                <%--{% block sonata_admin_content %}--%>
 
-                                {% block notice %}
-                                {% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}
-                                {% endblock notice %}
+                                <%--{% block notice %}--%>
+                                <%--{% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}--%>
+                                <%--{% endblock notice %}--%>
 
-                                {% if _preview is not empty %}
-                                <div class="sonata-ba-preview">{{ _preview|raw }}</div>
-                                {% endif %}
+                                <%--{% if _preview is not empty %}--%>
+                                <%--<div class="sonata-ba-preview">{{ _preview|raw }}</div>--%>
+                                <%--{% endif %}--%>
 
-                                {% if _content is not empty %}
-                                <div class="sonata-ba-content">{{ _content|raw }}</div>
-                                {% endif %}
+                                <%--{% if _content is not empty %}--%>
+                                <%--<div class="sonata-ba-content">{{ _content|raw }}</div>--%>
+                                <%--{% endif %}--%>
 
-                                {% if _show is not empty %}
-                                <div class="sonata-ba-show">{{ _show|raw }}</div>
-                                {% endif %}
+                                <%--{% if _show is not empty %}--%>
+                                <%--<div class="sonata-ba-show">{{ _show|raw }}</div>--%>
+                                <%--{% endif %}--%>
 
-                                {% if _form is not empty %}
-                                <div class="sonata-ba-form">{{ _form|raw }}</div>
-                                {% endif %}
+                                <%--{% if _form is not empty %}--%>
+                                <%--<div class="sonata-ba-form">{{ _form|raw }}</div>--%>
+                                <%--{% endif %}--%>
 
-                                {% if _list_table is not empty or _list_filters is not empty %}
-                                <div class="row">
-                                    <div class="sonata-ba-list {% if _list_filters|trim %}col-md-10{% else %}col-md-12{% endif %}">
-                                        {{ _list_table|raw }}
-                                    </div>
+                                <%--{% if _list_table is not empty or _list_filters is not empty %}--%>
+                                <%--<div class="row">--%>
+                                    <%--<div class="sonata-ba-list {% if _list_filters|trim %}col-md-10{% else %}col-md-12{% endif %}">--%>
+                                        <%--{{ _list_table|raw }}--%>
+                                    <%--</div>--%>
 
-                                    {% if _list_filters|trim %}
-                                    <div class="sonata-ba-filter col-md-2">
-                                        {{ _list_filters|raw }}
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                {% endif %}
-                                {% endblock sonata_admin_content %}
-                            </section>
-                        </div>
+                                    <%--{% if _list_filters|trim %}--%>
+                                    <%--<div class="sonata-ba-filter col-md-2">--%>
+                                        <%--{{ _list_filters|raw }}--%>
+                                    <%--</div>--%>
+                                    <%--{% endif %}--%>
+                                <%--</div>--%>
+                                <%--{% endif %}--%>
+                                <%--{% endblock sonata_admin_content %}--%>
+                            <%--</section>--%>
+                        <%--</div>--%>
                     </div>
                 </div>
             </div>
