@@ -36,6 +36,13 @@ public class UserController {
     @Autowired
     private MessageSource messageSource;
 
+    @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
+    public String homePage(ModelMap model) {
+        model.addAttribute("greeting", "Hi, Welcome to my site");
+
+        return "/admin/user/dashboard";
+    }
+
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());

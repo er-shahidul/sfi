@@ -4,51 +4,58 @@
 
 <t:login.layout>
 
-<div class="content">
-    <!-- BEGIN LOGIN FORM -->
-    <c:url var="loginUrl" value="/login" />
-    <form action="${loginUrl}" method="post" class="login-form">
-
-        <h3 class="form-title">Login to your account</h3>
-
-        <c:if test="${param.error != null}">
-            <div class="alert alert-danger">
-                <p>Invalid username and password.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-2 welcomeblock">
+                Welcome to the SFI Program Participant<br>
+                Form<br>
+                Please login to continue
             </div>
-        </c:if>
-        <c:if test="${param.logout != null}">
-            <div class="alert alert-success">
-                <p>You have been logged out successfully.</p>
-            </div>
-        </c:if>
+            <div class="col-sm-4 contentblock">
+                <div class="tipcontent">
+                    <c:url var="loginUrl" value="/login" />
+                    <form action="${loginUrl}" method="post" class="login-form">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9" for="username">Username</label>
-            <div class="input-icon">
-                <i class="fa fa-user"></i>
-                <input class="form-control form-control-solid placeholder-no-fix" type="text" id="username" autocomplete="off" placeholder="Username" name="username" required/>
+                    <br>
+                    <div class="form-group">
+                        <label>Username (email address)</label>
+                        <input type="text" id="username" name="username" required="required" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="password" name="password" required="required" class="form-control"/>
+                    </div>
+
+                    <div class="form-group">
+                        <a href="#">Forgot password?</a>
+                        <%--<a href="{{ path('fos_user_resetting_request') }}">Forgot password?</a>--%>
+                        <button type="submit" class="btn btn-success">Login</button>
+                    </div>
+
+                    <%--{% if error %}--%>
+                    <%--<p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>--%>
+                    <%--{% endif %}--%>
+
+                    <%--{#<p>#}--%>
+                    <%--{#A new password has been sent to the email address you provided. Once logged in you can change your password in your Profile.#}--%>
+                    <%--{#</p>#}--%>
+
+                        <c:if test="${param.error != null}">
+                            <div class="alert alert-danger">
+                                <p>Invalid username and password.</p>
+                            </div>
+                        </c:if>
+                        <c:if test="${param.logout != null}">
+                            <div class="alert alert-success">
+                                <p>You have been logged out successfully.</p>
+                            </div>
+                        </c:if>
+
+                    </form>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9" for="password">Password</label>
-            <div class="input-icon">
-                <i class="fa fa-lock"></i>
-                <input class="form-control form-control-solid placeholder-no-fix" id="password" type="password" autocomplete="off" placeholder="Password" name="password" required/>
-            </div>
-        </div>
-
-        <input type="hidden" name="${_csrf.parameterName}"
-               value="${_csrf.token}" />
-
-        <div class="form-actions">
-            <label class="checkbox">
-                <input type="checkbox" name="remember" value="1"/> Remember me </label>
-                <input type="submit" class="btn green-haze pull-right" value="Login">
-        </div>
-
-    </form>
-    <!-- END LOGIN FORM -->
-</div>
+    </div>
 
 </t:login.layout>

@@ -1,12 +1,13 @@
 <%@ tag description="Login page" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8" />
     <title>${title}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
     <link href="<c:url value='/assets/skins/all.css' />" rel="stylesheet">
     <link href="<c:url value='/assets/css/libs/bootstrap.min.css' />" rel="stylesheet">
@@ -15,16 +16,16 @@
     <link href="<c:url value='/assets/css/style.css' />" rel="stylesheet">
     <link href="<c:url value='/assets/css/libs/prism.css' />" rel="stylesheet">
     <link href="<c:url value='/assets/css/admin.css' />" rel="stylesheet">
-<!-- END THEME STYLES -->
+    <!-- END THEME STYLES -->
 
-<%--<link rel="shortcut icon" href="<c:url value='favicon.ico' />"/>--%>
+    <%--<link rel="shortcut icon" href="<c:url value='favicon.ico' />"/>--%>
 
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="green landScape">
+<body class="sonata-bc skin-black fixed">
 
-    <jsp:doBody/>
+<jsp:doBody/>
 
 <!-- BEGIN CORE PLUGINS -->
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -45,3 +46,4 @@
 
 </body>
 </html>
+
