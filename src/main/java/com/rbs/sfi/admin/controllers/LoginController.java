@@ -27,4 +27,10 @@ public class LoginController
         }
         return "redirect:/login?logout";
     }
+
+    @RequestMapping(value = {"/" }, method = RequestMethod.GET)
+    public String homePage(ModelMap model) {
+
+        return "/admin/user/dashboard";
+    }
 }

@@ -21,6 +21,8 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Locale;
 
+import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
+
 @Controller
 public class UserController {
 
@@ -38,7 +40,8 @@ public class UserController {
 
     @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
-        model.addAttribute("greeting", "Hi, Welcome to my site");
+
+        model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
 
         return "/admin/user/dashboard";
     }
