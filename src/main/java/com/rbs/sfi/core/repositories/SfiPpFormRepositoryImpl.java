@@ -30,4 +30,8 @@ public class SfiPpFormRepositoryImpl extends AbstractRepository<Integer, SfiPpFo
         return sfiPpForm;
     }
 
+    public void save(SfiPpForm sfiPpForm) {
+        persist(sfiPpForm);
+    }
+
 }

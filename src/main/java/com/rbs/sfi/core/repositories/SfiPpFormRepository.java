@@ -7,4 +7,5 @@ public interface SfiPpFormRepository
 {
     SfiPpForm findById(int id);
     SfiPpForm findByCompany(Company company);
+    void save(SfiPpForm sfiPpForm);
 }

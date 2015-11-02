@@ -21,4 +21,8 @@ public class SfiPpFormServiceImpl implements SfiPpFormService
     public SfiPpForm findByCompany(Company company) {
         return sfiPpFormRepository.findByCompany(company);
     }
+
+    public void save(SfiPpForm sfiPpForm){
+        sfiPpFormRepository.save(sfiPpForm);
+    }
 }

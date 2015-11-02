@@ -1,6 +1,8 @@
 package com.rbs.sfi.core.controllers;
 
+import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
+import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.core.entities.SfiPpForm;
@@ -11,10 +13,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
 
@@ -26,6 +31,9 @@ public class FormController {
 
     @Autowired
     SfiPpFormService sfiPpFormService;
+
+    @Autowired
+    CompanyService companyService;
 
     @RequestMapping(value = {"/" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
@@ -40,6 +48,10 @@ public class FormController {
 
             User user = userService.findByUsername(getCurrentUsername());
             SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(user.getCompany());
+            if(sfiPpForm == null){
+                return ("redirect:/admin/form/new");
+
+            }
             model.addAttribute("sfiPpForm", Util.getAsString(sfiPpForm));
             model.addAttribute("user", user);
 
@@ -47,5 +59,30 @@ public class FormController {
         }
 
         return "dashboard";
+    }
+
+    @RequestMapping(value = "/admin/form/new", method = RequestMethod.GET)
+    public String form(ModelMap model) {
+        SfiPpForm sfiPpForm = new SfiPpForm();
+
+        List<Company> companies = companyService.list();
+        model.addAttribute("companies", companies);
+
+        model.addAttribute("sfiPpForm", sfiPpForm);
+
+        return "/core/sfiPpForm/new";
+    }
+
+    @RequestMapping(value = "/admin/form/new", method = RequestMethod.POST)
+    public String save(@Valid SfiPpForm sfiPpForm, BindingResult result, ModelMap model) {
+
+        if (result.hasErrors()) {
+            return ("redirect:/admin/form/new");
+        }
+
+        sfiPpFormService.save(sfiPpForm);
+
+        model.addAttribute("success", "sfiPpForm " + "" + " has been registered successfully");
+        return ("redirect:/");
     }
 }

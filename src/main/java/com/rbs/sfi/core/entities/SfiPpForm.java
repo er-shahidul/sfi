@@ -152,22 +152,6 @@ public class SfiPpForm
 		this.createdBy = createdBy;
 	}
 
-	public boolean isSaved() {
-		return isSaved;
-	}
-
-	public void setIsSaved(boolean isSaved) {
-		this.isSaved = isSaved;
-	}
-
-	public boolean isComplete() {
-		return isComplete;
-	}
-
-	public void setIsComplete(boolean isComplete) {
-		this.isComplete = isComplete;
-	}
-
 	public SfiPpFormStatus getStatus() {
 		return status;
 	}
@@ -366,5 +350,21 @@ public class SfiPpForm
 
 	public void setSfiPpFormCs1SellsOtherCountries(Set<SfiPpFormAllCountry> sfiPpFormCs1SellsOtherCountries) {
 		this.sfiPpFormCs1SellsOtherCountries = sfiPpFormCs1SellsOtherCountries;
+	}
+
+	public boolean isSaved() {
+		return isSaved;
+	}
+
+	public void setIsSaved(boolean isSaved) {
+		this.isSaved = isSaved;
+	}
+
+	public boolean isComplete() {
+		return isComplete;
+	}
+
+	public void setIsComplete(boolean isComplete) {
+		this.isComplete = isComplete;
 	}
 }
