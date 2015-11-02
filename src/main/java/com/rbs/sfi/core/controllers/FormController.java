@@ -6,6 +6,7 @@ import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.core.entities.SfiPpForm;
+import com.rbs.sfi.core.repositories.SfiPpFormRepository;
 import com.rbs.sfi.core.services.SfiPpFormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -35,6 +36,9 @@ public class FormController {
     @Autowired
     CompanyService companyService;
 
+    @Autowired
+    SfiPpFormRepository sfiPpFormRepository;
+
     @RequestMapping(value = {"/" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
 
@@ -49,7 +53,9 @@ public class FormController {
             User user = userService.findByUsername(getCurrentUsername());
             SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(user.getCompany());
             if(sfiPpForm == null){
-                return ("redirect:/admin/form/new");
+                SfiPpForm form = new SfiPpForm();
+                form.setCompany(user.getCompany());
+                sfiPpFormService.save(form);
 
             }
             model.addAttribute("sfiPpForm", Util.getAsString(sfiPpForm));
