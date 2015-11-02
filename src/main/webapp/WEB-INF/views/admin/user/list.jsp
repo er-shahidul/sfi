@@ -54,10 +54,10 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${user}" var="user">
+                            <c:forEach items="${user}" var="user" varStatus="loopCounter" >
                             <tr>
                                 <td>
-                                   #
+                                    <c:out value="${loopCounter.count}"/>
                                 </td>
                                 <td>
                                     <c:out value="${user.username}" />

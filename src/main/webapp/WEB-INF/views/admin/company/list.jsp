@@ -35,10 +35,10 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${companies}" var="company">
+                            <c:forEach items="${companies}" var="company" varStatus="loopCounter" >
                                 <tr>
                                     <td>
-                                       #
+                                        <c:out value="${loopCounter.count}"/>
                                     </td>
                                     <td>
                                         <c:out value="${company.name}" />
