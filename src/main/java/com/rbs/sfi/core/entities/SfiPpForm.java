@@ -1,5 +1,6 @@
 package com.rbs.sfi.core.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
 
@@ -23,6 +24,7 @@ public class SfiPpForm
 	@JoinColumn(name="company_id", referencedColumnName="id", nullable=true)
 	private Company company;
 
+	@JsonIgnore
 	@ManyToOne(targetEntity = com.rbs.sfi.admin.entities.User.class, optional=true)
 	@JoinColumn(name="created_by", referencedColumnName="id", nullable=true)
 	private User createdBy;
@@ -90,25 +92,29 @@ public class SfiPpForm
 	@Column(name="cs1_manages_operates_other", nullable=true)
 	private boolean cs1OperatesInOthers;
 
+	@JsonIgnore
 	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL})
 	@JoinTable(name="sfi_pp_form_cs1_ownsMngLands_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id")})
 	private Set<SfiPpFormOtherCountry> sfiPpFormCs1OwnsMngLandsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
 
+	@JsonIgnore
 	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL})
 	@JoinTable(name="sfi_pp_form_cs1_primaryOperMillsYards_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id")})
 	private Set<SfiPpFormOtherCountry> sfiPpFormCs1PrimaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
 
+	@JsonIgnore
 	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL})
 	@JoinTable(name="sfi_pp_form_cs1_secondaryOperMillsYards_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id")})
 	private Set<SfiPpFormOtherCountry> sfiPpFormCs1SecondaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
 
-	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL})
+	@JsonIgnore
+	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormAllCountry.class, cascade = {CascadeType.ALL})
 	@JoinTable(name="sfi_pp_form_cs1_sells_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id")})

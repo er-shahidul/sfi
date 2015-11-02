@@ -28,11 +28,29 @@
                 <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">
                     2014 Program Participant Survey
                 </a>
-            </li></ul>
-        <div id="settings" data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-content="<a href=&quot;/sfi/admin/user/profile/${pageContext.request.userPrincipal.name}&quot; class=&quot;settings-popup icon1&quot;><div id='proImg'></div><span>Profile</span></a><a href=&quot;/sfi/logout&quot; class=&quot;settings-popup icon2&quot;><div id='logImg'></div><span>Logout</span></a>" data-trigger="click">
-            <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
-            <label>LOGGED IN AS</label>
-            <p>${pageContext.request.userPrincipal.name}</p>
-        </div>
+            </li>
+        </ul>
+
+        <sec:authorize var="admin" access="hasAnyRole('ADMIN', 'SUPER_ADMIN')">
+
+            <c:choose>
+                <c:when test="${admin}">
+                    <div id="settings" data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-content="<a href=&quot;/sfi/admin/user/profile/${pageContext.request.userPrincipal.name}&quot; class=&quot;settings-popup icon1&quot;><div id='proImg'></div><span>Profile</span></a><a href=&quot;/sfi/logout&quot; class=&quot;settings-popup icon2&quot;><div id='logImg'></div><span>Logout</span></a>" data-trigger="click">
+                        <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
+                        <label>LOGGED IN AS</label>
+                        <p>${pageContext.request.userPrincipal.name}</p>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div id="settings" data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-content="<a href=&quot;/sfi/login&quot; class=&quot;settings-popup icon1&quot;>" data-trigger="click">
+                        <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
+                        <label></label>
+                        <p></p>
+                    </div>
+                </c:otherwise>
+            </c:choose>
+
+        </sec:authorize>
+
     </div>
 </div>

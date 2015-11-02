@@ -30,7 +30,6 @@ public final class AutowireHelper implements ApplicationContextAware {
 		}
 	}
 
-	@Override
 	public void setApplicationContext(final ApplicationContext applicationContext) {
 		AutowireHelper.applicationContext = applicationContext;
 	}
