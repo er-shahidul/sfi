@@ -95,8 +95,10 @@ public class CompanyController
 //                AuditListener auditListener = new AuditListener();
 //                auditListener.preUpdate(company);
 
+                AuditListener auditListener = new AuditListener();
                 company.setLogoName(name);
                 company.setLogo(file.getBytes());
+                auditListener.preUpdate(company);
 
                 companyService.update(company);
             }
@@ -164,8 +166,10 @@ public class CompanyController
 //                AuditListener auditListener = new AuditListener();
 //                auditListener.prePersist(company);
 
+                AuditListener auditListener = new AuditListener();
                 company.setLogoName(name);
                 company.setLogo(file.getBytes());
+                auditListener.prePersist(company);
 
                 companyService.save(company);
             }
