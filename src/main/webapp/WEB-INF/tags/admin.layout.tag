@@ -11,133 +11,114 @@
     <div id="wrapper">
         <div class="container">
 
-            <%--{% block sonata_breadcrumb %}--%>
-            <%--{% if _breadcrumb is not empty or action is defined %}--%>
-            <%--<div class="breadcrumb">--%>
-                <%--{% if _breadcrumb is empty %}--%>
-                <%--{% if action is defined %}--%>
-                <%--{% for menu in admin.breadcrumbs(action) %}--%>
-                <%--{% if not loop.last  %}--%>
-                <%--{# Skipping first item to skip dashboard link #}--%>
-                <%--{% if not loop.first  %} <span class="text-muted">/</span>--%>
-                <%--{% if menu.uri is not empty %}--%>
-                <%--<a href="{{ menu.uri }}">{{ menu.label|raw }}</a>--%>
-                <%--{% else %}--%>
-                <%--{{ menu.label }}--%>
-                <%--{% endif %}--%>
-                <%--{% endif %}--%>
-
-                <%--{% else %}--%>
-                <%--<span class="text-muted">/</span>--%>
-                <%--{% if '\\Entity\\' in menu.name %} New--%>
-                <%--{% else %} {{ menu.label }}--%>
-                <%--{% endif %}--%>
-                <%--{% endif %}--%>
-                <%--{% endfor %}--%>
-                <%--{% endif %}--%>
-                <%--{% else %}--%>
-                <%--{{ _breadcrumb|raw }}--%>
-                <%--{% endif %}--%>
-            <%--</div>--%>
-            <%--{% endif %}--%>
-            <%--{% endblock sonata_breadcrumb %}--%>
-
             <div class="formContainer">
                 <div class="formContent">
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="sidebarmenu">
-
                                 <t:admin.left.menu> </t:admin.left.menu>
-
                             </div>
                         </div>
-                        <%--<div class="col-sm-9">--%>
-                            <%--{% block sonata_page_content %}--%>
-                            <%--<section class="content-header">--%>
-                                <%--{% block sonata_page_content_header %}--%>
-                                <%--{% block sonata_page_content_nav %}--%>
-                                <%--{% if _tab_menu is not empty or _actions is not empty %}--%>
-                                <%--<nav class="navbar navbar-default" role="navigation">--%>
-                                    <%--{% block tab_menu_navbar_header %}--%>
-                                    <%--{% if _navbar_title is not empty %}--%>
-                                    <%--<div class="navbar-header">--%>
-                                        <%--<span class="navbar-brand">{{ _navbar_title|raw }}</span>--%>
-                                    <%--</div>--%>
-                                    <%--{% endif %}--%>
-                                    <%--{% endblock %}--%>
-                                    <%--<div class="container-fluid">--%>
-                                        <%--<div class="navbar-left">--%>
-                                            <%--{% if _tab_menu is not empty %}--%>
-                                            <%--{{ _tab_menu|raw }}--%>
-                                            <%--{% endif %}--%>
-                                        <%--</div>--%>
+                        <div class="col-sm-9">
+                            <section class="content-header">
 
-                                        <%--{% if _actions|replace({ '<li>': '', '</li>': '' })|trim is not empty %}--%>
-                                        <%--<ul class="nav navbar-nav navbar-right">--%>
-                                            <%--<li class="dropdown sonata-actions">--%>
-                                                <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'link_actions'|trans({}, 'SonataAdminBundle') }} <b class="caret"></b></a>--%>
-                                                <%--<ul class="dropdown-menu" role="menu">--%>
-                                                    <%--{{ _actions|raw }}--%>
-                                                <%--</ul>--%>
-                                            <%--</li>--%>
-                                        <%--</ul>--%>
-                                        <%--{% endif %}--%>
-                                    <%--</div>--%>
-                                <%--</nav>--%>
-                                <%--{% endif %}--%>
-                                <%--{% endblock sonata_page_content_nav %}--%>
+                            </section>
 
-                                <%--{% endblock sonata_page_content_header %}--%>
-                            <%--</section>--%>
+                            <section class="content">
+                                <div class="sonata-ba-content">
 
-                            <%--<section class="content">--%>
-                                <%--{% block sonata_admin_content %}--%>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="cms-block cms-block-element">
 
-                                <%--{% block notice %}--%>
-                                <%--{% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}--%>
-                                <%--{% endblock notice %}--%>
+                                                <div class="box">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title" style="font-size: 24px;font-weight: normal;">Entities</h3>
+                                                    </div>
+                                                    <div class="box-body">
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="sonata-ba-list-label alignright" style="font-weight: bold;" width="40%">
+                                                                    User
+                                                                </td>
+                                                                <td>
+                                                                    <div class="btn-group">
+                                                                        <a class="btn-link btn-flat" href="<c:url value='/admin/user/new'/>">
+                                                                            <i class="fa fa-plus-circle"></i>
+                                                                            Add new
+                                                                        </a>
+                                                                        <a class="btn-link btn-flat" href="<c:url value='/admin/user/list'/>">
+                                                                            <i class="glyphicon glyphicon-list"></i>
+                                                                            List
+                                                                        </a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sonata-ba-list-label alignright" style="font-weight: bold;" width="40%">
+                                                                    Company
+                                                                </td>
+                                                                <td>
+                                                                    <div class="btn-group">
+                                                                        <a class="btn-link btn-flat" href="<c:url value='/admin/company/new'/>">
+                                                                            <i class="fa fa-plus-circle"></i>
+                                                                            Add new
+                                                                        </a>
+                                                                        <a class="btn-link btn-flat" href="<c:url value='/admin/company/list'/>">
+                                                                            <i class="glyphicon glyphicon-list"></i>
+                                                                            List</a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
 
-                                <%--{% if _preview is not empty %}--%>
-                                <%--<div class="sonata-ba-preview">{{ _preview|raw }}</div>--%>
-                                <%--{% endif %}--%>
+                                                <div class="box">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title" style="font-size: 24px;font-weight: normal;">Vocabulary</h3>
+                                                    </div>
+                                                    <div class="box-body">
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="sonata-ba-list-label alignright" style="font-weight: bold;" width="40%">
+                                                                    Area Unit
+                                                                </td>
+                                                                <td>
+                                                                    <div class="btn-group">
+                                                                        <a class="btn-link btn-flat" href="<c:url value='/admin/area/unit/new'/>">
+                                                                            <i class="fa fa-plus-circle"></i>
+                                                                            Add new
+                                                                        </a>
+                                                                        <a class="btn-link btn-flat" href="<c:url value='/admin/area/unit/list'/>">
+                                                                            <i class="glyphicon glyphicon-list"></i>
+                                                                            List
+                                                                        </a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                <%--{% if _content is not empty %}--%>
-                                <%--<div class="sonata-ba-content">{{ _content|raw }}</div>--%>
-                                <%--{% endif %}--%>
+                                        <div class="col-md-6">
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <%--{% if _show is not empty %}--%>
-                                <%--<div class="sonata-ba-show">{{ _show|raw }}</div>--%>
-                                <%--{% endif %}--%>
+                            </section>
+                        </div>
 
-                                <%--{% if _form is not empty %}--%>
-                                <%--<div class="sonata-ba-form">{{ _form|raw }}</div>--%>
-                                <%--{% endif %}--%>
-
-                                <%--{% if _list_table is not empty or _list_filters is not empty %}--%>
-                                <%--<div class="row">--%>
-                                    <%--<div class="sonata-ba-list {% if _list_filters|trim %}col-md-10{% else %}col-md-12{% endif %}">--%>
-                                        <%--{{ _list_table|raw }}--%>
-                                    <%--</div>--%>
-
-                                    <%--{% if _list_filters|trim %}--%>
-                                    <%--<div class="sonata-ba-filter col-md-2">--%>
-                                        <%--{{ _list_filters|raw }}--%>
-                                    <%--</div>--%>
-                                    <%--{% endif %}--%>
-                                <%--</div>--%>
-                                <%--{% endif %}--%>
-                                <%--{% endblock sonata_admin_content %}--%>
-                            <%--</section>--%>
-                        <%--</div>--%>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="wrapper">
-        <jsp:doBody/>
     </div>
 
     <script src="<c:url value='/assets/js/libs/angular.min.js' />"></script>
