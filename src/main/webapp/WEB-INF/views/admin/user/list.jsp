@@ -12,8 +12,11 @@
 
     <div id="wrapper">
         <div class="container">
-
             <div class="formContainer">
+                <div class="breadcrumb">
+                    <span class="text-muted">/</span>
+                    User List
+                </div>
                 <div class="formContent">
                     <div class="row">
                         <div class="col-sm-3">
@@ -43,7 +46,6 @@
                                             </ul>
                                         </div>
                                     </nav>
-
                                 </section>
                             </section>
 
