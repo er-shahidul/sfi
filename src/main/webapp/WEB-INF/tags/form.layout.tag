@@ -27,7 +27,6 @@
     <t:header.layout> </t:header.layout>
 </div>
 
-<jsp:doBody/>
 
 <!-- BEGIN CORE PLUGINS -->
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -45,6 +44,8 @@
 <script src="<c:url value='/assets/js/libs/bootstrap-table.js' />"></script>
 <script src="<c:url value='/assets/js/scripts.js' />"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
+
+<jsp:doBody/>
 
 </body>
 </html>

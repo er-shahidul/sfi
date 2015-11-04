@@ -1,0 +1,167 @@
+<div class="row" id="row-cont">
+    <div ng-init="errors = cs5.errors" ng-include="'/bundles/sficore/partials/form/error.html'"></div>
+
+    <div class="col-sm-12">
+        <h5>
+            <span popover data-html="true" data-placement="right" data-content="The SFI ERP requested more information on research dollars spent by SFI Program Participants in a reporting year. This brings closer alignment between the research dollars and Standard requirements. The list of research funding categories included in this question are from the current SFI 2010-2014 Standard.<br/>DID YOU KNOW Internal and External Research Funding:<br/>List the amount of funding in $US your organization provided this year for forest-related research within your organization (internal) and outside your organization (external) through grants, in-kind assistance, cooperatives, etc. Internal research funding includes salaries for forest-related research staff. While it is difficult in many instances to identify to which category research funding should be allocated, use your best judgment as to the primary intent of the given research project. If you find it impossible to allocate funding to the categories listed, list the total funding you provided in the “other” category and note as such.">
+                5. Research Funding
+            </span>
+        </h5>
+        <span>Participants are required to support forest research to improve forest health, productivity, and sustainable management of forest resources, and the environmental benefits and performance of forest products. Complete the following table with research funding dollars spent to meet this requirement.
+</span>
+        <form name="cs5Form" novalidate>
+            <table class="table table-striped vert-align-middle">
+                <thead>
+                <tr>
+                    <th>Research Funding Category (new!)</th>
+                    <th ng-class="{'disabled' : !operateInUsa()}">
+                        <span tooltip data-title="forest-related research within your organization (internal)" data-placement="top">
+                            Internal USD
+                        </span>
+                    </th>
+
+                    <th ng-class="{'disabled' : !operateInUsa()}">
+                        <span tooltip data-title="forest-related research outside your organization (external)" data-placement="top">
+                        External USD
+                        </span>
+                    </th>
+                    <th ng-class="{'disabled' : !operateInCa()}">
+                        <span tooltip data-title="forest-related research within your organization (internal)" data-placement="top">
+                            Internal CAD
+                        </span>
+
+                    </th>
+                    <th ng-class="{'disabled' : !operateInCa()}">
+                        <span tooltip data-title="forest-related research outside your organization (external)" data-placement="top">
+                        External CAD
+                        </span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr ng-repeat="item in cs5.items" ng-form="innerForm">
+
+                    <td align="right" ng-class="{'has-error' : innerForm.otherText.$invalid}">
+
+                        <input type="checkbox" disabled name="otherEnable" class="icheck" icheck
+                                ng-if="item.isOther" ng-model="item.otherEnable"/>
+
+                        {{ item.description }}
+                        <input type="text" readonly  class="form-control   shorter" name="otherText"
+                               ng-show="item.otherEnable" ng-model="item.otherText"
+                               ng-required="item.otherEnable" customerror
+                               ng- ='item.otherEnable' customerror />
+                    </td>
+
+
+
+                    <td ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
+                        <input type="number" readonly  class="form-control   shorter" min="0" name="internalUsd"
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                               ng-model="item.internalUsd" ng-disabled="!operateInUsa()"/>
+                    </td>
+
+                    <td ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
+                        <input type="number" readonly  class="form-control   shorter" name="externalUsd"
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                               ng-model="item.externalUsd" ng-disabled="!operateInUsa()">
+                    </td>
+
+                    <td ng-class="{'has-error' : innerForm.internalCad.$invalid}">
+                        <input type="number" readonly  class="form-control   shorter" name="internalCad"
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                               ng-model="item.internalCad" ng-disabled="!operateInCa()">
+                    </td>
+
+                    <td ng-class="{'has-error' : innerForm.externalCad.$invalid}">
+                        <input type="number" readonly  class="form-control   shorter" name="externalCad"
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                               ng-model="item.externalCad" ng-disabled="!operateInCa()">
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- Org list -->
+            <div class="form-group">
+
+                <div class="form-group">
+                    <div class="col-sm-12 ">
+                        <label>For each category below enter the organizations you worked with in 2014 as part of your research funding reporting</label>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-1">
+                        <label>Academic</label>
+                    </div>
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.academicList.$invalid }">
+                        <div class="form-control">{{cs5.academicList}}</div>
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <div class="col-sm-1">
+                        <label>Research</label>
+                    </div>
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.researchList.$invalid }">
+                        <div class="form-control">{{cs5.researchList}}</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-1">
+                        <label>Conservation</label>
+                    </div>
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.conservationList.$invalid }">
+                        <div class="form-control">{{cs5.conservationList}}</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-1">
+                        <label>Government</label>
+                    </div>
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.governmentList.$invalid }">
+                        <div class="form-control">{{cs5.governmentList}}</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-1">
+                        <label>Community</label>
+                    </div>
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.communityList.$invalid }">
+                        <div class="form-control">{{cs5.communityList}}</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-1">
+                        <label>Other</label>
+                    </div>
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.otherList.$invalid }">
+                        <div class="form-control">{{cs5.otherList}}</div>
+                    </div>
+                </div>
+            </div>
+            <!-- --/-- -->
+
+        </form>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Ensure you complete Section 6. in this form on Research, Conservation & Community Projects if you have a research, conservation or community project.</label>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-sm-offset-1 col-sm-4">
+
+    </div>
+</div>
+

@@ -167,6 +167,17 @@ ALTER TABLE `join_users_groups`
 ALTER TABLE `users`
   ADD CONSTRAINT `FK_camlvklbluxpcvlps0s8vs8wp` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`);
 
+
+INSERT INTO `sfi_pp_form_status` (`id`, `formStatus`, `statusName`) VALUES
+(1,	'none',	'Empty Form: only company have been created'),
+(2,	'pending',	'Form is not completed or submitted yet'),
+(3,	'submitted',	'Form is completed and also submitted');
+
+
+
+
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

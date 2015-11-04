@@ -1,0 +1,224 @@
+<div class="row">
+
+    <div ng-init="errors = cs7.errors" ng-include="'/bundles/sficore/partials/form/error.html'"></div>
+
+    <div class="col-sm-7">
+        <h5>7. Emerging Issues</h5>
+
+        <form name="cs7Form">
+            <div class="form-group">
+                <label>Select the emerging issues you are interested in. This way we can keep you informed on these topics.(new!)</label>
+
+                <div class="form-group hasRadioBoxes nopadding">
+
+                    <div class="col-sm-offset-0 col-sm-3 nopadding">
+                        <input type="checkbox" disabled  name="answer" ng-model="cs7.emerIssu_bioe" icheck>
+                        <label class="checkboxLabel">Bioenergy</label>
+
+                        <div></div>
+                        <input type="checkbox" disabled  name="answer" ng-model="cs7.emerIssu_clim" icheck>
+                        <label class="checkboxLabel">Climate change</label>
+                    </div>
+
+
+                    <div class="col-sm-offset-1 col-sm-3 nopadding">
+                        <input type="checkbox" disabled  name="answer" ng-model="cs7.emerIssu_carb" icheck>
+                        <label class="checkboxLabel">Carbon stocks</label>
+
+                        <div></div>
+                        <input type="checkbox" disabled  name="answer" ng-model="cs7.emerIssu_ecos" icheck>
+                        <label class="checkboxLabel">Ecosystem services</label>
+                    </div>
+
+                    <div class="col-sm-offset-1 col-sm-3 nopadding">
+                        <input type="checkbox" disabled  name="answer" ng-model="cs7.emerIssu_wate" icheck>
+                        <label class="checkboxLabel">Water quality</label>
+
+                        <div></div>
+                        <p>
+                            <input type="checkbox" disabled  name="answer" ng-model="cs7.emerIssu_other" icheck>
+                            <label class="checkboxLabel">Other</label>
+
+                            <div class="padded-left" ng-show="cs7.emerIssu_other">
+                                Explain <input type="text" readonly class="form-control shorter" ng-model="cs7.emerIssu_otherSpec">
+                            </div>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-striped vert-align-middle">
+                <thead>
+                <tr>
+                    <th colspan="2">Forest Tree Biotechnology (answer the following about your organization)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <label>We currently invest in research with with GE trees forest tree biotechnology.</label>
+
+                        <div class="col-sm-6">
+                            <div class="form-group hasRadioBoxes">
+
+                                <div>
+                                    <input type="radio" disabled  icheck name="test3" ng-model="cs7.investRes_ifInve" value="1">
+                                    <label class="checkboxLabel">Yes</label>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input type="radio" disabled  icheck name="test3" ng-model="cs7.investRes_ifInve" value="0">
+                                    <label class="checkboxLabel">No</label>
+                                </div>
+                                <p></p>
+
+                                <div ng-show="cs7.investRes_ifInve">
+
+                                    <label>In what countries?</label>
+                                    <select disabled class="form-control" name="select"
+                                            ng-model="country1"
+                                            ng-change="country1 = addCountry(cs7.investRes_countryID, country1)">
+                                        <option value="">Select Country</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+                                    </select>
+
+
+                                    <div id="selectedItem" ng-repeat="country in cs7.investRes_countryID ">{{country.name}}&nbsp;</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6" ng-show="cs7.investRes_ifInve">
+                            <br>
+                            <div class="group3">
+                                <p>% of your current supply into US and Canadian mills from forest tree biotechnology</p>
+                                <input type="number" readonly class="form-control shortest" max="100" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs7.investResperc_currSupply"> %
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>We plan on investing in research with GE trees forest tree biotechnology.</label>
+
+                        <div class="col-sm-6">
+                            <div class="form-group hasRadioBoxes">
+
+                                <div>
+                                    <input type="radio" disabled  icheck name="test2" ng-model="cs7.planInvestRes_ifPlan" value="1">
+                                    <label class="checkboxLabel">Yes</label>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input type="radio" disabled  icheck name="test2" ng-model="cs7.planInvestRes_ifPlan" value="0">
+                                    <label class="checkboxLabel">No</label>
+                                </div>
+                                <p></p>
+
+                                <div ng-show="cs7.planInvestRes_ifPlan">
+                                    <label>In what countries?</label>
+                                    <select disabled class="form-control" name="select"
+                                            ng-model="country2"
+                                            ng-change="country2 = addCountry(cs7.planInvestRes_countryID, country2)">
+                                        <option value="">Select Country</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+                                    </select>
+
+                                    <div id="selectedItem" ng-repeat="country in cs7.planInvestRes_countryID ">{{country.name}}&nbsp;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" ng-show="cs7.planInvestRes_ifPlan">
+                            <br><br>
+                            <div class="group2">
+                                <p>Anticipated year research will begin</p>
+                                <select disabled class="form-control" name="select" ng-model="cs7.planInvestRes_year">
+                                    <option value="0" ng-selected="!cs7.planInvestRes_year">Select Year</option>
+                                    <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
+                                            ng-value="{{year}}">{{year}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>We are planning commercial plantings of GE trees forest tree biotechnology.</label>
+
+                        <div class="col-sm-6">
+                            <div class="form-group hasRadioBoxes">
+
+                                <div>
+                                    <input type="radio" disabled  icheck name="test" ng-model="cs7.planCommPlant_ifPlanGE" value="1">
+                                    <label class="checkboxLabel">Yes</label>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input type="radio" disabled  icheck name="test" ng-model="cs7.planCommPlant_ifPlanGE" value="0">
+                                    <label class="checkboxLabel">No</label>
+                                </div>
+                                <p></p>
+
+                                <div class="group1" ng-show="cs7.planCommPlant_ifPlanGE">
+                                    <label>In what countries?</label>
+
+                                    <select disabled class="form-control" name="select"
+                                            ng-model="country3"
+                                            ng-change="country3 = addCountry(cs7.planCommPlant_countryID, country3)">
+                                        <option value="">Select Country</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+                                    </select>
+
+                                    <div id="selectedItem" ng-repeat="country in cs7.planCommPlant_countryID ">{{country.name}}&nbsp;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" ng-show="cs7.planCommPlant_ifPlanGE">
+                            <div class="group1">
+                                <br><br>
+                                <p>Anticipated year of harvest</p>
+                                <select disabled class="form-control" name="select" ng-model="cs7.planCommPlant_year">
+                                    <option value="0" ng-selected="!cs7.planCommPlant_year">Select Year</option>
+                                    <option value="1">2015 to 2019</option>
+                                    <option value="2">2020 to 2024</option>
+                                    <option value="3">2025 to 2029</option>
+                                    <option value="4">2030 to 2034</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="padded-left  group1" ng-show="cs7.planCommPlant_ifPlanGE">
+                            <p><label>Anticipated % of total harvest will be of fiber derived from forest tree
+                                biotechnology in 5 years?</label></p>
+                            <input type="text" readonly class="form-control shortest" max="100" min="0"
+                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                   ng-model="cs7.planCommPlantPerc"> %
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="col-sm-offset-1 col-sm-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Did you know?</h3>
+            </div>
+            <div class="panel-body">
+                <p>As commonly used, forest tree biotechnology encompasses structural and functional studies of genes
+                    and genomes (including development and application of genetic markers); various methods of
+                    vegetative reproduction such as micropropagation, tissue culture, and somatic embryogenesis; and
+                    genetic engineering (GE), which is the physical manipulation and asexual insertion of genes into
+                    organisms.
+                </p>
+                The use of forest tree biotechnology is an evolving issue and as federal and international laws,
+                regulations, agreements, treaties and market place recognition of the use of genetically engineered
+                trees via forest tree biotechnology change, SFI Inc. will proactively review and update standard
+                language and policy as necessary.
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-offset-1 col-sm-4">
+
+    </div>
+</div>

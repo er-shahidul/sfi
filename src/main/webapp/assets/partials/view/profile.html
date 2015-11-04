@@ -1,0 +1,141 @@
+<div class="row">
+
+    <div ng-init="errors = cs1.errors" ng-include="'/bundles/sficore/partials/form/error.html'"></div>
+    <form name="cs1Form" novalidate>
+
+        <div class="col-sm-7">
+            <h5>1. Profile</h5>
+
+            <div class="form-group">
+                <label>Program participant: {{ company.name }}</label>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{'has-error has-feedback':  cs1Form.companyWebsite.$invalid}">
+
+                <label>Company website</label>
+                <div class="form-control">{{cs1.companyWebsite}}</div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{'has-error has-feedback':  cs1Form.employeeNumber.$invalid}">
+
+                <label>Number of employees</label>
+                <input type="number" name="employeeNumber" class="form-control" min="0" readonly
+                       ng-pattern="/^\d*$/" pattern-msg="Please enter a valid number" customerror
+                       ng-model="cs1.employeeNumber" customerror>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{'has-error has-feedback':  !cs1.sellsCountries}">
+
+                <label tooltip data-placement="right" data-container="body"
+                       data-title='Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products). This market information will help SFI identify organizations with a shared country interest whether to positively influence procurement policies and/or organize promotion of SFI products shipped outside the U.S.A. or Canada, e.g. to be featured in the 2020 Tokyo Games or the World Expo in Milan.'
+                        >Countries your organization sells into (new!)</label>
+                <select class="form-control" disabled
+                        ng-model="sellCountry"
+                        ng-change="addSellCountry()"
+                        tooltip data-placement="right" data-container="body"
+                        data-title="Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products)">
+                    <option value="0">Select All that apply</option>
+                    <option ng-repeat="country in countries" value="{{country.id}}">{{country.name}}</option>
+                </select>
+
+                <div id="selectedItem" ng-repeat="country in cs1.sellsCountries">{{country.name}}
+                    &nbsp;
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.companyDesc.$invalid}">
+                <label>Company description</label>
+                <div class="form-control" ng-bind-html="cs1.companyDesc | para"></div>
+            </div>
+
+        <p>Please answer the following questions for ALL of your forestland and manufacturing operations/mills/log yards for your organization whether they fall under the scope of your SFI certificate or not:</p>
+
+        <label>My company/organization:</label>
+
+        <div class="form-group">
+            <input type="checkbox" name="ownsOrManagesLands" class="icheck" icheck disabled
+                   ng-model="cs1.ownsOrManagesLands"/>
+            <label class="checkboxLabel"
+                   tooltip data-placement="right" data-container="body"
+                   data-title='A forested area is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>Owns and/or manages forest lands</label>
+        </div>
+
+        <div class="form-group">
+            <input type="checkbox" name="hasOperationsYards" disabled
+                   ng-model="cs1.hasOperationsYards" class="icheck" icheck />
+            <label class="checkboxLabel">Has manufacturing operations/mills/log yards</label>
+        </div>
+
+        <label>My company manages/operates (forest management and/or manufacturing/mills/log yards) in:</label>
+
+        <div class="form-group">
+            <input type="checkbox" name="operatesInUsa" disabled
+                   ng-model="cs1.operatesInUsa" class="icheck" icheck />
+            <label class="checkboxLabel">United States</label>
+        </div>
+
+        <div class="form-group">
+            <input type="checkbox" name="operatesInCanada" disabled
+                   ng-model="cs1.operatesInCanada"  class="icheck" icheck />
+            <label class="checkboxLabel">Canada</label>
+        </div>
+
+        <div class="form-group">
+            <input type="checkbox" name="operatesInOthers" class="icheck" disabled
+                   ng-model="cs1.operatesInOthers" icheck>
+            <label class="checkboxLabel">Other (new!)</label>
+
+            <div class="form-group">
+
+                <div class="padded" id="otherCountry" ng-show="cs1.operatesInOthers" ng-class="{'has-error has-feedback':  OperatesInOthers && !cs1.operateCountries.length}">
+
+                    <select class="form-control" disabled
+                            ng-model="operateCountry" ng-change="addOperateCountry()"
+                            tooltip data-placement="right" data-container="body"
+                            data-title='This new question will help SFI understand where an organization operates for collaboration on region/country-specific issues.'>
+                        <option value="0">Select</option>
+                        <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
+                    </select>
+
+                    <div ng-repeat="country in cs1.operateCountries" id="selectedItem">{{country.name}}
+                        &nbsp;
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-sm-offset-1 col-sm-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">About the Form</h3>
+            </div>
+            <div class="panel-body">
+                This 2014 survey addresses SFI 2010-2014 Program requirements for annual reporting on standard conformance. Questions outside standard requirement language will help SFI to promote the program and connect with program participants on relevant topics. All questions are for the calendar year 2014.
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Quick Tips</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>Depending on your selections you may not have to fill out all sections of this form.  If an area is 'greyed out' don't fill it out.</li>
+                    <li>Click the form section titles to move to that section.</li>
+                    <li>The 'Save' button - saves are your selections throughout the entire form.</li>
+                    <li>The 'Submit' button - submits your form to SFI if nothing is missing.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </form>
+</div>
