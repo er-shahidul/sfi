@@ -27,6 +27,7 @@ public class GroupServiceImpl implements GroupService
         Group entity = groupRepository.findById(group.getId());
         if(entity!=null){
             entity.setRole(group.getRole());
+            groupRepository.save(entity);
         }
     }
 

@@ -1,0 +1,55 @@
+<th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<div class="container">
+    <div class="navbar-header">
+        <!--<a class="navbar-brand" href="/admin">-->
+            <!--<img id="logo" src="/images/sfi-logo.png" alt="SFI">-->
+        <!--</a>-->
+    </div>
+
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a th:href="@{/}" class="tab">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#" class="tab">
+                    Program Participant Survey
+                </a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown active">
+                <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">
+                    2014 Program Participant Survey
+                </a>
+            </li>
+        </ul>
+
+
+
+            <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_SUPER_ADMIN')">
+                <!--<th:block th:include="headerAthorize"></th:block>-->
+                <!--<div id="settings"-->
+                     <!--data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-trigger="click"-->
+                     <!--data-content="'<a href=&quot;/sfi/admin/user/profile/'+${principal.username}+'&quot; class=&quot;settings-popup icon1&quot;><div id='proImg'></div><span>Profile</span></a><a href=&quot;/sfi/logout&quot; class=&quot;settings-popup icon2&quot;><div id='logImg'></div><span>Logout</span></a>'" data-trigger="click">-->
+                    <!--<span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>-->
+                    <!--<label>LOGGED IN AS</label>-->
+                    <!--<p sec:authentication="principal.username"></p>-->
+                <!--</div>-->
+            </div>
+            <div sec:authorize="isAnonymous()">
+                <!--<th:block th:include="headerUnAthorize"></th:block>-->
+                <!--<div id="settings"-->
+                     <!--data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-trigger="click"-->
+                     <!--data-content="<a href=&quot;login&quot; class=&quot;settings-popup icon3&quot;><div id='logIn'><span class='glyphicon glyphicon-log-in'></span></div><span>Login</span></a>" style="width:22px;" >-->
+                    <!--<span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>-->
+                <!--</div>-->
+            </div>
+
+        </div>
+
+    </div>
+</th:block>

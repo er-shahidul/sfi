@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+
+<section layout:fragment="content">
+    <div id="wrapper">
+    <div class="container">
+
+        <div class="formContainer">
+            <div class="formContent">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="sidebarmenu">
+                            <th:block th:include="left_menu"></th:block>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <section class="content-header">
+
+                        </section>
+
+                        <section class="content">
+                            <div class="sonata-ba-content">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="cms-block cms-block-element">
+
+                                            <div class="box">
+                                                <div class="box-header">
+                                                    <h3 class="box-title" style="font-size: 24px;font-weight: normal;">Entities</h3>
+                                                </div>
+                                                <div class="box-body">
+                                                    <table class="table table-hover">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="sonata-ba-list-label alignright" style="font-weight: bold;" width="40%">
+                                                                User
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group">
+                                                                    <a class="btn-link btn-flat" th:href="@{/admin/user/new}">
+                                                                        <i class="fa fa-plus-circle"></i>
+                                                                        Add new
+                                                                    </a>
+                                                                    <a class="btn-link btn-flat" th:href="@{/admin/user/list}">
+                                                                        <i class="glyphicon glyphicon-list"></i>
+                                                                        List
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sonata-ba-list-label alignright" style="font-weight: bold;" width="40%">
+                                                                Company
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group">
+                                                                    <a class="btn-link btn-flat" th:href="@{/admin/company/new}">
+                                                                        <i class="fa fa-plus-circle"></i>
+                                                                        Add new
+                                                                    </a>
+                                                                    <a class="btn-link btn-flat" th:href="@{/admin/company/list}">
+                                                                        <i class="glyphicon glyphicon-list"></i>
+                                                                        List</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <div class="box">
+                                                <div class="box-header">
+                                                    <h3 class="box-title" style="font-size: 24px;font-weight: normal;">Vocabulary</h3>
+                                                </div>
+                                                <div class="box-body">
+                                                    <table class="table table-hover">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="sonata-ba-list-label alignright" style="font-weight: bold;" width="40%">
+                                                                Area Unit
+                                                            </td>
+                                                            <td>
+                                                                <div class="btn-group">
+                                                                    <a class="btn-link btn-flat" th:href="@{/admin/area/unit/new}">
+                                                                        <i class="fa fa-plus-circle"></i>
+                                                                        Add new
+                                                                    </a>
+                                                                    <a class="btn-link btn-flat" th:href="@{/admin/area/unit/list}">
+                                                                        <i class="glyphicon glyphicon-list"></i>
+                                                                        List
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/assets/js/libs/angular.min.js}"></script>
+<script th:src="@{/assets/js/libs/angular-ui-router.min.js}"></script>
+
+</section>
+</html>

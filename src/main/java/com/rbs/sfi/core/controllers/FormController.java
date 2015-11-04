@@ -46,10 +46,6 @@ public class FormController {
 
         if (!(auth instanceof AnonymousAuthenticationToken)) {
 
-//            int id = 1;
-//            model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
-//            SfiPpForm sfiPpForm = sfiPpFormService.findById(id);
-
             User user = userService.findByUsername(getCurrentUsername());
             SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(user.getCompany());
             if(sfiPpForm == null){
@@ -61,7 +57,7 @@ public class FormController {
             model.addAttribute("sfiPpForm", Util.getAsString(sfiPpForm));
             model.addAttribute("user", user);
 
-            return "/admin/user/dashboard";
+            return "admin";
         }
 
         return "dashboard";

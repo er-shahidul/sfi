@@ -1,0 +1,38 @@
+<th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<ul>
+    <li class="selected">
+        <a href="#">My Profile</a>
+    </li>
+
+    <!--<sec:authorize var="admin" access="hasAnyRole('ADMIN', 'SUPER_ADMIN')">-->
+
+        <!--<c:choose>-->
+            <!--<c:when test="${admin}">-->
+                <!--<li class="selected">-->
+                    <!--<a href="#">Manage Users</a>-->
+                <!--</li>-->
+                <!--<li class="selected">-->
+                    <!--<a href="#">Manage Companies</a>-->
+                <!--</li>-->
+                <!--<li class="selected">-->
+                    <!--<a href="#">Manage Area Units</a>-->
+                <!--</li>-->
+                <!--<li class="selected">-->
+                    <!--<a href="#">Forms</a>-->
+                <!--</li>-->
+            <!--</c:when>-->
+            <!--<c:otherwise>-->
+                <!--<li class="selected">-->
+                    <!--<a href="#">Company Settings</a>-->
+                <!--</li>-->
+            <!--</c:otherwise>-->
+        <!--</c:choose>-->
+
+    <!--</sec:authorize>-->
+
+    <li class="selected">
+        <a href="#">Privacy Policy</a>
+    </li>
+</ul>
+
+</th:block>
