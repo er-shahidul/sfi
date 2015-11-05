@@ -73,7 +73,7 @@
                                 <td th:text="${areaUnit.shortCode}"></td>
                                 <td th:text="${areaUnit.unitDescription}"></td>
                                 <td>
-                                    <a th:href="@{/admin/area/unit/edit/${areaUnit.id}}">Update</a>
+                                    <a th:href="@{'/admin/area/unit/edit/' + ${areaUnit.id}}">Update</a>
                                 </td>
                             </tr>
                             </tbody>

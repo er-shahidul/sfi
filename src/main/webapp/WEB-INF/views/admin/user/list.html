@@ -76,7 +76,11 @@
                                                 <tbody>
                                                 <tr th:each="u,iterationStatus  : ${user}">
                                                     <td th:text="${iterationStatus.count}"></td>
-                                                    <td th:text="${u.username}"></td>
+                                                    <td>
+                                                        <a th:href="@{'/admin/user/edit/' + ${u.id}}">
+                                                            <span th:text="${u.username}"></span>
+                                                        </a>
+                                                    </td>
                                                     <td th:text="${u.email}"></td>
                                                     <td th:text="${u.company.name}"></td>
                                                     <td>
