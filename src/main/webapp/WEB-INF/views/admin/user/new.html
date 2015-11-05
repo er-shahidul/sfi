@@ -20,104 +20,285 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                    <div class="portlet-body form">
-                        <form th:action="'/admin/user/new'" th:object="${user}" method="POST" class="form-horizontal">
-                            <input type="hidden" th:field="*{id}" />
-                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-
-                        <div class="form-body">
-                            <div class="form-group">
-                                <label class="control-label col-md-3">First Name<span class="required">* </span></label>
-                                <div class="col-md-4">
-                                    <input type="text" th:field="*{firstName}" class="form-control" />
-                                    <div class="has-error">
-                                        <errors th:path="*{firstName}" class="help-inline"/>
+                            <section class="content-header">
+                                <nav class="navbar navbar-default" role="navigation">
+                                    <div class="navbar-header">
+                                        <span class="navbar-brand">
+                                            Create
+                                        </span>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Last Name<span class="required">* </span></label>
-                                <div class="col-md-4">
-                                    <input type="text" th:field="*{lastName}" class="form-control" />
-                                    <div class="has-error">
-                                        <errors th:path="*{lastName}" class="help-inline"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Username<span class="required">* </span></label>
-                                <div class="col-md-4">
-                                    <div th:if="${edit}">
-                                        <input type="text" th:field="*{username}" id="username" class="form-control" disabled="true"/>
-                                    </div>
-                                    <div th:unless="${edit}">
-                                        <input type="text" th:field="*{username}" id="username" class="form-control"/>
-                                        <div class="has-error">
-                                            <errors th:path="*{username}" class="help-inline"/>
+                                    <div class="container-fluid">
+                                        <div class="navbar-left">
                                         </div>
+
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li class="dropdown sonata-actions">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li>
+                                                    </li>
+                                                    <li>
+                                                    </li>
+                                                    <li>
+                                                    </li>
+                                                    <li>
+                                                        <a class="sonata-action-element" style="color: #080808;" th:href="@{/admin/user/list}">
+                                                            <i class="fa fa-list"></i>
+                                                            Return to list</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="sonata-action-element" style="color: #080808;" th:href="@{/admin/user/new}">
+                                                            <i class="fa fa-plus-circle"></i>
+                                                            Add new</a>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </div>
-                            </div>
+                                </nav>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Password <span class="required">* </span></label>
-                                <div class="col-md-4">
-                                    <input type="password" th:field="*{password}" id="password" class="form-control"/>
-                                    <div class="has-error">
-                                        <errors th:path="*{password}" class="help-inline"/>
+                            </section>
+
+                            <section class="content">
+
+                                <div class="sonata-ba-form">
+
+                                <form th:action="'/admin/user/new'" th:object="${user}" method="POST" class="form-horizontal">
+                                    <input type="hidden" th:field="*{id}" />
+                                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 ">
+                                                    <div class="box box-success">
+                                                        <div class="box-header">
+                                                            <h4 class="box-title">
+                                                                User
+                                                            </h4>
+                                                        </div>
+                                                        <div class="box-body">
+                                                            <div class="sonata-ba-collapsed-fields">
+
+
+                                                                <div class="form-group" id="sonata-ba-field-container-first_name">
+                                                                    <label class="control-label required" style="text-align: left;">
+                                                                        First Name
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
+                                                                        <input type="text" th:field="*{firstName}" class="form-control" required="required" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group" id="sonata-ba-field-container-_last_name">
+                                                                    <label class="control-label required" style="text-align: left;">
+                                                                        Last Name
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
+                                                                        <input type="text" th:field="*{lastName}" class="form-control" required="required" />
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="form-group" id="sonata-ba-field-container-email">
+                                                                    <label class="control-label required" style="text-align: left;">
+                                                                        Email
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
+                                                                        <input type="text" th:field="*{email}" id="email" class="form-control" required="required" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group" id="sonata-ba-field-container-s563afbac0122b_company">
+                                                                    <label class=" control-label" style="text-align: left;">
+                                                                        Assign user to company
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural">
+
+                                                                            <select th:field="*{company.id}" class="form-control">
+                                                                                <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.name}">
+                                                                                </option>
+                                                                            </select>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <!--<div class="form-group" id="sonata-ba-field-container-s563afbac0122b_is_admin">-->
+                                                                    <!--<label class="control-label required">-->
+                                                                        <!--User Type-->
+                                                                    <!--</label>-->
+
+                                                                    <!--<div class=" sonata-ba-field sonata-ba-field-standard-natural  ">-->
+
+                                                                        <!--<ul id="s563afbac0122b_is_admin" class="list-unstyled "><li><label class=""><div class="iradio_minimal" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" id="s563afbac0122b_is_admin_0" name="s563afbac0122b[is_admin]" required="required" value="0" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div><span>-->
+                    <!--General - access to forms associated to their company                </span></label></li><li><label class=""><div class="iradio_minimal" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" id="s563afbac0122b_is_admin_1" name="s563afbac0122b[is_admin]" required="required" value="1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div><span>-->
+                    <!--Administrator - access to all forms and manage users                </span></label></li></ul>-->
+
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+
+
+
+
+
+                                                                <!--<div class="form-group" id="sonata-ba-field-container-s563afbac0122b_send_invitation">-->
+                                                                    <!--<label class="control-label">-->
+                                                                        <!--Send invitation mail (When checked clicking the Update or Update and close button will send an invite)-->
+                                                                    <!--</label>-->
+
+                                                                    <!--<div class=" sonata-ba-field sonata-ba-field-standard-natural  ">-->
+
+                                                                        <!--&lt;!&ndash;<div class="icheckbox_minimal" ari
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                <!--</div>-->
+
+                                                                <div class="form-group" id="sonata-ba-field-container-enabled">
+                                                                    <label class="control-label" style="text-align: left;">
+                                                                        This user is enabled
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural">
+
+                                                                        <input type="checkbox" th:field="*{enabled}" id="enabled" class="form-control"/>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group" id="sonata-ba-field-container-s563afbac0122b_invitation_msg">
+                                                                    <label class=" control-label" style="text-align: left;">
+                                                                        Welcome message (optional)
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
+
+                                                                        <textarea th:field="*{invitationMsg}" id="invitationMsg" class="form-control" rows="5"></textarea>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="well well-small form-actions">
+                                            <!--<button class="btn btn-success" type="submit" name="btn_create_and_edit"><i class="fa fa-save"></i> Create</button>-->
+                                            <button type="submit" class="btn btn-success" name="btn_create_and_list"><i class="fa fa-save"></i> <i class="fa fa-list"></i> Create and return to list</button>
+                                            <!--<button class="btn btn-success" type="submit" name="btn_create_and_create"><i class="fa fa-plus-circle"></i> Create and add another</button>-->
+                                        </div>
+                                    </form>
                                     </div>
+</section>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Confirm Password <span class="required">* </span></label>
-                                <div class="col-md-4">
-                                    <input type="password" id="password-check" class="form-control"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Email <span class="required">* </span></label>
-                                <div class="col-md-4">
-                                    <input type="text" th:field="*{email}" id="email" class="form-control" />
-                                    <div class="has-error">
-                                        <errors th:path="*{email}" class="help-inline"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Group <span class="required">* </span></label>
-                                <div class="col-md-4">
-                                    <select th:field="*{group}" class="form-control" multiple="true">
-                                        <option th:each="group : ${roles}" th:value="${group.id}"
-                                                th:text="${group.getRole()}">Name
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Company <span class="required">* </span></label>
-                                <div class="col-md-4">
-                                    <select th:field="*{company.id}" class="form-control">
-                                        <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.name}">
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
 
-                        <div class="form-actions">
-                            <div class="row">
-                                <div class="col-md-offset-3 col-md-9">
-                                    <input type="submit" id="submit" value="Register" class="btn green"/>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
         <!-- END VALIDATION STATES-->
     </div>
@@ -125,28 +306,6 @@
     </div>
 </div>
 
-    <!--<script>-->
-        <!--jQuery(function(){-->
-            <!--$("#submit").click(function(){-->
-                <!--$(".error").hide();-->
-                <!--var hasError = false;-->
-                <!--var passwordVal = $("#password").val();-->
-                <!--var checkVal = $("#password-check").val();-->
-                <!--if (passwordVal == '') {-->
-                    <!--$("#password").after('<span class="error">Please enter a password.</span>');-->
-                    <!--hasError = true;-->
-                <!--} else if (checkVal == '') {-->
-                    <!--$("#password-check").after('<span class="error">Please re-enter your password.</span>');-->
-                    <!--hasError = true;-->
-                <!--} else if (passwordVal != checkVal ) {-->
-                    <!--$("#password-check").after('<span class="error">Passwords do not match.</span>');-->
-                    <!--hasError = true;-->
-                <!--}-->
-                <!--if(hasError == true) {return false;}-->
-            <!--});-->
-        <!--});-->
-    <!--</script>-->
-</div>
 </section>
 </html>
 

@@ -180,11 +180,9 @@ sfiFormApp
 
                 var defer = $q.defer();
 
-                $http.get("/country/list").then(function(data){
-
-                    console.log(data);
-                    defer.resolve(data);
-                });
+//                $http.get(Routing.generate("sfi_form_country_list")).then(function(data){
+//                    defer.resolve(data);
+//                });
 
                 return defer.promise;
             },
@@ -207,11 +205,8 @@ sfiFormApp
                 if(window.countries){
 
                     this.countries = window.countries;
-                    this.sellCountries = window.countries;
-                    this.otherCountries = window.countries;
-
-                    //this.sellCountries = window.sellCountries;
-                    //this.otherCountries = window.otherCountries;
+                    this.sellCountries = window.sellCountries;
+                    this.otherCountries = window.otherCountries;
 
                     return;
                 }
@@ -601,7 +596,7 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
     $rootScope.getCountry = function(id){
 
         var country = $rootScope.findCountry($rootScope.countries, id);
-        return  country ? country.country : "";
+        return  country ? country.name : "";
     }
 
     $rootScope.getOtherCountry = function(id){
@@ -611,9 +606,8 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
     }
 
     $rootScope.getSellCountry = function(id){
-        console.log(id);
+
         var country = $rootScope.findCountry($rootScope.sellCountries, id);
-        console.log(country);
         return  country ? country.country : "";
     }
 
@@ -645,20 +639,6 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
         return "0";
     };
 
-    $rootScope.addSellCountry = function(bucket, model){
-
-        console.log(bucket, model);
-
-        //check if already exists
-        if(bucket.indexOf(model) >= 0){
-            return "0";
-        }
-
-        var country = $rootScope.findCountry($rootScope.sellCountries, model);
-        if(country)bucket.push(model);
-
-        return "0";
-    };
 
 
     $rootScope.delCountry = function(bucket, id){
