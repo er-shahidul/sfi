@@ -26,29 +26,29 @@ sfiFormApp
 
     /** -/- */
 
-//    $scope.addSellCountry = function(){
-//
-//
-//        if(!$scope.sellCountry) return false;
-//
-//        var isExists = _.find($scope.cs1.sellsCountries, function(country){
-//            return $scope.sellCountry == country.id;
-//        });
-//
-//        if(!isExists) {
-//
-//            var country = _.find($scope.countries, function(country){
-//                return country.id == $scope.sellCountry;
-//            });
-//
-//            if(country){
-//                $scope.cs1.sellsCountries.push(country);
-//            }
-//
-//        }
-//
-//        $scope.sellCountry = 0;
-//    }
+    $scope.addSellCountry = function(){
+
+
+        if(!$scope.sellCountry) return false;
+
+        var isExists = _.find($scope.cs1.sellsCountries, function(country){
+            return $scope.sellCountry == country.id;
+        });
+
+        if(!isExists) {
+
+            var country = _.find($scope.countries, function(country){
+                return country.id == $scope.sellCountry;
+            });
+
+            if(country){
+                $scope.cs1.sellsCountries.push(country);
+            }
+
+        }
+
+        $scope.sellCountry = 0;
+    }
 
 //    $scope.delSellCountry = function(countryId){
 //

@@ -156,6 +156,9 @@ public class UserController {
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.POST)
     public String save(@Valid User user, BindingResult result, ModelMap model) {
 
+        user.setUsername(user.getEmail());
+        user.setPassword(user.getEmail());
+
         if (result.hasErrors()) {
             System.out.println("There are errors");
             return "admin/user/new";
