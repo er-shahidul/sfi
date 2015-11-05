@@ -10,23 +10,23 @@ sfiFormApp
     $scope.otherCountries = Countries.getOthers();
     $scope.cs2 = angular.copy( $rootScope.form.cs2);
 
-    $scope.isFieldsEnabled = function(){
-        return $rootScope.form.cs1.ownsOrManagesLands;
-    }
-
-    $scope.operateInUsa = function(){
-
-        return $scope.isFieldsEnabled () && $rootScope.form.cs1.operatesInUsa;
-    }
-
-    $scope.operateInCa = function(){
-
-        return $scope.isFieldsEnabled () && $rootScope.form.cs1.operatesInCanada;
-    }
-
-    $scope.operateInOthers = function(){
-        return $scope.isFieldsEnabled () &&  $rootScope.form.cs1.operatesInOthers;
-    }
+//    $scope.isFieldsEnabled = function(){
+//        return $rootScope.form.cs1.ownsOrManagesLands;
+//    }
+//
+//    $scope.operateInUsa = function(){
+//
+//        return $scope.isFieldsEnabled () && $rootScope.form.cs1.operatesInUsa;
+//    }
+//
+//    $scope.operateInCa = function(){
+//
+//        return $scope.isFieldsEnabled () && $rootScope.form.cs1.operatesInCanada;
+//    }
+//
+//    $scope.operateInOthers = function(){
+//        return $scope.isFieldsEnabled () &&  $rootScope.form.cs1.operatesInOthers;
+//    }
 
 
     $scope.init = function(){

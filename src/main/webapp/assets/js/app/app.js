@@ -578,6 +578,8 @@ sfiFormApp.filter('para', ['$sce', function ($sce) {
 }]);
 
 
+/** Functions for multiple country select */
+
 sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
 
     $rootScope.countries      = Countries.getAll();
@@ -648,5 +650,28 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
         return bucket;
 
     };
+
+}]);
+
+/** Operating country rules from CS1 data */
+sfiFormApp.run(['$rootScope', function($rootScope) {
+
+    $rootScope.isFieldsEnabled = function(){
+        return $rootScope.form.cs1.ownsOrManagesLands;
+    }
+
+    $rootScope.operateInUsa = function(){
+
+        return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInUSA;
+    }
+
+    $rootScope.operateInCa = function(){
+
+        return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInOther;
+    }
+
+    $rootScope.operateInOthers = function(){
+        return $rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.operatesInOthers;
+    }
 
 }]);
