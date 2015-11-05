@@ -4,31 +4,21 @@
         <a href="#">My Profile</a>
     </li>
 
-    <!--<sec:authorize var="admin" access="hasAnyRole('ADMIN', 'SUPER_ADMIN')">-->
-
-        <!--<c:choose>-->
-            <!--<c:when test="${admin}">-->
-                <!--<li class="selected">-->
-                    <!--<a href="#">Manage Users</a>-->
-                <!--</li>-->
-                <!--<li class="selected">-->
-                    <!--<a href="#">Manage Companies</a>-->
-                <!--</li>-->
-                <!--<li class="selected">-->
-                    <!--<a href="#">Manage Area Units</a>-->
-                <!--</li>-->
-                <!--<li class="selected">-->
-                    <!--<a href="#">Forms</a>-->
-                <!--</li>-->
-            <!--</c:when>-->
-            <!--<c:otherwise>-->
-                <!--<li class="selected">-->
-                    <!--<a href="#">Company Settings</a>-->
-                <!--</li>-->
-            <!--</c:otherwise>-->
-        <!--</c:choose>-->
-
-    <!--</sec:authorize>-->
+    <li class="selected" sec:authorize="isAuthenticated()">
+        <a href="#">Manage Users</a>
+    </li>
+    <li class="selected" sec:authorize="isAuthenticated()">
+        <a href="#">Manage Companies</a>
+    </li>
+    <li class="selected" sec:authorize="isAuthenticated()">
+        <a href="#">Manage Area Units</a>
+    </li>
+    <li class="selected" sec:authorize="isAuthenticated()">
+        <a href="#">Forms</a>
+    </li>
+    <li class="selected" sec:authorize="isAnonymous()">
+        <a href="#">Company Settings</a>
+    </li>
 
     <li class="selected">
         <a href="#">Privacy Policy</a>
