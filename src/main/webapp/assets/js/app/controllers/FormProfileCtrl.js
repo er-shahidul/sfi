@@ -26,29 +26,29 @@ sfiFormApp
 
     /** -/- */
 
-    $scope.addSellCountry = function(){
-
-
-        if(!$scope.sellCountry) return false;
-
-        var isExists = _.find($scope.cs1.sellsCountries, function(country){
-            return $scope.sellCountry == country.id;
-        });
-
-        if(!isExists) {
-
-            var country = _.find($scope.countries, function(country){
-                return country.id == $scope.sellCountry;
-            });
-
-            if(country){
-                $scope.cs1.sellsCountries.push(country);
-            }
-
-        }
-
-        $scope.sellCountry = 0;
-    }
+//    $scope.addSellCountry = function(){
+//
+//
+//        if(!$scope.sellCountry) return false;
+//
+//        var isExists = _.find($scope.cs1.sellsCountries, function(country){
+//            return $scope.sellCountry == country.id;
+//        });
+//
+//        if(!isExists) {
+//
+//            var country = _.find($scope.countries, function(country){
+//                return country.id == $scope.sellCountry;
+//            });
+//
+//            if(country){
+//                $scope.cs1.sellsCountries.push(country);
+//            }
+//
+//        }
+//
+//        $scope.sellCountry = 0;
+//    }
 
     $scope.delSellCountry = function(countryId){
 
@@ -96,7 +96,7 @@ sfiFormApp
         if($scope.cs1Form.$valid){
 
             $http
-                .put("/form/cs1", $scope.cs1)
+                .put("", $scope.cs1)
                 .then(function(response){
 
                     if(response.data){

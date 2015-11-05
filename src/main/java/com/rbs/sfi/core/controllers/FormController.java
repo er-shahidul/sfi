@@ -7,6 +7,7 @@ import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.core.entities.SfiPpForm;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
+import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
 import com.rbs.sfi.core.services.SfiPpFormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -17,6 +18,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
+import com.rbs.sfi.core.services.SfiPpFormRegionService;
 
 import javax.validation.Valid;
 import javax.xml.bind.DatatypeConverter;
@@ -33,6 +37,11 @@ public class FormController {
 
     @Autowired
     SfiPpFormService sfiPpFormService;
+
+    @Autowired
+    SfiPpFormAllCountryService sfiPpFormAllCountryService;
+
+
 
     @Autowired
     CompanyService companyService;
@@ -59,11 +68,16 @@ public class FormController {
 
             String companyLogo = DatatypeConverter.printBase64Binary(company.getLogo());
 
-            model.addAttribute("sfiPpFormData", Util.getAsString(sfiPpForm));
-            model.addAttribute("companyData", Util.getAsString(company));
+            List countries = sfiPpFormAllCountryService.list();
+
+
+            model.addAttribute("form", sfiPpForm);
+            //model.addAttribute("sfiPpFormData", Util.getAsString(sfiPpForm));
+//            model.addAttribute("companyData", Util.getAsString(company));
             model.addAttribute("company", company);
-            model.addAttribute("companyLogo", companyLogo);
+            model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
             model.addAttribute("user", user);
+            model.addAttribute("countries", countries);
             model.addAttribute("mode", "edit");
 
             return "/core/form/index";

@@ -8,7 +8,6 @@ public class SfiPpFormAllCountry
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="countryID", nullable=false)
 	private int id;
 
 	@Column(name="country", nullable=true)

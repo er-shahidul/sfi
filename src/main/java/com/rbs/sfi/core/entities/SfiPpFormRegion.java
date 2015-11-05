@@ -15,7 +15,7 @@ public class SfiPpFormRegion
 	private String name;
 
 	@ManyToOne(targetEntity = com.rbs.sfi.core.entities.SfiPpFormAllCountry.class, optional=false)
-	@JoinColumn(name="countryID", referencedColumnName="countryID", nullable=true)
+	@JoinColumn(name="countryID", referencedColumnName="id", nullable=true)
 	private SfiPpFormAllCountry country;
 
 	public int getId() {

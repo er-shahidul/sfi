@@ -220,17 +220,19 @@
                                tooltip data-placement="right" data-container="body"
                                data-title='Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products). This market information will help SFI identify organizations with a shared country interest whether to positively influence procurement policies and/or organize promotion of SFI products shipped outside the U.S.A. or Canada, e.g. to be featured in the 2020 Tokyo Games or the World Expo in Milan.'
                                 >Countries your organization sells into (new!)</label>
+
                         <select class="form-control"
                                 ng-model="sellCountry"
-                                ng-change="addSellCountry()"
+                                ng-change="cs1.sellsCountries = addSellCountry(cs1.sellsCountries, sellCountry)"
                                 tooltip data-placement="right" data-container="body"
                                 data-title="Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products)">
                             <option value="0">Select All that apply</option>
-                            <option ng-repeat="country in sellCountries" value="{{country.id}}">{{country.name}}</option>
+                            <option ng-repeat="country in sellCountries" value="{{country.id}}">{{country.country}}</option>
                         </select>
 
-                        <div id="selectedItem" ng-repeat="countryId in cs1.sellsCountries">{{getCountry(countryId)}}
-                            <button ng-click="delSellCountry(country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+
+                        <div id="selectedItem" ng-repeat="countryId in cs1.sellsCountries">{{getSellCountry(countryId)}}
+                            <button ng-click="cs1.sellsCountries = delCountry(cs1.sellsCountries, countryId)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
                     </div>
 

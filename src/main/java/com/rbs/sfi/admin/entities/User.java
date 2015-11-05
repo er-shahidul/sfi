@@ -158,4 +158,11 @@ public class User
 	public void setCompany(Company company) {
 		this.company = company;
 	}
+
+	public String getFullname() {
+		return firstName + ' ' + lastName;
+	}
+
+
+
 }
