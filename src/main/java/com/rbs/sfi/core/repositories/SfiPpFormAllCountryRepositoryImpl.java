@@ -1,0 +1,25 @@
+package com.rbs.sfi.core.repositories;
+
+import com.rbs.sfi.admin.repositories.AbstractRepository;
+import com.rbs.sfi.core.entities.SfiPpFormAllCountry;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Repository("sfiPpFormAllCountryRepository")
+public class SfiPpFormAllCountryRepositoryImpl extends AbstractRepository<Integer, SfiPpFormAllCountry> implements SfiPpFormAllCountryRepository {
+
+    @Autowired
+    SessionFactory sessionFactory;
+
+    @Transactional
+    public List<SfiPpFormAllCountry> list() {
+        @SuppressWarnings("unchecked")
+        List<SfiPpFormAllCountry> sfiPpFormAllCountry = sessionFactory.getCurrentSession().createQuery("from SfiPpFormAllCountry").list();
+        return sfiPpFormAllCountry;
+    }
+
+}

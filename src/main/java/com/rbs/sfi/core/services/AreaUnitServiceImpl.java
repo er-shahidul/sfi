@@ -30,6 +30,8 @@ public class AreaUnitServiceImpl implements AreaUnitService
     public void update(AreaUnit areaUnit) {
         AreaUnit entity = areaUnitRepository.findById(areaUnit.getId());
         if(entity!=null){
+            entity.setShortCode(areaUnit.getShortCode());
+            entity.setUnitDescription(areaUnit.getUnitDescription());
             areaUnitRepository.update(entity);
         }
     }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout">
+
+<section layout:fragment="content">
+
+    <div id="wrapper">
+        <div class="container">
+            <div class="formContainer">
+                <div class="breadcrumb">
+                    <span class="text-muted">/</span>
+                    Area Unit New
+                </div>
+                <div class="formContent">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="sidebarmenu">
+                                <th:block th:include="left_menu"></th:block>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="portlet-body form">
+
+                                <form th:action="@{/admin/area/unit/new} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${areaUnit}" method="POST" class="form-horizontal">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">ShortCode<span class="required">* </span></label>
+                                            <div class="col-md-4">
+                                                <input type="text" th:field="*{shortCode}" class="form-control" />
+                                                <div class="has-error">
+                                                    <errors th:path="*{shortCode}" class="help-inline"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Description<span class="required">* </span></label>
+                                            <div class="col-md-4">
+                                                <input type="text" th:field="*{unitDescription}" class="form-control" />
+                                                <div class="has-error">
+                                                    <errors th:path="*{unitDescription}" class="help-inline"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <input type="submit" id="submit" value="Save" class="btn green"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END VALIDATION STATES-->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+</html>

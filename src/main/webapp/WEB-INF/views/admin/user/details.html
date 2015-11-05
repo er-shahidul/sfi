@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout">
+
+<section layout:fragment="content">
+
+    <div id="wrapper">
+        <div class="container">
+            <div class="formContainer">
+                <div class="breadcrumb">
+                    <span class="text-muted">/</span>
+                    User Details
+                </div>
+                <div class="formContent">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="sidebarmenu">
+                                <th:block th:include="left_menu"></th:block>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="portlet-body form">
+                        <!-- BEGIN PAGE CONTENT-->
+                        <div class="row margin-top-20">
+                            <div class="col-md-12">
+                                <!-- BEGIN PROFILE SIDEBAR -->
+                                <div class="profile-sidebar">
+                                    <!-- PORTLET MAIN -->
+                                    <div class="portlet light">
+                                        <div>
+                                            <h4 class="profile-desc-title">
+                                                About <span th:text="${user.firstName}"></span>
+                                                <span th:text="${user.lastName}"></span>
+                                            </h4>
+                                            <div class="margin-top-20 profile-desc-link">
+                                                <span class="profile-desc-text">
+                                                <span th:text="${user.username}"></span>
+                                                </span>
+                                            </div>
+                                            <div class="margin-top-20 profile-desc-link">
+                                                <span class="profile-desc-text">
+                                                <span th:text="${user.email}"></span>
+                                                </span>
+                                            </div>
+                                            <div class="margin-top-20 profile-desc-link">
+                                                <span class="profile-desc-text">
+                                                    <span th:text="${user.company.name}"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END PORTLET MAIN -->
+                                </div>
+                                <!-- END BEGIN PROFILE SIDEBAR -->
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END VALIDATION STATES-->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+</html>

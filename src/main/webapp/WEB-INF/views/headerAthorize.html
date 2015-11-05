@@ -1,0 +1,9 @@
+<th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<div id="settings"
+     data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-trigger="click"
+     data-th-content="${dataContent}" data-trigger="click">
+    <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
+    <label>LOGGED IN AS</label>
+    <p sec:authentication="principal.username"></p>
+</div>
+</th:block>
