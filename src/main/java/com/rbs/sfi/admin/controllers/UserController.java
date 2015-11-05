@@ -7,7 +7,9 @@ import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.GroupService;
 import com.rbs.sfi.admin.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -55,6 +57,17 @@ public class UserController {
     @RequestMapping("/admin/user/list")
     public ModelAndView list() {
         List user = userService.list();
+
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("Spring-Mail.xml");
+
+        MailMail mailer = (MailMail) context.getBean("mailMail");
+
+        mailer.sendMail("shanto.646596@gmail.com",
+                "shanto_646596@yahoo.com",
+                "Testing123",
+                "Testing only \n\n Hello Spring Email Sender");
+
         return new ModelAndView("admin/user/list","user",user);
     }
 
