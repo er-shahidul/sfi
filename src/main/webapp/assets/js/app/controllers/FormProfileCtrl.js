@@ -96,7 +96,7 @@ sfiFormApp
         if($scope.cs1Form.$valid){
 
             $http
-                .put("", $scope.cs1)
+                .put("/form/cs1", $scope.cs1)
                 .then(function(response){
 
                     if(response.data){
