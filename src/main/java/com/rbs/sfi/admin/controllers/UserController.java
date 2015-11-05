@@ -3,9 +3,11 @@ package com.rbs.sfi.admin.controllers;
 import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.Group;
 import com.rbs.sfi.admin.entities.User;
+import com.rbs.sfi.admin.entities.VerificationToken;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.GroupService;
 import com.rbs.sfi.admin.services.UserService;
+import com.rbs.sfi.admin.services.VerificationTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
@@ -19,9 +21,11 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 
 import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
 
@@ -40,6 +44,9 @@ public class UserController {
     @Autowired
     private MessageSource messageSource;
 
+    @Autowired
+    private VerificationTokenService verificationTokenService;
+
     @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
 
@@ -54,19 +61,16 @@ public class UserController {
         return "accessDenied";
     }
 
+    public void sendEmail(String recipient, String subject, String message) {
+//        String sender = "shanto.646596@gmail.com";
+        ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
+        MailMail mailer = (MailMail) context.getBean("mailMail");
+        mailer.sendMail(recipient, subject, message);
+    }
+
     @RequestMapping("/admin/user/list")
     public ModelAndView list() {
         List user = userService.list();
-
-        ApplicationContext context =
-                new ClassPathXmlApplicationContext("Spring-Mail.xml");
-
-        MailMail mailer = (MailMail) context.getBean("mailMail");
-
-        mailer.sendMail("shanto.646596@gmail.com",
-                "shanto_646596@yahoo.com",
-                "Testing123",
-                "Testing only \n\n Hello Spring Email Sender");
 
         return new ModelAndView("admin/user/list","user",user);
     }
@@ -166,11 +170,33 @@ public class UserController {
         return "admin/user/new";
     }
 
-    @RequestMapping(value = "/admin/user/new", method = RequestMethod.POST)
-    public String save(@Valid User user, BindingResult result, ModelMap model) {
+    @RequestMapping(value = "/user/verification/{token}", method = RequestMethod.GET)
+    public String verificationToken(@PathVariable String token) {
+        int userId = verificationTokenService.findUserIdByToken(token);
+        User user = userService.findByID(userId);
 
+        if(user == null){
+            return "accessDenied";
+        }else {
+
+            userService.verificationToken(user);
+            return "need redirect url";
+        }
+    }
+
+    @RequestMapping(value = "/admin/user/new", method = RequestMethod.POST)
+    public String save(@Valid User user, BindingResult result, ModelMap model, HttpServletRequest request) {
+
+        UUID uuid = UUID.randomUUID();
+        String randomUUIDString = uuid.toString();
+
+        VerificationToken verificationToken = new VerificationToken();
+
+        verificationToken.setToken(randomUUIDString);
+        verificationToken.setUser(user);
+
+        user.setPassword(randomUUIDString);
         user.setUsername(user.getEmail());
-        user.setPassword(user.getEmail());
 
         if (result.hasErrors()) {
             System.out.println("There are errors");
@@ -190,6 +216,12 @@ public class UserController {
         }
 
         userService.save(user);
+        verificationTokenService.save(verificationToken);
+
+        String recipient = user.getEmail();
+        String subject = "Email Verification";
+        String message = request.getLocalName() + "/user/verification/" + randomUUIDString;
+        sendEmail(recipient, subject, message);
 
         model.addAttribute("success", "User " + "" + " has been registered successfully");
         return ("redirect:/admin/user/list");

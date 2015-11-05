@@ -14,10 +14,6 @@
     <mvc:annotation-driven conversion-service="conversionService"/>
     <mvc:annotation-driven />
 
-    <!-- SET default mail properties -->
-
-
-
     <!-- - - - - thymeleaf start - - - - -->
 
     <bean id="templateResolver"

@@ -1,7 +1,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:email.properties" />
 
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="mailtrap.io"/>
@@ -21,22 +25,5 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     <bean id="mailMail" class="com.rbs.sfi.admin.controllers.MailMail">
         <property name="mailSender" ref="mailSender" />
     </bean>
-	
-	<bean id="customeMailMessage"
-		class="org.springframework.mail.SimpleMailMessage">
-
-		<property name="from" value="from@no-spam.com" />
-		<property name="to" value="to@no-spam.com" />
-		<property name="subject" value="Testing Subject" />
-		<property name="text">
-		<value>
-			<![CDATA[
-				Dear %s,
-				Mail Content : %s
-			]]>
-		</value>
-	</property>
-	</bean>
-
 
 </beans>
