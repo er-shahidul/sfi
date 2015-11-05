@@ -1,0 +1,605 @@
+<div class="row" id="cont-body">
+
+    <div ng-init="errors = cs2.errors" ng-include="'/assets/partials/form/error.html'"></div>
+
+    <div class="col-sm-12">
+        <h5>2. Forestland Information</h5>
+
+        <form name="cs2Form" novalidate ng-class="{'disabled' : !isFieldsEnabled()}" >
+            <span>
+
+                Provide forestland information on all forests your organization owns/manages as well as forestland
+                included under the scope of your SFI certification.
+            </span>
+
+            <table class="table table-striped" id="table1">
+                <thead>
+                <tr>
+                    <th width="12%">USA & Canada <span tooltip data-placement="top" data-container="body" data-html="true"
+                                                       data-title='<b>A forested area</b> is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>Forestlands</span>
+                    </th>
+                    <th>USA & Canada Forestlands-Ownership /Management</th>
+                    <th>Total area your organization owns/manages</th>
+                    <th>Total area certified to the SFI forest management standard</th>
+                    <th>Area managed open to public for recreation</th>
+                    <th style="min-width: 155px;">Area certified to SFI<br/>standard open to public<br/>for recreation (new!)</th>
+                    <th width="25%">Check all recreation categories that<br/>apply to areas open to recreation on<br/>your managed land (new!)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td align="right" ng-class="{'disabled' : !operateInUsa()}">United States<br>(Private)</td>
+
+                    <td nowrap>
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng1" ng-model="cs2.usa.private.forestlandOwnMng" value="1" icheck class="icheck">
+                            REIT/TIMO</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                            <input type="radio" name="forestlandOwnMng1" ng-model="cs2.usa.private.forestlandOwnMng" value="2" icheck class="icheck" >
+                            Industrial</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                            <input type="radio" name="forestlandOwnMng1" ng-model="cs2.usa.private.forestlandOwnMng" value="3" icheck class="icheck">
+                            Conservation</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                            <input type="radio" name="forestlandOwnMng1" ng-model="cs2.usa.private.forestlandOwnMng" value="4" icheck class="icheck">
+                            Family  Owned</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                            <input type="radio" name="forestlandOwnMng1" ng-model="cs2.usa.private.forestlandOwnMng" value="5" icheck class="icheck">
+                            Tribal</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                            <input type="radio" name="forestlandOwnMng1" ng-model="cs2.usa.private.forestlandOwnMng" value="6" icheck class="icheck">
+                            Non-profit</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                            <input type="radio" name="forestlandOwnMng1" ng-model="cs2.usa.private.forestlandOwnMng" value="7" icheck class="icheck">
+                            Other</label>
+                        </div>
+                        <input type="text" class="form-control shorter" ng-show="cs2.usa.private.forestlandOwnMng == 7" ng-model="cs2.usa.private.forestlandOwnMngOther">
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item1.$invalid}">
+
+                        <input type="number" class="form-control shorter"  min="0" name="item1"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.usa.private.totalAreaOwnOrManage"
+                               ng-disabled="!operateInUsa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item2.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item2"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.usa.private.totalAreaCertified"
+                               ng-disabled="!operateInUsa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item3.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item3"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.usa.private.areaManagedForPublic"
+                               ng-disabled="!operateInUsa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item4.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item4"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.usa.private.areaCertifiedForPublic"
+                               ng-disabled="!operateInUsa()"> {{ unit }}
+                    </td>
+                    <td ng-class="{'disabled' : !operateInUsa()}">
+
+                        <table width="90%" style="margin-left: 10px; min-width:225px;">
+
+                            <tr>
+                                <td><label class="checkboxLabel" >Motorized:</label></td>
+
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item5"
+                                           checklist-model="cs2.usa.private.recreationCategories" checklist-value="'1'"
+                                           ng-disabled="!operateInUsa()"/>
+                                    <label class="checkboxLabel" >Fee basis</label>
+                                </td>
+
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item6"
+                                           checklist-model="cs2.usa.private.recreationCategories" checklist-value="'2'"
+                                           ng-disabled="!operateInUsa()"/>
+                                    <label class="checkboxLabel">No fee</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><label class="checkboxLabel" >Non Motorized:</label></td>
+
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item7"
+                                           checklist-model="cs2.usa.private.recreationCategories" checklist-value="'3'"
+                                           ng-disabled="!operateInUsa()"/>
+                                    <label class="checkboxLabel" >Fee basis</label>
+                                </td>
+
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item8"
+                                           checklist-model="cs2.usa.private.recreationCategories" checklist-value="'4'"
+                                           ng-disabled="!operateInUsa()"/>
+                                    <label class="checkboxLabel">No fee</label>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right" ng-class="{'disabled' : !operateInUsa()}">United States<br>(Public)</td>
+                    <!-- v2 -->
+                    <td nowrap>
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng2" ng-model="cs2.usa.public.forestlandOwnMng" value="1" icheck class="icheck">
+                                REIT/TIMO</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng2" ng-model="cs2.usa.public.forestlandOwnMng" value="2" icheck class="icheck" >
+                                Industrial</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng2" ng-model="cs2.usa.public.forestlandOwnMng" value="3" icheck class="icheck">
+                                Conservation</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng2" ng-model="cs2.usa.public.forestlandOwnMng" value="4" icheck class="icheck">
+                                Family  Owned</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng2" ng-model="cs2.usa.public.forestlandOwnMng" value="5" icheck class="icheck">
+                                Tribal</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng2" ng-model="cs2.usa.public.forestlandOwnMng" value="6" icheck class="icheck">
+                                Non-profit</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng2" ng-model="cs2.usa.public.forestlandOwnMng" value="7" icheck class="icheck">
+                                Other</label>
+                        </div>
+                        <input type="text" class="form-control shorter" name="forestlandOwnMng2Other"
+                               ng-show="cs2.usa.public.forestlandOwnMng == 7" ng-model="cs2.usa.public.forestlandOwnMngOther">
+
+                    </td>
+                    <!-- -/- -->
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item9.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item9"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.usa.public.totalAreaOwnOrManage"
+                               ng-disabled="!operateInUsa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item10.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item10"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.usa.public.totalAreaCertified"
+                               ng-disabled="!operateInUsa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item11.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item11"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.usa.public.areaManagedForPublic"
+                               ng-disabled="!operateInUsa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item12.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item12"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.usa.public.areaCertifiedForPublic"
+                               ng-disabled="!operateInUsa()">  {{ unit }}
+
+                    </td>
+
+                    <td ng-class="{'disabled' : !operateInUsa()}">
+
+                        <table width="90%" style="margin-left: 10px; min-width:225px;">
+                            <tr>
+                                <td>
+                                    <label class="checkboxLabel" >Motorized:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item13"
+                                           checklist-model="cs2.usa.public.recreationCategories" checklist-value="'1'"
+                                           ng-disabled="!operateInUsa()"/>
+                                    <label class="checkboxLabel" >Fee basis</label>
+                                </td>
+
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item14"
+                                           checklist-model="cs2.usa.public.recreationCategories" checklist-value="'2'"
+                                           ng-disabled="!operateInUsa()"/>
+                                    <label class="checkboxLabel">No fee</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkboxLabel" >Non Motorized:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item15"
+                                           checklist-model="cs2.usa.public.recreationCategories" checklist-value="'3'"
+                                           ng-disabled="!operateInUsa()"/>
+                                    <label class="checkboxLabel" >Fee basis</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item16"
+                                           checklist-model="cs2.usa.public.recreationCategories" checklist-value="'4'"
+                                           ng-disabled="!operateInUsa()"/>
+                                    <label class="checkboxLabel">No fee</label>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td align="right" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Crown License)</td>
+                    <!-- v2 -->
+                    <td nowrap>
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng3" ng-model="cs2.ca.crown.forestlandOwnMng" value="1" icheck class="icheck">
+                                REIT/TIMO</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng3" ng-model="cs2.ca.crown.forestlandOwnMng" value="2" icheck class="icheck" >
+                                Industrial</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng3" ng-model="cs2.ca.crown.forestlandOwnMng" value="3" icheck class="icheck">
+                                Conservation</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng3" ng-model="cs2.ca.crown.forestlandOwnMng" value="4" icheck class="icheck">
+                                Family  Owned</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng3" ng-model="cs2.ca.crown.forestlandOwnMng" value="5" icheck class="icheck">
+                                Tribal</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng3" ng-model="cs2.ca.crown.forestlandOwnMng" value="6" icheck class="icheck">
+                                Non-profit</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng3" ng-model="cs2.ca.crown.forestlandOwnMng" value="7" icheck class="icheck">
+                                Other</label>
+                        </div>
+                        <input type="text" name="forestlandOwnMng3Other" class="form-control shorter"
+                               ng-show="cs2.ca.crown.forestlandOwnMng == 7" ng-model="cs2.usa.private.forestlandOwnMngOther">
+                    </td>
+                    <!-- -/- -->
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item17.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item17"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.ca.crown.totalAreaOwnOrManage"
+                               ng-disabled="!operateInCa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item18.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item18"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.ca.crown.totalAreaCertified"
+                               ng-disabled="!operateInCa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item19.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item19"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.ca.crown.areaManagedForPublic"
+                               ng-disabled="!operateInCa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item20.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item20"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.ca.crown.areaCertifiedForPublic"
+                               ng-disabled="!operateInCa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'disabled' : !operateInCa()}">
+
+                        <table width="90%" style="margin-left: 10px; min-width:225px;">
+                            <tr>
+                                <td>
+                                    <label class="checkboxLabel" >Motorized:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item21"
+                                           checklist-model="cs2.ca.crown.recreationCategories" checklist-value="'1'"
+                                           ng-disabled="!operateInCa()"/>
+                                    <label class="checkboxLabel" >Fee basis</label>
+                                </td>
+
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item22"
+                                           checklist-model="cs2.ca.crown.recreationCategories" checklist-value="'2'"
+                                           ng-disabled="!operateInCa()"/>
+                                    <label class="checkboxLabel">No fee</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkboxLabel" >Non Motorized:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item23"
+                                           checklist-model="cs2.ca.crown.recreationCategories" checklist-value="'3'"
+                                           ng-disabled="!operateInCa()"/>
+                                    <label class="checkboxLabel" >Fee basis</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item24"
+                                           checklist-model="cs2.ca.crown.recreationCategories" checklist-value="'4'"
+                                           ng-disabled="!operateInCa()"/>
+                                    <label class="checkboxLabel">No fee</label>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Private Land)</td>
+                    <!-- v2 -->
+                    <td nowrap>
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng4" ng-model="cs2.ca.private.forestlandOwnMng" value="1" icheck class="icheck">
+                                REIT/TIMO</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng4" ng-model="cs2.ca.private.forestlandOwnMng" value="2" icheck class="icheck" >
+                                Industrial</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng4" ng-model="cs2.ca.private.forestlandOwnMng" value="3" icheck class="icheck">
+                                Conservation</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng4" ng-model="cs2.ca.private.forestlandOwnMng" value="4" icheck class="icheck">
+                                Family  Owned</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng4" ng-model="cs2.ca.private.forestlandOwnMng" value="5" icheck class="icheck">
+                                Tribal</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng4" ng-model="cs2.ca.private.forestlandOwnMng" value="6" icheck class="icheck">
+                                Non-profit</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng4" ng-model="cs2.ca.private.forestlandOwnMng" value="7" icheck class="icheck">
+                                Other</label>
+                        </div>
+                        <input type="text" name="forestlandOwnMng4Other" class="form-control shorter"
+                               ng-model="cs2.ca.private.forestlandOwnMngOther" ng-show="cs2.ca.private.forestlandOwnMng == 7">
+                    </td>
+                    <!-- -/- -->
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item25.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item25"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.ca.private.totalAreaOwnOrManage"
+                               ng-disabled="!operateInCa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item26.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item26"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.ca.private.totalAreaCertified"
+                               ng-disabled="!operateInCa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item27.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item27"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.ca.private.areaManagedForPublic"
+                               ng-disabled="!operateInCa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'has-error has-feedback': error && cs2Form.item28.$invalid}">
+                        <input type="number" class="form-control shorter" min="0" name="item28"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="cs2.ca.private.areaCertifiedForPublic"
+                               ng-disabled="!operateInCa()"> {{ unit }}
+                    </td>
+
+                    <td ng-class="{'disabled' : !operateInCa()}">
+
+                        <table width="90%" style="margin-left: 10px; min-width:225px;">
+                            <tr>
+                                <td>
+                                    <label class="checkboxLabel" >Motorized:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item29"
+                                           checklist-model="cs2.ca.private.recreationCategories" checklist-value="'1'"
+                                           ng-disabled="!operateInCa()"/>
+                                    <label class="checkboxLabel" >Fee basis</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item30"
+                                           checklist-model="cs2.ca.private.recreationCategories" checklist-value="'2'"
+                                           ng-disabled="!operateInCa()"/>
+                                    <label class="checkboxLabel">No fee</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="checkboxLabel" >Non Motorized:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item31"
+                                           checklist-model="cs2.ca.private.recreationCategories" checklist-value="'3'"
+                                           ng-disabled="!operateInCa()"/>
+                                    <label class="checkboxLabel" >Fee basis</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="icheck" icheck name="item32"
+                                           checklist-model="cs2.ca.private.recreationCategories" checklist-value="'4'"
+                                           ng-disabled="!operateInCa()"/>
+                                    <label class="checkboxLabel">No fee</label>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <br><br>
+
+            <table class="table table-striped ">
+                <thead>
+                <tr>
+                    <th tooltip data-placement="top" data-container="body"
+                        data-title="SFI is including this new question as it is helpful for SFI to know where companies have a presence so SFI can work together with program participants on emerging issues in different countries and relevant procurement policies.">
+                        Forestlands Outside USA & Canada (new!)
+                    </th>
+                    <th>Total area managed</th>
+                    <th width="50%">Is this area certified under a certification standard?</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-class="{'disabled' : !operateInOthers()}"  ng-repeat="other in cs2.others" ng-form="innerForm">
+
+                    <td ng-class="{'has-error': isDirty (other) && innerForm.otherItem1.$invalid}">
+                        <select class="form-control" id="otherItem1" name="otherItem1" customerror
+                                ng-model="other.countryId"
+                                ng-disabled="!operateInOthers()">
+                            <option value="" ng-selected="other.countryId == ''">Select Country</option>
+                            <option ng-repeat="item in otherCountries"  ng-selected="other.countryId == item.id" value="{{ item.id }}">{{ item.country }}</option>
+                        </select>
+                    </td>
+
+                    <td ng-class="{'has-error': isDirty (other) && innerForm.otherItem2.$invalid}">
+                        <input type="number" class="form-control shorter" name="otherItem2"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/"
+                               ng-required="other.countryId"
+                               pattern-msg="Enter decimal number up to 4 precision points" customerror
+                               ng-model="other.areaManaged"
+                               ng-disabled="!operateInOthers()"> {{ unit }}
+                    </td>
+                    <td>
+                        <div class="form-group hasRadioBoxes">
+
+                            <input type="radio" ng-value="1" icheck name="otherItem{{$index}}3"
+                                   ng-model="other.certified" ng-checked="true"
+                                   ng-disabled="!operateInOthers()">
+                            <label class="checkboxLabel">Yes</label>
+
+                            &nbsp;&nbsp;&nbsp;
+
+                            <input type="radio" ng-value="0" class="icheck"
+                                   ng-model="other.certified"
+                                   ng-checked="!other.certified"
+                                   ng-disabled="!operateInOthers()" icheck>
+                            <label class="checkboxLabel">No</label>
+
+                            <div class="floatright col-sm-7" ng-show="other.certified"
+                                 ng-class="{'has-error': isDirty (other) && innerForm.certificationBody.$invalid}">
+
+                                <select class="form-control" name="certificationBody" ng-model="other.certificationBody"
+                                        ng-disabled="!operateInOthers()"
+                                        ng-required="other.certified">
+                                    <option value>Select Standard type</option>
+                                    <option value="1" >PEFC endorsed standard</option>
+                                    <option value="2" >FSC standard</option>
+                                    <option value="3" >Dual PEFC endorsed and FSC standards</option>
+                                    <option value="4" >Other</option>
+                                </select>
+
+                                <div class="padded" ng-show="other.certificationBody == 4 "
+                                     ng-class="{'has-error': isDirty (other) && innerForm.certificationOther.$invalid}">
+                                    Specify standard &nbsp;&nbsp;&nbsp;
+                                    <input type="text" name="certificationOther" class="form-control shorter" style="width: 50%;"
+                                           ng-maxlength="200" customerror
+                                           ng-model="other.certificationOther"
+                                           ng-required="other.certified && other.certificationBody == 4">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="" ng-click="addOther()" ng-show="operateInOthers()">+ Add Another Country</a>
+            <br><br>
+
+
+        </form>
+    </div>
+    {{setForms()}}
+    <div class="col-sm-6 col-sm-offset-4">
+        <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+        <button type="button" class="btn btn-success" ng-click="save('true')">Save and Go to Step 3</button>
+    </div>
+</div>

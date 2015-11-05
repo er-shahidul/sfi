@@ -1,0 +1,10 @@
+<div ng-bind-html-unsafe="popover.content">
+    Why is this less than 100% and what is your organization doing to reach 100%? (optional)
+    <textarea class="form-control" ng-model="DQLoggingReason"></textarea>
+    <div class="col-sm-6 specialpadding alignleft">
+        <button type="button" class="btn btn-cancel" ng-click="$hide();">Cancel</button>
+    </div>
+    <div class="col-sm-6 specialpadding alignright">
+        <button type="button" class="btn btn-success" ng-click="save()">Ok</button>
+    </div>
+</div>

@@ -182,7 +182,7 @@
 
     <build>
 
-        <finalName>sfi</finalName>
+        <finalName>/</finalName>
 
         <plugins>
 

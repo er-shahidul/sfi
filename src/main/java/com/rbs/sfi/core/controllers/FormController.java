@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import javax.xml.bind.DatatypeConverter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class FormController {
     @Autowired
     SfiPpFormRepository sfiPpFormRepository;
 
-    @RequestMapping(value = {"/" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/form" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -47,44 +48,27 @@ public class FormController {
         if (!(auth instanceof AnonymousAuthenticationToken)) {
 
             User user = userService.findByUsername(getCurrentUsername());
-            SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(user.getCompany());
+            Company company = user.getCompany();
+            SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(company);
+
             if(sfiPpForm == null){
-                SfiPpForm form = new SfiPpForm();
-                form.setCompany(user.getCompany());
-                sfiPpFormService.save(form);
-
+                sfiPpForm = new SfiPpForm();
+                sfiPpForm.setCompany(company);
+                sfiPpFormService.save(sfiPpForm);
             }
-            model.addAttribute("sfiPpForm", Util.getAsString(sfiPpForm));
+
+            String companyLogo = DatatypeConverter.printBase64Binary(company.getLogo());
+
+            model.addAttribute("sfiPpFormData", Util.getAsString(sfiPpForm));
+            model.addAttribute("companyData", Util.getAsString(company));
+            model.addAttribute("company", company);
+            model.addAttribute("companyLogo", companyLogo);
             model.addAttribute("user", user);
+            model.addAttribute("mode", "edit");
 
-            return "admin";
+            return "/core/form/index";
         }
 
-        return "dashboard";
-    }
-
-    @RequestMapping(value = "/admin/form/new", method = RequestMethod.GET)
-    public String form(ModelMap model) {
-        SfiPpForm sfiPpForm = new SfiPpForm();
-
-        List<Company> companies = companyService.list();
-        model.addAttribute("companies", companies);
-
-        model.addAttribute("sfiPpForm", sfiPpForm);
-
-        return "/core/sfiPpForm/new";
-    }
-
-    @RequestMapping(value = "/admin/form/new", method = RequestMethod.POST)
-    public String save(@Valid SfiPpForm sfiPpForm, BindingResult result, ModelMap model) {
-
-        if (result.hasErrors()) {
-            return ("redirect:/admin/form/new");
-        }
-
-        sfiPpFormService.save(sfiPpForm);
-
-        model.addAttribute("success", "sfiPpForm " + "" + " has been registered successfully");
-        return ("redirect:/");
+        return "redirect:/login";
     }
 }

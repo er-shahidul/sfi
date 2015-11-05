@@ -20,6 +20,7 @@ public class SfiPpForm
 	@JoinColumn(name="status_id", referencedColumnName="id", nullable=true)
 	private SfiPpFormStatus status;
 
+	@JsonIgnore
 	@OneToOne(targetEntity = com.rbs.sfi.admin.entities.Company.class, optional=false)
 	@JoinColumn(name="company_id", referencedColumnName="id", nullable=true)
 	private Company company;
@@ -52,6 +53,9 @@ public class SfiPpForm
 	@Column(name="cs1_companyDescr", nullable=true)
 	private String cs1CompanyDesc;
 
+	@Column(name="cs1_ownsMngLands", nullable=true)
+	private boolean cs1OwnsMngLands;
+
 	@Column(name="cs1_ownsMngLands_inUSA", nullable=true)
 	private boolean cs1OwnsMngLandsInUSA;
 
@@ -80,44 +84,33 @@ public class SfiPpForm
 	@Column(name="cs1_hasSecondaryOperMillsYards_inOther", nullable=true)
 	private boolean cs1HasSecondaryOperMillsYardsInOther;
 
-	@Column(name="cs1_hasOperMillsYards", nullable=true)
-	private boolean cs1HasOperationsYards;
 
-	@Column(name="cs1_mng_inUSA", nullable=true)
-	private boolean cs1OperatesInUsa;
-
-	@Column(name="cs1_mng_inCA", nullable=true)
-	private boolean cs1OperatesInCanada;
-
-	@Column(name="cs1_manages_operates_other", nullable=true)
-	private boolean cs1OperatesInOthers;
-
-	@JsonIgnore
-	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL})
+	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_ownsMngLands_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id")})
-	private Set<SfiPpFormOtherCountry> sfiPpFormCs1OwnsMngLandsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
+	private Set<SfiPpFormOtherCountry> cs1OwnsMngLandsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
 
-	@JsonIgnore
-	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL})
+
+	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_primaryOperMillsYards_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id")})
-	private Set<SfiPpFormOtherCountry> sfiPpFormCs1PrimaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
+	private Set<SfiPpFormOtherCountry> cs1PrimaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
 
-	@JsonIgnore
-	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL})
+
+	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_secondaryOperMillsYards_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id")})
-	private Set<SfiPpFormOtherCountry> sfiPpFormCs1SecondaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
+	private Set<SfiPpFormOtherCountry> cs1SecondaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
+
 
 	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-	@JoinTable(name="sfi_pp_form_cs1_sells_other_countries",
+	@JoinTable(name="sfi_pp_form_cs1_sells_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id")})
-	private Set<SfiPpFormAllCountry> sfiPpFormCs1SellsOtherCountries = new HashSet<SfiPpFormAllCountry>();
+	private Set<SfiPpFormAllCountry> cs1SellsCountries = new HashSet<SfiPpFormAllCountry>();
 
 
 	/*********************** Section CS2 ********************************************/
@@ -175,37 +168,6 @@ public class SfiPpForm
 		this.cs1CompanyDesc = cs1CompanyDesc;
 	}
 
-	public boolean isCs1HasOperationsYards() {
-		return cs1HasOperationsYards;
-	}
-
-	public void setCs1HasOperationsYards(boolean cs1HasOperationsYards) {
-		this.cs1HasOperationsYards = cs1HasOperationsYards;
-	}
-
-	public boolean isCs1OperatesInUsa() {
-		return cs1OperatesInUsa;
-	}
-
-	public void setCs1OperatesInUsa(boolean cs1OperatesInUsa) {
-		this.cs1OperatesInUsa = cs1OperatesInUsa;
-	}
-
-	public boolean isCs1OperatesInCanada() {
-		return cs1OperatesInCanada;
-	}
-
-	public void setCs1OperatesInCanada(boolean cs1OperatesInCanada) {
-		this.cs1OperatesInCanada = cs1OperatesInCanada;
-	}
-
-	public boolean isCs1OperatesInOthers() {
-		return cs1OperatesInOthers;
-	}
-
-	public void setCs1OperatesInOthers(boolean cs1OperatesInOthers) {
-		this.cs1OperatesInOthers = cs1OperatesInOthers;
-	}
 
 	public int getCs1NumberEmployeesUSA() {
 		return cs1NumberEmployeesUSA;
@@ -229,6 +191,14 @@ public class SfiPpForm
 
 	public void setCs1NumberEmployeesOther(int cs1NumberEmployeesOther) {
 		this.cs1NumberEmployeesOther = cs1NumberEmployeesOther;
+	}
+
+	public boolean isCs1OwnsMngLands() {
+		return cs1OwnsMngLands;
+	}
+
+	public void setCs1OwnsMngLands(boolean cs1OwnsMngLands) {
+		this.cs1OwnsMngLands = cs1OwnsMngLands;
 	}
 
 	public boolean isCs1OwnsMngLandsInUSA() {
@@ -319,36 +289,36 @@ public class SfiPpForm
 		this.cs1HasSecondaryOperMillsYardsInOther = cs1HasSecondaryOperMillsYardsInOther;
 	}
 
-	public Set<SfiPpFormOtherCountry> getSfiPpFormCs1OwnsMngLandsOtherCountries() {
-		return sfiPpFormCs1OwnsMngLandsOtherCountries;
+	public Set<SfiPpFormOtherCountry> getCs1OwnsMngLandsOtherCountries() {
+		return cs1OwnsMngLandsOtherCountries;
 	}
 
-	public void setSfiPpFormCs1OwnsMngLandsOtherCountries(Set<SfiPpFormOtherCountry> sfiPpFormCs1OwnsMngLandsOtherCountries) {
-		this.sfiPpFormCs1OwnsMngLandsOtherCountries = sfiPpFormCs1OwnsMngLandsOtherCountries;
+	public void setCs1OwnsMngLandsOtherCountries(Set<SfiPpFormOtherCountry> cs1OwnsMngLandsOtherCountries) {
+		this.cs1OwnsMngLandsOtherCountries = cs1OwnsMngLandsOtherCountries;
 	}
 
-	public Set<SfiPpFormOtherCountry> getSfiPpFormCs1PrimaryOperMillsYardsOtherCountries() {
-		return sfiPpFormCs1PrimaryOperMillsYardsOtherCountries;
+	public Set<SfiPpFormOtherCountry> getCs1PrimaryOperMillsYardsOtherCountries() {
+		return cs1PrimaryOperMillsYardsOtherCountries;
 	}
 
-	public void setSfiPpFormCs1PrimaryOperMillsYardsOtherCountries(Set<SfiPpFormOtherCountry> sfiPpFormCs1PrimaryOperMillsYardsOtherCountries) {
-		this.sfiPpFormCs1PrimaryOperMillsYardsOtherCountries = sfiPpFormCs1PrimaryOperMillsYardsOtherCountries;
+	public void setCs1PrimaryOperMillsYardsOtherCountries(Set<SfiPpFormOtherCountry> cs1PrimaryOperMillsYardsOtherCountries) {
+		this.cs1PrimaryOperMillsYardsOtherCountries = cs1PrimaryOperMillsYardsOtherCountries;
 	}
 
-	public Set<SfiPpFormOtherCountry> getSfiPpFormCs1SecondaryOperMillsYardsOtherCountries() {
-		return sfiPpFormCs1SecondaryOperMillsYardsOtherCountries;
+	public Set<SfiPpFormOtherCountry> getCs1SecondaryOperMillsYardsOtherCountries() {
+		return cs1SecondaryOperMillsYardsOtherCountries;
 	}
 
-	public void setSfiPpFormCs1SecondaryOperMillsYardsOtherCountries(Set<SfiPpFormOtherCountry> sfiPpFormCs1SecondaryOperMillsYardsOtherCountries) {
-		this.sfiPpFormCs1SecondaryOperMillsYardsOtherCountries = sfiPpFormCs1SecondaryOperMillsYardsOtherCountries;
+	public void setCs1SecondaryOperMillsYardsOtherCountries(Set<SfiPpFormOtherCountry> cs1SecondaryOperMillsYardsOtherCountries) {
+		this.cs1SecondaryOperMillsYardsOtherCountries = cs1SecondaryOperMillsYardsOtherCountries;
 	}
 
-	public Set<SfiPpFormAllCountry> getSfiPpFormCs1SellsOtherCountries() {
-		return sfiPpFormCs1SellsOtherCountries;
+	public Set<SfiPpFormAllCountry> getCs1SellsCountries() {
+		return cs1SellsCountries;
 	}
 
-	public void setSfiPpFormCs1SellsOtherCountries(Set<SfiPpFormAllCountry> sfiPpFormCs1SellsOtherCountries) {
-		this.sfiPpFormCs1SellsOtherCountries = sfiPpFormCs1SellsOtherCountries;
+	public void setCs1SellsCountries(Set<SfiPpFormAllCountry> cs1SellsCountries) {
+		this.cs1SellsCountries = cs1SellsCountries;
 	}
 
 	public boolean isSaved() {
