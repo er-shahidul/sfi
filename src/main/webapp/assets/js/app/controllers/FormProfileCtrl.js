@@ -4,14 +4,14 @@ sfiFormApp
         ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message',
             function ($rootScope , $scope, $state, $http, Countries, _, Message){
 
-    $scope.countries =  Countries.getSells();
-    $scope.otherCountries =  Countries.getOthers();
+    //$scope.countries =  Countries.getSells();
+    //$scope.otherCountries =  Countries.getOthers();
 
     $scope.cs1 = angular.copy($rootScope.form.cs1);
 
 
-    $scope.sellCountry = 0;
-    $scope.operateCountry = 0;
+    //$scope.sellCountry = 0;
+    //$scope.operateCountry = 0;
 
 
     /**
@@ -20,9 +20,9 @@ sfiFormApp
      * */
 
     cs1 = $scope;
-    $scope.cs1.ownsMngLandsOtherCountries = [];
-    $scope.cs1.hasPrimaryOperMillsYardsInOtherCountries = [];
-    $scope.cs1.hasSecondaryOperMillsYardsInOtherCountries = [];
+    //$scope.cs1.ownsMngLandsOtherCountries = [];
+    //$scope.cs1.hasPrimaryOperMillsYardsInOtherCountries = [];
+    //$scope.cs1.hasSecondaryOperMillsYardsInOtherCountries = [];
 
     /** -/- */
 
@@ -50,42 +50,42 @@ sfiFormApp
 //        $scope.sellCountry = 0;
 //    }
 
-    $scope.delSellCountry = function(countryId){
-
-        $scope.cs1.sellsCountries = _.filter($scope.cs1.sellsCountries, function(country){
-            return country.id != countryId;
-        });
-    }
-
-    $scope.addOperateCountry = function(){
-
-        if(!$scope.operateCountry) return false;
-
-        var isExists = _.find($scope.cs1.operateCountries, function(country){
-            return $scope.operateCountry == country.id;
-        });
-
-        if(!isExists) {
-
-            var country = _.find($scope.countries, function(country){
-                return country.id == $scope.operateCountry;
-            });
-
-            if(country){
-                $scope.cs1.operateCountries.push(country);
-            }
-        }
-
-        $scope.operateCountry = "0";
-
-    }
-
-    $scope.delOperateCountry = function(countryId){
-
-        $scope.cs1.operateCountries = _.filter($scope.cs1.operateCountries, function(country){
-            return country.id != countryId;
-        });
-    }
+//    $scope.delSellCountry = function(countryId){
+//
+//        $scope.cs1.sellsCountries = _.filter($scope.cs1.sellsCountries, function(country){
+//            return country.id != countryId;
+//        });
+//    }
+//
+//    $scope.addOperateCountry = function(){
+//
+//        if(!$scope.operateCountry) return false;
+//
+//        var isExists = _.find($scope.cs1.operateCountries, function(country){
+//            return $scope.operateCountry == country.id;
+//        });
+//
+//        if(!isExists) {
+//
+//            var country = _.find($scope.countries, function(country){
+//                return country.id == $scope.operateCountry;
+//            });
+//
+//            if(country){
+//                $scope.cs1.operateCountries.push(country);
+//            }
+//        }
+//
+//        $scope.operateCountry = "0";
+//
+//    }
+//
+//    $scope.delOperateCountry = function(countryId){
+//
+//        $scope.cs1.operateCountries = _.filter($scope.cs1.operateCountries, function(country){
+//            return country.id != countryId;
+//        });
+//    }
 
     $scope.setForms = function(){
         $rootScope.$form = $scope.cs1Form;
@@ -96,7 +96,7 @@ sfiFormApp
         if($scope.cs1Form.$valid){
 
             $http
-                .put("/form/cs1", $scope.cs1)
+                .put("/form/cs1", sfiV2.getSectionData('cs1', $scope.cs1))
                 .then(function(response){
 
                     if(response.data){

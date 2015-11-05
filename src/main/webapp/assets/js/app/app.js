@@ -621,41 +621,37 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
 
     $rootScope.addCountry = function(bucket, model){
 
-        //check if already exists
-        if(bucket.indexOf(model) >= 0){
-            return "0";
-        }
 
-        var country = $rootScope.findCountry($rootScope.countries, model);
-        if(country)bucket.push(model);
+        if(!(country = $rootScope.findCountry(bucket, model) )){
+
+            if(country = $rootScope.findCountry($rootScope.countries, model)){
+                bucket.push(country);
+            }
+        }
 
         return "0";
     };
 
     $rootScope.addOtherCountry = function(bucket, model){
 
-        //check if already exists
-        if(bucket.indexOf(model) >= 0){
-            return "0";
-        }
+        if(!(country = $rootScope.findCountry(bucket, model))){
 
-        var country = $rootScope.findCountry($rootScope.otherCountries, model);
-        if(country)bucket.push(model);
+            if(country = $rootScope.findCountry($rootScope.otherCountries, model)){
+                bucket.push(country);
+            }
+        }
 
         return "0";
     };
 
     $rootScope.addSellCountry = function(bucket, model){
 
-        console.log(bucket, model);
+        if(!(country = $rootScope.findCountry(bucket, model))){
 
-        //check if already exists
-        if(bucket.indexOf(model) >= 0){
-            return "0";
+            if(country = $rootScope.findCountry($rootScope.sellCountries, model)){
+                bucket.push(country);
+            }
         }
-
-        var country = $rootScope.findCountry($rootScope.sellCountries, model);
-        if(country)bucket.push(model);
 
         return "0";
     };
@@ -663,8 +659,8 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
 
     $rootScope.delCountry = function(bucket, id){
 
-        bucket = _.filter(bucket, function(countryId){
-            return countryId != id;
+        bucket = _.filter(bucket, function(country){
+            return country.id != id;
         });
 
         return bucket;

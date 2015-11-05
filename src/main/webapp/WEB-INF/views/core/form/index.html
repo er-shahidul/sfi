@@ -194,6 +194,19 @@
 
                 return form;
 
+            },
+
+            getSectionData : function(section, form){
+
+                var formData = {};
+                _.each(form, function(val, key){
+
+                    var attr = camelize(section + ' ' + key);
+
+                    formData[attr] = val;
+                });
+
+                return formData;
             }
         };
 

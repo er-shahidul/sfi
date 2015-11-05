@@ -108,8 +108,8 @@
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
 
-                                        <div ng-repeat="countryId in cs1.ownsMngLandsOtherCountries" id="selectedItem">{{getOtherCountry(countryId)}}
-                                            <button ng-click="cs1.ownsMngLandsOtherCountries = delCountry(cs1.ownsMngLandsOtherCountries, countryId)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                        <div ng-repeat="country in cs1.ownsMngLandsOtherCountries" id="selectedItem">{{country.country}}
+                                            <button ng-click="cs1.ownsMngLandsOtherCountries = delCountry(cs1.ownsMngLandsOtherCountries, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                         </div>
 
                                     </div>
@@ -151,8 +151,8 @@
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
 
-                                        <div ng-repeat="countryId in cs1.primaryOperMillsYardsOtherCountries" id="selectedItem">{{getOtherCountry(countryId)}}
-                                            <button ng-click="cs1.primaryOperMillsYardsOtherCountries = delCountry(cs1.primaryOperMillsYardsOtherCountries, countryId)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                        <div ng-repeat="country in cs1.primaryOperMillsYardsOtherCountries" id="selectedItem">{{ country.country }}
+                                            <button ng-click="cs1.primaryOperMillsYardsOtherCountries = delCountry(cs1.primaryOperMillsYardsOtherCountries, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                         </div>
 
                                     </div>
@@ -201,8 +201,8 @@
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
 
-                                        <div ng-repeat="countryId in cs1.secondaryOperMillsYardsOtherCountries" id="selectedItem">{{getOtherCountry(countryId)}}
-                                            <button ng-click="cs1.secondaryOperMillsYardsOtherCountries = delCountry(cs1.secondaryOperMillsYardsOtherCountries, countryId)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                        <div ng-repeat="country in cs1.secondaryOperMillsYardsOtherCountries" id="selectedItem">{{ country.country }}
+                                            <button ng-click="cs1.secondaryOperMillsYardsOtherCountries = delCountry(cs1.secondaryOperMillsYardsOtherCountries, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                         </div>
 
                                     </div>
@@ -213,7 +213,7 @@
                     </div>
 
                     <!-- Countries your organization sells into -->
-                    <div class="form-group"
+                    <div class="form-group" ng-init="other4 = 0"
                          ng-class="{'has-error has-feedback':  !cs1.sellsCountries}">
 
                         <label class="checkboxLabel"
@@ -222,8 +222,8 @@
                                 >Countries your organization sells into (new!)</label>
 
                         <select class="form-control"
-                                ng-model="sellCountry"
-                                ng-change="cs1.sellsCountries = addSellCountry(cs1.sellsCountries, sellCountry)"
+                                ng-model="other4"
+                                ng-change="other4 = addSellCountry(cs1.sellsCountries, other4)"
                                 tooltip data-placement="right" data-container="body"
                                 data-title="Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products)">
                             <option value="0">Select All that apply</option>
@@ -231,8 +231,8 @@
                         </select>
 
 
-                        <div id="selectedItem" ng-repeat="countryId in cs1.sellsCountries">{{getSellCountry(countryId)}}
-                            <button ng-click="cs1.sellsCountries = delCountry(cs1.sellsCountries, countryId)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        <div id="selectedItem" ng-repeat="country in cs1.sellsCountries">{{ country.country }}
+                            <button ng-click="cs1.sellsCountries = delCountry(cs1.sellsCountries, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
                     </div>
 

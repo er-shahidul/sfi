@@ -67,13 +67,9 @@ public class FormController {
             }
 
             String companyLogo = DatatypeConverter.printBase64Binary(company.getLogo());
-
             List countries = sfiPpFormAllCountryService.list();
 
-
             model.addAttribute("form", sfiPpForm);
-            //model.addAttribute("sfiPpFormData", Util.getAsString(sfiPpForm));
-//            model.addAttribute("companyData", Util.getAsString(company));
             model.addAttribute("company", company);
             model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
             model.addAttribute("user", user);
