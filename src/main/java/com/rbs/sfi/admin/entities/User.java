@@ -37,6 +37,9 @@ public class User
     @Column(name="token")
     private boolean token;
 
+    @Column(name="password_token")
+    private boolean passwordToken;
+
 	@Column(name="invitation_msg", nullable=true)
 	private String invitationMsg;
 
@@ -177,5 +180,14 @@ public class User
     public User() {
         super();
         this.token = false;
+        this.passwordToken = false;
+    }
+
+    public boolean isPasswordToken() {
+        return passwordToken;
+    }
+
+    public void setPasswordToken(boolean passwordToken) {
+        this.passwordToken = passwordToken;
     }
 }

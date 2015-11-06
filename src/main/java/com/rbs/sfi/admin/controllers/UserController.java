@@ -1,9 +1,6 @@
 package com.rbs.sfi.admin.controllers;
 
-import com.rbs.sfi.admin.entities.Company;
-import com.rbs.sfi.admin.entities.Group;
-import com.rbs.sfi.admin.entities.User;
-import com.rbs.sfi.admin.entities.VerificationToken;
+import com.rbs.sfi.admin.entities.*;
 import com.rbs.sfi.admin.services.*;
 import com.rbs.sfi.admin.util.MailHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -179,6 +176,52 @@ public class UserController {
         return userCheck(user);
     }
 
+    @RequestMapping(value = "/user/password/{token}", method = RequestMethod.GET)
+    public String passwordToken(@PathVariable String token) {
+        int userId = passwordResetTokenService.findUserIdByToken(token);
+        User user = userService.findByID(userId);
+
+        if(user == null){
+            return "accessDenied";
+        }else {
+            return ("redirect:/user/password/reset/" + user.getId());
+        }
+    }
+
+    @RequestMapping(value = "/user/forgot/password")
+    public String forgotPassword() {
+
+        return "forgot_password";
+    }
+
+    @RequestMapping(value = "/user/forgot/password", method = RequestMethod.POST)
+    public String forgotPassword(@RequestParam("email") String email, HttpServletRequest request) {
+        User user = userService.findByUsername(email);
+        UUID uuid = UUID.randomUUID();
+        String randomUUIDString = uuid.toString();
+
+        if(user.isPasswordToken() == false){
+            PasswordResetToken passwordResetToken = new PasswordResetToken();
+
+            passwordResetToken.setToken(randomUUIDString);
+            passwordResetToken.setUser(user);
+
+            passwordResetTokenService.save(passwordResetToken);
+            userService.passwordTokenUpdate(user);
+        } else {
+            PasswordResetToken passwordResetToken = passwordResetTokenService.findPasswordResetToken(user);
+
+            passwordResetToken.setToken(randomUUIDString);
+            passwordResetTokenService.passwordResetTokenUpdate(passwordResetToken);
+        }
+
+        String subject = "Password Reset";
+        String message = request.getLocalName() + "/user/password/" + randomUUIDString;
+        sendEmail(email, subject, message);
+
+        return "login";
+    }
+
     private String userCheck(User user) {
         if(user == null){
             return "accessDenied";
@@ -187,6 +230,26 @@ public class UserController {
         }else {
             return ("redirect:/user/password/set/" + user.getId());
         }
+    }
+
+
+    @RequestMapping(value = "/user/password/reset/{id}",method = RequestMethod.GET)
+    public String passwordReset(@PathVariable int id, ModelMap model) {
+        User user = userService.findByID(id);
+        model.addAttribute("user", user);
+
+        return "password";
+    }
+
+    @RequestMapping(value = { "/user/password/reset/{id}" }, method = RequestMethod.POST)
+    public String passwordReset(@Valid User user, BindingResult result, ModelMap model) {
+
+        if (result.hasErrors()) {
+            return "password";
+        }
+        userService.updatePassword(user);
+
+        return ("redirect:/login");
     }
 
     @RequestMapping(value = "/user/password/set/{id}",method = RequestMethod.GET)
