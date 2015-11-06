@@ -173,6 +173,14 @@ public class User
         return token;
     }
 
+//    String admin = "ADMIN";
+//    public boolean admin(Group group1) {
+//        if (group. == group1.getRole()) {
+//            return true;
+//        }
+//        return false;
+//    }
+
     public void setToken(boolean token) {
         this.token = token;
     }

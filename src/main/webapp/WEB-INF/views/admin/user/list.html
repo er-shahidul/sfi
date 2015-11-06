@@ -83,16 +83,13 @@
                                                     </td>
                                                     <td th:text="${u.email}"></td>
                                                     <td th:text="${u.company.name}"></td>
-                                                    <td th:switch="${u.group}">
-                                                        <!--<p th:case="ADMIN">-->
-                                                            <!--<span class="label label-success">yes</span>-->
-                                                        <!--</p>-->
-                                                        <!--<p th:case="SUPER_ADMIN">-->
-                                                            <!--<span class="label label-success">yes</span>-->
-                                                        <!--</p>-->
-                                                        <!--<p th:case="false">-->
-                                                            <!--<span class="label label-danger">no</span>-->
-                                                        <!--</p>-->
+                                                    <td th:each="g,iterationStatus  : ${u.group}">
+                                                        <p th:if="${g.role} == ADMIN or ${g.role} == SUPER_ADMIN">
+                                                            <span class="label label-success">yes</span>
+                                                       </p>
+                                                        <p th:if="${g.role} != ADMIN and ${g.role} != SUPER_ADMIN">
+                                                            <span class="label label-danger">no</span>
+                                                        </p>
                                                     </td>
                                                     <td th:switch="${u.enabled}">
                                                         <p th:case="true">
