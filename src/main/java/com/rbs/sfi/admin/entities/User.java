@@ -43,7 +43,7 @@ public class User
 	@Column(name="invitation_msg", nullable=true)
 	private String invitationMsg;
 
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(targetEntity = Group.class, fetch = FetchType.EAGER)
 	@JoinTable(name = "join_users_groups",
 			joinColumns = { @JoinColumn(name = "user_id") },
 			inverseJoinColumns = { @JoinColumn(name = "group_id") })

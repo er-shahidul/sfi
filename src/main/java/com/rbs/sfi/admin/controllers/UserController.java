@@ -165,6 +165,9 @@ public class UserController {
         List<Company> companies = companyService.list();
         model.addAttribute("companies", companies);
 
+        List<Group> groups = groupService.list();
+        model.addAttribute("groups", groups);
+
         return "admin/user/new";
     }
 
