@@ -34,6 +34,12 @@ public class User
 	@Column(name="enabled", nullable=true)
 	private boolean enabled;
 
+    @Column(name="token")
+    private boolean token;
+
+    @Column(name="password_token")
+    private boolean passwordToken;
+
 	@Column(name="invitation_msg", nullable=true)
 	private String invitationMsg;
 
@@ -123,7 +129,7 @@ public class User
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password
-				+ ", email=" + email + ", enabled=" + enabled
+				+ ", email=" + email + ", enabled=" + enabled + ", token=" + token
 				+ ", group=" + group +"]";
 	}
 
@@ -163,6 +169,25 @@ public class User
 		return firstName + ' ' + lastName;
 	}
 
+    public boolean isToken() {
+        return token;
+    }
 
+    public void setToken(boolean token) {
+        this.token = token;
+    }
 
+    public User() {
+        super();
+        this.token = false;
+        this.passwordToken = false;
+    }
+
+    public boolean isPasswordToken() {
+        return passwordToken;
+    }
+
+    public void setPasswordToken(boolean passwordToken) {
+        this.passwordToken = passwordToken;
+    }
 }
