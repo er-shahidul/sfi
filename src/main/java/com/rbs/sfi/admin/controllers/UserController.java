@@ -4,10 +4,8 @@ import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.Group;
 import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.entities.VerificationToken;
-import com.rbs.sfi.admin.services.CompanyService;
-import com.rbs.sfi.admin.services.GroupService;
-import com.rbs.sfi.admin.services.UserService;
-import com.rbs.sfi.admin.services.VerificationTokenService;
+import com.rbs.sfi.admin.services.*;
+import com.rbs.sfi.admin.util.MailHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
@@ -47,6 +45,9 @@ public class UserController {
     @Autowired
     private VerificationTokenService verificationTokenService;
 
+    @Autowired
+    private PasswordResetTokenService passwordResetTokenService;
+
     @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
 
@@ -64,8 +65,8 @@ public class UserController {
     public void sendEmail(String recipient, String subject, String message) {
 //        String sender = "shanto.646596@gmail.com";
         ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
-        MailMail mailer = (MailMail) context.getBean("mailMail");
-        mailer.sendMail(recipient, subject, message);
+        MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
+        mailHelper.sendMail(recipient, subject, message);
     }
 
     @RequestMapping("/admin/user/list")
@@ -175,13 +176,37 @@ public class UserController {
         int userId = verificationTokenService.findUserIdByToken(token);
         User user = userService.findByID(userId);
 
+        return userCheck(user);
+    }
+
+    private String userCheck(User user) {
         if(user == null){
             return "accessDenied";
+        }else if(user.isToken() == true ){
+            return "index";
         }else {
-
-            userService.verificationToken(user);
-            return "need redirect url";
+            return ("redirect:/user/password/set/" + user.getId());
         }
+    }
+
+    @RequestMapping(value = "/user/password/set/{id}",method = RequestMethod.GET)
+    public String passwordSet(@PathVariable int id, ModelMap model) {
+        User user = userService.findByID(id);
+        model.addAttribute("user", user);
+
+        return "password";
+    }
+
+    @RequestMapping(value = { "/user/password/set/{id}" }, method = RequestMethod.POST)
+    public String passwordSet(@Valid User user, BindingResult result, ModelMap model) {
+
+        if (result.hasErrors()) {
+            return "password";
+        }
+        userService.updatePassword(user);
+        userService.verificationToken(user);
+
+        return ("redirect:/login");
     }
 
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.POST)

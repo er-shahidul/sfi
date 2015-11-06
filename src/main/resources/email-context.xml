@@ -22,7 +22,7 @@
         </property>
     </bean>
 
-    <bean id="mailMail" class="com.rbs.sfi.admin.controllers.MailMail">
+    <bean id="mailMail" class="com.rbs.sfi.admin.util.MailHelper">
         <property name="mailSender" ref="mailSender" />
     </bean>
 

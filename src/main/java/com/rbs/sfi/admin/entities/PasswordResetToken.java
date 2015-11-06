@@ -3,8 +3,8 @@ package com.rbs.sfi.admin.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="users_verification_token")
-public class VerificationToken {
+@Table(name="users_password_reset_token")
+public class PasswordResetToken {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

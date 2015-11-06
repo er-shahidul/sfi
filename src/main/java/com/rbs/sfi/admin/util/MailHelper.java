@@ -1,9 +1,9 @@
-package com.rbs.sfi.admin.controllers;
+package com.rbs.sfi.admin.util;
 
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 
-public class MailMail
+public class MailHelper
 {
     private MailSender mailSender;
 
