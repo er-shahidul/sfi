@@ -4,6 +4,8 @@
         <a href="#">My Profile</a>
     </li>
 
+    <span th:with="baseUrl=${#httpServletRequest.requestURI}"></span>
+
     <li class="selected" sec:authorize="isAuthenticated()">
         <a href="#">Manage Users</a>
     </li>
