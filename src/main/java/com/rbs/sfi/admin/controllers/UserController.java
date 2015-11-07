@@ -51,7 +51,7 @@ public class UserController {
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
 
-        return "/admin/user/dashboard";
+        return "admin";
     }
 
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
