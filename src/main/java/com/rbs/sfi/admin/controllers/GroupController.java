@@ -27,7 +27,8 @@ public class GroupController {
     private MessageSource messageSource;
 
     @RequestMapping("/admin/group/list")
-    public ModelAndView list() {
+    public ModelAndView list(ModelMap model) {
+        model.addAttribute("title", "group");
         List groups = groupService.list();
         return new ModelAndView("admin/group/list", "groups", groups);
     }
@@ -40,6 +41,7 @@ public class GroupController {
 
     @RequestMapping(value = "/admin/group/create", method = RequestMethod.GET)
     public String create(ModelMap model) {
+        model.addAttribute("title", "group");
         Group group = new Group();
         model.addAttribute("group", group);
         return "admin/group/new";

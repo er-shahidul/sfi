@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
-      layout:decorator="layout">
+      layout:decorator="layout" th:with="title=${title}">
 
 <section layout:fragment="content">
 
@@ -67,6 +67,14 @@
                                     <form th:object="${user}" method="POST" class="form-horizontal">
                                         <input type="hidden" th:field="*{id}" />
                                         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+
+                                        <!--<div th:each="g,iterationStatus  : ${userGroup}">-->
+                                            <!--<div th:with="userRole=${g.role}" th:text="${g.role}">       </div>-->
+                                        <!--</div>-->
+                                        <!--<div th:text="${userRole}"></div>-->
+
+
 
                                         <div class="row">
 

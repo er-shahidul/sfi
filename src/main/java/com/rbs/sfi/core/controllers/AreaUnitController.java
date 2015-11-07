@@ -22,13 +22,15 @@ public class AreaUnitController {
     AreaUnitService areaUnitService;
 
     @RequestMapping("/admin/area/unit/list")
-    public ModelAndView areaList() {
+    public ModelAndView areaList(ModelMap model) {
+        model.addAttribute("title", "area_unit");
         List areaUnities = areaUnitService.list();
         return new ModelAndView("core/areaUnit/list", "areaUnities", areaUnities);
     }
 
     @RequestMapping(value = "/admin/area/unit/new", method = RequestMethod.GET)
     public String form(ModelMap model) {
+        model.addAttribute("title", "area_unit");
         AreaUnit areaUnit = new AreaUnit();
         model.addAttribute("areaUnit", areaUnit);
 
@@ -50,6 +52,7 @@ public class AreaUnitController {
 
     @RequestMapping(value = { "/admin/area/unit/edit/{id}" }, method = RequestMethod.GET)
     public String updateForm(@PathVariable int id, ModelMap model) {
+        model.addAttribute("title", "area_unit");
         AreaUnit areaUnit = areaUnitService.findById(id);
         model.addAttribute("areaUnit", areaUnit);
         model.addAttribute("edit", true);

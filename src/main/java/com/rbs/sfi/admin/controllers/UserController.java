@@ -48,7 +48,7 @@ public class UserController {
 
     @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
-
+        model.addAttribute("title", "user");
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
 
         return "admin";
@@ -57,6 +57,8 @@ public class UserController {
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
+        model.addAttribute("title", "user");
+
         return "accessDenied";
     }
 
@@ -68,8 +70,9 @@ public class UserController {
     }
 
     @RequestMapping("/admin/user/list")
-    public ModelAndView list() {
+    public ModelAndView list(ModelMap model) {
         List user = userService.list();
+        model.addAttribute("title", "user");
 
         return new ModelAndView("admin/user/list","user",user);
     }
@@ -85,6 +88,7 @@ public class UserController {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
         userService.userActive(user);
+        model.addAttribute("title", "user");
 
         return ("redirect:/admin/user/list");
     }
@@ -93,6 +97,7 @@ public class UserController {
     public ModelAndView details(@PathVariable int id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
+        model.addAttribute("title", "profile");
 
         return new ModelAndView("admin/user/details","user", user);
     }
@@ -101,6 +106,7 @@ public class UserController {
     public ModelAndView profile(@PathVariable String username, ModelMap model) {
         User user  = userService.findByUsername(username);
         model.addAttribute("user", user);
+        model.addAttribute("title", "user");
 
         return new ModelAndView("admin/user/profile","user", user);
     }
@@ -118,6 +124,7 @@ public class UserController {
     public String editPassword(@PathVariable int id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
+        model.addAttribute("title", "user");
         model.addAttribute("edit", true);
         return "admin/user/editPass";
     }
@@ -138,6 +145,8 @@ public class UserController {
     public String edit(@PathVariable int id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
+        model.addAttribute("userGroup", user.getGroup());
+        model.addAttribute("title", "user");
         model.addAttribute("edit", true);
 
         List<Company> companies = companyService.list();
@@ -165,7 +174,7 @@ public class UserController {
     public String create(ModelMap model) {
         User user = new User();
         model.addAttribute("user", user);
-
+        model.addAttribute("title", "user");
         List<Company> companies = companyService.list();
         model.addAttribute("companies", companies);
 
@@ -244,6 +253,7 @@ public class UserController {
     public String passwordReset(@PathVariable int id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
+        model.addAttribute("title", "user");
 
         return "password";
     }
@@ -261,6 +271,7 @@ public class UserController {
 
     @RequestMapping(value = "/user/password/set/{id}",method = RequestMethod.GET)
     public String passwordSet(@PathVariable int id, ModelMap model) {
+        model.addAttribute("title", "user");
         User user = userService.findByID(id);
         model.addAttribute("user", user);
 

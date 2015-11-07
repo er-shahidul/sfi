@@ -1,28 +1,26 @@
 <th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <ul>
-    <li class="selected">
+    <li th:class="(${title} == profile) ? 'selected' : ''" >
         <a href="#">My Profile</a>
     </li>
 
-    <span th:with="baseUrl=${#httpServletRequest.requestURI}"></span>
-
-    <li class="selected" sec:authorize="isAuthenticated()">
+    <li th:class="(${title} == user) ? 'selected' : ''" sec:authorize="isAuthenticated()">
         <a href="#">Manage Users</a>
     </li>
-    <li class="selected" sec:authorize="isAuthenticated()">
+    <li th:class="(${title} == company) ? 'selected' : ''" sec:authorize="isAuthenticated()">
         <a href="#">Manage Companies</a>
     </li>
-    <li class="selected" sec:authorize="isAuthenticated()">
+    <li th:class="(${title} == area_unit) ? 'selected' : ''" sec:authorize="isAuthenticated()">
         <a href="#">Manage Area Units</a>
     </li>
-    <li class="selected" sec:authorize="isAuthenticated()">
+    <li th:class="(${title} == form) ? 'selected' : ''" sec:authorize="isAuthenticated()">
         <a href="#">Forms</a>
     </li>
-    <li class="selected" sec:authorize="isAnonymous()">
+    <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="isAnonymous()">
         <a href="#">Company Settings</a>
     </li>
 
-    <li class="selected">
+    <li th:class="(${title} == privacy_policy) ? 'selected' : ''" >
         <a href="#">Privacy Policy</a>
     </li>
 </ul>

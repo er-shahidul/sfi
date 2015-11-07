@@ -49,7 +49,8 @@ public class CompanyController
     private MessageSource messageSource;
 
     @RequestMapping("/admin/company/list")
-    public ModelAndView companyList() {
+    public ModelAndView companyList(ModelMap model) {
+        model.addAttribute("title", "company");
         List companies = companyService.list();
         return new ModelAndView("admin/company/list", "companies", companies);
     }
@@ -57,6 +58,7 @@ public class CompanyController
     @RequestMapping(value = { "/admin/company/edit/{id}" }, method = RequestMethod.GET)
     public String edit(@PathVariable int id, ModelMap model) {
         Company company = companyService.findById(id);
+        model.addAttribute("title", "company_setting");
         model.addAttribute("company", company);
 
         List<AreaUnit> areaUnities = areaUnitService.list();
@@ -122,6 +124,7 @@ public class CompanyController
     @RequestMapping(value = "/admin/company/new", method = RequestMethod.GET)
     public String form(ModelMap model) {
         Company company = new Company();
+        model.addAttribute("title", "company_setting");
         model.addAttribute("company", company);
 
         List<AreaUnit> areaUnities = areaUnitService.list();
