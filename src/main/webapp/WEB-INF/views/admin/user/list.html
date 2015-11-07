@@ -82,7 +82,14 @@
                                                         </a>
                                                     </td>
                                                     <td th:text="${u.email}"></td>
-                                                    <td th:text="${u.company.name}"></td>
+                                                    <td>
+                                                        <p th:if="${u.company != null}">
+                                                            <span th:text="${u.company.name}">yes</span>
+                                                        </p>
+                                                        <p th:if="${u.company == null}">
+                                                            <span></span>
+                                                        </p>
+                                                    </td>
                                                     <td th:each="g,iterationStatus  : ${u.group}">
                                                         <p th:if="${g.role} == ADMIN">
                                                             <span class="label label-success">yes</span>

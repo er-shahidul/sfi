@@ -112,6 +112,18 @@
                                                                     </div>
                                                                 </div>
 
+                                                                <div class="form-group" id="sonata-ba-field-container-group">
+                                                                    <label class="control-label" style="text-align: left;">
+                                                                        User Type
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural">
+                                                                        <div th:field="*{group}">
+                                                                            <input th:name="group" type="radio" th:each="group : ${groups}" th:value="${group.id}" class="form-control" th:text="${group.description}" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
                                                                 <div class="form-group" id="sonata-ba-field-container-s563afbac0122b_company">
                                                                     <label class=" control-label" style="text-align: left;">
                                                                         Assign user to company
@@ -119,10 +131,10 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
 
-                                                                            <select th:field="*{company.id}" class="form-control">
-                                                                                <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.name}">
-                                                                                </option>
-                                                                            </select>
+                                                                        <select class="form-control">
+                                                                            <option value="" selected="selected"> Select a Company to Assign this User to </option>
+                                                                            <option th:field="*{company.id}" th:each="company : ${companies}" th:value="${company.id}" th:text="${company.name}"></option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
 
@@ -134,23 +146,6 @@
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
 
                                                                         <input type="checkbox" th:field="*{enabled}" id="enabled" class="form-control"/>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="form-group" id="sonata-ba-field-container-group">
-                                                                    <label class="control-label" style="text-align: left;">
-                                                                        Group
-                                                                    </label>
-
-                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural">
-
-                                                                        <ul>
-                                                                            <li th:field="*{group}">
-
-                                                                                <input th:name="group" type="radio" th:each="group : ${groups}" th:value="${group.id}" class="form-control" th:text="${group.role}" />
-                                                                            </li>
-                                                                        </ul>
-
                                                                     </div>
                                                                 </div>
 

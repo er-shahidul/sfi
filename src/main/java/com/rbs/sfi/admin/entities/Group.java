@@ -13,6 +13,17 @@ public class Group {
 	@Column(name="roles", length=15, unique=true, nullable=false)
 	private String role = UserGroupType.USER.getUserGroupType();
 
+	@Column(name="description", nullable=true)
+	private String description;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public enum UserGroupType {
 
 		USER("USER"),
