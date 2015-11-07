@@ -109,3 +109,7 @@
         background-size: 200px 20px;
     }
 }
+
+.form-horizontal .form-group{
+    margin-left: 0 !important;
+}

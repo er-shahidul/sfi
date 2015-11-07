@@ -54,27 +54,23 @@
                             <thead>
                             <tr>
                                 <th>
-                                    Sl
+                                    Id
                                 </th>
                                 <th>
-                                    ShortCode
+                                    Unit Description
                                 </th>
                                 <th>
-                                    Description
-                                </th>
-                                <th>
-                                    Update
+                                    Short Code
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:each="areaUnit,iterationStatus  : ${areaUnities}">
-                                <td th:text="${iterationStatus.count}"></td>
-                                <td th:text="${areaUnit.shortCode}"></td>
-                                <td th:text="${areaUnit.unitDescription}"></td>
                                 <td>
-                                    <a th:href="@{'/admin/area/unit/edit/' + ${areaUnit.id}}">Update</a>
+                                    <a th:href="@{'/admin/area/unit/edit/' + ${areaUnit.id}}" th:text="${areaUnit.id}"></a>
                                 </td>
+                                <td th:text="${areaUnit.unitDescription}"></td>
+                                <td th:text="${areaUnit.shortCode}"></td>
                             </tr>
                             </tbody>
                         </table>

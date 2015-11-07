@@ -53,27 +53,23 @@
                             <thead>
                             <tr>
                                 <th>
-                                    Sl
+                                    Id
                                 </th>
                                 <th>
-                                    Company Name
+                                    Name
                                 </th>
                                 <th>
                                     Area Unit
-                                </th>
-                                <th>
-                                    Update
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:each="company,iterationStatus  : ${companies}">
-                                <td th:text="${iterationStatus.count}"></td>
+                                <td>
+                                    <a th:href="@{'/admin/company/edit/' + ${company.id}}" th:text="${company.id}"></a>
+                                </td>
                                 <td th:text="${company.name}"></td>
                                 <td th:text="${company.areaUnit.shortCode}"></td>
-                                <td>
-                                    <a th:href="@{'/admin/company/edit/' + ${company.id}}">Update</a>
-                                </td>
                             </tr>
 
                             </tbody>

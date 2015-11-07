@@ -10,7 +10,7 @@
             <div class="formContainer">
                 <div class="breadcrumb">
                     <span class="text-muted">/</span>
-                    Area Unit New
+                    Area Unit Edit
                 </div>
                 <div class="formContent">
                     <div class="row">
@@ -20,41 +20,101 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <div class="portlet-body form">
-
-                                <form th:action="@{${id}} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${areaUnit}" method="POST" class="form-horizontal">
-                                    <input type="hidden" th:field="*{id}" />
-                                    <div class="form-body">
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">ShortCode<span class="required">* </span></label>
-                                            <div class="col-md-4">
-                                                <input type="text" th:field="*{shortCode}" class="form-control" />
-                                                <div class="has-error">
-                                                    <errors th:path="*{shortCode}" class="help-inline"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Description<span class="required">* </span></label>
-                                            <div class="col-md-4">
-                                                <input type="text" th:field="*{unitDescription}" class="form-control" />
-                                                <div class="has-error">
-                                                    <errors th:path="*{unitDescription}" class="help-inline"/>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-actions">
-                                            <div class="row">
-                                                <div class="col-md-offset-3 col-md-9">
-                                                    <input type="submit" id="submit" value="Save" class="btn green"/>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <section class="content-header">
+                                <nav class="navbar navbar-default" role="navigation">
+                                    <div class="navbar-header">
+                                        <span class="navbar-brand">Edit</span>
                                     </div>
-                                </form>
+                                    <div class="container-fluid">
+                                        <div class="navbar-left">
+                                        </div>
 
-                            </div>
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li class="dropdown sonata-actions">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li>
+                                                    </li>
+                                                    <li>
+                                                    </li>
+                                                    <li>
+                                                    </li>
+                                                    <li>
+                                                        <a class="sonata-action-element" style="color: #080808;" th:href="@{/admin/area/unit/list}">
+                                                            <i class="fa fa-list"></i>
+                                                            Return to list</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="sonata-action-element" style="color: #080808;" th:href="@{/admin/area/unit/new}">
+                                                            <i class="fa fa-plus-circle"></i>
+                                                            Add new</a>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+
+                            </section>
+                            <section class="content">
+
+                                <div class="sonata-ba-form">
+
+                                    <form th:action="@{${id}} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${areaUnit}" method="POST" class="form-horizontal">
+                                        <input type="hidden" th:field="*{id}" />
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="col-md-12">
+                                                    <div class="box box-success">
+                                                        <div class="box-header">
+                                                            <h4 class="box-title">
+                                                                Company
+                                                            </h4>
+                                                        </div>
+                                                        <div class="box-body">
+                                                            <div class="sonata-ba-collapsed-fields">
+
+
+                                                                <div class="form-group" id="sonata-ba-field-container-s563ad95d53c77_shortCode">
+                                                                    <label class="control-label required" style="text-align: left;">
+                                                                        Short Code
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
+                                                                        <input type="text" th:field="*{shortCode}" class="form-control" required="required" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group" id="sonata-ba-field-container-s563ad95d53c77_unitDescription">
+                                                                    <label class="control-label required" style="text-align: left;">
+                                                                        Unit Description
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
+                                                                        <input type="text" th:field="*{unitDescription}" class="form-control" required="required" />
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="well well-small form-actions">
+                                            <!--<button class="btn btn-success" type="submit" name="btn_create_and_edit"><i class="fa fa-save"></i> Create</button>-->
+                                            <button type="submit" class="btn btn-success" name="btn_create_and_list"><i class="fa fa-save"></i> <i class="fa fa-list"></i> Update and return to list</button>
+                                            <!--<button class="btn btn-success" type="submit" name="btn_create_and_create"><i class="fa fa-plus-circle"></i> Create and add another</button>-->
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </section>
                         </div>
                     </div>
                     <!-- END VALIDATION STATES-->

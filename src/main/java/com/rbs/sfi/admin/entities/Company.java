@@ -26,6 +26,12 @@ public class Company extends Audit
 	@Column(name="logo_name", nullable=true)
 	private String logoName;
 
+	@Column(name="sfi0_sci1", nullable=true)
+	private boolean sfi0Sci1;
+
+	@Column(name="primary0_secondary1", nullable=true)
+	private boolean primary0Secondary1;
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name +", areaUnit=" + areaUnit +", logo=" + logo +", logoName=" + logoName +"]";
@@ -69,5 +75,21 @@ public class Company extends Audit
 
 	public void setAreaUnit(AreaUnit areaUnit) {
 		this.areaUnit = areaUnit;
+	}
+
+	public boolean isSfi0Sci1() {
+		return sfi0Sci1;
+	}
+
+	public void setSfi0Sci1(boolean sfi0Sci1) {
+		this.sfi0Sci1 = sfi0Sci1;
+	}
+
+	public boolean isPrimary0Secondary1() {
+		return primary0Secondary1;
+	}
+
+	public void setPrimary0Secondary1(boolean primary0Secondary1) {
+		this.primary0Secondary1 = primary0Secondary1;
 	}
 }
