@@ -22,6 +22,12 @@ public class DefaultController {
     @Autowired
     SfiPpFormRegionService sfiPpFormRegionService;
 
+    @RequestMapping(value = {"/" }, method = RequestMethod.GET)
+    public String home() {
+
+        return "dashboard";
+    }
+
     @RequestMapping(value = {"/country/list" }, method = RequestMethod.GET)
     public ResponseEntity countryList() {
 
