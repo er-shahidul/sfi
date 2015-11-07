@@ -27,7 +27,7 @@ public class User
 	@Column(name="email", nullable=true)
 	private String email;
 
-	@ManyToOne(targetEntity = com.rbs.sfi.admin.entities.Company.class, optional=false)
+	@ManyToOne(targetEntity = com.rbs.sfi.admin.entities.Company.class, optional=true)
 	@JoinColumn(name="company_id", referencedColumnName="id", nullable=true)
 	private Company company;
 

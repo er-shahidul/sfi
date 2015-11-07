@@ -78,24 +78,27 @@
                                                     <td th:text="${iterationStatus.count}"></td>
                                                     <td>
                                                         <a th:href="@{'/admin/user/edit/' + ${u.id}}">
-                                                            <span th:text="${u.username}"></span>
+                                                            <span th:text="${u.getFullname()}"></span>
                                                         </a>
                                                     </td>
                                                     <td th:text="${u.email}"></td>
                                                     <td th:text="${u.company.name}"></td>
                                                     <td th:each="g,iterationStatus  : ${u.group}">
-                                                        <p th:if="${g.role} == ADMIN or ${g.role} == SUPER_ADMIN">
+                                                        <p th:if="${g.role} == ADMIN">
                                                             <span class="label label-success">yes</span>
                                                        </p>
-                                                        <p th:if="${g.role} != ADMIN and ${g.role} != SUPER_ADMIN">
+                                                        <p th:if="${g.role} == GENERAL">
+                                                            <span class="label label-danger">no</span>
+                                                        </p>
+                                                        <p th:if="${g.role} == USER">
                                                             <span class="label label-danger">no</span>
                                                         </p>
                                                     </td>
-                                                    <td th:switch="${u.enabled}">
-                                                        <p th:case="true">
+                                                    <td>
+                                                        <p th:if="${u.enabled} == true">
                                                             <span class="label label-success">yes</span>
                                                         </p>
-                                                        <p th:case="false">
+                                                        <p th:if="${u.enabled} == false">
                                                             <span class="label label-danger">no</span>
                                                         </p>
                                                     </td>
