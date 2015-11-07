@@ -83,7 +83,8 @@
                                                                     </label>
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
-                                                                        <input type="text" th:field="*{shortCode}" class="form-control" required="required" />
+                                                                        <input type="text" th:path="*{shortCode}" th:field="*{shortCode}" class="form-control" required="required" />
+                                                                        <errors th:path="*{shortCode}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
 
@@ -93,7 +94,8 @@
                                                                     </label>
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
-                                                                        <input type="text" th:field="*{unitDescription}" class="form-control" required="required" />
+                                                                        <input type="text" th:path="*{unitDescription}" th:field="*{unitDescription}" class="form-control" required="required" />
+                                                                        <errors th:path="*{unitDescription}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
 

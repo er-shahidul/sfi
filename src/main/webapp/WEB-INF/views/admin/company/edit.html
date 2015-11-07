@@ -82,7 +82,8 @@
                                                                     </label>
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
-                                                                        <input type="text" th:field="*{name}" class="form-control" required="required" />
+                                                                        <input type="text" th:path="*{name}" th:field="*{name}" class="form-control" required="required" />
+                                                                        <errors th:path="*{name}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
 
