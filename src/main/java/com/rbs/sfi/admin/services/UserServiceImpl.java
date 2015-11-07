@@ -24,6 +24,22 @@ public class UserServiceImpl implements UserService{
         userRepository.save(user);
     }
 
+    public void verificationToken(User user){
+        User entity = userRepository.findByID(user.getId());
+        if(entity!=null){
+            entity.setToken(true);
+            userRepository.update(entity);
+        }
+    }
+
+    public void passwordTokenUpdate(User user){
+        User entity = userRepository.findByID(user.getId());
+        if(entity!=null){
+            entity.setPasswordToken(true);
+            userRepository.update(entity);
+        }
+    }
+
     public User findByID(int id) {
         return userRepository.findByID(id);
     }

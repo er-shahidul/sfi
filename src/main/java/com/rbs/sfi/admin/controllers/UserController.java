@@ -1,13 +1,12 @@
 package com.rbs.sfi.admin.controllers;
 
-import com.rbs.sfi.admin.entities.Company;
-import com.rbs.sfi.admin.entities.Group;
-import com.rbs.sfi.admin.entities.User;
-import com.rbs.sfi.admin.services.CompanyService;
-import com.rbs.sfi.admin.services.GroupService;
-import com.rbs.sfi.admin.services.UserService;
+import com.rbs.sfi.admin.entities.*;
+import com.rbs.sfi.admin.services.*;
+import com.rbs.sfi.admin.util.MailHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -17,9 +16,11 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 
 import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
 
@@ -38,6 +39,12 @@ public class UserController {
     @Autowired
     private MessageSource messageSource;
 
+    @Autowired
+    private VerificationTokenService verificationTokenService;
+
+    @Autowired
+    private PasswordResetTokenService passwordResetTokenService;
+
     @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
 
@@ -52,9 +59,17 @@ public class UserController {
         return "accessDenied";
     }
 
+    public void sendEmail(String recipient, String subject, String message) {
+//        String sender = "shanto.646596@gmail.com";
+        ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
+        MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
+        mailHelper.sendMail(recipient, subject, message);
+    }
+
     @RequestMapping("/admin/user/list")
     public ModelAndView list() {
         List user = userService.list();
+
         return new ModelAndView("admin/user/list","user",user);
     }
 
@@ -150,14 +165,129 @@ public class UserController {
         List<Company> companies = companyService.list();
         model.addAttribute("companies", companies);
 
+        List<Group> groups = groupService.list();
+        model.addAttribute("groups", groups);
+
         return "admin/user/new";
     }
 
-    @RequestMapping(value = "/admin/user/new", method = RequestMethod.POST)
-    public String save(@Valid User user, BindingResult result, ModelMap model) {
+    @RequestMapping(value = "/user/verification/{token}", method = RequestMethod.GET)
+    public String verificationToken(@PathVariable String token) {
+        int userId = verificationTokenService.findUserIdByToken(token);
+        User user = userService.findByID(userId);
 
+        return userCheck(user);
+    }
+
+    @RequestMapping(value = "/user/password/{token}", method = RequestMethod.GET)
+    public String passwordToken(@PathVariable String token) {
+        int userId = passwordResetTokenService.findUserIdByToken(token);
+        User user = userService.findByID(userId);
+
+        if(user == null){
+            return "accessDenied";
+        }else {
+            return ("redirect:/user/password/reset/" + user.getId());
+        }
+    }
+
+    @RequestMapping(value = "/user/forgot/password")
+    public String forgotPassword() {
+
+        return "forgot_password";
+    }
+
+    @RequestMapping(value = "/user/forgot/password", method = RequestMethod.POST)
+    public String forgotPassword(@RequestParam("email") String email, HttpServletRequest request) {
+        User user = userService.findByUsername(email);
+        UUID uuid = UUID.randomUUID();
+        String randomUUIDString = uuid.toString();
+
+        if(user.isPasswordToken() == false){
+            PasswordResetToken passwordResetToken = new PasswordResetToken();
+
+            passwordResetToken.setToken(randomUUIDString);
+            passwordResetToken.setUser(user);
+
+            passwordResetTokenService.save(passwordResetToken);
+            userService.passwordTokenUpdate(user);
+        } else {
+            PasswordResetToken passwordResetToken = passwordResetTokenService.findPasswordResetToken(user);
+
+            passwordResetToken.setToken(randomUUIDString);
+            passwordResetTokenService.passwordResetTokenUpdate(passwordResetToken);
+        }
+
+        String subject = "Password Reset";
+        String message = request.getLocalName() + "/user/password/" + randomUUIDString;
+        sendEmail(email, subject, message);
+
+        return "login";
+    }
+
+    private String userCheck(User user) {
+        if(user == null){
+            return "accessDenied";
+        }else if(user.isToken() == true ){
+            return "index";
+        }else {
+            return ("redirect:/user/password/set/" + user.getId());
+        }
+    }
+
+
+    @RequestMapping(value = "/user/password/reset/{id}",method = RequestMethod.GET)
+    public String passwordReset(@PathVariable int id, ModelMap model) {
+        User user = userService.findByID(id);
+        model.addAttribute("user", user);
+
+        return "password";
+    }
+
+    @RequestMapping(value = { "/user/password/reset/{id}" }, method = RequestMethod.POST)
+    public String passwordReset(@Valid User user, BindingResult result, ModelMap model) {
+
+        if (result.hasErrors()) {
+            return "password";
+        }
+        userService.updatePassword(user);
+
+        return ("redirect:/login");
+    }
+
+    @RequestMapping(value = "/user/password/set/{id}",method = RequestMethod.GET)
+    public String passwordSet(@PathVariable int id, ModelMap model) {
+        User user = userService.findByID(id);
+        model.addAttribute("user", user);
+
+        return "password";
+    }
+
+    @RequestMapping(value = { "/user/password/set/{id}" }, method = RequestMethod.POST)
+    public String passwordSet(@Valid User user, BindingResult result, ModelMap model) {
+
+        if (result.hasErrors()) {
+            return "password";
+        }
+        userService.updatePassword(user);
+        userService.verificationToken(user);
+
+        return ("redirect:/login");
+    }
+
+    @RequestMapping(value = "/admin/user/new", method = RequestMethod.POST)
+    public String save(@Valid User user, BindingResult result, ModelMap model, HttpServletRequest request) {
+
+        UUID uuid = UUID.randomUUID();
+        String randomUUIDString = uuid.toString();
+
+        VerificationToken verificationToken = new VerificationToken();
+
+        verificationToken.setToken(randomUUIDString);
+        verificationToken.setUser(user);
+
+        user.setPassword(randomUUIDString);
         user.setUsername(user.getEmail());
-        user.setPassword(user.getEmail());
 
         if (result.hasErrors()) {
             System.out.println("There are errors");
@@ -177,6 +307,12 @@ public class UserController {
         }
 
         userService.save(user);
+        verificationTokenService.save(verificationToken);
+
+        String recipient = user.getEmail();
+        String subject = "Email Verification";
+        String message = request.getLocalName() + "/user/verification/" + randomUUIDString;
+        sendEmail(recipient, subject, message);
 
         model.addAttribute("success", "User " + "" + " has been registered successfully");
         return ("redirect:/admin/user/list");

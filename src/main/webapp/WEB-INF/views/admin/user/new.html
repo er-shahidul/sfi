@@ -126,135 +126,6 @@
                                                                     </div>
                                                                 </div>
 
-
-                                                                <!--<div class="form-group" id="sonata-ba-field-container-s563afbac0122b_is_admin">-->
-                                                                    <!--<label class="control-label required">-->
-                                                                        <!--User Type-->
-                                                                    <!--</label>-->
-
-                                                                    <!--<div class=" sonata-ba-field sonata-ba-field-standard-natural  ">-->
-
-                                                                        <!--<ul id="s563afbac0122b_is_admin" class="list-unstyled "><li><label class=""><div class="iradio_minimal" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" id="s563afbac0122b_is_admin_0" name="s563afbac0122b[is_admin]" required="required" value="0" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div><span>-->
-                    <!--General - access to forms associated to their company                </span></label></li><li><label class=""><div class="iradio_minimal" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" id="s563afbac0122b_is_admin_1" name="s563afbac0122b[is_admin]" required="required" value="1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div><span>-->
-                    <!--Administrator - access to all forms and manage users                </span></label></li></ul>-->
-
-                                                                    <!--</div>-->
-                                                                <!--</div>-->
-
-
-
-
-
-                                                                <!--<div class="form-group" id="sonata-ba-field-container-s563afbac0122b_send_invitation">-->
-                                                                    <!--<label class="control-label">-->
-                                                                        <!--Send invitation mail (When checked clicking the Update or Update and close button will send an invite)-->
-                                                                    <!--</label>-->
-
-                                                                    <!--<div class=" sonata-ba-field sonata-ba-field-standard-natural  ">-->
-
-                                                                        <!--&lt;!&ndash;<div class="icheckbox_minimal" ari
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                <!--</div>-->
-
                                                                 <div class="form-group" id="sonata-ba-field-container-enabled">
                                                                     <label class="control-label" style="text-align: left;">
                                                                         This user is enabled
@@ -263,6 +134,23 @@
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
 
                                                                         <input type="checkbox" th:field="*{enabled}" id="enabled" class="form-control"/>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group" id="sonata-ba-field-container-group">
+                                                                    <label class="control-label" style="text-align: left;">
+                                                                        Group
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural">
+
+                                                                        <ul>
+                                                                            <li th:field="*{group}">
+
+                                                                                <input th:name="group" type="radio" th:each="group : ${groups}" th:value="${group.id}" class="form-control" th:text="${group.role}" />
+                                                                            </li>
+                                                                        </ul>
+
                                                                     </div>
                                                                 </div>
 

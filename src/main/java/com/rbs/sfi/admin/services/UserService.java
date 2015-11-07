@@ -7,6 +7,8 @@ import java.util.List;
 public interface UserService
 {
     void save(User user);
+    void verificationToken(User user);
+    void passwordTokenUpdate(User user);
     User findByID(int id);
     List<User> list();
     void delete(int id);
