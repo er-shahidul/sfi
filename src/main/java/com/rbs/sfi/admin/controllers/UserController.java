@@ -1,6 +1,7 @@
 package com.rbs.sfi.admin.controllers;
 
 import com.rbs.sfi.admin.entities.*;
+import com.rbs.sfi.admin.listeners.AuditListener;
 import com.rbs.sfi.admin.services.*;
 import com.rbs.sfi.admin.util.MailHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -288,6 +289,9 @@ public class UserController {
 
         user.setPassword(randomUUIDString);
         user.setUsername(user.getEmail());
+
+        AuditListener auditListener = new AuditListener();  // audit log
+        auditListener.prePersist(user);                     // audit log
 
         if (result.hasErrors()) {
             System.out.println("There are errors");

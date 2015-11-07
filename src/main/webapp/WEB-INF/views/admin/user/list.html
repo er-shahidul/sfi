@@ -66,6 +66,9 @@
                                                         Company
                                                     </th>
                                                     <th>
+                                                        Created
+                                                    </th>
+                                                    <th>
                                                         Admin User
                                                     </th>
                                                     <th>
@@ -90,6 +93,7 @@
                                                             <span></span>
                                                         </p>
                                                     </td>
+                                                    <td th:text="${u.createdAt}"></td>
                                                     <td th:each="g,iterationStatus  : ${u.group}">
                                                         <p th:if="${g.role} == ADMIN">
                                                             <span class="label label-success">yes</span>
