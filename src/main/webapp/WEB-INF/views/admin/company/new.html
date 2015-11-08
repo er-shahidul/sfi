@@ -164,4 +164,27 @@
 
 </div>
 </section>
+
+<div layout:fragment="script">
+
+    <script type="text/javascript">
+        // <![CDATA[
+        var $grp1 = $("[name=sfi0Sci1]"), $grp2 = $("[name=primary0Secondary1]");
+        $grp1.change(function(){
+
+
+            if($grp1.filter(":checked").val() == "false"){
+
+                return $grp2.parents(".form-group").hide();
+            }
+
+
+            $grp2.parents(".form-group").show();
+
+        }).change();
+        // ]]>
+
+    </script>
+
+</div>
 </html>

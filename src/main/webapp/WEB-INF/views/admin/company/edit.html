@@ -126,7 +126,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="form-group" id="sonata-ba-field-container-s563ad95d53c77_primary0Secondary1">
+                                                                <div class="form-group" id="sonata-ba-field-container-primary0Secondary1">
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
                                                                         <input type="radio" th:name="primary0Secondary1" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Primary Users'}" th:value="false" th:field="*{primary0Secondary1}" />
                                                                         <br/>
@@ -163,4 +163,28 @@
 
     </div>
 </section>
+
+<div layout:fragment="script">
+
+    <script type="text/javascript">
+        // <![CDATA[
+        var $grp1 = $("[name=sfi0Sci1]"), $grp2 = $("[name=primary0Secondary1]");
+        $grp1.change(function(){
+
+
+            if($grp1.filter(":checked").val() == "false"){
+
+                return $grp2.parents(".form-group").hide();
+            }
+
+
+            $grp2.parents(".form-group").show();
+
+        }).change();
+        // ]]>
+
+    </script>
+
+</div>
+
 </html>
