@@ -64,7 +64,9 @@ public class FormController {
             if(sfiPpForm == null){
                 sfiPpForm = new SfiPpForm();
                 sfiPpForm.setCompany(company);
+                sfiPpForm.setCreatedBy(user);
                 sfiPpFormService.save(sfiPpForm);
+
             }
 
             String companyLogo = DatatypeConverter.printBase64Binary(company.getLogo());
