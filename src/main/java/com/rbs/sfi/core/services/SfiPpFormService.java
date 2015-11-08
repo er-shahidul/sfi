@@ -8,4 +8,5 @@ public interface SfiPpFormService
     SfiPpForm findById(int id);
     SfiPpForm findByCompany(Company company);
     void save(SfiPpForm sfiPpForm);
+    SfiPpForm saveCS1(SfiPpForm sfiPpForm);
 }

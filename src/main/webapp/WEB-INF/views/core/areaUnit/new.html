@@ -61,7 +61,8 @@
 
                                 <div class="sonata-ba-form">
 
-                                    <form th:action="@{/admin/area/unit/new} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${areaUnit}" method="POST" class="form-horizontal">
+                                    <!--<form th:action="@{/admin/area/unit/new} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${areaUnit}" method="POST" class="form-horizontal">-->
+                                    <form th:object="${areaUnit}" method="POST" class="form-horizontal">
 
                                         <div class="row">
 

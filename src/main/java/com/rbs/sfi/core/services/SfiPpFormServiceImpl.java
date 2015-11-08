@@ -1,6 +1,7 @@
 package com.rbs.sfi.core.services;
 
 import com.rbs.sfi.admin.entities.Company;
+import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.core.entities.SfiPpForm;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,16 @@ public class SfiPpFormServiceImpl implements SfiPpFormService
 
     public void save(SfiPpForm sfiPpForm){
         sfiPpFormRepository.save(sfiPpForm);
+    }
+
+    public SfiPpForm saveCS1(SfiPpForm sfiPpForm){
+        SfiPpForm entity = sfiPpFormRepository.findById(sfiPpForm.getId());
+        if(entity!=null){
+            Util.merge(entity, sfiPpForm);
+
+            sfiPpFormRepository.save(entity);
+        }
+
+        return  entity;
     }
 }

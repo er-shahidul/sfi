@@ -11,7 +11,7 @@
         <intercept-url pattern="/" access="permitAll" />
 
 		<form-login login-page="/login" username-parameter="username" password-parameter="password" />
-		<csrf />
+		<csrf disabled="true" />
 	</http>
 
 	<beans:bean id="bcryptEncoder"

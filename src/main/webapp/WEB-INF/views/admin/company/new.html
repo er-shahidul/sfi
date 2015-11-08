@@ -61,7 +61,8 @@
 
                                 <div class="sonata-ba-form">
 
-                                    <form th:action="@{/admin/company/new} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${company}" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                                    <!--<form th:action="@{/admin/company/new} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${company}" method="POST" class="form-horizontal" enctype="multipart/form-data">-->
+                                    <form th:action="@{/admin/company/new}" th:object="${company}" method="POST" class="form-horizontal" enctype="multipart/form-data">
 
                                         <div class="row">
 

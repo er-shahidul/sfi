@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 public class Util {
@@ -42,6 +43,33 @@ public class Util {
 			return objectMapper.readValue(dbData, Object.class);
 		} catch (IOException ex) {
 			return null;
+		}
+	}
+
+	public static void merge(Object obj, Object update){
+		if(!obj.getClass().isAssignableFrom(update.getClass())){
+			return;
+		}
+
+		Method[] methods = obj.getClass().getMethods();
+
+		for(Method fromMethod: methods){
+			if(fromMethod.getDeclaringClass().equals(obj.getClass())
+					&& fromMethod.getName().startsWith("get")){
+
+				String fromName = fromMethod.getName();
+				String toName = fromName.replace("get", "set");
+
+				try {
+					Method toMetod = obj.getClass().getMethod(toName, fromMethod.getReturnType());
+					Object value = fromMethod.invoke(update, (Object[])null);
+					if(value != null){
+						toMetod.invoke(obj, value);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 

@@ -28,6 +28,7 @@ import javax.xml.bind.DatatypeConverter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.rbs.sfi.admin.util.Util.getAsString;
 import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -81,13 +82,11 @@ public class FormController {
 
         return "redirect:/login";
     }
-
-    @RequestMapping(value = {"/form/cs1" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public String formCs1(@RequestBody @Valid SfiPpForm sfiPpForm, BindingResult result ) {
-
-
-
-
-        return "/core/form/index";
-    }
+//
+//    @RequestMapping(value = {"/form/cs1" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+//    public SfiPpForm formCs1(@RequestBody SfiPpForm sfiPpForm, BindingResult result ) {
+//
+//        return sfiPpFormService.saveCS1(sfiPpForm);
+//
+//    }
 }
