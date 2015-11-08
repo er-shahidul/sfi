@@ -18,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.xml.bind.DatatypeConverter;
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.List;
 import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-@org.springframework.web.bind.annotation.RestController
+@RestController
 public class DefaultRestController {
 
     @Autowired
