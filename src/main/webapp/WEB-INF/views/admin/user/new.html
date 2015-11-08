@@ -127,7 +127,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="form-group" id="sonata-ba-field-container-s563afbac0122b_company">
+                                                                <div class="form-group" id="sonata-ba-field-container-company">
                                                                     <label class=" control-label" style="text-align: left;">
                                                                         Assign user to company
                                                                     </label>
@@ -193,6 +193,30 @@
 </div>
 
 </section>
+
+<div layout:fragment="script">
+
+    <script type="text/javascript">
+        // <![CDATA[
+        var $userGrp = $("[name=group]");
+        $userGrp.change(function(){
+
+            var userType = $userGrp.filter(":checked").val();
+            var $companyCont  = $("#sonata-ba-field-container-company");
+
+            if(userType == "3"){
+                return $companyCont.show();
+            }
+
+            $companyCont.hide()
+                .find("select").val(null);
+
+        }).change();
+        // ]]>
+
+    </script>
+
+</div>
+
+
 </html>
-
-
