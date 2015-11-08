@@ -131,7 +131,7 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
                                                                         <div th:field="*{group}">
-                                                                            <input th:path="*{group}" th:name="group" type="radio" th:each="group : ${groups}" th:value="${group.id}" th:checked="${group == 1}" class="form-control" th:text="${group.description}" />
+                                                                            <input th:class="btn-default" th:path="*{group}" th:name="group" type="radio" th:each="group : ${groups}" th:value="${group.id}" th:checked="${group == 1}" class="form-control" th:text="${group.description}" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -157,7 +157,7 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
 
-                                                                        <input type="checkbox" th:field="*{enabled}" id="enabled" class="form-control"/>
+                                                                        <input th:class="btn-default" type="checkbox" th:field="*{enabled}" id="enabled" class="form-control"/>
                                                                     </div>
                                                                 </div>
 
