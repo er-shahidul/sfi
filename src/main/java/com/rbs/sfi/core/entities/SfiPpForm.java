@@ -1,8 +1,11 @@
 package com.rbs.sfi.core.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,6 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="sfi_pp_forms")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SfiPpForm
 {
 	@Id
@@ -129,6 +133,7 @@ public class SfiPpForm
 
 	@Column(name="cs2_usaPrivate_categories", nullable=true)
 	@ElementCollection
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<String> cs2UsaPrivateRecreationCategories = new ArrayList<String>();
 
 	@Column(name="cs2_usaPublic_totalOwnMng", nullable=true)
@@ -142,6 +147,7 @@ public class SfiPpForm
 
 	@Column(name="cs2_usaPublic_categories", nullable=true)
 	@ElementCollection
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<String> cs2UsaPublicRecreationCategories = new ArrayList<String>();
 
 	@Column(name="cs2_caCrown_totalOwnMng", nullable=true)
@@ -155,6 +161,7 @@ public class SfiPpForm
 
 	@Column(name="cs2_caCrown_categories", nullable=true)
 	@ElementCollection
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<String> cs2CaCrownRecreationCategories = new ArrayList<String>();
 
 	@Column(name="cs2_caPrivate_totalOwnMng", nullable=true)
@@ -168,9 +175,10 @@ public class SfiPpForm
 
 	@Column(name="cs2_caPrivate_categories", nullable=true)
 	@ElementCollection
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<String> cs2CaPrivateRecreationCategories = new ArrayList<String>();
 
-	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm", fetch = FetchType.LAZY)
+	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm", fetch = FetchType.EAGER)
 	private Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries = new HashSet<SfiPpFormCs2OutsideUsaCa>();
 
 
