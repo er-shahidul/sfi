@@ -1,5 +1,7 @@
 package com.rbs.sfi.core.controllers;
 
+import com.rbs.sfi.admin.entities.User;
+import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
 import com.rbs.sfi.core.services.SfiPpFormRegionService;
@@ -14,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
-
+import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
 
 @Controller
 public class DefaultController {
@@ -25,8 +27,22 @@ public class DefaultController {
     @Autowired
     SfiPpFormRegionService sfiPpFormRegionService;
 
+    @Autowired
+    UserService userService;
+
     @RequestMapping(value = {"/" }, method = RequestMethod.GET)
     public String home() {
+
+        User user = userService.findByUsername(getCurrentUsername());
+        if(user != null){
+            return ("redirect:/admin/dashboard");
+        } else {
+            return ("redirect:/dashboard");
+        }
+    }
+
+    @RequestMapping(value = {"/dashboard" }, method = RequestMethod.GET)
+    public String withOutLogIn() {
 
         return "dashboard";
     }
