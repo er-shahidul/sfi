@@ -27,15 +27,19 @@
     <bean id="templateEngine"
           class="org.thymeleaf.spring4.SpringTemplateEngine">
         <property name="templateResolver" ref="templateResolver" />
-        <property name="additionalDialects" ref="layoutDialect" />
+        <property name="additionalDialects">
+            <set>
+                <bean class="nz.net.ultraq.thymeleaf.LayoutDialect"></bean>
+                <bean class="org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect"></bean>
+            </set>
+        </property>
     </bean>
 
     <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine" />
     </bean>
 
-    <bean id="layoutDialect" class="nz.net.ultraq.thymeleaf.LayoutDialect">
-    </bean>
+
 
     <!-- - - - - thymeleaf end - - - - -->
 

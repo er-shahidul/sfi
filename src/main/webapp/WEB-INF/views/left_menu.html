@@ -1,27 +1,25 @@
-<th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<th:block xmlns:th="http://www.thymeleaf.org">
 <ul>
     <li th:class="(${title} == profile) ? 'selected' : ''" >
-        <a href="#">My Profile</a>
+        <a href="list.html" th:href="@{/user/profile}">My Profile</a>
     </li>
-
-    <li th:class="(${title} == user) ? 'selected' : ''" sec:authorize="isAuthenticated()">
-        <a href="#">Manage Users</a>
+    <li th:class="(${title} == user) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="list.html" th:href="@{/admin/user/list}">Manage Users</a>
     </li>
-    <li th:class="(${title} == company) ? 'selected' : ''" sec:authorize="isAuthenticated()">
-        <a href="#">Manage Companies</a>
+    <li th:class="(${title} == company) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="list.html" th:href="@{/admin/company/list}">Manage Companies</a>
     </li>
-    <li th:class="(${title} == area_unit) ? 'selected' : ''" sec:authorize="isAuthenticated()">
-        <a href="#">Manage Area Units</a>
+    <li th:class="(${title} == area_unit) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="list.html" th:href="@{/admin/area/unit/list}">Manage Area Units</a>
     </li>
-    <li th:class="(${title} == form) ? 'selected' : ''" sec:authorize="isAuthenticated()">
-        <a href="#">Forms</a>
+    <li th:class="(${title} == form) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="list.html" th:href="@{/admin/form}">Forms</a>
     </li>
-    <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="isAnonymous()">
-        <a href="#">Company Settings</a>
+    <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_GENERAL', 'ROLE_USER')">
+        <a href="list.html" th:href="@{/admin/company/setting}">Company Settings</a>
     </li>
-
     <li th:class="(${title} == privacy_policy) ? 'selected' : ''" >
-        <a href="#">Privacy Policy</a>
+        <a href="list.html" th:href="@{/policy}">Privacy Policy</a>
     </li>
 </ul>
 
