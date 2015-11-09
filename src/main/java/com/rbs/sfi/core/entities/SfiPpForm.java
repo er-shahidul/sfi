@@ -94,28 +94,28 @@ public class SfiPpForm
 	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_ownsMngLands_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
-			inverseJoinColumns={@JoinColumn(name="country_id")})
+			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
 	private Set<SfiPpFormOtherCountry> cs1OwnsMngLandsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
 
 
 	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_primaryOperMillsYards_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
-			inverseJoinColumns={@JoinColumn(name="country_id")})
+			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
 	private Set<SfiPpFormOtherCountry> cs1PrimaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
 
 
 	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_secondaryOperMillsYards_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
-			inverseJoinColumns={@JoinColumn(name="country_id")})
+			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
 	private Set<SfiPpFormOtherCountry> cs1SecondaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
 
 
 	@ManyToMany(targetEntity = com.rbs.sfi.core.entities.SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_sells_countries",
 			joinColumns={@JoinColumn(name="form_id")},
-			inverseJoinColumns={@JoinColumn(name="country_id")})
+			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
 	private Set<SfiPpFormAllCountry> cs1SellsCountries = new HashSet<SfiPpFormAllCountry>();
 
 

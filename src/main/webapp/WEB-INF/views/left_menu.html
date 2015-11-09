@@ -13,7 +13,7 @@
         <a href="list.html" th:href="@{/admin/area/unit/list}">Manage Area Units</a>
     </li>
     <li th:class="(${title} == form) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
-        <a href="list.html" th:href="@{/admin/form}">Forms</a>
+        <a href="list.html" th:href="@{/form}">Forms</a>
     </li>
     <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_GENERAL', 'ROLE_USER')">
         <a href="list.html" th:href="@{/admin/company/setting}">Company Settings</a>
