@@ -650,6 +650,7 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
 
             if(country = $rootScope.findCountry($rootScope.sellCountries, model)){
                 bucket.push(country);
+                //bucket.push(country.id);
             }
         }
 

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 public abstract class AbstractRepository<PK extends Serializable, T> {
 	
@@ -36,6 +37,8 @@ public abstract class AbstractRepository<PK extends Serializable, T> {
 	public void delete(T entity) {
 		getSession().delete(entity);
 	}
+
+	public T merge(T entity){ return (T) getSession().merge(entity);}
 
 	protected Criteria createEntityCriteria(){
 		return getSession().createCriteria(persistentClass);

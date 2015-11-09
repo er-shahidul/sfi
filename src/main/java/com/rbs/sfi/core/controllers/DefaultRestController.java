@@ -26,7 +26,7 @@ import java.util.List;
 import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-@RestController
+@org.springframework.web.bind.annotation.RestController
 public class DefaultRestController {
 
     @Autowired
