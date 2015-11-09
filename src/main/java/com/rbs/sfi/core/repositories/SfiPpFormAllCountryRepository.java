@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface SfiPpFormAllCountryRepository
 {
+    SfiPpFormAllCountry findById(int id);
     List<SfiPpFormAllCountry> list();
     SfiPpFormAllCountry merge(SfiPpFormAllCountry entity);
 }

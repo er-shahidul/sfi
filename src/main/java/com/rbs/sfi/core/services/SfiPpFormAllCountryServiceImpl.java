@@ -19,4 +19,8 @@ public class SfiPpFormAllCountryServiceImpl implements SfiPpFormAllCountryServic
         return sfiPpFormAllCountryRepository.list();
     }
 
+    public SfiPpFormAllCountry findById(int id) {
+        return sfiPpFormAllCountryRepository.findById(id);
+    }
+
 }

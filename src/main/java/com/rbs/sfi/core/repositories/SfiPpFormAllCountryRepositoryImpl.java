@@ -22,4 +22,8 @@ public class SfiPpFormAllCountryRepositoryImpl extends AbstractRepository<Intege
         return sfiPpFormAllCountry;
     }
 
+    public SfiPpFormAllCountry findById(int id) {
+        return (SfiPpFormAllCountry)sessionFactory.getCurrentSession().get(SfiPpFormAllCountry.class, id);
+    }
+
 }
