@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("sfiPpFormService")
@@ -27,6 +28,10 @@ public class SfiPpFormServiceImpl implements SfiPpFormService
 
     @Autowired
     SfiPpFormOtherCountryRepository sfiPpFormOtherCountryRepository;
+
+    public List<SfiPpForm> list() {
+        return sfiPpFormRepository.list();
+    }
 
     public SfiPpForm findById(int id) {
         return sfiPpFormRepository.findById(id);

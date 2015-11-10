@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository("sfiPpFormRepository")
 public class SfiPpFormRepositoryImpl extends AbstractRepository<Integer, SfiPpForm> implements SfiPpFormRepository {
 
@@ -28,6 +30,13 @@ public class SfiPpFormRepositoryImpl extends AbstractRepository<Integer, SfiPpFo
         SfiPpForm sfiPpForm = (SfiPpForm)criteria.uniqueResult();
 
         return sfiPpForm;
+    }
+
+    @Transactional
+    public List<SfiPpForm> list() {
+        @SuppressWarnings("unchecked")
+        List<SfiPpForm> sfiPpForms = sessionFactory.getCurrentSession().createQuery("from SfiPpForm").list();
+        return sfiPpForms;
     }
 
     public void save(SfiPpForm sfiPpForm) {

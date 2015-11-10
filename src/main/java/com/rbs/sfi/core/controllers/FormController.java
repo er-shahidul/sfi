@@ -99,8 +99,8 @@ public class FormController {
     @RequestMapping(value = {"/admin/form" }, method = RequestMethod.GET)
     public String adminForm(ModelMap model) {
         model.addAttribute("title", "form");
-        List companies = companyService.list();
-        model.addAttribute("companies", companies);
+        List sfiPpForms = sfiPpFormService.list();
+        model.addAttribute("sfiPpForms", sfiPpForms);
 
         return "/core/form/admin_form";
     }
