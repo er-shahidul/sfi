@@ -674,21 +674,21 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
 sfiFormApp.run(['$rootScope', function($rootScope) {
 
     $rootScope.isFieldsEnabled = function(){
-        return $rootScope.form.cs1.ownsOrManagesLands;
+        return true; //$rootScope.form.cs1.ownsOrManagesLands;
     }
 
     $rootScope.operateInUsa = function(){
 
-        return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInUSA;
+        return true; //$rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInUSA;
     }
 
     $rootScope.operateInCa = function(){
 
-        return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInOther;
+        return true; //$rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInOther;
     }
 
     $rootScope.operateInOthers = function(){
-        return $rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.operatesInOthers;
+        return true; //$rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.operatesInOthers;
     }
 
 }]);
