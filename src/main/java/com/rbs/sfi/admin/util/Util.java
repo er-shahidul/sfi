@@ -52,13 +52,12 @@ public class Util {
 		}
 
 		Method[] methods = obj.getClass().getMethods();
+		String toName;
 
 		for(Method fromMethod: methods){
+			toName = getSetterMethodNameForGetterMethod(fromMethod);
 			if(fromMethod.getDeclaringClass().equals(obj.getClass())
-					&& fromMethod.getName().startsWith("get")){
-
-				String fromName = fromMethod.getName();
-				String toName = fromName.replace("get", "set");
+					&& toName != null){
 
 				try {
 					Method toMetod = obj.getClass().getMethod(toName, fromMethod.getReturnType());
@@ -71,6 +70,19 @@ public class Util {
 				}
 			}
 		}
+	}
+
+	private static String getSetterMethodNameForGetterMethod(Method fromMethod) {
+		String fromName = fromMethod.getName();
+		if(fromName.startsWith("get")) {
+			return fromName.replace("get", "set");
+		}
+
+		if(fromName.startsWith("is")) {
+			return fromName.replace("is", "set");
+		}
+
+		return null;
 	}
 
 }
