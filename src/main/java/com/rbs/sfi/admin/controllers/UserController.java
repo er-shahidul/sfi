@@ -43,9 +43,6 @@ public class UserController {
     @Autowired
     private VerificationTokenService verificationTokenService;
 
-    @Autowired
-    private PasswordResetTokenService passwordResetTokenService;
-
     @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
         model.addAttribute("title", "user");
@@ -194,8 +191,7 @@ public class UserController {
 
     @RequestMapping(value = "/user/password/{token}", method = RequestMethod.GET)
     public String passwordToken(@PathVariable String token) {
-        int userId = passwordResetTokenService.findUserIdByToken(token);
-        User user = userService.findByID(userId);
+        User user = userService.findUserIdByToken(token);
 
         if(user == null){
             return "accessDenied";
@@ -216,20 +212,8 @@ public class UserController {
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
 
-        if(user.isPasswordToken() == false){
-            PasswordResetToken passwordResetToken = new PasswordResetToken();
-
-            passwordResetToken.setToken(randomUUIDString);
-            passwordResetToken.setUser(user);
-
-            passwordResetTokenService.save(passwordResetToken);
-            userService.passwordTokenUpdate(user);
-        } else {
-            PasswordResetToken passwordResetToken = passwordResetTokenService.findPasswordResetToken(user);
-
-            passwordResetToken.setToken(randomUUIDString);
-            passwordResetTokenService.passwordResetTokenUpdate(passwordResetToken);
-        }
+        user.setUserToken(randomUUIDString);
+        userService.passwordResetTokenUpdate(user);
 
         String subject = "Password Reset";
         String message = request.getLocalName() + "/user/password/" + randomUUIDString;

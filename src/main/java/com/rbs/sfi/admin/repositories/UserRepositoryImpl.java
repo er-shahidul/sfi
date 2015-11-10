@@ -64,4 +64,12 @@ public class UserRepositoryImpl extends AbstractRepository<Integer, User> implem
         }
         return user;
     }
+
+    public User findUserIdByToken(String userToken) {
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("userToken", userToken));
+        User user = (User)criteria.uniqueResult();
+
+        return user;
+    }
 }

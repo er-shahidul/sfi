@@ -37,9 +37,6 @@ public class User extends Audit
     @Column(name="token")
     private boolean token;
 
-    @Column(name="password_token")
-    private boolean passwordToken;
-
 	@Column(name="invitation_msg", nullable=true)
 	private String invitationMsg;
 
@@ -48,6 +45,9 @@ public class User extends Audit
 			joinColumns = { @JoinColumn(name = "user_id") },
 			inverseJoinColumns = { @JoinColumn(name = "group_id") })
 	private Set<Group> group = new HashSet<Group>();
+
+    @Column(name="user_token", nullable=true)
+    private String userToken;
 
 	public int getId() {
 		return id;
@@ -173,14 +173,6 @@ public class User extends Audit
         return token;
     }
 
-//    String admin = "ADMIN";
-//    public boolean admin(Group group1) {
-//        if (group. == group1.getRole()) {
-//            return true;
-//        }
-//        return false;
-//    }
-
     public void setToken(boolean token) {
         this.token = token;
     }
@@ -188,14 +180,13 @@ public class User extends Audit
     public User() {
         super();
         this.token = false;
-        this.passwordToken = false;
     }
 
-    public boolean isPasswordToken() {
-        return passwordToken;
+    public String getUserToken() {
+        return userToken;
     }
 
-    public void setPasswordToken(boolean passwordToken) {
-        this.passwordToken = passwordToken;
+    public void setUserToken(String userToken) {
+        this.userToken = userToken;
     }
 }

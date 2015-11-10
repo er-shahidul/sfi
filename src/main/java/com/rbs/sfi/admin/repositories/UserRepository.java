@@ -13,5 +13,7 @@ public interface UserRepository
     User findByUsername(String username);
     User findByEmail(String username);
     User findByID(int id);
+
+    User findUserIdByToken(String token);
 }
 

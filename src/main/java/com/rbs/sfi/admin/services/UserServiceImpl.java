@@ -32,14 +32,6 @@ public class UserServiceImpl implements UserService{
         }
     }
 
-    public void passwordTokenUpdate(User user){
-        User entity = userRepository.findByID(user.getId());
-        if(entity!=null){
-            entity.setPasswordToken(true);
-            userRepository.update(entity);
-        }
-    }
-
     public User findByID(int id) {
         return userRepository.findByID(id);
     }
@@ -107,5 +99,17 @@ public class UserServiceImpl implements UserService{
     public boolean isUserEmailUnique(Integer id, String email) {
         User user = findByEmail(email);
         return ( user == null || ((id != null) && (user.getId() == id)));
+    }
+
+    public User findUserIdByToken(String token){
+        return userRepository.findUserIdByToken(token);
+    }
+
+    public void passwordResetTokenUpdate(User user){
+        User entity = userRepository.findByID(user.getId());
+        if(entity!=null){
+            entity.setUserToken(user.getUserToken());
+            userRepository.save(entity);
+        }
     }
 }

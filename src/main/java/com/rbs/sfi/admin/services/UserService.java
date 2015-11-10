@@ -8,7 +8,6 @@ public interface UserService
 {
     void save(User user);
     void verificationToken(User user);
-    void passwordTokenUpdate(User user);
     User findByID(int id);
     List<User> list();
     void delete(int id);
@@ -20,4 +19,7 @@ public interface UserService
     void userActive(User user);
     boolean isUserUsernameUnique(Integer id, String username);
     boolean isUserEmailUnique(Integer id, String email);
+
+    void passwordResetTokenUpdate(User passwordResetToken);
+    User findUserIdByToken(String token);
 }
