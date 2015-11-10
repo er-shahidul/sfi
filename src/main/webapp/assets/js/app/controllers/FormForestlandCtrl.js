@@ -1,9 +1,11 @@
 var ngScope = null;
+var cs2 = null;
 sfiFormApp
     .controller('FormForestlandCtrl',
         ['$rootScope', '$scope', '$state', '$http', 'Countries', 'certifyBodies', '_', 'Message', '$',
             function ($rootScope , $scope, $state, $http, Countries, certifyBodies, _, Message, $){
 
+    cs2 = $scope;
 
     $scope.error = true;
     $scope.certifyBodies  = certifyBodies;
@@ -31,7 +33,7 @@ sfiFormApp
 
     $scope.init = function(){
 
-        if(!$scope.operateInUsa()){
+        if(!$rootScope.operateInUsa()){
 
             _.each($scope.cs2.usa, function(object){
                 for(var i in object){
@@ -50,10 +52,10 @@ sfiFormApp
         }
 
         if(!$scope.operateInOthers()){
-            $scope.cs2.others = [];
+            $scope.cs2.outsideCountries = [];
         }
 
-        if(_.isEmpty($scope.cs2.others)){
+        if(_.isEmpty($scope.cs2.outsideCountries)){
             $scope.addOther();
         }
     }
@@ -61,7 +63,7 @@ sfiFormApp
 
     $scope.addOther = function(){
 
-        $scope.cs2.others.push({
+        $scope.cs2.outsideCountries.push({
             id                 : null,
             countryId          : "",
             areaManaged        : null,
@@ -70,7 +72,6 @@ sfiFormApp
             certificationOther : null
         });
 
-        //angular.element('#otherItem1')[0].value = 0;
     };
 
     $scope.setForms = function(){
@@ -87,14 +88,17 @@ sfiFormApp
         }
 
         $http
-            .put(Routing.generate("sfi_cs2_form_update", urlData), $scope.cs2)
+            //.put(Routing.generate("sfi_cs2_form_update", urlData), $scope.cs2)
+            .put("/form/cs1", sfiV2.getSectionData('cs2', $scope.cs2))
             .then(function(response){
 
                 if(response.data){
 
                     $scope.cs2Form.$setPristine();
 
-                    $rootScope.form = response.data;
+                    formData = response.data
+                    $rootScope.form = sfiV2.prepareForm(formData);
+
                     $scope.cs2 = angular.copy($rootScope.form.cs2);
                     $scope.errors = $scope.cs2.errors;
 

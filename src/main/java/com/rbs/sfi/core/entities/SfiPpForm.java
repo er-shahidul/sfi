@@ -124,6 +124,10 @@ public class SfiPpForm
 
 	@Column(name="cs2_usaPrivate_totalOwnMng", nullable=true)
 	private float cs2UsaPrivateTotalAreaOwnOrManage;
+	@Column(name="cs2_usaPrivate_forestlandOwnMng", nullable=true)
+	private int cs2UsaPrivateForestlandOwnMng;
+	@Column(name="cs2_usaPrivate_forestlandOwnMngOther", nullable=true)
+	private String cs2UsaPrivateForestlandOwnMngOther;
 	@Column(name="cs2_usaPrivate_totalCertified", nullable=true)
 	private float cs2UsaPrivateTotalAreaCertified;
 	@Column(name="cs2_usaPrivate_area", nullable=true)
@@ -136,8 +140,13 @@ public class SfiPpForm
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<String> cs2UsaPrivateRecreationCategories = new ArrayList<String>();
 
+
 	@Column(name="cs2_usaPublic_totalOwnMng", nullable=true)
 	private float cs2UsaPublicTotalAreaOwnOrManage;
+	@Column(name="cs2_usaPublic_forestlandOwnMng", nullable=true)
+	private int cs2UsaPublicForestlandOwnMng;
+	@Column(name="cs2_usaPublic_forestlandOwnMngOther", nullable=true)
+	private String cs2UsaPublicForestlandOwnMngOther;
 	@Column(name="cs2_usaPublic_totalCertified", nullable=true)
 	private float cs2UsaPublicTotalAreaCertified;
 	@Column(name="cs2_usaPublic_area", nullable=true)
@@ -152,6 +161,11 @@ public class SfiPpForm
 
 	@Column(name="cs2_caCrown_totalOwnMng", nullable=true)
 	private float cs2CaCrownTotalAreaOwnOrManage;
+	@Column(name="cs2_caCrown_forestlandOwnMng", nullable=true)
+	private int cs2CaCrownForestlandOwnMng;
+	@Column(name="cs2_caCrown_forestlandOwnMngOther", nullable=true)
+	private String cs2CaCrownForestlandOwnMngOther;
+
 	@Column(name="cs2_caCrown_totalCertified", nullable=true)
 	private float cs2CaCrownTotalAreaCertified;
 	@Column(name="cs2_caCrown_area", nullable=true)
@@ -166,6 +180,12 @@ public class SfiPpForm
 
 	@Column(name="cs2_caPrivate_totalOwnMng", nullable=true)
 	private float cs2CaPrivateTotalAreaOwnOrManage;
+
+	@Column(name="cs2_caPrivate_forestlandOwnMng", nullable=true)
+	private int cs2CaPrivateForestlandOwnMng;
+	@Column(name="cs2_caPrivate_forestlandOwnMngOther", nullable=true)
+	private String cs2CaPrivateForestlandOwnMngOther;
+
 	@Column(name="cs2_caPrivate_totalCertified", nullable=true)
 	private float cs2CaPrivateTotalAreaCertified;
 	@Column(name="cs2_caPrivate_area", nullable=true)
@@ -570,5 +590,69 @@ public class SfiPpForm
 
 	public void setCs2OutsideCountries(Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries) {
 		this.cs2OutsideCountries = cs2OutsideCountries;
+	}
+
+	public int getCs2UsaPrivateForestlandOwnMng() {
+		return cs2UsaPrivateForestlandOwnMng;
+	}
+
+	public void setCs2UsaPrivateForestlandOwnMng(int cs2UsaPrivateForestlandOwnMng) {
+		this.cs2UsaPrivateForestlandOwnMng = cs2UsaPrivateForestlandOwnMng;
+	}
+
+	public int getCs2UsaPublicForestlandOwnMng() {
+		return cs2UsaPublicForestlandOwnMng;
+	}
+
+	public void setCs2UsaPublicForestlandOwnMng(int cs2UsaPublicForestlandOwnMng) {
+		this.cs2UsaPublicForestlandOwnMng = cs2UsaPublicForestlandOwnMng;
+	}
+
+	public int getCs2CaCrownForestlandOwnMng() {
+		return cs2CaCrownForestlandOwnMng;
+	}
+
+	public void setCs2CaCrownForestlandOwnMng(int cs2CaCrownForestlandOwnMng) {
+		this.cs2CaCrownForestlandOwnMng = cs2CaCrownForestlandOwnMng;
+	}
+
+	public int getCs2CaPrivateForestlandOwnMng() {
+		return cs2CaPrivateForestlandOwnMng;
+	}
+
+	public void setCs2CaPrivateForestlandOwnMng(int cs2CaPrivateForestlandOwnMng) {
+		this.cs2CaPrivateForestlandOwnMng = cs2CaPrivateForestlandOwnMng;
+	}
+
+	public String getCs2UsaPrivateForestlandOwnMngOther() {
+		return cs2UsaPrivateForestlandOwnMngOther;
+	}
+
+	public void setCs2UsaPrivateForestlandOwnMngOther(String cs2UsaPrivateForestlandOwnMngOther) {
+		this.cs2UsaPrivateForestlandOwnMngOther = cs2UsaPrivateForestlandOwnMngOther;
+	}
+
+	public String getCs2UsaPublicForestlandOwnMngOther() {
+		return cs2UsaPublicForestlandOwnMngOther;
+	}
+
+	public void setCs2UsaPublicForestlandOwnMngOther(String cs2UsaPublicForestlandOwnMngOther) {
+		this.cs2UsaPublicForestlandOwnMngOther = cs2UsaPublicForestlandOwnMngOther;
+	}
+
+	public String getCs2CaCrownForestlandOwnMngOther() {
+		return cs2CaCrownForestlandOwnMngOther;
+	}
+
+	public void setCs2CaCrownForestlandOwnMngOther(String cs2CaCrownForestlandOwnMngOther) {
+		this.cs2CaCrownForestlandOwnMngOther = cs2CaCrownForestlandOwnMngOther;
+	}
+
+	public String getCs2CaPrivateForestlandOwnMngOther() {
+		return cs2CaPrivateForestlandOwnMngOther;
+	}
+
+	public void setCs2CaPrivateForestlandOwnMngOther(String cs2CaPrivateForestlandOwnMngOther) {
+		this.cs2CaPrivateForestlandOwnMngOther = cs2CaPrivateForestlandOwnMngOther;
 	}
 }

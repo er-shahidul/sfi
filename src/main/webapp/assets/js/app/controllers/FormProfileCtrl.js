@@ -23,7 +23,10 @@ sfiFormApp
 
                         $scope.cs1Form.$setPristine();
 
-                        $rootScope.form = response.data;
+                        formData = response.data
+                        $rootScope.form = sfiV2.prepareForm(formData);
+
+
 
                         $scope.cs1 = angular.copy($rootScope.form.cs1);
                         $scope.errors = $scope.cs1.errors;
