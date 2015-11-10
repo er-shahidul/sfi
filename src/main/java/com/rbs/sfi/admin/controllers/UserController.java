@@ -212,12 +212,14 @@ public class UserController {
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
 
-        user.setUserToken(randomUUIDString);
-        userService.passwordResetTokenUpdate(user);
+        if(user != null){
+            user.setUserToken(randomUUIDString);
+            userService.passwordResetTokenUpdate(user);
 
-        String subject = "Password Reset";
-        String message = request.getLocalName() + "/user/password/" + randomUUIDString;
-        sendEmail(email, subject, message);
+            String subject = "Password Reset";
+            String message = request.getLocalName() + "/user/password/" + randomUUIDString;
+            sendEmail(email, subject, message);
+        }
 
         return "login";
     }

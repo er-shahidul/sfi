@@ -4,7 +4,7 @@ import com.rbs.sfi.admin.entities.Audit;
 import com.rbs.sfi.admin.entities.Logo;
 import com.rbs.sfi.admin.listeners.AuditListener;
 import com.rbs.sfi.core.entities.AreaUnit;
-import com.rbs.sfi.core.services.AreaUnitService;
+import com.rbs.sfi.core.repositories.AreaUnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -37,7 +37,7 @@ import java.util.List;
 public class CompanyController
 {
     @Autowired
-    AreaUnitService areaUnitService;
+    AreaUnitRepository areaUnitService;
 
     @Autowired
     CompanyService companyService;
