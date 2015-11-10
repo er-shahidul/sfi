@@ -13,16 +13,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
 import com.rbs.sfi.core.services.SfiPpFormRegionService;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.xml.bind.DatatypeConverter;
 import java.util.ArrayList;
@@ -51,44 +51,57 @@ public class FormController {
     SfiPpFormRepository sfiPpFormRepository;
 
     @RequestMapping(value = {"/form" }, method = RequestMethod.GET)
-    public String homePage(ModelMap model) {
+    public String homePage(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (!(auth instanceof AnonymousAuthenticationToken)) {
 
-            User user = userService.findByUsername(getCurrentUsername());
-            Company company = user.getCompany();
-            SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(company);
-
-            if(sfiPpForm == null){
-                sfiPpForm = new SfiPpForm();
-                sfiPpForm.setCompany(company);
-                sfiPpForm.setCreatedBy(user);
-                sfiPpFormService.save(sfiPpForm);
-
+            if (request.isUserInRole("ADMIN") == true) {
+                return ("redirect:/admin/form");
+            } else if (request.isUserInRole("USER") == true) {
+                return ("redirect:/admin/user/form");
+            } else {
+                return ("redirect:/dashboard");
             }
-
-            String companyLogo = DatatypeConverter.printBase64Binary(company.getLogo());
-            List countries = sfiPpFormAllCountryService.list();
-
-            model.addAttribute("form", sfiPpForm);
-            model.addAttribute("company", company);
-            model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
-            model.addAttribute("user", user);
-            model.addAttribute("countries", countries);
-            model.addAttribute("mode", "edit");
-
-            return "/core/form/index";
         }
 
         return "redirect:/login";
     }
-//
-//    @RequestMapping(value = {"/form/cs1" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-//    public SfiPpForm formCs1(@RequestBody SfiPpForm sfiPpForm, BindingResult result ) {
-//
-//        return sfiPpFormService.saveCS1(sfiPpForm);
-//
-//    }
+
+    @RequestMapping(value = {"/admin/user/form" }, method = RequestMethod.GET)
+    public String form(ModelMap model) {
+
+        User user = userService.findByUsername(getCurrentUsername());
+        Company company = user.getCompany();
+        SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(company);
+
+        if(sfiPpForm == null){
+            sfiPpForm = new SfiPpForm();
+            sfiPpForm.setCompany(company);
+            sfiPpForm.setCreatedBy(user);
+            sfiPpFormService.save(sfiPpForm);
+        }
+
+        String companyLogo = DatatypeConverter.printBase64Binary(company.getLogo());
+        List countries = sfiPpFormAllCountryService.list();
+
+        model.addAttribute("form", sfiPpForm);
+        model.addAttribute("company", company);
+        model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
+        model.addAttribute("user", user);
+        model.addAttribute("countries", countries);
+        model.addAttribute("mode", "edit");
+
+        return "/core/form/index";
+    }
+
+    @RequestMapping(value = {"/admin/form" }, method = RequestMethod.GET)
+    public String adminForm(ModelMap model) {
+        model.addAttribute("title", "form");
+        List companies = companyService.list();
+        model.addAttribute("companies", companies);
+
+        return "/core/form/admin_form";
+    }
 }
