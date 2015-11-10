@@ -18,8 +18,8 @@
     <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_GENERAL', 'ROLE_USER')">
         <a href="list.html" th:href="@{/admin/company/setting}">Company Settings</a>
     </li>
-    <li th:class="(${title} == privacy_policy) ? 'selected' : ''" >
-        <a href="list.html" th:href="@{/policy}">Privacy Policy</a>
+    <li th:class="(${title} == privacy) ? 'selected' : ''" >
+        <a href="list.html" th:href="@{/privacy}">Privacy Policy</a>
     </li>
 </ul>
 
