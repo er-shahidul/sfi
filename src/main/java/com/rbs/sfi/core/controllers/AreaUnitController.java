@@ -1,7 +1,7 @@
 package com.rbs.sfi.core.controllers;
 
 import com.rbs.sfi.core.entities.AreaUnit;
-import com.rbs.sfi.core.services.AreaUnitService;
+import com.rbs.sfi.core.repositories.AreaUnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,12 +19,12 @@ import java.util.List;
 public class AreaUnitController {
 
     @Autowired
-    AreaUnitService areaUnitService;
+    AreaUnitRepository areaUnitRepository;
 
     @RequestMapping("/admin/area/unit/list")
     public ModelAndView areaList(ModelMap model) {
         model.addAttribute("title", "area_unit");
-        List areaUnities = areaUnitService.list();
+        List areaUnities = areaUnitRepository.list();
         return new ModelAndView("core/areaUnit/list", "areaUnities", areaUnities);
     }
 
@@ -44,7 +44,7 @@ public class AreaUnitController {
             return "core/areaUnit/new";
         }
 
-        areaUnitService.save(areaUnit);
+        areaUnitRepository.save(areaUnit);
 
         model.addAttribute("success", "Area Unit " + "" + " has been registered successfully");
         return ("redirect:/admin/area/unit/list");
@@ -53,7 +53,7 @@ public class AreaUnitController {
     @RequestMapping(value = { "/admin/area/unit/edit/{id}" }, method = RequestMethod.GET)
     public String updateForm(@PathVariable int id, ModelMap model) {
         model.addAttribute("title", "area_unit");
-        AreaUnit areaUnit = areaUnitService.findById(id);
+        AreaUnit areaUnit = areaUnitRepository.findById(id);
         model.addAttribute("areaUnit", areaUnit);
         model.addAttribute("edit", true);
 
@@ -67,7 +67,7 @@ public class AreaUnitController {
         if (result.hasErrors()) {
             return "core/areaUnit/edit";
         }
-        areaUnitService.update(areaUnit);
+        areaUnitRepository.update(areaUnit);
 
         return ("redirect:/admin/area/unit/list");
     }

@@ -27,11 +27,18 @@ public class AreaUnitRepositoryImpl extends AbstractRepository<Integer, AreaUnit
         return (AreaUnit)sessionFactory.getCurrentSession().get(AreaUnit.class,id);
     }
 
+    @Transactional
     public void save(AreaUnit areaUnit) {
         persist(areaUnit);
     }
 
+    @Transactional
     public void update(AreaUnit areaUnit) {
-        persist(areaUnit);
+        AreaUnit entity = this.findById(areaUnit.getId());
+        if(entity!=null){
+            entity.setShortCode(areaUnit.getShortCode());
+            entity.setUnitDescription(areaUnit.getUnitDescription());
+            this.save(entity);
+        }
     }
 }
