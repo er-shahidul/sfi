@@ -1,9 +1,15 @@
 <th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
-<div id="settings"
-     data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-trigger="click"
-     data-th-content="${dataContent}" data-trigger="click">
-    <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
-    <label>LOGGED IN AS</label>
-    <p sec:authentication="principal.username"></p>
-</div>
+    <!--data-content="<a href=&quot;http://www.sfi.local/user/profile&quot; class=&quot;settings-popup icon1&quot;><div id='proImg'></div>-->
+    <!--<span>Profile</span></a>-->
+    <!--<a href=&quot;http://www.sfi.local/logout&quot; class=&quot;settings-popup icon2&quot;><div id='logImg'></div>-->
+    <!--<span>Logout</span></a>"-->
+
+    <div id="settings" data-placement="bottom" data-toggle="popover"
+         data-container="body" type="button" data-original-title=""
+
+         data-trigger="click">
+        <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
+        <label>LOGGED IN AS</label>
+        <p sec:authentication="principal.username"></p>
+    </div>
 </th:block>

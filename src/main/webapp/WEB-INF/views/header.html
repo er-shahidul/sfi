@@ -28,37 +28,12 @@
             </li>
         </ul>
 
-
-
             <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
-                <!--<th:block th:include="headerAthorize" th:with="dataContent=@{'<a href=&quot;/sfi/admin/user/profile/'}+${principal.username}+@{'&quot; class=&quot;settings-popup icon1&quot;><div id=&quot;proImg&quot;></div><span>Profile</span></a><a href=&quot;/sfi/logout&quot; class=&quot;settings-popup icon2&quot;><div id=&quot;logImg&quot;></div><span>Logout</span></a>'}">-->
-                <!--</th:block>-->
-                <!--<div id="settings"-->
-                     <!--data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-trigger="click"-->
-                     <!--data-content="'<a href=&quot;/sfi/admin/user/profile/'+${principal.username}+'&quot; class=&quot;settings-popup icon1&quot;><div id='proImg'></div><span>Profile</span></a><a href=&quot;/sfi/logout&quot; class=&quot;settings-popup icon2&quot;><div id='logImg'></div><span>Logout</span></a>'" data-trigger="click">-->
-                    <!--<span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>-->
-                    <!--<label>LOGGED IN AS</label>-->
-                    <!--<p sec:authentication="principal.username"></p>-->
-                <!--</div>-->
-                <!--<div id="settings" data-placement="bottom" data-toggle="popover"-->
-                     <!--data-container="body" type="button" data-original-title=""-->
-                     <!--data-content="<a href=&quot;http://www.sfi.local/user/profile&quot; class=&quot;settings-popup icon1&quot;><div id='proImg'></div>-->
-                     <!--<span>Profile</span></a>-->
-                     <!--<a href=&quot;http://www.sfi.local/logout&quot; class=&quot;settings-popup icon2&quot;><div id='logImg'></div>-->
-                     <!--<span>Logout</span></a>"-->
-                     <!--data-trigger="click">-->
-                    <!--<span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>-->
-                    <!--<label>LOGGED IN AS</label>-->
-                    <!--<p>SFI Admin</p>-->
-                <!--</div>-->
+                <th:block th:include="headerAthorize"></th:block>
             </div>
+
             <div sec:authorize="isAnonymous()">
-                <!--<th:block th:include="headerUnAthorize"></th:block>-->
-                <!--<div id="settings"-->
-                     <!--data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-trigger="click"-->
-                     <!--data-content="<a href=login class=settings-popup icon3><div id='logIn'><span class='glyphicon glyphicon-log-in'></span></div><span>Login</span></a>" style="width:22px;" >-->
-                    <!--<span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>-->
-                <!--</div>-->
+                <th:block th:include="headerUnAthorize"></th:block>
             </div>
 
         </div>
