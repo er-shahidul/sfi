@@ -40,9 +40,6 @@ public class UserController {
     @Autowired
     private MessageSource messageSource;
 
-    @Autowired
-    private VerificationTokenService verificationTokenService;
-
     @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
         model.addAttribute("title", "user");
@@ -129,7 +126,6 @@ public class UserController {
     @RequestMapping(value = { "/admin/user/edit/password/{id}" }, method = RequestMethod.POST)
     public String updatePassword(@Valid User user, BindingResult result, ModelMap model, @PathVariable int id) {
 
-
         if (result.hasErrors()) {
             return "admin/user/editPass";
         }
@@ -183,8 +179,7 @@ public class UserController {
 
     @RequestMapping(value = "/user/verification/{token}", method = RequestMethod.GET)
     public String verificationToken(@PathVariable String token) {
-        int userId = verificationTokenService.findUserIdByToken(token);
-        User user = userService.findByID(userId);
+        User user = userService.findUserIdByToken(token);
 
         return userCheck(user);
     }
@@ -282,11 +277,7 @@ public class UserController {
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
 
-        VerificationToken verificationToken = new VerificationToken();
-
-        verificationToken.setToken(randomUUIDString);
-        verificationToken.setUser(user);
-
+        user.setUserToken(randomUUIDString);
         user.setPassword(randomUUIDString);
         user.setUsername(user.getEmail());
 
@@ -311,7 +302,6 @@ public class UserController {
         }
 
         userService.save(user);
-        verificationTokenService.save(verificationToken);
 
         String recipient = user.getEmail();
         String subject = "Email Verification";

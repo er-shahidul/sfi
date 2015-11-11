@@ -134,9 +134,9 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
 
-                                                                        <select class="form-control">
-                                                                            <option value="" selected="selected"> Select a Company to Assign this User to </option>
-                                                                            <option th:field="*{company.id}" th:each="company : ${companies}" th:value="${company.id}" th:text="${company.name}"></option>
+                                                                        <select  th:field="*{company.id}" class="form-control">
+                                                                            <!--<option value=""> Select a Company to Assign this User to </option>-->
+                                                                            <option th:each="com : ${companies}" th:value="${com.id}" th:text="${com.name}"></option>
                                                                         </select>
                                                                     </div>
                                                                 </div>

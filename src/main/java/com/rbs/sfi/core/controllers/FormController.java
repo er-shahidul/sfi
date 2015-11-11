@@ -4,7 +4,6 @@ import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
-import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.core.entities.SfiPpForm;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
 import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
@@ -16,21 +15,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
-import com.rbs.sfi.core.services.SfiPpFormRegionService;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import javax.xml.bind.DatatypeConverter;
-import java.util.ArrayList;
 import java.util.List;
 
-import static com.rbs.sfi.admin.util.Util.getAsString;
 import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Controller
 public class FormController {

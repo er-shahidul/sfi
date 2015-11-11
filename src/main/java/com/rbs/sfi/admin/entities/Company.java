@@ -32,11 +32,6 @@ public class Company extends Audit
 	@Column(name="primary0_secondary1", nullable=true)
 	private boolean primary0Secondary1;
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name +", areaUnit=" + areaUnit +", logo=" + logo +", logoName=" + logoName +"]";
-	}
-
 	public int getId() {
 		return id;
 	}

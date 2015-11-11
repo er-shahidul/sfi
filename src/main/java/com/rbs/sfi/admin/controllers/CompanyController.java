@@ -1,11 +1,14 @@
 package com.rbs.sfi.admin.controllers;
 
-import com.rbs.sfi.admin.entities.Audit;
+import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.Logo;
 import com.rbs.sfi.admin.listeners.AuditListener;
+import com.rbs.sfi.admin.services.CompanyService;
+import com.rbs.sfi.admin.validator.FileValidator;
 import com.rbs.sfi.core.entities.AreaUnit;
 import com.rbs.sfi.core.repositories.AreaUnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -18,20 +21,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.UUID;
-
-import com.rbs.sfi.admin.entities.Company;
-import com.rbs.sfi.admin.services.CompanyService;
-import com.rbs.sfi.admin.validator.FileValidator;
-import org.springframework.context.MessageSource;
-
+import java.io.*;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class CompanyController

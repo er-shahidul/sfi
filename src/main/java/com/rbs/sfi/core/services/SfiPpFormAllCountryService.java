@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.services;
 
-import com.rbs.sfi.core.entities. SfiPpFormAllCountry;
+import com.rbs.sfi.core.entities.SfiPpFormAllCountry;
 
 import java.util.List;
 
