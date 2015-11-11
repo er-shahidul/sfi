@@ -59,7 +59,7 @@ public class FormController {
         return "redirect:/login";
     }
 
-    @RequestMapping(value = {"/admin/user/form" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/sfiPpForm" }, method = RequestMethod.GET)
     public String form(ModelMap model) {
 
         User user = userService.findByUsername(getCurrentUsername());

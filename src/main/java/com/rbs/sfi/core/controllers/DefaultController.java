@@ -40,18 +40,18 @@ public class DefaultController {
             if (request.isUserInRole("ADMIN") == true) {
                 return ("redirect:/admin/dashboard");
             } else if (request.isUserInRole("USER") == true) {
-                return ("redirect:/dashboard");
+                return ("redirect:/sfiPpForm");
             }
         }
 
-        return ("redirect:/dashboard");
+        return ("/dashboard");
     }
 
-    @RequestMapping(value = {"/dashboard" }, method = RequestMethod.GET)
-    public String withOutLogIn() {
-
-        return "dashboard";
-    }
+//    @RequestMapping(value = {"/dashboard" }, method = RequestMethod.GET)
+//    public String withOutLogIn() {
+//
+//        return "dashboard";
+//    }
 
     @RequestMapping(value = {"/privacy" }, method = RequestMethod.GET)
     public String privacy(ModelMap model) {
