@@ -60,7 +60,7 @@ public class FormController {
             if (request.isUserInRole("ADMIN") == true) {
                 return ("redirect:/admin/form");
             } else if (request.isUserInRole("USER") == true) {
-                return ("redirect:/admin/user/form");
+                return ("redirect:/sfiPpForm");
             } else {
                 return ("redirect:/dashboard");
             }
@@ -69,7 +69,7 @@ public class FormController {
         return "redirect:/login";
     }
 
-    @RequestMapping(value = {"/admin/user/form" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/sfiPpForm" }, method = RequestMethod.GET)
     public String form(ModelMap model) {
 
         User user = userService.findByUsername(getCurrentUsername());
