@@ -50,7 +50,7 @@ public class FormController {
             if (request.isUserInRole("ADMIN") == true) {
                 return ("redirect:/admin/form");
             } else if (request.isUserInRole("USER") == true) {
-                return ("redirect:/admin/user/form");
+                return ("redirect:/sfiPpForm");
             } else {
                 return ("redirect:/dashboard");
             }
