@@ -76,6 +76,23 @@ public class UserServiceImpl implements UserService{
         }
     }
 
+    public void updateName(User user) {
+        User entity = userRepository.findByID(user.getId());
+        if(entity!=null){
+            entity.setFirstName(user.getFirstName());
+            entity.setLastName(user.getLastName());
+            userRepository.update(entity);
+        }
+    }
+
+    public void updateEmail(User user) {
+        User entity = userRepository.findByID(user.getId());
+        if(entity!=null){
+            entity.setEmail(user.getEmail());
+            userRepository.update(entity);
+        }
+    }
+
     public void updatePassword(User user) {
         User entity = userRepository.findByID(user.getId());
         if(entity!=null){

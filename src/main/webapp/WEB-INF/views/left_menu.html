@@ -1,7 +1,7 @@
 <th:block xmlns:th="http://www.thymeleaf.org">
 <ul>
     <li th:class="(${title} == profile) ? 'selected' : ''" >
-        <a href="list.html" th:href="@{/user/profile}">My Profile</a>
+        <a href="list.html" th:href="@{/admin/user/profile}">My Profile</a>
     </li>
     <li th:class="(${title} == user) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
         <a href="list.html" th:href="@{/admin/user/list}">Manage Users</a>

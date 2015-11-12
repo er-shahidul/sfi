@@ -15,6 +15,8 @@ public interface UserService
     User findByEmail(String email);
     User findByUsernameOrEmail(String string);
     void updateUser(User user);
+    void updateName(User user);
+    void updateEmail(User user);
     void updatePassword(User user);
     void userActive(User user);
     boolean isUserUsernameUnique(Integer id, String username);

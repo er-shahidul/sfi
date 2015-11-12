@@ -10,6 +10,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -39,6 +40,9 @@ public class UserController {
 
     @Autowired
     private MessageSource messageSource;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
@@ -96,11 +100,11 @@ public class UserController {
         return new ModelAndView("admin/user/details","user", user);
     }
 
-    @RequestMapping(value = { "/admin/user/profile/{username}" })
-    public ModelAndView profile(@PathVariable String username, ModelMap model) {
-        User user  = userService.findByUsername(username);
+    @RequestMapping(value = { "/admin/user/profile" })
+    public ModelAndView profile(ModelMap model) {
+        User user = userService.findByUsername(getCurrentUsername());
         model.addAttribute("user", user);
-        model.addAttribute("title", "user");
+        model.addAttribute("title", "profile");
 
         return new ModelAndView("admin/user/profile","user", user);
     }
@@ -161,6 +165,49 @@ public class UserController {
 
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/admin/user/list");
+    }
+
+    @RequestMapping(value = { "/admin/user/name/edit/{id}" }, method = RequestMethod.POST)
+    public String updateName(@Valid User user, BindingResult result, ModelMap model, @PathVariable int id) {
+
+        if (result.hasErrors()) {
+            return "redirect:/admin/user/profile";
+        }
+        userService.updateName(user);
+
+        model.addAttribute("success", "User " + "" + " updated successfully");
+        return ("redirect:/admin/user/profile");
+    }
+
+    @RequestMapping(value = { "/admin/user/email/edit/{id}" }, method = RequestMethod.POST)
+    public String updateEmail(@Valid User user, BindingResult result, ModelMap model, @PathVariable int id) {
+
+        if (result.hasErrors()) {
+            return "redirect:/admin/user/profile";
+        }
+        userService.updateEmail(user);
+
+        model.addAttribute("success", "User " + "" + " updated successfully");
+        return ("redirect:/admin/user/profile");
+    }
+
+    @RequestMapping(value = { "/admin/user/password/edit/{id}" }, method = RequestMethod.POST)
+    public String updateMyPassword(@Valid User user, BindingResult result, ModelMap model, @PathVariable int id, @RequestParam("old_password") String old_password) {
+
+        User currentUser = userService.findByUsername(getCurrentUsername());
+
+        if(!passwordEncoder.matches(old_password, currentUser.getPassword())){
+            model.addAttribute("error: Your password not match");
+            return "redirect:/admin/user/profile";
+        }
+
+        if (result.hasErrors()) {
+            return "redirect:/admin/user/profile";
+        }
+        userService.updatePassword(user);
+
+        model.addAttribute("success", "User " + "" + " updated successfully");
+        return ("redirect:/admin/user/profile");
     }
 
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.GET)

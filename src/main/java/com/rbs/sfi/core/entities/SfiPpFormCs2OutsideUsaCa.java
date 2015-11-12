@@ -14,7 +14,7 @@ public class SfiPpFormCs2OutsideUsaCa
 	@JoinColumn(name="form_id", referencedColumnName="id", nullable=true)
 	private SfiPpForm sfiPpForm;
 
-	@ManyToOne(targetEntity = SfiPpForm.class, optional=true)
+	@ManyToOne(targetEntity = SfiPpFormOtherCountry.class, optional=true)
 	@JoinColumn(name="cs2_outsideUSandCA_countryID", referencedColumnName="id", nullable=true)
 	private SfiPpFormOtherCountry country;
 
@@ -36,14 +36,6 @@ public class SfiPpFormCs2OutsideUsaCa
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public SfiPpFormOtherCountry getCountry() {
-		return country;
-	}
-
-	public void setCountry(SfiPpFormOtherCountry country) {
-		this.country = country;
 	}
 
 	public SfiPpForm getSfiPpForm() {
@@ -84,5 +76,13 @@ public class SfiPpFormCs2OutsideUsaCa
 
 	public void setCs2StandardTypeOther(String cs2StandardTypeOther) {
 		this.cs2StandardTypeOther = cs2StandardTypeOther;
+	}
+
+	public SfiPpFormOtherCountry getCountry() {
+		return country;
+	}
+
+	public void setCountry(SfiPpFormOtherCountry country) {
+		this.country = country;
 	}
 }

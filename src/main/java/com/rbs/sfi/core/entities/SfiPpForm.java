@@ -198,8 +198,8 @@ public class SfiPpForm
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<String> cs2CaPrivateRecreationCategories = new ArrayList<String>();
 
-	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm", fetch = FetchType.EAGER)
-	private Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries = new HashSet<SfiPpFormCs2OutsideUsaCa>();
+	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	private Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries;
 
 
 
@@ -584,14 +584,6 @@ public class SfiPpForm
 		this.cs2CaPrivateRecreationCategories = cs2CaPrivateRecreationCategories;
 	}
 
-	public Set<SfiPpFormCs2OutsideUsaCa> getCs2OutsideCountries() {
-		return cs2OutsideCountries;
-	}
-
-	public void setCs2OutsideCountries(Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries) {
-		this.cs2OutsideCountries = cs2OutsideCountries;
-	}
-
 	public int getCs2UsaPrivateForestlandOwnMng() {
 		return cs2UsaPrivateForestlandOwnMng;
 	}
@@ -654,5 +646,13 @@ public class SfiPpForm
 
 	public void setCs2CaPrivateForestlandOwnMngOther(String cs2CaPrivateForestlandOwnMngOther) {
 		this.cs2CaPrivateForestlandOwnMngOther = cs2CaPrivateForestlandOwnMngOther;
+	}
+
+	public Set<SfiPpFormCs2OutsideUsaCa> getCs2OutsideCountries() {
+		return cs2OutsideCountries;
+	}
+
+	public void setCs2OutsideCountries(Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries) {
+		this.cs2OutsideCountries = cs2OutsideCountries;
 	}
 }
