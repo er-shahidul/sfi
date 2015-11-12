@@ -22,17 +22,17 @@ public class SfiPpForm
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-	@ManyToOne(targetEntity = com.rbs.sfi.admin.entities.User.class, optional=true)
+	@ManyToOne(targetEntity = SfiPpFormStatus.class, optional=true)
 	@JoinColumn(name="status_id", referencedColumnName="id", nullable=true)
 	private SfiPpFormStatus status;
 
 	@JsonIgnore
-	@OneToOne(targetEntity = com.rbs.sfi.admin.entities.Company.class, optional=false)
+	@OneToOne(targetEntity = Company.class, optional=false)
 	@JoinColumn(name="company_id", referencedColumnName="id", nullable=true)
 	private Company company;
 
 	@JsonIgnore
-	@ManyToOne(targetEntity = com.rbs.sfi.admin.entities.User.class, optional=true)
+	@ManyToOne(targetEntity = User.class, optional=true)
 	@JoinColumn(name="created_by", referencedColumnName="id", nullable=true)
 	private User createdBy;
 

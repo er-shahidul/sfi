@@ -1,5 +1,7 @@
 package com.rbs.sfi.core.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +12,7 @@ public class SfiPpFormCs2OutsideUsaCa
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+	@JsonIgnore
 	@ManyToOne(targetEntity = SfiPpForm.class, optional=true)
 	@JoinColumn(name="form_id", referencedColumnName="id", nullable=true)
 	private SfiPpForm sfiPpForm;
