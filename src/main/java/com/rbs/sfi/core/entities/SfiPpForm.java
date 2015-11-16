@@ -198,7 +198,12 @@ public class SfiPpForm
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<String> cs2CaPrivateRecreationCategories = new ArrayList<String>();
 
-	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+//	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+//	private Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries;
+
+	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinTable(name="join_sfi_pp_forms_sfi_pp_form_cs2_outside_us_and_ca",
+			joinColumns=@JoinColumn(name="sfi_pp_forms_id"), inverseJoinColumns=@JoinColumn(name="sfi_pp_form_cs2_outside_us_and_ca_id"))
 	private Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries;
 
 

@@ -46,7 +46,7 @@ public class UserController {
 
     @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
-        model.addAttribute("title", "user");
+        model.addAttribute("title", "home");
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
 
         return "admin";

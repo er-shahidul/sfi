@@ -12,10 +12,10 @@ public class SfiPpFormCs2OutsideUsaCa
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-	@JsonIgnore
-	@ManyToOne(targetEntity = SfiPpForm.class, optional=true)
-	@JoinColumn(name="form_id", referencedColumnName="id", nullable=true)
-	private SfiPpForm sfiPpForm;
+//	@JsonIgnore
+//	@ManyToOne(targetEntity = SfiPpForm.class, optional=true)
+//	@JoinColumn(name="form_id", referencedColumnName="id", nullable=true)
+//	private SfiPpForm sfiPpForm;
 
 	@ManyToOne(targetEntity = SfiPpFormOtherCountry.class, optional=true)
 	@JoinColumn(name="cs2_outsideUSandCA_countryID", referencedColumnName="id", nullable=true)
@@ -41,13 +41,13 @@ public class SfiPpFormCs2OutsideUsaCa
 		this.id = id;
 	}
 
-	public SfiPpForm getSfiPpForm() {
-		return sfiPpForm;
-	}
-
-	public void setSfiPpForm(SfiPpForm sfiPpForm) {
-		this.sfiPpForm = sfiPpForm;
-	}
+//	public SfiPpForm getSfiPpForm() {
+//		return sfiPpForm;
+//	}
+//
+//	public void setSfiPpForm(SfiPpForm sfiPpForm) {
+//		this.sfiPpForm = sfiPpForm;
+//	}
 
 	public float getCs2TotalArea() {
 		return cs2TotalArea;

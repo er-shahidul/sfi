@@ -31,8 +31,8 @@ public class DefaultController {
     UserService userService;
 
     @RequestMapping(value = {"/" }, method = RequestMethod.GET)
-    public String home( SecurityContextHolderAwareRequestWrapper request) {
-
+    public String home( SecurityContextHolderAwareRequestWrapper request, ModelMap model) {
+        model.addAttribute("title", "home");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (!(auth instanceof AnonymousAuthenticationToken)) {
