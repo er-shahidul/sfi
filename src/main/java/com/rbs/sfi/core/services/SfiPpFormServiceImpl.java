@@ -4,7 +4,7 @@ import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.core.entities.*;
 import com.rbs.sfi.core.repositories.SfiPpFormAllCountryRepository;
-import com.rbs.sfi.core.repositories.SfiPpFormCs3Repository;
+//import com.rbs.sfi.core.repositories.SfiPpFormCs3Repository;
 import com.rbs.sfi.core.repositories.SfiPpFormOtherCountryRepository;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,8 @@ public class SfiPpFormServiceImpl implements SfiPpFormService
     @Autowired
     SfiPpFormRepository sfiPpFormRepository;
 
-    @Autowired
-    SfiPpFormCs3Repository sfiPpFormCs3Repository;
+//    @Autowired
+//    SfiPpFormCs3Repository sfiPpFormCs3Repository;
 
     @Autowired
     SfiPpFormAllCountryRepository sfiPpFormAllCountryRepository;
@@ -112,7 +112,7 @@ public class SfiPpFormServiceImpl implements SfiPpFormService
         if(entity!=null){
             Util.merge(entity, sfiPpForm);
 
-            rePopulateCs3Projects(entity);
+//            rePopulateCs3Projects(entity);
 
             sfiPpFormRepository.save(entity);
         }
@@ -120,17 +120,17 @@ public class SfiPpFormServiceImpl implements SfiPpFormService
         return entity;
     }
 
-    private void rePopulateCs3Projects(SfiPpForm entity) {
-        Set<SfiPpFormCs3> sfiPpFormCs3 = new HashSet<SfiPpFormCs3>();
-
-        for (SfiPpFormCs3 sfiPpFormCs3Loop : entity.getCs3Projects()) {
-            sfiPpFormCs3.add(sfiPpFormCs3Repository.findById(sfiPpFormCs3Loop.getId()));
-//            rePopulateCs3ProjectLocations(entity);
-//            rePopulateCs3SupportDocs(entity);
-        }
-
-        entity.setCs3Projects(sfiPpFormCs3);
-    }
+//    private void rePopulateCs3Projects(SfiPpForm entity) {
+//        Set<SfiPpFormCs3> sfiPpFormCs3 = new HashSet<SfiPpFormCs3>();
+//
+//        for (SfiPpFormCs3 sfiPpFormCs3Loop : entity.getCs3Projects()) {
+//            sfiPpFormCs3.add(sfiPpFormCs3Repository.findById(sfiPpFormCs3Loop.getId()));
+////            rePopulateCs3ProjectLocations(entity);
+////            rePopulateCs3SupportDocs(entity);
+//        }
+//
+//        entity.setCs3Projects(sfiPpFormCs3);
+//    }
 
 //    private void rePopulateCs3ProjectLocations(SfiPpFormRegion entity) {
 //        Set<SfiPpFormOtherCountry> cs1SellsCountries = new HashSet<SfiPpFormOtherCountry>();
