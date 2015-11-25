@@ -198,15 +198,8 @@ public class SfiPpForm
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<String> cs2CaPrivateRecreationCategories = new ArrayList<String>();
 
-//	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm", fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-//	private Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries;
-
-	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinTable(name="join_sfi_pp_forms_sfi_pp_form_cs2_outside_us_and_ca",
-			joinColumns=@JoinColumn(name="sfi_pp_forms_id"), inverseJoinColumns=@JoinColumn(name="sfi_pp_form_cs2_outside_us_and_ca_id"))
-	private Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries;
-
-
+//	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+//	private List<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries;
 
 	/*********************** Section CS3 ********************************************/
 
@@ -660,27 +653,11 @@ public class SfiPpForm
 		this.cs2CaPrivateForestlandOwnMngOther = cs2CaPrivateForestlandOwnMngOther;
 	}
 
-	public Set<SfiPpFormCs2OutsideUsaCa> getCs2OutsideCountries() {
-		return cs2OutsideCountries;
-	}
-
-	public void setCs2OutsideCountries(Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries) {
-		this.cs2OutsideCountries = cs2OutsideCountries;
-	}
-//
-//	public boolean isCs3IsInPartnership() {
-//		return cs3IsInPartnership;
+//	public List<SfiPpFormCs2OutsideUsaCa> getCs2OutsideCountries() {
+//		return cs2OutsideCountries;
 //	}
 //
-//	public void setCs3IsInPartnership(boolean cs3IsInPartnership) {
-//		this.cs3IsInPartnership = cs3IsInPartnership;
-//	}
-
-//	public Set<SfiPpFormCs3> getCs3Projects() {
-//		return cs3Projects;
-//	}
-//
-//	public void setCs3Projects(Set<SfiPpFormCs3> cs3Projects) {
-//		this.cs3Projects = cs3Projects;
+//	public void setCs2OutsideCountries(List<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries) {
+//		this.cs2OutsideCountries = cs2OutsideCountries;
 //	}
 }
