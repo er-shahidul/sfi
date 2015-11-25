@@ -1,7 +1,5 @@
 package com.rbs.sfi.core.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,10 +10,9 @@ public class SfiPpFormCs2OutsideUsaCa
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-//	@JsonIgnore
-//	@ManyToOne(targetEntity = SfiPpForm.class, optional=true)
-//	@JoinColumn(name="form_id", referencedColumnName="id", nullable=true)
-//	private SfiPpForm sfiPpForm;
+	@ManyToOne(targetEntity = Cs2.class, optional=true)
+	@JoinColumn(name="form_id", nullable=true)
+	private Cs2 sfiPpForm;
 
 	@ManyToOne(targetEntity = SfiPpFormOtherCountry.class, optional=true)
 	@JoinColumn(name="cs2_outsideUSandCA_countryID", referencedColumnName="id", nullable=true)
@@ -40,14 +37,6 @@ public class SfiPpFormCs2OutsideUsaCa
 	public void setId(int id) {
 		this.id = id;
 	}
-
-//	public SfiPpForm getSfiPpForm() {
-//		return sfiPpForm;
-//	}
-//
-//	public void setSfiPpForm(SfiPpForm sfiPpForm) {
-//		this.sfiPpForm = sfiPpForm;
-//	}
 
 	public float getCs2TotalArea() {
 		return cs2TotalArea;
@@ -87,5 +76,13 @@ public class SfiPpFormCs2OutsideUsaCa
 
 	public void setCountry(SfiPpFormOtherCountry country) {
 		this.country = country;
+	}
+
+	public Cs2 getSfiPpForm() {
+		return sfiPpForm;
+	}
+
+	public void setSfiPpForm(Cs2 sfiPpForm) {
+		this.sfiPpForm = sfiPpForm;
 	}
 }

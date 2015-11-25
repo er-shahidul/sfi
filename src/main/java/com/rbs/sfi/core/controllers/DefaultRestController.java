@@ -4,7 +4,6 @@ import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.core.entities.SfiPpForm;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
-import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
 import com.rbs.sfi.core.services.SfiPpFormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -21,9 +20,6 @@ public class DefaultRestController {
 
     @Autowired
     SfiPpFormService sfiPpFormService;
-
-    @Autowired
-    SfiPpFormAllCountryService sfiPpFormAllCountryService;
 
     @Autowired
     CompanyService companyService;

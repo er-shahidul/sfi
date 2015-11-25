@@ -8,13 +8,12 @@ public class SfiPpFormRegion
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="regionID", nullable=false)
 	private int id;
 
 	@Column(name="regionName", nullable=true)
 	private String name;
 
-	@ManyToOne(targetEntity = com.rbs.sfi.core.entities.SfiPpFormAllCountry.class, optional=false)
+	@ManyToOne(targetEntity = SfiPpFormAllCountry.class, optional=false)
 	@JoinColumn(name="countryID", referencedColumnName="id", nullable=true)
 	private SfiPpFormAllCountry country;
 
