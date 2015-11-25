@@ -1,4 +1,4 @@
-package com.rbs.sfi.core.entities;
+package com.rbs.sfi.admin.entities;
 
 import javax.persistence.*;
 

@@ -1,7 +1,5 @@
 package com.rbs.sfi.admin.entities;
 
-import com.rbs.sfi.core.entities.AreaUnit;
-
 import javax.persistence.*;
 
 @Entity
@@ -15,7 +13,7 @@ public class Company extends Audit
 	@Column(name="name", unique=true, nullable=true)
 	private String name;
 
-	@ManyToOne(targetEntity = com.rbs.sfi.core.entities.AreaUnit.class, optional=true)
+	@ManyToOne(targetEntity = AreaUnit.class, optional=true)
 	@JoinColumn(name="area_unit_id", referencedColumnName="id", nullable=true)
 	private AreaUnit areaUnit;
 

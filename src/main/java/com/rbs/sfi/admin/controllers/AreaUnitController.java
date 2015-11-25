@@ -1,7 +1,7 @@
-package com.rbs.sfi.core.controllers;
+package com.rbs.sfi.admin.controllers;
 
-import com.rbs.sfi.core.entities.AreaUnit;
-import com.rbs.sfi.core.repositories.AreaUnitRepository;
+import com.rbs.sfi.admin.entities.AreaUnit;
+import com.rbs.sfi.admin.repositories.AreaUnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

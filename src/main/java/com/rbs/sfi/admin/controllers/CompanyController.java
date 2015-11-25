@@ -5,8 +5,8 @@ import com.rbs.sfi.admin.entities.Logo;
 import com.rbs.sfi.admin.listeners.AuditListener;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.validator.FileValidator;
-import com.rbs.sfi.core.entities.AreaUnit;
-import com.rbs.sfi.core.repositories.AreaUnitRepository;
+import com.rbs.sfi.admin.entities.AreaUnit;
+import com.rbs.sfi.admin.repositories.AreaUnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
@@ -29,7 +29,7 @@ import java.util.UUID;
 public class CompanyController
 {
     @Autowired
-    AreaUnitRepository areaUnitService;
+    AreaUnitRepository areaUnitRepository;
 
     @Autowired
     CompanyService companyService;
@@ -53,7 +53,7 @@ public class CompanyController
         model.addAttribute("title", "company_setting");
         model.addAttribute("company", company);
 
-        List<AreaUnit> areaUnities = areaUnitService.list();
+        List<AreaUnit> areaUnities = areaUnitRepository.list();
         model.addAttribute("areaUnities", areaUnities);
 
         model.addAttribute("edit", true);
@@ -119,7 +119,7 @@ public class CompanyController
         model.addAttribute("title", "company_setting");
         model.addAttribute("company", company);
 
-        List<AreaUnit> areaUnities = areaUnitService.list();
+        List<AreaUnit> areaUnities = areaUnitRepository.list();
         model.addAttribute("areaUnities", areaUnities);
 
         return "admin/company/new";
