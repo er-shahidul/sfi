@@ -15,46 +15,46 @@ public class Cs1
 	@Column(name="cs1_companyWebsite", nullable=true)
 	private String cs1CompanyWebsite;
 
-	@Column(name="cs1_numberEmployees_USA", nullable=true)
+	@Column(name="cs1_numberEmployees_USA", nullable = false, columnDefinition = "int default 0")
 	private int cs1NumberEmployeesUSA;
 
-	@Column(name="cs1_numberEmployees_CA", nullable=true)
+	@Column(name="cs1_numberEmployees_CA", nullable = false, columnDefinition = "int default 0")
 	private int cs1NumberEmployeesCA;
 
-	@Column(name="cs1_numberEmployees_Other", nullable=true)
+	@Column(name="cs1_numberEmployees_Other", nullable = false, columnDefinition = "int default 0")
 	private int cs1NumberEmployeesOther;
 
 	@Column(name="cs1_companyDescr", nullable=true)
 	private String cs1CompanyDesc;
 
-	@Column(name="cs1_ownsMngLands", nullable=true)
+	@Column(name="cs1_ownsMngLands", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1OwnsMngLands;
 
-	@Column(name="cs1_ownsMngLands_inUSA", nullable=true)
+	@Column(name="cs1_ownsMngLands_inUSA", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1OwnsMngLandsInUSA;
 
-	@Column(name="cs1_ownsMngLands_inCA", nullable=true)
+	@Column(name="cs1_ownsMngLands_inCA", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1OwnsMngLandsInCA;
 
-	@Column(name="cs1_ownsMngLands_inOther", nullable=true)
+	@Column(name="cs1_ownsMngLands_inOther", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1OwnsMngLandsInOther;
 
-	@Column(name="cs1_hasPrimaryOperMillsYards", nullable=true)
+	@Column(name="cs1_hasPrimaryOperMillsYards", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1HasPrimaryOperMillsYards;
-	@Column(name="cs1_hasPrimaryOperMillsYards_inUSA", nullable=true)
+	@Column(name="cs1_hasPrimaryOperMillsYards_inUSA", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1HasPrimaryOperMillsYardsInUSA;
-	@Column(name="cs1_hasPrimaryOperMillsYards_inCA", nullable=true)
+	@Column(name="cs1_hasPrimaryOperMillsYards_inCA", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1HasPrimaryOperMillsYardsInCA;
-	@Column(name="cs1_hasPrimaryOperMillsYards_inOther", nullable=true)
+	@Column(name="cs1_hasPrimaryOperMillsYards_inOther", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1HasPrimaryOperMillsYardsInOther;
 
-	@Column(name="cs1_hasSecondaryOperMillsYards", nullable=true)
+	@Column(name="cs1_hasSecondaryOperMillsYards", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1HasSecondaryOperMillsYards;
-	@Column(name="cs1_hasSecondaryOperMillsYards_inUSA", nullable=true)
+	@Column(name="cs1_hasSecondaryOperMillsYards_inUSA", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1HasSecondaryOperMillsYardsInUSA;
-	@Column(name="cs1_hasSecondaryOperMillsYards_inCA", nullable=true)
+	@Column(name="cs1_hasSecondaryOperMillsYards_inCA", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1HasSecondaryOperMillsYardsInCA;
-	@Column(name="cs1_hasSecondaryOperMillsYards_inOther", nullable=true)
+	@Column(name="cs1_hasSecondaryOperMillsYards_inOther", nullable = false, columnDefinition = "boolean default false")
 	private boolean cs1HasSecondaryOperMillsYardsInOther;
 
 	@ManyToMany(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
