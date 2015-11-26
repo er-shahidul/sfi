@@ -4,7 +4,9 @@ import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
+import com.rbs.sfi.core.entities.Cs1;
 import com.rbs.sfi.core.entities.SfiPpForm;
+import com.rbs.sfi.core.repositories.Cs1Repository;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
 import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
 import com.rbs.sfi.core.services.SfiPpFormService;
@@ -39,6 +41,9 @@ public class FormController {
 
     @Autowired
     SfiPpFormRepository sfiPpFormRepository;
+
+    @Autowired
+    Cs1Repository cs1Repository;
 
     @RequestMapping(value = {"/form" }, method = RequestMethod.GET)
     public String homePage(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
@@ -77,6 +82,8 @@ public class FormController {
         List countries = sfiPpFormAllCountryService.list();
 
         model.addAttribute("form", sfiPpForm);
+        Cs1 cs1 = cs1Repository.findById(sfiPpForm.getId());
+        model.addAttribute("cs1", cs1);
         model.addAttribute("company", company);
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("user", user);

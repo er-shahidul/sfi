@@ -102,19 +102,19 @@ public class Cs6
 		this.cs6ToAssistObj8 = cs6ToAssistObj8;
 	}
 
-//	public List<SfiPpFormCs6UsCanada> getCs6UsCanada() {
-//		return cs6UsCanada;
-//	}
-//
-//	public void setCs6UsCanada(List<SfiPpFormCs6UsCanada> cs6UsCanada) {
-//		this.cs6UsCanada = cs6UsCanada;
-//	}
+	public List<SfiPpFormCs6UsCanada> getCs6UsCanada() {
+		return cs6UsCanada;
+	}
 
-//	public List<SfiPpFormCs6Other> getCs6UsOthers() {
-//		return cs6UsOthers;
-//	}
-//
-//	public void setCs6UsOthers(List<SfiPpFormCs6Other> cs6UsOthers) {
-//		this.cs6UsOthers = cs6UsOthers;
-//	}
+	public void setCs6UsCanada(List<SfiPpFormCs6UsCanada> cs6UsCanada) {
+		this.cs6UsCanada = cs6UsCanada;
+	}
+
+	public List<SfiPpFormCs6Other> getCs6UsOthers() {
+		return cs6UsOthers;
+	}
+
+	public void setCs6UsOthers(List<SfiPpFormCs6Other> cs6UsOthers) {
+		this.cs6UsOthers = cs6UsOthers;
+	}
 }
