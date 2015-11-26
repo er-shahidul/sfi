@@ -238,10 +238,18 @@
 
     <script th:inline="javascript">
         var formData  = [[${form}]];
+
+        var form = {
+            cs1 : [[${cs1}]],
+            cs2 : [[${cs2}]]
+
+        };
+
+
         var company = [[${company}]];
         var countries = [[${countries}]];
 
-        var form = sfiV2.prepareForm(formData);
+        //var form = sfiV2.prepareForm(formData);
 
     </script>
 

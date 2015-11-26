@@ -13,325 +13,323 @@ public class Cs2
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="cs2_usaPrivate_totalOwnMng", nullable=true)
-	private float cs2UsaPrivateTotalAreaOwnOrManage;
+	private Float usaPrivateTotalAreaOwnOrManage;
 	@Column(name="cs2_usaPrivate_forestlandOwnMng", nullable=true)
-	private int cs2UsaPrivateForestlandOwnMng;
+	private Integer usaPrivateForestlandOwnMng;
 	@Column(name="cs2_usaPrivate_forestlandOwnMngOther", nullable=true)
-	private String cs2UsaPrivateForestlandOwnMngOther;
+	private String usaPrivateForestlandOwnMngOther;
 	@Column(name="cs2_usaPrivate_totalCertified", nullable=true)
-	private float cs2UsaPrivateTotalAreaCertified;
+	private Float usaPrivateTotalAreaCertified;
 	@Column(name="cs2_usaPrivate_area", nullable=true)
-	private float cs2UsaPrivateAreaManagedForPublic;
+	private Float usaPrivateAreaManagedForPublic;
 	@Column(name="cs2_usaPrivate_areaCertified", nullable=true)
-	private float cs2UsaPrivateAreaCertifiedForPublic;
+	private Float usaPrivateAreaCertifiedForPublic;
 
 	@Column(name="cs2_usaPrivate_categories", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs2UsaPrivateRecreationCategories = new ArrayList<String>();
+	private List<String> usaPrivateRecreationCategories;
 
 	@Column(name="cs2_usaPublic_totalOwnMng", nullable=true)
-	private float cs2UsaPublicTotalAreaOwnOrManage;
+	private Float usaPublicTotalAreaOwnOrManage;
 	@Column(name="cs2_usaPublic_forestlandOwnMng", nullable=true)
-	private int cs2UsaPublicForestlandOwnMng;
+	private Integer usaPublicForestlandOwnMng;
 	@Column(name="cs2_usaPublic_forestlandOwnMngOther", nullable=true)
-	private String cs2UsaPublicForestlandOwnMngOther;
+	private String usaPublicForestlandOwnMngOther;
 	@Column(name="cs2_usaPublic_totalCertified", nullable=true)
-	private float cs2UsaPublicTotalAreaCertified;
+	private Float usaPublicTotalAreaCertified;
 	@Column(name="cs2_usaPublic_area", nullable=true)
-	private float cs2UsaPublicAreaManagedForPublic;
+	private Float usaPublicAreaManagedForPublic;
 	@Column(name="cs2_usaPublic_areaCertified", nullable=true)
-	private float cs2UsaPublicAreaCertifiedForPublic;
+	private Float usaPublicAreaCertifiedForPublic;
 
 	@Column(name="cs2_usaPublic_categories", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs2UsaPublicRecreationCategories = new ArrayList<String>();
+	private List<String> usaPublicRecreationCategories;
 
 	@Column(name="cs2_caCrown_totalOwnMng", nullable=true)
-	private float cs2CaCrownTotalAreaOwnOrManage;
+	private Float caCrownTotalAreaOwnOrManage;
 	@Column(name="cs2_caCrown_forestlandOwnMng", nullable=true)
-	private int cs2CaCrownForestlandOwnMng;
+	private Integer caCrownForestlandOwnMng;
 	@Column(name="cs2_caCrown_forestlandOwnMngOther", nullable=true)
-	private String cs2CaCrownForestlandOwnMngOther;
+	private String caCrownForestlandOwnMngOther;
 
 	@Column(name="cs2_caCrown_totalCertified", nullable=true)
-	private float cs2CaCrownTotalAreaCertified;
+	private Float caCrownTotalAreaCertified;
 	@Column(name="cs2_caCrown_area", nullable=true)
-	private float cs2CaCrownAreaManagedForPublic;
+	private Float caCrownAreaManagedForPublic;
 	@Column(name="cs2_caCrown_areaCertified", nullable=true)
-	private float cs2CaCrownAreaCertifiedForPublic;
+	private Float caCrownAreaCertifiedForPublic;
 
 	@Column(name="cs2_caCrown_categories", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs2CaCrownRecreationCategories = new ArrayList<String>();
+	private List<String> caCrownRecreationCategories;
 
 	@Column(name="cs2_caPrivate_totalOwnMng", nullable=true)
-	private float cs2CaPrivateTotalAreaOwnOrManage;
+	private Float caPrivateTotalAreaOwnOrManage;
 
 	@Column(name="cs2_caPrivate_forestlandOwnMng", nullable=true)
-	private int cs2CaPrivateForestlandOwnMng;
+	private Integer caPrivateForestlandOwnMng;
 	@Column(name="cs2_caPrivate_forestlandOwnMngOther", nullable=true)
-	private String cs2CaPrivateForestlandOwnMngOther;
+	private String caPrivateForestlandOwnMngOther;
 
 	@Column(name="cs2_caPrivate_totalCertified", nullable=true)
-	private float cs2CaPrivateTotalAreaCertified;
+	private Float caPrivateTotalAreaCertified;
 	@Column(name="cs2_caPrivate_area", nullable=true)
-	private float cs2CaPrivateAreaManagedForPublic;
+	private Float caPrivateAreaManagedForPublic;
 	@Column(name="cs2_caPrivate_areaCertified", nullable=true)
-	private float cs2CaPrivateAreaCertifiedForPublic;
+	private Float caPrivateAreaCertifiedForPublic;
 
 	@Column(name="cs2_caPrivate_categories", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs2CaPrivateRecreationCategories = new ArrayList<String>();
+	private List<String> caPrivateRecreationCategories;
 
 	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	private List<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries;
+	private List<SfiPpFormCs2OutsideUsaCa> outsideCountries;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-
-	public List<String> getCs2UsaPrivateRecreationCategories() {
-		return cs2UsaPrivateRecreationCategories;
+	public Float getUsaPrivateTotalAreaOwnOrManage() {
+		return usaPrivateTotalAreaOwnOrManage;
 	}
 
-	public void setCs2UsaPrivateRecreationCategories(List<String> cs2UsaPrivateRecreationCategories) {
-		this.cs2UsaPrivateRecreationCategories = cs2UsaPrivateRecreationCategories;
+	public void setUsaPrivateTotalAreaOwnOrManage(Float usaPrivateTotalAreaOwnOrManage) {
+		this.usaPrivateTotalAreaOwnOrManage = usaPrivateTotalAreaOwnOrManage;
 	}
 
-
-	public float getCs2UsaPrivateTotalAreaOwnOrManage() {
-		return cs2UsaPrivateTotalAreaOwnOrManage;
+	public Integer getUsaPrivateForestlandOwnMng() {
+		return usaPrivateForestlandOwnMng;
 	}
 
-	public void setCs2UsaPrivateTotalAreaOwnOrManage(float cs2UsaPrivateTotalAreaOwnOrManage) {
-		this.cs2UsaPrivateTotalAreaOwnOrManage = cs2UsaPrivateTotalAreaOwnOrManage;
+	public void setUsaPrivateForestlandOwnMng(Integer usaPrivateForestlandOwnMng) {
+		this.usaPrivateForestlandOwnMng = usaPrivateForestlandOwnMng;
 	}
 
-	public float getCs2UsaPrivateTotalAreaCertified() {
-		return cs2UsaPrivateTotalAreaCertified;
+	public String getUsaPrivateForestlandOwnMngOther() {
+		return usaPrivateForestlandOwnMngOther;
 	}
 
-	public void setCs2UsaPrivateTotalAreaCertified(float cs2UsaPrivateTotalAreaCertified) {
-		this.cs2UsaPrivateTotalAreaCertified = cs2UsaPrivateTotalAreaCertified;
+	public void setUsaPrivateForestlandOwnMngOther(String usaPrivateForestlandOwnMngOther) {
+		this.usaPrivateForestlandOwnMngOther = usaPrivateForestlandOwnMngOther;
 	}
 
-	public float getCs2UsaPrivateAreaManagedForPublic() {
-		return cs2UsaPrivateAreaManagedForPublic;
+	public Float getUsaPrivateTotalAreaCertified() {
+		return usaPrivateTotalAreaCertified;
 	}
 
-	public void setCs2UsaPrivateAreaManagedForPublic(float cs2UsaPrivateAreaManagedForPublic) {
-		this.cs2UsaPrivateAreaManagedForPublic = cs2UsaPrivateAreaManagedForPublic;
+	public void setUsaPrivateTotalAreaCertified(Float usaPrivateTotalAreaCertified) {
+		this.usaPrivateTotalAreaCertified = usaPrivateTotalAreaCertified;
 	}
 
-	public float getCs2UsaPrivateAreaCertifiedForPublic() {
-		return cs2UsaPrivateAreaCertifiedForPublic;
+	public Float getUsaPrivateAreaManagedForPublic() {
+		return usaPrivateAreaManagedForPublic;
 	}
 
-	public void setCs2UsaPrivateAreaCertifiedForPublic(float cs2UsaPrivateAreaCertifiedForPublic) {
-		this.cs2UsaPrivateAreaCertifiedForPublic = cs2UsaPrivateAreaCertifiedForPublic;
+	public void setUsaPrivateAreaManagedForPublic(Float usaPrivateAreaManagedForPublic) {
+		this.usaPrivateAreaManagedForPublic = usaPrivateAreaManagedForPublic;
 	}
 
-	public float getCs2UsaPublicTotalAreaOwnOrManage() {
-		return cs2UsaPublicTotalAreaOwnOrManage;
+	public Float getUsaPrivateAreaCertifiedForPublic() {
+		return usaPrivateAreaCertifiedForPublic;
 	}
 
-	public void setCs2UsaPublicTotalAreaOwnOrManage(float cs2UsaPublicTotalAreaOwnOrManage) {
-		this.cs2UsaPublicTotalAreaOwnOrManage = cs2UsaPublicTotalAreaOwnOrManage;
+	public void setUsaPrivateAreaCertifiedForPublic(Float usaPrivateAreaCertifiedForPublic) {
+		this.usaPrivateAreaCertifiedForPublic = usaPrivateAreaCertifiedForPublic;
 	}
 
-	public float getCs2UsaPublicTotalAreaCertified() {
-		return cs2UsaPublicTotalAreaCertified;
+	public List<String> getUsaPrivateRecreationCategories() {
+		return usaPrivateRecreationCategories;
 	}
 
-	public void setCs2UsaPublicTotalAreaCertified(float cs2UsaPublicTotalAreaCertified) {
-		this.cs2UsaPublicTotalAreaCertified = cs2UsaPublicTotalAreaCertified;
+	public void setUsaPrivateRecreationCategories(List<String> usaPrivateRecreationCategories) {
+		this.usaPrivateRecreationCategories = usaPrivateRecreationCategories;
 	}
 
-	public float getCs2UsaPublicAreaManagedForPublic() {
-		return cs2UsaPublicAreaManagedForPublic;
+	public Float getUsaPublicTotalAreaOwnOrManage() {
+		return usaPublicTotalAreaOwnOrManage;
 	}
 
-	public void setCs2UsaPublicAreaManagedForPublic(float cs2UsaPublicAreaManagedForPublic) {
-		this.cs2UsaPublicAreaManagedForPublic = cs2UsaPublicAreaManagedForPublic;
+	public void setUsaPublicTotalAreaOwnOrManage(Float usaPublicTotalAreaOwnOrManage) {
+		this.usaPublicTotalAreaOwnOrManage = usaPublicTotalAreaOwnOrManage;
 	}
 
-	public float getCs2UsaPublicAreaCertifiedForPublic() {
-		return cs2UsaPublicAreaCertifiedForPublic;
+	public Integer getUsaPublicForestlandOwnMng() {
+		return usaPublicForestlandOwnMng;
 	}
 
-	public void setCs2UsaPublicAreaCertifiedForPublic(float cs2UsaPublicAreaCertifiedForPublic) {
-		this.cs2UsaPublicAreaCertifiedForPublic = cs2UsaPublicAreaCertifiedForPublic;
+	public void setUsaPublicForestlandOwnMng(Integer usaPublicForestlandOwnMng) {
+		this.usaPublicForestlandOwnMng = usaPublicForestlandOwnMng;
 	}
 
-	public List<String> getCs2UsaPublicRecreationCategories() {
-		return cs2UsaPublicRecreationCategories;
+	public String getUsaPublicForestlandOwnMngOther() {
+		return usaPublicForestlandOwnMngOther;
 	}
 
-	public void setCs2UsaPublicRecreationCategories(List<String> cs2UsaPublicRecreationCategories) {
-		this.cs2UsaPublicRecreationCategories = cs2UsaPublicRecreationCategories;
+	public void setUsaPublicForestlandOwnMngOther(String usaPublicForestlandOwnMngOther) {
+		this.usaPublicForestlandOwnMngOther = usaPublicForestlandOwnMngOther;
 	}
 
-	public float getCs2CaCrownTotalAreaOwnOrManage() {
-		return cs2CaCrownTotalAreaOwnOrManage;
+	public Float getUsaPublicTotalAreaCertified() {
+		return usaPublicTotalAreaCertified;
 	}
 
-	public void setCs2CaCrownTotalAreaOwnOrManage(float cs2CaCrownTotalAreaOwnOrManage) {
-		this.cs2CaCrownTotalAreaOwnOrManage = cs2CaCrownTotalAreaOwnOrManage;
+	public void setUsaPublicTotalAreaCertified(Float usaPublicTotalAreaCertified) {
+		this.usaPublicTotalAreaCertified = usaPublicTotalAreaCertified;
 	}
 
-	public float getCs2CaCrownTotalAreaCertified() {
-		return cs2CaCrownTotalAreaCertified;
+	public Float getUsaPublicAreaManagedForPublic() {
+		return usaPublicAreaManagedForPublic;
 	}
 
-	public void setCs2CaCrownTotalAreaCertified(float cs2CaCrownTotalAreaCertified) {
-		this.cs2CaCrownTotalAreaCertified = cs2CaCrownTotalAreaCertified;
+	public void setUsaPublicAreaManagedForPublic(Float usaPublicAreaManagedForPublic) {
+		this.usaPublicAreaManagedForPublic = usaPublicAreaManagedForPublic;
 	}
 
-	public float getCs2CaCrownAreaManagedForPublic() {
-		return cs2CaCrownAreaManagedForPublic;
+	public Float getUsaPublicAreaCertifiedForPublic() {
+		return usaPublicAreaCertifiedForPublic;
 	}
 
-	public void setCs2CaCrownAreaManagedForPublic(float cs2CaCrownAreaManagedForPublic) {
-		this.cs2CaCrownAreaManagedForPublic = cs2CaCrownAreaManagedForPublic;
+	public void setUsaPublicAreaCertifiedForPublic(Float usaPublicAreaCertifiedForPublic) {
+		this.usaPublicAreaCertifiedForPublic = usaPublicAreaCertifiedForPublic;
 	}
 
-	public float getCs2CaCrownAreaCertifiedForPublic() {
-		return cs2CaCrownAreaCertifiedForPublic;
+	public List<String> getUsaPublicRecreationCategories() {
+		return usaPublicRecreationCategories;
 	}
 
-	public void setCs2CaCrownAreaCertifiedForPublic(float cs2CaCrownAreaCertifiedForPublic) {
-		this.cs2CaCrownAreaCertifiedForPublic = cs2CaCrownAreaCertifiedForPublic;
+	public void setUsaPublicRecreationCategories(List<String> usaPublicRecreationCategories) {
+		this.usaPublicRecreationCategories = usaPublicRecreationCategories;
 	}
 
-	public List<String> getCs2CaCrownRecreationCategories() {
-		return cs2CaCrownRecreationCategories;
+	public Float getCaCrownTotalAreaOwnOrManage() {
+		return caCrownTotalAreaOwnOrManage;
 	}
 
-	public void setCs2CaCrownRecreationCategories(List<String> cs2CaCrownRecreationCategories) {
-		this.cs2CaCrownRecreationCategories = cs2CaCrownRecreationCategories;
+	public void setCaCrownTotalAreaOwnOrManage(Float caCrownTotalAreaOwnOrManage) {
+		this.caCrownTotalAreaOwnOrManage = caCrownTotalAreaOwnOrManage;
 	}
 
-	public float getCs2CaPrivateTotalAreaOwnOrManage() {
-		return cs2CaPrivateTotalAreaOwnOrManage;
+	public Integer getCaCrownForestlandOwnMng() {
+		return caCrownForestlandOwnMng;
 	}
 
-	public void setCs2CaPrivateTotalAreaOwnOrManage(float cs2CaPrivateTotalAreaOwnOrManage) {
-		this.cs2CaPrivateTotalAreaOwnOrManage = cs2CaPrivateTotalAreaOwnOrManage;
+	public void setCaCrownForestlandOwnMng(Integer caCrownForestlandOwnMng) {
+		this.caCrownForestlandOwnMng = caCrownForestlandOwnMng;
 	}
 
-	public float getCs2CaPrivateTotalAreaCertified() {
-		return cs2CaPrivateTotalAreaCertified;
+	public String getCaCrownForestlandOwnMngOther() {
+		return caCrownForestlandOwnMngOther;
 	}
 
-	public void setCs2CaPrivateTotalAreaCertified(float cs2CaPrivateTotalAreaCertified) {
-		this.cs2CaPrivateTotalAreaCertified = cs2CaPrivateTotalAreaCertified;
+	public void setCaCrownForestlandOwnMngOther(String caCrownForestlandOwnMngOther) {
+		this.caCrownForestlandOwnMngOther = caCrownForestlandOwnMngOther;
 	}
 
-	public float getCs2CaPrivateAreaManagedForPublic() {
-		return cs2CaPrivateAreaManagedForPublic;
+	public Float getCaCrownTotalAreaCertified() {
+		return caCrownTotalAreaCertified;
 	}
 
-	public void setCs2CaPrivateAreaManagedForPublic(float cs2CaPrivateAreaManagedForPublic) {
-		this.cs2CaPrivateAreaManagedForPublic = cs2CaPrivateAreaManagedForPublic;
+	public void setCaCrownTotalAreaCertified(Float caCrownTotalAreaCertified) {
+		this.caCrownTotalAreaCertified = caCrownTotalAreaCertified;
 	}
 
-	public float getCs2CaPrivateAreaCertifiedForPublic() {
-		return cs2CaPrivateAreaCertifiedForPublic;
+	public Float getCaCrownAreaManagedForPublic() {
+		return caCrownAreaManagedForPublic;
 	}
 
-	public void setCs2CaPrivateAreaCertifiedForPublic(float cs2CaPrivateAreaCertifiedForPublic) {
-		this.cs2CaPrivateAreaCertifiedForPublic = cs2CaPrivateAreaCertifiedForPublic;
+	public void setCaCrownAreaManagedForPublic(Float caCrownAreaManagedForPublic) {
+		this.caCrownAreaManagedForPublic = caCrownAreaManagedForPublic;
 	}
 
-	public List<String> getCs2CaPrivateRecreationCategories() {
-		return cs2CaPrivateRecreationCategories;
+	public Float getCaCrownAreaCertifiedForPublic() {
+		return caCrownAreaCertifiedForPublic;
 	}
 
-	public void setCs2CaPrivateRecreationCategories(List<String> cs2CaPrivateRecreationCategories) {
-		this.cs2CaPrivateRecreationCategories = cs2CaPrivateRecreationCategories;
+	public void setCaCrownAreaCertifiedForPublic(Float caCrownAreaCertifiedForPublic) {
+		this.caCrownAreaCertifiedForPublic = caCrownAreaCertifiedForPublic;
 	}
 
-	public int getCs2UsaPrivateForestlandOwnMng() {
-		return cs2UsaPrivateForestlandOwnMng;
+	public List<String> getCaCrownRecreationCategories() {
+		return caCrownRecreationCategories;
 	}
 
-	public void setCs2UsaPrivateForestlandOwnMng(int cs2UsaPrivateForestlandOwnMng) {
-		this.cs2UsaPrivateForestlandOwnMng = cs2UsaPrivateForestlandOwnMng;
+	public void setCaCrownRecreationCategories(List<String> caCrownRecreationCategories) {
+		this.caCrownRecreationCategories = caCrownRecreationCategories;
 	}
 
-	public int getCs2UsaPublicForestlandOwnMng() {
-		return cs2UsaPublicForestlandOwnMng;
+	public Float getCaPrivateTotalAreaOwnOrManage() {
+		return caPrivateTotalAreaOwnOrManage;
 	}
 
-	public void setCs2UsaPublicForestlandOwnMng(int cs2UsaPublicForestlandOwnMng) {
-		this.cs2UsaPublicForestlandOwnMng = cs2UsaPublicForestlandOwnMng;
+	public void setCaPrivateTotalAreaOwnOrManage(Float caPrivateTotalAreaOwnOrManage) {
+		this.caPrivateTotalAreaOwnOrManage = caPrivateTotalAreaOwnOrManage;
 	}
 
-	public int getCs2CaCrownForestlandOwnMng() {
-		return cs2CaCrownForestlandOwnMng;
+	public Integer getCaPrivateForestlandOwnMng() {
+		return caPrivateForestlandOwnMng;
 	}
 
-	public void setCs2CaCrownForestlandOwnMng(int cs2CaCrownForestlandOwnMng) {
-		this.cs2CaCrownForestlandOwnMng = cs2CaCrownForestlandOwnMng;
+	public void setCaPrivateForestlandOwnMng(Integer caPrivateForestlandOwnMng) {
+		this.caPrivateForestlandOwnMng = caPrivateForestlandOwnMng;
 	}
 
-	public int getCs2CaPrivateForestlandOwnMng() {
-		return cs2CaPrivateForestlandOwnMng;
+	public String getCaPrivateForestlandOwnMngOther() {
+		return caPrivateForestlandOwnMngOther;
 	}
 
-	public void setCs2CaPrivateForestlandOwnMng(int cs2CaPrivateForestlandOwnMng) {
-		this.cs2CaPrivateForestlandOwnMng = cs2CaPrivateForestlandOwnMng;
+	public void setCaPrivateForestlandOwnMngOther(String caPrivateForestlandOwnMngOther) {
+		this.caPrivateForestlandOwnMngOther = caPrivateForestlandOwnMngOther;
 	}
 
-	public String getCs2UsaPrivateForestlandOwnMngOther() {
-		return cs2UsaPrivateForestlandOwnMngOther;
+	public Float getCaPrivateTotalAreaCertified() {
+		return caPrivateTotalAreaCertified;
 	}
 
-	public void setCs2UsaPrivateForestlandOwnMngOther(String cs2UsaPrivateForestlandOwnMngOther) {
-		this.cs2UsaPrivateForestlandOwnMngOther = cs2UsaPrivateForestlandOwnMngOther;
+	public void setCaPrivateTotalAreaCertified(Float caPrivateTotalAreaCertified) {
+		this.caPrivateTotalAreaCertified = caPrivateTotalAreaCertified;
 	}
 
-	public String getCs2UsaPublicForestlandOwnMngOther() {
-		return cs2UsaPublicForestlandOwnMngOther;
+	public Float getCaPrivateAreaManagedForPublic() {
+		return caPrivateAreaManagedForPublic;
 	}
 
-	public void setCs2UsaPublicForestlandOwnMngOther(String cs2UsaPublicForestlandOwnMngOther) {
-		this.cs2UsaPublicForestlandOwnMngOther = cs2UsaPublicForestlandOwnMngOther;
+	public void setCaPrivateAreaManagedForPublic(Float caPrivateAreaManagedForPublic) {
+		this.caPrivateAreaManagedForPublic = caPrivateAreaManagedForPublic;
 	}
 
-	public String getCs2CaCrownForestlandOwnMngOther() {
-		return cs2CaCrownForestlandOwnMngOther;
+	public Float getCaPrivateAreaCertifiedForPublic() {
+		return caPrivateAreaCertifiedForPublic;
 	}
 
-	public void setCs2CaCrownForestlandOwnMngOther(String cs2CaCrownForestlandOwnMngOther) {
-		this.cs2CaCrownForestlandOwnMngOther = cs2CaCrownForestlandOwnMngOther;
+	public void setCaPrivateAreaCertifiedForPublic(Float caPrivateAreaCertifiedForPublic) {
+		this.caPrivateAreaCertifiedForPublic = caPrivateAreaCertifiedForPublic;
 	}
 
-	public String getCs2CaPrivateForestlandOwnMngOther() {
-		return cs2CaPrivateForestlandOwnMngOther;
+	public List<String> getCaPrivateRecreationCategories() {
+		return caPrivateRecreationCategories;
 	}
 
-	public void setCs2CaPrivateForestlandOwnMngOther(String cs2CaPrivateForestlandOwnMngOther) {
-		this.cs2CaPrivateForestlandOwnMngOther = cs2CaPrivateForestlandOwnMngOther;
+	public void setCaPrivateRecreationCategories(List<String> caPrivateRecreationCategories) {
+		this.caPrivateRecreationCategories = caPrivateRecreationCategories;
 	}
 
-	public List<SfiPpFormCs2OutsideUsaCa> getCs2OutsideCountries() {
-		return cs2OutsideCountries;
+	public List<SfiPpFormCs2OutsideUsaCa> getOutsideCountries() {
+		return outsideCountries;
 	}
 
-	public void setCs2OutsideCountries(List<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries) {
-		this.cs2OutsideCountries = cs2OutsideCountries;
+	public void setOutsideCountries(List<SfiPpFormCs2OutsideUsaCa> outsideCountries) {
+		this.outsideCountries = outsideCountries;
 	}
 }

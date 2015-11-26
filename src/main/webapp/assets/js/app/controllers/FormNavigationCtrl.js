@@ -9,7 +9,8 @@ sfiFormApp.controller('FormNavigationCtrl', ['$rootScope', '$scope', '$state', '
     };
 
     $scope.isEnabled = function(step){
-        return $rootScope.form[step].isSectionEnabled;
+        return true;
+        //sreturn $rootScope.form[step].isSectionEnabled;
     }
 
     $rootScope.isCompleted = function(){

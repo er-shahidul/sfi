@@ -129,62 +129,62 @@ public class Cs8
 	@Column(name="cs8_sfiLabelProductGroupContain_1", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain1 = new ArrayList<String>();
+	private List<String> cs8SfiLabelProductGroupContain1;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_2", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain2 = new ArrayList<String>();
+	private List<String> cs8SfiLabelProductGroupContain2;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_3", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain3 = new ArrayList<String>();
+	private List<String> cs8SfiLabelProductGroupContain3;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_4", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain4 = new ArrayList<String>();
+	private List<String> cs8SfiLabelProductGroupContain4;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_5", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain5 = new ArrayList<String>();
+	private List<String> cs8SfiLabelProductGroupContain5;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_6", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain6 = new ArrayList<String>();
+	private List<String> cs8SfiLabelProductGroupContain6;
 
 	@Column(name="cs8_alsoFSCLabel_1", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_1 = new ArrayList<String>();
+	private List<String> cs8_alsoFSCLabel_1;
 
 	@Column(name="cs8_alsoFSCLabel_2", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_2 = new ArrayList<String>();
+	private List<String> cs8_alsoFSCLabel_2;
 
 	@Column(name="cs8_alsoFSCLabel_3", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_3 = new ArrayList<String>();
+	private List<String> cs8_alsoFSCLabel_3;
 
 	@Column(name="cs8_alsoFSCLabel_4", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_4 = new ArrayList<String>();
+	private List<String> cs8_alsoFSCLabel_4;
 
 	@Column(name="cs8_alsoFSCLabel_5", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_5 = new ArrayList<String>();
+	private List<String> cs8_alsoFSCLabel_5;
 
 	@Column(name="cs8_alsoFSCLabel_6", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_6 = new ArrayList<String>();
+	private List<String> cs8_alsoFSCLabel_6;
 
 	@Column(name="cs8_sfiCertifiedForestContent_1", nullable=true)
 	private String cs8SfiCertifiedForestContent1;

@@ -88,19 +88,20 @@ sfiFormApp
         }
 
         $http
-            //.put(Routing.generate("sfi_cs2_form_update", urlData), $scope.cs2)
-            .put("/form/cs1", sfiV2.getSectionData('cs2', $scope.cs2))
+            .put("/form/cs1",  $scope.cs2)
+            //.put("/form/cs1", sfiV2.getSectionData('cs2', $scope.cs2))
             .then(function(response){
 
                 if(response.data){
 
                     $scope.cs2Form.$setPristine();
 
+                    /*
                     formData = response.data
                     $rootScope.form = sfiV2.prepareForm(formData);
 
                     $scope.cs2 = angular.copy($rootScope.form.cs2);
-                    $scope.errors = $scope.cs2.errors;
+                    $scope.errors = $scope.cs2.errors; */
 
                     Message.success('Section successfully saved', '.msg-cont');
                     $scope.init();
