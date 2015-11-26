@@ -9,35 +9,35 @@ public class Cs3
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="cs3_isInPartnership", nullable=true)
-	private boolean cs3IsInPartnership;
+	private Boolean isInPartnership;
 
 	@OneToMany(targetEntity = SfiPpFormCs3.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	private List<SfiPpFormCs3> cs3Projects;
+	private List<SfiPpFormCs3> projects;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public boolean isCs3IsInPartnership() {
-		return cs3IsInPartnership;
+	public Boolean isInPartnership() {
+		return isInPartnership;
 	}
 
-	public void setCs3IsInPartnership(boolean cs3IsInPartnership) {
-		this.cs3IsInPartnership = cs3IsInPartnership;
+	public void setIsInPartnership(Boolean isInPartnership) {
+		this.isInPartnership = isInPartnership;
 	}
 
-	public List<SfiPpFormCs3> getCs3Projects() {
-		return cs3Projects;
+	public List<SfiPpFormCs3> getProjects() {
+		return projects;
 	}
 
-	public void setCs3Projects(List<SfiPpFormCs3> cs3Projects) {
-		this.cs3Projects = cs3Projects;
+	public void setProjects(List<SfiPpFormCs3> projects) {
+		this.projects = projects;
 	}
 }

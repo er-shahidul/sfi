@@ -52,10 +52,10 @@ public class SfiPpFormService
         if(entity!=null){
             Util.merge(entity, sfiPpForm);
 
-            rePopulateCs1SellsCountries(entity.getId());
-            rePopulateOtherCountry(entity.getId());
-            rePopulateOtherCountry1(entity.getId());
-            rePopulateOtherCountry2(entity.getId());
+//            rePopulateCs1SellsCountries(entity.getId());
+//            rePopulateOtherCountry(entity.getId());
+//            rePopulateOtherCountry1(entity.getId());
+//            rePopulateOtherCountry2(entity.getId());
 //
 //            for (SfiPpFormAllCountry sfiPpFormAllCountry : entity.getCs1SellsCountries()) {
 //                sfiPpFormAllCountryRepository.merge(sfiPpFormAllCountry);
@@ -67,57 +67,57 @@ public class SfiPpFormService
         return  entity;
     }
 
-    private void rePopulateCs1SellsCountries(int id) {
-        Cs1 entity = cs1Repository.findById(id);
-
-        Set<SfiPpFormAllCountry> cs1SellsCountries = new HashSet<SfiPpFormAllCountry>();
-
-        for (SfiPpFormAllCountry sfiPpFormAllCountry : entity.getCs1SellsCountries()) {
-            cs1SellsCountries.add(sfiPpFormAllCountryRepository.findById(sfiPpFormAllCountry.getId()));
-        }
-
-        entity.setCs1SellsCountries(cs1SellsCountries);
-        cs1Repository.save(entity);
-    }
-
-    private void rePopulateOtherCountry(int id) {
-        Cs1 entity = cs1Repository.findById(id);
-
-        Set<SfiPpFormOtherCountry> cs1SellsCountries = new HashSet<SfiPpFormOtherCountry>();
-
-        for (SfiPpFormOtherCountry sfiPpFormAllCountry : entity.getCs1SecondaryOperMillsYardsOtherCountries()) {
-            cs1SellsCountries.add(sfiPpFormOtherCountryRepository.findById(sfiPpFormAllCountry.getId()));
-        }
-
-        entity.setCs1SecondaryOperMillsYardsOtherCountries(cs1SellsCountries);
-        cs1Repository.save(entity);
-    }
-
-    private void rePopulateOtherCountry1(int id) {
-        Cs1 entity = cs1Repository.findById(id);
-
-        Set<SfiPpFormOtherCountry> cs1SellsCountries = new HashSet<SfiPpFormOtherCountry>();
-
-        for (SfiPpFormOtherCountry sfiPpFormAllCountry : entity.getCs1PrimaryOperMillsYardsOtherCountries()) {
-            cs1SellsCountries.add(sfiPpFormOtherCountryRepository.findById(sfiPpFormAllCountry.getId()));
-        }
-
-        entity.setCs1PrimaryOperMillsYardsOtherCountries(cs1SellsCountries);
-        cs1Repository.save(entity);
-    }
-
-    private void rePopulateOtherCountry2(int id) {
-        Cs1 entity = cs1Repository.findById(id);
-
-        Set<SfiPpFormOtherCountry> cs1SellsCountries = new HashSet<SfiPpFormOtherCountry>();
-
-        for (SfiPpFormOtherCountry sfiPpFormAllCountry : entity.getCs1OwnsMngLandsOtherCountries()) {
-            cs1SellsCountries.add(sfiPpFormOtherCountryRepository.findById(sfiPpFormAllCountry.getId()));
-        }
-
-        entity.setCs1OwnsMngLandsOtherCountries(cs1SellsCountries);
-        cs1Repository.save(entity);
-    }
+//    private void rePopulateCs1SellsCountries(int id) {
+//        Cs1 entity = cs1Repository.findById(id);
+//
+//        Set<SfiPpFormAllCountry> cs1SellsCountries = new HashSet<SfiPpFormAllCountry>();
+//
+//        for (SfiPpFormAllCountry sfiPpFormAllCountry : entity.getCs1SellsCountries()) {
+//            cs1SellsCountries.add(sfiPpFormAllCountryRepository.findById(sfiPpFormAllCountry.getId()));
+//        }
+//
+//        entity.setCs1SellsCountries(cs1SellsCountries);
+//        cs1Repository.save(entity);
+//    }
+//
+//    private void rePopulateOtherCountry(int id) {
+//        Cs1 entity = cs1Repository.findById(id);
+//
+//        Set<SfiPpFormOtherCountry> cs1SellsCountries = new HashSet<SfiPpFormOtherCountry>();
+//
+//        for (SfiPpFormOtherCountry sfiPpFormAllCountry : entity.getCs1SecondaryOperMillsYardsOtherCountries()) {
+//            cs1SellsCountries.add(sfiPpFormOtherCountryRepository.findById(sfiPpFormAllCountry.getId()));
+//        }
+//
+//        entity.setCs1SecondaryOperMillsYardsOtherCountries(cs1SellsCountries);
+//        cs1Repository.save(entity);
+//    }
+//
+//    private void rePopulateOtherCountry1(int id) {
+//        Cs1 entity = cs1Repository.findById(id);
+//
+//        Set<SfiPpFormOtherCountry> cs1SellsCountries = new HashSet<SfiPpFormOtherCountry>();
+//
+//        for (SfiPpFormOtherCountry sfiPpFormAllCountry : entity.getCs1PrimaryOperMillsYardsOtherCountries()) {
+//            cs1SellsCountries.add(sfiPpFormOtherCountryRepository.findById(sfiPpFormAllCountry.getId()));
+//        }
+//
+//        entity.setCs1PrimaryOperMillsYardsOtherCountries(cs1SellsCountries);
+//        cs1Repository.save(entity);
+//    }
+//
+//    private void rePopulateOtherCountry2(int id) {
+//        Cs1 entity = cs1Repository.findById(id);
+//
+//        Set<SfiPpFormOtherCountry> cs1SellsCountries = new HashSet<SfiPpFormOtherCountry>();
+//
+//        for (SfiPpFormOtherCountry sfiPpFormAllCountry : entity.getCs1OwnsMngLandsOtherCountries()) {
+//            cs1SellsCountries.add(sfiPpFormOtherCountryRepository.findById(sfiPpFormAllCountry.getId()));
+//        }
+//
+//        entity.setCs1OwnsMngLandsOtherCountries(cs1SellsCountries);
+//        cs1Repository.save(entity);
+//    }
 
     public SfiPpForm saveCS2(SfiPpForm sfiPpForm){
         SfiPpForm entity = sfiPpFormRepository.findById(sfiPpForm.getId());

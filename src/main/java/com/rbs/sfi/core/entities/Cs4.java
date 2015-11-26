@@ -8,607 +8,607 @@ public class Cs4
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="cs4_totalAreaReceivedHarv_usa", nullable=true)
-	private Float cs4UsaTotalHervArea;
+	private Float usaTotalHervArea;
 
 	@Column(name="cs4_totalAreaReceivedHarv_ca", nullable=true)
-	private Float cs4CaTotalHervArea;
+	private Float caTotalHervArea;
 
 	@Column(name="cs4_avgAreaClearCutHarv_usa", nullable=true)
-	private Float cs4UsaAvgHervArea;
+	private Float usaAvgHervArea;
 
 	@Column(name="cs4_avgAreaClearCutHarv_ca", nullable=true)
-	private Float cs4CaAvgHervArea;
+	private Float caAvgHervArea;
 
 	@Column(name="cs4_havestArea_usa", nullable=true)
-	private boolean cs4UsaGovRegulation;
+	private Boolean usaGovRegulation;
 
 	@Column(name="cs4_havestArea_explain_usa", nullable=true)
-	private String cs4UsaGovRegulationExp;
+	private String usaGovRegulationExp;
 
 	@Column(name="cs4_havestArea_ca", nullable=true)
-	private boolean cs4CaGovRegulation;
+	private Boolean caGovRegulation;
 
 	@Column(name="cs4_havestArea_explain_ca", nullable=true)
-	private String cs4CaGovRegulationExp;
+	private String caGovRegulationExp;
 
 	@Column(name="cs4_naturDisasterInsects_usa", nullable=true)
-	private boolean cs4UsaDisResDiseaseInsects;
+	private Boolean usaDisResDiseaseInsects;
 
 	@Column(name="cs4_naturDisasterInsects_explain_usa", nullable=true)
-	private String cs4UsaDiseaseInsectsExp;
+	private String usaDiseaseInsectsExp;
 
 	@Column(name="cs4_naturDisasterInsects_ca", nullable=true)
-	private boolean cs4CaDisResDiseaseInsects;
+	private Boolean caDisResDiseaseInsects;
 
 	@Column(name="cs4_naturDisasterInsects_explain_ca", nullable=true)
-	private String cs4CaDiseaseInsectsExp;
+	private String caDiseaseInsectsExp;
 
 	@Column(name="cs4_naturDisasterFire_usa", nullable=true)
-	private boolean cs4UsaDisResFireSalvage;
+	private Boolean usaDisResFireSalvage;
 
 	@Column(name="cs4_naturDisasterFire_explain_usa", nullable=true)
-	private String cs4UsaFireSalvageExp;
+	private String usaFireSalvageExp;
 
 	@Column(name="cs4_naturDisasterFire_ca", nullable=true)
-	private boolean cs4CaDisResFireSalvage;
+	private Boolean caDisResFireSalvage;
 
 	@Column(name="cs4_naturDisasterFire_explain_ca", nullable=true)
-	private String cs4CaFireSalvageExp;
+	private String caFireSalvageExp;
 
 	@Column(name="cs4_naturDisasterWindthrow_usa", nullable=true)
-	private boolean cs4UsaDisResWindthrow;
+	private Boolean usaDisResWindthrow;
 
 	@Column(name="cs4_naturDisasterFireWindthrow_explain_usa", nullable=true)
-	private String cs4UsaWindthrowExp;
+	private String usaWindthrowExp;
 
 	@Column(name="cs4_naturDisasterWindthrow_ca", nullable=true)
-	private boolean cs4CaDisResWindthrow;
+	private Boolean caDisResWindthrow;
 
 	@Column(name="cs4_naturDisasterFireWindthrow_explain_ca", nullable=true)
-	private String cs4CaWindthrowExp;
+	private String caWindthrowExp;
 
 	@Column(name="cs4_naturDisasterHurricane_usa", nullable=true)
-	private boolean cs4UsaDisResHurricane;
+	private Boolean usaDisResHurricane;
 
 	@Column(name="cs4_naturDisasterHurricane_explain_usa", nullable=true)
-	private String cs4UsaHurricaneExp;
+	private String usaHurricaneExp;
 
 	@Column(name="cs4_naturDisasterHurricane_ca", nullable=true)
-	private boolean cs4CaDisResHurricane;
+	private Boolean caDisResHurricane;
 
 	@Column(name="cs4_naturDisasterHurricane_explain_ca", nullable=true)
-	private String cs4CaHurricaneExp;
+	private String caHurricaneExp;
 
 	@Column(name="cs4_naturDisasterIceStorms_usa", nullable=true)
-	private boolean cs4UsaDisResIceStorm;
+	private Boolean usaDisResIceStorm;
 
 	@Column(name="cs4_naturDisasterIceStorms_explain_usa", nullable=true)
-	private String cs4UsaIceStormExp;
+	private String usaIceStormExp;
 
 	@Column(name="cs4_naturDisasterIceStorms_ca", nullable=true)
-	private boolean cs4CaDisResIceStorm;
+	private Boolean caDisResIceStorm;
 
 	@Column(name="cs4_naturDisasterIceStorms_explain_ca", nullable=true)
-	private String cs4CaIceStormExp;
+	private String caIceStormExp;
 
 	@Column(name="cs4_naturDisasterOther_usa", nullable=true)
-	private boolean cs4UsaOthersApply;
+	private Boolean usaOthersApply;
 
 	@Column(name="cs4_naturDisasterOther_explain_usa", nullable=true)
-	private String cs4UsaOthersExp;
+	private String usaOthersExp;
 
 	@Column(name="cs4_naturDisasterOther_ca", nullable=true)
-	private boolean cs4CaOthersApply;
+	private Boolean caOthersApply;
 
 	@Column(name="cs4_naturDisasterOther_explain_ca", nullable=true)
-	private String cs4CaOthersExp;
+	private String caOthersExp;
 
 	@Column(name="cs4_totalAreaBySeedTreeAndShelt_usa", nullable=true)
-	private Float cs4UsaSeedTreeShelterWoodArea;
+	private Float usaSeedTreeShelterWoodArea;
 
 	@Column(name="cs4_totalAreaBySeedTreeAndShelt_ca", nullable=true)
-	private Float cs4CaSeedTreeShelterWoodArea;
+	private Float caSeedTreeShelterWoodArea;
 
 	@Column(name="cs4_totalAreaBySelection_usa", nullable=true)
-	private Float cs4UsaSelectionMethodArea;
+	private Float usaSelectionMethodArea;
 
 	@Column(name="cs4_totalAreaByThiningOrSaniSalv_usa", nullable=true)
-	private Float cs4UsaSanitationArea;
+	private Float usaSanitationArea;
 
 	@Column(name="cs4_totalAreaByThiningOrSaniSalv_ca", nullable=true)
-	private Float cs4CaSanitationArea;
+	private Float caSanitationArea;
 
 	@Column(name="cs4_totalAreaBySelection_ca", nullable=true)
-	private Float cs4CaSelectionMethodArea;
+	private Float caSelectionMethodArea;
 
 	@Column(name="cs4_usa_artPlant_1year", nullable=true)
-	private Float cs4UsaPlantingOneYr;
+	private Float usaPlantingOneYr;
 
 	@Column(name="cs4_ca_artPlant_1year", nullable=true)
-	private Float cs4CaPlantingOneYr;
+	private Float caPlantingOneYr;
 
 	@Column(name="cs4_usa_artPlant_2years", nullable=true)
-	private Float cs4UsaPlantingTwoYr;
+	private Float usaPlantingTwoYr;
 
 	@Column(name="cs4_ca_artPlant_2years", nullable=true)
-	private Float cs4CaPlantingTwoYr;
+	private Float caPlantingTwoYr;
 
 	@Column(name="cs4_usa_artPlant_moreThn2years", nullable=true)
-	private Float cs4UsaPlantingTwoPlusYr;
+	private Float usaPlantingTwoPlusYr;
 
 	@Column(name="cs4_ca_artPlant_moreThn2years", nullable=true)
-	private Float cs4CaPlantingTwoPlusYr;
+	private Float caPlantingTwoPlusYr;
 
 	@Column(name="cs4_usa_directSeed_1year", nullable=true)
-	private Float cs4UsaSeedingOneYr;
+	private Float usaSeedingOneYr;
 
 	@Column(name="cs4_ca_directSeed_1year", nullable=true)
-	private Float cs4CaSeedingOneYr;
+	private Float caSeedingOneYr;
 
 	@Column(name="cs4_usa_directSeed_2years", nullable=true)
-	private Float cs4UsaSeedingTwoYr;
+	private Float usaSeedingTwoYr;
 
 	@Column(name="cs4_ca_directSeed_2years", nullable=true)
-	private Float cs4CaSeedingTwoYr;
+	private Float caSeedingTwoYr;
 
 	@Column(name="cs4_usa_directSeed_moreThn2years", nullable=true)
-	private Float cs4UsaSeedingTwoPlusYr;
+	private Float usaSeedingTwoPlusYr;
 
 	@Column(name="cs4_ca_directSeed_moreThn2years", nullable=true)
-	private Float cs4CaSeedingTwoPlusYr;
+	private Float caSeedingTwoPlusYr;
 
 	@Column(name="cs4_usa_natrualRegen", nullable=true)
-	private Float cs4UsaNatRegen2014;
+	private Float usaNatRegen2014;
 
 	@Column(name="cs4_ca_natrualRegen", nullable=true)
-	private Float cs4CaNatRegen2014;
+	private Float caNatRegen2014;
 
 	@Column(name="cs4_usa_percHarvUnitsRegen", nullable=true)
-	private Float cs4UsaRegenPerc5Yr;
+	private Float usaRegenPerc5Yr;
 
 	@Column(name="cs4_ca_percHarvUnitsRegen", nullable=true)
-	private Float cs4CaRegenPerc5Yr;
+	private Float caRegenPerc5Yr;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	public Float getCs4UsaTotalHervArea() {
-		return cs4UsaTotalHervArea;
+		return usaTotalHervArea;
 	}
 
-	public void setCs4UsaTotalHervArea(Float cs4UsaTotalHervArea) {
-		this.cs4UsaTotalHervArea = cs4UsaTotalHervArea;
+	public void setCs4UsaTotalHervArea(Float usaTotalHervArea) {
+		this.usaTotalHervArea = usaTotalHervArea;
 	}
 
 	public Float getCs4CaTotalHervArea() {
-		return cs4CaTotalHervArea;
+		return caTotalHervArea;
 	}
 
-	public void setCs4CaTotalHervArea(Float cs4CaTotalHervArea) {
-		this.cs4CaTotalHervArea = cs4CaTotalHervArea;
+	public void setCs4CaTotalHervArea(Float caTotalHervArea) {
+		this.caTotalHervArea = caTotalHervArea;
 	}
 
 	public Float getCs4UsaAvgHervArea() {
-		return cs4UsaAvgHervArea;
+		return usaAvgHervArea;
 	}
 
-	public void setCs4UsaAvgHervArea(Float cs4UsaAvgHervArea) {
-		this.cs4UsaAvgHervArea = cs4UsaAvgHervArea;
+	public void setCs4UsaAvgHervArea(Float usaAvgHervArea) {
+		this.usaAvgHervArea = usaAvgHervArea;
 	}
 
 	public Float getCs4CaAvgHervArea() {
-		return cs4CaAvgHervArea;
+		return caAvgHervArea;
 	}
 
-	public void setCs4CaAvgHervArea(Float cs4CaAvgHervArea) {
-		this.cs4CaAvgHervArea = cs4CaAvgHervArea;
+	public void setCs4CaAvgHervArea(Float caAvgHervArea) {
+		this.caAvgHervArea = caAvgHervArea;
 	}
 
-	public boolean isCs4UsaGovRegulation() {
-		return cs4UsaGovRegulation;
+	public Boolean isCs4UsaGovRegulation() {
+		return usaGovRegulation;
 	}
 
-	public void setCs4UsaGovRegulation(boolean cs4UsaGovRegulation) {
-		this.cs4UsaGovRegulation = cs4UsaGovRegulation;
+	public void setCs4UsaGovRegulation(Boolean usaGovRegulation) {
+		this.usaGovRegulation = usaGovRegulation;
 	}
 
 	public String getCs4UsaGovRegulationExp() {
-		return cs4UsaGovRegulationExp;
+		return usaGovRegulationExp;
 	}
 
-	public void setCs4UsaGovRegulationExp(String cs4UsaGovRegulationExp) {
-		this.cs4UsaGovRegulationExp = cs4UsaGovRegulationExp;
+	public void setCs4UsaGovRegulationExp(String usaGovRegulationExp) {
+		this.usaGovRegulationExp = usaGovRegulationExp;
 	}
 
-	public boolean isCs4CaGovRegulation() {
-		return cs4CaGovRegulation;
+	public Boolean isCs4CaGovRegulation() {
+		return caGovRegulation;
 	}
 
-	public void setCs4CaGovRegulation(boolean cs4CaGovRegulation) {
-		this.cs4CaGovRegulation = cs4CaGovRegulation;
+	public void setCs4CaGovRegulation(Boolean caGovRegulation) {
+		this.caGovRegulation = caGovRegulation;
 	}
 
 	public String getCs4CaGovRegulationExp() {
-		return cs4CaGovRegulationExp;
+		return caGovRegulationExp;
 	}
 
-	public void setCs4CaGovRegulationExp(String cs4CaGovRegulationExp) {
-		this.cs4CaGovRegulationExp = cs4CaGovRegulationExp;
+	public void setCs4CaGovRegulationExp(String caGovRegulationExp) {
+		this.caGovRegulationExp = caGovRegulationExp;
 	}
 
-	public boolean isCs4UsaDisResDiseaseInsects() {
-		return cs4UsaDisResDiseaseInsects;
+	public Boolean isCs4UsaDisResDiseaseInsects() {
+		return usaDisResDiseaseInsects;
 	}
 
-	public void setCs4UsaDisResDiseaseInsects(boolean cs4UsaDisResDiseaseInsects) {
-		this.cs4UsaDisResDiseaseInsects = cs4UsaDisResDiseaseInsects;
+	public void setCs4UsaDisResDiseaseInsects(Boolean usaDisResDiseaseInsects) {
+		this.usaDisResDiseaseInsects = usaDisResDiseaseInsects;
 	}
 
 	public String getCs4UsaDiseaseInsectsExp() {
-		return cs4UsaDiseaseInsectsExp;
+		return usaDiseaseInsectsExp;
 	}
 
-	public void setCs4UsaDiseaseInsectsExp(String cs4UsaDiseaseInsectsExp) {
-		this.cs4UsaDiseaseInsectsExp = cs4UsaDiseaseInsectsExp;
+	public void setCs4UsaDiseaseInsectsExp(String usaDiseaseInsectsExp) {
+		this.usaDiseaseInsectsExp = usaDiseaseInsectsExp;
 	}
 
-	public boolean isCs4CaDisResDiseaseInsects() {
-		return cs4CaDisResDiseaseInsects;
+	public Boolean isCs4CaDisResDiseaseInsects() {
+		return caDisResDiseaseInsects;
 	}
 
-	public void setCs4CaDisResDiseaseInsects(boolean cs4CaDisResDiseaseInsects) {
-		this.cs4CaDisResDiseaseInsects = cs4CaDisResDiseaseInsects;
+	public void setCs4CaDisResDiseaseInsects(Boolean caDisResDiseaseInsects) {
+		this.caDisResDiseaseInsects = caDisResDiseaseInsects;
 	}
 
 	public String getCs4CaDiseaseInsectsExp() {
-		return cs4CaDiseaseInsectsExp;
+		return caDiseaseInsectsExp;
 	}
 
-	public void setCs4CaDiseaseInsectsExp(String cs4CaDiseaseInsectsExp) {
-		this.cs4CaDiseaseInsectsExp = cs4CaDiseaseInsectsExp;
+	public void setCs4CaDiseaseInsectsExp(String caDiseaseInsectsExp) {
+		this.caDiseaseInsectsExp = caDiseaseInsectsExp;
 	}
 
-	public boolean isCs4UsaDisResFireSalvage() {
-		return cs4UsaDisResFireSalvage;
+	public Boolean isCs4UsaDisResFireSalvage() {
+		return usaDisResFireSalvage;
 	}
 
-	public void setCs4UsaDisResFireSalvage(boolean cs4UsaDisResFireSalvage) {
-		this.cs4UsaDisResFireSalvage = cs4UsaDisResFireSalvage;
+	public void setCs4UsaDisResFireSalvage(Boolean usaDisResFireSalvage) {
+		this.usaDisResFireSalvage = usaDisResFireSalvage;
 	}
 
 	public String getCs4UsaFireSalvageExp() {
-		return cs4UsaFireSalvageExp;
+		return usaFireSalvageExp;
 	}
 
-	public void setCs4UsaFireSalvageExp(String cs4UsaFireSalvageExp) {
-		this.cs4UsaFireSalvageExp = cs4UsaFireSalvageExp;
+	public void setCs4UsaFireSalvageExp(String usaFireSalvageExp) {
+		this.usaFireSalvageExp = usaFireSalvageExp;
 	}
 
-	public boolean isCs4CaDisResFireSalvage() {
-		return cs4CaDisResFireSalvage;
+	public Boolean isCs4CaDisResFireSalvage() {
+		return caDisResFireSalvage;
 	}
 
-	public void setCs4CaDisResFireSalvage(boolean cs4CaDisResFireSalvage) {
-		this.cs4CaDisResFireSalvage = cs4CaDisResFireSalvage;
+	public void setCs4CaDisResFireSalvage(Boolean caDisResFireSalvage) {
+		this.caDisResFireSalvage = caDisResFireSalvage;
 	}
 
 	public String getCs4CaFireSalvageExp() {
-		return cs4CaFireSalvageExp;
+		return caFireSalvageExp;
 	}
 
-	public void setCs4CaFireSalvageExp(String cs4CaFireSalvageExp) {
-		this.cs4CaFireSalvageExp = cs4CaFireSalvageExp;
+	public void setCs4CaFireSalvageExp(String caFireSalvageExp) {
+		this.caFireSalvageExp = caFireSalvageExp;
 	}
 
-	public boolean isCs4UsaDisResWindthrow() {
-		return cs4UsaDisResWindthrow;
+	public Boolean isCs4UsaDisResWindthrow() {
+		return usaDisResWindthrow;
 	}
 
-	public void setCs4UsaDisResWindthrow(boolean cs4UsaDisResWindthrow) {
-		this.cs4UsaDisResWindthrow = cs4UsaDisResWindthrow;
+	public void setCs4UsaDisResWindthrow(Boolean usaDisResWindthrow) {
+		this.usaDisResWindthrow = usaDisResWindthrow;
 	}
 
 	public String getCs4UsaWindthrowExp() {
-		return cs4UsaWindthrowExp;
+		return usaWindthrowExp;
 	}
 
-	public void setCs4UsaWindthrowExp(String cs4UsaWindthrowExp) {
-		this.cs4UsaWindthrowExp = cs4UsaWindthrowExp;
+	public void setCs4UsaWindthrowExp(String usaWindthrowExp) {
+		this.usaWindthrowExp = usaWindthrowExp;
 	}
 
-	public boolean isCs4CaDisResWindthrow() {
-		return cs4CaDisResWindthrow;
+	public Boolean isCs4CaDisResWindthrow() {
+		return caDisResWindthrow;
 	}
 
-	public void setCs4CaDisResWindthrow(boolean cs4CaDisResWindthrow) {
-		this.cs4CaDisResWindthrow = cs4CaDisResWindthrow;
+	public void setCs4CaDisResWindthrow(Boolean caDisResWindthrow) {
+		this.caDisResWindthrow = caDisResWindthrow;
 	}
 
 	public String getCs4CaWindthrowExp() {
-		return cs4CaWindthrowExp;
+		return caWindthrowExp;
 	}
 
-	public void setCs4CaWindthrowExp(String cs4CaWindthrowExp) {
-		this.cs4CaWindthrowExp = cs4CaWindthrowExp;
+	public void setCs4CaWindthrowExp(String caWindthrowExp) {
+		this.caWindthrowExp = caWindthrowExp;
 	}
 
-	public boolean isCs4UsaDisResHurricane() {
-		return cs4UsaDisResHurricane;
+	public Boolean isCs4UsaDisResHurricane() {
+		return usaDisResHurricane;
 	}
 
-	public void setCs4UsaDisResHurricane(boolean cs4UsaDisResHurricane) {
-		this.cs4UsaDisResHurricane = cs4UsaDisResHurricane;
+	public void setCs4UsaDisResHurricane(Boolean usaDisResHurricane) {
+		this.usaDisResHurricane = usaDisResHurricane;
 	}
 
 	public String getCs4UsaHurricaneExp() {
-		return cs4UsaHurricaneExp;
+		return usaHurricaneExp;
 	}
 
-	public void setCs4UsaHurricaneExp(String cs4UsaHurricaneExp) {
-		this.cs4UsaHurricaneExp = cs4UsaHurricaneExp;
+	public void setCs4UsaHurricaneExp(String usaHurricaneExp) {
+		this.usaHurricaneExp = usaHurricaneExp;
 	}
 
-	public boolean isCs4CaDisResHurricane() {
-		return cs4CaDisResHurricane;
+	public Boolean isCs4CaDisResHurricane() {
+		return caDisResHurricane;
 	}
 
-	public void setCs4CaDisResHurricane(boolean cs4CaDisResHurricane) {
-		this.cs4CaDisResHurricane = cs4CaDisResHurricane;
+	public void setCs4CaDisResHurricane(Boolean caDisResHurricane) {
+		this.caDisResHurricane = caDisResHurricane;
 	}
 
 	public String getCs4CaHurricaneExp() {
-		return cs4CaHurricaneExp;
+		return caHurricaneExp;
 	}
 
-	public void setCs4CaHurricaneExp(String cs4CaHurricaneExp) {
-		this.cs4CaHurricaneExp = cs4CaHurricaneExp;
+	public void setCs4CaHurricaneExp(String caHurricaneExp) {
+		this.caHurricaneExp = caHurricaneExp;
 	}
 
-	public boolean isCs4UsaDisResIceStorm() {
-		return cs4UsaDisResIceStorm;
+	public Boolean isCs4UsaDisResIceStorm() {
+		return usaDisResIceStorm;
 	}
 
-	public void setCs4UsaDisResIceStorm(boolean cs4UsaDisResIceStorm) {
-		this.cs4UsaDisResIceStorm = cs4UsaDisResIceStorm;
+	public void setCs4UsaDisResIceStorm(Boolean usaDisResIceStorm) {
+		this.usaDisResIceStorm = usaDisResIceStorm;
 	}
 
 	public String getCs4UsaIceStormExp() {
-		return cs4UsaIceStormExp;
+		return usaIceStormExp;
 	}
 
-	public void setCs4UsaIceStormExp(String cs4UsaIceStormExp) {
-		this.cs4UsaIceStormExp = cs4UsaIceStormExp;
+	public void setCs4UsaIceStormExp(String usaIceStormExp) {
+		this.usaIceStormExp = usaIceStormExp;
 	}
 
-	public boolean isCs4CaDisResIceStorm() {
-		return cs4CaDisResIceStorm;
+	public Boolean isCs4CaDisResIceStorm() {
+		return caDisResIceStorm;
 	}
 
-	public void setCs4CaDisResIceStorm(boolean cs4CaDisResIceStorm) {
-		this.cs4CaDisResIceStorm = cs4CaDisResIceStorm;
+	public void setCs4CaDisResIceStorm(Boolean caDisResIceStorm) {
+		this.caDisResIceStorm = caDisResIceStorm;
 	}
 
 	public String getCs4CaIceStormExp() {
-		return cs4CaIceStormExp;
+		return caIceStormExp;
 	}
 
-	public void setCs4CaIceStormExp(String cs4CaIceStormExp) {
-		this.cs4CaIceStormExp = cs4CaIceStormExp;
+	public void setCs4CaIceStormExp(String caIceStormExp) {
+		this.caIceStormExp = caIceStormExp;
 	}
 
-	public boolean isCs4UsaOthersApply() {
-		return cs4UsaOthersApply;
+	public Boolean isCs4UsaOthersApply() {
+		return usaOthersApply;
 	}
 
-	public void setCs4UsaOthersApply(boolean cs4UsaOthersApply) {
-		this.cs4UsaOthersApply = cs4UsaOthersApply;
+	public void setCs4UsaOthersApply(Boolean usaOthersApply) {
+		this.usaOthersApply = usaOthersApply;
 	}
 
 	public String getCs4UsaOthersExp() {
-		return cs4UsaOthersExp;
+		return usaOthersExp;
 	}
 
-	public void setCs4UsaOthersExp(String cs4UsaOthersExp) {
-		this.cs4UsaOthersExp = cs4UsaOthersExp;
+	public void setCs4UsaOthersExp(String usaOthersExp) {
+		this.usaOthersExp = usaOthersExp;
 	}
 
-	public boolean isCs4CaOthersApply() {
-		return cs4CaOthersApply;
+	public Boolean isCs4CaOthersApply() {
+		return caOthersApply;
 	}
 
-	public void setCs4CaOthersApply(boolean cs4CaOthersApply) {
-		this.cs4CaOthersApply = cs4CaOthersApply;
+	public void setCs4CaOthersApply(Boolean caOthersApply) {
+		this.caOthersApply = caOthersApply;
 	}
 
 	public String getCs4CaOthersExp() {
-		return cs4CaOthersExp;
+		return caOthersExp;
 	}
 
-	public void setCs4CaOthersExp(String cs4CaOthersExp) {
-		this.cs4CaOthersExp = cs4CaOthersExp;
+	public void setCs4CaOthersExp(String caOthersExp) {
+		this.caOthersExp = caOthersExp;
 	}
 
 	public Float getCs4UsaSeedTreeShelterWoodArea() {
-		return cs4UsaSeedTreeShelterWoodArea;
+		return usaSeedTreeShelterWoodArea;
 	}
 
-	public void setCs4UsaSeedTreeShelterWoodArea(Float cs4UsaSeedTreeShelterWoodArea) {
-		this.cs4UsaSeedTreeShelterWoodArea = cs4UsaSeedTreeShelterWoodArea;
+	public void setCs4UsaSeedTreeShelterWoodArea(Float usaSeedTreeShelterWoodArea) {
+		this.usaSeedTreeShelterWoodArea = usaSeedTreeShelterWoodArea;
 	}
 
 	public Float getCs4CaSeedTreeShelterWoodArea() {
-		return cs4CaSeedTreeShelterWoodArea;
+		return caSeedTreeShelterWoodArea;
 	}
 
-	public void setCs4CaSeedTreeShelterWoodArea(Float cs4CaSeedTreeShelterWoodArea) {
-		this.cs4CaSeedTreeShelterWoodArea = cs4CaSeedTreeShelterWoodArea;
+	public void setCs4CaSeedTreeShelterWoodArea(Float caSeedTreeShelterWoodArea) {
+		this.caSeedTreeShelterWoodArea = caSeedTreeShelterWoodArea;
 	}
 
 	public Float getCs4UsaSelectionMethodArea() {
-		return cs4UsaSelectionMethodArea;
+		return usaSelectionMethodArea;
 	}
 
-	public void setCs4UsaSelectionMethodArea(Float cs4UsaSelectionMethodArea) {
-		this.cs4UsaSelectionMethodArea = cs4UsaSelectionMethodArea;
+	public void setCs4UsaSelectionMethodArea(Float usaSelectionMethodArea) {
+		this.usaSelectionMethodArea = usaSelectionMethodArea;
 	}
 
 	public Float getCs4UsaSanitationArea() {
-		return cs4UsaSanitationArea;
+		return usaSanitationArea;
 	}
 
-	public void setCs4UsaSanitationArea(Float cs4UsaSanitationArea) {
-		this.cs4UsaSanitationArea = cs4UsaSanitationArea;
+	public void setCs4UsaSanitationArea(Float usaSanitationArea) {
+		this.usaSanitationArea = usaSanitationArea;
 	}
 
 	public Float getCs4CaSanitationArea() {
-		return cs4CaSanitationArea;
+		return caSanitationArea;
 	}
 
-	public void setCs4CaSanitationArea(Float cs4CaSanitationArea) {
-		this.cs4CaSanitationArea = cs4CaSanitationArea;
+	public void setCs4CaSanitationArea(Float caSanitationArea) {
+		this.caSanitationArea = caSanitationArea;
 	}
 
 	public Float getCs4CaSelectionMethodArea() {
-		return cs4CaSelectionMethodArea;
+		return caSelectionMethodArea;
 	}
 
-	public void setCs4CaSelectionMethodArea(Float cs4CaSelectionMethodArea) {
-		this.cs4CaSelectionMethodArea = cs4CaSelectionMethodArea;
+	public void setCs4CaSelectionMethodArea(Float caSelectionMethodArea) {
+		this.caSelectionMethodArea = caSelectionMethodArea;
 	}
 
 	public Float getCs4UsaPlantingOneYr() {
-		return cs4UsaPlantingOneYr;
+		return usaPlantingOneYr;
 	}
 
-	public void setCs4UsaPlantingOneYr(Float cs4UsaPlantingOneYr) {
-		this.cs4UsaPlantingOneYr = cs4UsaPlantingOneYr;
+	public void setCs4UsaPlantingOneYr(Float usaPlantingOneYr) {
+		this.usaPlantingOneYr = usaPlantingOneYr;
 	}
 
 	public Float getCs4CaPlantingOneYr() {
-		return cs4CaPlantingOneYr;
+		return caPlantingOneYr;
 	}
 
-	public void setCs4CaPlantingOneYr(Float cs4CaPlantingOneYr) {
-		this.cs4CaPlantingOneYr = cs4CaPlantingOneYr;
+	public void setCs4CaPlantingOneYr(Float caPlantingOneYr) {
+		this.caPlantingOneYr = caPlantingOneYr;
 	}
 
 	public Float getCs4UsaPlantingTwoYr() {
-		return cs4UsaPlantingTwoYr;
+		return usaPlantingTwoYr;
 	}
 
-	public void setCs4UsaPlantingTwoYr(Float cs4UsaPlantingTwoYr) {
-		this.cs4UsaPlantingTwoYr = cs4UsaPlantingTwoYr;
+	public void setCs4UsaPlantingTwoYr(Float usaPlantingTwoYr) {
+		this.usaPlantingTwoYr = usaPlantingTwoYr;
 	}
 
 	public Float getCs4CaPlantingTwoYr() {
-		return cs4CaPlantingTwoYr;
+		return caPlantingTwoYr;
 	}
 
-	public void setCs4CaPlantingTwoYr(Float cs4CaPlantingTwoYr) {
-		this.cs4CaPlantingTwoYr = cs4CaPlantingTwoYr;
+	public void setCs4CaPlantingTwoYr(Float caPlantingTwoYr) {
+		this.caPlantingTwoYr = caPlantingTwoYr;
 	}
 
 	public Float getCs4UsaPlantingTwoPlusYr() {
-		return cs4UsaPlantingTwoPlusYr;
+		return usaPlantingTwoPlusYr;
 	}
 
-	public void setCs4UsaPlantingTwoPlusYr(Float cs4UsaPlantingTwoPlusYr) {
-		this.cs4UsaPlantingTwoPlusYr = cs4UsaPlantingTwoPlusYr;
+	public void setCs4UsaPlantingTwoPlusYr(Float usaPlantingTwoPlusYr) {
+		this.usaPlantingTwoPlusYr = usaPlantingTwoPlusYr;
 	}
 
 	public Float getCs4CaPlantingTwoPlusYr() {
-		return cs4CaPlantingTwoPlusYr;
+		return caPlantingTwoPlusYr;
 	}
 
-	public void setCs4CaPlantingTwoPlusYr(Float cs4CaPlantingTwoPlusYr) {
-		this.cs4CaPlantingTwoPlusYr = cs4CaPlantingTwoPlusYr;
+	public void setCs4CaPlantingTwoPlusYr(Float caPlantingTwoPlusYr) {
+		this.caPlantingTwoPlusYr = caPlantingTwoPlusYr;
 	}
 
 	public Float getCs4UsaSeedingOneYr() {
-		return cs4UsaSeedingOneYr;
+		return usaSeedingOneYr;
 	}
 
-	public void setCs4UsaSeedingOneYr(Float cs4UsaSeedingOneYr) {
-		this.cs4UsaSeedingOneYr = cs4UsaSeedingOneYr;
+	public void setCs4UsaSeedingOneYr(Float usaSeedingOneYr) {
+		this.usaSeedingOneYr = usaSeedingOneYr;
 	}
 
 	public Float getCs4CaSeedingOneYr() {
-		return cs4CaSeedingOneYr;
+		return caSeedingOneYr;
 	}
 
-	public void setCs4CaSeedingOneYr(Float cs4CaSeedingOneYr) {
-		this.cs4CaSeedingOneYr = cs4CaSeedingOneYr;
+	public void setCs4CaSeedingOneYr(Float caSeedingOneYr) {
+		this.caSeedingOneYr = caSeedingOneYr;
 	}
 
 	public Float getCs4UsaSeedingTwoYr() {
-		return cs4UsaSeedingTwoYr;
+		return usaSeedingTwoYr;
 	}
 
-	public void setCs4UsaSeedingTwoYr(Float cs4UsaSeedingTwoYr) {
-		this.cs4UsaSeedingTwoYr = cs4UsaSeedingTwoYr;
+	public void setCs4UsaSeedingTwoYr(Float usaSeedingTwoYr) {
+		this.usaSeedingTwoYr = usaSeedingTwoYr;
 	}
 
 	public Float getCs4CaSeedingTwoYr() {
-		return cs4CaSeedingTwoYr;
+		return caSeedingTwoYr;
 	}
 
-	public void setCs4CaSeedingTwoYr(Float cs4CaSeedingTwoYr) {
-		this.cs4CaSeedingTwoYr = cs4CaSeedingTwoYr;
+	public void setCs4CaSeedingTwoYr(Float caSeedingTwoYr) {
+		this.caSeedingTwoYr = caSeedingTwoYr;
 	}
 
 	public Float getCs4UsaSeedingTwoPlusYr() {
-		return cs4UsaSeedingTwoPlusYr;
+		return usaSeedingTwoPlusYr;
 	}
 
-	public void setCs4UsaSeedingTwoPlusYr(Float cs4UsaSeedingTwoPlusYr) {
-		this.cs4UsaSeedingTwoPlusYr = cs4UsaSeedingTwoPlusYr;
+	public void setCs4UsaSeedingTwoPlusYr(Float usaSeedingTwoPlusYr) {
+		this.usaSeedingTwoPlusYr = usaSeedingTwoPlusYr;
 	}
 
 	public Float getCs4CaSeedingTwoPlusYr() {
-		return cs4CaSeedingTwoPlusYr;
+		return caSeedingTwoPlusYr;
 	}
 
-	public void setCs4CaSeedingTwoPlusYr(Float cs4CaSeedingTwoPlusYr) {
-		this.cs4CaSeedingTwoPlusYr = cs4CaSeedingTwoPlusYr;
+	public void setCs4CaSeedingTwoPlusYr(Float caSeedingTwoPlusYr) {
+		this.caSeedingTwoPlusYr = caSeedingTwoPlusYr;
 	}
 
 	public Float getCs4UsaNatRegen2014() {
-		return cs4UsaNatRegen2014;
+		return usaNatRegen2014;
 	}
 
-	public void setCs4UsaNatRegen2014(Float cs4UsaNatRegen2014) {
-		this.cs4UsaNatRegen2014 = cs4UsaNatRegen2014;
+	public void setCs4UsaNatRegen2014(Float usaNatRegen2014) {
+		this.usaNatRegen2014 = usaNatRegen2014;
 	}
 
 	public Float getCs4CaNatRegen2014() {
-		return cs4CaNatRegen2014;
+		return caNatRegen2014;
 	}
 
-	public void setCs4CaNatRegen2014(Float cs4CaNatRegen2014) {
-		this.cs4CaNatRegen2014 = cs4CaNatRegen2014;
+	public void setCs4CaNatRegen2014(Float caNatRegen2014) {
+		this.caNatRegen2014 = caNatRegen2014;
 	}
 
 	public Float getCs4UsaRegenPerc5Yr() {
-		return cs4UsaRegenPerc5Yr;
+		return usaRegenPerc5Yr;
 	}
 
-	public void setCs4UsaRegenPerc5Yr(Float cs4UsaRegenPerc5Yr) {
-		this.cs4UsaRegenPerc5Yr = cs4UsaRegenPerc5Yr;
+	public void setCs4UsaRegenPerc5Yr(Float usaRegenPerc5Yr) {
+		this.usaRegenPerc5Yr = usaRegenPerc5Yr;
 	}
 
 	public Float getCs4CaRegenPerc5Yr() {
-		return cs4CaRegenPerc5Yr;
+		return caRegenPerc5Yr;
 	}
 
-	public void setCs4CaRegenPerc5Yr(Float cs4CaRegenPerc5Yr) {
-		this.cs4CaRegenPerc5Yr = cs4CaRegenPerc5Yr;
+	public void setCs4CaRegenPerc5Yr(Float caRegenPerc5Yr) {
+		this.caRegenPerc5Yr = caRegenPerc5Yr;
 	}
 }

@@ -4,7 +4,6 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,22 +12,22 @@ public class Cs8
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="cs8_productSegmentWoodProducts", nullable=true)
-	private boolean cs8ProductSegmentWoodProducts;
+	private Boolean cs8ProductSegmentWoodProducts;
 
 	@Column(name="cs8_productSegmentPrintingWritingPaper", nullable=true)
-	private boolean cs8ProductSegmentPrintingWritingPaper;
+	private Boolean cs8ProductSegmentPrintingWritingPaper;
 
 	@Column(name="cs8_productSegmentPackaging", nullable=true)
-	private boolean cs8ProductSegmentPackaging;
+	private Boolean cs8ProductSegmentPackaging;
 
 	@Column(name="cs8_productSegmentBioenergy", nullable=true)
-	private boolean cs8ProductSegmentBioenergy;
+	private Boolean cs8ProductSegmentBioenergy;
 
 	@Column(name="cs8_productSegmentOther", nullable=true)
-	private boolean cs8ProductSegmentOther;
+	private Boolean cs8ProductSegmentOther;
 
 	@Column(name="cs8_productSegmentOtherExplain", nullable=true)
 	private String cs8ProductSegmentOtherExplain;
@@ -61,31 +60,31 @@ public class Cs8
 	private String cs8Improve;
 
 	@Column(name="cs8_productSegmentTowelTissue", nullable=true)
-	private boolean cs8ProductSegmentTowelTissue;
+	private Boolean cs8ProductSegmentTowelTissue;
 
 	@Column(name="cs8_deforestationConcerns", nullable=true)
-	private boolean cs8DeforestationConcerns;
+	private Boolean cs8DeforestationConcerns;
 
 	@Column(name="cs8_deforestationConcerns_data", nullable=true)
-	private boolean cs8DeforestationConcernsData;
+	private Boolean cs8DeforestationConcernsData;
 
 	@Column(name="cs8_deforestationConcerns_data_explain", nullable=true)
 	private String cs8DeforestationConcernsDataExplain;
 
 	@Column(name="cs8_deforestationConcerns_reports", nullable=true)
-	private boolean cs8DeforestationConcernsReports;
+	private Boolean cs8DeforestationConcernsReports;
 
 	@Column(name="cs8_deforestationConcerns_reports_explain", nullable=true)
 	private String cs8DeforestationConcernsReportsExplain;
 
 	@Column(name="cs8_deforestationConcerns_studies", nullable=true)
-	private boolean cs8DeforestationConcernsStudies;
+	private Boolean cs8DeforestationConcernsStudies;
 
 	@Column(name="cs8_deforestationConcerns_studies_explain", nullable=true)
 	private String cs8DeforestationConcernsStudiesExplain;
 
 	@Column(name="cs8_deforestationConcerns_other", nullable=true)
-	private boolean cs8DeforestationConcernsOther;
+	private Boolean cs8DeforestationConcernsOther;
 
 	@Column(name="cs8_deforestationConcerns_other_explain", nullable=true)
 	private String cs8DeforestationConcernsOtherExplain;
@@ -295,148 +294,148 @@ public class Cs8
 	private String cs8FscCertificationExplain6;
 
 	@Column(name="cs8_cost_1", nullable=true)
-	private boolean cs8Cost1;
+	private Boolean cs8Cost1;
 
 	@Column(name="cs8_cost_2", nullable=true)
-	private boolean cs8Cost2;
+	private Boolean cs8Cost2;
 
 	@Column(name="cs8_cost_3", nullable=true)
-	private boolean cs8Cost3;
+	private Boolean cs8Cost3;
 
 	@Column(name="cs8_cost_4", nullable=true)
-	private boolean cs8Cost4;
+	private Boolean cs8Cost4;
 
 	@Column(name="cs8_cost_5", nullable=true)
-	private boolean cs8Cost5;
+	private Boolean cs8Cost5;
 
 	@Column(name="cs8_cost_6", nullable=true)
-	private boolean cs8Cost6;
+	private Boolean cs8Cost6;
 
 	@Column(name="cs8_lackOfResponsiveness_1", nullable=true)
-	private boolean cs8LackOfResponsiveness1;
+	private Boolean cs8LackOfResponsiveness1;
 
 	@Column(name="cs8_lackOfResponsiveness_2", nullable=true)
-	private boolean cs8LackOfResponsiveness2;
+	private Boolean cs8LackOfResponsiveness2;
 
 	@Column(name="cs8_lackOfResponsiveness_3", nullable=true)
-	private boolean cs8LackOfResponsiveness3;
+	private Boolean cs8LackOfResponsiveness3;
 
 	@Column(name="cs8_lackOfResponsiveness_4", nullable=true)
-	private boolean cs8LackOfResponsiveness4;
+	private Boolean cs8LackOfResponsiveness4;
 
 	@Column(name="cs8_lackOfResponsiveness_5", nullable=true)
-	private boolean cs8LackOfResponsiveness5;
+	private Boolean cs8LackOfResponsiveness5;
 
 	@Column(name="cs8_lackOfResponsiveness_6", nullable=true)
-	private boolean cs8LackOfResponsiveness6;
+	private Boolean cs8LackOfResponsiveness6;
 
 	@Column(name="cs8_complexity_1", nullable=true)
-	private boolean cs8Complexity1;
+	private Boolean cs8Complexity1;
 
 	@Column(name="cs8_complexity_2", nullable=true)
-	private boolean cs8Complexity2;
+	private Boolean cs8Complexity2;
 
 	@Column(name="cs8_complexity_3", nullable=true)
-	private boolean cs8Complexity3;
+	private Boolean cs8Complexity3;
 
 	@Column(name="cs8_complexity_4", nullable=true)
-	private boolean cs8Complexity4;
+	private Boolean cs8Complexity4;
 
 	@Column(name="cs8_complexity_5", nullable=true)
-	private boolean cs8Complexity5;
+	private Boolean cs8Complexity5;
 
 	@Column(name="cs8_complexity_6", nullable=true)
-	private boolean cs8Complexity6;
+	private Boolean cs8Complexity6;
 
 	@Column(name="cs8_noFSCMarketDemand_1", nullable=true)
-	private boolean cs8NoFSCMarketDemand1;
+	private Boolean cs8NoFSCMarketDemand1;
 
 	@Column(name="cs8_noFSCMarketDemand_2", nullable=true)
-	private boolean cs8NoFSCMarketDemand2;
+	private Boolean cs8NoFSCMarketDemand2;
 
 	@Column(name="cs8_noFSCMarketDemand_3", nullable=true)
-	private boolean cs8NoFSCMarketDemand3;
+	private Boolean cs8NoFSCMarketDemand3;
 
 	@Column(name="cs8_noFSCMarketDemand_4", nullable=true)
-	private boolean cs8NoFSCMarketDemand4;
+	private Boolean cs8NoFSCMarketDemand4;
 
 	@Column(name="cs8_noFSCMarketDemand_5", nullable=true)
-	private boolean cs8NoFSCMarketDemand5;
+	private Boolean cs8NoFSCMarketDemand5;
 
 	@Column(name="cs8_noFSCMarketDemand_6", nullable=true)
-	private boolean cs8NoFSCMarketDemand6;
+	private Boolean cs8NoFSCMarketDemand6;
 
 	@Column(name="cs8_uncertainty_1", nullable=true)
-	private boolean cs8Uncertainty1;
+	private Boolean cs8Uncertainty1;
 
 	@Column(name="cs8_uncertainty_2", nullable=true)
-	private boolean cs8Uncertainty2;
+	private Boolean cs8Uncertainty2;
 
 	@Column(name="cs8_uncertainty_3", nullable=true)
-	private boolean cs8Uncertainty3;
+	private Boolean cs8Uncertainty3;
 
 	@Column(name="cs8_uncertainty_4", nullable=true)
-	private boolean cs8Uncertainty4;
+	private Boolean cs8Uncertainty4;
 
 	@Column(name="cs8_uncertainty_5", nullable=true)
-	private boolean cs8Uncertainty5;
+	private Boolean cs8Uncertainty5;
 
 	@Column(name="cs8_uncertainty_6", nullable=true)
-	private boolean cs8Uncertainty6;
+	private Boolean cs8Uncertainty6;
 
 	@Column(name="cs8_lackOfFSCSupply_1", nullable=true)
-	private boolean cs8Lackoffscsupply1;
+	private Boolean cs8Lackoffscsupply1;
 
 	@Column(name="cs8_lackOfFSCSupply_2", nullable=true)
-	private boolean cs8Lackoffscsupply2;
+	private Boolean cs8Lackoffscsupply2;
 
 	@Column(name="cs8_lackOfFSCSupply_3", nullable=true)
-	private boolean cs8Lackoffscsupply3;
+	private Boolean cs8Lackoffscsupply3;
 
 	@Column(name="cs8_lackOfFSCSupply_4", nullable=true)
-	private boolean cs8Lackoffscsupply4;
+	private Boolean cs8Lackoffscsupply4;
 
 	@Column(name="cs8_lackOfFSCSupply_5", nullable=true)
-	private boolean cs8Lackoffscsupply5;
+	private Boolean cs8Lackoffscsupply5;
 
 	@Column(name="cs8_lackOfFSCSupply_6", nullable=true)
-	private boolean cs8Lackoffscsupply6;
+	private Boolean cs8Lackoffscsupply6;
 
 	@Column(name="cs8_inconsistentApproaches_1", nullable=true)
-	private boolean cs8Inconsistentapproaches1;
+	private Boolean cs8Inconsistentapproaches1;
 
 	@Column(name="cs8_inconsistentApproaches_2", nullable=true)
-	private boolean cs8Inconsistentapproaches2;
+	private Boolean cs8Inconsistentapproaches2;
 
 	@Column(name="cs8_inconsistentApproaches_3", nullable=true)
-	private boolean cs8Inconsistentapproaches3;
+	private Boolean cs8Inconsistentapproaches3;
 
 	@Column(name="cs8_inconsistentApproaches_4", nullable=true)
-	private boolean cs8Inconsistentapproaches4;
+	private Boolean cs8Inconsistentapproaches4;
 
 	@Column(name="cs8_inconsistentApproaches_5", nullable=true)
-	private boolean cs8Inconsistentapproaches5;
+	private Boolean cs8Inconsistentapproaches5;
 
 	@Column(name="cs8_inconsistentApproaches_6", nullable=true)
-	private boolean cs8Inconsistentapproaches6;
+	private Boolean cs8Inconsistentapproaches6;
 
 	@Column(name="cs8_other_1", nullable=true)
-	private boolean cs8Other1;
+	private Boolean cs8Other1;
 
 	@Column(name="cs8_other_2", nullable=true)
-	private boolean cs8Other2;
+	private Boolean cs8Other2;
 
 	@Column(name="cs8_other_3", nullable=true)
-	private boolean cs8Other3;
+	private Boolean cs8Other3;
 
 	@Column(name="cs8_other_4", nullable=true)
-	private boolean cs8Other4;
+	private Boolean cs8Other4;
 
 	@Column(name="cs8_other_5", nullable=true)
-	private boolean cs8Other5;
+	private Boolean cs8Other5;
 
 	@Column(name="cs8_other_6", nullable=true)
-	private boolean cs8Other6;
+	private Boolean cs8Other6;
 
 	@Column(name="cs8_ChainOfCustody_FSCCertification_1", nullable=true)
 	private String cs8ChainOfCustodyFSCCertification1;
@@ -475,194 +474,194 @@ public class Cs8
 	private String cs8ChainOfCustodyFscCertificationExplain6;
 
 	@Column(name="cs8_ChainOfCustody_cost_1", nullable=true)
-	private boolean cs8ChainOfCustodyCost1;
+	private Boolean cs8ChainOfCustodyCost1;
 
 	@Column(name="cs8_ChainOfCustody_cost_2", nullable=true)
-	private boolean cs8ChainOfCustodyCost2;
+	private Boolean cs8ChainOfCustodyCost2;
 
 	@Column(name="cs8_ChainOfCustody_cost_3", nullable=true)
-	private boolean cs8ChainOfCustodyCost3;
+	private Boolean cs8ChainOfCustodyCost3;
 
 	@Column(name="cs8_ChainOfCustody_cost_4", nullable=true)
-	private boolean cs8ChainOfCustodyCost4;
+	private Boolean cs8ChainOfCustodyCost4;
 
 	@Column(name="cs8_ChainOfCustody_cost_5", nullable=true)
-	private boolean cs8ChainOfCustodyCost5;
+	private Boolean cs8ChainOfCustodyCost5;
 
 	@Column(name="cs8_ChainOfCustody_cost_6", nullable=true)
-	private boolean cs8ChainOfCustodyCost6;
+	private Boolean cs8ChainOfCustodyCost6;
 
 	@Column(name="cs8_ChainOfCustody_lackOfResponsiveness_1", nullable=true)
-	private boolean cs8ChainOfCustodyLackOfResponsiveness1;
+	private Boolean cs8ChainOfCustodyLackOfResponsiveness1;
 
 	@Column(name="cs8_ChainOfCustody_lackOfResponsiveness_2", nullable=true)
-	private boolean cs8ChainOfCustodyLackOfResponsiveness2;
+	private Boolean cs8ChainOfCustodyLackOfResponsiveness2;
 
 	@Column(name="cs8_ChainOfCustody_lackOfResponsiveness_3", nullable=true)
-	private boolean cs8ChainOfCustodyLackOfResponsiveness3;
+	private Boolean cs8ChainOfCustodyLackOfResponsiveness3;
 
 	@Column(name="cs8_ChainOfCustody_lackOfResponsiveness_4", nullable=true)
-	private boolean cs8ChainOfCustodyLackOfResponsiveness4;
+	private Boolean cs8ChainOfCustodyLackOfResponsiveness4;
 
 	@Column(name="cs8_ChainOfCustody_lackOfResponsiveness_5", nullable=true)
-	private boolean cs8ChainOfCustodyLackOfResponsiveness5;
+	private Boolean cs8ChainOfCustodyLackOfResponsiveness5;
 
 	@Column(name="cs8_ChainOfCustody_lackOfResponsiveness_6", nullable=true)
-	private boolean cs8ChainOfCustodyLackOfResponsiveness6;
+	private Boolean cs8ChainOfCustodyLackOfResponsiveness6;
 
 	@Column(name="cs8_ChainOfCustody_complexity_1", nullable=true)
-	private boolean cs8ChainOfCustodyComplexity1;
+	private Boolean cs8ChainOfCustodyComplexity1;
 
 	@Column(name="cs8_ChainOfCustody_complexity_2", nullable=true)
-	private boolean cs8ChainOfCustodyComplexity2;
+	private Boolean cs8ChainOfCustodyComplexity2;
 
 	@Column(name="cs8_ChainOfCustody_complexity_3", nullable=true)
-	private boolean cs8ChainOfCustodyComplexity3;
+	private Boolean cs8ChainOfCustodyComplexity3;
 
 	@Column(name="cs8_ChainOfCustody_complexity_4", nullable=true)
-	private boolean cs8ChainOfCustodyComplexity4;
+	private Boolean cs8ChainOfCustodyComplexity4;
 
 	@Column(name="cs8_ChainOfCustody_complexity_5", nullable=true)
-	private boolean cs8ChainOfCustodyComplexity5;
+	private Boolean cs8ChainOfCustodyComplexity5;
 
 	@Column(name="cs8_ChainOfCustody_complexity_6", nullable=true)
-	private boolean cs8ChainOfCustodyComplexity6;
+	private Boolean cs8ChainOfCustodyComplexity6;
 
 	@Column(name="cs8_ChainOfCustody_noFSCMarketDemand_1", nullable=true)
-	private boolean cs8ChainOfCustodyNoFSCMarketDemand1;
+	private Boolean cs8ChainOfCustodyNoFSCMarketDemand1;
 
 	@Column(name="cs8_ChainOfCustody_noFSCMarketDemand_2", nullable=true)
-	private boolean cs8ChainOfCustodyNoFSCMarketDemand2;
+	private Boolean cs8ChainOfCustodyNoFSCMarketDemand2;
 
 	@Column(name="cs8_ChainOfCustody_noFSCMarketDemand_3", nullable=true)
-	private boolean cs8ChainOfCustodyNoFSCMarketDemand3;
+	private Boolean cs8ChainOfCustodyNoFSCMarketDemand3;
 
 	@Column(name="cs8_ChainOfCustody_noFSCMarketDemand_4", nullable=true)
-	private boolean cs8ChainOfCustodyNoFSCMarketDemand4;
+	private Boolean cs8ChainOfCustodyNoFSCMarketDemand4;
 
 	@Column(name="cs8_ChainOfCustody_noFSCMarketDemand_5", nullable=true)
-	private boolean cs8ChainOfCustodyNoFSCMarketDemand5;
+	private Boolean cs8ChainOfCustodyNoFSCMarketDemand5;
 
 	@Column(name="cs8_ChainOfCustody_noFSCMarketDemand_6", nullable=true)
-	private boolean cs8ChainOfCustodyNoFSCMarketDemand6;
+	private Boolean cs8ChainOfCustodyNoFSCMarketDemand6;
 
 	@Column(name="cs8_ChainOfCustody_uncertainty_1", nullable=true)
-	private boolean cs8ChainOfCustodyUncertainty1;
+	private Boolean cs8ChainOfCustodyUncertainty1;
 
 	@Column(name="cs8_ChainOfCustody_uncertainty_2", nullable=true)
-	private boolean cs8ChainOfCustodyUncertainty2;
+	private Boolean cs8ChainOfCustodyUncertainty2;
 
 	@Column(name="cs8_ChainOfCustody_uncertainty_3", nullable=true)
-	private boolean cs8ChainOfCustodyUncertainty3;
+	private Boolean cs8ChainOfCustodyUncertainty3;
 
 	@Column(name="cs8_ChainOfCustody_uncertainty_4", nullable=true)
-	private boolean cs8ChainOfCustodyUncertainty4;
+	private Boolean cs8ChainOfCustodyUncertainty4;
 
 	@Column(name="cs8_ChainOfCustody_uncertainty_5", nullable=true)
-	private boolean cs8ChainOfCustodyUncertainty5;
+	private Boolean cs8ChainOfCustodyUncertainty5;
 
 	@Column(name="cs8_ChainOfCustody_uncertainty_6", nullable=true)
-	private boolean cs8ChainOfCustodyUncertainty6;
+	private Boolean cs8ChainOfCustodyUncertainty6;
 
 	@Column(name="cs8_ChainOfCustody_lackOfFSCSupply_1", nullable=true)
-	private boolean cs8ChainOfCustodyLackoffscsupply1;
+	private Boolean cs8ChainOfCustodyLackoffscsupply1;
 
 	@Column(name="cs8_ChainOfCustody_lackOfFSCSupply_2", nullable=true)
-	private boolean cs8ChainOfCustodyLackoffscsupply2;
+	private Boolean cs8ChainOfCustodyLackoffscsupply2;
 
 	@Column(name="cs8_ChainOfCustody_lackOfFSCSupply_3", nullable=true)
-	private boolean cs8ChainOfCustodyLackoffscsupply3;
+	private Boolean cs8ChainOfCustodyLackoffscsupply3;
 
 	@Column(name="cs8_ChainOfCustody_lackOfFSCSupply_4", nullable=true)
-	private boolean cs8ChainOfCustodyLackoffscsupply4;
+	private Boolean cs8ChainOfCustodyLackoffscsupply4;
 
 	@Column(name="cs8_ChainOfCustody_lackOfFSCSupply_5", nullable=true)
-	private boolean cs8ChainOfCustodyLackoffscsupply5;
+	private Boolean cs8ChainOfCustodyLackoffscsupply5;
 
 	@Column(name="cs8_ChainOfCustody_lackOfFSCSupply_6", nullable=true)
-	private boolean cs8ChainOfCustodyLackoffscsupply6;
+	private Boolean cs8ChainOfCustodyLackoffscsupply6;
 
 	@Column(name="cs8_ChainOfCustody_inconsistentApproaches_1", nullable=true)
-	private boolean cs8ChainOfCustodyInconsistentapproaches1;
+	private Boolean cs8ChainOfCustodyInconsistentapproaches1;
 
 	@Column(name="cs8_ChainOfCustody_inconsistentApproaches_2", nullable=true)
-	private boolean cs8ChainOfCustodyInconsistentapproaches2;
+	private Boolean cs8ChainOfCustodyInconsistentapproaches2;
 
 	@Column(name="cs8_ChainOfCustody_inconsistentApproaches_3", nullable=true)
-	private boolean cs8ChainOfCustodyInconsistentapproaches3;
+	private Boolean cs8ChainOfCustodyInconsistentapproaches3;
 
 	@Column(name="cs8_ChainOfCustody_inconsistentApproaches_4", nullable=true)
-	private boolean cs8ChainOfCustodyInconsistentapproaches4;
+	private Boolean cs8ChainOfCustodyInconsistentapproaches4;
 
 	@Column(name="cs8_ChainOfCustody_inconsistentApproaches_5", nullable=true)
-	private boolean cs8ChainOfCustodyInconsistentapproaches5;
+	private Boolean cs8ChainOfCustodyInconsistentapproaches5;
 
 	@Column(name="cs8_ChainOfCustody_inconsistentApproaches_6", nullable=true)
-	private boolean cs8ChainOfCustodyInconsistentapproaches6;
+	private Boolean cs8ChainOfCustodyInconsistentapproaches6;
 
 	@Column(name="cs8_ChainOfCustody_other_1", nullable=true)
-	private boolean cs8ChainOfCustodyOther1;
+	private Boolean cs8ChainOfCustodyOther1;
 
 	@Column(name="cs8_ChainOfCustody_other_2", nullable=true)
-	private boolean cs8ChainOfCustodyOther2;
+	private Boolean cs8ChainOfCustodyOther2;
 
 	@Column(name="cs8_ChainOfCustody_other_3", nullable=true)
-	private boolean cs8ChainOfCustodyOther3;
+	private Boolean cs8ChainOfCustodyOther3;
 
 	@Column(name="cs8_ChainOfCustody_other_4", nullable=true)
-	private boolean cs8ChainOfCustodyOther4;
+	private Boolean cs8ChainOfCustodyOther4;
 
 	@Column(name="cs8_ChainOfCustody_other_5", nullable=true)
-	private boolean cs8ChainOfCustodyOther5;
+	private Boolean cs8ChainOfCustodyOther5;
 
 	@Column(name="cs8_ChainOfCustody_other_6", nullable=true)
-	private boolean cs8ChainOfCustodyOther6;
+	private Boolean cs8ChainOfCustodyOther6;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public boolean isCs8ProductSegmentWoodProducts() {
+	public Boolean isCs8ProductSegmentWoodProducts() {
 		return cs8ProductSegmentWoodProducts;
 	}
 
-	public void setCs8ProductSegmentWoodProducts(boolean cs8ProductSegmentWoodProducts) {
+	public void setCs8ProductSegmentWoodProducts(Boolean cs8ProductSegmentWoodProducts) {
 		this.cs8ProductSegmentWoodProducts = cs8ProductSegmentWoodProducts;
 	}
 
-	public boolean isCs8ProductSegmentPrintingWritingPaper() {
+	public Boolean isCs8ProductSegmentPrintingWritingPaper() {
 		return cs8ProductSegmentPrintingWritingPaper;
 	}
 
-	public void setCs8ProductSegmentPrintingWritingPaper(boolean cs8ProductSegmentPrintingWritingPaper) {
+	public void setCs8ProductSegmentPrintingWritingPaper(Boolean cs8ProductSegmentPrintingWritingPaper) {
 		this.cs8ProductSegmentPrintingWritingPaper = cs8ProductSegmentPrintingWritingPaper;
 	}
 
-	public boolean isCs8ProductSegmentPackaging() {
+	public Boolean isCs8ProductSegmentPackaging() {
 		return cs8ProductSegmentPackaging;
 	}
 
-	public void setCs8ProductSegmentPackaging(boolean cs8ProductSegmentPackaging) {
+	public void setCs8ProductSegmentPackaging(Boolean cs8ProductSegmentPackaging) {
 		this.cs8ProductSegmentPackaging = cs8ProductSegmentPackaging;
 	}
 
-	public boolean isCs8ProductSegmentBioenergy() {
+	public Boolean isCs8ProductSegmentBioenergy() {
 		return cs8ProductSegmentBioenergy;
 	}
 
-	public void setCs8ProductSegmentBioenergy(boolean cs8ProductSegmentBioenergy) {
+	public void setCs8ProductSegmentBioenergy(Boolean cs8ProductSegmentBioenergy) {
 		this.cs8ProductSegmentBioenergy = cs8ProductSegmentBioenergy;
 	}
 
-	public boolean isCs8ProductSegmentOther() {
+	public Boolean isCs8ProductSegmentOther() {
 		return cs8ProductSegmentOther;
 	}
 
-	public void setCs8ProductSegmentOther(boolean cs8ProductSegmentOther) {
+	public void setCs8ProductSegmentOther(Boolean cs8ProductSegmentOther) {
 		this.cs8ProductSegmentOther = cs8ProductSegmentOther;
 	}
 
@@ -746,27 +745,27 @@ public class Cs8
 		this.cs8Improve = cs8Improve;
 	}
 
-	public boolean isCs8ProductSegmentTowelTissue() {
+	public Boolean isCs8ProductSegmentTowelTissue() {
 		return cs8ProductSegmentTowelTissue;
 	}
 
-	public void setCs8ProductSegmentTowelTissue(boolean cs8ProductSegmentTowelTissue) {
+	public void setCs8ProductSegmentTowelTissue(Boolean cs8ProductSegmentTowelTissue) {
 		this.cs8ProductSegmentTowelTissue = cs8ProductSegmentTowelTissue;
 	}
 
-	public boolean isCs8DeforestationConcerns() {
+	public Boolean isCs8DeforestationConcerns() {
 		return cs8DeforestationConcerns;
 	}
 
-	public void setCs8DeforestationConcerns(boolean cs8DeforestationConcerns) {
+	public void setCs8DeforestationConcerns(Boolean cs8DeforestationConcerns) {
 		this.cs8DeforestationConcerns = cs8DeforestationConcerns;
 	}
 
-	public boolean isCs8DeforestationConcernsData() {
+	public Boolean isCs8DeforestationConcernsData() {
 		return cs8DeforestationConcernsData;
 	}
 
-	public void setCs8DeforestationConcernsData(boolean cs8DeforestationConcernsData) {
+	public void setCs8DeforestationConcernsData(Boolean cs8DeforestationConcernsData) {
 		this.cs8DeforestationConcernsData = cs8DeforestationConcernsData;
 	}
 
@@ -778,11 +777,11 @@ public class Cs8
 		this.cs8DeforestationConcernsDataExplain = cs8DeforestationConcernsDataExplain;
 	}
 
-	public boolean isCs8DeforestationConcernsReports() {
+	public Boolean isCs8DeforestationConcernsReports() {
 		return cs8DeforestationConcernsReports;
 	}
 
-	public void setCs8DeforestationConcernsReports(boolean cs8DeforestationConcernsReports) {
+	public void setCs8DeforestationConcernsReports(Boolean cs8DeforestationConcernsReports) {
 		this.cs8DeforestationConcernsReports = cs8DeforestationConcernsReports;
 	}
 
@@ -794,11 +793,11 @@ public class Cs8
 		this.cs8DeforestationConcernsReportsExplain = cs8DeforestationConcernsReportsExplain;
 	}
 
-	public boolean isCs8DeforestationConcernsStudies() {
+	public Boolean isCs8DeforestationConcernsStudies() {
 		return cs8DeforestationConcernsStudies;
 	}
 
-	public void setCs8DeforestationConcernsStudies(boolean cs8DeforestationConcernsStudies) {
+	public void setCs8DeforestationConcernsStudies(Boolean cs8DeforestationConcernsStudies) {
 		this.cs8DeforestationConcernsStudies = cs8DeforestationConcernsStudies;
 	}
 
@@ -810,11 +809,11 @@ public class Cs8
 		this.cs8DeforestationConcernsStudiesExplain = cs8DeforestationConcernsStudiesExplain;
 	}
 
-	public boolean isCs8DeforestationConcernsOther() {
+	public Boolean isCs8DeforestationConcernsOther() {
 		return cs8DeforestationConcernsOther;
 	}
 
-	public void setCs8DeforestationConcernsOther(boolean cs8DeforestationConcernsOther) {
+	public void setCs8DeforestationConcernsOther(Boolean cs8DeforestationConcernsOther) {
 		this.cs8DeforestationConcernsOther = cs8DeforestationConcernsOther;
 	}
 
@@ -1306,387 +1305,387 @@ public class Cs8
 		this.cs8FscCertificationExplain6 = cs8FscCertificationExplain6;
 	}
 
-	public boolean isCs8Cost1() {
+	public Boolean isCs8Cost1() {
 		return cs8Cost1;
 	}
 
-	public void setCs8Cost1(boolean cs8Cost1) {
+	public void setCs8Cost1(Boolean cs8Cost1) {
 		this.cs8Cost1 = cs8Cost1;
 	}
 
-	public boolean isCs8Cost2() {
+	public Boolean isCs8Cost2() {
 		return cs8Cost2;
 	}
 
-	public void setCs8Cost2(boolean cs8Cost2) {
+	public void setCs8Cost2(Boolean cs8Cost2) {
 		this.cs8Cost2 = cs8Cost2;
 	}
 
-	public boolean isCs8Cost3() {
+	public Boolean isCs8Cost3() {
 		return cs8Cost3;
 	}
 
-	public void setCs8Cost3(boolean cs8Cost3) {
+	public void setCs8Cost3(Boolean cs8Cost3) {
 		this.cs8Cost3 = cs8Cost3;
 	}
 
-	public boolean isCs8Cost4() {
+	public Boolean isCs8Cost4() {
 		return cs8Cost4;
 	}
 
-	public void setCs8Cost4(boolean cs8Cost4) {
+	public void setCs8Cost4(Boolean cs8Cost4) {
 		this.cs8Cost4 = cs8Cost4;
 	}
 
-	public boolean isCs8Cost5() {
+	public Boolean isCs8Cost5() {
 		return cs8Cost5;
 	}
 
-	public void setCs8Cost5(boolean cs8Cost5) {
+	public void setCs8Cost5(Boolean cs8Cost5) {
 		this.cs8Cost5 = cs8Cost5;
 	}
 
-	public boolean isCs8Cost6() {
+	public Boolean isCs8Cost6() {
 		return cs8Cost6;
 	}
 
-	public void setCs8Cost6(boolean cs8Cost6) {
+	public void setCs8Cost6(Boolean cs8Cost6) {
 		this.cs8Cost6 = cs8Cost6;
 	}
 
-	public boolean isCs8LackOfResponsiveness1() {
+	public Boolean isCs8LackOfResponsiveness1() {
 		return cs8LackOfResponsiveness1;
 	}
 
-	public void setCs8LackOfResponsiveness1(boolean cs8LackOfResponsiveness1) {
+	public void setCs8LackOfResponsiveness1(Boolean cs8LackOfResponsiveness1) {
 		this.cs8LackOfResponsiveness1 = cs8LackOfResponsiveness1;
 	}
 
-	public boolean isCs8LackOfResponsiveness2() {
+	public Boolean isCs8LackOfResponsiveness2() {
 		return cs8LackOfResponsiveness2;
 	}
 
-	public void setCs8LackOfResponsiveness2(boolean cs8LackOfResponsiveness2) {
+	public void setCs8LackOfResponsiveness2(Boolean cs8LackOfResponsiveness2) {
 		this.cs8LackOfResponsiveness2 = cs8LackOfResponsiveness2;
 	}
 
-	public boolean isCs8LackOfResponsiveness3() {
+	public Boolean isCs8LackOfResponsiveness3() {
 		return cs8LackOfResponsiveness3;
 	}
 
-	public void setCs8LackOfResponsiveness3(boolean cs8LackOfResponsiveness3) {
+	public void setCs8LackOfResponsiveness3(Boolean cs8LackOfResponsiveness3) {
 		this.cs8LackOfResponsiveness3 = cs8LackOfResponsiveness3;
 	}
 
-	public boolean isCs8LackOfResponsiveness4() {
+	public Boolean isCs8LackOfResponsiveness4() {
 		return cs8LackOfResponsiveness4;
 	}
 
-	public void setCs8LackOfResponsiveness4(boolean cs8LackOfResponsiveness4) {
+	public void setCs8LackOfResponsiveness4(Boolean cs8LackOfResponsiveness4) {
 		this.cs8LackOfResponsiveness4 = cs8LackOfResponsiveness4;
 	}
 
-	public boolean isCs8LackOfResponsiveness5() {
+	public Boolean isCs8LackOfResponsiveness5() {
 		return cs8LackOfResponsiveness5;
 	}
 
-	public void setCs8LackOfResponsiveness5(boolean cs8LackOfResponsiveness5) {
+	public void setCs8LackOfResponsiveness5(Boolean cs8LackOfResponsiveness5) {
 		this.cs8LackOfResponsiveness5 = cs8LackOfResponsiveness5;
 	}
 
-	public boolean isCs8LackOfResponsiveness6() {
+	public Boolean isCs8LackOfResponsiveness6() {
 		return cs8LackOfResponsiveness6;
 	}
 
-	public void setCs8LackOfResponsiveness6(boolean cs8LackOfResponsiveness6) {
+	public void setCs8LackOfResponsiveness6(Boolean cs8LackOfResponsiveness6) {
 		this.cs8LackOfResponsiveness6 = cs8LackOfResponsiveness6;
 	}
 
-	public boolean isCs8Complexity1() {
+	public Boolean isCs8Complexity1() {
 		return cs8Complexity1;
 	}
 
-	public void setCs8Complexity1(boolean cs8Complexity1) {
+	public void setCs8Complexity1(Boolean cs8Complexity1) {
 		this.cs8Complexity1 = cs8Complexity1;
 	}
 
-	public boolean isCs8Complexity2() {
+	public Boolean isCs8Complexity2() {
 		return cs8Complexity2;
 	}
 
-	public void setCs8Complexity2(boolean cs8Complexity2) {
+	public void setCs8Complexity2(Boolean cs8Complexity2) {
 		this.cs8Complexity2 = cs8Complexity2;
 	}
 
-	public boolean isCs8Complexity3() {
+	public Boolean isCs8Complexity3() {
 		return cs8Complexity3;
 	}
 
-	public void setCs8Complexity3(boolean cs8Complexity3) {
+	public void setCs8Complexity3(Boolean cs8Complexity3) {
 		this.cs8Complexity3 = cs8Complexity3;
 	}
 
-	public boolean isCs8Complexity4() {
+	public Boolean isCs8Complexity4() {
 		return cs8Complexity4;
 	}
 
-	public void setCs8Complexity4(boolean cs8Complexity4) {
+	public void setCs8Complexity4(Boolean cs8Complexity4) {
 		this.cs8Complexity4 = cs8Complexity4;
 	}
 
-	public boolean isCs8Complexity5() {
+	public Boolean isCs8Complexity5() {
 		return cs8Complexity5;
 	}
 
-	public void setCs8Complexity5(boolean cs8Complexity5) {
+	public void setCs8Complexity5(Boolean cs8Complexity5) {
 		this.cs8Complexity5 = cs8Complexity5;
 	}
 
-	public boolean isCs8Complexity6() {
+	public Boolean isCs8Complexity6() {
 		return cs8Complexity6;
 	}
 
-	public void setCs8Complexity6(boolean cs8Complexity6) {
+	public void setCs8Complexity6(Boolean cs8Complexity6) {
 		this.cs8Complexity6 = cs8Complexity6;
 	}
 
-	public boolean isCs8NoFSCMarketDemand1() {
+	public Boolean isCs8NoFSCMarketDemand1() {
 		return cs8NoFSCMarketDemand1;
 	}
 
-	public void setCs8NoFSCMarketDemand1(boolean cs8NoFSCMarketDemand1) {
+	public void setCs8NoFSCMarketDemand1(Boolean cs8NoFSCMarketDemand1) {
 		this.cs8NoFSCMarketDemand1 = cs8NoFSCMarketDemand1;
 	}
 
-	public boolean isCs8NoFSCMarketDemand2() {
+	public Boolean isCs8NoFSCMarketDemand2() {
 		return cs8NoFSCMarketDemand2;
 	}
 
-	public void setCs8NoFSCMarketDemand2(boolean cs8NoFSCMarketDemand2) {
+	public void setCs8NoFSCMarketDemand2(Boolean cs8NoFSCMarketDemand2) {
 		this.cs8NoFSCMarketDemand2 = cs8NoFSCMarketDemand2;
 	}
 
-	public boolean isCs8NoFSCMarketDemand3() {
+	public Boolean isCs8NoFSCMarketDemand3() {
 		return cs8NoFSCMarketDemand3;
 	}
 
-	public void setCs8NoFSCMarketDemand3(boolean cs8NoFSCMarketDemand3) {
+	public void setCs8NoFSCMarketDemand3(Boolean cs8NoFSCMarketDemand3) {
 		this.cs8NoFSCMarketDemand3 = cs8NoFSCMarketDemand3;
 	}
 
-	public boolean isCs8NoFSCMarketDemand4() {
+	public Boolean isCs8NoFSCMarketDemand4() {
 		return cs8NoFSCMarketDemand4;
 	}
 
-	public void setCs8NoFSCMarketDemand4(boolean cs8NoFSCMarketDemand4) {
+	public void setCs8NoFSCMarketDemand4(Boolean cs8NoFSCMarketDemand4) {
 		this.cs8NoFSCMarketDemand4 = cs8NoFSCMarketDemand4;
 	}
 
-	public boolean isCs8NoFSCMarketDemand5() {
+	public Boolean isCs8NoFSCMarketDemand5() {
 		return cs8NoFSCMarketDemand5;
 	}
 
-	public void setCs8NoFSCMarketDemand5(boolean cs8NoFSCMarketDemand5) {
+	public void setCs8NoFSCMarketDemand5(Boolean cs8NoFSCMarketDemand5) {
 		this.cs8NoFSCMarketDemand5 = cs8NoFSCMarketDemand5;
 	}
 
-	public boolean isCs8NoFSCMarketDemand6() {
+	public Boolean isCs8NoFSCMarketDemand6() {
 		return cs8NoFSCMarketDemand6;
 	}
 
-	public void setCs8NoFSCMarketDemand6(boolean cs8NoFSCMarketDemand6) {
+	public void setCs8NoFSCMarketDemand6(Boolean cs8NoFSCMarketDemand6) {
 		this.cs8NoFSCMarketDemand6 = cs8NoFSCMarketDemand6;
 	}
 
-	public boolean isCs8Uncertainty1() {
+	public Boolean isCs8Uncertainty1() {
 		return cs8Uncertainty1;
 	}
 
-	public void setCs8Uncertainty1(boolean cs8Uncertainty1) {
+	public void setCs8Uncertainty1(Boolean cs8Uncertainty1) {
 		this.cs8Uncertainty1 = cs8Uncertainty1;
 	}
 
-	public boolean isCs8Uncertainty2() {
+	public Boolean isCs8Uncertainty2() {
 		return cs8Uncertainty2;
 	}
 
-	public void setCs8Uncertainty2(boolean cs8Uncertainty2) {
+	public void setCs8Uncertainty2(Boolean cs8Uncertainty2) {
 		this.cs8Uncertainty2 = cs8Uncertainty2;
 	}
 
-	public boolean isCs8Uncertainty3() {
+	public Boolean isCs8Uncertainty3() {
 		return cs8Uncertainty3;
 	}
 
-	public void setCs8Uncertainty3(boolean cs8Uncertainty3) {
+	public void setCs8Uncertainty3(Boolean cs8Uncertainty3) {
 		this.cs8Uncertainty3 = cs8Uncertainty3;
 	}
 
-	public boolean isCs8Uncertainty4() {
+	public Boolean isCs8Uncertainty4() {
 		return cs8Uncertainty4;
 	}
 
-	public void setCs8Uncertainty4(boolean cs8Uncertainty4) {
+	public void setCs8Uncertainty4(Boolean cs8Uncertainty4) {
 		this.cs8Uncertainty4 = cs8Uncertainty4;
 	}
 
-	public boolean isCs8Uncertainty5() {
+	public Boolean isCs8Uncertainty5() {
 		return cs8Uncertainty5;
 	}
 
-	public void setCs8Uncertainty5(boolean cs8Uncertainty5) {
+	public void setCs8Uncertainty5(Boolean cs8Uncertainty5) {
 		this.cs8Uncertainty5 = cs8Uncertainty5;
 	}
 
-	public boolean isCs8Uncertainty6() {
+	public Boolean isCs8Uncertainty6() {
 		return cs8Uncertainty6;
 	}
 
-	public void setCs8Uncertainty6(boolean cs8Uncertainty6) {
+	public void setCs8Uncertainty6(Boolean cs8Uncertainty6) {
 		this.cs8Uncertainty6 = cs8Uncertainty6;
 	}
 
-	public boolean isCs8Lackoffscsupply1() {
+	public Boolean isCs8Lackoffscsupply1() {
 		return cs8Lackoffscsupply1;
 	}
 
-	public void setCs8Lackoffscsupply1(boolean cs8Lackoffscsupply1) {
+	public void setCs8Lackoffscsupply1(Boolean cs8Lackoffscsupply1) {
 		this.cs8Lackoffscsupply1 = cs8Lackoffscsupply1;
 	}
 
-	public boolean isCs8Lackoffscsupply2() {
+	public Boolean isCs8Lackoffscsupply2() {
 		return cs8Lackoffscsupply2;
 	}
 
-	public void setCs8Lackoffscsupply2(boolean cs8Lackoffscsupply2) {
+	public void setCs8Lackoffscsupply2(Boolean cs8Lackoffscsupply2) {
 		this.cs8Lackoffscsupply2 = cs8Lackoffscsupply2;
 	}
 
-	public boolean isCs8Lackoffscsupply3() {
+	public Boolean isCs8Lackoffscsupply3() {
 		return cs8Lackoffscsupply3;
 	}
 
-	public void setCs8Lackoffscsupply3(boolean cs8Lackoffscsupply3) {
+	public void setCs8Lackoffscsupply3(Boolean cs8Lackoffscsupply3) {
 		this.cs8Lackoffscsupply3 = cs8Lackoffscsupply3;
 	}
 
-	public boolean isCs8Lackoffscsupply4() {
+	public Boolean isCs8Lackoffscsupply4() {
 		return cs8Lackoffscsupply4;
 	}
 
-	public void setCs8Lackoffscsupply4(boolean cs8Lackoffscsupply4) {
+	public void setCs8Lackoffscsupply4(Boolean cs8Lackoffscsupply4) {
 		this.cs8Lackoffscsupply4 = cs8Lackoffscsupply4;
 	}
 
-	public boolean isCs8Lackoffscsupply5() {
+	public Boolean isCs8Lackoffscsupply5() {
 		return cs8Lackoffscsupply5;
 	}
 
-	public void setCs8Lackoffscsupply5(boolean cs8Lackoffscsupply5) {
+	public void setCs8Lackoffscsupply5(Boolean cs8Lackoffscsupply5) {
 		this.cs8Lackoffscsupply5 = cs8Lackoffscsupply5;
 	}
 
-	public boolean isCs8Lackoffscsupply6() {
+	public Boolean isCs8Lackoffscsupply6() {
 		return cs8Lackoffscsupply6;
 	}
 
-	public void setCs8Lackoffscsupply6(boolean cs8Lackoffscsupply6) {
+	public void setCs8Lackoffscsupply6(Boolean cs8Lackoffscsupply6) {
 		this.cs8Lackoffscsupply6 = cs8Lackoffscsupply6;
 	}
 
-	public boolean isCs8Inconsistentapproaches1() {
+	public Boolean isCs8Inconsistentapproaches1() {
 		return cs8Inconsistentapproaches1;
 	}
 
-	public void setCs8Inconsistentapproaches1(boolean cs8Inconsistentapproaches1) {
+	public void setCs8Inconsistentapproaches1(Boolean cs8Inconsistentapproaches1) {
 		this.cs8Inconsistentapproaches1 = cs8Inconsistentapproaches1;
 	}
 
-	public boolean isCs8Inconsistentapproaches2() {
+	public Boolean isCs8Inconsistentapproaches2() {
 		return cs8Inconsistentapproaches2;
 	}
 
-	public void setCs8Inconsistentapproaches2(boolean cs8Inconsistentapproaches2) {
+	public void setCs8Inconsistentapproaches2(Boolean cs8Inconsistentapproaches2) {
 		this.cs8Inconsistentapproaches2 = cs8Inconsistentapproaches2;
 	}
 
-	public boolean isCs8Inconsistentapproaches3() {
+	public Boolean isCs8Inconsistentapproaches3() {
 		return cs8Inconsistentapproaches3;
 	}
 
-	public void setCs8Inconsistentapproaches3(boolean cs8Inconsistentapproaches3) {
+	public void setCs8Inconsistentapproaches3(Boolean cs8Inconsistentapproaches3) {
 		this.cs8Inconsistentapproaches3 = cs8Inconsistentapproaches3;
 	}
 
-	public boolean isCs8Inconsistentapproaches4() {
+	public Boolean isCs8Inconsistentapproaches4() {
 		return cs8Inconsistentapproaches4;
 	}
 
-	public void setCs8Inconsistentapproaches4(boolean cs8Inconsistentapproaches4) {
+	public void setCs8Inconsistentapproaches4(Boolean cs8Inconsistentapproaches4) {
 		this.cs8Inconsistentapproaches4 = cs8Inconsistentapproaches4;
 	}
 
-	public boolean isCs8Inconsistentapproaches5() {
+	public Boolean isCs8Inconsistentapproaches5() {
 		return cs8Inconsistentapproaches5;
 	}
 
-	public void setCs8Inconsistentapproaches5(boolean cs8Inconsistentapproaches5) {
+	public void setCs8Inconsistentapproaches5(Boolean cs8Inconsistentapproaches5) {
 		this.cs8Inconsistentapproaches5 = cs8Inconsistentapproaches5;
 	}
 
-	public boolean isCs8Inconsistentapproaches6() {
+	public Boolean isCs8Inconsistentapproaches6() {
 		return cs8Inconsistentapproaches6;
 	}
 
-	public void setCs8Inconsistentapproaches6(boolean cs8Inconsistentapproaches6) {
+	public void setCs8Inconsistentapproaches6(Boolean cs8Inconsistentapproaches6) {
 		this.cs8Inconsistentapproaches6 = cs8Inconsistentapproaches6;
 	}
 
-	public boolean isCs8Other1() {
+	public Boolean isCs8Other1() {
 		return cs8Other1;
 	}
 
-	public void setCs8Other1(boolean cs8Other1) {
+	public void setCs8Other1(Boolean cs8Other1) {
 		this.cs8Other1 = cs8Other1;
 	}
 
-	public boolean isCs8Other2() {
+	public Boolean isCs8Other2() {
 		return cs8Other2;
 	}
 
-	public void setCs8Other2(boolean cs8Other2) {
+	public void setCs8Other2(Boolean cs8Other2) {
 		this.cs8Other2 = cs8Other2;
 	}
 
-	public boolean isCs8Other3() {
+	public Boolean isCs8Other3() {
 		return cs8Other3;
 	}
 
-	public void setCs8Other3(boolean cs8Other3) {
+	public void setCs8Other3(Boolean cs8Other3) {
 		this.cs8Other3 = cs8Other3;
 	}
 
-	public boolean isCs8Other4() {
+	public Boolean isCs8Other4() {
 		return cs8Other4;
 	}
 
-	public void setCs8Other4(boolean cs8Other4) {
+	public void setCs8Other4(Boolean cs8Other4) {
 		this.cs8Other4 = cs8Other4;
 	}
 
-	public boolean isCs8Other5() {
+	public Boolean isCs8Other5() {
 		return cs8Other5;
 	}
 
-	public void setCs8Other5(boolean cs8Other5) {
+	public void setCs8Other5(Boolean cs8Other5) {
 		this.cs8Other5 = cs8Other5;
 	}
 
-	public boolean isCs8Other6() {
+	public Boolean isCs8Other6() {
 		return cs8Other6;
 	}
 
-	public void setCs8Other6(boolean cs8Other6) {
+	public void setCs8Other6(Boolean cs8Other6) {
 		this.cs8Other6 = cs8Other6;
 	}
 
@@ -1786,387 +1785,387 @@ public class Cs8
 		this.cs8ChainOfCustodyFscCertificationExplain6 = cs8ChainOfCustodyFscCertificationExplain6;
 	}
 
-	public boolean isCs8ChainOfCustodyCost1() {
+	public Boolean isCs8ChainOfCustodyCost1() {
 		return cs8ChainOfCustodyCost1;
 	}
 
-	public void setCs8ChainOfCustodyCost1(boolean cs8ChainOfCustodyCost1) {
+	public void setCs8ChainOfCustodyCost1(Boolean cs8ChainOfCustodyCost1) {
 		this.cs8ChainOfCustodyCost1 = cs8ChainOfCustodyCost1;
 	}
 
-	public boolean isCs8ChainOfCustodyCost2() {
+	public Boolean isCs8ChainOfCustodyCost2() {
 		return cs8ChainOfCustodyCost2;
 	}
 
-	public void setCs8ChainOfCustodyCost2(boolean cs8ChainOfCustodyCost2) {
+	public void setCs8ChainOfCustodyCost2(Boolean cs8ChainOfCustodyCost2) {
 		this.cs8ChainOfCustodyCost2 = cs8ChainOfCustodyCost2;
 	}
 
-	public boolean isCs8ChainOfCustodyCost3() {
+	public Boolean isCs8ChainOfCustodyCost3() {
 		return cs8ChainOfCustodyCost3;
 	}
 
-	public void setCs8ChainOfCustodyCost3(boolean cs8ChainOfCustodyCost3) {
+	public void setCs8ChainOfCustodyCost3(Boolean cs8ChainOfCustodyCost3) {
 		this.cs8ChainOfCustodyCost3 = cs8ChainOfCustodyCost3;
 	}
 
-	public boolean isCs8ChainOfCustodyCost4() {
+	public Boolean isCs8ChainOfCustodyCost4() {
 		return cs8ChainOfCustodyCost4;
 	}
 
-	public void setCs8ChainOfCustodyCost4(boolean cs8ChainOfCustodyCost4) {
+	public void setCs8ChainOfCustodyCost4(Boolean cs8ChainOfCustodyCost4) {
 		this.cs8ChainOfCustodyCost4 = cs8ChainOfCustodyCost4;
 	}
 
-	public boolean isCs8ChainOfCustodyCost5() {
+	public Boolean isCs8ChainOfCustodyCost5() {
 		return cs8ChainOfCustodyCost5;
 	}
 
-	public void setCs8ChainOfCustodyCost5(boolean cs8ChainOfCustodyCost5) {
+	public void setCs8ChainOfCustodyCost5(Boolean cs8ChainOfCustodyCost5) {
 		this.cs8ChainOfCustodyCost5 = cs8ChainOfCustodyCost5;
 	}
 
-	public boolean isCs8ChainOfCustodyCost6() {
+	public Boolean isCs8ChainOfCustodyCost6() {
 		return cs8ChainOfCustodyCost6;
 	}
 
-	public void setCs8ChainOfCustodyCost6(boolean cs8ChainOfCustodyCost6) {
+	public void setCs8ChainOfCustodyCost6(Boolean cs8ChainOfCustodyCost6) {
 		this.cs8ChainOfCustodyCost6 = cs8ChainOfCustodyCost6;
 	}
 
-	public boolean isCs8ChainOfCustodyLackOfResponsiveness1() {
+	public Boolean isCs8ChainOfCustodyLackOfResponsiveness1() {
 		return cs8ChainOfCustodyLackOfResponsiveness1;
 	}
 
-	public void setCs8ChainOfCustodyLackOfResponsiveness1(boolean cs8ChainOfCustodyLackOfResponsiveness1) {
+	public void setCs8ChainOfCustodyLackOfResponsiveness1(Boolean cs8ChainOfCustodyLackOfResponsiveness1) {
 		this.cs8ChainOfCustodyLackOfResponsiveness1 = cs8ChainOfCustodyLackOfResponsiveness1;
 	}
 
-	public boolean isCs8ChainOfCustodyLackOfResponsiveness2() {
+	public Boolean isCs8ChainOfCustodyLackOfResponsiveness2() {
 		return cs8ChainOfCustodyLackOfResponsiveness2;
 	}
 
-	public void setCs8ChainOfCustodyLackOfResponsiveness2(boolean cs8ChainOfCustodyLackOfResponsiveness2) {
+	public void setCs8ChainOfCustodyLackOfResponsiveness2(Boolean cs8ChainOfCustodyLackOfResponsiveness2) {
 		this.cs8ChainOfCustodyLackOfResponsiveness2 = cs8ChainOfCustodyLackOfResponsiveness2;
 	}
 
-	public boolean isCs8ChainOfCustodyLackOfResponsiveness3() {
+	public Boolean isCs8ChainOfCustodyLackOfResponsiveness3() {
 		return cs8ChainOfCustodyLackOfResponsiveness3;
 	}
 
-	public void setCs8ChainOfCustodyLackOfResponsiveness3(boolean cs8ChainOfCustodyLackOfResponsiveness3) {
+	public void setCs8ChainOfCustodyLackOfResponsiveness3(Boolean cs8ChainOfCustodyLackOfResponsiveness3) {
 		this.cs8ChainOfCustodyLackOfResponsiveness3 = cs8ChainOfCustodyLackOfResponsiveness3;
 	}
 
-	public boolean isCs8ChainOfCustodyLackOfResponsiveness4() {
+	public Boolean isCs8ChainOfCustodyLackOfResponsiveness4() {
 		return cs8ChainOfCustodyLackOfResponsiveness4;
 	}
 
-	public void setCs8ChainOfCustodyLackOfResponsiveness4(boolean cs8ChainOfCustodyLackOfResponsiveness4) {
+	public void setCs8ChainOfCustodyLackOfResponsiveness4(Boolean cs8ChainOfCustodyLackOfResponsiveness4) {
 		this.cs8ChainOfCustodyLackOfResponsiveness4 = cs8ChainOfCustodyLackOfResponsiveness4;
 	}
 
-	public boolean isCs8ChainOfCustodyLackOfResponsiveness5() {
+	public Boolean isCs8ChainOfCustodyLackOfResponsiveness5() {
 		return cs8ChainOfCustodyLackOfResponsiveness5;
 	}
 
-	public void setCs8ChainOfCustodyLackOfResponsiveness5(boolean cs8ChainOfCustodyLackOfResponsiveness5) {
+	public void setCs8ChainOfCustodyLackOfResponsiveness5(Boolean cs8ChainOfCustodyLackOfResponsiveness5) {
 		this.cs8ChainOfCustodyLackOfResponsiveness5 = cs8ChainOfCustodyLackOfResponsiveness5;
 	}
 
-	public boolean isCs8ChainOfCustodyLackOfResponsiveness6() {
+	public Boolean isCs8ChainOfCustodyLackOfResponsiveness6() {
 		return cs8ChainOfCustodyLackOfResponsiveness6;
 	}
 
-	public void setCs8ChainOfCustodyLackOfResponsiveness6(boolean cs8ChainOfCustodyLackOfResponsiveness6) {
+	public void setCs8ChainOfCustodyLackOfResponsiveness6(Boolean cs8ChainOfCustodyLackOfResponsiveness6) {
 		this.cs8ChainOfCustodyLackOfResponsiveness6 = cs8ChainOfCustodyLackOfResponsiveness6;
 	}
 
-	public boolean isCs8ChainOfCustodyComplexity1() {
+	public Boolean isCs8ChainOfCustodyComplexity1() {
 		return cs8ChainOfCustodyComplexity1;
 	}
 
-	public void setCs8ChainOfCustodyComplexity1(boolean cs8ChainOfCustodyComplexity1) {
+	public void setCs8ChainOfCustodyComplexity1(Boolean cs8ChainOfCustodyComplexity1) {
 		this.cs8ChainOfCustodyComplexity1 = cs8ChainOfCustodyComplexity1;
 	}
 
-	public boolean isCs8ChainOfCustodyComplexity2() {
+	public Boolean isCs8ChainOfCustodyComplexity2() {
 		return cs8ChainOfCustodyComplexity2;
 	}
 
-	public void setCs8ChainOfCustodyComplexity2(boolean cs8ChainOfCustodyComplexity2) {
+	public void setCs8ChainOfCustodyComplexity2(Boolean cs8ChainOfCustodyComplexity2) {
 		this.cs8ChainOfCustodyComplexity2 = cs8ChainOfCustodyComplexity2;
 	}
 
-	public boolean isCs8ChainOfCustodyComplexity3() {
+	public Boolean isCs8ChainOfCustodyComplexity3() {
 		return cs8ChainOfCustodyComplexity3;
 	}
 
-	public void setCs8ChainOfCustodyComplexity3(boolean cs8ChainOfCustodyComplexity3) {
+	public void setCs8ChainOfCustodyComplexity3(Boolean cs8ChainOfCustodyComplexity3) {
 		this.cs8ChainOfCustodyComplexity3 = cs8ChainOfCustodyComplexity3;
 	}
 
-	public boolean isCs8ChainOfCustodyComplexity4() {
+	public Boolean isCs8ChainOfCustodyComplexity4() {
 		return cs8ChainOfCustodyComplexity4;
 	}
 
-	public void setCs8ChainOfCustodyComplexity4(boolean cs8ChainOfCustodyComplexity4) {
+	public void setCs8ChainOfCustodyComplexity4(Boolean cs8ChainOfCustodyComplexity4) {
 		this.cs8ChainOfCustodyComplexity4 = cs8ChainOfCustodyComplexity4;
 	}
 
-	public boolean isCs8ChainOfCustodyComplexity5() {
+	public Boolean isCs8ChainOfCustodyComplexity5() {
 		return cs8ChainOfCustodyComplexity5;
 	}
 
-	public void setCs8ChainOfCustodyComplexity5(boolean cs8ChainOfCustodyComplexity5) {
+	public void setCs8ChainOfCustodyComplexity5(Boolean cs8ChainOfCustodyComplexity5) {
 		this.cs8ChainOfCustodyComplexity5 = cs8ChainOfCustodyComplexity5;
 	}
 
-	public boolean isCs8ChainOfCustodyComplexity6() {
+	public Boolean isCs8ChainOfCustodyComplexity6() {
 		return cs8ChainOfCustodyComplexity6;
 	}
 
-	public void setCs8ChainOfCustodyComplexity6(boolean cs8ChainOfCustodyComplexity6) {
+	public void setCs8ChainOfCustodyComplexity6(Boolean cs8ChainOfCustodyComplexity6) {
 		this.cs8ChainOfCustodyComplexity6 = cs8ChainOfCustodyComplexity6;
 	}
 
-	public boolean isCs8ChainOfCustodyNoFSCMarketDemand1() {
+	public Boolean isCs8ChainOfCustodyNoFSCMarketDemand1() {
 		return cs8ChainOfCustodyNoFSCMarketDemand1;
 	}
 
-	public void setCs8ChainOfCustodyNoFSCMarketDemand1(boolean cs8ChainOfCustodyNoFSCMarketDemand1) {
+	public void setCs8ChainOfCustodyNoFSCMarketDemand1(Boolean cs8ChainOfCustodyNoFSCMarketDemand1) {
 		this.cs8ChainOfCustodyNoFSCMarketDemand1 = cs8ChainOfCustodyNoFSCMarketDemand1;
 	}
 
-	public boolean isCs8ChainOfCustodyNoFSCMarketDemand2() {
+	public Boolean isCs8ChainOfCustodyNoFSCMarketDemand2() {
 		return cs8ChainOfCustodyNoFSCMarketDemand2;
 	}
 
-	public void setCs8ChainOfCustodyNoFSCMarketDemand2(boolean cs8ChainOfCustodyNoFSCMarketDemand2) {
+	public void setCs8ChainOfCustodyNoFSCMarketDemand2(Boolean cs8ChainOfCustodyNoFSCMarketDemand2) {
 		this.cs8ChainOfCustodyNoFSCMarketDemand2 = cs8ChainOfCustodyNoFSCMarketDemand2;
 	}
 
-	public boolean isCs8ChainOfCustodyNoFSCMarketDemand3() {
+	public Boolean isCs8ChainOfCustodyNoFSCMarketDemand3() {
 		return cs8ChainOfCustodyNoFSCMarketDemand3;
 	}
 
-	public void setCs8ChainOfCustodyNoFSCMarketDemand3(boolean cs8ChainOfCustodyNoFSCMarketDemand3) {
+	public void setCs8ChainOfCustodyNoFSCMarketDemand3(Boolean cs8ChainOfCustodyNoFSCMarketDemand3) {
 		this.cs8ChainOfCustodyNoFSCMarketDemand3 = cs8ChainOfCustodyNoFSCMarketDemand3;
 	}
 
-	public boolean isCs8ChainOfCustodyNoFSCMarketDemand4() {
+	public Boolean isCs8ChainOfCustodyNoFSCMarketDemand4() {
 		return cs8ChainOfCustodyNoFSCMarketDemand4;
 	}
 
-	public void setCs8ChainOfCustodyNoFSCMarketDemand4(boolean cs8ChainOfCustodyNoFSCMarketDemand4) {
+	public void setCs8ChainOfCustodyNoFSCMarketDemand4(Boolean cs8ChainOfCustodyNoFSCMarketDemand4) {
 		this.cs8ChainOfCustodyNoFSCMarketDemand4 = cs8ChainOfCustodyNoFSCMarketDemand4;
 	}
 
-	public boolean isCs8ChainOfCustodyNoFSCMarketDemand5() {
+	public Boolean isCs8ChainOfCustodyNoFSCMarketDemand5() {
 		return cs8ChainOfCustodyNoFSCMarketDemand5;
 	}
 
-	public void setCs8ChainOfCustodyNoFSCMarketDemand5(boolean cs8ChainOfCustodyNoFSCMarketDemand5) {
+	public void setCs8ChainOfCustodyNoFSCMarketDemand5(Boolean cs8ChainOfCustodyNoFSCMarketDemand5) {
 		this.cs8ChainOfCustodyNoFSCMarketDemand5 = cs8ChainOfCustodyNoFSCMarketDemand5;
 	}
 
-	public boolean isCs8ChainOfCustodyNoFSCMarketDemand6() {
+	public Boolean isCs8ChainOfCustodyNoFSCMarketDemand6() {
 		return cs8ChainOfCustodyNoFSCMarketDemand6;
 	}
 
-	public void setCs8ChainOfCustodyNoFSCMarketDemand6(boolean cs8ChainOfCustodyNoFSCMarketDemand6) {
+	public void setCs8ChainOfCustodyNoFSCMarketDemand6(Boolean cs8ChainOfCustodyNoFSCMarketDemand6) {
 		this.cs8ChainOfCustodyNoFSCMarketDemand6 = cs8ChainOfCustodyNoFSCMarketDemand6;
 	}
 
-	public boolean isCs8ChainOfCustodyUncertainty1() {
+	public Boolean isCs8ChainOfCustodyUncertainty1() {
 		return cs8ChainOfCustodyUncertainty1;
 	}
 
-	public void setCs8ChainOfCustodyUncertainty1(boolean cs8ChainOfCustodyUncertainty1) {
+	public void setCs8ChainOfCustodyUncertainty1(Boolean cs8ChainOfCustodyUncertainty1) {
 		this.cs8ChainOfCustodyUncertainty1 = cs8ChainOfCustodyUncertainty1;
 	}
 
-	public boolean isCs8ChainOfCustodyUncertainty2() {
+	public Boolean isCs8ChainOfCustodyUncertainty2() {
 		return cs8ChainOfCustodyUncertainty2;
 	}
 
-	public void setCs8ChainOfCustodyUncertainty2(boolean cs8ChainOfCustodyUncertainty2) {
+	public void setCs8ChainOfCustodyUncertainty2(Boolean cs8ChainOfCustodyUncertainty2) {
 		this.cs8ChainOfCustodyUncertainty2 = cs8ChainOfCustodyUncertainty2;
 	}
 
-	public boolean isCs8ChainOfCustodyUncertainty3() {
+	public Boolean isCs8ChainOfCustodyUncertainty3() {
 		return cs8ChainOfCustodyUncertainty3;
 	}
 
-	public void setCs8ChainOfCustodyUncertainty3(boolean cs8ChainOfCustodyUncertainty3) {
+	public void setCs8ChainOfCustodyUncertainty3(Boolean cs8ChainOfCustodyUncertainty3) {
 		this.cs8ChainOfCustodyUncertainty3 = cs8ChainOfCustodyUncertainty3;
 	}
 
-	public boolean isCs8ChainOfCustodyUncertainty4() {
+	public Boolean isCs8ChainOfCustodyUncertainty4() {
 		return cs8ChainOfCustodyUncertainty4;
 	}
 
-	public void setCs8ChainOfCustodyUncertainty4(boolean cs8ChainOfCustodyUncertainty4) {
+	public void setCs8ChainOfCustodyUncertainty4(Boolean cs8ChainOfCustodyUncertainty4) {
 		this.cs8ChainOfCustodyUncertainty4 = cs8ChainOfCustodyUncertainty4;
 	}
 
-	public boolean isCs8ChainOfCustodyUncertainty5() {
+	public Boolean isCs8ChainOfCustodyUncertainty5() {
 		return cs8ChainOfCustodyUncertainty5;
 	}
 
-	public void setCs8ChainOfCustodyUncertainty5(boolean cs8ChainOfCustodyUncertainty5) {
+	public void setCs8ChainOfCustodyUncertainty5(Boolean cs8ChainOfCustodyUncertainty5) {
 		this.cs8ChainOfCustodyUncertainty5 = cs8ChainOfCustodyUncertainty5;
 	}
 
-	public boolean isCs8ChainOfCustodyUncertainty6() {
+	public Boolean isCs8ChainOfCustodyUncertainty6() {
 		return cs8ChainOfCustodyUncertainty6;
 	}
 
-	public void setCs8ChainOfCustodyUncertainty6(boolean cs8ChainOfCustodyUncertainty6) {
+	public void setCs8ChainOfCustodyUncertainty6(Boolean cs8ChainOfCustodyUncertainty6) {
 		this.cs8ChainOfCustodyUncertainty6 = cs8ChainOfCustodyUncertainty6;
 	}
 
-	public boolean isCs8ChainOfCustodyLackoffscsupply1() {
+	public Boolean isCs8ChainOfCustodyLackoffscsupply1() {
 		return cs8ChainOfCustodyLackoffscsupply1;
 	}
 
-	public void setCs8ChainOfCustodyLackoffscsupply1(boolean cs8ChainOfCustodyLackoffscsupply1) {
+	public void setCs8ChainOfCustodyLackoffscsupply1(Boolean cs8ChainOfCustodyLackoffscsupply1) {
 		this.cs8ChainOfCustodyLackoffscsupply1 = cs8ChainOfCustodyLackoffscsupply1;
 	}
 
-	public boolean isCs8ChainOfCustodyLackoffscsupply2() {
+	public Boolean isCs8ChainOfCustodyLackoffscsupply2() {
 		return cs8ChainOfCustodyLackoffscsupply2;
 	}
 
-	public void setCs8ChainOfCustodyLackoffscsupply2(boolean cs8ChainOfCustodyLackoffscsupply2) {
+	public void setCs8ChainOfCustodyLackoffscsupply2(Boolean cs8ChainOfCustodyLackoffscsupply2) {
 		this.cs8ChainOfCustodyLackoffscsupply2 = cs8ChainOfCustodyLackoffscsupply2;
 	}
 
-	public boolean isCs8ChainOfCustodyLackoffscsupply3() {
+	public Boolean isCs8ChainOfCustodyLackoffscsupply3() {
 		return cs8ChainOfCustodyLackoffscsupply3;
 	}
 
-	public void setCs8ChainOfCustodyLackoffscsupply3(boolean cs8ChainOfCustodyLackoffscsupply3) {
+	public void setCs8ChainOfCustodyLackoffscsupply3(Boolean cs8ChainOfCustodyLackoffscsupply3) {
 		this.cs8ChainOfCustodyLackoffscsupply3 = cs8ChainOfCustodyLackoffscsupply3;
 	}
 
-	public boolean isCs8ChainOfCustodyLackoffscsupply4() {
+	public Boolean isCs8ChainOfCustodyLackoffscsupply4() {
 		return cs8ChainOfCustodyLackoffscsupply4;
 	}
 
-	public void setCs8ChainOfCustodyLackoffscsupply4(boolean cs8ChainOfCustodyLackoffscsupply4) {
+	public void setCs8ChainOfCustodyLackoffscsupply4(Boolean cs8ChainOfCustodyLackoffscsupply4) {
 		this.cs8ChainOfCustodyLackoffscsupply4 = cs8ChainOfCustodyLackoffscsupply4;
 	}
 
-	public boolean isCs8ChainOfCustodyLackoffscsupply5() {
+	public Boolean isCs8ChainOfCustodyLackoffscsupply5() {
 		return cs8ChainOfCustodyLackoffscsupply5;
 	}
 
-	public void setCs8ChainOfCustodyLackoffscsupply5(boolean cs8ChainOfCustodyLackoffscsupply5) {
+	public void setCs8ChainOfCustodyLackoffscsupply5(Boolean cs8ChainOfCustodyLackoffscsupply5) {
 		this.cs8ChainOfCustodyLackoffscsupply5 = cs8ChainOfCustodyLackoffscsupply5;
 	}
 
-	public boolean isCs8ChainOfCustodyLackoffscsupply6() {
+	public Boolean isCs8ChainOfCustodyLackoffscsupply6() {
 		return cs8ChainOfCustodyLackoffscsupply6;
 	}
 
-	public void setCs8ChainOfCustodyLackoffscsupply6(boolean cs8ChainOfCustodyLackoffscsupply6) {
+	public void setCs8ChainOfCustodyLackoffscsupply6(Boolean cs8ChainOfCustodyLackoffscsupply6) {
 		this.cs8ChainOfCustodyLackoffscsupply6 = cs8ChainOfCustodyLackoffscsupply6;
 	}
 
-	public boolean isCs8ChainOfCustodyInconsistentapproaches1() {
+	public Boolean isCs8ChainOfCustodyInconsistentapproaches1() {
 		return cs8ChainOfCustodyInconsistentapproaches1;
 	}
 
-	public void setCs8ChainOfCustodyInconsistentapproaches1(boolean cs8ChainOfCustodyInconsistentapproaches1) {
+	public void setCs8ChainOfCustodyInconsistentapproaches1(Boolean cs8ChainOfCustodyInconsistentapproaches1) {
 		this.cs8ChainOfCustodyInconsistentapproaches1 = cs8ChainOfCustodyInconsistentapproaches1;
 	}
 
-	public boolean isCs8ChainOfCustodyInconsistentapproaches2() {
+	public Boolean isCs8ChainOfCustodyInconsistentapproaches2() {
 		return cs8ChainOfCustodyInconsistentapproaches2;
 	}
 
-	public void setCs8ChainOfCustodyInconsistentapproaches2(boolean cs8ChainOfCustodyInconsistentapproaches2) {
+	public void setCs8ChainOfCustodyInconsistentapproaches2(Boolean cs8ChainOfCustodyInconsistentapproaches2) {
 		this.cs8ChainOfCustodyInconsistentapproaches2 = cs8ChainOfCustodyInconsistentapproaches2;
 	}
 
-	public boolean isCs8ChainOfCustodyInconsistentapproaches3() {
+	public Boolean isCs8ChainOfCustodyInconsistentapproaches3() {
 		return cs8ChainOfCustodyInconsistentapproaches3;
 	}
 
-	public void setCs8ChainOfCustodyInconsistentapproaches3(boolean cs8ChainOfCustodyInconsistentapproaches3) {
+	public void setCs8ChainOfCustodyInconsistentapproaches3(Boolean cs8ChainOfCustodyInconsistentapproaches3) {
 		this.cs8ChainOfCustodyInconsistentapproaches3 = cs8ChainOfCustodyInconsistentapproaches3;
 	}
 
-	public boolean isCs8ChainOfCustodyInconsistentapproaches4() {
+	public Boolean isCs8ChainOfCustodyInconsistentapproaches4() {
 		return cs8ChainOfCustodyInconsistentapproaches4;
 	}
 
-	public void setCs8ChainOfCustodyInconsistentapproaches4(boolean cs8ChainOfCustodyInconsistentapproaches4) {
+	public void setCs8ChainOfCustodyInconsistentapproaches4(Boolean cs8ChainOfCustodyInconsistentapproaches4) {
 		this.cs8ChainOfCustodyInconsistentapproaches4 = cs8ChainOfCustodyInconsistentapproaches4;
 	}
 
-	public boolean isCs8ChainOfCustodyInconsistentapproaches5() {
+	public Boolean isCs8ChainOfCustodyInconsistentapproaches5() {
 		return cs8ChainOfCustodyInconsistentapproaches5;
 	}
 
-	public void setCs8ChainOfCustodyInconsistentapproaches5(boolean cs8ChainOfCustodyInconsistentapproaches5) {
+	public void setCs8ChainOfCustodyInconsistentapproaches5(Boolean cs8ChainOfCustodyInconsistentapproaches5) {
 		this.cs8ChainOfCustodyInconsistentapproaches5 = cs8ChainOfCustodyInconsistentapproaches5;
 	}
 
-	public boolean isCs8ChainOfCustodyInconsistentapproaches6() {
+	public Boolean isCs8ChainOfCustodyInconsistentapproaches6() {
 		return cs8ChainOfCustodyInconsistentapproaches6;
 	}
 
-	public void setCs8ChainOfCustodyInconsistentapproaches6(boolean cs8ChainOfCustodyInconsistentapproaches6) {
+	public void setCs8ChainOfCustodyInconsistentapproaches6(Boolean cs8ChainOfCustodyInconsistentapproaches6) {
 		this.cs8ChainOfCustodyInconsistentapproaches6 = cs8ChainOfCustodyInconsistentapproaches6;
 	}
 
-	public boolean isCs8ChainOfCustodyOther1() {
+	public Boolean isCs8ChainOfCustodyOther1() {
 		return cs8ChainOfCustodyOther1;
 	}
 
-	public void setCs8ChainOfCustodyOther1(boolean cs8ChainOfCustodyOther1) {
+	public void setCs8ChainOfCustodyOther1(Boolean cs8ChainOfCustodyOther1) {
 		this.cs8ChainOfCustodyOther1 = cs8ChainOfCustodyOther1;
 	}
 
-	public boolean isCs8ChainOfCustodyOther2() {
+	public Boolean isCs8ChainOfCustodyOther2() {
 		return cs8ChainOfCustodyOther2;
 	}
 
-	public void setCs8ChainOfCustodyOther2(boolean cs8ChainOfCustodyOther2) {
+	public void setCs8ChainOfCustodyOther2(Boolean cs8ChainOfCustodyOther2) {
 		this.cs8ChainOfCustodyOther2 = cs8ChainOfCustodyOther2;
 	}
 
-	public boolean isCs8ChainOfCustodyOther3() {
+	public Boolean isCs8ChainOfCustodyOther3() {
 		return cs8ChainOfCustodyOther3;
 	}
 
-	public void setCs8ChainOfCustodyOther3(boolean cs8ChainOfCustodyOther3) {
+	public void setCs8ChainOfCustodyOther3(Boolean cs8ChainOfCustodyOther3) {
 		this.cs8ChainOfCustodyOther3 = cs8ChainOfCustodyOther3;
 	}
 
-	public boolean isCs8ChainOfCustodyOther4() {
+	public Boolean isCs8ChainOfCustodyOther4() {
 		return cs8ChainOfCustodyOther4;
 	}
 
-	public void setCs8ChainOfCustodyOther4(boolean cs8ChainOfCustodyOther4) {
+	public void setCs8ChainOfCustodyOther4(Boolean cs8ChainOfCustodyOther4) {
 		this.cs8ChainOfCustodyOther4 = cs8ChainOfCustodyOther4;
 	}
 
-	public boolean isCs8ChainOfCustodyOther5() {
+	public Boolean isCs8ChainOfCustodyOther5() {
 		return cs8ChainOfCustodyOther5;
 	}
 
-	public void setCs8ChainOfCustodyOther5(boolean cs8ChainOfCustodyOther5) {
+	public void setCs8ChainOfCustodyOther5(Boolean cs8ChainOfCustodyOther5) {
 		this.cs8ChainOfCustodyOther5 = cs8ChainOfCustodyOther5;
 	}
 
-	public boolean isCs8ChainOfCustodyOther6() {
+	public Boolean isCs8ChainOfCustodyOther6() {
 		return cs8ChainOfCustodyOther6;
 	}
 
-	public void setCs8ChainOfCustodyOther6(boolean cs8ChainOfCustodyOther6) {
+	public void setCs8ChainOfCustodyOther6(Boolean cs8ChainOfCustodyOther6) {
 		this.cs8ChainOfCustodyOther6 = cs8ChainOfCustodyOther6;
 	}
 }

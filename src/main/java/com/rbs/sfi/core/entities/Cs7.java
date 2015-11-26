@@ -10,209 +10,337 @@ public class Cs7
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="cs7_emerIssu_bioe", nullable=true)
-	private boolean cs7EmerIssuBioe;
+	private Boolean emerIssuBioe;
 
 	@Column(name="cs7_emerIssu_carb", nullable=true)
-	private boolean cs7EmerIssuCarb;
+	private Boolean emerIssuCarb;
 
 	@Column(name="cs7_emerIssu_wate", nullable=true)
-	private boolean cs7EmerIssuWate;
+	private Boolean emerIssuWate;
 
 	@Column(name="cs7_emerIssu_clim", nullable=true)
-	private boolean cs7EmerIssuClim;
+	private Boolean emerIssuClim;
 
 	@Column(name="cs7_emerIssu_ecos", nullable=true)
-	private boolean cs7EmerIssuEcos;
+	private Boolean emerIssuEcos;
 
 	@Column(name="cs7_emerIssu_other", nullable=true)
-	private boolean cs7EmerIssuOther;
+	private Boolean emerIssuOther;
 
 	@Column(name="cs7_emerIssu_otherSpec", nullable=true)
-	private String cs7EmerIssuOtherSpec;
+	private String emerIssuOtherSpec;
 
 	@Column(name="cs7_investRes_ifInve", nullable=true)
-	private boolean cs7InvestResIfInve;
+	private Boolean investResIfInve;
 
 	@Column(name="cs7_investResperc_currSupply", nullable=true)
-	private boolean cs7InvestRespercCurrSupply;
+	private Boolean investRespercCurrSupply;
 
 	@Column(name="cs7_planInvestRes_ifPlan", nullable=true)
-	private boolean cs7PlanInvestResIfPlan;
+	private Boolean planInvestResIfPlan;
 
 	@Column(name="cs7_planInvestRes_year", nullable=true)
-	private String cs7PlanInvestResYear;
+	private String planInvestResYear;
 
 	@Column(name="cs7_planCommPlant_ifPlanGE", nullable=true)
-	private boolean cs7PlanCommPlantIfPlanGE;
+	private Boolean planCommPlantIfPlanGE;
 
 	@Column(name="cs7_planCommPlant_year", nullable=true)
-	private String cs7PlanCommPlantYear;
+	private String planCommPlantYear;
 
 	@Column(name="cs7_planCommPlantPerc", nullable=true)
-	private boolean cs7PlanCommPlantPerc;
+	private Boolean planCommPlantPerc;
 
 	@ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs7_invest_res_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormAllCountry> cs7InvestResCountries = new HashSet<SfiPpFormAllCountry>();
+	private Set<SfiPpFormAllCountry> investResCountries = new HashSet<SfiPpFormAllCountry>();
 
 	@ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs7_plan_invest_res_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormAllCountry> cs7planInvestResCountries = new HashSet<SfiPpFormAllCountry>();
+	private Set<SfiPpFormAllCountry> planInvestResCountries = new HashSet<SfiPpFormAllCountry>();
 
 	@ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs7_plan_comm_plant_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormAllCountry> cs7PlanCommPlantCountries = new HashSet<SfiPpFormAllCountry>();
+	private Set<SfiPpFormAllCountry> planCommPlantCountries = new HashSet<SfiPpFormAllCountry>();
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public boolean isCs7EmerIssuBioe() {
-		return cs7EmerIssuBioe;
+	public Boolean isCs7EmerIssuBioe() {
+		return emerIssuBioe;
 	}
 
-	public void setCs7EmerIssuBioe(boolean cs7EmerIssuBioe) {
-		this.cs7EmerIssuBioe = cs7EmerIssuBioe;
+	public void setCs7EmerIssuBioe(Boolean emerIssuBioe) {
+		this.emerIssuBioe = emerIssuBioe;
 	}
 
-	public boolean isCs7EmerIssuCarb() {
-		return cs7EmerIssuCarb;
+	public Boolean isCs7EmerIssuCarb() {
+		return emerIssuCarb;
 	}
 
-	public void setCs7EmerIssuCarb(boolean cs7EmerIssuCarb) {
-		this.cs7EmerIssuCarb = cs7EmerIssuCarb;
+	public void setCs7EmerIssuCarb(Boolean emerIssuCarb) {
+		this.emerIssuCarb = emerIssuCarb;
 	}
 
-	public boolean isCs7EmerIssuWate() {
-		return cs7EmerIssuWate;
+	public Boolean isCs7EmerIssuWate() {
+		return emerIssuWate;
 	}
 
-	public void setCs7EmerIssuWate(boolean cs7EmerIssuWate) {
-		this.cs7EmerIssuWate = cs7EmerIssuWate;
+	public void setCs7EmerIssuWate(Boolean emerIssuWate) {
+		this.emerIssuWate = emerIssuWate;
 	}
 
-	public boolean isCs7EmerIssuClim() {
-		return cs7EmerIssuClim;
+	public Boolean isCs7EmerIssuClim() {
+		return emerIssuClim;
 	}
 
-	public void setCs7EmerIssuClim(boolean cs7EmerIssuClim) {
-		this.cs7EmerIssuClim = cs7EmerIssuClim;
+	public void setCs7EmerIssuClim(Boolean emerIssuClim) {
+		this.emerIssuClim = emerIssuClim;
 	}
 
-	public boolean isCs7EmerIssuEcos() {
-		return cs7EmerIssuEcos;
+	public Boolean isCs7EmerIssuEcos() {
+		return emerIssuEcos;
 	}
 
-	public void setCs7EmerIssuEcos(boolean cs7EmerIssuEcos) {
-		this.cs7EmerIssuEcos = cs7EmerIssuEcos;
+	public void setCs7EmerIssuEcos(Boolean emerIssuEcos) {
+		this.emerIssuEcos = emerIssuEcos;
 	}
 
-	public boolean isCs7EmerIssuOther() {
-		return cs7EmerIssuOther;
+	public Boolean isCs7EmerIssuOther() {
+		return emerIssuOther;
 	}
 
-	public void setCs7EmerIssuOther(boolean cs7EmerIssuOther) {
-		this.cs7EmerIssuOther = cs7EmerIssuOther;
+	public void setCs7EmerIssuOther(Boolean emerIssuOther) {
+		this.emerIssuOther = emerIssuOther;
 	}
 
 	public String getCs7EmerIssuOtherSpec() {
-		return cs7EmerIssuOtherSpec;
+		return emerIssuOtherSpec;
 	}
 
-	public void setCs7EmerIssuOtherSpec(String cs7EmerIssuOtherSpec) {
-		this.cs7EmerIssuOtherSpec = cs7EmerIssuOtherSpec;
+	public void setCs7EmerIssuOtherSpec(String emerIssuOtherSpec) {
+		this.emerIssuOtherSpec = emerIssuOtherSpec;
 	}
 
-	public boolean isCs7InvestResIfInve() {
-		return cs7InvestResIfInve;
+	public Boolean isCs7InvestResIfInve() {
+		return investResIfInve;
 	}
 
-	public void setCs7InvestResIfInve(boolean cs7InvestResIfInve) {
-		this.cs7InvestResIfInve = cs7InvestResIfInve;
+	public void setCs7InvestResIfInve(Boolean investResIfInve) {
+		this.investResIfInve = investResIfInve;
 	}
 
-	public boolean isCs7InvestRespercCurrSupply() {
-		return cs7InvestRespercCurrSupply;
+	public Boolean isCs7InvestRespercCurrSupply() {
+		return investRespercCurrSupply;
 	}
 
-	public void setCs7InvestRespercCurrSupply(boolean cs7InvestRespercCurrSupply) {
-		this.cs7InvestRespercCurrSupply = cs7InvestRespercCurrSupply;
+	public void setCs7InvestRespercCurrSupply(Boolean investRespercCurrSupply) {
+		this.investRespercCurrSupply = investRespercCurrSupply;
 	}
 
-	public boolean isCs7PlanInvestResIfPlan() {
-		return cs7PlanInvestResIfPlan;
+	public Boolean isCs7PlanInvestResIfPlan() {
+		return planInvestResIfPlan;
 	}
 
-	public void setCs7PlanInvestResIfPlan(boolean cs7PlanInvestResIfPlan) {
-		this.cs7PlanInvestResIfPlan = cs7PlanInvestResIfPlan;
+	public void setCs7PlanInvestResIfPlan(Boolean planInvestResIfPlan) {
+		this.planInvestResIfPlan = planInvestResIfPlan;
 	}
 
 	public String getCs7PlanInvestResYear() {
-		return cs7PlanInvestResYear;
+		return planInvestResYear;
 	}
 
-	public void setCs7PlanInvestResYear(String cs7PlanInvestResYear) {
-		this.cs7PlanInvestResYear = cs7PlanInvestResYear;
+	public void setCs7PlanInvestResYear(String planInvestResYear) {
+		this.planInvestResYear = planInvestResYear;
 	}
 
-	public boolean isCs7PlanCommPlantIfPlanGE() {
-		return cs7PlanCommPlantIfPlanGE;
+	public Boolean isCs7PlanCommPlantIfPlanGE() {
+		return planCommPlantIfPlanGE;
 	}
 
-	public void setCs7PlanCommPlantIfPlanGE(boolean cs7PlanCommPlantIfPlanGE) {
-		this.cs7PlanCommPlantIfPlanGE = cs7PlanCommPlantIfPlanGE;
+	public void setCs7PlanCommPlantIfPlanGE(Boolean planCommPlantIfPlanGE) {
+		this.planCommPlantIfPlanGE = planCommPlantIfPlanGE;
 	}
 
 	public String getCs7PlanCommPlantYear() {
-		return cs7PlanCommPlantYear;
+		return planCommPlantYear;
 	}
 
-	public void setCs7PlanCommPlantYear(String cs7PlanCommPlantYear) {
-		this.cs7PlanCommPlantYear = cs7PlanCommPlantYear;
+	public void setCs7PlanCommPlantYear(String planCommPlantYear) {
+		this.planCommPlantYear = planCommPlantYear;
 	}
 
-	public boolean isCs7PlanCommPlantPerc() {
-		return cs7PlanCommPlantPerc;
+	public Boolean isCs7PlanCommPlantPerc() {
+		return planCommPlantPerc;
 	}
 
-	public void setCs7PlanCommPlantPerc(boolean cs7PlanCommPlantPerc) {
-		this.cs7PlanCommPlantPerc = cs7PlanCommPlantPerc;
+	public void setCs7PlanCommPlantPerc(Boolean planCommPlantPerc) {
+		this.planCommPlantPerc = planCommPlantPerc;
 	}
 
 	public Set<SfiPpFormAllCountry> getCs7InvestResCountries() {
-		return cs7InvestResCountries;
+		return investResCountries;
 	}
 
-	public void setCs7InvestResCountries(Set<SfiPpFormAllCountry> cs7InvestResCountries) {
-		this.cs7InvestResCountries = cs7InvestResCountries;
+	public void setCs7InvestResCountries(Set<SfiPpFormAllCountry> investResCountries) {
+		this.investResCountries = investResCountries;
 	}
 
-	public Set<SfiPpFormAllCountry> getCs7planInvestResCountries() {
-		return cs7planInvestResCountries;
+	public Boolean isEmerIssuBioe() {
+		return emerIssuBioe;
 	}
 
-	public void setCs7planInvestResCountries(Set<SfiPpFormAllCountry> cs7planInvestResCountries) {
-		this.cs7planInvestResCountries = cs7planInvestResCountries;
+	public void setEmerIssuBioe(Boolean emerIssuBioe) {
+		this.emerIssuBioe = emerIssuBioe;
+	}
+
+	public Boolean isEmerIssuCarb() {
+		return emerIssuCarb;
+	}
+
+	public void setEmerIssuCarb(Boolean emerIssuCarb) {
+		this.emerIssuCarb = emerIssuCarb;
+	}
+
+	public Boolean isEmerIssuWate() {
+		return emerIssuWate;
+	}
+
+	public void setEmerIssuWate(Boolean emerIssuWate) {
+		this.emerIssuWate = emerIssuWate;
+	}
+
+	public Boolean isEmerIssuClim() {
+		return emerIssuClim;
+	}
+
+	public void setEmerIssuClim(Boolean emerIssuClim) {
+		this.emerIssuClim = emerIssuClim;
+	}
+
+	public Boolean isEmerIssuEcos() {
+		return emerIssuEcos;
+	}
+
+	public void setEmerIssuEcos(Boolean emerIssuEcos) {
+		this.emerIssuEcos = emerIssuEcos;
+	}
+
+	public Boolean isEmerIssuOther() {
+		return emerIssuOther;
+	}
+
+	public void setEmerIssuOther(Boolean emerIssuOther) {
+		this.emerIssuOther = emerIssuOther;
+	}
+
+	public String getEmerIssuOtherSpec() {
+		return emerIssuOtherSpec;
+	}
+
+	public void setEmerIssuOtherSpec(String emerIssuOtherSpec) {
+		this.emerIssuOtherSpec = emerIssuOtherSpec;
+	}
+
+	public Boolean isInvestResIfInve() {
+		return investResIfInve;
+	}
+
+	public void setInvestResIfInve(Boolean investResIfInve) {
+		this.investResIfInve = investResIfInve;
+	}
+
+	public Boolean isInvestRespercCurrSupply() {
+		return investRespercCurrSupply;
+	}
+
+	public void setInvestRespercCurrSupply(Boolean investRespercCurrSupply) {
+		this.investRespercCurrSupply = investRespercCurrSupply;
+	}
+
+	public Boolean isPlanInvestResIfPlan() {
+		return planInvestResIfPlan;
+	}
+
+	public void setPlanInvestResIfPlan(Boolean planInvestResIfPlan) {
+		this.planInvestResIfPlan = planInvestResIfPlan;
+	}
+
+	public String getPlanInvestResYear() {
+		return planInvestResYear;
+	}
+
+	public void setPlanInvestResYear(String planInvestResYear) {
+		this.planInvestResYear = planInvestResYear;
+	}
+
+	public Boolean isPlanCommPlantIfPlanGE() {
+		return planCommPlantIfPlanGE;
+	}
+
+	public void setPlanCommPlantIfPlanGE(Boolean planCommPlantIfPlanGE) {
+		this.planCommPlantIfPlanGE = planCommPlantIfPlanGE;
+	}
+
+	public String getPlanCommPlantYear() {
+		return planCommPlantYear;
+	}
+
+	public void setPlanCommPlantYear(String planCommPlantYear) {
+		this.planCommPlantYear = planCommPlantYear;
+	}
+
+	public Boolean isPlanCommPlantPerc() {
+		return planCommPlantPerc;
+	}
+
+	public void setPlanCommPlantPerc(Boolean planCommPlantPerc) {
+		this.planCommPlantPerc = planCommPlantPerc;
+	}
+
+	public Set<SfiPpFormAllCountry> getInvestResCountries() {
+		return investResCountries;
+	}
+
+	public void setInvestResCountries(Set<SfiPpFormAllCountry> investResCountries) {
+		this.investResCountries = investResCountries;
+	}
+
+	public Set<SfiPpFormAllCountry> getPlanInvestResCountries() {
+		return planInvestResCountries;
+	}
+
+	public void setPlanInvestResCountries(Set<SfiPpFormAllCountry> planInvestResCountries) {
+		this.planInvestResCountries = planInvestResCountries;
+	}
+
+	public Set<SfiPpFormAllCountry> getPlanCommPlantCountries() {
+		return planCommPlantCountries;
+	}
+
+	public void setPlanCommPlantCountries(Set<SfiPpFormAllCountry> planCommPlantCountries) {
+		this.planCommPlantCountries = planCommPlantCountries;
 	}
 
 	public Set<SfiPpFormAllCountry> getCs7PlanCommPlantCountries() {
-		return cs7PlanCommPlantCountries;
+		return planCommPlantCountries;
 	}
 
-	public void setCs7PlanCommPlantCountries(Set<SfiPpFormAllCountry> cs7PlanCommPlantCountries) {
-		this.cs7PlanCommPlantCountries = cs7PlanCommPlantCountries;
+	public void setCs7PlanCommPlantCountries(Set<SfiPpFormAllCountry> planCommPlantCountries) {
+		this.planCommPlantCountries = planCommPlantCountries;
 	}
 }

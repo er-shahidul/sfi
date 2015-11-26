@@ -11,25 +11,25 @@ public class Cs5
 	private int id;
 
 	@Column(name="cs5_organization_list_academic", nullable=true)
-	private String cs5OrganizationListAcademic;
+	private String organizationListAcademic;
 
 	@Column(name="cs5_organization_list_research", nullable=true)
-	private String cs5OrganizationListResearch;
+	private String organizationListResearch;
 
 	@Column(name="cs5_organization_list_conservation", nullable=true)
-	private String cs5OrganizationListConservation;
+	private String organizationListConservation;
 
 	@Column(name="cs5_organization_list_government", nullable=true)
-	private String cs5OrganizationListGovernment;
+	private String organizationListGovernment;
 
 	@Column(name="cs5_organization_list_community", nullable=true)
-	private String cs5OrganizationListCommunity;
+	private String organizationListCommunity;
 
 	@Column(name="cs5_organization_list_other", nullable=true)
-	private String cs5OrganizationListOther;
+	private String organizationListOther;
 
 	@Column(name="cs5_other", nullable=true)
-	private String cs5Other;
+	private String other;
 
 	public int getId() {
 		return id;
@@ -40,58 +40,58 @@ public class Cs5
 	}
 
 	public String getCs5OrganizationListAcademic() {
-		return cs5OrganizationListAcademic;
+		return organizationListAcademic;
 	}
 
-	public void setCs5OrganizationListAcademic(String cs5OrganizationListAcademic) {
-		this.cs5OrganizationListAcademic = cs5OrganizationListAcademic;
+	public void setCs5OrganizationListAcademic(String organizationListAcademic) {
+		this.organizationListAcademic = organizationListAcademic;
 	}
 
 	public String getCs5OrganizationListResearch() {
-		return cs5OrganizationListResearch;
+		return organizationListResearch;
 	}
 
-	public void setCs5OrganizationListResearch(String cs5OrganizationListResearch) {
-		this.cs5OrganizationListResearch = cs5OrganizationListResearch;
+	public void setCs5OrganizationListResearch(String organizationListResearch) {
+		this.organizationListResearch = organizationListResearch;
 	}
 
 	public String getCs5OrganizationListConservation() {
-		return cs5OrganizationListConservation;
+		return organizationListConservation;
 	}
 
-	public void setCs5OrganizationListConservation(String cs5OrganizationListConservation) {
-		this.cs5OrganizationListConservation = cs5OrganizationListConservation;
+	public void setCs5OrganizationListConservation(String organizationListConservation) {
+		this.organizationListConservation = organizationListConservation;
 	}
 
 	public String getCs5OrganizationListGovernment() {
-		return cs5OrganizationListGovernment;
+		return organizationListGovernment;
 	}
 
-	public void setCs5OrganizationListGovernment(String cs5OrganizationListGovernment) {
-		this.cs5OrganizationListGovernment = cs5OrganizationListGovernment;
+	public void setCs5OrganizationListGovernment(String organizationListGovernment) {
+		this.organizationListGovernment = organizationListGovernment;
 	}
 
 	public String getCs5OrganizationListCommunity() {
-		return cs5OrganizationListCommunity;
+		return organizationListCommunity;
 	}
 
-	public void setCs5OrganizationListCommunity(String cs5OrganizationListCommunity) {
-		this.cs5OrganizationListCommunity = cs5OrganizationListCommunity;
+	public void setCs5OrganizationListCommunity(String organizationListCommunity) {
+		this.organizationListCommunity = organizationListCommunity;
 	}
 
 	public String getCs5OrganizationListOther() {
-		return cs5OrganizationListOther;
+		return organizationListOther;
 	}
 
-	public void setCs5OrganizationListOther(String cs5OrganizationListOther) {
-		this.cs5OrganizationListOther = cs5OrganizationListOther;
+	public void setCs5OrganizationListOther(String organizationListOther) {
+		this.organizationListOther = organizationListOther;
 	}
 
 	public String getCs5Other() {
-		return cs5Other;
+		return other;
 	}
 
-	public void setCs5Other(String cs5Other) {
-		this.cs5Other = cs5Other;
+	public void setCs5Other(String other) {
+		this.other = other;
 	}
 }

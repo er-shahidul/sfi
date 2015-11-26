@@ -9,10 +9,10 @@ public class Cs10
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="cs10_acknowledge", nullable=true)
-	private boolean cs10Acknowledge;
+	private Boolean cs10Acknowledge;
 
 	@Column(name="updated_at", nullable=true)
 	private Date updatedAt;
@@ -23,19 +23,19 @@ public class Cs10
 	@Column(name="submitted_at", nullable=true)
 	private Date submittedAt;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public boolean isCs10Acknowledge() {
+	public Boolean isCs10Acknowledge() {
 		return cs10Acknowledge;
 	}
 
-	public void setCs10Acknowledge(boolean cs10Acknowledge) {
+	public void setCs10Acknowledge(Boolean cs10Acknowledge) {
 		this.cs10Acknowledge = cs10Acknowledge;
 	}
 
