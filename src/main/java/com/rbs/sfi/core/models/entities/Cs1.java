@@ -1,8 +1,5 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.repositories.SfiPpFormAllCountryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +8,6 @@ import java.util.Set;
 @Table(name="sfi_pp_forms")
 public class Cs1
 {
-
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
