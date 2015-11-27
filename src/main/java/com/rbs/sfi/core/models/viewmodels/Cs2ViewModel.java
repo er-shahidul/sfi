@@ -2,7 +2,7 @@ package com.rbs.sfi.core.models.viewmodels;
 
 import com.rbs.sfi.core.models.entities.SfiPpFormCs2OutsideUsaCa;
 
-import java.util.List;
+import java.util.Set;
 
 public class Cs2ViewModel {
 	private Integer id;
@@ -12,29 +12,29 @@ public class Cs2ViewModel {
 	private Float usaPrivateTotalAreaCertified;
 	private Float usaPrivateAreaManagedForPublic;
 	private Float usaPrivateAreaCertifiedForPublic;
-	private List<String> usaPrivateRecreationCategories;
+	private Set<String> usaPrivateRecreationCategories;
 	private Float usaPublicTotalAreaOwnOrManage;
 	private Integer usaPublicForestlandOwnMng;
 	private String usaPublicForestlandOwnMngOther;
 	private Float usaPublicTotalAreaCertified;
 	private Float usaPublicAreaManagedForPublic;
 	private Float usaPublicAreaCertifiedForPublic;
-	private List<String> usaPublicRecreationCategories;
+	private Set<String> usaPublicRecreationCategories;
 	private Float caCrownTotalAreaOwnOrManage;
 	private Integer caCrownForestlandOwnMng;
 	private String caCrownForestlandOwnMngOther;
 	private Float caCrownTotalAreaCertified;
 	private Float caCrownAreaManagedForPublic;
 	private Float caCrownAreaCertifiedForPublic;
-	private List<String> caCrownRecreationCategories;
+	private Set<String> caCrownRecreationCategories;
 	private Float caPrivateTotalAreaOwnOrManage;
 	private Integer caPrivateForestlandOwnMng;
 	private String caPrivateForestlandOwnMngOther;
 	private Float caPrivateTotalAreaCertified;
 	private Float caPrivateAreaManagedForPublic;
 	private Float caPrivateAreaCertifiedForPublic;
-	private List<String> caPrivateRecreationCategories;
-	private List<SfiPpFormCs2OutsideUsaCa> outsideCountries;
+	private Set<String> caPrivateRecreationCategories;
+	private Set<SfiPpFormCs2OutsideUsaCa> outsideCountries;
 
 	public Integer getId() {
 		return id;
@@ -92,11 +92,11 @@ public class Cs2ViewModel {
 		this.usaPrivateAreaCertifiedForPublic = usaPrivateAreaCertifiedForPublic;
 	}
 
-	public List<String> getUsaPrivateRecreationCategories() {
+	public Set<String> getUsaPrivateRecreationCategories() {
 		return usaPrivateRecreationCategories;
 	}
 
-	public void setUsaPrivateRecreationCategories(List<String> usaPrivateRecreationCategories) {
+	public void setUsaPrivateRecreationCategories(Set<String> usaPrivateRecreationCategories) {
 		this.usaPrivateRecreationCategories = usaPrivateRecreationCategories;
 	}
 
@@ -148,11 +148,11 @@ public class Cs2ViewModel {
 		this.usaPublicAreaCertifiedForPublic = usaPublicAreaCertifiedForPublic;
 	}
 
-	public List<String> getUsaPublicRecreationCategories() {
+	public Set<String> getUsaPublicRecreationCategories() {
 		return usaPublicRecreationCategories;
 	}
 
-	public void setUsaPublicRecreationCategories(List<String> usaPublicRecreationCategories) {
+	public void setUsaPublicRecreationCategories(Set<String> usaPublicRecreationCategories) {
 		this.usaPublicRecreationCategories = usaPublicRecreationCategories;
 	}
 
@@ -204,11 +204,11 @@ public class Cs2ViewModel {
 		this.caCrownAreaCertifiedForPublic = caCrownAreaCertifiedForPublic;
 	}
 
-	public List<String> getCaCrownRecreationCategories() {
+	public Set<String> getCaCrownRecreationCategories() {
 		return caCrownRecreationCategories;
 	}
 
-	public void setCaCrownRecreationCategories(List<String> caCrownRecreationCategories) {
+	public void setCaCrownRecreationCategories(Set<String> caCrownRecreationCategories) {
 		this.caCrownRecreationCategories = caCrownRecreationCategories;
 	}
 
@@ -260,19 +260,19 @@ public class Cs2ViewModel {
 		this.caPrivateAreaCertifiedForPublic = caPrivateAreaCertifiedForPublic;
 	}
 
-	public List<String> getCaPrivateRecreationCategories() {
+	public Set<String> getCaPrivateRecreationCategories() {
 		return caPrivateRecreationCategories;
 	}
 
-	public void setCaPrivateRecreationCategories(List<String> caPrivateRecreationCategories) {
+	public void setCaPrivateRecreationCategories(Set<String> caPrivateRecreationCategories) {
 		this.caPrivateRecreationCategories = caPrivateRecreationCategories;
 	}
 
-	public List<SfiPpFormCs2OutsideUsaCa> getOutsideCountries() {
+	public Set<SfiPpFormCs2OutsideUsaCa> getOutsideCountries() {
 		return outsideCountries;
 	}
 
-	public void setOutsideCountries(List<SfiPpFormCs2OutsideUsaCa> outsideCountries) {
+	public void setOutsideCountries(Set<SfiPpFormCs2OutsideUsaCa> outsideCountries) {
 		this.outsideCountries = outsideCountries;
 	}
 }

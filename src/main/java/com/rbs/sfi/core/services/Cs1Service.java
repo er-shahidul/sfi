@@ -3,14 +3,15 @@ package com.rbs.sfi.core.services;
 import com.rbs.sfi.common.services.AutoPopulateService;
 import com.rbs.sfi.core.models.entities.Cs1;
 import com.rbs.sfi.core.models.entities.SfiPpFormAllCountry;
+import com.rbs.sfi.core.models.entities.SfiPpFormOtherCountry;
 import com.rbs.sfi.core.models.viewmodels.Cs1ViewModel;
 import com.rbs.sfi.core.repositories.Cs1Repository;
 import com.rbs.sfi.core.repositories.SfiPpFormAllCountryRepository;
+import com.rbs.sfi.core.repositories.SfiPpFormOtherCountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Service
@@ -25,6 +26,9 @@ public class Cs1Service {
     @Autowired
 	private SfiPpFormAllCountryRepository sfiPpFormAllCountryRepository;
 
+    @Autowired
+    private SfiPpFormOtherCountryRepository sfiPpFormOtherCountryRepository;
+
     public Cs1ViewModel getViewModel(int id) {
         Cs1 entity = repository.findById(id);
         Cs1ViewModel model = new Cs1ViewModel();
@@ -33,40 +37,10 @@ public class Cs1Service {
         return model;
     }
 
-    /*
+/*
     public void setEntity(Cs1ViewModel model) {
         Cs1 entity = repository.get(model.getId());
         populateService.populate(model, entity);
-    }
-
-    public Cs1ViewModel getViewModel(int id) {
-        Cs1 entity = repository.get(id);
-        Cs1ViewModel model = new Cs1ViewModel();
-
-        model.setId(entity.getId());
-        model.setCompanyWebsite(entity.getCompanyWebsite());
-		model.setNumberEmployeesUSA(entity.getNumberEmployeesUSA());
-        model.setNumberEmployeesCA(entity.getNumberEmployeesCA());
-        model.setNumberEmployeesOther(entity.getNumberEmployeesOther());
-        model.setCompanyDesc(entity.getCompanyDesc());
-        model.setOwnsMngLands(entity.isOwnsMngLands());
-        model.setOwnsMngLandsInUSA(entity.isOwnsMngLandsInUSA());
-        model.setOwnsMngLandsInCA(entity.isOwnsMngLandsInCA());
-        model.setOwnsMngLandsInOther(entity.isOwnsMngLandsInOther());
-        model.setHasPrimaryOperMillsYards(entity.isHasPrimaryOperMillsYards());
-        model.setHasPrimaryOperMillsYardsInUSA(entity.isHasPrimaryOperMillsYardsInUSA());
-        model.setHasPrimaryOperMillsYardsInCA(entity.isHasPrimaryOperMillsYardsInCA());
-        model.setHasPrimaryOperMillsYardsInOther(entity.isHasPrimaryOperMillsYardsInOther());
-        model.setHasSecondaryOperMillsYards(entity.isHasSecondaryOperMillsYards());
-        model.setHasSecondaryOperMillsYardsInUSA(entity.isHasSecondaryOperMillsYardsInUSA());
-        model.setHasSecondaryOperMillsYardsInCA(entity.isHasSecondaryOperMillsYardsInCA());
-        model.setHasSecondaryOperMillsYardsInOther(entity.isHasSecondaryOperMillsYardsInOther());
-        model.setOwnsMngLandsOtherCountries(entity.getOwnsMngLandsOtherCountries());
-        model.setPrimaryOperMillsYardsOtherCountries(entity.getPrimaryOperMillsYardsOtherCountries());
-        model.setSecondaryOperMillsYardsOtherCountries(entity.getSecondaryOperMillsYardsOtherCountries());
-        model.setSellsCountries(entity.getSellsCountries());
-
-        return model;
     }
 */
 
@@ -94,9 +68,42 @@ public class Cs1Service {
 //        entity.setPrimaryOperMillsYardsOtherCountries(model.getPrimaryOperMillsYardsOtherCountries());
 //        entity.setSecondaryOperMillsYardsOtherCountries(model.getSecondaryOperMillsYardsOtherCountries());
 //        entity.setSellsCountries(model.getSellsCountries());
+        addOwnsMngLandsOtherCountries(entity, model.getOwnsMngLandsOtherCountries());
+        addPrimaryOperMillsYardsOtherCountries(entity, model.getPrimaryOperMillsYardsOtherCountries());
+        addSecondaryOperMillsYardsOtherCountries(entity, model.getSecondaryOperMillsYardsOtherCountries());
         addSellsCountries(entity, model.getSellsCountries());
 
         repository.save(entity);
+    }
+
+    private void addSecondaryOperMillsYardsOtherCountries(Cs1 entity, Set<SfiPpFormOtherCountry> secondaryOperMillsYardsOtherCountries) {
+        Set<SfiPpFormOtherCountry> cs1secondaryOperMillsYardsOtherCountries = entity.getSecondaryOperMillsYardsOtherCountries();
+        cs1secondaryOperMillsYardsOtherCountries.clear();
+
+        for (SfiPpFormOtherCountry sfiPpFormOtherCountry : secondaryOperMillsYardsOtherCountries) {
+			cs1secondaryOperMillsYardsOtherCountries.add(sfiPpFormOtherCountryRepository.findById(sfiPpFormOtherCountry.getId()));
+		}
+        entity.setSecondaryOperMillsYardsOtherCountries(cs1secondaryOperMillsYardsOtherCountries);
+    }
+
+    private void addPrimaryOperMillsYardsOtherCountries(Cs1 entity, Set<SfiPpFormOtherCountry> primaryOperMillsYardsOtherCountries) {
+        Set<SfiPpFormOtherCountry> cs1primaryOperMillsYardsOtherCountries = entity.getPrimaryOperMillsYardsOtherCountries();
+        cs1primaryOperMillsYardsOtherCountries.clear();
+
+        for (SfiPpFormOtherCountry sfiPpFormOtherCountry : primaryOperMillsYardsOtherCountries) {
+			cs1primaryOperMillsYardsOtherCountries.add(sfiPpFormOtherCountryRepository.findById(sfiPpFormOtherCountry.getId()));
+		}
+        entity.setPrimaryOperMillsYardsOtherCountries(cs1primaryOperMillsYardsOtherCountries);
+    }
+
+    private void addOwnsMngLandsOtherCountries(Cs1 entity, Set<SfiPpFormOtherCountry> ownsMngLandsOtherCountries) {
+        Set<SfiPpFormOtherCountry> cs1ownsMngLandsOtherCountries = entity.getOwnsMngLandsOtherCountries();
+        cs1ownsMngLandsOtherCountries.clear();
+
+        for (SfiPpFormOtherCountry sfiPpFormOtherCountry : ownsMngLandsOtherCountries) {
+			cs1ownsMngLandsOtherCountries.add(sfiPpFormOtherCountryRepository.findById(sfiPpFormOtherCountry.getId()));
+		}
+        entity.setOwnsMngLandsOtherCountries(cs1ownsMngLandsOtherCountries);
     }
 
     public void addSellsCountries(Cs1 entity, Set<SfiPpFormAllCountry> sellsCountries) {

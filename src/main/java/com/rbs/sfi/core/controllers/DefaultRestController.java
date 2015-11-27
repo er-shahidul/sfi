@@ -5,10 +5,12 @@ import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.core.models.entities.Cs1;
 import com.rbs.sfi.core.models.entities.Cs2;
 import com.rbs.sfi.core.models.viewmodels.Cs1ViewModel;
+import com.rbs.sfi.core.models.viewmodels.Cs2ViewModel;
 import com.rbs.sfi.core.repositories.Cs1Repository;
 import com.rbs.sfi.core.repositories.Cs2Repository;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
 import com.rbs.sfi.core.services.Cs1Service;
+import com.rbs.sfi.core.services.Cs2Service;
 import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
 import com.rbs.sfi.core.services.SfiPpFormService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,9 @@ public class DefaultRestController {
     Cs1Service cs1Service;
 
     @Autowired
+    Cs2Service cs2Service;
+
+    @Autowired
     Cs2Repository cs2Repository;
 
     @RequestMapping(value = {"/form/cs1" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
@@ -48,10 +53,7 @@ public class DefaultRestController {
     }
 
     @RequestMapping(value = {"/form/cs2" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public Cs2 formCs2(@RequestBody Cs2 cs2, BindingResult result ) {
-
-//        cs2Repository.save(cs2);
-
-        return cs2;
+    public void formCs2(@RequestBody Cs2ViewModel model, BindingResult result ) {
+        cs2Service.setEntity(model);
     }
 }
