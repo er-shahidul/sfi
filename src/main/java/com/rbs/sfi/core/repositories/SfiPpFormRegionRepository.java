@@ -1,7 +1,7 @@
 package com.rbs.sfi.core.repositories;
 
 import com.rbs.sfi.admin.repositories.AbstractRepository;
-import com.rbs.sfi.core.entities.SfiPpFormRegion;
+import com.rbs.sfi.core.models.entities.SfiPpFormRegion;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

@@ -29,7 +29,7 @@
 		<property name="packagesToScan">
 			<list>
 				<value>com.rbs.sfi.admin.entities</value>
-				<value>com.rbs.sfi.core.entities</value>
+				<value>com.rbs.sfi.core.models.entities</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
