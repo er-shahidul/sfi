@@ -1,4 +1,4 @@
-package com.rbs.sfi.core.entities;
+package com.rbs.sfi.core.models.entities;
 
 import javax.persistence.*;
 
@@ -14,7 +14,7 @@ public class SfiPpFormCs2OutsideUsaCa
 	@JoinColumn(name="form_id", nullable=true)
 	private Cs2 sfiPpForm;
 
-	@ManyToOne(targetEntity = SfiPpFormOtherCountry.class, optional=true)
+	@ManyToOne(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, optional=true)
 	@JoinColumn(name="cs2_outsideUSandCA_countryID", referencedColumnName="id", nullable=true)
 	private SfiPpFormOtherCountry country;
 

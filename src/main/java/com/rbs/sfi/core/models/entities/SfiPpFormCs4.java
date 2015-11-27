@@ -1,4 +1,4 @@
-package com.rbs.sfi.core.entities;
+package com.rbs.sfi.core.models.entities;
 
 import com.rbs.sfi.admin.entities.Company;
 

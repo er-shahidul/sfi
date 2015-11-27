@@ -1,4 +1,4 @@
-package com.rbs.sfi.core.entities;
+package com.rbs.sfi.core.models.entities;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -33,7 +33,7 @@ public class SfiPpFormCs3
 	@JoinTable(name="sfi_pp_form_cs3_project_locations",
 			joinColumns={@JoinColumn(name="cs3_projectID")},
 			inverseJoinColumns={@JoinColumn(name="cs3_project_locationID", referencedColumnName = "id")})
-	private Set<SfiPpFormRegion> cs3ProjectLocations = new HashSet<SfiPpFormRegion>();
+	private Set<SfiPpFormRegion> cs3ProjectLocations;
 
 	@Column(name="cs3_conservatonPartners", nullable=true)
 	private String cs3ConservatonPartners;

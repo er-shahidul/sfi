@@ -1,17 +1,17 @@
-package com.rbs.sfi.core.entities;
+package com.rbs.sfi.core.models.entities;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="sfi_pp_form_all_country_list")
-public class SfiPpFormAllCountry
+@Table(name="sfi_pp_form_other_country")
+public class SfiPpFormCountry
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name="country", nullable=true)
-	private String country;
+	@Column(name="name", nullable=true)
+	private String name;
 
 	@Column(name="isUnknown", nullable=true)
 	private boolean isUnknown;
@@ -24,12 +24,12 @@ public class SfiPpFormAllCountry
 		this.id = id;
 	}
 
-	public String getCountry() {
-		return country;
+	public String getName() {
+		return name;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public boolean isUnknown() {

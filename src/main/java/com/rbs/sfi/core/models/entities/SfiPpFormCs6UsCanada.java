@@ -1,4 +1,4 @@
-package com.rbs.sfi.core.entities;
+package com.rbs.sfi.core.models.entities;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -47,7 +47,7 @@ public class SfiPpFormCs6UsCanada
 	@Column(name="cs6_usCanada_moreThanOneStandard_1", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs6UsCanadaMoreThanOneStandard1 = new ArrayList<String>();
+	private List<String> cs6UsCanadaMoreThanOneStandard1;
 
 	@Column(name="cs6_usCanada_other", nullable=true)
 	private boolean cs6UsCanadaOther;
