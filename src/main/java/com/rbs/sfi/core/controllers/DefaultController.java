@@ -47,12 +47,6 @@ public class DefaultController {
         return ("/dashboard");
     }
 
-//    @RequestMapping(value = {"/dashboard" }, method = RequestMethod.GET)
-//    public String withOutLogIn() {
-//
-//        return "dashboard";
-//    }
-
     @RequestMapping(value = {"/privacy" }, method = RequestMethod.GET)
     public String privacy(ModelMap model) {
         model.addAttribute("title", "privacy");
