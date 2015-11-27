@@ -2,7 +2,7 @@ package com.rbs.sfi.core.repositories;
 
 import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.repositories.AbstractRepository;
-import com.rbs.sfi.core.entities.SfiPpForm;
+import com.rbs.sfi.core.models.entities.SfiPpForm;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;

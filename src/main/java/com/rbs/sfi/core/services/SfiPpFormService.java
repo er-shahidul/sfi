@@ -2,7 +2,7 @@ package com.rbs.sfi.core.services;
 
 import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.util.Util;
-import com.rbs.sfi.core.entities.*;
+import com.rbs.sfi.core.models.entities.*;
 import com.rbs.sfi.core.repositories.Cs1Repository;
 import com.rbs.sfi.core.repositories.SfiPpFormAllCountryRepository;
 import com.rbs.sfi.core.repositories.SfiPpFormOtherCountryRepository;
@@ -11,9 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Service("sfiPpFormService")
 @Transactional

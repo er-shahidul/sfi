@@ -58,19 +58,19 @@ public class Cs7
 	@JoinTable(name="sfi_pp_form_cs7_invest_res_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormAllCountry> investResCountries = new HashSet<SfiPpFormAllCountry>();
+	private Set<SfiPpFormAllCountry> investResCountries;
 
 	@ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs7_plan_invest_res_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormAllCountry> planInvestResCountries = new HashSet<SfiPpFormAllCountry>();
+	private Set<SfiPpFormAllCountry> planInvestResCountries;
 
 	@ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs7_plan_comm_plant_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormAllCountry> planCommPlantCountries = new HashSet<SfiPpFormAllCountry>();
+	private Set<SfiPpFormAllCountry> planCommPlantCountries;
 
 	public Integer getId() {
 		return id;

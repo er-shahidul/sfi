@@ -4,12 +4,13 @@ import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
-import com.rbs.sfi.core.entities.Cs1;
-import com.rbs.sfi.core.entities.Cs2;
-import com.rbs.sfi.core.entities.SfiPpForm;
+import com.rbs.sfi.core.models.entities.Cs1;
+import com.rbs.sfi.core.models.entities.Cs2;
+import com.rbs.sfi.core.models.entities.SfiPpForm;
 import com.rbs.sfi.core.repositories.Cs1Repository;
 import com.rbs.sfi.core.repositories.Cs2Repository;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
+import com.rbs.sfi.core.services.Cs1Service;
 import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
 import com.rbs.sfi.core.services.SfiPpFormService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ public class FormController {
     SfiPpFormRepository sfiPpFormRepository;
 
     @Autowired
-    Cs1Repository cs1Repository;
+    Cs1Service cs1Service;
 
     @Autowired
     Cs2Repository cs2Repository;
@@ -87,9 +88,8 @@ public class FormController {
         List countries = sfiPpFormAllCountryService.list();
 
         model.addAttribute("form", sfiPpForm);
-        Cs1 cs1 = cs1Repository.findById(sfiPpForm.getId());
+        model.addAttribute("cs1", cs1Service.getViewModel(sfiPpForm.getId()));
         Cs2 cs2 = cs2Repository.findById(sfiPpForm.getId());
-        model.addAttribute("cs1", cs1);
         model.addAttribute("cs2", cs2);
         model.addAttribute("company", company);
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);

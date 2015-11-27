@@ -62,25 +62,25 @@ public class Cs1
 	@JoinTable(name="sfi_pp_form_cs1_ownsMngLands_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormOtherCountry> ownsMngLandsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
+	private Set<SfiPpFormOtherCountry> ownsMngLandsOtherCountries;
 
 	@ManyToMany(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_primaryOperMillsYards_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormOtherCountry> primaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
+	private Set<SfiPpFormOtherCountry> primaryOperMillsYardsOtherCountries;
 
 	@ManyToMany(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_secondaryOperMillsYards_other_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormOtherCountry> secondaryOperMillsYardsOtherCountries = new HashSet<SfiPpFormOtherCountry>();
+	private Set<SfiPpFormOtherCountry> secondaryOperMillsYardsOtherCountries;
 
 	@ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs1_sells_countries",
 			joinColumns={@JoinColumn(name="form_id")},
 			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormAllCountry> sellsCountries = new HashSet<SfiPpFormAllCountry>();
+	private Set<SfiPpFormAllCountry> sellsCountries;
 
 
 
@@ -259,6 +259,5 @@ public class Cs1
 	public void setSellsCountries(Set<SfiPpFormAllCountry> sellsCountries) {
 		this.sellsCountries = sellsCountries;
 	}
-
 
 }

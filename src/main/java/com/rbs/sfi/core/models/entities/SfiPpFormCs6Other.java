@@ -14,7 +14,7 @@ public class SfiPpFormCs6Other
 	@JoinColumn(name="form_id", nullable=true)
 	private Cs6 sfiPpForm;
 
-	@ManyToOne(targetEntity = SfiPpFormOtherCountry.class, optional=true)
+	@ManyToOne(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, optional=true)
 	@JoinColumn(name="cs6_otherCountries_countryID", nullable=true)
 	private SfiPpFormOtherCountry country;
 

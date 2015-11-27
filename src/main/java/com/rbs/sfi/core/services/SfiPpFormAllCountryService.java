@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.services;
 
-import com.rbs.sfi.core.entities.SfiPpFormAllCountry;
+import com.rbs.sfi.core.models.entities.SfiPpFormAllCountry;
 import com.rbs.sfi.core.repositories.SfiPpFormAllCountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
