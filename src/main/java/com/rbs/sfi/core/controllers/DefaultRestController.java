@@ -1,40 +1,34 @@
 package com.rbs.sfi.core.controllers;
 
-import com.rbs.sfi.admin.services.CompanyService;
-import com.rbs.sfi.admin.services.UserService;
-import com.rbs.sfi.core.entities.SfiPpForm;
-import com.rbs.sfi.core.repositories.SfiPpFormRepository;
-import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
-import com.rbs.sfi.core.services.SfiPpFormService;
+import com.rbs.sfi.core.models.viewmodels.Cs1ViewModel;
+import com.rbs.sfi.core.models.viewmodels.Cs2ViewModel;
+import com.rbs.sfi.core.services.Cs1Service;
+import com.rbs.sfi.core.services.Cs2Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-@org.springframework.web.bind.annotation.RestController
+@RestController
 public class DefaultRestController {
 
     @Autowired
-    UserService userService;
+    Cs1Service cs1Service;
 
     @Autowired
-    SfiPpFormService sfiPpFormService;
-
-    @Autowired
-    SfiPpFormAllCountryService sfiPpFormAllCountryService;
-
-    @Autowired
-    CompanyService companyService;
-
-    @Autowired
-    SfiPpFormRepository sfiPpFormRepository;
+    Cs2Service cs2Service;
 
     @RequestMapping(value = {"/form/cs1" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public SfiPpForm formCs1(@RequestBody SfiPpForm sfiPpForm, BindingResult result ) {
+    public void formCs1(@RequestBody Cs1ViewModel model, BindingResult result ) {
+        cs1Service.setEntity(model);
+    }
 
-        return sfiPpFormService.saveCS1(sfiPpForm);
-
+    @RequestMapping(value = {"/form/cs2" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public void formCs2(@RequestBody Cs2ViewModel model, BindingResult result ) {
+        cs2Service.setEntity(model);
     }
 }

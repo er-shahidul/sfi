@@ -4,8 +4,10 @@ import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
-import com.rbs.sfi.core.entities.SfiPpForm;
+import com.rbs.sfi.core.models.entities.SfiPpForm;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
+import com.rbs.sfi.core.services.Cs1Service;
+import com.rbs.sfi.core.services.Cs2Service;
 import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
 import com.rbs.sfi.core.services.SfiPpFormService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.xml.bind.DatatypeConverter;
 import java.util.List;
@@ -39,6 +42,12 @@ public class FormController {
 
     @Autowired
     SfiPpFormRepository sfiPpFormRepository;
+
+    @Autowired
+    Cs1Service cs1Service;
+
+    @Autowired
+    Cs2Service cs2Service;
 
     @RequestMapping(value = {"/form" }, method = RequestMethod.GET)
     public String homePage(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
@@ -77,6 +86,9 @@ public class FormController {
         List countries = sfiPpFormAllCountryService.list();
 
         model.addAttribute("form", sfiPpForm);
+        model.addAttribute("cs1", cs1Service.getViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs2", cs2Service.getViewModel(sfiPpForm.getId()));
+
         model.addAttribute("company", company);
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("user", user);
