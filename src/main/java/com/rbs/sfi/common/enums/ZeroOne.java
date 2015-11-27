@@ -1,11 +1,5 @@
 package com.rbs.sfi.common.enums;
 
-<<<<<<< HEAD
-=======
-/**
- * Created by BS102-Saif on 10/6/2015.
- */
->>>>>>> e912010d368d8762be8ad23bccd8380bd6831f37
 public enum ZeroOne {
     ZERO(0),
     ONE(1);
