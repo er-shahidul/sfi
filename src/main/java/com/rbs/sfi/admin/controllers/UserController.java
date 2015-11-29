@@ -188,7 +188,7 @@ public class UserController {
         userService.updateEmail(user);
 
         model.addAttribute("success", "User " + "" + " updated successfully");
-        return ("redirect:/admin/user/profile");
+        return ("redirect:/logout");
     }
 
     @RequestMapping(value = { "/admin/user/password/edit/{id}" }, method = RequestMethod.POST)
