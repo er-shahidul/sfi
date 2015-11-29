@@ -89,6 +89,7 @@ public class UserService {
         User entity = userRepository.findByID(user.getId());
         if(entity!=null){
             entity.setEmail(user.getEmail());
+            entity.setUsername(user.getEmail());
             userRepository.update(entity);
         }
     }
