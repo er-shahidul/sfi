@@ -88,7 +88,7 @@ sfiFormApp
         }
 
         $http
-            .put("/form/cs1",  $scope.cs2)
+            .put("/form/cs2",  $scope.cs2)
             //.put("/form/cs1", sfiV2.getSectionData('cs2', $scope.cs2))
             .then(function(response){
 
