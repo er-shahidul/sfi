@@ -10,7 +10,7 @@ public class SfiPpFormCs4
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@OneToOne(targetEntity = Company.class)
 	@JoinColumn(name="company_id", nullable=true)
@@ -29,85 +29,85 @@ public class SfiPpFormCs4
 	private Float cs4CaAvgHervArea;
 
 	@Column(name="cs4UsaGovRegulation", nullable=true)
-	private boolean cs4UsaGovRegulation;
+	private Boolean cs4UsaGovRegulation;
 
 	@Column(name="cs4UsaGovRegulationExp", nullable=true)
 	private String cs4UsaGovRegulationExp;
 
 	@Column(name="cs4CaGovRegulation", nullable=true)
-	private boolean cs4CaGovRegulation;
+	private Boolean cs4CaGovRegulation;
 
 	@Column(name="cs4CaGovRegulationExp", nullable=true)
 	private String cs4CaGovRegulationExp;
 
 	@Column(name="cs4UsaDisResDiseaseInsects", nullable=true)
-	private boolean cs4UsaDisResDiseaseInsects;
+	private Boolean cs4UsaDisResDiseaseInsects;
 
 	@Column(name="cs4UsaDiseaseInsectsExp", nullable=true)
 	private String cs4UsaDiseaseInsectsExp;
 
 	@Column(name="cs4CaDisResDiseaseInsects", nullable=true)
-	private boolean cs4CaDisResDiseaseInsects;
+	private Boolean cs4CaDisResDiseaseInsects;
 
 	@Column(name="cs4CaDiseaseInsectsExp", nullable=true)
 	private String cs4CaDiseaseInsectsExp;
 
 	@Column(name="cs4UsaDisResFireSalvage", nullable=true)
-	private boolean cs4UsaDisResFireSalvage;
+	private Boolean cs4UsaDisResFireSalvage;
 
 	@Column(name="cs4UsaFireSalvageExp", nullable=true)
 	private String cs4UsaFireSalvageExp;
 
 	@Column(name="cs4CaDisResFireSalvage", nullable=true)
-	private boolean cs4CaDisResFireSalvage;
+	private Boolean cs4CaDisResFireSalvage;
 
 	@Column(name="cs4CaFireSalvageExp", nullable=true)
 	private String cs4CaFireSalvageExp;
 
 	@Column(name="cs4UsaDisResWindthrow", nullable=true)
-	private boolean cs4UsaDisResWindthrow;
+	private Boolean cs4UsaDisResWindthrow;
 
 	@Column(name="cs4UsaWindthrowExp", nullable=true)
 	private String cs4UsaWindthrowExp;
 
 	@Column(name="cs4CaDisResWindthrow", nullable=true)
-	private boolean cs4CaDisResWindthrow;
+	private Boolean cs4CaDisResWindthrow;
 
 	@Column(name="cs4CaWindthrowExp", nullable=true)
 	private String cs4CaWindthrowExp;
 
 	@Column(name="cs4UsaDisResHurricane", nullable=true)
-	private boolean cs4UsaDisResHurricane;
+	private Boolean cs4UsaDisResHurricane;
 
 	@Column(name="cs4UsaHurricaneExp", nullable=true)
 	private String cs4UsaHurricaneExp;
 
 	@Column(name="cs4CaDisResHurricane", nullable=true)
-	private boolean cs4CaDisResHurricane;
+	private Boolean cs4CaDisResHurricane;
 
 	@Column(name="cs4CaHurricaneExp", nullable=true)
 	private String cs4CaHurricaneExp;
 
 	@Column(name="cs4UsaDisResIceStorm", nullable=true)
-	private boolean cs4UsaDisResIceStorm;
+	private Boolean cs4UsaDisResIceStorm;
 
 	@Column(name="cs4UsaIceStormExp", nullable=true)
 	private String cs4UsaIceStormExp;
 
 	@Column(name="cs4CaDisResIceStorm", nullable=true)
-	private boolean cs4CaDisResIceStorm;
+	private Boolean cs4CaDisResIceStorm;
 
 	@Column(name="cs4CaIceStormExp", nullable=true)
 	private String cs4CaIceStormExp;
 
 	@Column(name="cs4UsaOthersApply", nullable=true)
-	private boolean cs4UsaOthersApply;
+	private Boolean cs4UsaOthersApply;
 
 	@Column(name="cs4UsaOthersExp", nullable=true)
 	private String cs4UsaOthersExp;
 
 	@Column(name="cs4CaOthersApply", nullable=true)
-	private boolean cs4CaOthersApply;
+	private Boolean cs4CaOthersApply;
 
 	@Column(name="cs4CaOthersExp", nullable=true)
 	private String cs4CaOthersExp;
@@ -172,11 +172,11 @@ public class SfiPpFormCs4
 	@Column(name="cs4RegenPerc5Yr", nullable=true)
 	private Float cs4RegenPerc5Yr;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -220,11 +220,11 @@ public class SfiPpFormCs4
 		this.cs4CaAvgHervArea = cs4CaAvgHervArea;
 	}
 
-	public boolean isCs4UsaGovRegulation() {
+	public Boolean isCs4UsaGovRegulation() {
 		return cs4UsaGovRegulation;
 	}
 
-	public void setCs4UsaGovRegulation(boolean cs4UsaGovRegulation) {
+	public void setCs4UsaGovRegulation(Boolean cs4UsaGovRegulation) {
 		this.cs4UsaGovRegulation = cs4UsaGovRegulation;
 	}
 
@@ -236,11 +236,11 @@ public class SfiPpFormCs4
 		this.cs4UsaGovRegulationExp = cs4UsaGovRegulationExp;
 	}
 
-	public boolean isCs4CaGovRegulation() {
+	public Boolean isCs4CaGovRegulation() {
 		return cs4CaGovRegulation;
 	}
 
-	public void setCs4CaGovRegulation(boolean cs4CaGovRegulation) {
+	public void setCs4CaGovRegulation(Boolean cs4CaGovRegulation) {
 		this.cs4CaGovRegulation = cs4CaGovRegulation;
 	}
 
@@ -252,11 +252,11 @@ public class SfiPpFormCs4
 		this.cs4CaGovRegulationExp = cs4CaGovRegulationExp;
 	}
 
-	public boolean isCs4UsaDisResDiseaseInsects() {
+	public Boolean isCs4UsaDisResDiseaseInsects() {
 		return cs4UsaDisResDiseaseInsects;
 	}
 
-	public void setCs4UsaDisResDiseaseInsects(boolean cs4UsaDisResDiseaseInsects) {
+	public void setCs4UsaDisResDiseaseInsects(Boolean cs4UsaDisResDiseaseInsects) {
 		this.cs4UsaDisResDiseaseInsects = cs4UsaDisResDiseaseInsects;
 	}
 
@@ -268,11 +268,11 @@ public class SfiPpFormCs4
 		this.cs4UsaDiseaseInsectsExp = cs4UsaDiseaseInsectsExp;
 	}
 
-	public boolean isCs4CaDisResDiseaseInsects() {
+	public Boolean isCs4CaDisResDiseaseInsects() {
 		return cs4CaDisResDiseaseInsects;
 	}
 
-	public void setCs4CaDisResDiseaseInsects(boolean cs4CaDisResDiseaseInsects) {
+	public void setCs4CaDisResDiseaseInsects(Boolean cs4CaDisResDiseaseInsects) {
 		this.cs4CaDisResDiseaseInsects = cs4CaDisResDiseaseInsects;
 	}
 
@@ -284,11 +284,11 @@ public class SfiPpFormCs4
 		this.cs4CaDiseaseInsectsExp = cs4CaDiseaseInsectsExp;
 	}
 
-	public boolean isCs4UsaDisResFireSalvage() {
+	public Boolean isCs4UsaDisResFireSalvage() {
 		return cs4UsaDisResFireSalvage;
 	}
 
-	public void setCs4UsaDisResFireSalvage(boolean cs4UsaDisResFireSalvage) {
+	public void setCs4UsaDisResFireSalvage(Boolean cs4UsaDisResFireSalvage) {
 		this.cs4UsaDisResFireSalvage = cs4UsaDisResFireSalvage;
 	}
 
@@ -300,11 +300,11 @@ public class SfiPpFormCs4
 		this.cs4UsaFireSalvageExp = cs4UsaFireSalvageExp;
 	}
 
-	public boolean isCs4CaDisResFireSalvage() {
+	public Boolean isCs4CaDisResFireSalvage() {
 		return cs4CaDisResFireSalvage;
 	}
 
-	public void setCs4CaDisResFireSalvage(boolean cs4CaDisResFireSalvage) {
+	public void setCs4CaDisResFireSalvage(Boolean cs4CaDisResFireSalvage) {
 		this.cs4CaDisResFireSalvage = cs4CaDisResFireSalvage;
 	}
 
@@ -316,11 +316,11 @@ public class SfiPpFormCs4
 		this.cs4CaFireSalvageExp = cs4CaFireSalvageExp;
 	}
 
-	public boolean isCs4UsaDisResWindthrow() {
+	public Boolean isCs4UsaDisResWindthrow() {
 		return cs4UsaDisResWindthrow;
 	}
 
-	public void setCs4UsaDisResWindthrow(boolean cs4UsaDisResWindthrow) {
+	public void setCs4UsaDisResWindthrow(Boolean cs4UsaDisResWindthrow) {
 		this.cs4UsaDisResWindthrow = cs4UsaDisResWindthrow;
 	}
 
@@ -332,11 +332,11 @@ public class SfiPpFormCs4
 		this.cs4UsaWindthrowExp = cs4UsaWindthrowExp;
 	}
 
-	public boolean isCs4CaDisResWindthrow() {
+	public Boolean isCs4CaDisResWindthrow() {
 		return cs4CaDisResWindthrow;
 	}
 
-	public void setCs4CaDisResWindthrow(boolean cs4CaDisResWindthrow) {
+	public void setCs4CaDisResWindthrow(Boolean cs4CaDisResWindthrow) {
 		this.cs4CaDisResWindthrow = cs4CaDisResWindthrow;
 	}
 
@@ -348,11 +348,11 @@ public class SfiPpFormCs4
 		this.cs4CaWindthrowExp = cs4CaWindthrowExp;
 	}
 
-	public boolean isCs4UsaDisResHurricane() {
+	public Boolean isCs4UsaDisResHurricane() {
 		return cs4UsaDisResHurricane;
 	}
 
-	public void setCs4UsaDisResHurricane(boolean cs4UsaDisResHurricane) {
+	public void setCs4UsaDisResHurricane(Boolean cs4UsaDisResHurricane) {
 		this.cs4UsaDisResHurricane = cs4UsaDisResHurricane;
 	}
 
@@ -364,11 +364,11 @@ public class SfiPpFormCs4
 		this.cs4UsaHurricaneExp = cs4UsaHurricaneExp;
 	}
 
-	public boolean isCs4CaDisResHurricane() {
+	public Boolean isCs4CaDisResHurricane() {
 		return cs4CaDisResHurricane;
 	}
 
-	public void setCs4CaDisResHurricane(boolean cs4CaDisResHurricane) {
+	public void setCs4CaDisResHurricane(Boolean cs4CaDisResHurricane) {
 		this.cs4CaDisResHurricane = cs4CaDisResHurricane;
 	}
 
@@ -380,11 +380,11 @@ public class SfiPpFormCs4
 		this.cs4CaHurricaneExp = cs4CaHurricaneExp;
 	}
 
-	public boolean isCs4UsaDisResIceStorm() {
+	public Boolean isCs4UsaDisResIceStorm() {
 		return cs4UsaDisResIceStorm;
 	}
 
-	public void setCs4UsaDisResIceStorm(boolean cs4UsaDisResIceStorm) {
+	public void setCs4UsaDisResIceStorm(Boolean cs4UsaDisResIceStorm) {
 		this.cs4UsaDisResIceStorm = cs4UsaDisResIceStorm;
 	}
 
@@ -396,11 +396,11 @@ public class SfiPpFormCs4
 		this.cs4UsaIceStormExp = cs4UsaIceStormExp;
 	}
 
-	public boolean isCs4CaDisResIceStorm() {
+	public Boolean isCs4CaDisResIceStorm() {
 		return cs4CaDisResIceStorm;
 	}
 
-	public void setCs4CaDisResIceStorm(boolean cs4CaDisResIceStorm) {
+	public void setCs4CaDisResIceStorm(Boolean cs4CaDisResIceStorm) {
 		this.cs4CaDisResIceStorm = cs4CaDisResIceStorm;
 	}
 
@@ -412,11 +412,11 @@ public class SfiPpFormCs4
 		this.cs4CaIceStormExp = cs4CaIceStormExp;
 	}
 
-	public boolean isCs4UsaOthersApply() {
+	public Boolean isCs4UsaOthersApply() {
 		return cs4UsaOthersApply;
 	}
 
-	public void setCs4UsaOthersApply(boolean cs4UsaOthersApply) {
+	public void setCs4UsaOthersApply(Boolean cs4UsaOthersApply) {
 		this.cs4UsaOthersApply = cs4UsaOthersApply;
 	}
 
@@ -428,11 +428,11 @@ public class SfiPpFormCs4
 		this.cs4UsaOthersExp = cs4UsaOthersExp;
 	}
 
-	public boolean isCs4CaOthersApply() {
+	public Boolean isCs4CaOthersApply() {
 		return cs4CaOthersApply;
 	}
 
-	public void setCs4CaOthersApply(boolean cs4CaOthersApply) {
+	public void setCs4CaOthersApply(Boolean cs4CaOthersApply) {
 		this.cs4CaOthersApply = cs4CaOthersApply;
 	}
 

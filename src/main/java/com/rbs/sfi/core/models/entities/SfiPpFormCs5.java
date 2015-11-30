@@ -8,7 +8,7 @@ public class SfiPpFormCs5
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@ManyToOne(targetEntity = SfiPpForm.class)
 	@JoinColumn(name="form_id", nullable=true)
@@ -30,11 +30,11 @@ public class SfiPpFormCs5
 	@Column(name="cs5_exterCA", nullable=true)
 	private Float externalCad;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

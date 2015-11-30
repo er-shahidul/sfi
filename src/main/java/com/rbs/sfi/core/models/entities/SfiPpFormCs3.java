@@ -11,7 +11,7 @@ public class SfiPpFormCs3
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@ManyToOne(targetEntity = Cs3.class)
 	@JoinColumn(name="form_id", nullable=true)
@@ -27,7 +27,7 @@ public class SfiPpFormCs3
 	private String cs3ProjectDescr;
 
 	@Column(name="cs3_sfiStandardObj", nullable=true)
-	private int cs3SfiStandardObj;
+	private Integer cs3SfiStandardObj;
 
 	@ManyToMany(targetEntity = SfiPpFormRegion.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name="sfi_pp_form_cs3_project_locations",
@@ -45,16 +45,16 @@ public class SfiPpFormCs3
 	private Date cs3EndDate;
 
 	@Column(name="cs3_totalProjectCost", nullable=true)
-	private int cs3TotalProjectCost;
+	private Integer cs3TotalProjectCost;
 
 	@Column(name="cs3_totalProjectCost_curr", nullable=true)
-	private int cs3TotalProjectCostCurr;
+	private Integer cs3TotalProjectCostCurr;
 
 	@Column(name="cs3_orgContribution", nullable=true)
-	private int cs3OrgContribution;
+	private Integer cs3OrgContribution;
 
 	@Column(name="cs3_orgContribution_curr", nullable=true)
-	private int cs3OrgContributionCurr;
+	private Integer cs3OrgContributionCurr;
 
 	@Column(name="cs3_organization_list_academic", nullable=true)
 	private String cs3OrganizationListAcademic;
@@ -78,16 +78,16 @@ public class SfiPpFormCs3
 	private Set<SfiPpFormCs3ProjectSupportDocs> cs3SupportDocs;
 
 	@Column(name="cs3_include_research_funding", nullable=true)
-	private boolean cs3IncludeResearchFunding;
+	private Boolean cs3IncludeResearchFunding;
 
 	@Column(name="cs3_shareConserData", nullable=true)
-	private boolean cs3ShareConserData;
+	private Boolean cs3ShareConserData;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -115,11 +115,11 @@ public class SfiPpFormCs3
 		this.cs3ProjectDescr = cs3ProjectDescr;
 	}
 
-	public int getCs3SfiStandardObj() {
+	public Integer getCs3SfiStandardObj() {
 		return cs3SfiStandardObj;
 	}
 
-	public void setCs3SfiStandardObj(int cs3SfiStandardObj) {
+	public void setCs3SfiStandardObj(Integer cs3SfiStandardObj) {
 		this.cs3SfiStandardObj = cs3SfiStandardObj;
 	}
 
@@ -155,35 +155,35 @@ public class SfiPpFormCs3
 		this.cs3EndDate = cs3EndDate;
 	}
 
-	public int getCs3TotalProjectCost() {
+	public Integer getCs3TotalProjectCost() {
 		return cs3TotalProjectCost;
 	}
 
-	public void setCs3TotalProjectCost(int cs3TotalProjectCost) {
+	public void setCs3TotalProjectCost(Integer cs3TotalProjectCost) {
 		this.cs3TotalProjectCost = cs3TotalProjectCost;
 	}
 
-	public int getCs3TotalProjectCostCurr() {
+	public Integer getCs3TotalProjectCostCurr() {
 		return cs3TotalProjectCostCurr;
 	}
 
-	public void setCs3TotalProjectCostCurr(int cs3TotalProjectCostCurr) {
+	public void setCs3TotalProjectCostCurr(Integer cs3TotalProjectCostCurr) {
 		this.cs3TotalProjectCostCurr = cs3TotalProjectCostCurr;
 	}
 
-	public int getCs3OrgContribution() {
+	public Integer getCs3OrgContribution() {
 		return cs3OrgContribution;
 	}
 
-	public void setCs3OrgContribution(int cs3OrgContribution) {
+	public void setCs3OrgContribution(Integer cs3OrgContribution) {
 		this.cs3OrgContribution = cs3OrgContribution;
 	}
 
-	public int getCs3OrgContributionCurr() {
+	public Integer getCs3OrgContributionCurr() {
 		return cs3OrgContributionCurr;
 	}
 
-	public void setCs3OrgContributionCurr(int cs3OrgContributionCurr) {
+	public void setCs3OrgContributionCurr(Integer cs3OrgContributionCurr) {
 		this.cs3OrgContributionCurr = cs3OrgContributionCurr;
 	}
 
@@ -243,19 +243,19 @@ public class SfiPpFormCs3
 		this.cs3SupportDocs = cs3SupportDocs;
 	}
 
-	public boolean isCs3IncludeResearchFunding() {
+	public Boolean isCs3IncludeResearchFunding() {
 		return cs3IncludeResearchFunding;
 	}
 
-	public void setCs3IncludeResearchFunding(boolean cs3IncludeResearchFunding) {
+	public void setCs3IncludeResearchFunding(Boolean cs3IncludeResearchFunding) {
 		this.cs3IncludeResearchFunding = cs3IncludeResearchFunding;
 	}
 
-	public boolean isCs3ShareConserData() {
+	public Boolean isCs3ShareConserData() {
 		return cs3ShareConserData;
 	}
 
-	public void setCs3ShareConserData(boolean cs3ShareConserData) {
+	public void setCs3ShareConserData(Boolean cs3ShareConserData) {
 		this.cs3ShareConserData = cs3ShareConserData;
 	}
 

@@ -29,7 +29,7 @@ public class Cs1Service {
     @Autowired
     private SfiPpFormOtherCountryRepository sfiPpFormOtherCountryRepository;
 
-    public Cs1ViewModel getViewModel(int id) {
+    public Cs1ViewModel getViewModel(Integer id) {
         Cs1 entity = repository.findById(id);
         Cs1ViewModel model = new Cs1ViewModel();
 

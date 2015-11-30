@@ -8,7 +8,7 @@ public class SfiPpFormCs6Other
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@ManyToOne(targetEntity = Cs6.class)
 	@JoinColumn(name="form_id", nullable=true)
@@ -19,7 +19,7 @@ public class SfiPpFormCs6Other
 	private SfiPpFormOtherCountry country;
 
 	@Column(name="cs6_otherCountries_units", nullable=true)
-	private int cs6OtherCountriesUnits;
+	private Integer cs6OtherCountriesUnits;
 
 	@Column(name="cs6_otherCountries_volume", nullable=true)
 	private String cs6OtherCountriesVolume;
@@ -37,16 +37,16 @@ public class SfiPpFormCs6Other
 	private String cs6OtherCountriesPercSFIFiberSourcing;
 
 	@Column(name="cs6_otherCountries_percOther", nullable=true)
-	private boolean cs6OtherCountriesPercOther;
+	private Boolean cs6OtherCountriesPercOther;
 
 	@Column(name="cs6_otherCountries_percOtherReason", nullable=true)
 	private String cs6OtherCountriesPercOtherReason;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -66,11 +66,11 @@ public class SfiPpFormCs6Other
 		this.country = country;
 	}
 
-	public int getCs6OtherCountriesUnits() {
+	public Integer getCs6OtherCountriesUnits() {
 		return cs6OtherCountriesUnits;
 	}
 
-	public void setCs6OtherCountriesUnits(int cs6OtherCountriesUnits) {
+	public void setCs6OtherCountriesUnits(Integer cs6OtherCountriesUnits) {
 		this.cs6OtherCountriesUnits = cs6OtherCountriesUnits;
 	}
 
@@ -114,11 +114,11 @@ public class SfiPpFormCs6Other
 		this.cs6OtherCountriesPercSFIFiberSourcing = cs6OtherCountriesPercSFIFiberSourcing;
 	}
 
-	public boolean isCs6OtherCountriesPercOther() {
+	public Boolean isCs6OtherCountriesPercOther() {
 		return cs6OtherCountriesPercOther;
 	}
 
-	public void setCs6OtherCountriesPercOther(boolean cs6OtherCountriesPercOther) {
+	public void setCs6OtherCountriesPercOther(Boolean cs6OtherCountriesPercOther) {
 		this.cs6OtherCountriesPercOther = cs6OtherCountriesPercOther;
 	}
 

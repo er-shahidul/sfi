@@ -14,7 +14,7 @@ public class Cs1Repository extends AbstractRepository<Integer, Cs1> {
     SessionFactory sessionFactory;
 
     @Transactional
-    public Cs1 findById(int id) {
+    public Cs1 findById(Integer id) {
         return (Cs1)sessionFactory.getCurrentSession().get(Cs1.class,id);
     }
 

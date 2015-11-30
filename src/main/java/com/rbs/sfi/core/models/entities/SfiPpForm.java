@@ -11,7 +11,7 @@ public class SfiPpForm
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@ManyToOne(targetEntity = SfiPpFormStatus.class, optional=true)
 	@JoinColumn(name="status_id", referencedColumnName="id", nullable=true)
@@ -26,16 +26,16 @@ public class SfiPpForm
 	private User createdBy;
 
 	@Column(name="isSaved", nullable=true)
-	private boolean isSaved;
+	private Boolean isSaved;
 
 	@Column(name="isComplete", nullable=true)
-	private boolean isComplete;
+	private Boolean isComplete;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -63,19 +63,19 @@ public class SfiPpForm
 		this.createdBy = createdBy;
 	}
 
-	public boolean isSaved() {
+	public Boolean isSaved() {
 		return isSaved;
 	}
 
-	public void setIsSaved(boolean isSaved) {
+	public void setIsSaved(Boolean isSaved) {
 		this.isSaved = isSaved;
 	}
 
-	public boolean isComplete() {
+	public Boolean isComplete() {
 		return isComplete;
 	}
 
-	public void setIsComplete(boolean isComplete) {
+	public void setIsComplete(Boolean isComplete) {
 		this.isComplete = isComplete;
 	}
 }
