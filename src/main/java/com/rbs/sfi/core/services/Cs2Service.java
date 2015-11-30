@@ -5,6 +5,7 @@ import com.rbs.sfi.core.models.entities.SfiPpFormCs2OutsideUsaCa;
 import com.rbs.sfi.core.models.viewmodels.Cs2ViewModel;
 import com.rbs.sfi.core.repositories.Cs2Repository;
 import com.rbs.sfi.core.repositories.SfiPpFormCs2OutsideUsaCaRepository;
+import com.rbs.sfi.core.repositories.SfiPpFormOtherCountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,9 @@ public class Cs2Service {
 
     @Autowired
     private SfiPpFormCs2OutsideUsaCaRepository sfiPpFormCs2OutsideUsaCaRepository;
+
+    @Autowired
+    private SfiPpFormOtherCountryRepository sfiPpFormOtherCountryRepository;
 
     public Cs2ViewModel getViewModel(Integer id) {
         Cs2 entity = cs2Repository.findById(id);
@@ -69,11 +73,30 @@ public class Cs2Service {
     }
 
     private void addOutsideCountries(Cs2 entity, Set<SfiPpFormCs2OutsideUsaCa> outsideCountries) {
+        if (outsideCountries == null) return;
         Set<SfiPpFormCs2OutsideUsaCa> cs2OutsideCountries = entity.getOutsideCountries();
         cs2OutsideCountries.clear();
 
         for (SfiPpFormCs2OutsideUsaCa sfiPpFormCs2OutsideUsaCa : outsideCountries) {
-            cs2OutsideCountries.add(sfiPpFormCs2OutsideUsaCaRepository.findById(sfiPpFormCs2OutsideUsaCa.getId()));
+            if (sfiPpFormCs2OutsideUsaCa == null) continue;
+            SfiPpFormCs2OutsideUsaCa temp = null;
+
+            if (sfiPpFormCs2OutsideUsaCa.getId() == null) {
+                temp = new SfiPpFormCs2OutsideUsaCa();
+                temp.setSfiPpForm(entity.getId().hashCode());
+
+            } else {
+                temp = sfiPpFormCs2OutsideUsaCaRepository.findById(sfiPpFormCs2OutsideUsaCa.getId());
+            }
+
+            temp.setCountry(sfiPpFormOtherCountryRepository.findById(sfiPpFormCs2OutsideUsaCa.getCountry().getId()));
+            temp.setStandardType(sfiPpFormCs2OutsideUsaCa.getStandardType());
+            temp.setStandardTypeOther(sfiPpFormCs2OutsideUsaCa.getStandardTypeOther());
+            temp.setTotalArea(sfiPpFormCs2OutsideUsaCa.getTotalArea());
+            temp.setUnderCertifiedStandard(sfiPpFormCs2OutsideUsaCa.getUnderCertifiedStandard());
+            sfiPpFormCs2OutsideUsaCaRepository.save(temp);
+
+            cs2OutsideCountries.add(temp);
         }
         entity.setOutsideCountries(cs2OutsideCountries);
     }

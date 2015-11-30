@@ -532,47 +532,47 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-class="{'disabled' : !operateInOthers()}"  ng-repeat="other in cs2.others" ng-form="innerForm">
+                <tr ng-class="{'disabled' : !operateInOthers()}"  ng-repeat="other in cs2.outsideCountries" ng-form="innerForm">
 
                     <td ng-class="{'has-error': isDirty (other) && innerForm.otherItem1.$invalid}">
                         <select class="form-control" id="otherItem1" name="otherItem1" customerror
-                                ng-model="other.countryId"
+                                ng-model="other.country.id"
                                 ng-disabled="!operateInOthers()">
-                            <option value="" ng-selected="other.countryId == ''">Select Country</option>
-                            <option ng-repeat="item in otherCountries"  ng-selected="other.countryId == item.id" value="{{ item.id }}">{{ item.country }}</option>
+                            <option value="" ng-selected="!other.country">Select Country</option>
+                            <option ng-repeat="item in otherCountries"  ng-selected="other.country.id == item.id" value="{{ item.id }}">{{ item.country }}</option>
                         </select>
                     </td>
 
                     <td ng-class="{'has-error': isDirty (other) && innerForm.otherItem2.$invalid}">
                         <input type="number" class="form-control shorter" name="otherItem2"
                                ng-pattern="/^\d*(\.\d{1,4})?$/"
-                               ng-required="other.countryId"
+                               ng-required="other.country.id"
                                pattern-msg="Enter decimal number up to 4 precision points" customerror
-                               ng-model="other.areaManaged"
+                               ng-model="other.totalArea"
                                ng-disabled="!operateInOthers()"> {{ unit }}
                     </td>
                     <td>
                         <div class="form-group hasRadioBoxes">
 
                             <input type="radio" ng-value="1" icheck name="otherItem{{$index}}3"
-                                   ng-model="other.certified" ng-checked="true"
+                                   ng-model="other.underCertifiedStandard" ng-checked="true"
                                    ng-disabled="!operateInOthers()">
                             <label class="checkboxLabel">Yes</label>
 
                             &nbsp;&nbsp;&nbsp;
 
                             <input type="radio" ng-value="0" class="icheck"
-                                   ng-model="other.certified"
-                                   ng-checked="!other.certified"
+                                   ng-model="other.underCertifiedStandard"
+                                   ng-checked="!other.underCertifiedStandard"
                                    ng-disabled="!operateInOthers()" icheck>
                             <label class="checkboxLabel">No</label>
 
-                            <div class="floatright col-sm-7" ng-show="other.certified"
+                            <div class="floatright col-sm-7" ng-show="other.underCertifiedStandard"
                                  ng-class="{'has-error': isDirty (other) && innerForm.certificationBody.$invalid}">
 
-                                <select class="form-control" name="certificationBody" ng-model="other.certificationBody"
+                                <select class="form-control" name="standardType" ng-model="other.standardType"
                                         ng-disabled="!operateInOthers()"
-                                        ng-required="other.certified">
+                                        ng-required="other.underCertifiedStandard">
                                     <option value>Select Standard type</option>
                                     <option value="1" >PEFC endorsed standard</option>
                                     <option value="2" >FSC standard</option>
@@ -580,13 +580,13 @@
                                     <option value="4" >Other</option>
                                 </select>
 
-                                <div class="padded" ng-show="other.certificationBody == 4 "
-                                     ng-class="{'has-error': isDirty (other) && innerForm.certificationOther.$invalid}">
+                                <div class="padded" ng-show="other.standardType == 4 "
+                                     ng-class="{'has-error': isDirty (other) && innerForm.standardType.$invalid}">
                                     Specify standard &nbsp;&nbsp;&nbsp;
                                     <input type="text" name="certificationOther" class="form-control shorter" style="width: 50%;"
                                            ng-maxlength="200" customerror
-                                           ng-model="other.certificationOther"
-                                           ng-required="other.certified && other.certificationBody == 4">
+                                           ng-model="other.standardTypeOther"
+                                           ng-required="other.underCertifiedStandard && other.standardType == 4">
                                 </div>
                             </div>
                         </div>

@@ -10,25 +10,24 @@ public class SfiPpFormCs2OutsideUsaCa
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
-	@ManyToOne(targetEntity = Cs2.class, optional=true)
-	@JoinColumn(name="form_id", nullable=true)
-	private Cs2 sfiPpForm;
+	@Column(name="form_id", nullable=true)
+	private Integer sfiPpForm;
 
 	@ManyToOne(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, optional=true)
 	@JoinColumn(name="cs2_outsideUSandCA_countryID", referencedColumnName="id", nullable=true)
 	private SfiPpFormOtherCountry country;
 
 	@Column(name="cs2_totalArea", nullable=true)
-	private Float cs2TotalArea;
+	private Float totalArea;
 
 	@Column(name="cs2_isUnderCertStand", nullable=true)
-	private Boolean cs2UnderCertifiedStandard;
+	private Boolean underCertifiedStandard;
 
 	@Column(name="cs2_standardType", nullable=true)
-	private Integer cs2StandardType;
+	private Integer standardType;
 
 	@Column(name="cs2_standardType_other", nullable=true)
-	private String cs2StandardTypeOther;
+	private String standardTypeOther;
 
 	public Integer getId() {
 		return id;
@@ -38,36 +37,12 @@ public class SfiPpFormCs2OutsideUsaCa
 		this.id = id;
 	}
 
-	public Float getCs2TotalArea() {
-		return cs2TotalArea;
+	public Integer getSfiPpForm() {
+		return sfiPpForm;
 	}
 
-	public void setCs2TotalArea(Float cs2TotalArea) {
-		this.cs2TotalArea = cs2TotalArea;
-	}
-
-	public Boolean isCs2UnderCertifiedStandard() {
-		return cs2UnderCertifiedStandard;
-	}
-
-	public void setCs2UnderCertifiedStandard(Boolean cs2UnderCertifiedStandard) {
-		this.cs2UnderCertifiedStandard = cs2UnderCertifiedStandard;
-	}
-
-	public Integer getCs2StandardType() {
-		return cs2StandardType;
-	}
-
-	public void setCs2StandardType(Integer cs2StandardType) {
-		this.cs2StandardType = cs2StandardType;
-	}
-
-	public String getCs2StandardTypeOther() {
-		return cs2StandardTypeOther;
-	}
-
-	public void setCs2StandardTypeOther(String cs2StandardTypeOther) {
-		this.cs2StandardTypeOther = cs2StandardTypeOther;
+	public void setSfiPpForm(Integer sfiPpForm) {
+		this.sfiPpForm = sfiPpForm;
 	}
 
 	public SfiPpFormOtherCountry getCountry() {
@@ -78,11 +53,35 @@ public class SfiPpFormCs2OutsideUsaCa
 		this.country = country;
 	}
 
-	public Cs2 getSfiPpForm() {
-		return sfiPpForm;
+	public Float getTotalArea() {
+		return totalArea;
 	}
 
-	public void setSfiPpForm(Cs2 sfiPpForm) {
-		this.sfiPpForm = sfiPpForm;
+	public void setTotalArea(Float totalArea) {
+		this.totalArea = totalArea;
+	}
+
+	public Boolean getUnderCertifiedStandard() {
+		return underCertifiedStandard;
+	}
+
+	public void setUnderCertifiedStandard(Boolean underCertifiedStandard) {
+		this.underCertifiedStandard = underCertifiedStandard;
+	}
+
+	public Integer getStandardType() {
+		return standardType;
+	}
+
+	public void setStandardType(Integer standardType) {
+		this.standardType = standardType;
+	}
+
+	public String getStandardTypeOther() {
+		return standardTypeOther;
+	}
+
+	public void setStandardTypeOther(String standardTypeOther) {
+		this.standardTypeOther = standardTypeOther;
 	}
 }

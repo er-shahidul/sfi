@@ -26,4 +26,8 @@ public class SfiPpFormCs2OutsideUsaCaRepository extends AbstractRepository<Integ
         return (SfiPpFormCs2OutsideUsaCa)sessionFactory.getCurrentSession().get(SfiPpFormCs2OutsideUsaCa.class, id);
     }
 
+    public void save(SfiPpFormCs2OutsideUsaCa sfiPpFormCs2OutsideUsaCa){
+        persist(sfiPpFormCs2OutsideUsaCa);
+    }
+
 }
