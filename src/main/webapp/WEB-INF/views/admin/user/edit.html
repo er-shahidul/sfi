@@ -5,6 +5,11 @@
 
 <section layout:fragment="content">
 
+    <!--<div th:each="u  : ${userGroup}">-->
+        <!--<div th:with="groupId=${u.id}"></div>-->
+    <!--</div>-->
+
+
     <div id="wrapper">
         <div class="container">
             <div class="formContainer">
@@ -131,7 +136,9 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
                                                                         <div th:field="*{group}">
-                                                                            <input th:class="btn-default" th:path="*{group}" th:name="group" type="radio" th:each="group : ${groups}" th:value="${group.id}" th:checked="${group == 1}" class="form-control" th:text="${group.description}" />
+                                                                            <div th:path="*{group}" th:each="group : ${groups}">
+                                                                                <input th:class="btn-default" th:name="group" type="radio" th:value="${group.id}" th:checked="${group.id == userGroupId}" class="form-control" th:text="${group.description}" />
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>

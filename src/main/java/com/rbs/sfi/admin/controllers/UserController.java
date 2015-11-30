@@ -151,7 +151,8 @@ public class UserController {
     public String edit(@PathVariable int id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
-        model.addAttribute("userGroup", user.getGroup());
+        model.addAttribute("userGroupId", user.getGroupId());
+
         model.addAttribute("title", "user");
         model.addAttribute("edit", true);
 

@@ -88,6 +88,15 @@ public class User extends Audit
 		return group;
 	}
 
+	public int getGroupId() {
+		int groupId = 0;
+		for(Group x : this.getGroup() ){
+			groupId =  x.getId();
+		}
+
+		return groupId;
+	}
+
 	public void setGroup(Set<Group> group) {
 		this.group = group;
 	}
