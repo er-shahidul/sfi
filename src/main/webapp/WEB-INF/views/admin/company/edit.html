@@ -122,17 +122,18 @@
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
                                                                         <input type="radio" th:name="sfi0Sci1" th:text="${'SFI Annual Progress Report'}" th:value="false" th:field="*{sfi0Sci1}" />
                                                                         <br/>
+                                                                            <div class="form-group inner-form" style="margin-left: 20px!important;" id="sonata-ba-field-container-primary0Secondary1">
+                                                                                <div class=" sonata-ba-field sonata-ba-field-standard-natural">
+                                                                                    <input type="radio" th:name="primary0Secondary1" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Primary Users'}" th:value="false" th:field="*{primary0Secondary1}" />
+                                                                                    <br/>
+                                                                                    <input type="radio" th:name="primary0Secondary1" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Secondary Users'}" th:value="true" th:field="*{primary0Secondary1}" />
+                                                                                </div>
+                                                                            </div>
                                                                         <input type="radio" th:name="sfi0Sci1" th:text="${'SIC Survey'}" th:value="true" th:field="*{sfi0Sci1}" />
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="form-group" id="sonata-ba-field-container-primary0Secondary1">
-                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural">
-                                                                        <input type="radio" th:name="primary0Secondary1" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Primary Users'}" th:value="false" th:field="*{primary0Secondary1}" />
-                                                                        <br/>
-                                                                        <input type="radio" th:name="primary0Secondary1" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Secondary Users'}" th:value="true" th:field="*{primary0Secondary1}" />
-                                                                    </div>
-                                                                </div>
+
 
                                                             </div>
                                                         </div>
@@ -146,6 +147,7 @@
                                             <!--<button class="btn btn-success" type="submit" name="btn_create_and_edit"><i class="fa fa-save"></i> Create</button>-->
                                             <button type="submit" class="btn btn-success" name="btn_create_and_list"><i class="fa fa-save"></i> <i class="fa fa-list"></i> Update and return to list</button>
                                             <!--<button class="btn btn-success" type="submit" name="btn_create_and_create"><i class="fa fa-plus-circle"></i> Create and add another</button>-->
+                                            <a class="btn btn-danger" th:href="@{'/admin/company/delete/' + ${company.id}}"><i class="fa fa-minus-circle"></i>Delete</a>
                                         </div>
 
                                     </form>
@@ -174,11 +176,11 @@
 
             if($grp1.filter(":checked").val() == "true"){
 
-                return $grp2.parents(".form-group").hide();
+                return $grp2.parents(".inner-form").hide();
             }
 
 
-            $grp2.parents(".form-group").show();
+            $grp2.parents(".inner-form").show();
 
         }).change();
         // ]]>

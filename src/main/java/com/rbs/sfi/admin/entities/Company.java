@@ -30,6 +30,9 @@ public class Company extends Audit
 	@Column(name="primary0_secondary1", nullable=true)
 	private boolean primary0Secondary1;
 
+	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
+	private Boolean isActive;
+
 	public int getId() {
 		return id;
 	}
@@ -84,5 +87,13 @@ public class Company extends Audit
 
 	public void setPrimary0Secondary1(boolean primary0Secondary1) {
 		this.primary0Secondary1 = primary0Secondary1;
+	}
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
 	}
 }

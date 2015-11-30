@@ -184,6 +184,15 @@ public class CompanyController
         return new ModelAndView("redirect:/admin/company/list");
     }
 
+    @RequestMapping(value = { "/admin/company/delete/{id}" }, method = RequestMethod.GET)
+    public String softDelete(@PathVariable int id, ModelMap model) {
+        model.addAttribute("title", "company_setting");
+        Company company = companyService.findById(id);
+        companyService.softDelete(company);
+
+        return ("redirect:/admin/company/list");
+    }
+
     private static String getFileExtension(String fileName) {
         if(fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
             return fileName.substring(fileName.lastIndexOf(".")+1);

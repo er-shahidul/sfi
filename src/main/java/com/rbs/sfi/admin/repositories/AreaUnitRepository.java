@@ -1,7 +1,11 @@
 package com.rbs.sfi.admin.repositories;
 
 import com.rbs.sfi.admin.entities.AreaUnit;
+import com.rbs.sfi.admin.entities.Group;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,20 +19,30 @@ public class AreaUnitRepository extends AbstractRepository<Integer, AreaUnit> {
     SessionFactory sessionFactory;
 
     @Transactional
+    @SuppressWarnings("unchecked")
     public List<AreaUnit> list() {
-        @SuppressWarnings("unchecked")
-        List<AreaUnit> areaUnities = sessionFactory.getCurrentSession().createQuery("from AreaUnit").list();
-        return areaUnities;
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("isActive", true));
+        return (List<AreaUnit>)criteria.list();
     }
 
     @Transactional
     public AreaUnit findById(int id) {
-        return (AreaUnit)sessionFactory.getCurrentSession().get(AreaUnit.class,id);
+        return (AreaUnit)sessionFactory.getCurrentSession().get(AreaUnit.class, id);
     }
 
     @Transactional
     public void save(AreaUnit areaUnit) {
         persist(areaUnit);
+    }
+
+    @Transactional
+    public void softDelete(AreaUnit areaUnit) {
+        AreaUnit entity = this.findById(areaUnit.getId());
+        if(entity!=null){
+            entity.setIsActive(false);
+            this.save(entity);
+        }
     }
 
     @Transactional

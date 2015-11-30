@@ -29,10 +29,11 @@ public class UserRepository extends AbstractRepository<Integer, User> {
     }
 
     @Transactional
+    @SuppressWarnings("unchecked")
     public List<User> list() {
-        @SuppressWarnings("unchecked")
-        List<User> users = sessionFactory.getCurrentSession().createQuery("from User").list();
-        return users;
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("isActive", true));
+        return (List<User>)criteria.list();
     }
 
     @Transactional

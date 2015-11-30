@@ -49,6 +49,9 @@ public class User extends Audit
     @Column(name="user_token", nullable=true)
     private String userToken;
 
+	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
+	private Boolean isActive;
+
 	public int getId() {
 		return id;
 	}
@@ -83,6 +86,15 @@ public class User extends Audit
 
 	public Set<Group> getGroup() {
 		return group;
+	}
+
+	public int getGroupId() {
+		int groupId = 0;
+		for(Group x : this.getGroup() ){
+			groupId =  x.getId();
+		}
+
+		return groupId;
 	}
 
 	public void setGroup(Set<Group> group) {
@@ -189,4 +201,12 @@ public class User extends Audit
     public void setUserToken(String userToken) {
         this.userToken = userToken;
     }
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
 }

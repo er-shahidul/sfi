@@ -35,4 +35,12 @@ public class CompanyService
             companyRepository.update(entity);
         }
     }
+
+    public void softDelete(Company company) {
+        Company entity = this.findById(company.getId());
+        if(entity!=null){
+            entity.setIsActive(false);
+            companyRepository.update(entity);
+        }
+    }
 }
