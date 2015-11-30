@@ -81,6 +81,15 @@ public class UserController {
         return new ModelAndView("redirect:/admin/user/list");
     }
 
+    @RequestMapping(value = { "/admin/user/delete/{id}" }, method = RequestMethod.GET)
+    public String softDelete(@PathVariable int id, ModelMap model) {
+        model.addAttribute("title", "user");
+        User user = userService.findByID(id);
+        userService.softDelete(user);
+
+        return ("redirect:/admin/user/list");
+    }
+
     @RequestMapping(value = { "/admin/user/active/{id}" })
     public String active(@PathVariable int id, ModelMap model) {
         User user = userService.findByID(id);

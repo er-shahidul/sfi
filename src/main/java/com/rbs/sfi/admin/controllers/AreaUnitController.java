@@ -70,4 +70,13 @@ public class AreaUnitController {
 
         return ("redirect:/admin/area/unit/list");
     }
+
+    @RequestMapping(value = { "/admin/area/unit/delete/{id}" }, method = RequestMethod.GET)
+    public String softDelete(@PathVariable int id, ModelMap model) {
+        model.addAttribute("title", "area_unit");
+        AreaUnit areaUnit = areaUnitRepository.findById(id);
+        areaUnitRepository.softDelete(areaUnit);
+
+        return ("redirect:/admin/area/unit/list");
+    }
 }

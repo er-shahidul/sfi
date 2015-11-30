@@ -76,6 +76,14 @@ public class UserService {
         }
     }
 
+    public void softDelete(User user) {
+        User entity = userRepository.findByID(user.getId());
+        if(entity!=null){
+            entity.setIsActive(false);
+            userRepository.update(entity);
+        }
+    }
+
     public void updateName(User user) {
         User entity = userRepository.findByID(user.getId());
         if(entity!=null){

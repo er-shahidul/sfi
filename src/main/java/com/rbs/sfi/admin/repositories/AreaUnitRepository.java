@@ -28,12 +28,21 @@ public class AreaUnitRepository extends AbstractRepository<Integer, AreaUnit> {
 
     @Transactional
     public AreaUnit findById(int id) {
-        return (AreaUnit)sessionFactory.getCurrentSession().get(AreaUnit.class,id);
+        return (AreaUnit)sessionFactory.getCurrentSession().get(AreaUnit.class, id);
     }
 
     @Transactional
     public void save(AreaUnit areaUnit) {
         persist(areaUnit);
+    }
+
+    @Transactional
+    public void softDelete(AreaUnit areaUnit) {
+        AreaUnit entity = this.findById(areaUnit.getId());
+        if(entity!=null){
+            entity.setIsActive(false);
+            this.save(entity);
+        }
     }
 
     @Transactional
