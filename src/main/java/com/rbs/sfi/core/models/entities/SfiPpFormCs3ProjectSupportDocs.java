@@ -8,7 +8,7 @@ public class SfiPpFormCs3ProjectSupportDocs
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@ManyToOne(targetEntity = SfiPpFormCs3.class)
 	@JoinColumn(name="cs3_projectID", referencedColumnName="id", nullable=true)
@@ -20,11 +20,11 @@ public class SfiPpFormCs3ProjectSupportDocs
 	@Column(name="cs3_project_uniqueDocumentName", nullable=true)
 	private String cs3ProjectUniqueDocumentName;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

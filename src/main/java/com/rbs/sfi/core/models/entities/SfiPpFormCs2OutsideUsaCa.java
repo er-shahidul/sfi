@@ -8,7 +8,7 @@ public class SfiPpFormCs2OutsideUsaCa
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@ManyToOne(targetEntity = Cs2.class, optional=true)
 	@JoinColumn(name="form_id", nullable=true)
@@ -19,46 +19,46 @@ public class SfiPpFormCs2OutsideUsaCa
 	private SfiPpFormOtherCountry country;
 
 	@Column(name="cs2_totalArea", nullable=true)
-	private float cs2TotalArea;
+	private Float cs2TotalArea;
 
 	@Column(name="cs2_isUnderCertStand", nullable=true)
-	private boolean cs2UnderCertifiedStandard;
+	private Boolean cs2UnderCertifiedStandard;
 
 	@Column(name="cs2_standardType", nullable=true)
-	private int cs2StandardType;
+	private Integer cs2StandardType;
 
 	@Column(name="cs2_standardType_other", nullable=true)
 	private String cs2StandardTypeOther;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public float getCs2TotalArea() {
+	public Float getCs2TotalArea() {
 		return cs2TotalArea;
 	}
 
-	public void setCs2TotalArea(float cs2TotalArea) {
+	public void setCs2TotalArea(Float cs2TotalArea) {
 		this.cs2TotalArea = cs2TotalArea;
 	}
 
-	public boolean isCs2UnderCertifiedStandard() {
+	public Boolean isCs2UnderCertifiedStandard() {
 		return cs2UnderCertifiedStandard;
 	}
 
-	public void setCs2UnderCertifiedStandard(boolean cs2UnderCertifiedStandard) {
+	public void setCs2UnderCertifiedStandard(Boolean cs2UnderCertifiedStandard) {
 		this.cs2UnderCertifiedStandard = cs2UnderCertifiedStandard;
 	}
 
-	public int getCs2StandardType() {
+	public Integer getCs2StandardType() {
 		return cs2StandardType;
 	}
 
-	public void setCs2StandardType(int cs2StandardType) {
+	public void setCs2StandardType(Integer cs2StandardType) {
 		this.cs2StandardType = cs2StandardType;
 	}
 

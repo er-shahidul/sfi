@@ -8,19 +8,19 @@ public class SfiPpFormCountry
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="name", nullable=true)
 	private String name;
 
 	@Column(name="isUnknown", nullable=true)
-	private boolean isUnknown;
+	private Boolean isUnknown;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -32,11 +32,11 @@ public class SfiPpFormCountry
 		this.name = name;
 	}
 
-	public boolean isUnknown() {
+	public Boolean isUnknown() {
 		return isUnknown;
 	}
 
-	public void setIsUnknown(boolean isUnknown) {
+	public void setIsUnknown(Boolean isUnknown) {
 		this.isUnknown = isUnknown;
 	}
 }

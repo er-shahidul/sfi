@@ -23,7 +23,7 @@ public class Cs2Service {
     @Autowired
     private SfiPpFormCs2OutsideUsaCaRepository sfiPpFormCs2OutsideUsaCaRepository;
 
-    public Cs2ViewModel getViewModel(int id) {
+    public Cs2ViewModel getViewModel(Integer id) {
         Cs2 entity = cs2Repository.findById(id);
         Cs2ViewModel model = new Cs2ViewModel();
 

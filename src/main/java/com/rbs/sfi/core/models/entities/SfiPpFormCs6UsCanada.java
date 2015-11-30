@@ -13,7 +13,7 @@ public class SfiPpFormCs6UsCanada
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@ManyToOne(targetEntity = Cs6.class, optional=true)
 	@JoinColumn(name="form_id", nullable=true)
@@ -24,7 +24,7 @@ public class SfiPpFormCs6UsCanada
 	private SfiPpFormRegion region;
 
 	@Column(name="cs6_usCanada_unit_1", nullable=true)
-	private int cs6UsCanadaUnit1;
+	private Integer cs6UsCanadaUnit1;
 
 	@Column(name="cs6_usCanada_volume_1", nullable=true)
 	private String cs6UsCanadaVolume1;
@@ -50,7 +50,7 @@ public class SfiPpFormCs6UsCanada
 	private List<String> cs6UsCanadaMoreThanOneStandard1;
 
 	@Column(name="cs6_usCanada_other", nullable=true)
-	private boolean cs6UsCanadaOther;
+	private Boolean cs6UsCanadaOther;
 
 	@Column(name="cs6_usCanada_otherLabel", nullable=true)
 	private String cs6UsCanadaOtherLabel;
@@ -286,11 +286,11 @@ public class SfiPpFormCs6UsCanada
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_11", nullable=true)
 	private Float cs6UsCanadaPercCertifedMoreThanOneStandard711;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -310,11 +310,11 @@ public class SfiPpFormCs6UsCanada
 		this.region = region;
 	}
 
-	public int getCs6UsCanadaUnit1() {
+	public Integer getCs6UsCanadaUnit1() {
 		return cs6UsCanadaUnit1;
 	}
 
-	public void setCs6UsCanadaUnit1(int cs6UsCanadaUnit1) {
+	public void setCs6UsCanadaUnit1(Integer cs6UsCanadaUnit1) {
 		this.cs6UsCanadaUnit1 = cs6UsCanadaUnit1;
 	}
 
@@ -374,11 +374,11 @@ public class SfiPpFormCs6UsCanada
 		this.cs6UsCanadaMoreThanOneStandard1 = cs6UsCanadaMoreThanOneStandard1;
 	}
 
-	public boolean isCs6UsCanadaOther() {
+	public Boolean isCs6UsCanadaOther() {
 		return cs6UsCanadaOther;
 	}
 
-	public void setCs6UsCanadaOther(boolean cs6UsCanadaOther) {
+	public void setCs6UsCanadaOther(Boolean cs6UsCanadaOther) {
 		this.cs6UsCanadaOther = cs6UsCanadaOther;
 	}
 

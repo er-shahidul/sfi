@@ -10,38 +10,38 @@ public class SfiPpFormCs6
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@ManyToOne(targetEntity = Company.class)
 	@JoinColumn(name="company_id", nullable=true)
 	private Company company;
 
 	@Column(name="usa_timberSellers", nullable=true)
-	private int usaTimberSellers;
+	private Integer usaTimberSellers;
 
 	@Column(name="usa_infoReceived", nullable=true)
-	private int usaInfoReceived;
+	private Integer usaInfoReceived;
 
 	@Column(name="usa_fundingProvided", nullable=true)
 	private Float usaFundingProvided;
 
 	@Column(name="ca_timberSellers", nullable=true)
-	private int caTimberSellers;
+	private Integer caTimberSellers;
 
 	@Column(name="ca_infoReceived", nullable=true)
-	private int caInfoReceived;
+	private Integer caInfoReceived;
 
 	@Column(name="ca_fundingProvided", nullable=true)
-	private int caFundingProvided;
+	private Integer caFundingProvided;
 
 	@Column(name="orgYesNo", nullable=true)
-	private boolean orgYesNo;
+	private Boolean orgYesNo;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -53,19 +53,19 @@ public class SfiPpFormCs6
 		this.company = company;
 	}
 
-	public int getUsaTimberSellers() {
+	public Integer getUsaTimberSellers() {
 		return usaTimberSellers;
 	}
 
-	public void setUsaTimberSellers(int usaTimberSellers) {
+	public void setUsaTimberSellers(Integer usaTimberSellers) {
 		this.usaTimberSellers = usaTimberSellers;
 	}
 
-	public int getUsaInfoReceived() {
+	public Integer getUsaInfoReceived() {
 		return usaInfoReceived;
 	}
 
-	public void setUsaInfoReceived(int usaInfoReceived) {
+	public void setUsaInfoReceived(Integer usaInfoReceived) {
 		this.usaInfoReceived = usaInfoReceived;
 	}
 
@@ -77,35 +77,35 @@ public class SfiPpFormCs6
 		this.usaFundingProvided = usaFundingProvided;
 	}
 
-	public int getCaTimberSellers() {
+	public Integer getCaTimberSellers() {
 		return caTimberSellers;
 	}
 
-	public void setCaTimberSellers(int caTimberSellers) {
+	public void setCaTimberSellers(Integer caTimberSellers) {
 		this.caTimberSellers = caTimberSellers;
 	}
 
-	public int getCaInfoReceived() {
+	public Integer getCaInfoReceived() {
 		return caInfoReceived;
 	}
 
-	public void setCaInfoReceived(int caInfoReceived) {
+	public void setCaInfoReceived(Integer caInfoReceived) {
 		this.caInfoReceived = caInfoReceived;
 	}
 
-	public int getCaFundingProvided() {
+	public Integer getCaFundingProvided() {
 		return caFundingProvided;
 	}
 
-	public void setCaFundingProvided(int caFundingProvided) {
+	public void setCaFundingProvided(Integer caFundingProvided) {
 		this.caFundingProvided = caFundingProvided;
 	}
 
-	public boolean isOrgYesNo() {
+	public Boolean isOrgYesNo() {
 		return orgYesNo;
 	}
 
-	public void setOrgYesNo(boolean orgYesNo) {
+	public void setOrgYesNo(Boolean orgYesNo) {
 		this.orgYesNo = orgYesNo;
 	}
 }
