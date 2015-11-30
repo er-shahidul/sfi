@@ -49,7 +49,7 @@ public class User extends Audit
     @Column(name="user_token", nullable=true)
     private String userToken;
 
-	@Column(name="is_active", nullable=true)
+	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
 	private Boolean isActive;
 
 	public int getId() {

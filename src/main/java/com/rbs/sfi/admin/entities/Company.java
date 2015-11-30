@@ -30,7 +30,7 @@ public class Company extends Audit
 	@Column(name="primary0_secondary1", nullable=true)
 	private boolean primary0Secondary1;
 
-	@Column(name="is_active", nullable=true)
+	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
 	private Boolean isActive;
 
 	public int getId() {

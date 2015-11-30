@@ -16,7 +16,7 @@ public class AreaUnit
 	@Column(name="short_code", nullable=true)
 	private String shortCode;
 
-	@Column(name="is_active", nullable=true)
+	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
 	private Boolean isActive;
 
 	public int getId() {
