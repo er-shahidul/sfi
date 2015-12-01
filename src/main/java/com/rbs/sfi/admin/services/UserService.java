@@ -77,6 +77,7 @@ public class UserService {
             entity.setCompany(user.getCompany());
             entity.setUpdatedAt(Util.getCurrentDate());
             entity.setUpdatedBy(Util.getCurrentUsername());
+            entity.setEnabled(user.isEnabled());
             userRepository.update(entity);
         }
     }
