@@ -152,7 +152,11 @@ public class UserController {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
         model.addAttribute("userGroupId", user.getGroupId());
-        model.addAttribute("userCompanyId", user.getCompany().getId());
+        if ((user.getCompany() == null)) {
+            model.addAttribute("userCompanyId", null);
+        } else {
+            model.addAttribute("userCompanyId", user.getCompany().getId());
+        }
 
         model.addAttribute("title", "user");
         model.addAttribute("edit", true);
