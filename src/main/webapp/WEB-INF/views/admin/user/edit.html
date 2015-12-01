@@ -169,7 +169,7 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
 
-                                                                        <select th:field="*{company}" class="form-control">
+                                                                        <select th:field="*{company.id}" class="form-control">
                                                                             <!--<option value=""> Select a Company to Assign this User to </option>-->
                                                                             <div th:path="*{company}" th:each="com : ${companies}">
                                                                                 <option th:value="${com.id}" th:text="${com.name}" th:selected="${com.id == userCompanyId}"></option>
