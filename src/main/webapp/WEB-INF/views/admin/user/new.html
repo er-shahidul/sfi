@@ -122,7 +122,9 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
                                                                         <div th:field="*{group}">
-                                                                            <input th:class="btn-default" th:path="*{group}" th:name="group" type="radio" th:each="group : ${groups}" th:value="${group.id}" class="form-control" th:text="${group.description}" />
+                                                                            <div th:path="*{group}" th:each="group : ${groups}">
+                                                                                <input th:class="btn-default" th:name="group" type="radio" th:value="${group.id}" class="form-control" th:text="${group.description}" />
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
