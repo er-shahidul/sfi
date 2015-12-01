@@ -2,6 +2,7 @@ package com.rbs.sfi.admin.services;
 
 import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.repositories.UserRepository;
+import com.rbs.sfi.admin.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -74,6 +75,8 @@ public class UserService {
             entity.setFirstName(user.getFirstName());
             entity.setLastName(user.getLastName());
             entity.setCompany(user.getCompany());
+            entity.setUpdatedAt(Util.getCurrentDate());
+            entity.setUpdatedBy(Util.getCurrentUsername());
             userRepository.update(entity);
         }
     }

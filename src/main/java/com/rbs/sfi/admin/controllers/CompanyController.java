@@ -92,12 +92,11 @@ public class CompanyController
             if (!newFile.exists()) {
                 newFile.createNewFile();
 
-                company.setLogoName(name);
-                company.setLogo(file.getBytes());
-                company.setUpdatedAt(Util.getCurrentDate());
-                company.setUpdatedBy(fullName);
+//                company.setLogoName(name);
+//                company.setLogo(file.getBytes());
+                byte[] fileN = file.getBytes();
 
-                companyService.update(company);
+                companyService.update(company, fileN, name);
             }
 
             outputStream = new FileOutputStream(newFile);
