@@ -21,6 +21,7 @@ public class UserService {
 
     public void save(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setIsActive(true);
         userRepository.save(user);
     }
 
@@ -68,6 +69,7 @@ public class UserService {
     public void updateUser(User user) {
         User entity = userRepository.findByID(user.getId());
         if(entity!=null){
+            entity.setPassword(passwordEncoder.encode(user.getPassword()));
             entity.setGroup(user.getGroup());
             entity.setFirstName(user.getFirstName());
             entity.setLastName(user.getLastName());
