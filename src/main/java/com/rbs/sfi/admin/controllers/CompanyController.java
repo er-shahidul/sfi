@@ -85,31 +85,14 @@ public class CompanyController
             return "admin/company/edit";
         }
 
+        byte[] fileN = new byte[0];
         try {
-            inputStream = file.getInputStream();
-
-            File newFile = new File("src/main/webapp/uploads/user/" + name);
-            if (!newFile.exists()) {
-                newFile.createNewFile();
-
-//                company.setLogoName(name);
-//                company.setLogo(file.getBytes());
-                byte[] fileN = file.getBytes();
-
-                companyService.update(company, fileN, name);
-            }
-
-            outputStream = new FileOutputStream(newFile);
-            int read = 0;
-            byte[] bytes = new byte[1024];
-
-            while ((read = inputStream.read(bytes)) != -1) {
-                outputStream.write(bytes, 0, read);
-            }
+            fileN = file.getBytes();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        companyService.update(company, fileN, name);
 
         model.addAttribute("success", "Company " + "" + " updated successfully");
         return ("redirect:/admin/company/list");
@@ -144,33 +127,14 @@ public class CompanyController
             return new ModelAndView("admin/company/new");
         }
 
+        byte[] fileN = new byte[0];
         try {
-            inputStream = file.getInputStream();
-
-            File newFile = new File("src/main/webapp/uploads/user/" + name);
-            if (!newFile.exists()) {
-                newFile.createNewFile();
-
-                AuditListener auditListener = new AuditListener();
-                company.setLogoName(name);
-                company.setLogo(file.getBytes());
-                company.setIsActive(true);
-                auditListener.prePersist(company);
-
-                companyService.save(company);
-            }
-
-            outputStream = new FileOutputStream(newFile);
-            int read = 0;
-            byte[] bytes = new byte[1024];
-
-            while ((read = inputStream.read(bytes)) != -1) {
-                outputStream.write(bytes, 0, read);
-            }
+            fileN = file.getBytes();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        companyService.save(company, fileN, name);
 
         return new ModelAndView("redirect:/admin/company/list");
     }

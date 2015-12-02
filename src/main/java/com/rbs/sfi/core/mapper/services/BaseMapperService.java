@@ -53,7 +53,7 @@ public abstract class BaseMapperService<E extends IModel> {
     }
 
     private <T, F> Set<T> setTypeResolver(Set<F> from, Class<T> tClass) {
-        Set<T> to = new HashSet<>();
+        Set<T> to = new HashSet<T>();
         for (F f : from) {
             if (f == null) continue;
             to.add(singleTypeResolver(f, tClass));

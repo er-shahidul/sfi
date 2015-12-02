@@ -32,6 +32,7 @@ public class CompanyRepository extends AbstractRepository<Integer, Company> {
     }
 
     public void save(Company company) {
+        company.setIsActive(true);
         persist(company);
     }
 
