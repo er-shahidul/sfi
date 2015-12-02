@@ -49,6 +49,9 @@ public class FormController {
     @Autowired
     Cs3Service cs3Service;
 
+    @Autowired
+    Cs4Service cs4Service;
+
     @RequestMapping(value = {"/form" }, method = RequestMethod.GET)
     public String homePage(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
 
@@ -89,6 +92,7 @@ public class FormController {
         model.addAttribute("cs1", cs1Service.getViewModel(sfiPpForm.getId()));
         model.addAttribute("cs2", cs2Service.getViewModel(sfiPpForm.getId()));
         model.addAttribute("cs3", cs3Service.getViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs4", cs4Service.getViewModel(sfiPpForm.getId()));
 
         model.addAttribute("company", company);
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);

@@ -3,9 +3,11 @@ package com.rbs.sfi.core.controllers;
 import com.rbs.sfi.core.models.viewmodels.Cs1ViewModel;
 import com.rbs.sfi.core.models.viewmodels.Cs2ViewModel;
 import com.rbs.sfi.core.models.viewmodels.Cs3ViewModel;
+import com.rbs.sfi.core.models.viewmodels.Cs4ViewModel;
 import com.rbs.sfi.core.services.Cs1Service;
 import com.rbs.sfi.core.services.Cs2Service;
 import com.rbs.sfi.core.services.Cs3Service;
+import com.rbs.sfi.core.services.Cs4Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +29,9 @@ public class DefaultRestController {
     @Autowired
     Cs3Service cs3Service;
 
+    @Autowired
+    Cs4Service cs4Service;
+
     @RequestMapping(value = {"/form/cs1" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public void formCs1(@RequestBody Cs1ViewModel model, BindingResult result ) {
         cs1Service.setEntity(model);
@@ -40,5 +45,10 @@ public class DefaultRestController {
     @RequestMapping(value = {"/form/cs3" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public void formCs3(@RequestBody Cs3ViewModel model, BindingResult result ) {
         cs3Service.setEntity(model);
+    }
+
+    @RequestMapping(value = {"/form/cs4" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public void formCs4(@RequestBody Cs4ViewModel model, BindingResult result ) {
+        cs4Service.setEntity(model);
     }
 }
