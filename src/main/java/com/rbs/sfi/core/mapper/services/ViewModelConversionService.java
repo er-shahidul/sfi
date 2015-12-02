@@ -43,7 +43,7 @@ public class ViewModelConversionService {
     }
 
     private <T, F> Set<T> setTypeResolver(Set<F> from, Class<T> tClass) {
-        Set<T> to = new HashSet<>();
+        Set<T> to = new HashSet<T>();
         for (F f : from) {
             to.add(singleTypeResolver(f, tClass));
         }

@@ -33,6 +33,7 @@ public class AreaUnitRepository extends AbstractRepository<Integer, AreaUnit> {
 
     @Transactional
     public void save(AreaUnit areaUnit) {
+        areaUnit.setIsActive(true);
         persist(areaUnit);
     }
 
