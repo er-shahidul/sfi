@@ -42,7 +42,7 @@ public class AreaUnitRepository extends AbstractRepository<Integer, AreaUnit> {
         AreaUnit entity = this.findById(areaUnit.getId());
         if(entity!=null){
             entity.setIsActive(false);
-            this.save(entity);
+            persist(entity);
         }
     }
 
