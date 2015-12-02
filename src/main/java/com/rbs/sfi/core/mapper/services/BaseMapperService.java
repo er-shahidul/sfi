@@ -1,21 +1,31 @@
 package com.rbs.sfi.core.mapper.services;
 
-import com.rbs.sfi.core.mapper.BaseEntity;
+import com.rbs.sfi.core.mapper.IModel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
-import java.lang.*;
-import java.lang.reflect.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-@Service
-@Transactional
-public class ViewModelConversionService {
+public abstract class BaseMapperService<E extends IModel> {
     @Autowired
-    private ModelConversionHelperService helper;
+    private ReflectionHelperService helper;
 
-    private <T> T getInstance(Class<T> tClass) {
+    private Class<E> typeClass;
+
+    @SuppressWarnings("unchecked")
+    private Class<E> getTypeClass() {
+        if (typeClass == null) {
+            ParameterizedType thisType = (ParameterizedType) getClass().getGenericSuperclass();
+            this.typeClass = (Class<E>) thisType.getActualTypeArguments()[0];
+        }
+        return typeClass;
+    }
+
+    protected <T> T getInstance(Integer id, Class<T> tClass) {
         T t = null;
         try {
             t = tClass.newInstance();
@@ -29,8 +39,8 @@ public class ViewModelConversionService {
     private <T> T singleTypeResolver(Object o, Class<T> tClass) {
         T t = null;
         try {
-            if (o instanceof BaseEntity) {
-                t = convertFromEntityModel((BaseEntity) o, tClass);
+            if (getTypeClass().isInstance(o)) {
+                t = convert((E) o, tClass);
             } else if (helper.methodExists(o, "clone")) {
                 t = (T) tClass.getMethod("clone").invoke(o);
             } else {
@@ -45,25 +55,26 @@ public class ViewModelConversionService {
     private <T, F> Set<T> setTypeResolver(Set<F> from, Class<T> tClass) {
         Set<T> to = new HashSet<>();
         for (F f : from) {
+            if (f == null) continue;
             to.add(singleTypeResolver(f, tClass));
         }
         return to;
     }
 
     @SuppressWarnings("unchecked")
-    private <T> T typeResolver(Object src, Method method) {
-        if (src == null) return null;
+    private <T> T typeResolver(Object source, Method method) {
+        if (source == null) return null;
 
         String paramType = method.getParameterTypes()[0].toString();
         String genericParamType = method.getGenericParameterTypes()[0].toString();
 
         T t = null;
         if (paramType.equals(genericParamType)) {
-            t = (T) singleTypeResolver(src, method.getParameterTypes()[0]);
+            t = (T) singleTypeResolver(source, method.getParameterTypes()[0]);
         } else {
             try {
                 Class<?> clazz = Class.forName(genericParamType.split("[<>]")[1]);
-                t = (T) setTypeResolver((Set) src, clazz);
+                t = (T) setTypeResolver((Set) source, clazz);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -72,27 +83,27 @@ public class ViewModelConversionService {
         return t;
     }
 
-    public <T> T convertFromEntityModel(BaseEntity entity, Class<T> tClass) {
-        if (entity == null) return null;
-        T viewModel = getInstance(tClass);
+    public <T> T convert(E source, Class<T> tClass) {
+        if (source == null) return null;
+        T dest = getInstance(source.getId(), tClass);
 
-        Map<String, Method> viewModelMethodMap  = helper.getMethodMap(viewModel);
-        List<Method> entityGetterMethods = helper.getGetterMethods(entity.getClass().getMethods());
+        Map<String, Method> destMethodMap  = helper.getMethodMap(dest);
+        List<Method> sourceMethods = helper.getGetterMethods(source.getClass().getMethods());
 
-        for (Method getterMethod : entityGetterMethods) {
+        for (Method getterMethod : sourceMethods) {
             String getterMethodName = getterMethod.getName();
             String setterMethodName = helper.getterToSetter(getterMethodName);
 
-            if (!viewModelMethodMap.containsKey(setterMethodName)) continue;
-            Method setterMethod = viewModelMethodMap.get(setterMethodName);
+            if (!destMethodMap.containsKey(setterMethodName)) continue;
+            Method setterMethod = destMethodMap.get(setterMethodName);
 
             try {
-                setterMethod.invoke(viewModel, typeResolver(getterMethod.invoke(entity), setterMethod));
+                setterMethod.invoke(dest, typeResolver(getterMethod.invoke(source), setterMethod));
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
-        return viewModel;
+        return dest;
     }
 }

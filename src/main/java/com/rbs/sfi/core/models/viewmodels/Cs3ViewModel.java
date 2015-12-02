@@ -1,14 +1,15 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
 import java.util.Set;
 
-public class Cs3ViewModel implements IViewModel {
+public class Cs3ViewModel extends BaseViewModel {
 	private Integer id;
 	private Boolean isInPartnership;
 	private Set<SfiPpFormCs3ViewModel> projects;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

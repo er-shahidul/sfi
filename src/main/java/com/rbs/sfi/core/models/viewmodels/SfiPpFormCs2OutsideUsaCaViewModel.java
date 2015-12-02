@@ -1,8 +1,8 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
-public class SfiPpFormCs2OutsideUsaCaViewModel implements IViewModel {
+public class SfiPpFormCs2OutsideUsaCaViewModel extends BaseViewModel {
     private Integer id;
     private Integer sfiPpForm;
     private Integer standardType;
@@ -13,6 +13,7 @@ public class SfiPpFormCs2OutsideUsaCaViewModel implements IViewModel {
 
     private SfiPpFormOtherCountryViewModel country;
 
+    @Override
     public Integer getId() {
         return id;
     }

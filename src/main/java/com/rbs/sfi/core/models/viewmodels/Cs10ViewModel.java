@@ -1,16 +1,17 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
 import java.util.Date;
 
-public class Cs10ViewModel implements IViewModel {
+public class Cs10ViewModel extends BaseViewModel {
 	private Integer id;
 	private Boolean cs10Acknowledge;
 	private Date updatedAt;
 	private Date createdAt;
 	private Date submittedAt;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

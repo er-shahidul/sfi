@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-public  abstract class BaseRepository<T extends Object> {
+public abstract class BaseRepository<T extends Object> {
     @Autowired
     @Qualifier(value = "sessionFactory")
     private SessionFactory sessionFactory;
@@ -37,6 +37,7 @@ public  abstract class BaseRepository<T extends Object> {
     private String getDomainClassName() {
         return getModelClass().getName();
     }
+
     public void create(T t) {
         getSession().save(t);
     }

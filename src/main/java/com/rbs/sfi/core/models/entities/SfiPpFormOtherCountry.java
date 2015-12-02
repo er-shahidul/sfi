@@ -1,12 +1,12 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntity;
+import com.rbs.sfi.core.mapper.BaseEntityModel;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="sfi_pp_form_other_country_list")
-public class SfiPpFormOtherCountry extends BaseEntity {
+public class SfiPpFormOtherCountry extends BaseEntityModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;

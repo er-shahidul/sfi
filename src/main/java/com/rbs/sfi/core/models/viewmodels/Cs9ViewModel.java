@@ -1,11 +1,12 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
-public class Cs9ViewModel implements IViewModel {
+public class Cs9ViewModel extends BaseViewModel {
 	private Integer id;
 	private Boolean cs9Acknowledge;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

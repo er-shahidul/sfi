@@ -1,12 +1,13 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
-public class SfiPpFormAllCountryViewModel implements IViewModel {
+public class SfiPpFormAllCountryViewModel extends BaseViewModel {
     private Integer id;
     private String country;
     private Boolean isUnknown;
 
+    @Override
     public Integer getId() {
         return id;
     }

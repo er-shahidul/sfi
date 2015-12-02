@@ -1,10 +1,10 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
 import java.util.Set;
 
-public class Cs2ViewModel implements IViewModel {
+public class Cs2ViewModel extends BaseViewModel {
 	private Integer id;
 	private Integer usaPublicForestlandOwnMng;
 	private Integer usaPrivateForestlandOwnMng;
@@ -36,6 +36,7 @@ public class Cs2ViewModel implements IViewModel {
 	private Set<String> caPrivateRecreationCategories;
 	private Set<SfiPpFormCs2OutsideUsaCaViewModel> outsideCountries;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

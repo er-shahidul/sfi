@@ -2,13 +2,13 @@ package com.rbs.sfi.core.models.entities;
 
 import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
-import com.rbs.sfi.core.mapper.BaseEntity;
+import com.rbs.sfi.core.mapper.BaseEntityModel;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="sfi_pp_forms")
-public class SfiPpForm extends BaseEntity {
+public class SfiPpForm extends BaseEntityModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;

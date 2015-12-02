@@ -1,15 +1,15 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntity;
+import com.rbs.sfi.core.mapper.BaseEntityModel;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="sfi_pp_forms")
-public class Cs5 extends BaseEntity {
+public class Cs5 extends BaseEntityModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="cs5_organization_list_academic", nullable=true)
 	private String organizationListAcademic;
@@ -32,11 +32,11 @@ public class Cs5 extends BaseEntity {
 	@Column(name="cs5_other", nullable=true)
 	private String other;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

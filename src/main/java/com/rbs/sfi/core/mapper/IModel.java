@@ -1,5 +1,5 @@
 package com.rbs.sfi.core.mapper;
 
-public interface IViewModel {
+public interface IModel {
     public Integer getId();
 }

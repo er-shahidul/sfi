@@ -8,10 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service("sfiPpFormAllCountryService")
+@Service
 @Transactional
-public class SfiPpFormAllCountryService
-{
+public class SfiPpFormAllCountryService {
     @Autowired
     SfiPpFormAllCountryRepository sfiPpFormAllCountryRepository;
 

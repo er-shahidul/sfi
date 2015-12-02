@@ -1,8 +1,8 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
-public class Cs5ViewModel implements IViewModel {
+public class Cs5ViewModel extends BaseViewModel {
 	private Integer id;
 	private String organizationListAcademic;
 	private String organizationListResearch;
@@ -12,6 +12,7 @@ public class Cs5ViewModel implements IViewModel {
 	private String organizationListOther;
 	private String other;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

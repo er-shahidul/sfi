@@ -1,16 +1,11 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
-import java.util.List;
+import java.util.Set;
 
-public class Cs8ViewModel implements IViewModel {
+public class Cs8ViewModel extends BaseViewModel {
 	private Integer id;
-	private Boolean cs8ProductSegmentWoodProducts;
-	private Boolean cs8ProductSegmentPrintingWritingPaper;
-	private Boolean cs8ProductSegmentPackaging;
-	private Boolean cs8ProductSegmentBioenergy;
-	private Boolean cs8ProductSegmentOther;
 	private String cs8ProductSegmentOtherExplain;
 	private String cs8ProofPoint;
 	private String cs8EnhancedCorporate;
@@ -21,15 +16,9 @@ public class Cs8ViewModel implements IViewModel {
 	private String cs8RiskManagementTool;
 	private String cs8ToolToAddressPressures;
 	private String cs8Improve;
-	private Boolean cs8ProductSegmentTowelTissue;
-	private Boolean cs8DeforestationConcerns;
-	private Boolean cs8DeforestationConcernsData;
 	private String cs8DeforestationConcernsDataExplain;
-	private Boolean cs8DeforestationConcernsReports;
 	private String cs8DeforestationConcernsReportsExplain;
-	private Boolean cs8DeforestationConcernsStudies;
 	private String cs8DeforestationConcernsStudiesExplain;
-	private Boolean cs8DeforestationConcernsOther;
 	private String cs8DeforestationConcernsOtherExplain;
 	private String cs8DemandDeveloping1;
 	private String cs8DemandDeveloping2;
@@ -43,18 +32,6 @@ public class Cs8ViewModel implements IViewModel {
 	private String cs8DemandDevelopingWhy4;
 	private String cs8DemandDevelopingWhy5;
 	private String cs8DemandDevelopingWhy6;
-	private List<String> cs8SfiLabelProductGroupContain1;
-	private List<String> cs8SfiLabelProductGroupContain2;
-	private List<String> cs8SfiLabelProductGroupContain3;
-	private List<String> cs8SfiLabelProductGroupContain4;
-	private List<String> cs8SfiLabelProductGroupContain5;
-	private List<String> cs8SfiLabelProductGroupContain6;
-	private List<String> cs8_alsoFSCLabel_1;
-	private List<String> cs8_alsoFSCLabel_2;
-	private List<String> cs8_alsoFSCLabel_3;
-	private List<String> cs8_alsoFSCLabel_4;
-	private List<String> cs8_alsoFSCLabel_5;
-	private List<String> cs8_alsoFSCLabel_6;
 	private String cs8SfiCertifiedForestContent1;
 	private String cs8SfiCertifiedForestContent2;
 	private String cs8SfiCertifiedForestContent3;
@@ -91,6 +68,41 @@ public class Cs8ViewModel implements IViewModel {
 	private String cs8FscCertificationExplain4;
 	private String cs8FscCertificationExplain5;
 	private String cs8FscCertificationExplain6;
+   	private String cs8ChainOfCustodyFSCCertification1;
+	private String cs8ChainOfCustodyFSCCertification2;
+	private String cs8ChainOfCustodyFSCCertification3;
+	private String cs8ChainOfCustodyFSCCertification4;
+	private String cs8ChainOfCustodyFSCCertification5;
+	private String cs8ChainOfCustodyFSCCertification6;
+	private String cs8ChainOfCustodyFscCertificationExplain1;
+	private String cs8ChainOfCustodyFscCertificationExplain2;
+	private String cs8ChainOfCustodyFscCertificationExplain3;
+	private String cs8ChainOfCustodyFscCertificationExplain4;
+	private String cs8ChainOfCustodyFscCertificationExplain5;
+	private String cs8ChainOfCustodyFscCertificationExplain6;
+   	private Set<String> cs8SfiLabelProductGroupContain1;
+	private Set<String> cs8SfiLabelProductGroupContain2;
+	private Set<String> cs8SfiLabelProductGroupContain3;
+	private Set<String> cs8SfiLabelProductGroupContain4;
+	private Set<String> cs8SfiLabelProductGroupContain5;
+	private Set<String> cs8SfiLabelProductGroupContain6;
+	private Set<String> cs8_alsoFSCLabel_1;
+	private Set<String> cs8_alsoFSCLabel_2;
+	private Set<String> cs8_alsoFSCLabel_3;
+	private Set<String> cs8_alsoFSCLabel_4;
+	private Set<String> cs8_alsoFSCLabel_5;
+	private Set<String> cs8_alsoFSCLabel_6;
+   	private Boolean cs8ProductSegmentTowelTissue;
+	private Boolean cs8DeforestationConcerns;
+	private Boolean cs8DeforestationConcernsData;
+    private Boolean cs8DeforestationConcernsReports;
+    private Boolean cs8DeforestationConcernsStudies;
+    private Boolean cs8DeforestationConcernsOther;
+   	private Boolean cs8ProductSegmentWoodProducts;
+	private Boolean cs8ProductSegmentPrintingWritingPaper;
+	private Boolean cs8ProductSegmentPackaging;
+	private Boolean cs8ProductSegmentBioenergy;
+	private Boolean cs8ProductSegmentOther;
 	private Boolean cs8Cost1;
 	private Boolean cs8Cost2;
 	private Boolean cs8Cost3;
@@ -139,18 +151,6 @@ public class Cs8ViewModel implements IViewModel {
 	private Boolean cs8Other4;
 	private Boolean cs8Other5;
 	private Boolean cs8Other6;
-	private String cs8ChainOfCustodyFSCCertification1;
-	private String cs8ChainOfCustodyFSCCertification2;
-	private String cs8ChainOfCustodyFSCCertification3;
-	private String cs8ChainOfCustodyFSCCertification4;
-	private String cs8ChainOfCustodyFSCCertification5;
-	private String cs8ChainOfCustodyFSCCertification6;
-	private String cs8ChainOfCustodyFscCertificationExplain1;
-	private String cs8ChainOfCustodyFscCertificationExplain2;
-	private String cs8ChainOfCustodyFscCertificationExplain3;
-	private String cs8ChainOfCustodyFscCertificationExplain4;
-	private String cs8ChainOfCustodyFscCertificationExplain5;
-	private String cs8ChainOfCustodyFscCertificationExplain6;
 	private Boolean cs8ChainOfCustodyCost1;
 	private Boolean cs8ChainOfCustodyCost2;
 	private Boolean cs8ChainOfCustodyCost3;
@@ -200,6 +200,7 @@ public class Cs8ViewModel implements IViewModel {
 	private Boolean cs8ChainOfCustodyOther5;
 	private Boolean cs8ChainOfCustodyOther6;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}
@@ -504,99 +505,99 @@ public class Cs8ViewModel implements IViewModel {
 		this.cs8DemandDevelopingWhy6 = cs8DemandDevelopingWhy6;
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain1() {
+	public Set<String> getCs8SfiLabelProductGroupContain1() {
 		return cs8SfiLabelProductGroupContain1;
 	}
 
-	public void setCs8SfiLabelProductGroupContain1(List<String> cs8SfiLabelProductGroupContain1) {
+	public void setCs8SfiLabelProductGroupContain1(Set<String> cs8SfiLabelProductGroupContain1) {
 		this.cs8SfiLabelProductGroupContain1 = cs8SfiLabelProductGroupContain1;
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain2() {
+	public Set<String> getCs8SfiLabelProductGroupContain2() {
 		return cs8SfiLabelProductGroupContain2;
 	}
 
-	public void setCs8SfiLabelProductGroupContain2(List<String> cs8SfiLabelProductGroupContain2) {
+	public void setCs8SfiLabelProductGroupContain2(Set<String> cs8SfiLabelProductGroupContain2) {
 		this.cs8SfiLabelProductGroupContain2 = cs8SfiLabelProductGroupContain2;
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain3() {
+	public Set<String> getCs8SfiLabelProductGroupContain3() {
 		return cs8SfiLabelProductGroupContain3;
 	}
 
-	public void setCs8SfiLabelProductGroupContain3(List<String> cs8SfiLabelProductGroupContain3) {
+	public void setCs8SfiLabelProductGroupContain3(Set<String> cs8SfiLabelProductGroupContain3) {
 		this.cs8SfiLabelProductGroupContain3 = cs8SfiLabelProductGroupContain3;
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain4() {
+	public Set<String> getCs8SfiLabelProductGroupContain4() {
 		return cs8SfiLabelProductGroupContain4;
 	}
 
-	public void setCs8SfiLabelProductGroupContain4(List<String> cs8SfiLabelProductGroupContain4) {
+	public void setCs8SfiLabelProductGroupContain4(Set<String> cs8SfiLabelProductGroupContain4) {
 		this.cs8SfiLabelProductGroupContain4 = cs8SfiLabelProductGroupContain4;
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain5() {
+	public Set<String> getCs8SfiLabelProductGroupContain5() {
 		return cs8SfiLabelProductGroupContain5;
 	}
 
-	public void setCs8SfiLabelProductGroupContain5(List<String> cs8SfiLabelProductGroupContain5) {
+	public void setCs8SfiLabelProductGroupContain5(Set<String> cs8SfiLabelProductGroupContain5) {
 		this.cs8SfiLabelProductGroupContain5 = cs8SfiLabelProductGroupContain5;
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain6() {
+	public Set<String> getCs8SfiLabelProductGroupContain6() {
 		return cs8SfiLabelProductGroupContain6;
 	}
 
-	public void setCs8SfiLabelProductGroupContain6(List<String> cs8SfiLabelProductGroupContain6) {
+	public void setCs8SfiLabelProductGroupContain6(Set<String> cs8SfiLabelProductGroupContain6) {
 		this.cs8SfiLabelProductGroupContain6 = cs8SfiLabelProductGroupContain6;
 	}
 
-	public List<String> getCs8_alsoFSCLabel_1() {
+	public Set<String> getCs8_alsoFSCLabel_1() {
 		return cs8_alsoFSCLabel_1;
 	}
 
-	public void setCs8_alsoFSCLabel_1(List<String> cs8_alsoFSCLabel_1) {
+	public void setCs8_alsoFSCLabel_1(Set<String> cs8_alsoFSCLabel_1) {
 		this.cs8_alsoFSCLabel_1 = cs8_alsoFSCLabel_1;
 	}
 
-	public List<String> getCs8_alsoFSCLabel_2() {
+	public Set<String> getCs8_alsoFSCLabel_2() {
 		return cs8_alsoFSCLabel_2;
 	}
 
-	public void setCs8_alsoFSCLabel_2(List<String> cs8_alsoFSCLabel_2) {
+	public void setCs8_alsoFSCLabel_2(Set<String> cs8_alsoFSCLabel_2) {
 		this.cs8_alsoFSCLabel_2 = cs8_alsoFSCLabel_2;
 	}
 
-	public List<String> getCs8_alsoFSCLabel_3() {
+	public Set<String> getCs8_alsoFSCLabel_3() {
 		return cs8_alsoFSCLabel_3;
 	}
 
-	public void setCs8_alsoFSCLabel_3(List<String> cs8_alsoFSCLabel_3) {
+	public void setCs8_alsoFSCLabel_3(Set<String> cs8_alsoFSCLabel_3) {
 		this.cs8_alsoFSCLabel_3 = cs8_alsoFSCLabel_3;
 	}
 
-	public List<String> getCs8_alsoFSCLabel_4() {
+	public Set<String> getCs8_alsoFSCLabel_4() {
 		return cs8_alsoFSCLabel_4;
 	}
 
-	public void setCs8_alsoFSCLabel_4(List<String> cs8_alsoFSCLabel_4) {
+	public void setCs8_alsoFSCLabel_4(Set<String> cs8_alsoFSCLabel_4) {
 		this.cs8_alsoFSCLabel_4 = cs8_alsoFSCLabel_4;
 	}
 
-	public List<String> getCs8_alsoFSCLabel_5() {
+	public Set<String> getCs8_alsoFSCLabel_5() {
 		return cs8_alsoFSCLabel_5;
 	}
 
-	public void setCs8_alsoFSCLabel_5(List<String> cs8_alsoFSCLabel_5) {
+	public void setCs8_alsoFSCLabel_5(Set<String> cs8_alsoFSCLabel_5) {
 		this.cs8_alsoFSCLabel_5 = cs8_alsoFSCLabel_5;
 	}
 
-	public List<String> getCs8_alsoFSCLabel_6() {
+	public Set<String> getCs8_alsoFSCLabel_6() {
 		return cs8_alsoFSCLabel_6;
 	}
 
-	public void setCs8_alsoFSCLabel_6(List<String> cs8_alsoFSCLabel_6) {
+	public void setCs8_alsoFSCLabel_6(Set<String> cs8_alsoFSCLabel_6) {
 		this.cs8_alsoFSCLabel_6 = cs8_alsoFSCLabel_6;
 	}
 

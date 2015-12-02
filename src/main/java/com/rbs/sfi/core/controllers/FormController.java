@@ -41,16 +41,7 @@ public class FormController {
     SfiPpFormRepository sfiPpFormRepository;
 
     @Autowired
-    Cs1Service cs1Service;
-
-    @Autowired
-    Cs2Service cs2Service;
-
-    @Autowired
-    Cs3Service cs3Service;
-
-    @Autowired
-    Cs4Service cs4Service;
+    FormService formService;
 
     @RequestMapping(value = {"/form" }, method = RequestMethod.GET)
     public String homePage(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
@@ -89,10 +80,10 @@ public class FormController {
         List countries = sfiPpFormAllCountryService.list();
 
         model.addAttribute("form", sfiPpForm);
-        model.addAttribute("cs1", cs1Service.getViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs2", cs2Service.getViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs3", cs3Service.getViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs4", cs4Service.getViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs2", formService.getCs2ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs3", formService.getCs3ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs4", formService.getCs4ViewModel(sfiPpForm.getId()));
 
         model.addAttribute("company", company);
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);

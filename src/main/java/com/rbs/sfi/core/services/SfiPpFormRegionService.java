@@ -8,10 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service("sfiPpFormRegionService")
+@Service
 @Transactional
-public class SfiPpFormRegionService
-{
+public class SfiPpFormRegionService {
     @Autowired
     SfiPpFormRegionRepository sfiPpFormRegionRepository;
 

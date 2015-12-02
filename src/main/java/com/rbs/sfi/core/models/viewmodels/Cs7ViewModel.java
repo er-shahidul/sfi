@@ -1,11 +1,10 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
-import com.rbs.sfi.core.models.entities.SfiPpFormAllCountry;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
 import java.util.Set;
 
-public class Cs7ViewModel implements IViewModel {
+public class Cs7ViewModel extends BaseViewModel {
 	private Integer id;
 	private Boolean emerIssuBioe;
 	private Boolean emerIssuCarb;
@@ -21,10 +20,11 @@ public class Cs7ViewModel implements IViewModel {
 	private Boolean planCommPlantIfPlanGE;
 	private String planCommPlantYear;
 	private Boolean planCommPlantPerc;
-	private Set<SfiPpFormAllCountry> investResCountries;
-	private Set<SfiPpFormAllCountry> planInvestResCountries;
-	private Set<SfiPpFormAllCountry> planCommPlantCountries;
+	private Set<SfiPpFormAllCountryViewModel> investResCountries;
+	private Set<SfiPpFormAllCountryViewModel> planInvestResCountries;
+	private Set<SfiPpFormAllCountryViewModel> planCommPlantCountries;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}
@@ -145,27 +145,27 @@ public class Cs7ViewModel implements IViewModel {
 		this.planCommPlantPerc = planCommPlantPerc;
 	}
 
-	public Set<SfiPpFormAllCountry> getInvestResCountries() {
+	public Set<SfiPpFormAllCountryViewModel> getInvestResCountries() {
 		return investResCountries;
 	}
 
-	public void setInvestResCountries(Set<SfiPpFormAllCountry> investResCountries) {
+	public void setInvestResCountries(Set<SfiPpFormAllCountryViewModel> investResCountries) {
 		this.investResCountries = investResCountries;
 	}
 
-	public Set<SfiPpFormAllCountry> getPlanInvestResCountries() {
+	public Set<SfiPpFormAllCountryViewModel> getPlanInvestResCountries() {
 		return planInvestResCountries;
 	}
 
-	public void setPlanInvestResCountries(Set<SfiPpFormAllCountry> planInvestResCountries) {
+	public void setPlanInvestResCountries(Set<SfiPpFormAllCountryViewModel> planInvestResCountries) {
 		this.planInvestResCountries = planInvestResCountries;
 	}
 
-	public Set<SfiPpFormAllCountry> getPlanCommPlantCountries() {
+	public Set<SfiPpFormAllCountryViewModel> getPlanCommPlantCountries() {
 		return planCommPlantCountries;
 	}
 
-	public void setPlanCommPlantCountries(Set<SfiPpFormAllCountry> planCommPlantCountries) {
+	public void setPlanCommPlantCountries(Set<SfiPpFormAllCountryViewModel> planCommPlantCountries) {
 		this.planCommPlantCountries = planCommPlantCountries;
 	}
 }

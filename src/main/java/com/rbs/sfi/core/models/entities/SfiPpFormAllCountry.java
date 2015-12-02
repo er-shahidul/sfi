@@ -1,20 +1,20 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntity;
+import com.rbs.sfi.core.mapper.BaseEntityModel;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="sfi_pp_form_all_country_list")
-public class SfiPpFormAllCountry extends BaseEntity {
+public class SfiPpFormAllCountry extends BaseEntityModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name="country", nullable=true)
+	@Column(name = "country", nullable=true)
 	private String country;
 
-	@Column(name="isUnknown", nullable=true)
+	@Column(name = "isUnknown", nullable=true)
 	private Boolean isUnknown;
 
 	public Integer getId() {

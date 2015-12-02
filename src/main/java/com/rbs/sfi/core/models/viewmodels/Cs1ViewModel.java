@@ -1,10 +1,10 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
 import java.util.Set;
 
-public class Cs1ViewModel implements IViewModel {
+public class Cs1ViewModel extends BaseViewModel {
     private Integer id;
     private Integer numberEmployeesUSA;
     private Integer numberEmployeesCA;
@@ -28,6 +28,7 @@ public class Cs1ViewModel implements IViewModel {
     private Set<SfiPpFormOtherCountryViewModel> secondaryOperMillsYardsOtherCountries;
     private Set<SfiPpFormAllCountryViewModel> sellsCountries;
 
+    @Override
     public Integer getId() {
         return id;
     }

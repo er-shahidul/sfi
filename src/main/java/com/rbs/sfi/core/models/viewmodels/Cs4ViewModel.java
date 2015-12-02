@@ -1,42 +1,14 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
-public class Cs4ViewModel implements IViewModel {
+public class Cs4ViewModel extends BaseViewModel {
 	private Integer id;
 	private Float usaTotalHervArea;
 	private Float caTotalHervArea;
 	private Float usaAvgHervArea;
 	private Float caAvgHervArea;
-	private Boolean usaGovRegulation;
-	private String usaGovRegulationExp;
-	private Boolean caGovRegulation;
-	private String caGovRegulationExp;
-	private Boolean usaDisResDiseaseInsects;
-	private String usaDiseaseInsectsExp;
-	private Boolean caDisResDiseaseInsects;
-	private String caDiseaseInsectsExp;
-	private Boolean usaDisResFireSalvage;
-	private String usaFireSalvageExp;
-	private Boolean caDisResFireSalvage;
-	private String caFireSalvageExp;
-	private Boolean usaDisResWindthrow;
-	private String usaWindthrowExp;
-	private Boolean caDisResWindthrow;
-	private String caWindthrowExp;
-	private Boolean usaDisResHurricane;
-	private String usaHurricaneExp;
-	private Boolean caDisResHurricane;
-	private String caHurricaneExp;
-	private Boolean usaDisResIceStorm;
-	private String usaIceStormExp;
-	private Boolean caDisResIceStorm;
-	private String caIceStormExp;
-	private Boolean usaOthersApply;
-	private String usaOthersExp;
-	private Boolean caOthersApply;
-	private String caOthersExp;
-	private Float usaSeedTreeShelterWoodArea;
+   	private Float usaSeedTreeShelterWoodArea;
 	private Float caSeedTreeShelterWoodArea;
 	private Float usaSelectionMethodArea;
 	private Float usaSanitationArea;
@@ -58,7 +30,36 @@ public class Cs4ViewModel implements IViewModel {
 	private Float caNatRegen2014;
 	private Float usaRegenPerc5Yr;
 	private Float caRegenPerc5Yr;
+	private String usaGovRegulationExp;
+    private String caGovRegulationExp;
+	private String usaDiseaseInsectsExp;
+	private String caDiseaseInsectsExp;
+	private String usaFireSalvageExp;
+	private String caFireSalvageExp;
+	private String usaWindthrowExp;
+	private String caWindthrowExp;
+	private String usaHurricaneExp;
+	private String caHurricaneExp;
+	private String usaIceStormExp;
+	private String caIceStormExp;
+	private String usaOthersExp;
+	private String caOthersExp;
+    private Boolean usaGovRegulation;
+    private Boolean caGovRegulation;
+    private Boolean usaDisResDiseaseInsects;
+    private Boolean caDisResDiseaseInsects;
+    private Boolean usaDisResFireSalvage;
+    private Boolean caDisResFireSalvage;
+    private Boolean usaDisResWindthrow;
+    private Boolean caDisResWindthrow;
+    private Boolean usaDisResHurricane;
+    private Boolean caDisResHurricane;
+    private Boolean usaDisResIceStorm;
+    private Boolean caDisResIceStorm;
+    private Boolean usaOthersApply;
+    private Boolean caOthersApply;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

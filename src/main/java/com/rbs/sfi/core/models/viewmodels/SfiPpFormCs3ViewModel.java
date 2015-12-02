@@ -1,11 +1,11 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
 import java.util.Date;
 import java.util.Set;
 
-public class SfiPpFormCs3ViewModel implements IViewModel {
+public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer id;
     private Integer cs3SfiStandardObj;
     private Integer cs3TotalProjectCost;
@@ -35,6 +35,7 @@ public class SfiPpFormCs3ViewModel implements IViewModel {
     private Set<SfiPpFormRegionViewModel> cs3ProjectLocations;
     private Set<SfiPpFormCs3ProjectSupportDocsViewModel> cs3SupportDocs;
 
+    @Override
     public Integer getId() {
         return id;
     }

@@ -1,12 +1,10 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.IViewModel;
-import com.rbs.sfi.core.models.entities.SfiPpFormCs6Other;
-import com.rbs.sfi.core.models.entities.SfiPpFormCs6UsCanada;
+import com.rbs.sfi.core.mapper.BaseViewModel;
 
-import java.util.List;
+import java.util.Set;
 
-public class Cs6ViewModel implements IViewModel {
+public class Cs6ViewModel extends BaseViewModel {
 	private Integer id;
 	private Integer numPrivateForeOwersUs;
 	private Integer numPrivateForeOwersCa;
@@ -15,9 +13,10 @@ public class Cs6ViewModel implements IViewModel {
 	private Integer fundSFIActivStateProviUs;
 	private Integer fundSFIActivStateProviCa;
 	private Boolean toAssistObj8;
-	private List<SfiPpFormCs6UsCanada> cs6UsCanada;
-	private List<SfiPpFormCs6Other> cs6UsOthers;
+	private Set<SfiPpFormCs6UsCanadaViewModel> cs6UsCanada;
+	private Set<SfiPpFormCs6OtherViewModel> cs6UsOthers;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}
@@ -82,19 +81,19 @@ public class Cs6ViewModel implements IViewModel {
 		this.toAssistObj8 = toAssistObj8;
 	}
 
-	public List<SfiPpFormCs6UsCanada> getCs6UsCanada() {
+	public Set<SfiPpFormCs6UsCanadaViewModel> getCs6UsCanada() {
 		return cs6UsCanada;
 	}
 
-	public void setCs6UsCanada(List<SfiPpFormCs6UsCanada> cs6UsCanada) {
+	public void setCs6UsCanada(Set<SfiPpFormCs6UsCanadaViewModel> cs6UsCanada) {
 		this.cs6UsCanada = cs6UsCanada;
 	}
 
-	public List<SfiPpFormCs6Other> getCs6UsOthers() {
+	public Set<SfiPpFormCs6OtherViewModel> getCs6UsOthers() {
 		return cs6UsOthers;
 	}
 
-	public void setCs6UsOthers(List<SfiPpFormCs6Other> cs6UsOthers) {
+	public void setCs6UsOthers(Set<SfiPpFormCs6OtherViewModel> cs6UsOthers) {
 		this.cs6UsOthers = cs6UsOthers;
 	}
 }
