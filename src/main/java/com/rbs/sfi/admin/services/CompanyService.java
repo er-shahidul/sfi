@@ -2,6 +2,7 @@ package com.rbs.sfi.admin.services;
 
 import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.repositories.CompanyRepository;
+import com.rbs.sfi.admin.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,11 +28,15 @@ public class CompanyService
         return companyRepository.findById(id);
     }
 
-    public void update(Company company) {
+    public void update(Company company, byte[] fileN, String name) {
         Company entity = this.findById(company.getId());
         if(entity!=null){
             entity.setName(company.getName());
             entity.setAreaUnit(company.getAreaUnit());
+            entity.setUpdatedAt(Util.getCurrentDate());
+            entity.setUpdatedBy(Util.getCurrentUsername());
+            entity.setLogoName(name);
+            entity.setLogo(fileN);
             companyRepository.update(entity);
         }
     }

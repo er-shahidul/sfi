@@ -2,13 +2,16 @@ package com.rbs.sfi.admin.controllers;
 
 import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.Logo;
+import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.listeners.AuditListener;
 import com.rbs.sfi.admin.services.CompanyService;
+import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.admin.validator.FileValidator;
 import com.rbs.sfi.admin.entities.AreaUnit;
 import com.rbs.sfi.admin.repositories.AreaUnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -22,6 +25,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.io.*;
+import java.security.Principal;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -61,8 +66,9 @@ public class CompanyController
     }
 
     @RequestMapping(value = { "/admin/company/edit/{id}" }, method = RequestMethod.POST)
-    public String update(@Valid Logo logo, @ModelAttribute("company") Company company, BindingResult result, ModelMap model, @PathVariable int id) {
+    public String update(@Valid Logo logo, @ModelAttribute("company") Company company, BindingResult result, ModelMap model, @PathVariable int id, Principal principal) {
         model.addAttribute("id", id);
+        String fullName = principal.getName();
 
         InputStream inputStream = null;
         OutputStream outputStream = null;
@@ -86,15 +92,11 @@ public class CompanyController
             if (!newFile.exists()) {
                 newFile.createNewFile();
 
-//                AuditListener auditListener = new AuditListener();
-//                auditListener.preUpdate(company);
+//                company.setLogoName(name);
+//                company.setLogo(file.getBytes());
+                byte[] fileN = file.getBytes();
 
-                AuditListener auditListener = new AuditListener();
-                company.setLogoName(name);
-                company.setLogo(file.getBytes());
-                auditListener.preUpdate(company);
-
-                companyService.update(company);
+                companyService.update(company, fileN, name);
             }
 
             outputStream = new FileOutputStream(newFile);
@@ -138,15 +140,6 @@ public class CompanyController
         String fileName = file.getOriginalFilename();
         String name = randomUUIDString+"."+getFileExtension(fileName);
 
-//        long size = file.getSize();
-//        String ext = file.getContentType();
-//        String ext1 = "image/jpeg";
-//        if (ext != ext1) {
-//            errors.rejectValue("file", "uploadForm.error2",
-//                    "Please select a file!");
-//        }
-//		String fileType = file.getContentType();
-
         if (result.hasErrors()) {
             return new ModelAndView("admin/company/new");
         }
@@ -158,12 +151,10 @@ public class CompanyController
             if (!newFile.exists()) {
                 newFile.createNewFile();
 
-//                AuditListener auditListener = new AuditListener();
-//                auditListener.prePersist(company);
-
                 AuditListener auditListener = new AuditListener();
                 company.setLogoName(name);
                 company.setLogo(file.getBytes());
+                company.setIsActive(true);
                 auditListener.prePersist(company);
 
                 companyService.save(company);

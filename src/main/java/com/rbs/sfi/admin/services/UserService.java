@@ -2,6 +2,7 @@ package com.rbs.sfi.admin.services;
 
 import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.repositories.UserRepository;
+import com.rbs.sfi.admin.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ public class UserService {
 
     public void save(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setIsActive(true);
         userRepository.save(user);
     }
 
@@ -68,10 +70,14 @@ public class UserService {
     public void updateUser(User user) {
         User entity = userRepository.findByID(user.getId());
         if(entity!=null){
+            entity.setPassword(passwordEncoder.encode(user.getPassword()));
             entity.setGroup(user.getGroup());
             entity.setFirstName(user.getFirstName());
             entity.setLastName(user.getLastName());
             entity.setCompany(user.getCompany());
+            entity.setUpdatedAt(Util.getCurrentDate());
+            entity.setUpdatedBy(Util.getCurrentUsername());
+            entity.setEnabled(user.isEnabled());
             userRepository.update(entity);
         }
     }

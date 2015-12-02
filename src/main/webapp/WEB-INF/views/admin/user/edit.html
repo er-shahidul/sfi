@@ -29,7 +29,7 @@
                                 <nav class="navbar navbar-default" role="navigation">
                                     <div class="navbar-header">
                                         <span class="navbar-brand">
-                                            Create
+                                            Edit "<span th:text="${user.email}"></span>"
                                         </span>
                                     </div>
                                     <div class="container-fluid">
@@ -79,8 +79,6 @@
                                         <!--</div>-->
                                         <!--<div th:text="${userRole}"></div>-->
 
-
-
                                         <div class="row">
 
                                             <div class="col-md-12">
@@ -129,6 +127,27 @@
                                                                     </div>
                                                                 </div>
 
+                                                                <div class="form-group" id="sonata-ba-field-container-password">
+                                                                    <label class="control-label required" style="text-align: left;">
+                                                                        Update password
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
+                                                                        <input type="password" th:path="*{password}" th:field="*{password}" id="password" class="form-control" required="required" />
+                                                                        <errors th:path="*{password}" class="help-inline"/>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group" id="sonata-ba-field-container-password-check">
+                                                                    <label class="control-label required" style="text-align: left;">
+                                                                        Repeat password
+                                                                    </label>
+
+                                                                    <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
+                                                                        <input type="password" id="password-check" class="form-control"/>
+                                                                    </div>
+                                                                </div>
+
                                                                 <div class="form-group" id="sonata-ba-field-container-group">
                                                                     <label class="control-label" style="text-align: left;">
                                                                         User Type
@@ -150,9 +169,11 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
 
-                                                                        <select  th:field="*{company}" class="form-control">
+                                                                        <select th:field="*{company.id}" class="form-control">
                                                                             <!--<option value=""> Select a Company to Assign this User to </option>-->
-                                                                            <option th:each="com : ${companies}" th:value="${com.id}" th:text="${com.name}"></option>
+                                                                            <div th:path="*{company}" th:each="com : ${companies}">
+                                                                                <option th:value="${com.id}" th:text="${com.name}" th:selected="${com.id == userCompanyId}"></option>
+                                                                            </div>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -191,7 +212,7 @@
 
                                         <div class="well well-small form-actions">
                                             <!--<button class="btn btn-success" type="submit" name="btn_create_and_edit"><i class="fa fa-save"></i> Create</button>-->
-                                            <button type="submit" class="btn btn-success" name="btn_create_and_list"><i class="fa fa-save"></i> <i class="fa fa-list"></i> Update and return to list</button>
+                                            <button type="submit" id="submit" class="btn btn-success" name="btn_create_and_list"><i class="fa fa-save"></i> <i class="fa fa-list"></i> Update and return to list</button>
                                             <!--<button class="btn btn-success" type="submit" name="btn_create_and_create"><i class="fa fa-plus-circle"></i> Create and add another</button>-->
                                             <a class="btn btn-danger" th:href="@{'/admin/user/delete/' + ${user.id}}"><i class="fa fa-minus-circle"></i>Delete</a>
                                         </div>
@@ -228,6 +249,25 @@
                 .find("select").val(null);
 
         }).change();
+
+        $("#submit").click(function(){
+            $(".error").hide();
+            var hasError = false;
+            var passwordVal = $("#password").val();
+            var checkVal = $("#password-check").val();
+            if (passwordVal == '') {
+                $("#password").after('<span class="error">Please enter a password.</span>');
+                hasError = true;
+            } else if (checkVal == '') {
+                $("#password-check").after('<span class="error">Please re-enter your password.</span>');
+                hasError = true;
+            } else if (passwordVal != checkVal ) {
+                $("#password-check").after('<span class="error">Passwords do not match.</span>');
+                hasError = true;
+            }
+            if(hasError == true) {return false;}
+        });
+
         // ]]>
 
     </script>
