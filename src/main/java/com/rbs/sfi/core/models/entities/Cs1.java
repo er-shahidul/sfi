@@ -1,263 +1,263 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
+
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name="sfi_pp_forms")
-public class Cs1
-{
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+public class Cs1 extends BaseEntity {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
 
-	@Column(name="cs1_companyWebsite", nullable=true)
-	private String companyWebsite;
+    @Column(name="cs1_companyWebsite", nullable=true)
+    private String companyWebsite;
 
-	@Column(name="cs1_numberEmployees_USA", nullable = false, columnDefinition = "Integer default 0")
-	private Integer numberEmployeesUSA;
+    @Column(name="cs1_numberEmployees_USA", nullable = false, columnDefinition = "Integer default 0")
+    private Integer numberEmployeesUSA;
 
-	@Column(name="cs1_numberEmployees_CA", nullable = false, columnDefinition = "Integer default 0")
-	private Integer numberEmployeesCA;
+    @Column(name="cs1_numberEmployees_CA", nullable = false, columnDefinition = "Integer default 0")
+    private Integer numberEmployeesCA;
 
-	@Column(name="cs1_numberEmployees_Other", nullable = false, columnDefinition = "Integer default 0")
-	private Integer numberEmployeesOther;
+    @Column(name="cs1_numberEmployees_Other", nullable = false, columnDefinition = "Integer default 0")
+    private Integer numberEmployeesOther;
 
-	@Column(name="cs1_companyDescr", nullable=true)
-	private String companyDesc;
+    @Column(name="cs1_companyDescr", nullable=true)
+    private String companyDesc;
 
-	@Column(name="cs1_ownsMngLands", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean ownsMngLands;
+    @Column(name="cs1_ownsMngLands", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean ownsMngLands;
 
-	@Column(name="cs1_ownsMngLands_inUSA", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean ownsMngLandsInUSA;
+    @Column(name="cs1_ownsMngLands_inUSA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean ownsMngLandsInUSA;
 
-	@Column(name="cs1_ownsMngLands_inCA", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean ownsMngLandsInCA;
+    @Column(name="cs1_ownsMngLands_inCA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean ownsMngLandsInCA;
 
-	@Column(name="cs1_ownsMngLands_inOther", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean ownsMngLandsInOther;
+    @Column(name="cs1_ownsMngLands_inOther", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean ownsMngLandsInOther;
 
-	@Column(name="cs1_hasPrimaryOperMillsYards", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean hasPrimaryOperMillsYards;
-	@Column(name="cs1_hasPrimaryOperMillsYards_inUSA", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean hasPrimaryOperMillsYardsInUSA;
-	@Column(name="cs1_hasPrimaryOperMillsYards_inCA", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean hasPrimaryOperMillsYardsInCA;
-	@Column(name="cs1_hasPrimaryOperMillsYards_inOther", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean hasPrimaryOperMillsYardsInOther;
+    @Column(name="cs1_hasPrimaryOperMillsYards", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasPrimaryOperMillsYards;
+    @Column(name="cs1_hasPrimaryOperMillsYards_inUSA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasPrimaryOperMillsYardsInUSA;
+    @Column(name="cs1_hasPrimaryOperMillsYards_inCA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasPrimaryOperMillsYardsInCA;
+    @Column(name="cs1_hasPrimaryOperMillsYards_inOther", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasPrimaryOperMillsYardsInOther;
 
-	@Column(name="cs1_hasSecondaryOperMillsYards", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean hasSecondaryOperMillsYards;
-	@Column(name="cs1_hasSecondaryOperMillsYards_inUSA", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean hasSecondaryOperMillsYardsInUSA;
-	@Column(name="cs1_hasSecondaryOperMillsYards_inCA", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean hasSecondaryOperMillsYardsInCA;
-	@Column(name="cs1_hasSecondaryOperMillsYards_inOther", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean hasSecondaryOperMillsYardsInOther;
-
-
-	@ManyToMany(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-	@JoinTable(name="sfi_pp_form_cs1_ownsMngLands_other_countries",
-			joinColumns={@JoinColumn(name="form_id")},
-			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormOtherCountry> ownsMngLandsOtherCountries;
-
-	@ManyToMany(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-	@JoinTable(name="sfi_pp_form_cs1_primaryOperMillsYards_other_countries",
-			joinColumns={@JoinColumn(name="form_id")},
-			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormOtherCountry> primaryOperMillsYardsOtherCountries;
-
-	@ManyToMany(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-	@JoinTable(name="sfi_pp_form_cs1_secondaryOperMillsYards_other_countries",
-			joinColumns={@JoinColumn(name="form_id")},
-			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormOtherCountry> secondaryOperMillsYardsOtherCountries;
-
-	@ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-	@JoinTable(name="sfi_pp_form_cs1_sells_countries",
-			joinColumns={@JoinColumn(name="form_id")},
-			inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
-	private Set<SfiPpFormAllCountry> sellsCountries;
+    @Column(name="cs1_hasSecondaryOperMillsYards", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasSecondaryOperMillsYards;
+    @Column(name="cs1_hasSecondaryOperMillsYards_inUSA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasSecondaryOperMillsYardsInUSA;
+    @Column(name="cs1_hasSecondaryOperMillsYards_inCA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasSecondaryOperMillsYardsInCA;
+    @Column(name="cs1_hasSecondaryOperMillsYards_inOther", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasSecondaryOperMillsYardsInOther;
 
 
+    @ManyToMany(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name="sfi_pp_form_cs1_ownsMngLands_other_countries",
+            joinColumns={@JoinColumn(name="form_id")},
+            inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormOtherCountry> ownsMngLandsOtherCountries;
 
-	public Integer getId() {
-		return id;
-	}
+    @ManyToMany(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name="sfi_pp_form_cs1_primaryOperMillsYards_other_countries",
+            joinColumns={@JoinColumn(name="form_id")},
+            inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormOtherCountry> primaryOperMillsYardsOtherCountries;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @ManyToMany(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name="sfi_pp_form_cs1_secondaryOperMillsYards_other_countries",
+            joinColumns={@JoinColumn(name="form_id")},
+            inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormOtherCountry> secondaryOperMillsYardsOtherCountries;
 
-	public String getCompanyWebsite() {
-		return companyWebsite;
-	}
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name="sfi_pp_form_cs1_sells_countries",
+            joinColumns={@JoinColumn(name="form_id")},
+            inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> sellsCountries;
 
-	public void setCompanyWebsite(String companyWebsite) {
-		this.companyWebsite = companyWebsite;
-	}
 
-	public Integer getNumberEmployeesUSA() {
-		return numberEmployeesUSA;
-	}
 
-	public void setNumberEmployeesUSA(Integer numberEmployeesUSA) {
-		this.numberEmployeesUSA = numberEmployeesUSA;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public Integer getNumberEmployeesCA() {
-		return numberEmployeesCA;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setNumberEmployeesCA(Integer numberEmployeesCA) {
-		this.numberEmployeesCA = numberEmployeesCA;
-	}
+    public String getCompanyWebsite() {
+        return companyWebsite;
+    }
 
-	public Integer getNumberEmployeesOther() {
-		return numberEmployeesOther;
-	}
+    public void setCompanyWebsite(String companyWebsite) {
+        this.companyWebsite = companyWebsite;
+    }
 
-	public void setNumberEmployeesOther(Integer numberEmployeesOther) {
-		this.numberEmployeesOther = numberEmployeesOther;
-	}
+    public Integer getNumberEmployeesUSA() {
+        return numberEmployeesUSA;
+    }
 
-	public String getCompanyDesc() {
-		return companyDesc;
-	}
+    public void setNumberEmployeesUSA(Integer numberEmployeesUSA) {
+        this.numberEmployeesUSA = numberEmployeesUSA;
+    }
 
-	public void setCompanyDesc(String companyDesc) {
-		this.companyDesc = companyDesc;
-	}
+    public Integer getNumberEmployeesCA() {
+        return numberEmployeesCA;
+    }
 
-	public Boolean isOwnsMngLands() {
-		return ownsMngLands;
-	}
+    public void setNumberEmployeesCA(Integer numberEmployeesCA) {
+        this.numberEmployeesCA = numberEmployeesCA;
+    }
 
-	public void setOwnsMngLands(Boolean ownsMngLands) {
-		this.ownsMngLands = ownsMngLands;
-	}
+    public Integer getNumberEmployeesOther() {
+        return numberEmployeesOther;
+    }
 
-	public Boolean isOwnsMngLandsInUSA() {
-		return ownsMngLandsInUSA;
-	}
+    public void setNumberEmployeesOther(Integer numberEmployeesOther) {
+        this.numberEmployeesOther = numberEmployeesOther;
+    }
 
-	public void setOwnsMngLandsInUSA(Boolean ownsMngLandsInUSA) {
-		this.ownsMngLandsInUSA = ownsMngLandsInUSA;
-	}
+    public String getCompanyDesc() {
+        return companyDesc;
+    }
 
-	public Boolean isOwnsMngLandsInCA() {
-		return ownsMngLandsInCA;
-	}
+    public void setCompanyDesc(String companyDesc) {
+        this.companyDesc = companyDesc;
+    }
 
-	public void setOwnsMngLandsInCA(Boolean ownsMngLandsInCA) {
-		this.ownsMngLandsInCA = ownsMngLandsInCA;
-	}
+    public Boolean isOwnsMngLands() {
+        return ownsMngLands;
+    }
 
-	public Boolean isOwnsMngLandsInOther() {
-		return ownsMngLandsInOther;
-	}
+    public void setOwnsMngLands(Boolean ownsMngLands) {
+        this.ownsMngLands = ownsMngLands;
+    }
 
-	public void setOwnsMngLandsInOther(Boolean ownsMngLandsInOther) {
-		this.ownsMngLandsInOther = ownsMngLandsInOther;
-	}
+    public Boolean isOwnsMngLandsInUSA() {
+        return ownsMngLandsInUSA;
+    }
 
-	public Boolean isHasPrimaryOperMillsYards() {
-		return hasPrimaryOperMillsYards;
-	}
+    public void setOwnsMngLandsInUSA(Boolean ownsMngLandsInUSA) {
+        this.ownsMngLandsInUSA = ownsMngLandsInUSA;
+    }
 
-	public void setHasPrimaryOperMillsYards(Boolean hasPrimaryOperMillsYards) {
-		this.hasPrimaryOperMillsYards = hasPrimaryOperMillsYards;
-	}
+    public Boolean isOwnsMngLandsInCA() {
+        return ownsMngLandsInCA;
+    }
 
-	public Boolean isHasPrimaryOperMillsYardsInUSA() {
-		return hasPrimaryOperMillsYardsInUSA;
-	}
+    public void setOwnsMngLandsInCA(Boolean ownsMngLandsInCA) {
+        this.ownsMngLandsInCA = ownsMngLandsInCA;
+    }
 
-	public void setHasPrimaryOperMillsYardsInUSA(Boolean hasPrimaryOperMillsYardsInUSA) {
-		this.hasPrimaryOperMillsYardsInUSA = hasPrimaryOperMillsYardsInUSA;
-	}
+    public Boolean isOwnsMngLandsInOther() {
+        return ownsMngLandsInOther;
+    }
 
-	public Boolean isHasPrimaryOperMillsYardsInCA() {
-		return hasPrimaryOperMillsYardsInCA;
-	}
+    public void setOwnsMngLandsInOther(Boolean ownsMngLandsInOther) {
+        this.ownsMngLandsInOther = ownsMngLandsInOther;
+    }
 
-	public void setHasPrimaryOperMillsYardsInCA(Boolean hasPrimaryOperMillsYardsInCA) {
-		this.hasPrimaryOperMillsYardsInCA = hasPrimaryOperMillsYardsInCA;
-	}
+    public Boolean isHasPrimaryOperMillsYards() {
+        return hasPrimaryOperMillsYards;
+    }
 
-	public Boolean isHasPrimaryOperMillsYardsInOther() {
-		return hasPrimaryOperMillsYardsInOther;
-	}
+    public void setHasPrimaryOperMillsYards(Boolean hasPrimaryOperMillsYards) {
+        this.hasPrimaryOperMillsYards = hasPrimaryOperMillsYards;
+    }
 
-	public void setHasPrimaryOperMillsYardsInOther(Boolean hasPrimaryOperMillsYardsInOther) {
-		this.hasPrimaryOperMillsYardsInOther = hasPrimaryOperMillsYardsInOther;
-	}
+    public Boolean isHasPrimaryOperMillsYardsInUSA() {
+        return hasPrimaryOperMillsYardsInUSA;
+    }
 
-	public Boolean isHasSecondaryOperMillsYards() {
-		return hasSecondaryOperMillsYards;
-	}
+    public void setHasPrimaryOperMillsYardsInUSA(Boolean hasPrimaryOperMillsYardsInUSA) {
+        this.hasPrimaryOperMillsYardsInUSA = hasPrimaryOperMillsYardsInUSA;
+    }
 
-	public void setHasSecondaryOperMillsYards(Boolean hasSecondaryOperMillsYards) {
-		this.hasSecondaryOperMillsYards = hasSecondaryOperMillsYards;
-	}
+    public Boolean isHasPrimaryOperMillsYardsInCA() {
+        return hasPrimaryOperMillsYardsInCA;
+    }
 
-	public Boolean isHasSecondaryOperMillsYardsInUSA() {
-		return hasSecondaryOperMillsYardsInUSA;
-	}
+    public void setHasPrimaryOperMillsYardsInCA(Boolean hasPrimaryOperMillsYardsInCA) {
+        this.hasPrimaryOperMillsYardsInCA = hasPrimaryOperMillsYardsInCA;
+    }
 
-	public void setHasSecondaryOperMillsYardsInUSA(Boolean hasSecondaryOperMillsYardsInUSA) {
-		this.hasSecondaryOperMillsYardsInUSA = hasSecondaryOperMillsYardsInUSA;
-	}
+    public Boolean isHasPrimaryOperMillsYardsInOther() {
+        return hasPrimaryOperMillsYardsInOther;
+    }
 
-	public Boolean isHasSecondaryOperMillsYardsInCA() {
-		return hasSecondaryOperMillsYardsInCA;
-	}
+    public void setHasPrimaryOperMillsYardsInOther(Boolean hasPrimaryOperMillsYardsInOther) {
+        this.hasPrimaryOperMillsYardsInOther = hasPrimaryOperMillsYardsInOther;
+    }
 
-	public void setHasSecondaryOperMillsYardsInCA(Boolean hasSecondaryOperMillsYardsInCA) {
-		this.hasSecondaryOperMillsYardsInCA = hasSecondaryOperMillsYardsInCA;
-	}
+    public Boolean isHasSecondaryOperMillsYards() {
+        return hasSecondaryOperMillsYards;
+    }
 
-	public Boolean isHasSecondaryOperMillsYardsInOther() {
-		return hasSecondaryOperMillsYardsInOther;
-	}
+    public void setHasSecondaryOperMillsYards(Boolean hasSecondaryOperMillsYards) {
+        this.hasSecondaryOperMillsYards = hasSecondaryOperMillsYards;
+    }
 
-	public void setHasSecondaryOperMillsYardsInOther(Boolean hasSecondaryOperMillsYardsInOther) {
-		this.hasSecondaryOperMillsYardsInOther = hasSecondaryOperMillsYardsInOther;
-	}
+    public Boolean isHasSecondaryOperMillsYardsInUSA() {
+        return hasSecondaryOperMillsYardsInUSA;
+    }
 
-	public Set<SfiPpFormOtherCountry> getOwnsMngLandsOtherCountries() {
-		return ownsMngLandsOtherCountries;
-	}
+    public void setHasSecondaryOperMillsYardsInUSA(Boolean hasSecondaryOperMillsYardsInUSA) {
+        this.hasSecondaryOperMillsYardsInUSA = hasSecondaryOperMillsYardsInUSA;
+    }
 
-	public void setOwnsMngLandsOtherCountries(Set<SfiPpFormOtherCountry> ownsMngLandsOtherCountries) {
-		this.ownsMngLandsOtherCountries = ownsMngLandsOtherCountries;
-	}
+    public Boolean isHasSecondaryOperMillsYardsInCA() {
+        return hasSecondaryOperMillsYardsInCA;
+    }
 
-	public Set<SfiPpFormOtherCountry> getPrimaryOperMillsYardsOtherCountries() {
-		return primaryOperMillsYardsOtherCountries;
-	}
+    public void setHasSecondaryOperMillsYardsInCA(Boolean hasSecondaryOperMillsYardsInCA) {
+        this.hasSecondaryOperMillsYardsInCA = hasSecondaryOperMillsYardsInCA;
+    }
 
-	public void setPrimaryOperMillsYardsOtherCountries(Set<SfiPpFormOtherCountry> primaryOperMillsYardsOtherCountries) {
-		this.primaryOperMillsYardsOtherCountries = primaryOperMillsYardsOtherCountries;
-	}
+    public Boolean isHasSecondaryOperMillsYardsInOther() {
+        return hasSecondaryOperMillsYardsInOther;
+    }
 
-	public Set<SfiPpFormOtherCountry> getSecondaryOperMillsYardsOtherCountries() {
-		return secondaryOperMillsYardsOtherCountries;
-	}
+    public void setHasSecondaryOperMillsYardsInOther(Boolean hasSecondaryOperMillsYardsInOther) {
+        this.hasSecondaryOperMillsYardsInOther = hasSecondaryOperMillsYardsInOther;
+    }
 
-	public void setSecondaryOperMillsYardsOtherCountries(Set<SfiPpFormOtherCountry> secondaryOperMillsYardsOtherCountries) {
-		this.secondaryOperMillsYardsOtherCountries = secondaryOperMillsYardsOtherCountries;
-	}
+    public Set<SfiPpFormOtherCountry> getOwnsMngLandsOtherCountries() {
+        return ownsMngLandsOtherCountries;
+    }
 
-	public Set<SfiPpFormAllCountry> getSellsCountries() {
-		return sellsCountries;
-	}
+    public void setOwnsMngLandsOtherCountries(Set<SfiPpFormOtherCountry> ownsMngLandsOtherCountries) {
+        addAll(this.ownsMngLandsOtherCountries, ownsMngLandsOtherCountries);
+    }
 
-	public void setSellsCountries(Set<SfiPpFormAllCountry> sellsCountries) {
-		this.sellsCountries = sellsCountries;
-	}
+    public Set<SfiPpFormOtherCountry> getPrimaryOperMillsYardsOtherCountries() {
+        return primaryOperMillsYardsOtherCountries;
+    }
+
+    public void setPrimaryOperMillsYardsOtherCountries(Set<SfiPpFormOtherCountry> primaryOperMillsYardsOtherCountries) {
+        addAll(this.primaryOperMillsYardsOtherCountries, primaryOperMillsYardsOtherCountries);
+    }
+
+    public Set<SfiPpFormOtherCountry> getSecondaryOperMillsYardsOtherCountries() {
+        return secondaryOperMillsYardsOtherCountries;
+    }
+
+    public void setSecondaryOperMillsYardsOtherCountries(Set<SfiPpFormOtherCountry> secondaryOperMillsYardsOtherCountries) {
+        addAll(this.secondaryOperMillsYardsOtherCountries, secondaryOperMillsYardsOtherCountries);
+    }
+
+    public Set<SfiPpFormAllCountry> getSellsCountries() {
+        return sellsCountries;
+    }
+
+    public void setSellsCountries(Set<SfiPpFormAllCountry> sellsCountries) {
+        addAll(this.sellsCountries, sellsCountries);
+    }
 
 }

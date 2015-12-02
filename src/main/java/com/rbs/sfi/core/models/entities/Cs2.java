@@ -1,5 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -8,8 +9,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="sfi_pp_forms")
-public class Cs2
-{
+public class Cs2 extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -153,7 +153,7 @@ public class Cs2
 	}
 
 	public void setUsaPrivateRecreationCategories(Set<String> usaPrivateRecreationCategories) {
-		this.usaPrivateRecreationCategories = usaPrivateRecreationCategories;
+		addAll(this.usaPrivateRecreationCategories, usaPrivateRecreationCategories);
 	}
 
 	public Float getUsaPublicTotalAreaOwnOrManage() {
@@ -209,7 +209,7 @@ public class Cs2
 	}
 
 	public void setUsaPublicRecreationCategories(Set<String> usaPublicRecreationCategories) {
-		this.usaPublicRecreationCategories = usaPublicRecreationCategories;
+		addAll(this.usaPublicRecreationCategories, usaPublicRecreationCategories);
 	}
 
 	public Float getCaCrownTotalAreaOwnOrManage() {
@@ -265,7 +265,7 @@ public class Cs2
 	}
 
 	public void setCaCrownRecreationCategories(Set<String> caCrownRecreationCategories) {
-		this.caCrownRecreationCategories = caCrownRecreationCategories;
+		addAll(this.caCrownRecreationCategories, caCrownRecreationCategories);
 	}
 
 	public Float getCaPrivateTotalAreaOwnOrManage() {
@@ -321,7 +321,7 @@ public class Cs2
 	}
 
 	public void setCaPrivateRecreationCategories(Set<String> caPrivateRecreationCategories) {
-		this.caPrivateRecreationCategories = caPrivateRecreationCategories;
+		addAll(this.caPrivateRecreationCategories, caPrivateRecreationCategories);
 	}
 
 	public Set<SfiPpFormCs2OutsideUsaCa> getOutsideCountries() {
@@ -329,6 +329,6 @@ public class Cs2
 	}
 
 	public void setOutsideCountries(Set<SfiPpFormCs2OutsideUsaCa> outsideCountries) {
-		this.outsideCountries = outsideCountries;
+		addAll(this.outsideCountries, outsideCountries);
 	}
 }

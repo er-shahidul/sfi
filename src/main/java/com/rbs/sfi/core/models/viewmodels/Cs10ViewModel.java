@@ -1,8 +1,10 @@
 package com.rbs.sfi.core.models.viewmodels;
 
+import com.rbs.sfi.core.mapper.IViewModel;
+
 import java.util.Date;
 
-public class Cs10ViewModel {
+public class Cs10ViewModel implements IViewModel {
 	private Integer id;
 	private Boolean cs10Acknowledge;
 	private Date updatedAt;

@@ -1,11 +1,12 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="sfi_pp_forms")
-public class Cs4
-{
+public class Cs4 extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;

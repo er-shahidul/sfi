@@ -1,6 +1,8 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-public class Cs4ViewModel {
+import com.rbs.sfi.core.mapper.IViewModel;
+
+public class Cs4ViewModel implements IViewModel {
 	private Integer id;
 	private Float usaTotalHervArea;
 	private Float caTotalHervArea;

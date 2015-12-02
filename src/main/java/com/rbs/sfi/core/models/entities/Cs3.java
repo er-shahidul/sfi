@@ -1,12 +1,13 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
+
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="sfi_pp_forms")
-public class Cs3
-{
+public class Cs3 extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -15,7 +16,7 @@ public class Cs3
 	private Boolean isInPartnership;
 
 	@OneToMany(targetEntity = SfiPpFormCs3.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	private List<SfiPpFormCs3> projects;
+	private Set<SfiPpFormCs3> projects;
 
 	public Integer getId() {
 		return id;
@@ -33,11 +34,11 @@ public class Cs3
 		this.isInPartnership = isInPartnership;
 	}
 
-	public List<SfiPpFormCs3> getProjects() {
+	public Set<SfiPpFormCs3> getProjects() {
 		return projects;
 	}
 
-	public void setProjects(List<SfiPpFormCs3> projects) {
-		this.projects = projects;
+	public void setProjects(Set<SfiPpFormCs3> projects) {
+		addAll(this.projects, projects);
 	}
 }

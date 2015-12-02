@@ -1,6 +1,8 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-public class Cs9ViewModel {
+import com.rbs.sfi.core.mapper.IViewModel;
+
+public class Cs9ViewModel implements IViewModel {
 	private Integer id;
 	private Boolean cs9Acknowledge;
 

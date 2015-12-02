@@ -6,10 +6,7 @@ import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.core.models.entities.SfiPpForm;
 import com.rbs.sfi.core.repositories.SfiPpFormRepository;
-import com.rbs.sfi.core.services.Cs1Service;
-import com.rbs.sfi.core.services.Cs2Service;
-import com.rbs.sfi.core.services.SfiPpFormAllCountryService;
-import com.rbs.sfi.core.services.SfiPpFormService;
+import com.rbs.sfi.core.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -48,6 +45,9 @@ public class FormController {
 
     @Autowired
     Cs2Service cs2Service;
+
+    @Autowired
+    Cs3Service cs3Service;
 
     @RequestMapping(value = {"/form" }, method = RequestMethod.GET)
     public String homePage(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
@@ -88,6 +88,7 @@ public class FormController {
         model.addAttribute("form", sfiPpForm);
         model.addAttribute("cs1", cs1Service.getViewModel(sfiPpForm.getId()));
         model.addAttribute("cs2", cs2Service.getViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs3", cs3Service.getViewModel(sfiPpForm.getId()));
 
         model.addAttribute("company", company);
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);

@@ -1,12 +1,13 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
+
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="sfi_pp_forms")
-public class Cs6
-{
+public class Cs6 extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -33,10 +34,10 @@ public class Cs6
 	private Boolean toAssistObj8;
 
 	@OneToMany(targetEntity = SfiPpFormCs6UsCanada.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	private List<SfiPpFormCs6UsCanada> cs6UsCanada;
+	private Set<SfiPpFormCs6UsCanada> cs6UsCanada;
 
 	@OneToMany(targetEntity = SfiPpFormCs6Other.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	private List<SfiPpFormCs6Other> cs6UsOthers;
+	private Set<SfiPpFormCs6Other> cs6UsOthers;
 
 	public Integer getId() {
 		return id;
@@ -134,19 +135,19 @@ public class Cs6
 		this.toAssistObj8 = toAssistObj8;
 	}
 
-	public List<SfiPpFormCs6UsCanada> getCs6UsCanada() {
+	public Set<SfiPpFormCs6UsCanada> getCs6UsCanada() {
 		return cs6UsCanada;
 	}
 
-	public void setCs6UsCanada(List<SfiPpFormCs6UsCanada> cs6UsCanada) {
-		this.cs6UsCanada = cs6UsCanada;
+	public void setCs6UsCanada(Set<SfiPpFormCs6UsCanada> cs6UsCanada) {
+		addAll(this.cs6UsCanada, cs6UsCanada);
 	}
 
-	public List<SfiPpFormCs6Other> getCs6UsOthers() {
+	public Set<SfiPpFormCs6Other> getCs6UsOthers() {
 		return cs6UsOthers;
 	}
 
-	public void setCs6UsOthers(List<SfiPpFormCs6Other> cs6UsOthers) {
-		this.cs6UsOthers = cs6UsOthers;
+	public void setCs6UsOthers(Set<SfiPpFormCs6Other> cs6UsOthers) {
+		addAll(this.cs6UsOthers, cs6UsOthers);
 	}
 }

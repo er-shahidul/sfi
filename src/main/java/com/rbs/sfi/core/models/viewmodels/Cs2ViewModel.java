@@ -1,40 +1,40 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.models.entities.SfiPpFormCs2OutsideUsaCa;
+import com.rbs.sfi.core.mapper.IViewModel;
 
 import java.util.Set;
 
-public class Cs2ViewModel {
+public class Cs2ViewModel implements IViewModel {
 	private Integer id;
-	private Float usaPrivateTotalAreaOwnOrManage;
+	private Integer usaPublicForestlandOwnMng;
 	private Integer usaPrivateForestlandOwnMng;
-	private String usaPrivateForestlandOwnMngOther;
+	private Integer caCrownForestlandOwnMng;
+	private Integer caPrivateForestlandOwnMng;
+	private Float usaPrivateTotalAreaOwnOrManage;
 	private Float usaPrivateTotalAreaCertified;
 	private Float usaPrivateAreaManagedForPublic;
 	private Float usaPrivateAreaCertifiedForPublic;
-	private Set<String> usaPrivateRecreationCategories;
 	private Float usaPublicTotalAreaOwnOrManage;
-	private Integer usaPublicForestlandOwnMng;
-	private String usaPublicForestlandOwnMngOther;
 	private Float usaPublicTotalAreaCertified;
 	private Float usaPublicAreaManagedForPublic;
 	private Float usaPublicAreaCertifiedForPublic;
-	private Set<String> usaPublicRecreationCategories;
 	private Float caCrownTotalAreaOwnOrManage;
-	private Integer caCrownForestlandOwnMng;
-	private String caCrownForestlandOwnMngOther;
 	private Float caCrownTotalAreaCertified;
 	private Float caCrownAreaManagedForPublic;
 	private Float caCrownAreaCertifiedForPublic;
-	private Set<String> caCrownRecreationCategories;
 	private Float caPrivateTotalAreaOwnOrManage;
-	private Integer caPrivateForestlandOwnMng;
-	private String caPrivateForestlandOwnMngOther;
 	private Float caPrivateTotalAreaCertified;
 	private Float caPrivateAreaManagedForPublic;
 	private Float caPrivateAreaCertifiedForPublic;
+	private String usaPrivateForestlandOwnMngOther;
+	private String usaPublicForestlandOwnMngOther;
+	private String caCrownForestlandOwnMngOther;
+	private String caPrivateForestlandOwnMngOther;
+	private Set<String> usaPrivateRecreationCategories;
+	private Set<String> usaPublicRecreationCategories;
+	private Set<String> caCrownRecreationCategories;
 	private Set<String> caPrivateRecreationCategories;
-	private Set<SfiPpFormCs2OutsideUsaCa> outsideCountries;
+	private Set<SfiPpFormCs2OutsideUsaCaViewModel> outsideCountries;
 
 	public Integer getId() {
 		return id;
@@ -268,11 +268,11 @@ public class Cs2ViewModel {
 		this.caPrivateRecreationCategories = caPrivateRecreationCategories;
 	}
 
-	public Set<SfiPpFormCs2OutsideUsaCa> getOutsideCountries() {
+	public Set<SfiPpFormCs2OutsideUsaCaViewModel> getOutsideCountries() {
 		return outsideCountries;
 	}
 
-	public void setOutsideCountries(Set<SfiPpFormCs2OutsideUsaCa> outsideCountries) {
+	public void setOutsideCountries(Set<SfiPpFormCs2OutsideUsaCaViewModel> outsideCountries) {
 		this.outsideCountries = outsideCountries;
 	}
 }

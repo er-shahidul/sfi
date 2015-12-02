@@ -1,14 +1,14 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
+
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name="sfi_pp_form_cs3_projects")
-public class SfiPpFormCs3
-{
+public class SfiPpFormCs3 extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -128,7 +128,7 @@ public class SfiPpFormCs3
 	}
 
 	public void setCs3ProjectLocations(Set<SfiPpFormRegion> cs3ProjectLocations) {
-		this.cs3ProjectLocations = cs3ProjectLocations;
+		addAll(this.cs3ProjectLocations, cs3ProjectLocations);
 	}
 
 	public String getCs3ConservatonPartners() {
@@ -240,7 +240,7 @@ public class SfiPpFormCs3
 	}
 
 	public void setCs3SupportDocs(Set<SfiPpFormCs3ProjectSupportDocs> cs3SupportDocs) {
-		this.cs3SupportDocs = cs3SupportDocs;
+		addAll(this.cs3SupportDocs, cs3SupportDocs);
 	}
 
 	public Boolean isCs3IncludeResearchFunding() {

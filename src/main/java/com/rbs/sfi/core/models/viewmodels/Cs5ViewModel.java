@@ -1,6 +1,8 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-public class Cs5ViewModel {
+import com.rbs.sfi.core.mapper.IViewModel;
+
+public class Cs5ViewModel implements IViewModel {
 	private Integer id;
 	private String organizationListAcademic;
 	private String organizationListResearch;

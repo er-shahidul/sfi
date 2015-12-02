@@ -1,11 +1,12 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="sfi_pp_form_cs5_research_funding_categories")
-public class SfiPpFormResearchType
-{
+public class SfiPpFormResearchType extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;

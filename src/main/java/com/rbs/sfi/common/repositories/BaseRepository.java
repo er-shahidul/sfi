@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-public  abstract class BaseRepository<T extends Object>{
+public  abstract class BaseRepository<T extends Object> {
     @Autowired
     @Qualifier(value = "sessionFactory")
     private SessionFactory sessionFactory;
@@ -85,7 +85,4 @@ public  abstract class BaseRepository<T extends Object>{
     public boolean exists(Serializable id) {
         return (get(id) != null);
     }
-
-
-
 }

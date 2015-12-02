@@ -1,13 +1,13 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
+
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name="sfi_pp_forms")
-public class Cs7
-{
+public class Cs7 extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -197,7 +197,7 @@ public class Cs7
 	}
 
 	public void setCs7InvestResCountries(Set<SfiPpFormAllCountry> investResCountries) {
-		this.investResCountries = investResCountries;
+		addAll(this.investResCountries, investResCountries);
 	}
 
 	public Boolean isEmerIssuBioe() {
@@ -317,7 +317,7 @@ public class Cs7
 	}
 
 	public void setInvestResCountries(Set<SfiPpFormAllCountry> investResCountries) {
-		this.investResCountries = investResCountries;
+		addAll(this.investResCountries, investResCountries);
 	}
 
 	public Set<SfiPpFormAllCountry> getPlanInvestResCountries() {
@@ -325,7 +325,7 @@ public class Cs7
 	}
 
 	public void setPlanInvestResCountries(Set<SfiPpFormAllCountry> planInvestResCountries) {
-		this.planInvestResCountries = planInvestResCountries;
+		addAll(this.planInvestResCountries, planInvestResCountries);
 	}
 
 	public Set<SfiPpFormAllCountry> getPlanCommPlantCountries() {
@@ -333,7 +333,7 @@ public class Cs7
 	}
 
 	public void setPlanCommPlantCountries(Set<SfiPpFormAllCountry> planCommPlantCountries) {
-		this.planCommPlantCountries = planCommPlantCountries;
+		addAll(this.planCommPlantCountries, planCommPlantCountries);
 	}
 
 	public Set<SfiPpFormAllCountry> getCs7PlanCommPlantCountries() {
@@ -341,6 +341,6 @@ public class Cs7
 	}
 
 	public void setCs7PlanCommPlantCountries(Set<SfiPpFormAllCountry> planCommPlantCountries) {
-		this.planCommPlantCountries = planCommPlantCountries;
+		addAll(this.planCommPlantCountries, planCommPlantCountries);
 	}
 }

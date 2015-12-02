@@ -1,10 +1,11 @@
 package com.rbs.sfi.core.models.viewmodels;
 
+import com.rbs.sfi.core.mapper.IViewModel;
 import com.rbs.sfi.core.models.entities.SfiPpFormAllCountry;
 
 import java.util.Set;
 
-public class Cs7ViewModel {
+public class Cs7ViewModel implements IViewModel {
 	private Integer id;
 	private Boolean emerIssuBioe;
 	private Boolean emerIssuCarb;

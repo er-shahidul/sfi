@@ -1,6 +1,7 @@
 package com.rbs.sfi.core.services;
 
-import com.rbs.sfi.common.services.AutoPopulateService;
+import com.rbs.sfi.core.mapper.services.EntityModelConversionService;
+import com.rbs.sfi.core.mapper.services.ViewModelConversionService;
 import com.rbs.sfi.core.models.entities.Cs1;
 import com.rbs.sfi.core.models.entities.SfiPpFormAllCountry;
 import com.rbs.sfi.core.models.entities.SfiPpFormOtherCountry;
@@ -18,10 +19,13 @@ import java.util.Set;
 @Transactional
 public class Cs1Service {
     @Autowired
-    private Cs1Repository repository;
+    private Cs1Repository cs1Repository;
 
     @Autowired
-    private AutoPopulateService populateService;
+    private ViewModelConversionService viewModelConversionService;
+
+    @Autowired
+    private EntityModelConversionService entityModelConversionService;
 
     @Autowired
 	private SfiPpFormAllCountryRepository sfiPpFormAllCountryRepository;
@@ -30,20 +34,15 @@ public class Cs1Service {
     private SfiPpFormOtherCountryRepository sfiPpFormOtherCountryRepository;
 
     public Cs1ViewModel getViewModel(Integer id) {
-        Cs1 entity = repository.findById(id);
-        Cs1ViewModel model = new Cs1ViewModel();
-
-        populateService.populate(entity, model);
-        return model;
+        Cs1 entity = cs1Repository.get(id);
+        return viewModelConversionService.convertFromEntityModel(entity, Cs1ViewModel.class);
     }
 
-/*
     public void setEntity(Cs1ViewModel model) {
-        Cs1 entity = repository.get(model.getId());
-        populateService.populate(model, entity);
+        Cs1 entity = entityModelConversionService.convertFromViewModel(model, Cs1.class);
     }
-*/
 
+    /*
     public void setEntity(Cs1ViewModel model) {
         Cs1 entity = repository.findById(model.getId());
 
@@ -75,6 +74,7 @@ public class Cs1Service {
 
         repository.save(entity);
     }
+    */
 
     private void addSecondaryOperMillsYardsOtherCountries(Cs1 entity, Set<SfiPpFormOtherCountry> secondaryOperMillsYardsOtherCountries) {
         Set<SfiPpFormOtherCountry> cs1secondaryOperMillsYardsOtherCountries = entity.getSecondaryOperMillsYardsOtherCountries();

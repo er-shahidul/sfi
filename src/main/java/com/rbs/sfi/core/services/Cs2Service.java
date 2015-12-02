@@ -1,8 +1,11 @@
 package com.rbs.sfi.core.services;
-import com.rbs.sfi.common.services.AutoPopulateService;
+import com.rbs.sfi.core.mapper.services.EntityModelConversionService;
+import com.rbs.sfi.core.mapper.services.ViewModelConversionService;
 import com.rbs.sfi.core.models.entities.Cs2;
+import com.rbs.sfi.core.models.entities.SfiPpForm;
 import com.rbs.sfi.core.models.entities.SfiPpFormCs2OutsideUsaCa;
 import com.rbs.sfi.core.models.viewmodels.Cs2ViewModel;
+import com.rbs.sfi.core.models.viewmodels.SfiPpFormCs2OutsideUsaCaViewModel;
 import com.rbs.sfi.core.repositories.Cs2Repository;
 import com.rbs.sfi.core.repositories.SfiPpFormCs2OutsideUsaCaRepository;
 import com.rbs.sfi.core.repositories.SfiPpFormOtherCountryRepository;
@@ -19,7 +22,10 @@ public class Cs2Service {
     private Cs2Repository cs2Repository;
 
     @Autowired
-    private AutoPopulateService populateService;
+    private ViewModelConversionService conversionService;
+
+    @Autowired
+    private EntityModelConversionService entityModelConversionService;
 
     @Autowired
     private SfiPpFormCs2OutsideUsaCaRepository sfiPpFormCs2OutsideUsaCaRepository;
@@ -28,12 +34,20 @@ public class Cs2Service {
     private SfiPpFormOtherCountryRepository sfiPpFormOtherCountryRepository;
 
     public Cs2ViewModel getViewModel(Integer id) {
-        Cs2 entity = cs2Repository.findById(id);
-        Cs2ViewModel model = new Cs2ViewModel();
-
-        populateService.populate(entity, model);
-        return model;
+        Cs2 entity = cs2Repository.get(id);
+        return conversionService.convertFromEntityModel(entity, Cs2ViewModel.class);
     }
+
+    public void setEntity(Cs2ViewModel model) {
+        Set<SfiPpFormCs2OutsideUsaCaViewModel> set = model.getOutsideCountries();
+        for (SfiPpFormCs2OutsideUsaCaViewModel m : set) {
+            if (m.getSfiPpForm() != null) continue;
+            m.setSfiPpForm(model.getId().hashCode());
+        }
+        Cs2 entity = entityModelConversionService.convertFromViewModel(model, Cs2.class);
+    }
+
+    /*
 
     public void setEntity(Cs2ViewModel model) {
         Cs2 entity = cs2Repository.findById(model.getId());
@@ -100,4 +114,5 @@ public class Cs2Service {
         }
         entity.setOutsideCountries(cs2OutsideCountries);
     }
+    */
 }

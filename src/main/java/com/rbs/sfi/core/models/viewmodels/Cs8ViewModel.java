@@ -1,8 +1,10 @@
 package com.rbs.sfi.core.models.viewmodels;
 
+import com.rbs.sfi.core.mapper.IViewModel;
+
 import java.util.List;
 
-public class Cs8ViewModel {
+public class Cs8ViewModel implements IViewModel {
 	private Integer id;
 	private Boolean cs8ProductSegmentWoodProducts;
 	private Boolean cs8ProductSegmentPrintingWritingPaper;

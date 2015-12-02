@@ -1,16 +1,15 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="sfi_pp_form_cs6_us_canada")
-public class SfiPpFormCs6UsCanada
-{
+public class SfiPpFormCs6UsCanada extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -47,7 +46,7 @@ public class SfiPpFormCs6UsCanada
 	@Column(name="cs6_usCanada_moreThanOneStandard_1", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs6UsCanadaMoreThanOneStandard1;
+	private Set<String> cs6UsCanadaMoreThanOneStandard1;
 
 	@Column(name="cs6_usCanada_other", nullable=true)
 	private Boolean cs6UsCanadaOther;
@@ -366,12 +365,12 @@ public class SfiPpFormCs6UsCanada
 		this.cs6UsCanadaPercFSCOnlyCertified1 = cs6UsCanadaPercFSCOnlyCertified1;
 	}
 
-	public List<String> getCs6UsCanadaMoreThanOneStandard1() {
+	public Set<String> getCs6UsCanadaMoreThanOneStandard1() {
 		return cs6UsCanadaMoreThanOneStandard1;
 	}
 
-	public void setCs6UsCanadaMoreThanOneStandard1(List<String> cs6UsCanadaMoreThanOneStandard1) {
-		this.cs6UsCanadaMoreThanOneStandard1 = cs6UsCanadaMoreThanOneStandard1;
+	public void setCs6UsCanadaMoreThanOneStandard1(Set<String> cs6UsCanadaMoreThanOneStandard1) {
+		addAll(this.cs6UsCanadaMoreThanOneStandard1, cs6UsCanadaMoreThanOneStandard1);
 	}
 
 	public Boolean isCs6UsCanadaOther() {

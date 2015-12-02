@@ -1,11 +1,12 @@
 package com.rbs.sfi.core.models.viewmodels;
 
+import com.rbs.sfi.core.mapper.IViewModel;
 import com.rbs.sfi.core.models.entities.SfiPpFormCs6Other;
 import com.rbs.sfi.core.models.entities.SfiPpFormCs6UsCanada;
 
 import java.util.List;
 
-public class Cs6ViewModel {
+public class Cs6ViewModel implements IViewModel {
 	private Integer id;
 	private Integer numPrivateForeOwersUs;
 	private Integer numPrivateForeOwersCa;

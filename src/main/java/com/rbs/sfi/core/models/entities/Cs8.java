@@ -1,15 +1,15 @@
 package com.rbs.sfi.core.models.entities;
 
+import com.rbs.sfi.core.mapper.BaseEntity;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="sfi_pp_forms")
-public class Cs8
-{
+public class Cs8 extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -128,62 +128,62 @@ public class Cs8
 	@Column(name="cs8_sfiLabelProductGroupContain_1", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain1;
+	private Set<String> cs8SfiLabelProductGroupContain1;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_2", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain2;
+	private Set<String> cs8SfiLabelProductGroupContain2;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_3", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain3;
+	private Set<String> cs8SfiLabelProductGroupContain3;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_4", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain4;
+	private Set<String> cs8SfiLabelProductGroupContain4;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_5", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain5;
+	private Set<String> cs8SfiLabelProductGroupContain5;
 
 	@Column(name="cs8_sfiLabelProductGroupContain_6", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8SfiLabelProductGroupContain6;
+	private Set<String> cs8SfiLabelProductGroupContain6;
 
 	@Column(name="cs8_alsoFSCLabel_1", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_1;
+	private Set<String> cs8_alsoFSCLabel_1;
 
 	@Column(name="cs8_alsoFSCLabel_2", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_2;
+	private Set<String> cs8_alsoFSCLabel_2;
 
 	@Column(name="cs8_alsoFSCLabel_3", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_3;
+	private Set<String> cs8_alsoFSCLabel_3;
 
 	@Column(name="cs8_alsoFSCLabel_4", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_4;
+	private Set<String> cs8_alsoFSCLabel_4;
 
 	@Column(name="cs8_alsoFSCLabel_5", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_5;
+	private Set<String> cs8_alsoFSCLabel_5;
 
 	@Column(name="cs8_alsoFSCLabel_6", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<String> cs8_alsoFSCLabel_6;
+	private Set<String> cs8_alsoFSCLabel_6;
 
 	@Column(name="cs8_sfiCertifiedForestContent_1", nullable=true)
 	private String cs8SfiCertifiedForestContent1;
@@ -921,100 +921,100 @@ public class Cs8
 		this.cs8DemandDevelopingWhy6 = cs8DemandDevelopingWhy6;
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain1() {
+	public Set<String> getCs8SfiLabelProductGroupContain1() {
 		return cs8SfiLabelProductGroupContain1;
 	}
 
-	public void setCs8SfiLabelProductGroupContain1(List<String> cs8SfiLabelProductGroupContain1) {
-		this.cs8SfiLabelProductGroupContain1 = cs8SfiLabelProductGroupContain1;
+	public void setCs8SfiLabelProductGroupContain1(Set<String> cs8SfiLabelProductGroupContain1) {
+		addAll(this.cs8SfiLabelProductGroupContain1, cs8SfiLabelProductGroupContain1);
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain2() {
+	public Set<String> getCs8SfiLabelProductGroupContain2() {
 		return cs8SfiLabelProductGroupContain2;
 	}
 
-	public void setCs8SfiLabelProductGroupContain2(List<String> cs8SfiLabelProductGroupContain2) {
-		this.cs8SfiLabelProductGroupContain2 = cs8SfiLabelProductGroupContain2;
+	public void setCs8SfiLabelProductGroupContain2(Set<String> cs8SfiLabelProductGroupContain2) {
+		addAll(this.cs8SfiLabelProductGroupContain2,cs8SfiLabelProductGroupContain2);
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain3() {
+	public Set<String> getCs8SfiLabelProductGroupContain3() {
 		return cs8SfiLabelProductGroupContain3;
 	}
 
-	public void setCs8SfiLabelProductGroupContain3(List<String> cs8SfiLabelProductGroupContain3) {
-		this.cs8SfiLabelProductGroupContain3 = cs8SfiLabelProductGroupContain3;
+	public void setCs8SfiLabelProductGroupContain3(Set<String> cs8SfiLabelProductGroupContain3) {
+		addAll(this.cs8SfiLabelProductGroupContain3, cs8SfiLabelProductGroupContain3);
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain4() {
+	public Set<String> getCs8SfiLabelProductGroupContain4() {
 		return cs8SfiLabelProductGroupContain4;
 	}
 
-	public void setCs8SfiLabelProductGroupContain4(List<String> cs8SfiLabelProductGroupContain4) {
-		this.cs8SfiLabelProductGroupContain4 = cs8SfiLabelProductGroupContain4;
+	public void setCs8SfiLabelProductGroupContain4(Set<String> cs8SfiLabelProductGroupContain4) {
+		addAll(this.cs8SfiLabelProductGroupContain4, cs8SfiLabelProductGroupContain4);
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain5() {
+	public Set<String> getCs8SfiLabelProductGroupContain5() {
 		return cs8SfiLabelProductGroupContain5;
 	}
 
-	public void setCs8SfiLabelProductGroupContain5(List<String> cs8SfiLabelProductGroupContain5) {
-		this.cs8SfiLabelProductGroupContain5 = cs8SfiLabelProductGroupContain5;
+	public void setCs8SfiLabelProductGroupContain5(Set<String> cs8SfiLabelProductGroupContain5) {
+		addAll(this.cs8SfiLabelProductGroupContain5, cs8SfiLabelProductGroupContain5);
 	}
 
-	public List<String> getCs8SfiLabelProductGroupContain6() {
+	public Set<String> getCs8SfiLabelProductGroupContain6() {
 		return cs8SfiLabelProductGroupContain6;
 	}
 
-	public void setCs8SfiLabelProductGroupContain6(List<String> cs8SfiLabelProductGroupContain6) {
-		this.cs8SfiLabelProductGroupContain6 = cs8SfiLabelProductGroupContain6;
+	public void setCs8SfiLabelProductGroupContain6(Set<String> cs8SfiLabelProductGroupContain6) {
+		addAll(this.cs8SfiLabelProductGroupContain6, cs8SfiLabelProductGroupContain6);
 	}
 
-	public List<String> getCs8_alsoFSCLabel_1() {
+	public Set<String> getCs8_alsoFSCLabel_1() {
 		return cs8_alsoFSCLabel_1;
 	}
 
-	public void setCs8_alsoFSCLabel_1(List<String> cs8_alsoFSCLabel_1) {
-		this.cs8_alsoFSCLabel_1 = cs8_alsoFSCLabel_1;
+	public void setCs8_alsoFSCLabel_1(Set<String> cs8_alsoFSCLabel_1) {
+		addAll(this.cs8_alsoFSCLabel_1, cs8_alsoFSCLabel_1);
 	}
 
-	public List<String> getCs8_alsoFSCLabel_2() {
+	public Set<String> getCs8_alsoFSCLabel_2() {
 		return cs8_alsoFSCLabel_2;
 	}
 
-	public void setCs8_alsoFSCLabel_2(List<String> cs8_alsoFSCLabel_2) {
-		this.cs8_alsoFSCLabel_2 = cs8_alsoFSCLabel_2;
+	public void setCs8_alsoFSCLabel_2(Set<String> cs8_alsoFSCLabel_2) {
+		addAll(this.cs8_alsoFSCLabel_2, cs8_alsoFSCLabel_2);
 	}
 
-	public List<String> getCs8_alsoFSCLabel_3() {
+	public Set<String> getCs8_alsoFSCLabel_3() {
 		return cs8_alsoFSCLabel_3;
 	}
 
-	public void setCs8_alsoFSCLabel_3(List<String> cs8_alsoFSCLabel_3) {
-		this.cs8_alsoFSCLabel_3 = cs8_alsoFSCLabel_3;
+	public void setCs8_alsoFSCLabel_3(Set<String> cs8_alsoFSCLabel_3) {
+		addAll(this.cs8_alsoFSCLabel_3, cs8_alsoFSCLabel_3);
 	}
 
-	public List<String> getCs8_alsoFSCLabel_4() {
+	public Set<String> getCs8_alsoFSCLabel_4() {
 		return cs8_alsoFSCLabel_4;
 	}
 
-	public void setCs8_alsoFSCLabel_4(List<String> cs8_alsoFSCLabel_4) {
-		this.cs8_alsoFSCLabel_4 = cs8_alsoFSCLabel_4;
+	public void setCs8_alsoFSCLabel_4(Set<String> cs8_alsoFSCLabel_4) {
+		addAll(this.cs8_alsoFSCLabel_4, cs8_alsoFSCLabel_4);
 	}
 
-	public List<String> getCs8_alsoFSCLabel_5() {
+	public Set<String> getCs8_alsoFSCLabel_5() {
 		return cs8_alsoFSCLabel_5;
 	}
 
-	public void setCs8_alsoFSCLabel_5(List<String> cs8_alsoFSCLabel_5) {
-		this.cs8_alsoFSCLabel_5 = cs8_alsoFSCLabel_5;
+	public void setCs8_alsoFSCLabel_5(Set<String> cs8_alsoFSCLabel_5) {
+		addAll(this.cs8_alsoFSCLabel_5, cs8_alsoFSCLabel_5);
 	}
 
-	public List<String> getCs8_alsoFSCLabel_6() {
+	public Set<String> getCs8_alsoFSCLabel_6() {
 		return cs8_alsoFSCLabel_6;
 	}
 
-	public void setCs8_alsoFSCLabel_6(List<String> cs8_alsoFSCLabel_6) {
-		this.cs8_alsoFSCLabel_6 = cs8_alsoFSCLabel_6;
+	public void setCs8_alsoFSCLabel_6(Set<String> cs8_alsoFSCLabel_6) {
+		addAll(this.cs8_alsoFSCLabel_6, cs8_alsoFSCLabel_6);
 	}
 
 	public String getCs8SfiCertifiedForestContent1() {
