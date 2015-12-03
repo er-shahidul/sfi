@@ -60,11 +60,11 @@ public class UserController {
         return "accessDenied";
     }
 
-    public void sendEmail(String recipient, String subject, String message) {
+    public void sendEmail(String recipient, String subject, String message, User user) {
 //        String sender = "shanto.646596@gmail.com";
         ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
         MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
-        mailHelper.sendMail(recipient, subject, message);
+        mailHelper.sendMail(recipient, subject, message, user);
     }
 
     @RequestMapping("/admin/user/list")
@@ -275,7 +275,7 @@ public class UserController {
 
             String subject = "Password Reset";
             String message = request.getLocalName() + "/user/password/" + randomUUIDString;
-            sendEmail(email, subject, message);
+            sendEmail(email, subject, message, user);
         }
 
         return "login";
@@ -368,7 +368,7 @@ public class UserController {
         String recipient = user.getEmail();
         String subject = "Email Verification";
         String message = request.getLocalName() + "/user/verification/" + randomUUIDString;
-        sendEmail(recipient, subject, message);
+        sendEmail(recipient, subject, message, user);
 
         model.addAttribute("success", "User " + "" + " has been registered successfully");
         return ("redirect:/admin/user/list");
