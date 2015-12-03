@@ -682,21 +682,25 @@ sfiFormApp.run(['$rootScope', function($rootScope) {
 
 
     $rootScope.isFieldsEnabled = function(){
-        return true; //$rootScope.form.cs1.ownsOrManagesLands;
+        //return true;
+        return $rootScope.form.cs1.ownsMngLands;
     }
 
     $rootScope.operateInUsa = function(){
 
-        return true; //$rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInUSA;
+        //return true;
+        return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInUSA;
     }
 
     $rootScope.operateInCa = function(){
 
-        return true; //$rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInOther;
+        //return true;
+        return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInCA;
     }
 
     $rootScope.operateInOthers = function(){
-        return true; //$rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.operatesInOthers;
+        //return true;
+        return $rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.operatesInOthers;
     }
 
 }]);
