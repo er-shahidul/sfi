@@ -12,7 +12,7 @@
                             http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd ">
   
     <context:component-scan base-package="com.rbs.sfi.admin.repositories" />
-    <context:component-scan base-package="com.rbs.sfi.core.repositories" />
+    <context:component-scan base-package="com.rbs.sfi.web.repositories" />
 
 	<context:property-placeholder location="classpath:application.properties" />
 	
@@ -29,7 +29,7 @@
 		<property name="packagesToScan">
 			<list>
 				<value>com.rbs.sfi.admin.entities</value>
-				<value>com.rbs.sfi.core.models.entities</value>
+				<value>com.rbs.sfi.web.models.entities</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
