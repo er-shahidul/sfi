@@ -1,4 +1,4 @@
-package com.rbs.sfi.core.mapper;
+package com.rbs.sfi.common.models;
 
 public interface IModel {
     public Integer getId();

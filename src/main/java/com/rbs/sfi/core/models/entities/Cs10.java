@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -24,6 +24,7 @@ public class Cs10 extends BaseEntityModel {
 	@Column(name="submitted_at", nullable=true)
 	private Date submittedAt;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

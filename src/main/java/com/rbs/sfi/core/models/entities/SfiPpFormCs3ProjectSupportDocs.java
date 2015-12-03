@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
@@ -21,6 +21,7 @@ public class SfiPpFormCs3ProjectSupportDocs extends BaseEntityModel {
 	@Column(name="cs3_project_uniqueDocumentName", nullable=true)
 	private String cs3ProjectUniqueDocumentName;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

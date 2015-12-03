@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -92,6 +92,7 @@ public class Cs2 extends BaseEntityModel {
 	@OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	private Set<SfiPpFormCs2OutsideUsaCa> outsideCountries;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

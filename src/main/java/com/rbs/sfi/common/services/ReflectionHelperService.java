@@ -1,4 +1,4 @@
-package com.rbs.sfi.core.mapper.services;
+package com.rbs.sfi.common.services;
 
 import org.springframework.stereotype.Service;
 

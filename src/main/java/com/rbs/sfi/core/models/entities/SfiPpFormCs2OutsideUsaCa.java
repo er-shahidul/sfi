@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
@@ -30,6 +30,7 @@ public class SfiPpFormCs2OutsideUsaCa extends BaseEntityModel {
 	@Column(name="cs2_standardType_other", nullable=true)
 	private String standardTypeOther;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

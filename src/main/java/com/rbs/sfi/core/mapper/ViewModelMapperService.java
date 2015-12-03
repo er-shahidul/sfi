@@ -1,6 +1,6 @@
-package com.rbs.sfi.core.mapper.services;
+package com.rbs.sfi.core.mapper;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

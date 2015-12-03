@@ -35,39 +35,27 @@ public class DefaultController {
         model.addAttribute("title", "home");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (!(auth instanceof AnonymousAuthenticationToken)) {
+        if (auth instanceof AnonymousAuthenticationToken) return ("/dashboard");
 
-            if (request.isUserInRole("ADMIN") == true) {
-                return ("redirect:/admin/dashboard");
-            } else if (request.isUserInRole("USER") == true) {
-                return ("redirect:/sfiPpForm");
-            }
-        }
-
-        return ("/dashboard");
+        if (request.isUserInRole("ADMIN")) return ("redirect:/admin/dashboard");
+        return ("redirect:/sfiPpForm");
     }
 
     @RequestMapping(value = {"/privacy" }, method = RequestMethod.GET)
     public String privacy(ModelMap model) {
         model.addAttribute("title", "privacy");
-
         return "privacy";
     }
 
     @RequestMapping(value = {"/country/list" }, method = RequestMethod.GET)
-    public ResponseEntity countryList() {
-
+    public ResponseEntity<String> countryList() {
         List country = sfiPpFormAllCountryService.list();
-
-        return new ResponseEntity(Util.getAsString(country), HttpStatus.OK);
+        return new ResponseEntity<String>(Util.getAsString(country), HttpStatus.OK);
     }
 
     @RequestMapping(value = {"/region/list" }, method = RequestMethod.GET)
-    public ResponseEntity regionList() {
-
+    public ResponseEntity<String> regionList() {
         List region = sfiPpFormRegionService.list();
-
-    return new ResponseEntity(Util.getAsString(region), HttpStatus.OK);
+        return new ResponseEntity<String>(Util.getAsString(region), HttpStatus.OK);
     }
-
 }

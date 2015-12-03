@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -18,6 +18,7 @@ public class Cs3 extends BaseEntityModel {
 	@OneToMany(targetEntity = SfiPpFormCs3.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	private Set<SfiPpFormCs3> projects;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

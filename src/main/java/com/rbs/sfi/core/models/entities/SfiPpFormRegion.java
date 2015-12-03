@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
@@ -18,6 +18,7 @@ public class SfiPpFormRegion extends BaseEntityModel {
 	@JoinColumn(name="countryID", referencedColumnName="id", nullable=true)
 	private SfiPpFormAllCountry country;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

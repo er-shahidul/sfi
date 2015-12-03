@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
@@ -14,6 +14,7 @@ public class SfiPpFormResearchType extends BaseEntityModel {
 	@Column(name="cs5_researchFundingDesc", nullable=true)
 	private String description;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

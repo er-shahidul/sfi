@@ -1,8 +1,8 @@
 package com.rbs.sfi.core.services;
 
-import com.rbs.sfi.core.mapper.services.EntityModelMapperService;
-import com.rbs.sfi.core.mapper.services.ReflectionHelperService;
-import com.rbs.sfi.core.mapper.services.ViewModelMapperService;
+import com.rbs.sfi.core.mapper.EntityModelMapperService;
+import com.rbs.sfi.common.services.ReflectionHelperService;
+import com.rbs.sfi.core.mapper.ViewModelMapperService;
 import com.rbs.sfi.core.models.entities.*;
 import com.rbs.sfi.core.models.viewmodels.*;
 import com.rbs.sfi.core.repositories.*;
@@ -99,5 +99,16 @@ public class FormService {
     public void setCs4Entity(Cs4ViewModel model) {
         Cs4 entity = entityModelMapperService.convert(model, Cs4.class);
     }
-    /*********************** Cs3 : End   ***********************/
+    /*********************** Cs4 : End   ***********************/
+
+    /*********************** Cs5 : Begin ***********************/
+    public Cs5ViewModel getCs5ViewModel(Integer id) {
+        Cs5 entity = cs5Repository.get(id);
+        return viewModelMapperService.convert(entity, Cs5ViewModel.class);
+    }
+
+    public void setCs5Entity(Cs5ViewModel model) {
+        Cs5 entity = entityModelMapperService.convert(model, Cs5.class);
+    }
+    /*********************** Cs4 : End   ***********************/
 }

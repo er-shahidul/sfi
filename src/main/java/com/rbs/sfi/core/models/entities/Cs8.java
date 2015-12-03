@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -617,6 +617,7 @@ public class Cs8 extends BaseEntityModel {
 	@Column(name="cs8_ChainOfCustody_other_6", nullable=true)
 	private Boolean cs8ChainOfCustodyOther6;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

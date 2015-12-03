@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
@@ -17,6 +17,7 @@ public class SfiPpFormAllCountry extends BaseEntityModel {
 	@Column(name = "isUnknown", nullable=true)
 	private Boolean isUnknown;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

@@ -1,7 +1,7 @@
 package com.rbs.sfi.core.models.entities;
 
 import com.rbs.sfi.admin.entities.Company;
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
@@ -172,6 +172,7 @@ public class SfiPpFormCs4 extends BaseEntityModel {
 	@Column(name="cs4RegenPerc5Yr", nullable=true)
 	private Float cs4RegenPerc5Yr;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

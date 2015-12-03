@@ -1,6 +1,7 @@
-package com.rbs.sfi.core.mapper.services;
+package com.rbs.sfi.core.mapper;
 
-import com.rbs.sfi.core.mapper.IModel;
+import com.rbs.sfi.common.models.IModel;
+import com.rbs.sfi.common.services.ReflectionHelperService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.reflect.Method;
@@ -36,7 +37,7 @@ public abstract class BaseMapperService<E extends IModel> {
     }
 
     @SuppressWarnings("unchecked")
-    private <T> T singleTypeResolver(Object o, Class<T> tClass) {
+    private <T> T singleTypeHandler(Object o, Class<T> tClass) {
         T t = null;
         try {
             if (getTypeClass().isInstance(o)) {
@@ -52,17 +53,17 @@ public abstract class BaseMapperService<E extends IModel> {
         return t;
     }
 
-    private <T, F> Set<T> setTypeResolver(Set<F> from, Class<T> tClass) {
+    private <T, F> Set<T> setTypeHandler(Set<F> from, Class<T> tClass) {
         Set<T> to = new HashSet<T>();
         for (F f : from) {
             if (f == null) continue;
-            to.add(singleTypeResolver(f, tClass));
+            to.add(singleTypeHandler(f, tClass));
         }
         return to;
     }
 
     @SuppressWarnings("unchecked")
-    private <T> T typeResolver(Object source, Method method) {
+    private <T> T typeHandler(Object source, Method method) {
         if (source == null) return null;
 
         String paramType = method.getParameterTypes()[0].toString();
@@ -70,11 +71,11 @@ public abstract class BaseMapperService<E extends IModel> {
 
         T t = null;
         if (paramType.equals(genericParamType)) {
-            t = (T) singleTypeResolver(source, method.getParameterTypes()[0]);
+            t = (T) singleTypeHandler(source, method.getParameterTypes()[0]);
         } else {
             try {
                 Class<?> clazz = Class.forName(genericParamType.split("[<>]")[1]);
-                t = (T) setTypeResolver((Set) source, clazz);
+                t = (T) setTypeHandler((Set) source, clazz);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -98,7 +99,7 @@ public abstract class BaseMapperService<E extends IModel> {
             Method setterMethod = destMethodMap.get(setterMethodName);
 
             try {
-                setterMethod.invoke(dest, typeResolver(getterMethod.invoke(source), setterMethod));
+                setterMethod.invoke(dest, typeHandler(getterMethod.invoke(source), setterMethod));
             } catch (Exception e) {
                 e.printStackTrace();
             }

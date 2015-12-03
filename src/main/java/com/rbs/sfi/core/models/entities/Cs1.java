@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -82,8 +82,7 @@ public class Cs1 extends BaseEntityModel {
             inverseJoinColumns={@JoinColumn(name="country_id", referencedColumnName = "id")})
     private Set<SfiPpFormAllCountry> sellsCountries;
 
-
-
+    @Override
     public Integer getId() {
         return id;
     }

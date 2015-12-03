@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.viewmodels;
 
-import com.rbs.sfi.core.mapper.BaseViewModel;
+import com.rbs.sfi.common.models.BaseViewModel;
 
 public class SfiPpFormCs2OutsideUsaCaViewModel extends BaseViewModel {
     private Integer id;

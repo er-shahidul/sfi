@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
@@ -31,6 +31,7 @@ public class SfiPpFormCs5 extends BaseEntityModel {
 	@Column(name="cs5_exterCA", nullable=true)
 	private Float externalCad;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

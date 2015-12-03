@@ -2,7 +2,7 @@ package com.rbs.sfi.core.models.entities;
 
 import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
@@ -31,6 +31,7 @@ public class SfiPpForm extends BaseEntityModel {
 	@Column(name="isComplete", nullable=true)
 	private Boolean isComplete;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}

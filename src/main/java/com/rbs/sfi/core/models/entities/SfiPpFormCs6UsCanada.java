@@ -1,6 +1,6 @@
 package com.rbs.sfi.core.models.entities;
 
-import com.rbs.sfi.core.mapper.BaseEntityModel;
+import com.rbs.sfi.common.models.BaseEntityModel;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -285,6 +285,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_11", nullable=true)
 	private Float cs6UsCanadaPercCertifedMoreThanOneStandard711;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}
