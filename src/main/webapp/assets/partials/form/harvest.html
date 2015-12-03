@@ -17,14 +17,14 @@
                            data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2014. This includes harvesting activities that were started in 2013 and completed in 2014, but not those that were still underway by the end of the 2014 calendar/fiscal year.">What is the total area of harvest units completed last year by clearcutting?</label>
                     <input type="number" class="form-control required shortest" name="usaTotalHervArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.usa.totalHervArea"> {{ unit }}
+                           ng-model="cs4.usaTotalHervArea"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaAvgHervArea')}">
                     <label>What was the average area of clear-cut (even-aged) harvest units?</label>
                     <input type="number" class="form-control required shortest" name="usaAvgHervArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.usa.avgHervArea" > {{ unit }}
+                           ng-model="cs4.usaAvgHervArea" > {{ unit }}
                 </div>
 
                 <div class="form-group" ng-show="showExplCheckboxs('usa')">
@@ -33,83 +33,83 @@
 
                     <div class="form-group">
 
-                        <input type="checkbox" class="form-group icheck" icheck ng-model="cs4.usa.govRegulation">
+                        <input type="checkbox" class="form-group icheck" icheck ng-model="cs4.usaGovRegulation">
                         <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
                         <br>
 
-                        <div class="form-group" ng-show="cs4.usa.govRegulation">
+                        <div class="form-group" ng-show="cs4.usaGovRegulation">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.usa.govRegulation" customerror
-                                   ng-model="cs4.usa.govRegulationExp">
+                                   ng-required="cs4.usaGovRegulation" customerror
+                                   ng-model="cs4.usaGovRegulationExp">
                         </div>
 
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usa.disResDiseaseInsects">
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResDiseaseInsects">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
                         <br>
 
-                        <div class="form-group" ng-show="cs4.usa.disResDiseaseInsects">
+                        <div class="form-group" ng-show="cs4.usaDisResDiseaseInsects">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.usa.disResDiseaseInsects" customerror
-                                   ng-model="cs4.usa.diseaseInsectsExp">
+                                   ng-required="cs4.usaDisResDiseaseInsects" customerror
+                                   ng-model="cs4.usaDiseaseInsectsExp">
                         </div>
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usa.disResFireSalvage">
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResFireSalvage">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
                         <br>
 
-                        <div class="form-group" ng-show="cs4.usa.disResFireSalvage">
+                        <div class="form-group" ng-show="cs4.usaDisResFireSalvage">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.usa.disResFireSalvage" customerror
-                                   ng-model="cs4.usa.fireSalvageExp">
+                                   ng-required="cs4.usaDisResFireSalvage" customerror
+                                   ng-model="cs4.usaFireSalvageExp">
                         </div>
 
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usa.disResWindthrow">
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResWindthrow">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
                         <br>
 
-                        <div class="form-group" ng-show="cs4.usa.disResWindthrow">
+                        <div class="form-group" ng-show="cs4.usaDisResWindthrow">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.usa.disResWindthrow" customerror
-                                   ng-model="cs4.usa.windthrowExp">
+                                   ng-required="cs4.usaDisResWindthrow" customerror
+                                   ng-model="cs4.usaWindthrowExp">
                         </div>
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usa.disResHurricane">
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResHurricane">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
                         <br>
 
-                        <div class="form-group" ng-show="cs4.usa.disResHurricane">
+                        <div class="form-group" ng-show="cs4.usaDisResHurricane">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.usa.disResHurricane" customerror
-                                   ng-model="cs4.usa.hurricaneExp">
+                                   ng-required="cs4.usaDisResHurricane" customerror
+                                   ng-model="cs4.usaHurricaneExp">
                         </div>
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usa.disResIceStorm">
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResIceStorm">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
                         <br>
 
-                        <div class="form-group" ng-show="cs4.usa.disResIceStorm">
+                        <div class="form-group" ng-show="cs4.usaDisResIceStorm">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.usa.disResIceStorm" customerror
-                                   ng-model="cs4.usa.iceStormExp">
+                                   ng-required="cs4.usaDisResIceStorm" customerror
+                                   ng-model="cs4.usaIceStormExp">
                         </div>
 
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usa.othersApply">
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaOthersApply">
                         <label class="checkboxLabel"> &nbsp;Other</label>
 
-                        <div class="form-group" ng-show="cs4.usa.othersApply">
+                        <div class="form-group" ng-show="cs4.usaOthersApply">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.usa.othersApply" customerror
-                                   ng-model="cs4.usa.othersExp">
+                                   ng-required="cs4.usaOthersApply" customerror
+                                   ng-model="cs4.usaOthersExp">
                         </div>
 
                     </div>
@@ -129,7 +129,7 @@
 
                     <input type="number" class="form-control required shortest" name="usaSeedShelterWoodArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.usa.seedTreeShelterWoodArea"> {{ unit }}
+                           ng-model="cs4.usaSeedTreeShelterWoodArea"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaSelectionMethodArea')}">
@@ -140,7 +140,7 @@
 
                     <input type="number" class="form-control required shortest" name="usaSelectionMethodArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.usa.selectionMethodArea"> {{ unit }}
+                           ng-model="cs4.usaSelectionMethodArea"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaThinningSanitationArea')}">
@@ -155,7 +155,7 @@
 
                     <input type="number" class="form-control required shortest" name="usasanitation salvageSanitationArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.usa.sanitationArea"> {{ unit }}
+                           ng-model="cs4.usaSanitationArea"> {{ unit }}
                 </div>
 
             </div>
@@ -181,7 +181,7 @@
                     <label>What was the average area of clear-cut (even-aged) harvest units?</label>
                     <input type="number" class="form-control required shortest" name="caAverageArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.ca.avgHervArea" > {{ unit }}
+                           ng-model="cs4.caAvgHervArea" > {{ unit }}
                 </div>
 
                 <div class="form-group" ng-show="showExplCheckboxs('ca')">
@@ -204,74 +204,74 @@
 
 
                         <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.ca.disResDiseaseInsects">
+                               ng-model="cs4.caDisResDiseaseInsects">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
                         <br>
-                        <div class="form-group" ng-show="cs4.ca.disResDiseaseInsects">
+                        <div class="form-group" ng-show="cs4.caDisResDiseaseInsects">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.ca.disResDiseaseInsects" customerror
-                                   ng-model="cs4.ca.diseaseInsectsExp">
+                                   ng-required="cs4.caDisResDiseaseInsects" customerror
+                                   ng-model="cs4.caDiseaseInsectsExp">
                         </div>
 
 
 
                         <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.ca.disResFireSalvage">
+                               ng-model="cs4.caDisResFireSalvage">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
                         <br>
 
-                        <div class="form-group" ng-show="cs4.ca.disResFireSalvage">
+                        <div class="form-group" ng-show="cs4.caDisResFireSalvage">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.ca.disResFireSalvage" customerror
-                                   ng-model="cs4.ca.fireSalvageExp">
+                                   ng-required="cs4.caDisResFireSalvage" customerror
+                                   ng-model="cs4.caFireSalvageExp">
                         </div>
 
 
                         <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.ca.disResWindthrow">
+                               ng-model="cs4.caDisResWindthrow">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
                         <br>
-                        <div class="form-group" ng-show="cs4.ca.disResWindthrow">
+                        <div class="form-group" ng-show="cs4.caDisResWindthrow">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.ca.disResWindthrow" customerror
-                                   ng-model="cs4.ca.windthrowExp">
+                                   ng-required="cs4.caDisResWindthrow" customerror
+                                   ng-model="cs4.caWindthrowExp">
                         </div>
 
                         <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.ca.disResHurricane">
+                               ng-model="cs4.caDisResHurricane">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
                         <br>
-                        <div class="form-group" ng-show="cs4.ca.disResHurricane">
+                        <div class="form-group" ng-show="cs4.caDisResHurricane">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.ca.disResHurricane" customerror
-                                   ng-model="cs4.ca.hurricaneExp">
+                                   ng-required="cs4.caDisResHurricane" customerror
+                                   ng-model="cs4.caHurricaneExp">
                         </div>
 
                         <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.ca.disResIceStorm">
+                               ng-model="cs4.caDisResIceStorm">
                         <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
                         <br>
-                        <div class="form-group" ng-show="cs4.ca.disResIceStorm">
+                        <div class="form-group" ng-show="cs4.caDisResIceStorm">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.ca.disResIceStorm" customerror
-                                   ng-model="cs4.ca.iceStormExp">
+                                   ng-required="cs4.caDisResIceStorm" customerror
+                                   ng-model="cs4.caIceStormExp">
                         </div>
 
 
                         <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.ca.othersApply">
+                               ng-model="cs4.caOthersApply">
                         <label class="checkboxLabel"> &nbsp;Other</label>
 
-                        <div class="form-group" ng-show="cs4.ca.othersApply">
+                        <div class="form-group" ng-show="cs4.caOthersApply">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.ca.othersApply" customerror
-                                   ng-model="cs4.ca.othersExp">
+                                   ng-required="cs4.caOthersApply" customerror
+                                   ng-model="cs4.caOthersExp">
                         </div>
 
                     </div>
@@ -290,7 +290,7 @@
 
                     <input type="number" class="form-control required shortest" name="caSeedShelterWoodArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.ca.seedTreeShelterWoodArea"> {{ unit }}
+                           ng-model="cs4.caSeedTreeShelterWoodArea"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('caSelectionMethodArea')}">
@@ -302,7 +302,7 @@
 
                     <input type="number" class="form-control required shortest" name="caSelectionMethodArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.ca.selectionMethodArea"> {{ unit }}
+                           ng-model="cs4.caSelectionMethodArea"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('caThinningSanitationArea')}">
@@ -316,7 +316,7 @@
 
                     <input type="number" class="form-control required shortest" name="caThinningSanitationArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.ca.sanitationArea"> {{ unit }}
+                           ng-model="cs4.caSanitationArea"> {{ unit }}
                 </div>
 
             </div>
@@ -355,17 +355,17 @@
                         <td ng-class="{'has-error' : hasError('usaPlantingOne')}">
                             <input type="number" class="form-control required shorter" name="usaPlantingOne"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usa.planting.oneYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaPlantingOneYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaPlantingTwo')}">
                             <input type="number" class="form-control required shorter" name="usaPlantingTwo"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usa.planting.twoYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaPlanting.twoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaPlantingTwoPlus')}">
                             <input type="number" class="form-control required shorter" name="usaPlantingTwoPlus"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usa.planting.twoPlusYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaPlanting.twoPlusYr"> {{ unit }}</td>
 
                         <td class="vert-align-middle"> {{ getPlantingTotal('usa', 'planting') }} {{ unit }} </td>
                     </tr>
@@ -376,17 +376,17 @@
                         <td ng-class="{'has-error' : hasError('usaSeedingOne')}">
                             <input type="number" class="form-control required shorter" name="usaSeedingOne"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usa.seeding.oneYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaSeedingOneYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaSeedingTwo')}">
                             <input type="number" class="form-control required shorter" name="usaSeedingTwo"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usa.seeding.twoYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaSeeding.twoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaSeedingTwoPlus')}">
                             <input type="number" class="form-control required shorter" name="usaSeedingTwoPlus"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usa.seeding.twoPlusYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaSeeding.twoPlusYr"> {{ unit }}</td>
 
                         <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('usa', 'seeding') }} {{ unit }} </td>
                     </tr>
@@ -397,7 +397,7 @@
                     <label>What was the Natural Regeneration - All types in 2014?</label>
                     <input type="number" class="form-control required shortest" name="usanaturalRegen2014"
                            ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                           ng-model="cs4.usa.natRegen2014"> {{ unit }}
+                           ng-model="cs4.usaNatRegen2014"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaharvestRegenPerc')}">
@@ -408,7 +408,7 @@
 
                     <input type="number" class="form-control required shortest" name="usaharvestRegenPerc" max="100" min="0"
                            ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                           ng-model="cs4.usa.regenPerc5Yr"> %
+                           ng-model="cs4.usaRegenPerc5Yr"> %
                 </div>
 
             </div >
@@ -435,17 +435,17 @@
                         <td ng-class="{'has-error' : hasError('caPlantingOne')}">
                             <input type="number" class="form-control required shorter" name="caPlantingOne" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.ca.planting.oneYr"> {{ unit }}</td>
+                                   ng-model="cs4.caPlantingOneYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caPlantingTwo')}">
                             <input type="number" class="form-control required shorter" name="caPlantingTwo" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.ca.planting.twoYr"> {{ unit }}</td>
+                                   ng-model="cs4.caPlanting.twoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caPlantingTwoPlus')}">
                             <input type="number" class="form-control required shorter" name="caPlantingTwoPlus" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.ca.planting.twoPlusYr"> {{ unit }}</td>
+                                   ng-model="cs4.caPlanting.twoPlusYr"> {{ unit }}</td>
 
                         <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('ca', 'planting') }} {{ unit }}</td>
                     </tr>
@@ -455,17 +455,17 @@
                         <td ng-class="{'has-error' : hasError('caSeedingOne')}">
                             <input type="number" class="form-control required shorter" name="caSeedingOne" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.ca.seeding.oneYr"> {{ unit }}</td>
+                                   ng-model="cs4.caSeedingOneYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caSeedingTwo')}">
                             <input type="number" class="form-control required shorter" name="caSeedingTwo" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.ca.seeding.twoYr"> {{ unit }}</td>
+                                   ng-model="cs4.caSeeding.twoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caSeedingTwo')}">
                             <input type="number" class="form-control required shorter" name="caSeedingTwo" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.ca.seeding.twoPlusYr"> {{ unit }}</td>
+                                   ng-model="cs4.caSeeding.twoPlusYr"> {{ unit }}</td>
 
                         <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('ca', 'seeding') }} {{ unit }}</td>
                     </tr>
@@ -479,7 +479,7 @@
                     <label>What was the Natural Regeneration - All types in 2014?</label>
                     <input type="number" class="form-control required shortest" name="naturalRegen2014" min="0"
                            ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                           ng-model="cs4.ca.natRegen2014"> {{ unit }}
+                           ng-model="cs4.caNatRegen2014"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('harvestRegenPerc')}">
@@ -489,7 +489,7 @@
 
                     <input type="number" class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"
                            ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                           ng-model="cs4.ca.regenPerc5Yr"> %
+                           ng-model="cs4.caRegenPerc5Yr"> %
                 </div>
             </div >
         </form>

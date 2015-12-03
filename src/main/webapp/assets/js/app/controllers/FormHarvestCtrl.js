@@ -6,22 +6,6 @@ sfiFormApp
 
     $scope.cs4 = angular.copy($rootScope.form.cs4);
 
-    $scope.operateInUsa = function(){
-
-        return $rootScope.form.cs1.operatesInUsa;
-    }
-
-    $scope.operateInCa = function(){
-
-        return $rootScope.form.cs1.operatesInCanada;
-    }
-
-    $scope.operateInOthers = function(){
-
-        return $rootScope.form.cs1.operatesInOthers;
-    }
-
-
 
     $scope.showExplCheckboxs = function(country){
 
@@ -30,24 +14,25 @@ sfiFormApp
 
             if(country == 'usa'){
 
-                return $scope.cs4.usa.avgHervArea > 50
+                return $scope.cs4.usaAvgHervArea > 50
             }
 
-            return $scope.cs4.ca.avgHervArea > 50
+            return $scope.cs4.caAvgHervArea > 50
 
 
         }
 
         if(country == 'usa'){
 
-            return $scope.cs4.usa.avgHervArea > 120
+            return $scope.cs4.usaAvgHervArea > 120
         }
 
-        return $scope.cs4.ca.avgHervArea > 120
+        return $scope.cs4.caAvgHervArea > 120
     }
 
     $scope.getPlantingTotal = function(country, type){
 
+        return 0;
 
         var total = 0, items = $scope.cs4[country][type];
 
@@ -82,16 +67,16 @@ sfiFormApp
         }
 
         $http
-            .put(Routing.generate("sfi_cs4_form_update", urlData), $scope.cs4)
+            .put("/form/cs4", $scope.cs4)
             .then(function(response){
 
                 if(response.data){
 
                     $scope.cs4Form.$setPristine();
 
-                    $rootScope.form = response.data;
-                    $scope.cs4 = angular.copy($rootScope.form.cs4);
-                    $scope.errors = $scope.cs4.errors;
+                    //$rootScope.form = response.data;
+                    //$scope.cs4 = angular.copy($rootScope.form.cs4);
+                    //$scope.errors = $scope.cs4.errors;
                     Message.success('Section successfully saved', '.msg-cont', true);
                 }
 

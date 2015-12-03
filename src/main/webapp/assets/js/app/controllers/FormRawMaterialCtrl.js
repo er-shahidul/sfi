@@ -320,7 +320,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         }
 
         $http
-            .put(Routing.generate("sfi_cs6_form_update", urlData), $scope.cs6)
+            .put("/form/cs6", $scope.cs6)
             .then(function(response){
 
                 if(response.data){
