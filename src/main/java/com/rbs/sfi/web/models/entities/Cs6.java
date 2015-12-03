@@ -44,99 +44,67 @@ public class Cs6 extends BaseEntityModel {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Integer getCs6NumPrivateForeOwersUs() {
-		return numPrivateForeOwersUs;
-	}
+    public Integer getNumPrivateForeOwersUs() {
+        return numPrivateForeOwersUs;
+    }
 
-	public void setCs6NumPrivateForeOwersUs(Integer numPrivateForeOwersUs) {
-		this.numPrivateForeOwersUs = numPrivateForeOwersUs;
-	}
+    public void setNumPrivateForeOwersUs(Integer numPrivateForeOwersUs) {
+        this.numPrivateForeOwersUs = numPrivateForeOwersUs;
+    }
 
-	public Integer getCs6NumPrivateForeOwersCa() {
-		return numPrivateForeOwersCa;
-	}
+    public Integer getNumPrivateForeOwersCa() {
+        return numPrivateForeOwersCa;
+    }
 
-	public void setCs6NumPrivateForeOwersCa(Integer numPrivateForeOwersCa) {
-		this.numPrivateForeOwersCa = numPrivateForeOwersCa;
-	}
+    public void setNumPrivateForeOwersCa(Integer numPrivateForeOwersCa) {
+        this.numPrivateForeOwersCa = numPrivateForeOwersCa;
+    }
 
-	public Integer getCs6NumPrivateLandOwersUs() {
-		return numPrivateLandOwersUs;
-	}
+    public Integer getNumPrivateLandOwersUs() {
+        return numPrivateLandOwersUs;
+    }
 
-	public void setCs6NumPrivateLandOwersUs(Integer numPrivateLandOwersUs) {
-		this.numPrivateLandOwersUs = numPrivateLandOwersUs;
-	}
+    public void setNumPrivateLandOwersUs(Integer numPrivateLandOwersUs) {
+        this.numPrivateLandOwersUs = numPrivateLandOwersUs;
+    }
 
-	public Integer getCs6NumPrivateLandOwersCa() {
-		return numPrivateLandOwersCa;
-	}
+    public Integer getNumPrivateLandOwersCa() {
+        return numPrivateLandOwersCa;
+    }
 
-	public void setCs6NumPrivateLandOwersCa(Integer numPrivateLandOwersCa) {
-		this.numPrivateLandOwersCa = numPrivateLandOwersCa;
-	}
+    public void setNumPrivateLandOwersCa(Integer numPrivateLandOwersCa) {
+        this.numPrivateLandOwersCa = numPrivateLandOwersCa;
+    }
 
-	public Integer getNumPrivateForeOwersUs() {
-		return numPrivateForeOwersUs;
-	}
+    public Integer getFundSFIActivStateProviUs() {
+        return fundSFIActivStateProviUs;
+    }
 
-	public void setNumPrivateForeOwersUs(Integer numPrivateForeOwersUs) {
-		this.numPrivateForeOwersUs = numPrivateForeOwersUs;
-	}
+    public void setFundSFIActivStateProviUs(Integer fundSFIActivStateProviUs) {
+        this.fundSFIActivStateProviUs = fundSFIActivStateProviUs;
+    }
 
-	public Integer getNumPrivateForeOwersCa() {
-		return numPrivateForeOwersCa;
-	}
+    public Integer getFundSFIActivStateProviCa() {
+        return fundSFIActivStateProviCa;
+    }
 
-	public void setNumPrivateForeOwersCa(Integer numPrivateForeOwersCa) {
-		this.numPrivateForeOwersCa = numPrivateForeOwersCa;
-	}
+    public void setFundSFIActivStateProviCa(Integer fundSFIActivStateProviCa) {
+        this.fundSFIActivStateProviCa = fundSFIActivStateProviCa;
+    }
 
-	public Integer getNumPrivateLandOwersUs() {
-		return numPrivateLandOwersUs;
-	}
+    public Boolean getToAssistObj8() {
+        return toAssistObj8;
+    }
 
-	public void setNumPrivateLandOwersUs(Integer numPrivateLandOwersUs) {
-		this.numPrivateLandOwersUs = numPrivateLandOwersUs;
-	}
+    public void setToAssistObj8(Boolean toAssistObj8) {
+        this.toAssistObj8 = toAssistObj8;
+    }
 
-	public Integer getNumPrivateLandOwersCa() {
-		return numPrivateLandOwersCa;
-	}
-
-	public void setNumPrivateLandOwersCa(Integer numPrivateLandOwersCa) {
-		this.numPrivateLandOwersCa = numPrivateLandOwersCa;
-	}
-
-	public Integer getFundSFIActivStateProviUs() {
-		return fundSFIActivStateProviUs;
-	}
-
-	public void setFundSFIActivStateProviUs(Integer fundSFIActivStateProviUs) {
-		this.fundSFIActivStateProviUs = fundSFIActivStateProviUs;
-	}
-
-	public Integer getFundSFIActivStateProviCa() {
-		return fundSFIActivStateProviCa;
-	}
-
-	public void setFundSFIActivStateProviCa(Integer fundSFIActivStateProviCa) {
-		this.fundSFIActivStateProviCa = fundSFIActivStateProviCa;
-	}
-
-	public Boolean isToAssistObj8() {
-		return toAssistObj8;
-	}
-
-	public void setToAssistObj8(Boolean toAssistObj8) {
-		this.toAssistObj8 = toAssistObj8;
-	}
-
-	public Set<SfiPpFormCs6UsCanada> getUsCanada() {
+    public Set<SfiPpFormCs6UsCanada> getUsCanada() {
 		return usCanada;
 	}
 

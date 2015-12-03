@@ -85,7 +85,7 @@ public class Cs6ViewModel extends BaseViewModel {
 		return usCanada;
 	}
 
-	public void setUsCanada(Set<SfiPpFormCs6UsCanadaViewModel> cs6UsCanada) {
+	public void setUsCanada(Set<SfiPpFormCs6UsCanadaViewModel> usCanada) {
 		this.usCanada = usCanada;
 	}
 

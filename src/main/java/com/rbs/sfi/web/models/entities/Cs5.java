@@ -41,59 +41,59 @@ public class Cs5 extends BaseEntityModel {
 		this.id = id;
 	}
 
-	public String getCs5OrganizationListAcademic() {
-		return organizationListAcademic;
-	}
+    public String getOrganizationListAcademic() {
+        return organizationListAcademic;
+    }
 
-	public void setCs5OrganizationListAcademic(String organizationListAcademic) {
-		this.organizationListAcademic = organizationListAcademic;
-	}
+    public void setOrganizationListAcademic(String organizationListAcademic) {
+        this.organizationListAcademic = organizationListAcademic;
+    }
 
-	public String getCs5OrganizationListResearch() {
-		return organizationListResearch;
-	}
+    public String getOrganizationListResearch() {
+        return organizationListResearch;
+    }
 
-	public void setCs5OrganizationListResearch(String organizationListResearch) {
-		this.organizationListResearch = organizationListResearch;
-	}
+    public void setOrganizationListResearch(String organizationListResearch) {
+        this.organizationListResearch = organizationListResearch;
+    }
 
-	public String getCs5OrganizationListConservation() {
-		return organizationListConservation;
-	}
+    public String getOrganizationListConservation() {
+        return organizationListConservation;
+    }
 
-	public void setCs5OrganizationListConservation(String organizationListConservation) {
-		this.organizationListConservation = organizationListConservation;
-	}
+    public void setOrganizationListConservation(String organizationListConservation) {
+        this.organizationListConservation = organizationListConservation;
+    }
 
-	public String getCs5OrganizationListGovernment() {
-		return organizationListGovernment;
-	}
+    public String getOrganizationListGovernment() {
+        return organizationListGovernment;
+    }
 
-	public void setCs5OrganizationListGovernment(String organizationListGovernment) {
-		this.organizationListGovernment = organizationListGovernment;
-	}
+    public void setOrganizationListGovernment(String organizationListGovernment) {
+        this.organizationListGovernment = organizationListGovernment;
+    }
 
-	public String getCs5OrganizationListCommunity() {
-		return organizationListCommunity;
-	}
+    public String getOrganizationListCommunity() {
+        return organizationListCommunity;
+    }
 
-	public void setCs5OrganizationListCommunity(String organizationListCommunity) {
-		this.organizationListCommunity = organizationListCommunity;
-	}
+    public void setOrganizationListCommunity(String organizationListCommunity) {
+        this.organizationListCommunity = organizationListCommunity;
+    }
 
-	public String getCs5OrganizationListOther() {
-		return organizationListOther;
-	}
+    public String getOrganizationListOther() {
+        return organizationListOther;
+    }
 
-	public void setCs5OrganizationListOther(String organizationListOther) {
-		this.organizationListOther = organizationListOther;
-	}
+    public void setOrganizationListOther(String organizationListOther) {
+        this.organizationListOther = organizationListOther;
+    }
 
-	public String getCs5Other() {
-		return other;
-	}
+    public String getOther() {
+        return other;
+    }
 
-	public void setCs5Other(String other) {
-		this.other = other;
-	}
+    public void setOther(String other) {
+        this.other = other;
+    }
 }
