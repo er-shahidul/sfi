@@ -39,6 +39,9 @@ public class CompanyService
         Company entity = this.findById(company.getId());
         if(entity!=null){
             entity.setName(company.getName());
+            entity.setSci(company.isSci());
+            entity.setSfi(company.isSfi());
+            entity.setPrimary0Secondary1(company.getPrimary0Secondary1());
             entity.setAreaUnit(company.getAreaUnit());
             entity.setUpdatedAt(Util.getCurrentDate());
             entity.setUpdatedBy(Util.getCurrentUsername());

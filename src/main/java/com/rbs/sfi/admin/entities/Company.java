@@ -24,11 +24,14 @@ public class Company extends Audit
 	@Column(name="logo_name", nullable=true)
 	private String logoName;
 
-	@Column(name="sfi0_sci1", nullable=true)
-	private boolean sfi0Sci1;
+	@Column(name="sfi", nullable = false, columnDefinition = "Boolean default false")
+	private boolean sfi;
 
-	@Column(name="primary0_secondary1", nullable=true)
-	private boolean primary0Secondary1;
+	@Column(name="sci", nullable = false, columnDefinition = "Boolean default false")
+	private boolean sci;
+
+	@Column(name="primary0_secondary1", nullable = true)
+	private Boolean primary0Secondary1;
 
 	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
 	private Boolean isActive;
@@ -73,27 +76,35 @@ public class Company extends Audit
 		this.areaUnit = areaUnit;
 	}
 
-	public boolean isSfi0Sci1() {
-		return sfi0Sci1;
-	}
-
-	public void setSfi0Sci1(boolean sfi0Sci1) {
-		this.sfi0Sci1 = sfi0Sci1;
-	}
-
-	public boolean isPrimary0Secondary1() {
-		return primary0Secondary1;
-	}
-
-	public void setPrimary0Secondary1(boolean primary0Secondary1) {
-		this.primary0Secondary1 = primary0Secondary1;
-	}
-
 	public Boolean getIsActive() {
 		return isActive;
 	}
 
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
+	}
+
+	public boolean isSfi() {
+		return sfi;
+	}
+
+	public void setSfi(boolean sfi) {
+		this.sfi = sfi;
+	}
+
+	public boolean isSci() {
+		return sci;
+	}
+
+	public void setSci(boolean sci) {
+		this.sci = sci;
+	}
+
+	public Boolean getPrimary0Secondary1() {
+		return primary0Secondary1;
+	}
+
+	public void setPrimary0Secondary1(Boolean primary0Secondary1) {
+		this.primary0Secondary1 = primary0Secondary1;
 	}
 }

@@ -120,7 +120,7 @@
                                                                     </label>
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
-                                                                        <input type="radio" th:name="sfi0Sci1" th:text="${'SFI Annual Progress Report'}" th:value="false" th:field="*{sfi0Sci1}" />
+                                                                        <input type="checkbox" th:name="sfi" th:text="${'SFI Annual Progress Report'}" th:value="false" th:field="*{sfi}" />
                                                                         <br/>
                                                                         <div class="form-group inner-form" style="margin-left: 20px!important;" id="sonata-ba-field-container-primary0Secondary1">
                                                                             <div class=" sonata-ba-field sonata-ba-field-standard-natural">
@@ -129,7 +129,7 @@
                                                                                 <input type="radio" th:name="primary0Secondary1" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Secondary Users'}" th:value="true" th:field="*{primary0Secondary1}" />
                                                                             </div>
                                                                         </div>
-                                                                        <input type="radio" th:name="sfi0Sci1" th:text="${'SIC Survey'}" th:value="true" th:field="*{sfi0Sci1}" />
+                                                                        <input type="checkbox" th:name="sci" th:text="${'SIC Survey'}" th:value="true" th:field="*{sci}" />
                                                                     </div>
                                                                 </div>
 
@@ -167,17 +167,16 @@
 
     <script type="text/javascript">
         // <![CDATA[
-        var $grp1 = $("[name=sfi0Sci1]"), $grp2 = $("[name=primary0Secondary1]");
+        var $grp1 = $("[name=sfi]"), $grp2 = $("[name=primary0Secondary1]");
         $grp1.change(function(){
 
 
             if($grp1.filter(":checked").val() == "true"){
 
-                return $grp2.parents(".inner-form").hide();
+                return $grp2.parents(".inner-form").show();
             }
 
-
-            $grp2.parents(".inner-form").show();
+            $grp2.parents(".inner-form").hide();
 
         }).change();
         // ]]>
