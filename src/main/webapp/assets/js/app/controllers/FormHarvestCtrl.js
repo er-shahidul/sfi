@@ -11,19 +11,14 @@ sfiFormApp
 
             if($rootScope.unit == "HA"){
 
-
                 if(country == 'usa'){
-
                     return $scope.cs4.usaAvgHervArea > 50
                 }
 
                 return $scope.cs4.caAvgHervArea > 50
-
-
             }
 
             if(country == 'usa'){
-
                 return $scope.cs4.usaAvgHervArea > 120
             }
 
