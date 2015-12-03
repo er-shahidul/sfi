@@ -673,6 +673,14 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
 /** Operating country rules from CS1 data */
 sfiFormApp.run(['$rootScope', function($rootScope) {
 
+    $rootScope.camelcase = function(str) {
+        return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
+            return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+        }).replace(/\s+/g, '');
+    }
+
+
+
     $rootScope.isFieldsEnabled = function(){
         return true; //$rootScope.form.cs1.ownsOrManagesLands;
     }

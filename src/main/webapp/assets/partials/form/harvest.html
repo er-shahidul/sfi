@@ -174,7 +174,7 @@
 
                     <input type="number" class="form-control required shortest" name="caTotalArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                           ng-model="cs4.ca.totalHervArea"> {{ unit }}
+                           ng-model="cs4.caTotalHervArea"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('caAverageArea')}">
@@ -192,14 +192,14 @@
 
 
                         <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.ca.govRegulation">
+                               ng-model="cs4.caGovRegulation">
                         <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
                         <br>
-                        <div class="form-group" ng-show="cs4.ca.govRegulation">
+                        <div class="form-group" ng-show="cs4.caGovRegulation">
                             <label>Explain</label>
                             <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.ca.govRegulation" customerror
-                                   ng-model="cs4.ca.govRegulationExp">
+                                   ng-required="cs4.caGovRegulation" customerror
+                                   ng-model="cs4.caGovRegulationExp">
                         </div>
 
 
@@ -360,12 +360,12 @@
                         <td ng-class="{'has-error' : hasError('usaPlantingTwo')}">
                             <input type="number" class="form-control required shorter" name="usaPlantingTwo"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usaPlanting.twoYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaPlantingTwoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaPlantingTwoPlus')}">
                             <input type="number" class="form-control required shorter" name="usaPlantingTwoPlus"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usaPlanting.twoPlusYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaPlantingTwoPlusYr"> {{ unit }}</td>
 
                         <td class="vert-align-middle"> {{ getPlantingTotal('usa', 'planting') }} {{ unit }} </td>
                     </tr>
@@ -381,12 +381,12 @@
                         <td ng-class="{'has-error' : hasError('usaSeedingTwo')}">
                             <input type="number" class="form-control required shorter" name="usaSeedingTwo"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usaSeeding.twoYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaSeedingTwoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaSeedingTwoPlus')}">
                             <input type="number" class="form-control required shorter" name="usaSeedingTwoPlus"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.usaSeeding.twoPlusYr"> {{ unit }}</td>
+                                   ng-model="cs4.usaSeedingTwoPlusYr"> {{ unit }}</td>
 
                         <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('usa', 'seeding') }} {{ unit }} </td>
                     </tr>
@@ -440,12 +440,12 @@
                         <td ng-class="{'has-error' : hasError('caPlantingTwo')}">
                             <input type="number" class="form-control required shorter" name="caPlantingTwo" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.caPlanting.twoYr"> {{ unit }}</td>
+                                   ng-model="cs4.caPlantingTwoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caPlantingTwoPlus')}">
                             <input type="number" class="form-control required shorter" name="caPlantingTwoPlus" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.caPlanting.twoPlusYr"> {{ unit }}</td>
+                                   ng-model="cs4.caPlantingTwoPlusYr"> {{ unit }}</td>
 
                         <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('ca', 'planting') }} {{ unit }}</td>
                     </tr>
@@ -460,12 +460,12 @@
                         <td ng-class="{'has-error' : hasError('caSeedingTwo')}">
                             <input type="number" class="form-control required shorter" name="caSeedingTwo" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.caSeeding.twoYr"> {{ unit }}</td>
+                                   ng-model="cs4.caSeedingTwoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caSeedingTwo')}">
                             <input type="number" class="form-control required shorter" name="caSeedingTwo" min="0"
                                    ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-                                   ng-model="cs4.caSeeding.twoPlusYr"> {{ unit }}</td>
+                                   ng-model="cs4.caSeedingTwoPlusYr"> {{ unit }}</td>
 
                         <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('ca', 'seeding') }} {{ unit }}</td>
                     </tr>
