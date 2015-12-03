@@ -11,26 +11,11 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         $scope.cs6.supply = [];
     }
 
-    $scope.operateInUsa = function(){
-
-        return $rootScope.form.cs1.operatesInUsa;
-    }
-
-    $scope.operateInCa = function(){
-
-        return $rootScope.form.cs1.operatesInCanada;
-    }
-
-    $scope.operateInOthers = function(){
-
-        return $rootScope.form.cs1.operatesInOthers;
-    }
-
-    $scope.otherCountries = CountryList.getOthers();
+    //$scope.otherCountries = CountryList.getOthers();
 
     $scope.init = function(){
 
-        if(!$scope.operateInUsa()){
+        if(!$rootScope.operateInUsa()){
 
             with($scope.cs6){
                 usaFundingProvided = null;
@@ -39,7 +24,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
             }
         }
 
-        if(!$scope.operateInCa()){
+        if(!$rootScope.operateInCa()){
 
             with($scope.cs6){
                 caFundingProvided = null;
@@ -51,16 +36,16 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
     $scope.init();
 
-    if(!$rootScope.regions){
-
-        RegionList
-            .load()
-            .then(function(reponse){
-                $rootScope.regions = reponse.data;
-                $scope.parseSupplies();
-
-            });
-    }
+//    if(!$rootScope.regions){
+//
+//        RegionList
+//            .load()
+//            .then(function(reponse){
+//                $rootScope.regions = reponse.data;
+//                $scope.parseSupplies();
+//
+//            });
+//    }
 
     $scope.regionId = 0;
 

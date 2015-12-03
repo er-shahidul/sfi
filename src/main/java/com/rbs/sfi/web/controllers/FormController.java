@@ -35,6 +35,9 @@ public class FormController {
     SfiPpFormAllCountryService sfiPpFormAllCountryService;
 
     @Autowired
+    SfiPpFormRegionService sfiPpFormRegionService;
+
+    @Autowired
     CompanyService companyService;
 
     @Autowired
@@ -78,6 +81,7 @@ public class FormController {
 
         String companyLogo = DatatypeConverter.printBase64Binary(company.getLogo());
         List countries = sfiPpFormAllCountryService.list();
+        List regions = sfiPpFormRegionService.list();
 
         model.addAttribute("form", sfiPpForm);
         model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpForm.getId()));
@@ -91,6 +95,8 @@ public class FormController {
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("user", user);
         model.addAttribute("countries", countries);
+        model.addAttribute("regions", regions);
+
         model.addAttribute("mode", "edit");
 
         return "/core/form/index";

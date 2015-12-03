@@ -263,15 +263,13 @@ sfiFormApp
 
             init : function(){
 
-                if(window.allRegions){
+                if(window.regions){
 
-                    this.allRegions = window.allRegions;
+                    this.allRegions = window.regions;
                     return;
                 }
 
-                this.load().then(function(response){
-                    factory.allRegions = response.data;
-                });
+
             },
 
             getName : function(id){
@@ -585,11 +583,13 @@ sfiFormApp.filter('para', ['$sce', function ($sce) {
 
 /** Functions for multiple country select */
 
-sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
+sfiFormApp.run(['$rootScope', 'Countries', 'RegionList', function($rootScope, Countries, RegionList ) {
 
     $rootScope.countries      = Countries.getAll();
     $rootScope.otherCountries = Countries.getOthers();
     $rootScope.sellCountries  = Countries.getSells();
+
+    $rootScope.regions = RegionList.getAll();
 
     $rootScope.findCountry = function(bucket, id){
 
@@ -611,9 +611,7 @@ sfiFormApp.run(['$rootScope', 'Countries', function($rootScope, Countries ) {
     }
 
     $rootScope.getSellCountry = function(id){
-        console.log(id);
         var country = $rootScope.findCountry($rootScope.sellCountries, id);
-        console.log(country);
         return  country ? country.country : "";
     }
 

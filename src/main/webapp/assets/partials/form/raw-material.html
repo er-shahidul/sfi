@@ -27,24 +27,24 @@
 
         <td>
             <input type="number" class="form-control  shorter"
-                   ng-model="cs6.usaTimberSellers" ng-class="{'disabled' : !operateInUsa()}">
+                   ng-model="cs6.numPrivateForeOwersUs" ng-class="{'disabled' : !operateInUsa()}">
         </td>
 
         <td>
             <input type="number" class="form-control  shorter"
-                   ng-model="cs6.caTimberSellers" ng-disabled="!operateInCa()" >
+                   ng-model="cs6.numPrivateForeOwersCa" ng-disabled="!operateInCa()" >
         </td>
     </tr>
     <tr>
         <td>Number of those private landowners who received information directly from your employees on the advantages of reforestation and Best Management Practices (BMPs).</td>
         <td>
             <input type="number" class="form-control  shorter"
-                   ng-model="cs6.usaInfoReceived" ng-class="{'disabled' : !operateInUsa()}">
+                   ng-model="cs6.numPrivateLandOwersUs" ng-class="{'disabled' : !operateInUsa()}">
         </td>
 
         <td>
             <input type="number" class="form-control  shorter"
-                   ng-model="cs6.caInfoReceived" ng-disabled="!operateInCa()" >
+                   ng-model="cs6.numPrivateLandOwersCa" ng-disabled="!operateInCa()" >
         </td>
     </tr>
     <!--
@@ -73,10 +73,10 @@
 <div class="form-group">
     <label>To assist in implementing Objective 8 of the SFI Standard Principles and Objectives, our organization has clearly defined in writing, and distributed to loggers, chip suppliers, dealers and other raw material suppliers, our organization specific procurement policy, program or plan.</label>
     <div class="form-group hasRadioBoxes">
-        <input type="radio" name="answer" name="orgYesNo" ng-model="cs6.orgYesNo" ng-value="1" class="icheck" icheck />
+        <input type="radio" name="answer" name="toAssistObj8" ng-model="cs6.toAssistObj8" ng-value="1" class="icheck" icheck />
         <label class="checkboxLabel">Yes</label>
         &nbsp;&nbsp;&nbsp;
-        <input type="radio" name="answer" name="orgYesNo" ng-model="cs6.orgYesNo" ng-value="0" class="icheck" icheck />
+        <input type="radio" name="answer" name="toAssistObj8" ng-model="cs6.toAssistObj8" ng-value="0" class="icheck" icheck />
         <label class="checkboxLabel">No</label>
     </div>
 </div>
