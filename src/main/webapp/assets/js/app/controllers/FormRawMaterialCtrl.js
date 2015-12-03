@@ -52,7 +52,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
     $scope.getSupply = function(regionId){
 
 
-        var supply = _.find($scope.cs6.supplies, function(item){
+        var supply = _.find($scope.cs6.usCanada, function(item){
             return item.regionId == regionId;
         });
 
@@ -160,10 +160,10 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         item.regionName = RegionList.getName(regionId);
 
         if(!$scope.edit){
-            $scope.cs6.supplies.push(item);
+            $scope.cs6.usCanada.push(item);
         }
 
-        //$scope.cs6.supplies.push(item);
+        //$scope.cs6.usCanada.push(item);
 
         $scope.isDataDirty = true;
         $scope.resetSection();
@@ -198,7 +198,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
     $scope.deleteOk = function(){
 
         if($scope.delete){
-            $scope.cs6.supplies = _.without($scope.cs6.supplies, $scope.delete);
+            $scope.cs6.usCanada = _.without($scope.cs6.usCanada, $scope.delete);
         }
 
         if($scope.otherDelete){
@@ -313,14 +313,14 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
                     $scope.isDataDirty = false;
                     $scope.cs6Form.$setPristine();
 
-                    $rootScope.form = response.data;
-                    $scope.cs6 = $rootScope.form.cs6;
-                    $scope.errors = $scope.cs6.errors;
-                    $scope.cs6.supplies = $rootScope.form.cs6.supplies;
-                    $scope.cs6.others = $rootScope.form.cs6.others;
+                    //$rootScope.form = response.data;
+                    //$scope.cs6 = $rootScope.form.cs6;
+                    //$scope.errors = $scope.cs6.errors;
+                    //$scope.cs6.usCanada = $rootScope.form.cs6.usCanada;
+                    //$scope.cs6.others = $rootScope.form.cs6.others;
 
-                    $scope.parseSupplies();
-                    $scope.parseOthers();
+                    //$scope.parseSupplies();
+                    //$scope.parseOthers();
 
 
                     Message.success('Section successfully saved', '.msg-cont');
@@ -444,7 +444,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
     $scope.parseSupplies = function(){
 
-        _.each($scope.cs6.supplies, function(supply){
+        _.each($scope.cs6.usCanada, function(supply){
 
             var titles = [];
             _.each(supply.sections, function(section, k){
