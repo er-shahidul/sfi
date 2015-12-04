@@ -6,16 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public abstract class BaseMapperService<E extends IModel> {
     @Autowired
     private ReflectionHelperService helper;
 
     private Class<E> typeClass;
+
+    private final Map<Class, Object> callStack = new HashMap<Class, Object>();
 
     @SuppressWarnings("unchecked")
     private Class<E> getTypeClass() {
@@ -86,7 +85,12 @@ public abstract class BaseMapperService<E extends IModel> {
 
     public <T> T convert(E source, Class<T> tClass) {
         if (source == null) return null;
+        if (callStack.get(tClass) != null) {
+            return (T) callStack.get(tClass);
+        }
+
         T dest = getInstance(source.getId(), tClass);
+        callStack.put(tClass, dest);
 
         Map<String, Method> destMethodMap  = helper.getMethodMap(dest);
         List<Method> sourceMethods = helper.getGetterMethods(source.getClass().getMethods());
@@ -105,6 +109,7 @@ public abstract class BaseMapperService<E extends IModel> {
             }
         }
 
+        callStack.remove(tClass);
         return dest;
     }
 }
