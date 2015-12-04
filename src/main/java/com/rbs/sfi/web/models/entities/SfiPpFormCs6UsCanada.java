@@ -23,267 +23,267 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
 	private SfiPpFormRegion region;
 
 	@Column(name="cs6_usCanada_unit_1", nullable=true)
-	private Integer cs6UsCanadaUnit1;
+	private Integer usCanadaUnit1;
 
 	@Column(name="cs6_usCanada_volume_1", nullable=true)
-	private String cs6UsCanadaVolume1;
+	private String usCanadaVolume1;
 
 	@Column(name="cs6_usCanada_percDeliveredQualifiedLogging_1", nullable=true)
-	private String cs6UsCanadaPercDeliveredQualifiedLogging1;
+	private String usCanadaPercDeliveredQualifiedLogging1;
 
 	@Column(name="cs6_usCanada_percSFIOnlyCertified_1", nullable=true)
-	private String cs6UsCanadaPercSFIOnlyCertified1;
+	private String usCanadaPercSFIOnlyCertified1;
 
 	@Column(name="cs6_usCanada_percATFSOnlyCertified_1", nullable=true)
-	private String cs6UsCanadaPercATFSOnlyCertified1;
+	private String usCanadaPercATFSOnlyCertified1;
 
 	@Column(name="cs6_usCanada_percCSAOnlyCertified_1", nullable=true)
-	private String cs6UsCanadaPercCSAOnlyCertified1;
+	private String usCanadaPercCSAOnlyCertified1;
 
 	@Column(name="cs6_usCanada_percFSCOnlyCertified_1", nullable=true)
-	private String cs6UsCanadaPercFSCOnlyCertified1;
+	private String usCanadaPercFSCOnlyCertified1;
 
 	@Column(name="cs6_usCanada_moreThanOneStandard_1", nullable=true)
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private Set<String> cs6UsCanadaMoreThanOneStandard1;
+	private Set<String> usCanadaMoreThanOneStandard1;
 
 	@Column(name="cs6_usCanada_other", nullable=true)
-	private Boolean cs6UsCanadaOther;
+	private Boolean usCanadaOther;
 
 	@Column(name="cs6_usCanada_otherLabel", nullable=true)
-	private String cs6UsCanadaOtherLabel;
+	private String usCanadaOtherLabel;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_1", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard11;
+	private Float usCanadaPercCertifedMoreThanOneStandard11;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_1", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard21;
+	private Float usCanadaPercCertifedMoreThanOneStandard21;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_1", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard31;
+	private Float usCanadaPercCertifedMoreThanOneStandard31;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_1", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard41;
+	private Float usCanadaPercCertifedMoreThanOneStandard41;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_1", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard51;
+	private Float usCanadaPercCertifedMoreThanOneStandard51;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_1", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard61;
+	private Float usCanadaPercCertifedMoreThanOneStandard61;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_1", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard71;
+	private Float usCanadaPercCertifedMoreThanOneStandard71;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_2", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard12;
+	private Float usCanadaPercCertifedMoreThanOneStandard12;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_2", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard22;
+	private Float usCanadaPercCertifedMoreThanOneStandard22;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_2", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard32;
+	private Float usCanadaPercCertifedMoreThanOneStandard32;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_2", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard42;
+	private Float usCanadaPercCertifedMoreThanOneStandard42;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_2", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard52;
+	private Float usCanadaPercCertifedMoreThanOneStandard52;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_2", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard62;
+	private Float usCanadaPercCertifedMoreThanOneStandard62;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_2", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard72;
+	private Float usCanadaPercCertifedMoreThanOneStandard72;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_3", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard13;
+	private Float usCanadaPercCertifedMoreThanOneStandard13;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_3", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard23;
+	private Float usCanadaPercCertifedMoreThanOneStandard23;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_3", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard33;
+	private Float usCanadaPercCertifedMoreThanOneStandard33;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_3", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard43;
+	private Float usCanadaPercCertifedMoreThanOneStandard43;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_3", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard53;
+	private Float usCanadaPercCertifedMoreThanOneStandard53;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_3", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard63;
+	private Float usCanadaPercCertifedMoreThanOneStandard63;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_3", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard73;
+	private Float usCanadaPercCertifedMoreThanOneStandard73;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_4", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard14;
+	private Float usCanadaPercCertifedMoreThanOneStandard14;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_4", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard24;
+	private Float usCanadaPercCertifedMoreThanOneStandard24;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_4", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard34;
+	private Float usCanadaPercCertifedMoreThanOneStandard34;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_4", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard44;
+	private Float usCanadaPercCertifedMoreThanOneStandard44;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_4", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard54;
+	private Float usCanadaPercCertifedMoreThanOneStandard54;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_4", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard64;
+	private Float usCanadaPercCertifedMoreThanOneStandard64;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_4", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard74;
+	private Float usCanadaPercCertifedMoreThanOneStandard74;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_5", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard15;
+	private Float usCanadaPercCertifedMoreThanOneStandard15;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_5", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard25;
+	private Float usCanadaPercCertifedMoreThanOneStandard25;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_5", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard35;
+	private Float usCanadaPercCertifedMoreThanOneStandard35;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_5", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard45;
+	private Float usCanadaPercCertifedMoreThanOneStandard45;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_5", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard55;
+	private Float usCanadaPercCertifedMoreThanOneStandard55;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_5", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard65;
+	private Float usCanadaPercCertifedMoreThanOneStandard65;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_5", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard75;
+	private Float usCanadaPercCertifedMoreThanOneStandard75;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_6", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard16;
+	private Float usCanadaPercCertifedMoreThanOneStandard16;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_6", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard26;
+	private Float usCanadaPercCertifedMoreThanOneStandard26;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_6", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard36;
+	private Float usCanadaPercCertifedMoreThanOneStandard36;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_6", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard46;
+	private Float usCanadaPercCertifedMoreThanOneStandard46;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_6", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard56;
+	private Float usCanadaPercCertifedMoreThanOneStandard56;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_6", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard66;
+	private Float usCanadaPercCertifedMoreThanOneStandard66;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_6", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard76;
+	private Float usCanadaPercCertifedMoreThanOneStandard76;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_7", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard17;
+	private Float usCanadaPercCertifedMoreThanOneStandard17;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_7", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard27;
+	private Float usCanadaPercCertifedMoreThanOneStandard27;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_7", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard37;
+	private Float usCanadaPercCertifedMoreThanOneStandard37;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_7", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard47;
+	private Float usCanadaPercCertifedMoreThanOneStandard47;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_7", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard57;
+	private Float usCanadaPercCertifedMoreThanOneStandard57;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_7", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard67;
+	private Float usCanadaPercCertifedMoreThanOneStandard67;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_7", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard77;
+	private Float usCanadaPercCertifedMoreThanOneStandard77;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_8", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard18;
+	private Float usCanadaPercCertifedMoreThanOneStandard18;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_8", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard28;
+	private Float usCanadaPercCertifedMoreThanOneStandard28;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_8", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard38;
+	private Float usCanadaPercCertifedMoreThanOneStandard38;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_8", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard48;
+	private Float usCanadaPercCertifedMoreThanOneStandard48;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_8", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard58;
+	private Float usCanadaPercCertifedMoreThanOneStandard58;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_8", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard68;
+	private Float usCanadaPercCertifedMoreThanOneStandard68;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_8", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard78;
+	private Float usCanadaPercCertifedMoreThanOneStandard78;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_9", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard19;
+	private Float usCanadaPercCertifedMoreThanOneStandard19;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_9", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard29;
+	private Float usCanadaPercCertifedMoreThanOneStandard29;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_9", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard39;
+	private Float usCanadaPercCertifedMoreThanOneStandard39;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_9", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard49;
+	private Float usCanadaPercCertifedMoreThanOneStandard49;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_9", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard59;
+	private Float usCanadaPercCertifedMoreThanOneStandard59;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_9", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard69;
+	private Float usCanadaPercCertifedMoreThanOneStandard69;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_9", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard79;
+	private Float usCanadaPercCertifedMoreThanOneStandard79;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_10", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard110;
+	private Float usCanadaPercCertifedMoreThanOneStandard110;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_10", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard210;
+	private Float usCanadaPercCertifedMoreThanOneStandard210;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_10", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard310;
+	private Float usCanadaPercCertifedMoreThanOneStandard310;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_10", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard410;
+	private Float usCanadaPercCertifedMoreThanOneStandard410;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_10", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard510;
+	private Float usCanadaPercCertifedMoreThanOneStandard510;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_10", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard610;
+	private Float usCanadaPercCertifedMoreThanOneStandard610;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_10", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard710;
+	private Float usCanadaPercCertifedMoreThanOneStandard710;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_1_11", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard111;
+	private Float usCanadaPercCertifedMoreThanOneStandard111;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_2_11", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard211;
+	private Float usCanadaPercCertifedMoreThanOneStandard211;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_3_11", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard311;
+	private Float usCanadaPercCertifedMoreThanOneStandard311;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_4_11", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard411;
+	private Float usCanadaPercCertifedMoreThanOneStandard411;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_5_11", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard511;
+	private Float usCanadaPercCertifedMoreThanOneStandard511;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_6_11", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard611;
+	private Float usCanadaPercCertifedMoreThanOneStandard611;
 
 	@Column(name="cs6_usCanada_percCertifedMoreThanOneStandard_7_11", nullable=true)
-	private Float cs6UsCanadaPercCertifedMoreThanOneStandard711;
+	private Float usCanadaPercCertifedMoreThanOneStandard711;
 
     @Override
 	public Integer getId() {
@@ -294,715 +294,715 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
 		this.id = id;
 	}
 
-	public Cs6 getSfiPpForm() {
-		return sfiPpForm;
-	}
-
-	public void setSfiPpForm(Cs6 sfiPpForm) {
-		this.sfiPpForm = sfiPpForm;
-	}
-
-	public SfiPpFormRegion getRegion() {
-		return region;
-	}
-
-	public void setRegion(SfiPpFormRegion region) {
-		this.region = region;
-	}
-
-	public Integer getCs6UsCanadaUnit1() {
-		return cs6UsCanadaUnit1;
-	}
-
-	public void setCs6UsCanadaUnit1(Integer cs6UsCanadaUnit1) {
-		this.cs6UsCanadaUnit1 = cs6UsCanadaUnit1;
-	}
-
-	public String getCs6UsCanadaVolume1() {
-		return cs6UsCanadaVolume1;
-	}
-
-	public void setCs6UsCanadaVolume1(String cs6UsCanadaVolume1) {
-		this.cs6UsCanadaVolume1 = cs6UsCanadaVolume1;
-	}
-
-	public String getCs6UsCanadaPercDeliveredQualifiedLogging1() {
-		return cs6UsCanadaPercDeliveredQualifiedLogging1;
-	}
-
-	public void setCs6UsCanadaPercDeliveredQualifiedLogging1(String cs6UsCanadaPercDeliveredQualifiedLogging1) {
-		this.cs6UsCanadaPercDeliveredQualifiedLogging1 = cs6UsCanadaPercDeliveredQualifiedLogging1;
-	}
-
-	public String getCs6UsCanadaPercSFIOnlyCertified1() {
-		return cs6UsCanadaPercSFIOnlyCertified1;
-	}
-
-	public void setCs6UsCanadaPercSFIOnlyCertified1(String cs6UsCanadaPercSFIOnlyCertified1) {
-		this.cs6UsCanadaPercSFIOnlyCertified1 = cs6UsCanadaPercSFIOnlyCertified1;
-	}
-
-	public String getCs6UsCanadaPercATFSOnlyCertified1() {
-		return cs6UsCanadaPercATFSOnlyCertified1;
-	}
-
-	public void setCs6UsCanadaPercATFSOnlyCertified1(String cs6UsCanadaPercATFSOnlyCertified1) {
-		this.cs6UsCanadaPercATFSOnlyCertified1 = cs6UsCanadaPercATFSOnlyCertified1;
-	}
-
-	public String getCs6UsCanadaPercCSAOnlyCertified1() {
-		return cs6UsCanadaPercCSAOnlyCertified1;
-	}
-
-	public void setCs6UsCanadaPercCSAOnlyCertified1(String cs6UsCanadaPercCSAOnlyCertified1) {
-		this.cs6UsCanadaPercCSAOnlyCertified1 = cs6UsCanadaPercCSAOnlyCertified1;
-	}
-
-	public String getCs6UsCanadaPercFSCOnlyCertified1() {
-		return cs6UsCanadaPercFSCOnlyCertified1;
-	}
-
-	public void setCs6UsCanadaPercFSCOnlyCertified1(String cs6UsCanadaPercFSCOnlyCertified1) {
-		this.cs6UsCanadaPercFSCOnlyCertified1 = cs6UsCanadaPercFSCOnlyCertified1;
-	}
-
-	public Set<String> getCs6UsCanadaMoreThanOneStandard1() {
-		return cs6UsCanadaMoreThanOneStandard1;
-	}
-
-	public void setCs6UsCanadaMoreThanOneStandard1(Set<String> cs6UsCanadaMoreThanOneStandard1) {
-		addAll(this.cs6UsCanadaMoreThanOneStandard1, cs6UsCanadaMoreThanOneStandard1);
-	}
-
-	public Boolean isCs6UsCanadaOther() {
-		return cs6UsCanadaOther;
-	}
-
-	public void setCs6UsCanadaOther(Boolean cs6UsCanadaOther) {
-		this.cs6UsCanadaOther = cs6UsCanadaOther;
-	}
-
-	public String getCs6UsCanadaOtherLabel() {
-		return cs6UsCanadaOtherLabel;
-	}
-
-	public void setCs6UsCanadaOtherLabel(String cs6UsCanadaOtherLabel) {
-		this.cs6UsCanadaOtherLabel = cs6UsCanadaOtherLabel;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard11() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard11;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard11(Float cs6UsCanadaPercCertifedMoreThanOneStandard11) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard11 = cs6UsCanadaPercCertifedMoreThanOneStandard11;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard21() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard21;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard21(Float cs6UsCanadaPercCertifedMoreThanOneStandard21) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard21 = cs6UsCanadaPercCertifedMoreThanOneStandard21;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard31() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard31;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard31(Float cs6UsCanadaPercCertifedMoreThanOneStandard31) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard31 = cs6UsCanadaPercCertifedMoreThanOneStandard31;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard41() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard41;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard41(Float cs6UsCanadaPercCertifedMoreThanOneStandard41) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard41 = cs6UsCanadaPercCertifedMoreThanOneStandard41;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard51() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard51;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard51(Float cs6UsCanadaPercCertifedMoreThanOneStandard51) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard51 = cs6UsCanadaPercCertifedMoreThanOneStandard51;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard61() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard61;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard61(Float cs6UsCanadaPercCertifedMoreThanOneStandard61) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard61 = cs6UsCanadaPercCertifedMoreThanOneStandard61;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard71() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard71;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard71(Float cs6UsCanadaPercCertifedMoreThanOneStandard71) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard71 = cs6UsCanadaPercCertifedMoreThanOneStandard71;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard12() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard12;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard12(Float cs6UsCanadaPercCertifedMoreThanOneStandard12) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard12 = cs6UsCanadaPercCertifedMoreThanOneStandard12;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard22() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard22;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard22(Float cs6UsCanadaPercCertifedMoreThanOneStandard22) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard22 = cs6UsCanadaPercCertifedMoreThanOneStandard22;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard32() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard32;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard32(Float cs6UsCanadaPercCertifedMoreThanOneStandard32) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard32 = cs6UsCanadaPercCertifedMoreThanOneStandard32;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard42() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard42;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard42(Float cs6UsCanadaPercCertifedMoreThanOneStandard42) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard42 = cs6UsCanadaPercCertifedMoreThanOneStandard42;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard52() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard52;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard52(Float cs6UsCanadaPercCertifedMoreThanOneStandard52) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard52 = cs6UsCanadaPercCertifedMoreThanOneStandard52;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard62() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard62;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard62(Float cs6UsCanadaPercCertifedMoreThanOneStandard62) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard62 = cs6UsCanadaPercCertifedMoreThanOneStandard62;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard72() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard72;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard72(Float cs6UsCanadaPercCertifedMoreThanOneStandard72) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard72 = cs6UsCanadaPercCertifedMoreThanOneStandard72;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard13() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard13;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard13(Float cs6UsCanadaPercCertifedMoreThanOneStandard13) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard13 = cs6UsCanadaPercCertifedMoreThanOneStandard13;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard23() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard23;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard23(Float cs6UsCanadaPercCertifedMoreThanOneStandard23) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard23 = cs6UsCanadaPercCertifedMoreThanOneStandard23;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard33() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard33;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard33(Float cs6UsCanadaPercCertifedMoreThanOneStandard33) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard33 = cs6UsCanadaPercCertifedMoreThanOneStandard33;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard43() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard43;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard43(Float cs6UsCanadaPercCertifedMoreThanOneStandard43) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard43 = cs6UsCanadaPercCertifedMoreThanOneStandard43;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard53() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard53;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard53(Float cs6UsCanadaPercCertifedMoreThanOneStandard53) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard53 = cs6UsCanadaPercCertifedMoreThanOneStandard53;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard63() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard63;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard63(Float cs6UsCanadaPercCertifedMoreThanOneStandard63) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard63 = cs6UsCanadaPercCertifedMoreThanOneStandard63;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard73() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard73;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard73(Float cs6UsCanadaPercCertifedMoreThanOneStandard73) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard73 = cs6UsCanadaPercCertifedMoreThanOneStandard73;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard14() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard14;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard14(Float cs6UsCanadaPercCertifedMoreThanOneStandard14) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard14 = cs6UsCanadaPercCertifedMoreThanOneStandard14;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard24() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard24;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard24(Float cs6UsCanadaPercCertifedMoreThanOneStandard24) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard24 = cs6UsCanadaPercCertifedMoreThanOneStandard24;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard34() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard34;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard34(Float cs6UsCanadaPercCertifedMoreThanOneStandard34) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard34 = cs6UsCanadaPercCertifedMoreThanOneStandard34;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard44() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard44;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard44(Float cs6UsCanadaPercCertifedMoreThanOneStandard44) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard44 = cs6UsCanadaPercCertifedMoreThanOneStandard44;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard54() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard54;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard54(Float cs6UsCanadaPercCertifedMoreThanOneStandard54) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard54 = cs6UsCanadaPercCertifedMoreThanOneStandard54;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard64() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard64;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard64(Float cs6UsCanadaPercCertifedMoreThanOneStandard64) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard64 = cs6UsCanadaPercCertifedMoreThanOneStandard64;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard74() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard74;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard74(Float cs6UsCanadaPercCertifedMoreThanOneStandard74) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard74 = cs6UsCanadaPercCertifedMoreThanOneStandard74;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard15() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard15;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard15(Float cs6UsCanadaPercCertifedMoreThanOneStandard15) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard15 = cs6UsCanadaPercCertifedMoreThanOneStandard15;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard25() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard25;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard25(Float cs6UsCanadaPercCertifedMoreThanOneStandard25) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard25 = cs6UsCanadaPercCertifedMoreThanOneStandard25;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard35() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard35;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard35(Float cs6UsCanadaPercCertifedMoreThanOneStandard35) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard35 = cs6UsCanadaPercCertifedMoreThanOneStandard35;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard45() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard45;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard45(Float cs6UsCanadaPercCertifedMoreThanOneStandard45) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard45 = cs6UsCanadaPercCertifedMoreThanOneStandard45;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard55() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard55;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard55(Float cs6UsCanadaPercCertifedMoreThanOneStandard55) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard55 = cs6UsCanadaPercCertifedMoreThanOneStandard55;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard65() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard65;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard65(Float cs6UsCanadaPercCertifedMoreThanOneStandard65) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard65 = cs6UsCanadaPercCertifedMoreThanOneStandard65;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard75() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard75;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard75(Float cs6UsCanadaPercCertifedMoreThanOneStandard75) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard75 = cs6UsCanadaPercCertifedMoreThanOneStandard75;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard16() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard16;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard16(Float cs6UsCanadaPercCertifedMoreThanOneStandard16) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard16 = cs6UsCanadaPercCertifedMoreThanOneStandard16;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard26() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard26;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard26(Float cs6UsCanadaPercCertifedMoreThanOneStandard26) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard26 = cs6UsCanadaPercCertifedMoreThanOneStandard26;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard36() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard36;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard36(Float cs6UsCanadaPercCertifedMoreThanOneStandard36) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard36 = cs6UsCanadaPercCertifedMoreThanOneStandard36;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard46() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard46;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard46(Float cs6UsCanadaPercCertifedMoreThanOneStandard46) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard46 = cs6UsCanadaPercCertifedMoreThanOneStandard46;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard56() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard56;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard56(Float cs6UsCanadaPercCertifedMoreThanOneStandard56) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard56 = cs6UsCanadaPercCertifedMoreThanOneStandard56;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard66() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard66;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard66(Float cs6UsCanadaPercCertifedMoreThanOneStandard66) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard66 = cs6UsCanadaPercCertifedMoreThanOneStandard66;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard76() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard76;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard76(Float cs6UsCanadaPercCertifedMoreThanOneStandard76) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard76 = cs6UsCanadaPercCertifedMoreThanOneStandard76;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard17() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard17;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard17(Float cs6UsCanadaPercCertifedMoreThanOneStandard17) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard17 = cs6UsCanadaPercCertifedMoreThanOneStandard17;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard27() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard27;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard27(Float cs6UsCanadaPercCertifedMoreThanOneStandard27) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard27 = cs6UsCanadaPercCertifedMoreThanOneStandard27;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard37() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard37;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard37(Float cs6UsCanadaPercCertifedMoreThanOneStandard37) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard37 = cs6UsCanadaPercCertifedMoreThanOneStandard37;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard47() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard47;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard47(Float cs6UsCanadaPercCertifedMoreThanOneStandard47) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard47 = cs6UsCanadaPercCertifedMoreThanOneStandard47;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard57() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard57;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard57(Float cs6UsCanadaPercCertifedMoreThanOneStandard57) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard57 = cs6UsCanadaPercCertifedMoreThanOneStandard57;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard67() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard67;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard67(Float cs6UsCanadaPercCertifedMoreThanOneStandard67) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard67 = cs6UsCanadaPercCertifedMoreThanOneStandard67;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard77() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard77;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard77(Float cs6UsCanadaPercCertifedMoreThanOneStandard77) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard77 = cs6UsCanadaPercCertifedMoreThanOneStandard77;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard18() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard18;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard18(Float cs6UsCanadaPercCertifedMoreThanOneStandard18) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard18 = cs6UsCanadaPercCertifedMoreThanOneStandard18;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard28() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard28;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard28(Float cs6UsCanadaPercCertifedMoreThanOneStandard28) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard28 = cs6UsCanadaPercCertifedMoreThanOneStandard28;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard38() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard38;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard38(Float cs6UsCanadaPercCertifedMoreThanOneStandard38) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard38 = cs6UsCanadaPercCertifedMoreThanOneStandard38;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard48() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard48;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard48(Float cs6UsCanadaPercCertifedMoreThanOneStandard48) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard48 = cs6UsCanadaPercCertifedMoreThanOneStandard48;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard58() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard58;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard58(Float cs6UsCanadaPercCertifedMoreThanOneStandard58) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard58 = cs6UsCanadaPercCertifedMoreThanOneStandard58;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard68() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard68;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard68(Float cs6UsCanadaPercCertifedMoreThanOneStandard68) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard68 = cs6UsCanadaPercCertifedMoreThanOneStandard68;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard78() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard78;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard78(Float cs6UsCanadaPercCertifedMoreThanOneStandard78) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard78 = cs6UsCanadaPercCertifedMoreThanOneStandard78;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard19() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard19;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard19(Float cs6UsCanadaPercCertifedMoreThanOneStandard19) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard19 = cs6UsCanadaPercCertifedMoreThanOneStandard19;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard29() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard29;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard29(Float cs6UsCanadaPercCertifedMoreThanOneStandard29) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard29 = cs6UsCanadaPercCertifedMoreThanOneStandard29;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard39() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard39;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard39(Float cs6UsCanadaPercCertifedMoreThanOneStandard39) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard39 = cs6UsCanadaPercCertifedMoreThanOneStandard39;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard49() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard49;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard49(Float cs6UsCanadaPercCertifedMoreThanOneStandard49) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard49 = cs6UsCanadaPercCertifedMoreThanOneStandard49;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard59() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard59;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard59(Float cs6UsCanadaPercCertifedMoreThanOneStandard59) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard59 = cs6UsCanadaPercCertifedMoreThanOneStandard59;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard69() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard69;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard69(Float cs6UsCanadaPercCertifedMoreThanOneStandard69) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard69 = cs6UsCanadaPercCertifedMoreThanOneStandard69;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard79() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard79;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard79(Float cs6UsCanadaPercCertifedMoreThanOneStandard79) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard79 = cs6UsCanadaPercCertifedMoreThanOneStandard79;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard110() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard110;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard110(Float cs6UsCanadaPercCertifedMoreThanOneStandard110) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard110 = cs6UsCanadaPercCertifedMoreThanOneStandard110;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard210() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard210;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard210(Float cs6UsCanadaPercCertifedMoreThanOneStandard210) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard210 = cs6UsCanadaPercCertifedMoreThanOneStandard210;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard310() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard310;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard310(Float cs6UsCanadaPercCertifedMoreThanOneStandard310) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard310 = cs6UsCanadaPercCertifedMoreThanOneStandard310;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard410() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard410;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard410(Float cs6UsCanadaPercCertifedMoreThanOneStandard410) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard410 = cs6UsCanadaPercCertifedMoreThanOneStandard410;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard510() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard510;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard510(Float cs6UsCanadaPercCertifedMoreThanOneStandard510) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard510 = cs6UsCanadaPercCertifedMoreThanOneStandard510;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard610() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard610;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard610(Float cs6UsCanadaPercCertifedMoreThanOneStandard610) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard610 = cs6UsCanadaPercCertifedMoreThanOneStandard610;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard710() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard710;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard710(Float cs6UsCanadaPercCertifedMoreThanOneStandard710) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard710 = cs6UsCanadaPercCertifedMoreThanOneStandard710;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard111() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard111;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard111(Float cs6UsCanadaPercCertifedMoreThanOneStandard111) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard111 = cs6UsCanadaPercCertifedMoreThanOneStandard111;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard211() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard211;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard211(Float cs6UsCanadaPercCertifedMoreThanOneStandard211) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard211 = cs6UsCanadaPercCertifedMoreThanOneStandard211;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard311() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard311;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard311(Float cs6UsCanadaPercCertifedMoreThanOneStandard311) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard311 = cs6UsCanadaPercCertifedMoreThanOneStandard311;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard411() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard411;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard411(Float cs6UsCanadaPercCertifedMoreThanOneStandard411) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard411 = cs6UsCanadaPercCertifedMoreThanOneStandard411;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard511() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard511;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard511(Float cs6UsCanadaPercCertifedMoreThanOneStandard511) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard511 = cs6UsCanadaPercCertifedMoreThanOneStandard511;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard611() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard611;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard611(Float cs6UsCanadaPercCertifedMoreThanOneStandard611) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard611 = cs6UsCanadaPercCertifedMoreThanOneStandard611;
-	}
-
-	public Float getCs6UsCanadaPercCertifedMoreThanOneStandard711() {
-		return cs6UsCanadaPercCertifedMoreThanOneStandard711;
-	}
-
-	public void setCs6UsCanadaPercCertifedMoreThanOneStandard711(Float cs6UsCanadaPercCertifedMoreThanOneStandard711) {
-		this.cs6UsCanadaPercCertifedMoreThanOneStandard711 = cs6UsCanadaPercCertifedMoreThanOneStandard711;
-	}
+    public Cs6 getSfiPpForm() {
+        return sfiPpForm;
+    }
+
+    public void setSfiPpForm(Cs6 sfiPpForm) {
+        this.sfiPpForm = sfiPpForm;
+    }
+
+    public SfiPpFormRegion getRegion() {
+        return region;
+    }
+
+    public void setRegion(SfiPpFormRegion region) {
+        this.region = region;
+    }
+
+    public Integer getUsCanadaUnit1() {
+        return usCanadaUnit1;
+    }
+
+    public void setUsCanadaUnit1(Integer usCanadaUnit1) {
+        this.usCanadaUnit1 = usCanadaUnit1;
+    }
+
+    public String getUsCanadaVolume1() {
+        return usCanadaVolume1;
+    }
+
+    public void setUsCanadaVolume1(String usCanadaVolume1) {
+        this.usCanadaVolume1 = usCanadaVolume1;
+    }
+
+    public String getUsCanadaPercDeliveredQualifiedLogging1() {
+        return usCanadaPercDeliveredQualifiedLogging1;
+    }
+
+    public void setUsCanadaPercDeliveredQualifiedLogging1(String usCanadaPercDeliveredQualifiedLogging1) {
+        this.usCanadaPercDeliveredQualifiedLogging1 = usCanadaPercDeliveredQualifiedLogging1;
+    }
+
+    public String getUsCanadaPercSFIOnlyCertified1() {
+        return usCanadaPercSFIOnlyCertified1;
+    }
+
+    public void setUsCanadaPercSFIOnlyCertified1(String usCanadaPercSFIOnlyCertified1) {
+        this.usCanadaPercSFIOnlyCertified1 = usCanadaPercSFIOnlyCertified1;
+    }
+
+    public String getUsCanadaPercATFSOnlyCertified1() {
+        return usCanadaPercATFSOnlyCertified1;
+    }
+
+    public void setUsCanadaPercATFSOnlyCertified1(String usCanadaPercATFSOnlyCertified1) {
+        this.usCanadaPercATFSOnlyCertified1 = usCanadaPercATFSOnlyCertified1;
+    }
+
+    public String getUsCanadaPercCSAOnlyCertified1() {
+        return usCanadaPercCSAOnlyCertified1;
+    }
+
+    public void setUsCanadaPercCSAOnlyCertified1(String usCanadaPercCSAOnlyCertified1) {
+        this.usCanadaPercCSAOnlyCertified1 = usCanadaPercCSAOnlyCertified1;
+    }
+
+    public String getUsCanadaPercFSCOnlyCertified1() {
+        return usCanadaPercFSCOnlyCertified1;
+    }
+
+    public void setUsCanadaPercFSCOnlyCertified1(String usCanadaPercFSCOnlyCertified1) {
+        this.usCanadaPercFSCOnlyCertified1 = usCanadaPercFSCOnlyCertified1;
+    }
+
+    public Set<String> getUsCanadaMoreThanOneStandard1() {
+        return usCanadaMoreThanOneStandard1;
+    }
+
+    public void setUsCanadaMoreThanOneStandard1(Set<String> usCanadaMoreThanOneStandard1) {
+        addAll(this.usCanadaMoreThanOneStandard1, usCanadaMoreThanOneStandard1);
+    }
+
+    public Boolean getUsCanadaOther() {
+        return usCanadaOther;
+    }
+
+    public void setUsCanadaOther(Boolean usCanadaOther) {
+        this.usCanadaOther = usCanadaOther;
+    }
+
+    public String getUsCanadaOtherLabel() {
+        return usCanadaOtherLabel;
+    }
+
+    public void setUsCanadaOtherLabel(String usCanadaOtherLabel) {
+        this.usCanadaOtherLabel = usCanadaOtherLabel;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard11() {
+        return usCanadaPercCertifedMoreThanOneStandard11;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard11(Float usCanadaPercCertifedMoreThanOneStandard11) {
+        this.usCanadaPercCertifedMoreThanOneStandard11 = usCanadaPercCertifedMoreThanOneStandard11;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard21() {
+        return usCanadaPercCertifedMoreThanOneStandard21;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard21(Float usCanadaPercCertifedMoreThanOneStandard21) {
+        this.usCanadaPercCertifedMoreThanOneStandard21 = usCanadaPercCertifedMoreThanOneStandard21;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard31() {
+        return usCanadaPercCertifedMoreThanOneStandard31;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard31(Float usCanadaPercCertifedMoreThanOneStandard31) {
+        this.usCanadaPercCertifedMoreThanOneStandard31 = usCanadaPercCertifedMoreThanOneStandard31;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard41() {
+        return usCanadaPercCertifedMoreThanOneStandard41;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard41(Float usCanadaPercCertifedMoreThanOneStandard41) {
+        this.usCanadaPercCertifedMoreThanOneStandard41 = usCanadaPercCertifedMoreThanOneStandard41;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard51() {
+        return usCanadaPercCertifedMoreThanOneStandard51;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard51(Float usCanadaPercCertifedMoreThanOneStandard51) {
+        this.usCanadaPercCertifedMoreThanOneStandard51 = usCanadaPercCertifedMoreThanOneStandard51;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard61() {
+        return usCanadaPercCertifedMoreThanOneStandard61;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard61(Float usCanadaPercCertifedMoreThanOneStandard61) {
+        this.usCanadaPercCertifedMoreThanOneStandard61 = usCanadaPercCertifedMoreThanOneStandard61;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard71() {
+        return usCanadaPercCertifedMoreThanOneStandard71;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard71(Float usCanadaPercCertifedMoreThanOneStandard71) {
+        this.usCanadaPercCertifedMoreThanOneStandard71 = usCanadaPercCertifedMoreThanOneStandard71;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard12() {
+        return usCanadaPercCertifedMoreThanOneStandard12;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard12(Float usCanadaPercCertifedMoreThanOneStandard12) {
+        this.usCanadaPercCertifedMoreThanOneStandard12 = usCanadaPercCertifedMoreThanOneStandard12;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard22() {
+        return usCanadaPercCertifedMoreThanOneStandard22;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard22(Float usCanadaPercCertifedMoreThanOneStandard22) {
+        this.usCanadaPercCertifedMoreThanOneStandard22 = usCanadaPercCertifedMoreThanOneStandard22;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard32() {
+        return usCanadaPercCertifedMoreThanOneStandard32;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard32(Float usCanadaPercCertifedMoreThanOneStandard32) {
+        this.usCanadaPercCertifedMoreThanOneStandard32 = usCanadaPercCertifedMoreThanOneStandard32;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard42() {
+        return usCanadaPercCertifedMoreThanOneStandard42;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard42(Float usCanadaPercCertifedMoreThanOneStandard42) {
+        this.usCanadaPercCertifedMoreThanOneStandard42 = usCanadaPercCertifedMoreThanOneStandard42;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard52() {
+        return usCanadaPercCertifedMoreThanOneStandard52;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard52(Float usCanadaPercCertifedMoreThanOneStandard52) {
+        this.usCanadaPercCertifedMoreThanOneStandard52 = usCanadaPercCertifedMoreThanOneStandard52;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard62() {
+        return usCanadaPercCertifedMoreThanOneStandard62;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard62(Float usCanadaPercCertifedMoreThanOneStandard62) {
+        this.usCanadaPercCertifedMoreThanOneStandard62 = usCanadaPercCertifedMoreThanOneStandard62;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard72() {
+        return usCanadaPercCertifedMoreThanOneStandard72;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard72(Float usCanadaPercCertifedMoreThanOneStandard72) {
+        this.usCanadaPercCertifedMoreThanOneStandard72 = usCanadaPercCertifedMoreThanOneStandard72;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard13() {
+        return usCanadaPercCertifedMoreThanOneStandard13;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard13(Float usCanadaPercCertifedMoreThanOneStandard13) {
+        this.usCanadaPercCertifedMoreThanOneStandard13 = usCanadaPercCertifedMoreThanOneStandard13;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard23() {
+        return usCanadaPercCertifedMoreThanOneStandard23;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard23(Float usCanadaPercCertifedMoreThanOneStandard23) {
+        this.usCanadaPercCertifedMoreThanOneStandard23 = usCanadaPercCertifedMoreThanOneStandard23;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard33() {
+        return usCanadaPercCertifedMoreThanOneStandard33;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard33(Float usCanadaPercCertifedMoreThanOneStandard33) {
+        this.usCanadaPercCertifedMoreThanOneStandard33 = usCanadaPercCertifedMoreThanOneStandard33;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard43() {
+        return usCanadaPercCertifedMoreThanOneStandard43;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard43(Float usCanadaPercCertifedMoreThanOneStandard43) {
+        this.usCanadaPercCertifedMoreThanOneStandard43 = usCanadaPercCertifedMoreThanOneStandard43;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard53() {
+        return usCanadaPercCertifedMoreThanOneStandard53;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard53(Float usCanadaPercCertifedMoreThanOneStandard53) {
+        this.usCanadaPercCertifedMoreThanOneStandard53 = usCanadaPercCertifedMoreThanOneStandard53;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard63() {
+        return usCanadaPercCertifedMoreThanOneStandard63;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard63(Float usCanadaPercCertifedMoreThanOneStandard63) {
+        this.usCanadaPercCertifedMoreThanOneStandard63 = usCanadaPercCertifedMoreThanOneStandard63;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard73() {
+        return usCanadaPercCertifedMoreThanOneStandard73;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard73(Float usCanadaPercCertifedMoreThanOneStandard73) {
+        this.usCanadaPercCertifedMoreThanOneStandard73 = usCanadaPercCertifedMoreThanOneStandard73;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard14() {
+        return usCanadaPercCertifedMoreThanOneStandard14;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard14(Float usCanadaPercCertifedMoreThanOneStandard14) {
+        this.usCanadaPercCertifedMoreThanOneStandard14 = usCanadaPercCertifedMoreThanOneStandard14;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard24() {
+        return usCanadaPercCertifedMoreThanOneStandard24;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard24(Float usCanadaPercCertifedMoreThanOneStandard24) {
+        this.usCanadaPercCertifedMoreThanOneStandard24 = usCanadaPercCertifedMoreThanOneStandard24;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard34() {
+        return usCanadaPercCertifedMoreThanOneStandard34;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard34(Float usCanadaPercCertifedMoreThanOneStandard34) {
+        this.usCanadaPercCertifedMoreThanOneStandard34 = usCanadaPercCertifedMoreThanOneStandard34;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard44() {
+        return usCanadaPercCertifedMoreThanOneStandard44;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard44(Float usCanadaPercCertifedMoreThanOneStandard44) {
+        this.usCanadaPercCertifedMoreThanOneStandard44 = usCanadaPercCertifedMoreThanOneStandard44;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard54() {
+        return usCanadaPercCertifedMoreThanOneStandard54;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard54(Float usCanadaPercCertifedMoreThanOneStandard54) {
+        this.usCanadaPercCertifedMoreThanOneStandard54 = usCanadaPercCertifedMoreThanOneStandard54;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard64() {
+        return usCanadaPercCertifedMoreThanOneStandard64;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard64(Float usCanadaPercCertifedMoreThanOneStandard64) {
+        this.usCanadaPercCertifedMoreThanOneStandard64 = usCanadaPercCertifedMoreThanOneStandard64;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard74() {
+        return usCanadaPercCertifedMoreThanOneStandard74;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard74(Float usCanadaPercCertifedMoreThanOneStandard74) {
+        this.usCanadaPercCertifedMoreThanOneStandard74 = usCanadaPercCertifedMoreThanOneStandard74;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard15() {
+        return usCanadaPercCertifedMoreThanOneStandard15;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard15(Float usCanadaPercCertifedMoreThanOneStandard15) {
+        this.usCanadaPercCertifedMoreThanOneStandard15 = usCanadaPercCertifedMoreThanOneStandard15;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard25() {
+        return usCanadaPercCertifedMoreThanOneStandard25;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard25(Float usCanadaPercCertifedMoreThanOneStandard25) {
+        this.usCanadaPercCertifedMoreThanOneStandard25 = usCanadaPercCertifedMoreThanOneStandard25;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard35() {
+        return usCanadaPercCertifedMoreThanOneStandard35;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard35(Float usCanadaPercCertifedMoreThanOneStandard35) {
+        this.usCanadaPercCertifedMoreThanOneStandard35 = usCanadaPercCertifedMoreThanOneStandard35;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard45() {
+        return usCanadaPercCertifedMoreThanOneStandard45;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard45(Float usCanadaPercCertifedMoreThanOneStandard45) {
+        this.usCanadaPercCertifedMoreThanOneStandard45 = usCanadaPercCertifedMoreThanOneStandard45;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard55() {
+        return usCanadaPercCertifedMoreThanOneStandard55;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard55(Float usCanadaPercCertifedMoreThanOneStandard55) {
+        this.usCanadaPercCertifedMoreThanOneStandard55 = usCanadaPercCertifedMoreThanOneStandard55;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard65() {
+        return usCanadaPercCertifedMoreThanOneStandard65;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard65(Float usCanadaPercCertifedMoreThanOneStandard65) {
+        this.usCanadaPercCertifedMoreThanOneStandard65 = usCanadaPercCertifedMoreThanOneStandard65;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard75() {
+        return usCanadaPercCertifedMoreThanOneStandard75;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard75(Float usCanadaPercCertifedMoreThanOneStandard75) {
+        this.usCanadaPercCertifedMoreThanOneStandard75 = usCanadaPercCertifedMoreThanOneStandard75;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard16() {
+        return usCanadaPercCertifedMoreThanOneStandard16;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard16(Float usCanadaPercCertifedMoreThanOneStandard16) {
+        this.usCanadaPercCertifedMoreThanOneStandard16 = usCanadaPercCertifedMoreThanOneStandard16;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard26() {
+        return usCanadaPercCertifedMoreThanOneStandard26;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard26(Float usCanadaPercCertifedMoreThanOneStandard26) {
+        this.usCanadaPercCertifedMoreThanOneStandard26 = usCanadaPercCertifedMoreThanOneStandard26;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard36() {
+        return usCanadaPercCertifedMoreThanOneStandard36;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard36(Float usCanadaPercCertifedMoreThanOneStandard36) {
+        this.usCanadaPercCertifedMoreThanOneStandard36 = usCanadaPercCertifedMoreThanOneStandard36;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard46() {
+        return usCanadaPercCertifedMoreThanOneStandard46;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard46(Float usCanadaPercCertifedMoreThanOneStandard46) {
+        this.usCanadaPercCertifedMoreThanOneStandard46 = usCanadaPercCertifedMoreThanOneStandard46;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard56() {
+        return usCanadaPercCertifedMoreThanOneStandard56;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard56(Float usCanadaPercCertifedMoreThanOneStandard56) {
+        this.usCanadaPercCertifedMoreThanOneStandard56 = usCanadaPercCertifedMoreThanOneStandard56;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard66() {
+        return usCanadaPercCertifedMoreThanOneStandard66;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard66(Float usCanadaPercCertifedMoreThanOneStandard66) {
+        this.usCanadaPercCertifedMoreThanOneStandard66 = usCanadaPercCertifedMoreThanOneStandard66;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard76() {
+        return usCanadaPercCertifedMoreThanOneStandard76;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard76(Float usCanadaPercCertifedMoreThanOneStandard76) {
+        this.usCanadaPercCertifedMoreThanOneStandard76 = usCanadaPercCertifedMoreThanOneStandard76;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard17() {
+        return usCanadaPercCertifedMoreThanOneStandard17;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard17(Float usCanadaPercCertifedMoreThanOneStandard17) {
+        this.usCanadaPercCertifedMoreThanOneStandard17 = usCanadaPercCertifedMoreThanOneStandard17;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard27() {
+        return usCanadaPercCertifedMoreThanOneStandard27;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard27(Float usCanadaPercCertifedMoreThanOneStandard27) {
+        this.usCanadaPercCertifedMoreThanOneStandard27 = usCanadaPercCertifedMoreThanOneStandard27;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard37() {
+        return usCanadaPercCertifedMoreThanOneStandard37;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard37(Float usCanadaPercCertifedMoreThanOneStandard37) {
+        this.usCanadaPercCertifedMoreThanOneStandard37 = usCanadaPercCertifedMoreThanOneStandard37;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard47() {
+        return usCanadaPercCertifedMoreThanOneStandard47;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard47(Float usCanadaPercCertifedMoreThanOneStandard47) {
+        this.usCanadaPercCertifedMoreThanOneStandard47 = usCanadaPercCertifedMoreThanOneStandard47;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard57() {
+        return usCanadaPercCertifedMoreThanOneStandard57;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard57(Float usCanadaPercCertifedMoreThanOneStandard57) {
+        this.usCanadaPercCertifedMoreThanOneStandard57 = usCanadaPercCertifedMoreThanOneStandard57;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard67() {
+        return usCanadaPercCertifedMoreThanOneStandard67;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard67(Float usCanadaPercCertifedMoreThanOneStandard67) {
+        this.usCanadaPercCertifedMoreThanOneStandard67 = usCanadaPercCertifedMoreThanOneStandard67;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard77() {
+        return usCanadaPercCertifedMoreThanOneStandard77;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard77(Float usCanadaPercCertifedMoreThanOneStandard77) {
+        this.usCanadaPercCertifedMoreThanOneStandard77 = usCanadaPercCertifedMoreThanOneStandard77;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard18() {
+        return usCanadaPercCertifedMoreThanOneStandard18;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard18(Float usCanadaPercCertifedMoreThanOneStandard18) {
+        this.usCanadaPercCertifedMoreThanOneStandard18 = usCanadaPercCertifedMoreThanOneStandard18;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard28() {
+        return usCanadaPercCertifedMoreThanOneStandard28;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard28(Float usCanadaPercCertifedMoreThanOneStandard28) {
+        this.usCanadaPercCertifedMoreThanOneStandard28 = usCanadaPercCertifedMoreThanOneStandard28;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard38() {
+        return usCanadaPercCertifedMoreThanOneStandard38;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard38(Float usCanadaPercCertifedMoreThanOneStandard38) {
+        this.usCanadaPercCertifedMoreThanOneStandard38 = usCanadaPercCertifedMoreThanOneStandard38;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard48() {
+        return usCanadaPercCertifedMoreThanOneStandard48;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard48(Float usCanadaPercCertifedMoreThanOneStandard48) {
+        this.usCanadaPercCertifedMoreThanOneStandard48 = usCanadaPercCertifedMoreThanOneStandard48;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard58() {
+        return usCanadaPercCertifedMoreThanOneStandard58;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard58(Float usCanadaPercCertifedMoreThanOneStandard58) {
+        this.usCanadaPercCertifedMoreThanOneStandard58 = usCanadaPercCertifedMoreThanOneStandard58;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard68() {
+        return usCanadaPercCertifedMoreThanOneStandard68;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard68(Float usCanadaPercCertifedMoreThanOneStandard68) {
+        this.usCanadaPercCertifedMoreThanOneStandard68 = usCanadaPercCertifedMoreThanOneStandard68;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard78() {
+        return usCanadaPercCertifedMoreThanOneStandard78;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard78(Float usCanadaPercCertifedMoreThanOneStandard78) {
+        this.usCanadaPercCertifedMoreThanOneStandard78 = usCanadaPercCertifedMoreThanOneStandard78;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard19() {
+        return usCanadaPercCertifedMoreThanOneStandard19;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard19(Float usCanadaPercCertifedMoreThanOneStandard19) {
+        this.usCanadaPercCertifedMoreThanOneStandard19 = usCanadaPercCertifedMoreThanOneStandard19;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard29() {
+        return usCanadaPercCertifedMoreThanOneStandard29;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard29(Float usCanadaPercCertifedMoreThanOneStandard29) {
+        this.usCanadaPercCertifedMoreThanOneStandard29 = usCanadaPercCertifedMoreThanOneStandard29;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard39() {
+        return usCanadaPercCertifedMoreThanOneStandard39;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard39(Float usCanadaPercCertifedMoreThanOneStandard39) {
+        this.usCanadaPercCertifedMoreThanOneStandard39 = usCanadaPercCertifedMoreThanOneStandard39;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard49() {
+        return usCanadaPercCertifedMoreThanOneStandard49;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard49(Float usCanadaPercCertifedMoreThanOneStandard49) {
+        this.usCanadaPercCertifedMoreThanOneStandard49 = usCanadaPercCertifedMoreThanOneStandard49;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard59() {
+        return usCanadaPercCertifedMoreThanOneStandard59;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard59(Float usCanadaPercCertifedMoreThanOneStandard59) {
+        this.usCanadaPercCertifedMoreThanOneStandard59 = usCanadaPercCertifedMoreThanOneStandard59;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard69() {
+        return usCanadaPercCertifedMoreThanOneStandard69;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard69(Float usCanadaPercCertifedMoreThanOneStandard69) {
+        this.usCanadaPercCertifedMoreThanOneStandard69 = usCanadaPercCertifedMoreThanOneStandard69;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard79() {
+        return usCanadaPercCertifedMoreThanOneStandard79;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard79(Float usCanadaPercCertifedMoreThanOneStandard79) {
+        this.usCanadaPercCertifedMoreThanOneStandard79 = usCanadaPercCertifedMoreThanOneStandard79;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard110() {
+        return usCanadaPercCertifedMoreThanOneStandard110;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard110(Float usCanadaPercCertifedMoreThanOneStandard110) {
+        this.usCanadaPercCertifedMoreThanOneStandard110 = usCanadaPercCertifedMoreThanOneStandard110;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard210() {
+        return usCanadaPercCertifedMoreThanOneStandard210;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard210(Float usCanadaPercCertifedMoreThanOneStandard210) {
+        this.usCanadaPercCertifedMoreThanOneStandard210 = usCanadaPercCertifedMoreThanOneStandard210;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard310() {
+        return usCanadaPercCertifedMoreThanOneStandard310;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard310(Float usCanadaPercCertifedMoreThanOneStandard310) {
+        this.usCanadaPercCertifedMoreThanOneStandard310 = usCanadaPercCertifedMoreThanOneStandard310;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard410() {
+        return usCanadaPercCertifedMoreThanOneStandard410;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard410(Float usCanadaPercCertifedMoreThanOneStandard410) {
+        this.usCanadaPercCertifedMoreThanOneStandard410 = usCanadaPercCertifedMoreThanOneStandard410;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard510() {
+        return usCanadaPercCertifedMoreThanOneStandard510;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard510(Float usCanadaPercCertifedMoreThanOneStandard510) {
+        this.usCanadaPercCertifedMoreThanOneStandard510 = usCanadaPercCertifedMoreThanOneStandard510;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard610() {
+        return usCanadaPercCertifedMoreThanOneStandard610;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard610(Float usCanadaPercCertifedMoreThanOneStandard610) {
+        this.usCanadaPercCertifedMoreThanOneStandard610 = usCanadaPercCertifedMoreThanOneStandard610;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard710() {
+        return usCanadaPercCertifedMoreThanOneStandard710;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard710(Float usCanadaPercCertifedMoreThanOneStandard710) {
+        this.usCanadaPercCertifedMoreThanOneStandard710 = usCanadaPercCertifedMoreThanOneStandard710;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard111() {
+        return usCanadaPercCertifedMoreThanOneStandard111;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard111(Float usCanadaPercCertifedMoreThanOneStandard111) {
+        this.usCanadaPercCertifedMoreThanOneStandard111 = usCanadaPercCertifedMoreThanOneStandard111;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard211() {
+        return usCanadaPercCertifedMoreThanOneStandard211;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard211(Float usCanadaPercCertifedMoreThanOneStandard211) {
+        this.usCanadaPercCertifedMoreThanOneStandard211 = usCanadaPercCertifedMoreThanOneStandard211;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard311() {
+        return usCanadaPercCertifedMoreThanOneStandard311;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard311(Float usCanadaPercCertifedMoreThanOneStandard311) {
+        this.usCanadaPercCertifedMoreThanOneStandard311 = usCanadaPercCertifedMoreThanOneStandard311;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard411() {
+        return usCanadaPercCertifedMoreThanOneStandard411;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard411(Float usCanadaPercCertifedMoreThanOneStandard411) {
+        this.usCanadaPercCertifedMoreThanOneStandard411 = usCanadaPercCertifedMoreThanOneStandard411;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard511() {
+        return usCanadaPercCertifedMoreThanOneStandard511;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard511(Float usCanadaPercCertifedMoreThanOneStandard511) {
+        this.usCanadaPercCertifedMoreThanOneStandard511 = usCanadaPercCertifedMoreThanOneStandard511;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard611() {
+        return usCanadaPercCertifedMoreThanOneStandard611;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard611(Float usCanadaPercCertifedMoreThanOneStandard611) {
+        this.usCanadaPercCertifedMoreThanOneStandard611 = usCanadaPercCertifedMoreThanOneStandard611;
+    }
+
+    public Float getUsCanadaPercCertifedMoreThanOneStandard711() {
+        return usCanadaPercCertifedMoreThanOneStandard711;
+    }
+
+    public void setUsCanadaPercCertifedMoreThanOneStandard711(Float usCanadaPercCertifedMoreThanOneStandard711) {
+        this.usCanadaPercCertifedMoreThanOneStandard711 = usCanadaPercCertifedMoreThanOneStandard711;
+    }
 }

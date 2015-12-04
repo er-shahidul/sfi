@@ -16,10 +16,10 @@ public class SfiPpFormCs3ProjectSupportDocs extends BaseEntityModel {
 	private SfiPpFormCs3 sfiPpFormCs3;
 
 	@Column(name="cs3_project_originalDocumentName", nullable=true)
-	private String cs3ProjectOriginalDocumentName;
+	private String projectOriginalDocumentName;
 
 	@Column(name="cs3_project_uniqueDocumentName", nullable=true)
-	private String cs3ProjectUniqueDocumentName;
+	private String projectUniqueDocumentName;
 
     @Override
 	public Integer getId() {
@@ -30,27 +30,27 @@ public class SfiPpFormCs3ProjectSupportDocs extends BaseEntityModel {
 		this.id = id;
 	}
 
-	public SfiPpFormCs3 getSfiPpFormCs3() {
-		return sfiPpFormCs3;
-	}
+    public SfiPpFormCs3 getSfiPpFormCs3() {
+        return sfiPpFormCs3;
+    }
 
-	public void setSfiPpFormCs3(SfiPpFormCs3 sfiPpFormCs3) {
-		this.sfiPpFormCs3 = sfiPpFormCs3;
-	}
+    public void setSfiPpFormCs3(SfiPpFormCs3 sfiPpFormCs3) {
+        this.sfiPpFormCs3 = sfiPpFormCs3;
+    }
 
-	public String getCs3ProjectOriginalDocumentName() {
-		return cs3ProjectOriginalDocumentName;
-	}
+    public String getProjectOriginalDocumentName() {
+        return projectOriginalDocumentName;
+    }
 
-	public void setCs3ProjectOriginalDocumentName(String cs3ProjectOriginalDocumentName) {
-		this.cs3ProjectOriginalDocumentName = cs3ProjectOriginalDocumentName;
-	}
+    public void setProjectOriginalDocumentName(String projectOriginalDocumentName) {
+        this.projectOriginalDocumentName = projectOriginalDocumentName;
+    }
 
-	public String getCs3ProjectUniqueDocumentName() {
-		return cs3ProjectUniqueDocumentName;
-	}
+    public String getProjectUniqueDocumentName() {
+        return projectUniqueDocumentName;
+    }
 
-	public void setCs3ProjectUniqueDocumentName(String cs3ProjectUniqueDocumentName) {
-		this.cs3ProjectUniqueDocumentName = cs3ProjectUniqueDocumentName;
-	}
+    public void setProjectUniqueDocumentName(String projectUniqueDocumentName) {
+        this.projectUniqueDocumentName = projectUniqueDocumentName;
+    }
 }

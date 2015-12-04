@@ -4,16 +4,16 @@ import com.rbs.sfi.common.models.BaseViewModel;
 
 public class SfiPpFormCs6OtherViewModel extends BaseViewModel {
 	private Integer id;
-    private Integer cs6OtherCountriesUnits;
+    private Integer otherCountriesUnits;
 	private Cs6ViewModel sfiPpForm;
 	private SfiPpFormOtherCountryViewModel country;
-	private String cs6OtherCountriesVolume;
-	private String cs6OtherCountriesPercPEFCCertified;
-	private String cs6OtherCountriesPercFSCCertified;
-	private String cs6OtherCountriesPercPEFCFSCCertified;
-	private String cs6OtherCountriesPercSFIFiberSourcing;
-	private String cs6OtherCountriesPercOtherReason;
-    private Boolean cs6OtherCountriesPercOther;
+	private String otherCountriesVolume;
+	private String otherCountriesPercPEFCCertified;
+	private String otherCountriesPercFSCCertified;
+	private String otherCountriesPercPEFCFSCCertified;
+	private String otherCountriesPercSFIFiberSourcing;
+	private String otherCountriesPercOtherReason;
+    private Boolean otherCountriesPercOther;
 
     @Override
     public Integer getId() {
@@ -24,12 +24,12 @@ public class SfiPpFormCs6OtherViewModel extends BaseViewModel {
         this.id = id;
     }
 
-    public Integer getCs6OtherCountriesUnits() {
-        return cs6OtherCountriesUnits;
+    public Integer getOtherCountriesUnits() {
+        return otherCountriesUnits;
     }
 
-    public void setCs6OtherCountriesUnits(Integer cs6OtherCountriesUnits) {
-        this.cs6OtherCountriesUnits = cs6OtherCountriesUnits;
+    public void setOtherCountriesUnits(Integer otherCountriesUnits) {
+        this.otherCountriesUnits = otherCountriesUnits;
     }
 
     public Cs6ViewModel getSfiPpForm() {
@@ -48,59 +48,59 @@ public class SfiPpFormCs6OtherViewModel extends BaseViewModel {
         this.country = country;
     }
 
-    public String getCs6OtherCountriesVolume() {
-        return cs6OtherCountriesVolume;
+    public String getOtherCountriesVolume() {
+        return otherCountriesVolume;
     }
 
-    public void setCs6OtherCountriesVolume(String cs6OtherCountriesVolume) {
-        this.cs6OtherCountriesVolume = cs6OtherCountriesVolume;
+    public void setOtherCountriesVolume(String otherCountriesVolume) {
+        this.otherCountriesVolume = otherCountriesVolume;
     }
 
-    public String getCs6OtherCountriesPercPEFCCertified() {
-        return cs6OtherCountriesPercPEFCCertified;
+    public String getOtherCountriesPercPEFCCertified() {
+        return otherCountriesPercPEFCCertified;
     }
 
-    public void setCs6OtherCountriesPercPEFCCertified(String cs6OtherCountriesPercPEFCCertified) {
-        this.cs6OtherCountriesPercPEFCCertified = cs6OtherCountriesPercPEFCCertified;
+    public void setOtherCountriesPercPEFCCertified(String otherCountriesPercPEFCCertified) {
+        this.otherCountriesPercPEFCCertified = otherCountriesPercPEFCCertified;
     }
 
-    public String getCs6OtherCountriesPercFSCCertified() {
-        return cs6OtherCountriesPercFSCCertified;
+    public String getOtherCountriesPercFSCCertified() {
+        return otherCountriesPercFSCCertified;
     }
 
-    public void setCs6OtherCountriesPercFSCCertified(String cs6OtherCountriesPercFSCCertified) {
-        this.cs6OtherCountriesPercFSCCertified = cs6OtherCountriesPercFSCCertified;
+    public void setOtherCountriesPercFSCCertified(String otherCountriesPercFSCCertified) {
+        this.otherCountriesPercFSCCertified = otherCountriesPercFSCCertified;
     }
 
-    public String getCs6OtherCountriesPercPEFCFSCCertified() {
-        return cs6OtherCountriesPercPEFCFSCCertified;
+    public String getOtherCountriesPercPEFCFSCCertified() {
+        return otherCountriesPercPEFCFSCCertified;
     }
 
-    public void setCs6OtherCountriesPercPEFCFSCCertified(String cs6OtherCountriesPercPEFCFSCCertified) {
-        this.cs6OtherCountriesPercPEFCFSCCertified = cs6OtherCountriesPercPEFCFSCCertified;
+    public void setOtherCountriesPercPEFCFSCCertified(String otherCountriesPercPEFCFSCCertified) {
+        this.otherCountriesPercPEFCFSCCertified = otherCountriesPercPEFCFSCCertified;
     }
 
-    public String getCs6OtherCountriesPercSFIFiberSourcing() {
-        return cs6OtherCountriesPercSFIFiberSourcing;
+    public String getOtherCountriesPercSFIFiberSourcing() {
+        return otherCountriesPercSFIFiberSourcing;
     }
 
-    public void setCs6OtherCountriesPercSFIFiberSourcing(String cs6OtherCountriesPercSFIFiberSourcing) {
-        this.cs6OtherCountriesPercSFIFiberSourcing = cs6OtherCountriesPercSFIFiberSourcing;
+    public void setOtherCountriesPercSFIFiberSourcing(String otherCountriesPercSFIFiberSourcing) {
+        this.otherCountriesPercSFIFiberSourcing = otherCountriesPercSFIFiberSourcing;
     }
 
-    public String getCs6OtherCountriesPercOtherReason() {
-        return cs6OtherCountriesPercOtherReason;
+    public String getOtherCountriesPercOtherReason() {
+        return otherCountriesPercOtherReason;
     }
 
-    public void setCs6OtherCountriesPercOtherReason(String cs6OtherCountriesPercOtherReason) {
-        this.cs6OtherCountriesPercOtherReason = cs6OtherCountriesPercOtherReason;
+    public void setOtherCountriesPercOtherReason(String otherCountriesPercOtherReason) {
+        this.otherCountriesPercOtherReason = otherCountriesPercOtherReason;
     }
 
-    public Boolean getCs6OtherCountriesPercOther() {
-        return cs6OtherCountriesPercOther;
+    public Boolean getOtherCountriesPercOther() {
+        return otherCountriesPercOther;
     }
 
-    public void setCs6OtherCountriesPercOther(Boolean cs6OtherCountriesPercOther) {
-        this.cs6OtherCountriesPercOther = cs6OtherCountriesPercOther;
+    public void setOtherCountriesPercOther(Boolean otherCountriesPercOther) {
+        this.otherCountriesPercOther = otherCountriesPercOther;
     }
 }

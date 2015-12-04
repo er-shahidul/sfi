@@ -7,33 +7,33 @@ import java.util.Set;
 
 public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer id;
-    private Integer cs3SfiStandardObj;
-    private Integer cs3TotalProjectCost;
-    private Integer cs3TotalProjectCostCurr;
-    private Integer cs3OrgContribution;
-    private Integer cs3OrgContributionCurr;
+    private Integer sfiStandardObj;
+    private Integer totalProjectCost;
+    private Integer totalProjectCostCurr;
+    private Integer orgContribution;
+    private Integer orgContributionCurr;
 
-    private String cs3ProjectNm;
-    private String cs3ProjectObj;
-    private String cs3ProjectDescr;
-    private String cs3ConservatonPartners;
-    private String cs3OrganizationListAcademic;
-    private String cs3OrganizationListResearch;
-    private String cs3OrganizationListConservation;
-    private String cs3OrganizationListGovernment;
-    private String cs3OrganizationListCommunity;
-    private String cs3OrganizationListOther;
+    private String projectNm;
+    private String projectObj;
+    private String projectDescr;
+    private String conservatonPartners;
+    private String organizationListAcademic;
+    private String organizationListResearch;
+    private String organizationListConservation;
+    private String organizationListGovernment;
+    private String organizationListCommunity;
+    private String organizationListOther;
 
-    private Boolean cs3IncludeResearchFunding;
-    private Boolean cs3ShareConserData;
+    private Boolean includeResearchFunding;
+    private Boolean shareConserData;
 
-    private Date cs3StartDate;
-    private Date cs3EndDate;
+    private Date startDate;
+    private Date endDate;
 
     private Cs3ViewModel sfiPpForm;
 
-    private Set<SfiPpFormRegionViewModel> cs3ProjectLocations;
-    private Set<SfiPpFormCs3ProjectSupportDocsViewModel> cs3SupportDocs;
+    private Set<SfiPpFormRegionViewModel> projectLocations;
+    private Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs;
 
     @Override
     public Integer getId() {
@@ -44,172 +44,156 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.id = id;
     }
 
-    public String getCs3ProjectNm() {
-        return cs3ProjectNm;
+    public Integer getSfiStandardObj() {
+        return sfiStandardObj;
     }
 
-    public void setCs3ProjectNm(String cs3ProjectNm) {
-        this.cs3ProjectNm = cs3ProjectNm;
+    public void setSfiStandardObj(Integer sfiStandardObj) {
+        this.sfiStandardObj = sfiStandardObj;
     }
 
-    public String getCs3ProjectObj() {
-        return cs3ProjectObj;
+    public Integer getTotalProjectCost() {
+        return totalProjectCost;
     }
 
-    public void setCs3ProjectObj(String cs3ProjectObj) {
-        this.cs3ProjectObj = cs3ProjectObj;
+    public void setTotalProjectCost(Integer totalProjectCost) {
+        this.totalProjectCost = totalProjectCost;
     }
 
-    public String getCs3ProjectDescr() {
-        return cs3ProjectDescr;
+    public Integer getTotalProjectCostCurr() {
+        return totalProjectCostCurr;
     }
 
-    public void setCs3ProjectDescr(String cs3ProjectDescr) {
-        this.cs3ProjectDescr = cs3ProjectDescr;
+    public void setTotalProjectCostCurr(Integer totalProjectCostCurr) {
+        this.totalProjectCostCurr = totalProjectCostCurr;
     }
 
-    public Integer getCs3SfiStandardObj() {
-        return cs3SfiStandardObj;
+    public Integer getOrgContribution() {
+        return orgContribution;
     }
 
-    public void setCs3SfiStandardObj(Integer cs3SfiStandardObj) {
-        this.cs3SfiStandardObj = cs3SfiStandardObj;
+    public void setOrgContribution(Integer orgContribution) {
+        this.orgContribution = orgContribution;
     }
 
-    public Set<SfiPpFormRegionViewModel> getCs3ProjectLocations() {
-        return cs3ProjectLocations;
+    public Integer getOrgContributionCurr() {
+        return orgContributionCurr;
     }
 
-    public void setCs3ProjectLocations(Set<SfiPpFormRegionViewModel> cs3ProjectLocations) {
-        this.cs3ProjectLocations = cs3ProjectLocations;
+    public void setOrgContributionCurr(Integer orgContributionCurr) {
+        this.orgContributionCurr = orgContributionCurr;
     }
 
-    public String getCs3ConservatonPartners() {
-        return cs3ConservatonPartners;
+    public String getProjectNm() {
+        return projectNm;
     }
 
-    public void setCs3ConservatonPartners(String cs3ConservatonPartners) {
-        this.cs3ConservatonPartners = cs3ConservatonPartners;
+    public void setProjectNm(String projectNm) {
+        this.projectNm = projectNm;
     }
 
-    public Date getCs3StartDate() {
-        return cs3StartDate;
+    public String getProjectObj() {
+        return projectObj;
     }
 
-    public void setCs3StartDate(Date cs3StartDate) {
-        this.cs3StartDate = cs3StartDate;
+    public void setProjectObj(String projectObj) {
+        this.projectObj = projectObj;
     }
 
-    public Date getCs3EndDate() {
-        return cs3EndDate;
+    public String getProjectDescr() {
+        return projectDescr;
     }
 
-    public void setCs3EndDate(Date cs3EndDate) {
-        this.cs3EndDate = cs3EndDate;
+    public void setProjectDescr(String projectDescr) {
+        this.projectDescr = projectDescr;
     }
 
-    public Integer getCs3TotalProjectCost() {
-        return cs3TotalProjectCost;
+    public String getConservatonPartners() {
+        return conservatonPartners;
     }
 
-    public void setCs3TotalProjectCost(Integer cs3TotalProjectCost) {
-        this.cs3TotalProjectCost = cs3TotalProjectCost;
+    public void setConservatonPartners(String conservatonPartners) {
+        this.conservatonPartners = conservatonPartners;
     }
 
-    public Integer getCs3TotalProjectCostCurr() {
-        return cs3TotalProjectCostCurr;
+    public String getOrganizationListAcademic() {
+        return organizationListAcademic;
     }
 
-    public void setCs3TotalProjectCostCurr(Integer cs3TotalProjectCostCurr) {
-        this.cs3TotalProjectCostCurr = cs3TotalProjectCostCurr;
+    public void setOrganizationListAcademic(String organizationListAcademic) {
+        this.organizationListAcademic = organizationListAcademic;
     }
 
-    public Integer getCs3OrgContribution() {
-        return cs3OrgContribution;
+    public String getOrganizationListResearch() {
+        return organizationListResearch;
     }
 
-    public void setCs3OrgContribution(Integer cs3OrgContribution) {
-        this.cs3OrgContribution = cs3OrgContribution;
+    public void setOrganizationListResearch(String organizationListResearch) {
+        this.organizationListResearch = organizationListResearch;
     }
 
-    public Integer getCs3OrgContributionCurr() {
-        return cs3OrgContributionCurr;
+    public String getOrganizationListConservation() {
+        return organizationListConservation;
     }
 
-    public void setCs3OrgContributionCurr(Integer cs3OrgContributionCurr) {
-        this.cs3OrgContributionCurr = cs3OrgContributionCurr;
+    public void setOrganizationListConservation(String organizationListConservation) {
+        this.organizationListConservation = organizationListConservation;
     }
 
-    public String getCs3OrganizationListAcademic() {
-        return cs3OrganizationListAcademic;
+    public String getOrganizationListGovernment() {
+        return organizationListGovernment;
     }
 
-    public void setCs3OrganizationListAcademic(String cs3OrganizationListAcademic) {
-        this.cs3OrganizationListAcademic = cs3OrganizationListAcademic;
+    public void setOrganizationListGovernment(String organizationListGovernment) {
+        this.organizationListGovernment = organizationListGovernment;
     }
 
-    public String getCs3OrganizationListResearch() {
-        return cs3OrganizationListResearch;
+    public String getOrganizationListCommunity() {
+        return organizationListCommunity;
     }
 
-    public void setCs3OrganizationListResearch(String cs3OrganizationListResearch) {
-        this.cs3OrganizationListResearch = cs3OrganizationListResearch;
+    public void setOrganizationListCommunity(String organizationListCommunity) {
+        this.organizationListCommunity = organizationListCommunity;
     }
 
-    public String getCs3OrganizationListConservation() {
-        return cs3OrganizationListConservation;
+    public String getOrganizationListOther() {
+        return organizationListOther;
     }
 
-    public void setCs3OrganizationListConservation(String cs3OrganizationListConservation) {
-        this.cs3OrganizationListConservation = cs3OrganizationListConservation;
+    public void setOrganizationListOther(String organizationListOther) {
+        this.organizationListOther = organizationListOther;
     }
 
-    public String getCs3OrganizationListGovernment() {
-        return cs3OrganizationListGovernment;
+    public Boolean getIncludeResearchFunding() {
+        return includeResearchFunding;
     }
 
-    public void setCs3OrganizationListGovernment(String cs3OrganizationListGovernment) {
-        this.cs3OrganizationListGovernment = cs3OrganizationListGovernment;
+    public void setIncludeResearchFunding(Boolean includeResearchFunding) {
+        this.includeResearchFunding = includeResearchFunding;
     }
 
-    public String getCs3OrganizationListCommunity() {
-        return cs3OrganizationListCommunity;
+    public Boolean getShareConserData() {
+        return shareConserData;
     }
 
-    public void setCs3OrganizationListCommunity(String cs3OrganizationListCommunity) {
-        this.cs3OrganizationListCommunity = cs3OrganizationListCommunity;
+    public void setShareConserData(Boolean shareConserData) {
+        this.shareConserData = shareConserData;
     }
 
-    public String getCs3OrganizationListOther() {
-        return cs3OrganizationListOther;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setCs3OrganizationListOther(String cs3OrganizationListOther) {
-        this.cs3OrganizationListOther = cs3OrganizationListOther;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Set<SfiPpFormCs3ProjectSupportDocsViewModel> getCs3SupportDocs() {
-        return cs3SupportDocs;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setCs3SupportDocs(Set<SfiPpFormCs3ProjectSupportDocsViewModel> cs3SupportDocs) {
-        this.cs3SupportDocs = cs3SupportDocs;
-    }
-
-    public Boolean isCs3IncludeResearchFunding() {
-        return cs3IncludeResearchFunding;
-    }
-
-    public void setCs3IncludeResearchFunding(Boolean cs3IncludeResearchFunding) {
-        this.cs3IncludeResearchFunding = cs3IncludeResearchFunding;
-    }
-
-    public Boolean isCs3ShareConserData() {
-        return cs3ShareConserData;
-    }
-
-    public void setCs3ShareConserData(Boolean cs3ShareConserData) {
-        this.cs3ShareConserData = cs3ShareConserData;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public Cs3ViewModel getSfiPpForm() {
@@ -218,5 +202,21 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setSfiPpForm(Cs3ViewModel sfiPpForm) {
         this.sfiPpForm = sfiPpForm;
+    }
+
+    public Set<SfiPpFormRegionViewModel> getProjectLocations() {
+        return projectLocations;
+    }
+
+    public void setProjectLocations(Set<SfiPpFormRegionViewModel> projectLocations) {
+        this.projectLocations = projectLocations;
+    }
+
+    public Set<SfiPpFormCs3ProjectSupportDocsViewModel> getSupportDocs() {
+        return supportDocs;
+    }
+
+    public void setSupportDocs(Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs) {
+        this.supportDocs = supportDocs;
     }
 }
