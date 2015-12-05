@@ -92,6 +92,8 @@ public class CompanyController
             e.printStackTrace();
         }
 
+        if(file.isEmpty()){fileN = null;}
+
         companyService.update(company, fileN, name);
 
         model.addAttribute("success", "Company " + "" + " updated successfully");

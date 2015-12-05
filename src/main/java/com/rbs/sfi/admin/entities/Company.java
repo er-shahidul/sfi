@@ -8,7 +8,7 @@ public class Company extends Audit
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="name", unique=true, nullable=true)
 	private String name;
@@ -25,22 +25,25 @@ public class Company extends Audit
 	private String logoName;
 
 	@Column(name="sfi", nullable = false, columnDefinition = "Boolean default false")
-	private boolean sfi;
+	private Boolean sfi;
 
 	@Column(name="sci", nullable = false, columnDefinition = "Boolean default false")
-	private boolean sci;
+	private Boolean sci;
 
-	@Column(name="primary0_secondary1", nullable = true)
-	private Boolean primary0Secondary1;
+	@Column(name="primary_user", nullable = false, columnDefinition = "Boolean default false")
+	private Boolean primary;
+
+	@Column(name="secondary_user", nullable = false, columnDefinition = "Boolean default false")
+	private Boolean secondary;
 
 	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
 	private Boolean isActive;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -84,27 +87,35 @@ public class Company extends Audit
 		this.isActive = isActive;
 	}
 
-	public boolean isSfi() {
+	public Boolean getSfi() {
 		return sfi;
 	}
 
-	public void setSfi(boolean sfi) {
+	public void setSfi(Boolean sfi) {
 		this.sfi = sfi;
 	}
 
-	public boolean isSci() {
+	public Boolean getSci() {
 		return sci;
 	}
 
-	public void setSci(boolean sci) {
+	public void setSci(Boolean sci) {
 		this.sci = sci;
 	}
 
-	public Boolean getPrimary0Secondary1() {
-		return primary0Secondary1;
-	}
+    public Boolean getPrimary() {
+        return primary;
+    }
 
-	public void setPrimary0Secondary1(Boolean primary0Secondary1) {
-		this.primary0Secondary1 = primary0Secondary1;
-	}
+    public void setPrimary(Boolean primary) {
+        this.primary = primary;
+    }
+
+    public Boolean getSecondary() {
+        return secondary;
+    }
+
+    public void setSecondary(Boolean secondary) {
+        this.secondary = secondary;
+    }
 }

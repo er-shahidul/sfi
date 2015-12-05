@@ -39,14 +39,15 @@ public class CompanyService
         Company entity = this.findById(company.getId());
         if(entity!=null){
             entity.setName(company.getName());
-            entity.setSci(company.isSci());
-            entity.setSfi(company.isSfi());
-            entity.setPrimary0Secondary1(company.getPrimary0Secondary1());
+            entity.setSci(company.getSci());
+            entity.setSfi(company.getSfi());
+            entity.setPrimary(company.getPrimary());
+            entity.setSecondary(company.getSecondary());
             entity.setAreaUnit(company.getAreaUnit());
             entity.setUpdatedAt(Util.getCurrentDate());
             entity.setUpdatedBy(Util.getCurrentUsername());
             entity.setLogoName(name);
-            entity.setLogo(fileN);
+            if(fileN!=null){entity.setLogo(fileN);}
             companyRepository.update(entity);
         }
     }

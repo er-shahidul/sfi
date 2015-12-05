@@ -126,16 +126,14 @@
                                                                         <br/>
                                                                         <div class="form-group inner-form" style="margin-left: 20px!important;" id="sonata-ba-field-container-primary0Secondary1">
                                                                             <div class=" sonata-ba-field sonata-ba-field-standard-natural">
-                                                                                <input type="radio" th:name="primary0Secondary1" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Primary Users'}" th:value="false" th:field="*{primary0Secondary1}" />
+                                                                                <input type="checkbox" th:name="primary" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Primary Users'}" th:value="false" th:field="*{primary}" />
                                                                                 <br/>
-                                                                                <input type="radio" th:name="primary0Secondary1" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Secondary Users'}" th:value="true" th:field="*{primary0Secondary1}" />
+                                                                                <input type="checkbox" th:name="secondary" th:text="${'Sections 1-8 and Section 9 Market Survey- Questions for Secondary Users'}" th:value="true" th:field="*{secondary}" />
                                                                             </div>
                                                                         </div>
                                                                         <input type="checkbox" th:name="sci" th:text="${'SIC Survey'}" th:value="true" th:field="*{sci}" />
                                                                     </div>
                                                                 </div>
-
-
 
                                                             </div>
                                                         </div>
@@ -172,16 +170,16 @@
 
     <script type="text/javascript">
         // <![CDATA[
-        var $grp1 = $("[name=sfi]"), $grp2 = $("[name=primary0Secondary1]");
+        var $grp1 = $("[name=sfi]"), $grp2 = $("[name=primary]"), $grp3 = $("[name=secondary]");
         $grp1.change(function(){
 
 
             if($grp1.filter(":checked").val() == "true"){
 
-                return $grp2.parents(".inner-form").show();
+                return ($grp2, $grp3).parents(".inner-form").show();
             }
 
-            $grp2.parents(".inner-form").hide();
+            ($grp2, $grp3).parents(".inner-form").hide();
 
         }).change();
         // ]]>
