@@ -14,9 +14,8 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(targetEntity = Cs6.class, optional = true)
-    @JoinColumn(name = "form_id", nullable = true)
-    private Cs6 sfiPpForm;
+    @Column(name="form_id", nullable=true)
+    private Integer sfiPpForm;
 
     @ManyToOne(targetEntity = SfiPpFormRegion.class, optional = true)
     @JoinColumn(name = "region_id", nullable = true)
@@ -292,14 +291,6 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Cs6 getSfiPpForm() {
-        return sfiPpForm;
-    }
-
-    public void setSfiPpForm(Cs6 sfiPpForm) {
-        this.sfiPpForm = sfiPpForm;
     }
 
     public SfiPpFormRegion getRegion() {
@@ -1004,5 +995,13 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
 
     public void setPercCertifedMoreThanOneStandard711(Float percCertifedMoreThanOneStandard711) {
         this.percCertifedMoreThanOneStandard711 = percCertifedMoreThanOneStandard711;
+    }
+
+    public Integer getSfiPpForm() {
+        return sfiPpForm;
+    }
+
+    public void setSfiPpForm(Integer sfiPpForm) {
+        this.sfiPpForm = sfiPpForm;
     }
 }

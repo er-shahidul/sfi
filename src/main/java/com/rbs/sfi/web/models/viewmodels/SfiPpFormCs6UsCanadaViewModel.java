@@ -7,7 +7,7 @@ import java.util.Set;
 public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
     private Integer id;
     private Boolean other;
-    private Cs6ViewModel sfiPpForm;
+    private Integer sfiPpForm;
     private Float percCertifedMoreThanOneStandard110;
     private Float percCertifedMoreThanOneStandard111;
     private Float percCertifedMoreThanOneStandard11;
@@ -113,11 +113,11 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
         this.other = other;
     }
 
-    public Cs6ViewModel getSfiPpForm() {
+    public Integer getSfiPpForm() {
         return sfiPpForm;
     }
 
-    public void setSfiPpForm(Cs6ViewModel sfiPpForm) {
+    public void setSfiPpForm(Integer sfiPpForm) {
         this.sfiPpForm = sfiPpForm;
     }
 
