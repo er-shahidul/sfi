@@ -17,9 +17,9 @@ public class Cs6Service {
     }
 
     private void setUsCanadaSfiPpForm(Cs6ViewModel model) {
-        Set<SfiPpFormCs6UsCanadaViewModel> usCanada1 = model.getUsCanada();
+        Set<SfiPpFormCs6UsCanadaViewModel> usCanadaSet = model.getUsCanada();
 
-        for (SfiPpFormCs6UsCanadaViewModel usCanada : usCanada1) {
+        for (SfiPpFormCs6UsCanadaViewModel usCanada : usCanadaSet) {
             if (usCanada.getSfiPpForm() != null) continue;
             usCanada.setSfiPpForm(model.getId().hashCode());
         }
