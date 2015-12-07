@@ -485,7 +485,8 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
             return false;
         }
 
-        var countryId = $scope.other.countryID;
+        var countryId = $scope.other.country.id;
+        var country = $rootScope.getMyCountry(countryId);
 
         if($scope.otherEdit){
             var other = $scope.otherEdit;
@@ -495,8 +496,8 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
         $scope.cloneOther($scope.other, other);
 
-        other.countryName = CountryList.getName(countryId);
-        other.title = $scope.unitById(other.units);
+        other.country = country;
+        other.sfiPpForm = $scope.cs6.id;
 
         if(!$scope.otherEdit){
             $scope.usOthers.push(other);
@@ -505,6 +506,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         $scope.isDataDirty = true;
         $scope.cancelOther();
 
+        console.log($scope.usOthers);
     }
 
     $scope.cancelOther = function(){
@@ -540,7 +542,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
     $scope.getOther = function(countryId){
 
         var other = _.find($scope.usOthers, function(item){
-            return item.countryID == countryId;
+            return item.country.id == countryId;
         });
 
         return other;
@@ -560,6 +562,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
     $scope.editOther = function(countryId){
 
         var item = $scope.getOther(countryId);
+
 
         if(!item){
             return alert('Edit item not found');
@@ -964,7 +967,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
             return opt.id == usOther.units;
         });
 
-        return option.name;
+        return usOther.volume + ", " + option.name;
     }
 
 }]);

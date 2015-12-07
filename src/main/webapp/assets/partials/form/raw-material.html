@@ -114,9 +114,9 @@
         <!-- Other country supply -->
         <tr ng-repeat="other in cs6.usOthers">
             <td>{{ other.country.country }}</td>
-            <td>{{ other.volume }}, {{ other.title}}</td>
-            <td><a href="" ng-click="editOther(other.countryID)">Edit</a></td>
-            <td><a href="" ng-click="deleteOther(other.countryID)">Delete</a></td>
+            <td>{{ usOtherTitle(other)}}</td>
+            <td><a href="" ng-click="editOther(other.country.id)">Edit</a></td>
+            <td><a href="" ng-click="deleteOther(other.country.id)">Delete</a></td>
         </tr>
         <!-- -->
 
@@ -346,7 +346,7 @@
 
         <td ng-init="other.form = innerForm" ng-class="{'has-error' :  innerForm.other1.$invalid}">
             <select class="form-control" name="other1" id="countryId" customerror
-                    ng-model="other.countryID" ng-required="isOtherDirty()">
+                    ng-model="other.country.id" ng-required="isOtherDirty()">
                 <option value>&lt; Select Country &gt;</option>
                 <option ng-repeat="item in otherCountries" value="{{ item.id }}">{{item.country}}</option>
             </select>

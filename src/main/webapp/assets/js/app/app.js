@@ -673,6 +673,15 @@ sfiFormApp.run(['$rootScope', 'Countries', 'RegionList', function($rootScope, Co
         });
     }
 
+    $rootScope.getMyCountry = function(countryId){
+
+        return _.find($rootScope.countries, function(country){
+            return country.id == countryId;
+        });
+    }
+
+
+
 
 }]);
 
