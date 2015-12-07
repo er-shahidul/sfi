@@ -5,7 +5,7 @@ import com.rbs.sfi.common.models.BaseEntityModel;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "sfi_pp_form_cs3_projects")
+@Table(name = "sfi_pp_form_cs3_others")
 public class SfiPpFormCs6Other extends BaseEntityModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
