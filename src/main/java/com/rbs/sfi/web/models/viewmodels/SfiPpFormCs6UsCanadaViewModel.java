@@ -7,7 +7,6 @@ import java.util.Set;
 public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
     private Integer id;
     private Boolean other;
-    private Integer sfiPpForm;
     private Float percCertifedMoreThanOneStandard110;
     private Float percCertifedMoreThanOneStandard111;
     private Float percCertifedMoreThanOneStandard11;
@@ -85,16 +84,108 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
     private Float percCertifedMoreThanOneStandard77;
     private Float percCertifedMoreThanOneStandard78;
     private Float percCertifedMoreThanOneStandard79;
+    private Float volume10;
+    private Float volume11;
+    private Float volume1;
+    private Float volume2;
+    private Float volume3;
+    private Float volume4;
+    private Float volume5;
+    private Float volume6;
+    private Float volume7;
+    private Float volume8;
+    private Float volume9;
+    private Integer sfiPpForm;
+    private Integer unit10;
+    private Integer unit11;
     private Integer unit1;
+    private Integer unit2;
+    private Integer unit3;
+    private Integer unit4;
+    private Integer unit5;
+    private Integer unit6;
+    private Integer unit7;
+    private Integer unit8;
+    private Integer unit9;
+    private Set<String> moreThanOneStandard10;
+    private Set<String> moreThanOneStandard11;
     private Set<String> moreThanOneStandard1;
+    private Set<String> moreThanOneStandard2;
+    private Set<String> moreThanOneStandard3;
+    private Set<String> moreThanOneStandard4;
+    private Set<String> moreThanOneStandard5;
+    private Set<String> moreThanOneStandard6;
+    private Set<String> moreThanOneStandard7;
+    private Set<String> moreThanOneStandard8;
+    private Set<String> moreThanOneStandard9;
     private SfiPpFormRegionViewModel region;
     private String otherLabel;
+    private String percATFSOnlyCertified10;
+    private String percATFSOnlyCertified11;
     private String percATFSOnlyCertified1;
+    private String percATFSOnlyCertified2;
+    private String percATFSOnlyCertified3;
+    private String percATFSOnlyCertified4;
+    private String percATFSOnlyCertified5;
+    private String percATFSOnlyCertified6;
+    private String percATFSOnlyCertified7;
+    private String percATFSOnlyCertified8;
+    private String percATFSOnlyCertified9;
+    private String percCSAOnlyCertified10;
+    private String percCSAOnlyCertified11;
     private String percCSAOnlyCertified1;
+    private String percCSAOnlyCertified2;
+    private String percCSAOnlyCertified3;
+    private String percCSAOnlyCertified4;
+    private String percCSAOnlyCertified5;
+    private String percCSAOnlyCertified6;
+    private String percCSAOnlyCertified7;
+    private String percCSAOnlyCertified8;
+    private String percCSAOnlyCertified9;
+    private String percDeliveredQualifiedLogging10;
+    private String percDeliveredQualifiedLogging11;
     private String percDeliveredQualifiedLogging1;
+    private String percDeliveredQualifiedLogging2;
+    private String percDeliveredQualifiedLogging3;
+    private String percDeliveredQualifiedLogging4;
+    private String percDeliveredQualifiedLogging5;
+    private String percDeliveredQualifiedLogging6;
+    private String percDeliveredQualifiedLogging7;
+    private String percDeliveredQualifiedLogging8;
+    private String percDeliveredQualifiedLogging9;
+    private String percDeliveredQualifiedLoggingReason10;
+    private String percDeliveredQualifiedLoggingReason11;
+    private String percDeliveredQualifiedLoggingReason1;
+    private String percDeliveredQualifiedLoggingReason2;
+    private String percDeliveredQualifiedLoggingReason3;
+    private String percDeliveredQualifiedLoggingReason4;
+    private String percDeliveredQualifiedLoggingReason5;
+    private String percDeliveredQualifiedLoggingReason6;
+    private String percDeliveredQualifiedLoggingReason7;
+    private String percDeliveredQualifiedLoggingReason8;
+    private String percDeliveredQualifiedLoggingReason9;
+    private String percFSCOnlyCertified10;
+    private String percFSCOnlyCertified11;
     private String percFSCOnlyCertified1;
+    private String percFSCOnlyCertified2;
+    private String percFSCOnlyCertified3;
+    private String percFSCOnlyCertified4;
+    private String percFSCOnlyCertified5;
+    private String percFSCOnlyCertified6;
+    private String percFSCOnlyCertified7;
+    private String percFSCOnlyCertified8;
+    private String percFSCOnlyCertified9;
+    private String percSFIOnlyCertified10;
+    private String percSFIOnlyCertified11;
     private String percSFIOnlyCertified1;
-    private String volume1;
+    private String percSFIOnlyCertified2;
+    private String percSFIOnlyCertified3;
+    private String percSFIOnlyCertified4;
+    private String percSFIOnlyCertified5;
+    private String percSFIOnlyCertified6;
+    private String percSFIOnlyCertified7;
+    private String percSFIOnlyCertified8;
+    private String percSFIOnlyCertified9;
 
     @Override
     public Integer getId() {
@@ -111,14 +202,6 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
 
     public void setOther(Boolean other) {
         this.other = other;
-    }
-
-    public Integer getSfiPpForm() {
-        return sfiPpForm;
-    }
-
-    public void setSfiPpForm(Integer sfiPpForm) {
-        this.sfiPpForm = sfiPpForm;
     }
 
     public Float getPercCertifedMoreThanOneStandard110() {
@@ -737,6 +820,118 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
         this.percCertifedMoreThanOneStandard79 = percCertifedMoreThanOneStandard79;
     }
 
+    public Float getVolume10() {
+        return volume10;
+    }
+
+    public void setVolume10(Float volume10) {
+        this.volume10 = volume10;
+    }
+
+    public Float getVolume11() {
+        return volume11;
+    }
+
+    public void setVolume11(Float volume11) {
+        this.volume11 = volume11;
+    }
+
+    public Float getVolume1() {
+        return volume1;
+    }
+
+    public void setVolume1(Float volume1) {
+        this.volume1 = volume1;
+    }
+
+    public Float getVolume2() {
+        return volume2;
+    }
+
+    public void setVolume2(Float volume2) {
+        this.volume2 = volume2;
+    }
+
+    public Float getVolume3() {
+        return volume3;
+    }
+
+    public void setVolume3(Float volume3) {
+        this.volume3 = volume3;
+    }
+
+    public Float getVolume4() {
+        return volume4;
+    }
+
+    public void setVolume4(Float volume4) {
+        this.volume4 = volume4;
+    }
+
+    public Float getVolume5() {
+        return volume5;
+    }
+
+    public void setVolume5(Float volume5) {
+        this.volume5 = volume5;
+    }
+
+    public Float getVolume6() {
+        return volume6;
+    }
+
+    public void setVolume6(Float volume6) {
+        this.volume6 = volume6;
+    }
+
+    public Float getVolume7() {
+        return volume7;
+    }
+
+    public void setVolume7(Float volume7) {
+        this.volume7 = volume7;
+    }
+
+    public Float getVolume8() {
+        return volume8;
+    }
+
+    public void setVolume8(Float volume8) {
+        this.volume8 = volume8;
+    }
+
+    public Float getVolume9() {
+        return volume9;
+    }
+
+    public void setVolume9(Float volume9) {
+        this.volume9 = volume9;
+    }
+
+    public Integer getSfiPpForm() {
+        return sfiPpForm;
+    }
+
+    public void setSfiPpForm(Integer sfiPpForm) {
+        this.sfiPpForm = sfiPpForm;
+    }
+
+    public Integer getUnit10() {
+        return unit10;
+    }
+
+    public void setUnit10(Integer unit10) {
+        this.unit10 = unit10;
+    }
+
+    public Integer getUnit11() {
+        return unit11;
+    }
+
+    public void setUnit11(Integer unit11) {
+        this.unit11 = unit11;
+    }
+
     public Integer getUnit1() {
         return unit1;
     }
@@ -745,12 +940,156 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
         this.unit1 = unit1;
     }
 
+    public Integer getUnit2() {
+        return unit2;
+    }
+
+    public void setUnit2(Integer unit2) {
+        this.unit2 = unit2;
+    }
+
+    public Integer getUnit3() {
+        return unit3;
+    }
+
+    public void setUnit3(Integer unit3) {
+        this.unit3 = unit3;
+    }
+
+    public Integer getUnit4() {
+        return unit4;
+    }
+
+    public void setUnit4(Integer unit4) {
+        this.unit4 = unit4;
+    }
+
+    public Integer getUnit5() {
+        return unit5;
+    }
+
+    public void setUnit5(Integer unit5) {
+        this.unit5 = unit5;
+    }
+
+    public Integer getUnit6() {
+        return unit6;
+    }
+
+    public void setUnit6(Integer unit6) {
+        this.unit6 = unit6;
+    }
+
+    public Integer getUnit7() {
+        return unit7;
+    }
+
+    public void setUnit7(Integer unit7) {
+        this.unit7 = unit7;
+    }
+
+    public Integer getUnit8() {
+        return unit8;
+    }
+
+    public void setUnit8(Integer unit8) {
+        this.unit8 = unit8;
+    }
+
+    public Integer getUnit9() {
+        return unit9;
+    }
+
+    public void setUnit9(Integer unit9) {
+        this.unit9 = unit9;
+    }
+
+    public Set<String> getMoreThanOneStandard10() {
+        return moreThanOneStandard10;
+    }
+
+    public void setMoreThanOneStandard10(Set<String> moreThanOneStandard10) {
+        this.moreThanOneStandard10 = moreThanOneStandard10;
+    }
+
+    public Set<String> getMoreThanOneStandard11() {
+        return moreThanOneStandard11;
+    }
+
+    public void setMoreThanOneStandard11(Set<String> moreThanOneStandard11) {
+        this.moreThanOneStandard11 = moreThanOneStandard11;
+    }
+
     public Set<String> getMoreThanOneStandard1() {
         return moreThanOneStandard1;
     }
 
     public void setMoreThanOneStandard1(Set<String> moreThanOneStandard1) {
         this.moreThanOneStandard1 = moreThanOneStandard1;
+    }
+
+    public Set<String> getMoreThanOneStandard2() {
+        return moreThanOneStandard2;
+    }
+
+    public void setMoreThanOneStandard2(Set<String> moreThanOneStandard2) {
+        this.moreThanOneStandard2 = moreThanOneStandard2;
+    }
+
+    public Set<String> getMoreThanOneStandard3() {
+        return moreThanOneStandard3;
+    }
+
+    public void setMoreThanOneStandard3(Set<String> moreThanOneStandard3) {
+        this.moreThanOneStandard3 = moreThanOneStandard3;
+    }
+
+    public Set<String> getMoreThanOneStandard4() {
+        return moreThanOneStandard4;
+    }
+
+    public void setMoreThanOneStandard4(Set<String> moreThanOneStandard4) {
+        this.moreThanOneStandard4 = moreThanOneStandard4;
+    }
+
+    public Set<String> getMoreThanOneStandard5() {
+        return moreThanOneStandard5;
+    }
+
+    public void setMoreThanOneStandard5(Set<String> moreThanOneStandard5) {
+        this.moreThanOneStandard5 = moreThanOneStandard5;
+    }
+
+    public Set<String> getMoreThanOneStandard6() {
+        return moreThanOneStandard6;
+    }
+
+    public void setMoreThanOneStandard6(Set<String> moreThanOneStandard6) {
+        this.moreThanOneStandard6 = moreThanOneStandard6;
+    }
+
+    public Set<String> getMoreThanOneStandard7() {
+        return moreThanOneStandard7;
+    }
+
+    public void setMoreThanOneStandard7(Set<String> moreThanOneStandard7) {
+        this.moreThanOneStandard7 = moreThanOneStandard7;
+    }
+
+    public Set<String> getMoreThanOneStandard8() {
+        return moreThanOneStandard8;
+    }
+
+    public void setMoreThanOneStandard8(Set<String> moreThanOneStandard8) {
+        this.moreThanOneStandard8 = moreThanOneStandard8;
+    }
+
+    public Set<String> getMoreThanOneStandard9() {
+        return moreThanOneStandard9;
+    }
+
+    public void setMoreThanOneStandard9(Set<String> moreThanOneStandard9) {
+        this.moreThanOneStandard9 = moreThanOneStandard9;
     }
 
     public SfiPpFormRegionViewModel getRegion() {
@@ -769,12 +1108,108 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
         this.otherLabel = otherLabel;
     }
 
+    public String getPercATFSOnlyCertified10() {
+        return percATFSOnlyCertified10;
+    }
+
+    public void setPercATFSOnlyCertified10(String percATFSOnlyCertified10) {
+        this.percATFSOnlyCertified10 = percATFSOnlyCertified10;
+    }
+
+    public String getPercATFSOnlyCertified11() {
+        return percATFSOnlyCertified11;
+    }
+
+    public void setPercATFSOnlyCertified11(String percATFSOnlyCertified11) {
+        this.percATFSOnlyCertified11 = percATFSOnlyCertified11;
+    }
+
     public String getPercATFSOnlyCertified1() {
         return percATFSOnlyCertified1;
     }
 
     public void setPercATFSOnlyCertified1(String percATFSOnlyCertified1) {
         this.percATFSOnlyCertified1 = percATFSOnlyCertified1;
+    }
+
+    public String getPercATFSOnlyCertified2() {
+        return percATFSOnlyCertified2;
+    }
+
+    public void setPercATFSOnlyCertified2(String percATFSOnlyCertified2) {
+        this.percATFSOnlyCertified2 = percATFSOnlyCertified2;
+    }
+
+    public String getPercATFSOnlyCertified3() {
+        return percATFSOnlyCertified3;
+    }
+
+    public void setPercATFSOnlyCertified3(String percATFSOnlyCertified3) {
+        this.percATFSOnlyCertified3 = percATFSOnlyCertified3;
+    }
+
+    public String getPercATFSOnlyCertified4() {
+        return percATFSOnlyCertified4;
+    }
+
+    public void setPercATFSOnlyCertified4(String percATFSOnlyCertified4) {
+        this.percATFSOnlyCertified4 = percATFSOnlyCertified4;
+    }
+
+    public String getPercATFSOnlyCertified5() {
+        return percATFSOnlyCertified5;
+    }
+
+    public void setPercATFSOnlyCertified5(String percATFSOnlyCertified5) {
+        this.percATFSOnlyCertified5 = percATFSOnlyCertified5;
+    }
+
+    public String getPercATFSOnlyCertified6() {
+        return percATFSOnlyCertified6;
+    }
+
+    public void setPercATFSOnlyCertified6(String percATFSOnlyCertified6) {
+        this.percATFSOnlyCertified6 = percATFSOnlyCertified6;
+    }
+
+    public String getPercATFSOnlyCertified7() {
+        return percATFSOnlyCertified7;
+    }
+
+    public void setPercATFSOnlyCertified7(String percATFSOnlyCertified7) {
+        this.percATFSOnlyCertified7 = percATFSOnlyCertified7;
+    }
+
+    public String getPercATFSOnlyCertified8() {
+        return percATFSOnlyCertified8;
+    }
+
+    public void setPercATFSOnlyCertified8(String percATFSOnlyCertified8) {
+        this.percATFSOnlyCertified8 = percATFSOnlyCertified8;
+    }
+
+    public String getPercATFSOnlyCertified9() {
+        return percATFSOnlyCertified9;
+    }
+
+    public void setPercATFSOnlyCertified9(String percATFSOnlyCertified9) {
+        this.percATFSOnlyCertified9 = percATFSOnlyCertified9;
+    }
+
+    public String getPercCSAOnlyCertified10() {
+        return percCSAOnlyCertified10;
+    }
+
+    public void setPercCSAOnlyCertified10(String percCSAOnlyCertified10) {
+        this.percCSAOnlyCertified10 = percCSAOnlyCertified10;
+    }
+
+    public String getPercCSAOnlyCertified11() {
+        return percCSAOnlyCertified11;
+    }
+
+    public void setPercCSAOnlyCertified11(String percCSAOnlyCertified11) {
+        this.percCSAOnlyCertified11 = percCSAOnlyCertified11;
     }
 
     public String getPercCSAOnlyCertified1() {
@@ -785,12 +1220,260 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
         this.percCSAOnlyCertified1 = percCSAOnlyCertified1;
     }
 
+    public String getPercCSAOnlyCertified2() {
+        return percCSAOnlyCertified2;
+    }
+
+    public void setPercCSAOnlyCertified2(String percCSAOnlyCertified2) {
+        this.percCSAOnlyCertified2 = percCSAOnlyCertified2;
+    }
+
+    public String getPercCSAOnlyCertified3() {
+        return percCSAOnlyCertified3;
+    }
+
+    public void setPercCSAOnlyCertified3(String percCSAOnlyCertified3) {
+        this.percCSAOnlyCertified3 = percCSAOnlyCertified3;
+    }
+
+    public String getPercCSAOnlyCertified4() {
+        return percCSAOnlyCertified4;
+    }
+
+    public void setPercCSAOnlyCertified4(String percCSAOnlyCertified4) {
+        this.percCSAOnlyCertified4 = percCSAOnlyCertified4;
+    }
+
+    public String getPercCSAOnlyCertified5() {
+        return percCSAOnlyCertified5;
+    }
+
+    public void setPercCSAOnlyCertified5(String percCSAOnlyCertified5) {
+        this.percCSAOnlyCertified5 = percCSAOnlyCertified5;
+    }
+
+    public String getPercCSAOnlyCertified6() {
+        return percCSAOnlyCertified6;
+    }
+
+    public void setPercCSAOnlyCertified6(String percCSAOnlyCertified6) {
+        this.percCSAOnlyCertified6 = percCSAOnlyCertified6;
+    }
+
+    public String getPercCSAOnlyCertified7() {
+        return percCSAOnlyCertified7;
+    }
+
+    public void setPercCSAOnlyCertified7(String percCSAOnlyCertified7) {
+        this.percCSAOnlyCertified7 = percCSAOnlyCertified7;
+    }
+
+    public String getPercCSAOnlyCertified8() {
+        return percCSAOnlyCertified8;
+    }
+
+    public void setPercCSAOnlyCertified8(String percCSAOnlyCertified8) {
+        this.percCSAOnlyCertified8 = percCSAOnlyCertified8;
+    }
+
+    public String getPercCSAOnlyCertified9() {
+        return percCSAOnlyCertified9;
+    }
+
+    public void setPercCSAOnlyCertified9(String percCSAOnlyCertified9) {
+        this.percCSAOnlyCertified9 = percCSAOnlyCertified9;
+    }
+
+    public String getPercDeliveredQualifiedLogging10() {
+        return percDeliveredQualifiedLogging10;
+    }
+
+    public void setPercDeliveredQualifiedLogging10(String percDeliveredQualifiedLogging10) {
+        this.percDeliveredQualifiedLogging10 = percDeliveredQualifiedLogging10;
+    }
+
+    public String getPercDeliveredQualifiedLogging11() {
+        return percDeliveredQualifiedLogging11;
+    }
+
+    public void setPercDeliveredQualifiedLogging11(String percDeliveredQualifiedLogging11) {
+        this.percDeliveredQualifiedLogging11 = percDeliveredQualifiedLogging11;
+    }
+
     public String getPercDeliveredQualifiedLogging1() {
         return percDeliveredQualifiedLogging1;
     }
 
     public void setPercDeliveredQualifiedLogging1(String percDeliveredQualifiedLogging1) {
         this.percDeliveredQualifiedLogging1 = percDeliveredQualifiedLogging1;
+    }
+
+    public String getPercDeliveredQualifiedLogging2() {
+        return percDeliveredQualifiedLogging2;
+    }
+
+    public void setPercDeliveredQualifiedLogging2(String percDeliveredQualifiedLogging2) {
+        this.percDeliveredQualifiedLogging2 = percDeliveredQualifiedLogging2;
+    }
+
+    public String getPercDeliveredQualifiedLogging3() {
+        return percDeliveredQualifiedLogging3;
+    }
+
+    public void setPercDeliveredQualifiedLogging3(String percDeliveredQualifiedLogging3) {
+        this.percDeliveredQualifiedLogging3 = percDeliveredQualifiedLogging3;
+    }
+
+    public String getPercDeliveredQualifiedLogging4() {
+        return percDeliveredQualifiedLogging4;
+    }
+
+    public void setPercDeliveredQualifiedLogging4(String percDeliveredQualifiedLogging4) {
+        this.percDeliveredQualifiedLogging4 = percDeliveredQualifiedLogging4;
+    }
+
+    public String getPercDeliveredQualifiedLogging5() {
+        return percDeliveredQualifiedLogging5;
+    }
+
+    public void setPercDeliveredQualifiedLogging5(String percDeliveredQualifiedLogging5) {
+        this.percDeliveredQualifiedLogging5 = percDeliveredQualifiedLogging5;
+    }
+
+    public String getPercDeliveredQualifiedLogging6() {
+        return percDeliveredQualifiedLogging6;
+    }
+
+    public void setPercDeliveredQualifiedLogging6(String percDeliveredQualifiedLogging6) {
+        this.percDeliveredQualifiedLogging6 = percDeliveredQualifiedLogging6;
+    }
+
+    public String getPercDeliveredQualifiedLogging7() {
+        return percDeliveredQualifiedLogging7;
+    }
+
+    public void setPercDeliveredQualifiedLogging7(String percDeliveredQualifiedLogging7) {
+        this.percDeliveredQualifiedLogging7 = percDeliveredQualifiedLogging7;
+    }
+
+    public String getPercDeliveredQualifiedLogging8() {
+        return percDeliveredQualifiedLogging8;
+    }
+
+    public void setPercDeliveredQualifiedLogging8(String percDeliveredQualifiedLogging8) {
+        this.percDeliveredQualifiedLogging8 = percDeliveredQualifiedLogging8;
+    }
+
+    public String getPercDeliveredQualifiedLogging9() {
+        return percDeliveredQualifiedLogging9;
+    }
+
+    public void setPercDeliveredQualifiedLogging9(String percDeliveredQualifiedLogging9) {
+        this.percDeliveredQualifiedLogging9 = percDeliveredQualifiedLogging9;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason10() {
+        return percDeliveredQualifiedLoggingReason10;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason10(String percDeliveredQualifiedLoggingReason10) {
+        this.percDeliveredQualifiedLoggingReason10 = percDeliveredQualifiedLoggingReason10;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason11() {
+        return percDeliveredQualifiedLoggingReason11;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason11(String percDeliveredQualifiedLoggingReason11) {
+        this.percDeliveredQualifiedLoggingReason11 = percDeliveredQualifiedLoggingReason11;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason1() {
+        return percDeliveredQualifiedLoggingReason1;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason1(String percDeliveredQualifiedLoggingReason1) {
+        this.percDeliveredQualifiedLoggingReason1 = percDeliveredQualifiedLoggingReason1;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason2() {
+        return percDeliveredQualifiedLoggingReason2;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason2(String percDeliveredQualifiedLoggingReason2) {
+        this.percDeliveredQualifiedLoggingReason2 = percDeliveredQualifiedLoggingReason2;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason3() {
+        return percDeliveredQualifiedLoggingReason3;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason3(String percDeliveredQualifiedLoggingReason3) {
+        this.percDeliveredQualifiedLoggingReason3 = percDeliveredQualifiedLoggingReason3;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason4() {
+        return percDeliveredQualifiedLoggingReason4;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason4(String percDeliveredQualifiedLoggingReason4) {
+        this.percDeliveredQualifiedLoggingReason4 = percDeliveredQualifiedLoggingReason4;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason5() {
+        return percDeliveredQualifiedLoggingReason5;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason5(String percDeliveredQualifiedLoggingReason5) {
+        this.percDeliveredQualifiedLoggingReason5 = percDeliveredQualifiedLoggingReason5;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason6() {
+        return percDeliveredQualifiedLoggingReason6;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason6(String percDeliveredQualifiedLoggingReason6) {
+        this.percDeliveredQualifiedLoggingReason6 = percDeliveredQualifiedLoggingReason6;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason7() {
+        return percDeliveredQualifiedLoggingReason7;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason7(String percDeliveredQualifiedLoggingReason7) {
+        this.percDeliveredQualifiedLoggingReason7 = percDeliveredQualifiedLoggingReason7;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason8() {
+        return percDeliveredQualifiedLoggingReason8;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason8(String percDeliveredQualifiedLoggingReason8) {
+        this.percDeliveredQualifiedLoggingReason8 = percDeliveredQualifiedLoggingReason8;
+    }
+
+    public String getPercDeliveredQualifiedLoggingReason9() {
+        return percDeliveredQualifiedLoggingReason9;
+    }
+
+    public void setPercDeliveredQualifiedLoggingReason9(String percDeliveredQualifiedLoggingReason9) {
+        this.percDeliveredQualifiedLoggingReason9 = percDeliveredQualifiedLoggingReason9;
+    }
+
+    public String getPercFSCOnlyCertified10() {
+        return percFSCOnlyCertified10;
+    }
+
+    public void setPercFSCOnlyCertified10(String percFSCOnlyCertified10) {
+        this.percFSCOnlyCertified10 = percFSCOnlyCertified10;
+    }
+
+    public String getPercFSCOnlyCertified11() {
+        return percFSCOnlyCertified11;
+    }
+
+    public void setPercFSCOnlyCertified11(String percFSCOnlyCertified11) {
+        this.percFSCOnlyCertified11 = percFSCOnlyCertified11;
     }
 
     public String getPercFSCOnlyCertified1() {
@@ -801,6 +1484,86 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
         this.percFSCOnlyCertified1 = percFSCOnlyCertified1;
     }
 
+    public String getPercFSCOnlyCertified2() {
+        return percFSCOnlyCertified2;
+    }
+
+    public void setPercFSCOnlyCertified2(String percFSCOnlyCertified2) {
+        this.percFSCOnlyCertified2 = percFSCOnlyCertified2;
+    }
+
+    public String getPercFSCOnlyCertified3() {
+        return percFSCOnlyCertified3;
+    }
+
+    public void setPercFSCOnlyCertified3(String percFSCOnlyCertified3) {
+        this.percFSCOnlyCertified3 = percFSCOnlyCertified3;
+    }
+
+    public String getPercFSCOnlyCertified4() {
+        return percFSCOnlyCertified4;
+    }
+
+    public void setPercFSCOnlyCertified4(String percFSCOnlyCertified4) {
+        this.percFSCOnlyCertified4 = percFSCOnlyCertified4;
+    }
+
+    public String getPercFSCOnlyCertified5() {
+        return percFSCOnlyCertified5;
+    }
+
+    public void setPercFSCOnlyCertified5(String percFSCOnlyCertified5) {
+        this.percFSCOnlyCertified5 = percFSCOnlyCertified5;
+    }
+
+    public String getPercFSCOnlyCertified6() {
+        return percFSCOnlyCertified6;
+    }
+
+    public void setPercFSCOnlyCertified6(String percFSCOnlyCertified6) {
+        this.percFSCOnlyCertified6 = percFSCOnlyCertified6;
+    }
+
+    public String getPercFSCOnlyCertified7() {
+        return percFSCOnlyCertified7;
+    }
+
+    public void setPercFSCOnlyCertified7(String percFSCOnlyCertified7) {
+        this.percFSCOnlyCertified7 = percFSCOnlyCertified7;
+    }
+
+    public String getPercFSCOnlyCertified8() {
+        return percFSCOnlyCertified8;
+    }
+
+    public void setPercFSCOnlyCertified8(String percFSCOnlyCertified8) {
+        this.percFSCOnlyCertified8 = percFSCOnlyCertified8;
+    }
+
+    public String getPercFSCOnlyCertified9() {
+        return percFSCOnlyCertified9;
+    }
+
+    public void setPercFSCOnlyCertified9(String percFSCOnlyCertified9) {
+        this.percFSCOnlyCertified9 = percFSCOnlyCertified9;
+    }
+
+    public String getPercSFIOnlyCertified10() {
+        return percSFIOnlyCertified10;
+    }
+
+    public void setPercSFIOnlyCertified10(String percSFIOnlyCertified10) {
+        this.percSFIOnlyCertified10 = percSFIOnlyCertified10;
+    }
+
+    public String getPercSFIOnlyCertified11() {
+        return percSFIOnlyCertified11;
+    }
+
+    public void setPercSFIOnlyCertified11(String percSFIOnlyCertified11) {
+        this.percSFIOnlyCertified11 = percSFIOnlyCertified11;
+    }
+
     public String getPercSFIOnlyCertified1() {
         return percSFIOnlyCertified1;
     }
@@ -809,11 +1572,67 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
         this.percSFIOnlyCertified1 = percSFIOnlyCertified1;
     }
 
-    public String getVolume1() {
-        return volume1;
+    public String getPercSFIOnlyCertified2() {
+        return percSFIOnlyCertified2;
     }
 
-    public void setVolume1(String volume1) {
-        this.volume1 = volume1;
+    public void setPercSFIOnlyCertified2(String percSFIOnlyCertified2) {
+        this.percSFIOnlyCertified2 = percSFIOnlyCertified2;
+    }
+
+    public String getPercSFIOnlyCertified3() {
+        return percSFIOnlyCertified3;
+    }
+
+    public void setPercSFIOnlyCertified3(String percSFIOnlyCertified3) {
+        this.percSFIOnlyCertified3 = percSFIOnlyCertified3;
+    }
+
+    public String getPercSFIOnlyCertified4() {
+        return percSFIOnlyCertified4;
+    }
+
+    public void setPercSFIOnlyCertified4(String percSFIOnlyCertified4) {
+        this.percSFIOnlyCertified4 = percSFIOnlyCertified4;
+    }
+
+    public String getPercSFIOnlyCertified5() {
+        return percSFIOnlyCertified5;
+    }
+
+    public void setPercSFIOnlyCertified5(String percSFIOnlyCertified5) {
+        this.percSFIOnlyCertified5 = percSFIOnlyCertified5;
+    }
+
+    public String getPercSFIOnlyCertified6() {
+        return percSFIOnlyCertified6;
+    }
+
+    public void setPercSFIOnlyCertified6(String percSFIOnlyCertified6) {
+        this.percSFIOnlyCertified6 = percSFIOnlyCertified6;
+    }
+
+    public String getPercSFIOnlyCertified7() {
+        return percSFIOnlyCertified7;
+    }
+
+    public void setPercSFIOnlyCertified7(String percSFIOnlyCertified7) {
+        this.percSFIOnlyCertified7 = percSFIOnlyCertified7;
+    }
+
+    public String getPercSFIOnlyCertified8() {
+        return percSFIOnlyCertified8;
+    }
+
+    public void setPercSFIOnlyCertified8(String percSFIOnlyCertified8) {
+        this.percSFIOnlyCertified8 = percSFIOnlyCertified8;
+    }
+
+    public String getPercSFIOnlyCertified9() {
+        return percSFIOnlyCertified9;
+    }
+
+    public void setPercSFIOnlyCertified9(String percSFIOnlyCertified9) {
+        this.percSFIOnlyCertified9 = percSFIOnlyCertified9;
     }
 }

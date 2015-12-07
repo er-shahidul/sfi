@@ -692,7 +692,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard1(Set<String> moreThanOneStandard1) {
-        this.moreThanOneStandard1 = moreThanOneStandard1;
+        addAll(this.moreThanOneStandard1, moreThanOneStandard1);
     }
 
     public Boolean getOther() {
@@ -1388,7 +1388,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard2(Set<String> moreThanOneStandard2) {
-        this.moreThanOneStandard2 = moreThanOneStandard2;
+        addAll(this.moreThanOneStandard2, moreThanOneStandard2);
     }
 
     public Integer getUnit3() {
@@ -1452,7 +1452,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard3(Set<String> moreThanOneStandard3) {
-        this.moreThanOneStandard3 = moreThanOneStandard3;
+        addAll(this.moreThanOneStandard3, moreThanOneStandard3);
     }
 
     public Integer getUnit4() {
@@ -1516,7 +1516,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard4(Set<String> moreThanOneStandard4) {
-        this.moreThanOneStandard4 = moreThanOneStandard4;
+        addAll(this.moreThanOneStandard4, moreThanOneStandard4);
     }
 
     public Integer getUnit5() {
@@ -1580,7 +1580,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard5(Set<String> moreThanOneStandard5) {
-        this.moreThanOneStandard5 = moreThanOneStandard5;
+        addAll(this.moreThanOneStandard5, moreThanOneStandard5);
     }
 
     public Integer getUnit6() {
@@ -1644,7 +1644,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard6(Set<String> moreThanOneStandard6) {
-        this.moreThanOneStandard6 = moreThanOneStandard6;
+        addAll(this.moreThanOneStandard6, moreThanOneStandard6);
     }
 
     public Integer getUnit7() {
@@ -1708,7 +1708,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard7(Set<String> moreThanOneStandard7) {
-        this.moreThanOneStandard7 = moreThanOneStandard7;
+        addAll(this.moreThanOneStandard7, moreThanOneStandard7);
     }
 
     public Integer getUnit8() {
@@ -1772,7 +1772,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard8(Set<String> moreThanOneStandard8) {
-        this.moreThanOneStandard8 = moreThanOneStandard8;
+        addAll(this.moreThanOneStandard8, moreThanOneStandard8);
     }
 
     public Integer getUnit9() {
@@ -1836,7 +1836,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard9(Set<String> moreThanOneStandard9) {
-        this.moreThanOneStandard9 = moreThanOneStandard9;
+        addAll(this.moreThanOneStandard9, moreThanOneStandard9);
     }
 
     public String getPercDeliveredQualifiedLoggingReason1() {
@@ -1988,7 +1988,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard10(Set<String> moreThanOneStandard10) {
-        this.moreThanOneStandard10 = moreThanOneStandard10;
+        addAll(this.moreThanOneStandard10, moreThanOneStandard10);
     }
 
     public Integer getUnit11() {
@@ -2052,6 +2052,6 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
     public void setMoreThanOneStandard11(Set<String> moreThanOneStandard11) {
-        this.moreThanOneStandard11 = moreThanOneStandard11;
+        addAll(this.moreThanOneStandard11, moreThanOneStandard11);
     }
 }

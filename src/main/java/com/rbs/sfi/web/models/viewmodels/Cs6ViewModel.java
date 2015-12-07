@@ -5,16 +5,16 @@ import com.rbs.sfi.common.models.BaseViewModel;
 import java.util.Set;
 
 public class Cs6ViewModel extends BaseViewModel {
-	private Integer id;
-	private Integer numPrivateForeOwersUs;
-	private Integer numPrivateForeOwersCa;
-	private Integer numPrivateLandOwersUs;
-	private Integer numPrivateLandOwersCa;
-	private Integer fundSFIActivStateProviUs;
-	private Integer fundSFIActivStateProviCa;
-	private Boolean toAssistObj8;
-	private Set<SfiPpFormCs6UsCanadaViewModel> usCanada;
-	private Set<SfiPpFormCs6OtherViewModel> usOthers;
+    private Integer id;
+    private Integer numPrivateForeOwersUs;
+    private Integer numPrivateForeOwersCa;
+    private Integer numPrivateLandOwersUs;
+    private Integer numPrivateLandOwersCa;
+    private Integer fundSFIActivStateProviUs;
+    private Integer fundSFIActivStateProviCa;
+    private Boolean toAssistObj8;
+    private Set<SfiPpFormCs6UsCanadaViewModel> usCanada;
+    private Set<SfiPpFormCs6OtherViewModel> usOthers;
 
     @Override
 	public Integer getId() {

@@ -11,9 +11,8 @@ public class SfiPpFormCs6Other extends BaseEntityModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@ManyToOne(targetEntity = Cs6.class)
-	@JoinColumn(name = "form_id", nullable = true)
-	private Cs6 sfiPpForm;
+	@Column(name = "form_id", nullable = true)
+	private Integer sfiPpForm;
 
 	@ManyToOne(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, optional=true)
 	@JoinColumn(name = "cs6_otherCountries_countryID", nullable=true)
@@ -52,11 +51,11 @@ public class SfiPpFormCs6Other extends BaseEntityModel {
 		this.id = id;
 	}
 
-    public Cs6 getSfiPpForm() {
+    public Integer getSfiPpForm() {
         return sfiPpForm;
     }
 
-    public void setSfiPpForm(Cs6 sfiPpForm) {
+    public void setSfiPpForm(Integer sfiPpForm) {
         this.sfiPpForm = sfiPpForm;
     }
 
