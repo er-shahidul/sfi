@@ -8,7 +8,7 @@ public class AreaUnit
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="unit_description", nullable=true)
 	private String unitDescription;
@@ -19,11 +19,11 @@ public class AreaUnit
 	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
 	private Boolean isActive;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

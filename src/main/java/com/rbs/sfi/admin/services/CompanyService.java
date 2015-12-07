@@ -31,7 +31,7 @@ public class CompanyService
         companyRepository.save(company);
     }
 
-    public Company findById(int id) {
+    public Company findById(Integer id) {
         return companyRepository.findById(id);
     }
 

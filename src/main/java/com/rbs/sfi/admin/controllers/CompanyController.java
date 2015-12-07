@@ -53,7 +53,7 @@ public class CompanyController
     }
 
     @RequestMapping(value = { "/admin/company/edit/{id}" }, method = RequestMethod.GET)
-    public String edit(@PathVariable int id, ModelMap model) {
+    public String edit(@PathVariable Integer id, ModelMap model) {
         Company company = companyService.findById(id);
         model.addAttribute("title", "company_setting");
         model.addAttribute("company", company);
@@ -66,7 +66,7 @@ public class CompanyController
     }
 
     @RequestMapping(value = { "/admin/company/edit/{id}" }, method = RequestMethod.POST)
-    public String update(@Valid Logo logo, @ModelAttribute("company") Company company, BindingResult result, ModelMap model, @PathVariable int id, Principal principal) {
+    public String update(@Valid Logo logo, @ModelAttribute("company") Company company, BindingResult result, ModelMap model, @PathVariable Integer id, Principal principal) {
         model.addAttribute("id", id);
         String fullName = principal.getName();
 
@@ -142,7 +142,7 @@ public class CompanyController
     }
 
     @RequestMapping(value = { "/admin/company/delete/{id}" }, method = RequestMethod.GET)
-    public String softDelete(@PathVariable int id, ModelMap model) {
+    public String softDelete(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "company_setting");
         Company company = companyService.findById(id);
         companyService.softDelete(company);

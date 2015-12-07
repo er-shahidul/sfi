@@ -30,7 +30,7 @@ public class UserLoginService implements UserDetailsService{
             throw new UsernameNotFoundException("Username not found");
         }
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-                user.isEnabled(), true, true, true, getGrantedAuthorities(user));
+                user.getEnabled(), true, true, true, getGrantedAuthorities(user));
     }
 
 

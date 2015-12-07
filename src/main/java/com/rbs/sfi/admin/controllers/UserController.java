@@ -76,13 +76,13 @@ public class UserController {
     }
 
     @RequestMapping("/admin/user/delete")
-    public ModelAndView delete(@RequestParam int id) {
+    public ModelAndView delete(@RequestParam Integer id) {
         userService.delete(id);
         return new ModelAndView("redirect:/admin/user/list");
     }
 
     @RequestMapping(value = { "/admin/user/delete/{id}" }, method = RequestMethod.GET)
-    public String softDelete(@PathVariable int id, ModelMap model) {
+    public String softDelete(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "user");
         User user = userService.findByID(id);
         userService.softDelete(user);
@@ -91,7 +91,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/active/{id}" })
-    public String active(@PathVariable int id, ModelMap model) {
+    public String active(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
         userService.userActive(user);
@@ -101,7 +101,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/details/{id}" })
-    public ModelAndView details(@PathVariable int id, ModelMap model) {
+    public ModelAndView details(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
         model.addAttribute("title", "profile");
@@ -119,7 +119,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/inactive/{id}" })
-    public String inactive(@PathVariable int id, ModelMap model) {
+    public String inactive(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
         userService.userActive(user);
@@ -128,7 +128,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/edit/password/{id}" }, method = RequestMethod.GET)
-    public String editPassword(@PathVariable int id, ModelMap model) {
+    public String editPassword(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
@@ -137,7 +137,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/edit/password/{id}" }, method = RequestMethod.POST)
-    public String updatePassword(@Valid User user, BindingResult result, ModelMap model, @PathVariable int id) {
+    public String updatePassword(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
 
         if (result.hasErrors()) {
             return "admin/user/editPass";
@@ -148,7 +148,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/edit/{id}" }, method = RequestMethod.GET)
-    public String edit(@PathVariable int id, ModelMap model) {
+    public String edit(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
         model.addAttribute("userGroupId", user.getGroupId());
@@ -171,7 +171,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/edit/{id}" }, method = RequestMethod.POST)
-    public String update(@Valid User user, BindingResult result, ModelMap model, @PathVariable int id) {
+    public String update(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
 
         if (result.hasErrors()) {
             return "admin/user/edit";
@@ -183,7 +183,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/name/edit/{id}" }, method = RequestMethod.POST)
-    public String updateName(@Valid User user, BindingResult result, ModelMap model, @PathVariable int id) {
+    public String updateName(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
 
         if (result.hasErrors()) {
             return "redirect:/admin/user/profile";
@@ -195,7 +195,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/email/edit/{id}" }, method = RequestMethod.POST)
-    public String updateEmail(@Valid User user, BindingResult result, ModelMap model, @PathVariable int id) {
+    public String updateEmail(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
 
         if (result.hasErrors()) {
             return "redirect:/admin/user/profile";
@@ -207,7 +207,7 @@ public class UserController {
     }
 
     @RequestMapping(value = { "/admin/user/password/edit/{id}" }, method = RequestMethod.POST)
-    public String updateMyPassword(@Valid User user, BindingResult result, ModelMap model, @PathVariable int id, @RequestParam("old_password") String old_password) {
+    public String updateMyPassword(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id, @RequestParam("old_password") String old_password) {
 
         User currentUser = userService.findByUsername(getCurrentUsername());
 
@@ -284,7 +284,7 @@ public class UserController {
     private String userCheck(User user) {
         if(user == null){
             return "accessDenied";
-        }else if(user.isToken() == true ){
+        }else if(user.getToken() == true ){
             return "index";
         }else {
             return ("redirect:/user/password/set/" + user.getId());
@@ -293,7 +293,7 @@ public class UserController {
 
 
     @RequestMapping(value = "/user/password/reset/{id}",method = RequestMethod.GET)
-    public String passwordReset(@PathVariable int id, ModelMap model) {
+    public String passwordReset(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
@@ -313,7 +313,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/password/set/{id}",method = RequestMethod.GET)
-    public String passwordSet(@PathVariable int id, ModelMap model) {
+    public String passwordSet(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "user");
         User user = userService.findByID(id);
         model.addAttribute("user", user);

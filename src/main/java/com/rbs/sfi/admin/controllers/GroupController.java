@@ -34,7 +34,7 @@ public class GroupController {
     }
 
     @RequestMapping("/admin/group/delete")
-    public ModelAndView delete(@RequestParam int id) {
+    public ModelAndView delete(@RequestParam Integer id) {
         groupService.delete(id);
         return new ModelAndView("redirect:/admin/group/list");
     }

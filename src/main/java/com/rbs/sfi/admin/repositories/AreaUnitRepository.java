@@ -27,7 +27,7 @@ public class AreaUnitRepository extends AbstractRepository<Integer, AreaUnit> {
     }
 
     @Transactional
-    public AreaUnit findById(int id) {
+    public AreaUnit findById(Integer id) {
         return (AreaUnit)sessionFactory.getCurrentSession().get(AreaUnit.class, id);
     }
 

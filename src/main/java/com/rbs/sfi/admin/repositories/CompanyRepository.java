@@ -41,7 +41,7 @@ public class CompanyRepository extends AbstractRepository<Integer, Company> {
     }
 
     @Transactional
-    public Company findById(int id) {
+    public Company findById(Integer id) {
         return (Company)sessionFactory.getCurrentSession().get(Company.class,id);
     }
 }

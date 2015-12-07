@@ -50,7 +50,7 @@ public class AreaUnitController {
     }
 
     @RequestMapping(value = { "/admin/area/unit/edit/{id}" }, method = RequestMethod.GET)
-    public String updateForm(@PathVariable int id, ModelMap model) {
+    public String updateForm(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "area_unit");
         AreaUnit areaUnit = areaUnitRepository.findById(id);
         model.addAttribute("areaUnit", areaUnit);
@@ -60,7 +60,7 @@ public class AreaUnitController {
     }
 
     @RequestMapping(value = { "/admin/area/unit/edit/{id}" }, method = RequestMethod.POST)
-    public String update(@Valid AreaUnit areaUnit, BindingResult result, @PathVariable int id, ModelMap model) {
+    public String update(@Valid AreaUnit areaUnit, BindingResult result, @PathVariable Integer id, ModelMap model) {
         model.addAttribute("id", id);
 
         if (result.hasErrors()) {
@@ -72,7 +72,7 @@ public class AreaUnitController {
     }
 
     @RequestMapping(value = { "/admin/area/unit/delete/{id}" }, method = RequestMethod.GET)
-    public String softDelete(@PathVariable int id, ModelMap model) {
+    public String softDelete(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "area_unit");
         AreaUnit areaUnit = areaUnitRepository.findById(id);
         areaUnitRepository.softDelete(areaUnit);

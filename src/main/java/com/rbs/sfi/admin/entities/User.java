@@ -10,7 +10,7 @@ public class User extends Audit
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	@Column(name="username", unique=true, nullable=false)
 	private String username;
@@ -32,10 +32,10 @@ public class User extends Audit
 	private Company company;
 
 	@Column(name="enabled", nullable=true)
-	private boolean enabled;
+	private Boolean enabled;
 
     @Column(name="token")
-    private boolean token;
+    private Boolean token;
 
 	@Column(name="invitation_msg", nullable=true)
 	private String invitationMsg;
@@ -52,11 +52,11 @@ public class User extends Audit
 	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
 	private Boolean isActive;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -88,8 +88,8 @@ public class User extends Audit
 		return group;
 	}
 
-	public int getGroupId() {
-		int groupId = 0;
+	public Integer getGroupId() {
+		Integer groupId = 0;
 		for(Group x : this.getGroup() ){
 			groupId =  x.getId();
 		}
@@ -101,48 +101,12 @@ public class User extends Audit
 		this.group = group;
 	}
 
-	public boolean isEnabled() {
+	public Boolean getEnabled() {
 		return enabled;
 	}
 
-	public void setEnabled(boolean enabled) {
+	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id;
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
-
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (!(obj instanceof User))
-			return false;
-		User other = (User) obj;
-		if (id != other.id)
-			return false;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password
-				+ ", email=" + email + ", enabled=" + enabled + ", token=" + token
-				+ ", group=" + group +"]";
 	}
 
 	public String getFirstName() {
@@ -181,11 +145,11 @@ public class User extends Audit
 		return firstName + ' ' + lastName;
 	}
 
-    public boolean isToken() {
+    public Boolean getToken() {
         return token;
     }
 
-    public void setToken(boolean token) {
+    public void setToken(Boolean token) {
         this.token = token;
     }
 
