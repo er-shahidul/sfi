@@ -17,83 +17,83 @@ public class Cs6ViewModel extends BaseViewModel {
     private Set<SfiPpFormCs6OtherViewModel> usOthers;
 
     @Override
-	public Integer getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Integer getNumPrivateForeOwersUs() {
-		return numPrivateForeOwersUs;
-	}
+    public Integer getNumPrivateForeOwersUs() {
+        return numPrivateForeOwersUs;
+    }
 
-	public void setNumPrivateForeOwersUs(Integer numPrivateForeOwersUs) {
-		this.numPrivateForeOwersUs = numPrivateForeOwersUs;
-	}
+    public void setNumPrivateForeOwersUs(Integer numPrivateForeOwersUs) {
+        this.numPrivateForeOwersUs = numPrivateForeOwersUs;
+    }
 
-	public Integer getNumPrivateForeOwersCa() {
-		return numPrivateForeOwersCa;
-	}
+    public Integer getNumPrivateForeOwersCa() {
+        return numPrivateForeOwersCa;
+    }
 
-	public void setNumPrivateForeOwersCa(Integer numPrivateForeOwersCa) {
-		this.numPrivateForeOwersCa = numPrivateForeOwersCa;
-	}
+    public void setNumPrivateForeOwersCa(Integer numPrivateForeOwersCa) {
+        this.numPrivateForeOwersCa = numPrivateForeOwersCa;
+    }
 
-	public Integer getNumPrivateLandOwersUs() {
-		return numPrivateLandOwersUs;
-	}
+    public Integer getNumPrivateLandOwersUs() {
+        return numPrivateLandOwersUs;
+    }
 
-	public void setNumPrivateLandOwersUs(Integer numPrivateLandOwersUs) {
-		this.numPrivateLandOwersUs = numPrivateLandOwersUs;
-	}
+    public void setNumPrivateLandOwersUs(Integer numPrivateLandOwersUs) {
+        this.numPrivateLandOwersUs = numPrivateLandOwersUs;
+    }
 
-	public Integer getNumPrivateLandOwersCa() {
-		return numPrivateLandOwersCa;
-	}
+    public Integer getNumPrivateLandOwersCa() {
+        return numPrivateLandOwersCa;
+    }
 
-	public void setNumPrivateLandOwersCa(Integer numPrivateLandOwersCa) {
-		this.numPrivateLandOwersCa = numPrivateLandOwersCa;
-	}
+    public void setNumPrivateLandOwersCa(Integer numPrivateLandOwersCa) {
+        this.numPrivateLandOwersCa = numPrivateLandOwersCa;
+    }
 
-	public Integer getFundSFIActivStateProviUs() {
-		return fundSFIActivStateProviUs;
-	}
+    public Integer getFundSFIActivStateProviUs() {
+        return fundSFIActivStateProviUs;
+    }
 
-	public void setFundSFIActivStateProviUs(Integer fundSFIActivStateProviUs) {
-		this.fundSFIActivStateProviUs = fundSFIActivStateProviUs;
-	}
+    public void setFundSFIActivStateProviUs(Integer fundSFIActivStateProviUs) {
+        this.fundSFIActivStateProviUs = fundSFIActivStateProviUs;
+    }
 
-	public Integer getFundSFIActivStateProviCa() {
-		return fundSFIActivStateProviCa;
-	}
+    public Integer getFundSFIActivStateProviCa() {
+        return fundSFIActivStateProviCa;
+    }
 
-	public void setFundSFIActivStateProviCa(Integer fundSFIActivStateProviCa) {
-		this.fundSFIActivStateProviCa = fundSFIActivStateProviCa;
-	}
+    public void setFundSFIActivStateProviCa(Integer fundSFIActivStateProviCa) {
+        this.fundSFIActivStateProviCa = fundSFIActivStateProviCa;
+    }
 
-	public Boolean getToAssistObj8() {
-		return toAssistObj8;
-	}
+    public Boolean getToAssistObj8() {
+        return toAssistObj8;
+    }
 
-	public void setToAssistObj8(Boolean toAssistObj8) {
-		this.toAssistObj8 = toAssistObj8;
-	}
+    public void setToAssistObj8(Boolean toAssistObj8) {
+        this.toAssistObj8 = toAssistObj8;
+    }
 
-	public Set<SfiPpFormCs6UsCanadaViewModel> getUsCanada() {
-		return usCanada;
-	}
+    public Set<SfiPpFormCs6UsCanadaViewModel> getUsCanada() {
+        return usCanada;
+    }
 
-	public void setUsCanada(Set<SfiPpFormCs6UsCanadaViewModel> usCanada) {
-		this.usCanada = usCanada;
-	}
+    public void setUsCanada(Set<SfiPpFormCs6UsCanadaViewModel> usCanada) {
+        this.usCanada = usCanada;
+    }
 
-	public Set<SfiPpFormCs6OtherViewModel> getUsOthers() {
-		return usOthers;
-	}
+    public Set<SfiPpFormCs6OtherViewModel> getUsOthers() {
+        return usOthers;
+    }
 
-	public void setUsOthers(Set<SfiPpFormCs6OtherViewModel> usOthers) {
-		this.usOthers = usOthers;
-	}
+    public void setUsOthers(Set<SfiPpFormCs6OtherViewModel> usOthers) {
+        this.usOthers = usOthers;
+    }
 }

@@ -6,107 +6,107 @@ import com.rbs.sfi.common.models.BaseEntityModel;
 import javax.persistence.*;
 
 @Entity
-@Table(name="sfi_pp_forms_cs6")
+@Table(name = "sfi_pp_forms_cs6")
 public class SfiPpFormCs6 extends BaseEntityModel {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	@ManyToOne(targetEntity = Company.class)
-	@JoinColumn(name="company_id", nullable=true)
-	private Company company;
+    @ManyToOne(targetEntity = Company.class)
+    @JoinColumn(name = "company_id", nullable = true)
+    private Company company;
 
-	@Column(name="usa_timberSellers", nullable=true)
-	private Integer usaTimberSellers;
+    @Column(name = "usa_timberSellers", nullable = true)
+    private Integer usaTimberSellers;
 
-	@Column(name="usa_infoReceived", nullable=true)
-	private Integer usaInfoReceived;
+    @Column(name = "usa_infoReceived", nullable = true)
+    private Integer usaInfoReceived;
 
-	@Column(name="usa_fundingProvided", nullable=true)
-	private Float usaFundingProvided;
+    @Column(name = "usa_fundingProvided", nullable = true)
+    private Float usaFundingProvided;
 
-	@Column(name="ca_timberSellers", nullable=true)
-	private Integer caTimberSellers;
+    @Column(name = "ca_timberSellers", nullable = true)
+    private Integer caTimberSellers;
 
-	@Column(name="ca_infoReceived", nullable=true)
-	private Integer caInfoReceived;
+    @Column(name = "ca_infoReceived", nullable = true)
+    private Integer caInfoReceived;
 
-	@Column(name="ca_fundingProvided", nullable=true)
-	private Integer caFundingProvided;
+    @Column(name = "ca_fundingProvided", nullable = true)
+    private Integer caFundingProvided;
 
-	@Column(name="orgYesNo", nullable=true)
-	private Boolean orgYesNo;
+    @Column(name = "orgYesNo", nullable = true)
+    private Boolean orgYesNo;
 
     @Override
-	public Integer getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Company getCompany() {
-		return company;
-	}
+    public Company getCompany() {
+        return company;
+    }
 
-	public void setCompany(Company company) {
-		this.company = company;
-	}
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
-	public Integer getUsaTimberSellers() {
-		return usaTimberSellers;
-	}
+    public Integer getUsaTimberSellers() {
+        return usaTimberSellers;
+    }
 
-	public void setUsaTimberSellers(Integer usaTimberSellers) {
-		this.usaTimberSellers = usaTimberSellers;
-	}
+    public void setUsaTimberSellers(Integer usaTimberSellers) {
+        this.usaTimberSellers = usaTimberSellers;
+    }
 
-	public Integer getUsaInfoReceived() {
-		return usaInfoReceived;
-	}
+    public Integer getUsaInfoReceived() {
+        return usaInfoReceived;
+    }
 
-	public void setUsaInfoReceived(Integer usaInfoReceived) {
-		this.usaInfoReceived = usaInfoReceived;
-	}
+    public void setUsaInfoReceived(Integer usaInfoReceived) {
+        this.usaInfoReceived = usaInfoReceived;
+    }
 
-	public Float getUsaFundingProvided() {
-		return usaFundingProvided;
-	}
+    public Float getUsaFundingProvided() {
+        return usaFundingProvided;
+    }
 
-	public void setUsaFundingProvided(Float usaFundingProvided) {
-		this.usaFundingProvided = usaFundingProvided;
-	}
+    public void setUsaFundingProvided(Float usaFundingProvided) {
+        this.usaFundingProvided = usaFundingProvided;
+    }
 
-	public Integer getCaTimberSellers() {
-		return caTimberSellers;
-	}
+    public Integer getCaTimberSellers() {
+        return caTimberSellers;
+    }
 
-	public void setCaTimberSellers(Integer caTimberSellers) {
-		this.caTimberSellers = caTimberSellers;
-	}
+    public void setCaTimberSellers(Integer caTimberSellers) {
+        this.caTimberSellers = caTimberSellers;
+    }
 
-	public Integer getCaInfoReceived() {
-		return caInfoReceived;
-	}
+    public Integer getCaInfoReceived() {
+        return caInfoReceived;
+    }
 
-	public void setCaInfoReceived(Integer caInfoReceived) {
-		this.caInfoReceived = caInfoReceived;
-	}
+    public void setCaInfoReceived(Integer caInfoReceived) {
+        this.caInfoReceived = caInfoReceived;
+    }
 
-	public Integer getCaFundingProvided() {
-		return caFundingProvided;
-	}
+    public Integer getCaFundingProvided() {
+        return caFundingProvided;
+    }
 
-	public void setCaFundingProvided(Integer caFundingProvided) {
-		this.caFundingProvided = caFundingProvided;
-	}
+    public void setCaFundingProvided(Integer caFundingProvided) {
+        this.caFundingProvided = caFundingProvided;
+    }
 
-	public Boolean isOrgYesNo() {
-		return orgYesNo;
-	}
+    public Boolean isOrgYesNo() {
+        return orgYesNo;
+    }
 
-	public void setOrgYesNo(Boolean orgYesNo) {
-		this.orgYesNo = orgYesNo;
-	}
+    public void setOrgYesNo(Boolean orgYesNo) {
+        this.orgYesNo = orgYesNo;
+    }
 }

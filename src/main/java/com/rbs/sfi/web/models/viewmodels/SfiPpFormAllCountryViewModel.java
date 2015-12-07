@@ -11,6 +11,7 @@ public class SfiPpFormAllCountryViewModel extends BaseViewModel {
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -18,6 +19,7 @@ public class SfiPpFormAllCountryViewModel extends BaseViewModel {
     public String getCountry() {
         return country;
     }
+
     public void setCountry(String country) {
         this.country = country;
     }
@@ -25,6 +27,7 @@ public class SfiPpFormAllCountryViewModel extends BaseViewModel {
     public Boolean isUnknown() {
         return isUnknown;
     }
+
     public void setIsUnknown(Boolean isUnknown) {
         this.isUnknown = isUnknown;
     }

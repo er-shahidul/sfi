@@ -2,7 +2,7 @@ package com.rbs.sfi.web.controllers;
 
 import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.web.models.viewmodels.*;
-import com.rbs.sfi.web.services.*;
+import com.rbs.sfi.web.services.FormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,38 +20,38 @@ public class DefaultRestController {
     @Autowired
     private FormService formService;
 
-    @RequestMapping(value = {"/form/cs1" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> formCs1(@RequestBody Cs1ViewModel model, BindingResult result ) {
+    @RequestMapping(value = {"/form/cs1"}, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs1(@RequestBody Cs1ViewModel model, BindingResult result) {
         formService.setCs1Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
-    @RequestMapping(value = {"/form/cs2" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> formCs2(@RequestBody Cs2ViewModel model, BindingResult result ) {
+    @RequestMapping(value = {"/form/cs2"}, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs2(@RequestBody Cs2ViewModel model, BindingResult result) {
         formService.setCs2Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
-    @RequestMapping(value = {"/form/cs3" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> formCs3(@RequestBody Cs3ViewModel model, BindingResult result ) {
+    @RequestMapping(value = {"/form/cs3"}, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs3(@RequestBody Cs3ViewModel model, BindingResult result) {
         formService.setCs3Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
-    @RequestMapping(value = {"/form/cs4" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> formCs4(@RequestBody Cs4ViewModel model, BindingResult result ) {
+    @RequestMapping(value = {"/form/cs4"}, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs4(@RequestBody Cs4ViewModel model, BindingResult result) {
         formService.setCs4Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
-    @RequestMapping(value = {"/form/cs5" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> formCs5(@RequestBody Cs5ViewModel model, BindingResult result ) {
+    @RequestMapping(value = {"/form/cs5"}, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs5(@RequestBody Cs5ViewModel model, BindingResult result) {
         formService.setCs5Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
-    @RequestMapping(value = {"/form/cs6" }, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> formCs6(@RequestBody Cs6ViewModel model, BindingResult result ) {
+    @RequestMapping(value = {"/form/cs6"}, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs6(@RequestBody Cs6ViewModel model, BindingResult result) {
         formService.setCs6Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }

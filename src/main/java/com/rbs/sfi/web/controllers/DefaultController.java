@@ -30,8 +30,8 @@ public class DefaultController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = {"/" }, method = RequestMethod.GET)
-    public String home( SecurityContextHolderAwareRequestWrapper request, ModelMap model) {
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    public String home(SecurityContextHolderAwareRequestWrapper request, ModelMap model) {
         model.addAttribute("title", "home");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -41,19 +41,19 @@ public class DefaultController {
         return ("redirect:/sfiPpForm");
     }
 
-    @RequestMapping(value = {"/privacy" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/privacy"}, method = RequestMethod.GET)
     public String privacy(ModelMap model) {
         model.addAttribute("title", "privacy");
         return "privacy";
     }
 
-    @RequestMapping(value = {"/country/list" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/country/list"}, method = RequestMethod.GET)
     public ResponseEntity<String> countryList() {
         List country = sfiPpFormAllCountryService.list();
         return new ResponseEntity<String>(Util.getAsString(country), HttpStatus.OK);
     }
 
-    @RequestMapping(value = {"/region/list" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/region/list"}, method = RequestMethod.GET)
     public ResponseEntity<String> regionList() {
         List region = sfiPpFormRegionService.list();
         return new ResponseEntity<String>(Util.getAsString(region), HttpStatus.OK);

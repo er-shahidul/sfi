@@ -7,11 +7,11 @@ public class SfiPpFormCs6OtherViewModel extends BaseViewModel {
     private Integer sfiPpForm;
     private SfiPpFormOtherCountryViewModel country;
     private Integer otherCountriesUnits;
-    private String otherCountriesVolume;
-    private String otherCountriesPercPEFCCertified;
-    private String otherCountriesPercFSCCertified;
-    private String otherCountriesPercPEFCFSCCertified;
-    private String otherCountriesPercSFIFiberSourcing;
+    private Float otherCountriesVolume;
+    private Float otherCountriesPercPEFCCertified;
+    private Float otherCountriesPercFSCCertified;
+    private Float otherCountriesPercPEFCFSCCertified;
+    private Float otherCountriesPercSFIFiberSourcing;
     private Boolean otherCountriesPercOther;
     private String otherCountriesPercOtherReason;
 
@@ -48,43 +48,43 @@ public class SfiPpFormCs6OtherViewModel extends BaseViewModel {
         this.otherCountriesUnits = otherCountriesUnits;
     }
 
-    public String getOtherCountriesVolume() {
+    public Float getOtherCountriesVolume() {
         return otherCountriesVolume;
     }
 
-    public void setOtherCountriesVolume(String otherCountriesVolume) {
+    public void setOtherCountriesVolume(Float otherCountriesVolume) {
         this.otherCountriesVolume = otherCountriesVolume;
     }
 
-    public String getOtherCountriesPercPEFCCertified() {
+    public Float getOtherCountriesPercPEFCCertified() {
         return otherCountriesPercPEFCCertified;
     }
 
-    public void setOtherCountriesPercPEFCCertified(String otherCountriesPercPEFCCertified) {
+    public void setOtherCountriesPercPEFCCertified(Float otherCountriesPercPEFCCertified) {
         this.otherCountriesPercPEFCCertified = otherCountriesPercPEFCCertified;
     }
 
-    public String getOtherCountriesPercFSCCertified() {
+    public Float getOtherCountriesPercFSCCertified() {
         return otherCountriesPercFSCCertified;
     }
 
-    public void setOtherCountriesPercFSCCertified(String otherCountriesPercFSCCertified) {
+    public void setOtherCountriesPercFSCCertified(Float otherCountriesPercFSCCertified) {
         this.otherCountriesPercFSCCertified = otherCountriesPercFSCCertified;
     }
 
-    public String getOtherCountriesPercPEFCFSCCertified() {
+    public Float getOtherCountriesPercPEFCFSCCertified() {
         return otherCountriesPercPEFCFSCCertified;
     }
 
-    public void setOtherCountriesPercPEFCFSCCertified(String otherCountriesPercPEFCFSCCertified) {
+    public void setOtherCountriesPercPEFCFSCCertified(Float otherCountriesPercPEFCFSCCertified) {
         this.otherCountriesPercPEFCFSCCertified = otherCountriesPercPEFCFSCCertified;
     }
 
-    public String getOtherCountriesPercSFIFiberSourcing() {
+    public Float getOtherCountriesPercSFIFiberSourcing() {
         return otherCountriesPercSFIFiberSourcing;
     }
 
-    public void setOtherCountriesPercSFIFiberSourcing(String otherCountriesPercSFIFiberSourcing) {
+    public void setOtherCountriesPercSFIFiberSourcing(Float otherCountriesPercSFIFiberSourcing) {
         this.otherCountriesPercSFIFiberSourcing = otherCountriesPercSFIFiberSourcing;
     }
 

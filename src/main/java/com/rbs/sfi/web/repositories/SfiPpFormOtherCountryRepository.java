@@ -13,7 +13,7 @@ public class SfiPpFormOtherCountryRepository extends AbstractRepository<Integer,
     SessionFactory sessionFactory;
 
     public SfiPpFormOtherCountry findById(int id) {
-        return (SfiPpFormOtherCountry)sessionFactory.getCurrentSession().get(SfiPpFormOtherCountry.class, id);
+        return (SfiPpFormOtherCountry) sessionFactory.getCurrentSession().get(SfiPpFormOtherCountry.class, id);
     }
 
 }

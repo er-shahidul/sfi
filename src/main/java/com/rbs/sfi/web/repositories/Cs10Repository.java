@@ -15,7 +15,7 @@ public class Cs10Repository extends AbstractRepository<Integer, Cs10> {
 
     @Transactional
     public Cs10 findById(int id) {
-        return (Cs10)sessionFactory.getCurrentSession().get(Cs10.class,id);
+        return (Cs10) sessionFactory.getCurrentSession().get(Cs10.class, id);
     }
 
     public void save(Cs10 cs10) {

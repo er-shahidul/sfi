@@ -14,6 +14,7 @@ public class SfiPpFormCs3ProjectSupportDocsViewModel extends BaseViewModel {
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -21,6 +22,7 @@ public class SfiPpFormCs3ProjectSupportDocsViewModel extends BaseViewModel {
     public SfiPpFormCs3ViewModel getSfiPpFormCs3() {
         return sfiPpFormCs3;
     }
+
     public void setSfiPpFormCs3(SfiPpFormCs3ViewModel sfiPpFormCs3) {
         this.sfiPpFormCs3 = sfiPpFormCs3;
     }

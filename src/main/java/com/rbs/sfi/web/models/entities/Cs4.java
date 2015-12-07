@@ -5,182 +5,182 @@ import com.rbs.sfi.common.models.BaseEntityModel;
 import javax.persistence.*;
 
 @Entity
-@Table(name="sfi_pp_forms")
+@Table(name = "sfi_pp_forms")
 public class Cs4 extends BaseEntityModel {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	@Column(name="cs4_totalAreaReceivedHarv_usa", nullable=true)
-	private Float usaTotalHervArea;
+    @Column(name = "cs4_totalAreaReceivedHarv_usa", nullable = true)
+    private Float usaTotalHervArea;
 
-	@Column(name="cs4_totalAreaReceivedHarv_ca", nullable=true)
-	private Float caTotalHervArea;
+    @Column(name = "cs4_totalAreaReceivedHarv_ca", nullable = true)
+    private Float caTotalHervArea;
 
-	@Column(name="cs4_avgAreaClearCutHarv_usa", nullable=true)
-	private Float usaAvgHervArea;
+    @Column(name = "cs4_avgAreaClearCutHarv_usa", nullable = true)
+    private Float usaAvgHervArea;
 
-	@Column(name="cs4_avgAreaClearCutHarv_ca", nullable=true)
-	private Float caAvgHervArea;
+    @Column(name = "cs4_avgAreaClearCutHarv_ca", nullable = true)
+    private Float caAvgHervArea;
 
-	@Column(name="cs4_havestArea_usa", nullable=true)
-	private Boolean usaGovRegulation;
+    @Column(name = "cs4_havestArea_usa", nullable = true)
+    private Boolean usaGovRegulation;
 
-	@Column(name="cs4_havestArea_explain_usa", nullable=true)
-	private String usaGovRegulationExp;
+    @Column(name = "cs4_havestArea_explain_usa", nullable = true)
+    private String usaGovRegulationExp;
 
-	@Column(name="cs4_havestArea_ca", nullable=true)
-	private Boolean caGovRegulation;
+    @Column(name = "cs4_havestArea_ca", nullable = true)
+    private Boolean caGovRegulation;
 
-	@Column(name="cs4_havestArea_explain_ca", nullable=true)
-	private String caGovRegulationExp;
+    @Column(name = "cs4_havestArea_explain_ca", nullable = true)
+    private String caGovRegulationExp;
 
-	@Column(name="cs4_naturDisasterInsects_usa", nullable=true)
-	private Boolean usaDisResDiseaseInsects;
+    @Column(name = "cs4_naturDisasterInsects_usa", nullable = true)
+    private Boolean usaDisResDiseaseInsects;
 
-	@Column(name="cs4_naturDisasterInsects_explain_usa", nullable=true)
-	private String usaDiseaseInsectsExp;
+    @Column(name = "cs4_naturDisasterInsects_explain_usa", nullable = true)
+    private String usaDiseaseInsectsExp;
 
-	@Column(name="cs4_naturDisasterInsects_ca", nullable=true)
-	private Boolean caDisResDiseaseInsects;
+    @Column(name = "cs4_naturDisasterInsects_ca", nullable = true)
+    private Boolean caDisResDiseaseInsects;
 
-	@Column(name="cs4_naturDisasterInsects_explain_ca", nullable=true)
-	private String caDiseaseInsectsExp;
+    @Column(name = "cs4_naturDisasterInsects_explain_ca", nullable = true)
+    private String caDiseaseInsectsExp;
 
-	@Column(name="cs4_naturDisasterFire_usa", nullable=true)
-	private Boolean usaDisResFireSalvage;
+    @Column(name = "cs4_naturDisasterFire_usa", nullable = true)
+    private Boolean usaDisResFireSalvage;
 
-	@Column(name="cs4_naturDisasterFire_explain_usa", nullable=true)
-	private String usaFireSalvageExp;
+    @Column(name = "cs4_naturDisasterFire_explain_usa", nullable = true)
+    private String usaFireSalvageExp;
 
-	@Column(name="cs4_naturDisasterFire_ca", nullable=true)
-	private Boolean caDisResFireSalvage;
+    @Column(name = "cs4_naturDisasterFire_ca", nullable = true)
+    private Boolean caDisResFireSalvage;
 
-	@Column(name="cs4_naturDisasterFire_explain_ca", nullable=true)
-	private String caFireSalvageExp;
+    @Column(name = "cs4_naturDisasterFire_explain_ca", nullable = true)
+    private String caFireSalvageExp;
 
-	@Column(name="cs4_naturDisasterWindthrow_usa", nullable=true)
-	private Boolean usaDisResWindthrow;
+    @Column(name = "cs4_naturDisasterWindthrow_usa", nullable = true)
+    private Boolean usaDisResWindthrow;
 
-	@Column(name="cs4_naturDisasterFireWindthrow_explain_usa", nullable=true)
-	private String usaWindthrowExp;
+    @Column(name = "cs4_naturDisasterFireWindthrow_explain_usa", nullable = true)
+    private String usaWindthrowExp;
 
-	@Column(name="cs4_naturDisasterWindthrow_ca", nullable=true)
-	private Boolean caDisResWindthrow;
+    @Column(name = "cs4_naturDisasterWindthrow_ca", nullable = true)
+    private Boolean caDisResWindthrow;
 
-	@Column(name="cs4_naturDisasterFireWindthrow_explain_ca", nullable=true)
-	private String caWindthrowExp;
+    @Column(name = "cs4_naturDisasterFireWindthrow_explain_ca", nullable = true)
+    private String caWindthrowExp;
 
-	@Column(name="cs4_naturDisasterHurricane_usa", nullable=true)
-	private Boolean usaDisResHurricane;
+    @Column(name = "cs4_naturDisasterHurricane_usa", nullable = true)
+    private Boolean usaDisResHurricane;
 
-	@Column(name="cs4_naturDisasterHurricane_explain_usa", nullable=true)
-	private String usaHurricaneExp;
+    @Column(name = "cs4_naturDisasterHurricane_explain_usa", nullable = true)
+    private String usaHurricaneExp;
 
-	@Column(name="cs4_naturDisasterHurricane_ca", nullable=true)
-	private Boolean caDisResHurricane;
+    @Column(name = "cs4_naturDisasterHurricane_ca", nullable = true)
+    private Boolean caDisResHurricane;
 
-	@Column(name="cs4_naturDisasterHurricane_explain_ca", nullable=true)
-	private String caHurricaneExp;
+    @Column(name = "cs4_naturDisasterHurricane_explain_ca", nullable = true)
+    private String caHurricaneExp;
 
-	@Column(name="cs4_naturDisasterIceStorms_usa", nullable=true)
-	private Boolean usaDisResIceStorm;
+    @Column(name = "cs4_naturDisasterIceStorms_usa", nullable = true)
+    private Boolean usaDisResIceStorm;
 
-	@Column(name="cs4_naturDisasterIceStorms_explain_usa", nullable=true)
-	private String usaIceStormExp;
+    @Column(name = "cs4_naturDisasterIceStorms_explain_usa", nullable = true)
+    private String usaIceStormExp;
 
-	@Column(name="cs4_naturDisasterIceStorms_ca", nullable=true)
-	private Boolean caDisResIceStorm;
+    @Column(name = "cs4_naturDisasterIceStorms_ca", nullable = true)
+    private Boolean caDisResIceStorm;
 
-	@Column(name="cs4_naturDisasterIceStorms_explain_ca", nullable=true)
-	private String caIceStormExp;
+    @Column(name = "cs4_naturDisasterIceStorms_explain_ca", nullable = true)
+    private String caIceStormExp;
 
-	@Column(name="cs4_naturDisasterOther_usa", nullable=true)
-	private Boolean usaOthersApply;
+    @Column(name = "cs4_naturDisasterOther_usa", nullable = true)
+    private Boolean usaOthersApply;
 
-	@Column(name="cs4_naturDisasterOther_explain_usa", nullable=true)
-	private String usaOthersExp;
+    @Column(name = "cs4_naturDisasterOther_explain_usa", nullable = true)
+    private String usaOthersExp;
 
-	@Column(name="cs4_naturDisasterOther_ca", nullable=true)
-	private Boolean caOthersApply;
+    @Column(name = "cs4_naturDisasterOther_ca", nullable = true)
+    private Boolean caOthersApply;
 
-	@Column(name="cs4_naturDisasterOther_explain_ca", nullable=true)
-	private String caOthersExp;
+    @Column(name = "cs4_naturDisasterOther_explain_ca", nullable = true)
+    private String caOthersExp;
 
-	@Column(name="cs4_totalAreaBySeedTreeAndShelt_usa", nullable=true)
-	private Float usaSeedTreeShelterWoodArea;
+    @Column(name = "cs4_totalAreaBySeedTreeAndShelt_usa", nullable = true)
+    private Float usaSeedTreeShelterWoodArea;
 
-	@Column(name="cs4_totalAreaBySeedTreeAndShelt_ca", nullable=true)
-	private Float caSeedTreeShelterWoodArea;
+    @Column(name = "cs4_totalAreaBySeedTreeAndShelt_ca", nullable = true)
+    private Float caSeedTreeShelterWoodArea;
 
-	@Column(name="cs4_totalAreaBySelection_usa", nullable=true)
-	private Float usaSelectionMethodArea;
+    @Column(name = "cs4_totalAreaBySelection_usa", nullable = true)
+    private Float usaSelectionMethodArea;
 
-	@Column(name="cs4_totalAreaByThiningOrSaniSalv_usa", nullable=true)
-	private Float usaSanitationArea;
+    @Column(name = "cs4_totalAreaByThiningOrSaniSalv_usa", nullable = true)
+    private Float usaSanitationArea;
 
-	@Column(name="cs4_totalAreaByThiningOrSaniSalv_ca", nullable=true)
-	private Float caSanitationArea;
+    @Column(name = "cs4_totalAreaByThiningOrSaniSalv_ca", nullable = true)
+    private Float caSanitationArea;
 
-	@Column(name="cs4_totalAreaBySelection_ca", nullable=true)
-	private Float caSelectionMethodArea;
+    @Column(name = "cs4_totalAreaBySelection_ca", nullable = true)
+    private Float caSelectionMethodArea;
 
-	@Column(name="cs4_usa_artPlant_1year", nullable=true)
-	private Float usaPlantingOneYr;
+    @Column(name = "cs4_usa_artPlant_1year", nullable = true)
+    private Float usaPlantingOneYr;
 
-	@Column(name="cs4_ca_artPlant_1year", nullable=true)
-	private Float caPlantingOneYr;
+    @Column(name = "cs4_ca_artPlant_1year", nullable = true)
+    private Float caPlantingOneYr;
 
-	@Column(name="cs4_usa_artPlant_2years", nullable=true)
-	private Float usaPlantingTwoYr;
+    @Column(name = "cs4_usa_artPlant_2years", nullable = true)
+    private Float usaPlantingTwoYr;
 
-	@Column(name="cs4_ca_artPlant_2years", nullable=true)
-	private Float caPlantingTwoYr;
+    @Column(name = "cs4_ca_artPlant_2years", nullable = true)
+    private Float caPlantingTwoYr;
 
-	@Column(name="cs4_usa_artPlant_moreThn2years", nullable=true)
-	private Float usaPlantingTwoPlusYr;
+    @Column(name = "cs4_usa_artPlant_moreThn2years", nullable = true)
+    private Float usaPlantingTwoPlusYr;
 
-	@Column(name="cs4_ca_artPlant_moreThn2years", nullable=true)
-	private Float caPlantingTwoPlusYr;
+    @Column(name = "cs4_ca_artPlant_moreThn2years", nullable = true)
+    private Float caPlantingTwoPlusYr;
 
-	@Column(name="cs4_usa_directSeed_1year", nullable=true)
-	private Float usaSeedingOneYr;
+    @Column(name = "cs4_usa_directSeed_1year", nullable = true)
+    private Float usaSeedingOneYr;
 
-	@Column(name="cs4_ca_directSeed_1year", nullable=true)
-	private Float caSeedingOneYr;
+    @Column(name = "cs4_ca_directSeed_1year", nullable = true)
+    private Float caSeedingOneYr;
 
-	@Column(name="cs4_usa_directSeed_2years", nullable=true)
-	private Float usaSeedingTwoYr;
+    @Column(name = "cs4_usa_directSeed_2years", nullable = true)
+    private Float usaSeedingTwoYr;
 
-	@Column(name="cs4_ca_directSeed_2years", nullable=true)
-	private Float caSeedingTwoYr;
+    @Column(name = "cs4_ca_directSeed_2years", nullable = true)
+    private Float caSeedingTwoYr;
 
-	@Column(name="cs4_usa_directSeed_moreThn2years", nullable=true)
-	private Float usaSeedingTwoPlusYr;
+    @Column(name = "cs4_usa_directSeed_moreThn2years", nullable = true)
+    private Float usaSeedingTwoPlusYr;
 
-	@Column(name="cs4_ca_directSeed_moreThn2years", nullable=true)
-	private Float caSeedingTwoPlusYr;
+    @Column(name = "cs4_ca_directSeed_moreThn2years", nullable = true)
+    private Float caSeedingTwoPlusYr;
 
-	@Column(name="cs4_usa_natrualRegen", nullable=true)
-	private Float usaNatRegen2014;
+    @Column(name = "cs4_usa_natrualRegen", nullable = true)
+    private Float usaNatRegen2014;
 
-	@Column(name="cs4_ca_natrualRegen", nullable=true)
-	private Float caNatRegen2014;
+    @Column(name = "cs4_ca_natrualRegen", nullable = true)
+    private Float caNatRegen2014;
 
-	@Column(name="cs4_usa_percHarvUnitsRegen", nullable=true)
-	private Float usaRegenPerc5Yr;
+    @Column(name = "cs4_usa_percHarvUnitsRegen", nullable = true)
+    private Float usaRegenPerc5Yr;
 
-	@Column(name="cs4_ca_percHarvUnitsRegen", nullable=true)
-	private Float caRegenPerc5Yr;
+    @Column(name = "cs4_ca_percHarvUnitsRegen", nullable = true)
+    private Float caRegenPerc5Yr;
 
     @Override
-	public Integer getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Float getUsaTotalHervArea() {
         return usaTotalHervArea;

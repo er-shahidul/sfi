@@ -1,7 +1,7 @@
 package com.rbs.sfi.web.services;
 
-import com.rbs.sfi.web.mapper.EntityModelMapperService;
 import com.rbs.sfi.common.services.ReflectionHelperService;
+import com.rbs.sfi.web.mapper.EntityModelMapperService;
 import com.rbs.sfi.web.mapper.ViewModelMapperService;
 import com.rbs.sfi.web.models.entities.*;
 import com.rbs.sfi.web.models.viewmodels.*;
@@ -59,7 +59,9 @@ public class FormService {
     @Autowired
     private Cs6Service cs6Service;
 
-    /*********************** Cs1 : Begin ***********************/
+    /***********************
+     * Cs1 : Begin
+     ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
         Cs1 entity = cs1Repository.get(id);
         return viewModelMapperService.convert(entity, Cs1ViewModel.class);
@@ -70,7 +72,9 @@ public class FormService {
     }
     /*********************** Cs1 : End   ***********************/
 
-    /*********************** Cs2 : Begin ***********************/
+    /***********************
+     * Cs2 : Begin
+     ***********************/
     public Cs2ViewModel getCs2ViewModel(Integer id) {
         Cs2 entity = cs2Repository.get(id);
         return viewModelMapperService.convert(entity, Cs2ViewModel.class);
@@ -82,7 +86,9 @@ public class FormService {
     }
     /*********************** Cs2 : End   ***********************/
 
-    /*********************** Cs3 : Begin ***********************/
+    /***********************
+     * Cs3 : Begin
+     ***********************/
     public Cs3ViewModel getCs3ViewModel(Integer id) {
         Cs3 entity = cs3Repository.get(id);
         return viewModelMapperService.convert(entity, Cs3ViewModel.class);
@@ -93,7 +99,9 @@ public class FormService {
     }
     /*********************** Cs3 : End   ***********************/
 
-    /*********************** Cs4 : Begin ***********************/
+    /***********************
+     * Cs4 : Begin
+     ***********************/
     public Cs4ViewModel getCs4ViewModel(Integer id) {
         Cs4 entity = cs4Repository.get(id);
         return viewModelMapperService.convert(entity, Cs4ViewModel.class);
@@ -104,7 +112,9 @@ public class FormService {
     }
     /*********************** Cs4 : End   ***********************/
 
-    /*********************** Cs5 : Begin ***********************/
+    /***********************
+     * Cs5 : Begin
+     ***********************/
     public Cs5ViewModel getCs5ViewModel(Integer id) {
         Cs5 entity = cs5Repository.get(id);
         return viewModelMapperService.convert(entity, Cs5ViewModel.class);
@@ -115,7 +125,9 @@ public class FormService {
     }
     /*********************** Cs5 : End   ***********************/
 
-    /*********************** Cs6 : Begin ***********************/
+    /***********************
+     * Cs6 : Begin
+     ***********************/
     public Cs6ViewModel getCs6ViewModel(Integer id) {
         Cs6 entity = cs6Repository.get(id);
         return viewModelMapperService.convert(entity, Cs6ViewModel.class);

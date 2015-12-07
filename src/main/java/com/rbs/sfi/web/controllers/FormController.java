@@ -6,7 +6,10 @@ import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.web.models.entities.SfiPpForm;
 import com.rbs.sfi.web.repositories.SfiPpFormRepository;
-import com.rbs.sfi.web.services.*;
+import com.rbs.sfi.web.services.FormService;
+import com.rbs.sfi.web.services.SfiPpFormAllCountryService;
+import com.rbs.sfi.web.services.SfiPpFormRegionService;
+import com.rbs.sfi.web.services.SfiPpFormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -46,7 +49,7 @@ public class FormController {
     @Autowired
     FormService formService;
 
-    @RequestMapping(value = {"/form" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/form"}, method = RequestMethod.GET)
     public String homePage(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -65,14 +68,14 @@ public class FormController {
         return "redirect:/login";
     }
 
-    @RequestMapping(value = {"/sfiPpForm" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/sfiPpForm"}, method = RequestMethod.GET)
     public String form(ModelMap model) {
 
         User user = userService.findByUsername(getCurrentUsername());
         Company company = user.getCompany();
         SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(company);
 
-        if(sfiPpForm == null){
+        if (sfiPpForm == null) {
             sfiPpForm = new SfiPpForm();
             sfiPpForm.setCompany(company);
             sfiPpForm.setCreatedBy(user);
@@ -102,7 +105,7 @@ public class FormController {
         return "/core/form/index";
     }
 
-    @RequestMapping(value = {"/admin/form" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/form"}, method = RequestMethod.GET)
     public String adminForm(ModelMap model) {
         model.addAttribute("title", "form");
         List sfiPpForms = sfiPpFormService.list();

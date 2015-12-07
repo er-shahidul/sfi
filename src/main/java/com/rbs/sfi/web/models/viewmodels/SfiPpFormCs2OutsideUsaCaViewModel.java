@@ -17,6 +17,7 @@ public class SfiPpFormCs2OutsideUsaCaViewModel extends BaseViewModel {
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -24,6 +25,7 @@ public class SfiPpFormCs2OutsideUsaCaViewModel extends BaseViewModel {
     public Integer getSfiPpForm() {
         return sfiPpForm;
     }
+
     public void setSfiPpForm(Integer sfiPpForm) {
         this.sfiPpForm = sfiPpForm;
     }
@@ -31,6 +33,7 @@ public class SfiPpFormCs2OutsideUsaCaViewModel extends BaseViewModel {
     public Float getTotalArea() {
         return totalArea;
     }
+
     public void setTotalArea(Float totalArea) {
         this.totalArea = totalArea;
     }
@@ -38,6 +41,7 @@ public class SfiPpFormCs2OutsideUsaCaViewModel extends BaseViewModel {
     public Boolean getUnderCertifiedStandard() {
         return underCertifiedStandard;
     }
+
     public void setUnderCertifiedStandard(Boolean underCertifiedStandard) {
         this.underCertifiedStandard = underCertifiedStandard;
     }
@@ -45,6 +49,7 @@ public class SfiPpFormCs2OutsideUsaCaViewModel extends BaseViewModel {
     public Integer getStandardType() {
         return standardType;
     }
+
     public void setStandardType(Integer standardType) {
         this.standardType = standardType;
     }
@@ -52,6 +57,7 @@ public class SfiPpFormCs2OutsideUsaCaViewModel extends BaseViewModel {
     public String getStandardTypeOther() {
         return standardTypeOther;
     }
+
     public void setStandardTypeOther(String standardTypeOther) {
         this.standardTypeOther = standardTypeOther;
     }
@@ -59,6 +65,7 @@ public class SfiPpFormCs2OutsideUsaCaViewModel extends BaseViewModel {
     public SfiPpFormOtherCountryViewModel getCountry() {
         return country;
     }
+
     public void setCountry(SfiPpFormOtherCountryViewModel country) {
         this.country = country;
     }

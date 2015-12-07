@@ -6,43 +6,43 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name="sfi_pp_forms")
+@Table(name = "sfi_pp_forms")
 public class Cs6 extends BaseEntityModel {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	@Column(name="cs6_numPrivateForeOwers_us", nullable=true)
-	private Integer numPrivateForeOwersUs;
+    @Column(name = "cs6_numPrivateForeOwers_us", nullable = true)
+    private Integer numPrivateForeOwersUs;
 
-	@Column(name="cs6_numPrivateForeOwers_ca", nullable=true)
-	private Integer numPrivateForeOwersCa;
+    @Column(name = "cs6_numPrivateForeOwers_ca", nullable = true)
+    private Integer numPrivateForeOwersCa;
 
-	@Column(name="cs6_numPrivateLandOwers_us", nullable=true)
-	private Integer numPrivateLandOwersUs;
+    @Column(name = "cs6_numPrivateLandOwers_us", nullable = true)
+    private Integer numPrivateLandOwersUs;
 
-	@Column(name="cs6_numPrivateLandOwers_ca", nullable=true)
-	private Integer numPrivateLandOwersCa;
+    @Column(name = "cs6_numPrivateLandOwers_ca", nullable = true)
+    private Integer numPrivateLandOwersCa;
 
-	@Column(name="cs6_fundSFIActiv_stateProvi_us", nullable=true)
-	private Integer fundSFIActivStateProviUs;
+    @Column(name = "cs6_fundSFIActiv_stateProvi_us", nullable = true)
+    private Integer fundSFIActivStateProviUs;
 
-	@Column(name="cs6_fundSFIActiv_stateProvi_ca", nullable=true)
-	private Integer fundSFIActivStateProviCa;
+    @Column(name = "cs6_fundSFIActiv_stateProvi_ca", nullable = true)
+    private Integer fundSFIActivStateProviCa;
 
-	@Column(name="cs6_toAssistObj8", nullable=true)
-	private Boolean toAssistObj8;
+    @Column(name = "cs6_toAssistObj8", nullable = true)
+    private Boolean toAssistObj8;
 
-	@OneToMany(targetEntity = SfiPpFormCs6UsCanada.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	private Set<SfiPpFormCs6UsCanada> usCanada;
+    @OneToMany(targetEntity = SfiPpFormCs6UsCanada.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<SfiPpFormCs6UsCanada> usCanada;
 
-	@OneToMany(targetEntity = SfiPpFormCs6Other.class, mappedBy="sfiPpForm" , fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	private Set<SfiPpFormCs6Other> usOthers;
+    @OneToMany(targetEntity = SfiPpFormCs6Other.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<SfiPpFormCs6Other> usOthers;
 
     @Override
-	public Integer getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
     public void setId(Integer id) {
         this.id = id;
@@ -105,18 +105,18 @@ public class Cs6 extends BaseEntityModel {
     }
 
     public Set<SfiPpFormCs6UsCanada> getUsCanada() {
-		return usCanada;
-	}
+        return usCanada;
+    }
 
-	public void setUsCanada(Set<SfiPpFormCs6UsCanada> usCanada) {
-		addAll(this.usCanada, usCanada);
-	}
+    public void setUsCanada(Set<SfiPpFormCs6UsCanada> usCanada) {
+        addAll(this.usCanada, usCanada);
+    }
 
-	public Set<SfiPpFormCs6Other> getUsOthers() {
-		return usOthers;
-	}
+    public Set<SfiPpFormCs6Other> getUsOthers() {
+        return usOthers;
+    }
 
-	public void setUsOthers(Set<SfiPpFormCs6Other> usOthers) {
-		addAll(this.usOthers, usOthers);
-	}
+    public void setUsOthers(Set<SfiPpFormCs6Other> usOthers) {
+        addAll(this.usOthers, usOthers);
+    }
 }
