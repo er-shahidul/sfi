@@ -102,11 +102,12 @@
         </thead>
         <tbody>
         <!-- Normal supply -->
-        <tr ng-repeat="supply in cs6.usCanada">
-            <td>{{ supply.regionName }}</td>
-            <td>{{supply.title}}</td>
-            <td><a href="" ng-click="editSupply(supply.regionId)">Edit</a></td>
-            <td><a href="" ng-click="deleteSupply(supply.regionId)">Delete</a></td>
+        <tr ng-repeat="supply in usCanada">
+            <td>{{ supply.region.name }}, {{ supply.region.country.country }}</td>
+            <td>{{ usCanadaTitle(supply) }}</td>
+
+            <td><a href="" ng-click="editSupply(supply.region.id)">Edit</a></td>
+            <td><a href="" ng-click="deleteSupply(supply.region.id)">Delete</a></td>
         </tr>
         <!-- -->
 
@@ -183,8 +184,6 @@
 
 <tbody>
 
-
-
     <tr ng-repeat-start="section in sections" ng-if="section.row == 1">
         <th>Private</th>
         <th colspan="8"></th>
@@ -211,6 +210,7 @@
                    ng-if="section.row == 11" ng-model="section.otherEnable"/>
             {{section.name}}
 
+
             <div ng-show="section.otherEnable && otherLabel">
                 <a ng-click="showPopUp3(section)">{{ otherLabel | limitTo: 20 }}</a>
             </div>
@@ -235,14 +235,16 @@
             <div class="form-group padded alignright"
                  ng-class="{'has-error' : isSecDirty(innerForm) && innerForm.item2.$invalid}" ng-show="section.unit > 0">
 
-                Volume <input type="number" style="width: 105px" class="form-control shortest2" name="item2" ng-required="isSecDirty(innerForm)"
+                Volume <input type="text" style="width: 105px" class="form-control shortest2" name="item2" ng-required="isSecDirty(innerForm)"
                               ng-disabled="isDisabled(section)" ng-model="section.volume"
-                              ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror />
+                              ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+
+                              ng-model-options="{allowInvalid:true}"  />
             </div>
         </td>
 
         <td align="center" ng-class="{'has-error' : isSecDirty(innerForm) && innerForm.item3.$invalid}">
-            <input type="number" class="form-control shorter" max="100" min="0" name="item3" ng-required="isSecDirty(innerForm)"
+            <input type="text" class="form-control shorter" max="100" min="0" name="item3" ng-required="isSecDirty(innerForm)"
                    ng-model="section.percDeliveredQualifiedLogging" ng-disabled="isDisabled(section)"
                    ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
 
@@ -254,25 +256,25 @@
         </td>
 
         <td align="center" ng-class="{'has-error' : innerForm.item4.$invalid}">
-            <input type="number" class="form-control shorter" name="item4"
+            <input type="text" class="form-control shorter" name="item4"
                    ng-disabled="isDisabled(section)" ng-model="section.percSFIOnlyCertified"
                    ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
         </td>
 
         <td align="center" ng-class="{'has-error' : innerForm.item5.$invalid}">
-            <input type="number" class="form-control  shorter" name="item5"
+            <input type="text" class="form-control  shorter" name="item5"
                    ng-disabled="isDisabled(section)" ng-model="section.percATFSOnlyCertified"
                    ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
         </td>
 
         <td align="center" ng-class="{'has-error' : innerForm.item6.$invalid}">
-            <input type="number" class="form-control  shorter" name="item6"
+            <input type="text" class="form-control  shorter" name="item6"
                    ng-disabled="isDisabled(section)" ng-model="section.percCSAOnlyCertified"
                    ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
         </td>
 
         <td align="center" ng-class="{'has-error' : innerForm.item7.$invalid}">
-            <input type="number" class="form-control  shorter" name="item7"
+            <input type="text" class="form-control  shorter" name="item7"
                    ng-disabled="isDisabled(section)" ng-model="section.percFSCOnlyCertified"
                    ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
         </td>

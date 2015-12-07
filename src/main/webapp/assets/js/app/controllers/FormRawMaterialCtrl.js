@@ -1,3 +1,4 @@
+var cs6;
 
 sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', '$http', 'Countries', 'RegionList', '$popover', '$compile' , '_', 'Message', '$', function ($rootScope , $scope, $state, $http, CountryList , RegionList, $popover, $compile, _, Message, $){
 
@@ -6,12 +7,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
     $scope.delete = null;
     $scope.cs6 = angular.copy($rootScope.form.cs6);
 
-
-    if(!$scope.cs6.supply){
-        $scope.cs6.supply = [];
-    }
-
-    //$scope.otherCountries = CountryList.getOthers();
+    cs6 = $scope;
 
     $scope.init = function(){
 
@@ -32,28 +28,53 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
                 caTimberSellers = null;
             }
         }
+
+
+        $scope.usCanada = [];
+
+        _.each($scope.cs6.usCanada, function(usCanada){
+
+            var item = { sections : [] };
+
+            _.each(usCanada, function(val, key){
+
+                var matches = /^([a-zA-Z]*)([0-9]+)$/.exec(key);
+                if(!matches) return item[key] = val;
+
+
+                /** Process section data */
+
+                var attr = matches[1];
+                var num  = matches[2];
+
+                /** Process moreThanOneStandard data */
+                if(attr == "percCertifedMoreThanOneStandard"){
+                    matches = /([1-7]{1})(.*)$/.exec(num);
+                    attr = attr + matches[1];
+                }
+
+                var index = parseInt(matches[2]) - 1;
+
+                if(!item.sections[index]){
+                    item.sections[index] = {};
+                }
+
+                item.sections[index][attr] = val;
+            });
+
+            $scope.usCanada.push(item);
+        });
+
+
     }
 
     $scope.init();
-
-//    if(!$rootScope.regions){
-//
-//        RegionList
-//            .load()
-//            .then(function(reponse){
-//                $rootScope.regions = reponse.data;
-//                $scope.parseSupplies();
-//
-//            });
-//    }
-
     $scope.regionId = 0;
 
     $scope.getSupply = function(regionId){
 
-
-        var supply = _.find($scope.cs6.usCanada, function(item){
-            return item.regionId == regionId;
+        var supply = _.find($scope.usCanada, function(item){
+            return item.region.id == regionId;
         });
 
         return supply;
@@ -128,18 +149,20 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
             return $('#confirm').modal();
         }
 
+
         var titles = [];
         var regionId = $scope.regionId;
+        var region   = $rootScope.getRegion(regionId);
 
         if($scope.edit){
 
             var item = $scope.edit;
-            item.regionId = regionId;
+            item.region = region;
         }else{
 
             var item = {
                 sections : [],
-                regionId : regionId
+                region : region
             };
         }
 
@@ -156,14 +179,12 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
             item.sections[i] = $scope.setSectionValues(section, {});
         }
 
-        item.title = titles.splice(0, 3).join();
-        item.regionName = RegionList.getName(regionId);
+        //item.title = titles.splice(0, 3).join();
+        //item.regionName = RegionList.getName(regionId);
 
         if(!$scope.edit){
-            $scope.cs6.usCanada.push(item);
+            $scope.usCanada.push(item);
         }
-
-        //$scope.cs6.usCanada.push(item);
 
         $scope.isDataDirty = true;
         $scope.resetSection();
@@ -198,7 +219,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
     $scope.deleteOk = function(){
 
         if($scope.delete){
-            $scope.cs6.usCanada = _.without($scope.cs6.usCanada, $scope.delete);
+            $scope.usCanada = _.without($scope.usCanada, $scope.delete);
         }
 
         if($scope.otherDelete){
@@ -293,6 +314,35 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
     }
 
+    $scope.preparePayload = function(){
+
+        var data = angular.copy($scope.cs6);
+        delete data.sections;
+
+        _.each($scope.usCanada, function(usCanada){
+
+            var item = usCanada;
+
+            _.each(usCanada.sections, function(section, i){
+
+                var k = parseInt(i) + 1;
+
+                _.each(section, function(val, key){
+
+                    var attr = $rootScope.camelcase(key + ' ' + k );
+                    item[attr] = val;
+                });
+
+            });
+
+            item.sfiPpForm = $scope.cs6.id;
+
+            data.usCanada.push(item);
+        });
+
+        return data;
+    }
+
     $scope.save = function(go){
 
         if($scope.cs6Form.$invalid){
@@ -304,8 +354,13 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
             return false;
         }
 
+        var data = $scope.preparePayload();
+
+        console.log(data);
+        //return;
+
         $http
-            .put("/form/cs6", $scope.cs6)
+            .put("/form/cs6", data)
             .then(function(response){
 
                 if(response.data){
@@ -316,7 +371,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
                     //$rootScope.form = response.data;
                     //$scope.cs6 = $rootScope.form.cs6;
                     //$scope.errors = $scope.cs6.errors;
-                    //$scope.cs6.usCanada = $rootScope.form.cs6.usCanada;
+                    //$scope.cs6.supplies = $rootScope.form.cs6.supplies;
                     //$scope.cs6.others = $rootScope.form.cs6.others;
 
                     //$scope.parseSupplies();
@@ -400,12 +455,6 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         "Crown land (federal and provincial) that you control through a long-term lease.",
         "Direct and indirect purchases from Crown land (federal and provincial) that you do not control through a long-term lease.",
         "Include raw material originating from private forests (family forests, industry, TIMOs, and all other privately held forests) that was not purchased directly from the landowner."
-
-
-
-
-
-
     ];
 
 
@@ -444,7 +493,9 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
     $scope.parseSupplies = function(){
 
-        _.each($scope.cs6.usCanada, function(supply){
+        return;
+
+        _.each($scope.usCanada, function(supply){
 
             var titles = [];
             _.each(supply.sections, function(section, k){
@@ -858,8 +909,6 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         });
     }
 
-
-
     $scope.showPopUp4 = function(){
 
         var $el = $('#other8');
@@ -913,13 +962,42 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         });
     }
 
-
-
-
-
-
     $scope.parseSupplies();
     $scope.parseOthers();
+
+
+    var sectionTitles = [
+        'Fee and long-term lease',
+        'Direct purchase from TIMOs & REITs',
+        'Direct purchase from family forest owners',
+        'Direct purchase from Aboriginal/Tribal lands',
+        'Direct purchase from conservation lands',
+        'All other direct purchase from private landowners',
+        'U.S. Federal lands',
+        'All other U.S. public lands',
+        'Crown land',
+        'Non-controlled crown land',
+        'Other sources'
+    ];
+
+    $scope.usCanadaTitle = function(usCanada){
+
+        var titles = [];
+
+        _.each(usCanada.sections, function(section, k){
+
+            if(!section.unit){
+                return;
+            }
+
+            console.log(k, sectionTitles[k])
+
+            titles.push(sectionTitles[k]);
+
+        });
+
+        return titles.splice(0, 3).join();
+    }
 
 
 }]);

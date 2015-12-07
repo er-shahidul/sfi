@@ -666,6 +666,14 @@ sfiFormApp.run(['$rootScope', 'Countries', 'RegionList', function($rootScope, Co
 
     };
 
+
+    $rootScope.getRegion = function(regionId){
+        return _.find($rootScope.regions, function(region){
+            return region.id == regionId;
+        });
+    }
+
+
 }]);
 
 /** Operating country rules from CS1 data */

@@ -6,15 +6,15 @@ sfiFormApp
 
     $scope.cs5 = angular.copy($rootScope.form.cs5);
 
-    $scope.operateInUsa = function(){
-
-        return $rootScope.form.cs1.operatesInUsa;
-    }
-
-    $scope.operateInCa = function(){
-
-        return $rootScope.form.cs1.operatesInCanada;
-    }
+//    $scope.operateInUsa = function(){
+//
+//        return $rootScope.form.cs1.operatesInUsa;
+//    }
+//
+//    $scope.operateInCa = function(){
+//
+//        return $rootScope.form.cs1.operatesInCanada;
+//    }
 
 
     $scope.hasAnyOrg = function(){

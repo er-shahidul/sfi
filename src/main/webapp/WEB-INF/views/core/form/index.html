@@ -325,6 +325,53 @@
 
         // ]]>
     </script>
-    </div>
+    <script id="pop2tpl" type="text/template">
+
+        <![CDATA[
+        <div style="width:300px;">
+            <form>
+                <table>
+                    <tr>
+                        <td width="60%">Select standard combination if reporting volume certified to more than one standard</td>
+                        <td>% certified</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" value="SFI/FSC" name="item1" class="icheck" icheck>&nbsp;SFI/FSC</td>
+                        <td style="height: 45px;"><input name="val1" type="number" class="valbox form-control shorter"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" value="SFI/ATFS" name="item2" class="icheck" icheck>&nbsp;SFI/ATFS</td>
+                        <td style="height: 45px;"><input name="val2" type="number" class="valbox form-control shorter"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" value="SFI/CSA" name="item3" class="icheck" icheck>&nbsp;SFI/CSA</td>
+                        <td style="height: 45px;"><input name="val3" type="number" class="valbox form-control shorter"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" value="ATFS/FSC" name="item4" class="icheck" icheck>&nbsp;ATFS/FSC</td>
+                        <td style="height: 45px;"><input name="val4" type="number" class="valbox form-control shorter"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" value="CSA/FSC" name="item5" class="icheck" icheck>&nbsp;CSA/FSC</td>
+                        <td style="height: 45px;"><input name="val5" type="number" class="valbox form-control shorter"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" value="SFI/ATFS/FSC" name="item6" class="icheck" icheck >&nbsp;SFI/ATFS/FSC</td>
+                        <td style="height: 45px;"><input name="val6" type="number" class="valbox form-control shorter"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" value="SFI/CSA/FSC" name="item7" class="icheck" icheck>&nbsp;SFI/CSA/FSC</td>
+                        <td style="height: 45px;"><input name="val7" type="number" class="valbox form-control shorter"/></td>
+                    </tr>
+                </table>
+                <div class="col-sm-6 specialpadding alignleft"><button type="button" class="btn btn-cancel">Cancel</button></div>
+                <div class="col-sm-6 specialpadding alignright"><button type="button" class="btn btn-success">Ok</button> </div>
+            </form>
+        </div>
+
+         ]]>
+    </script>
+
+</div>
 
 </html>
