@@ -19,28 +19,28 @@ public class SfiPpFormCs6Other extends BaseEntityModel {
     private SfiPpFormOtherCountry country;
 
     @Column(name = "cs6_otherCountries_units", nullable = true)
-    private Integer countriesUnits;
+    private Integer units;
 
 	@Column(name = "cs6_otherCountries_volume", nullable=true)
-	private Float countriesVolume;
+	private Float volume;
 
 	@Column(name = "cs6_otherCountries_percPEFCCertified", nullable=true)
-	private Float countriesPercPEFCCertified;
+	private Float percPEFCCertified;
 
 	@Column(name = "cs6_otherCountries_percFSCCertified", nullable=true)
-	private Float countriesPercFSCCertified;
+	private Float percFSCCertified;
 
 	@Column(name = "cs6_otherCountries_percPEFCFSCCertified", nullable=true)
-	private Float countriesPercPEFCFSCCertified;
+	private Float percPEFCFSCCertified;
 
 	@Column(name = "cs6_otherCountries_percSFIFiberSourcing", nullable=true)
-	private Float countriesPercSFIFiberSourcing;
+	private Float percSFIFiberSourcing;
 
     @Column(name = "cs6_otherCountries_percOther", nullable = true)
-    private Boolean countriesPercOther;
+    private Boolean percOther;
 
     @Column(name = "cs6_otherCountries_percOtherReason", nullable = true)
-    private String countriesPercOtherReason;
+    private String percOtherReason;
 
     @Override
     public Integer getId() {
@@ -67,67 +67,67 @@ public class SfiPpFormCs6Other extends BaseEntityModel {
         this.country = country;
     }
 
-    public Integer getCountriesUnits() {
-        return countriesUnits;
+    public Integer getUnits() {
+        return units;
     }
 
-    public void setCountriesUnits(Integer countriesUnits) {
-        this.countriesUnits = countriesUnits;
+    public void setUnits(Integer units) {
+        this.units = units;
     }
 
-    public Float getCountriesVolume() {
-        return countriesVolume;
+    public Float getVolume() {
+        return volume;
     }
 
-    public void setCountriesVolume(Float countriesVolume) {
-        this.countriesVolume = countriesVolume;
+    public void setVolume(Float volume) {
+        this.volume = volume;
     }
 
-    public Float getCountriesPercPEFCCertified() {
-        return countriesPercPEFCCertified;
+    public Float getPercPEFCCertified() {
+        return percPEFCCertified;
     }
 
-    public void setCountriesPercPEFCCertified(Float countriesPercPEFCCertified) {
-        this.countriesPercPEFCCertified = countriesPercPEFCCertified;
+    public void setPercPEFCCertified(Float percPEFCCertified) {
+        this.percPEFCCertified = percPEFCCertified;
     }
 
-    public Float getCountriesPercFSCCertified() {
-        return countriesPercFSCCertified;
+    public Float getPercFSCCertified() {
+        return percFSCCertified;
     }
 
-    public void setCountriesPercFSCCertified(Float countriesPercFSCCertified) {
-        this.countriesPercFSCCertified = countriesPercFSCCertified;
+    public void setPercFSCCertified(Float percFSCCertified) {
+        this.percFSCCertified = percFSCCertified;
     }
 
-    public Float getCountriesPercPEFCFSCCertified() {
-        return countriesPercPEFCFSCCertified;
+    public Float getPercPEFCFSCCertified() {
+        return percPEFCFSCCertified;
     }
 
-    public void setCountriesPercPEFCFSCCertified(Float countriesPercPEFCFSCCertified) {
-        this.countriesPercPEFCFSCCertified = countriesPercPEFCFSCCertified;
+    public void setPercPEFCFSCCertified(Float percPEFCFSCCertified) {
+        this.percPEFCFSCCertified = percPEFCFSCCertified;
     }
 
-    public Float getCountriesPercSFIFiberSourcing() {
-        return countriesPercSFIFiberSourcing;
+    public Float getPercSFIFiberSourcing() {
+        return percSFIFiberSourcing;
     }
 
-    public void setCountriesPercSFIFiberSourcing(Float countriesPercSFIFiberSourcing) {
-        this.countriesPercSFIFiberSourcing = countriesPercSFIFiberSourcing;
+    public void setPercSFIFiberSourcing(Float percSFIFiberSourcing) {
+        this.percSFIFiberSourcing = percSFIFiberSourcing;
     }
 
-    public Boolean getCountriesPercOther() {
-        return countriesPercOther;
+    public Boolean getPercOther() {
+        return percOther;
     }
 
-    public void setCountriesPercOther(Boolean countriesPercOther) {
-        this.countriesPercOther = countriesPercOther;
+    public void setPercOther(Boolean percOther) {
+        this.percOther = percOther;
     }
 
-    public String getCountriesPercOtherReason() {
-        return countriesPercOtherReason;
+    public String getPercOtherReason() {
+        return percOtherReason;
     }
 
-    public void setCountriesPercOtherReason(String countriesPercOtherReason) {
-        this.countriesPercOtherReason = countriesPercOtherReason;
+    public void setPercOtherReason(String percOtherReason) {
+        this.percOtherReason = percOtherReason;
     }
 }
