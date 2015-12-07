@@ -106,8 +106,8 @@
             <td>{{ supply.region.name }}, {{ supply.region.country.country }}</td>
             <td>{{ usCanadaTitle(supply) }}</td>
 
-            <td><a href="" ng-click="editSupply(supply.region.id)">Edit</a></td>
-            <td><a href="" ng-click="deleteSupply(supply.region.id)">Delete</a></td>
+            <td><a href="" ng-click="editUsCanada(supply.region.id)">Edit</a></td>
+            <td><a href="" ng-click="deleteUsCanada(supply.region.id)">Delete</a></td>
         </tr>
         <!-- -->
 
@@ -131,7 +131,7 @@
 <div class="form-group">
     <h6><strong>Raw Material Supply (procured directly from the forest to your SFI manufacturing facilities)</strong></h6>
     <label>Select the country, state or province using the drop-down below. Please note, you may either select and report raw material supply for individual states or provinces or select ‘All States’ or ‘All Provinces’ from the list to report your procured volume by country.</label>
-    <select ng-model="regionId" id="regionId" ng-change="checkDuplicate()">
+    <select ng-model="regionId" id="regionId" ng-change="isUsCanadaExist()">
         <option value="0">&lt;Select the region of your fiber source&gt;</option>
         <option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
         <option ng-show="operateInOthers()" value="-1">Outside USA & Canada</option>
@@ -219,11 +219,11 @@
 
         <td>
 
-            <div ng-class="{'has-error' : isSecDirty(innerForm) && innerForm.item1.$invalid}">
+            <div ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item1.$invalid}">
 
                 <select class="form-control" name="item1"
                         ng-model="section.unit"
-                        ng-required="isSecDirty(innerForm)"
+                        ng-required="isSectionDirty(innerForm)"
                         ng-disabled="isDisabled(section)"  >
 
                     <option value="" ng-selected="!section.unit" >Select Units</option>
@@ -233,9 +233,9 @@
             </div>
 
             <div class="form-group padded alignright"
-                 ng-class="{'has-error' : isSecDirty(innerForm) && innerForm.item2.$invalid}" ng-show="section.unit > 0">
+                 ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item2.$invalid}" ng-show="section.unit > 0">
 
-                Volume <input type="text" style="width: 105px" class="form-control shortest2" name="item2" ng-required="isSecDirty(innerForm)"
+                Volume <input type="text" style="width: 105px" class="form-control shortest2" name="item2" ng-required="isSectionDirty(innerForm)"
                               ng-disabled="isDisabled(section)" ng-model="section.volume"
                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
 
@@ -243,8 +243,8 @@
             </div>
         </td>
 
-        <td align="center" ng-class="{'has-error' : isSecDirty(innerForm) && innerForm.item3.$invalid}">
-            <input type="text" class="form-control shorter" max="100" min="0" name="item3" ng-required="isSecDirty(innerForm)"
+        <td align="center" ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item3.$invalid}">
+            <input type="text" class="form-control shorter" max="100" min="0" name="item3" ng-required="isSectionDirty(innerForm)"
                    ng-model="section.percDeliveredQualifiedLogging" ng-disabled="isDisabled(section)"
                    ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
 
@@ -306,10 +306,10 @@
 
 <!-- Form 1 buttons -->
 <div class="col-sm-4 col-sm-offset-8 alignright" ng-show="regionId > 0">
-    <button type="button" class="btn secondary" ng-click="cancelSupply()">Cancel</button>
+    <button type="button" class="btn secondary" ng-click="cancelUsCanada()">Cancel</button>
     <!-- v2 -->
-    <!-- button type="button" class="btn btn-success" ng-click="saveSupply()">Save, and enter another region</button-->
-    <button type="button" class="btn btn-success" ng-click="saveSupply()">Enter another region</button>
+    <!-- button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save, and enter another region</button-->
+    <button type="button" class="btn btn-success" ng-click="saveUsCanada()">Enter another region</button>
 </div>
 <div class="control-group">&nbsp;</div>
 <!-- -->
@@ -426,7 +426,7 @@
                 <p>Are you sure you want to delete <span id="region-text"></span> as a raw material supply?</p>
             </div>
             <div class="modal-footer">
-                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteOk()">ok</a>
+                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">ok</a>
                 <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
             </div>
         </div>

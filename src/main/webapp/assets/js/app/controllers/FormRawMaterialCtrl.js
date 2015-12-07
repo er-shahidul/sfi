@@ -3,8 +3,9 @@ var cs6;
 sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', '$http', 'Countries', 'RegionList', '$popover', '$compile' , '_', 'Message', '$', function ($rootScope , $scope, $state, $http, CountryList , RegionList, $popover, $compile, _, Message, $){
 
 
-    $scope.edit = false;
-    $scope.delete = null;
+    $scope.usCanadaEdit   = false;
+    $scope.usCanadaDelete = null;
+
     $scope.cs6 = angular.copy($rootScope.form.cs6);
 
     cs6 = $scope;
@@ -71,35 +72,31 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
     $scope.init();
     $scope.regionId = 0;
 
-    $scope.getSupply = function(regionId){
+    $scope.getUsCanada = function(regionId){
 
-        var supply = _.find($scope.usCanada, function(item){
+        var usCanada = _.find($scope.usCanada, function(item){
             return item.region.id == regionId;
         });
 
-        return supply;
+        return usCanada;
     }
 
-    $scope.checkDuplicate = function(){
+    $scope.isUsCanadaExist = function(){
 
-        var regionId = $scope.regionId;
-
-        if($scope.edit && $scope.edit.regionId == regionId){
+        if($scope.usCanadaEdit && $scope.usCanadaEdit.regionId == $scope.regionId){
             return false;
         }
 
+        var usCanada = $scope.getUsCanada($scope.regionId);
 
-        var supply = $scope.getSupply(regionId);
-
-        if(supply){
-
+        if(usCanada){
             $scope.setRegion(0);
             $scope.resetSection();
             return alert('Already has info for this region');
         }
     }
 
-    $scope.isDirty = function(form){
+    $scope.isSectionDirty = function(form){
 
         for(var i=1;i <11; i++){
             var item = 'item' + i , el = form[item];
@@ -112,78 +109,41 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         return false;
     }
 
-    $scope.isSecDirty = function(form){
+    $scope.saveUsCanada = function(){
 
-        for(var i=1;i <=7; i++){
-            var item = 'item' + i , el = form[item];
+        /** Check if atleast one valid section there */
 
-            if(el && el.$modelValue){
-                return true;
-            }
-        }
+        var hasValidSection = false , isValid  = true;
 
-        return false;
-    }
+        _.each($scope.sections, function(section){
+            var form = section.form;
 
-    $scope.saveSupply = function(){
-
-        //Checking validity
-        var oneSection = false;
-        var valid  = true;
-
-        for(var i in $scope.sections){
-
-            var section = $scope.sections[i],
-                form = section.form;
-
-            if(!$scope.isDirty(form)){
-                continue;
+            if(!$scope.isSectionDirty(form)){
+                return;
             }
 
-            valid = valid && form.$valid;
-            oneSection = oneSection || form.$valid;
-        }
+            isValid = isValid && form.$valid;
+            hasValidSection = hasValidSection || form.$valid;
+        });
 
-
-        if(!valid || !oneSection){
+        if(!isValid || !hasValidSection){
             return $('#confirm').modal();
         }
 
 
-        var titles = [];
-        var regionId = $scope.regionId;
-        var region   = $rootScope.getRegion(regionId);
+        var region   = $rootScope.getRegion($scope.regionId);
+        var usCanada = $scope.usCanadaEdit ? $scope.usCanadaEdit : { sections : [] };
 
-        if($scope.edit){
+        usCanada.region = region;
+        usCanada.otherLabel = $scope.otherLabel ;
 
-            var item = $scope.edit;
-            item.region = region;
-        }else{
+        _.each($scope.sections, function(section, index){
+            usCanada.sections[index] = $scope.setSectionValues(section, {});
+        });
 
-            var item = {
-                sections : [],
-                region : region
-            };
-        }
 
-        item.otherLabel = $scope.otherLabel ;
-
-        for(var i in $scope.sections){
-
-            var section = $scope.sections[i];
-
-            if(section.form.$valid){
-                titles.push(section.name);
-            }
-
-            item.sections[i] = $scope.setSectionValues(section, {});
-        }
-
-        //item.title = titles.splice(0, 3).join();
-        //item.regionName = RegionList.getName(regionId);
-
-        if(!$scope.edit){
-            $scope.usCanada.push(item);
+        if(!$scope.usCanadaEdit){
+            $scope.usCanada.push(usCanada);
         }
 
         $scope.isDataDirty = true;
@@ -192,34 +152,32 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
     $scope.resetSection = function(){
 
-        for(var i in $scope.sections){
-            var section = $scope.sections[i];
+        _.each($scope.sections, function(section, index){
             $scope.setSectionValues({}, section);
-        }
+        });
 
-        $scope.edit = null;
-        $scope.delete = null;
-        $scope.regionId = 0;
-        $scope.otherLabel = null;
+        $scope.usCanadaEdit   = null;
+        $scope.usCanadaDelete = null;
+        $scope.otherLabel     = null;
+        $scope.regionId       = 0;
     }
 
-    $scope.deleteSupply = function(regionId){
+    $scope.deleteUsCanada = function(regionId){
 
-        var item = $scope.getSupply(regionId);
+        var usCanada = $scope.getUsCanada(regionId);
 
-        if(item){
-            $scope.delete = item;
+        if(usCanada){
 
-            $('#delete1 #region-text').text(item.regionName);
+            $scope.usCanadaDelete = usCanada;
+            $('#delete1 #region-text').text(usCanada.regionName);
             $('#delete1').modal();
-
         }
     }
 
-    $scope.deleteOk = function(){
+    $scope.deleteConfirm = function(){
 
-        if($scope.delete){
-            $scope.usCanada = _.without($scope.usCanada, $scope.delete);
+        if($scope.usCanadaDelete){
+            $scope.usCanada = _.without($scope.usCanada, $scope.usCanadaDelete);
         }
 
         if($scope.otherDelete){
@@ -233,7 +191,6 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
     $scope.deleteCancel = function(){
         $scope.cancelOther();
         $scope.resetSection();
-
     }
 
     $scope.cloneSupply = function(srcSec, destSec){
@@ -260,26 +217,28 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         dest.moreThanOneStandard                 = src.moreThanOneStandard || null;
         dest.percDeliveredQualifiedLogging       = src.percDeliveredQualifiedLogging || null;
         dest.percDeliveredQualifiedLoggingReason = src.percDeliveredQualifiedLoggingReason || "";
-        dest.standardValues                      = src.standardValues ||[];
-        dest.standardItems                       = src.standardItems ||[];
 
+        for(var i = 1; i<= 7; i++){
+            var key = "percCertifedMoreThanOneStandard" + i;
+            dest[key] = src[key];
+        }
 
         return dest;
     }
 
-    $scope.cancelSupply = function(){
+    $scope.cancelUsCanada = function(){
         $scope.resetSection();
     }
 
-    $scope.editSupply = function(regionId){
+    $scope.editUsCanada = function(regionId){
 
-        var item = $scope.getSupply(regionId);
+        var item = $scope.getUsCanada(regionId);
 
         if(!item){
             return alert('Edit item not found');
         }
 
-        $scope.edit = item;
+        $scope.usCanadaEdit = item;
         $scope.setRegion(regionId);
 
         for(var i in $scope.sections){
@@ -758,16 +717,24 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         var ob = section.standardValues || {};
 
         for(var i = 1; i<= 7; i++){
+
             var key1 = "val"  + i;
             var key2 = "item" + i;
 
             var $input1 = $popover.$tip.find("input[name=" + key1 +"]");
             var $input2 = $popover.$tip.find("input[name=" + key2 +"]");
 
-            var val = ob[key1] , flag = (val);
+            var key = "percCertifedMoreThanOneStandard" + i;
+            var val = section[key];
 
-            $input1.val(val).attr('disabled', !flag);
-            flag ? $input2.iCheck('check') : $input2.iCheck('uncheck');
+
+            if(val){
+                $input1.val(val).attr('disabled', false);
+                $input2.iCheck('check')
+            }else{
+                $input1.val(null).attr('disabled', true);
+                $input2.iCheck('uncheck')
+            }
         }
 
         var section = $scope.sections[index];
@@ -789,18 +756,16 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
                 var $input1 = $tip.find("input[name=" + key1 +"]");
                 var $input2 = $tip.find("input[name=" + key2 +"]");
 
-
-                ob[key1] = $input1.val();
-
-                if($input2.is(":checked")){
-                    items.push(i);
-                }
+                var key = "percCertifedMoreThanOneStandard" + i;
+                section[key] = $input2.is(":checked") ?  $input1.val() : null;
             }
 
+            console.log(section);
+
+            //section.standardValues = ob;
+            //section.standardItems = items;
 
 
-            section.standardValues = ob;
-            section.standardItems = items;
             $scope.$digest()
         });
     }

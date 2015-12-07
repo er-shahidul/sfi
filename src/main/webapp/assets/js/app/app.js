@@ -706,7 +706,7 @@ sfiFormApp.run(['$rootScope', function($rootScope) {
 
     $rootScope.operateInOthers = function(){
         //return true;
-        return $rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.operatesInOthers;
+        return $rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.ownsMngLandsInOther;
     }
 
 }]);
