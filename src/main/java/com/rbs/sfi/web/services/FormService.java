@@ -56,6 +56,9 @@ public class FormService {
     @Autowired
     private Cs2Service cs2Service;
 
+    @Autowired
+    private Cs6Service cs6Service;
+
     /*********************** Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
         Cs1 entity = cs1Repository.get(id);
@@ -119,6 +122,7 @@ public class FormService {
     }
 
     public void setCs6Entity(Cs6ViewModel model) {
+        cs6Service.manualPopulation(model);
         Cs6 entity = entityModelMapperService.convert(model, Cs6.class);
     }
     /*********************** Cs6 : End   ***********************/
