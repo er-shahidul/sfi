@@ -646,7 +646,20 @@ INSERT INTO sfi_pp_form_region_list (id,regionName,countryID) VALUE(12,'Hawaii',
 INSERT INTO sfi_pp_form_region_list (id,regionName,countryID) VALUE(19,'Louisiana',1);
 
 
-
+INSERT INTO `sfi_pp_form_cs5_research_funding_categories` (`id`, `cs5_researchFundingDesc`) VALUES
+(1,	'Forest health, productivity, and ecosystem functions'),
+(2,	'Chemical efficiency, USE rate AND integrated pest management'),
+(3,	'Water quality and/or effectiveness of best management practices including effectiveness of water quality and best management practices for protecting the quality, diversity and distributions of fish and wildlife habitats'),
+(4,	'Wildlife management at stand and landscape levels'),
+(5,	'Conservation of biological diversity'),
+(6,	'Ecological impacts of bioenergy feedstock removals on productivity, wildlife habitat, water quality and other ecosystem functions'),
+(7,	'Climate change research for both adaptation and mitigation'),
+(8,	'Forest operations efficiencies and economics'),
+(9,	'Energy efficiency'),
+(10,	'Life cycle assessment'),
+(11,	'Avoidance of illegal logging'),
+(12,	'Avoidance of controversial sources'),
+(13,	'Other');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
