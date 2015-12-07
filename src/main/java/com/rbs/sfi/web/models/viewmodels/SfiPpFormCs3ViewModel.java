@@ -30,7 +30,7 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Date startDate;
     private Date endDate;
 
-    private Cs3ViewModel sfiPpForm;
+    private Integer sfiPpForm;
 
     private Set<SfiPpFormRegionViewModel> projectLocations;
     private Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs;
@@ -196,11 +196,11 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.endDate = endDate;
     }
 
-    public Cs3ViewModel getSfiPpForm() {
+    public Integer getSfiPpForm() {
         return sfiPpForm;
     }
 
-    public void setSfiPpForm(Cs3ViewModel sfiPpForm) {
+    public void setSfiPpForm(Integer sfiPpForm) {
         this.sfiPpForm = sfiPpForm;
     }
 

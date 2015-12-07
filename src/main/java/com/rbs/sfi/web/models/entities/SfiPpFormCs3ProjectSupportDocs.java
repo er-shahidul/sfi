@@ -11,9 +11,8 @@ public class SfiPpFormCs3ProjectSupportDocs extends BaseEntityModel {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
-	@ManyToOne(targetEntity = SfiPpFormCs3.class)
-	@JoinColumn(name="cs3_projectID", referencedColumnName="id", nullable=true)
-	private SfiPpFormCs3 sfiPpFormCs3;
+	@Column(name="cs3_projectID", nullable=true)
+	private Integer sfiPpFormCs3;
 
 	@Column(name="cs3_project_originalDocumentName", nullable=true)
 	private String projectOriginalDocumentName;
@@ -30,11 +29,11 @@ public class SfiPpFormCs3ProjectSupportDocs extends BaseEntityModel {
 		this.id = id;
 	}
 
-    public SfiPpFormCs3 getSfiPpFormCs3() {
+    public Integer getSfiPpFormCs3() {
         return sfiPpFormCs3;
     }
 
-    public void setSfiPpFormCs3(SfiPpFormCs3 sfiPpFormCs3) {
+    public void setSfiPpFormCs3(Integer sfiPpFormCs3) {
         this.sfiPpFormCs3 = sfiPpFormCs3;
     }
 
