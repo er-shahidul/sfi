@@ -19,7 +19,7 @@ public class GroupService
         return groupRepository.list();
     }
 
-    public int delete(int id) {
+    public Integer delete(Integer id) {
         return groupRepository.delete(id);
     }
 
@@ -47,7 +47,7 @@ public class GroupService
         groupRepository.save(group);
     }
 
-    public Group findById(int id) {
+    public Group findById(Integer id) {
         return groupRepository.findById(id);
     }
 

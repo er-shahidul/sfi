@@ -24,7 +24,7 @@ public class UserRepository extends AbstractRepository<Integer, User> {
     }
 
     @Transactional
-    public User findByID(int id) {
+    public User findByID(Integer id) {
         return (User)sessionFactory.getCurrentSession().get(User.class,id);
     }
 
@@ -37,7 +37,7 @@ public class UserRepository extends AbstractRepository<Integer, User> {
     }
 
     @Transactional
-    public void delete(int id) {
+    public void delete(Integer id) {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
         User user = (User) session.load(User.class, id);

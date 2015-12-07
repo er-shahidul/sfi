@@ -26,7 +26,7 @@ public class GroupRepository extends AbstractRepository<Integer, Group> {
         return (List<Group>)criteria.list();
     }
 
-    public int delete(int id) {
+    public Integer delete(Integer id) {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
         Group group = (Group) session.load(Group.class, id);
@@ -44,7 +44,7 @@ public class GroupRepository extends AbstractRepository<Integer, Group> {
         return (List<Group>)criteria.list();
     }
 
-    public Group findById(int id) {
+    public Group findById(Integer id) {
         return getByKey(id);
     }
 

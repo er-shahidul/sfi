@@ -34,7 +34,7 @@ public class UserService {
         }
     }
 
-    public User findByID(int id) {
+    public User findByID(Integer id) {
         return userRepository.findByID(id);
     }
 
@@ -42,7 +42,7 @@ public class UserService {
         return userRepository.list();
     }
 
-    public void delete(int id) {
+    public void delete(Integer id) {
        userRepository.delete(id);
     }
 
@@ -77,7 +77,7 @@ public class UserService {
             entity.setCompany(user.getCompany());
             entity.setUpdatedAt(Util.getCurrentDate());
             entity.setUpdatedBy(Util.getCurrentUsername());
-            entity.setEnabled(user.isEnabled());
+            entity.setEnabled(user.getEnabled());
             userRepository.update(entity);
         }
     }
@@ -118,7 +118,7 @@ public class UserService {
     public void userActive(User user) {
         User entity = userRepository.findByID(user.getId());
         if(entity!=null){
-            if(entity.isEnabled()){entity.setEnabled(false);}
+            if(entity.getEnabled()){entity.setEnabled(false);}
             else{entity.setEnabled(true);}
         }
     }
