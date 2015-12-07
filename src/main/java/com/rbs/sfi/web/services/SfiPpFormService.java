@@ -1,7 +1,7 @@
 package com.rbs.sfi.web.services;
 
 import com.rbs.sfi.admin.entities.Company;
-import com.rbs.sfi.web.models.entities.*;
+import com.rbs.sfi.web.models.entities.SfiPpForm;
 import com.rbs.sfi.web.repositories.Cs1Repository;
 import com.rbs.sfi.web.repositories.SfiPpFormAllCountryRepository;
 import com.rbs.sfi.web.repositories.SfiPpFormOtherCountryRepository;
@@ -39,7 +39,7 @@ public class SfiPpFormService {
         return sfiPpFormRepository.findByCompany(company);
     }
 
-    public void save(SfiPpForm sfiPpForm){
+    public void save(SfiPpForm sfiPpForm) {
         sfiPpFormRepository.save(sfiPpForm);
     }
 }

@@ -20,14 +20,14 @@ public class SfiPpFormRepository extends AbstractRepository<Integer, SfiPpForm> 
 
     @Transactional
     public SfiPpForm findById(int id) {
-        return (SfiPpForm)sessionFactory.getCurrentSession().get(SfiPpForm.class,id);
+        return (SfiPpForm) sessionFactory.getCurrentSession().get(SfiPpForm.class, id);
     }
 
     @Transactional
     public SfiPpForm findByCompany(Company company) {
         Criteria criteria = createEntityCriteria();
         criteria.add(Restrictions.eq("company", company));
-        SfiPpForm sfiPpForm = (SfiPpForm)criteria.uniqueResult();
+        SfiPpForm sfiPpForm = (SfiPpForm) criteria.uniqueResult();
 
         return sfiPpForm;
     }

@@ -15,7 +15,7 @@ public class Cs7Repository extends AbstractRepository<Integer, Cs7> {
 
     @Transactional
     public Cs7 findById(int id) {
-        return (Cs7)sessionFactory.getCurrentSession().get(Cs7.class,id);
+        return (Cs7) sessionFactory.getCurrentSession().get(Cs7.class, id);
     }
 
     public void save(Cs7 cs7) {

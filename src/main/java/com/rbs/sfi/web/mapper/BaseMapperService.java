@@ -92,7 +92,7 @@ public abstract class BaseMapperService<E extends IModel> {
         T dest = getInstance(source.getId(), tClass);
         callStack.put(tClass, dest);
 
-        Map<String, Method> destMethodMap  = helper.getMethodMap(dest);
+        Map<String, Method> destMethodMap = helper.getMethodMap(dest);
         List<Method> sourceMethods = helper.getGetterMethods(source.getClass().getMethods());
 
         for (Method getterMethod : sourceMethods) {

@@ -14,7 +14,7 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="form_id", nullable=true)
+    @Column(name = "form_id", nullable = true)
     private Integer sfiPpForm;
 
     @ManyToOne(targetEntity = SfiPpFormRegion.class, optional = true)

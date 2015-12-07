@@ -23,7 +23,7 @@ public class SfiPpFormAllCountryRepository extends AbstractRepository<Integer, S
     }
 
     public SfiPpFormAllCountry findById(int id) {
-        return (SfiPpFormAllCountry)sessionFactory.getCurrentSession().get(SfiPpFormAllCountry.class, id);
+        return (SfiPpFormAllCountry) sessionFactory.getCurrentSession().get(SfiPpFormAllCountry.class, id);
     }
 
 }

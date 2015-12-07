@@ -15,7 +15,7 @@ public class Cs9Repository extends AbstractRepository<Integer, Cs9> {
 
     @Transactional
     public Cs9 findById(int id) {
-        return (Cs9)sessionFactory.getCurrentSession().get(Cs9.class,id);
+        return (Cs9) sessionFactory.getCurrentSession().get(Cs9.class, id);
     }
 
     public void save(Cs9 cs9) {

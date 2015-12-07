@@ -15,7 +15,7 @@ public class Cs8Repository extends AbstractRepository<Integer, Cs8> {
 
     @Transactional
     public Cs8 findById(int id) {
-        return (Cs8)sessionFactory.getCurrentSession().get(Cs8.class,id);
+        return (Cs8) sessionFactory.getCurrentSession().get(Cs8.class, id);
     }
 
     public void save(Cs8 cs8) {
