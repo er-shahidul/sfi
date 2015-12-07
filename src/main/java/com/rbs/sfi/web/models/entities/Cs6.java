@@ -33,7 +33,7 @@ public class Cs6 extends BaseEntityModel {
     @Column(name = "cs6_toAssistObj8", nullable = true)
     private Boolean toAssistObj8;
 
-    @OneToMany(targetEntity = SfiPpFormCs6UsCanada.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = SfiPpFormCs6UsCanada.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SfiPpFormCs6UsCanada> usCanada;
 
     @OneToMany(targetEntity = SfiPpFormCs6Other.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
