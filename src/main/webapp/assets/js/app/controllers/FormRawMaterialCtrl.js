@@ -2,6 +2,8 @@ var cs6;
 
 sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', '$http', 'Countries', 'RegionList', '$popover', '$compile' , '_', 'Message', '$', function ($rootScope , $scope, $state, $http, CountryList , RegionList, $popover, $compile, _, Message, $){
 
+    $scope.usCanada = [];
+    $scope.usOthers = [];
 
     $scope.usCanadaEdit   = false;
     $scope.usCanadaDelete = null;
@@ -29,9 +31,6 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
                 caTimberSellers = null;
             }
         }
-
-
-        $scope.usCanada = [];
 
         _.each($scope.cs6.usCanada, function(usCanada){
 
@@ -182,7 +181,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
         if($scope.otherDelete){
 
-            $scope.cs6.others = _.without($scope.cs6.others, $scope.otherDelete);
+            $scope.usOthers = _.without($scope.usOthers, $scope.otherDelete);
             $scope.otherDelete = null;
         }
 
@@ -496,7 +495,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         other.title = $scope.unitById(other.units);
 
         if(!$scope.otherEdit){
-            $scope.cs6.others.push(other);
+            $scope.usOthers.push(other);
         }
 
         $scope.isDataDirty = true;
@@ -536,7 +535,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
     $scope.getOther = function(countryId){
 
-        var other = _.find($scope.cs6.others, function(item){
+        var other = _.find($scope.usOthers, function(item){
             return item.countryID == countryId;
         });
 
@@ -583,7 +582,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
     $scope.parseOthers = function(){
 
-        _.each($scope.cs6.others, function(other){
+        _.each($scope.usOthers, function(other){
 
             var countryId = other.countryID;
             other.countryName = CountryList.getName(countryId);

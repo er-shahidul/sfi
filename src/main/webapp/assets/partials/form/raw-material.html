@@ -84,7 +84,7 @@
 <!-- -->
 
 <!-- GRID Section 3 -->
-<div class="form-group" ng-show="cs6.usCanada.length || cs6.others.length">
+<div class="form-group" ng-show="cs6.usCanada.length || cs6.usOthers.length">
 
     <label><span tooltip data-html="true" data-placement="top" data-container="body"
            data-title="Raw Material Consumption. In this question SFI Inc. is seeking the volume of raw material (roundwood and whole log chips) your manufacturing facilities (including log and chip exports) used sourced directly from the forest. Volumes do not have to be absolutely precise; they should be rounded to the nearest unit. Please specify the units (board feet, cubic feet, cords, tons, etc.) you are reporting in column 2. ANNEX 1, which can be found at the end of this document, contains the multipliers that are used by SFI Inc. staff to convert various volume units to “thousands of cubic feet” for reporting totals. If you are converting volumes for this report, please use the appropriate multiplier from the table in ANNEX 1, unless you have a more accurate multiplier or conversion factor for your specific region and species."
@@ -112,7 +112,7 @@
         <!-- -->
 
         <!-- Other country supply -->
-        <tr ng-repeat="other in cs6.others">
+        <tr ng-repeat="other in cs6.usOthers">
             <td>{{ other.countryName }}</td>
             <td>{{ other.volume }}, {{ other.title}}</td>
             <td><a href="" ng-click="editOther(other.countryID)">Edit</a></td>
