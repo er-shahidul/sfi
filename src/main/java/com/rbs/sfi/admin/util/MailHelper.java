@@ -18,29 +18,12 @@ public class MailHelper
         this.mailSender = mailSender;
     }
 
-//    private MailSender mailSender;
-//
-//    public void setMailSender(MailSender mailSender) {
-//        this.mailSender = mailSender;
-//    }
-
-//    public void sendMail(String from, String to, String subject, String msg) {
     public void sendMail(String to, String subject, String msg, User user) {
-
-//        SimpleMailMessage message = new SimpleMailMessage();
-//
-////      message.setFrom(from);
-//        message.setTo(to);
-//        message.setSubject(subject);
-//        message.setText(msg);
-//        mailSender.send(message);
 
         try{
 
             MimeMessage message = mailSender.createMimeMessage();
-
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-//          helper.setFrom(from);
             helper.setTo(to);
             helper.setSubject(subject);
 
