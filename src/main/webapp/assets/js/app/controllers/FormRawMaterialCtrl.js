@@ -65,6 +65,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
             $scope.usCanada.push(item);
         });
 
+        $scope.usOthers = angular.copy($scope.cs6.usOthers);
 
     }
 
@@ -277,6 +278,9 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
         var data = angular.copy($scope.cs6);
         delete data.sections;
 
+        data.usCanada = [];
+        data.usOthers = angular.copy($scope.usOthers);
+
         _.each($scope.usCanada, function(usCanada){
 
             var item = usCanada;
@@ -294,8 +298,8 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
             });
 
             item.sfiPpForm = $scope.cs6.id;
-
             data.usCanada.push(item);
+
         });
 
         return data;
@@ -759,12 +763,6 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
                 section[key] = $input2.is(":checked") ?  $input1.val() : null;
             }
 
-            console.log(section);
-
-            //section.standardValues = ob;
-            //section.standardItems = items;
-
-
             $scope.$digest()
         });
     }
@@ -954,14 +952,19 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
                 return;
             }
 
-            console.log(k, sectionTitles[k])
-
             titles.push(sectionTitles[k]);
-
         });
 
         return titles.splice(0, 3).join();
     }
 
+    $scope.usOtherTitle = function(usOther){
+
+        var option = _.find($scope.opt1, function(opt){
+            return opt.id == usOther.units;
+        });
+
+        return option.name;
+    }
 
 }]);

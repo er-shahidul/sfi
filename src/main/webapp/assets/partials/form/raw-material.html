@@ -113,7 +113,7 @@
 
         <!-- Other country supply -->
         <tr ng-repeat="other in cs6.usOthers">
-            <td>{{ other.countryName }}</td>
+            <td>{{ other.country.country }}</td>
             <td>{{ other.volume }}, {{ other.title}}</td>
             <td><a href="" ng-click="editOther(other.countryID)">Edit</a></td>
             <td><a href="" ng-click="deleteOther(other.countryID)">Delete</a></td>
