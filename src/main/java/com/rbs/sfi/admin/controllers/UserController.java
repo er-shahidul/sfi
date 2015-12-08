@@ -1,8 +1,12 @@
 package com.rbs.sfi.admin.controllers;
 
-import com.rbs.sfi.admin.entities.*;
+import com.rbs.sfi.admin.entities.Company;
+import com.rbs.sfi.admin.entities.Group;
+import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.listeners.AuditListener;
-import com.rbs.sfi.admin.services.*;
+import com.rbs.sfi.admin.services.CompanyService;
+import com.rbs.sfi.admin.services.GroupService;
+import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.admin.util.MailHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -44,7 +48,7 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @RequestMapping(value = {"/admin/dashboard" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/dashboard"}, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
         model.addAttribute("title", "home");
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
@@ -72,7 +76,7 @@ public class UserController {
         List user = userService.list();
         model.addAttribute("title", "user");
 
-        return new ModelAndView("admin/user/list","user",user);
+        return new ModelAndView("admin/user/list", "user", user);
     }
 
     @RequestMapping("/admin/user/delete")
@@ -81,7 +85,7 @@ public class UserController {
         return new ModelAndView("redirect:/admin/user/list");
     }
 
-    @RequestMapping(value = { "/admin/user/delete/{id}" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/user/delete/{id}"}, method = RequestMethod.GET)
     public String softDelete(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "user");
         User user = userService.findByID(id);
@@ -90,7 +94,7 @@ public class UserController {
         return ("redirect:/admin/user/list");
     }
 
-    @RequestMapping(value = { "/admin/user/active/{id}" })
+    @RequestMapping(value = {"/admin/user/active/{id}"})
     public String active(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
@@ -100,25 +104,25 @@ public class UserController {
         return ("redirect:/admin/user/list");
     }
 
-    @RequestMapping(value = { "/admin/user/details/{id}" })
+    @RequestMapping(value = {"/admin/user/details/{id}"})
     public ModelAndView details(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
         model.addAttribute("title", "profile");
 
-        return new ModelAndView("admin/user/details","user", user);
+        return new ModelAndView("admin/user/details", "user", user);
     }
 
-    @RequestMapping(value = { "/admin/user/profile" })
+    @RequestMapping(value = {"/admin/user/profile"})
     public ModelAndView profile(ModelMap model) {
         User user = userService.findByUsername(getCurrentUsername());
         model.addAttribute("user", user);
         model.addAttribute("title", "profile");
 
-        return new ModelAndView("admin/user/profile","user", user);
+        return new ModelAndView("admin/user/profile", "user", user);
     }
 
-    @RequestMapping(value = { "/admin/user/inactive/{id}" })
+    @RequestMapping(value = {"/admin/user/inactive/{id}"})
     public String inactive(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
@@ -127,7 +131,7 @@ public class UserController {
         return ("redirect:/admin/user/list");
     }
 
-    @RequestMapping(value = { "/admin/user/edit/password/{id}" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/user/edit/password/{id}"}, method = RequestMethod.GET)
     public String editPassword(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
@@ -136,7 +140,7 @@ public class UserController {
         return "admin/user/editPass";
     }
 
-    @RequestMapping(value = { "/admin/user/edit/password/{id}" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/admin/user/edit/password/{id}"}, method = RequestMethod.POST)
     public String updatePassword(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
 
         if (result.hasErrors()) {
@@ -147,11 +151,11 @@ public class UserController {
         return ("redirect:/admin/user/list");
     }
 
-    @RequestMapping(value = { "/admin/user/edit/{id}" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/user/edit/{id}"}, method = RequestMethod.GET)
     public String edit(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
-        model.addAttribute("userGroupId", user.getGroupId());
+        model.addAttribute("userGroupId", userService.getGroupId(user));
         if ((user.getCompany() == null)) {
             model.addAttribute("userCompanyId", null);
         } else {
@@ -170,10 +174,14 @@ public class UserController {
         return "admin/user/edit";
     }
 
-    @RequestMapping(value = { "/admin/user/edit/{id}" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/admin/user/edit/{id}"}, method = RequestMethod.POST)
     public String update(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
+        boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
+        boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
 
-        if (result.hasErrors()) {
+        if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
+            model.addAttribute("error.firstName", isInvalidFirstName);
+            model.addAttribute("error.email", isInvalidEmail);
             return "admin/user/edit";
         }
         userService.updateUser(user);
@@ -182,7 +190,7 @@ public class UserController {
         return ("redirect:/admin/user/list");
     }
 
-    @RequestMapping(value = { "/admin/user/name/edit/{id}" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/admin/user/name/edit/{id}"}, method = RequestMethod.POST)
     public String updateName(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
 
         if (result.hasErrors()) {
@@ -194,10 +202,12 @@ public class UserController {
         return ("redirect:/admin/user/profile");
     }
 
-    @RequestMapping(value = { "/admin/user/email/edit/{id}" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/admin/user/email/edit/{id}"}, method = RequestMethod.POST)
     public String updateEmail(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
+        boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
 
-        if (result.hasErrors()) {
+        if (result.hasErrors() || isInvalidEmail) {
+            model.addAttribute("error.email", isInvalidEmail);
             return "redirect:/admin/user/profile";
         }
         userService.updateEmail(user);
@@ -206,12 +216,12 @@ public class UserController {
         return ("redirect:/logout");
     }
 
-    @RequestMapping(value = { "/admin/user/password/edit/{id}" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/admin/user/password/edit/{id}"}, method = RequestMethod.POST)
     public String updateMyPassword(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id, @RequestParam("old_password") String old_password) {
 
         User currentUser = userService.findByUsername(getCurrentUsername());
 
-        if(!passwordEncoder.matches(old_password, currentUser.getPassword())){
+        if (!passwordEncoder.matches(old_password, currentUser.getPassword())) {
             model.addAttribute("error: Your password not match");
             return "redirect:/admin/user/profile";
         }
@@ -250,9 +260,9 @@ public class UserController {
     public String passwordToken(@PathVariable String token) {
         User user = userService.findUserIdByToken(token);
 
-        if(user == null){
+        if (user == null) {
             return "accessDenied";
-        }else {
+        } else {
             return ("redirect:/user/password/reset/" + user.getId());
         }
     }
@@ -269,7 +279,7 @@ public class UserController {
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
 
-        if(user != null){
+        if (user != null) {
             user.setUserToken(randomUUIDString);
             userService.passwordResetTokenUpdate(user);
 
@@ -282,17 +292,17 @@ public class UserController {
     }
 
     private String userCheck(User user) {
-        if(user == null){
+        if (user == null) {
             return "accessDenied";
-        }else if(user.getToken() == true ){
+        } else if (user.getToken() == true) {
             return "index";
-        }else {
+        } else {
             return ("redirect:/user/password/set/" + user.getId());
         }
     }
 
 
-    @RequestMapping(value = "/user/password/reset/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/user/password/reset/{id}", method = RequestMethod.GET)
     public String passwordReset(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
         model.addAttribute("user", user);
@@ -301,7 +311,7 @@ public class UserController {
         return "password";
     }
 
-    @RequestMapping(value = { "/user/password/reset/{id}" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/user/password/reset/{id}"}, method = RequestMethod.POST)
     public String passwordReset(@Valid User user, BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {
@@ -312,7 +322,7 @@ public class UserController {
         return ("redirect:/login");
     }
 
-    @RequestMapping(value = "/user/password/set/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/user/password/set/{id}", method = RequestMethod.GET)
     public String passwordSet(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "user");
         User user = userService.findByID(id);
@@ -321,7 +331,7 @@ public class UserController {
         return "password";
     }
 
-    @RequestMapping(value = { "/user/password/set/{id}" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/user/password/set/{id}"}, method = RequestMethod.POST)
     public String passwordSet(@Valid User user, BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {
@@ -346,19 +356,23 @@ public class UserController {
         AuditListener auditListener = new AuditListener();  // audit log
         auditListener.prePersist(user);                     // audit log
 
-        if (result.hasErrors()) {
-            System.out.println("There are errors");
+        boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
+        boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
+
+        if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
+            model.addAttribute("error.firstName", isInvalidFirstName);
+            model.addAttribute("error.email", isInvalidEmail);
             return "admin/user/new";
         }
 
-        if(!userService.isUserUsernameUnique(user.getId(), user.getUsername())){
-            FieldError ssoError =new FieldError("user","username",messageSource.getMessage("non.unique.username", new String[]{user.getUsername()}, Locale.getDefault()));
+        if (!userService.isUserUsernameUnique(user.getId(), user.getUsername())) {
+            FieldError ssoError = new FieldError("user", "username", messageSource.getMessage("non.unique.username", new String[]{user.getUsername()}, Locale.getDefault()));
             result.addError(ssoError);
             return "admin/user/new";
         }
 
-        if(!userService.isUserEmailUnique(user.getId(), user.getEmail())){
-            FieldError ssoError =new FieldError("user","email",messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
+        if (!userService.isUserEmailUnique(user.getId(), user.getEmail())) {
+            FieldError ssoError = new FieldError("user", "email", messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
             result.addError(ssoError);
             return "admin/user/new";
         }
@@ -371,15 +385,15 @@ public class UserController {
         sendEmail(recipient, subject, message, user);
 
         model.addAttribute("success", "User " + "" + " has been registered successfully");
-        return ("redirect:/admin/user/list");
+        return "redirect:/admin/user/list";
     }
 
-    private String getPrincipal(){
+    private String getPrincipal() {
         String userName = null;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if (principal instanceof UserDetails) {
-            userName = ((UserDetails)principal).getUsername();
+            userName = ((UserDetails) principal).getUsername();
         } else {
             userName = principal.toString();
         }

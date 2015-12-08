@@ -1,5 +1,6 @@
 package com.rbs.sfi.admin.services;
 
+import com.rbs.sfi.admin.entities.Group;
 import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.repositories.UserRepository;
 import com.rbs.sfi.admin.util.Util;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Set;
 
 @Service("userService")
 @Transactional
@@ -19,6 +21,9 @@ public class UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private ValidationService validationService;
 
     public void save(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -143,5 +148,25 @@ public class UserService {
             entity.setUserToken(user.getUserToken());
             userRepository.save(entity);
         }
+    }
+
+    public Integer getGroupId(User user) {
+        Set<Group> userGroups = user.getGroup();
+
+        for (Group userGroup : userGroups)
+            return userGroup.getId();
+
+        return null;
+    }
+
+    public Boolean isValidFirstName(String firstName) {
+        return !validationService.isEmptyString(firstName);
+    }
+
+    public Boolean isValidEmail(String email) {
+        if (!validationService.isEmptyString(email)) return false;
+        if (!validationService.isValidEmail(email)) return false;
+        if (userRepository.findByEmail(email) != null) return false;
+        return true;
     }
 }

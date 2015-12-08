@@ -55,8 +55,8 @@ public class GroupController {
             return "admin/group/new";
         }
 
-        if(!groupService.isRoleUnique(group.getId(), group.getRole())){
-            FieldError ssoError =new FieldError("group","role",messageSource.getMessage("non.unique.role", new String[]{group.getRole()}, Locale.getDefault()));
+        if (!groupService.isRoleUnique(group.getId(), group.getRole())) {
+            FieldError ssoError = new FieldError("group", "role", messageSource.getMessage("non.unique.role", new String[]{group.getRole()}, Locale.getDefault()));
             result.addError(ssoError);
             return "admin/group/new";
         }
