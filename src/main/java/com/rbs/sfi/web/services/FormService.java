@@ -63,6 +63,18 @@ public class FormService {
     private Cs6Service cs6Service;
 
     @Autowired
+    private Cs7Service cs7Service;
+
+    @Autowired
+    private Cs8Service cs8Service;
+
+    @Autowired
+    private Cs9Service cs9Service;
+
+    @Autowired
+    private Cs10Service cs10Service;
+
+    @Autowired
     private ReflectionHelperService reflectionHelperService;
 
     @Autowired
@@ -161,4 +173,26 @@ public class FormService {
         Cs8 entity = entityModelMapperService.convert(model, Cs8.class);
     }
     /*********************** Cs8 : End   ***********************/
+
+    /************************ Cs9 : Begin ***********************/
+    public Cs9ViewModel getCs9ViewModel(Integer id) {
+        Cs9 entity = cs9Repository.get(id);
+        return viewModelMapperService.convert(entity, Cs9ViewModel.class);
+    }
+
+    public void setCs9Entity(Cs9ViewModel model) {
+        Cs9 entity = entityModelMapperService.convert(model, Cs9.class);
+    }
+    /*********************** Cs9 : End   ***********************/
+
+    /************************ Cs10 : Begin ***********************/
+    public Cs10ViewModel getCs10ViewModel(Integer id) {
+        Cs10 entity = cs10Repository.get(id);
+        return viewModelMapperService.convert(entity, Cs10ViewModel.class);
+    }
+
+    public void setCs10Entity(Cs10ViewModel model) {
+        Cs10 entity = entityModelMapperService.convert(model, Cs10.class);
+    }
+    /*********************** Cs10 : End   ***********************/
 }

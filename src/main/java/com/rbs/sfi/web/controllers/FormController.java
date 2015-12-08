@@ -6,10 +6,7 @@ import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.web.models.entities.SfiPpForm;
 import com.rbs.sfi.web.repositories.SfiPpFormRepository;
-import com.rbs.sfi.web.services.FormService;
-import com.rbs.sfi.web.services.SfiPpFormAllCountryService;
-import com.rbs.sfi.web.services.SfiPpFormRegionService;
-import com.rbs.sfi.web.services.SfiPpFormService;
+import com.rbs.sfi.web.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -42,6 +39,9 @@ public class FormController {
 
     @Autowired
     CompanyService companyService;
+
+    @Autowired
+    SfiPpFormCs5Service sfiPpFormCs5Service;
 
     @Autowired
     SfiPpFormRepository sfiPpFormRepository;
@@ -95,12 +95,16 @@ public class FormController {
         model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs7", formService.getCs7ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpForm.getId()));
 
         model.addAttribute("company", company);
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("user", user);
         model.addAttribute("countries", countries);
         model.addAttribute("regions", regions);
+
+        model.addAttribute("sfiPpFormCs5", sfiPpFormCs5Service.list());
 
         model.addAttribute("mode", "edit");
 

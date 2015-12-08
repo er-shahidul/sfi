@@ -102,7 +102,7 @@ public class SfiPpFormCs6 extends BaseEntityModel {
         this.caFundingProvided = caFundingProvided;
     }
 
-    public Boolean isOrgYesNo() {
+    public Boolean getOrgYesNo() {
         return orgYesNo;
     }
 
