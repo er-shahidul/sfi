@@ -45,6 +45,24 @@ public class FormService {
     private Cs10Repository cs10Repository;
 
     @Autowired
+    private Cs1Service cs1Service;
+
+    @Autowired
+    private Cs2Service cs2Service;
+
+    @Autowired
+    private Cs3Service cs3Service;
+
+    @Autowired
+    private Cs4Service cs4Service;
+
+    @Autowired
+    private Cs5Service cs5Service;
+
+    @Autowired
+    private Cs6Service cs6Service;
+
+    @Autowired
     private ReflectionHelperService reflectionHelperService;
 
     @Autowired
@@ -53,15 +71,7 @@ public class FormService {
     @Autowired
     private EntityModelMapperService entityModelMapperService;
 
-    @Autowired
-    private Cs2Service cs2Service;
-
-    @Autowired
-    private Cs6Service cs6Service;
-
-    /***********************
-     * Cs1 : Begin
-     ***********************/
+    /************************ Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
         Cs1 entity = cs1Repository.get(id);
         return viewModelMapperService.convert(entity, Cs1ViewModel.class);
@@ -72,9 +82,7 @@ public class FormService {
     }
     /*********************** Cs1 : End   ***********************/
 
-    /***********************
-     * Cs2 : Begin
-     ***********************/
+    /************************ Cs2 : Begin ***********************/
     public Cs2ViewModel getCs2ViewModel(Integer id) {
         Cs2 entity = cs2Repository.get(id);
         return viewModelMapperService.convert(entity, Cs2ViewModel.class);
@@ -86,22 +94,19 @@ public class FormService {
     }
     /*********************** Cs2 : End   ***********************/
 
-    /***********************
-     * Cs3 : Begin
-     ***********************/
+    /************************ Cs3 : Begin ***********************/
     public Cs3ViewModel getCs3ViewModel(Integer id) {
         Cs3 entity = cs3Repository.get(id);
         return viewModelMapperService.convert(entity, Cs3ViewModel.class);
     }
 
     public void setCs3Entity(Cs3ViewModel model) {
+        cs3Service.manualPopulation(model);
         Cs3 entity = entityModelMapperService.convert(model, Cs3.class);
     }
     /*********************** Cs3 : End   ***********************/
 
-    /***********************
-     * Cs4 : Begin
-     ***********************/
+    /************************ Cs4 : Begin ***********************/
     public Cs4ViewModel getCs4ViewModel(Integer id) {
         Cs4 entity = cs4Repository.get(id);
         return viewModelMapperService.convert(entity, Cs4ViewModel.class);
@@ -112,9 +117,7 @@ public class FormService {
     }
     /*********************** Cs4 : End   ***********************/
 
-    /***********************
-     * Cs5 : Begin
-     ***********************/
+    /************************ Cs5 : Begin ***********************/
     public Cs5ViewModel getCs5ViewModel(Integer id) {
         Cs5 entity = cs5Repository.get(id);
         return viewModelMapperService.convert(entity, Cs5ViewModel.class);
@@ -125,9 +128,7 @@ public class FormService {
     }
     /*********************** Cs5 : End   ***********************/
 
-    /***********************
-     * Cs6 : Begin
-     ***********************/
+    /************************ Cs6 : Begin ***********************/
     public Cs6ViewModel getCs6ViewModel(Integer id) {
         Cs6 entity = cs6Repository.get(id);
         return viewModelMapperService.convert(entity, Cs6ViewModel.class);
@@ -138,4 +139,26 @@ public class FormService {
         Cs6 entity = entityModelMapperService.convert(model, Cs6.class);
     }
     /*********************** Cs6 : End   ***********************/
+
+    /************************ Cs7 : Begin ***********************/
+    public Cs7ViewModel getCs7ViewModel(Integer id) {
+        Cs7 entity = cs7Repository.get(id);
+        return viewModelMapperService.convert(entity, Cs7ViewModel.class);
+    }
+
+    public void setCs7Entity(Cs7ViewModel model) {
+        Cs7 entity = entityModelMapperService.convert(model, Cs7.class);
+    }
+    /*********************** Cs7 : End   ***********************/
+
+    /************************ Cs8 : Begin ***********************/
+    public Cs8ViewModel getCs8ViewModel(Integer id) {
+        Cs8 entity = cs8Repository.get(id);
+        return viewModelMapperService.convert(entity, Cs8ViewModel.class);
+    }
+
+    public void setCs8Entity(Cs8ViewModel model) {
+        Cs8 entity = entityModelMapperService.convert(model, Cs8.class);
+    }
+    /*********************** Cs8 : End   ***********************/
 }

@@ -81,127 +81,7 @@ public class Cs7 extends BaseEntityModel {
         this.id = id;
     }
 
-    public Boolean isCs7EmerIssuBioe() {
-        return emerIssuBioe;
-    }
-
-    public void setCs7EmerIssuBioe(Boolean emerIssuBioe) {
-        this.emerIssuBioe = emerIssuBioe;
-    }
-
-    public Boolean isCs7EmerIssuCarb() {
-        return emerIssuCarb;
-    }
-
-    public void setCs7EmerIssuCarb(Boolean emerIssuCarb) {
-        this.emerIssuCarb = emerIssuCarb;
-    }
-
-    public Boolean isCs7EmerIssuWate() {
-        return emerIssuWate;
-    }
-
-    public void setCs7EmerIssuWate(Boolean emerIssuWate) {
-        this.emerIssuWate = emerIssuWate;
-    }
-
-    public Boolean isCs7EmerIssuClim() {
-        return emerIssuClim;
-    }
-
-    public void setCs7EmerIssuClim(Boolean emerIssuClim) {
-        this.emerIssuClim = emerIssuClim;
-    }
-
-    public Boolean isCs7EmerIssuEcos() {
-        return emerIssuEcos;
-    }
-
-    public void setCs7EmerIssuEcos(Boolean emerIssuEcos) {
-        this.emerIssuEcos = emerIssuEcos;
-    }
-
-    public Boolean isCs7EmerIssuOther() {
-        return emerIssuOther;
-    }
-
-    public void setCs7EmerIssuOther(Boolean emerIssuOther) {
-        this.emerIssuOther = emerIssuOther;
-    }
-
-    public String getCs7EmerIssuOtherSpec() {
-        return emerIssuOtherSpec;
-    }
-
-    public void setCs7EmerIssuOtherSpec(String emerIssuOtherSpec) {
-        this.emerIssuOtherSpec = emerIssuOtherSpec;
-    }
-
-    public Boolean isCs7InvestResIfInve() {
-        return investResIfInve;
-    }
-
-    public void setCs7InvestResIfInve(Boolean investResIfInve) {
-        this.investResIfInve = investResIfInve;
-    }
-
-    public Boolean isCs7InvestRespercCurrSupply() {
-        return investRespercCurrSupply;
-    }
-
-    public void setCs7InvestRespercCurrSupply(Boolean investRespercCurrSupply) {
-        this.investRespercCurrSupply = investRespercCurrSupply;
-    }
-
-    public Boolean isCs7PlanInvestResIfPlan() {
-        return planInvestResIfPlan;
-    }
-
-    public void setCs7PlanInvestResIfPlan(Boolean planInvestResIfPlan) {
-        this.planInvestResIfPlan = planInvestResIfPlan;
-    }
-
-    public String getCs7PlanInvestResYear() {
-        return planInvestResYear;
-    }
-
-    public void setCs7PlanInvestResYear(String planInvestResYear) {
-        this.planInvestResYear = planInvestResYear;
-    }
-
-    public Boolean isCs7PlanCommPlantIfPlanGE() {
-        return planCommPlantIfPlanGE;
-    }
-
-    public void setCs7PlanCommPlantIfPlanGE(Boolean planCommPlantIfPlanGE) {
-        this.planCommPlantIfPlanGE = planCommPlantIfPlanGE;
-    }
-
-    public String getCs7PlanCommPlantYear() {
-        return planCommPlantYear;
-    }
-
-    public void setCs7PlanCommPlantYear(String planCommPlantYear) {
-        this.planCommPlantYear = planCommPlantYear;
-    }
-
-    public Boolean isCs7PlanCommPlantPerc() {
-        return planCommPlantPerc;
-    }
-
-    public void setCs7PlanCommPlantPerc(Boolean planCommPlantPerc) {
-        this.planCommPlantPerc = planCommPlantPerc;
-    }
-
-    public Set<SfiPpFormAllCountry> getCs7InvestResCountries() {
-        return investResCountries;
-    }
-
-    public void setCs7InvestResCountries(Set<SfiPpFormAllCountry> investResCountries) {
-        addAll(this.investResCountries, investResCountries);
-    }
-
-    public Boolean isEmerIssuBioe() {
+    public Boolean getEmerIssuBioe() {
         return emerIssuBioe;
     }
 
@@ -209,7 +89,7 @@ public class Cs7 extends BaseEntityModel {
         this.emerIssuBioe = emerIssuBioe;
     }
 
-    public Boolean isEmerIssuCarb() {
+    public Boolean getEmerIssuCarb() {
         return emerIssuCarb;
     }
 
@@ -217,7 +97,7 @@ public class Cs7 extends BaseEntityModel {
         this.emerIssuCarb = emerIssuCarb;
     }
 
-    public Boolean isEmerIssuWate() {
+    public Boolean getEmerIssuWate() {
         return emerIssuWate;
     }
 
@@ -225,7 +105,7 @@ public class Cs7 extends BaseEntityModel {
         this.emerIssuWate = emerIssuWate;
     }
 
-    public Boolean isEmerIssuClim() {
+    public Boolean getEmerIssuClim() {
         return emerIssuClim;
     }
 
@@ -233,7 +113,7 @@ public class Cs7 extends BaseEntityModel {
         this.emerIssuClim = emerIssuClim;
     }
 
-    public Boolean isEmerIssuEcos() {
+    public Boolean getEmerIssuEcos() {
         return emerIssuEcos;
     }
 
@@ -241,7 +121,7 @@ public class Cs7 extends BaseEntityModel {
         this.emerIssuEcos = emerIssuEcos;
     }
 
-    public Boolean isEmerIssuOther() {
+    public Boolean getEmerIssuOther() {
         return emerIssuOther;
     }
 
@@ -257,7 +137,7 @@ public class Cs7 extends BaseEntityModel {
         this.emerIssuOtherSpec = emerIssuOtherSpec;
     }
 
-    public Boolean isInvestResIfInve() {
+    public Boolean getInvestResIfInve() {
         return investResIfInve;
     }
 
@@ -265,7 +145,7 @@ public class Cs7 extends BaseEntityModel {
         this.investResIfInve = investResIfInve;
     }
 
-    public Boolean isInvestRespercCurrSupply() {
+    public Boolean getInvestRespercCurrSupply() {
         return investRespercCurrSupply;
     }
 
@@ -273,7 +153,7 @@ public class Cs7 extends BaseEntityModel {
         this.investRespercCurrSupply = investRespercCurrSupply;
     }
 
-    public Boolean isPlanInvestResIfPlan() {
+    public Boolean getPlanInvestResIfPlan() {
         return planInvestResIfPlan;
     }
 
@@ -289,7 +169,7 @@ public class Cs7 extends BaseEntityModel {
         this.planInvestResYear = planInvestResYear;
     }
 
-    public Boolean isPlanCommPlantIfPlanGE() {
+    public Boolean getPlanCommPlantIfPlanGE() {
         return planCommPlantIfPlanGE;
     }
 
@@ -305,7 +185,7 @@ public class Cs7 extends BaseEntityModel {
         this.planCommPlantYear = planCommPlantYear;
     }
 
-    public Boolean isPlanCommPlantPerc() {
+    public Boolean getPlanCommPlantPerc() {
         return planCommPlantPerc;
     }
 
@@ -334,14 +214,6 @@ public class Cs7 extends BaseEntityModel {
     }
 
     public void setPlanCommPlantCountries(Set<SfiPpFormAllCountry> planCommPlantCountries) {
-        addAll(this.planCommPlantCountries, planCommPlantCountries);
-    }
-
-    public Set<SfiPpFormAllCountry> getCs7PlanCommPlantCountries() {
-        return planCommPlantCountries;
-    }
-
-    public void setCs7PlanCommPlantCountries(Set<SfiPpFormAllCountry> planCommPlantCountries) {
         addAll(this.planCommPlantCountries, planCommPlantCountries);
     }
 }

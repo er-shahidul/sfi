@@ -93,6 +93,8 @@ public class FormController {
         model.addAttribute("cs4", formService.getCs4ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs5", formService.getCs5ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs7", formService.getCs7ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpForm.getId()));
 
         model.addAttribute("company", company);
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);

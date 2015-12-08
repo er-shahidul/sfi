@@ -21,5 +21,4 @@ public class SfiPpFormAllCountryService {
     public SfiPpFormAllCountry findById(int id) {
         return sfiPpFormAllCountryRepository.findById(id);
     }
-
 }

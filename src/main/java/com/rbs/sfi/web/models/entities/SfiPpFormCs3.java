@@ -73,7 +73,8 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Column(name = "cs3_organization_list_other", nullable = true)
     private String organizationListOther;
 
-    @OneToMany(targetEntity = SfiPpFormCs3ProjectSupportDocs.class, mappedBy = "sfiPpFormCs3", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = SfiPpFormCs3ProjectSupportDocs.class, mappedBy = "sfiPpFormCs3", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SfiPpFormCs3ProjectSupportDocs> supportDocs;
 
     @Column(name = "cs3_include_research_funding", nullable = true)

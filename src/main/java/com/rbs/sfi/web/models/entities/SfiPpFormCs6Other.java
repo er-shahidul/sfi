@@ -14,7 +14,7 @@ public class SfiPpFormCs6Other extends BaseEntityModel {
     @Column(name = "form_id", nullable = true)
     private Integer sfiPpForm;
 
-    @ManyToOne(targetEntity = SfiPpFormOtherCountry.class, cascade = {CascadeType.ALL}, optional = true)
+    @ManyToOne(targetEntity = SfiPpFormOtherCountry.class, cascade = CascadeType.ALL, optional = true)
     @JoinColumn(name = "cs6_otherCountries_countryID", nullable = true)
     private SfiPpFormOtherCountry country;
 

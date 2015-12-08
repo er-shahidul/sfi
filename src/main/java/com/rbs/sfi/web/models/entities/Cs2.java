@@ -89,7 +89,8 @@ public class Cs2 extends BaseEntityModel {
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> caPrivateRecreationCategories;
 
-    @OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(targetEntity = SfiPpFormCs2OutsideUsaCa.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SfiPpFormCs2OutsideUsaCa> outsideCountries;
 
     @Override

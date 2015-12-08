@@ -15,5 +15,4 @@ public class SfiPpFormOtherCountryService {
     public SfiPpFormOtherCountry findById(int id) {
         return sfiPpFormOtherCountryRepository.findById(id);
     }
-
 }

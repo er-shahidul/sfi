@@ -258,5 +258,4 @@ public class Cs1 extends BaseEntityModel {
     public void setSellsCountries(Set<SfiPpFormAllCountry> sellsCountries) {
         addAll(this.sellsCountries, sellsCountries);
     }
-
 }

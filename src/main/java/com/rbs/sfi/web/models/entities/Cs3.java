@@ -15,7 +15,8 @@ public class Cs3 extends BaseEntityModel {
     @Column(name = "cs3_isInPartnership", nullable = true)
     private Boolean isInPartnership;
 
-    @OneToMany(targetEntity = SfiPpFormCs3.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = SfiPpFormCs3.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SfiPpFormCs3> projects;
 
     @Override

@@ -55,4 +55,16 @@ public class DefaultRestController {
         formService.setCs6Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
+
+    @RequestMapping(value = {"/form/cs7"}, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs7(@RequestBody Cs7ViewModel model, BindingResult result) {
+        formService.setCs7Entity(model);
+        return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = {"/form/cs8"}, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs8(@RequestBody Cs8ViewModel model, BindingResult result) {
+        formService.setCs8Entity(model);
+        return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
+    }
 }
