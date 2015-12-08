@@ -10,6 +10,7 @@ public class SfiPpFormCs5ViewModel extends BaseViewModel {
     private Float externalUsd;
     private Float internalCad;
     private Float externalCad;
+    private String description;
 
     @Override
     public Integer getId() {
@@ -66,5 +67,13 @@ public class SfiPpFormCs5ViewModel extends BaseViewModel {
 
     public void setExternalCad(Float externalCad) {
         this.externalCad = externalCad;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

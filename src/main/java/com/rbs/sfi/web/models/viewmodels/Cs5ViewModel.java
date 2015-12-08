@@ -1,6 +1,9 @@
 package com.rbs.sfi.web.models.viewmodels;
 
 import com.rbs.sfi.common.models.BaseViewModel;
+import com.rbs.sfi.web.models.entities.SfiPpFormCs5;
+
+import java.util.List;
 
 public class Cs5ViewModel extends BaseViewModel {
     private Integer id;
@@ -11,6 +14,7 @@ public class Cs5ViewModel extends BaseViewModel {
     private String organizationListCommunity;
     private String organizationListOther;
     private String other;
+    private List<SfiPpFormCs5ViewModel> items;
 
     @Override
     public Integer getId() {
@@ -75,5 +79,13 @@ public class Cs5ViewModel extends BaseViewModel {
 
     public void setOther(String other) {
         this.other = other;
+    }
+
+    public List<SfiPpFormCs5ViewModel> getItems() {
+        return items;
+    }
+
+    public void setItems(List<SfiPpFormCs5ViewModel> items) {
+        this.items = items;
     }
 }

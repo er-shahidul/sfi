@@ -5,6 +5,7 @@ import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.web.models.entities.SfiPpForm;
+import com.rbs.sfi.web.models.viewmodels.Cs5ViewModel;
 import com.rbs.sfi.web.repositories.SfiPpFormRepository;
 import com.rbs.sfi.web.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,7 +92,11 @@ public class FormController {
         model.addAttribute("cs2", formService.getCs2ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs3", formService.getCs3ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs4", formService.getCs4ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs5", formService.getCs5ViewModel(sfiPpForm.getId()));
+
+        Cs5ViewModel cs5ViewModel = formService.getCs5ViewModel(sfiPpForm.getId());
+        cs5ViewModel.setItems(formService.getSfiPpFormCs5ViewModels(sfiPpForm.getId()));
+        model.addAttribute("cs5", cs5ViewModel);
+
         model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs7", formService.getCs7ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpForm.getId()));
@@ -103,8 +108,6 @@ public class FormController {
         model.addAttribute("user", user);
         model.addAttribute("countries", countries);
         model.addAttribute("regions", regions);
-
-        model.addAttribute("sfiPpFormCs5", sfiPpFormCs5Service.list());
 
         model.addAttribute("mode", "edit");
 
