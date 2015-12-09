@@ -97,6 +97,7 @@
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
 
                                                                         <select th:field="*{areaUnit.id}" class="form-control" required="required" >
+                                                                            <option value=""> Select a Area Unit Assign this Company </option>
                                                                             <option th:each="areaUnit : ${areaUnities}" th:value="${areaUnit.id}" th:text="${areaUnit.shortCode}">
                                                                             </option>
                                                                         </select>
