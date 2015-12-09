@@ -5,8 +5,10 @@ import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.web.models.entities.SfiPpForm;
+import com.rbs.sfi.web.models.entities.SfiPpFormStatus;
 import com.rbs.sfi.web.models.viewmodels.Cs5ViewModel;
 import com.rbs.sfi.web.repositories.SfiPpFormRepository;
+import com.rbs.sfi.web.repositories.SfiPpFormStatusRepository;
 import com.rbs.sfi.web.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -31,6 +33,9 @@ public class FormController {
 
     @Autowired
     SfiPpFormService sfiPpFormService;
+
+    @Autowired
+    SfiPpFormStatusService sfiPpFormStatusService;
 
     @Autowired
     SfiPpFormAllCountryService sfiPpFormAllCountryService;
@@ -71,15 +76,16 @@ public class FormController {
 
     @RequestMapping(value = {"/sfiPpForm"}, method = RequestMethod.GET)
     public String form(ModelMap model) {
-
         User user = userService.findByUsername(getCurrentUsername());
         Company company = user.getCompany();
         SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(company);
+        SfiPpFormStatus sfiPpFormStatus = sfiPpFormStatusService.findById(1);
 
         if (sfiPpForm == null) {
             sfiPpForm = new SfiPpForm();
             sfiPpForm.setCompany(company);
             sfiPpForm.setCreatedBy(user);
+            sfiPpForm.setStatus(sfiPpFormStatus);
             sfiPpFormService.save(sfiPpForm);
         }
 
