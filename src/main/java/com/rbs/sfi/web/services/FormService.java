@@ -121,7 +121,7 @@ public class FormService {
     }
 
     public void setCs3Entity(Cs3ViewModel model) {
-        cs3Service.manualPopulation(model);
+//        cs3Service.manualPopulation(model);
         Cs3 entity = entityModelMapperService.convert(model, Cs3.class);
     }
     /************************ Cs3 : End   ***********************/
@@ -144,6 +144,7 @@ public class FormService {
     }
 
     public void setCs5Entity(Cs5ViewModel model) {
+        cs5Service.manualPopulation(model);
         Cs5 entity = entityModelMapperService.convert(model, Cs5.class);
     }
     /************************ Cs5 : End   ***********************/

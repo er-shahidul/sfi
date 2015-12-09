@@ -12,12 +12,12 @@ public class Cs3 extends BaseEntityModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "cs3_isInPartnership", nullable = true)
-    private Boolean isInPartnership;
-
-    @OneToMany(targetEntity = SfiPpFormCs3.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<SfiPpFormCs3> projects;
+//    @Column(name = "cs3_isInPartnership", nullable = true)
+//    private Boolean isInPartnership;
+//
+//    @OneToMany(targetEntity = SfiPpFormCs3.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER,
+//            cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<SfiPpFormCs3> projects;
 
     @Override
     public Integer getId() {
@@ -28,19 +28,19 @@ public class Cs3 extends BaseEntityModel {
         this.id = id;
     }
 
-    public Boolean isInPartnership() {
-        return isInPartnership;
-    }
-
-    public void setIsInPartnership(Boolean isInPartnership) {
-        this.isInPartnership = isInPartnership;
-    }
-
-    public Set<SfiPpFormCs3> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(Set<SfiPpFormCs3> projects) {
-        addAll(this.projects, projects);
-    }
+//    public Boolean isInPartnership() {
+//        return isInPartnership;
+//    }
+//
+//    public void setIsInPartnership(Boolean isInPartnership) {
+//        this.isInPartnership = isInPartnership;
+//    }
+//
+//    public Set<SfiPpFormCs3> getProjects() {
+//        return projects;
+//    }
+//
+//    public void setProjects(Set<SfiPpFormCs3> projects) {
+//        addAll(this.projects, projects);
+//    }
 }

@@ -4,6 +4,7 @@ import com.rbs.sfi.common.models.BaseViewModel;
 import com.rbs.sfi.web.models.entities.SfiPpFormCs5;
 
 import java.util.List;
+import java.util.Set;
 
 public class Cs5ViewModel extends BaseViewModel {
     private Integer id;
@@ -14,6 +15,8 @@ public class Cs5ViewModel extends BaseViewModel {
     private String organizationListCommunity;
     private String organizationListOther;
     private String other;
+    private Boolean isInPartnership;
+    private Set<SfiPpFormCs3ViewModel> projects;
     private List<SfiPpFormCs5ViewModel> items;
 
     @Override
@@ -23,6 +26,18 @@ public class Cs5ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getIsInPartnership() {
+        return isInPartnership;
+    }
+
+    public void setIsInPartnership(Boolean isInPartnership) {
+        this.isInPartnership = isInPartnership;
+    }
+
+    public Set<SfiPpFormCs3ViewModel> getProjects() {
+        return projects;
     }
 
     public String getOrganizationListAcademic() {
