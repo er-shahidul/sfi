@@ -25,48 +25,53 @@
 
                             </div>
 
-                            <div class="bootstrap-table">
+                            <div class="fixed-table-toolbar">
+                                <h4 class="pull-left">SIC Surveys</h4>
+                                <div class="pull-right search">
 
-                                <div class="fixed-table-toolbar">
-                                    <h4 class="pull-left">SIC Surveys</h4>
-                                    <div class="pull-right search">
+                                </div>
+                            </div>
 
+                            <section class="content">
+                                <div class="sonata-ba-content">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                <thead>
+                                                <tr>
+                                                    <th>Company Name</th>
+                                                    <th>Created By</th>
+                                                    <th>Date Created</th>
+                                                    <th>Status</th>
+                                                    <th>Last Updated</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!--<tr th:each="sfiPpForm, iterationStatus : ${sfiPpForms}">-->
+                                                    <!--<td th:text="${sfiPpForm.company.name}"></td>-->
+                                                    <!--<td th:text="${sfiPpForm.createdBy.username}"></td>-->
+                                                    <!--<td th:text="${sfiPpForm.createdAt}"></td>-->
+                                                    <!--<td th:text="${sfiPpForm.status.status}"></td>-->
+                                                    <!--<td th:text="${sfiPpForm.updatedAt}"></td>-->
+                                                    <!--<td>-->
+                                                        <!--<a th:href="@{'/admin/company/sfi/form/' + ${sfiPpForm.id}}">-->
+                                                            <!--<button th:text="Open"></button>-->
+                                                        <!--</a>-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="fixed-table-container">
-                                    <table class="table table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th><div class="th-inner">Company Name</div></th>
-                                            <th><div class="th-inner">Created By</div></th>
-                                            <th><div class="th-inner">Date Created</div></th>
-                                            <th><div class="th-inner">Status</div></th>
-                                            <th><div class="th-inner">Last Updated</div></th>
-                                            <th><div class="th-inner">Actions</div></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <!--<tr th:each="sfiPpForm,iterationStatus  : ${sfiPpForms}">-->
-                                            <!--<td th:text="${sfiPpForm.company.name}"></td>-->
-                                            <!--<td th:text="${sfiPpForm.createdBy.username}"></td>-->
-                                            <!--<td th:text="${sfiPpForm.createdAt}"></td>-->
-                                            <!--<td th:text="${sfiPpForm.status.status}"></td>-->
-                                            <!--<td th:text="${sfiPpForm.updatedAt}"></td>-->
-                                            <!--<td>-->
-                                                <!--<a th:href="@{'/admin/company/sfi/form/' + ${sfiPpForm.id}}">-->
-                                                    <!--<button th:text="Open"></button>-->
-                                                <!--</a>-->
-                                            <!--</td>-->
-                                        <!--</tr>-->
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="fixed-table-pagination pull-left">
-
-                                </div>
-
-                            </div>
+                            </section>
 
                         </div>
 
@@ -75,10 +80,6 @@
             </div>
         </div>
     </div>
-
-
-    <script th:src="@{/assets/js/libs/angular.min.js}"></script>
-    <script th:src="@{/assets/js/libs/angular-ui-router.min.js}"></script>
 
 </section>
 </html>
