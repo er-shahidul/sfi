@@ -17,8 +17,8 @@ public class Util {
 	public static Date getCurrentDate() {
 		return Calendar.getInstance().getTime();
 	}
-	
-	public static String getCurrentUsername() {
+
+    public static String getCurrentUsername() {
 		Object principal = SecurityContextHolder.getContext()
 				.getAuthentication().getPrincipal();
 		String username = null;

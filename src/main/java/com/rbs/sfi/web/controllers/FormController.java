@@ -73,7 +73,7 @@ public class FormController {
         model.addAttribute("mode", "edit");
     }
 
-    @RequestMapping(value = {"/form"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/form", method = RequestMethod.GET)
     public String home(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -86,16 +86,16 @@ public class FormController {
         return "redirect:/dashboard";
     }
 
-    @RequestMapping(value = {"/sfiPpForm"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/sfiPpForm", method = RequestMethod.GET)
     public String form(ModelMap model) {
-        SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGet();
+        SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/core/form/index";
     }
 
-    @RequestMapping(value = { "/admin/company/sfi/form/{id}" }, method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/company/sfi/form/{id}", method = RequestMethod.GET)
     public String editPassword(@PathVariable Integer id, ModelMap model) {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.get(id);
         populateFormContent(model, sfiPpFormData);
@@ -103,7 +103,7 @@ public class FormController {
         return "/core/form/index";
     }
 
-    @RequestMapping(value = {"/admin/form"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/form", method = RequestMethod.GET)
     public String adminForm(ModelMap model) {
         model.addAttribute("title", "form");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
@@ -111,7 +111,7 @@ public class FormController {
         return "/core/form/admin_form";
     }
 
-    @RequestMapping(value = {"/admin/form/sfi"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/form/sfi", method = RequestMethod.GET)
     public String adminSfiForm(ModelMap model) {
         model.addAttribute("title", "sfi");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
@@ -119,7 +119,7 @@ public class FormController {
         return "/core/form/admin_form_sfi";
     }
 
-    @RequestMapping(value = {"/admin/form/sic"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/form/sic", method = RequestMethod.GET)
     public String adminSicForm(ModelMap model) {
         model.addAttribute("title", "sic");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());

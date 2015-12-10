@@ -34,36 +34,36 @@ public class DefaultController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(SecurityContextHolderAwareRequestWrapper request, ModelMap model) {
         model.addAttribute("title", "home");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) return ("/dashboard");
+        if (auth instanceof AnonymousAuthenticationToken) return "/dashboard";
 
-        if (request.isUserInRole("ADMIN")) return ("redirect:/admin/dashboard");
-        return ("redirect:/sfiPpForm");
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        return "redirect:/sfiPpForm";
     }
 
-    @RequestMapping(value = {"/privacy"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/privacy", method = RequestMethod.GET)
     public String privacy(ModelMap model) {
         model.addAttribute("title", "privacy");
         return "privacy";
     }
 
-    @RequestMapping(value = {"/country/list"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/country/list", method = RequestMethod.GET)
     public ResponseEntity<String> countryList() {
         List country = sfiPpFormAllCountryService.getAll();
         return new ResponseEntity<String>(Util.getAsString(country), HttpStatus.OK);
     }
 
-    @RequestMapping(value = {"/region/list"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/region/list", method = RequestMethod.GET)
     public ResponseEntity<String> regionList() {
         List region = sfiPpFormRegionService.getAll();
         return new ResponseEntity<String>(Util.getAsString(region), HttpStatus.OK);
     }
 
-    @RequestMapping(value = {"/project/standard/objective/list"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/project/standard/objective/list", method = RequestMethod.GET)
     public ResponseEntity<String> projectStandardObjectiveList() {
         List projectStandardObjectives = sfiPpFormCs3ProjectStandardObjectiveService.list();
         return new ResponseEntity<String>(Util.getAsString(projectStandardObjectives), HttpStatus.OK);

@@ -46,7 +46,7 @@ public class SfiPpFormDataService {
         return entity;
     }
 
-    public SfiPpFormData createOrGet() {
+    public SfiPpFormData createOrGetByCurrentUsersCompany() {
         User user = userService.findByUsername(Util.getCurrentUsername());
         SfiPpFormData entity = sfiPpFormDataRepository.getByCompany(user.getCompany());
         if (entity == null) entity = create(user);
