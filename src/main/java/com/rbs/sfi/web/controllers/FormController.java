@@ -56,22 +56,16 @@ public class FormController {
     FormService formService;
 
     @RequestMapping(value = {"/form"}, method = RequestMethod.GET)
-    public String homePage(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
-
+    public String home(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (!(auth instanceof AnonymousAuthenticationToken)) {
+        if (auth instanceof AnonymousAuthenticationToken)
+            return "redirect:/login";
 
-            if (request.isUserInRole("ADMIN") == true) {
-                return ("redirect:/admin/form");
-            } else if (request.isUserInRole("USER") == true) {
-                return ("redirect:/sfiPpForm");
-            } else {
-                return ("redirect:/dashboard");
-            }
-        }
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/form";
+        if (request.isUserInRole("USER")) return "redirect:/sfiPpForm";
 
-        return "redirect:/login";
+        return "redirect:/dashboard";
     }
 
     @RequestMapping(value = {"/sfiPpForm"}, method = RequestMethod.GET)
@@ -90,7 +84,7 @@ public class FormController {
         }
 
         String companyLogo = DatatypeConverter.printBase64Binary(company.getLogo());
-        List countries = sfiPpFormAllCountryService.list();
+        List countries = sfiPpFormAllCountryService.getAll();
         List regions = sfiPpFormRegionService.list();
 
         model.addAttribute("form", sfiPpForm);

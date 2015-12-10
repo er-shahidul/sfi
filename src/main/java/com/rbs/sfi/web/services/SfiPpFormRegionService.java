@@ -15,6 +15,6 @@ public class SfiPpFormRegionService {
     SfiPpFormRegionRepository sfiPpFormRegionRepository;
 
     public List<SfiPpFormRegion> list() {
-        return sfiPpFormRegionRepository.list();
+        return sfiPpFormRegionRepository.getAll();
     }
 }

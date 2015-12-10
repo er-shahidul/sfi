@@ -14,11 +14,11 @@ public class SfiPpFormAllCountryService {
     @Autowired
     SfiPpFormAllCountryRepository sfiPpFormAllCountryRepository;
 
-    public List<SfiPpFormAllCountry> list() {
-        return sfiPpFormAllCountryRepository.list();
+    public List<SfiPpFormAllCountry> getAll() {
+        return sfiPpFormAllCountryRepository.getAll();
     }
 
-    public SfiPpFormAllCountry findById(int id) {
-        return sfiPpFormAllCountryRepository.findById(id);
+    public SfiPpFormAllCountry get(int id) {
+        return sfiPpFormAllCountryRepository.get(id);
     }
 }

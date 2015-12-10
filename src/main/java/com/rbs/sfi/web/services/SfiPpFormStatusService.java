@@ -13,6 +13,6 @@ public class SfiPpFormStatusService {
     SfiPpFormStatusRepository sfiPpFormStatusRepository;
 
     public SfiPpFormStatus findById(int id) {
-        return sfiPpFormStatusRepository.findById(id);
+        return sfiPpFormStatusRepository.get(id);
     }
 }

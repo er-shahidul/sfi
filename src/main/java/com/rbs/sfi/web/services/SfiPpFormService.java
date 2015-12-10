@@ -18,15 +18,6 @@ public class SfiPpFormService {
     @Autowired
     SfiPpFormRepository sfiPpFormRepository;
 
-    @Autowired
-    SfiPpFormAllCountryRepository sfiPpFormAllCountryRepository;
-
-    @Autowired
-    SfiPpFormOtherCountryRepository sfiPpFormOtherCountryRepository;
-
-    @Autowired
-    Cs1Repository cs1Repository;
-
     public List<SfiPpForm> list() {
         return sfiPpFormRepository.list();
     }

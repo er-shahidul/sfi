@@ -49,7 +49,7 @@ public class DefaultController {
 
     @RequestMapping(value = {"/country/list"}, method = RequestMethod.GET)
     public ResponseEntity<String> countryList() {
-        List country = sfiPpFormAllCountryService.list();
+        List country = sfiPpFormAllCountryService.getAll();
         return new ResponseEntity<String>(Util.getAsString(country), HttpStatus.OK);
     }
 
