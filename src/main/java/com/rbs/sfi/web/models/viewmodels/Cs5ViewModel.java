@@ -40,6 +40,10 @@ public class Cs5ViewModel extends BaseViewModel {
         return projects;
     }
 
+    public void setProjects(Set<SfiPpFormCs3ViewModel> projects) {
+        this.projects = projects;
+    }
+
     public String getOrganizationListAcademic() {
         return organizationListAcademic;
     }
