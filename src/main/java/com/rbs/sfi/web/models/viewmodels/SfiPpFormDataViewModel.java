@@ -4,7 +4,7 @@ import com.rbs.sfi.common.models.BaseViewModel;
 import com.rbs.sfi.common.models.ViewModels.CompanyViewModel;
 import com.rbs.sfi.common.models.ViewModels.UserViewModel;
 
-public class SfiPpFormViewModel extends BaseViewModel {
+public class SfiPpFormDataViewModel extends BaseViewModel {
     private Integer id;
     private SfiPpFormStatusViewModel status;
     private CompanyViewModel company;

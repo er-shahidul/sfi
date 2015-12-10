@@ -1,15 +1,9 @@
 package com.rbs.sfi.web.controllers;
 
-import com.rbs.sfi.admin.entities.Company;
-import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
-import com.rbs.sfi.admin.util.Util;
-import com.rbs.sfi.web.models.entities.SfiPpForm;
-import com.rbs.sfi.web.models.entities.SfiPpFormStatus;
-import com.rbs.sfi.web.models.viewmodels.Cs5ViewModel;
-import com.rbs.sfi.web.repositories.SfiPpFormRepository;
-import com.rbs.sfi.web.repositories.SfiPpFormStatusRepository;
+import com.rbs.sfi.web.models.entities.SfiPpFormData;
+import com.rbs.sfi.web.repositories.SfiPpFormDataRepository;
 import com.rbs.sfi.web.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -23,18 +17,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.xml.bind.DatatypeConverter;
-import java.util.List;
 
 import static com.rbs.sfi.admin.util.Util.getCurrentUsername;
 
 @Controller
 public class FormController {
-
     @Autowired
     UserService userService;
 
     @Autowired
-    SfiPpFormService sfiPpFormService;
+    SfiPpFormDataService sfiPpFormDataService;
 
     @Autowired
     SfiPpFormStatusService sfiPpFormStatusService;
@@ -52,10 +44,34 @@ public class FormController {
     SfiPpFormCs5Service sfiPpFormCs5Service;
 
     @Autowired
-    SfiPpFormRepository sfiPpFormRepository;
+    SfiPpFormDataRepository sfiPpFormDataRepository;
 
     @Autowired
     FormService formService;
+
+    private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
+        Integer id = sfiPpFormData.getId();
+        String companyLogo = DatatypeConverter.printBase64Binary(sfiPpFormData.getCompany().getLogo());
+
+        model.addAttribute("form", sfiPpFormData);
+        model.addAttribute("cs1", formService.getCs1ViewModel(id));
+        model.addAttribute("cs2", formService.getCs2ViewModel(id));
+        model.addAttribute("cs3", formService.getCs3ViewModel(id));
+        model.addAttribute("cs4", formService.getCs4ViewModel(id));
+        model.addAttribute("cs5", formService.getCs5ViewModel(id));
+        model.addAttribute("cs6", formService.getCs6ViewModel(id));
+        model.addAttribute("cs7", formService.getCs7ViewModel(id));
+        model.addAttribute("cs8", formService.getCs8ViewModel(id));
+        model.addAttribute("cs9", formService.getCs9ViewModel(id));
+        model.addAttribute("cs10", formService.getCs10ViewModel(id));
+
+        model.addAttribute("company", sfiPpFormData.getCompany());
+        model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
+        model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
+        model.addAttribute("regions", sfiPpFormRegionService.getAll());
+
+        model.addAttribute("mode", "edit");
+    }
 
     @RequestMapping(value = {"/form"}, method = RequestMethod.GET)
     public String home(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
@@ -72,83 +88,17 @@ public class FormController {
 
     @RequestMapping(value = {"/sfiPpForm"}, method = RequestMethod.GET)
     public String form(ModelMap model) {
-        User user = userService.findByUsername(getCurrentUsername());
-        Company company = user.getCompany();
-        SfiPpForm sfiPpForm = sfiPpFormService.findByCompany(company);
-        SfiPpFormStatus sfiPpFormStatus = sfiPpFormStatusService.findById(1);
+        SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGet();
+        populateFormContent(model, sfiPpFormData);
 
-        if (sfiPpForm == null) {
-            sfiPpForm = new SfiPpForm();
-            sfiPpForm.setCompany(company);
-            sfiPpForm.setCreatedBy(user);
-            sfiPpForm.setUpdatedBy(user);
-            sfiPpForm.setStatus(sfiPpFormStatus);
-            sfiPpForm.setCreatedAt(Util.getCurrentDate());
-            sfiPpForm.setUpdatedAt(Util.getCurrentDate());
-            sfiPpFormService.save(sfiPpForm);
-        }
-
-        String companyLogo = DatatypeConverter.printBase64Binary(company.getLogo());
-        List countries = sfiPpFormAllCountryService.getAll();
-        List regions = sfiPpFormRegionService.list();
-
-        model.addAttribute("form", sfiPpForm);
-        model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs2", formService.getCs2ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs3", formService.getCs3ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs4", formService.getCs4ViewModel(sfiPpForm.getId()));
-
-        Cs5ViewModel cs5ViewModel = formService.getCs5ViewModel(sfiPpForm.getId());
-        cs5ViewModel.setItems(formService.getSfiPpFormCs5ViewModels(sfiPpForm.getId()));
-        model.addAttribute("cs5", cs5ViewModel);
-
-        model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs7", formService.getCs7ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpForm.getId()));
-
-        model.addAttribute("company", company);
-        model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
-        model.addAttribute("user", user);
-        model.addAttribute("countries", countries);
-        model.addAttribute("regions", regions);
-
-        model.addAttribute("mode", "edit");
-
+        model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/core/form/index";
     }
 
     @RequestMapping(value = { "/admin/company/sfi/form/{id}" }, method = RequestMethod.GET)
     public String editPassword(@PathVariable Integer id, ModelMap model) {
-        SfiPpForm sfiPpForm = sfiPpFormService.findById(id);
-
-        String companyLogo = DatatypeConverter.printBase64Binary(sfiPpForm.getCompany().getLogo());
-        List countries = sfiPpFormAllCountryService.list();
-        List regions = sfiPpFormRegionService.list();
-
-        model.addAttribute("form", sfiPpForm);
-        model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs2", formService.getCs2ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs3", formService.getCs3ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs4", formService.getCs4ViewModel(sfiPpForm.getId()));
-
-        Cs5ViewModel cs5ViewModel = formService.getCs5ViewModel(sfiPpForm.getId());
-        cs5ViewModel.setItems(formService.getSfiPpFormCs5ViewModels(sfiPpForm.getId()));
-        model.addAttribute("cs5", cs5ViewModel);
-
-        model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs7", formService.getCs7ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpForm.getId()));
-
-        model.addAttribute("company", sfiPpForm.getCompany());
-        model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
-        model.addAttribute("countries", countries);
-        model.addAttribute("regions", regions);
-
-        model.addAttribute("mode", "edit");
+        SfiPpFormData sfiPpFormData = sfiPpFormDataService.get(id);
+        populateFormContent(model, sfiPpFormData);
 
         return "/core/form/index";
     }
@@ -156,8 +106,7 @@ public class FormController {
     @RequestMapping(value = {"/admin/form"}, method = RequestMethod.GET)
     public String adminForm(ModelMap model) {
         model.addAttribute("title", "form");
-        List sfiPpForms = sfiPpFormService.list();
-        model.addAttribute("sfiPpForms", sfiPpForms);
+        model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
 
         return "/core/form/admin_form";
     }

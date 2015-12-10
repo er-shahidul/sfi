@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "sfi_pp_forms")
-public class SfiPpForm extends BaseEntityModel {
+public class SfiPpFormData extends BaseEntityModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

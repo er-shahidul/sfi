@@ -140,7 +140,10 @@ public class FormService {
     /************************ Cs5 : Begin ***********************/
     public Cs5ViewModel getCs5ViewModel(Integer id) {
         Cs5 entity = cs5Repository.get(id);
-        return viewModelMapperService.convert(entity, Cs5ViewModel.class);
+        Cs5ViewModel model =  viewModelMapperService.convert(entity, Cs5ViewModel.class);
+        model.setItems(this.getSfiPpFormCs5ViewModels(id));
+
+        return model;
     }
 
     public void setCs5Entity(Cs5ViewModel model) {

@@ -12,7 +12,7 @@ public class SfiPpFormStatusService {
     @Autowired
     SfiPpFormStatusRepository sfiPpFormStatusRepository;
 
-    public SfiPpFormStatus findById(int id) {
-        return sfiPpFormStatusRepository.get(id);
+    public SfiPpFormStatus getByStatus(String status) {
+        return sfiPpFormStatusRepository.getByStatus(status);
     }
 }

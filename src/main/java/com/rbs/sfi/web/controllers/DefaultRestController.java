@@ -46,8 +46,8 @@ public class DefaultRestController {
 
     @RequestMapping(value = {"/form/cs5"}, method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs5(@RequestBody Cs5ViewModel model, BindingResult result) {
-        formService.setCs5Entity(model);
         formService.setSfiPpFormCs5Entities(model.getItems());
+        formService.setCs5Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 

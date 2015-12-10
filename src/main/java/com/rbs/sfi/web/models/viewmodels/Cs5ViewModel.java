@@ -1,7 +1,6 @@
 package com.rbs.sfi.web.models.viewmodels;
 
 import com.rbs.sfi.common.models.BaseViewModel;
-import com.rbs.sfi.web.models.entities.SfiPpFormCs5;
 
 import java.util.List;
 import java.util.Set;
@@ -38,6 +37,10 @@ public class Cs5ViewModel extends BaseViewModel {
 
     public Set<SfiPpFormCs3ViewModel> getProjects() {
         return projects;
+    }
+
+    public void setProjects(Set<SfiPpFormCs3ViewModel> projects) {
+        this.projects = projects;
     }
 
     public String getOrganizationListAcademic() {
