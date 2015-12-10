@@ -110,4 +110,20 @@ public class FormController {
 
         return "/core/form/admin_form";
     }
+
+    @RequestMapping(value = {"/admin/form/sfi"}, method = RequestMethod.GET)
+    public String adminSfiForm(ModelMap model) {
+        model.addAttribute("title", "sfi");
+        model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
+
+        return "/core/form/admin_form_sfi";
+    }
+
+    @RequestMapping(value = {"/admin/form/sic"}, method = RequestMethod.GET)
+    public String adminSicForm(ModelMap model) {
+        model.addAttribute("title", "sic");
+        model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
+
+        return "/core/form/admin_form_sic";
+    }
 }

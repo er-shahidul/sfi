@@ -15,6 +15,9 @@
     <link th:href="@{/assets/css/style.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/assets/css/libs/prism.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/assets/css/admin.css}" rel="stylesheet" type="text/css"/>
+
+    <link th:href="@{/assets/css/libs/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+
     <!-- END GLOBAL MANDATORY STYLES -->
     <th:block layout:fragment="styles"/>
 
@@ -43,10 +46,21 @@
 <script th:src="@{/assets/js/libs/bootstrap-table.js}" type="text/javascript"></script>
 <script th:src="@{/assets/js/scripts.js}" type="text/javascript"></script>
 
+<script th:src="@{/assets/js/libs/jquery.dataTables.min.js}"></script>
+<script th:src="@{/assets/js/libs/dataTables.bootstrap.min.js}"></script>
+
 <th:block layout:fragment="script"/>
 <!-- END SCRIPTS -->
 
-<script>
+<script type="text/javascript">
+    // <![CDATA[
+
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+
+    // ]]>
+
 </script>
 
 <!-- END JAVASCRIPTS -->

@@ -48,36 +48,21 @@
                                 <div class="sonata-ba-content">
 
                                     <div class="row">
-                                        <div class="col-md-10">
-                                            <table class="table table-striped table-bordered table-hover">
+                                        <div class="col-md-12">
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
-
                                                 <tr>
-                                                    <th>
-                                                        Sl
-                                                    </th>
-                                                    <th>
-                                                        Name
-                                                    </th>
-                                                    <th>
-                                                        Email
-                                                    </th>
-                                                    <th>
-                                                        Company
-                                                    </th>
-                                                    <th>
-                                                        Created
-                                                    </th>
-                                                    <th>
-                                                        Admin User
-                                                    </th>
-                                                    <th>
-                                                        Enabled
-                                                    </th>
+                                                    <th>Sl</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Company</th>
+                                                    <th>Created</th>
+                                                    <th>Admin User</th>
+                                                    <th>Enabled</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr th:each="u,iterationStatus  : ${user}">
+                                                <tr th:each="u,iterationStatus : ${user}">
                                                     <td th:text="${iterationStatus.count}"></td>
                                                     <td>
                                                         <a th:href="@{'/admin/user/edit/' + ${u.id}}">
@@ -97,7 +82,7 @@
                                                     <td th:each="g,iterationStatus  : ${u.group}">
                                                         <p th:if="${g.role} == ADMIN">
                                                             <span class="label label-success">yes</span>
-                                                       </p>
+                                                        </p>
                                                         <p th:if="${g.role} == GENERAL">
                                                             <span class="label label-danger">no</span>
                                                         </p>
@@ -131,10 +116,6 @@
             </div>
         </div>
     </div>
-
-
-    <script th:src="@{/assets/js/libs/angular.min.js}"></script>
-    <script th:src="@{/assets/js/libs/angular-ui-router.min.js}"></script>
 
 </section>
 </html>

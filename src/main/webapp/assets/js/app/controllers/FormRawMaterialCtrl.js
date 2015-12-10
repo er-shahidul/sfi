@@ -318,7 +318,7 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
         var data = $scope.preparePayload();
 
-        console.log(data);
+        //console.log(data);
         //return;
 
         $http

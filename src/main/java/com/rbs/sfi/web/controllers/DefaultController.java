@@ -3,6 +3,7 @@ package com.rbs.sfi.web.controllers;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.web.services.SfiPpFormAllCountryService;
+import com.rbs.sfi.web.services.SfiPpFormCs3ProjectStandardObjectiveService;
 import com.rbs.sfi.web.services.SfiPpFormRegionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,9 @@ public class DefaultController {
 
     @Autowired
     SfiPpFormAllCountryService sfiPpFormAllCountryService;
+
+    @Autowired
+    SfiPpFormCs3ProjectStandardObjectiveService sfiPpFormCs3ProjectStandardObjectiveService;
 
     @Autowired
     SfiPpFormRegionService sfiPpFormRegionService;
@@ -55,7 +59,13 @@ public class DefaultController {
 
     @RequestMapping(value = {"/region/list"}, method = RequestMethod.GET)
     public ResponseEntity<String> regionList() {
-        List region = sfiPpFormRegionService.list();
+        List region = sfiPpFormRegionService.getAll();
         return new ResponseEntity<String>(Util.getAsString(region), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = {"/project/standard/objective/list"}, method = RequestMethod.GET)
+    public ResponseEntity<String> projectStandardObjectiveList() {
+        List projectStandardObjectives = sfiPpFormCs3ProjectStandardObjectiveService.list();
+        return new ResponseEntity<String>(Util.getAsString(projectStandardObjectives), HttpStatus.OK);
     }
 }
