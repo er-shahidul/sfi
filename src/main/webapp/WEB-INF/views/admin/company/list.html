@@ -48,34 +48,27 @@
                                 <div class="sonata-ba-content">
 
                                     <div class="row">
-                                        <div class="col-md-10">
-                                            <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                            <tr>
-                                <th>
-                                    Id
-                                </th>
-                                <th>
-                                    Name
-                                </th>
-                                <th>
-                                    Area Unit
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="company,iterationStatus  : ${companies}">
-                                <td>
-                                    <a th:href="@{'/admin/company/edit/' + ${company.id}}" th:text="${company.id}"></a>
-                                </td>
-                                <td th:text="${company.name}"></td>
-                                <td th:text="${company.areaUnit.shortCode}"></td>
-                            </tr>
+                                        <div class="col-md-12">
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Name</th>
+                                                    <th>Area Unit</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="company,iterationStatus  : ${companies}">
+                                                    <td>
+                                                        <a th:href="@{'/admin/company/edit/' + ${company.id}}" th:text="${company.id}"></a>
+                                                    </td>
+                                                    <td th:text="${company.name}"></td>
+                                                    <td th:text="${company.areaUnit.shortCode}"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
 
-                            </tbody>
-                        </table>
                                         </div>
-
                                         <div class="col-md-2">
                                         </div>
                                     </div>
@@ -89,10 +82,6 @@
             </div>
         </div>
     </div>
-
-
-    <script th:src="@{/assets/js/libs/angular.min.js}"></script>
-    <script th:src="@{/assets/js/libs/angular-ui-router.min.js}"></script>
 
 </section>
 </html>
