@@ -48,32 +48,25 @@
                                 <div class="sonata-ba-content">
 
                                     <div class="row">
-                                        <div class="col-md-10">
-                                            <table class="table table-striped table-bordered table-hover">
-
-                            <thead>
-                            <tr>
-                                <th>
-                                    Id
-                                </th>
-                                <th>
-                                    Unit Description
-                                </th>
-                                <th>
-                                    Short Code
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="areaUnit,iterationStatus  : ${areaUnities}">
-                                <td>
-                                    <a th:href="@{'/admin/area/unit/edit/' + ${areaUnit.id}}" th:text="${areaUnit.id}"></a>
-                                </td>
-                                <td th:text="${areaUnit.unitDescription}"></td>
-                                <td th:text="${areaUnit.shortCode}"></td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                        <div class="col-md-12">
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Unit Description</th>
+                                                    <th>Short Code</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="areaUnit,iterationStatus  : ${areaUnities}">
+                                                    <td>
+                                                        <a th:href="@{'/admin/area/unit/edit/' + ${areaUnit.id}}" th:text="${areaUnit.id}"></a>
+                                                    </td>
+                                                    <td th:text="${areaUnit.unitDescription}"></td>
+                                                    <td th:text="${areaUnit.shortCode}"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
 
                                         <div class="col-md-2">
@@ -89,10 +82,6 @@
             </div>
         </div>
     </div>
-
-
-    <script th:src="@{/assets/js/libs/angular.min.js}"></script>
-    <script th:src="@{/assets/js/libs/angular-ui-router.min.js}"></script>
 
 </section>
 </html>
