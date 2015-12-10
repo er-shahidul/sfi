@@ -5,6 +5,7 @@ import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "sfi_pp_forms")
@@ -24,6 +25,18 @@ public class SfiPpForm extends BaseEntityModel {
     @ManyToOne(targetEntity = User.class, optional = true)
     @JoinColumn(name = "created_by", referencedColumnName = "id", nullable = true)
     private User createdBy;
+
+    @ManyToOne(targetEntity = User.class, optional = true)
+    @JoinColumn(name = "updated_by", referencedColumnName = "id", nullable = true)
+    private User updatedBy;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at")
+    private Date createdAt;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "updated_at")
+    private Date updatedAt;
 
     @Column(name = "isSaved", nullable = true)
     private Boolean isSaved;
@@ -64,7 +77,7 @@ public class SfiPpForm extends BaseEntityModel {
         this.createdBy = createdBy;
     }
 
-    public Boolean isSaved() {
+    public Boolean getIsSaved() {
         return isSaved;
     }
 
@@ -72,11 +85,35 @@ public class SfiPpForm extends BaseEntityModel {
         this.isSaved = isSaved;
     }
 
-    public Boolean isComplete() {
+    public Boolean getIsComplete() {
         return isComplete;
     }
 
     public void setIsComplete(Boolean isComplete) {
         this.isComplete = isComplete;
+    }
+
+    public User getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(User updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

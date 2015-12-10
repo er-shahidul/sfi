@@ -40,22 +40,24 @@
                                         <tr>
                                             <th><div class="th-inner">Company Name</div></th>
                                             <th><div class="th-inner">Created By</div></th>
-                                            <!--<th><div class="th-inner">Date Created</div></th>-->
+                                            <th><div class="th-inner">Date Created</div></th>
                                             <th><div class="th-inner">Status</div></th>
-                                            <!--<th><div class="th-inner">Last Updated</div></th>-->
-                                            <!--<th><div class="th-inner">Actions</div></th>-->
+                                            <th><div class="th-inner">Last Updated</div></th>
+                                            <th><div class="th-inner">Actions</div></th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr th:each="sfiPpForm,iterationStatus  : ${sfiPpForms}">
                                             <td th:text="${sfiPpForm.company.name}"></td>
                                             <td th:text="${sfiPpForm.createdBy.username}"></td>
-                                            <!--<td th:text="${sfiPpForm.createdAt}"></td>-->
-                                            <td th:text="${sfiPpForm.status}"></td>
-                                            <!--<td th:text="${sfiPpForm.updatedAt}"></td>-->
-                                            <!--<td>-->
-                                                <!--<a th:href="@{'/' + ${sfiPpForm.id}}" th:text="edit"></a>-->
-                                            <!--</td>-->
+                                            <td th:text="${sfiPpForm.createdAt}"></td>
+                                            <td th:text="${sfiPpForm.status.status}"></td>
+                                            <td th:text="${sfiPpForm.updatedAt}"></td>
+                                            <td>
+                                                <a th:href="@{'/admin/company/sfi/form/' + ${sfiPpForm.id}}">
+                                                    <button th:text="Open"></button>
+                                                </a>
+                                            </td>
                                         </tr>
                                         </tbody>
                                     </table>
