@@ -4,6 +4,7 @@ import com.rbs.sfi.admin.entities.Company;
 import com.rbs.sfi.admin.entities.User;
 import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
+import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.web.models.entities.SfiPpForm;
 import com.rbs.sfi.web.models.entities.SfiPpFormStatus;
 import com.rbs.sfi.web.models.viewmodels.Cs5ViewModel;
@@ -17,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -85,7 +87,10 @@ public class FormController {
             sfiPpForm = new SfiPpForm();
             sfiPpForm.setCompany(company);
             sfiPpForm.setCreatedBy(user);
+            sfiPpForm.setUpdatedBy(user);
             sfiPpForm.setStatus(sfiPpFormStatus);
+            sfiPpForm.setCreatedAt(Util.getCurrentDate());
+            sfiPpForm.setUpdatedAt(Util.getCurrentDate());
             sfiPpFormService.save(sfiPpForm);
         }
 
@@ -120,6 +125,40 @@ public class FormController {
         return "/core/form/index";
     }
 
+    @RequestMapping(value = { "/admin/company/sfi/form/{id}" }, method = RequestMethod.GET)
+    public String editPassword(@PathVariable Integer id, ModelMap model) {
+        SfiPpForm sfiPpForm = sfiPpFormService.findById(id);
+
+        String companyLogo = DatatypeConverter.printBase64Binary(sfiPpForm.getCompany().getLogo());
+        List countries = sfiPpFormAllCountryService.list();
+        List regions = sfiPpFormRegionService.list();
+
+        model.addAttribute("form", sfiPpForm);
+        model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs2", formService.getCs2ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs3", formService.getCs3ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs4", formService.getCs4ViewModel(sfiPpForm.getId()));
+
+        Cs5ViewModel cs5ViewModel = formService.getCs5ViewModel(sfiPpForm.getId());
+        cs5ViewModel.setItems(formService.getSfiPpFormCs5ViewModels(sfiPpForm.getId()));
+        model.addAttribute("cs5", cs5ViewModel);
+
+        model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs7", formService.getCs7ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpForm.getId()));
+        model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpForm.getId()));
+
+        model.addAttribute("company", sfiPpForm.getCompany());
+        model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
+        model.addAttribute("countries", countries);
+        model.addAttribute("regions", regions);
+
+        model.addAttribute("mode", "edit");
+
+        return "/core/form/index";
+    }
+
     @RequestMapping(value = {"/admin/form"}, method = RequestMethod.GET)
     public String adminForm(ModelMap model) {
         model.addAttribute("title", "form");
@@ -127,5 +166,23 @@ public class FormController {
         model.addAttribute("sfiPpForms", sfiPpForms);
 
         return "/core/form/admin_form";
+    }
+
+    @RequestMapping(value = {"/admin/form/sfi"}, method = RequestMethod.GET)
+    public String adminSfiForm(ModelMap model) {
+        model.addAttribute("title", "sfi");
+        List sfiPpForms = sfiPpFormService.list();
+        model.addAttribute("sfiPpForms", sfiPpForms);
+
+        return "/core/form/admin_form_sfi";
+    }
+
+    @RequestMapping(value = {"/admin/form/sic"}, method = RequestMethod.GET)
+    public String adminSicForm(ModelMap model) {
+        model.addAttribute("title", "sic");
+        List sfiPpForms = sfiPpFormService.list();
+        model.addAttribute("sfiPpForms", sfiPpForms);
+
+        return "/core/form/admin_form_sic";
     }
 }
