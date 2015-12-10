@@ -105,7 +105,7 @@ public class FormController {
 
         model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs7", formService.getCs7ViewModel(sfiPpForm.getId()));
-        model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpForm.getId()));
+        //model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpForm.getId()));
         model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpForm.getId()));
 
