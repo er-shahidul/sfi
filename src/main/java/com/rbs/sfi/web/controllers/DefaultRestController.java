@@ -1,6 +1,7 @@
 package com.rbs.sfi.web.controllers;
 
 import com.rbs.sfi.admin.util.Util;
+import com.rbs.sfi.common.services.FIleIOHelperService;
 import com.rbs.sfi.web.models.viewmodels.*;
 import com.rbs.sfi.web.services.FormService;
 import javafx.util.Pair;
@@ -24,6 +25,9 @@ public class DefaultRestController {
 
     @Autowired
     private FormService formService;
+
+    @Autowired
+    private FIleIOHelperService fIleIOHelperService;
 
     @RequestMapping(value = "/form/cs1", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs1(@RequestBody Cs1ViewModel model, BindingResult result) {
@@ -80,8 +84,8 @@ public class DefaultRestController {
         String fileName = file.getOriginalFilename();
         SfiPpFormCs3ProjectSupportDocsViewModel model = formService.getSfiPpFormCs3ProjectSupportDocsViewModel(fileName);
 
-        String path = request.getSession().getServletContext().getRealPath("/uploads/sfi")
-                + "/" + model.getProjectUniqueDocumentName();
+        String path = fIleIOHelperService.createDirectory(request.getSession().getServletContext().getRealPath("."), "uploads/sfi");
+        path += "/" + model.getProjectUniqueDocumentName();
 
         try {
             file.transferTo(new File(path));

@@ -49,6 +49,9 @@ public class FormController {
     @Autowired
     FormService formService;
 
+    @Autowired
+    SfiPpFormCs3ProjectStandardObjectiveService sfiPpFormCs3ProjectStandardObjectiveService;
+
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
         String companyLogo = DatatypeConverter.printBase64Binary(sfiPpFormData.getCompany().getLogo());
@@ -69,6 +72,7 @@ public class FormController {
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
+        model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.list());
 
         model.addAttribute("mode", "edit");
     }

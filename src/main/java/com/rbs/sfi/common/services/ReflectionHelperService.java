@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@Transactional
 public class ReflectionHelperService {
     public boolean isGetter(String methodName) {
         return (methodName.startsWith("get")
