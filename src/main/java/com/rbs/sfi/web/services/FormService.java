@@ -83,7 +83,7 @@ public class FormService {
     private SfiPpFormResearchTypeService sfiPpFormResearchTypeService;
 
     @Autowired
-    private ReflectionHelperService reflectionHelperService;
+    private SfiPpFormCs3ProjectSupportDocsService sfiPpFormCs3ProjectSupportDocsService;
 
     @Autowired
     private ViewModelMapperService viewModelMapperService;
@@ -231,4 +231,16 @@ public class FormService {
         }
     }
     /************************ SfiPpFormCs5 : End   ***********************/
+
+    /************************ SfiPpFormCs3ProjectSupportDocsViewModel : Begin ***********************/
+    public SfiPpFormCs3ProjectSupportDocsViewModel getSfiPpFormCs3ProjectSupportDocsViewModel(String fileName) {
+        SfiPpFormCs3ProjectSupportDocsViewModel model = new SfiPpFormCs3ProjectSupportDocsViewModel();
+        model.setProjectOriginalDocumentName(fileName);
+
+        String generatedFileName = sfiPpFormCs3ProjectSupportDocsService.generateUniqueName()
+                + fileName.substring(fileName.lastIndexOf("."));
+        model.setProjectUniqueDocumentName(generatedFileName);
+        return model;
+    }
+    /************************ SfiPpFormCs3ProjectSupportDocsViewModel : End   ***********************/
 }

@@ -8,7 +8,7 @@ public class SfiPpFormCs3ProjectSupportDocsViewModel extends BaseViewModel {
     private String projectOriginalDocumentName;
     private String projectUniqueDocumentName;
 
-    private SfiPpFormCs3ViewModel sfiPpFormCs3;
+    private Integer sfiPpFormCs3;
 
     @Override
     public Integer getId() {
@@ -19,11 +19,11 @@ public class SfiPpFormCs3ProjectSupportDocsViewModel extends BaseViewModel {
         this.id = id;
     }
 
-    public SfiPpFormCs3ViewModel getSfiPpFormCs3() {
+    public Integer getSfiPpFormCs3() {
         return sfiPpFormCs3;
     }
 
-    public void setSfiPpFormCs3(SfiPpFormCs3ViewModel sfiPpFormCs3) {
+    public void setSfiPpFormCs3(Integer sfiPpFormCs3) {
         this.sfiPpFormCs3 = sfiPpFormCs3;
     }
 
