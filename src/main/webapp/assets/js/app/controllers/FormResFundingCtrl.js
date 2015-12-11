@@ -65,11 +65,11 @@ sfiFormApp
 
             $scope.project = {
 
-                name                : "",
-                objective           : "",
+                projectNm                : "",
+                projectObj           : "",
                 description         : "",
-                StandardObject      : 0,
-                locations           : [],
+                sfiStandardObj      : 0,
+                projectLocations           : [],
                 conversionPattern   : "",
                 startDate           : "",
                 endDate             : "",
@@ -80,12 +80,12 @@ sfiFormApp
                 shareConserData     : null,
                 incResFunding       : null,
                 supportDocs         : [],
-                academicList        : "",
-                researchList        : "",
-                conservationList    : "",
-                governmentList      : "",
-                communityList       : "",
-                otherList           : ""
+                organizationListAcademic        : "",
+                organizationListResearch        : "",
+                organizationListConservation    : "",
+                organizationListGovernment      : "",
+                organizationListCommunity       : "",
+                organizationListOther           : ""
 
             };
 
@@ -98,10 +98,10 @@ sfiFormApp
         $scope.isDirty = function(){
 
             with( $scope.project){
-                return name
-                    || objective
+                return projectNm
+                    || projectObj
                     || description
-                    || StandardObject
+                    || sfiStandardObj
                     || startDate
                     || endDate
                     || totalProjectCost
@@ -115,12 +115,12 @@ sfiFormApp
 
             with( $scope.project){
 
-                return academicList
-                    || researchList
-                    || conservationList
-                    || governmentList
-                    || communityList
-                    || otherList;
+                return organizationListAcademic
+                    || organizationListResearch
+                    || organizationListConservation
+                    || organizationListGovernment
+                    || organizationListCommunity
+                    || organizationListOther;
             }
         }
 
@@ -169,11 +169,11 @@ sfiFormApp
 
             var region = $scope.project.regionItem;
 
-            if(!$scope.project.locations){
-                $scope.project.locations = [];
+            if(!$scope.project.projectLocations){
+                $scope.project.projectLocations = [];
             }
 
-            $scope.project.locations.push(region.id);
+            $scope.project.projectLocations.push(region.id);
         }
 
 
@@ -182,7 +182,7 @@ sfiFormApp
         }
 
         $scope.delRegion = function(regionId){
-            $scope.project.locations = _.without($scope.project.locations, regionId);
+            $scope.project.projectLocations = _.without($scope.project.projectLocations, regionId);
         }
 
         $rootScope.isSectionDirty = function(){
@@ -302,7 +302,7 @@ sfiFormApp
 
             title : '',
             html : true,
-            content : '<div class="form-group"><input type="radio" class="icheck" value="1" name="test" data-name="USD"><label class="checkboxLabel">USD</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="icheck" value="2" name="test" data-name="CAD"><label class="checkboxLabel">CAD</label></div></div>',
+            content : '<div class="form-group"><input type="radio" class="icheck" value="1" name="test" data-projectNm="USD"><label class="checkboxLabel">USD</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="icheck" value="2" name="test" data-name="CAD"><label class="checkboxLabel">CAD</label></div></div>',
             placement : 'bottom',
             trigger : 'manual'
         }
