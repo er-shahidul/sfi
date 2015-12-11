@@ -1,8 +1,8 @@
 var cs5;
 sfiFormApp
     .controller('FormResFundingCtrl',
-        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList',
-            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList){
+        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$',
+            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $){
 
         $scope.validate = false;
         $scope.isDataDirty = false;
