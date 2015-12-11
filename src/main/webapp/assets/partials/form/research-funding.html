@@ -50,7 +50,7 @@
                         <input type="checkbox" name="otherEnable" class="icheck" icheck
                                 ng-if="item.isOther" ng-model="item.otherEnable"/>
 
-                        {{ item.description }}
+                        {{ item.projectDescr }}
                         <input type="text" class="form-control   shorter" name="otherText"
                                ng-show="item.otherEnable" ng-model="item.otherText"
                                ng-required="item.otherEnable" customerror
@@ -101,9 +101,9 @@
                     <div class="col-sm-1">
                         <label>Academic</label>
                     </div>
-                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.academicList.$invalid }">
-                        <input type="text" class="form-control" name="academicList"
-                               ng-maxlength="200" customerror ng-model="cs5.academicList" >
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListAcademic.$invalid }">
+                        <input type="text" class="form-control" name="organizationListAcademic"
+                               ng-maxlength="200" customerror ng-model="cs5.organizationListAcademic" >
                     </div>
                 </div>
 
@@ -111,9 +111,9 @@
                     <div class="col-sm-1">
                         <label>Research</label>
                     </div>
-                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.researchList.$invalid }">
-                        <input type="text" class="form-control" name="researchList"
-                               ng-maxlength="200" customerror ng-model="cs5.researchList" >
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListResearch.$invalid }">
+                        <input type="text" class="form-control" name="organizationListResearch"
+                               ng-maxlength="200" customerror ng-model="cs5.organizationListResearch" >
                     </div>
                 </div>
 
@@ -121,9 +121,9 @@
                     <div class="col-sm-1">
                         <label>Conservation</label>
                     </div>
-                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.conservationList.$invalid }">
-                        <input type="text" class="form-control" name="conservationList"
-                               ng-maxlength="200" customerror ng-model="cs5.conservationList" >
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListConservation.$invalid }">
+                        <input type="text" class="form-control" name="organizationListConservation"
+                               ng-maxlength="200" customerror ng-model="cs5.organizationListConservation" >
                     </div>
                 </div>
 
@@ -131,9 +131,9 @@
                     <div class="col-sm-1">
                         <label>Government</label>
                     </div>
-                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.governmentList.$invalid }">
-                        <input type="text" class="form-control" name="governmentList"
-                               ng-maxlength="200" customerror ng-model="cs5.governmentList" >
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListGovernment.$invalid }">
+                        <input type="text" class="form-control" name="organizationListGovernment"
+                               ng-maxlength="200" customerror ng-model="cs5.organizationListGovernment" >
                     </div>
                 </div>
 
@@ -141,9 +141,9 @@
                     <div class="col-sm-1">
                         <label>Community</label>
                     </div>
-                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.communityList.$invalid }">
-                        <input type="text" name="communityList" class="form-control"
-                               ng-maxlength="200" customerror ng-model="cs5.communityList" >
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListCommunity.$invalid }">
+                        <input type="text" name="organizationListCommunity" class="form-control"
+                               ng-maxlength="200" customerror ng-model="cs5.organizationListCommunity" >
                     </div>
                 </div>
 
@@ -151,9 +151,9 @@
                     <div class="col-sm-1">
                         <label>Other</label>
                     </div>
-                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.otherList.$invalid }">
-                        <input type="text" name="otherList" class="form-control"
-                               ng-maxlength="200" customerror ng-model="cs5.otherList" >
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListOther.$invalid }">
+                        <input type="text" name="organizationListOther" class="form-control"
+                               ng-maxlength="200" customerror ng-model="cs5.organizationListOther" >
                     </div>
                 </div>
             </div>
@@ -170,10 +170,10 @@
                         Is your organization currently involved in any conservation partnerships?
 
                         <div class="floatright">
-                            <input type="radio" name="cs3_isInPartnership" ng-model="cs5.isInPartnership" value=true icheck/>
+                            <input type="radio" name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == true" ng-model="cs5.isInPartnership" value=true icheck/>
                             <label class="checkboxLabel">Yes</label>
                             &nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="cs3_isInPartnership" ng-model="cs5.isInPartnership" value=false icheck/>
+                            <input type="radio" name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == false" ng-model="cs5.isInPartnership" value=false icheck/>
                             <label class="checkboxLabel">No</label>
                         </div>
                     </div>
@@ -194,8 +194,8 @@
                 </thead>
                 <tbody>
                 <tr ng-repeat="project in getProjects()">
-                    <td>{{ project.name }}</td>
-                    <td>{{ project.objective }}</td>
+                    <td>{{ project.projectNm }}</td>
+                    <td>{{ project.projectObj }}</td>
                     <td><a href="" ng-click="editProject($index)">Edit</a></td>
                     <td><a href="" ng-click="deleteProject($index)">Delete</a></td>
                 </tr>
@@ -212,33 +212,33 @@
                         <label>Project name</label>
                         <input type="text" class="form-control" name="name" ng-required="isDirty()" maxlength="200" customerror
                                tooltip data-placement="right" data-container="#secCont" data-title="If this is a partnership project with an official title, please provide the official project name."
-                               ng-model="project.name"/>
+                               ng-model="project.projectNm"/>
                     </div>
 
                     <div class="form-group"
-                         ng-class="{'has-error' : isDirty() && innerFrom.objective.$invalid }">
+                         ng-class="{'has-error' : isDirty() && innerFrom.projectObj.$invalid }">
 
                         <label>Project objective</label>
-                        <input type="text" class="form-control" name="objective" ng-required="isDirty()" maxlength="200" customerror
-                               ng-model="project.objective"/>
+                        <input type="text" class="form-control" name="projectObj" ng-required="isDirty()" maxlength="200" customerror
+                               ng-model="project.projectObj"/>
                     </div>
 
                     <div class="form-group"
-                         ng-class="{'has-error' : isDirty() && innerFrom.description.$invalid }">
+                         ng-class="{'has-error' : isDirty() && innerFrom.projectDescr.$invalid }">
 
                         <label>Short project description (include main point of contact and other relevant information - max. 650 words)</label>
-                <textarea class="form-control" name="description" ng-required="isDirty()"
+                <textarea class="form-control" name="projectDescr" ng-required="isDirty()"
                           style="resize:none;" maxlength="4000" max-word-count="650" customerror
-                          ng-model="project.description"></textarea>
+                          ng-model="project.projectDescr"></textarea>
                     </div>
 
                     <div class="form-group"
-                         ng-class="{'has-error' : isDirty() && innerFrom.standardObject.$invalid }">
+                         ng-class="{'has-error' : isDirty() && innerFrom.sfiStandardObj.$invalid }">
 
                         <label>SFI 2010-2014 Standard Objective most relevant to project (new!)</label>
-                        <select class="form-control" name="standardObject"  customerror
-                                ng-model="project.StandardObject">
-                            <option value="0" ng-selected="!project.StandardObject">Please select</option>
+                        <select class="form-control" name="sfiStandardObj"  customerror
+                                ng-model="project.sfiStandardObj">
+                            <option value="0" ng-selected="!project.sfiStandardObj">Please select</option>
                             <option ng-repeat="item in standObjective" value="{{item.cs3_sfiStandardObj}}">{{item.cs3_sfiStandardObjDesc}}</option>
                         </select>
                     </div>
@@ -251,7 +251,7 @@
                             <option value ng-selected="!project.regionItem">Please select</option>
                         </select>
 
-                        <div id="selectedItem" ng-repeat="regionId in project.locations">{{ regionName(regionId) }}
+                        <div id="selectedItem" ng-repeat="regionId in project.projectLocations">{{ regionName(regionId) }}
                             <button ng-click="delRegion(regionId)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
 
@@ -267,9 +267,9 @@
                             <div class="col-sm-2">
                                 <label>Academic</label>
                             </div>
-                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.academicList.$invalid }">
-                                <input type="text" class="form-control" name="academicList"
-                                       ng-maxlength="200" customerror ng-model="project.academicList" >
+                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
+                                <input type="text" class="form-control" name="organizationListAcademic"
+                                       ng-maxlength="200" customerror ng-model="project.organizationListAcademic" >
                             </div>
                         </div>
 
@@ -277,9 +277,9 @@
                             <div class="col-sm-2">
                                 <label>Research</label>
                             </div>
-                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.researchList.$invalid }">
-                                <input type="text" class="form-control" name="researchList"
-                                       ng-maxlength="200" customerror ng-model="project.researchList" >
+                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListResearch.$invalid }">
+                                <input type="text" class="form-control" name="organizationListResearch"
+                                       ng-maxlength="200" customerror ng-model="project.organizationListResearch" >
                             </div>
                         </div>
 
@@ -287,9 +287,9 @@
                             <div class="col-sm-2">
                                 <label>Conservation</label>
                             </div>
-                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.conservationList.$invalid }">
-                                <input type="text" class="form-control" name="conservationList"
-                                       ng-maxlength="200" customerror ng-model="project.conservationList" >
+                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
+                                <input type="text" class="form-control" name="organizationListConservation"
+                                       ng-maxlength="200" customerror ng-model="project.organizationListConservation" >
                             </div>
                         </div>
 
@@ -297,25 +297,25 @@
                             <div class="col-sm-2">
                                 <label>Government</label>
                             </div>
-                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.governmentList.$invalid }">
-                                <input type="text" class="form-control" name="governmentList"
-                                       ng-maxlength="200" customerror ng-model="project.governmentList" >
+                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListGovernment.$invalid }">
+                                <input type="text" class="form-control" name="organizationListGovernment"
+                                       ng-maxlength="200" customerror ng-model="project.organizationListGovernment" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-2"><label>Community</label></div>
-                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.communityList.$invalid }">
-                                <input type="text" name="communityList" class="form-control"
-                                       ng-maxlength="200" customerror ng-model="project.communityList" >
+                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListCommunity.$invalid }">
+                                <input type="text" name="organizationListCommunity" class="form-control"
+                                       ng-maxlength="200" customerror ng-model="project.organizationListCommunity" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-2"><label>Other</label></div>
-                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.otherList.$invalid }">
-                                <input type="text" name="otherList" class="form-control"
-                                       ng-maxlength="200" customerror ng-model="project.otherList" >
+                            <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListOther.$invalid }">
+                                <input type="text" name="organizationListOther" class="form-control"
+                                       ng-maxlength="200" customerror ng-model="project.organizationListOther" >
                             </div>
                         </div>
                     </div>
