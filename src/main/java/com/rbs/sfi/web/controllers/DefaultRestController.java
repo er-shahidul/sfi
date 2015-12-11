@@ -4,7 +4,6 @@ import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.common.services.FIleIOHelperService;
 import com.rbs.sfi.web.models.viewmodels.*;
 import com.rbs.sfi.web.services.FormService;
-import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.File;
 import java.io.IOException;
 
