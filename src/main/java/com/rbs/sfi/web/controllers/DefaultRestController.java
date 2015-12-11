@@ -80,8 +80,8 @@ public class DefaultRestController {
         String fileName = file.getOriginalFilename();
         SfiPpFormCs3ProjectSupportDocsViewModel model = formService.getSfiPpFormCs3ProjectSupportDocsViewModel(fileName);
 
-        String path = request.getSession().getServletContext().getRealPath("/uploads/sfi/")
-                + model.getProjectUniqueDocumentName();
+        String path = request.getSession().getServletContext().getRealPath("/uploads/sfi")
+                + "/" + model.getProjectUniqueDocumentName();
 
         try {
             file.transferTo(new File(path));

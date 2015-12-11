@@ -12,10 +12,18 @@ public class EntityModelMapperService extends BaseMapperService<BaseViewModel> {
     private MapperRepository mapperRepository;
 
     @Override
+    @SuppressWarnings("unchecked")
     protected <T> T getInstance(Integer id, Class<T> tClass) {
         T t = null;
         if (id != null) t = mapperRepository.get(id, tClass);
-        if (t == null) t = super.getInstance(id, tClass);
+        if (t == null) {
+            try {
+                t = tClass.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mapperRepository.create(t);
+        }
 
         return t;
     }

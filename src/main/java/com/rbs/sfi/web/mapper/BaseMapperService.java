@@ -16,6 +16,8 @@ public abstract class BaseMapperService<E extends IModel> {
 
     private final Map<Class, Object> callStack = new HashMap<Class, Object>();
 
+    abstract protected <T> T getInstance(Integer id, Class<T> tClass);
+
     @SuppressWarnings("unchecked")
     private Class<E> getTypeClass() {
         if (typeClass == null) {
@@ -23,16 +25,6 @@ public abstract class BaseMapperService<E extends IModel> {
             this.typeClass = (Class<E>) thisType.getActualTypeArguments()[0];
         }
         return typeClass;
-    }
-
-    protected <T> T getInstance(Integer id, Class<T> tClass) {
-        T t = null;
-        try {
-            t = tClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return t;
     }
 
     @SuppressWarnings("unchecked")
@@ -100,9 +92,11 @@ public abstract class BaseMapperService<E extends IModel> {
             String setterMethodName = helper.getterToSetter(getterMethodName);
 
             if (!destMethodMap.containsKey(setterMethodName)) continue;
-            Method setterMethod = destMethodMap.get(setterMethodName);
 
             try {
+                if (getterMethodName.equals("getId")
+                    && getterMethod.invoke(source) == null) continue;
+                Method setterMethod = destMethodMap.get(setterMethodName);
                 setterMethod.invoke(dest, typeHandler(getterMethod.invoke(source), setterMethod));
             } catch (Exception e) {
                 e.printStackTrace();
