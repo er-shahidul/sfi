@@ -3,14 +3,19 @@ package com.rbs.sfi.web.controllers;
 import com.rbs.sfi.admin.util.Util;
 import com.rbs.sfi.web.models.viewmodels.*;
 import com.rbs.sfi.web.services.FormService;
+import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import java.io.File;
+import java.io.IOException;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -66,6 +71,24 @@ public class DefaultRestController {
     @RequestMapping(value = "/form/cs8", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs8(@RequestBody Cs8ViewModel model, BindingResult result) {
         formService.setCs8Entity(model);
+        return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/files/upload", method = RequestMethod.POST)
+    public @ResponseBody ResponseEntity<String> fileUpload(@RequestParam("file") MultipartFile file,
+                                                           HttpServletRequest request, HttpServletResponse response) {
+        String fileName = file.getOriginalFilename();
+        SfiPpFormCs3ProjectSupportDocsViewModel model = formService.getSfiPpFormCs3ProjectSupportDocsViewModel(fileName);
+
+        String path = request.getSession().getServletContext().getRealPath("/uploads/sfi/")
+                + model.getProjectUniqueDocumentName();
+
+        try {
+            file.transferTo(new File(path));
+        } catch (IOException e) {
+            return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.BAD_REQUEST);
+        }
+
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 }
