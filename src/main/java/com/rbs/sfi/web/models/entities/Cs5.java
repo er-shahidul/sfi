@@ -49,7 +49,7 @@ public class Cs5 extends BaseEntityModel {
         this.id = id;
     }
 
-    public Boolean isInPartnership() {
+    public Boolean getIsInPartnership() {
         return isInPartnership;
     }
 

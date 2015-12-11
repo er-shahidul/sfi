@@ -27,22 +27,6 @@ public class Cs5ViewModel extends BaseViewModel {
         this.id = id;
     }
 
-    public Boolean getIsInPartnership() {
-        return isInPartnership;
-    }
-
-    public void setIsInPartnership(Boolean isInPartnership) {
-        this.isInPartnership = isInPartnership;
-    }
-
-    public Set<SfiPpFormCs3ViewModel> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(Set<SfiPpFormCs3ViewModel> projects) {
-        this.projects = projects;
-    }
-
     public String getOrganizationListAcademic() {
         return organizationListAcademic;
     }
@@ -97,6 +81,22 @@ public class Cs5ViewModel extends BaseViewModel {
 
     public void setOther(String other) {
         this.other = other;
+    }
+
+    public Boolean getIsInPartnership() {
+        return isInPartnership;
+    }
+
+    public void setIsInPartnership(Boolean isInPartnership) {
+        this.isInPartnership = isInPartnership;
+    }
+
+    public Set<SfiPpFormCs3ViewModel> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<SfiPpFormCs3ViewModel> projects) {
+        this.projects = projects;
     }
 
     public List<SfiPpFormCs5ViewModel> getItems() {
