@@ -80,8 +80,17 @@ public class DefaultRestController {
         String fileName = file.getOriginalFilename();
         SfiPpFormCs3ProjectSupportDocsViewModel model = formService.getSfiPpFormCs3ProjectSupportDocsViewModel(fileName);
 
-        String path = request.getSession().getServletContext().getRealPath("/uploads/sfi/")
-                + model.getProjectUniqueDocumentName();
+        File uploads = new File(request.getSession().getServletContext().getRealPath("/uploads"));
+        boolean existsUploads = uploads.exists();
+        if(!existsUploads){
+            new File(request.getSession().getServletContext().getRealPath("./uploads")).mkdir();
+        }
+        File sfi = new File(request.getSession().getServletContext().getRealPath("/uploads/sfi"));
+        boolean existsSfi = sfi.exists();
+        if(!existsSfi){new File(request.getSession().getServletContext().getRealPath("./uploads/sfi")).mkdir();}
+
+        String path = request.getSession().getServletContext().getRealPath("/uploads/sfi")
+                + "/" + model.getProjectUniqueDocumentName();
 
         try {
             file.transferTo(new File(path));
