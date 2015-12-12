@@ -25,7 +25,6 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private String organizationListOther;
 
     private Boolean includeResearchFunding;
-    private Boolean shareConserData;
 
     private Date startDate;
     private Date endDate;
@@ -35,6 +34,10 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Set<SfiPpFormRegionViewModel> projectLocations;
     private Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs;
 
+    private Boolean shareConceptData;
+    private Boolean shareConceptNoName;
+    private Boolean dontShare;
+
     @Override
     public Integer getId() {
         return id;
@@ -42,6 +45,30 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getShareConceptData() {
+        return shareConceptData;
+    }
+
+    public void setShareConceptData(Boolean shareConceptData) {
+        this.shareConceptData = shareConceptData;
+    }
+
+    public Boolean getShareConceptNoName() {
+        return shareConceptNoName;
+    }
+
+    public void setShareConceptNoName(Boolean shareConceptNoName) {
+        this.shareConceptNoName = shareConceptNoName;
+    }
+
+    public Boolean getDontShare() {
+        return dontShare;
+    }
+
+    public void setDontShare(Boolean dontShare) {
+        this.dontShare = dontShare;
     }
 
     public Integer getSfiStandardObj() {
@@ -170,14 +197,6 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setIncludeResearchFunding(Boolean includeResearchFunding) {
         this.includeResearchFunding = includeResearchFunding;
-    }
-
-    public Boolean getShareConserData() {
-        return shareConserData;
-    }
-
-    public void setShareConserData(Boolean shareConserData) {
-        this.shareConserData = shareConserData;
     }
 
     public Date getStartDate() {

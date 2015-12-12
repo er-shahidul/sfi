@@ -40,6 +40,12 @@ public class Cs5 extends BaseEntityModel {
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SfiPpFormCs3> projects;
 
+    @Column(name = "cs5_fundSFIActiv_stateProvi_ca", nullable = true)
+    private Integer fundSFIActivStateProviCa;
+
+    @Column(name = "cs5_fundSFIActiv_stateProvi_us", nullable = true)
+    private Integer fundSFIActivStateProviUs;
+
     @Override
     public Integer getId() {
         return id;
@@ -47,6 +53,22 @@ public class Cs5 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getFundSFIActivStateProviCa() {
+        return fundSFIActivStateProviCa;
+    }
+
+    public void setFundSFIActivStateProviCa(Integer fundSFIActivStateProviCa) {
+        this.fundSFIActivStateProviCa = fundSFIActivStateProviCa;
+    }
+
+    public Integer getFundSFIActivStateProviUs() {
+        return fundSFIActivStateProviUs;
+    }
+
+    public void setFundSFIActivStateProviUs(Integer fundSFIActivStateProviUs) {
+        this.fundSFIActivStateProviUs = fundSFIActivStateProviUs;
     }
 
     public Boolean getIsInPartnership() {

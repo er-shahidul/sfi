@@ -17,6 +17,8 @@ public class Cs5ViewModel extends BaseViewModel {
     private Boolean isInPartnership;
     private Set<SfiPpFormCs3ViewModel> projects;
     private List<SfiPpFormCs5ViewModel> items;
+    private Integer fundSFIActivStateProviCa;
+    private Integer fundSFIActivStateProviUs;
 
     @Override
     public Integer getId() {
@@ -25,6 +27,22 @@ public class Cs5ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getFundSFIActivStateProviUs() {
+        return fundSFIActivStateProviUs;
+    }
+
+    public void setFundSFIActivStateProviUs(Integer fundSFIActivStateProviUs) {
+        this.fundSFIActivStateProviUs = fundSFIActivStateProviUs;
+    }
+
+    public Integer getFundSFIActivStateProviCa() {
+        return fundSFIActivStateProviCa;
+    }
+
+    public void setFundSFIActivStateProviCa(Integer fundSFIActivStateProviCa) {
+        this.fundSFIActivStateProviCa = fundSFIActivStateProviCa;
     }
 
     public String getOrganizationListAcademic() {
