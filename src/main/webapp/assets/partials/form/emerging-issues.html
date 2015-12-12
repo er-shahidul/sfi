@@ -2,7 +2,7 @@
 
     <div ng-init="errors = cs7.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
-    <div class="col-sm-7">
+    <div class="col-sm-8">
         <h5>7. Emerging Issues</h5>
 
         <form name="cs7Form">
@@ -11,36 +11,47 @@
 
                 <div class="form-group hasRadioBoxes nopadding">
 
-                    <div class="col-sm-offset-0 col-sm-3 nopadding">
-                        <input type="checkbox" name="answer" ng-model="cs7.emerIssu_bioe" icheck>
+                    <div class="col-sm-3 nopadding">
+                        <input type="checkbox" name="answer" ng-model="cs7.emerIssuBioe" icheck>
                         <label class="checkboxLabel">Bioenergy</label>
 
                         <div></div>
-                        <input type="checkbox" name="answer" ng-model="cs7.emerIssu_clim" icheck>
+                        <input type="checkbox" name="answer" ng-model="cs7.emerIssuClim" icheck>
                         <label class="checkboxLabel">Climate change</label>
                     </div>
 
 
-                    <div class="col-sm-offset-1 col-sm-3 nopadding">
-                        <input type="checkbox" name="answer" ng-model="cs7.emerIssu_carb" icheck>
+                    <div class="col-sm-3 nopadding">
+                        <input type="checkbox" name="answer" ng-model="cs7.emerIssuCarb" icheck>
                         <label class="checkboxLabel">Carbon stocks</label>
 
                         <div></div>
-                        <input type="checkbox" name="answer" ng-model="cs7.emerIssu_ecos" icheck>
+                        <input type="checkbox" name="answer" ng-model="cs7.emerIssuEcos" icheck>
                         <label class="checkboxLabel">Ecosystem services</label>
                     </div>
 
-                    <div class="col-sm-offset-1 col-sm-3 nopadding">
-                        <input type="checkbox" name="answer" ng-model="cs7.emerIssu_wate" icheck>
+                    <div class="col-sm-3 nopadding">
+                        <input type="checkbox" name="answer" ng-model="cs7.emerIssuEurop" icheck>
+                        <label class="checkboxLabel">European Markets</label>
+
+                        <div></div>
+                        <input type="checkbox" name="answer" ng-model="cs7.emerIssuWate" icheck>
                         <label class="checkboxLabel">Water quality</label>
+
+
+                    </div>
+
+                    <div class="col-sm-3 nopadding">
+                        <input type="checkbox" name="answer" ng-model="cs7.emerIssuBioConsrv" icheck>
+                        <label class="checkboxLabel">Biodiversity and Conservation</label>
 
                         <div></div>
                         <p>
-                            <input type="checkbox" name="answer" ng-model="cs7.emerIssu_other" icheck>
+                            <input type="checkbox" name="answer" ng-model="cs7.emerIssuOther" icheck>
                             <label class="checkboxLabel">Other</label>
 
-                            <div class="padded-left" ng-show="cs7.emerIssu_other">
-                                Explain <input type="text" class="form-control shorter" ng-model="cs7.emerIssu_otherSpec">
+                            <div class="padded-left" ng-show="cs7.emerIssuOther">
+                                Explain <input type="text" class="form-control shorter" ng-model="cs7.emerIssuOtherSpec">
                             </div>
                         </p>
 
@@ -63,40 +74,42 @@
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
-                                    <input type="radio" icheck name="test3" ng-model="cs7.investRes_ifInve" value="1">
+                                    <input type="radio" icheck name="test3" value=true
+                                           ng-model="cs7.investResIfInve" ng-checked="cs7.investResIfInve == true">
                                     <label class="checkboxLabel">Yes</label>
                                     &nbsp;&nbsp;&nbsp;
-                                    <input type="radio" icheck name="test3" ng-model="cs7.investRes_ifInve" value="0">
+                                    <input type="radio" icheck name="test3" value=false
+                                           ng-model="cs7.investResIfInve" ng-checked="cs7.investResIfInve == false">
                                     <label class="checkboxLabel">No</label>
                                 </div>
                                 <p></p>
 
-                                <div ng-show="cs7.investRes_ifInve">
+                                <div ng-show="cs7.investResIfInve">
 
                                     <label>In what countries?</label>
                                     <select class="form-control" name="select"
                                             ng-model="country1"
-                                            ng-change="country1 = addCountry(cs7.investRes_countryID, country1)">
+                                            ng-change="country1 = addCountry(cs7.investResCountries, country1)">
                                         <option value="">Select Country</option>
-                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.country }}</option>
                                     </select>
 
 
-                                    <div id="selectedItem" ng-repeat="country in cs7.investRes_countryID ">{{country.name}}
+                                    <div id="selectedItem" ng-repeat="country in cs7.investResCountries ">{{country.country}}
                                         <button type="button" class="close" aria-hidden="1"
-                                                ng-click="cs7.investRes_countryID = delCountry(cs7.investRes_countryID, country.id)">x</button>
+                                                ng-click="cs7.investResCountries = delCountry(cs7.investResCountries, country.id)">x</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-sm-6" ng-show="cs7.investRes_ifInve">
+                        <div class="col-sm-6" ng-show="cs7.investResIfInve">
                             <br>
                             <div class="group3">
                                 <p>% of your current supply into US and Canadian mills from forest tree biotechnology</p>
                                 <input type="number" class="form-control shortest" max="100" min="0"
                                        ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                                       ng-model="cs7.investResperc_currSupply"> %
+                                       ng-model="cs7.investRespercCurrSupply"> %
                             </div>
                         </div>
                     </td>
@@ -110,36 +123,38 @@
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
-                                    <input type="radio" icheck name="test2" ng-model="cs7.planInvestRes_ifPlan" value="1">
+                                    <input type="radio" icheck name="test2" value=true
+                                           ng-model="cs7.planInvestResIfPlan" ng-checked="cs7.planInvestResIfPlan == true">
                                     <label class="checkboxLabel">Yes</label>
                                     &nbsp;&nbsp;&nbsp;
-                                    <input type="radio" icheck name="test2" ng-model="cs7.planInvestRes_ifPlan" value="0">
+                                    <input type="radio" icheck name="test2" value=false
+                                           ng-model="cs7.planInvestResIfPlan" ng-checked="cs7.planInvestResIfPlan == false">
                                     <label class="checkboxLabel">No</label>
                                 </div>
                                 <p></p>
 
-                                <div ng-show="cs7.planInvestRes_ifPlan">
+                                <div ng-show="cs7.planInvestResIfPlan">
                                     <label>In what countries?</label>
                                     <select class="form-control" name="select"
                                             ng-model="country2"
-                                            ng-change="country2 = addCountry(cs7.planInvestRes_countryID, country2)">
+                                            ng-change="country2 = addCountry(cs7.planInvestResCountries, country2)">
                                         <option value="">Select Country</option>
-                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.country }}</option>
                                     </select>
 
-                                    <div id="selectedItem" ng-repeat="country in cs7.planInvestRes_countryID ">{{country.name}}
+                                    <div id="selectedItem" ng-repeat="country in cs7.planInvestResCountries ">{{country.country}}
                                         <button type="button" class="close" aria-hidden="1"
-                                                ng-click="cs7.planInvestRes_countryID = delCountry(cs7.planInvestRes_countryID, country.id)">x</button>
+                                                ng-click="cs7.planInvestResCountries = delCountry(cs7.planInvestResCountries, country.id)">x</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6" ng-show="cs7.planInvestRes_ifPlan">
+                        <div class="col-sm-6" ng-show="cs7.planInvestResIfPlan">
                             <br><br>
                             <div class="group2">
                                 <p>Anticipated year research will begin</p>
-                                <select class="form-control" name="select" ng-model="cs7.planInvestRes_year">
-                                    <option value="0" ng-selected="!cs7.planInvestRes_year">Select Year</option>
+                                <select class="form-control" name="select" ng-model="cs7.planInvestResYear">
+                                    <option value="0" ng-selected="!cs7.planInvestResYear">Select Year</option>
                                     <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
                                             ng-value="{{year}}">{{year}}</option>
                                 </select>
@@ -156,37 +171,39 @@
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
-                                    <input type="radio" icheck name="test" ng-model="cs7.planCommPlant_ifPlanGE" value="1">
+                                    <input type="radio" icheck name="test" value=true
+                                           ng-model="cs7.planCommPlantIfPlanGE" ng-checked="cs7.planCommPlantIfPlanGE == true">
                                     <label class="checkboxLabel">Yes</label>
                                     &nbsp;&nbsp;&nbsp;
-                                    <input type="radio" icheck name="test" ng-model="cs7.planCommPlant_ifPlanGE" value="0">
+                                    <input type="radio" icheck name="test" value=false
+                                           ng-model="cs7.planCommPlantIfPlanGE" ng-checked="cs7.planCommPlantIfPlanGE == false">
                                     <label class="checkboxLabel">No</label>
                                 </div>
                                 <p></p>
 
-                                <div class="group1" ng-show="cs7.planCommPlant_ifPlanGE">
+                                <div class="group1" ng-show="cs7.planCommPlantIfPlanGE">
                                     <label>In what countries?</label>
 
                                     <select class="form-control" name="select"
                                             ng-model="country3"
-                                            ng-change="country3 = addCountry(cs7.planCommPlant_countryID, country3)">
+                                            ng-change="country3 = addCountry(cs7.planCommPlantCountries, country3)">
                                         <option value="">Select Country</option>
-                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.country }}</option>
                                     </select>
 
-                                    <div id="selectedItem" ng-repeat="country in cs7.planCommPlant_countryID ">{{country.name}}
+                                    <div id="selectedItem" ng-repeat="country in cs7.planCommPlantCountries ">{{country.country}}
                                         <button type="button" class="close" aria-hidden="1"
-                                                ng-click="cs7.planCommPlant_countryID = delCountry(cs7.planCommPlant_countryID, country.id)">x</button>
+                                                ng-click="cs7.planCommPlantCountries = delCountry(cs7.planCommPlantCountries, country.id)">x</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6" ng-show="cs7.planCommPlant_ifPlanGE">
+                        <div class="col-sm-6" ng-show="cs7.planCommPlantIfPlanGE">
                             <div class="group1">
                                 <br><br>
                                 <p>Anticipated year of harvest</p>
-                                <select class="form-control" name="select" ng-model="cs7.planCommPlant_year">
-                                    <option value="0" ng-selected="!cs7.planCommPlant_year">Select Year</option>
+                                <select class="form-control" name="select" ng-model="cs7.planCommPlantYear">
+                                    <option value="0" ng-selected="!cs7.planCommPlantYear">Select Year</option>
                                     <option value="1">2015 to 2019</option>
                                     <option value="2">2020 to 2024</option>
                                     <option value="3">2025 to 2029</option>
@@ -194,7 +211,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="padded-left  group1" ng-show="cs7.planCommPlant_ifPlanGE">
+                        <div class="padded-left  group1" ng-show="cs7.planCommPlantIfPlanGE">
                             <p><label>Anticipated % of total harvest will be of fiber derived from forest tree
                                 biotechnology in 5 years?</label></p>
                             <input type="text" class="form-control shortest" max="100" min="0"
@@ -206,7 +223,14 @@
 
                 </tbody>
             </table>
+
+            <div class="form-group">
+                <label>Please use this space for any additional comments to SFI:</label>
+                <textarea class="form-control" name="comments" ng-model="cs7.comments"></textarea>
+            </div>
+
         </form>
+
 
         {{ setForms() }}
 
@@ -215,7 +239,7 @@
             <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 8</button>
         </div>
     </div>
-    <div class="col-sm-offset-1 col-sm-4">
+    <div class="col-sm-4">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">Did you know?</h3>

@@ -276,7 +276,7 @@ sfiFormApp
                 }
 
                 if(go){
-                    $rootScope.goStep("cs3")
+                    $rootScope.goStep("cs7")
                 }
 
             });

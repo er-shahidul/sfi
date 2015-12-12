@@ -14,12 +14,12 @@ public class Cs7ViewModel extends BaseViewModel {
     private Boolean emerIssuOther;
     private String emerIssuOtherSpec;
     private Boolean investResIfInve;
-    private Boolean investRespercCurrSupply;
+    private Float investRespercCurrSupply;
     private Boolean planInvestResIfPlan;
     private String planInvestResYear;
     private Boolean planCommPlantIfPlanGE;
     private String planCommPlantYear;
-    private Boolean planCommPlantPerc;
+    private Float planCommPlantPerc;
     private Set<SfiPpFormAllCountryViewModel> investResCountries;
     private Set<SfiPpFormAllCountryViewModel> planInvestResCountries;
     private Set<SfiPpFormAllCountryViewModel> planCommPlantCountries;
@@ -97,11 +97,11 @@ public class Cs7ViewModel extends BaseViewModel {
         this.investResIfInve = investResIfInve;
     }
 
-    public Boolean getInvestRespercCurrSupply() {
+    public Float getInvestRespercCurrSupply() {
         return investRespercCurrSupply;
     }
 
-    public void setInvestRespercCurrSupply(Boolean investRespercCurrSupply) {
+    public void setInvestRespercCurrSupply(Float investRespercCurrSupply) {
         this.investRespercCurrSupply = investRespercCurrSupply;
     }
 
@@ -137,11 +137,11 @@ public class Cs7ViewModel extends BaseViewModel {
         this.planCommPlantYear = planCommPlantYear;
     }
 
-    public Boolean getPlanCommPlantPerc() {
+    public Float getPlanCommPlantPerc() {
         return planCommPlantPerc;
     }
 
-    public void setPlanCommPlantPerc(Boolean planCommPlantPerc) {
+    public void setPlanCommPlantPerc(Float planCommPlantPerc) {
         this.planCommPlantPerc = planCommPlantPerc;
     }
 

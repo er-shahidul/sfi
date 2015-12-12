@@ -37,7 +37,7 @@ public class Cs7 extends BaseEntityModel {
     private Boolean investResIfInve;
 
     @Column(name = "cs7_investResperc_currSupply", nullable = true)
-    private Boolean investRespercCurrSupply;
+    private Float investRespercCurrSupply;
 
     @Column(name = "cs7_planInvestRes_ifPlan", nullable = true)
     private Boolean planInvestResIfPlan;
@@ -52,7 +52,7 @@ public class Cs7 extends BaseEntityModel {
     private String planCommPlantYear;
 
     @Column(name = "cs7_planCommPlantPerc", nullable = true)
-    private Boolean planCommPlantPerc;
+    private Float planCommPlantPerc;
 
     @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(name = "sfi_pp_form_cs7_invest_res_countries",
@@ -145,11 +145,11 @@ public class Cs7 extends BaseEntityModel {
         this.investResIfInve = investResIfInve;
     }
 
-    public Boolean getInvestRespercCurrSupply() {
+    public Float getInvestRespercCurrSupply() {
         return investRespercCurrSupply;
     }
 
-    public void setInvestRespercCurrSupply(Boolean investRespercCurrSupply) {
+    public void setInvestRespercCurrSupply(Float investRespercCurrSupply) {
         this.investRespercCurrSupply = investRespercCurrSupply;
     }
 
@@ -185,11 +185,11 @@ public class Cs7 extends BaseEntityModel {
         this.planCommPlantYear = planCommPlantYear;
     }
 
-    public Boolean getPlanCommPlantPerc() {
+    public Float getPlanCommPlantPerc() {
         return planCommPlantPerc;
     }
 
-    public void setPlanCommPlantPerc(Boolean planCommPlantPerc) {
+    public void setPlanCommPlantPerc(Float planCommPlantPerc) {
         this.planCommPlantPerc = planCommPlantPerc;
     }
 
