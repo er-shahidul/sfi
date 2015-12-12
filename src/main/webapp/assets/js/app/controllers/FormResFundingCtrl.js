@@ -1,12 +1,16 @@
 var cs5;
 sfiFormApp
     .controller('FormResFundingCtrl',
-        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$',
-            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $){
+        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects',
+            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects){
 
         $scope.validate = false;
         $scope.isDataDirty = false;
+        $scope.standardObjects = standardObjects;
+        console.log($scope.standardObjects);
         $scope.cs5 = angular.copy($rootScope.form.cs5);
+        $scope.cs5.isOtherEnabled = ($scope.cs5.other) ? true: false;
+
         cs5 = $scope;
 
         $scope.init = function(){
@@ -77,7 +81,9 @@ sfiFormApp
                 totalProjectCostCurr: 1,
                 orgContribution     : 0,
                 orgContributionCurr : 1,
-                shareConserData     : null,
+                shareConceptData    : false,
+                shareConceptNoName  : false,
+                dontShare           : false,
                 incResFunding       : null,
                 supportDocs         : [],
                 organizationListAcademic        : "",
@@ -106,7 +112,9 @@ sfiFormApp
                     || endDate
                     || totalProjectCost
                     || orgContribution
-                    || shareConserData
+                    || shareConceptData
+                    || shareConceptNoName
+                    || dontShare
                     || incResFunding;
             }
         }

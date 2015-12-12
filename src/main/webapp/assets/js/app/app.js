@@ -168,6 +168,9 @@ sfiFormApp
     .factory('$', function() {
         return window.$;
     })
+    .factory('standardObjects', function() {
+        return window.standardObjects;
+    })
     .factory('Countries', ['$http', '$q','_', function($http, $q) {
 
         var factory = {

@@ -661,6 +661,30 @@ INSERT INTO `sfi_pp_form_cs5_research_funding_categories` (`id`, `cs5_researchFu
 (12,	'Avoidance of controversial sources'),
 (13,	'Other');
 
+INSERT INTO `sfi_pp_form_cs3_project_standard_objectives` (`id`, `cs3_sfiStandardObjDesc`) VALUES
+(1,	'Objective 1 - Forest Management Planning'),
+(2,	'Objective 2 - Forest Productivity'),
+(3,	'Objective 3 - Protection and Maintenance of Water Resources'),
+(4,	'Objective 4 - Conservation of Biological Diversity including Forests with Exceptional Conservation Value'),
+(5,	'Objective 5 - Management of Visual Quality and Recreational Benefits'),
+(6,	'Objective 6 - Protection of Special Sites'),
+(7,	'Objective 7 - Efficient Use of Forest Resources'),
+(8,	'Objective 8 - Landowner Outreach'),
+(9,	'Objective 9 - Use of Qualified Resource and Qualified Logging Professionals'),
+(10,	'Objective 10 - Adherence to Best Management Practices'),
+(11,	'Objective 11 - Promote Conservation of Biological Diversity, Biodiversity Hotspots and High-Biodiversity Wilderness Areas'),
+(12,	'Objective 12 - Avoidance of Controversial Sources including Illegal Logging'),
+(13,	'Objective 13 - Avoidance of Controversial Sources including Fiber Sourced From Areas Without Effective Social Laws'),
+(14,	'Objective 15 - Forestry Research, Science, and Technology'),
+(15,	'Objective 14 - Legal and Regulatory Compliance'),
+(16,	'Objective 16 - Training and Education'),
+(17,	'Objective 17 - Community Involvement in the Practice of Sustainable Forestry'),
+(18,	'Objective 18 - Public Land Management Responsibilities'),
+(19,	'Objective 19 - Communications and Public Reporting'),
+(20,	'Objective 20 - Management Review and Continual Improvement');
+
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
