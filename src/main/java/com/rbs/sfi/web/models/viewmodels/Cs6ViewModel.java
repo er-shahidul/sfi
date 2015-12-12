@@ -10,8 +10,6 @@ public class Cs6ViewModel extends BaseViewModel {
     private Integer numPrivateForeOwersCa;
     private Integer numPrivateLandOwersUs;
     private Integer numPrivateLandOwersCa;
-    private Integer fundSFIActivStateProviUs;
-    private Integer fundSFIActivStateProviCa;
     private Boolean toAssistObj8;
     private Set<SfiPpFormCs6UsCanadaViewModel> usCanada;
     private Set<SfiPpFormCs6OtherViewModel> usOthers;
@@ -55,22 +53,6 @@ public class Cs6ViewModel extends BaseViewModel {
 
     public void setNumPrivateLandOwersCa(Integer numPrivateLandOwersCa) {
         this.numPrivateLandOwersCa = numPrivateLandOwersCa;
-    }
-
-    public Integer getFundSFIActivStateProviUs() {
-        return fundSFIActivStateProviUs;
-    }
-
-    public void setFundSFIActivStateProviUs(Integer fundSFIActivStateProviUs) {
-        this.fundSFIActivStateProviUs = fundSFIActivStateProviUs;
-    }
-
-    public Integer getFundSFIActivStateProviCa() {
-        return fundSFIActivStateProviCa;
-    }
-
-    public void setFundSFIActivStateProviCa(Integer fundSFIActivStateProviCa) {
-        this.fundSFIActivStateProviCa = fundSFIActivStateProviCa;
     }
 
     public Boolean getToAssistObj8() {

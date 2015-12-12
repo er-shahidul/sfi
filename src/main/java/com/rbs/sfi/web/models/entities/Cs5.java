@@ -43,7 +43,7 @@ public class Cs5 extends BaseEntityModel {
     @Column(name = "cs5_fundSFIActiv_stateProvi_ca", nullable = true)
     private Integer fundSFIActivStateProviCa;
 
-    @Column(name = "cs6_fundSFIActiv_stateProvi_us", nullable = true)
+    @Column(name = "cs5_fundSFIActiv_stateProvi_us", nullable = true)
     private Integer fundSFIActivStateProviUs;
 
     @Override
