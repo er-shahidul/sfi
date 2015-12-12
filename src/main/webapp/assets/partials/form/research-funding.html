@@ -459,17 +459,17 @@
                             the areas of conservation and community engagement?</label><br/>
 
                         <div>
-                            <input type="radio" name="consent" icheck ng-model="project.shareConceptData"/>
+                            <input type="radio" name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>
                             <label class="radioLabel">Share – with our organization’s name</label>
                         </div>
 
                         <div>
-                            <input type="radio" name="consent" icheck ng-model="project.shareConceptNoName"/>
+                            <input type="radio" name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />
                             <label class="radioLabel">Share – don’t use our organization’s name</label>
                         </div>
 
                         <div>
-                            <input type="radio" name="consent" icheck ng-model="project.dontShare"/>
+                            <input type="radio" name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>
                             <label class="radioLabel">Please don’t share</label>
                         </div>
 
