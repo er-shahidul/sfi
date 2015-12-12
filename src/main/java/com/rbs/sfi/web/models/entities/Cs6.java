@@ -24,12 +24,6 @@ public class Cs6 extends BaseEntityModel {
     @Column(name = "cs6_numPrivateLandOwers_ca", nullable = true)
     private Integer numPrivateLandOwersCa;
 
-    @Column(name = "cs6_fundSFIActiv_stateProvi_us", nullable = true)
-    private Integer fundSFIActivStateProviUs;
-
-    @Column(name = "cs6_fundSFIActiv_stateProvi_ca", nullable = true)
-    private Integer fundSFIActivStateProviCa;
-
     @Column(name = "cs6_toAssistObj8", nullable = true)
     private Boolean toAssistObj8;
 
@@ -80,22 +74,6 @@ public class Cs6 extends BaseEntityModel {
 
     public void setNumPrivateLandOwersCa(Integer numPrivateLandOwersCa) {
         this.numPrivateLandOwersCa = numPrivateLandOwersCa;
-    }
-
-    public Integer getFundSFIActivStateProviUs() {
-        return fundSFIActivStateProviUs;
-    }
-
-    public void setFundSFIActivStateProviUs(Integer fundSFIActivStateProviUs) {
-        this.fundSFIActivStateProviUs = fundSFIActivStateProviUs;
-    }
-
-    public Integer getFundSFIActivStateProviCa() {
-        return fundSFIActivStateProviCa;
-    }
-
-    public void setFundSFIActivStateProviCa(Integer fundSFIActivStateProviCa) {
-        this.fundSFIActivStateProviCa = fundSFIActivStateProviCa;
     }
 
     public Boolean getToAssistObj8() {
