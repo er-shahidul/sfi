@@ -80,8 +80,14 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Column(name = "cs3_include_research_funding", nullable = true)
     private Boolean includeResearchFunding;
 
-    @Column(name = "cs3_shareConserData", nullable = true)
-    private Boolean shareConserData;
+    @Column(name = "cs3_share_concept_data", nullable = true)
+    private Boolean shareConceptData;
+
+    @Column(name = "cs3_share_concept_no_name", nullable = true)
+    private Boolean shareConceptNoName;
+
+    @Column(name = "cs3_dont_share", nullable = true)
+    private Boolean dontShare;
 
     @Override
     public Integer getId() {
@@ -90,6 +96,30 @@ public class SfiPpFormCs3 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getShareConceptData() {
+        return shareConceptData;
+    }
+
+    public void setShareConceptData(Boolean shareConceptData) {
+        this.shareConceptData = shareConceptData;
+    }
+
+    public Boolean getShareConceptNoName() {
+        return shareConceptNoName;
+    }
+
+    public void setShareConceptNoName(Boolean shareConceptNoName) {
+        this.shareConceptNoName = shareConceptNoName;
+    }
+
+    public Boolean getDontShare() {
+        return dontShare;
+    }
+
+    public void setDontShare(Boolean dontShare) {
+        this.dontShare = dontShare;
     }
 
     public Integer getSfiPpForm() {
@@ -258,13 +288,5 @@ public class SfiPpFormCs3 extends BaseEntityModel {
 
     public void setIncludeResearchFunding(Boolean includeResearchFunding) {
         this.includeResearchFunding = includeResearchFunding;
-    }
-
-    public Boolean getShareConserData() {
-        return shareConserData;
-    }
-
-    public void setShareConserData(Boolean shareConserData) {
-        this.shareConserData = shareConserData;
     }
 }
