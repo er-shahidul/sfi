@@ -3,6 +3,7 @@ package com.rbs.sfi.web.models.entities;
 import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
+import javax.xml.soap.Text;
 import java.util.Set;
 
 @Entity
@@ -72,6 +73,15 @@ public class Cs7 extends BaseEntityModel {
             inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
     private Set<SfiPpFormAllCountry> planCommPlantCountries;
 
+    @Column(name = "cs7_emerIssuEurop", nullable = true)
+    private Boolean emerIssuEurop;
+
+    @Column(name = "cs7_emerIssuBioConsrv", nullable = true)
+    private Boolean emerIssuBioConsrv;
+
+    @Column(name = "cs7_comments", nullable = true)
+    private Text comments;
+
     @Override
     public Integer getId() {
         return id;
@@ -79,6 +89,30 @@ public class Cs7 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getEmerIssuEurop() {
+        return emerIssuEurop;
+    }
+
+    public void setEmerIssuEurop(Boolean emerIssuEurop) {
+        this.emerIssuEurop = emerIssuEurop;
+    }
+
+    public Boolean getEmerIssuBioConsrv() {
+        return emerIssuBioConsrv;
+    }
+
+    public void setEmerIssuBioConsrv(Boolean emerIssuBioConsrv) {
+        this.emerIssuBioConsrv = emerIssuBioConsrv;
+    }
+
+    public Text getComments() {
+        return comments;
+    }
+
+    public void setComments(Text comments) {
+        this.comments = comments;
     }
 
     public Boolean getEmerIssuBioe() {

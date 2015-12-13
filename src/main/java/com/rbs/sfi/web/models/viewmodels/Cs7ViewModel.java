@@ -2,6 +2,7 @@ package com.rbs.sfi.web.models.viewmodels;
 
 import com.rbs.sfi.common.models.BaseViewModel;
 
+import javax.xml.soap.Text;
 import java.util.Set;
 
 public class Cs7ViewModel extends BaseViewModel {
@@ -24,6 +25,10 @@ public class Cs7ViewModel extends BaseViewModel {
     private Set<SfiPpFormAllCountryViewModel> planInvestResCountries;
     private Set<SfiPpFormAllCountryViewModel> planCommPlantCountries;
 
+    private Boolean emerIssuEurop;
+    private Boolean emerIssuBioConsrv;
+    private Text comments;
+
     @Override
     public Integer getId() {
         return id;
@@ -31,6 +36,30 @@ public class Cs7ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getEmerIssuEurop() {
+        return emerIssuEurop;
+    }
+
+    public void setEmerIssuEurop(Boolean emerIssuEurop) {
+        this.emerIssuEurop = emerIssuEurop;
+    }
+
+    public Boolean getEmerIssuBioConsrv() {
+        return emerIssuBioConsrv;
+    }
+
+    public void setEmerIssuBioConsrv(Boolean emerIssuBioConsrv) {
+        this.emerIssuBioConsrv = emerIssuBioConsrv;
+    }
+
+    public Text getComments() {
+        return comments;
+    }
+
+    public void setComments(Text comments) {
+        this.comments = comments;
     }
 
     public Boolean getEmerIssuBioe() {
