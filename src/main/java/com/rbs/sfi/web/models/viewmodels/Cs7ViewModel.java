@@ -2,7 +2,6 @@ package com.rbs.sfi.web.models.viewmodels;
 
 import com.rbs.sfi.common.models.BaseViewModel;
 
-import javax.xml.soap.Text;
 import java.util.Set;
 
 public class Cs7ViewModel extends BaseViewModel {
@@ -27,7 +26,7 @@ public class Cs7ViewModel extends BaseViewModel {
 
     private Boolean emerIssuEurop;
     private Boolean emerIssuBioConsrv;
-    private Text comments;
+    private String comments;
 
     @Override
     public Integer getId() {
@@ -54,11 +53,11 @@ public class Cs7ViewModel extends BaseViewModel {
         this.emerIssuBioConsrv = emerIssuBioConsrv;
     }
 
-    public Text getComments() {
+    public String getComments() {
         return comments;
     }
 
-    public void setComments(Text comments) {
+    public void setComments(String comments) {
         this.comments = comments;
     }
 

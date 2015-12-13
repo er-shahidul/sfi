@@ -3,7 +3,6 @@ package com.rbs.sfi.web.models.entities;
 import com.rbs.sfi.common.models.BaseEntityModel;
 
 import javax.persistence.*;
-import javax.xml.soap.Text;
 import java.util.Set;
 
 @Entity
@@ -80,7 +79,7 @@ public class Cs7 extends BaseEntityModel {
     private Boolean emerIssuBioConsrv;
 
     @Column(name = "cs7_comments", nullable = true)
-    private Text comments;
+    private String comments;
 
     @Override
     public Integer getId() {
@@ -107,11 +106,11 @@ public class Cs7 extends BaseEntityModel {
         this.emerIssuBioConsrv = emerIssuBioConsrv;
     }
 
-    public Text getComments() {
+    public String getComments() {
         return comments;
     }
 
-    public void setComments(Text comments) {
+    public void setComments(String comments) {
         this.comments = comments;
     }
 
