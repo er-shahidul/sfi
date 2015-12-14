@@ -123,7 +123,7 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
                                                                         <input type="text" th:path="*{email}" th:field="*{email}" id="email" class="form-control" required="required" />
-                                                                        <errors th:path="*{email}" class="help-inline"/>
+                                                                        <errors th:text="${email}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
 
@@ -134,7 +134,7 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
                                                                         <input type="password" th:path="*{password}" th:field="*{password}" id="password" class="form-control" required="required" />
-                                                                        <errors th:path="*{password}" class="help-inline"/>
+                                                                        <errors th:text="${errorPassword}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
 

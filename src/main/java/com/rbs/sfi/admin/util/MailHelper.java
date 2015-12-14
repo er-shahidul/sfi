@@ -5,6 +5,7 @@ package com.rbs.sfi.admin.util;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 
 import com.rbs.sfi.admin.entities.User;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -41,7 +42,7 @@ public class MailHelper
                             "\t\t\t\t<tr>\n" +
                             "\t\t\t\t\t<td colspan=\"3\" style=\"border-bottom: 1px solid #009900;\">\n" +
                             "\t\t\t\t\t\t<a href=\"\">\n" +
-                            "\t\t\t\t\t\t\t<img th:src=\"/assets/images/u4.png\" th:alt=\"\" style=\"border: none;\" />\n" +
+                            "\t\t\t\t\t\t\t<img src=\"assets/images/u4.png\" alt=\"\" style=\"border: none;\" />\n" +
                             "\t\t\t\t\t\t</a>\n" +
                             "\t\t\t\t\t</td>\n" +
                             "\t\t\t\t</tr>\n" +
@@ -71,7 +72,7 @@ public class MailHelper
                             "\t\t\t\t<tr>\n" +
                             "\t\t\t\t\t<td colspan=\"3\" align=\"right\" style=\"border-top: 1px solid #009900;\">\n" +
                             "\t\t\t\t\t\t<a href=\"\">\n" +
-                            "\t\t\t\t\t\t\t<img th:src=\"/assets/images/u4.png\" th:alt=\"\" style=\"border: none;\" />\n" +
+                            "\t\t\t\t\t\t\t<img src=\"assets/images/u4.png\" alt=\"\" style=\"border: none;\" />\n" +
                             "\t\t\t\t\t\t</a>\n" +
                             "\t\t\t\t\t</td>\n" +
                             "\t\t\t\t</tr>\n" +

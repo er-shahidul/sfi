@@ -71,6 +71,7 @@
                                     <div class="col-sm-3">
                                         <label>New password</label>
                                         <input type="password" th:field="*{password}" id="password" class="form-control" value=""/>
+                                        <errors th:text="${errorPassword}" class="help-inline"/>
                                     </div>
                                     <div class="col-sm-3">
                                         <label>Repeat password</label>
