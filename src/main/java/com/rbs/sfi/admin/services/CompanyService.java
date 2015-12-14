@@ -20,7 +20,7 @@ public class CompanyService
         return companyRepository.list();
     }
 
-    public void save(Company company,byte[] fileN,String name){
+    public void save(Company company, byte[] fileN, String name){
         company.setLogoName(name);
         company.setLogo(fileN);
         company.setIsActive(true);

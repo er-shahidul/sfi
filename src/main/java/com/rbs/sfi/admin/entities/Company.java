@@ -1,5 +1,7 @@
 package com.rbs.sfi.admin.entities;
 
+import com.rbs.sfi.common.services.TypeConversionUtils;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,7 +21,7 @@ public class Company extends Audit
 
 	@Lob @Basic(fetch = FetchType.LAZY)
 	@Column(name="logo", nullable=true)
-	private byte[] logo;
+	private Byte[] logo;
 
 	@Column(name="logo_name", nullable=true)
 	private String logoName;
@@ -55,11 +57,15 @@ public class Company extends Audit
 		this.name = name;
 	}
 
-	public byte[] getLogo() {
+	public Byte[] getLogo() {
 		return logo;
 	}
 
 	public void setLogo(byte[] logo) {
+        this.logo = TypeConversionUtils.toObjectType(logo);
+	}
+
+	public void setLogo(Byte[] logo) {
 		this.logo = logo;
 	}
 

@@ -129,14 +129,12 @@ public class CompanyController
             return new ModelAndView("admin/company/new");
         }
 
-        byte[] fileN = new byte[0];
         try {
-            fileN = file.getBytes();
+            companyService.save(company, file.getBytes(), name);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        companyService.save(company, fileN, name);
 
         return new ModelAndView("redirect:/admin/company/list");
     }

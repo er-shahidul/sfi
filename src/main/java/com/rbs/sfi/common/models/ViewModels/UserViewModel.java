@@ -6,23 +6,23 @@ import java.util.Date;
 import java.util.Set;
 
 public class UserViewModel extends BaseViewModel {
-	private Integer id;
-	private String username;
-	private String firstName;
-	private String lastName;
-	private String password;
-	private String email;
-	private CompanyViewModel company;
-	private Boolean enabled;
+    private Integer id;
+    private String username;
+    private String firstName;
+    private String lastName;
+    private String password;
+    private String email;
+    private CompanyViewModel company;
+    private Boolean enabled;
     private Boolean token;
-	private String invitationMsg;
-	private Set<GroupViewModel> group;
+    private String invitationMsg;
+    private Set<GroupViewModel> group;
     private String userToken;
-	private Boolean isActive;
-	private Date createdAt;
-	private Date updatedAt;
-	private String createdBy;
-	private String updatedBy;
+    private Boolean isActive;
+    private Date createdAt;
+    private Date updatedAt;
+    private String createdBy;
+    private String updatedBy;
 
     @Override
     public Integer getId() {
