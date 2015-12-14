@@ -143,7 +143,7 @@ public class UserController {
     public String updatePassword(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
-            model.addAttribute("error.password", isInvalidPassword);
+            model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "admin/user/editPass";
         }
         userService.updatePassword(user);
@@ -181,9 +181,9 @@ public class UserController {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail || isInvalidPassword) {
-            model.addAttribute("error.firstName", isInvalidFirstName);
-            model.addAttribute("error.email", isInvalidEmail);
-            model.addAttribute("error.password", isInvalidPassword);
+            model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
+            model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
+            model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "admin/user/edit";
         }
         userService.updateUser(user);
@@ -209,7 +209,7 @@ public class UserController {
         boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
 
         if (result.hasErrors() || isInvalidEmail) {
-            model.addAttribute("error.email", isInvalidEmail);
+            model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
             return "redirect:/admin/user/profile";
         }
         userService.updateEmail(user);
@@ -231,7 +231,7 @@ public class UserController {
 
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
-            model.addAttribute("error.password", isInvalidPassword);
+            model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "redirect:/admin/user/profile";
         }
         userService.updatePassword(user);
@@ -320,7 +320,7 @@ public class UserController {
     public String passwordReset(@Valid User user, BindingResult result, ModelMap model) {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
-            model.addAttribute("error.password", isInvalidPassword);
+            model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "password";
         }
         userService.updatePassword(user);
@@ -341,7 +341,7 @@ public class UserController {
     public String passwordSet(@Valid User user, BindingResult result, ModelMap model) {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors()) {
-            model.addAttribute("error.password", isInvalidPassword);
+            model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "password";
         }
         userService.updatePassword(user);
@@ -367,8 +367,8 @@ public class UserController {
         boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
-            model.addAttribute("error.firstName", isInvalidFirstName);
-            model.addAttribute("error.email", isInvalidEmail);
+            model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
+            model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
             return "admin/user/new";
         }
 

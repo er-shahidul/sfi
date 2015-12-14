@@ -64,7 +64,7 @@
 
                                 <div class="sonata-ba-form">
 
-                                <form th:action="'/admin/user/new'" th:object="${user}" method="POST" class="form-horizontal">
+                                <form th:action="'/admin/user/new'" th:object="${user}" method="POST" class="form-horizontal" novalidate="novalidate">
                                     <input type="hidden" th:field="*{id}" />
                                     <!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
                                         <div class="row">
@@ -88,7 +88,7 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
                                                                         <input type="text" th:path="*{firstName}" th:field="*{firstName}" class="form-control" required="required" />
-                                                                        <errors th:path="*{firstName}" class="help-inline"/>
+                                                                        <errors th:text="${errorFirstName}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
 
@@ -111,7 +111,7 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
                                                                         <input type="text" th:path="*{email}" th:field="*{email}" id="email" class="form-control" required="required" />
-                                                                        <errors th:path="*{email}" class="help-inline"/>
+                                                                        <errors th:text="${errorEmail}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
 
