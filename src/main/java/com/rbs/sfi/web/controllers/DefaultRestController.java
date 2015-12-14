@@ -76,6 +76,18 @@ public class DefaultRestController {
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/form/cs9", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs9(@RequestBody Cs9ViewModel model, BindingResult result) {
+        formService.setCs9Entity(model);
+        return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/form/cs10", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs10(@RequestBody Cs10ViewModel model, BindingResult result) {
+        formService.setCs10Entity(model);
+        return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/files/upload", method = RequestMethod.POST)
     public @ResponseBody ResponseEntity<String> fileUpload(@RequestParam("file") MultipartFile file,
                                                            HttpServletRequest request, HttpServletResponse response) {
