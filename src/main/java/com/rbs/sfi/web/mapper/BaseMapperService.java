@@ -9,12 +9,10 @@ import java.lang.reflect.ParameterizedType;
 import java.util.*;
 
 public abstract class BaseMapperService<E extends IModel> {
+    private final Map<Class, Object> callStack = new HashMap<Class, Object>();
     @Autowired
     private ReflectionHelperService helper;
-
     private Class<E> typeClass;
-
-    private final Map<Class, Object> callStack = new HashMap<Class, Object>();
 
     abstract protected <T> T getInstance(Integer id, Class<T> tClass);
 
@@ -95,7 +93,7 @@ public abstract class BaseMapperService<E extends IModel> {
 
             try {
                 if (getterMethodName.equals("getId")
-                    && getterMethod.invoke(source) == null) continue;
+                        && getterMethod.invoke(source) == null) continue;
                 Method setterMethod = destMethodMap.get(setterMethodName);
                 setterMethod.invoke(dest, typeHandler(getterMethod.invoke(source), setterMethod));
             } catch (Exception e) {

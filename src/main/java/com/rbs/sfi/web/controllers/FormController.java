@@ -1,10 +1,8 @@
 package com.rbs.sfi.web.controllers;
 
-import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
 import com.rbs.sfi.common.services.TypeConversionUtils;
 import com.rbs.sfi.web.models.entities.SfiPpFormData;
-import com.rbs.sfi.web.repositories.SfiPpFormDataRepository;
 import com.rbs.sfi.web.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -16,7 +14,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.thymeleaf.util.ArrayUtils;
 
 import javax.xml.bind.DatatypeConverter;
 
@@ -31,19 +28,10 @@ public class FormController {
     SfiPpFormDataService sfiPpFormDataService;
 
     @Autowired
-    SfiPpFormStatusService sfiPpFormStatusService;
-
-    @Autowired
     SfiPpFormAllCountryService sfiPpFormAllCountryService;
 
     @Autowired
     SfiPpFormRegionService sfiPpFormRegionService;
-
-    @Autowired
-    CompanyService companyService;
-
-    @Autowired
-    SfiPpFormCs5Service sfiPpFormCs5Service;
 
     @Autowired
     FormService formService;
@@ -72,7 +60,7 @@ public class FormController {
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
-        model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.list());
+        model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
 
         model.addAttribute("mode", "edit");
     }

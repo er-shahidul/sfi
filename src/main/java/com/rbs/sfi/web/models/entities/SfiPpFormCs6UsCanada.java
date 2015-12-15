@@ -1304,7 +1304,6 @@ public class SfiPpFormCs6UsCanada extends BaseEntityModel {
     }
 
 
-
     public Set<String> getMoreThanOneStandard2() {
         return moreThanOneStandard2;
     }

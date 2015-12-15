@@ -65,7 +65,7 @@ public class DefaultController {
 
     @RequestMapping(value = "/project/standard/objective/list", method = RequestMethod.GET)
     public ResponseEntity<String> projectStandardObjectiveList() {
-        List projectStandardObjectives = sfiPpFormCs3ProjectStandardObjectiveService.list();
+        List projectStandardObjectives = sfiPpFormCs3ProjectStandardObjectiveService.getAll();
         return new ResponseEntity<String>(Util.getAsString(projectStandardObjectives), HttpStatus.OK);
     }
 }
