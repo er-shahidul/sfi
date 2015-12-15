@@ -10,6 +10,6 @@
          data-trigger="click">
         <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
         <label>LOGGED IN AS</label>
-        <p sec:authentication="principal.username"></p>
+        <div th:text="${user.fullname}"></div>
     </div>
 </th:block>
