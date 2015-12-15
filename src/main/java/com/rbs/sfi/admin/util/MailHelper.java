@@ -32,7 +32,7 @@ public class MailHelper
     }
 
     private void confirmBody(String msg, User user, MimeMessageHelper helper, String path) throws MessagingException {
-            String imagePath = path + "/assets/images/u4.png";
+            String imagePath = "http://" + path + "/assets/images/u4.png";
             helper.setText(
                 "<html><body>" +
                 "<style type='text/css'> #sfi-confirmation td { font-family: Arial, Helvetica, sans-serif; color: #333333; font-size: 13px; line-height: 15px; }\n" +
@@ -47,7 +47,7 @@ public class MailHelper
                         "\t\t\t\t<tr>\n" +
                         "\t\t\t\t\t<td colspan=\"3\" style=\"border-bottom: 1px solid #009900;\">\n" +
                         "\t\t\t\t\t\t<a href=\"\">\n" +
-                        "\t\t\t\t\t\t\t<img src="+ imagePath +" alt=\"\" style=\"border: none;\" />\n" +
+                        "\t\t\t\t\t\t\t<img src=\"" + imagePath + "\" alt=\"\" style=\"border: none;\" />\n" +
                         "\t\t\t\t\t\t</a>\n" +
                         "\t\t\t\t\t</td>\n" +
                         "\t\t\t\t</tr>\n" +
@@ -75,7 +75,7 @@ public class MailHelper
                         "\t\t\t\t<tr>\n" +
                         "\t\t\t\t\t<td colspan=\"3\" align=\"right\" style=\"border-top: 1px solid #009900;\">\n" +
                         "\t\t\t\t\t\t<a href=\"\">\n" +
-                        "\t\t\t\t\t\t\t<img src="+ imagePath +" alt=\"\" style=\"border: none;\" />\n" +
+                        "\t\t\t\t\t\t\t<img src=\"" + imagePath + "\" alt=\"\" style=\"border: none;\" />\n" +
                         "\t\t\t\t\t\t</a>\n" +
                         "\t\t\t\t\t</td>\n" +
                         "\t\t\t\t</tr>\n" +
@@ -88,7 +88,7 @@ public class MailHelper
     }
 
     private void resetBody(String msg, User user, MimeMessageHelper helper, String path) throws MessagingException {
-        String imagePath = path + "/assets/images/u4.png";
+        String imagePath = "http://" + path + "/assets/images/u4.png";
         helper.setText(
                     "<html><body>" +
                             "<style type='text/css'> #sfi-confirmation td { font-family: Arial, Helvetica, sans-serif; color: #333333; font-size: 13px; line-height: 15px; }\n" +
@@ -103,7 +103,7 @@ public class MailHelper
                             "\t\t\t\t<tr>\n" +
                             "\t\t\t\t\t<td colspan=\"3\" style=\"border-bottom: 1px solid #009900;\">\n" +
                             "\t\t\t\t\t\t<a href=\"\">\n" +
-                            "\t\t\t\t\t\t\t<img src="+ imagePath +" alt=\"\" style=\"border: none;\" />\n" +
+                            "\t\t\t\t\t\t\t<img src=\"" + imagePath + "\" alt=\"\" style=\"border: none;\" />\n" +
                             "\t\t\t\t\t\t</a>\n" +
                             "\t\t\t\t\t</td>\n" +
                             "\t\t\t\t</tr>\n" +
@@ -131,7 +131,7 @@ public class MailHelper
                             "\t\t\t\t<tr>\n" +
                             "\t\t\t\t\t<td colspan=\"3\" align=\"right\" style=\"border-top: 1px solid #009900;\">\n" +
                             "\t\t\t\t\t\t<a href=\"\">\n" +
-                            "\t\t\t\t\t\t\t<img src="+ imagePath +" alt=\"\" style=\"border: none;\" />\n" +
+                            "\t\t\t\t\t\t\t<img src=\"" + imagePath + "\" alt=\"\" style=\"border: none;\" />\n" +
                             "\t\t\t\t\t\t</a>\n" +
                             "\t\t\t\t\t</td>\n" +
                             "\t\t\t\t</tr>\n" +
