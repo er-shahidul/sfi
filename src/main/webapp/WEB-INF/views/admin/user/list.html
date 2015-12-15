@@ -62,7 +62,7 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr th:each="u,iterationStatus : ${user}">
+                                                <tr th:each="u,iterationStatus : ${users}">
                                                     <td th:text="${iterationStatus.count}"></td>
                                                     <td>
                                                         <a th:href="@{'/admin/user/edit/' + ${u.id}}">

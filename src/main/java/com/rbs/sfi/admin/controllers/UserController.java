@@ -72,10 +72,10 @@ public class UserController {
 
     @RequestMapping("/admin/user/list")
     public ModelAndView list(ModelMap model) {
-        List user = userService.list();
+        List users = userService.list();
         model.addAttribute("title", "user");
 
-        return new ModelAndView("admin/user/list", "user", user);
+        return new ModelAndView("admin/user/list", "users", users);
     }
 
     @RequestMapping("/admin/user/delete")
@@ -407,6 +407,12 @@ public class UserController {
             userName = principal.toString();
         }
         return userName;
+    }
+
+    private String getUserInfo() {
+        User user = userService.findByUsername(getCurrentUsername());
+        String fullname = user.getFullname();
+        return fullname;
     }
 
     @ModelAttribute("roles")
