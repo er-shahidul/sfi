@@ -51,7 +51,7 @@ public class CompanyController {
     @RequestMapping(value = {"/admin/company/edit/{id}"}, method = RequestMethod.GET)
     public String edit(@PathVariable Integer id, ModelMap model) {
         Company company = companyService.findById(id);
-        model.addAttribute("title", "company_setting");
+        model.addAttribute("title", "company");
         model.addAttribute("company", company);
 
         List<AreaUnit> areaUnities = areaUnitService.list();
@@ -101,7 +101,7 @@ public class CompanyController {
     @RequestMapping(value = "/admin/company/new", method = RequestMethod.GET)
     public String form(ModelMap model) {
         Company company = new Company();
-        model.addAttribute("title", "company_setting");
+        model.addAttribute("title", "company");
         model.addAttribute("company", company);
 
         List<AreaUnit> areaUnities = areaUnitService.list();
