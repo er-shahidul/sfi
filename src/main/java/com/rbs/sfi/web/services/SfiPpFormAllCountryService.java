@@ -12,13 +12,13 @@ import java.util.List;
 @Transactional
 public class SfiPpFormAllCountryService {
     @Autowired
-    SfiPpFormAllCountryRepository sfiPpFormAllCountryRepository;
+    SfiPpFormAllCountryRepository repository;
 
     public List<SfiPpFormAllCountry> getAll() {
-        return sfiPpFormAllCountryRepository.getAll();
+        return repository.getAll();
     }
 
     public SfiPpFormAllCountry get(int id) {
-        return sfiPpFormAllCountryRepository.get(id);
+        return repository.get(id);
     }
 }

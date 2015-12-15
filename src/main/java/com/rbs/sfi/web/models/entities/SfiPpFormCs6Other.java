@@ -21,20 +21,20 @@ public class SfiPpFormCs6Other extends BaseEntityModel {
     @Column(name = "cs6_otherCountries_units", nullable = true)
     private Integer units;
 
-	@Column(name = "cs6_otherCountries_volume", nullable=true)
-	private Float volume;
+    @Column(name = "cs6_otherCountries_volume", nullable = true)
+    private Float volume;
 
-	@Column(name = "cs6_otherCountries_percPEFCCertified", nullable=true)
-	private Float percPEFCCertified;
+    @Column(name = "cs6_otherCountries_percPEFCCertified", nullable = true)
+    private Float percPEFCCertified;
 
-	@Column(name = "cs6_otherCountries_percFSCCertified", nullable=true)
-	private Float percFSCCertified;
+    @Column(name = "cs6_otherCountries_percFSCCertified", nullable = true)
+    private Float percFSCCertified;
 
-	@Column(name = "cs6_otherCountries_percPEFCFSCCertified", nullable=true)
-	private Float percPEFCFSCCertified;
+    @Column(name = "cs6_otherCountries_percPEFCFSCCertified", nullable = true)
+    private Float percPEFCFSCCertified;
 
-	@Column(name = "cs6_otherCountries_percSFIFiberSourcing", nullable=true)
-	private Float percSFIFiberSourcing;
+    @Column(name = "cs6_otherCountries_percSFIFiberSourcing", nullable = true)
+    private Float percSFIFiberSourcing;
 
     @Column(name = "cs6_otherCountries_percOther", nullable = true)
     private Boolean percOther;
