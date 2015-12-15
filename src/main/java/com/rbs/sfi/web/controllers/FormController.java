@@ -46,9 +46,6 @@ public class FormController {
     SfiPpFormCs5Service sfiPpFormCs5Service;
 
     @Autowired
-    SfiPpFormDataRepository sfiPpFormDataRepository;
-
-    @Autowired
     FormService formService;
 
     @Autowired
