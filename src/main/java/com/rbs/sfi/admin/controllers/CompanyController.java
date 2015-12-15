@@ -12,10 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -114,7 +111,7 @@ public class CompanyController {
     }
 
     @RequestMapping(value = "/admin/company/new", method = RequestMethod.POST)
-    public ModelAndView save(@Valid Logo logo, @ModelAttribute("company") Company company, BindingResult result, Errors errors) {
+    public ModelAndView save(@Valid Logo logo, @ModelAttribute("company") Company company, BindingResult result, Errors errors, @RequestParam String action) {
         MultipartFile file = logo.getFile();
         fileValidator.validate(logo, result);
 
@@ -133,8 +130,9 @@ public class CompanyController {
             e.printStackTrace();
         }
 
-
-        return new ModelAndView("redirect:/admin/company/list");
+        if(action.equals("btn_create_and_edit")) return new ModelAndView("redirect:/admin/company/edit/" + company.getId());
+        else if(action.equals("btn_create_and_create")) return new ModelAndView("redirect:/admin/company/new");
+        else return new ModelAndView("redirect:/admin/company/list");
     }
 
     @RequestMapping(value = {"/admin/company/delete/{id}"}, method = RequestMethod.GET)
