@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout" th:with="title=${title}">
+
+<section layout:fragment="content">
+
+    <div id="wrapper">
+        <div class="container">
+            <div class="formContainer">
+
+                <div class="formContent">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="sidebarmenu">
+                                <th:block th:include="left_menu"></th:block>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <section class="content-header">
+                                <nav class="navbar navbar-default" role="navigation">
+                                    <div class="navbar-header">
+                                        <span class="navbar-brand">
+
+                                        </span>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="navbar-left">
+                                        </div>
+
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li class="dropdown sonata-actions">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li>
+                                                    </li>
+                                                    <li>
+                                                    </li>
+                                                    <li>
+                                                    </li>
+                                                    <li>
+                                                        <a class="sonata-action-element" style="color: #080808;" th:href="@{/admin/user/list}">
+                                                            <i class="fa fa-list"></i>
+                                                            Return to list</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="sonata-action-element" style="color: #080808;" th:href="@{/admin/user/new}">
+                                                            <i class="fa fa-plus-circle"></i>
+                                                            Add new</a>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+
+                            </section>
+
+
+                                            <div class="formContent">
+                                                <div class="row">
+
+                                                    <div class="col-sm-12">
+                                                        <span style="font-size: 15px;">Confirm deletion</span>
+
+                                                        <div class="form-group">
+
+                                                        </div>
+
+                                                        <div class="fixed-table-toolbar" style="border-top: 2px solid #aab2bd;">
+                                                            <br/>
+                                                            Are you sure you want to delete the selected "<span th:text="${user.email}"></span>" user?
+                                                            <div class="pull-right search">
+                                                                <br/>
+                                                            </div>
+                                                        </div>
+
+                                                        <section class="content">
+                                                            <div class="sonata-ba-content">
+
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+
+                                                                        <a style="margin-right: 10px;" class="btn" th:href="@{'/admin/user/delete/' + ${user.id}}">
+                                                                            Yes, delete
+                                                                        </a>
+                                                                        or
+                                                                        <a style="margin-left: 10px;" class="btn" th:href="@{'/admin/user/edit/' + ${user.id}}">
+                                                                            Edit
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="col-md-2">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </section>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- END VALIDATION STATES-->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div layout:fragment="script">
+
+    <script type="text/javascript">
+        // <![CDATA[
+        var $userGrp = $("[name=group]");
+        $userGrp.change(function(){
+
+            var userType = $userGrp.filter(":checked").val();
+            var $companyCont  = $("#sonata-ba-field-container-company");
+
+            if(userType == "3"){
+                return $companyCont.show();
+            }
+
+            $companyCont.hide()
+                .find("select").val(null);
+
+        }).change();
+
+        $("#submit").click(function(){
+            $(".error").hide();
+            var hasError = false;
+            var passwordVal = $("#password").val();
+            var checkVal = $("#password-check").val();
+            if (passwordVal == '') {
+                $("#password").after('<span class="error">Please enter a password.</span>');
+                hasError = true;
+            } else if (checkVal == '') {
+                $("#password-check").after('<span class="error">Please re-enter your password.</span>');
+                hasError = true;
+            } else if (passwordVal != checkVal ) {
+                $("#password-check").after('<span class="error">Passwords do not match.</span>');
+                hasError = true;
+            }
+            if(hasError == true) {return false;}
+        });
+
+        // ]]>
+
+    </script>
+
+</div>
+
+</html>
+
+

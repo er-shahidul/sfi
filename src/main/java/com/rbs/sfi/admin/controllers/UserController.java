@@ -151,6 +151,14 @@ public class UserController {
         return ("redirect:/admin/user/list");
     }
 
+    @RequestMapping(value = {"/admin/user/{id}"}, method = RequestMethod.GET)
+    public String userAction(@PathVariable Integer id, ModelMap model) {
+        User user = userService.findByID(id);
+        model.addAttribute("user", user);
+        model.addAttribute("title", "user");
+        return "admin/user/action";
+    }
+
     @RequestMapping(value = {"/admin/user/edit/{id}"}, method = RequestMethod.GET)
     public String edit(@PathVariable Integer id, ModelMap model) {
         User user = userService.findByID(id);
