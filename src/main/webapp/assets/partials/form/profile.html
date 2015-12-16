@@ -29,7 +29,7 @@
                 <div class="form-horizontal">
                     <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.numberEmployeesUSA.$invalid}">
                         <label class="col-sm-2 control-label">United States:</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-5">
                             <input type="number" class="form-control shorter" maxlength="200"
                                    name="numberEmployeesUSA" ng-model="cs1.numberEmployeesUSA">
                         </div>
@@ -38,7 +38,7 @@
                     <div>
                         <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.numberEmployeesCA.$invalid}">
                             <label class="col-sm-2 control-label">Canada:</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-5">
                                 <input type="number" class="form-control shorter" maxlength="200"
                                        name="numberEmployeesCA" ng-model="cs1.numberEmployeesCA">
                             </div>
@@ -47,7 +47,7 @@
                     <div>
                         <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.numberEmployeesOther.$invalid}">
                             <label class="col-sm-2 control-label">Outside US/Canada:</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-5">
                                 <input type="number" class="form-control shorter" maxlength="200"
                                        name="numberEmployeesOther" ng-model="cs1.numberEmployeesOther">
                             </div>
@@ -104,7 +104,7 @@
                                     <div class="padded" ng-show="cs1.ownsMngLandsInOther" ng-class="{'has-error has-feedback':  cs1.ownsMngLandsInOther && !cs1.ownsMngLandsOtherCountries.length}">
 
                                         <select class="form-control" ng-model="other1" ng-change="other1 = addOtherCountry(cs1.ownsMngLandsOtherCountries, other1)">
-                                            <option value="0">Select</option>
+                                            <option value="0">Select country</option>
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
 
@@ -147,7 +147,7 @@
                                     <div class="padded" ng-show="cs1.hasPrimaryOperMillsYardsInOther" ng-class="{'has-error has-feedback': cs1.hasPrimaryOperMillsYardsInOther && !cs1.primaryOperMillsYardsOtherCountries.length}">
 
                                         <select class="form-control" ng-model="other2" ng-change="other2 = addOtherCountry(cs1.primaryOperMillsYardsOtherCountries, other2)">
-                                            <option value="0">Select</option>
+                                            <option value="0">Select country</option>
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
 
@@ -197,7 +197,7 @@
                                     <div class="padded" ng-show="cs1.hasSecondaryOperMillsYardsInOther" ng-class="{'has-error has-feedback':  cs1.hasSecondaryOperMillsYardsInOther && !cs1.hasSecondaryOperMillsYardsInOther.length}">
 
                                         <select class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs1.secondaryOperMillsYardsOtherCountries, other3)">
-                                            <option value="0">Select</option>
+                                            <option value="0">Select country</option>
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
 
