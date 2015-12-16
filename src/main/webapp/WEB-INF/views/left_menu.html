@@ -12,13 +12,14 @@
     <li th:class="(${title} == area_unit) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
         <a href="list.html" th:href="@{/admin/area/unit/list}">Manage Area Units</a>
     </li>
-    <li th:class="(${title} == form) or (${title} == sfi) or (${title} == sic) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
-        <a href="list.html" th:href="@{/admin/form}">Surveys</a>
+    <li id="survay" th:class="(${title} == form) or (${title} == sfi) or (${title} == sic) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
+        <!--<a href="list.html" th:href="@{/admin/form}">Surveys</a>-->
+        <a>Surveys</a>
     </li>
-    <li style="margin-left: 20px;" th:class="(${title} == sfi) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
+    <li id="sfi" style="margin-left: 20px;" th:class="(${title} == sfi) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
         <a href="list.html" th:href="@{/admin/form/sfi}">Program Participant</a>
     </li>
-    <li style="margin-left: 20px;" th:class="(${title} == sic) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
+    <li id="sic" style="margin-left: 20px;" th:class="(${title} == sic) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
         <a href="list.html" th:href="@{/admin/form/sic}">SIC</a>
     </li>
     <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_GENERAL', 'ROLE_USER')">
@@ -28,5 +29,26 @@
         <a href="list.html" th:href="@{/privacy}">Privacy Policy</a>
     </li>
 </ul>
+
+    <script type="text/javascript">
+        // <![CDATA[
+//        $( "#survay" ).toggle(
+//                function() {
+//                    $( "#sfi" ).hide();
+//                    $( "#sic" ).hide();
+//                }, function() {
+//                    $( "#sfi" ).show();
+//                    $( "#sic" ).show();
+//                }
+//        );
+        $(document).ready(function() {
+            $("#survay").click(function(event) {
+                $( "#sfi" ).hide();
+                $( "#sic" ).hide();
+            });
+        });
+        // ]]>
+
+    </script>
 
 </th:block>
