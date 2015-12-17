@@ -1,7 +1,6 @@
 package com.rbs.sfi.web.models.viewmodels;
 
 import com.rbs.sfi.common.models.BaseViewModel;
-import com.rbs.sfi.web.models.entities.SfiPpFormForestlandArea;
 
 import java.util.Set;
 
@@ -15,7 +14,7 @@ public class Cs9ViewModel extends BaseViewModel {
     private Set<Integer> indigenousPeoplesPublicItems;
     private Set<Integer> protectionMaintenanceWaterResItems;
     private Set<Integer> trainingEducationItems;
-    private Set<SfiPpFormForestlandArea> forestlandAreas;
+    private Set<SfiPpFormForestlandAreaViewModel> forestlandAreas;
     private Boolean convertForestCover;
     private Boolean convertForestLand;
     private Boolean ecologicalImpactsLandscap;
@@ -140,11 +139,11 @@ public class Cs9ViewModel extends BaseViewModel {
         this.trainingEducationItems = trainingEducationItems;
     }
 
-    public Set<SfiPpFormForestlandArea> getForestlandAreas() {
+    public Set<SfiPpFormForestlandAreaViewModel> getForestlandAreas() {
         return forestlandAreas;
     }
 
-    public void setForestlandAreas(Set<SfiPpFormForestlandArea> forestlandAreas) {
+    public void setForestlandAreas(Set<SfiPpFormForestlandAreaViewModel> forestlandAreas) {
         this.forestlandAreas = forestlandAreas;
     }
 

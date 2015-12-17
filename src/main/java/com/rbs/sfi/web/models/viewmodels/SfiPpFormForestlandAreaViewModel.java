@@ -1,13 +1,11 @@
 package com.rbs.sfi.web.models.viewmodels;
 
 import com.rbs.sfi.common.models.BaseViewModel;
-import com.rbs.sfi.web.models.entities.SfiPpFormRegion;
 
 public class SfiPpFormForestlandAreaViewModel extends BaseViewModel {
-
     private Integer id;
     private Float area;
-    private SfiPpFormRegion region;
+    private SfiPpFormRegionViewModel region;
 
     @Override
     public Integer getId() {
@@ -26,11 +24,11 @@ public class SfiPpFormForestlandAreaViewModel extends BaseViewModel {
         this.area = area;
     }
 
-    public SfiPpFormRegion getRegion() {
+    public SfiPpFormRegionViewModel getRegion() {
         return region;
     }
 
-    public void setRegion(SfiPpFormRegion region) {
+    public void setRegion(SfiPpFormRegionViewModel region) {
         this.region = region;
     }
 }
