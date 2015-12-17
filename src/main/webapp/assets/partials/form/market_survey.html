@@ -5,40 +5,119 @@
 
 <form name="cs8Form">
 <p>
-    SFI has an opportunity to engage with program participants on their activities, plans, opportunities and challenges
-    while generating insights based on perceptions of market developments, emerging trends and opportunities for
-    improvement. The responses to these questions may be used to generate management insights for SFI staff that will
-    enable us to better serve the SFI community.
+    SFI Inc. values your participation in the SFI program. As an organization certified to one or more of the SFI standards, we would appreciate your direct feedback on the market value of SFI certification and your involvement in the SFI program. We know demand for certified products in the print, paper and packaging sectors is on the rise. Based on a 2014 study conducted by the European research firm GfK, almost 70% of 1,000 U.S. consumers said they would prefer companies that source wood-based products responsibly to use a forest certification label to inform consumers. We also know through a survey by The Natural Marketing Institute (NMI) of more than 20,000 U.S. consumers, more than 23% of those consumers recognized and understood the SFI logo, compared to 14% for FSC.
+</p>
+<p>
+    Last year SFI asked similar market survey questions to SFI Primary Producers only (SFI program participants who source forest products directly), and over 90% responded. The information and data from that input helped produce a SFI Market Relevancy Factsheet [PAULA to post on website shortly]. This year SFI has expanded the survey to SFI Secondary Producers as well (SFI program participants such as furniture manufacturers or printers sourcing more than half of their fiber from secondary sources). While completing this market survey is optional, you are strongly encouraged to do so if possible. SFI will use the results to generate insights and ways to identify opportunities to better serve all SFI organizations certified to the SFI standard. Please note that individual responses shall remain strictly confidential, and may only be used for marketing and communications purposes in aggregate form.
 </p>
 
 <div class="form-group">
+
+    <!-- Contacts -->
+
+    <label>Who are the main contacts for your organization/who should be receiving information on SFI-related information?</label>
+    <div class="form-inline">
+
+        <div class="col-sm-4">
+            <label>Name</label>
+            <input type="text" class="form-control shorter">
+        </div>
+        <div class="col-sm-4">
+            <label>Email</label>
+            <input type="email" class="form-control shorter">
+        </div>
+        <div class="col-sm-4">
+            <label>Position</label>
+            <input type="text" class="form-control shorter">
+        </div>
+
+    </div>
+    <div class="form-group">
+        <a href="" class="pull-right" >+ Add another project</a>
+    </div>
+    <br/><br/>
+    <!-- -/- -->
+
+
+
+
     <label>Select your companies product segment(s) (select at least one)</label>
 
     <div class="form-group hasRadioBoxes">
-        <table class="table noborder table-striped">
+        <table class="table noborder table-striped" width="100%">
             <tbody>
+
+            <!-- Product Segments -->
+
             <tr>
-                <td onshow="">
-                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentWoodProducts">
-                    <label class="checkboxLabel">Wood products</label>
-                </td>
-                <td>
-                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentPackaging">
-                    <label class="checkboxLabel">Packaging</label>
-                </td>
-                <td>
+                <td width="33%">
                     <input type="checkbox" icheck  name="answer" icheck ng-model="cs8.productSegmentPrintingWritingPaper">
                     <label class="checkboxLabel">Printing writing paper</label>
                 </td>
-                <td>
+
+                <td width="33%">
+                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentPackaging">
+                    <label class="checkboxLabel">Packaging</label>
+                </td>
+
+                <td width="33%">
                     <input type="checkbox" icheck  name="answer" icheck ng-model="cs8.productSegmentBioenergy">
                     <label class="checkboxLabel">Bioenergy</label>
                 </td>
+
+            </tr>
+            <tr>
+
+                <td onshow="">
+                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentPulp">
+                    <label class="checkboxLabel">Pulp</label>
+                </td>
+
+                <td onshow="">
+                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentLand">
+                    <label class="checkboxLabel">Land Only</label>
+                </td>
+
+                <td onshow="">
+                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentSolidWood">
+                    <label class="checkboxLabel">Solid wood products (includes logs)</label>
+                </td>
+            </tr>
+            <tr>
+
+                <td onshow="">
+                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentPaperMerchant">
+                    <label class="checkboxLabel">Paper Broker/Merchant</label>
+                </td>
+
+                <td onshow="">
+                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentPaperBoard">
+                    <label class="checkboxLabel">Paperboard Converter</label>
+                </td>
+
+                <td onshow="">
+                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentFurniture">
+                    <label class="checkboxLabel">Furniture</label>
+                </td>
+            </tr>
+            <tr>
                 <td>
                     <input type="checkbox" icheck  name="answer" icheck ng-model="cs8.productSegmentTowelTissue">
                     <label class="checkboxLabel">Towel/tissue</label>
                 </td>
-                <td>
+
+                <td onshow="">
+                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentPrinter">
+                    <label class="checkboxLabel">Printer</label>
+                </td>
+
+                <td onshow="">
+                    <input type="checkbox" name="answer" icheck ng-model="cs8.productSegmentWoodMerchant">
+                    <label class="checkboxLabel">Wood Broker/Merchant</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
                     <input type="checkbox" icheck  name="answer" icheck ng-model="cs8.productSegmentOther">
                     <label class="checkboxLabel">Other</label>
 
@@ -46,14 +125,59 @@
                         Explain <input type="text" class="form-control shorter" maxlength="200" ng-model="cs8.productSegmentOtherExplain">
                     </div>
                 </td>
-                <td width="5%">&nbsp;</td>
-                <td width="5%">&nbsp;</td>
             </tr>
+            <tr></tr>
+            <tr></tr>
+            <!-- -/- -->
+
+            <tr>
+                <td colspan="7" class="text-center highlight">
+                    <label>LABELS & CLAIMS:</label>
+                    <p>SFI would like to better understand your use of SFI label during the last 12 months and the value that the SFI label adds to your products.</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="table noborder table-striped" width="100%">
+            <tbody>
+            <!-- SFI label/claim -->
+            <tr ng-show="anySelect()">
+                <td colspan="7" ng-include="'/assets/partials/form/cs8/sec1-product-label.html'" ></td>
+            </tr>
+            <!-- -/- -->
+
+            <!-- countries into which you sell product -->
+            <tr ng-show="anySelect()">
+                <td colspan="7" ng-include="'/assets/partials/form/cs8/sec2-product-sell-country.html'" ></td>
+            </tr>
+            <!-- -/- -->
+
+            <!-- countries into which you sell product -->
+            <tr ng-show="anySelect()" >
+                <td colspan="7" ng-include="'/assets/partials/form/cs8/sec3-product-sell-certification.html'" ></td>
+            </tr>
+            <!-- -/- -->
+
+            <!-- Request those actualy went to market -->
+            <tr ng-show="anySelect()" >
+                <td colspan="7" ng-include="'/assets/partials/form/cs8/sec4-request-went-market.html'" ></td>
+            </tr>
+            <!-- -/- -->
+
+            <!-- Request those actualy went to market -->
+            <tr ng-show="anySelect()" >
+                <td colspan="7" ng-include="'/assets/partials/form/cs8/sec5-comments.html'" ></td>
+            </tr>
+            <!-- -/- -->
+
+
 
 
             <!-- Demand Developing -->
             <tr ng-show="anySelect()">
                 <td colspan="7">
+
                     <p>In your product segment, how would you characterize the demand for certified products during the last 12 months (SFI, PEFC, FSC, etc.)?</p>
                     <div class="form-group" ng-show="woodProducts()">
                         <label>Wood products</label>

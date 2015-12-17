@@ -3,11 +3,16 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
     ['$rootScope', '$scope', 'Countries',  '$http', '_', 'Message',
         function ($rootScope , $scope, Countries, $http, _ , Message){
 
-    $scope.cs8 = angular.copy($rootScope.form.cs8);
+        $scope.cs8 = angular.copy($rootScope.form.cs8);
+
+        /** Debug items */
+        $scope.cs8.sfiLabelProductSellCountry_1 = [];
+        /** */
 
     $scope.user = [];
     $scope.countries = Countries.getAll();
 
+    /*
     $scope.findCountry = function(bucket, id){
 
         return _.find(bucket, function(country){
@@ -47,42 +52,94 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         return bucket;
 
     };
+    */
 
 
+        $scope.anySelect = function(){
 
-    $scope.anySelect = function(){
+            var flag = false;
 
-        return $scope.woodProducts() ||
-            $scope.packaging() ||
-            $scope.printingWritingPaper() ||
-            $scope.bioenergy ()||
-            $scope.towelTissue() ||
-            $scope.other();
-    }
+            var hasSelected = _.find($scope.productItems(), function(key){
+                return $scope.cs8[key];
+            });
 
-    $scope.woodProducts = function(){
-        return $scope.cs8.productSegmentWoodProducts;
-    }
+            return hasSelected ? true : false;
+        }
 
-    $scope.packaging = function(){
-        return $scope.cs8.productSegmentPackaging;
-    }
+        $scope.productItems = function(){
 
-    $scope.printingWritingPaper = function(){
-        return $scope.cs8.productSegmentPrintingWritingPaper;
-    }
+            return [
+                'productSegmentPrintingWritingPaper',
+                'productSegmentPackaging',
+                'productSegmentBioenergy',
+                'productSegmentPulp',
+                'productSegmentLand',
+                'productSegmentSolidWood',
+                'productSegmentPaperMerchant',
+                'productSegmentPaperBoard',
+                'productSegmentFurniture',
+                'productSegmentTowelTissue',
+                'productSegmentPrinter',
+                'productSegmentWoodMerchant',
+                'productSegmentOther'
+            ]
 
-    $scope.bioenergy = function(){
-        return $scope.cs8.productSegmentBioenergy;
-    }
+        }
 
-    $scope.towelTissue = function(){
-        return $scope.cs8.productSegmentTowelTissue;
-    }
 
-    $scope.other = function(){
-        return $scope.cs8.productSegmentOther;
-    }
+        $scope.printingWritingPaper = function(){
+            return $scope.cs8.productSegmentPrintingWritingPaper;
+        }
+
+        $scope.packaging = function(){
+                return $scope.cs8.productSegmentPackaging;
+        }
+
+        $scope.bioenergy = function(){
+            return $scope.cs8.productSegmentBioenergy;
+        }
+
+        $scope.pulp = function(){
+            return $scope.cs8.productSegmentPulp;
+        }
+
+        $scope.land = function(){
+            return $scope.cs8.productSegmentLand;
+        }
+
+        $scope.solidWood = function(){
+            return $scope.cs8.productSegmentSolidWood;
+        }
+
+        $scope.paperMerchant = function(){
+            return $scope.cs8.productSegmentPaperMerchant;
+        }
+
+        $scope.paperBoard = function(){
+            return $scope.cs8.productSegmentPaperBoard;
+        }
+
+        $scope.furniture = function(){
+            return $scope.cs8.productSegmentFurniture;
+        }
+
+        $scope.towelTissue = function(){
+            return $scope.cs8.productSegmentTowelTissue;
+        }
+
+        $scope.printer = function(){
+            return $scope.cs8.productSegmentPrinter;
+        }
+
+        $scope.woodMerchant = function(){
+            return $scope.cs8.productSegmentWoodMerchant;
+        }
+
+        $scope.other = function(){
+            return $scope.cs8.productSegmentOther;
+        }
+
+
 
     $scope.isSelected = function(model, val){
 

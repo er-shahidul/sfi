@@ -1,0 +1,177 @@
+<label>Select all of the countries into which you sell product with the SFI label or claim:</label>
+
+<div class="form-group col-sm-4" ng-show="printingWritingPaper()">
+    <label>Printing writing paper</label>
+
+    <select class="form-control" ng-model="sellCountry1" ng-init="sellCountry1 = 0"
+            ng-change="sellCountry1 = addCountry(cs8.sfiLabelProductSellCountry_1, sellCountry1)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_1 ">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_1 = delCountry(cs8.sfiLabelProductSellCountry_1, country.id)">x</button>
+    </div>
+</div>
+
+
+<div class="form-group col-sm-4" ng-show="packaging()">
+    <label>Packaging</label>
+
+    <select class="form-control" ng-model="sellCountry2" ng-init="sellCountry2 = 0"
+            ng-change="sellCountry2 = addCountry(cs8.sfiLabelProductSellCountry_2, sellCountry2)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_2">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_2 = delCountry(cs8.sfiLabelProductSellCountry_2, country.id)">x</button>
+    </div>
+
+</div>
+
+<div class="form-group col-sm-4" ng-show="bioenergy()">
+    <label>Bioenergy</label>
+
+    <select class="form-control" ng-model="sellCountry3" ng-init="sellCountry3 = 0"
+            ng-change="sellCountry3 = addCountry(cs8.sfiLabelProductSellCountry_3, sellCountry3)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_3">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_3 = delCountry(cs8.sfiLabelProductSellCountry_3, country.id)">x</button>
+    </div>
+</div>
+
+<div class="form-group col-sm-4" ng-show="pulp()">
+    <label>Pulp</label>
+    <select class="form-control" ng-model="sellCountry4" ng-init="sellCountry4 = 0"
+            ng-change="sellCountry4 = addCountry(cs8.sfiLabelProductSellCountry_4, sellCountry4)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_4">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_4 = delCountry(cs8.sfiLabelProductSellCountry_4, country.id)">x</button>
+    </div>
+</div>
+
+<div class="form-group col-sm-4" ng-show="land()">
+    <label>Land Only</label>
+    <select class="form-control" ng-model="sellCountry5" ng-init="sellCountry5 = 0"
+            ng-change="sellCountry5 = addCountry(cs8.sfiLabelProductSellCountry_5, sellCountry5)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_5">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_5 = delCountry(cs8.sfiLabelProductSellCountry_5, country.id)">x</button>
+    </div>
+</div>
+
+<div class="form-group col-sm-4" ng-show="solidWood()">
+    <label>Solid wood products (includes logs)</label>
+    <select class="form-control" ng-model="sellCountry6" ng-init="sellCountry6 = 0"
+            ng-change="sellCountry6 = addCountry(cs8.sfiLabelProductSellCountry_6, sellCountry6)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_6">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_6 = delCountry(cs8.sfiLabelProductSellCountry_6, country.id)">x</button>
+    </div>
+</div>
+
+<div class="form-group col-sm-4" ng-show="paperMerchant()">
+    <label>Paper Broker/Merchant</label>
+    <select class="form-control" ng-model="sellCountry7" ng-init="sellCountry7 = 0"
+            ng-change="sellCountry7 = addCountry(cs8.sfiLabelProductSellCountry_7, sellCountry7)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_7">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_7 = delCountry(cs8.sfiLabelProductSellCountry_7, country.id)">x</button>
+    </div>
+</div>
+
+<div class="form-group col-sm-4" ng-show="paperBoard()">
+    <label>Paperboard Converter</label>
+    <select class="form-control" ng-model="sellCountry8" ng-init="sellCountry8 = 0"
+            ng-change="sellCountry8 = addCountry(cs8.sfiLabelProductSellCountry_8, sellCountry8)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_8">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_8 = delCountry(cs8.sfiLabelProductSellCountry_8, country.id)">x</button>
+    </div>
+</div>
+
+<div class="form-group col-sm-4" ng-show="furniture()">
+    <label>Furniture</label>
+    <select class="form-control" ng-model="sellCountry9" ng-init="sellCountry9 = 0"
+            ng-change="sellCountry9 = addCountry(cs8.sfiLabelProductSellCountry_9, sellCountry9)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_9">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_9 = delCountry(cs8.sfiLabelProductSellCountry_9, country.id)">x</button>
+    </div>
+</div>
+
+<div class="form-group col-sm-4" ng-show="towelTissue()">
+    <label>Towel/tissue</label>
+    <select class="form-control" ng-model="sellCountry10" ng-init="sellCountry10 = 0"
+            ng-change="sellCountry10 = addCountry(cs8.sfiLabelProductSellCountry_10, sellCountry10)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_10">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_10 = delCountry(cs8.sfiLabelProductSellCountry_10, country.id)">x</button>
+    </div>
+</div>
+
+
+<div class="form-group col-sm-4" ng-show="printer()">
+    <label>Printer</label>
+    <select class="form-control" ng-model="sellCountry11" ng-init="sellCountry11 = 0"
+            ng-change="sellCountry11 = addCountry(cs8.sfiLabelProductSellCountry_11, sellCountry11)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_11">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_11 = delCountry(cs8.sfiLabelProductSellCountry_11, country.id)">x</button>
+    </div>
+</div>
+
+
+<div class="form-group col-sm-4" ng-show="woodMerchant()">
+    <label>Wood Broker/paperMerchant</label>
+    <select class="form-control" ng-model="sellCountry12" ng-init="sellCountry12 = 0"
+            ng-change="sellCountry12 = addCountry(cs8.sfiLabelProductSellCountry_12, sellCountry12)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_12">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_12 = delCountry(cs8.sfiLabelProductSellCountry_12, country.id)">x</button>
+    </div>
+</div>
+
+<div class="form-group col-sm-4" ng-show="other()">
+    <label>Other</label>
+    <select class="form-control" ng-model="sellCountry13" ng-init="sellCountry13 = 0"
+            ng-change="sellCountry13 = addCountry(cs8.sfiLabelProductSellCountry_13, sellCountry13)">
+        <option value="0">Select country</option>
+        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+    </select>
+
+    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductSellCountry_13">{{ country.country }}
+        <button type="button" class="close" ng-click="cs8.sfiLabelProductSellCountry_13 = delCountry(cs8.sfiLabelProductSellCountry_13, country.id)">x</button>
+    </div>
+</div>

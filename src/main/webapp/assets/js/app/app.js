@@ -689,7 +689,7 @@ sfiFormApp.run(['$rootScope', 'Countries', 'RegionList', function($rootScope, Co
 }]);
 
 /** Operating country rules from CS1 data */
-sfiFormApp.run(['$rootScope', function($rootScope) {
+sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
 
     $rootScope.camelcase = function(str) {
         return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
@@ -719,6 +719,10 @@ sfiFormApp.run(['$rootScope', function($rootScope) {
     $rootScope.operateInOthers = function(){
         //return true;
         return $rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.ownsMngLandsInOther;
+    }
+
+    $rootScope.isSelected = function(model, val){
+        return _.indexOf(model, val) > -1;
     }
 
 }]);

@@ -873,3 +873,46 @@ div.form-control {
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
+
+.highlight {
+    padding: 9px 14px;
+    margin-bottom: 14px;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+    background-color:#E3E0DC;
+}
+
+.box-shadow{
+    width: 250px;
+    height: 200px;
+    background-color: #666666;
+    box-shadow: 5px 5px 5px #888888;
+}
+.box-shadow p{
+    margin: 10px 10px 10px 10px;
+    color: whitesmoke;
+}
+.box-shadow ul{
+    color: whitesmoke;
+}
+.box-shadow h6{
+    padding-top: 10px;
+    margin: 10px 10px 10px 10px;
+    color: whitesmoke;
+}
+.passage-bold p{
+    font-weight: 700;
+}
+.highlited-text span{
+    color: #0079FF;
+}
+.sub-content{
+    padding-left: 25px; padding-bottom: 20px;
+}
+.content-pading{
+    padding-left: 20px;padding-top: 10px;
+}
+label a {
+    color: #006442;
+}
