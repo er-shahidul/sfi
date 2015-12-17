@@ -17,15 +17,15 @@ sfiFormApp
     $scope.saveForm = function (go) {
 
         $http
-            .put(Routing.generate("sfi_cs10_form_update", urlData), $scope.cs10)
+            .put("/form/cs10", $scope.cs10)
             .then(function(response){
 
                 if(response.data){
 
                     $scope.cs10Form.$setPristine();
-                    $rootScope.form = response.data;
-                    $scope.cs10 = angular.copy($rootScope.form.cs10);
-                    $scope.errors = $scope.cs10.errors;
+                    //$rootScope.form = response.data;
+                    //$scope.cs10 = angular.copy($rootScope.form.cs10);
+                    //$scope.errors = $scope.cs10.errors;
 
 
                     Message.success('Section successfully saved', '.msg-cont');
