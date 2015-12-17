@@ -12,9 +12,9 @@ import java.util.List;
 @Transactional
 public class SfiPpFormRegionService {
     @Autowired
-    SfiPpFormRegionRepository sfiPpFormRegionRepository;
+    SfiPpFormRegionRepository repository;
 
     public List<SfiPpFormRegion> getAll() {
-        return sfiPpFormRegionRepository.getAll();
+        return repository.getAll();
     }
 }

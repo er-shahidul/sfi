@@ -16,7 +16,7 @@
     <link th:href="@{/assets/css/libs/prism.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/assets/css/admin.css}" rel="stylesheet" type="text/css"/>
 
-    <link th:href="@{/assets/css/libs/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 
     <!-- END GLOBAL MANDATORY STYLES -->
     <th:block layout:fragment="styles"/>
@@ -57,7 +57,11 @@
 
     $(document).ready(function() {
         $('#example').DataTable();
-    } );
+
+        $("#survay").click(function(event) {
+            $( "#sfi_sic" ).toggle(  )
+        });
+    });
 
     // ]]>
 

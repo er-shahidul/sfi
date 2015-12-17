@@ -1,7 +1,7 @@
 package com.rbs.sfi.admin.controllers;
 
 import com.rbs.sfi.admin.entities.AreaUnit;
-import com.rbs.sfi.admin.repositories.AreaUnitRepository;
+import com.rbs.sfi.admin.services.AreaUnitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,12 +18,12 @@ import java.util.List;
 public class AreaUnitController {
 
     @Autowired
-    AreaUnitRepository areaUnitRepository;
+    AreaUnitService areaUnitService;
 
     @RequestMapping("/admin/area/unit/list")
     public ModelAndView areaList(ModelMap model) {
         model.addAttribute("title", "area_unit");
-        List areaUnities = areaUnitRepository.list();
+        List<AreaUnit> areaUnities = areaUnitService.list();
         return new ModelAndView("core/areaUnit/list", "areaUnities", areaUnities);
     }
 
@@ -43,39 +43,39 @@ public class AreaUnitController {
             return "core/areaUnit/new";
         }
 
-        areaUnitRepository.save(areaUnit);
+        areaUnitService.save(areaUnit);
 
         model.addAttribute("success", "Area Unit " + "" + " has been registered successfully");
         return ("redirect:/admin/area/unit/list");
     }
 
-    @RequestMapping(value = { "/admin/area/unit/edit/{id}" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/area/unit/edit/{id}"}, method = RequestMethod.GET)
     public String updateForm(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "area_unit");
-        AreaUnit areaUnit = areaUnitRepository.findById(id);
+        AreaUnit areaUnit = areaUnitService.findById(id);
         model.addAttribute("areaUnit", areaUnit);
         model.addAttribute("edit", true);
 
         return "core/areaUnit/edit";
     }
 
-    @RequestMapping(value = { "/admin/area/unit/edit/{id}" }, method = RequestMethod.POST)
+    @RequestMapping(value = {"/admin/area/unit/edit/{id}"}, method = RequestMethod.POST)
     public String update(@Valid AreaUnit areaUnit, BindingResult result, @PathVariable Integer id, ModelMap model) {
         model.addAttribute("id", id);
 
         if (result.hasErrors()) {
             return "core/areaUnit/edit";
         }
-        areaUnitRepository.update(areaUnit);
+        areaUnitService.update(areaUnit);
 
         return ("redirect:/admin/area/unit/list");
     }
 
-    @RequestMapping(value = { "/admin/area/unit/delete/{id}" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/area/unit/delete/{id}"}, method = RequestMethod.GET)
     public String softDelete(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "area_unit");
-        AreaUnit areaUnit = areaUnitRepository.findById(id);
-        areaUnitRepository.softDelete(areaUnit);
+        AreaUnit areaUnit = areaUnitService.findById(id);
+        areaUnitService.softDelete(areaUnit);
 
         return ("redirect:/admin/area/unit/list");
     }

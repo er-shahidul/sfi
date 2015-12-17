@@ -1,107 +1,112 @@
 package com.rbs.sfi.admin.entities;
 
+import com.rbs.sfi.common.services.TypeConversionUtils;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name="companies")
-public class Company extends Audit
-{
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+@Table(name = "companies")
+public class Company extends Audit {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	@Column(name="name", unique=true, nullable=true)
-	private String name;
+    @Column(name = "name", unique = true, nullable = true)
+    private String name;
 
-	@ManyToOne(targetEntity = AreaUnit.class, optional=true)
-	@JoinColumn(name="area_unit_id", referencedColumnName="id", nullable=true)
-	private AreaUnit areaUnit;
+    @ManyToOne(targetEntity = AreaUnit.class, optional = true)
+    @JoinColumn(name = "area_unit_id", referencedColumnName = "id", nullable = true)
+    private AreaUnit areaUnit;
 
 	@Lob @Basic(fetch = FetchType.LAZY)
 	@Column(name="logo", nullable=true)
-	private byte[] logo;
+	private Byte[] logo;
 
-	@Column(name="logo_name", nullable=true)
-	private String logoName;
+    @Column(name = "logo_name", nullable = true)
+    private String logoName;
 
-	@Column(name="sfi", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean sfi;
+    @Column(name = "sfi", nullable = false)
+    private Boolean sfi = false;
 
-	@Column(name="sci", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean sci;
+    @Column(name = "sci", nullable = false)
+    private Boolean sci = false;
 
-	@Column(name="primary_user", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean primary;
+    @Column(name = "primary_user", nullable = false)
+    private Boolean primary = false;
 
-	@Column(name="secondary_user", nullable = false, columnDefinition = "Boolean default false")
-	private Boolean secondary;
+    @Column(name = "secondary_user", nullable = false)
+    private Boolean secondary = false;
 
-	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
-	private Boolean isActive;
+    @Column(name = "is_active", nullable = false)
+    private Boolean isActive = true;
 
-	public Integer getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public byte[] getLogo() {
+	public Byte[] getLogo() {
 		return logo;
 	}
 
 	public void setLogo(byte[] logo) {
+        this.logo = TypeConversionUtils.toObjectType(logo);
+	}
+
+	public void setLogo(Byte[] logo) {
 		this.logo = logo;
 	}
 
-	public String getLogoName() {
-		return logoName;
-	}
+    public String getLogoName() {
+        return logoName;
+    }
 
-	public void setLogoName(String logoName) {
-		this.logoName = logoName;
-	}
+    public void setLogoName(String logoName) {
+        this.logoName = logoName;
+    }
 
-	public AreaUnit getAreaUnit() {
-		return areaUnit;
-	}
+    public AreaUnit getAreaUnit() {
+        return areaUnit;
+    }
 
-	public void setAreaUnit(AreaUnit areaUnit) {
-		this.areaUnit = areaUnit;
-	}
+    public void setAreaUnit(AreaUnit areaUnit) {
+        this.areaUnit = areaUnit;
+    }
 
-	public Boolean getIsActive() {
-		return isActive;
-	}
+    public Boolean getIsActive() {
+        return isActive;
+    }
 
-	public void setIsActive(Boolean isActive) {
-		this.isActive = isActive;
-	}
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
 
-	public Boolean getSfi() {
-		return sfi;
-	}
+    public Boolean getSfi() {
+        return sfi;
+    }
 
-	public void setSfi(Boolean sfi) {
-		this.sfi = sfi;
-	}
+    public void setSfi(Boolean sfi) {
+        this.sfi = sfi;
+    }
 
-	public Boolean getSci() {
-		return sci;
-	}
+    public Boolean getSci() {
+        return sci;
+    }
 
-	public void setSci(Boolean sci) {
-		this.sci = sci;
-	}
+    public void setSci(Boolean sci) {
+        this.sci = sci;
+    }
 
     public Boolean getPrimary() {
         return primary;

@@ -13,14 +13,17 @@
         <a href="list.html" th:href="@{/admin/area/unit/list}">Manage Area Units</a>
     </li>
     <li th:class="(${title} == form) or (${title} == sfi) or (${title} == sic) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
-        <a href="list.html" th:href="@{/admin/form}">Surveys</a>
+        <!--<a href="list.html" th:href="@{/admin/form}">Surveys</a>-->
+        <a id="survay">Surveys</a>
     </li>
-    <li style="margin-left: 20px;" th:class="(${title} == sfi) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
-        <a href="list.html" th:href="@{/admin/form/sfi}">Program Participant</a>
-    </li>
-    <li style="margin-left: 20px;" th:class="(${title} == sic) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
-        <a href="list.html" th:href="@{/admin/form/sic}">SIC</a>
-    </li>
+        <ul id="sfi_sic">
+            <li style="margin-left: 20px;" th:class="(${title} == sfi) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
+                <a href="list.html" th:href="@{/admin/form/sfi}">Program Participant</a>
+            </li>
+            <li style="margin-left: 20px;" th:class="(${title} == sic) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
+                <a href="list.html" th:href="@{/admin/form/sic}">SIC</a>
+            </li>
+        </ul>
     <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_GENERAL', 'ROLE_USER')">
         <a href="list.html" th:href="@{/admin/company/setting}">Company Settings</a>
     </li>

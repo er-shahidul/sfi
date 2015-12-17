@@ -10,7 +10,6 @@ import java.util.Date;
 
 @Component
 public class AuditListener {
-
     @PrePersist
 	public void prePersist(Audit audit) {
 		Date currentDate = Util.getCurrentDate();
@@ -20,7 +19,7 @@ public class AuditListener {
 		audit.setUpdatedBy(username);
 		audit.setUpdatedAt(currentDate);
 	}
-	
+
 	@PreUpdate
 	public void preUpdate(Audit audit) {
 		Date currentDate = Util.getCurrentDate();
@@ -28,5 +27,4 @@ public class AuditListener {
 		audit.setUpdatedBy(username);
 		audit.setUpdatedAt(currentDate);
 	}
-
 }

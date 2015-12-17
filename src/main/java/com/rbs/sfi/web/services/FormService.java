@@ -1,6 +1,5 @@
 package com.rbs.sfi.web.services;
 
-import com.rbs.sfi.common.services.ReflectionHelperService;
 import com.rbs.sfi.web.mapper.EntityModelMapperService;
 import com.rbs.sfi.web.mapper.ViewModelMapperService;
 import com.rbs.sfi.web.models.entities.*;
@@ -91,7 +90,9 @@ public class FormService {
     @Autowired
     private EntityModelMapperService entityModelMapperService;
 
-    /************************ Cs1 : Begin ***********************/
+    /************************
+     * Cs1 : Begin
+     ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
         Cs1 entity = cs1Repository.get(id);
         return viewModelMapperService.convert(entity, Cs1ViewModel.class);
@@ -102,7 +103,9 @@ public class FormService {
     }
     /************************ Cs1 : End   ***********************/
 
-    /************************ Cs2 : Begin ***********************/
+    /************************
+     * Cs2 : Begin
+     ***********************/
     public Cs2ViewModel getCs2ViewModel(Integer id) {
         Cs2 entity = cs2Repository.get(id);
         return viewModelMapperService.convert(entity, Cs2ViewModel.class);
@@ -114,19 +117,22 @@ public class FormService {
     }
     /************************ Cs2 : End   ***********************/
 
-    /************************ Cs3 : Begin ***********************/
+    /************************
+     * Cs3 : Begin
+     ***********************/
     public Cs3ViewModel getCs3ViewModel(Integer id) {
         Cs3 entity = cs3Repository.get(id);
         return viewModelMapperService.convert(entity, Cs3ViewModel.class);
     }
 
     public void setCs3Entity(Cs3ViewModel model) {
-//        cs3Service.manualPopulation(model);
         Cs3 entity = entityModelMapperService.convert(model, Cs3.class);
     }
     /************************ Cs3 : End   ***********************/
 
-    /************************ Cs4 : Begin ***********************/
+    /************************
+     * Cs4 : Begin
+     ***********************/
     public Cs4ViewModel getCs4ViewModel(Integer id) {
         Cs4 entity = cs4Repository.get(id);
         return viewModelMapperService.convert(entity, Cs4ViewModel.class);
@@ -137,10 +143,12 @@ public class FormService {
     }
     /************************ Cs4 : End   ***********************/
 
-    /************************ Cs5 : Begin ***********************/
+    /************************
+     * Cs5 : Begin
+     ***********************/
     public Cs5ViewModel getCs5ViewModel(Integer id) {
         Cs5 entity = cs5Repository.get(id);
-        Cs5ViewModel model =  viewModelMapperService.convert(entity, Cs5ViewModel.class);
+        Cs5ViewModel model = viewModelMapperService.convert(entity, Cs5ViewModel.class);
         model.setItems(this.getSfiPpFormCs5ViewModels(id));
 
         return model;
@@ -154,7 +162,9 @@ public class FormService {
     }
     /************************ Cs5 : End   ***********************/
 
-    /************************ Cs6 : Begin ***********************/
+    /************************
+     * Cs6 : Begin
+     ***********************/
     public Cs6ViewModel getCs6ViewModel(Integer id) {
         Cs6 entity = cs6Repository.get(id);
         return viewModelMapperService.convert(entity, Cs6ViewModel.class);
@@ -166,7 +176,9 @@ public class FormService {
     }
     /************************ Cs6 : End   ***********************/
 
-    /************************ Cs7 : Begin ***********************/
+    /************************
+     * Cs7 : Begin
+     ***********************/
     public Cs7ViewModel getCs7ViewModel(Integer id) {
         Cs7 entity = cs7Repository.get(id);
         return viewModelMapperService.convert(entity, Cs7ViewModel.class);
@@ -177,7 +189,9 @@ public class FormService {
     }
     /************************ Cs7 : End   ***********************/
 
-    /************************ Cs8 : Begin ***********************/
+    /************************
+     * Cs8 : Begin
+     ***********************/
     public Cs8ViewModel getCs8ViewModel(Integer id) {
         Cs8 entity = cs8Repository.get(id);
         return viewModelMapperService.convert(entity, Cs8ViewModel.class);
@@ -188,7 +202,9 @@ public class FormService {
     }
     /************************ Cs8 : End   ***********************/
 
-    /************************ Cs9 : Begin ***********************/
+    /************************
+     * Cs9 : Begin
+     ***********************/
     public Cs9ViewModel getCs9ViewModel(Integer id) {
         Cs9 entity = cs9Repository.get(id);
         return viewModelMapperService.convert(entity, Cs9ViewModel.class);
@@ -199,7 +215,9 @@ public class FormService {
     }
     /************************ Cs9 : End   ***********************/
 
-    /************************ Cs10 : Begin ***********************/
+    /************************
+     * Cs10 : Begin
+     ***********************/
     public Cs10ViewModel getCs10ViewModel(Integer id) {
         Cs10 entity = cs10Repository.get(id);
         return viewModelMapperService.convert(entity, Cs10ViewModel.class);
@@ -210,14 +228,16 @@ public class FormService {
     }
     /************************ Cs10 : End   ***********************/
 
-    /************************ SfiPpFormCs5 : Begin ***********************/
-    public List<SfiPpFormCs5ViewModel> getSfiPpFormCs5ViewModels(Integer form) {
+    /************************
+     * SfiPpFormCs5 : Begin
+     ***********************/
+    public List<SfiPpFormCs5ViewModel> getSfiPpFormCs5ViewModels(Integer formId) {
         List<SfiPpFormResearchType> researchTypes = sfiPpFormResearchTypeService.getAll();
         List<SfiPpFormCs5ViewModel> models = new ArrayList<SfiPpFormCs5ViewModel>();
 
         for (SfiPpFormResearchType researchType : researchTypes) {
-            SfiPpFormCs5 entity = sfiPpFormCs5Service.getByFormAndResearchType(form, researchType.getId());
-            if (entity == null) entity = sfiPpFormCs5Service.createByFormAndResearchType(form, researchType);
+            SfiPpFormCs5 entity = sfiPpFormCs5Service.getByFormAndResearchType(formId, researchType.getId());
+            if (entity == null) entity = sfiPpFormCs5Service.createByFormAndResearchType(formId, researchType);
 
             SfiPpFormCs5ViewModel model = viewModelMapperService.convert(entity, SfiPpFormCs5ViewModel.class);
             model.setDescription(researchType.getDescription());
@@ -234,7 +254,9 @@ public class FormService {
     }
     /************************ SfiPpFormCs5 : End   ***********************/
 
-    /************************ SfiPpFormCs3ProjectSupportDocsViewModel : Begin ***********************/
+    /************************
+     * SfiPpFormCs3ProjectSupportDocsViewModel : Begin
+     ***********************/
     public SfiPpFormCs3ProjectSupportDocsViewModel getSfiPpFormCs3ProjectSupportDocsViewModel(String fileName) {
         SfiPpFormCs3ProjectSupportDocsViewModel model = new SfiPpFormCs3ProjectSupportDocsViewModel();
         model.setProjectOriginalDocumentName(fileName);

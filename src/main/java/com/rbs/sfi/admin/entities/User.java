@@ -5,145 +5,137 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="users")
-public class User extends Audit
-{
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+@Table(name = "users")
+public class User extends Audit {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	@Column(name="username", unique=true, nullable=false)
-	private String username;
+    @Column(name = "username", unique = true, nullable = false)
+    private String username;
 
-	@Column(name="first_name", nullable=true)
-	private String firstName;
+    @Column(name = "first_name", nullable = true)
+    private String firstName;
 
-	@Column(name="last_name", nullable=true)
-	private String lastName;
+    @Column(name = "last_name", nullable = true)
+    private String lastName;
 
-	@Column(name="password", nullable=true)
-	private String password;
+    @Column(name = "password", nullable = true)
+    private String password;
 
-	@Column(name="email", nullable=true)
-	private String email;
+    @Column(name = "email", nullable = true)
+    private String email;
 
-	@ManyToOne(targetEntity = com.rbs.sfi.admin.entities.Company.class, optional=true)
-	@JoinColumn(name="company_id", referencedColumnName="id", nullable=true)
-	private Company company;
+    @ManyToOne(targetEntity = Company.class, optional = true)
+    @JoinColumn(name = "company_id", referencedColumnName = "id", nullable = true)
+    private Company company;
 
-	@Column(name="enabled", nullable=true)
-	private Boolean enabled;
+    @Column(name = "enabled", nullable = true)
+    private Boolean enabled;
 
-    @Column(name="token")
-    private Boolean token;
+    @Column(name = "token")
+    private Boolean token = false;
 
-	@Column(name="invitation_msg", nullable=true)
-	private String invitationMsg;
+    @Column(name = "invitation_msg", nullable = true)
+    private String invitationMsg;
 
-	@ManyToMany(targetEntity = Group.class, fetch = FetchType.EAGER)
-	@JoinTable(name = "join_users_groups",
-			joinColumns = { @JoinColumn(name = "user_id") },
-			inverseJoinColumns = { @JoinColumn(name = "group_id") })
-	private Set<Group> group = new HashSet<Group>();
+    @ManyToMany(targetEntity = Group.class, fetch = FetchType.EAGER)
+    @JoinTable(name = "join_users_groups",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "group_id")})
+    private Set<Group> group = new HashSet<Group>();
 
-    @Column(name="user_token", nullable=true)
+    @Column(name = "user_token", nullable = true)
     private String userToken;
 
-	@Column(name="is_active", nullable = false, columnDefinition = "Boolean default true")
-	private Boolean isActive;
+    @Column(name = "is_active", nullable = false)
+    private Boolean isActive = true;
 
-	public Integer getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public Set<Group> getGroup() {
-		return group;
-	}
+    public Set<Group> getGroup() {
+        return group;
+    }
 
-	public Integer getGroupId() {
-		Integer groupId = 0;
-		for(Group x : this.getGroup() ){
-			groupId =  x.getId();
-		}
+    public void setGroup(Set<Group> group) {
+        if (this.group == null) this.group = new HashSet<Group>();
+        this.group.clear();
+        this.group.addAll(group);
+    }
 
-		return groupId;
-	}
+    public Boolean getEnabled() {
+        return enabled;
+    }
 
-	public void setGroup(Set<Group> group) {
-		this.group = group;
-	}
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-	public Boolean getEnabled() {
-		return enabled;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public String getInvitationMsg() {
+        return invitationMsg;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public void setInvitationMsg(String invitationMsg) {
+        this.invitationMsg = invitationMsg;
+    }
 
-	public String getInvitationMsg() {
-		return invitationMsg;
-	}
+    public Company getCompany() {
+        return company;
+    }
 
-	public void setInvitationMsg(String invitationMsg) {
-		this.invitationMsg = invitationMsg;
-	}
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
-	public Company getCompany() {
-		return company;
-	}
-
-	public void setCompany(Company company) {
-		this.company = company;
-	}
-
-	public String getFullname() {
-		return firstName + ' ' + lastName;
-	}
+    public String getFullname() {
+        return firstName + ' ' + lastName;
+    }
 
     public Boolean getToken() {
         return token;
@@ -151,11 +143,6 @@ public class User extends Audit
 
     public void setToken(Boolean token) {
         this.token = token;
-    }
-
-    public User() {
-        super();
-        this.token = false;
     }
 
     public String getUserToken() {
@@ -166,11 +153,11 @@ public class User extends Audit
         this.userToken = userToken;
     }
 
-	public Boolean getIsActive() {
-		return isActive;
-	}
+    public Boolean getIsActive() {
+        return isActive;
+    }
 
-	public void setIsActive(Boolean isActive) {
-		this.isActive = isActive;
-	}
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
 }

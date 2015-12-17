@@ -1,9 +1,8 @@
 package com.rbs.sfi.web.controllers;
 
-import com.rbs.sfi.admin.services.CompanyService;
 import com.rbs.sfi.admin.services.UserService;
+import com.rbs.sfi.common.services.TypeConversionUtils;
 import com.rbs.sfi.web.models.entities.SfiPpFormData;
-import com.rbs.sfi.web.repositories.SfiPpFormDataRepository;
 import com.rbs.sfi.web.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -29,22 +28,10 @@ public class FormController {
     SfiPpFormDataService sfiPpFormDataService;
 
     @Autowired
-    SfiPpFormStatusService sfiPpFormStatusService;
-
-    @Autowired
     SfiPpFormAllCountryService sfiPpFormAllCountryService;
 
     @Autowired
     SfiPpFormRegionService sfiPpFormRegionService;
-
-    @Autowired
-    CompanyService companyService;
-
-    @Autowired
-    SfiPpFormCs5Service sfiPpFormCs5Service;
-
-    @Autowired
-    SfiPpFormDataRepository sfiPpFormDataRepository;
 
     @Autowired
     FormService formService;
@@ -54,7 +41,8 @@ public class FormController {
 
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
-        String companyLogo = DatatypeConverter.printBase64Binary(sfiPpFormData.getCompany().getLogo());
+        String companyLogo = DatatypeConverter
+                .printBase64Binary(TypeConversionUtils.toPrimitiveType(sfiPpFormData.getCompany().getLogo()));
 
         model.addAttribute("form", sfiPpFormData);
         model.addAttribute("cs1", formService.getCs1ViewModel(id));
@@ -72,7 +60,7 @@ public class FormController {
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
-        model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.list());
+        model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
 
         model.addAttribute("mode", "edit");
     }

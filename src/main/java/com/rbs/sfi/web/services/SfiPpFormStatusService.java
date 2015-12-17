@@ -10,9 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class SfiPpFormStatusService {
     @Autowired
-    SfiPpFormStatusRepository sfiPpFormStatusRepository;
+    SfiPpFormStatusRepository repository;
 
     public SfiPpFormStatus getByStatus(String status) {
-        return sfiPpFormStatusRepository.getByStatus(status);
+        return repository.getByStatus(status);
     }
 }

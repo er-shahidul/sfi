@@ -3,9 +3,9 @@ package com.rbs.sfi.common.models.ViewModels;
 import com.rbs.sfi.common.models.BaseViewModel;
 
 public class GroupViewModel extends BaseViewModel {
-	private Integer id;
-	private String role;
-	private String description;
+    private Integer id;
+    private String role;
+    private String description;
 
     @Override
     public Integer getId() {

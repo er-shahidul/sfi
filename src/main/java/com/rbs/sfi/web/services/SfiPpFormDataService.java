@@ -15,7 +15,7 @@ import java.util.List;
 @Transactional
 public class SfiPpFormDataService {
     @Autowired
-    private SfiPpFormDataRepository sfiPpFormDataRepository;
+    private SfiPpFormDataRepository repository;
 
     @Autowired
     private SfiPpFormStatusService sfiPpFormStatusService;
@@ -24,11 +24,11 @@ public class SfiPpFormDataService {
     private UserService userService;
 
     public SfiPpFormData get(int id) {
-        return sfiPpFormDataRepository.get(id);
+        return repository.get(id);
     }
 
     public List<SfiPpFormData> getAll() {
-        return sfiPpFormDataRepository.getAll();
+        return repository.getAll();
     }
 
     private SfiPpFormData create(User user) {
@@ -42,13 +42,13 @@ public class SfiPpFormDataService {
         entity.setCreatedAt(Util.getCurrentDate());
         entity.setUpdatedAt(Util.getCurrentDate());
 
-        sfiPpFormDataRepository.create(entity);
+        repository.create(entity);
         return entity;
     }
 
     public SfiPpFormData createOrGetByCurrentUsersCompany() {
         User user = userService.findByUsername(Util.getCurrentUsername());
-        SfiPpFormData entity = sfiPpFormDataRepository.getByCompany(user.getCompany());
+        SfiPpFormData entity = repository.getByCompany(user.getCompany());
         if (entity == null) entity = create(user);
         return entity;
     }

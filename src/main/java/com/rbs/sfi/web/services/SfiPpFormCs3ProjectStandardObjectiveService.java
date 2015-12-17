@@ -12,9 +12,9 @@ import java.util.List;
 @Transactional
 public class SfiPpFormCs3ProjectStandardObjectiveService {
     @Autowired
-    SfiPpFormCs3ProjectStandardObjectiveRepository sfiPpFormCs3ProjectStandardObjectiveRepository;
+    SfiPpFormCs3ProjectStandardObjectiveRepository repository;
 
-    public List<SfiPpFormCs3ProjectStandardObjective> list() {
-        return sfiPpFormCs3ProjectStandardObjectiveRepository.list();
+    public List<SfiPpFormCs3ProjectStandardObjective> getAll() {
+        return repository.getAll();
     }
 }
