@@ -9,10 +9,12 @@ import java.lang.reflect.ParameterizedType;
 import java.util.*;
 
 public abstract class BaseMapperService<E extends IModel> {
-    private final Map<Class, Object> callStack = new HashMap<Class, Object>();
     @Autowired
     private ReflectionHelperService helper;
+
     private Class<E> typeClass;
+
+    private final Map<Class, Object> callStack = new HashMap<Class, Object>();
 
     abstract protected <T> T getInstance(Integer id, Class<T> tClass);
 
