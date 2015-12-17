@@ -14,7 +14,7 @@ public class SfiPpFormForestlandArea extends BaseEntityModel {
     @Column(name = "cs9_area", nullable = true)
     private Float area;
 
-    @ManyToOne(targetEntity = SfiPpFormRegion.class, optional = false)
+    @ManyToOne(targetEntity = SfiPpFormRegion.class, optional = true)
     @JoinColumn(name = "cs9_region", referencedColumnName = "id", nullable = true)
     private SfiPpFormRegion region;
 
