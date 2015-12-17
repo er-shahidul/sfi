@@ -7,7 +7,7 @@ sfiFormApp
     cs9 = $scope;
 
 
-    $scope.cs9.forestlandAreas = [];
+    //$scope.cs9.forestlandAreas = [];
 
     $scope.hasRegionData = function(){
 
