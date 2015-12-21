@@ -24,7 +24,7 @@ public class AreaUnitController {
     public ModelAndView areaList(ModelMap model) {
         model.addAttribute("title", "area_unit");
         List<AreaUnit> areaUnities = areaUnitService.list();
-        return new ModelAndView("core/areaUnit/list", "areaUnities", areaUnities);
+        return new ModelAndView("admin/area/list", "areaUnities", areaUnities);
     }
 
     @RequestMapping(value = "/admin/area/unit/new", method = RequestMethod.GET)
@@ -33,14 +33,14 @@ public class AreaUnitController {
         AreaUnit areaUnit = new AreaUnit();
         model.addAttribute("areaUnit", areaUnit);
 
-        return "core/areaUnit/new";
+        return "admin/area/new";
     }
 
     @RequestMapping(value = "/admin/area/unit/new", method = RequestMethod.POST)
     public String save(@Valid AreaUnit areaUnit, BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {
-            return "core/areaUnit/new";
+            return "admin/area/new";
         }
 
         areaUnitService.save(areaUnit);
@@ -56,7 +56,7 @@ public class AreaUnitController {
         model.addAttribute("areaUnit", areaUnit);
         model.addAttribute("edit", true);
 
-        return "core/areaUnit/edit";
+        return "admin/area/edit";
     }
 
     @RequestMapping(value = {"/admin/area/unit/edit/{id}"}, method = RequestMethod.POST)
@@ -64,7 +64,7 @@ public class AreaUnitController {
         model.addAttribute("id", id);
 
         if (result.hasErrors()) {
-            return "core/areaUnit/edit";
+            return "admin/area/edit";
         }
         areaUnitService.update(areaUnit);
 
