@@ -3,7 +3,7 @@ package com.rbs.www.admin.services;
 import com.rbs.www.admin.entities.Group;
 import com.rbs.www.admin.entities.User;
 import com.rbs.www.admin.repositories.UserRepository;
-import com.rbs.www.admin.util.Util;
+import com.rbs.www.common.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

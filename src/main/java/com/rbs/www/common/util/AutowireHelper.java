@@ -1,4 +1,4 @@
-package com.rbs.www.admin.util;
+package com.rbs.www.common.util;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

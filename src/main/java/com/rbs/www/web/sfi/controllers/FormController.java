@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.xml.bind.DatatypeConverter;
 
-import static com.rbs.www.admin.util.Util.getCurrentUsername;
+import static com.rbs.www.common.util.Util.getCurrentUsername;
 
 @Controller
 public class FormController {

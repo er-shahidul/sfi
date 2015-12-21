@@ -1,4 +1,4 @@
-package com.rbs.www.admin.util;
+package com.rbs.www.common.util;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;

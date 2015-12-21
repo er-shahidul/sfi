@@ -1,7 +1,7 @@
 package com.rbs.www.admin.listeners;
 
 import com.rbs.www.admin.entities.Audit;
-import com.rbs.www.admin.util.Util;
+import com.rbs.www.common.util.Util;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.PrePersist;

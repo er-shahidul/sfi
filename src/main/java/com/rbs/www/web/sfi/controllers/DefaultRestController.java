@@ -1,6 +1,6 @@
 package com.rbs.www.web.sfi.controllers;
 
-import com.rbs.www.admin.util.Util;
+import com.rbs.www.common.util.Util;
 import com.rbs.www.common.services.FIleIOHelperService;
 import com.rbs.www.web.sfi.models.viewmodels.*;
 import com.rbs.www.web.sfi.services.FormService;

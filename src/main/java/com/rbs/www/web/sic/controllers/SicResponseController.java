@@ -1,6 +1,6 @@
 package com.rbs.www.web.sic.controllers;
 
-import com.rbs.www.admin.util.Util;
+import com.rbs.www.common.util.Util;
 import com.rbs.www.web.sic.models.viewmodels.*;
 import com.rbs.www.web.sic.services.SicFormService;
 import org.springframework.beans.factory.annotation.Autowired;

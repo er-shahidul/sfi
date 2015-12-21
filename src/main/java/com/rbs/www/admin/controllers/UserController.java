@@ -7,7 +7,7 @@ import com.rbs.www.admin.listeners.AuditListener;
 import com.rbs.www.admin.services.CompanyService;
 import com.rbs.www.admin.services.GroupService;
 import com.rbs.www.admin.services.UserService;
-import com.rbs.www.admin.util.MailHelper;
+import com.rbs.www.common.util.MailHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
-import static com.rbs.www.admin.util.Util.getCurrentUsername;
+import static com.rbs.www.common.util.Util.getCurrentUsername;
 
 @Controller
 public class UserController {

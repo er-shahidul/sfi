@@ -2,7 +2,7 @@ package com.rbs.www.web.sic.services;
 
 import com.rbs.www.admin.entities.User;
 import com.rbs.www.admin.services.UserService;
-import com.rbs.www.admin.util.Util;
+import com.rbs.www.common.util.Util;
 import com.rbs.www.web.sfi.services.SfiPpFormStatusService;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import com.rbs.www.web.sic.repositories.SicFormDataRepository;

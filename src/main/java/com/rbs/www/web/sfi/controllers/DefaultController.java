@@ -1,7 +1,7 @@
 package com.rbs.www.web.sfi.controllers;
 
 import com.rbs.www.admin.services.UserService;
-import com.rbs.www.admin.util.Util;
+import com.rbs.www.common.util.Util;
 import com.rbs.www.web.sfi.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
 import com.rbs.www.web.sfi.services.SfiPpFormRegionService;

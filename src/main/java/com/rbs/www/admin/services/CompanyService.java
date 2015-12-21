@@ -2,7 +2,7 @@ package com.rbs.www.admin.services;
 
 import com.rbs.www.admin.entities.Company;
 import com.rbs.www.admin.repositories.CompanyRepository;
-import com.rbs.www.admin.util.Util;
+import com.rbs.www.common.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

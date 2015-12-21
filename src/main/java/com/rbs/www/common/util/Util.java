@@ -1,4 +1,4 @@
-package com.rbs.www.admin.util;
+package com.rbs.www.common.util;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -15,7 +15,7 @@
 
     <bean id="auditListener" class="com.rbs.www.admin.listeners.AuditListener" />
 
-	<bean id="autowireHelper" class="com.rbs.www.admin.util.AutowireHelper"/>
+	<bean id="autowireHelper" class="com.rbs.www.common.util.AutowireHelper"/>
 
 	<bean id="fileValidator" class="com.rbs.www.admin.validator.FileValidator" />
 
