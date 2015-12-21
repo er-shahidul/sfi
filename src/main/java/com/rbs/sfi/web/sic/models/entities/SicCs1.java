@@ -5,7 +5,7 @@ import com.rbs.sfi.common.models.BaseEntityModel;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "sic_pp_forms")
+@Table(name = "sic_forms")
 public class SicCs1 extends BaseEntityModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
