@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "sic_pp_forms")
-public class Cs1 extends BaseEntityModel {
+public class SicCs2 extends BaseEntityModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
