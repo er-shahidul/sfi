@@ -2,7 +2,7 @@ package com.rbs.sfi.web.sic.models.viewmodels;
 
 import com.rbs.sfi.common.models.BaseViewModel;
 
-public class Cs1ViewModel extends BaseViewModel {
+public class SicCs2ViewModel extends BaseViewModel {
     private Integer id;
 
     @Override
