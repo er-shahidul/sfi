@@ -19,25 +19,25 @@ public class SicResponseController {
 
     @RequestMapping(value = "/form/sic/cs1", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs1(@RequestBody SicCs1ViewModel model, BindingResult result) {
-        sicFormService.setCs1Entity(model);
+        sicFormService.setSicCs1Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/form/sic/cs2", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs2(@RequestBody SicCs2ViewModel model, BindingResult result) {
-        sicFormService.setCs2Entity(model);
+        sicFormService.setSicCs2Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/form/sic/cs3", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs3(@RequestBody SicCs3ViewModel model, BindingResult result) {
-        sicFormService.setCs3Entity(model);
+        sicFormService.setSicCs3Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/form/sic/cs4", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs4(@RequestBody SicCs4ViewModel model, BindingResult result) {
-        sicFormService.setCs4Entity(model);
+        sicFormService.setSicCs4Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 }
