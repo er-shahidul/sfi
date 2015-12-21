@@ -1,6 +1,6 @@
 package com.rbs.www.admin.services;
 
-import com.rbs.www.admin.entities.Company;
+import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.admin.repositories.CompanyRepository;
 import com.rbs.www.common.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;

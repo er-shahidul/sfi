@@ -1,6 +1,6 @@
-package com.rbs.www.admin.entities;
+package com.rbs.www.admin.models.datamodels;
 
-import com.rbs.www.admin.listeners.AuditListener;
+import com.rbs.www.common.listeners.AuditListener;
 
 import javax.persistence.*;
 import java.util.Date;

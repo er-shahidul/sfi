@@ -1,6 +1,6 @@
 package com.rbs.www.admin.controllers;
 
-import com.rbs.www.admin.entities.Group;
+import com.rbs.www.admin.models.entities.Group;
 import com.rbs.www.admin.services.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

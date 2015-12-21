@@ -1,4 +1,4 @@
-package com.rbs.www.admin.entities;
+package com.rbs.www.admin.models.datamodels;
 
 import org.springframework.web.multipart.MultipartFile;
 

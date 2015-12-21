@@ -1,6 +1,6 @@
-package com.rbs.www.admin.listeners;
+package com.rbs.www.common.listeners;
 
-import com.rbs.www.admin.entities.Audit;
+import com.rbs.www.admin.models.datamodels.Audit;
 import com.rbs.www.common.util.Util;
 import org.springframework.stereotype.Component;
 

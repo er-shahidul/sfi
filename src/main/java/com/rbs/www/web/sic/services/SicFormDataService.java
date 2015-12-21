@@ -1,6 +1,6 @@
 package com.rbs.www.web.sic.services;
 
-import com.rbs.www.admin.entities.User;
+import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.sfi.services.SfiPpFormStatusService;

@@ -3,7 +3,7 @@ package com.rbs.www.common.util;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
-import com.rbs.www.admin.entities.User;
+import com.rbs.www.admin.models.entities.User;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 

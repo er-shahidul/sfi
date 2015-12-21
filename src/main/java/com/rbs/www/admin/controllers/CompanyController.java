@@ -1,11 +1,11 @@
 package com.rbs.www.admin.controllers;
 
-import com.rbs.www.admin.entities.AreaUnit;
-import com.rbs.www.admin.entities.Company;
-import com.rbs.www.admin.entities.Logo;
+import com.rbs.www.admin.models.entities.AreaUnit;
+import com.rbs.www.admin.models.entities.Company;
+import com.rbs.www.admin.models.datamodels.Logo;
 import com.rbs.www.admin.services.AreaUnitService;
 import com.rbs.www.admin.services.CompanyService;
-import com.rbs.www.admin.validator.FileValidator;
+//import com.rbs.www.common.validator.FileValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,8 +31,8 @@ public class CompanyController {
     @Autowired
     CompanyService companyService;
 
-    @Autowired
-    FileValidator fileValidator;
+//    @Autowired
+//    FileValidator fileValidator;
 
     private static String getFileExtension(String fileName) {
         if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
@@ -69,7 +69,7 @@ public class CompanyController {
         OutputStream outputStream = null;
 
         MultipartFile file = logo.getFile();
-        fileValidator.validate(logo, result);
+//        fileValidator.validate(logo, result);
 
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
@@ -112,7 +112,7 @@ public class CompanyController {
     @RequestMapping(value = "/admin/company/new", method = RequestMethod.POST)
     public ModelAndView save(@Valid Logo logo, @ModelAttribute("company") Company company, BindingResult result, Errors errors, @RequestParam String action) {
         MultipartFile file = logo.getFile();
-        fileValidator.validate(logo, result);
+//        fileValidator.validate(logo, result);
 
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();

@@ -1,6 +1,6 @@
 package com.rbs.www.admin.services;
 
-import com.rbs.www.admin.entities.AreaUnit;
+import com.rbs.www.admin.models.entities.AreaUnit;
 import com.rbs.www.admin.repositories.AreaUnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

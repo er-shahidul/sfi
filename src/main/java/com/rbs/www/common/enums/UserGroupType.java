@@ -1,4 +1,4 @@
-package com.rbs.www.admin.enums;
+package com.rbs.www.common.enums;
 
 public enum UserGroupType {
     USER("USER"),

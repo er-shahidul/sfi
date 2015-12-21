@@ -1,7 +1,7 @@
 package com.rbs.www.web.sfi.models.entities;
 
-import com.rbs.www.admin.entities.Company;
-import com.rbs.www.admin.entities.User;
+import com.rbs.www.admin.models.entities.Company;
+import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.common.models.BaseEntityModel;
 
 import javax.persistence.*;

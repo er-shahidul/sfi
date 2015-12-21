@@ -1,6 +1,6 @@
 package com.rbs.www.web.sfi.repositories;
 
-import com.rbs.www.admin.entities.Company;
+import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.common.repositories.BaseRepository;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import org.hibernate.criterion.Restrictions;

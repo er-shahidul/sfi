@@ -1,6 +1,6 @@
 package com.rbs.www.admin.repositories;
 
-import com.rbs.www.admin.entities.Group;
+import com.rbs.www.admin.models.entities.Group;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

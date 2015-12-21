@@ -1,6 +1,6 @@
-package com.rbs.www.admin.entities;
+package com.rbs.www.admin.models.entities;
 
-import com.rbs.www.admin.enums.UserGroupType;
+import com.rbs.www.common.enums.UserGroupType;
 
 import javax.persistence.*;
 

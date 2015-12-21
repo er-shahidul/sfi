@@ -1,23 +1,14 @@
-package com.rbs.www.admin.entities;
+package com.rbs.www.admin.models.viewmodels;
 
-import javax.persistence.*;
+import com.rbs.www.common.models.BaseViewModel;
 
-@Entity
-@Table(name = "company_area_unit")
-public class AreaUnit {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AreaUnitViewModel extends BaseViewModel {
     private Integer id;
-
-    @Column(name = "unit_description", nullable = true)
     private String unitDescription;
-
-    @Column(name = "short_code", nullable = true)
     private String shortCode;
-
-    @Column(name = "is_active", nullable = false, columnDefinition = "Boolean default true")
     private Boolean isActive;
 
+    @Override
     public Integer getId() {
         return id;
     }

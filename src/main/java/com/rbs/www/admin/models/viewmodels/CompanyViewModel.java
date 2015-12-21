@@ -1,4 +1,4 @@
-package com.rbs.www.common.models.ViewModels;
+package com.rbs.www.admin.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 

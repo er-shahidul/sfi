@@ -1,7 +1,7 @@
 package com.rbs.www.admin.services;
 
-import com.rbs.www.admin.entities.Group;
-import com.rbs.www.admin.entities.User;
+import com.rbs.www.admin.models.entities.Group;
+import com.rbs.www.admin.models.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

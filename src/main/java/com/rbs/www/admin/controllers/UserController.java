@@ -1,9 +1,9 @@
 package com.rbs.www.admin.controllers;
 
-import com.rbs.www.admin.entities.Company;
-import com.rbs.www.admin.entities.Group;
-import com.rbs.www.admin.entities.User;
-import com.rbs.www.admin.listeners.AuditListener;
+import com.rbs.www.admin.models.entities.Company;
+import com.rbs.www.admin.models.entities.Group;
+import com.rbs.www.admin.models.entities.User;
+import com.rbs.www.common.listeners.AuditListener;
 import com.rbs.www.admin.services.CompanyService;
 import com.rbs.www.admin.services.GroupService;
 import com.rbs.www.admin.services.UserService;

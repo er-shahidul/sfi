@@ -1,6 +1,6 @@
 package com.rbs.www.admin.repositories;
 
-import com.rbs.www.admin.entities.User;
+import com.rbs.www.admin.models.entities.User;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;

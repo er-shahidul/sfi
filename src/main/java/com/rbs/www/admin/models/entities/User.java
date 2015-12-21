@@ -1,4 +1,6 @@
-package com.rbs.www.admin.entities;
+package com.rbs.www.admin.models.entities;
+
+import com.rbs.www.admin.models.datamodels.Audit;
 
 import javax.persistence.*;
 import java.util.HashSet;
