@@ -13,11 +13,11 @@
   
     <context:component-scan base-package="com" />
 
-    <bean id="auditListener" class="com.rbs.sfi.admin.listeners.AuditListener" />
+    <bean id="auditListener" class="com.rbs.www.admin.listeners.AuditListener" />
 
-	<bean id="autowireHelper" class="com.rbs.sfi.admin.util.AutowireHelper"/>
+	<bean id="autowireHelper" class="com.rbs.www.admin.util.AutowireHelper"/>
 
-	<bean id="fileValidator" class="com.rbs.sfi.admin.validator.FileValidator" />
+	<bean id="fileValidator" class="com.rbs.www.admin.validator.FileValidator" />
 
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 </beans>
