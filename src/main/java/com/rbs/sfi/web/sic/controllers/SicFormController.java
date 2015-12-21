@@ -31,10 +31,10 @@ public class SicFormController {
                 .printBase64Binary(TypeConversionUtils.toPrimitiveType(sicFormData.getCompany().getLogo()));
 
         model.addAttribute("form", sicFormData);
-        model.addAttribute("cs1", formService.getCs1ViewModel(id));
-        model.addAttribute("cs2", formService.getCs2ViewModel(id));
-        model.addAttribute("cs3", formService.getCs3ViewModel(id));
-        model.addAttribute("cs4", formService.getCs4ViewModel(id));
+        model.addAttribute("cs1", formService.getSicCs1ViewModel(id));
+        model.addAttribute("cs2", formService.getSicCs2ViewModel(id));
+        model.addAttribute("cs3", formService.getSicCs3ViewModel(id));
+        model.addAttribute("cs4", formService.getSicCs4ViewModel(id));
 
         model.addAttribute("company", sicFormData.getCompany());
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
