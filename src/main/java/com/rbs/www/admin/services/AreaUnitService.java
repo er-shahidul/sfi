@@ -57,6 +57,16 @@ public class AreaUnitService {
         return viewModelMapperService.convert(entity, AreaUnitViewModel.class);
     }
 
+    public AreaUnitViewModel getViewModelById(Integer id) {
+        AreaUnit entity = findById(id);
+        return viewModelMapperService.convert(entity, AreaUnitViewModel.class);
+    }
+
+    public void setAreaUnitEntity(AreaUnitViewModel model) {
+        model.setIsActive(true);
+        AreaUnit entity = entityModelMapperService.convert(model, AreaUnit.class);
+    }
+
     public void setEntity(AreaUnitViewModel model) {
         areaUnitRepository.persist(entityModelMapperService.convert(model, AreaUnit.class));
     }
