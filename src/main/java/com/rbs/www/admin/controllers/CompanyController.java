@@ -1,8 +1,8 @@
 package com.rbs.www.admin.controllers;
 
-import com.rbs.www.admin.models.entities.AreaUnit;
 import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.admin.models.datamodels.Logo;
+import com.rbs.www.admin.models.viewmodels.AreaUnitViewModel;
 import com.rbs.www.admin.services.AreaUnitService;
 import com.rbs.www.admin.services.CompanyService;
 //import com.rbs.www.common.validator.FileValidator;
@@ -53,7 +53,7 @@ public class CompanyController {
         model.addAttribute("title", "company");
         model.addAttribute("company", company);
 
-        List<AreaUnit> areaUnities = areaUnitService.list();
+        List<AreaUnitViewModel> areaUnities = areaUnitService.list();
         model.addAttribute("areaUnities", areaUnities);
 
         model.addAttribute("edit", true);
@@ -103,7 +103,7 @@ public class CompanyController {
         model.addAttribute("title", "company");
         model.addAttribute("company", company);
 
-        List<AreaUnit> areaUnities = areaUnitService.list();
+        List<AreaUnitViewModel> areaUnities = areaUnitService.list();
         model.addAttribute("areaUnities", areaUnities);
 
         return "admin/company/new";

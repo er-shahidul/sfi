@@ -23,34 +23,8 @@ public class AreaUnitService {
     @Autowired
     private EntityModelMapperService entityModelMapperService;
 
-    public List<AreaUnit> list() {
+    public List<AreaUnitViewModel> list() {
         return areaUnitRepository.list();
-    }
-
-    public AreaUnit findById(Integer id) {
-        return areaUnitRepository.getByKey(id);
-    }
-
-    public void save(AreaUnit areaUnit) {
-        areaUnit.setIsActive(true);
-        areaUnitRepository.persist(areaUnit);
-    }
-
-    public void softDelete(AreaUnit areaUnit) {
-        AreaUnit entity = areaUnitRepository.getByKey(areaUnit.getId());
-        if(entity!=null){
-            entity.setIsActive(false);
-            areaUnitRepository.persist(entity);
-        }
-    }
-
-    public void update(AreaUnit areaUnit) {
-        AreaUnit entity = areaUnitRepository.getByKey(areaUnit.getId());
-        if(entity!=null){
-            entity.setShortCode(areaUnit.getShortCode());
-            entity.setUnitDescription(areaUnit.getUnitDescription());
-            areaUnitRepository.persist(entity);
-        }
     }
 
     public AreaUnitViewModel getViewModel(AreaUnit entity) {
@@ -58,7 +32,7 @@ public class AreaUnitService {
     }
 
     public AreaUnitViewModel getViewModelById(Integer id) {
-        AreaUnit entity = findById(id);
+        AreaUnit entity = areaUnitRepository.getByKey(id);
         return viewModelMapperService.convert(entity, AreaUnitViewModel.class);
     }
 
@@ -67,7 +41,8 @@ public class AreaUnitService {
         AreaUnit entity = entityModelMapperService.convert(model, AreaUnit.class);
     }
 
-    public void setEntity(AreaUnitViewModel model) {
-        areaUnitRepository.persist(entityModelMapperService.convert(model, AreaUnit.class));
+    public void deleteAreaUnitEntity(AreaUnitViewModel model) {
+        model.setIsActive(false);
+        AreaUnit entity = entityModelMapperService.convert(model, AreaUnit.class);
     }
 }

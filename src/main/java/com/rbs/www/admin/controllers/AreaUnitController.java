@@ -1,6 +1,5 @@
 package com.rbs.www.admin.controllers;
 
-import com.rbs.www.admin.models.entities.AreaUnit;
 import com.rbs.www.admin.models.viewmodels.AreaUnitViewModel;
 import com.rbs.www.admin.services.AreaUnitService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class AreaUnitController {
     @RequestMapping("/admin/area/unit/list")
     public ModelAndView areaList(ModelMap model) {
         model.addAttribute("title", "area_unit");
-        List<AreaUnit> areaUnities = areaUnitService.list();
+        List<AreaUnitViewModel> areaUnities = areaUnitService.list();
         return new ModelAndView("admin/area/list", "areaUnities", areaUnities);
     }
 
@@ -75,8 +74,8 @@ public class AreaUnitController {
     @RequestMapping(value = {"/admin/area/unit/delete/{id}"}, method = RequestMethod.GET)
     public String softDelete(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "area_unit");
-        AreaUnit areaUnit = areaUnitService.findById(id);
-        areaUnitService.softDelete(areaUnit);
+        AreaUnitViewModel areaUnit = areaUnitService.getViewModelById(id);
+        areaUnitService.deleteAreaUnitEntity(areaUnit);
 
         return ("redirect:/admin/area/unit/list");
     }
