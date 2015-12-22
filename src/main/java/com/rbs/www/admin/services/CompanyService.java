@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service("companyService")
+@Service
 @Transactional
 public class CompanyService
 {
@@ -28,11 +28,11 @@ public class CompanyService
         company.setUpdatedBy(Util.getCurrentUsername());
         company.setCreatedAt(Util.getCurrentDate());
         company.setCreatedBy(Util.getCurrentUsername());
-        companyRepository.save(company);
+        companyRepository.persist(company);
     }
 
     public Company findById(Integer id) {
-        return companyRepository.findById(id);
+        return companyRepository.getByKey(id);
     }
 
     public void update(Company company, byte[] fileN, String name) {
@@ -48,7 +48,7 @@ public class CompanyService
             entity.setUpdatedBy(Util.getCurrentUsername());
             entity.setLogoName(name);
             if(fileN!=null){entity.setLogo(fileN);}
-            companyRepository.update(entity);
+            companyRepository.persist(entity);
         }
     }
 
@@ -56,7 +56,7 @@ public class CompanyService
         Company entity = this.findById(company.getId());
         if(entity!=null){
             entity.setIsActive(false);
-            companyRepository.update(entity);
+            companyRepository.persist(entity);
         }
     }
 }
