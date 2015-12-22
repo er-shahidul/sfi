@@ -1,4 +1,4 @@
-package com.rbs.www.admin.models.datamodels;
+package com.rbs.www.admin.models.entities;
 
 import com.rbs.www.common.listeners.AuditListener;
 

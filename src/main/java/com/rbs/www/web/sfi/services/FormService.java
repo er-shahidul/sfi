@@ -16,36 +16,6 @@ import java.util.List;
 @Transactional
 public class FormService {
     @Autowired
-    private Cs1Repository cs1Repository;
-
-    @Autowired
-    private Cs2Repository cs2Repository;
-
-    @Autowired
-    private Cs3Repository cs3Repository;
-
-    @Autowired
-    private Cs4Repository cs4Repository;
-
-    @Autowired
-    private Cs5Repository cs5Repository;
-
-    @Autowired
-    private Cs6Repository cs6Repository;
-
-    @Autowired
-    private Cs7Repository cs7Repository;
-
-    @Autowired
-    private Cs8Repository cs8Repository;
-
-    @Autowired
-    private Cs9Repository cs9Repository;
-
-    @Autowired
-    private Cs10Repository cs10Repository;
-
-    @Autowired
     private Cs1Service cs1Service;
 
     @Autowired
@@ -92,7 +62,7 @@ public class FormService {
 
     /************************* Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
-        Cs1 entity = cs1Repository.get(id);
+        Cs1 entity = cs1Service.get(id);
         return viewModelMapperService.convert(entity, Cs1ViewModel.class);
     }
 
@@ -103,7 +73,7 @@ public class FormService {
 
     /************************* Cs2 : Begin ***********************/
     public Cs2ViewModel getCs2ViewModel(Integer id) {
-        Cs2 entity = cs2Repository.get(id);
+        Cs2 entity = cs2Service.get(id);
         return viewModelMapperService.convert(entity, Cs2ViewModel.class);
     }
 
@@ -115,7 +85,7 @@ public class FormService {
 
     /************************* Cs3 : Begin ***********************/
     public Cs3ViewModel getCs3ViewModel(Integer id) {
-        Cs3 entity = cs3Repository.get(id);
+        Cs3 entity = cs3Service.get(id);
         return viewModelMapperService.convert(entity, Cs3ViewModel.class);
     }
 
@@ -126,7 +96,7 @@ public class FormService {
 
     /************************* Cs4 : Begin ***********************/
     public Cs4ViewModel getCs4ViewModel(Integer id) {
-        Cs4 entity = cs4Repository.get(id);
+        Cs4 entity = cs4Service.get(id);
         return viewModelMapperService.convert(entity, Cs4ViewModel.class);
     }
 
@@ -137,7 +107,7 @@ public class FormService {
 
     /************************* Cs5 : Begin ***********************/
     public Cs5ViewModel getCs5ViewModel(Integer id) {
-        Cs5 entity = cs5Repository.get(id);
+        Cs5 entity = cs5Service.get(id);
         Cs5ViewModel model = viewModelMapperService.convert(entity, Cs5ViewModel.class);
         model.setItems(this.getSfiPpFormCs5ViewModels(id));
 
@@ -154,7 +124,7 @@ public class FormService {
 
     /************************* Cs6 : Begin ***********************/
     public Cs6ViewModel getCs6ViewModel(Integer id) {
-        Cs6 entity = cs6Repository.get(id);
+        Cs6 entity = cs6Service.get(id);
         return viewModelMapperService.convert(entity, Cs6ViewModel.class);
     }
 
@@ -166,7 +136,7 @@ public class FormService {
 
     /************************* Cs7 : Begin ***********************/
     public Cs7ViewModel getCs7ViewModel(Integer id) {
-        Cs7 entity = cs7Repository.get(id);
+        Cs7 entity = cs7Service.get(id);
         return viewModelMapperService.convert(entity, Cs7ViewModel.class);
     }
 
@@ -177,7 +147,7 @@ public class FormService {
 
     /************************* Cs8 : Begin ***********************/
     public Cs8ViewModel getCs8ViewModel(Integer id) {
-        Cs8 entity = cs8Repository.get(id);
+        Cs8 entity = cs8Service.get(id);
         return viewModelMapperService.convert(entity, Cs8ViewModel.class);
     }
 
@@ -188,7 +158,7 @@ public class FormService {
 
     /************************* Cs9 : Begin ***********************/
     public Cs9ViewModel getCs9ViewModel(Integer id) {
-        Cs9 entity = cs9Repository.get(id);
+        Cs9 entity = cs9Service.get(id);
         return viewModelMapperService.convert(entity, Cs9ViewModel.class);
     }
 
@@ -199,7 +169,7 @@ public class FormService {
 
     /************************* Cs10 : Begin ***********************/
     public Cs10ViewModel getCs10ViewModel(Integer id) {
-        Cs10 entity = cs10Repository.get(id);
+        Cs10 entity = cs10Service.get(id);
         return viewModelMapperService.convert(entity, Cs10ViewModel.class);
     }
 

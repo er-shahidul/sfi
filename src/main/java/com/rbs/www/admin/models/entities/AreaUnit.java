@@ -1,10 +1,12 @@
 package com.rbs.www.admin.models.entities;
 
+import com.rbs.www.common.models.BaseEntityModel;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "company_area_unit")
-public class AreaUnit {
+public class AreaUnit extends BaseEntityModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -16,7 +18,7 @@ public class AreaUnit {
     private String shortCode;
 
     @Column(name = "is_active", nullable = false, columnDefinition = "Boolean default true")
-    private Boolean isActive;
+    private Boolean isActive = true;
 
     public Integer getId() {
         return id;

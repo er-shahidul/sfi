@@ -12,6 +12,10 @@ public class SfiPpFormStatusService {
     @Autowired
     SfiPpFormStatusRepository repository;
 
+    public SfiPpFormStatus get(Integer id) {
+        return repository.get(id);
+    }
+
     public SfiPpFormStatus getByStatus(String status) {
         return repository.getByStatus(status);
     }

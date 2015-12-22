@@ -14,6 +14,10 @@ public class SfiPpFormRegionService {
     @Autowired
     SfiPpFormRegionRepository repository;
 
+    public SfiPpFormRegion get(Integer id) {
+        return repository.get(id);
+    }
+
     public List<SfiPpFormRegion> getAll() {
         return repository.getAll();
     }
