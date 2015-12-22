@@ -1,7 +1,10 @@
 package com.rbs.www.admin.services;
 
 import com.rbs.www.admin.models.entities.AreaUnit;
+import com.rbs.www.admin.models.viewmodels.AreaUnitViewModel;
 import com.rbs.www.admin.repositories.AreaUnitRepository;
+import com.rbs.www.web.common.mapper.EntityModelMapperService;
+import com.rbs.www.web.common.mapper.ViewModelMapperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,12 @@ import java.util.List;
 public class AreaUnitService {
     @Autowired
     private AreaUnitRepository areaUnitRepository;
+
+    @Autowired
+    private ViewModelMapperService viewModelMapperService;
+
+    @Autowired
+    private EntityModelMapperService entityModelMapperService;
 
     public List<AreaUnit> list() {
         return areaUnitRepository.list();
@@ -42,5 +51,13 @@ public class AreaUnitService {
             entity.setUnitDescription(areaUnit.getUnitDescription());
             areaUnitRepository.persist(entity);
         }
+    }
+
+    public AreaUnitViewModel getViewModel(AreaUnit entity) {
+        return viewModelMapperService.convert(entity, AreaUnitViewModel.class);
+    }
+
+    public void setEntity(AreaUnitViewModel model) {
+        areaUnitRepository.persist(entityModelMapperService.convert(model, AreaUnit.class));
     }
 }

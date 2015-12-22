@@ -13,6 +13,10 @@ public class SfiPpFormCs5Service {
     @Autowired
     SfiPpFormCs5Repository repository;
 
+    public SfiPpFormCs5 get(Integer id) {
+        return repository.get(id);
+    }
+
     public SfiPpFormCs5 createByFormAndResearchType(Integer form, SfiPpFormResearchType researchType) {
         SfiPpFormCs5 entity = new SfiPpFormCs5();
         entity.setForm(form);

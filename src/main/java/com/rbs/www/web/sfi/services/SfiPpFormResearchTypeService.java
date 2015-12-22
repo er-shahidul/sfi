@@ -14,6 +14,10 @@ public class SfiPpFormResearchTypeService {
     @Autowired
     private SfiPpFormResearchTypeRepository repository;
 
+    public SfiPpFormResearchType get(Integer id) {
+        return repository.get(id);
+    }
+
     public List<SfiPpFormResearchType> getAll() {
         return repository.getAll();
     }

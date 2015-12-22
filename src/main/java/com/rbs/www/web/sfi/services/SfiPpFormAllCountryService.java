@@ -14,6 +14,9 @@ public class SfiPpFormAllCountryService {
     @Autowired
     SfiPpFormAllCountryRepository repository;
 
+    public SfiPpFormAllCountry get(Integer id) {
+        return repository.get(id);
+    }
     public List<SfiPpFormAllCountry> getAll() {
         return repository.getAll();
     }

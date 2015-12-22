@@ -14,6 +14,10 @@ public class SfiPpFormCs3ProjectStandardObjectiveService {
     @Autowired
     SfiPpFormCs3ProjectStandardObjectiveRepository repository;
 
+    public SfiPpFormCs3ProjectStandardObjective get(Integer id) {
+        return repository.get(id);
+    }
+
     public List<SfiPpFormCs3ProjectStandardObjective> getAll() {
         return repository.getAll();
     }
