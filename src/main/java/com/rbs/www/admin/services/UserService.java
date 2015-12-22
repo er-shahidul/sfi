@@ -170,6 +170,12 @@ public class UserService {
         return true;
     }
 
+    public Boolean isValidEmailUpdate(String email) {
+        if (validationService.isEmptyString(email)) return false;
+        if (!validationService.isValidEmail(email)) return false;
+        return true;
+    }
+
     public boolean isValidPassword(String password) {
         return validationService.isValidPassword(password);
     }

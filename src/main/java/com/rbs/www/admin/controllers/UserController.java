@@ -185,7 +185,7 @@ public class UserController {
     @RequestMapping(value = {"/admin/user/edit/{id}"}, method = RequestMethod.POST)
     public String update(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
-        boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
+        boolean isInvalidEmail = !userService.isValidEmailUpdate(user.getEmail());
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail || isInvalidPassword) {
