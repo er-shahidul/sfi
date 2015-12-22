@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import java.io.Serializable;
 import java.util.List;
 
-@Repository("groupRepository")
+@Repository
 public class GroupRepository extends AbstractRepository<Integer, Group> {
 
     @Autowired
@@ -44,10 +44,6 @@ public class GroupRepository extends AbstractRepository<Integer, Group> {
         return (List<Group>)criteria.list();
     }
 
-    public Group findById(Integer id) {
-        return getByKey(id);
-    }
-
     public Group findByType(String type) {
         Criteria criteria = createEntityCriteria();
         criteria.add(Restrictions.eq("role", type));
@@ -58,9 +54,5 @@ public class GroupRepository extends AbstractRepository<Integer, Group> {
         Criteria criteria = createEntityCriteria();
         criteria.add(Restrictions.eq("role", role));
         return (Group) criteria.uniqueResult();
-    }
-
-    public void save(Group group) {
-        persist(group);
     }
 }

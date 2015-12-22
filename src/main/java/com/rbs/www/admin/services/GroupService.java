@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service("groupService")
+@Service
 @Transactional
 public class GroupService
 {
@@ -24,10 +24,10 @@ public class GroupService
     }
 
     public void update(Group group) {
-        Group entity = groupRepository.findById(group.getId());
+        Group entity = groupRepository.getByKey(group.getId());
         if(entity!=null){
             entity.setRole(group.getRole());
-            groupRepository.save(entity);
+            groupRepository.persist(entity);
         }
     }
 
@@ -44,11 +44,11 @@ public class GroupService
     }
 
     public void save(Group group){
-        groupRepository.save(group);
+        groupRepository.persist(group);
     }
 
     public Group findById(Integer id) {
-        return groupRepository.findById(id);
+        return groupRepository.getByKey(id);
     }
 
     public boolean isRoleUnique(Integer id, String role) {
