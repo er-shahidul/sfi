@@ -1,6 +1,7 @@
 package com.rbs.www.admin.repositories;
 
 import com.rbs.www.admin.models.entities.Company;
+import com.rbs.www.admin.models.viewmodels.CompanyViewModel;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -12,9 +13,9 @@ import java.util.List;
 @Repository
 public class CompanyRepository extends AbstractRepository<Integer, Company> {
     @SuppressWarnings("unchecked")
-    public List<Company> list() {
+    public List<CompanyViewModel> list() {
         Criteria criteria = createEntityCriteria();
         criteria.add(Restrictions.eq("isActive", true));
-        return (List<Company>)criteria.list();
+        return (List<CompanyViewModel>)criteria.list();
     }
 }

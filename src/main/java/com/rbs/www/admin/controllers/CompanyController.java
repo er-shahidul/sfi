@@ -3,6 +3,7 @@ package com.rbs.www.admin.controllers;
 import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.admin.models.datamodels.Logo;
 import com.rbs.www.admin.models.viewmodels.AreaUnitViewModel;
+import com.rbs.www.admin.models.viewmodels.CompanyViewModel;
 import com.rbs.www.admin.services.AreaUnitService;
 import com.rbs.www.admin.services.CompanyService;
 //import com.rbs.www.common.validator.FileValidator;
@@ -43,13 +44,13 @@ public class CompanyController {
     @RequestMapping("/admin/company/list")
     public ModelAndView companyList(ModelMap model) {
         model.addAttribute("title", "company");
-        List companies = companyService.list();
+        List<CompanyViewModel> companies = companyService.list();
         return new ModelAndView("admin/company/list", "companies", companies);
     }
 
     @RequestMapping(value = {"/admin/company/edit/{id}"}, method = RequestMethod.GET)
     public String edit(@PathVariable Integer id, ModelMap model) {
-        Company company = companyService.findById(id);
+        CompanyViewModel company = companyService.getViewModelById(id);
         model.addAttribute("title", "company");
         model.addAttribute("company", company);
 
@@ -137,8 +138,8 @@ public class CompanyController {
     @RequestMapping(value = {"/admin/company/delete/{id}"}, method = RequestMethod.GET)
     public String softDelete(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "company_setting");
-        Company company = companyService.findById(id);
-        companyService.softDelete(company);
+        CompanyViewModel company = companyService.getViewModelById(id);
+        companyService.deleteCompanyEntity(company);
 
         return ("redirect:/admin/company/list");
     }

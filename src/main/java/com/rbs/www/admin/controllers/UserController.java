@@ -3,6 +3,7 @@ package com.rbs.www.admin.controllers;
 import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.admin.models.entities.Group;
 import com.rbs.www.admin.models.entities.User;
+import com.rbs.www.admin.models.viewmodels.CompanyViewModel;
 import com.rbs.www.common.listeners.AuditListener;
 import com.rbs.www.admin.services.CompanyService;
 import com.rbs.www.admin.services.GroupService;
@@ -173,7 +174,7 @@ public class UserController {
         model.addAttribute("title", "user");
         model.addAttribute("edit", true);
 
-        List<Company> companies = companyService.list();
+        List<CompanyViewModel> companies = companyService.list();
         model.addAttribute("companies", companies);
 
         List<Group> groups = groupService.list();
@@ -253,7 +254,7 @@ public class UserController {
         User user = new User();
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
-        List<Company> companies = companyService.list();
+        List<CompanyViewModel> companies = companyService.list();
         model.addAttribute("companies", companies);
 
         List<Group> groups = groupService.list();
