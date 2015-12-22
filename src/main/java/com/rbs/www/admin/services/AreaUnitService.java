@@ -19,18 +19,28 @@ public class AreaUnitService {
     }
 
     public AreaUnit findById(Integer id) {
-        return areaUnitRepository.findById(id);
+        return areaUnitRepository.getByKey(id);
     }
 
     public void save(AreaUnit areaUnit) {
-        areaUnitRepository.save(areaUnit);
+        areaUnit.setIsActive(true);
+        areaUnitRepository.persist(areaUnit);
     }
 
     public void softDelete(AreaUnit areaUnit) {
-        areaUnitRepository.softDelete(areaUnit);
+        AreaUnit entity = areaUnitRepository.getByKey(areaUnit.getId());
+        if(entity!=null){
+            entity.setIsActive(false);
+            areaUnitRepository.persist(entity);
+        }
     }
 
     public void update(AreaUnit areaUnit) {
-        areaUnitRepository.update(areaUnit);
+        AreaUnit entity = areaUnitRepository.getByKey(areaUnit.getId());
+        if(entity!=null){
+            entity.setShortCode(areaUnit.getShortCode());
+            entity.setUnitDescription(areaUnit.getUnitDescription());
+            areaUnitRepository.persist(entity);
+        }
     }
 }
