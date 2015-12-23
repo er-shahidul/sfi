@@ -196,7 +196,7 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         if($scope.cs8Form.$valid){
 
             $http
-                .put(Routing.generate("sfi_cs8_form_update", urlData), $scope.cs8)
+                .put("/form/cs8", $scope.cs8)
                 .then(function(response){
 
                     if(response.data){
