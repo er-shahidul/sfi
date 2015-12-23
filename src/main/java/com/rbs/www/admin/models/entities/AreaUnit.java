@@ -18,7 +18,7 @@ public class AreaUnit extends BaseEntityModel {
     private String shortCode;
 
     @Column(name = "is_active", nullable = false, columnDefinition = "Boolean default true")
-    private Boolean isActive = true;
+    private Boolean isActive;
 
     public Integer getId() {
         return id;
