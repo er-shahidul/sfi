@@ -1,13 +1,14 @@
 package com.rbs.www.admin.models.entities;
 
 import com.rbs.www.common.listeners.AuditListener;
+import com.rbs.www.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @MappedSuperclass
 @EntityListeners(AuditListener.class)
-public abstract class Audit {
+public abstract class Audit extends BaseEntityModel {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")
     private Date createdAt;

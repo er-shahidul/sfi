@@ -325,7 +325,16 @@
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs9.protectionMaintenanceWaterResItems" checklist-value="1">
                                 Improved mapping
-                                <a href="#" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 1)">Share Your Story</a>
+                                <a ng-click="shareHistory(1, 'protectionMaintenanceWaterResItems_1', {})" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 1)">Share Your Story</a>
+                                <div class="col-sm-7 nopadding"
+                                     style="cursor: pointer;"
+                                     ng-file-select ng-model="myFiles"
+                                     ng-file-change="fileSelected(files)"
+                                     ng-multiple="false"
+                                     ng-accept="'image/*,application/pdf'" >
+                                    <div>Click to add files from your computer</div>
+                                    <div><small><u>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</u></small></div>
+                                </div>
                             </label>
                         </li>
                         <li>

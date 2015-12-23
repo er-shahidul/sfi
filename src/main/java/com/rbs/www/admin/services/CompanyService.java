@@ -1,8 +1,11 @@
 package com.rbs.www.admin.services;
 
 import com.rbs.www.admin.models.entities.Company;
+import com.rbs.www.admin.models.viewmodels.CompanyViewModel;
 import com.rbs.www.admin.repositories.CompanyRepository;
 import com.rbs.www.common.util.Util;
+import com.rbs.www.web.common.mapper.EntityModelMapperService;
+import com.rbs.www.web.common.mapper.ViewModelMapperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +19,13 @@ public class CompanyService
     @Autowired
     CompanyRepository companyRepository;
 
-    public List<Company> list() {
+    @Autowired
+    private ViewModelMapperService viewModelMapperService;
+
+    @Autowired
+    private EntityModelMapperService entityModelMapperService;
+
+    public List<CompanyViewModel> list() {
         return companyRepository.list();
     }
 
@@ -31,12 +40,30 @@ public class CompanyService
         companyRepository.persist(company);
     }
 
-    public Company findById(Integer id) {
-        return companyRepository.getByKey(id);
+//    public void setCompanyEntity(CompanyViewModel model, byte[] fileN, String name) {
+//        model.setIsActive(true);
+//        model.setAreaUnit(model.getAreaUnit());
+//        model.setLogoName(name);
+//        if(fileN!=null){model.setLogo(TypeConversionUtils.toObjectType(fileN));}
+//        model.setUpdatedAt(Util.getCurrentDate());
+//        model.setUpdatedBy(Util.getCurrentUsername());
+//        model.setCreatedAt(Util.getCurrentDate());
+//        model.setCreatedBy(Util.getCurrentUsername());
+//        Company entity = entityModelMapperService.convert(model, Company.class);
+//    }
+
+    public CompanyViewModel getViewModelById(Integer id) {
+        Company entity = companyRepository.getByKey(id);
+        return viewModelMapperService.convert(entity, CompanyViewModel.class);
+    }
+
+    public void deleteCompanyEntity(CompanyViewModel model) {
+        model.setIsActive(false);
+        Company entity = entityModelMapperService.convert(model, Company.class);
     }
 
     public void update(Company company, byte[] fileN, String name) {
-        Company entity = this.findById(company.getId());
+        Company entity = companyRepository.getByKey(company.getId());
         if(entity!=null){
             entity.setName(company.getName());
             entity.setSci(company.getSci());
@@ -48,14 +75,6 @@ public class CompanyService
             entity.setUpdatedBy(Util.getCurrentUsername());
             entity.setLogoName(name);
             if(fileN!=null){entity.setLogo(fileN);}
-            companyRepository.persist(entity);
-        }
-    }
-
-    public void softDelete(Company company) {
-        Company entity = this.findById(company.getId());
-        if(entity!=null){
-            entity.setIsActive(false);
             companyRepository.persist(entity);
         }
     }

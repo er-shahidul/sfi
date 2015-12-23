@@ -1,3 +1,5 @@
+//var sfiFormApp = angular.module('sfiFormApp', ['ui.router', 'checklist-model',  'ngSanitize', /*'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.popover', */ 'angularFileUpload', 'ui.bootstrap']);
+
 var sfiFormApp = angular.module('sfiFormApp', ['ui.router', 'checklist-model',  'ngSanitize', 'mgcrea.ngStrap', 'angularFileUpload']);
 
 

@@ -1,6 +1,6 @@
 package com.rbs.www.admin.controllers;
 
-import com.rbs.www.admin.models.entities.AreaUnit;
+import com.rbs.www.admin.models.viewmodels.AreaUnitViewModel;
 import com.rbs.www.admin.services.AreaUnitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,27 +23,27 @@ public class AreaUnitController {
     @RequestMapping("/admin/area/unit/list")
     public ModelAndView areaList(ModelMap model) {
         model.addAttribute("title", "area_unit");
-        List<AreaUnit> areaUnities = areaUnitService.list();
+        List<AreaUnitViewModel> areaUnities = areaUnitService.list();
         return new ModelAndView("admin/area/list", "areaUnities", areaUnities);
     }
 
     @RequestMapping(value = "/admin/area/unit/new", method = RequestMethod.GET)
     public String form(ModelMap model) {
         model.addAttribute("title", "area_unit");
-        AreaUnit areaUnit = new AreaUnit();
+        AreaUnitViewModel areaUnit = new AreaUnitViewModel();
         model.addAttribute("areaUnit", areaUnit);
 
         return "admin/area/new";
     }
 
     @RequestMapping(value = "/admin/area/unit/new", method = RequestMethod.POST)
-    public String save(@Valid AreaUnit areaUnit, BindingResult result, ModelMap model) {
+    public String save(@Valid AreaUnitViewModel areaUnit, BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {
             return "admin/area/new";
         }
 
-        areaUnitService.save(areaUnit);
+        areaUnitService.setAreaUnitEntity(areaUnit);
 
         model.addAttribute("success", "Area Unit " + "" + " has been registered successfully");
         return ("redirect:/admin/area/unit/list");
@@ -52,7 +52,7 @@ public class AreaUnitController {
     @RequestMapping(value = {"/admin/area/unit/edit/{id}"}, method = RequestMethod.GET)
     public String updateForm(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "area_unit");
-        AreaUnit areaUnit = areaUnitService.findById(id);
+        AreaUnitViewModel areaUnit = areaUnitService.getViewModelById(id);
         model.addAttribute("areaUnit", areaUnit);
         model.addAttribute("edit", true);
 
@@ -60,13 +60,13 @@ public class AreaUnitController {
     }
 
     @RequestMapping(value = {"/admin/area/unit/edit/{id}"}, method = RequestMethod.POST)
-    public String update(@Valid AreaUnit areaUnit, BindingResult result, @PathVariable Integer id, ModelMap model) {
+    public String update(@Valid AreaUnitViewModel areaUnit, BindingResult result, @PathVariable Integer id, ModelMap model) {
         model.addAttribute("id", id);
 
         if (result.hasErrors()) {
             return "admin/area/edit";
         }
-        areaUnitService.update(areaUnit);
+        areaUnitService.setAreaUnitEntity(areaUnit);
 
         return ("redirect:/admin/area/unit/list");
     }
@@ -74,8 +74,8 @@ public class AreaUnitController {
     @RequestMapping(value = {"/admin/area/unit/delete/{id}"}, method = RequestMethod.GET)
     public String softDelete(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "area_unit");
-        AreaUnit areaUnit = areaUnitService.findById(id);
-        areaUnitService.softDelete(areaUnit);
+        AreaUnitViewModel areaUnit = areaUnitService.getViewModelById(id);
+        areaUnitService.deleteAreaUnitEntity(areaUnit);
 
         return ("redirect:/admin/area/unit/list");
     }
