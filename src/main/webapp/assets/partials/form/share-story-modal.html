@@ -1,0 +1,110 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #E4E4E4">
+                <p style="font-size: larger">
+                    Why are we asking? Please share your story if you have an interesting or compelling case example of
+                    how your organization improved management and best practices related to the new standard.
+                </p>
+            </div>
+            <div class="modal-body">
+
+                <h5>Mapping</h5>
+
+                <div class="form-group" style="padding-left: 20px">
+                    <div>
+                        Please Describe<br/>
+                        <textarea rows="6" cols="70" ng-model="story.description"></textarea>
+                    </div>
+                    <form>
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <p>Upload File</p>
+                        <!--
+                        <div class="input-group input-large" style="width: 510px;">
+                            <div class="form-control uneditable-input input-fixed input-medium">
+                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                <span class="fileinput-filename"></span>
+                            </div>
+                            <span class="input-group-addon btn default btn-file"
+                                  ng-file-select
+                                  ng-model="myFiles"
+                                  ng-file-change="fileSelected(files)"
+                                  ng-multiple="false"
+                                  ng-accept="'image/*,application/pdf'">Select</span> -->
+
+                            <!--<span class="fileinput-exists">Change </span>-->
+                            <!--<input type="file" name="...">-->
+                            <!--</span>-->
+                            <!--<a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>-->
+                        <!-- </div> -->
+
+                        <div class="col-sm-7 nopadding"
+                             style="cursor: pointer;"
+                             ng-file-select ng-model="myFiles"
+                             ng-file-change="fileSelected(files)"
+                             ng-multiple="false"
+                             ng-accept="'image/*,application/pdf'" >
+                            <div>Click to add files from your computer</div>
+                            <div><small><u>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</u></small></div>
+                        </div>
+
+                        Files can be one of the following formats: .pdf, .doc, .xls)
+                    </div>
+                    </form>
+                    <div style="padding-top: 20px;">
+                        <p>
+                            Who is the communications lead if SFI has questions on this story?
+                        </p>
+
+                        <div>
+                            <form role="form">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <p>First Name</p>
+                                        <input type="text" class="form-control" ng-model="story.firstName">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p>Last Name</p>
+                                        <input type="text" class="form-control" ng-model="story.lastName">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <p>Email</p>
+                                        <input type="text" class="form-control" ng-model="story.email">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <br>
+                    </div>
+                    <div style="padding-top: 20px;">
+                        <p>Choose what SFI can do with your story</p>
+
+                        <div>
+                            <label>
+                                <input icheck type="radio" value="true" name="shareOrgName" ng-model="story.shareOrgName" ng-checked="story.shareOrgName == true"/> Share – with our organization’s name
+                            </label>
+                            <br>
+                            <label>
+                                <input icheck type="radio" value="true" name="shareOrgName"  ng-model="story.shareNoUse" ng-checked="story.shareNoUse == true"/> Share – don't use our organization’s name
+                            </label>
+                            <br>
+                            <label>
+                                <input icheck type="radio" value="true" name="shareOrgName"  ng-model="story.shareUseAggregate" ng-checked="story.shareUseAggregate == true"/> Only use in aggregate
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                        <button type="button" class="btn red" ng-click="saveHistory()">Add Story</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!--Modal Body End-->
+    </div>
+</div>

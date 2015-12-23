@@ -4,10 +4,50 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         function ($rootScope , $scope, Countries, $http, _ , Message){
 
         $scope.cs8 = angular.copy($rootScope.form.cs8);
+        ngScope = $scope;
 
         /** Debug items */
         $scope.cs8.sfiLabelProductSellCountry_1 = [];
+        $scope.cs8.orgContacts = [];
+
+        $scope.cs8.sfiLabelProductGroupContainFSC_Country_1 = [];
+        $scope.cs8.sfiLabelProductGroupContainPEFC_Country_1 = [];
         /** */
+
+
+        $scope.contact = {};
+        $scope.contactIndex = null;
+
+        $scope.addContact = function(){
+
+            if(!$scope.contactForm.$valid){
+                return false;
+            }
+
+            if($scope.contactIndex == null){
+                $scope.contactIndex = $scope.cs8.orgContacts.length;
+                $scope.cs8.orgContacts.push({});
+            }
+
+            $scope.cs8.orgContacts[$scope.contactIndex] = {
+                name     : $scope.contact.name,
+                email    : $scope.contact.email,
+                position : $scope.contact.position
+            }
+
+            $scope.contact = {};
+            $scope.contactIndex = null;
+
+
+        }
+
+        $scope.editContact = function(index, contact){
+            $scope.contactIndex = index;
+            $scope.contact = angular.copy(contact);
+        }
+
+
+
 
     $scope.user = [];
     $scope.countries = Countries.getAll();
