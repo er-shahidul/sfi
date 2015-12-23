@@ -11,6 +11,9 @@ public class OrgContact extends BaseEntityModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "form_id", nullable = true)
+    private Integer sfiPpForm;
+
     @Column(name = "name", nullable = true)
     private String name;
 
@@ -27,6 +30,14 @@ public class OrgContact extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getSfiPpForm() {
+        return sfiPpForm;
+    }
+
+    public void setSfiPpForm(Integer sfiPpForm) {
+        this.sfiPpForm = sfiPpForm;
     }
 
     public String getName() {

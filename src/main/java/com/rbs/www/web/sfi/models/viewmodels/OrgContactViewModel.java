@@ -4,6 +4,7 @@ import com.rbs.www.common.models.BaseViewModel;
 
 public class OrgContactViewModel extends BaseViewModel {
     private Integer id;
+    private Integer sfiPpForm;
     private String name;
     private String email;
     private String position;
@@ -15,6 +16,14 @@ public class OrgContactViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getSfiPpForm() {
+        return sfiPpForm;
+    }
+
+    public void setSfiPpForm(Integer sfiPpForm) {
+        this.sfiPpForm = sfiPpForm;
     }
 
     public String getName() {

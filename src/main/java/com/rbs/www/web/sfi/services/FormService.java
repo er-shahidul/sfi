@@ -4,7 +4,6 @@ import com.rbs.www.web.common.mapper.EntityModelMapperService;
 import com.rbs.www.web.common.mapper.ViewModelMapperService;
 import com.rbs.www.web.sfi.models.entities.*;
 import com.rbs.www.web.sfi.models.viewmodels.*;
-import com.rbs.www.web.sfi.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +36,13 @@ public class FormService {
     private Cs7Service cs7Service;
 
     @Autowired
-    private Cs8Service cs8Service;
+    private Cs8PartialAService cs8PartialAService;
+
+    @Autowired
+    private Cs8PartialBService cs8PartialBService;
+
+    @Autowired
+    private Cs8PartialCService cs8PartialCService;
 
     @Autowired
     private Cs9Service cs9Service;
@@ -147,12 +152,32 @@ public class FormService {
 
     /************************* Cs8 : Begin ***********************/
     public Cs8ViewModel getCs8ViewModel(Integer id) {
-        Cs8 entity = cs8Service.get(id);
-        return viewModelMapperService.convert(entity, Cs8ViewModel.class);
+        Cs8PartialA partialEntityA = cs8PartialAService.get(id);
+        Cs8PartialB partialEntityB = cs8PartialBService.get(id);
+        Cs8PartialC partialEntityC = cs8PartialCService.get(id);
+
+        Cs8PartialAViewModel partialAViewModel = viewModelMapperService.convert(partialEntityA, Cs8PartialAViewModel.class);
+        Cs8PartialBViewModel partialBViewModel = viewModelMapperService.convert(partialEntityB, Cs8PartialBViewModel.class);
+        Cs8PartialCViewModel partialCViewModel = viewModelMapperService.convert(partialEntityC, Cs8PartialCViewModel.class);
+
+        Cs8ViewModel model = new Cs8ViewModel();
+        model.setCs8PartialAViewModel(partialAViewModel);
+        model.setCs8PartialBViewModel(partialBViewModel);
+        model.setCs8PartialCViewModel(partialCViewModel);
+
+        return model;
     }
 
     public void setCs8Entity(Cs8ViewModel model) {
-        Cs8 entity = entityModelMapperService.convert(model, Cs8.class);
+        Cs8PartialAViewModel partialAViewModel = model.getCs8PartialAViewModel();
+        cs8PartialAService.manualPopulation(partialAViewModel);
+        Cs8PartialA partialEntityA = entityModelMapperService.convert(partialAViewModel, Cs8PartialA.class);
+
+        Cs8PartialBViewModel partialBViewModel = model.getCs8PartialBViewModel();
+        Cs8PartialB partialEntityB = entityModelMapperService.convert(partialBViewModel, Cs8PartialB.class);
+
+        Cs8PartialCViewModel partialCViewModel = model.getCs8PartialCViewModel();
+        Cs8PartialC partialEntityC = entityModelMapperService.convert(partialCViewModel, Cs8PartialC.class);
     }
     /************************ Cs8 : End ***********************/
 
