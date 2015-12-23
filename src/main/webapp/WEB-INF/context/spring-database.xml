@@ -11,8 +11,9 @@
                             http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
                             http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd ">
   
-    <context:component-scan base-package="com.rbs.sfi.admin.repositories" />
-    <context:component-scan base-package="com.rbs.sfi.web.repositories" />
+    <context:component-scan base-package="com.rbs.www.admin.repositories" />
+    <context:component-scan base-package="com.rbs.www.web.sfi.repositories" />
+    <context:component-scan base-package="com.rbs.www.web.sic.repositories" />
 
 	<context:property-placeholder location="classpath:application.properties" />
 	
@@ -28,8 +29,9 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="packagesToScan">
 			<list>
-				<value>com.rbs.sfi.admin.entities</value>
-				<value>com.rbs.sfi.web.models.entities</value>
+				<value>com.rbs.www.admin.models.entities</value>
+				<value>com.rbs.www.web.sfi.models.entities</value>
+				<value>com.rbs.www.web.sic.models.entities</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
