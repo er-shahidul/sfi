@@ -345,12 +345,14 @@ sfiFormApp
 
 
 
-
+/*
 sfiFormApp.directive('icheck', ['$rootScope', '$timeout',  function($rootScope, $timeout){
 
     return {
         require: 'ngModel',
         link: function($scope, element, $attrs, ngModel) {
+
+
 
             return $timeout(function() {
                 var value = $attrs['value'];
@@ -380,6 +382,8 @@ sfiFormApp.directive('icheck', ['$rootScope', '$timeout',  function($rootScope, 
         }
     };
 }]);
+
+*/
 
 sfiFormApp
     .config(function($popoverProvider) {
