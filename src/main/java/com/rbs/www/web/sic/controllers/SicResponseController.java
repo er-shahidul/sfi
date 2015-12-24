@@ -70,4 +70,10 @@ public class SicResponseController {
         sicFormService.setSicCs9Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/form/sic/cs10", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
+    public ResponseEntity<String> formCs10(@RequestBody SicCs10ViewModel model, BindingResult result) {
+        sicFormService.setSicCs10Entity(model);
+        return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
+    }
 }
