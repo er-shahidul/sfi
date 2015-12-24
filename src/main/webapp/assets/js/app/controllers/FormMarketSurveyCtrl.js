@@ -4,16 +4,6 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         function ($rootScope , $scope, Countries, $http, _ , Message){
 
         $scope.cs8 = angular.copy($rootScope.form.cs8);
-        ngScope = $scope;
-
-        /** Debug items */
-        $scope.cs8.sfiLabelProductSellCountry_1 = [];
-        $scope.cs8.orgContacts = [];
-
-        $scope.cs8.sfiLabelProductGroupContainFSC_Country_1 = [];
-        $scope.cs8.sfiLabelProductGroupContainPEFC_Country_1 = [];
-        /** */
-
 
         $scope.contact = {};
         $scope.contactIndex = null;
