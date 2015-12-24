@@ -2,8 +2,11 @@ package com.rbs.www.admin.services;
 
 import com.rbs.www.admin.models.entities.Group;
 import com.rbs.www.admin.models.entities.User;
+import com.rbs.www.admin.models.viewmodels.UserViewModel;
 import com.rbs.www.admin.repositories.UserRepository;
 import com.rbs.www.common.util.Util;
+import com.rbs.www.web.common.mapper.EntityModelMapperService;
+import com.rbs.www.web.common.mapper.ViewModelMapperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,6 +27,12 @@ public class UserService {
 
     @Autowired
     private ValidationService validationService;
+
+    @Autowired
+    private ViewModelMapperService viewModelMapperService;
+
+    @Autowired
+    private EntityModelMapperService entityModelMapperService;
 
     public void save(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -178,5 +187,16 @@ public class UserService {
 
     public boolean isValidPassword(String password) {
         return validationService.isValidPassword(password);
+    }
+
+
+    public UserViewModel getViewModelById(Integer id) {
+        User entity = userRepository.getByKey(id);
+        return viewModelMapperService.convert(entity, UserViewModel.class);
+    }
+
+    public void setAreaUnitEntity(UserViewModel model) {
+        model.setIsActive(true);
+        User entity = entityModelMapperService.convert(model, User.class);
     }
 }

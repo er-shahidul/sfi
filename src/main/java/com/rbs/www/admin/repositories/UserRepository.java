@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Repository("userRepository")
+@Repository
 public class UserRepository extends AbstractRepository<Integer, User> {
 
     @Autowired
