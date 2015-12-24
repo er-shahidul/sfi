@@ -853,16 +853,16 @@
 
             <div class="content-pading">
                 <label>
-                    <input icheck type="radio" name="useWho1A1B" ng-model="cs9.useWho1A1B" value=true> Yes
-                    <input icheck type="radio" name="useWho1A1B" ng-model="cs9.useWho1A1B" value=false> No
+                    <input icheck type="radio" name="useWho1A1B" ng-model="cs9.useWho1A1B" value=true ng-checked="cs9.useWho1A1B"> Yes
+                    <input icheck type="radio" name="useWho1A1B" ng-model="cs9.useWho1A1B" value=false ng-checked="!cs9.useWho1A1B"> No
                 </label>
 
-                <p>
+                <p ng-show="cs9.useWho1A1B">
                     Please note the name of the collaborative effort if appropriate, or the lead organization for the
                     collaborative
                 </p>
 
-                <div class="form-group">
+                <div class="form-group" ng-show="cs9.useWho1A1B">
                     <textarea rows="2" cols="70" ng-model="cs9.useWho1A1BNote"></textarea>
                 </div>
             </div>
@@ -878,16 +878,16 @@
 
             <div class="content-pading">
                 <label>
-                    <input icheck type="radio" name="stopWho1A1B" ng-model="cs9.stopWho1A1B" value=true> Yes
-                    <input icheck type="radio" name="stopWho1A1B" ng-model="cs9.stopWho1A1B" value=false> No
+                    <input icheck type="radio" name="stopWho1A1B" ng-model="cs9.stopWho1A1B" value=true ng-checked="cs9.stopWho1A1B"> Yes
+                    <input icheck type="radio" name="stopWho1A1B" ng-model="cs9.stopWho1A1B" value=false ng-checked="!cs9.stopWho1A1B"> No
                 </label>
 
-                <p>
+                <p ng-show="cs9.stopWho1A1B">
                     Please note the name of the collaborative effort if appropriate, or the lead organization for the
                     collaborative
                 </p>
 
-                <div class="form-group">
+                <div class="form-group" ng-show="cs9.stopWho1A1B">
                     <textarea rows="2" cols="70" ng-model="cs9.stopWho1A1BNote"></textarea>
                 </div>
             </div>
