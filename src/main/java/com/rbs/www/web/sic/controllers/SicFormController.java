@@ -36,6 +36,7 @@ public class SicFormController {
         model.addAttribute("cs3", formService.getSicCs3ViewModel(id));
         model.addAttribute("cs4", formService.getSicCs4ViewModel(id));
         model.addAttribute("cs5", formService.getSicCs5ViewModel(id));
+        model.addAttribute("cs6", formService.getSicCs6ViewModel(id));
 
         model.addAttribute("company", sicFormData.getCompany());
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
