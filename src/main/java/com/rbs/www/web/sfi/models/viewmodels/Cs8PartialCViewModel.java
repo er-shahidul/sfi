@@ -33,6 +33,10 @@ public class Cs8PartialCViewModel extends BaseViewModel {
     private Set<Integer> fscForestCertificationItems_12;
     private Set<Integer> fscForestCertificationItems_13;
 
+    private Set<Integer> sfiHelpCommunication;
+    private Set<Integer> sfiMarketExternally;
+    private Set<Integer> sfiServeBetter;
+
     @Override
     public Integer getId() {
         return id;
@@ -248,5 +252,29 @@ public class Cs8PartialCViewModel extends BaseViewModel {
 
     public void setFscForestCertificationItems_13(Set<Integer> fscForestCertificationItems_13) {
         this.fscForestCertificationItems_13 = fscForestCertificationItems_13;
+    }
+
+    public Set<Integer> getSfiHelpCommunication() {
+        return sfiHelpCommunication;
+    }
+
+    public void setSfiHelpCommunication(Set<Integer> sfiHelpCommunication) {
+        this.sfiHelpCommunication = sfiHelpCommunication;
+    }
+
+    public Set<Integer> getSfiMarketExternally() {
+        return sfiMarketExternally;
+    }
+
+    public void setSfiMarketExternally(Set<Integer> sfiMarketExternally) {
+        this.sfiMarketExternally = sfiMarketExternally;
+    }
+
+    public Set<Integer> getSfiServeBetter() {
+        return sfiServeBetter;
+    }
+
+    public void setSfiServeBetter(Set<Integer> sfiServeBetter) {
+        this.sfiServeBetter = sfiServeBetter;
     }
 }

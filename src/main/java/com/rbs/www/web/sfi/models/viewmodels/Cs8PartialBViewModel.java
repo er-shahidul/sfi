@@ -7,10 +7,6 @@ import java.util.Set;
 public class Cs8PartialBViewModel extends BaseViewModel {
     private Integer id;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_1;
-    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_10;
-    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_11;
-    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_12;
-    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_13;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_2;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_3;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_4;
@@ -19,13 +15,24 @@ public class Cs8PartialBViewModel extends BaseViewModel {
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_7;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_8;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_9;
+    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_10;
+    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_11;
+    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_12;
+    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_13;
+
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_1;
+    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_2;
+    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_3;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_10;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_11;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_12;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_13;
-    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_2;
-    private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_3;
+
+
+//    cs8PartialAViewModel: {FSCLandCertification: null, alsoFSCLabel_1: [], alsoFSCLabel_10: [], alsoFSCLabel_11: [],…}
+//    cs8PartialBViewModel: {id: 1, sfiLabelProductGroupContainFSC_Country_1: [], sfiLabelProductGroupContainFSC_Country_10: [],…}
+//    cs8PartialCViewModel: {fscCocCertificationItems_1: [], fscCocCertificationItems_10: [], fscCocCertificationItems_11: [],…}
+
 
     @Override
     public Integer getId() {

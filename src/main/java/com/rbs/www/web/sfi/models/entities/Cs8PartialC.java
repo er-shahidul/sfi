@@ -145,6 +145,21 @@ public class Cs8PartialC extends BaseEntityModel {
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> fscForestCertificationItems_13;
 
+    @Column(name = "cs8_sfiHelpCommunication", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> sfiHelpCommunication;
+
+    @Column(name = "cs8_sfiMarketExternally", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> sfiMarketExternally;
+
+    @Column(name = "cs8_sfiServeBetter", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> sfiServeBetter;
+
     @Override
     public Integer getId() {
         return id;
@@ -360,5 +375,29 @@ public class Cs8PartialC extends BaseEntityModel {
 
     public void setFscForestCertificationItems_13(Set<Integer> fscForestCertificationItems_13) {
         addAll(this.fscForestCertificationItems_13, fscForestCertificationItems_13);
+    }
+
+    public Set<Integer> getSfiHelpCommunication() {
+        return sfiHelpCommunication;
+    }
+
+    public void setSfiHelpCommunication(Set<Integer> sfiHelpCommunication) {
+        addAll(this.sfiHelpCommunication, sfiHelpCommunication);
+    }
+
+    public Set<Integer> getSfiMarketExternally() {
+        return sfiMarketExternally;
+    }
+
+    public void setSfiMarketExternally(Set<Integer> sfiMarketExternally) {
+        addAll(this.sfiMarketExternally, sfiMarketExternally);
+    }
+
+    public Set<Integer> getSfiServeBetter() {
+        return sfiServeBetter;
+    }
+
+    public void setSfiServeBetter(Set<Integer> sfiServeBetter) {
+        addAll(this.sfiServeBetter, sfiServeBetter);
     }
 }

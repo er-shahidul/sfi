@@ -960,6 +960,63 @@ public class Cs8PartialA extends BaseEntityModel {
     @Column(name = "cs8_whyChoseSFI9", columnDefinition = "TEXT", nullable = true)
     private String whyChoseSFI9;
 
+    @Column(name = "cs8_fscDemandDeveloping_1", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_1;
+
+    @Column(name = "cs8_sfiDemandDeveloping_2", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_2;
+
+    @Column(name = "cs8_sfiDemandDeveloping_3", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_3;
+
+    @Column(name = "cs8_sfiDemandDeveloping_4", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_4;
+
+    @Column(name = "cs8_sfiDemandDeveloping_5", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_5;
+
+    @Column(name = "cs8_sfiDemandDeveloping_6", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_6;
+
+    @Column(name = "cs8_sfiDemandDeveloping_7", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_7;
+
+    @Column(name = "cs8_sfiDemandDeveloping_8", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_8;
+
+    @Column(name = "cs8_sfiDemandDeveloping_9", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_9;
+
+    @Column(name = "cs8_sfiDemandDeveloping_10", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_10;
+
+    @Column(name = "cs8_sfiDemandDeveloping_11", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_11;
+
+    @Column(name = "cs8_sfiDemandDeveloping_12", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_12;
+
+    @Column(name = "cs8_sfiDemandDeveloping_13", columnDefinition = "TEXT", nullable = true)
+    private String sfiDemandDeveloping_13;
+
+    @Column(name = "cs8_sfiHelpCommunicationExplain", columnDefinition = "TEXT", nullable = true)
+    private String sfiHelpCommunicationExplain;
+
+    @Column(name = "cs8_sfiMarketExplain1", columnDefinition = "TEXT", nullable = true)
+    private String sfiMarketExplain1;
+
+    @Column(name = "cs8_sfiMarketExplain2", columnDefinition = "TEXT", nullable = true)
+    private String sfiMarketExplain2;
+
+    @Column(name = "cs8_sfiServeComments", columnDefinition = "TEXT", nullable = true)
+    private String sfiServeComments;
+
+    @Column(name = "cs8_fscCocCertificationItemsWhy_2", columnDefinition = "TEXT", nullable = true)
+    private String fscCocCertificationItemsWhy_2;
+
+    @Column(name = "cs8_fscDemandDeveloping_4", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_4;
+
     @Override
     public Integer getId() {
         return id;
@@ -3127,5 +3184,157 @@ public class Cs8PartialA extends BaseEntityModel {
 
     public void setWhyChoseSFI9(String whyChoseSFI9) {
         this.whyChoseSFI9 = whyChoseSFI9;
+    }
+
+    public String getFscDemandDeveloping_1() {
+        return fscDemandDeveloping_1;
+    }
+
+    public void setFscDemandDeveloping_1(String fscDemandDeveloping_1) {
+        this.fscDemandDeveloping_1 = fscDemandDeveloping_1;
+    }
+
+    public String getSfiDemandDeveloping_2() {
+        return sfiDemandDeveloping_2;
+    }
+
+    public void setSfiDemandDeveloping_2(String sfiDemandDeveloping_2) {
+        this.sfiDemandDeveloping_2 = sfiDemandDeveloping_2;
+    }
+
+    public String getSfiDemandDeveloping_3() {
+        return sfiDemandDeveloping_3;
+    }
+
+    public void setSfiDemandDeveloping_3(String sfiDemandDeveloping_3) {
+        this.sfiDemandDeveloping_3 = sfiDemandDeveloping_3;
+    }
+
+    public String getSfiDemandDeveloping_4() {
+        return sfiDemandDeveloping_4;
+    }
+
+    public void setSfiDemandDeveloping_4(String sfiDemandDeveloping_4) {
+        this.sfiDemandDeveloping_4 = sfiDemandDeveloping_4;
+    }
+
+    public String getSfiDemandDeveloping_5() {
+        return sfiDemandDeveloping_5;
+    }
+
+    public void setSfiDemandDeveloping_5(String sfiDemandDeveloping_5) {
+        this.sfiDemandDeveloping_5 = sfiDemandDeveloping_5;
+    }
+
+    public String getSfiDemandDeveloping_6() {
+        return sfiDemandDeveloping_6;
+    }
+
+    public void setSfiDemandDeveloping_6(String sfiDemandDeveloping_6) {
+        this.sfiDemandDeveloping_6 = sfiDemandDeveloping_6;
+    }
+
+    public String getSfiDemandDeveloping_7() {
+        return sfiDemandDeveloping_7;
+    }
+
+    public void setSfiDemandDeveloping_7(String sfiDemandDeveloping_7) {
+        this.sfiDemandDeveloping_7 = sfiDemandDeveloping_7;
+    }
+
+    public String getSfiDemandDeveloping_8() {
+        return sfiDemandDeveloping_8;
+    }
+
+    public void setSfiDemandDeveloping_8(String sfiDemandDeveloping_8) {
+        this.sfiDemandDeveloping_8 = sfiDemandDeveloping_8;
+    }
+
+    public String getSfiDemandDeveloping_9() {
+        return sfiDemandDeveloping_9;
+    }
+
+    public void setSfiDemandDeveloping_9(String sfiDemandDeveloping_9) {
+        this.sfiDemandDeveloping_9 = sfiDemandDeveloping_9;
+    }
+
+    public String getSfiDemandDeveloping_10() {
+        return sfiDemandDeveloping_10;
+    }
+
+    public void setSfiDemandDeveloping_10(String sfiDemandDeveloping_10) {
+        this.sfiDemandDeveloping_10 = sfiDemandDeveloping_10;
+    }
+
+    public String getSfiDemandDeveloping_11() {
+        return sfiDemandDeveloping_11;
+    }
+
+    public void setSfiDemandDeveloping_11(String sfiDemandDeveloping_11) {
+        this.sfiDemandDeveloping_11 = sfiDemandDeveloping_11;
+    }
+
+    public String getSfiDemandDeveloping_12() {
+        return sfiDemandDeveloping_12;
+    }
+
+    public void setSfiDemandDeveloping_12(String sfiDemandDeveloping_12) {
+        this.sfiDemandDeveloping_12 = sfiDemandDeveloping_12;
+    }
+
+    public String getSfiDemandDeveloping_13() {
+        return sfiDemandDeveloping_13;
+    }
+
+    public void setSfiDemandDeveloping_13(String sfiDemandDeveloping_13) {
+        this.sfiDemandDeveloping_13 = sfiDemandDeveloping_13;
+    }
+
+    public String getSfiHelpCommunicationExplain() {
+        return sfiHelpCommunicationExplain;
+    }
+
+    public void setSfiHelpCommunicationExplain(String sfiHelpCommunicationExplain) {
+        this.sfiHelpCommunicationExplain = sfiHelpCommunicationExplain;
+    }
+
+    public String getSfiMarketExplain1() {
+        return sfiMarketExplain1;
+    }
+
+    public void setSfiMarketExplain1(String sfiMarketExplain1) {
+        this.sfiMarketExplain1 = sfiMarketExplain1;
+    }
+
+    public String getSfiMarketExplain2() {
+        return sfiMarketExplain2;
+    }
+
+    public void setSfiMarketExplain2(String sfiMarketExplain2) {
+        this.sfiMarketExplain2 = sfiMarketExplain2;
+    }
+
+    public String getSfiServeComments() {
+        return sfiServeComments;
+    }
+
+    public void setSfiServeComments(String sfiServeComments) {
+        this.sfiServeComments = sfiServeComments;
+    }
+
+    public String getFscCocCertificationItemsWhy_2() {
+        return fscCocCertificationItemsWhy_2;
+    }
+
+    public void setFscCocCertificationItemsWhy_2(String fscCocCertificationItemsWhy_2) {
+        this.fscCocCertificationItemsWhy_2 = fscCocCertificationItemsWhy_2;
+    }
+
+    public String getFscDemandDeveloping_4() {
+        return fscDemandDeveloping_4;
+    }
+
+    public void setFscDemandDeveloping_4(String fscDemandDeveloping_4) {
+        this.fscDemandDeveloping_4 = fscDemandDeveloping_4;
     }
 }
