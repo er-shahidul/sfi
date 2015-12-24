@@ -486,9 +486,10 @@
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity414Items" checklist-value="1">
                                 Participated in conservation planning and priority-setting efforts. Please identify the name of the effort or process in which you participated.
                             </label>
-                            Please explain
-                            <div class="form-group">
-                                <textarea rows="4" cols="70"></textarea>
+
+                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items, 1)">
+                                <label>Please explain</label><br/>
+                                <textarea rows="4" cols="70" ng-model="cs9.conservationBiodiversity414_explain1"></textarea>
                             </div>
                         </li>
                         <li>
@@ -498,8 +499,8 @@
                             </label>
 
                             <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items, 2)">
-                                Please explain<br/>
-                                <textarea rows="4" cols="70"></textarea>
+                                <label>Please explain</label><br/>
+                                <textarea rows="4" cols="70" ng-model="cs9.conservationBiodiversity414_explain2"></textarea>
                             </div>
                         </li>
                         <li>
@@ -521,8 +522,8 @@
                             </label>
 
                             <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items, 5)">
-                                Please explain<br/>
-                                <textarea rows="4" cols="70"></textarea>
+                                <label>Please explain</label><br/>
+                                <textarea rows="4" cols="70" ng-model="cs9.conservationBiodiversity414_explain5"></textarea>
                             </div>
                         </li>
                         <li>
@@ -531,8 +532,8 @@
                                 Used provincial wildlife recovery plans for priority setting efforts .Please identify the provincial wildlife recovery plan and/or species affected.
                             </label>
                             <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items, 6)">
-                                Please explain<br/>
-                                <textarea rows="4" cols="70"></textarea>
+                                <label>Please explain</label><br/>
+                                <textarea rows="4" cols="70" ng-model="cs9.conservationBiodiversity414_explain6"></textarea>
                             </div>
                         </li>
                     </ul>
