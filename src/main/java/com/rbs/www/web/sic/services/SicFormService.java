@@ -26,6 +26,9 @@ public class SicFormService {
     private SicCs4Repository sicCs4Repository;
 
     @Autowired
+    private SicCs5Repository sicCs5Repository;
+
+    @Autowired
     private SicCs1Service sicCs1Service;
 
     @Autowired
@@ -36,6 +39,9 @@ public class SicFormService {
 
     @Autowired
     private SicCs4Service sicCs4Service;
+
+    @Autowired
+    private SicCs5Service sicCs5Service;
 
     @Autowired
     private ViewModelMapperService viewModelMapperService;
@@ -86,4 +92,15 @@ public class SicFormService {
         SicCs4 entity = entityModelMapperService.convert(model, SicCs4.class);
     }
     /************************* SicCs4 : End ***********************/
+
+    /************************* SicCs5 : Begin ***********************/
+    public SicCs5ViewModel getSicCs5ViewModel(Integer id) {
+        SicCs5 entity = sicCs5Repository.get(id);
+        return viewModelMapperService.convert(entity, SicCs5ViewModel.class);
+    }
+
+    public void setSicCs5Entity(SicCs5ViewModel model) {
+        SicCs5 entity = entityModelMapperService.convert(model, SicCs5.class);
+    }
+    /************************* SicCs5 : End ***********************/
 }
