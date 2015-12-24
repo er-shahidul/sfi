@@ -1202,38 +1202,41 @@
             </p>
             <br>
 
-            <div class="col-lg-6">
-                <p>
-                    Acres converted of our managed forest land
-                </p>
-
-                <table>
+            <div class="col-lg-12">
+                <table width="100%">
                     <thead>
-                        <td>Acres converted of our managed forest land</td>
-                        <td>Region</td>
+                        <td><label>Acres converted of our managed forest land</label></td>
+                        <td><label>Region</label></td>
                     </thead>
                     <tbody>
                         <tr ng-repeat="forestlandArea in cs9.forestlandAreas">
-                            <td>{{ forestlandArea.area }}</td>
+                            <td>{{ forestlandArea.area }} AC</td>
                             <td>{{ forestlandArea.region.name }}</td>
-
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="number" name="area" ng-model="regionArea"> AC
+                                </label>
+                            </td>
+                            <td ng-init="regionId = 0">
+                                <label>
+                                    <select class="col-lg-12" ng-model="regionId" id="regionId">
+                                        <option value=0>< Select Region ></option>
+                                        <option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
+                                    </select>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a style="text-align: right;padding-top: 30px;" ng-click="saveRegionArea()">+ Add Another Line</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <label>
-                    <input type="number" name="area" ng-model="regionArea"> AC
-                </label>
-            </div>
-            <div class="col-lg-6" ng-init="regionId = 0">
-                <p>
-                    Region
-                </p>
-                <select class="col-lg-12" ng-model="regionId" id="regionId">
-                    <option value=0>< Select Region ></option>
-                    <option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
-                </select>
-                
-                <a style="text-align: right;padding-top: 30px;" ng-click="saveRegionArea()">+ Add Another Line</a>
+
             </div>
         </div>
         </form>
