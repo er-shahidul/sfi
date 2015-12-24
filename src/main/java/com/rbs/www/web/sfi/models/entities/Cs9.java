@@ -206,6 +206,58 @@ public class Cs9 extends BaseEntityModel {
     @Column(name = "cs9_respondingOtherArea", nullable = true)
     private String respondingOtherArea;
 
+    @Column(name = "cs9_ecologicalImpactsLandscape", nullable = true)
+    private Boolean ecologicalImpactsLandscape;
+
+    @Column(name = "cs9_ecologicalImpactsSite", nullable = true)
+    private Boolean ecologicalImpactsSite;
+
+    @Column(name = "cs9_economicOther", nullable = true)
+    private Boolean economicOther;
+
+    @Column(name = "cs9_economicProductivity", nullable = true)
+    private Boolean economicProductivity;
+
+    @Column(name = "cs9_economicReasons", nullable = true)
+    private Boolean economicReasons;
+
+    @Column(name = "cs9_economicStandQuality", nullable = true)
+    private Boolean economicStandQuality;
+
+    @Column(name = "cs9_environmentalHarmOther", nullable = true)
+    private Boolean environmentalHarmOther;
+
+    @Column(name = "cs9_mitigatingEnvironmentalHarm", nullable = true)
+    private Boolean mitigatingEnvironmentalHarm;
+
+    @Column(name = "cs9_respondingDiseaseIssues", nullable = true)
+    private Boolean respondingDiseaseIssues;
+
+    @Column(name = "cs9_respondingForestHealth", nullable = true)
+    private Boolean respondingForestHealth;
+
+    @Column(name = "cs9_respondingInsect", nullable = true)
+    private Boolean respondingInsect;
+
+    @Column(name = "cs9_respondingInvasiveSpecies", nullable = true)
+    private Boolean respondingInvasiveSpecies;
+
+    @Column(name = "cs9_respondingOther", nullable = true)
+    private Boolean respondingOther;
+
+    @Column(name = "cs9_restorationForestCover", nullable = true)
+    private Boolean restorationForestCover;
+
+    @Column(name = "cs9_restorationNativeForest", nullable = true)
+    private Boolean restorationNativeForest;
+
+    @Column(name = "cs9_restorationOther", nullable = true)
+    private Boolean restorationOther;
+
+    @Column(name = "cs9_restorationRiparianProtection", nullable = true)
+    private Boolean restorationRiparianProtection;
+
+
     @Override
     public Integer getId() {
         return id;
@@ -685,5 +737,141 @@ public class Cs9 extends BaseEntityModel {
 
     public void setRespondingOtherArea(String respondingOtherArea) {
         this.respondingOtherArea = respondingOtherArea;
+    }
+
+    public Boolean getEcologicalImpactsLandscape() {
+        return ecologicalImpactsLandscape;
+    }
+
+    public void setEcologicalImpactsLandscape(Boolean ecologicalImpactsLandscape) {
+        this.ecologicalImpactsLandscape = ecologicalImpactsLandscape;
+    }
+
+    public Boolean getEcologicalImpactsSite() {
+        return ecologicalImpactsSite;
+    }
+
+    public void setEcologicalImpactsSite(Boolean ecologicalImpactsSite) {
+        this.ecologicalImpactsSite = ecologicalImpactsSite;
+    }
+
+    public Boolean getEconomicOther() {
+        return economicOther;
+    }
+
+    public void setEconomicOther(Boolean economicOther) {
+        this.economicOther = economicOther;
+    }
+
+    public Boolean getEconomicProductivity() {
+        return economicProductivity;
+    }
+
+    public void setEconomicProductivity(Boolean economicProductivity) {
+        this.economicProductivity = economicProductivity;
+    }
+
+    public Boolean getEconomicReasons() {
+        return economicReasons;
+    }
+
+    public void setEconomicReasons(Boolean economicReasons) {
+        this.economicReasons = economicReasons;
+    }
+
+    public Boolean getEconomicStandQuality() {
+        return economicStandQuality;
+    }
+
+    public void setEconomicStandQuality(Boolean economicStandQuality) {
+        this.economicStandQuality = economicStandQuality;
+    }
+
+    public Boolean getEnvironmentalHarmOther() {
+        return environmentalHarmOther;
+    }
+
+    public void setEnvironmentalHarmOther(Boolean environmentalHarmOther) {
+        this.environmentalHarmOther = environmentalHarmOther;
+    }
+
+    public Boolean getMitigatingEnvironmentalHarm() {
+        return mitigatingEnvironmentalHarm;
+    }
+
+    public void setMitigatingEnvironmentalHarm(Boolean mitigatingEnvironmentalHarm) {
+        this.mitigatingEnvironmentalHarm = mitigatingEnvironmentalHarm;
+    }
+
+    public Boolean getRespondingDiseaseIssues() {
+        return respondingDiseaseIssues;
+    }
+
+    public void setRespondingDiseaseIssues(Boolean respondingDiseaseIssues) {
+        this.respondingDiseaseIssues = respondingDiseaseIssues;
+    }
+
+    public Boolean getRespondingForestHealth() {
+        return respondingForestHealth;
+    }
+
+    public void setRespondingForestHealth(Boolean respondingForestHealth) {
+        this.respondingForestHealth = respondingForestHealth;
+    }
+
+    public Boolean getRespondingInsect() {
+        return respondingInsect;
+    }
+
+    public void setRespondingInsect(Boolean respondingInsect) {
+        this.respondingInsect = respondingInsect;
+    }
+
+    public Boolean getRespondingInvasiveSpecies() {
+        return respondingInvasiveSpecies;
+    }
+
+    public void setRespondingInvasiveSpecies(Boolean respondingInvasiveSpecies) {
+        this.respondingInvasiveSpecies = respondingInvasiveSpecies;
+    }
+
+    public Boolean getRespondingOther() {
+        return respondingOther;
+    }
+
+    public void setRespondingOther(Boolean respondingOther) {
+        this.respondingOther = respondingOther;
+    }
+
+    public Boolean getRestorationForestCover() {
+        return restorationForestCover;
+    }
+
+    public void setRestorationForestCover(Boolean restorationForestCover) {
+        this.restorationForestCover = restorationForestCover;
+    }
+
+    public Boolean getRestorationNativeForest() {
+        return restorationNativeForest;
+    }
+
+    public void setRestorationNativeForest(Boolean restorationNativeForest) {
+        this.restorationNativeForest = restorationNativeForest;
+    }
+
+    public Boolean getRestorationOther() {
+        return restorationOther;
+    }
+
+    public void setRestorationOther(Boolean restorationOther) {
+        this.restorationOther = restorationOther;
+    }
+
+    public Boolean getRestorationRiparianProtection() {
+        return restorationRiparianProtection;
+    }
+
+    public void setRestorationRiparianProtection(Boolean restorationRiparianProtection) {
+        this.restorationRiparianProtection = restorationRiparianProtection;
     }
 }
