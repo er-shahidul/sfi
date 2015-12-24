@@ -78,6 +78,24 @@ public class Cs10 extends BaseEntityModel {
     @Column(name = "cs10_trainedWoodProducersChanged", nullable = true)
     private String trainedWoodProducersChanged;
 
+    @Column(name = "cs10_biodiversityManagementMechanismDescribe", nullable = true)
+    private String biodiversityManagementMechanismDescribe;
+
+    @Column(name = "cs10_biodiversityTrainingMechanismDescribe", nullable = true)
+    private String biodiversityTrainingMechanismDescribe;
+
+    @Column(name = "cs10_biodiversityTrainingNoDescribe", nullable = true)
+    private String biodiversityTrainingNoDescribe;
+
+    @Column(name = "cs10_biodiversityManagementNoDescribe", nullable = true)
+    private String biodiversityManagementNoDescribe;
+
+    @Column(name = "cs10_biodiversityMechanismDescribe", nullable = true)
+    private String biodiversityMechanismDescribe;
+
+    @Column(name = "cs10_biodiversityNoDescribe", nullable = true)
+    private String biodiversityNoDescribe;
+
     @Override
     public Integer getId() {
         return id;
@@ -221,5 +239,53 @@ public class Cs10 extends BaseEntityModel {
 
     public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
         this.trainedWoodProducersChanged = trainedWoodProducersChanged;
+    }
+
+    public String getBiodiversityManagementMechanismDescribe() {
+        return biodiversityManagementMechanismDescribe;
+    }
+
+    public void setBiodiversityManagementMechanismDescribe(String biodiversityManagementMechanismDescribe) {
+        this.biodiversityManagementMechanismDescribe = biodiversityManagementMechanismDescribe;
+    }
+
+    public String getBiodiversityTrainingMechanismDescribe() {
+        return biodiversityTrainingMechanismDescribe;
+    }
+
+    public void setBiodiversityTrainingMechanismDescribe(String biodiversityTrainingMechanismDescribe) {
+        this.biodiversityTrainingMechanismDescribe = biodiversityTrainingMechanismDescribe;
+    }
+
+    public String getBiodiversityTrainingNoDescribe() {
+        return biodiversityTrainingNoDescribe;
+    }
+
+    public void setBiodiversityTrainingNoDescribe(String biodiversityTrainingNoDescribe) {
+        this.biodiversityTrainingNoDescribe = biodiversityTrainingNoDescribe;
+    }
+
+    public String getBiodiversityManagementNoDescribe() {
+        return biodiversityManagementNoDescribe;
+    }
+
+    public void setBiodiversityManagementNoDescribe(String biodiversityManagementNoDescribe) {
+        this.biodiversityManagementNoDescribe = biodiversityManagementNoDescribe;
+    }
+
+    public String getBiodiversityMechanismDescribe() {
+        return biodiversityMechanismDescribe;
+    }
+
+    public void setBiodiversityMechanismDescribe(String biodiversityMechanismDescribe) {
+        this.biodiversityMechanismDescribe = biodiversityMechanismDescribe;
+    }
+
+    public String getBiodiversityNoDescribe() {
+        return biodiversityNoDescribe;
+    }
+
+    public void setBiodiversityNoDescribe(String biodiversityNoDescribe) {
+        this.biodiversityNoDescribe = biodiversityNoDescribe;
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Repository("userRepository")
+@Repository
 public class UserRepository extends AbstractRepository<Integer, User> {
 
     @Autowired
@@ -21,11 +21,6 @@ public class UserRepository extends AbstractRepository<Integer, User> {
 
     public void update(User user) {
         persist(user);
-    }
-
-    @Transactional
-    public User findByID(Integer id) {
-        return (User)sessionFactory.getCurrentSession().get(User.class,id);
     }
 
     @Transactional

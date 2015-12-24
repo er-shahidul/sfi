@@ -100,7 +100,7 @@ public class CompanyController {
 
     @RequestMapping(value = "/admin/company/new", method = RequestMethod.GET)
     public String form(ModelMap model) {
-        Company company = new Company();
+        CompanyViewModel company = new CompanyViewModel();
         model.addAttribute("title", "company");
         model.addAttribute("company", company);
 

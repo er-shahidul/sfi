@@ -1,9 +1,9 @@
 package com.rbs.www.admin.controllers;
 
-import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.admin.models.entities.Group;
 import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.admin.models.viewmodels.CompanyViewModel;
+import com.rbs.www.admin.models.viewmodels.UserViewModel;
 import com.rbs.www.common.listeners.AuditListener;
 import com.rbs.www.admin.services.CompanyService;
 import com.rbs.www.admin.services.GroupService;
@@ -88,8 +88,8 @@ public class UserController {
     @RequestMapping(value = {"/admin/user/delete/{id}"}, method = RequestMethod.GET)
     public String softDelete(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "user");
-        User user = userService.findByID(id);
-        userService.softDelete(user);
+        UserViewModel user = userService.getViewModelById(id);
+        userService.deleteUserEntity(user);
 
         return ("redirect:/admin/user/list");
     }
@@ -106,7 +106,7 @@ public class UserController {
 
     @RequestMapping(value = {"/admin/user/details/{id}"})
     public ModelAndView details(@PathVariable Integer id, ModelMap model) {
-        User user = userService.findByID(id);
+        UserViewModel user = userService.getViewModelById(id);
         model.addAttribute("user", user);
         model.addAttribute("title", "profile");
 
@@ -133,7 +133,7 @@ public class UserController {
 
     @RequestMapping(value = {"/admin/user/edit/password/{id}"}, method = RequestMethod.GET)
     public String editPassword(@PathVariable Integer id, ModelMap model) {
-        User user = userService.findByID(id);
+        UserViewModel user = userService.getViewModelById(id);
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
         model.addAttribute("edit", true);
@@ -154,7 +154,7 @@ public class UserController {
 
     @RequestMapping(value = {"/admin/user/{id}"}, method = RequestMethod.GET)
     public String userAction(@PathVariable Integer id, ModelMap model) {
-        User user = userService.findByID(id);
+        UserViewModel user = userService.getViewModelById(id);
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
         return "admin/user/action";
@@ -251,7 +251,7 @@ public class UserController {
 
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.GET)
     public String create(ModelMap model) {
-        User user = new User();
+        UserViewModel user = new UserViewModel();
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
         List<CompanyViewModel> companies = companyService.list();
@@ -319,7 +319,7 @@ public class UserController {
 
     @RequestMapping(value = "/user/password/reset/{id}", method = RequestMethod.GET)
     public String passwordReset(@PathVariable Integer id, ModelMap model) {
-        User user = userService.findByID(id);
+        UserViewModel user = userService.getViewModelById(id);
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
 
@@ -341,7 +341,7 @@ public class UserController {
     @RequestMapping(value = "/user/password/set/{id}", method = RequestMethod.GET)
     public String passwordSet(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "user");
-        User user = userService.findByID(id);
+        UserViewModel user = userService.getViewModelById(id);
         model.addAttribute("user", user);
 
         return "password";

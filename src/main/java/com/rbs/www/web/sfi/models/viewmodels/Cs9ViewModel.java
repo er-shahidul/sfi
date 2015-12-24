@@ -66,6 +66,24 @@ public class Cs9ViewModel extends BaseViewModel {
     private String restorationRiparianArea;
     private String respondingOtherArea;
 
+    private Boolean ecologicalImpactsLandscape;
+    private Boolean ecologicalImpactsSite;
+    private Boolean economicOther;
+    private Boolean economicProductivity;
+    private Boolean economicReasons;
+    private Boolean economicStandQuality;
+    private Boolean environmentalHarmOther;
+    private Boolean mitigatingEnvironmentalHarm;
+    private Boolean respondingDiseaseIssues;
+    private Boolean respondingForestHealth;
+    private Boolean respondingInsect;
+    private Boolean respondingInvasiveSpecies;
+    private Boolean respondingOther;
+    private Boolean restorationForestCover;
+    private Boolean restorationNativeForest;
+    private Boolean restorationOther;
+    private Boolean restorationRiparianProtection;
+
     @Override
     public Integer getId() {
         return id;
@@ -545,5 +563,141 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setRespondingOtherArea(String respondingOtherArea) {
         this.respondingOtherArea = respondingOtherArea;
+    }
+
+    public Boolean getEcologicalImpactsLandscape() {
+        return ecologicalImpactsLandscape;
+    }
+
+    public void setEcologicalImpactsLandscape(Boolean ecologicalImpactsLandscape) {
+        this.ecologicalImpactsLandscape = ecologicalImpactsLandscape;
+    }
+
+    public Boolean getEcologicalImpactsSite() {
+        return ecologicalImpactsSite;
+    }
+
+    public void setEcologicalImpactsSite(Boolean ecologicalImpactsSite) {
+        this.ecologicalImpactsSite = ecologicalImpactsSite;
+    }
+
+    public Boolean getEconomicOther() {
+        return economicOther;
+    }
+
+    public void setEconomicOther(Boolean economicOther) {
+        this.economicOther = economicOther;
+    }
+
+    public Boolean getEconomicProductivity() {
+        return economicProductivity;
+    }
+
+    public void setEconomicProductivity(Boolean economicProductivity) {
+        this.economicProductivity = economicProductivity;
+    }
+
+    public Boolean getEconomicReasons() {
+        return economicReasons;
+    }
+
+    public void setEconomicReasons(Boolean economicReasons) {
+        this.economicReasons = economicReasons;
+    }
+
+    public Boolean getEconomicStandQuality() {
+        return economicStandQuality;
+    }
+
+    public void setEconomicStandQuality(Boolean economicStandQuality) {
+        this.economicStandQuality = economicStandQuality;
+    }
+
+    public Boolean getEnvironmentalHarmOther() {
+        return environmentalHarmOther;
+    }
+
+    public void setEnvironmentalHarmOther(Boolean environmentalHarmOther) {
+        this.environmentalHarmOther = environmentalHarmOther;
+    }
+
+    public Boolean getMitigatingEnvironmentalHarm() {
+        return mitigatingEnvironmentalHarm;
+    }
+
+    public void setMitigatingEnvironmentalHarm(Boolean mitigatingEnvironmentalHarm) {
+        this.mitigatingEnvironmentalHarm = mitigatingEnvironmentalHarm;
+    }
+
+    public Boolean getRespondingDiseaseIssues() {
+        return respondingDiseaseIssues;
+    }
+
+    public void setRespondingDiseaseIssues(Boolean respondingDiseaseIssues) {
+        this.respondingDiseaseIssues = respondingDiseaseIssues;
+    }
+
+    public Boolean getRespondingForestHealth() {
+        return respondingForestHealth;
+    }
+
+    public void setRespondingForestHealth(Boolean respondingForestHealth) {
+        this.respondingForestHealth = respondingForestHealth;
+    }
+
+    public Boolean getRespondingInsect() {
+        return respondingInsect;
+    }
+
+    public void setRespondingInsect(Boolean respondingInsect) {
+        this.respondingInsect = respondingInsect;
+    }
+
+    public Boolean getRespondingInvasiveSpecies() {
+        return respondingInvasiveSpecies;
+    }
+
+    public void setRespondingInvasiveSpecies(Boolean respondingInvasiveSpecies) {
+        this.respondingInvasiveSpecies = respondingInvasiveSpecies;
+    }
+
+    public Boolean getRespondingOther() {
+        return respondingOther;
+    }
+
+    public void setRespondingOther(Boolean respondingOther) {
+        this.respondingOther = respondingOther;
+    }
+
+    public Boolean getRestorationForestCover() {
+        return restorationForestCover;
+    }
+
+    public void setRestorationForestCover(Boolean restorationForestCover) {
+        this.restorationForestCover = restorationForestCover;
+    }
+
+    public Boolean getRestorationNativeForest() {
+        return restorationNativeForest;
+    }
+
+    public void setRestorationNativeForest(Boolean restorationNativeForest) {
+        this.restorationNativeForest = restorationNativeForest;
+    }
+
+    public Boolean getRestorationOther() {
+        return restorationOther;
+    }
+
+    public void setRestorationOther(Boolean restorationOther) {
+        this.restorationOther = restorationOther;
+    }
+
+    public Boolean getRestorationRiparianProtection() {
+        return restorationRiparianProtection;
+    }
+
+    public void setRestorationRiparianProtection(Boolean restorationRiparianProtection) {
+        this.restorationRiparianProtection = restorationRiparianProtection;
     }
 }

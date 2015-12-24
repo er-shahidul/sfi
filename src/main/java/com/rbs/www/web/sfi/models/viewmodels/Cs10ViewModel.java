@@ -25,6 +25,13 @@ public class Cs10ViewModel extends BaseViewModel {
     private String legalComplianceOutsideOtherExplain;
     private String trainedWoodProducersChanged;
 
+    private String biodiversityManagementMechanismDescribe;
+    private String biodiversityTrainingMechanismDescribe;
+    private String biodiversityTrainingNoDescribe;
+    private String biodiversityManagementNoDescribe;
+    private String biodiversityMechanismDescribe;
+    private String biodiversityNoDescribe;
+
     @Override
     public Integer getId() {
         return id;
@@ -168,5 +175,53 @@ public class Cs10ViewModel extends BaseViewModel {
 
     public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
         this.trainedWoodProducersChanged = trainedWoodProducersChanged;
+    }
+
+    public String getBiodiversityManagementMechanismDescribe() {
+        return biodiversityManagementMechanismDescribe;
+    }
+
+    public void setBiodiversityManagementMechanismDescribe(String biodiversityManagementMechanismDescribe) {
+        this.biodiversityManagementMechanismDescribe = biodiversityManagementMechanismDescribe;
+    }
+
+    public String getBiodiversityTrainingMechanismDescribe() {
+        return biodiversityTrainingMechanismDescribe;
+    }
+
+    public void setBiodiversityTrainingMechanismDescribe(String biodiversityTrainingMechanismDescribe) {
+        this.biodiversityTrainingMechanismDescribe = biodiversityTrainingMechanismDescribe;
+    }
+
+    public String getBiodiversityTrainingNoDescribe() {
+        return biodiversityTrainingNoDescribe;
+    }
+
+    public void setBiodiversityTrainingNoDescribe(String biodiversityTrainingNoDescribe) {
+        this.biodiversityTrainingNoDescribe = biodiversityTrainingNoDescribe;
+    }
+
+    public String getBiodiversityManagementNoDescribe() {
+        return biodiversityManagementNoDescribe;
+    }
+
+    public void setBiodiversityManagementNoDescribe(String biodiversityManagementNoDescribe) {
+        this.biodiversityManagementNoDescribe = biodiversityManagementNoDescribe;
+    }
+
+    public String getBiodiversityMechanismDescribe() {
+        return biodiversityMechanismDescribe;
+    }
+
+    public void setBiodiversityMechanismDescribe(String biodiversityMechanismDescribe) {
+        this.biodiversityMechanismDescribe = biodiversityMechanismDescribe;
+    }
+
+    public String getBiodiversityNoDescribe() {
+        return biodiversityNoDescribe;
+    }
+
+    public void setBiodiversityNoDescribe(String biodiversityNoDescribe) {
+        this.biodiversityNoDescribe = biodiversityNoDescribe;
     }
 }
