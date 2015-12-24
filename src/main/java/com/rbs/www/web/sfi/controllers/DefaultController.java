@@ -2,6 +2,7 @@ package com.rbs.www.web.sfi.controllers;
 
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.util.Util;
+import com.rbs.www.web.sfi.models.entities.SfiPpFormCs3ProjectStandardObjective;
 import com.rbs.www.web.sfi.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
 import com.rbs.www.web.sfi.services.SfiPpFormRegionService;
@@ -65,7 +66,7 @@ public class DefaultController {
 
     @RequestMapping(value = "/project/standard/objective/list", method = RequestMethod.GET)
     public ResponseEntity<String> projectStandardObjectiveList() {
-        List projectStandardObjectives = sfiPpFormCs3ProjectStandardObjectiveService.getAll();
+        List<SfiPpFormCs3ProjectStandardObjective> projectStandardObjectives = sfiPpFormCs3ProjectStandardObjectiveService.getAll();
         return new ResponseEntity<String>(Util.getAsString(projectStandardObjectives), HttpStatus.OK);
     }
 }

@@ -12,5 +12,4 @@ public class SfiPpFormCs3ProjectStandardObjectiveRepository extends BaseReposito
     public List<SfiPpFormCs3ProjectStandardObjective> getAll() {
         return getCriteria().list();
     }
-
 }
