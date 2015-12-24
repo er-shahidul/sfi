@@ -24,11 +24,6 @@ public class UserRepository extends AbstractRepository<Integer, User> {
     }
 
     @Transactional
-    public User findByID(Integer id) {
-        return (User)sessionFactory.getCurrentSession().get(User.class,id);
-    }
-
-    @Transactional
     @SuppressWarnings("unchecked")
     public List<User> list() {
         Criteria criteria = createEntityCriteria();

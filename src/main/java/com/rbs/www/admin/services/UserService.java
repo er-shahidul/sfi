@@ -41,7 +41,7 @@ public class UserService {
     }
 
     public void verificationToken(User user){
-        User entity = userRepository.findByID(user.getId());
+        User entity = userRepository.getByKey(user.getId());
         if(entity!=null){
             entity.setToken(true);
             userRepository.update(entity);
@@ -49,7 +49,7 @@ public class UserService {
     }
 
     public User findByID(Integer id) {
-        return userRepository.findByID(id);
+        return userRepository.getByKey(id);
     }
 
     public List<User> list() {
@@ -82,7 +82,7 @@ public class UserService {
     }
 
     public void updateUser(User user) {
-        User entity = userRepository.findByID(user.getId());
+        User entity = userRepository.getByKey(user.getId());
         if(entity!=null){
             entity.setPassword(passwordEncoder.encode(user.getPassword()));
             entity.setGroup(user.getGroup());
@@ -96,16 +96,16 @@ public class UserService {
         }
     }
 
-    public void softDelete(User user) {
-        User entity = userRepository.findByID(user.getId());
-        if(entity!=null){
-            entity.setIsActive(false);
-            userRepository.update(entity);
-        }
-    }
+//    public void softDelete(User user) {
+//        User entity = userRepository.findByID(user.getId());
+//        if(entity!=null){
+//            entity.setIsActive(false);
+//            userRepository.update(entity);
+//        }
+//    }
 
     public void updateName(User user) {
-        User entity = userRepository.findByID(user.getId());
+        User entity = userRepository.getByKey(user.getId());
         if(entity!=null){
             entity.setFirstName(user.getFirstName());
             entity.setLastName(user.getLastName());
@@ -114,7 +114,7 @@ public class UserService {
     }
 
     public void updateEmail(User user) {
-        User entity = userRepository.findByID(user.getId());
+        User entity = userRepository.getByKey(user.getId());
         if(entity!=null){
             entity.setEmail(user.getEmail());
             entity.setUsername(user.getEmail());
@@ -123,14 +123,14 @@ public class UserService {
     }
 
     public void updatePassword(User user) {
-        User entity = userRepository.findByID(user.getId());
+        User entity = userRepository.getByKey(user.getId());
         if(entity!=null){
             entity.setPassword(passwordEncoder.encode(user.getPassword()));
         }
     }
 
     public void userActive(User user) {
-        User entity = userRepository.findByID(user.getId());
+        User entity = userRepository.getByKey(user.getId());
         if(entity!=null){
             if(entity.getEnabled()){entity.setEnabled(false);}
             else{entity.setEnabled(true);}
@@ -152,7 +152,7 @@ public class UserService {
     }
 
     public void passwordResetTokenUpdate(User user){
-        User entity = userRepository.findByID(user.getId());
+        User entity = userRepository.getByKey(user.getId());
         if(entity!=null){
             entity.setUserToken(user.getUserToken());
             userRepository.save(entity);
@@ -197,6 +197,11 @@ public class UserService {
 
     public void setAreaUnitEntity(UserViewModel model) {
         model.setIsActive(true);
+        User entity = entityModelMapperService.convert(model, User.class);
+    }
+
+    public void deleteUserEntity(UserViewModel model) {
+        model.setIsActive(false);
         User entity = entityModelMapperService.convert(model, User.class);
     }
 }
