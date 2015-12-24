@@ -847,7 +847,8 @@
             </h5>
 
             <p class="highlited-text">
-                Do you use a <span>WHO 1A</span> or <span>1B pesticide</span> in your operations?
+
+                Do you use a <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">WHO 1A</a> or <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">1B pesticide</a> in your operations?
             </p>
 
             <div class="content-pading">
@@ -871,7 +872,7 @@
 
         <div>
             <p class="highlited-text">
-                Did you stop using a <span>WHO 1A</span> or <span>1B pesticide</span> in your operations due to the new
+                Did you stop using a <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">WHO 1A</a> or <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">1B pesticide</a> in your operations due to the new
                 Standard requirement?
             </p>
 
@@ -1212,6 +1213,10 @@
                         <tr ng-repeat="forestlandArea in cs9.forestlandAreas">
                             <td>{{ forestlandArea.area }} AC</td>
                             <td>{{ forestlandArea.region.name }}</td>
+                            <td>
+                                <a href="#" ng-click="editRegionArea($index)">Edit</a>
+                                <a href="#" ng-click="deleteRegionArea($index)">Delete</a>
+                            </td>
                         </tr>
                         <tr></tr>
                         <tr>
