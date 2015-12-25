@@ -257,10 +257,53 @@ public class Cs9 extends BaseEntityModel {
     @Column(name = "cs9_restorationRiparianProtection", nullable = true)
     private Boolean restorationRiparianProtection;
 
+    @Column(name = "cs9_conservationBiodiversity414_explain1", nullable = true)
+    private String conservationBiodiversity414_explain1;
+
+    @Column(name = "cs9_conservationBiodiversity414_explain2", nullable = true)
+    private String conservationBiodiversity414_explain2;
+
+    @Column(name = "cs9_conservationBiodiversity414_explain5", nullable = true)
+    private String conservationBiodiversity414_explain5;
+
+    @Column(name = "cs9_conservationBiodiversity414_explain6", nullable = true)
+    private String conservationBiodiversity414_explain6;
 
     @Override
     public Integer getId() {
         return id;
+    }
+
+    public String getConservationBiodiversity414_explain1() {
+        return conservationBiodiversity414_explain1;
+    }
+
+    public void setConservationBiodiversity414_explain1(String conservationBiodiversity414_explain1) {
+        this.conservationBiodiversity414_explain1 = conservationBiodiversity414_explain1;
+    }
+
+    public String getConservationBiodiversity414_explain2() {
+        return conservationBiodiversity414_explain2;
+    }
+
+    public void setConservationBiodiversity414_explain2(String conservationBiodiversity414_explain2) {
+        this.conservationBiodiversity414_explain2 = conservationBiodiversity414_explain2;
+    }
+
+    public String getConservationBiodiversity414_explain5() {
+        return conservationBiodiversity414_explain5;
+    }
+
+    public void setConservationBiodiversity414_explain5(String conservationBiodiversity414_explain5) {
+        this.conservationBiodiversity414_explain5 = conservationBiodiversity414_explain5;
+    }
+
+    public String getConservationBiodiversity414_explain6() {
+        return conservationBiodiversity414_explain6;
+    }
+
+    public void setConservationBiodiversity414_explain6(String conservationBiodiversity414_explain6) {
+        this.conservationBiodiversity414_explain6 = conservationBiodiversity414_explain6;
     }
 
     public void setId(Integer id) {
