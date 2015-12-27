@@ -20,7 +20,7 @@ import javax.xml.bind.DatatypeConverter;
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
 @Controller
-public class FormController {
+public class PpFormController {
     @Autowired
     UserService userService;
 

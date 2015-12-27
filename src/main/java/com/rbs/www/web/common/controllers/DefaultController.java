@@ -1,4 +1,4 @@
-package com.rbs.www.web.sfi.controllers;
+package com.rbs.www.web.common.controllers;
 
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.util.Util;

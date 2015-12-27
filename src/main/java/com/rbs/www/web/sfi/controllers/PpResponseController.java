@@ -19,7 +19,7 @@ import java.io.IOException;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-public class DefaultRestController {
+public class PpResponseController {
 
     @Autowired
     private FormService formService;
