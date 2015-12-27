@@ -71,11 +71,11 @@
 
                         <div class="row">
                             <form name="contactForm">
-                                <div class="col-md-3">
-                                    <input type="text" required class="form-control" ng-model="contact.name">
+                                <div class="col-md-3" ng-class="{'has-error' : isContactDirty() && contactForm.name.$invalid}">
+                                    <input type="text" required class="form-control" name="name" ng-model="contact.name">
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="email" required class="form-control" ng-model="contact.email">
+                                <div class="col-md-3" ng-class="{'has-error' : isContactDirty() && contactForm.email.$invalid}">
+                                    <input type="email" required class="form-control" name="email" ng-model="contact.email">
                                 </div>
                                 <div class="col-md-3">
                                     <input type="text" class="form-control" ng-model="contact.position">
@@ -83,9 +83,7 @@
                                 <div class="col-md-3"></div>
                             </form>
                         </div>
-                        <br>
-                        <p style="text-align: right;padding-top: 30px;" ng-click="addContact()">+ Add Contact</p>
-
+                        <p style="text-align: right;padding-top: 30px; cursor:pointer;" ng-click="addContact()">+ Add Contact</p>
                 </div>
 
             </div>
@@ -537,7 +535,7 @@
         </div>
 
         <!--Section 1-->
-        <div class="col-lg-12 passage-bold pading-botoms">
+        <div class="col-lg-12 passage-bold pading-botoms" ng-show="anySelect()">
             <div class="col-lg-8">
                 <div class="content-header2">
                     <span data-toggle="tootltip" title="An SFI claim is a certified sourcing or chain of custody statement accompanying a product. An SFI label is an illustrative symbol that communicates an SFI claim on a product.">LABELS & CLAIMS:</span><br>
@@ -569,7 +567,7 @@
         </div>
 
         <!--Section 2-->
-        <div class="col-lg-12 passage-bold pading-botoms">
+        <div class="col-lg-12 passage-bold pading-botoms" ng-show="anySelect()">
             <div class="col-lg-8">
                 <h5 class="content-header2" style="padding-top: 30px;">CERTIFICATION & MARKET DEMAND</h5>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec9-demand-certified-product.html'" ></div>

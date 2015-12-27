@@ -3,10 +3,36 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
     ['$rootScope', '$scope', 'Countries',  '$http', '_', 'Message',
         function ($rootScope , $scope, Countries, $http, _ , Message){
 
-        $scope.cs8 = angular.copy($rootScope.form.cs8);
+        $scope.cs8 = {} ;
+        $scope.cs8Data = angular.copy($rootScope.form.cs8);
+
+        _.each($scope.cs8Data, function(val){
+            $scope.cs8 = _.extend($scope.cs8, val);
+        });
+
+        $scope.formData = function(){
+
+            _.each($scope.cs8Data, function(object, key){
+
+                _.each(object, function(val, key){
+                    object[key] = $scope.cs8[key];
+                });
+
+            });
+
+            return $scope.cs8Data;
+        };
+
 
         $scope.contact = {};
         $scope.contactIndex = null;
+
+        $scope.isContactDirty = function(){
+            return $scope.contact.name ||
+                $scope.contact.email ||
+                $scope.contact.position;
+        }
+
 
         $scope.addContact = function(){
 
@@ -34,6 +60,13 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         $scope.editContact = function(index, contact){
             $scope.contactIndex = index;
             $scope.contact = angular.copy(contact);
+        }
+
+        $scope.deleteContact = function(index, contact){
+            if(confirm("Are you sure to delete this ?")){
+                $scope.cs8.orgContacts.splice(index, 1);
+            }
+
         }
 
 
@@ -186,15 +219,16 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         if($scope.cs8Form.$valid){
 
             $http
-                .put("/form/cs8", $scope.cs8)
+                .put("/form/cs8", $scope.formData())
                 .then(function(response){
 
                     if(response.data){
 
                         $scope.cs8Form.$setPristine();
-                        $rootScope.form = response.data;
-                        $scope.cs8 = angular.copy($rootScope.form.cs8);
-                        $scope.errors = $scope.cs8.errors;
+
+                        //$rootScope.form = response.data;
+                        //$scope.cs8 = angular.copy($rootScope.form.cs8);
+                        //$scope.errors = $scope.cs8.errors;
                         Message.success('Section successfully saved', '.msg-cont');
                     }
 
