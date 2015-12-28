@@ -7,6 +7,8 @@ sfiFormApp
     cs9 = $scope;
 
 
+    $scope.cs9.stories = $scope.cs9.stories || [];
+
     $scope.hasRegionData = function(){
         return $scope.regionId || $scope.regionArea;
     }
@@ -64,64 +66,85 @@ sfiFormApp
         show: false
     });
 
-    $scope.shareHistory = function(index, name, data){
-        $scope.story = {}
+    $scope.shareHistory = function(index, key){
+
+        var story = _.find($scope.cs9.stories, function(story){
+            return story.index == index;
+        });
+
+        if(!story){
+
+            story = {
+                index : index,
+                key   : key
+            }
+        }
+
+        $scope.story = angular.copy(story);
+        $scope.story.myFiles = [];
+
         shareStoryModal.$promise.then(shareStoryModal.show);
     }
 
     $scope.saveHistory = function(){
-        shareStoryModal.$promise.then(shareStoryModal.hide);
-        console.log($scope.story);
+
+        if(shareStoryModal.$scope.storyForm.$valid){
+            shareStoryModal.$promise.then(shareStoryModal.hide);
+        }
+
+        var index = $scope.story.index;
+
+        var story = _.find($scope.cs9.stories, function(story){
+            return story.index == index;
+        });
+
+        if(!story){
+            story = {
+                index : $scope.story.index,
+                key   : $scope.story.key
+            }
+            $scope.cs9.stories.push(story);
+        }
+
+        story.firstName     = $scope.story.firstName;
+        story.lastName      = $scope.story.lastName;
+        story.email         = $scope.story.email;
+        story.description   = $scope.story.description;
+        story.shareOrgName  = $scope.story.shareOrgName || false;
+        story.shareNoUse    = $scope.story.shareNoUse || false;
+        story.shareUseAggregate = $scope.story.shareUseAggregate || false;
+        story.supportDocs = $scope.story.supportDocs;
+
+        $scope.story = null;
     }
 
+    $scope.story = {};
     $scope.upload = {};
-    $scope.myFiles = [];
+    $scope.story.myFiles = [];
 
-    $scope.fileSelected = function(files) {
+    $scope.fileSelected = function() {
 
-        console.log(files);
+        for (var i = 0; i < $scope.story.myFiles.length; i++) {
+            var file = $scope.story.myFiles[i];
 
-        alert(1);
-        console.log($scope.myFiles);
+            $scope.upload = $upload.upload({
+                url: '/files/upload',
+                method: 'POST',
+                data: $scope.cs9,
+                file: file
+            }).progress(function(evt) {
+                    console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
+            }).success(function(data, status, headers, config) {
 
-            for (var i = 0; i < $scope.myFiles.length; i++) {
+                $scope.story.supportDocs = data;
 
-            alert(2);
+                //console.log(data, status, headers, config)
+                //$scope.project.supportDocs.push(data);
+            });
 
-                var file = $scope.myFiles[i];
-
-                console.log(file);
-
-                $scope.upload = $upload.upload({
-                    url: '/files/upload',
-                    method: 'POST',
-                    data: $scope.cs9,
-                    file: file
-
-                }).progress(function(evt) {
-                        console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
-                }).success(function(data, status, headers, config) {
-                    console.log(data, status, headers, config)
-                    //$scope.project.supportDocs.push(data);
-                });
-
-            }
         }
+    }
 
 
 }]);
 
-sfiFormApp
-    .controller('shareStoryModalCtrl', function ($scope, $uibModalInstance) {
-
-        $scope.ok = function () {
-            $uibModalInstance.close(true);
-        };
-
-        $scope.cancel = function () {
-            $uibModalInstance.dismiss('cancel');
-        };
-
-
-
-    });
