@@ -58,64 +58,13 @@ public class Cs9 extends BaseEntityModel {
 
     @OneToMany(targetEntity = SfiPpFormStory.class, fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<SfiPpFormStory> story;
+    private Set<SfiPpFormStory> stories;
 
     @Column(name = "cs9_convertForestCover", nullable = true)
     private Boolean convertForestCover;
 
     @Column(name = "cs9_convertForestLand", nullable = true)
     private Boolean convertForestLand;
-
-    @Column(name = "cs9_ecologicalImpactsLandscap", nullable = true)
-    private Boolean ecologicalImpactsLandscap;
-
-    @Column(name = "cs9_ecologicalImpactsSit", nullable = true)
-    private Boolean ecologicalImpactsSit;
-
-    @Column(name = "cs9_economicOthe", nullable = true)
-    private Boolean economicOthe;
-
-    @Column(name = "cs9_economicProductivit", nullable = true)
-    private Boolean economicProductivit;
-
-    @Column(name = "cs9_economicReason", nullable = true)
-    private Boolean economicReason;
-
-    @Column(name = "cs9_economicStandQualit", nullable = true)
-    private Boolean economicStandQualit;
-
-    @Column(name = "cs9_environmentalHarmOthe", nullable = true)
-    private Boolean environmentalHarmOthe;
-
-    @Column(name = "cs9_mitigatingEnvironmentalHar", nullable = true)
-    private Boolean mitigatingEnvironmentalHar;
-
-    @Column(name = "cs9_respondingDiseaseIssue", nullable = true)
-    private Boolean respondingDiseaseIssue;
-
-    @Column(name = "cs9_respondingForestHealt", nullable = true)
-    private Boolean respondingForestHealt;
-
-    @Column(name = "cs9_respondingInsec", nullable = true)
-    private Boolean respondingInsec;
-
-    @Column(name = "cs9_respondingInvasiveSpecie", nullable = true)
-    private Boolean respondingInvasiveSpecie;
-
-    @Column(name = "cs9_respondingOthe", nullable = true)
-    private Boolean respondingOthe;
-
-    @Column(name = "cs9_restorationForestCove", nullable = true)
-    private Boolean restorationForestCove;
-
-    @Column(name = "cs9_restorationNativeFores", nullable = true)
-    private Boolean restorationNativeFores;
-
-    @Column(name = "cs9_restorationOthe", nullable = true)
-    private Boolean restorationOthe;
-
-    @Column(name = "cs9_restorationRiparianProtectio", nullable = true)
-    private Boolean restorationRiparianProtectio;
 
     @Column(name = "cs9_stopWho1A1B", nullable = true)
     private Boolean stopWho1A1B;
@@ -278,12 +227,12 @@ public class Cs9 extends BaseEntityModel {
         return id;
     }
 
-    public Set<SfiPpFormStory> getStory() {
-        return story;
+    public Set<SfiPpFormStory> getStories() {
+        return stories;
     }
 
-    public void setStory(Set<SfiPpFormStory> story) {
-        addAll(this.story, story);
+    public void setStories(Set<SfiPpFormStory> stories) {
+        addAll(this.stories, stories);
     }
 
     public String getConservationBiodiversity414_explain1() {
@@ -408,142 +357,6 @@ public class Cs9 extends BaseEntityModel {
 
     public void setConvertForestLand(Boolean convertForestLand) {
         this.convertForestLand = convertForestLand;
-    }
-
-    public Boolean getEcologicalImpactsLandscap() {
-        return ecologicalImpactsLandscap;
-    }
-
-    public void setEcologicalImpactsLandscap(Boolean ecologicalImpactsLandscap) {
-        this.ecologicalImpactsLandscap = ecologicalImpactsLandscap;
-    }
-
-    public Boolean getEcologicalImpactsSit() {
-        return ecologicalImpactsSit;
-    }
-
-    public void setEcologicalImpactsSit(Boolean ecologicalImpactsSit) {
-        this.ecologicalImpactsSit = ecologicalImpactsSit;
-    }
-
-    public Boolean getEconomicOthe() {
-        return economicOthe;
-    }
-
-    public void setEconomicOthe(Boolean economicOthe) {
-        this.economicOthe = economicOthe;
-    }
-
-    public Boolean getEconomicProductivit() {
-        return economicProductivit;
-    }
-
-    public void setEconomicProductivit(Boolean economicProductivit) {
-        this.economicProductivit = economicProductivit;
-    }
-
-    public Boolean getEconomicReason() {
-        return economicReason;
-    }
-
-    public void setEconomicReason(Boolean economicReason) {
-        this.economicReason = economicReason;
-    }
-
-    public Boolean getEconomicStandQualit() {
-        return economicStandQualit;
-    }
-
-    public void setEconomicStandQualit(Boolean economicStandQualit) {
-        this.economicStandQualit = economicStandQualit;
-    }
-
-    public Boolean getEnvironmentalHarmOthe() {
-        return environmentalHarmOthe;
-    }
-
-    public void setEnvironmentalHarmOthe(Boolean environmentalHarmOthe) {
-        this.environmentalHarmOthe = environmentalHarmOthe;
-    }
-
-    public Boolean getMitigatingEnvironmentalHar() {
-        return mitigatingEnvironmentalHar;
-    }
-
-    public void setMitigatingEnvironmentalHar(Boolean mitigatingEnvironmentalHar) {
-        this.mitigatingEnvironmentalHar = mitigatingEnvironmentalHar;
-    }
-
-    public Boolean getRespondingDiseaseIssue() {
-        return respondingDiseaseIssue;
-    }
-
-    public void setRespondingDiseaseIssue(Boolean respondingDiseaseIssue) {
-        this.respondingDiseaseIssue = respondingDiseaseIssue;
-    }
-
-    public Boolean getRespondingForestHealt() {
-        return respondingForestHealt;
-    }
-
-    public void setRespondingForestHealt(Boolean respondingForestHealt) {
-        this.respondingForestHealt = respondingForestHealt;
-    }
-
-    public Boolean getRespondingInsec() {
-        return respondingInsec;
-    }
-
-    public void setRespondingInsec(Boolean respondingInsec) {
-        this.respondingInsec = respondingInsec;
-    }
-
-    public Boolean getRespondingInvasiveSpecie() {
-        return respondingInvasiveSpecie;
-    }
-
-    public void setRespondingInvasiveSpecie(Boolean respondingInvasiveSpecie) {
-        this.respondingInvasiveSpecie = respondingInvasiveSpecie;
-    }
-
-    public Boolean getRespondingOthe() {
-        return respondingOthe;
-    }
-
-    public void setRespondingOthe(Boolean respondingOthe) {
-        this.respondingOthe = respondingOthe;
-    }
-
-    public Boolean getRestorationForestCove() {
-        return restorationForestCove;
-    }
-
-    public void setRestorationForestCove(Boolean restorationForestCove) {
-        this.restorationForestCove = restorationForestCove;
-    }
-
-    public Boolean getRestorationNativeFores() {
-        return restorationNativeFores;
-    }
-
-    public void setRestorationNativeFores(Boolean restorationNativeFores) {
-        this.restorationNativeFores = restorationNativeFores;
-    }
-
-    public Boolean getRestorationOthe() {
-        return restorationOthe;
-    }
-
-    public void setRestorationOthe(Boolean restorationOthe) {
-        this.restorationOthe = restorationOthe;
-    }
-
-    public Boolean getRestorationRiparianProtectio() {
-        return restorationRiparianProtectio;
-    }
-
-    public void setRestorationRiparianProtectio(Boolean restorationRiparianProtectio) {
-        this.restorationRiparianProtectio = restorationRiparianProtectio;
     }
 
     public Boolean getStopWho1A1B() {

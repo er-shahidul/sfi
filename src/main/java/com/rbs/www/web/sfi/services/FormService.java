@@ -188,6 +188,7 @@ public class FormService {
     }
 
     public void setCs9Entity(Cs9ViewModel model) {
+        cs9Service.manualPopulation(model);
         Cs9 entity = entityModelMapperService.convert(model, Cs9.class);
     }
     /************************ Cs9 : End ***********************/

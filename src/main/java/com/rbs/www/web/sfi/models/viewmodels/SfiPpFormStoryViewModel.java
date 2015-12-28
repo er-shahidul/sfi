@@ -2,8 +2,6 @@ package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 
-import java.util.Set;
-
 public class SfiPpFormStoryViewModel extends BaseViewModel {
     private Integer id;
     private Integer sfiPpForm;
@@ -14,7 +12,10 @@ public class SfiPpFormStoryViewModel extends BaseViewModel {
     private Boolean shareNoUse;
     private Boolean shareOrgName;
     private Boolean shareUseAggregate;
-    private Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs;
+    private Integer index;
+    private String key;
+    private String originalDocumentName;
+    private String uniqueDocumentName;
 
     @Override
     public Integer getId() {
@@ -89,11 +90,35 @@ public class SfiPpFormStoryViewModel extends BaseViewModel {
         this.shareUseAggregate = shareUseAggregate;
     }
 
-    public Set<SfiPpFormCs3ProjectSupportDocsViewModel> getSupportDocs() {
-        return supportDocs;
+    public Integer getIndex() {
+        return index;
     }
 
-    public void setSupportDocs(Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs) {
-        this.supportDocs = supportDocs;
+    public void setIndex(Integer index) {
+        this.index = index;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getOriginalDocumentName() {
+        return originalDocumentName;
+    }
+
+    public void setOriginalDocumentName(String originalDocumentName) {
+        this.originalDocumentName = originalDocumentName;
+    }
+
+    public String getUniqueDocumentName() {
+        return uniqueDocumentName;
+    }
+
+    public void setUniqueDocumentName(String uniqueDocumentName) {
+        this.uniqueDocumentName = uniqueDocumentName;
     }
 }

@@ -36,9 +36,17 @@ public class SfiPpFormStory extends BaseEntityModel {
     @Column(name = "shareUseAggregate", nullable = true)
     private Boolean shareUseAggregate;
 
-    @OneToMany(targetEntity = SfiPpFormCs3ProjectSupportDocs.class, mappedBy = "sfiPpFormCs3", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<SfiPpFormCs3ProjectSupportDocs> supportDocs;
+    @Column(name = "story_index", nullable = true)
+    private Integer index;
+
+    @Column(name = "story_key", nullable = true)
+    private String key;
+
+    @Column(name = "originalDocumentName", nullable = true)
+    private String originalDocumentName;
+
+    @Column(name = "uniqueDocumentName", nullable = true)
+    private String uniqueDocumentName;
 
     @Override
     public Integer getId() {
@@ -113,11 +121,35 @@ public class SfiPpFormStory extends BaseEntityModel {
         this.shareUseAggregate = shareUseAggregate;
     }
 
-    public Set<SfiPpFormCs3ProjectSupportDocs> getSupportDocs() {
-        return supportDocs;
+    public Integer getIndex() {
+        return index;
     }
 
-    public void setSupportDocs(Set<SfiPpFormCs3ProjectSupportDocs> supportDocs) {
-        addAll(this.supportDocs, supportDocs);
+    public void setIndex(Integer index) {
+        this.index = index;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getOriginalDocumentName() {
+        return originalDocumentName;
+    }
+
+    public void setOriginalDocumentName(String originalDocumentName) {
+        this.originalDocumentName = originalDocumentName;
+    }
+
+    public String getUniqueDocumentName() {
+        return uniqueDocumentName;
+    }
+
+    public void setUniqueDocumentName(String uniqueDocumentName) {
+        this.uniqueDocumentName = uniqueDocumentName;
     }
 }
