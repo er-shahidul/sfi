@@ -23,9 +23,44 @@ sfiFormApp
 
             };
 
-            $scope.cs9.forestlandAreas.push(forestlandArea);
+            if($scope.editIndex){
+                $scope.cs9.forestlandAreas[$scope.editIndex] = forestlandArea;
+            }else{
+                $scope.cs9.forestlandAreas.push(forestlandArea);
+            }
+
+            $scope.editIndex = null;
+            $scope.resetRegionArea();
         }
     }
+
+    $scope.editIndex = null;
+    $scope.editRegionArea = function(index){
+
+        $scope.editIndex = index;
+        var forestlandArea = $scope.cs9.forestlandAreas[index];
+
+        $scope.regionArea = forestlandArea.area;
+        $scope.regionId = forestlandArea.region.id;
+
+        return false;
+    }
+
+    $scope.deleteRegionArea = function(index){
+
+        if(confirm('Are you sure to delete this item ?')){
+            $scope.cs9.forestlandAreas.splice(index, 1);
+        }
+    }
+
+
+    $scope.resetRegionArea = function(){
+        $scope.regionArea = null;
+        $scope.regionId = 0;
+    }
+
+
+
 
     $scope.isRequired = function(){
         return $rootScope.form.cs1.hasOperationsYards;
@@ -81,6 +116,8 @@ sfiFormApp
         $scope.story.myFiles = [];
 
         shareStoryModal.$promise.then(shareStoryModal.show);
+        return false;
+
     }
 
     $scope.cancelHistory = function(){

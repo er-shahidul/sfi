@@ -70,52 +70,8 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         }
 
 
-
-
     $scope.user = [];
     $scope.countries = Countries.getAll();
-
-    /*
-    $scope.findCountry = function(bucket, id){
-
-        return _.find(bucket, function(country){
-            return country.id == id;
-        });
-    }
-
-    $scope.getCountry = function(id){
-
-        var country = _.find($scope.countries, function(country){
-            return country.id == id;
-        });
-
-        return  country ? country.name : "";
-    }
-
-    $scope.addCountry = function(model, id){
-
-        //check if already exists
-        if(model.indexOf(id) >= 0){
-            return "";
-        }
-
-        var country = $scope.findCountry($scope.countries, id);
-        if(country)model.push(id);
-
-
-        return "";
-    };
-
-    $scope.delCountry = function(bucket, id){
-
-        bucket = _.filter(bucket, function(countryId){
-            return countryId != id;
-        });
-
-        return bucket;
-
-    };
-    */
 
 
         $scope.anySelect = function(){

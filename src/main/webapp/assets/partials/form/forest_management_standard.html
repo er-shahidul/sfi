@@ -675,14 +675,14 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPrivateItems" checklist-value="2">
                                 The use of wood in traditional buildings and crafts
-                                <a href="#" ng-click="shareHistory(25, 'indigenousPeoplesPrivateItems_2')" ng-show="isSelected(cs9.indigenousPeoplesPrivateItems, 1)">Share Your Story</a>
+                                <a href="#" ng-click="shareHistory(25, 'indigenousPeoplesPrivateItems_2')" ng-show="isSelected(cs9.indigenousPeoplesPrivateItems, 2)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPrivateItems" checklist-value="3">
                                 Flora that may be used in cultural practices for food ceremonies or medicine.
-                                <a href="#" ng-click="shareHistory(26, 'indigenousPeoplesPrivateItems_3')" ng-show="isSelected(cs9.indigenousPeoplesPrivateItems, 1)">Share Your Story</a>
+                                <a href="#" ng-click="shareHistory(26, 'indigenousPeoplesPrivateItems_3')" ng-show="isSelected(cs9.indigenousPeoplesPrivateItems, 3)">Share Your Story</a>
                             </label>
                         </li>
                     </ul>
@@ -1222,18 +1222,19 @@
             <br>
 
             <div class="col-lg-12">
-                <table width="100%">
+                <table width="100%" class="table table-striped vert-align-middle">
                     <thead>
                         <td><label>Acres converted of our managed forest land</label></td>
                         <td><label>Region</label></td>
+                        <td width="120px"></td>
                     </thead>
                     <tbody>
                         <tr ng-repeat="forestlandArea in cs9.forestlandAreas">
                             <td>{{ forestlandArea.area }} AC</td>
                             <td>{{ forestlandArea.region.name }}</td>
                             <td>
-                                <a href="#" ng-click="editRegionArea($index)">Edit</a>
-                                <a href="#" ng-click="deleteRegionArea($index)">Delete</a>
+                                <a style="text-align: right;padding-top: 30px;" ng-click="editRegionArea($index)">Edit</a> &nbsp;
+                                <a style="text-align: right;padding-top: 30px;" ng-click="deleteRegionArea($index)">Delete</a>
                             </td>
                         </tr>
                         <tr></tr>
@@ -1243,7 +1244,7 @@
                                     <input type="number" name="area" ng-model="regionArea"> AC
                                 </label>
                             </td>
-                            <td ng-init="regionId = 0">
+                            <td ng-init="regionId = 0" >
                                 <label>
                                     <select class="col-lg-12" ng-model="regionId" id="regionId">
                                         <option value=0>< Select Region ></option>
@@ -1251,10 +1252,8 @@
                                     </select>
                                 </label>
                             </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <a style="text-align: right;padding-top: 30px;" ng-click="saveRegionArea()">+ Add Another Line</a>
+                            <td colspan="3"  >
+                                <a ng-click="saveRegionArea()">+ Save Region</a>
                             </td>
                         </tr>
                     </tbody>
