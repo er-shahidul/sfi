@@ -334,49 +334,49 @@
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs9.protectionMaintenanceWaterResItems" checklist-value="2">
                                 Improved stream inventory and management
-                                <a href="#" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 2)">Share Your Story</a>
+                                <a href="#" ng-click="shareHistory(2, 'protectionMaintenanceWaterResItems_2')" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 2)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs9.protectionMaintenanceWaterResItems" checklist-value="3">
                                 Implemented enhanced buffers for wetlands
-                                <a href="#" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 3)">Share Your Story</a>
+                                <a href="#" ng-click="shareHistory(3, 'protectionMaintenanceWaterResItems_3')" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 3)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs9.protectionMaintenanceWaterResItems" checklist-value="4">
                                 Implemented enhanced buffers for riparian areas
-                                <a href="#" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 4)">Share Your Story</a>
+                                <a href="#" ng-click="shareHistory(4, 'protectionMaintenanceWaterResItems_4')" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 4)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs9.protectionMaintenanceWaterResItems" checklist-value="5">
                                 Defined machine-free zones for wetlands
-                                <a href="#" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 5)">Share Your Story</a>
+                                <a href="#" ng-click="shareHistory(5, 'protectionMaintenanceWaterResItems_5')" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 5)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs9.protectionMaintenanceWaterResItems" checklist-value="6">
                                 Defined machine-free zones for riparian areas
-                                <a href="#" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 6)">Share Your Story</a>
+                                <a href="#" ng-click="shareHistory(6, 'protectionMaintenanceWaterResItems_6')" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 6)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs9.protectionMaintenanceWaterResItems" checklist-value="7">
                                 Implemented restrictions limiting operations to winter (frozen ground) for units with wet lands
-                                <a href="#" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 7)">Share Your Story</a>
+                                <a href="#" ng-click="shareHistory(7, 'protectionMaintenanceWaterResItems_7')" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 7)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs9.protectionMaintenanceWaterResItems" checklist-value="8">
                                 Implemented restrictions limiting operations to winter (frozen ground) for units with riparian areas
-                                <a href="#" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 8)">Share Your Story</a>
+                                <a href="#" ng-click="shareHistory(8, 'protectionMaintenanceWaterResItems_8')" ng-show="isSelected(cs9.protectionMaintenanceWaterResItems, 8)">Share Your Story</a>
                             </label>
                         </li>
                     </ul>
@@ -414,12 +414,14 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity413Items" checklist-value="1">
                                 Among forest tenure holdings, the documentation of forest diversity has improved as a consequence of this indicator.
+                                <a href="#" ng-click="shareHistory(9, 'conservationBiodiversity413Items_1')" ng-show="isSelected(cs9.conservationBiodiversity413Items, 1)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity413Items" checklist-value="2">
                                 Our organization consulted credible data to document forest diversity at the landscape scale.
+                                <a href="#" ng-click="shareHistory(10, 'conservationBiodiversity413Items_2')" ng-show="isSelected(cs9.conservationBiodiversity413Items, 2)">Share Your Story</a>
                             </label>
 
                             <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items, 2)">
@@ -431,16 +433,19 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity413Items" checklist-value="3">
                                 We individually supported forest diversity at the landscape level.
+                                <a href="#" ng-click="shareHistory(11, 'conservationBiodiversity413Items_3')" ng-show="isSelected(cs9.conservationBiodiversity413Items, 3)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity413Items" checklist-value="4">
                                 We worked within the context of a collaborative effort to support forest diversity at the landscape level.
+                                <a href="#" ng-click="shareHistory(12, 'conservationBiodiversity413Items_4')" ng-show="isSelected(cs9.conservationBiodiversity413Items, 4)">Share Your Story</a>
                             </label>
 
                             <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items, 4)">
                                 Please note the name of the collaborative effort if appropriate, or the lead organization for the collaborative<br/>
+                                <a href="#" ng-click="shareHistory(13, 'conservationBiodiversity413Items_5')" ng-show="isSelected(cs9.conservationBiodiversity413Items, 5)">Share Your Story</a>
                                 <textarea rows="2" cols="70"></textarea>
                             </div>
                         </li>
@@ -476,6 +481,7 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity414Items" checklist-value="1">
                                 Participated in conservation planning and priority-setting efforts. Please identify the name of the effort or process in which you participated.
+                                <a href="#" ng-click="shareHistory(14, 'conservationBiodiversity414Items_1')" ng-show="isSelected(cs9.conservationBiodiversity414Items, 1)">Share Your Story</a>
                             </label>
 
                             <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items, 1)">
@@ -487,6 +493,7 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity414Items" checklist-value="2">
                                 Incorporated the results of conservation planning and priority-setting efforts. Please identify the name of the effort or process in which you participated.
+                                <a href="#" ng-click="shareHistory(15, 'conservationBiodiversity414Items_2')" ng-show="isSelected(cs9.conservationBiodiversity414Items, 2)">Share Your Story</a>
                             </label>
 
                             <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items, 2)">
@@ -498,18 +505,21 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity414Items" checklist-value="3">
                                 Used state wildlife action plans for priority setting efforts.
+                                <a href="#" ng-click="shareHistory(16, 'conservationBiodiversity414Items_3')" ng-show="isSelected(cs9.conservationBiodiversity414Items, 3)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity414Items" checklist-value="4">
                                 Used state forest action plans for priority setting efforts.
+                                <a href="#" ng-click="shareHistory(17, 'conservationBiodiversity414Items_4')" ng-show="isSelected(cs9.conservationBiodiversity414Items, 4)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity414Items" checklist-value="5">
                                 Used habitat conservation plans for priority setting efforts Please identify the habitat conservation plan, and/or species affected.
+                                <a href="#" ng-click="shareHistory(18, 'conservationBiodiversity414Items_5')" ng-show="isSelected(cs9.conservationBiodiversity414Items, 5)">Share Your Story</a>
                             </label>
 
                             <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items, 5)">
@@ -521,6 +531,7 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity414Items" checklist-value="6">
                                 Used provincial wildlife recovery plans for priority setting efforts .Please identify the provincial wildlife recovery plan and/or species affected.
+                                <a href="#" ng-click="shareHistory(19, 'conservationBiodiversity414Items_6')" ng-show="isSelected(cs9.conservationBiodiversity414Items, 6)">Share Your Story</a>
                             </label>
                             <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items, 6)">
                                 <label>Please explain</label><br/>
@@ -598,24 +609,28 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPublicItems" checklist-value="1">
                                 Facilitated a better understanding and respect for traditional forest-related knowledge.
+                                <a href="#" ng-click="shareHistory(20, 'indigenousPeoplesPublicItems_1')" ng-show="isSelected(cs9.indigenousPeoplesPublicItems, 1)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPublicItems" checklist-value="2">
                                 Helped to identify and protect spiritually, historically, or culturally important sites.
+                                <a href="#" ng-click="shareHistory(21, 'indigenousPeoplesPublicItems_2')" ng-show="isSelected(cs9.indigenousPeoplesPublicItems, 2)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPublicItems" checklist-value="3">
                                 Helped to address the use of non-timber forest products of value to Indigenous Peoples in areas where Program Participants have management responsibilities on public lands.
+                                <a href="#" ng-click="shareHistory(22, 'indigenousPeoplesPublicItems_3')" ng-show="isSelected(cs9.indigenousPeoplesPublicItems, 3)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPublicItems" checklist-value="4">
                                 Helped improve our response to Indigenous Peoples’ inquiries and concerns received.
+                                <a href="#" ng-click="shareHistory(23, 'indigenousPeoplesPublicItems_4')" ng-show="isSelected(cs9.indigenousPeoplesPublicItems, 4)">Share Your Story</a>
                             </label>
                         </li>
                     </ul>
@@ -653,18 +668,21 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPrivateItems" checklist-value="1">
                                 Known cultural heritage sites
+                                <a href="#" ng-click="shareHistory(24, 'indigenousPeoplesPrivateItems_1')" ng-show="isSelected(cs9.indigenousPeoplesPrivateItems, 1)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPrivateItems" checklist-value="3">
+                                <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPrivateItems" checklist-value="2">
                                 The use of wood in traditional buildings and crafts
+                                <a href="#" ng-click="shareHistory(25, 'indigenousPeoplesPrivateItems_2')" ng-show="isSelected(cs9.indigenousPeoplesPrivateItems, 1)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesPrivateItems" checklist-value="3">
                                 Flora that may be used in cultural practices for food ceremonies or medicine.
+                                <a href="#" ng-click="shareHistory(26, 'indigenousPeoplesPrivateItems_3')" ng-show="isSelected(cs9.indigenousPeoplesPrivateItems, 1)">Share Your Story</a>
                             </label>
                         </li>
                     </ul>
@@ -698,12 +716,14 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesForestItems" checklist-value="1">
                                 Facilitated a better understanding and respect for traditional forest-related knowledge.
+                                <a href="#" ng-click="shareHistory(25, 'indigenousPeoplesForestItems_1')" ng-show="isSelected(cs9.indigenousPeoplesForestItems, 1)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesForestItems" checklist-value="2">
                                 Helped to identify and protect spiritually, historically, or culturally important sites.
+                                <a href="#" ng-click="shareHistory(26, 'indigenousPeoplesForestItems_2')" ng-show="isSelected(cs9.indigenousPeoplesForestItems, 2)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
@@ -712,6 +732,7 @@
                                 Helped to address the use of non-timber forest products of value
                                 to Indigenous Peoples in areas where Program Participants have management
                                 responsibilities on public lands.
+                                <a href="#" ng-click="shareHistory(27, 'indigenousPeoplesForestItems_3')" ng-show="isSelected(cs9.indigenousPeoplesForestItems, 3)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
@@ -719,6 +740,7 @@
                                 <input type="checkbox" icheck checklist-model="cs9.indigenousPeoplesForestItems" checklist-value="3">
                                 Helped improve our response to Indigenous Peoples’ inquiries and
                                 concerns received.
+                                <a href="#" ng-click="shareHistory(28, 'indigenousPeoplesForestItems_4')" ng-show="isSelected(cs9.indigenousPeoplesForestItems, 4)">Share Your Story</a>
                             </label>
                         </li>
                     </ul>
@@ -758,18 +780,21 @@
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.trainingEducationItems" checklist-value="1">
                                 Purchase orders
+                                <a href="#" ng-click="shareHistory(29, 'trainingEducationItems_1')" ng-show="isSelected(cs9.trainingEducationItems, 1)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.trainingEducationItems" checklist-value="2">
                                 Purchase contracts
+                                <a href="#" ng-click="shareHistory(30, 'trainingEducationItems_2')" ng-show="isSelected(cs9.trainingEducationItems, 2)">Share Your Story</a>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" icheck checklist-model="cs9.trainingEducationItems" checklist-value="3">
                                 Other formats
+                                <a href="#" ng-click="shareHistory(31, 'trainingEducationItems_3')" ng-show="isSelected(cs9.trainingEducationItems, 3)">Share Your Story</a>
                             </label>
                         </li>
                     </ul>
@@ -907,6 +932,7 @@
                         <label>
                             <input icheck type="checkbox" ng-model="cs9.restorationForestCover" value=true>
                             Restoration of Historic Forest Cover.
+
                         </label>
                         <ul style="list-style-type: none" ng-show="cs9.restorationForestCover">
                             <p>Select all that apply</p>
