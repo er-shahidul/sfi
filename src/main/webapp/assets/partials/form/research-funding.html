@@ -370,7 +370,7 @@
                                 <div class='input-group date datetimepicker' datetimepicker>
                                     <input type='text' class="form-control datepicker" name="start_date"
                                            ng-required="isDirty()" customerror
-                                           ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}*$/"
+                                           ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                            pattern-msg="Please enter a valid date(YYYY-MM-DD)"
                                            ng-model="project.startDate">
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -387,7 +387,7 @@
                             <div class="col-sm-8 nopadding">
                                 <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
                                     <input type='text' class="form-control" name="end_date" customerror
-                                           ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}*$/"
+                                           ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                            pattern-msg="Please enter a valid date(YYYY-MM-DD)"
                                            ng-model="project.endDate">
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -441,7 +441,7 @@
                             <div><small><u>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</u></small></div>
                         </div>
                         <div id="valdfil">
-                            <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted">&nbsp;{{ doc.filename }}&nbsp;
+                            <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted">&nbsp;{{ doc.projectOriginalDocumentName }}&nbsp;
                                 <button ng-click="delSupportDoc($index)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>

@@ -59,6 +59,8 @@ sfiFormApp
             $scope.story.myFiles = [];
 
             shareStoryModal.$promise.then(shareStoryModal.show);
+
+            return false;
         }
 
         $scope.cancelHistory = function(){
