@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Date;
 import java.util.Set;
 
 @Service
@@ -17,10 +16,6 @@ public class SfiPpFormCs3ProjectSupportDocsService {
 
     public SfiPpFormCs3ProjectSupportDocs get(Integer id) {
         return repository.get(id);
-    }
-
-    public String generateUniqueName() {
-        return Long.toString(new Date().getTime());
     }
 
     public void setSupportDocs(Set<SfiPpFormCs3ProjectSupportDocs> supportDocs, Integer id) {

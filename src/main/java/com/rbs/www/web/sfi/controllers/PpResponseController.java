@@ -4,6 +4,7 @@ import com.rbs.www.common.util.Util;
 import com.rbs.www.common.services.FIleIOHelperService;
 import com.rbs.www.web.sfi.models.viewmodels.*;
 import com.rbs.www.web.sfi.services.FormService;
+import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -91,18 +92,9 @@ public class PpResponseController {
     @RequestMapping(value = "/files/upload", method = RequestMethod.POST)
     public @ResponseBody ResponseEntity<String> fileUpload(@RequestParam("file") MultipartFile file,
                                                            HttpServletRequest request, HttpServletResponse response) {
-        String fileName = file.getOriginalFilename();
-        SfiPpFormCs3ProjectSupportDocsViewModel model = formService.getSfiPpFormCs3ProjectSupportDocsViewModel(fileName);
+        FileNames fileNames = fIleIOHelperService.saveFile(file, request.getSession().getServletContext().getRealPath("."));
+        HttpStatus responseStatus = fileNames == null ? HttpStatus.BAD_REQUEST : HttpStatus.OK;
 
-        String path = fIleIOHelperService.createDirectory(request.getSession().getServletContext().getRealPath("."), "uploads/sfi");
-        path += "/" + model.getProjectUniqueDocumentName();
-
-        try {
-            file.transferTo(new File(path));
-        } catch (IOException e) {
-            return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.BAD_REQUEST);
-        }
-
-        return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
+        return new ResponseEntity<String>(Util.getAsString(fileNames), responseStatus);
     }
 }
