@@ -56,6 +56,10 @@ public class Cs9 extends BaseEntityModel {
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SfiPpFormForestlandArea> forestlandAreas;
 
+    @OneToMany(targetEntity = SfiPpFormStory.class, fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SfiPpFormStory> story;
+
     @Column(name = "cs9_convertForestCover", nullable = true)
     private Boolean convertForestCover;
 
@@ -272,6 +276,14 @@ public class Cs9 extends BaseEntityModel {
     @Override
     public Integer getId() {
         return id;
+    }
+
+    public Set<SfiPpFormStory> getStory() {
+        return story;
+    }
+
+    public void setStory(Set<SfiPpFormStory> story) {
+        addAll(this.story, story);
     }
 
     public String getConservationBiodiversity414_explain1() {
