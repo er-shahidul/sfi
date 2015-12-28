@@ -179,8 +179,8 @@ sfiFormApp
                     console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
             }).success(function(data, status, headers, config) {
 
-                $scope.story.originalDocumentName = data.projectOriginalDocumentName;
-                $scope.story.story.uniqueDocumentName = data.projectUniqueDocumentName;
+                $scope.story.originalDocumentName = data.originalName;
+                $scope.story.uniqueDocumentName = data.uniqueName;
 
 
                 //console.log(data, status, headers, config)
