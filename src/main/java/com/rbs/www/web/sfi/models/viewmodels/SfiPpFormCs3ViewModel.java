@@ -1,6 +1,7 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
 
 import java.util.Date;
 import java.util.Set;

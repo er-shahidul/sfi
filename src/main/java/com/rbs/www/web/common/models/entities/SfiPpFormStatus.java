@@ -1,12 +1,23 @@
-package com.rbs.www.web.sfi.models.viewmodels;
+package com.rbs.www.web.common.models.entities;
 
-import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.models.BaseEntityModel;
 
-public class SfiPpFormStatusViewModel extends BaseViewModel {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "sfi_pp_form_status")
+public class SfiPpFormStatus extends BaseEntityModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "formStatus", nullable = true)
     private String status;
+
+    @Column(name = "statusName", nullable = true)
     private String name;
 
+    @Override
     public Integer getId() {
         return id;
     }

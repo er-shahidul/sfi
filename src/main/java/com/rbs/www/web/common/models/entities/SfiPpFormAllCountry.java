@@ -1,4 +1,4 @@
-package com.rbs.www.web.sfi.models.entities;
+package com.rbs.www.web.common.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 

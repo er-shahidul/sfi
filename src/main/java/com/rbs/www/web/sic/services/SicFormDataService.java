@@ -3,7 +3,7 @@ package com.rbs.www.web.sic.services;
 import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.util.Util;
-import com.rbs.www.web.sfi.services.SfiPpFormStatusService;
+import com.rbs.www.web.common.services.SfiPpFormStatusService;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import com.rbs.www.web.sic.repositories.SicFormDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-<th:block xmlns:th="http://www.thymeleaf.org">
+<th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <div class="container">
     <div class="navbar-header">
         <a class="navbar-brand" href="#">
@@ -21,11 +21,11 @@
         </ul>
 
         <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
-            <th:block th:include="headerAthorize"></th:block>
+            <th:block th:include="/templates/headerAthorize"></th:block>
         </div>
 
         <div sec:authorize="isAnonymous()">
-            <th:block th:include="headerUnAthorize"></th:block>
+            <th:block th:include="/templates/headerUnAthorize"></th:block>
         </div>
 
     </div>
