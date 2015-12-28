@@ -152,7 +152,11 @@ sfiFormApp
         story.shareOrgName  = $scope.story.shareOrgName || false;
         story.shareNoUse    = $scope.story.shareNoUse || false;
         story.shareUseAggregate = $scope.story.shareUseAggregate || false;
-        story.supportDocs = $scope.story.supportDocs;
+
+        //story.supportDocs = $scope.story.supportDocs;
+
+        story.originalDocumentName = $scope.story.originalDocumentName;
+        story.uniqueDocumentName = $scope.story.uniqueDocumentName;
 
         $scope.story = null;
     }
@@ -175,7 +179,9 @@ sfiFormApp
                     console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
             }).success(function(data, status, headers, config) {
 
-                $scope.story.supportDocs = data;
+                $scope.story.originalDocumentName = data.projectOriginalDocumentName;
+                $scope.story.story.uniqueDocumentName = data.projectUniqueDocumentName;
+
 
                 //console.log(data, status, headers, config)
                 //$scope.project.supportDocs.push(data);
