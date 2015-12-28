@@ -57,9 +57,6 @@ sfiFormApp
             });
     }
 
-
-
-
     var shareStoryModal = $modal({
         scope: $scope,
         template: '/assets/partials/form/share-story-modal.html',
@@ -84,6 +81,11 @@ sfiFormApp
         $scope.story.myFiles = [];
 
         shareStoryModal.$promise.then(shareStoryModal.show);
+    }
+
+    $scope.cancelHistory = function(){
+        shareStoryModal.$promise.then(shareStoryModal.hide);
+        $scope.story = null;
     }
 
     $scope.saveHistory = function(){
