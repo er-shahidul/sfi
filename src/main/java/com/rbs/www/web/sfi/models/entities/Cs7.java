@@ -1,6 +1,7 @@
 package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.web.common.models.entities.SfiPpFormAllCountry;
 
 import javax.persistence.*;
 import java.util.Set;

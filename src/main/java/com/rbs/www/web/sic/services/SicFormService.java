@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.services;
 
-import com.rbs.www.web.common.mapper.EntityModelMapperService;
-import com.rbs.www.web.common.mapper.ViewModelMapperService;
+import com.rbs.www.common.mapper.EntityModelMapperService;
+import com.rbs.www.common.mapper.ViewModelMapperService;
 import com.rbs.www.web.sic.models.entities.*;
 import com.rbs.www.web.sic.models.viewmodels.*;
 import com.rbs.www.web.sic.repositories.*;

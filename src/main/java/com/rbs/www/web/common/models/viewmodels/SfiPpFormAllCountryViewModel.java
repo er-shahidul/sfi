@@ -1,4 +1,4 @@
-package com.rbs.www.web.sfi.models.viewmodels;
+package com.rbs.www.web.common.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 

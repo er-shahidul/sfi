@@ -1,7 +1,7 @@
-package com.rbs.www.web.sfi.repositories;
+package com.rbs.www.web.common.repositories;
 
 import com.rbs.www.common.repositories.BaseRepository;
-import com.rbs.www.web.sfi.models.entities.SfiPpFormRegion;
+import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
 import org.springframework.stereotype.Repository;
 
 @Repository

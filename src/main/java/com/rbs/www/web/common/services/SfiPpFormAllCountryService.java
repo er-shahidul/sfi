@@ -1,7 +1,7 @@
-package com.rbs.www.web.sfi.services;
+package com.rbs.www.web.common.services;
 
-import com.rbs.www.web.sfi.models.entities.SfiPpFormAllCountry;
-import com.rbs.www.web.sfi.repositories.SfiPpFormAllCountryRepository;
+import com.rbs.www.web.common.models.entities.SfiPpFormAllCountry;
+import com.rbs.www.web.common.repositories.SfiPpFormAllCountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

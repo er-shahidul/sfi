@@ -3,8 +3,8 @@ package com.rbs.www.admin.services;
 import com.rbs.www.admin.models.entities.AreaUnit;
 import com.rbs.www.admin.models.viewmodels.AreaUnitViewModel;
 import com.rbs.www.admin.repositories.AreaUnitRepository;
-import com.rbs.www.web.common.mapper.EntityModelMapperService;
-import com.rbs.www.web.common.mapper.ViewModelMapperService;
+import com.rbs.www.common.mapper.EntityModelMapperService;
+import com.rbs.www.common.mapper.ViewModelMapperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -3,6 +3,7 @@ package com.rbs.www.web.sfi.models.entities;
 import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.web.common.models.entities.SfiPpFormStatus;
 
 import javax.persistence.*;
 import java.util.Date;

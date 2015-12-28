@@ -1,7 +1,7 @@
-package com.rbs.www.web.sfi.repositories;
+package com.rbs.www.web.common.repositories;
 
 import com.rbs.www.common.repositories.BaseRepository;
-import com.rbs.www.web.sfi.models.entities.SfiPpFormStatus;
+import com.rbs.www.web.common.models.entities.SfiPpFormStatus;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 

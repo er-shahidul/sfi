@@ -1,6 +1,7 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
 
 public class SfiPpFormForestlandAreaViewModel extends BaseViewModel {
     private Integer id;
