@@ -14,6 +14,7 @@
     <context:component-scan base-package="com.rbs.www.admin.repositories" />
     <context:component-scan base-package="com.rbs.www.web.sfi.repositories" />
     <context:component-scan base-package="com.rbs.www.web.sic.repositories" />
+    <context:component-scan base-package="com.rbs.www.web.common.repositories" />
 
 	<context:property-placeholder location="classpath:application.properties" />
 	
@@ -32,6 +33,7 @@
 				<value>com.rbs.www.admin.models.entities</value>
 				<value>com.rbs.www.web.sfi.models.entities</value>
 				<value>com.rbs.www.web.sic.models.entities</value>
+				<value>com.rbs.www.web.common.models.entities</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
