@@ -15,6 +15,8 @@ public class Cs9ViewModel extends BaseViewModel {
     private Set<Integer> protectionMaintenanceWaterResItems;
     private Set<Integer> trainingEducationItems;
     private Set<SfiPpFormForestlandAreaViewModel> forestlandAreas;
+    private Set<SfiPpFormStoryViewModel> story;
+
     private Boolean convertForestCover;
     private Boolean convertForestLand;
     private Boolean ecologicalImpactsLandscap;
@@ -92,6 +94,14 @@ public class Cs9ViewModel extends BaseViewModel {
     @Override
     public Integer getId() {
         return id;
+    }
+
+    public Set<SfiPpFormStoryViewModel> getStory() {
+        return story;
+    }
+
+    public void setStory(Set<SfiPpFormStoryViewModel> story) {
+        this.story = story;
     }
 
     public String getConservationBiodiversity414_explain1() {
