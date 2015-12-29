@@ -7,6 +7,9 @@ import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.MessageSource;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,6 +21,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.xml.bind.DatatypeConverter;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
@@ -40,6 +50,9 @@ public class PpFormController {
 
     @Autowired
     SfiPpFormCs3ProjectStandardObjectiveService sfiPpFormCs3ProjectStandardObjectiveService;
+
+    @Autowired
+    private MessageSource messageSource;
 
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
@@ -81,12 +94,28 @@ public class PpFormController {
     }
 
     @RequestMapping(value = "/sfiPpForm", method = RequestMethod.GET)
-    public String form(ModelMap model) {
+    public String form(ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
 
+        long diffDays = getDiffDays();
+
+        model.addAttribute("days_until", diffDays);
+
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/core/form/index";
+    }
+
+    private long getDiffDays() throws ParseException {
+        String dateStart = messageSource.getMessage("startDate", new String[]{}, Locale.getDefault());
+        DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+        Date dateE = new Date();
+        String dateStop = format.format(dateE);
+
+        Date d1 = format.parse(dateStart);
+        Date d2 = format.parse(dateStop);
+        long diff = d2.getTime() - d1.getTime();
+        return diff / (24 * 60 * 60 * 1000);
     }
 
     @RequestMapping(value = "/admin/company/sfi/form/{id}", method = RequestMethod.GET)
