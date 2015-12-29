@@ -7,9 +7,7 @@ import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -25,7 +23,6 @@ import javax.xml.bind.DatatypeConverter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -98,9 +95,7 @@ public class PpFormController {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
 
-        long diffDays = getDiffDays();
-
-        model.addAttribute("days_until", diffDays);
+        model.addAttribute("days_until", getDiffDays());
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/core/form/index";
