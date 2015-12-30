@@ -603,12 +603,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
     $scope.showPop1Link = function(index){
 
         var section = $scope.sections[index];
-
-        if(_.isNumber(section.percDeliveredQualifiedLogging)){
-            return section.percDeliveredQualifiedLogging < 100;
-        }
-
-        return false;
+        return section.percDeliveredQualifiedLogging < 100;
     }
 
     $scope.showPopUp1 = function(index){
