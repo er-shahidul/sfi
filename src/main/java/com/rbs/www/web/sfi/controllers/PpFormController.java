@@ -112,8 +112,8 @@ public class PpFormController {
         Date dateE = new Date();
         String dateStop = format.format(dateE);
 
-        Date d1 = format.parse(dateStart);
-        Date d2 = format.parse(dateStop);
+        Date d1 = format.parse(dateStop);
+        Date d2 = format.parse(dateStart);
         long diff = d2.getTime() - d1.getTime();
         return diff / (24 * 60 * 60 * 1000);
     }
