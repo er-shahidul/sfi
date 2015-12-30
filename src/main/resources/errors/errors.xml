@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="cs1Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs1"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cs2Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs2"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cs3Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs3"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cs4Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs4"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cs5Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs5"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cs6Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs6"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cs7Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs7"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cs8Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs8"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cs9Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs9"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cs10Errors" class="java.util.HashMap">
+        <constructor-arg>
+            <util:properties location="classpath*:errors/cs10"/>
+        </constructor-arg>
+    </bean>
+
+</beans>
