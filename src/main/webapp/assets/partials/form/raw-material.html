@@ -5,7 +5,7 @@
 <div class="col-sm-12">
 <h5>4. Raw Material Supply</h5>
 <p>
-    (The following questions should be answered for manufacturing facilities covered under the scope of your SFI certificate)
+    (The following questions should be answered for manufacturing facilities covered under the scope of your SFI 2015-2019 Fiber Sourcing Standard certificate)
 </p>
 
 
@@ -14,7 +14,7 @@
 <table class="table table-striped vert-align-middle">
     <thead>
     <tr>
-        <th>Private Forest Landowners and SFI Implementation Committee details</th>
+        <th>Private Forest Landowners</th>
         <th ng-class="{'disabled' : !operateInUsa()}">US</th>
         <th ng-class="{'disabled' : !operateInCa()}" >Canada</th>
     </tr>
@@ -35,6 +35,7 @@
                    ng-model="cs6.numPrivateForeOwersCa" ng-disabled="!operateInCa()" >
         </td>
     </tr>
+    <!--
     <tr>
         <td>Number of those private landowners who received information directly from your employees on the advantages of reforestation and Best Management Practices (BMPs).</td>
         <td>
@@ -47,6 +48,7 @@
                    ng-model="cs6.numPrivateLandOwersCa" ng-disabled="!operateInCa()" >
         </td>
     </tr>
+    -->
     <!--
     <tr>
         <td tooltip data-html="true" data-placement="top" data-container="body"
@@ -88,8 +90,20 @@
 
     <label><span tooltip data-html="true" data-placement="top" data-container="body"
            data-title="Raw Material Consumption. In this question SFI Inc. is seeking the volume of raw material (roundwood and whole log chips) your manufacturing facilities (including log and chip exports) used sourced directly from the forest. Volumes do not have to be absolutely precise; they should be rounded to the nearest unit. Please specify the units (board feet, cubic feet, cords, tons, etc.) you are reporting in column 2. ANNEX 1, which can be found at the end of this document, contains the multipliers that are used by SFI Inc. staff to convert various volume units to “thousands of cubic feet” for reporting totals. If you are converting volumes for this report, please use the appropriate multiplier from the table in ANNEX 1, unless you have a more accurate multiplier or conversion factor for your specific region and species."
-            >Raw Material Supply -procured directly from the forest to your SFI manufacturing facilities (new!)</span></label>
+            >Raw Material Supply -procured directly from the forest to your SFI manufacturing facilities (new!)</span>
+    </label>
     (can now drill down to more specific regions for sourcing of fiber supply)
+    <a style="text-decoration:underline;" ng-click="lastYearPop()">How we used your data last year</a>
+
+    <br/><br/>
+    <span>Select the country, state or province using the drop-down below. Please note, you may either select or report raw material supply for individual states or provinces or select ‘All States’ or ‘All Provinces’ from the list to report your procured volume by country.</span>
+
+    <br/><br/>
+    <div class="content-header" style="height:40px;">
+        <label>
+            Starting in 2017, SFI will be asking all program participants with raw material supply to track and report the data by state or province.
+        </label>
+    </div>
 
     <table class="table table-striped">
         <thead>

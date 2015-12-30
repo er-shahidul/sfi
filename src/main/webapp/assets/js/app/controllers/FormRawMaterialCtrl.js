@@ -1,6 +1,8 @@
 var cs6;
 
-sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', '$http', 'Countries', 'RegionList', '$popover', '$compile' , '_', 'Message', '$', function ($rootScope , $scope, $state, $http, CountryList , RegionList, $popover, $compile, _, Message, $){
+sfiFormApp.controller('FormRawMaterialCtrl',
+    ['$rootScope', '$scope', '$state', '$http', 'Countries', 'RegionList', '$popover', '$compile' , '_', 'Message', '$', '$modal',
+        function ($rootScope , $scope, $state, $http, CountryList , RegionList, $popover, $compile, _, Message, $, $modal){
 
     $scope.usCanada = [];
     $scope.usOthers = [];
@@ -969,5 +971,18 @@ sfiFormApp.controller('FormRawMaterialCtrl', ['$rootScope', '$scope', '$state', 
 
         return usOther.volume + ", " + option.name;
     }
+
+    var lastYearModal = $modal({
+        scope: $scope,
+        template: '/assets/partials/form/last-year-modal.html',
+        show: false
+    });
+
+
+    $scope.lastYearPop = function(){
+        lastYearModal.$promise.then(lastYearModal.show);
+        return false;
+    }
+
 
 }]);
