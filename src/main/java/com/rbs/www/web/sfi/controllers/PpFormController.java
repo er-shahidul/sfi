@@ -4,9 +4,11 @@ import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
+import com.rbs.www.web.sfi.factories.ErrorViewModelFactory;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,6 +20,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.xml.bind.DatatypeConverter;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
@@ -41,6 +49,12 @@ public class PpFormController {
     @Autowired
     SfiPpFormCs3ProjectStandardObjectiveService sfiPpFormCs3ProjectStandardObjectiveService;
 
+    @Autowired
+    private MessageSource messageSource;
+
+    @Autowired
+    private ErrorViewModelFactory errorViewModelFactory;
+
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
         String companyLogo = DatatypeConverter
@@ -57,6 +71,7 @@ public class PpFormController {
         model.addAttribute("cs8", formService.getCs8ViewModel(id));
         model.addAttribute("cs9", formService.getCs9ViewModel(id));
         model.addAttribute("cs10", formService.getCs10ViewModel(id));
+        model.addAttribute("error", errorViewModelFactory.getErrorViewModel());
 
         model.addAttribute("company", sfiPpFormData.getCompany());
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
@@ -81,12 +96,26 @@ public class PpFormController {
     }
 
     @RequestMapping(value = "/sfiPpForm", method = RequestMethod.GET)
-    public String form(ModelMap model) {
+    public String form(ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
 
+        model.addAttribute("days_until", getDiffDays());
+
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/core/form/index";
+    }
+
+    private long getDiffDays() throws ParseException {
+        String dateStart = messageSource.getMessage("startDate", new String[]{}, Locale.getDefault());
+        DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+        Date dateE = new Date();
+        String dateStop = format.format(dateE);
+
+        Date d1 = format.parse(dateStart);
+        Date d2 = format.parse(dateStop);
+        long diff = d2.getTime() - d1.getTime();
+        return diff / (24 * 60 * 60 * 1000);
     }
 
     @RequestMapping(value = "/admin/company/sfi/form/{id}", method = RequestMethod.GET)

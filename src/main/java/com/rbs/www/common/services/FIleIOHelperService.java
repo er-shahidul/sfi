@@ -1,10 +1,6 @@
 package com.rbs.www.common.services;
 
-import com.rbs.www.common.util.Util;
 import com.rbs.www.web.sfi.models.viewmodels.FileNames;
-import javafx.util.Pair;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
