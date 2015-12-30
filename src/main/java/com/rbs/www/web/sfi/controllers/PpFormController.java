@@ -4,12 +4,11 @@ import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
+import com.rbs.www.web.sfi.factories.ErrorViewModelFactory;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -25,7 +24,6 @@ import javax.xml.bind.DatatypeConverter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -54,6 +52,9 @@ public class PpFormController {
     @Autowired
     private MessageSource messageSource;
 
+    @Autowired
+    private ErrorViewModelFactory errorViewModelFactory;
+
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
         String companyLogo = DatatypeConverter
@@ -70,6 +71,7 @@ public class PpFormController {
         model.addAttribute("cs8", formService.getCs8ViewModel(id));
         model.addAttribute("cs9", formService.getCs9ViewModel(id));
         model.addAttribute("cs10", formService.getCs10ViewModel(id));
+        model.addAttribute("error", errorViewModelFactory.getErrorViewModel());
 
         model.addAttribute("company", sfiPpFormData.getCompany());
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
