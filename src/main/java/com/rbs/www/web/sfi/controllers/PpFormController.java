@@ -100,9 +100,7 @@ public class PpFormController {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
 
-        long diffDays = getDiffDays();
-
-        model.addAttribute("days_until", diffDays);
+        model.addAttribute("days_until", getDiffDays());
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/core/form/index";
