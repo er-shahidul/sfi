@@ -1011,3 +1011,7 @@ label a {
 .label-margin label{
     margin: 8px;
 }
+
+textarea {
+    resize: none;
+}
