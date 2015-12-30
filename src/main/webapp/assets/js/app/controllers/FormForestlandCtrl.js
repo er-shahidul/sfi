@@ -2,8 +2,8 @@ var ngScope = null;
 var cs2 = null;
 sfiFormApp
     .controller('FormForestlandCtrl',
-        ['$rootScope', '$scope', '$state', '$http', 'Countries', 'certifyBodies', '_', 'Message', '$',
-            function ($rootScope , $scope, $state, $http, Countries, certifyBodies, _, Message, $){
+        ['$rootScope', '$scope', '$state', '$http', 'Countries', 'certifyBodies', '_', 'Message', '$', '$modal',
+            function ($rootScope , $scope, $state, $http, Countries, certifyBodies, _, Message, $, $modal){
 
     cs2 = $scope;
 
@@ -11,25 +11,6 @@ sfiFormApp
     $scope.certifyBodies  = certifyBodies;
     $scope.otherCountries = Countries.getOthers();
     $scope.cs2 = angular.copy( $rootScope.form.cs2);
-
-//    $scope.isFieldsEnabled = function(){
-//        return $rootScope.form.cs1.ownsOrManagesLands;
-//    }
-//
-//    $scope.operateInUsa = function(){
-//
-//        return $scope.isFieldsEnabled () && $rootScope.form.cs1.operatesInUsa;
-//    }
-//
-//    $scope.operateInCa = function(){
-//
-//        return $scope.isFieldsEnabled () && $rootScope.form.cs1.operatesInCanada;
-//    }
-//
-//    $scope.operateInOthers = function(){
-//        return $scope.isFieldsEnabled () &&  $rootScope.form.cs1.operatesInOthers;
-//    }
-
 
     $scope.init = function(){
 
@@ -158,7 +139,19 @@ sfiFormApp
 
     })
 
-
-
     $scope.init();
+
+    var lastYearModal = $modal({
+        scope: $scope,
+        template: '/assets/partials/form/last-year-modal.html',
+        show: false
+    });
+
+
+    $scope.lastYearPop = function(){
+        lastYearModal.$promise.then(lastYearModal.show);
+        return false;
+    }
+
+
 }]);

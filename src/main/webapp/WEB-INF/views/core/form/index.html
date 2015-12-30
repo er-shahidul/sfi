@@ -286,7 +286,7 @@
         sfiFormApp.run(function($rootScope) {
             $rootScope.mode = "edit";
             $rootScope.company = company;
-            $rootScope.unit = company.unit;
+            $rootScope.unit = company.areaUnit.shortCode;
             $rootScope.standObjective = "";
             $rootScope.form = form;
             $rootScope.daysLeft = 123;
