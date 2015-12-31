@@ -124,7 +124,7 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     }
 
     public void setSfiStandard10(Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard10) {
-        this.sfiStandard10 = sfiStandard10;
+        addAll(this.sfiStandard10, sfiStandard10);
     }
 
     public Set<SfiPpFormCs3ProjectStandardObjective> getSfiStandard15() {
@@ -132,7 +132,7 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     }
 
     public void setSfiStandard15(Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard15) {
-        this.sfiStandard15 = sfiStandard15;
+        addAll(this.sfiStandard15, sfiStandard15);
     }
 
     public Boolean getIncResFunding() {
