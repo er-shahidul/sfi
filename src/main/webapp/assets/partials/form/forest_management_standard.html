@@ -453,6 +453,10 @@
                 <input type="radio" icheck ng-model="cs9.protectionMaintenanceWaterRes" name="protectionMaintenanceWaterRes" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
+            <div class="form-group" ng-show="cs9.protectionMaintenanceWaterRes == 3">
+                Provide rationale<br/>
+                <textarea rows="4" cols="70" ng-model="cs9.protectionMaintenanceRationale"></textarea>
+            </div>
         </div>
         <br>
         <div>
@@ -567,6 +571,10 @@
                 <input icheck type="radio" ng-model="cs9.conservationBiodiversity413" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
+            <div class="form-group" ng-show="cs9.conservationBiodiversity413 == 3">
+                Provide rationale<br/>
+                <textarea rows="4" cols="70" ng-model="cs9.conservation413Rationale"></textarea>
+            </div>
         </div>
         <br>
 
@@ -721,6 +729,10 @@
                 <input type="radio" icheck name="conservationBiodiversity414" ng-model="cs9.conservationBiodiversity414" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
+            <div class="form-group" ng-show="cs9.conservationBiodiversity414 == 3">
+                Provide rationale<br/>
+                <textarea rows="4" cols="70" ng-model="cs9.conservation414Rationale"></textarea>
+            </div>
         </div>
         <br>
 
@@ -759,6 +771,11 @@
                 <input type="radio" icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity415" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
+
+            <div class="form-group" ng-show="cs9.conservationBiodiversity415 == 3">
+                Provide rationale<br/>
+                <textarea rows="4" cols="70" ng-model="cs9.conservation415Rationale"></textarea>
+            </div>
         </div>
         <br>
 
@@ -855,6 +872,11 @@
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019
                 Standard that address the above indicators.
             </label>
+
+            <div class="form-group" ng-show="cs9.indigenousPeoplesPublic == 4">
+                Provide rationale<br/>
+                <textarea rows="4" cols="70" ng-model="cs9.indigenousPublicRationale"></textarea>
+            </div>
         </div>
         <br>
 
@@ -931,6 +953,10 @@
                 <input type="radio" icheck name="indigenousPeoplesPrivate" ng-model="cs9.indigenousPeoplesPrivate" value=4>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
+            <div class="form-group" ng-show="cs9.indigenousPeoplesPrivate == 4">
+                Provide rationale<br/>
+                <textarea rows="4" cols="70" ng-model="cs9.indigenousPrivateRationale"></textarea>
+            </div>
         </div>
         <br>
 
@@ -1026,6 +1052,10 @@
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019
                 Standard that address the above indicators.
             </label>
+            <div class="form-group" ng-show="cs9.indigenousPeoplesForest == 3">
+                Describe practice<br/>
+                <textarea rows="4" cols="70" ng-model="cs9.indigenousForestPractice"></textarea>
+            </div>
         </div>
         <br>
 
@@ -1106,6 +1136,10 @@
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019
                 Standard that address the above indicators because:
             </label>
+            <div class="form-group" ng-show="cs9.trainingEducation == 3">
+                Provide rationale<br/>
+                <textarea rows="4" cols="70" ng-model="cs9.trainingEduRationale"></textarea>
+            </div>
             <label>
                 <input type="radio" icheck name="trainingEducation" ng-model="cs9.trainingEducation" value=4>
                 We have another mechanism
