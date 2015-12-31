@@ -44,6 +44,9 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Boolean incResFunding;
     private Boolean incSFIConservation;
 
+    private String conversionPattern;
+    private String description;
+
     @Override
     public Integer getId() {
         return id;
@@ -51,6 +54,22 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getConversionPattern() {
+        return conversionPattern;
+    }
+
+    public void setConversionPattern(String conversionPattern) {
+        this.conversionPattern = conversionPattern;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> getSfiStandard10() {

@@ -23,6 +23,12 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Column(name = "cs3_projectNm", nullable = true)
     private String projectNm;
 
+    @Column(name = "cs3_conversionPattern", nullable = true)
+    private String conversionPattern;
+
+    @Column(name = "cs3_description", nullable = true)
+    private String description;
+
     @Column(name = "cs3_projectObj", nullable = true)
     private String projectObj;
 
@@ -117,6 +123,22 @@ public class SfiPpFormCs3 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getConversionPattern() {
+        return conversionPattern;
+    }
+
+    public void setConversionPattern(String conversionPattern) {
+        this.conversionPattern = conversionPattern;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Set<SfiPpFormCs3ProjectStandardObjective> getSfiStandard10() {
