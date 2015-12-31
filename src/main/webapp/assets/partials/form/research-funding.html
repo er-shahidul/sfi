@@ -95,38 +95,86 @@
 
                 <div class="form-group">
                     <div class="col-sm-12 ">
-                        <label>For each category below enter the organizations you worked with in 2014 as part of your research funding reporting</label>
+                        <label>
+                            For each category below enter the organizations you worked with in 2014 as part of your research funding reporting
+                        </label>
                     </div>
                 </div>
 
 
                 <div class="form-group">
                     <div class="col-sm-1">
-                        <label>Academic</label>
+                        <label>University or College</label>
                     </div>
-                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListAcademic.$invalid }">
-                        <input type="text" class="form-control" name="organizationListAcademic"
-                               ng-maxlength="200" customerror ng-model="cs5.organizationListAcademic" >
+                    <div class="col-sm-11" ng-class="{'has-error' : cs5Form.universityCollege.$invalid }">
+
+                        <select class="form-control" name="organizationListAcademic" ng-model="cs5.organizationListAcademic">
+                            <option ng-selected="!cs5.organizationListAcademic">Select</option>
+                            <option value="1" >Auburn University</option>
+                            <option value="2" >Clemson University</option>
+                            <option value="3" >Duke University</option>
+                            <option value="4" >Lakehead University</option>
+                            <option value="5" >Laval University</option>
+                            <option value="6" >Michigan State University</option>
+                            <option value="7" >Mississippi State University</option>
+                            <option value="8" >North Carolina State University</option>
+                            <option value="9" >Oregon State University</option>
+                            <option value="10" >Stephen F. Austin State University</option>
+                            <option value="11" >Texas A&M University</option>
+                            <option value="12" >University of Alberta</option>
+                            <option value="13" >University of British Columbia</option>
+                            <option value="14" >University of Florida</option>
+                            <option value="15" >University of Georgia</option>
+                            <option value="16" >University of Georgia</option>
+                            <option value="17" >University of Idaho</option>
+                            <option value="18" >University of Maine</option>
+                            <option value="19" >University of Minnesota</option>
+                            <option value="20" >University of Montana</option>
+                            <option value="21" >University of New Brunswick</option>
+                            <option value="22" >University of Washington</option>
+                            <option value="23" >Virginia Polytechnic Institute</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="form-group" >
                     <div class="col-sm-1">
-                        <label>Research</label>
+                        <label>Research Institution</label>
                     </div>
                     <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListResearch.$invalid }">
-                        <input type="text" class="form-control" name="organizationListResearch"
-                               ng-maxlength="200" customerror ng-model="cs5.organizationListResearch" >
+
+                        <select class="form-control" name="organizationListResearch" ng-model="cs5.organizationListResearch">
+                            <option ng-selected="!cs5.organizationListResearch">Select</option>
+                            <option value="1">FP Innovations</option>
+                            <option value="2">National Council for Air and Stream Improvement</option>
+                            <option value="3">Wood Supply Resources Institute</option>
+                        </select>
+
+
+
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-1">
-                        <label>Conservation</label>
+                        <label>Conservation Organisation</label>
                     </div>
                     <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListConservation.$invalid }">
-                        <input type="text" class="form-control" name="organizationListConservation"
-                               ng-maxlength="200" customerror ng-model="cs5.organizationListConservation" >
+
+                        <select class="form-control" name="organizationListConservation" ng-model="cs5.organizationListConservation">
+                            <option ng-selected="!cs5.organizationListResearch">Select</option>
+                            <option value="1">Ducks Unlimited</option>
+                            <option value="2">Ducks Unlimited Canada</option>
+                            <option value="3">Forest Ecosystems Science Co-op</option>
+                            <option value="4">Longleaf Alliance</option>
+                            <option value="5">New Brunswick Tree Improvement Council</option>
+                            <option value="6">Pacific Salmon Foundation</option>
+                            <option value="7">Rocky Mountain Elk Foundation</option>
+                            <option value="8">Ruffed Grouse Society</option>
+                            <option value="9">The Nature Conservancy</option>
+                            <option value="10">The Nature Conservancy of Canada</option>
+                        </select>
+
                     </div>
                 </div>
 
@@ -135,18 +183,70 @@
                         <label>Government</label>
                     </div>
                     <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListGovernment.$invalid }">
-                        <input type="text" class="form-control" name="organizationListGovernment"
-                               ng-maxlength="200" customerror ng-model="cs5.organizationListGovernment" >
+
+                        <select class="form-control" name="organizationListGovernment" ng-model="cs5.organizationListGovernment">
+                            <option ng-selected="!cs5.organizationListGovernment">Select</option>
+                            <option value="1">Canadian Forest Service</option>
+                            <option value="2">US Fish & Wildlife Service</option>
+                            <option value="3">US Forest Service</option>
+                        </select>
+
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-1">
-                        <label>Community</label>
+                        <label>Community Organization</label>
                     </div>
                     <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListCommunity.$invalid }">
-                        <input type="text" name="organizationListCommunity" class="form-control"
-                               ng-maxlength="200" customerror ng-model="cs5.organizationListCommunity" >
+
+                        <!--<input type="text" name="organizationListCommunity" class="form-control"-->
+                               <!--ng-maxlength="200" customerror ng-model="cs5.organizationListCommunity" >-->
+                        <select class="form-control" name="organizationListCommunity" ng-model="cs5.organizationListCommunity">
+                            <option ng-selected="!cs5.organizationListCommunity">Select</option>
+                            <option value="1">Boy Scouts of America</option>
+                            <option value="2">Girl Guides</option>
+                            <option value="3">Girl Guides of Canada</option>
+                            <option value="4">Habitat for Humanity</option>
+                            <option value="5">Habitat for Humanity Canada</option>
+                            <option value="6">Intertribal Timber Council</option>
+                            <option value="7">Scouts Canada</option>
+                            <option value="8">Alabama SIC</option>
+                            <option value="9">Alaska SIC</option>
+                            <option value="10">Arkansas SIC</option>
+                            <option value="11">California SIC</option>
+                            <option value="12">Central Canada SIC</option>
+                            <option value="13">Central Rockies SIC</option>
+                            <option value="14">Florida SIC</option>
+                            <option value="15">Georgia SIC</option>
+                            <option value="16">Idaho SIC</option>
+                            <option value="17">Kentucky SIC</option>
+                            <option value="18">Louisiana SIC</option>
+                            <option value="19">Maine SIC</option>
+                            <option value="20">Maritime SIC</option>
+                            <option value="21">Maryland/Delaware SIC</option>
+                            <option value="22">Michigan SIC</option>
+                            <option value="23">Minnesota SIC</option>
+                            <option value="24">Mississippi SIC</option>
+                            <option value="25">Montana SIC</option>
+                            <option value="26">New Hampshire SIC</option>
+                            <option value="27">New York SIC</option>
+                            <option value="28">North Carolina SIC</option>
+                            <option value="29">Ohio SIC</option>
+                            <option value="30">Oregon SIC</option>
+                            <option value="31">Pennsylvania SIC</option>
+                            <option value="32">Quebec SIC</option>
+                            <option value="33">South Carolina SIC</option>
+                            <option value="34">Tennessee SIC</option>
+                            <option value="35">Texas SIC</option>
+                            <option value="36">Vermont SIC</option>
+                            <option value="37">Virginia SIC</option>
+                            <option value="38">Washington SIC</option>
+                            <option value="39">West Virginia SIC</option>
+                            <option value="40">Western Canada SIC</option>
+                            <option value="41">Wisconsin SIC</option>
+                         </select>
+
                     </div>
                 </div>
 
@@ -155,8 +255,17 @@
                         <label>Other</label>
                     </div>
                     <div class="col-sm-11" ng-class="{'has-error' : cs5Form.organizationListOther.$invalid }">
-                        <input type="text" name="organizationListOther" class="form-control"
-                               ng-maxlength="200" customerror ng-model="cs5.organizationListOther" >
+
+                        <select class="form-control" name="organizationListOther" ng-model="cs5.organizationListOther">
+                            <option ng-selected="!cs5.organizationListOther">Select</option>
+                            <option value="1">America Forest and Paper Association</option>
+                            <option value="2">American Forest Foundation</option>
+                            <option value="3">Forest Products Association of Canada</option>
+                            <option value="4">Forest Resources Association</option>
+                            <option value="5">Society of American Foresters</option>
+                            <option value="6">Sustainable Forestry Initiative Inc</option>
+                        </select>
+
                     </div>
                 </div>
             </div>
@@ -301,31 +410,78 @@
 
                         <div class="form-group">
                             <div class="col-sm-2">
-                                <label>Academic</label>
+                                <label>University or College</label>
                             </div>
                             <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
-                                <input type="text" class="form-control" name="organizationListAcademic"
-                                       ng-maxlength="200" customerror ng-model="project.organizationListAcademic" >
+                                <select class="form-control" name="organizationListAcademic" ng-model="project.organizationListAcademic">
+                                    <option ng-selected="!project.organizationListAcademic">Select</option>
+                                    <option value="1" >Auburn University</option>
+                                    <option value="2" >Clemson University</option>
+                                    <option value="3" >Duke University</option>
+                                    <option value="4" >Lakehead University</option>
+                                    <option value="5" >Laval University</option>
+                                    <option value="6" >Michigan State University</option>
+                                    <option value="7" >Mississippi State University</option>
+                                    <option value="8" >North Carolina State University</option>
+                                    <option value="9" >Oregon State University</option>
+                                    <option value="10" >Stephen F. Austin State University</option>
+                                    <option value="11" >Texas A&M University</option>
+                                    <option value="12" >University of Alberta</option>
+                                    <option value="13" >University of British Columbia</option>
+                                    <option value="14" >University of Florida</option>
+                                    <option value="15" >University of Georgia</option>
+                                    <option value="16" >University of Georgia</option>
+                                    <option value="17" >University of Idaho</option>
+                                    <option value="18" >University of Maine</option>
+                                    <option value="19" >University of Minnesota</option>
+                                    <option value="20" >University of Montana</option>
+                                    <option value="21" >University of New Brunswick</option>
+                                    <option value="22" >University of Washington</option>
+                                    <option value="23" >Virginia Polytechnic Institute</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="form-group" >
                             <div class="col-sm-2">
-                                <label>Research</label>
+                                <label>Research Institution</label>
                             </div>
                             <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListResearch.$invalid }">
-                                <input type="text" class="form-control" name="organizationListResearch"
-                                       ng-maxlength="200" customerror ng-model="project.organizationListResearch" >
+                                <!--<input type="text" class="form-control" name="organizationListResearch"-->
+                                       <!--ng-maxlength="200" customerror ng-model="project.organizationListResearch" >-->
+
+                                <select class="form-control" name="organizationListResearch" ng-model="project.organizationListResearch">
+                                    <option ng-selected="!project.organizationListResearch">Select</option>
+                                    <option value="1">FP Innovations</option>
+                                    <option value="2">National Council for Air and Stream Improvement</option>
+                                    <option value="3">Wood Supply Resources Institute</option>
+                                </select>
+
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-2">
-                                <label>Conservation</label>
+                                <label>Conservation Organisation</label>
                             </div>
                             <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
-                                <input type="text" class="form-control" name="organizationListConservation"
-                                       ng-maxlength="200" customerror ng-model="project.organizationListConservation" >
+
+                                <!--<input type="text" class="form-control" name="organizationListConservation"-->
+                                       <!--ng-maxlength="200" customerror ng-model="project.organizationListConservation" >-->
+
+                                <select class="form-control" name="organizationListConservation" ng-model="project.organizationListConservation">
+                                    <option ng-selected="!project.organizationListResearch">Select</option>
+                                    <option value="1">Ducks Unlimited</option>
+                                    <option value="2">Ducks Unlimited Canada</option>
+                                    <option value="3">Forest Ecosystems Science Co-op</option>
+                                    <option value="4">Longleaf Alliance</option>
+                                    <option value="5">New Brunswick Tree Improvement Council</option>
+                                    <option value="6">Pacific Salmon Foundation</option>
+                                    <option value="7">Rocky Mountain Elk Foundation</option>
+                                    <option value="8">Ruffed Grouse Society</option>
+                                    <option value="9">The Nature Conservancy</option>
+                                    <option value="10">The Nature Conservancy of Canada</option>
+                                </select>
                             </div>
                         </div>
 
@@ -334,24 +490,91 @@
                                 <label>Government</label>
                             </div>
                             <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListGovernment.$invalid }">
-                                <input type="text" class="form-control" name="organizationListGovernment"
-                                       ng-maxlength="200" customerror ng-model="project.organizationListGovernment" >
+
+                                <!--<input type="text" class="form-control" name="organizationListGovernment"-->
+                                       <!--ng-maxlength="200" customerror ng-model="project.organizationListGovernment" >-->
+
+                                <select class="form-control" name="organizationListGovernment" ng-model="project.organizationListGovernment">
+                                    <option ng-selected="!project.organizationListGovernment">Select</option>
+                                    <option value="1">Canadian Forest Service</option>
+                                    <option value="2">US Fish & Wildlife Service</option>
+                                    <option value="3">US Forest Service</option>
+                                </select>
+
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-sm-2"><label>Community</label></div>
+                            <div class="col-sm-2">
+                                <label>Community Organization</label>
+                            </div>
                             <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListCommunity.$invalid }">
-                                <input type="text" name="organizationListCommunity" class="form-control"
-                                       ng-maxlength="200" customerror ng-model="project.organizationListCommunity" >
+                                <!--<input type="text" name="organizationListCommunity" class="form-control"-->
+                                       <!--ng-maxlength="200" customerror ng-model="project.organizationListCommunity" >-->
+
+                                <select class="form-control" name="organizationListCommunity" ng-model="project.organizationListCommunity">
+                                    <option ng-selected="!project.organizationListCommunity">Select</option>
+                                    <option value="1">Boy Scouts of America</option>
+                                    <option value="2">Girl Guides</option>
+                                    <option value="3">Girl Guides of Canada</option>
+                                    <option value="4">Habitat for Humanity</option>
+                                    <option value="5">Habitat for Humanity Canada</option>
+                                    <option value="6">Intertribal Timber Council</option>
+                                    <option value="7">Scouts Canada</option>
+                                    <option value="8">Alabama SIC</option>
+                                    <option value="9">Alaska SIC</option>
+                                    <option value="10">Arkansas SIC</option>
+                                    <option value="11">California SIC</option>
+                                    <option value="12">Central Canada SIC</option>
+                                    <option value="13">Central Rockies SIC</option>
+                                    <option value="14">Florida SIC</option>
+                                    <option value="15">Georgia SIC</option>
+                                    <option value="16">Idaho SIC</option>
+                                    <option value="17">Kentucky SIC</option>
+                                    <option value="18">Louisiana SIC</option>
+                                    <option value="19">Maine SIC</option>
+                                    <option value="20">Maritime SIC</option>
+                                    <option value="21">Maryland/Delaware SIC</option>
+                                    <option value="22">Michigan SIC</option>
+                                    <option value="23">Minnesota SIC</option>
+                                    <option value="24">Mississippi SIC</option>
+                                    <option value="25">Montana SIC</option>
+                                    <option value="26">New Hampshire SIC</option>
+                                    <option value="27">New York SIC</option>
+                                    <option value="28">North Carolina SIC</option>
+                                    <option value="29">Ohio SIC</option>
+                                    <option value="30">Oregon SIC</option>
+                                    <option value="31">Pennsylvania SIC</option>
+                                    <option value="32">Quebec SIC</option>
+                                    <option value="33">South Carolina SIC</option>
+                                    <option value="34">Tennessee SIC</option>
+                                    <option value="35">Texas SIC</option>
+                                    <option value="36">Vermont SIC</option>
+                                    <option value="37">Virginia SIC</option>
+                                    <option value="38">Washington SIC</option>
+                                    <option value="39">West Virginia SIC</option>
+                                    <option value="40">Western Canada SIC</option>
+                                    <option value="41">Wisconsin SIC</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-2"><label>Other</label></div>
                             <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.organizationListOther.$invalid }">
-                                <input type="text" name="organizationListOther" class="form-control"
-                                       ng-maxlength="200" customerror ng-model="project.organizationListOther" >
+                                <!--<input type="text" name="organizationListOther" class="form-control"-->
+                                       <!--ng-maxlength="200" customerror ng-model="project.organizationListOther" >-->
+
+                                <select class="form-control" name="organizationListOther" ng-model="project.organizationListOther">
+                                    <option ng-selected="!project.organizationListOther">Select</option>
+                                    <option value="1">America Forest and Paper Association</option>
+                                    <option value="2">American Forest Foundation</option>
+                                    <option value="3">Forest Products Association of Canada</option>
+                                    <option value="4">Forest Resources Association</option>
+                                    <option value="5">Society of American Foresters</option>
+                                    <option value="6">Sustainable Forestry Initiative Inc</option>
+                                </select>
+
                             </div>
                         </div>
                     </div>
