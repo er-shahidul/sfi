@@ -87,6 +87,7 @@ sfiFormApp
                 shareConceptNoName  : false,
                 dontShare           : false,
                 incResFunding       : null,
+                incSFIConservation  : null,
                 supportDocs         : [],
                 organizationListAcademic        : "",
                 organizationListResearch        : "",
@@ -117,7 +118,8 @@ sfiFormApp
                     || shareConceptData
                     || shareConceptNoName
                     || dontShare
-                    || incResFunding;
+                    || incResFunding
+                    || incSFIConservation;
             }
         }
 
