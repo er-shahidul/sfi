@@ -8,7 +8,6 @@ import java.util.Set;
 
 public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer id;
-    private Integer sfiStandardObj;
     private Integer totalProjectCost;
     private Integer totalProjectCostCurr;
     private Integer orgContribution;
@@ -35,9 +34,18 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Set<SfiPpFormRegionViewModel> projectLocations;
     private Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs;
 
+    private Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard10;
+    private Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard15;
+
     private Boolean shareConceptData;
     private Boolean shareConceptNoName;
     private Boolean dontShare;
+
+    private Boolean incResFunding;
+    private Boolean incSFIConservation;
+
+    private String conversionPattern;
+    private String description;
 
     @Override
     public Integer getId() {
@@ -46,6 +54,54 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getConversionPattern() {
+        return conversionPattern;
+    }
+
+    public void setConversionPattern(String conversionPattern) {
+        this.conversionPattern = conversionPattern;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> getSfiStandard10() {
+        return sfiStandard10;
+    }
+
+    public void setSfiStandard10(Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard10) {
+        this.sfiStandard10 = sfiStandard10;
+    }
+
+    public Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> getSfiStandard15() {
+        return sfiStandard15;
+    }
+
+    public void setSfiStandard15(Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard15) {
+        this.sfiStandard15 = sfiStandard15;
+    }
+
+    public Boolean getIncResFunding() {
+        return incResFunding;
+    }
+
+    public void setIncResFunding(Boolean incResFunding) {
+        this.incResFunding = incResFunding;
+    }
+
+    public Boolean getIncSFIConservation() {
+        return incSFIConservation;
+    }
+
+    public void setIncSFIConservation(Boolean incSFIConservation) {
+        this.incSFIConservation = incSFIConservation;
     }
 
     public Boolean getShareConceptData() {
@@ -70,14 +126,6 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setDontShare(Boolean dontShare) {
         this.dontShare = dontShare;
-    }
-
-    public Integer getSfiStandardObj() {
-        return sfiStandardObj;
-    }
-
-    public void setSfiStandardObj(Integer sfiStandardObj) {
-        this.sfiStandardObj = sfiStandardObj;
     }
 
     public Integer getTotalProjectCost() {
