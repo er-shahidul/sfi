@@ -372,20 +372,40 @@
                          ng-class="{'has-error' : isDirty() && innerFrom.projectDescr.$invalid }">
 
                         <label>Short project description (include main point of contact and other relevant information - max. 650 words)</label>
-                <textarea class="form-control" name="projectDescr" ng-required="isDirty()"
-                          style="resize:none;" maxlength="4000" max-word-count="650" customerror
-                          ng-model="project.projectDescr"></textarea>
+                        <textarea class="form-control" name="projectDescr" ng-required="isDirty()"
+                                  style="resize:none;" maxlength="4000" max-word-count="650" customerror
+                                  ng-model="project.projectDescr"></textarea>
                     </div>
 
                     <div class="form-group"
-                         ng-class="{'has-error' : isDirty() && innerFrom.sfiStandardObj.$invalid }">
+                         ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
-                        <label>SFI 2010-2014 Standard Objective most relevant to project (new!)</label>
-                        <select class="form-control" name="sfiStandardObj"  customerror
-                                ng-model="project.sfiStandardObj">
-                            <option value="0" ng-selected="!project.sfiStandardObj">Please select</option>
-                            <option ng-repeat="item in standardObjects" value="{{item.id}}">{{item.sfiStandardObjDesc}}</option>
+                        <label>SFI 2015-2019 Standard Objective most relevant to project</label>
+                        <select class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"
+                                ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects)">
+                            <option value="0" ng-selected="!project.sfiStandard10">Please select</option>
+                            <option ng-repeat="item in standardObjects" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
                         </select>
+
+                        <div id="selectedItem" ng-repeat="item in project.sfiStandard10">{{ item.sfiStandardObjDesc }}
+                            <button ng-click="project.sfiStandard10 = deleteBucket(item.id, project.sfiStandard10)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group"
+                         ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
+
+                        <label>SFI 2010-2014 Standard Objective most relevant to project</label>
+                        <select class="form-control" name="sfiStandard15" customerror ng-init="sfiStandard15 = 0"
+                                ng-model="sfiStandard15" ng-change="sfiStandard15 = addBucket(project.sfiStandard15, sfiStandard15, standardObjects)">
+                            <option value="0" ng-selected="!project.sfiStandard15">Please select</option>
+                            <option ng-repeat="item in standardObjects" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                        </select>
+
+                        <div id="selectedItem" ng-repeat="item in project.sfiStandard15">{{ item.sfiStandardObjDesc }}
+                            <button ng-click="project.sfiStandard15 = deleteBucket(item.id, project.sfiStandard15)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        </div>
                     </div>
 
                     <div class="form-group">

@@ -731,4 +731,30 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
         return _.indexOf(model, val) > -1;
     }
 
+
+    $rootScope.addBucket = function(bucket, model, list){
+
+        var item = _.find(bucket, function(item){
+            return item.id == model;
+        });
+
+        if(item) return "0";
+
+        var item = _.find(list, function(item){
+            return item.id == model;
+        });
+
+        if(item) bucket.push(item);
+
+        return null;
+    }
+
+
+    $rootScope.deleteBucket = function(id, bucket){
+
+        return _.filter(bucket, function(item){
+            return item.id == id;
+        });
+    }
+
 }]);

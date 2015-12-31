@@ -69,11 +69,13 @@ sfiFormApp
 
             $scope.project = {
 
-                projectNm                : "",
-                projectObj           : "",
+                projectNm           : "",
+                projectObj          : "",
                 description         : "",
                 sfiStandardObj      : 0,
-                projectLocations           : [],
+                sfiStandard10     : [],
+                sfiStandard15     : [],
+                projectLocations    : [],
                 conversionPattern   : "",
                 startDate           : "",
                 endDate             : "",
@@ -200,47 +202,16 @@ sfiFormApp
 
 
 
+        $scope.init();
+        $scope.resetProject();
 
 
+        $scope.setForms = function(){
+            $rootScope.$form = $scope.cs5Form;
+        }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    $scope.init();
-    $scope.resetProject();
-
-
-    $scope.setForms = function(){
-        $rootScope.$form = $scope.cs5Form;
-    }
-
-
-    $scope.save = function(go){
+        $scope.save = function(go){
 
 
         if($scope.cs5Form.$invalid){
@@ -385,4 +356,4 @@ sfiFormApp
 
 
 
-}]);
+    }]);
