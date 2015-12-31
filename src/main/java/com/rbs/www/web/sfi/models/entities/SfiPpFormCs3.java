@@ -2,9 +2,12 @@ package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -26,8 +29,19 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Column(name = "cs3_projectDescr", nullable = true)
     private String projectDescr;
 
-    @Column(name = "cs3_sfiStandardObj", nullable = true)
-    private Integer sfiStandardObj;
+    @OneToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective.class, fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name = "sfi_pp_form_cs3_project_standard_objectives_sfiStandard10",
+            joinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_projects_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_project_standard_objectives_id", referencedColumnName = "id")})
+    private Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard10;
+
+    @OneToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective.class, fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name = "sfi_pp_form_cs3_project_standard_objectives_sfiStandard15",
+            joinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_projects_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_project_standard_objectives_id", referencedColumnName = "id")})
+    private Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard15;
 
     @ManyToMany(targetEntity = SfiPpFormRegion.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(name = "sfi_pp_form_cs3_project_locations",
@@ -90,6 +104,12 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Column(name = "cs3_dont_share", nullable = true)
     private Boolean dontShare;
 
+    @Column(name = "cs3_incResFunding", nullable = true)
+    private Boolean incResFunding;
+
+    @Column(name = "cs3_incSFIConservation", nullable = true)
+    private Boolean incSFIConservation;
+
     @Override
     public Integer getId() {
         return id;
@@ -97,6 +117,38 @@ public class SfiPpFormCs3 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<SfiPpFormCs3ProjectStandardObjective> getSfiStandard10() {
+        return sfiStandard10;
+    }
+
+    public void setSfiStandard10(Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard10) {
+        this.sfiStandard10 = sfiStandard10;
+    }
+
+    public Set<SfiPpFormCs3ProjectStandardObjective> getSfiStandard15() {
+        return sfiStandard15;
+    }
+
+    public void setSfiStandard15(Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard15) {
+        this.sfiStandard15 = sfiStandard15;
+    }
+
+    public Boolean getIncResFunding() {
+        return incResFunding;
+    }
+
+    public void setIncResFunding(Boolean incResFunding) {
+        this.incResFunding = incResFunding;
+    }
+
+    public Boolean getIncSFIConservation() {
+        return incSFIConservation;
+    }
+
+    public void setIncSFIConservation(Boolean incSFIConservation) {
+        this.incSFIConservation = incSFIConservation;
     }
 
     public Boolean getShareConceptData() {
@@ -153,14 +205,6 @@ public class SfiPpFormCs3 extends BaseEntityModel {
 
     public void setProjectDescr(String projectDescr) {
         this.projectDescr = projectDescr;
-    }
-
-    public Integer getSfiStandardObj() {
-        return sfiStandardObj;
-    }
-
-    public void setSfiStandardObj(Integer sfiStandardObj) {
-        this.sfiStandardObj = sfiStandardObj;
     }
 
     public Set<SfiPpFormRegion> getProjectLocations() {

@@ -1,20 +1,10 @@
-package com.rbs.www.web.sfi.models.entities;
+package com.rbs.www.web.sfi.models.viewmodels;
 
-import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.common.models.BaseViewModel;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "sfi_pp_form_cs3_project_standard_objectives")
-public class SfiPpFormCs3ProjectStandardObjective extends BaseEntityModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SfiPpFormCs3ProjectStandardObjectiveViewModel extends BaseViewModel {
     private Integer id;
-
-    @Column(name = "cs3_sfiStandardObj", nullable = true)
     private Integer sfiStandardObj;
-
-    @Column(name = "cs3_sfiStandardObjDesc", nullable = true)
     private String sfiStandardObjDesc;
 
     @Override
