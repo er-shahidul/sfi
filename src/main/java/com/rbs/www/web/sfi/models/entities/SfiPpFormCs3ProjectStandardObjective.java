@@ -11,6 +11,9 @@ public class SfiPpFormCs3ProjectStandardObjective extends BaseEntityModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @ManyToOne
+    private SfiPpFormCs3 sfiPpFormCs3;
+
     @Column(name = "cs3_sfiStandardObj", nullable = true)
     private Integer sfiStandardObj;
 
@@ -24,6 +27,14 @@ public class SfiPpFormCs3ProjectStandardObjective extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public SfiPpFormCs3 getSfiPpFormCs3() {
+        return sfiPpFormCs3;
+    }
+
+    public void setSfiPpFormCs3(SfiPpFormCs3 sfiPpFormCs3) {
+        this.sfiPpFormCs3 = sfiPpFormCs3;
     }
 
     public Integer getSfiStandardObj() {

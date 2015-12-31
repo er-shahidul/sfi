@@ -33,30 +33,50 @@ public class Cs10 extends BaseEntityModel {
     @Column(name = "updated_at", nullable = true)
     private Date updatedAt;
 
-    @Column(name = "cs10_biodiversityItems", nullable = true)
+    @Column(name = "cs10_biodiversityItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityItems;
+    private Set<Integer>biodiversityItems1;
 
-    @Column(name = "cs10_biodiversityManagementItems", nullable = true)
+    @Column(name = "cs10_biodiversityItems2", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityManagementItems;
+    private Set<Integer>biodiversityItems2;
+
+    @Column(name = "cs10_biodiversityManagementItems1", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer>biodiversityManagementItems1;
+
+    @Column(name = "cs10_biodiversityManagementItems2", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer>biodiversityManagementItems2;
 
     @Column(name = "cs10_biodiversityNatureItems", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer>biodiversityNatureItems;
 
-    @Column(name = "cs10_biodiversityStateForestItems", nullable = true)
+    @Column(name = "cs10_biodiversityStateForestItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityStateForestItems;
+    private Set<Integer>biodiversityStateForestItems1;
 
-    @Column(name = "cs10_biodiversityTrainingItems", nullable = true)
+    @Column(name = "cs10_biodiversityStateForestItems2", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityTrainingItems;
+    private Set<Integer>biodiversityStateForestItems2;
+
+    @Column(name = "cs10_biodiversityTrainingItems1", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer>biodiversityTrainingItems1;
+
+    @Column(name = "cs10_biodiversityTrainingItems2", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer>biodiversityTrainingItems2;
 
     @Column(name = "cs10_legalComplianceOutsideItems", nullable = true)
     @ElementCollection
@@ -103,6 +123,70 @@ public class Cs10 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<Integer> getBiodiversityItems1() {
+        return biodiversityItems1;
+    }
+
+    public void setBiodiversityItems1(Set<Integer> biodiversityItems1) {
+        addAll(this.biodiversityItems1, biodiversityItems1);
+    }
+
+    public Set<Integer> getBiodiversityItems2() {
+        return biodiversityItems2;
+    }
+
+    public void setBiodiversityItems2(Set<Integer> biodiversityItems2) {
+        addAll(this.biodiversityItems2, biodiversityItems2);
+    }
+
+    public Set<Integer> getBiodiversityManagementItems1() {
+        return biodiversityManagementItems1;
+    }
+
+    public void setBiodiversityManagementItems1(Set<Integer> biodiversityManagementItems1) {
+        addAll(this.biodiversityManagementItems1, biodiversityManagementItems1);
+    }
+
+    public Set<Integer> getBiodiversityManagementItems2() {
+        return biodiversityManagementItems2;
+    }
+
+    public void setBiodiversityManagementItems2(Set<Integer> biodiversityManagementItems2) {
+        addAll(this.biodiversityManagementItems2, biodiversityManagementItems2);
+    }
+
+    public Set<Integer> getBiodiversityStateForestItems1() {
+        return biodiversityStateForestItems1;
+    }
+
+    public void setBiodiversityStateForestItems1(Set<Integer> biodiversityStateForestItems1) {
+        addAll(this.biodiversityStateForestItems1, biodiversityStateForestItems1);
+    }
+
+    public Set<Integer> getBiodiversityStateForestItems2() {
+        return biodiversityStateForestItems2;
+    }
+
+    public void setBiodiversityStateForestItems2(Set<Integer> biodiversityStateForestItems2) {
+        addAll(this.biodiversityStateForestItems2, biodiversityStateForestItems2);
+    }
+
+    public Set<Integer> getBiodiversityTrainingItems1() {
+        return biodiversityTrainingItems1;
+    }
+
+    public void setBiodiversityTrainingItems1(Set<Integer> biodiversityTrainingItems1) {
+        addAll(this.biodiversityTrainingItems1, biodiversityTrainingItems1);
+    }
+
+    public Set<Integer> getBiodiversityTrainingItems2() {
+        return biodiversityTrainingItems2;
+    }
+
+    public void setBiodiversityTrainingItems2(Set<Integer> biodiversityTrainingItems2) {
+        addAll(this.biodiversityTrainingItems2, biodiversityTrainingItems2);
     }
 
     public Boolean getAcknowledge() {
@@ -153,44 +237,12 @@ public class Cs10 extends BaseEntityModel {
         this.updatedAt = updatedAt;
     }
 
-    public Set<Integer> getBiodiversityItems() {
-        return biodiversityItems;
-    }
-
-    public void setBiodiversityItems(Set<Integer> biodiversityItems) {
-        addAll(this.biodiversityItems, biodiversityItems);
-    }
-
-    public Set<Integer> getBiodiversityManagementItems() {
-        return biodiversityManagementItems;
-    }
-
-    public void setBiodiversityManagementItems(Set<Integer> biodiversityManagementItems) {
-        addAll(this.biodiversityManagementItems, biodiversityManagementItems);
-    }
-
     public Set<Integer> getBiodiversityNatureItems() {
         return biodiversityNatureItems;
     }
 
     public void setBiodiversityNatureItems(Set<Integer> biodiversityNatureItems) {
         addAll(this.biodiversityNatureItems, biodiversityNatureItems);
-    }
-
-    public Set<Integer> getBiodiversityStateForestItems() {
-        return biodiversityStateForestItems;
-    }
-
-    public void setBiodiversityStateForestItems(Set<Integer> biodiversityStateForestItems) {
-        addAll(this.biodiversityStateForestItems, biodiversityStateForestItems);
-    }
-
-    public Set<Integer> getBiodiversityTrainingItems() {
-        return biodiversityTrainingItems;
-    }
-
-    public void setBiodiversityTrainingItems(Set<Integer> biodiversityTrainingItems) {
-        addAll(this.biodiversityTrainingItems, biodiversityTrainingItems);
     }
 
     public Set<Integer> getLegalComplianceOutsideItems() {
