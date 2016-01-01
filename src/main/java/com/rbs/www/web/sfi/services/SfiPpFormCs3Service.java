@@ -22,20 +22,4 @@ public class SfiPpFormCs3Service {
     public SfiPpFormCs3 get(Integer id) {
         return repository.get(id);
     }
-
-    public void setProjects(Cs5ViewModel model) {
-        Set<SfiPpFormCs3ViewModel> projects = model.getProjects();
-
-        for (SfiPpFormCs3ViewModel project : projects) {
-            if (project.getSfiPpForm() != null) continue;
-            project.setSfiPpForm(model.getId().hashCode());
-        }
-    }
-
-    public void setSupportDocs(Set<SfiPpFormCs3> projects) {
-        for (SfiPpFormCs3 project : projects) {
-            sfiPpFormCs3ProjectSupportDocsService
-                    .setSupportDocs(project.getSupportDocs(), project.getId());
-        }
-    }
 }

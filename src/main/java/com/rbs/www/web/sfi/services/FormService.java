@@ -122,8 +122,6 @@ public class FormService {
     public void setCs5Entity(Cs5ViewModel model) {
         cs5Service.manualPopulation(model);
         Cs5 entity = entityModelMapperService.convert(model, Cs5.class);
-
-        cs5Service.setSupportDocs(entity);
     }
     /************************ Cs5 : End ***********************/
 

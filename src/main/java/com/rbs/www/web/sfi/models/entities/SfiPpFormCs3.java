@@ -2,12 +2,9 @@ package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -94,8 +91,11 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Column(name = "cs3_organization_list_other", nullable = true)
     private String organizationListOther;
 
-    @OneToMany(targetEntity = SfiPpFormCs3ProjectSupportDocs.class, mappedBy = "sfiPpFormCs3", fetch = FetchType.EAGER,
+    @OneToMany(targetEntity = SfiPpFormCs3ProjectSupportDocs.class, fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name = "sfi_pp_form_cs3_projects_supportDocs",
+            joinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_projects_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_project_support_docs_id", referencedColumnName = "id")})
     private Set<SfiPpFormCs3ProjectSupportDocs> supportDocs;
 
     @Column(name = "cs3_include_research_funding", nullable = true)

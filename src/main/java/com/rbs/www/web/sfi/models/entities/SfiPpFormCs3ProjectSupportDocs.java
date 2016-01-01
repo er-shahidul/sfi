@@ -11,9 +11,6 @@ public class SfiPpFormCs3ProjectSupportDocs extends BaseEntityModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "cs3_projectID", nullable = true)
-    private Integer sfiPpFormCs3;
-
     @Column(name = "cs3_project_originalDocumentName", nullable = true)
     private String projectOriginalDocumentName;
 
@@ -27,14 +24,6 @@ public class SfiPpFormCs3ProjectSupportDocs extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getSfiPpFormCs3() {
-        return sfiPpFormCs3;
-    }
-
-    public void setSfiPpFormCs3(Integer sfiPpFormCs3) {
-        this.sfiPpFormCs3 = sfiPpFormCs3;
     }
 
     public String getProjectOriginalDocumentName() {
