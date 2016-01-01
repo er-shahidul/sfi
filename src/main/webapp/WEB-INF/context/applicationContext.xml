@@ -14,7 +14,9 @@
 
     <context:component-scan base-package="com" />
 
-    <import resource="classpath*:errors/errors.xml" />
+    <!--<context:property-placeholder location="classpath:application.properties, classpath*:errors/*" />-->
+
+    <context:property-placeholder location="classpath:application.properties" />
 
     <bean id="auditListener" class="com.rbs.www.common.listeners.AuditListener" />
 

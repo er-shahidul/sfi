@@ -65,6 +65,9 @@ public class FormService {
     @Autowired
     private EntityModelMapperService entityModelMapperService;
 
+    @Autowired
+    private ModelValidationService modelValidationService;
+
     /************************* Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
         Cs1 entity = cs1Service.get(id);
@@ -226,4 +229,28 @@ public class FormService {
         }
     }
     /************************ SfiPpFormCs5 : End ***********************/
+
+    /************************* ErrorViewModel : Begin ***********************/
+    public ErrorViewModel getErrorViewModel(Integer id) {
+        ErrorViewModel model = new ErrorViewModel();
+
+        model.setCs1Errors(modelValidationService.validate(this.getCs1ViewModel(id)));
+        model.setCs2Errors(modelValidationService.validate(this.getCs2ViewModel(id)));
+        model.setCs3Errors(modelValidationService.validate(this.getCs3ViewModel(id)));
+        model.setCs4Errors(modelValidationService.validate(this.getCs4ViewModel(id)));
+        model.setCs5Errors(modelValidationService.validate(this.getCs5ViewModel(id)));
+        model.setCs6Errors(modelValidationService.validate(this.getCs6ViewModel(id)));
+        model.setCs7Errors(modelValidationService.validate(this.getCs7ViewModel(id)));
+
+        Cs8ViewModel cs8ViewModel = this.getCs8ViewModel(id);
+        model.setCs8PartialAErrors(modelValidationService.validate(cs8ViewModel.getCs8PartialAViewModel()));
+        model.setCs8PartialBErrors(modelValidationService.validate(cs8ViewModel.getCs8PartialBViewModel()));
+        model.setCs8PartialCErrors(modelValidationService.validate(cs8ViewModel.getCs8PartialCViewModel()));
+
+        model.setCs9Errors(modelValidationService.validate(this.getCs9ViewModel(id)));
+        model.setCs10Errors(modelValidationService.validate(this.getCs10ViewModel(id)));
+
+        return model;
+    }
+    /************************ ErrorViewModel : End ***********************/
 }
