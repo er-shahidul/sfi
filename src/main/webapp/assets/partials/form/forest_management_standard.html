@@ -1452,14 +1452,14 @@
 
             <div class="content-pading">
                 <label>
-                    <input icheck type="radio" name="convertForestCover" ng-model="cs9.convertForestCover" value=true> Yes
-                    <input icheck type="radio" name="convertForestCover" ng-model="cs9.convertForestCover" value=false> No
+                    <input icheck type="radio" name="convertForestCover" ng-model="cs9.convertForestCover" value=1> Yes
+                    <input icheck type="radio" name="convertForestCover" ng-model="cs9.convertForestCover" value=0> No
                 </label>
                 <ul style="list-style-type: none" ng-show="cs9.convertForestCover">
                     <p>Select all that apply</p>
                     <li>
                         <label>
-                            <input icheck type="checkbox" ng-model="cs9.restorationForestCover" value=true>
+                            <input icheck type="checkbox" ng-model="cs9.restorationForestCover" value=1>
                             Restoration of Historic Forest Cover.
 
                         </label>
@@ -1468,7 +1468,7 @@
 
                             <li>
                                 <label>
-                                    <input icheck type="checkbox" ng-model="cs9.restorationRiparianProtection" value=true>
+                                    <input icheck type="checkbox" ng-model="cs9.restorationRiparianProtection" value=1>
                                     <span data-toggle="tooltip" title="Removal of loblolly-pine from riparian areas to allow re-establishment of hardwood species (US South); removal of alder from riparian areas to allow re-establishment of spruce species (PNW/BC) ">
                                         Riparian protection
                                     </span>
@@ -1485,7 +1485,7 @@
                             </li>
                             <li>
                                 <label>
-                                    <input icheck type="checkbox" ng-model="cs9.restorationNativeForest" value=true>
+                                    <input icheck type="checkbox" ng-model="cs9.restorationNativeForest" value=1>
                                     <!--<div class="sub-content">-->
                                         <span data-toggle="tooltip" title="Re-establishment of longleaf pine from loblolly pine (US South); re-establishment of blister rust resistant western white pine (PNW)">
                                             Native forest types
@@ -1504,7 +1504,7 @@
                             </li>
                             <li>
                                 <label>
-                                    <input icheck type="checkbox" ng-model="cs9.restorationOther" value=true>
+                                    <input icheck type="checkbox" ng-model="cs9.restorationOther" value=1>
                                     Other
                                 </label>
 
@@ -1524,7 +1524,7 @@
                     </li>
                     <li>
                         <label>
-                            <input icheck type="checkbox" ng-model="cs9.respondingForestHealth" value=true>
+                            <input icheck type="checkbox" ng-model="cs9.respondingForestHealth" value=1>
                             Responding to forest health concerns.
                         </label>
                         <ul style="list-style-type: none" ng-show="cs9.respondingForestHealth">
@@ -1598,7 +1598,7 @@
                     </li>
                     <li>
                         <label>
-                            <input icheck type="checkbox" ng-model="cs9.mitigatingEnvironmentalHarm" value=true>
+                            <input icheck type="checkbox" ng-model="cs9.mitigatingEnvironmentalHarm" value=1>
                             Mitigating Present or Future Environmental Harm.
                         </label>
                         <ul style="list-style-type: none" ng-show="cs9.mitigatingEnvironmentalHarm">
@@ -1723,15 +1723,15 @@
 
                 <div class="content-pading">
                     <label>
-                        <input icheck type="radio" name="convertForestLand" ng-model="cs9.convertForestLand" value=true> Yes
-                        <input icheck type="radio" name="convertForestLand" ng-model="cs9.convertForestLand" value=false> No
+                        <input icheck type="radio" name="convertForestLand" ng-model="cs9.convertForestLand" value=1> Yes
+                        <input icheck type="radio" name="convertForestLand" ng-model="cs9.convertForestLand" value=0> No
                     </label>
 
-                    <p>
-                        Please explain
-                    </p>
 
-                    <div class="form-group">
+                    <div class="form-group" ng-show="cs9.convertForestLand">
+                        <p>
+                            Please explain
+                        </p>
                         <textarea rows="2" cols="70" ng-model="cs9.convertForestLandExplain"></textarea>
                     </div>
                 </div>
