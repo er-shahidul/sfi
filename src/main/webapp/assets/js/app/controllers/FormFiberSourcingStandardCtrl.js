@@ -47,7 +47,12 @@ sfiFormApp
         });
 
         $scope.isStoryDirty = function(){
+
+            if($scope.story){
                 return $scope.story.shareOrgName || $scope.story.shareNoUse || $scope.story.shareUseAggregate ;
+            }
+
+            return false;
         }
 
 

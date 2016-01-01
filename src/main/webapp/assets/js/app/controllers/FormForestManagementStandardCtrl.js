@@ -106,7 +106,12 @@ sfiFormApp
     });
 
     $scope.isStoryDirty = function(){
-        return $scope.story.shareOrgName || $scope.story.shareNoUse || $scope.story.shareUseAggregate ;
+
+        if($scope.story){
+            return $scope.story.shareOrgName || $scope.story.shareNoUse || $scope.story.shareUseAggregate ;
+        }
+
+        return false;
     }
 
     $scope.shareHistory = function(index, key , $event){
