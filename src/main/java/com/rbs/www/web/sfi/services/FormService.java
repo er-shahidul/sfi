@@ -200,6 +200,7 @@ public class FormService {
     }
 
     public void setCs10Entity(Cs10ViewModel model) {
+        cs10Service.manualPopulation(model);
         Cs10 entity = entityModelMapperService.convert(model, Cs10.class);
     }
     /************************ Cs10 : End ***********************/

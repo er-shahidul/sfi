@@ -36,6 +36,7 @@ public class Cs10ViewModel extends BaseViewModel {
     private String biodiversityMechanismDescribe;
     private String biodiversityNoDescribe;
 
+    private Set<SfiPpFormStoryCs10ViewModel> stories;
     @Override
     public Integer getId() {
         return id;
@@ -43,6 +44,14 @@ public class Cs10ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<SfiPpFormStoryCs10ViewModel> getStories() {
+        return stories;
+    }
+
+    public void setStories(Set<SfiPpFormStoryCs10ViewModel> stories) {
+        this.stories = stories;
     }
 
     public Set<Integer> getBiodiversityItems1() {

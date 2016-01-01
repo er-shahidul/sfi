@@ -116,6 +116,10 @@ public class Cs10 extends BaseEntityModel {
     @Column(name = "cs10_biodiversityNoDescribe", nullable = true)
     private String biodiversityNoDescribe;
 
+    @OneToMany(targetEntity = SfiPpFormStoryCs10.class, fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SfiPpFormStoryCs10> stories;
+
     @Override
     public Integer getId() {
         return id;
@@ -123,6 +127,14 @@ public class Cs10 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<SfiPpFormStoryCs10> getStories() {
+        return stories;
+    }
+
+    public void setStories(Set<SfiPpFormStoryCs10> stories) {
+        addAll(this.stories, stories);
     }
 
     public Set<Integer> getBiodiversityItems1() {
