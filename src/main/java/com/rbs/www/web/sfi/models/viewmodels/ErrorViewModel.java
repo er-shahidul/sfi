@@ -10,7 +10,9 @@ public class ErrorViewModel{
     private Map<String, String> cs5Errors;
     private Map<String, String> cs6Errors;
     private Map<String, String> cs7Errors;
-    private Map<String, String> cs8Errors;
+    private Map<String, String> cs8PartialAErrors;
+    private Map<String, String> cs8PartialBErrors;
+    private Map<String, String> cs8PartialCErrors;
     private Map<String, String> cs9Errors;
     private Map<String, String> cs10Errors;
 
@@ -70,12 +72,28 @@ public class ErrorViewModel{
         this.cs7Errors = cs7Errors;
     }
 
-    public Map<String, String> getCs8Errors() {
-        return cs8Errors;
+    public Map<String, String> getCs8PartialAErrors() {
+        return cs8PartialAErrors;
     }
 
-    public void setCs8Errors(Map<String, String> cs8Errors) {
-        this.cs8Errors = cs8Errors;
+    public void setCs8PartialAErrors(Map<String, String> cs8PartialAErrors) {
+        this.cs8PartialAErrors = cs8PartialAErrors;
+    }
+
+    public Map<String, String> getCs8PartialBErrors() {
+        return cs8PartialBErrors;
+    }
+
+    public void setCs8PartialBErrors(Map<String, String> cs8PartialBErrors) {
+        this.cs8PartialBErrors = cs8PartialBErrors;
+    }
+
+    public Map<String, String> getCs8PartialCErrors() {
+        return cs8PartialCErrors;
+    }
+
+    public void setCs8PartialCErrors(Map<String, String> cs8PartialCErrors) {
+        this.cs8PartialCErrors = cs8PartialCErrors;
     }
 
     public Map<String, String> getCs9Errors() {

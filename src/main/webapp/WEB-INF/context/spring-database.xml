@@ -16,8 +16,6 @@
     <context:component-scan base-package="com.rbs.www.web.sic.repositories" />
     <context:component-scan base-package="com.rbs.www.web.common.repositories" />
 
-	<context:property-placeholder location="classpath:application.properties" />
-	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />

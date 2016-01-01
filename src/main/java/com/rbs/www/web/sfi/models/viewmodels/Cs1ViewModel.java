@@ -3,13 +3,21 @@ package com.rbs.www.web.sfi.models.viewmodels;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormAllCountryViewModel;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Null;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 public class Cs1ViewModel extends BaseViewModel {
+    // just kidding
+    @Null(message = "{cs1.null}")
     private Integer id;
+
     private Integer numberEmployeesUSA;
     private Integer numberEmployeesCA;
     private Integer numberEmployeesOther;
+
+    @Size(min = 2, max = 4, message = "{notEmpty}")
     private String companyWebsite;
     private String companyDesc;
     private Boolean ownsMngLands;
