@@ -105,6 +105,10 @@ sfiFormApp
         show: false
     });
 
+    $scope.isStoryDirty = function(){
+        return $scope.story.shareOrgName || $scope.story.shareNoUse || $scope.story.shareUseAggregate ;
+    }
+
     $scope.shareHistory = function(index, key , $event){
 
         var el = $event.currentTarget;
@@ -139,6 +143,11 @@ sfiFormApp
     }
 
     $scope.saveHistory = function(){
+
+        if(!$scope.isStoryDirty()){
+            return false;
+        }
+
 
         if(shareStoryModal.$scope.storyForm.$valid){
             shareStoryModal.$promise.then(shareStoryModal.hide);

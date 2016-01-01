@@ -69,8 +69,8 @@
                     <div style="padding-top: 20px;">
                         <p>Choose what SFI can do with your story</p>
 
-                        <div>
-                            <label>
+                        <div ng-class="{'error': !isStoryDirty() }">
+                            <label >
                                 <input icheck type="radio" ng-value=true name="shareOrgName" ng-model="story.shareOrgName" ng-checked="story.shareOrgName == true"/> Share – with our organization’s name
                             </label>
                             <br>
