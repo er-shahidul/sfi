@@ -287,8 +287,11 @@
                         <tr>
                             <td>
                                 <label class="form-inline">
-                                    <input class="form-control" style="margin: 0px;" type="checkbox">  Other
+                                    <input class="form-control" style="margin: 0px;" type="checkbox" ng-model="cs8.whyChoseSFI20Other">  Other
                                 </label>
+                                <div ng-show="cs8.whyChoseSFI20Other">
+                                    Please specify <input class="form-control" style="margin: 0px;" type="text" ng-model="cs8.whyChoseSFI20OtherSpecify">
+                                </div>
                             </td>
                             <td><input icheck name="whyChoseSFI21" ng-model="cs8.whyChoseSFI21" value="1" type="radio"></td>
                             <td><input icheck name="whyChoseSFI21" ng-model="cs8.whyChoseSFI21" value="2" type="radio"></td>
