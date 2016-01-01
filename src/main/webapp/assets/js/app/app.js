@@ -734,6 +734,8 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
 
     $rootScope.addBucket = function(bucket, model, list){
 
+        console.log(bucket, model, list);
+
         var item = _.find(bucket, function(item){
             return item.id == model;
         });
@@ -746,7 +748,7 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
 
         if(item) bucket.push(item);
 
-        return null;
+        return "0"
     }
 
 

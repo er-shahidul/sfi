@@ -149,20 +149,9 @@ sfiFormApp
 
         $scope.deleteProject = function(index){
 
-            $scope.deleteItem = $scope.getProject(index);
-            $("#delete1").modal();
-        }
-
-        $scope.deleteProjectOk = function(){
-
-            if($scope.deleteItem){
-                $scope.deleteItem.isDeleted = true;
-                $scope.deleteItem = null;
+            if(confirm("Are you sure to delete this project ?")){
+                $scope.cs5.projects.splice(index, 1);
             }
-        }
-
-        $scope.deleteProjectCancel = function(){
-            $scope.deleteItem = null;
         }
 
         $scope.editProject = function(index){
@@ -177,21 +166,6 @@ sfiFormApp
             return $scope.cs5.projects[index];
         }
 
-        $scope.addRegion = function(region){
-
-            var region = $scope.project.regionItem;
-
-            if(!$scope.project.projectLocations){
-                $scope.project.projectLocations = [];
-            }
-
-            $scope.project.projectLocations.push(region.id);
-        }
-
-
-        $scope.regionName = function(regionId){
-            return RegionList.getSingleName(regionId);
-        }
 
         $scope.delRegion = function(regionId){
             $scope.project.projectLocations = _.without($scope.project.projectLocations, regionId);
@@ -273,7 +247,10 @@ sfiFormApp
                 }).progress(function(evt) {
                         console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
                 }).success(function(data, status, headers, config) {
-                    $scope.project.supportDocs.push(data);
+                    $scope.project.supportDocs.push({
+                        projectOriginalDocumentName : data.originalName,
+                        projectUniqueDocumentName : data.uniqueName
+                    });
                 });
 
             }
@@ -346,14 +323,14 @@ sfiFormApp
         }
 
 
-        if(!$rootScope.regions){
-
-                RegionList
-                    .load()
-                    .then(function(reponse){
-                        $rootScope.regions = reponse.data;
-                    });
-            }
+//        if(!$rootScope.regions){
+//
+//                RegionList
+//                    .load()
+//                    .then(function(reponse){
+//                        $rootScope.regions = reponse.data;
+//                    });
+//            }
 
 
 

@@ -410,14 +410,14 @@
 
                     <div class="form-group">
                         <label>Select state(s)/province(s) for this project (new!)</label>
-                        <select class="form-control" name="region"
-                                ng-model="project.regionItem" ng-change="addRegion()"
-                                ng-options="region.name for region in regions track by region.id" >
-                            <option value ng-selected="!project.regionItem">Please select</option>
+                        <select class="form-control" name="region" ng-init="regionModel = 0"
+                                ng-model="regionModel" ng-change="regionModel = addBucket(project.projectLocations, regionModel, regions)">
+                            <option value="0" >Please select</option>
+                            <option ng-repeat="region in regions" ng-value={{region.id}}>{{region.name}}</option>
                         </select>
 
-                        <div id="selectedItem" ng-repeat="regionId in project.projectLocations">{{ regionName(regionId) }}
-                            <button ng-click="delRegion(regionId)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        <div id="selectedItem" ng-repeat="region in project.projectLocations">{{ region.name }}
+                            <button ng-click="project.projectLocations = deleteBucket(region.id, project.projectLocations)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
 
                     </div>
