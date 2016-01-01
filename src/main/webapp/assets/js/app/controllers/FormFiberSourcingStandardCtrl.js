@@ -1,12 +1,17 @@
+var $el;
 sfiFormApp
     .controller('FormFiberSourcingStandardCtrl',
-        ['$rootScope', '$scope', '$state', '$http', '_','Message', '$modal', '$upload',
-            function ($rootScope, $scope, $state, $http, _, Message, $modal, $upload) {
+        ['$rootScope', '$scope', '$state', '$http', '_','Message', '$modal', '$upload', '$',
+            function ($rootScope, $scope, $state, $http, _, Message, $modal, $upload, $) {
 
 
     $scope.cs10 = angular.copy($rootScope.form.cs10);
 
-    $scope.cs10.stories = $scope.cs10.stories || [];
+    $scope.hasStory = {};
+    _.each($scope.cs10.stories, function(story){
+            $scope.hasStory[story.index] = true;
+    });
+
 
     $scope.isRequired = function(){
         return $rootScope.form.cs1.hasOperationsYards;
@@ -41,7 +46,11 @@ sfiFormApp
             show: false
         });
 
-        $scope.shareHistory = function(index, key){
+        $scope.shareHistory = function(index, key, $event){
+
+            var el = $event.currentTarget;
+            var text = $(el).parent().text();
+            var label = text.replace('Share Your Story', '').replace('Edit Your Story', '').trim();
 
             var story = _.find($scope.cs10.stories, function(story){
                 return story.index == index;
@@ -54,6 +63,8 @@ sfiFormApp
                     key   : key
                 }
             }
+
+            story.label = label;
 
             $scope.story = angular.copy(story);
             $scope.story.myFiles = [];
@@ -100,6 +111,7 @@ sfiFormApp
             story.originalDocumentName = $scope.story.originalDocumentName;
             story.uniqueDocumentName = $scope.story.uniqueDocumentName;
 
+            $scope.hasStory[index] = true;
             $scope.story = null;
         }
 

@@ -4,6 +4,13 @@ sfiFormApp
     /** CS9  represents front step 7 */
 
     $scope.cs9 = angular.copy($rootScope.form.cs9);
+
+    $scope.hasStory = {};
+
+    _.each($scope.cs9.stories, function(story){
+        $scope.hasStory[story.index] = true;
+    });
+
     cs9 = $scope;
 
 
@@ -98,19 +105,25 @@ sfiFormApp
         show: false
     });
 
-    $scope.shareHistory = function(index, key){
+    $scope.shareHistory = function(index, key , $event){
+
+        var el = $event.currentTarget;
+        var text = $(el).parent().text();
+        var label = text.replace('Share Your Story', '').replace('Edit Your Story', '').trim();
+
 
         var story = _.find($scope.cs9.stories, function(story){
             return story.index == index;
         });
 
         if(!story){
-
             story = {
                 index : index,
                 key   : key
             }
         }
+
+        story.label = label;
 
         $scope.story = angular.copy(story);
         $scope.story.myFiles = [];
@@ -158,7 +171,9 @@ sfiFormApp
         story.originalDocumentName = $scope.story.originalDocumentName;
         story.uniqueDocumentName = $scope.story.uniqueDocumentName;
 
+        $scope.hasStory[index] = true;
         $scope.story = null;
+
     }
 
     $scope.story = {};
