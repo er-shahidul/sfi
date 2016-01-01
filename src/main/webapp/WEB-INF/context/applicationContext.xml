@@ -14,7 +14,16 @@
 
     <context:component-scan base-package="com" />
 
-    <import resource="classpath*:errors/errors.xml" />
+    <context:property-placeholder location="classpath*:errors/cs1" />
+    <context:property-placeholder location="classpath*:errors/cs2" />
+    <context:property-placeholder location="classpath*:errors/cs3" />
+    <context:property-placeholder location="classpath*:errors/cs4" />
+    <context:property-placeholder location="classpath*:errors/cs5" />
+    <context:property-placeholder location="classpath*:errors/cs6" />
+    <context:property-placeholder location="classpath*:errors/cs7" />
+    <context:property-placeholder location="classpath*:errors/cs8" />
+    <context:property-placeholder location="classpath*:errors/cs9" />
+    <context:property-placeholder location="classpath*:errors/cs10" />
 
     <bean id="auditListener" class="com.rbs.www.common.listeners.AuditListener" />
 

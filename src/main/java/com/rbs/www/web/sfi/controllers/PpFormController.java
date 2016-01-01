@@ -52,9 +52,6 @@ public class PpFormController {
     @Autowired
     private MessageSource messageSource;
 
-    @Autowired
-    private ErrorViewModelFactory errorViewModelFactory;
-
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
         String companyLogo = DatatypeConverter
@@ -71,7 +68,6 @@ public class PpFormController {
         model.addAttribute("cs8", formService.getCs8ViewModel(id));
         model.addAttribute("cs9", formService.getCs9ViewModel(id));
         model.addAttribute("cs10", formService.getCs10ViewModel(id));
-        model.addAttribute("error", errorViewModelFactory.getErrorViewModel());
 
         model.addAttribute("company", sfiPpFormData.getCompany());
         model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
