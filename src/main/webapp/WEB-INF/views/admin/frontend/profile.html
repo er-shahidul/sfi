@@ -80,8 +80,11 @@
     </div>
 </section>
 
-<script>
-    jQuery(function(){
+<div layout:fragment="script">
+
+    <script type="text/javascript">
+        // <![CDATA[
+
         $("#submit").click(function(){
             $(".error").hide();
             var hasError = false;
@@ -99,8 +102,11 @@
             }
             if(hasError == true) {return false;}
         });
-    });
-</script>
+
+        // ]]>
+
+    </script>
+</div>
 
 </html>
 

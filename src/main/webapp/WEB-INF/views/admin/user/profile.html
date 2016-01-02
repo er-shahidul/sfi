@@ -78,7 +78,7 @@
                                         <input type="password" id="password-check" class="form-control" value="" />
                                     </div>
                                     <div class="col-sm-3 container-right">
-                                        <button type="submit" name="section" class="btn btn-primary" value="password">Update</button>
+                                        <button id="submit" type="submit" name="section" class="btn btn-primary" value="password">Update</button>
                                     </div>
                                 </div>
                             </form>
@@ -94,8 +94,11 @@
     </div>
 </section>
 
-<script>
-    jQuery(function(){
+<div layout:fragment="script">
+
+    <script type="text/javascript">
+        // <![CDATA[
+
         $("#submit").click(function(){
             $(".error").hide();
             var hasError = false;
@@ -113,8 +116,11 @@
             }
             if(hasError == true) {return false;}
         });
-    });
-</script>
+
+        // ]]>
+
+    </script>
+</div>
 
 </html>
 
