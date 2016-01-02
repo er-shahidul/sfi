@@ -24,7 +24,7 @@
                 <a href="list.html" th:href="@{/admin/form/sic}">SIC</a>
             </li>
         </ul>
-    <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_GENERAL', 'ROLE_USER')">
+    <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="hasRole('ROLE_ADMIN')">
         <a href="list.html" th:href="@{/admin/company/setting}">Company Settings</a>
     </li>
     <li th:class="(${title} == privacy) ? 'selected' : ''" >

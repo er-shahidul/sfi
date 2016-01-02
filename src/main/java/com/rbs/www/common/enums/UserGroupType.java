@@ -2,8 +2,8 @@ package com.rbs.www.common.enums;
 
 public enum UserGroupType {
     USER("USER"),
-    ADMIN("ADMIN"),
-    SUPER_ADMIN("SUPER_ADMIN");
+    GENERAL("GENERAL"),
+    ADMIN("ADMIN");
 
     String userGroupType;
 
