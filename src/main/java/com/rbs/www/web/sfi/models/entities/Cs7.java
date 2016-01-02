@@ -2,6 +2,8 @@ package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.web.common.models.entities.SfiPpFormAllCountry;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -34,9 +36,6 @@ public class Cs7 extends BaseEntityModel {
     @Column(name = "cs7_emerIssu_otherSpec", nullable = true)
     private String emerIssuOtherSpec;
 
-    @Column(name = "cs7_investRes_ifInve", nullable = true)
-    private Boolean investResIfInve;
-
     @Column(name = "cs7_investResperc_currSupply", nullable = true)
     private Float investRespercCurrSupply;
 
@@ -49,35 +48,28 @@ public class Cs7 extends BaseEntityModel {
     @Column(name = "cs7_planCommPlant_ifPlanGE", nullable = true)
     private Boolean planCommPlantIfPlanGE;
 
-    @Column(name = "cs7_planCommPlant_year", nullable = true)
-    private String planCommPlantYear;
-
-    @Column(name = "cs7_planCommPlantPerc", nullable = true)
-    private Float planCommPlantPerc;
-
     @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(name = "sfi_pp_form_cs7_invest_res_countries",
             joinColumns = {@JoinColumn(name = "form_id")},
             inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
     private Set<SfiPpFormAllCountry> investResCountries;
 
-    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    @JoinTable(name = "sfi_pp_form_cs7_plan_invest_res_countries",
-            joinColumns = {@JoinColumn(name = "form_id")},
-            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
-    private Set<SfiPpFormAllCountry> planInvestResCountries;
-
-    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    @JoinTable(name = "sfi_pp_form_cs7_plan_comm_plant_countries",
-            joinColumns = {@JoinColumn(name = "form_id")},
-            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
-    private Set<SfiPpFormAllCountry> planCommPlantCountries;
-
     @Column(name = "cs7_emerIssuEurop", nullable = true)
     private Boolean emerIssuEurop;
 
     @Column(name = "cs7_emerIssuBioConsrv", nullable = true)
     private Boolean emerIssuBioConsrv;
+
+    @Column(name = "cs7_emerIssuIntMarket", nullable = true)
+    private Boolean emerIssuIntMarket;
+
+    @Column(name = "cs7_intMarketCountries", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> intMarketCountries;
+
+    @Column(name = "cs7_intMarketCountryOther", nullable = true)
+    private String intMarketCountryOther;
 
     @Column(name = "cs7_comments", nullable = true)
     private String comments;
@@ -89,6 +81,30 @@ public class Cs7 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getEmerIssuIntMarket() {
+        return emerIssuIntMarket;
+    }
+
+    public void setEmerIssuIntMarket(Boolean emerIssuIntMarket) {
+        this.emerIssuIntMarket = emerIssuIntMarket;
+    }
+
+    public Set<Integer> getIntMarketCountries() {
+        return intMarketCountries;
+    }
+
+    public void setIntMarketCountries(Set<Integer> intMarketCountries) {
+        addAll(this.intMarketCountries, intMarketCountries);
+    }
+
+    public String getIntMarketCountryOther() {
+        return intMarketCountryOther;
+    }
+
+    public void setIntMarketCountryOther(String intMarketCountryOther) {
+        this.intMarketCountryOther = intMarketCountryOther;
     }
 
     public Boolean getEmerIssuEurop() {
@@ -171,14 +187,6 @@ public class Cs7 extends BaseEntityModel {
         this.emerIssuOtherSpec = emerIssuOtherSpec;
     }
 
-    public Boolean getInvestResIfInve() {
-        return investResIfInve;
-    }
-
-    public void setInvestResIfInve(Boolean investResIfInve) {
-        this.investResIfInve = investResIfInve;
-    }
-
     public Float getInvestRespercCurrSupply() {
         return investRespercCurrSupply;
     }
@@ -211,43 +219,11 @@ public class Cs7 extends BaseEntityModel {
         this.planCommPlantIfPlanGE = planCommPlantIfPlanGE;
     }
 
-    public String getPlanCommPlantYear() {
-        return planCommPlantYear;
-    }
-
-    public void setPlanCommPlantYear(String planCommPlantYear) {
-        this.planCommPlantYear = planCommPlantYear;
-    }
-
-    public Float getPlanCommPlantPerc() {
-        return planCommPlantPerc;
-    }
-
-    public void setPlanCommPlantPerc(Float planCommPlantPerc) {
-        this.planCommPlantPerc = planCommPlantPerc;
-    }
-
     public Set<SfiPpFormAllCountry> getInvestResCountries() {
         return investResCountries;
     }
 
     public void setInvestResCountries(Set<SfiPpFormAllCountry> investResCountries) {
         addAll(this.investResCountries, investResCountries);
-    }
-
-    public Set<SfiPpFormAllCountry> getPlanInvestResCountries() {
-        return planInvestResCountries;
-    }
-
-    public void setPlanInvestResCountries(Set<SfiPpFormAllCountry> planInvestResCountries) {
-        addAll(this.planInvestResCountries, planInvestResCountries);
-    }
-
-    public Set<SfiPpFormAllCountry> getPlanCommPlantCountries() {
-        return planCommPlantCountries;
-    }
-
-    public void setPlanCommPlantCountries(Set<SfiPpFormAllCountry> planCommPlantCountries) {
-        addAll(this.planCommPlantCountries, planCommPlantCountries);
     }
 }

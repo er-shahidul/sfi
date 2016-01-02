@@ -14,20 +14,19 @@ public class Cs7ViewModel extends BaseViewModel {
     private Boolean emerIssuEcos;
     private Boolean emerIssuOther;
     private String emerIssuOtherSpec;
-    private Boolean investResIfInve;
     private Float investRespercCurrSupply;
     private Boolean planInvestResIfPlan;
     private String planInvestResYear;
     private Boolean planCommPlantIfPlanGE;
-    private String planCommPlantYear;
-    private Float planCommPlantPerc;
     private Set<SfiPpFormAllCountryViewModel> investResCountries;
-    private Set<SfiPpFormAllCountryViewModel> planInvestResCountries;
-    private Set<SfiPpFormAllCountryViewModel> planCommPlantCountries;
 
     private Boolean emerIssuEurop;
     private Boolean emerIssuBioConsrv;
     private String comments;
+
+    private Boolean emerIssuIntMarket;
+    private Set<Integer> intMarketCountries;
+    private String intMarketCountryOther;
 
     @Override
     public Integer getId() {
@@ -36,6 +35,30 @@ public class Cs7ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getEmerIssuIntMarket() {
+        return emerIssuIntMarket;
+    }
+
+    public void setEmerIssuIntMarket(Boolean emerIssuIntMarket) {
+        this.emerIssuIntMarket = emerIssuIntMarket;
+    }
+
+    public Set<Integer> getIntMarketCountries() {
+        return intMarketCountries;
+    }
+
+    public void setIntMarketCountries(Set<Integer> intMarketCountries) {
+        this.intMarketCountries = intMarketCountries;
+    }
+
+    public String getIntMarketCountryOther() {
+        return intMarketCountryOther;
+    }
+
+    public void setIntMarketCountryOther(String intMarketCountryOther) {
+        this.intMarketCountryOther = intMarketCountryOther;
     }
 
     public Boolean getEmerIssuEurop() {
@@ -118,14 +141,6 @@ public class Cs7ViewModel extends BaseViewModel {
         this.emerIssuOtherSpec = emerIssuOtherSpec;
     }
 
-    public Boolean getInvestResIfInve() {
-        return investResIfInve;
-    }
-
-    public void setInvestResIfInve(Boolean investResIfInve) {
-        this.investResIfInve = investResIfInve;
-    }
-
     public Float getInvestRespercCurrSupply() {
         return investRespercCurrSupply;
     }
@@ -158,43 +173,11 @@ public class Cs7ViewModel extends BaseViewModel {
         this.planCommPlantIfPlanGE = planCommPlantIfPlanGE;
     }
 
-    public String getPlanCommPlantYear() {
-        return planCommPlantYear;
-    }
-
-    public void setPlanCommPlantYear(String planCommPlantYear) {
-        this.planCommPlantYear = planCommPlantYear;
-    }
-
-    public Float getPlanCommPlantPerc() {
-        return planCommPlantPerc;
-    }
-
-    public void setPlanCommPlantPerc(Float planCommPlantPerc) {
-        this.planCommPlantPerc = planCommPlantPerc;
-    }
-
     public Set<SfiPpFormAllCountryViewModel> getInvestResCountries() {
         return investResCountries;
     }
 
     public void setInvestResCountries(Set<SfiPpFormAllCountryViewModel> investResCountries) {
         this.investResCountries = investResCountries;
-    }
-
-    public Set<SfiPpFormAllCountryViewModel> getPlanInvestResCountries() {
-        return planInvestResCountries;
-    }
-
-    public void setPlanInvestResCountries(Set<SfiPpFormAllCountryViewModel> planInvestResCountries) {
-        this.planInvestResCountries = planInvestResCountries;
-    }
-
-    public Set<SfiPpFormAllCountryViewModel> getPlanCommPlantCountries() {
-        return planCommPlantCountries;
-    }
-
-    public void setPlanCommPlantCountries(Set<SfiPpFormAllCountryViewModel> planCommPlantCountries) {
-        this.planCommPlantCountries = planCommPlantCountries;
     }
 }
