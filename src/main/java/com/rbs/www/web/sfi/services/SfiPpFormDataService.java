@@ -28,6 +28,14 @@ public class SfiPpFormDataService {
         return repository.get(id);
     }
 
+    public void setAuditInfo(int id, String status) {
+        SfiPpFormData entity = repository.get(id);
+        User user = userService.findByUsername(Util.getCurrentUsername());
+        entity.setStatus(sfiPpFormStatusService.getByStatus(status));
+        entity.setUpdatedAt(Util.getCurrentDate());
+        entity.setUpdatedBy(user);
+    }
+
     public List<SfiPpFormData> getAll() {
         return repository.getAll();
     }

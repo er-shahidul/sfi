@@ -15,6 +15,9 @@ import java.util.List;
 @Transactional
 public class FormService {
     @Autowired
+    private SfiPpFormDataService sfiPpFormDataService;
+
+    @Autowired
     private Cs1Service cs1Service;
 
     @Autowired
@@ -68,6 +71,8 @@ public class FormService {
     @Autowired
     private ModelValidationService modelValidationService;
 
+    private String pending = "pending";
+
     /************************* Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
         Cs1 entity = cs1Service.get(id);
@@ -76,6 +81,7 @@ public class FormService {
 
     public void setCs1Entity(Cs1ViewModel model) {
         Cs1 entity = entityModelMapperService.convert(model, Cs1.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs1 : End ***********************/
 
@@ -88,6 +94,7 @@ public class FormService {
     public void setCs2Entity(Cs2ViewModel model) {
         cs2Service.manualPopulation(model);
         Cs2 entity = entityModelMapperService.convert(model, Cs2.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs2 : End ***********************/
 
@@ -99,6 +106,7 @@ public class FormService {
 
     public void setCs3Entity(Cs3ViewModel model) {
         Cs3 entity = entityModelMapperService.convert(model, Cs3.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs3 : End ***********************/
 
@@ -110,6 +118,7 @@ public class FormService {
 
     public void setCs4Entity(Cs4ViewModel model) {
         Cs4 entity = entityModelMapperService.convert(model, Cs4.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs4 : End ***********************/
 
@@ -125,6 +134,7 @@ public class FormService {
     public void setCs5Entity(Cs5ViewModel model) {
         cs5Service.manualPopulation(model);
         Cs5 entity = entityModelMapperService.convert(model, Cs5.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs5 : End ***********************/
 
@@ -137,6 +147,7 @@ public class FormService {
     public void setCs6Entity(Cs6ViewModel model) {
         cs6Service.manualPopulation(model);
         Cs6 entity = entityModelMapperService.convert(model, Cs6.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs6 : End ***********************/
 
@@ -148,6 +159,7 @@ public class FormService {
 
     public void setCs7Entity(Cs7ViewModel model) {
         Cs7 entity = entityModelMapperService.convert(model, Cs7.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs7 : End ***********************/
 
@@ -179,6 +191,7 @@ public class FormService {
 
         Cs8PartialCViewModel partialCViewModel = model.getCs8PartialCViewModel();
         Cs8PartialC partialEntityC = entityModelMapperService.convert(partialCViewModel, Cs8PartialC.class);
+        sfiPpFormDataService.setAuditInfo(partialAViewModel.getId(), pending);
     }
     /************************ Cs8 : End ***********************/
 
@@ -191,6 +204,7 @@ public class FormService {
     public void setCs9Entity(Cs9ViewModel model) {
         cs9Service.manualPopulation(model);
         Cs9 entity = entityModelMapperService.convert(model, Cs9.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs9 : End ***********************/
 
@@ -203,6 +217,7 @@ public class FormService {
     public void setCs10Entity(Cs10ViewModel model) {
         cs10Service.manualPopulation(model);
         Cs10 entity = entityModelMapperService.convert(model, Cs10.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs10 : End ***********************/
 
