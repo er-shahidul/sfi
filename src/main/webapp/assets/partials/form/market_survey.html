@@ -321,40 +321,44 @@
                         Who are the main contacts for your organization that should be receiving SFI related information? Please include your organization's Head of Communications.
                     </p>
                     <div>
-                        <form role="form">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p>[name of primary producer]</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p>[xx% of total annual purchased supply]</p>
-                                </div>
-                                <div class="col-md-2">
-                                    <button >EDIT</button>
-                                </div>
-                                <div class="col-md-2">
-                                    <button>DELETE</button>
-                                </div>
-                            </div>
-                            <br>
+                        <table class="table table-striped" ng-show="cs8.primaryProducers.length">
+                            <thead>
+                            <tr>
+                                <th>Name of primary producer</th>
+                                <th>% of total annual purchased supply</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr ng-repeat="item in cs8.primaryProducers">
+                                <td class="ng-binding">{{ producers[item.source] }}</td>
+                                <td class="ng-binding">{{ item.percPurchased }} </td>
+
+                                <td><a href="" ng-click="editProducer($index, item)">Edit</a></td>
+                                <td><a href="" ng-click="deleteProducer($index)">Delete</a></td>
+                            </tr>
+                            </tbody>
+                        </table><br/>
+                        <form name="producerForm">
                             <p>
                                 Select companies/manufacturers/mills from which you sourced SFI material in 2015:
                             </p>
                             <label class="form-inline">
                                 SFI primary producers
-                                <select class="form-control">
-                                    <option>
-                                        <- Select one or More ->
-                                    </option>
+                                <select class="form-control" name="producerSource" ng-model="producer.source"
+                                        ng-options="idx*1 as item for (idx, item) in producers">
+                                    <option ng-selected="!producer.source">Select</option>
                                 </select>
                             </label>
                             <label class="form-inline">
                                 How much of your total annual purchased supply does this supplier represent (estimate)
-                                <input class="form-control" style="width: 60px;"> %
+                                <input type="number" ng-model="producer.percPurchased" name="percPurchased" class="form-control" style="width: 60px;"> %
                             </label>
 
+                        <p style="text-align: right;padding-top: 10px;padding-right: 60px;" ng-click="addProducer()">+ Add Another</p>
                         </form>
-                        <p style="text-align: right;padding-top: 10px;padding-right: 60px;">+ Add Another</p>
                     </div>
 
                 </div>
