@@ -96,6 +96,11 @@ public class PpFormController {
         populateFormContent(model, sfiPpFormData);
 
         model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("createdAt", sfiPpFormData.getCreatedAt());
+        model.addAttribute("createdBy", sfiPpFormData.getCreatedBy());
+        model.addAttribute("updateAt", sfiPpFormData.getUpdatedAt());
+        model.addAttribute("updateBy", sfiPpFormData.getUpdatedBy());
+        model.addAttribute("status", sfiPpFormData.getStatus());
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/core/form/index";
