@@ -862,6 +862,13 @@
                 <div>
                     <input type="radio" icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity415" value=1>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators
+
+                    <a  ng-click="shareHistory(67, 'conservationBiodiversity415', $event)" ng-show="cs9.conservationBiodiversity415 == 1">
+                        <span ng-hide="hasStory[67]">Share Your Story</span>
+                        <span ng-show="hasStory[67]">Edit Your Story</span>
+                    </a>
+
+
                 </div>
             </label>
 
