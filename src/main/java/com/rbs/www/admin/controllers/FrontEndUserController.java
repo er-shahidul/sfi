@@ -13,9 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -49,8 +52,12 @@ public class FrontEndUserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @RequestMapping(value = {"/frontend/user/profile"})
-    public ModelAndView profile(ModelMap model) {
+    @RequestMapping(value = {"/user/profile"})
+    public ModelAndView profile(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth instanceof AnonymousAuthenticationToken) return new ModelAndView("redirect:/login");
+        if (request.isUserInRole("ADMIN")) return new ModelAndView("redirect:/admin/user/profile");
+
         User user = userService.findByUsername(getCurrentUsername());
         model.addAttribute("user", user);
         model.addAttribute("title", "profile");
@@ -62,13 +69,13 @@ public class FrontEndUserController {
     public String updateName(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
 
         if (result.hasErrors()) {
-            return "redirect:/frontend/user/profile";
+            return "redirect:/user/profile";
         }
         userService.updateName(user);
 
         model.addAttribute("success", "User " + "" + " updated successfully");
 
-        return ("redirect:/frontend/user/profile");
+        return ("redirect:/user/profile");
     }
 
     @RequestMapping(value = {"/frontend/user/password/edit/{id}"}, method = RequestMethod.POST)
@@ -79,18 +86,18 @@ public class FrontEndUserController {
 
         if (!passwordEncoder.matches(old_password, currentUser.getPassword())) {
             model.addAttribute("error: Your password not match");
-            return "redirect:/frontend/user/profile";
+            return "redirect:/user/profile";
         }
 
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "redirect:/frontend/user/profile";
+            return "redirect:/user/profile";
         }
         userService.updatePassword(user);
 
         model.addAttribute("success", "User " + "" + " updated successfully");
-        return ("redirect:/frontend/user/profile");
+        return ("redirect:/user/profile");
     }
 
 }
