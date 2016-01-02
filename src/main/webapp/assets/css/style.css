@@ -804,11 +804,11 @@ button.close {
     width: 32px;
     margin-left: 12px;
     margin-top: 4px;
-    background-image: url("/images/icon-profile.png");
+    background-image: url("/assets/images/icon-profile.png");
 }
 
 .icon1:hover #proImg{
-    background-image: url("/images/icon-profile-hover.png");
+    background-image: url("/assets/images/icon-profile-hover.png");
 }
 
 
@@ -818,11 +818,11 @@ button.close {
     height: 26px;
     width: 22px;
     margin: auto;
-    background-image: url("/images/icon-logout.png");
+    background-image: url("/assets/images/icon-logout.png");
 }
 
 .icon2:hover #logImg{
-    background-image: url("/images/icon-logout-hover.png");
+    background-image: url("/assets/images/icon-logout-hover.png");
 }
 
 .icon3 #logIn {
@@ -1031,3 +1031,5 @@ textarea {
     margin: 30px auto;
     z-index: 1044;
 }
+
+src/main/webapp/assets/fonts/glyphicons-halflings-regular.eot
