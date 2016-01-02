@@ -57,6 +57,10 @@ public class CompanyService
         return viewModelMapperService.convert(entity, CompanyViewModel.class);
     }
 
+    public Company findById(Integer id) {
+        return companyRepository.getByKey(id);
+    }
+
     public void deleteCompanyEntity(CompanyViewModel model) {
         model.setIsActive(false);
         Company entity = entityModelMapperService.convert(model, Company.class);
