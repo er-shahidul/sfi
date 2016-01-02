@@ -1,5 +1,5 @@
 <th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
-<div class="container">
+<div class="container" id="header-cont">
     <div class="navbar-header">
         <a class="navbar-brand" href="#">
             <img id="logo" src="/assets/images/sfi-logo.png" th:src="@{/assets/images/sfi-logo.png}" th:alt="SFI"/>
@@ -20,7 +20,7 @@
             </li>
         </ul>
 
-        <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
+        <div sec:authorize="hasAnyRole('ADMIN', 'GENERAL', 'USER')" >
             <th:block th:include="/templates/headerAthorize"></th:block>
         </div>
 

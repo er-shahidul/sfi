@@ -1,16 +1,13 @@
 <th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
-    <!--data-content="<a href=&quot;http://www.sfi.local/user/profile&quot; class=&quot;settings-popup icon1&quot;><div id='proImg'></div>-->
-    <!--<span>Profile</span></a>-->
-    <!--<a href=&quot;http://www.sfi.local/logout&quot; class=&quot;settings-popup icon2&quot;><div id='logImg'></div>-->
-    <!--<span>Logout</span></a>"-->
 
-    <div id="settings" data-placement="bottom" data-toggle="popover"
-         data-container="body" type="button" data-original-title=""
-
-         data-trigger="click">
+    <div id="settings"
+         data-content="&lt;a href=&quot;/profile&quot; class=&quot;settings-popup icon1&quot;>&lt;div id=&quot;proImg&quot;>&lt;/div>&lt;span>Profile&lt;/span>&lt;/a>&lt;a href=&quot;/logout&quot; class=&quot;settings-popup icon2&quot;>&lt;div id=&quot;logImg&quot;>&lt;/div>&lt;span>Logout&lt;/span>&lt;/a>"
+         data-html="true"
+         data-placement="bottom" data-toggle="popover" data-container="body" type="button" data-original-title="" data-trigger="click">
         <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
         <label>LOGGED IN AS</label>
         <p sec:authentication="Principal.username"></p>
         <!--<span th:text="${session.fullname}"></span>-->
     </div>
+
 </th:block>
