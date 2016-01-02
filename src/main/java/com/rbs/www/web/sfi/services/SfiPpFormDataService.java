@@ -28,6 +28,14 @@ public class SfiPpFormDataService {
         return repository.get(id);
     }
 
+    public void setAuditInfo(int id, String status) {
+        SfiPpFormData entity = repository.get(id);
+        User user = userService.findByUsername(Util.getCurrentUsername());
+        entity.setStatus(sfiPpFormStatusService.getByStatus(status));
+        entity.setUpdatedAt(Util.getCurrentDate());
+        entity.setUpdatedBy(user);
+    }
+
     public List<SfiPpFormData> getAll() {
         return repository.getAll();
     }
@@ -51,6 +59,12 @@ public class SfiPpFormDataService {
         User user = userService.findByUsername(Util.getCurrentUsername());
         SfiPpFormData entity = repository.getByCompany(user.getCompany());
         if (entity == null) entity = create(user);
+        return entity;
+    }
+
+    public SfiPpFormData getPpForm() {
+        User user = userService.findByUsername(Util.getCurrentUsername());
+        SfiPpFormData entity = repository.getByCompany(user.getCompany());
         return entity;
     }
 }

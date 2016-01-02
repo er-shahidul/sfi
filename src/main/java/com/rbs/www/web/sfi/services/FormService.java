@@ -15,6 +15,9 @@ import java.util.List;
 @Transactional
 public class FormService {
     @Autowired
+    private SfiPpFormDataService sfiPpFormDataService;
+
+    @Autowired
     private Cs1Service cs1Service;
 
     @Autowired
@@ -68,6 +71,48 @@ public class FormService {
     @Autowired
     private ModelValidationService modelValidationService;
 
+    private String pending = "pending";
+
+//    public PpFormViewModel formSubmit(Integer id) {
+//        SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
+//
+//        Cs1ViewModel   cs1ViewModel = getCs1ViewModel(sfiPpFormData.getId());
+//
+//        SfiPpFormDataViewModel   sfiPpFormDataViewModel = getSfiPpFormDataViewModel(sfiPpFormData.getId());
+//        Cs2ViewModel   cs2ViewModel = getCs2ViewModel(sfiPpFormData.getId());
+//        Cs3ViewModel   cs3ViewModel = getCs3ViewModel(sfiPpFormData.getId());
+//        Cs4ViewModel   cs4ViewModel = getCs4ViewModel(sfiPpFormData.getId());
+//        Cs5ViewModel   cs5ViewModel = getCs5ViewModel(sfiPpFormData.getId());
+//        Cs6ViewModel   cs6ViewModel = getCs6ViewModel(sfiPpFormData.getId());
+//        Cs7ViewModel   cs7ViewModel = getCs7ViewModel(sfiPpFormData.getId());
+//        Cs8ViewModel   cs8ViewModel = getCs8ViewModel(sfiPpFormData.getId());
+//        Cs9ViewModel   cs9ViewModel = getCs9ViewModel(sfiPpFormData.getId());
+//        Cs10ViewModel cs10ViewModel = getCs10ViewModel(sfiPpFormData.getId());
+//
+//        PpFormViewModel model = new PpFormViewModel();
+//
+//        model.getSfiPpFormDataViewModel(sfiPpFormDataViewModel);
+//        model.getCs1ViewModel(cs1ViewModel);
+//        model.getCs2ViewModel(cs2ViewModel);
+//        model.getCs3ViewModel(cs3ViewModel);
+//        model.getCs4ViewModel(cs4ViewModel);
+//        model.getCs5ViewModel(cs5ViewModel);
+//        model.getCs6ViewModel(cs6ViewModel);
+//        model.getCs7ViewModel(cs7ViewModel);
+//        model.getCs8ViewModel(cs8ViewModel);
+//        model.getCs9ViewModel(cs9ViewModel);
+//        model.getCs10ViewModel(cs10ViewModel);
+//
+//        return model;
+//    }
+
+    /************************* SfiPpFormData : Begin ***********************/
+    public SfiPpFormDataViewModel getSfiPpFormDataViewModel(Integer id) {
+        SfiPpFormData entity = sfiPpFormDataService.get(id);
+        return viewModelMapperService.convert(entity, SfiPpFormDataViewModel.class);
+    }
+    /************************ SfiPpFormData : End ***********************/
+
     /************************* Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
         Cs1 entity = cs1Service.get(id);
@@ -76,6 +121,7 @@ public class FormService {
 
     public void setCs1Entity(Cs1ViewModel model) {
         Cs1 entity = entityModelMapperService.convert(model, Cs1.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs1 : End ***********************/
 
@@ -88,6 +134,7 @@ public class FormService {
     public void setCs2Entity(Cs2ViewModel model) {
         cs2Service.manualPopulation(model);
         Cs2 entity = entityModelMapperService.convert(model, Cs2.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs2 : End ***********************/
 
@@ -99,6 +146,7 @@ public class FormService {
 
     public void setCs3Entity(Cs3ViewModel model) {
         Cs3 entity = entityModelMapperService.convert(model, Cs3.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs3 : End ***********************/
 
@@ -110,6 +158,7 @@ public class FormService {
 
     public void setCs4Entity(Cs4ViewModel model) {
         Cs4 entity = entityModelMapperService.convert(model, Cs4.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs4 : End ***********************/
 
@@ -125,6 +174,7 @@ public class FormService {
     public void setCs5Entity(Cs5ViewModel model) {
         cs5Service.manualPopulation(model);
         Cs5 entity = entityModelMapperService.convert(model, Cs5.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs5 : End ***********************/
 
@@ -137,6 +187,7 @@ public class FormService {
     public void setCs6Entity(Cs6ViewModel model) {
         cs6Service.manualPopulation(model);
         Cs6 entity = entityModelMapperService.convert(model, Cs6.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs6 : End ***********************/
 
@@ -148,6 +199,7 @@ public class FormService {
 
     public void setCs7Entity(Cs7ViewModel model) {
         Cs7 entity = entityModelMapperService.convert(model, Cs7.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs7 : End ***********************/
 
@@ -179,6 +231,7 @@ public class FormService {
 
         Cs8PartialCViewModel partialCViewModel = model.getCs8PartialCViewModel();
         Cs8PartialC partialEntityC = entityModelMapperService.convert(partialCViewModel, Cs8PartialC.class);
+        sfiPpFormDataService.setAuditInfo(partialAViewModel.getId(), pending);
     }
     /************************ Cs8 : End ***********************/
 
@@ -191,6 +244,7 @@ public class FormService {
     public void setCs9Entity(Cs9ViewModel model) {
         cs9Service.manualPopulation(model);
         Cs9 entity = entityModelMapperService.convert(model, Cs9.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs9 : End ***********************/
 
@@ -203,6 +257,7 @@ public class FormService {
     public void setCs10Entity(Cs10ViewModel model) {
         cs10Service.manualPopulation(model);
         Cs10 entity = entityModelMapperService.convert(model, Cs10.class);
+        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************ Cs10 : End ***********************/
 
