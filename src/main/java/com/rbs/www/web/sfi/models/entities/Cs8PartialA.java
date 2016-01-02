@@ -57,164 +57,165 @@ public class Cs8PartialA extends BaseEntityModel {
     @Column(name = "cs8_whyChoseSFI20Other", nullable = true)
     private Boolean whyChoseSFI20Other;
 
-    @Column(name = "cs8_fscChainCustody2Other1", nullable = true)
-    private Boolean fscChainCustody2Other1;
+    @Column(name = "cs8_fscChainCustody1Other", nullable = true)
+    private Boolean fscChainCustody1Other;
 
-    @Column(name = "cs8_fscChainCustody2Other2", nullable = true)
-    private Boolean fscChainCustody2Other2;
+    @Column(name = "cs8_fscChainCustody2Other", nullable = true)
+    private Boolean fscChainCustody2Other;
 
-    @Column(name = "cs8_fscChainCustody2Other3", nullable = true)
-    private Boolean fscChainCustody2Other3;
+    @Column(name = "cs8_fscChainCustody3Other", nullable = true)
+    private Boolean fscChainCustody3Other;
 
-    @Column(name = "cs8_fscChainCustody2Other4", nullable = true)
-    private Boolean fscChainCustody2Other4;
+    @Column(name = "cs8_fscChainCustody4Other", nullable = true)
+    private Boolean fscChainCustody4Other;
 
-    @Column(name = "cs8_fscChainCustody2Other5", nullable = true)
-    private Boolean fscChainCustody2Other5;
+    @Column(name = "cs8_fscChainCustody5Other", nullable = true)
+    private Boolean fscChainCustody5Other;
 
-    @Column(name = "cs8_fscChainCustody2Other6", nullable = true)
-    private Boolean fscChainCustody2Other6;
+    @Column(name = "cs8_fscChainCustody6Other", nullable = true)
+    private Boolean fscChainCustody6Other;
 
-    @Column(name = "cs8_fscChainCustody2Other7", nullable = true)
-    private Boolean fscChainCustody2Other7;
+    @Column(name = "cs8_fscChainCustody7Other", nullable = true)
+    private Boolean fscChainCustody7Other;
 
-    @Column(name = "cs8_fscChainCustody2Other8", nullable = true)
-    private Boolean fscChainCustody2Other8;
+    @Column(name = "cs8_fscChainCustody8Other", nullable = true)
+    private Boolean fscChainCustody8Other;
 
-    @Column(name = "cs8_fscChainCustody2Other9", nullable = true)
-    private Boolean fscChainCustody2Other9;
+    @Column(name = "cs8_fscChainCustody9Other", nullable = true)
+    private Boolean fscChainCustody9Other;
 
-    @Column(name = "cs8_fscChainCustody2Other10", nullable = true)
-    private Boolean fscChainCustody2Other10;
+    @Column(name = "cs8_fscChainCustody10Other", nullable = true)
+    private Boolean fscChainCustody10Other;
 
-    @Column(name = "cs8_fscChainCustody2Other11", nullable = true)
-    private Boolean fscChainCustody2Other11;
+    @Column(name = "cs8_fscChainCustody11Other", nullable = true)
+    private Boolean fscChainCustody11Other;
 
-    @Column(name = "cs8_fscChainCustody2Other12", nullable = true)
-    private Boolean fscChainCustody2Other12;
+    @Column(name = "cs8_fscChainCustody12Other", nullable = true)
+    private Boolean fscChainCustody12Other;
 
-    @Column(name = "cs8_fscChainCustody2Other13", nullable = true)
-    private Boolean fscChainCustody2Other13;
+    @Column(name = "cs8_fscChainCustody13Other", nullable = true)
+    private Boolean fscChainCustody13Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other1", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other1;
+    @Column(name = "cs8_sfiLogoUseMotivation_1Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_1Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other2", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other2;
+    @Column(name = "cs8_sfiLogoUseMotivation_2Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_2Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other3", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other3;
+    @Column(name = "cs8_sfiLogoUseMotivation_3Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_3Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other4", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other4;
+    @Column(name = "cs8_sfiLogoUseMotivation_4Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_4Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other5", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other5;
+    @Column(name = "cs8_sfiLogoUseMotivation_5Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_5Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other6", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other6;
+    @Column(name = "cs8_sfiLogoUseMotivation_6Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_6Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other7", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other7;
+    @Column(name = "cs8_sfiLogoUseMotivation_7Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_7Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other8", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other8;
+    @Column(name = "cs8_sfiLogoUseMotivation_8Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_8Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other9", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other9;
+    @Column(name = "cs8_sfiLogoUseMotivation_9Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_9Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other10", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other10;
+    @Column(name = "cs8_sfiLogoUseMotivation_10Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_10Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other11", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other11;
+    @Column(name = "cs8_sfiLogoUseMotivation_11Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_11Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other12", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other12;
+    @Column(name = "cs8_sfiLogoUseMotivation_12Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_12Other;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Other13", nullable = true)
-    private Boolean sfiLogoUseMotivation_1Other13;
+    @Column(name = "cs8_sfiLogoUseMotivation_13Other", nullable = true)
+    private Boolean sfiLogoUseMotivation_13Other;
 
     @Column(name = "cs8_whyChoseSFI20OtherSpecify", nullable = true)
     private String whyChoseSFI20OtherSpecify;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe1", nullable = true)
-    private String sfiLogoUseMotivation_1Describe1;
+    @Column(name = "cs8_sfiLogoUseMotivation_1Describe", nullable = true)
+    private String sfiLogoUseMotivation_1Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe2", nullable = true)
-    private String sfiLogoUseMotivation_1Describe2;
+    @Column(name = "cs8_sfiLogoUseMotivation_2Describe", nullable = true)
+    private String sfiLogoUseMotivation_2Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe3", nullable = true)
-    private String sfiLogoUseMotivation_1Describe3;
+    @Column(name = "cs8_sfiLogoUseMotivation_3Describe", nullable = true)
+    private String sfiLogoUseMotivation_3Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe4", nullable = true)
-    private String sfiLogoUseMotivation_1Describe4;
+    @Column(name = "cs8_sfiLogoUseMotivation_4Describe", nullable = true)
+    private String sfiLogoUseMotivation_4Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe5", nullable = true)
-    private String sfiLogoUseMotivation_1Describe5;
+    @Column(name = "cs8_sfiLogoUseMotivation_5Describe", nullable = true)
+    private String sfiLogoUseMotivation_5Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe6", nullable = true)
-    private String sfiLogoUseMotivation_1Describe6;
+    @Column(name = "cs8_sfiLogoUseMotivation_6Describe", nullable = true)
+    private String sfiLogoUseMotivation_6Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe7", nullable = true)
-    private String sfiLogoUseMotivation_1Describe7;
+    @Column(name = "cs8_sfiLogoUseMotivation_7Describe", nullable = true)
+    private String sfiLogoUseMotivation_7Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe8", nullable = true)
-    private String sfiLogoUseMotivation_1Describe8;
+    @Column(name = "cs8_sfiLogoUseMotivation_8Describe", nullable = true)
+    private String sfiLogoUseMotivation_8Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe9", nullable = true)
-    private String sfiLogoUseMotivation_1Describe9;
+    @Column(name = "cs8_sfiLogoUseMotivation_9Describe", nullable = true)
+    private String sfiLogoUseMotivation_9Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe10", nullable = true)
-    private String sfiLogoUseMotivation_1Describe10;
+    @Column(name = "cs8_sfiLogoUseMotivation_10Describe", nullable = true)
+    private String sfiLogoUseMotivation_10Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe11", nullable = true)
-    private String sfiLogoUseMotivation_1Describe11;
+    @Column(name = "cs8_sfiLogoUseMotivation_11Describe", nullable = true)
+    private String sfiLogoUseMotivation_11Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe12", nullable = true)
-    private String sfiLogoUseMotivation_1Describe12;
+    @Column(name = "cs8_sfiLogoUseMotivation_12Describe", nullable = true)
+    private String sfiLogoUseMotivation_12Describe;
 
-    @Column(name = "cs8_sfiLogoUseMotivation_1Describe13", nullable = true)
-    private String sfiLogoUseMotivation_1Describe13;
+    @Column(name = "cs8_sfiLogoUseMotivation_13Describe", nullable = true)
+    private String sfiLogoUseMotivation_13Describe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe1", nullable = true)
-    private String fscChainCustody2OtherDescribe1;
+    @Column(name = "cs8_fscChainCustody1OtherDescribe", nullable = true)
+    private String fscChainCustody1OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe2", nullable = true)
-    private String fscChainCustody2OtherDescribe2;
+    @Column(name = "cs8_fscChainCustody2OtherDescribe", nullable = true)
+    private String fscChainCustody2OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe3", nullable = true)
-    private String fscChainCustody2OtherDescribe3;
+    @Column(name = "cs8_fscChainCustody3OtherDescribe", nullable = true)
+    private String fscChainCustody3OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe4", nullable = true)
-    private String fscChainCustody2OtherDescribe4;
+    @Column(name = "cs8_fscChainCustody4OtherDescribe", nullable = true)
+    private String fscChainCustody4OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe5", nullable = true)
-    private String fscChainCustody2OtherDescribe5;
+    @Column(name = "cs8_fscChainCustody5OtherDescribe", nullable = true)
+    private String fscChainCustody5OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe6", nullable = true)
-    private String fscChainCustody2OtherDescribe6;
+    @Column(name = "cs8_fscChainCustody6OtherDescribe", nullable = true)
+    private String fscChainCustody6OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe7", nullable = true)
-    private String fscChainCustody2OtherDescribe7;
+    @Column(name = "cs8_fscChainCustody7OtherDescribe", nullable = true)
+    private String fscChainCustody7OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe8", nullable = true)
-    private String fscChainCustody2OtherDescribe8;
+    @Column(name = "cs8_fscChainCustody8OtherDescribe", nullable = true)
+    private String fscChainCustody8OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe9", nullable = true)
-    private String fscChainCustody2OtherDescribe9;
+    @Column(name = "cs8_fscChainCustody9OtherDescribe", nullable = true)
+    private String fscChainCustody9OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe10", nullable = true)
-    private String fscChainCustody2OtherDescribe10;
+    @Column(name = "cs8_fscChainCustody10OtherDescribe", nullable = true)
+    private String fscChainCustody10OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe11", nullable = true)
-    private String fscChainCustody2OtherDescribe11;
+    @Column(name = "cs8_fscChainCustody11OtherDescribe", nullable = true)
+    private String fscChainCustody11OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe12", nullable = true)
-    private String fscChainCustody2OtherDescribe12;
+    @Column(name = "cs8_fscChainCustody12OtherDescribe", nullable = true)
+    private String fscChainCustody12OtherDescribe;
 
-    @Column(name = "cs8_fscChainCustody2OtherDescribe13", nullable = true)
-    private String fscChainCustody2OtherDescribe13;
+    @Column(name = "cs8_fscChainCustody13OtherDescribe", nullable = true)
+    private String fscChainCustody13OtherDescribe;
+
 
     @Column(name = "cs8_fscChainCustody10", nullable = true)
     private Integer fscChainCustody10;
@@ -1197,212 +1198,420 @@ public class Cs8PartialA extends BaseEntityModel {
         this.whyChoseSFI20Other = whyChoseSFI20Other;
     }
 
-    public Boolean getFscChainCustody2Other1() {
-        return fscChainCustody2Other1;
+    public Boolean getFscChainCustody1Other() {
+        return fscChainCustody1Other;
     }
 
-    public void setFscChainCustody2Other1(Boolean fscChainCustody2Other1) {
-        this.fscChainCustody2Other1 = fscChainCustody2Other1;
+    public void setFscChainCustody1Other(Boolean fscChainCustody1Other) {
+        this.fscChainCustody1Other = fscChainCustody1Other;
     }
 
-    public Boolean getFscChainCustody2Other2() {
-        return fscChainCustody2Other2;
+    public Boolean getFscChainCustody2Other() {
+        return fscChainCustody2Other;
     }
 
-    public void setFscChainCustody2Other2(Boolean fscChainCustody2Other2) {
-        this.fscChainCustody2Other2 = fscChainCustody2Other2;
+    public void setFscChainCustody2Other(Boolean fscChainCustody2Other) {
+        this.fscChainCustody2Other = fscChainCustody2Other;
     }
 
-    public Boolean getFscChainCustody2Other3() {
-        return fscChainCustody2Other3;
+    public Boolean getFscChainCustody3Other() {
+        return fscChainCustody3Other;
     }
 
-    public void setFscChainCustody2Other3(Boolean fscChainCustody2Other3) {
-        this.fscChainCustody2Other3 = fscChainCustody2Other3;
+    public void setFscChainCustody3Other(Boolean fscChainCustody3Other) {
+        this.fscChainCustody3Other = fscChainCustody3Other;
     }
 
-    public Boolean getFscChainCustody2Other4() {
-        return fscChainCustody2Other4;
+    public Boolean getFscChainCustody4Other() {
+        return fscChainCustody4Other;
     }
 
-    public void setFscChainCustody2Other4(Boolean fscChainCustody2Other4) {
-        this.fscChainCustody2Other4 = fscChainCustody2Other4;
+    public void setFscChainCustody4Other(Boolean fscChainCustody4Other) {
+        this.fscChainCustody4Other = fscChainCustody4Other;
     }
 
-    public Boolean getFscChainCustody2Other5() {
-        return fscChainCustody2Other5;
+    public Boolean getFscChainCustody5Other() {
+        return fscChainCustody5Other;
     }
 
-    public void setFscChainCustody2Other5(Boolean fscChainCustody2Other5) {
-        this.fscChainCustody2Other5 = fscChainCustody2Other5;
+    public void setFscChainCustody5Other(Boolean fscChainCustody5Other) {
+        this.fscChainCustody5Other = fscChainCustody5Other;
     }
 
-    public Boolean getFscChainCustody2Other6() {
-        return fscChainCustody2Other6;
+    public Boolean getFscChainCustody6Other() {
+        return fscChainCustody6Other;
     }
 
-    public void setFscChainCustody2Other6(Boolean fscChainCustody2Other6) {
-        this.fscChainCustody2Other6 = fscChainCustody2Other6;
+    public void setFscChainCustody6Other(Boolean fscChainCustody6Other) {
+        this.fscChainCustody6Other = fscChainCustody6Other;
     }
 
-    public Boolean getFscChainCustody2Other7() {
-        return fscChainCustody2Other7;
+    public Boolean getFscChainCustody7Other() {
+        return fscChainCustody7Other;
     }
 
-    public void setFscChainCustody2Other7(Boolean fscChainCustody2Other7) {
-        this.fscChainCustody2Other7 = fscChainCustody2Other7;
+    public void setFscChainCustody7Other(Boolean fscChainCustody7Other) {
+        this.fscChainCustody7Other = fscChainCustody7Other;
     }
 
-    public Boolean getFscChainCustody2Other8() {
-        return fscChainCustody2Other8;
+    public Boolean getFscChainCustody8Other() {
+        return fscChainCustody8Other;
     }
 
-    public void setFscChainCustody2Other8(Boolean fscChainCustody2Other8) {
-        this.fscChainCustody2Other8 = fscChainCustody2Other8;
+    public void setFscChainCustody8Other(Boolean fscChainCustody8Other) {
+        this.fscChainCustody8Other = fscChainCustody8Other;
     }
 
-    public Boolean getFscChainCustody2Other9() {
-        return fscChainCustody2Other9;
+    public Boolean getFscChainCustody9Other() {
+        return fscChainCustody9Other;
     }
 
-    public void setFscChainCustody2Other9(Boolean fscChainCustody2Other9) {
-        this.fscChainCustody2Other9 = fscChainCustody2Other9;
+    public void setFscChainCustody9Other(Boolean fscChainCustody9Other) {
+        this.fscChainCustody9Other = fscChainCustody9Other;
     }
 
-    public Boolean getFscChainCustody2Other10() {
-        return fscChainCustody2Other10;
+    public Boolean getFscChainCustody10Other() {
+        return fscChainCustody10Other;
     }
 
-    public void setFscChainCustody2Other10(Boolean fscChainCustody2Other10) {
-        this.fscChainCustody2Other10 = fscChainCustody2Other10;
+    public void setFscChainCustody10Other(Boolean fscChainCustody10Other) {
+        this.fscChainCustody10Other = fscChainCustody10Other;
     }
 
-    public Boolean getFscChainCustody2Other11() {
-        return fscChainCustody2Other11;
+    public Boolean getFscChainCustody11Other() {
+        return fscChainCustody11Other;
     }
 
-    public void setFscChainCustody2Other11(Boolean fscChainCustody2Other11) {
-        this.fscChainCustody2Other11 = fscChainCustody2Other11;
+    public void setFscChainCustody11Other(Boolean fscChainCustody11Other) {
+        this.fscChainCustody11Other = fscChainCustody11Other;
     }
 
-    public Boolean getFscChainCustody2Other12() {
-        return fscChainCustody2Other12;
+    public Boolean getFscChainCustody12Other() {
+        return fscChainCustody12Other;
     }
 
-    public void setFscChainCustody2Other12(Boolean fscChainCustody2Other12) {
-        this.fscChainCustody2Other12 = fscChainCustody2Other12;
+    public void setFscChainCustody12Other(Boolean fscChainCustody12Other) {
+        this.fscChainCustody12Other = fscChainCustody12Other;
     }
 
-    public Boolean getFscChainCustody2Other13() {
-        return fscChainCustody2Other13;
+    public Boolean getFscChainCustody13Other() {
+        return fscChainCustody13Other;
     }
 
-    public void setFscChainCustody2Other13(Boolean fscChainCustody2Other13) {
-        this.fscChainCustody2Other13 = fscChainCustody2Other13;
+    public void setFscChainCustody13Other(Boolean fscChainCustody13Other) {
+        this.fscChainCustody13Other = fscChainCustody13Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other1() {
-        return sfiLogoUseMotivation_1Other1;
+    public Boolean getSfiLogoUseMotivation_1Other() {
+        return sfiLogoUseMotivation_1Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other1(Boolean sfiLogoUseMotivation_1Other1) {
-        this.sfiLogoUseMotivation_1Other1 = sfiLogoUseMotivation_1Other1;
+    public void setSfiLogoUseMotivation_1Other(Boolean sfiLogoUseMotivation_1Other) {
+        this.sfiLogoUseMotivation_1Other = sfiLogoUseMotivation_1Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other2() {
-        return sfiLogoUseMotivation_1Other2;
+    public Boolean getSfiLogoUseMotivation_2Other() {
+        return sfiLogoUseMotivation_2Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other2(Boolean sfiLogoUseMotivation_1Other2) {
-        this.sfiLogoUseMotivation_1Other2 = sfiLogoUseMotivation_1Other2;
+    public void setSfiLogoUseMotivation_2Other(Boolean sfiLogoUseMotivation_2Other) {
+        this.sfiLogoUseMotivation_2Other = sfiLogoUseMotivation_2Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other3() {
-        return sfiLogoUseMotivation_1Other3;
+    public Boolean getSfiLogoUseMotivation_3Other() {
+        return sfiLogoUseMotivation_3Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other3(Boolean sfiLogoUseMotivation_1Other3) {
-        this.sfiLogoUseMotivation_1Other3 = sfiLogoUseMotivation_1Other3;
+    public void setSfiLogoUseMotivation_3Other(Boolean sfiLogoUseMotivation_3Other) {
+        this.sfiLogoUseMotivation_3Other = sfiLogoUseMotivation_3Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other4() {
-        return sfiLogoUseMotivation_1Other4;
+    public Boolean getSfiLogoUseMotivation_4Other() {
+        return sfiLogoUseMotivation_4Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other4(Boolean sfiLogoUseMotivation_1Other4) {
-        this.sfiLogoUseMotivation_1Other4 = sfiLogoUseMotivation_1Other4;
+    public void setSfiLogoUseMotivation_4Other(Boolean sfiLogoUseMotivation_4Other) {
+        this.sfiLogoUseMotivation_4Other = sfiLogoUseMotivation_4Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other5() {
-        return sfiLogoUseMotivation_1Other5;
+    public Boolean getSfiLogoUseMotivation_5Other() {
+        return sfiLogoUseMotivation_5Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other5(Boolean sfiLogoUseMotivation_1Other5) {
-        this.sfiLogoUseMotivation_1Other5 = sfiLogoUseMotivation_1Other5;
+    public void setSfiLogoUseMotivation_5Other(Boolean sfiLogoUseMotivation_5Other) {
+        this.sfiLogoUseMotivation_5Other = sfiLogoUseMotivation_5Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other6() {
-        return sfiLogoUseMotivation_1Other6;
+    public Boolean getSfiLogoUseMotivation_6Other() {
+        return sfiLogoUseMotivation_6Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other6(Boolean sfiLogoUseMotivation_1Other6) {
-        this.sfiLogoUseMotivation_1Other6 = sfiLogoUseMotivation_1Other6;
+    public void setSfiLogoUseMotivation_6Other(Boolean sfiLogoUseMotivation_6Other) {
+        this.sfiLogoUseMotivation_6Other = sfiLogoUseMotivation_6Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other7() {
-        return sfiLogoUseMotivation_1Other7;
+    public Boolean getSfiLogoUseMotivation_7Other() {
+        return sfiLogoUseMotivation_7Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other7(Boolean sfiLogoUseMotivation_1Other7) {
-        this.sfiLogoUseMotivation_1Other7 = sfiLogoUseMotivation_1Other7;
+    public void setSfiLogoUseMotivation_7Other(Boolean sfiLogoUseMotivation_7Other) {
+        this.sfiLogoUseMotivation_7Other = sfiLogoUseMotivation_7Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other8() {
-        return sfiLogoUseMotivation_1Other8;
+    public Boolean getSfiLogoUseMotivation_8Other() {
+        return sfiLogoUseMotivation_8Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other8(Boolean sfiLogoUseMotivation_1Other8) {
-        this.sfiLogoUseMotivation_1Other8 = sfiLogoUseMotivation_1Other8;
+    public void setSfiLogoUseMotivation_8Other(Boolean sfiLogoUseMotivation_8Other) {
+        this.sfiLogoUseMotivation_8Other = sfiLogoUseMotivation_8Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other9() {
-        return sfiLogoUseMotivation_1Other9;
+    public Boolean getSfiLogoUseMotivation_9Other() {
+        return sfiLogoUseMotivation_9Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other9(Boolean sfiLogoUseMotivation_1Other9) {
-        this.sfiLogoUseMotivation_1Other9 = sfiLogoUseMotivation_1Other9;
+    public void setSfiLogoUseMotivation_9Other(Boolean sfiLogoUseMotivation_9Other) {
+        this.sfiLogoUseMotivation_9Other = sfiLogoUseMotivation_9Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other10() {
-        return sfiLogoUseMotivation_1Other10;
+    public Boolean getSfiLogoUseMotivation_10Other() {
+        return sfiLogoUseMotivation_10Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other10(Boolean sfiLogoUseMotivation_1Other10) {
-        this.sfiLogoUseMotivation_1Other10 = sfiLogoUseMotivation_1Other10;
+    public void setSfiLogoUseMotivation_10Other(Boolean sfiLogoUseMotivation_10Other) {
+        this.sfiLogoUseMotivation_10Other = sfiLogoUseMotivation_10Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other11() {
-        return sfiLogoUseMotivation_1Other11;
+    public Boolean getSfiLogoUseMotivation_11Other() {
+        return sfiLogoUseMotivation_11Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other11(Boolean sfiLogoUseMotivation_1Other11) {
-        this.sfiLogoUseMotivation_1Other11 = sfiLogoUseMotivation_1Other11;
+    public void setSfiLogoUseMotivation_11Other(Boolean sfiLogoUseMotivation_11Other) {
+        this.sfiLogoUseMotivation_11Other = sfiLogoUseMotivation_11Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other12() {
-        return sfiLogoUseMotivation_1Other12;
+    public Boolean getSfiLogoUseMotivation_12Other() {
+        return sfiLogoUseMotivation_12Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other12(Boolean sfiLogoUseMotivation_1Other12) {
-        this.sfiLogoUseMotivation_1Other12 = sfiLogoUseMotivation_1Other12;
+    public void setSfiLogoUseMotivation_12Other(Boolean sfiLogoUseMotivation_12Other) {
+        this.sfiLogoUseMotivation_12Other = sfiLogoUseMotivation_12Other;
     }
 
-    public Boolean getSfiLogoUseMotivation_1Other13() {
-        return sfiLogoUseMotivation_1Other13;
+    public Boolean getSfiLogoUseMotivation_13Other() {
+        return sfiLogoUseMotivation_13Other;
     }
 
-    public void setSfiLogoUseMotivation_1Other13(Boolean sfiLogoUseMotivation_1Other13) {
-        this.sfiLogoUseMotivation_1Other13 = sfiLogoUseMotivation_1Other13;
+    public void setSfiLogoUseMotivation_13Other(Boolean sfiLogoUseMotivation_13Other) {
+        this.sfiLogoUseMotivation_13Other = sfiLogoUseMotivation_13Other;
+    }
+
+    public String getSfiLogoUseMotivation_1Describe() {
+        return sfiLogoUseMotivation_1Describe;
+    }
+
+    public void setSfiLogoUseMotivation_1Describe(String sfiLogoUseMotivation_1Describe) {
+        this.sfiLogoUseMotivation_1Describe = sfiLogoUseMotivation_1Describe;
+    }
+
+    public String getSfiLogoUseMotivation_2Describe() {
+        return sfiLogoUseMotivation_2Describe;
+    }
+
+    public void setSfiLogoUseMotivation_2Describe(String sfiLogoUseMotivation_2Describe) {
+        this.sfiLogoUseMotivation_2Describe = sfiLogoUseMotivation_2Describe;
+    }
+
+    public String getSfiLogoUseMotivation_3Describe() {
+        return sfiLogoUseMotivation_3Describe;
+    }
+
+    public void setSfiLogoUseMotivation_3Describe(String sfiLogoUseMotivation_3Describe) {
+        this.sfiLogoUseMotivation_3Describe = sfiLogoUseMotivation_3Describe;
+    }
+
+    public String getSfiLogoUseMotivation_4Describe() {
+        return sfiLogoUseMotivation_4Describe;
+    }
+
+    public void setSfiLogoUseMotivation_4Describe(String sfiLogoUseMotivation_4Describe) {
+        this.sfiLogoUseMotivation_4Describe = sfiLogoUseMotivation_4Describe;
+    }
+
+    public String getSfiLogoUseMotivation_5Describe() {
+        return sfiLogoUseMotivation_5Describe;
+    }
+
+    public void setSfiLogoUseMotivation_5Describe(String sfiLogoUseMotivation_5Describe) {
+        this.sfiLogoUseMotivation_5Describe = sfiLogoUseMotivation_5Describe;
+    }
+
+    public String getSfiLogoUseMotivation_6Describe() {
+        return sfiLogoUseMotivation_6Describe;
+    }
+
+    public void setSfiLogoUseMotivation_6Describe(String sfiLogoUseMotivation_6Describe) {
+        this.sfiLogoUseMotivation_6Describe = sfiLogoUseMotivation_6Describe;
+    }
+
+    public String getSfiLogoUseMotivation_7Describe() {
+        return sfiLogoUseMotivation_7Describe;
+    }
+
+    public void setSfiLogoUseMotivation_7Describe(String sfiLogoUseMotivation_7Describe) {
+        this.sfiLogoUseMotivation_7Describe = sfiLogoUseMotivation_7Describe;
+    }
+
+    public String getSfiLogoUseMotivation_8Describe() {
+        return sfiLogoUseMotivation_8Describe;
+    }
+
+    public void setSfiLogoUseMotivation_8Describe(String sfiLogoUseMotivation_8Describe) {
+        this.sfiLogoUseMotivation_8Describe = sfiLogoUseMotivation_8Describe;
+    }
+
+    public String getSfiLogoUseMotivation_9Describe() {
+        return sfiLogoUseMotivation_9Describe;
+    }
+
+    public void setSfiLogoUseMotivation_9Describe(String sfiLogoUseMotivation_9Describe) {
+        this.sfiLogoUseMotivation_9Describe = sfiLogoUseMotivation_9Describe;
+    }
+
+    public String getSfiLogoUseMotivation_10Describe() {
+        return sfiLogoUseMotivation_10Describe;
+    }
+
+    public void setSfiLogoUseMotivation_10Describe(String sfiLogoUseMotivation_10Describe) {
+        this.sfiLogoUseMotivation_10Describe = sfiLogoUseMotivation_10Describe;
+    }
+
+    public String getSfiLogoUseMotivation_11Describe() {
+        return sfiLogoUseMotivation_11Describe;
+    }
+
+    public void setSfiLogoUseMotivation_11Describe(String sfiLogoUseMotivation_11Describe) {
+        this.sfiLogoUseMotivation_11Describe = sfiLogoUseMotivation_11Describe;
+    }
+
+    public String getSfiLogoUseMotivation_12Describe() {
+        return sfiLogoUseMotivation_12Describe;
+    }
+
+    public void setSfiLogoUseMotivation_12Describe(String sfiLogoUseMotivation_12Describe) {
+        this.sfiLogoUseMotivation_12Describe = sfiLogoUseMotivation_12Describe;
+    }
+
+    public String getSfiLogoUseMotivation_13Describe() {
+        return sfiLogoUseMotivation_13Describe;
+    }
+
+    public void setSfiLogoUseMotivation_13Describe(String sfiLogoUseMotivation_13Describe) {
+        this.sfiLogoUseMotivation_13Describe = sfiLogoUseMotivation_13Describe;
+    }
+
+    public String getFscChainCustody1OtherDescribe() {
+        return fscChainCustody1OtherDescribe;
+    }
+
+    public void setFscChainCustody1OtherDescribe(String fscChainCustody1OtherDescribe) {
+        this.fscChainCustody1OtherDescribe = fscChainCustody1OtherDescribe;
+    }
+
+    public String getFscChainCustody2OtherDescribe() {
+        return fscChainCustody2OtherDescribe;
+    }
+
+    public void setFscChainCustody2OtherDescribe(String fscChainCustody2OtherDescribe) {
+        this.fscChainCustody2OtherDescribe = fscChainCustody2OtherDescribe;
+    }
+
+    public String getFscChainCustody3OtherDescribe() {
+        return fscChainCustody3OtherDescribe;
+    }
+
+    public void setFscChainCustody3OtherDescribe(String fscChainCustody3OtherDescribe) {
+        this.fscChainCustody3OtherDescribe = fscChainCustody3OtherDescribe;
+    }
+
+    public String getFscChainCustody4OtherDescribe() {
+        return fscChainCustody4OtherDescribe;
+    }
+
+    public void setFscChainCustody4OtherDescribe(String fscChainCustody4OtherDescribe) {
+        this.fscChainCustody4OtherDescribe = fscChainCustody4OtherDescribe;
+    }
+
+    public String getFscChainCustody5OtherDescribe() {
+        return fscChainCustody5OtherDescribe;
+    }
+
+    public void setFscChainCustody5OtherDescribe(String fscChainCustody5OtherDescribe) {
+        this.fscChainCustody5OtherDescribe = fscChainCustody5OtherDescribe;
+    }
+
+    public String getFscChainCustody6OtherDescribe() {
+        return fscChainCustody6OtherDescribe;
+    }
+
+    public void setFscChainCustody6OtherDescribe(String fscChainCustody6OtherDescribe) {
+        this.fscChainCustody6OtherDescribe = fscChainCustody6OtherDescribe;
+    }
+
+    public String getFscChainCustody7OtherDescribe() {
+        return fscChainCustody7OtherDescribe;
+    }
+
+    public void setFscChainCustody7OtherDescribe(String fscChainCustody7OtherDescribe) {
+        this.fscChainCustody7OtherDescribe = fscChainCustody7OtherDescribe;
+    }
+
+    public String getFscChainCustody8OtherDescribe() {
+        return fscChainCustody8OtherDescribe;
+    }
+
+    public void setFscChainCustody8OtherDescribe(String fscChainCustody8OtherDescribe) {
+        this.fscChainCustody8OtherDescribe = fscChainCustody8OtherDescribe;
+    }
+
+    public String getFscChainCustody9OtherDescribe() {
+        return fscChainCustody9OtherDescribe;
+    }
+
+    public void setFscChainCustody9OtherDescribe(String fscChainCustody9OtherDescribe) {
+        this.fscChainCustody9OtherDescribe = fscChainCustody9OtherDescribe;
+    }
+
+    public String getFscChainCustody10OtherDescribe() {
+        return fscChainCustody10OtherDescribe;
+    }
+
+    public void setFscChainCustody10OtherDescribe(String fscChainCustody10OtherDescribe) {
+        this.fscChainCustody10OtherDescribe = fscChainCustody10OtherDescribe;
+    }
+
+    public String getFscChainCustody11OtherDescribe() {
+        return fscChainCustody11OtherDescribe;
+    }
+
+    public void setFscChainCustody11OtherDescribe(String fscChainCustody11OtherDescribe) {
+        this.fscChainCustody11OtherDescribe = fscChainCustody11OtherDescribe;
+    }
+
+    public String getFscChainCustody12OtherDescribe() {
+        return fscChainCustody12OtherDescribe;
+    }
+
+    public void setFscChainCustody12OtherDescribe(String fscChainCustody12OtherDescribe) {
+        this.fscChainCustody12OtherDescribe = fscChainCustody12OtherDescribe;
+    }
+
+    public String getFscChainCustody13OtherDescribe() {
+        return fscChainCustody13OtherDescribe;
+    }
+
+    public void setFscChainCustody13OtherDescribe(String fscChainCustody13OtherDescribe) {
+        this.fscChainCustody13OtherDescribe = fscChainCustody13OtherDescribe;
     }
 
     public String getWhyChoseSFI20OtherSpecify() {
@@ -1411,214 +1620,6 @@ public class Cs8PartialA extends BaseEntityModel {
 
     public void setWhyChoseSFI20OtherSpecify(String whyChoseSFI20OtherSpecify) {
         this.whyChoseSFI20OtherSpecify = whyChoseSFI20OtherSpecify;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe1() {
-        return sfiLogoUseMotivation_1Describe1;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe1(String sfiLogoUseMotivation_1Describe1) {
-        this.sfiLogoUseMotivation_1Describe1 = sfiLogoUseMotivation_1Describe1;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe2() {
-        return sfiLogoUseMotivation_1Describe2;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe2(String sfiLogoUseMotivation_1Describe2) {
-        this.sfiLogoUseMotivation_1Describe2 = sfiLogoUseMotivation_1Describe2;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe3() {
-        return sfiLogoUseMotivation_1Describe3;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe3(String sfiLogoUseMotivation_1Describe3) {
-        this.sfiLogoUseMotivation_1Describe3 = sfiLogoUseMotivation_1Describe3;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe4() {
-        return sfiLogoUseMotivation_1Describe4;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe4(String sfiLogoUseMotivation_1Describe4) {
-        this.sfiLogoUseMotivation_1Describe4 = sfiLogoUseMotivation_1Describe4;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe5() {
-        return sfiLogoUseMotivation_1Describe5;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe5(String sfiLogoUseMotivation_1Describe5) {
-        this.sfiLogoUseMotivation_1Describe5 = sfiLogoUseMotivation_1Describe5;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe6() {
-        return sfiLogoUseMotivation_1Describe6;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe6(String sfiLogoUseMotivation_1Describe6) {
-        this.sfiLogoUseMotivation_1Describe6 = sfiLogoUseMotivation_1Describe6;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe7() {
-        return sfiLogoUseMotivation_1Describe7;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe7(String sfiLogoUseMotivation_1Describe7) {
-        this.sfiLogoUseMotivation_1Describe7 = sfiLogoUseMotivation_1Describe7;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe8() {
-        return sfiLogoUseMotivation_1Describe8;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe8(String sfiLogoUseMotivation_1Describe8) {
-        this.sfiLogoUseMotivation_1Describe8 = sfiLogoUseMotivation_1Describe8;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe9() {
-        return sfiLogoUseMotivation_1Describe9;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe9(String sfiLogoUseMotivation_1Describe9) {
-        this.sfiLogoUseMotivation_1Describe9 = sfiLogoUseMotivation_1Describe9;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe10() {
-        return sfiLogoUseMotivation_1Describe10;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe10(String sfiLogoUseMotivation_1Describe10) {
-        this.sfiLogoUseMotivation_1Describe10 = sfiLogoUseMotivation_1Describe10;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe11() {
-        return sfiLogoUseMotivation_1Describe11;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe11(String sfiLogoUseMotivation_1Describe11) {
-        this.sfiLogoUseMotivation_1Describe11 = sfiLogoUseMotivation_1Describe11;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe12() {
-        return sfiLogoUseMotivation_1Describe12;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe12(String sfiLogoUseMotivation_1Describe12) {
-        this.sfiLogoUseMotivation_1Describe12 = sfiLogoUseMotivation_1Describe12;
-    }
-
-    public String getSfiLogoUseMotivation_1Describe13() {
-        return sfiLogoUseMotivation_1Describe13;
-    }
-
-    public void setSfiLogoUseMotivation_1Describe13(String sfiLogoUseMotivation_1Describe13) {
-        this.sfiLogoUseMotivation_1Describe13 = sfiLogoUseMotivation_1Describe13;
-    }
-
-    public String getFscChainCustody2OtherDescribe1() {
-        return fscChainCustody2OtherDescribe1;
-    }
-
-    public void setFscChainCustody2OtherDescribe1(String fscChainCustody2OtherDescribe1) {
-        this.fscChainCustody2OtherDescribe1 = fscChainCustody2OtherDescribe1;
-    }
-
-    public String getFscChainCustody2OtherDescribe2() {
-        return fscChainCustody2OtherDescribe2;
-    }
-
-    public void setFscChainCustody2OtherDescribe2(String fscChainCustody2OtherDescribe2) {
-        this.fscChainCustody2OtherDescribe2 = fscChainCustody2OtherDescribe2;
-    }
-
-    public String getFscChainCustody2OtherDescribe3() {
-        return fscChainCustody2OtherDescribe3;
-    }
-
-    public void setFscChainCustody2OtherDescribe3(String fscChainCustody2OtherDescribe3) {
-        this.fscChainCustody2OtherDescribe3 = fscChainCustody2OtherDescribe3;
-    }
-
-    public String getFscChainCustody2OtherDescribe4() {
-        return fscChainCustody2OtherDescribe4;
-    }
-
-    public void setFscChainCustody2OtherDescribe4(String fscChainCustody2OtherDescribe4) {
-        this.fscChainCustody2OtherDescribe4 = fscChainCustody2OtherDescribe4;
-    }
-
-    public String getFscChainCustody2OtherDescribe5() {
-        return fscChainCustody2OtherDescribe5;
-    }
-
-    public void setFscChainCustody2OtherDescribe5(String fscChainCustody2OtherDescribe5) {
-        this.fscChainCustody2OtherDescribe5 = fscChainCustody2OtherDescribe5;
-    }
-
-    public String getFscChainCustody2OtherDescribe6() {
-        return fscChainCustody2OtherDescribe6;
-    }
-
-    public void setFscChainCustody2OtherDescribe6(String fscChainCustody2OtherDescribe6) {
-        this.fscChainCustody2OtherDescribe6 = fscChainCustody2OtherDescribe6;
-    }
-
-    public String getFscChainCustody2OtherDescribe7() {
-        return fscChainCustody2OtherDescribe7;
-    }
-
-    public void setFscChainCustody2OtherDescribe7(String fscChainCustody2OtherDescribe7) {
-        this.fscChainCustody2OtherDescribe7 = fscChainCustody2OtherDescribe7;
-    }
-
-    public String getFscChainCustody2OtherDescribe8() {
-        return fscChainCustody2OtherDescribe8;
-    }
-
-    public void setFscChainCustody2OtherDescribe8(String fscChainCustody2OtherDescribe8) {
-        this.fscChainCustody2OtherDescribe8 = fscChainCustody2OtherDescribe8;
-    }
-
-    public String getFscChainCustody2OtherDescribe9() {
-        return fscChainCustody2OtherDescribe9;
-    }
-
-    public void setFscChainCustody2OtherDescribe9(String fscChainCustody2OtherDescribe9) {
-        this.fscChainCustody2OtherDescribe9 = fscChainCustody2OtherDescribe9;
-    }
-
-    public String getFscChainCustody2OtherDescribe10() {
-        return fscChainCustody2OtherDescribe10;
-    }
-
-    public void setFscChainCustody2OtherDescribe10(String fscChainCustody2OtherDescribe10) {
-        this.fscChainCustody2OtherDescribe10 = fscChainCustody2OtherDescribe10;
-    }
-
-    public String getFscChainCustody2OtherDescribe11() {
-        return fscChainCustody2OtherDescribe11;
-    }
-
-    public void setFscChainCustody2OtherDescribe11(String fscChainCustody2OtherDescribe11) {
-        this.fscChainCustody2OtherDescribe11 = fscChainCustody2OtherDescribe11;
-    }
-
-    public String getFscChainCustody2OtherDescribe12() {
-        return fscChainCustody2OtherDescribe12;
-    }
-
-    public void setFscChainCustody2OtherDescribe12(String fscChainCustody2OtherDescribe12) {
-        this.fscChainCustody2OtherDescribe12 = fscChainCustody2OtherDescribe12;
-    }
-
-    public String getFscChainCustody2OtherDescribe13() {
-        return fscChainCustody2OtherDescribe13;
-    }
-
-    public void setFscChainCustody2OtherDescribe13(String fscChainCustody2OtherDescribe13) {
-        this.fscChainCustody2OtherDescribe13 = fscChainCustody2OtherDescribe13;
     }
 
     public Boolean getProductSegmentBioenergy() {
