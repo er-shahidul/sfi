@@ -35,35 +35,6 @@
                    ng-model="cs6.numPrivateForeOwersCa" ng-disabled="!operateInCa()" >
         </td>
     </tr>
-    <!--
-    <tr>
-        <td>Number of those private landowners who received information directly from your employees on the advantages of reforestation and Best Management Practices (BMPs).</td>
-        <td>
-            <input type="number" class="form-control  shorter"
-                   ng-model="cs6.numPrivateLandOwersUs" ng-class="{'disabled' : !operateInUsa()}">
-        </td>
-
-        <td>
-            <input type="number" class="form-control  shorter"
-                   ng-model="cs6.numPrivateLandOwersCa" ng-disabled="!operateInCa()" >
-        </td>
-    </tr>
-    -->
-    <!--
-    <tr>
-        <td tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="Include all funding your organization provided last year to SFI Implementation Committees and others for logger training and education and all other SFI program implementation activities at the state or provincial level."
-                >Funding provided last year for SFI program implementation activities at the state or provincial level (Support for US SICs in $US. Support for Canadian SICs in CAD.)</td>
-        <td>
-            <input type="number" class="form-control  shorter"
-                   ng-model="cs6.usaFundingProvided" ng-class="{'disabled' : !operateInUsa()}">
-        </td>
-        <td>
-            <input type="number" class="form-control  shorter"
-                   ng-model="cs6.caFundingProvided" ng-disabled="!operateInCa()" >
-        </td>
-    </tr>
-    -->
     </tbody>
 </table>
 </form>
@@ -295,8 +266,26 @@
 
         <td align="center">
 
-            <div ng-repeat="item in section.standardValues">
-                <span ng-if="item">{{ getStandard($index) }}</span>
+            <div ng-show="section.percCertifedMoreThanOneStandard1">
+                <span>SFI/FSC</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard2">
+                <span>SFI/ATFS</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard3">
+                <span>SFI/CSA</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard4">
+                <span>ATFS/FSC</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard5">
+                <span>CSA/FSC</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard6">
+                <span>SFI/ATFS/FSC</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard7">
+                <span>SFI/CSA/FSC</span>
             </div>
 
             <a ng-hide="isDisabled(section)" ng-click="showPopUp2($index)" id="pop-link-{{$index}}">Select Standard</a>
@@ -305,11 +294,32 @@
 
         <td align="center" ng-class="{'has-error' : innerForm.item8.$invalid}">
 
-            <input type="hidden" ng-model="section.standardValues">
-            <div ng-repeat="item in section.standardValues">
-                <span ng-if="item">{{ item }}%</span>
-            </div>
+            <!--<input type="hidden" ng-model="section.standardValues">-->
+            <!--<div ng-repeat="item in section.standardValues">-->
+                <!--<span ng-if="item">{{ item }}%</span>-->
+            <!--</div>-->
 
+            <div ng-show="section.percCertifedMoreThanOneStandard1">
+                <span>{{ section.percCertifedMoreThanOneStandard1}} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard2">
+                <span>{{ section.percCertifedMoreThanOneStandard2 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard3">
+                <span>{{ section.percCertifedMoreThanOneStandard3 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard4">
+                <span>{{ section.percCertifedMoreThanOneStandard4 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard5">
+                <span>{{ section.percCertifedMoreThanOneStandard5 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard6">
+                <span>{{ section.percCertifedMoreThanOneStandard6 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard7">
+                <span>{{ section.percCertifedMoreThanOneStandard7 }} </span>
+            </div>
         </td>
     </tr>
 </tbody>
