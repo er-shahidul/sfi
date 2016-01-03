@@ -35,9 +35,11 @@ public class PpResponseController {
     @Autowired
     SfiPpFormDataService sfiPpFormDataService;
 
+    private String submitted = "submitted";
+
     @RequestMapping(value = "/form/submit/{id}", method = RequestMethod.GET)
     public ResponseEntity<String> formSubmit( @PathVariable Integer id, ModelMap model) throws ParseException {
-        SfiPpFormData sfiPpFormData = sfiPpFormDataService.getPpForm();
+        SfiPpFormData sfiPpFormData = sfiPpFormDataService.getPpForm(id);
 
         model.addAttribute("form", sfiPpFormData);
         model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpFormData.getId()));
@@ -50,6 +52,8 @@ public class PpResponseController {
         model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpFormData.getId()));
         model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpFormData.getId()));
         model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpFormData.getId()));
+
+        sfiPpFormDataService.setAuditInfo(sfiPpFormData.getId(), submitted);
 
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }

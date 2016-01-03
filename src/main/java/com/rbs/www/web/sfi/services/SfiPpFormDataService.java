@@ -1,6 +1,8 @@
 package com.rbs.www.web.sfi.services;
 
+import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.admin.models.entities.User;
+import com.rbs.www.admin.services.CompanyService;
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormStatusService;
@@ -20,6 +22,9 @@ public class SfiPpFormDataService {
 
     @Autowired
     private SfiPpFormStatusService sfiPpFormStatusService;
+
+    @Autowired
+    private CompanyService companyService;
 
     @Autowired
     private UserService userService;
@@ -62,9 +67,9 @@ public class SfiPpFormDataService {
         return entity;
     }
 
-    public SfiPpFormData getPpForm() {
-        User user = userService.findByUsername(Util.getCurrentUsername());
-        SfiPpFormData entity = repository.getByCompany(user.getCompany());
+    public SfiPpFormData getPpForm(Integer id) {
+        Company company = companyService.findById(id);
+        SfiPpFormData entity = repository.getByCompany(company);
         return entity;
     }
 }
