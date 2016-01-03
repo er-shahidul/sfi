@@ -3,6 +3,7 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
     ['$rootScope', '$scope', 'Countries',  '$http', '_', 'Message',
         function ($rootScope , $scope, Countries, $http, _ , Message){
 
+        ngScope = $scope;
         $scope.cs8 = {} ;
         $scope.cs8Data = angular.copy($rootScope.form.cs8);
 
@@ -22,6 +23,41 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
 
             return $scope.cs8Data;
         };
+
+        $scope.cs8.primaryProducers = $scope.cs8.primaryProducers || [];
+
+        $scope.producer = {};
+        $scope.producerIndex = null;
+
+        $scope.producers = [
+            'producers 1' , 'producers 2'
+        ];
+
+        $scope.addProducer = function(){
+
+            if($scope.cs8Form.producerSource.$valid && $scope.cs8Form.percPurchased.$valid){
+
+                if(!$scope.producerIndex){
+                    $scope.cs8.primaryProducers.push($scope.producer);
+                }
+
+                $scope.producerIndex = null;
+                $scope.producer = {};
+            }
+        }
+
+        $scope.editProducer = function(index, producer){
+            $scope.producerIndex = index;
+            $scope.producer = producer;
+        }
+
+        $scope.deleteProducer = function(index){
+
+            if(confirm('Are you sure to delete this item ?')){
+                $scope.cs8.primaryProducers.cs8.primaryProducers(index, 1);
+            }
+        }
+
 
 
         $scope.contact = {};
