@@ -54,6 +54,6 @@ public class SicFormController {
         populateFormContent(model, sicFormData);
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
-        return "/core/form/index";
+        return "/web/sic/index";
     }
 }
