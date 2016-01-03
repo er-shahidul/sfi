@@ -82,4 +82,25 @@ public class CompanyService
             companyRepository.persist(entity);
         }
     }
+
+    public void unitUpdate(Company company) {
+        Company entity = companyRepository.getByKey(company.getId());
+        if(entity!=null){
+            entity.setAreaUnit(company.getAreaUnit());
+            entity.setUpdatedAt(Util.getCurrentDate());
+            entity.setUpdatedBy(Util.getCurrentUsername());
+            companyRepository.persist(entity);
+        }
+    }
+
+    public void logoUpdate(Company company, byte[] fileN, String name) {
+        Company entity = companyRepository.getByKey(company.getId());
+        if(entity!=null){
+            entity.setLogoName(name);
+            if(fileN!=null){entity.setLogo(fileN);}
+            entity.setUpdatedAt(Util.getCurrentDate());
+            entity.setUpdatedBy(Util.getCurrentUsername());
+            companyRepository.persist(entity);
+        }
+    }
 }

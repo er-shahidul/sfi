@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout" th:with="title=${title}">
+
+<section layout:fragment="content">
+
+    <div id="wrapper">
+        <div class="container">
+            <div class="formContainer">
+                <div class="breadcrumb">
+                    <span class="text-muted">/</span>
+                    My Profile
+                </div>
+                <div class="formContent">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="sidebarmenu">
+                                <th:block th:include="/templates/left_menu"></th:block>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <h3>[ <span th:text="${company.getName()}"></span> ] - Settings</h3>
+                            <div class="form-group">
+
+                            </div>
+                            <form th:class="bordered" th:action="'/frontend/user/company/logo/edit/' + ${company.id}" th:object="${company}" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                                <input type="hidden" th:field="*{id}" />
+                                <div class="form-group">
+                                    <h4>Company Logo</h4><br/>
+
+                                    <div class="col-sm-2">
+                                            <img th:src="${{companyLogo}}" width="111px;" height="61px;"/>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="file" name="file" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-6 container-right">
+                                        <button type="submit" name="section" class="btn btn-primary" value="name">Update</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form th:class="bordered" th:action="'/frontend/user/company/unit/edit/' + ${company.id}" th:object="${company}" method="POST" class="form-horizontal">
+                                <input type="hidden" th:field="*{id}" />
+                                <div class="form-group">
+                                    <h4>Units of Measure</h4>
+
+                                    <div class="col-sm-8">
+                                        <select th:field="*{areaUnit.id}" class="form-control" required="required" >
+                                            <option value=""> Select a Area Unit</option>
+                                            <option th:each="areaUnit : ${areaUnities}" th:value="${areaUnit.id}" th:text="${areaUnit.getUnitDescription()}">
+                                            </option>
+                                        </select>
+                                        <div style="margin-top: 5px;">Note: 1 Acre = 0.404686 Hectare</div>
+                                    </div>
+
+                                    <div class="col-sm-4 container-right">
+                                        <button type="submit" name="section" class="btn btn-primary" value="password">Update</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <!-- END VALIDATION STATES-->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</html>
+
+
