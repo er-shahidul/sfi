@@ -105,6 +105,7 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_8;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_9;
     private Set<OrgContactViewModel> orgContacts;
+    private Set<PrimaryProducerViewModel> primaryProducers;
     private Set<String> alsoFSCLabel_10;
     private Set<String> alsoFSCLabel_11;
     private Set<String> alsoFSCLabel_12;
@@ -1578,6 +1579,14 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     public void setOrgContacts(Set<OrgContactViewModel> orgContacts) {
         this.orgContacts = orgContacts;
+    }
+
+    public Set<PrimaryProducerViewModel> getPrimaryProducers() {
+        return primaryProducers;
+    }
+
+    public void setPrimaryProducers(Set<PrimaryProducerViewModel> primaryProducers) {
+        this.primaryProducers = primaryProducers;
     }
 
     public Set<String> getAlsoFSCLabel_10() {

@@ -530,6 +530,10 @@ public class Cs8PartialA extends BaseEntityModel {
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<OrgContact> orgContacts;
 
+    @OneToMany(targetEntity = PrimaryProducer.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<PrimaryProducer> primaryProducers;
+
     @Column(name = "cs8_alsoFSCLabel_10", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -2404,6 +2408,14 @@ public class Cs8PartialA extends BaseEntityModel {
 
     public void setOrgContacts(Set<OrgContact> orgContacts) {
         addAll(this.orgContacts, orgContacts);
+    }
+
+    public Set<PrimaryProducer> getPrimaryProducers() {
+        return primaryProducers;
+    }
+
+    public void setPrimaryProducers(Set<PrimaryProducer> primaryProducers) {
+        addAll(this.primaryProducers, primaryProducers);
     }
 
     public Set<String> getAlsoFSCLabel_10() {
