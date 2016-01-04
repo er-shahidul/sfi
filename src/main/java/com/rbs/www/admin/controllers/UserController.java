@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -255,7 +254,9 @@ public class UserController {
 
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
-            model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
+            model.addAttribute("errorPassword", isInvalidPassword
+                    ? messageSource.getMessage("NotEmpty.password", new String[] { user.getPassword() }, Locale.getDefault())
+                    : "");
             return "redirect:/admin/user/profile";
         }
         userService.updatePassword(user);
@@ -324,7 +325,7 @@ public class UserController {
     private String userCheck(User user) {
         if (user == null) {
             return "accessDenied";
-        } else if (user.getToken() == true) {
+        } else if (user.getToken()) {
             return "index";
         } else {
             return ("redirect:/user/password/set/" + user.getId());
@@ -416,7 +417,7 @@ public class UserController {
         String message = request.getLocalName() + "/user/verification/" + randomUUIDString;
         String mailType = "confirm";
 
-        if(user.getSendInvitation() == true){
+        if (user.getSendInvitation()) {
             sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
         }
 
