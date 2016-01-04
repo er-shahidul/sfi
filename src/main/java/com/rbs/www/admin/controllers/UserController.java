@@ -199,6 +199,9 @@ public class UserController {
             return "redirect:/admin/user/edit" + user.getId();
         }
         userService.updateUser(user);
+        if(user.getSendInvitation() == true){
+
+        }
 
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/admin/user/list");
@@ -217,7 +220,7 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/admin/user/email/edit/{id}"}, method = RequestMethod.POST)
-    public String updateEmail(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
+    public String updateEmail(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id, HttpServletRequest request) {
         boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
 
         if (result.hasErrors() || isInvalidEmail) {
@@ -225,6 +228,15 @@ public class UserController {
             return "redirect:/admin/user/profile";
         }
         userService.updateEmail(user);
+
+//        String recipient = user.getEmail();
+//        String subject = "Email Verification";
+//        String message = "not implemented";
+//        String mailType = "confirm";
+//
+//        if(user.getSendInvitation() == true){
+//            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+//        }
 
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/logout");
@@ -260,7 +272,7 @@ public class UserController {
         List<CompanyViewModel> companies = companyService.list();
         model.addAttribute("companies", companies);
 
-        List<Group> groups = groupService.list();
+            List<Group> groups = groupService.list();
         model.addAttribute("groups", groups);
 
         return "admin/user/new";
@@ -403,7 +415,10 @@ public class UserController {
         String subject = "Email Verification";
         String message = request.getLocalName() + "/user/verification/" + randomUUIDString;
         String mailType = "confirm";
-        sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+
+        if(user.getSendInvitation() == true){
+            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+        }
 
         model.addAttribute("success", "User " + "" + " has been registered successfully");
         return "redirect:/admin/user/list";

@@ -23,6 +23,7 @@ public class UserViewModel extends BaseViewModel {
     private Date updatedAt;
     private String createdBy;
     private String updatedBy;
+    private Boolean sendInvitation;
 
     @Override
     public Integer getId() {
@@ -31,6 +32,14 @@ public class UserViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getSendInvitation() {
+        return sendInvitation;
+    }
+
+    public void setSendInvitation(Boolean sendInvitation) {
+        this.sendInvitation = sendInvitation;
     }
 
     public String getUsername() {

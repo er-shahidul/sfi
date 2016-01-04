@@ -56,6 +56,9 @@ public class User extends Audit implements UserDetails {
     @Column(name = "is_active", nullable = false)
     private Boolean isActive = true;
 
+    @Column(name = "sendInvitation", nullable = true)
+    private Boolean sendInvitation;
+
     @Transient
     private Set<GrantedAuthority> authorities;
 
@@ -128,6 +131,14 @@ public class User extends Audit implements UserDetails {
         }
         System.out.print("authorities :"+authorities);
         return authorities;
+    }
+
+    public Boolean getSendInvitation() {
+        return sendInvitation;
+    }
+
+    public void setSendInvitation(Boolean sendInvitation) {
+        this.sendInvitation = sendInvitation;
     }
 
     public String getPassword() {
