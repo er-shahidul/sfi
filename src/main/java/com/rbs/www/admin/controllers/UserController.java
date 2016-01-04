@@ -13,9 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -114,7 +116,8 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/admin/user/profile"})
-    public ModelAndView profile(ModelMap model) {
+    public ModelAndView profile(SecurityContextHolderAwareRequestWrapper request, ModelMap model) {
+        if (request.isUserInRole("GENERAL")) return new ModelAndView("redirect:/user/profile");
         User user = userService.findByUsername(getCurrentUsername());
         model.addAttribute("user", user);
         model.addAttribute("title", "profile");

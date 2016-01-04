@@ -84,7 +84,8 @@ public class PpFormController {
         if (auth instanceof AnonymousAuthenticationToken)
             return "redirect:/login";
 
-        if (request.isUserInRole("ADMIN")) return "redirect:/admin/form";
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
         if (request.isUserInRole("USER")) return "redirect:/sfiPpForm";
 
         return "redirect:/dashboard";

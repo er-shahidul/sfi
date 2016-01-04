@@ -22,8 +22,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-import static com.rbs.www.common.util.Util.getCurrentUsername;
-
 @Controller
 public class DefaultController {
 
@@ -46,12 +44,10 @@ public class DefaultController {
 
         if (auth instanceof AnonymousAuthenticationToken) return "/dashboard";
 
-        if (request.isUserInRole("ADMIN")){
-//            User user = userService.findByUsername(getCurrentUsername());
-//            session.setAttribute("u", user.getFirstName());
-//            model.addAttribute("u", user.getFirstName());
-            return "redirect:/admin/dashboard";
-        }
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        if (request.isUserInRole("USER")) return "redirect:/sfiPpForm";
+
         return "redirect:/sfiPpForm";
     }
 
