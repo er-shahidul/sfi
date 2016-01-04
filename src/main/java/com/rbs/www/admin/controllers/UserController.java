@@ -55,7 +55,7 @@ public class UserController {
         model.addAttribute("title", "home");
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
 
-        return "admin";
+        return "admin/user/dashboard";
     }
 
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
@@ -63,7 +63,7 @@ public class UserController {
         model.addAttribute("user", getPrincipal());
         model.addAttribute("title", "user");
 
-        return "accessDenied";
+        return "common/accessDenied";
     }
 
     public void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
@@ -291,7 +291,7 @@ public class UserController {
         User user = userService.findUserIdByToken(token);
 
         if (user == null) {
-            return "accessDenied";
+            return "common/accessDenied";
         } else {
             return ("redirect:/user/password/reset/" + user.getId());
         }
@@ -300,7 +300,7 @@ public class UserController {
     @RequestMapping(value = "/user/forgot/password")
     public String forgotPassword() {
 
-        return "forgot_password";
+        return "common/forgot_password";
     }
 
     @RequestMapping(value = "/user/forgot/password", method = RequestMethod.POST)
@@ -339,7 +339,7 @@ public class UserController {
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
 
-        return "password";
+        return "common/password";
     }
 
     @RequestMapping(value = {"/user/password/reset/{id}"}, method = RequestMethod.POST)
@@ -360,7 +360,7 @@ public class UserController {
         UserViewModel user = userService.getViewModelById(id);
         model.addAttribute("user", user);
 
-        return "password";
+        return "common/password";
     }
 
     @RequestMapping(value = {"/user/password/set/{id}"}, method = RequestMethod.POST)

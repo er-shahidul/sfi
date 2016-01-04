@@ -1,6 +1,5 @@
 package com.rbs.www.web.common.controllers;
 
-import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormCs3ProjectStandardObjective;
@@ -54,7 +53,7 @@ public class DefaultController {
     @RequestMapping(value = "/privacy", method = RequestMethod.GET)
     public String privacy(ModelMap model) {
         model.addAttribute("title", "privacy");
-        return "privacy";
+        return "common/privacy";
     }
 
     @RequestMapping(value = "/country/list", method = RequestMethod.GET)
