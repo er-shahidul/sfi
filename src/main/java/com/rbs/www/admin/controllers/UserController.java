@@ -50,9 +50,9 @@ public class UserController {
     private PasswordEncoder passwordEncoder;
 
     @RequestMapping(value = {"/admin/dashboard"}, method = RequestMethod.GET)
-    public String homePage(ModelMap model) {
+    public String homePage(ModelMap model, HttpServletRequest request) {
         model.addAttribute("title", "home");
-        model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
+        request.getSession().setAttribute("user", userService.findByUsername(getCurrentUsername()));
 
         return "admin";
     }
