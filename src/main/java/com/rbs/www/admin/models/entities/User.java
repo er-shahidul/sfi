@@ -1,12 +1,17 @@
 package com.rbs.www.admin.models.entities;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.util.Assert;
+
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.*;
 
 @Entity
 @Table(name = "users")
-public class User extends Audit {
+public class User extends Audit implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -51,6 +56,23 @@ public class User extends Audit {
     @Column(name = "is_active", nullable = false)
     private Boolean isActive = true;
 
+    @Transient
+    private Set<GrantedAuthority> authorities;
+
+    private static SortedSet<GrantedAuthority> sortAuthorities(Collection<? extends GrantedAuthority> authorities) {
+        Assert.notNull(authorities, "Cannot pass a null GrantedAuthority collection");
+        TreeSet sortedAuthorities = new TreeSet(new User.AuthorityComparator());
+        Iterator i$ = authorities.iterator();
+
+        while(i$.hasNext()) {
+            GrantedAuthority grantedAuthority = (GrantedAuthority)i$.next();
+            Assert.notNull(grantedAuthority, "GrantedAuthority list cannot contain any null elements");
+            sortedAuthorities.add(grantedAuthority);
+        }
+
+        return sortedAuthorities;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -63,8 +85,49 @@ public class User extends Audit {
         return username;
     }
 
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        if(authorities == null) {
+            authorities = Collections.unmodifiableSet(sortAuthorities(getGrantedAuthorities()));
+        }
+
+        return authorities;
+    }
+
+    private List<GrantedAuthority> getGrantedAuthorities(){
+        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+
+        for(Group role : this.getGroup()) {
+            System.out.println("Role : "+role.getRole());
+            authorities.add(new SimpleGrantedAuthority("ROLE_"+role.getRole()));
+
+        }
+        System.out.print("authorities :"+authorities);
+        return authorities;
     }
 
     public String getPassword() {
@@ -159,5 +222,16 @@ public class User extends Audit {
 
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+    }
+
+    private static class AuthorityComparator implements Comparator<GrantedAuthority>, Serializable {
+        private static final long serialVersionUID = 400L;
+
+        private AuthorityComparator() {
+        }
+
+        public int compare(GrantedAuthority g1, GrantedAuthority g2) {
+            return g2.getAuthority() == null?-1:(g1.getAuthority() == null?1:g1.getAuthority().compareTo(g2.getAuthority()));
+        }
     }
 }
