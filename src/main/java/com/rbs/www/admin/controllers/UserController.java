@@ -145,7 +145,7 @@ public class UserController {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "admin/user/editPass";
+            return "redirect:/admin/user/edit/password/" + user.getId() ;
         }
         userService.updatePassword(user);
 
@@ -193,7 +193,7 @@ public class UserController {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "admin/user/edit";
+            return "redirect:/admin/user/edit" + user.getId();
         }
         userService.updateUser(user);
 
@@ -331,7 +331,7 @@ public class UserController {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "password";
+            return "redirect:/user/password/reset/" + user.getId();
         }
         userService.updatePassword(user);
 
@@ -352,7 +352,7 @@ public class UserController {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors()) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "password";
+            return "redirect:/user/password/set/" + user.getId();
         }
         userService.updatePassword(user);
         userService.verificationToken(user);
@@ -379,19 +379,19 @@ public class UserController {
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
-            return "admin/user/new";
+            return "redirect:/admin/user/new";
         }
 
         if (!userService.isUserUsernameUnique(user.getId(), user.getUsername())) {
             FieldError ssoError = new FieldError("user", "username", messageSource.getMessage("non.unique.username", new String[]{user.getUsername()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "admin/user/new";
+            return "redirect:admin/user/new";
         }
 
         if (!userService.isUserEmailUnique(user.getId(), user.getEmail())) {
             FieldError ssoError = new FieldError("user", "email", messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "admin/user/new";
+            return "redirect:admin/user/new";
         }
 
         userService.save(user);

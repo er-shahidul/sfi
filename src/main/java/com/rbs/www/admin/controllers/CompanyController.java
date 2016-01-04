@@ -91,7 +91,7 @@ public class CompanyController {
         String name = randomUUIDString + "." + getFileExtension(fileName);
 
         if (result.hasErrors()) {
-            return "admin/company/edit";
+            return "redirect:/admin/company/edit" + company.getId();
         }
 
         byte[] fileN = new byte[0];
@@ -204,7 +204,7 @@ public class CompanyController {
         String name = randomUUIDString + "." + getFileExtension(fileName);
 
         if (result.hasErrors()) {
-            return new ModelAndView("admin/company/new");
+            return new ModelAndView("redirect:/admin/company/new");
         }
 
         try {
