@@ -357,7 +357,7 @@ public class UserController {
     @RequestMapping(value = "/user/password/set/{id}", method = RequestMethod.GET)
     public String passwordSet(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "user");
-        UserViewModel user = userService.getViewModelById(id);
+        User user = userService.findByID(id);
         model.addAttribute("user", user);
 
         return "common/password";
