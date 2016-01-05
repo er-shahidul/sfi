@@ -348,7 +348,7 @@ public class UserController {
         }
         userService.updatePassword(user);
 
-        return ("redirect:/login");
+        return "common/after_password";
     }
 
     @RequestMapping(value = "/user/password/set/{id}", method = RequestMethod.GET)
@@ -370,7 +370,7 @@ public class UserController {
         userService.updatePassword(user);
         userService.verificationToken(user);
 
-        return ("redirect:/login");
+        return "common/after_password";
     }
 
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.POST)
