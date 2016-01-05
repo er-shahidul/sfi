@@ -1,10 +1,7 @@
 package com.rbs.www.admin.controllers;
 
-import org.springframework.context.ApplicationEvent;
-import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,15 +25,4 @@ public class LoginController {
         }
         return "redirect:/login?logout";
     }
-
-//    public void onApplicationEvent(ApplicationEvent appEvent)
-//    {
-//        if (appEvent instanceof AuthenticationSuccessEvent)
-//        {
-//            AuthenticationSuccessEvent event = (AuthenticationSuccessEvent) appEvent;
-//            UserDetails userDetails = (UserDetails) event.getAuthentication().getPrincipal();
-//
-//            // ....
-//        }
-//    }
 }
