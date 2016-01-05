@@ -15,8 +15,9 @@ public class MailHelper
         this.mailSender = mailSender;
     }
 
-    public void sendMail(String to, String subject, String msg, User user, String mailType, String path) {
+    public void sendMail(String to, String subject, String url, User user, String mailType, String path) {
         String form = "sfiprogram.org";
+        String msg = "http://"+url;
         try{
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -62,7 +63,8 @@ public class MailHelper
 
                         "<p>Welcome " + user.getFirstName() + ",</p>\n" +
                         "<p>To complete your registration to the SFI Annual Reporting & Survey Tool please follow this link:</p>\n" +
-                        "<a href=\" "+ msg +" \" >Go to SFI Annual Reporting & Survey Tool</a> \n" +
+                        "<a href=\" "+msg+" \" >Go to SFI Annual Reporting & Survey Tool</a> \n" +
+                        "<p>if link is not work than copy this url <b> "+msg+" </b></p>\n" +
                         "<p></p>\n" +
                         "<p>If you require any additional help or have questions, please feel free to contact me.</p>\n" +
                         "<p></p>\n" +
@@ -126,7 +128,8 @@ public class MailHelper
 
                         "<p>Welcome " + user.getFirstName() + ",</p>\n" +
                         "<p>To change your password please click the following link</p>\n" +
-                        "<a href=\" "+ msg +" \" >Go to SFI Annual Reporting & Survey Tool</a> \n" +
+                        "<a href=\" "+msg+" \" >Go to SFI Annual Reporting & Survey Tool</a> \n" +
+                        "<p>if link is not work than copy this url <b> "+msg+" </b></p>\n" +
                         "<p></p>\n" +
                         "<p>If you require any additional help or have questions, please feel free to contact me.</p>\n" +
                         "<p></p>\n" +
