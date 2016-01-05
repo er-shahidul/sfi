@@ -63,7 +63,7 @@ public class UserController {
         model.addAttribute("user", getPrincipal());
         model.addAttribute("title", "user");
 
-        return "common/accessDenied";
+        return "common/access_denied";
     }
 
     public void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
@@ -288,7 +288,7 @@ public class UserController {
         User user = userService.findUserIdByToken(token);
 
         if (user == null) {
-            return "common/accessDenied";
+            return "common/access_denied";
         } else {
             return ("redirect:/user/password/reset/" + user.getId());
         }
@@ -316,7 +316,7 @@ public class UserController {
             sendEmail(email, subject, message, user, mailType, request.getLocalName());
         }
 
-        return "login";
+        return "common/login";
     }
 
     private String userCheck(User user) {

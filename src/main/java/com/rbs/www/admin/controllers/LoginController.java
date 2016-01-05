@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() {
-        return "login";
+        return "common/login";
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
