@@ -105,7 +105,7 @@ public class User extends Audit implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return enabled;
     }
 
     public void setUsername(String username) {
