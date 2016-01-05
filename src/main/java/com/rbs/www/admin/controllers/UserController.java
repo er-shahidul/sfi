@@ -198,9 +198,15 @@ public class UserController {
             return "redirect:/admin/user/edit" + user.getId();
         }
         userService.updateUser(user);
-        if(user.getSendInvitation() == true){
 
-        }
+//        String recipient = user.getEmail();
+//        String subject = "Email Verification";
+//        String message = "not implemented";
+//        String mailType = "confirm";
+//
+//        if(user.getSendInvitation()){
+//            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+//        }
 
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/admin/user/list");
@@ -227,15 +233,6 @@ public class UserController {
             return "redirect:/admin/user/profile";
         }
         userService.updateEmail(user);
-
-//        String recipient = user.getEmail();
-//        String subject = "Email Verification";
-//        String message = "not implemented";
-//        String mailType = "confirm";
-//
-//        if(user.getSendInvitation() == true){
-//            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
-//        }
 
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/logout");

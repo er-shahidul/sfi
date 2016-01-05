@@ -43,6 +43,21 @@
                                     </div>
                                 </div>
                             </form>
+                            <form th:class="bordered" th:action="'/frontend/user/email/edit/' + ${user.id}" th:object="${user}" method="POST" class="form-horizontal">
+                                <input type="hidden" th:field="*{id}" />
+                                <div class="form-group">
+                                    <h4>Email</h4><br/>
+
+                                    <div class="col-sm-6">
+                                        <label></label>
+                                        <input type="text" th:path="*{email}" th:field="*{email}" id="email" class="form-control" required="required" />
+                                        <errors th:text="${errorEmail}" class="help-inline"/>
+                                    </div>
+                                    <div class="col-sm-6 container-right">
+                                        <button type="submit" name="section" class="btn btn-primary" value="email">Update</button>
+                                    </div>
+                                </div>
+                            </form>
                             <form th:class="bordered" th:action="'/frontend/user/password/edit/' + ${user.id}" th:object="${user}" method="POST" class="form-horizontal">
                                 <input type="hidden" th:field="*{id}" />
                                 <div class="form-group">
