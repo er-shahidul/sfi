@@ -57,8 +57,11 @@
                                                     <td th:text="${sfiPpForm.status.status}"></td>
                                                     <td th:text="${sfiPpForm.updatedAt}"></td>
                                                     <td>
-                                                        <a th:href="@{'/admin/company/sfi/form/' + ${sfiPpForm.id}}">
-                                                            <button th:text="Open"></button>
+                                                        <a th:href="@{'/admin/company/pp/form/view/' + ${sfiPpForm.id}}">
+                                                            <button th:text="Open" style="width:47px;"></button>
+                                                        </a>
+                                                        <a th:href="@{'/admin/company/pp/form/' + ${sfiPpForm.id}}">
+                                                            <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
                                                 </tr>
