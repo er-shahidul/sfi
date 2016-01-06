@@ -1,0 +1,60 @@
+<div class="row">
+    <form name="cs3Form">
+    <div class="col-sm-12">
+
+        <!--Right Side Start
+        -------------
+        -------------------------------
+        ----------------------------------->
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+                <h5>
+                    3. <span data-toggle="tooltip" title="From SIC Governance document – Landowner outreach core mission priority:  Focus landowner outreach efforts on education and technology."> Landowner Outreach</span>
+                </h5>
+                <p>
+                    If you are especially proud of a particular landowner outreach project, event or activity you accomplished last
+                    year or plan to achieve this year, provide a description of your top Landowner Outreach activities, for potential elevation
+                    through SFI media channels:
+                </p>
+                <ul class="list-style">
+                    <li>
+                        <label style="width:80px;">
+                            <input type="checkbox" name="workshop" ng-model="cs3.workshop" >  Workshop
+                        </label>
+
+                        <textarea  ng-show="cs3.workshop" ng-model="cs3.workshopSpecify" rows="3" cols="60" style="vertical-align: top;position: relative;right: -20px; margin-bottom:10px;" placeholder="Please Specify"></textarea>
+                    </li>
+                    <li>
+                        <label style="width:80px;">
+                            <input type="checkbox" name="workshop" ng-model="cs3.brochure" >  Brochure
+                        </label>
+
+                        <textarea  ng-show="cs3.brochure" ng-model="cs3.brochureSpecify" rows="3" cols="60" style="vertical-align: top;position: relative;right: -20px; margin-bottom:10px;" placeholder="Please Specify"></textarea>
+
+                    </li>
+                    <li>
+                        <label style="width:80px;">
+                            <input type="checkbox" name="tours" ng-model="cs3.tours" >  Tours
+                        </label>
+                        <textarea  ng-show="cs3.tours" ng-model="cs3.toursSpecify" rows="3" cols="60" style="vertical-align: top;position: relative;right: -20px; margin-bottom:10px;" placeholder="Please Specify"></textarea>
+                    </li>
+                    <li>
+                        <label style="width:80px;">
+                            <input type="checkbox" name="other" ng-model="cs3.other" >  Other
+                        </label>
+
+                        <textarea  ng-show="cs3.other" ng-model="cs3.otherSpecify" rows="3" cols="60" style="vertical-align: top;position: relative;right: -20px; margin-bottom:10px;" placeholder="Please Specify"></textarea>
+                    </li>
+                </ul>
+
+            </div>
+            <br>
+        </div>
+
+        <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
+            <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
+            <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 4</button>
+        </div>
+    </div>
+    </form>
+</div>
