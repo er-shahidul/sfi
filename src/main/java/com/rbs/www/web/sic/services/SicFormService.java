@@ -13,35 +13,6 @@ import javax.transaction.Transactional;
 @Service
 @Transactional
 public class SicFormService {
-    @Autowired
-    private SicCs1Repository sicCs1Repository;
-
-    @Autowired
-    private SicCs2Repository sicCs2Repository;
-
-    @Autowired
-    private SicCs3Repository sicCs3Repository;
-
-    @Autowired
-    private SicCs4Repository sicCs4Repository;
-
-    @Autowired
-    private SicCs5Repository sicCs5Repository;
-
-    @Autowired
-    private SicCs6Repository sicCs6Repository;
-
-    @Autowired
-    private SicCs7Repository sicCs7Repository;
-
-    @Autowired
-    private SicCs8Repository sicCs8Repository;
-
-    @Autowired
-    private SicCs9Repository sicCs9Repository;
-
-    @Autowired
-    private SicCs10Repository sicCs10Repository;
 
     @Autowired
     private SicCs1Service sicCs1Service;
@@ -81,18 +52,19 @@ public class SicFormService {
 
     /************************* SicCs1 : Begin *************************/
     public SicCs1ViewModel getSicCs1ViewModel(Integer id) {
-        SicCs1 entity = sicCs1Repository.get(id);
+        SicCs1 entity = sicCs1Service.get(id);
         return viewModelMapperService.convert(entity, SicCs1ViewModel.class);
     }
 
     public void setSicCs1Entity(SicCs1ViewModel model) {
+        sicCs1Service.manualPopulation(model);
         SicCs1 entity = entityModelMapperService.convert(model, SicCs1.class);
     }
     /************************* SicCs1 : End *************************/
 
     /************************* SicCs2 : Begin ***********************/
     public SicCs2ViewModel getSicCs2ViewModel(Integer id) {
-        SicCs2 entity = sicCs2Repository.get(id);
+        SicCs2 entity = sicCs2Service.get(id);
         return viewModelMapperService.convert(entity, SicCs2ViewModel.class);
     }
 
@@ -103,7 +75,7 @@ public class SicFormService {
 
     /************************* SicCs3 : Begin ***********************/
     public SicCs3ViewModel getSicCs3ViewModel(Integer id) {
-        SicCs3 entity = sicCs3Repository.get(id);
+        SicCs3 entity = sicCs3Service.get(id);
         return viewModelMapperService.convert(entity, SicCs3ViewModel.class);
     }
 
@@ -114,7 +86,7 @@ public class SicFormService {
 
     /************************* SicCs4 : Begin ***********************/
     public SicCs4ViewModel getSicCs4ViewModel(Integer id) {
-        SicCs4 entity = sicCs4Repository.get(id);
+        SicCs4 entity = sicCs4Service.get(id);
         return viewModelMapperService.convert(entity, SicCs4ViewModel.class);
     }
 
@@ -125,7 +97,7 @@ public class SicFormService {
 
     /************************* SicCs5 : Begin ***********************/
     public SicCs5ViewModel getSicCs5ViewModel(Integer id) {
-        SicCs5 entity = sicCs5Repository.get(id);
+        SicCs5 entity = sicCs5Service.get(id);
         return viewModelMapperService.convert(entity, SicCs5ViewModel.class);
     }
 
@@ -136,7 +108,7 @@ public class SicFormService {
 
     /************************* SicCs6 : Begin ***********************/
     public SicCs6ViewModel getSicCs6ViewModel(Integer id) {
-        SicCs6 entity = sicCs6Repository.get(id);
+        SicCs6 entity = sicCs6Service.get(id);
         return viewModelMapperService.convert(entity, SicCs6ViewModel.class);
     }
 
@@ -147,7 +119,7 @@ public class SicFormService {
 
     /************************* SicCs7 : Begin ***********************/
     public SicCs7ViewModel getSicCs7ViewModel(Integer id) {
-        SicCs7 entity = sicCs7Repository.get(id);
+        SicCs7 entity = sicCs7Service.get(id);
         return viewModelMapperService.convert(entity, SicCs7ViewModel.class);
     }
 
@@ -158,7 +130,7 @@ public class SicFormService {
 
     /************************* SicCs8 : Begin ***********************/
     public SicCs8ViewModel getSicCs8ViewModel(Integer id) {
-        SicCs8 entity = sicCs8Repository.get(id);
+        SicCs8 entity = sicCs8Service.get(id);
         return viewModelMapperService.convert(entity, SicCs8ViewModel.class);
     }
 
@@ -169,7 +141,7 @@ public class SicFormService {
 
     /************************* SicCs9 : Begin ***********************/
     public SicCs9ViewModel getSicCs9ViewModel(Integer id) {
-        SicCs9 entity = sicCs9Repository.get(id);
+        SicCs9 entity = sicCs9Service.get(id);
         return viewModelMapperService.convert(entity, SicCs9ViewModel.class);
     }
 
@@ -180,7 +152,7 @@ public class SicFormService {
 
     /************************* SicCs10 : Begin ***********************/
     public SicCs10ViewModel getSicCs10ViewModel(Integer id) {
-        SicCs10 entity = sicCs10Repository.get(id);
+        SicCs10 entity = sicCs10Service.get(id);
         return viewModelMapperService.convert(entity, SicCs10ViewModel.class);
     }
 
