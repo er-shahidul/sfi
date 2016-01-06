@@ -1,0 +1,325 @@
+
+Conversation opened. 1 read message.
+
+Skip to content
+Using Gmail with screen readers
+Asad
+2
+Search
+
+
+
+Error checking mail for your external accounts.  Details  Dismiss
+Gmail
+COMPOSE
+Labels
+Inbox (7,197)
+Sent Mail
+Drafts (129)
+All Mail
+Circles
+KA
+phpXperts (1,106)
+Project Access
+Sent Messages
+TDv2 (185)
+More
+Hangouts
+
+
+
+
+  More
+2 of 10,448
+
+Print all In new window
+Fwd: SFI
+Inbox
+x
+
+Maksudur Rahman
+Attachments4:08 PM (6 hours ago)
+
+to me, Shahidul
+FYI
+
+<div class="row">
+  <div id="formContainer">
+    <div id="formNavigation">
+      <div class="formMenuItem">
+        <div class="circle">1</div>
+        <span>Profile</span>
+      </div>
+      <div class="formMenuItem section2">
+        <div class="circle ">2</div>
+        <span>Forestland</br> Information</span>
+      </div>
+      <div class="formMenuItem section3">
+        <div class="circle ">3</div>
+        <span>Community, Conservation & Other Partnerships</span>
+      </div>
+      <div class="formMenuItem section4">
+        <div class="circle active">4</div>
+        <span>Harvest & Reforestation</span>
+      </div>
+      <div class="formMenuItem section5">
+        <div class="circle">5</div>
+        <span>Research Funding</span>
+      </div>
+      <div class="formMenuItem section6">
+        <div class="circle">6</div>
+        <span>Raw Material Supply</span>
+      </div>
+      <div class="formMenuItem">
+        <div class="circle">7</div>
+        <span>Emerging Issues</span>
+      </div>
+      <div class="formMenuItem">
+        <div class="circle">8</div>
+        <span>Market</br> Survey</span>
+      </div>
+      <div class="formMenuItem">
+        <div class="circle">9</div>
+        <span>Forest Management Standard</span>
+      </div>
+      <div class="formMenuItem">
+        <div class="circle">10</div>
+        <span>Fiber Sourcing Standard</span>
+      </div>
+
+    </div>
+
+
+
+<div class="formContent section_background_4">
+  <div class="row">
+    <div class="col-sm-12">
+        <!--Introduction start-->
+        <div>
+
+On Sun, Jan 3, 2016 at 12:20 PM, Maksudur Rahman <maksud@emicrograph.com> wrote:
+Hi Maksudur,
+
+We got a change request regarding to the design of the site.
+
+Here is some instruction they provided : "every sub-navigation bubble has a different color. So # 2 the bubble would be a dark turquoise, Then when you click on it, the #2 in white, and the whole page back ground color is a lighter turquoise.
+
+The dark grey ribbon across the top and underneath the section numbers would not change. The SUBMIT button could stay the same colour green as the status bar (that would not have to change)." there's different image for each section on the right side of the dark grey ribbon.
+
+Please take a look at the attached file and get back to us:
+
+the feasibility of changes.
+the time estimate for these design changes.
+Thanks,
+
+Attachments area
+Preview attachment custom.css
+
+Style Sheet
+custom.css
+
+Click here to Reply, Reply to all, or Forward
+2.79 GB (18%) of 15 GB used
+Manage
+Terms - Privacy
+Last account activity: 1 hour ago
+Details
+People (2)
+Maksudur Rahman's profile photo
+Maksudur Rahman
+Add to circles
+
+Show details
+
+.box-shadow{
+    width: 250px;
+    height: 200px;
+    background-color: #666666;
+    box-shadow: 5px 5px 5px #888888;
+}
+.aditional-line{
+    width: 100%;
+    height: 120px;
+    background-color: #CCCCCC;
+    border-radius: 10px;
+}
+.tipbox{
+    width: 250px;
+    height: 150px;
+    background-color: #CCCCCC;
+    border-radius: 10px;
+}
+.tipbox p{
+    margin: 10px 10px 10px 10px;
+}
+.tipbox p b {
+    color: #000000;
+}
+.box-shadow p{
+    margin: 10px 10px 10px 10px;
+    color: whitesmoke;
+}
+.box-shadow ul{
+    color: whitesmoke;
+}
+.box-shadow h6{
+    padding-top: 10px;
+    margin: 10px 10px 10px 10px;
+    color: whitesmoke;
+}
+.passage-bold p{
+    font-weight: 700;
+}
+.highlited-text span{
+    color: #0079FF;
+}
+.sub-content{
+    padding-left: 25px; padding-bottom: 20px;
+}
+.content-pading{
+    padding-left: 20px;padding-top: 10px;
+}
+label a {
+    color: #006442;
+}
+.boxsize th{
+    padding: 10px;
+}
+.boxsize td{
+    padding: 10px;
+}
+.boxsize input{
+    height: 30px;
+}
+.input-size input{
+    width: 100%;
+    height: 30px;
+}
+.padding-left-10{
+    padding-left: 10px;
+}
+.pading-botom{
+    padding-bottom: 35px;
+}
+.pading-botoms{
+    padding-bottom: 35px;
+}
+.col-lg-12 p{
+    text-align: justify;
+}
+.list-style li{
+    list-style: none;
+}
+.list-style label{
+    margin-bottom: 15px;
+}
+.col-lg-12 label{
+    margin-bottom: 15px;
+
+}
+.list-pading li {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.list-select-drop {
+    height: 300px; width: 100%;background-color: #F2F2F2; border-radius: 10px;
+}
+.content-header{
+    width: 100%;
+    height: 30px;
+    background-color: #E4E4E4;
+    text-align: center;
+    padding-top: 5px;
+
+}
+.content-header2{
+    width: 100%;
+    height: 80px;
+    background-color: #E4E4E4;
+    text-align: center;
+    padding-top: 5px;
+}
+.content-header2 p{
+    margin: 10px;
+    text-align: center;
+}
+.content-header2 span{
+     font-weight: bolder;
+     text-align: center;
+ }
+.padding-left-50{
+    padding-left: 50px;
+}
+.padding-left-60{
+    padding-left: 60px;
+}
+.pading-botom-2350 {
+    padding-bottom: 2350px;
+}
+.label-margin label{
+    margin: 8px;
+}
+
+/*
+ Section color Change individual
+*/
+.formContent.section_background_2{
+    background-color: #E1F2F3;
+}
+.section2 div{
+    border-color: #048F98;
+}
+.formMenuItem.section2 span{
+    color: #048F98;
+}
+.section2 div.active{
+    background-color: #048F98;
+}
+.formContent.section_background_3{
+    background-color: #F2EAF1;
+}
+.section3 div{
+    border-color: #9C6F93;
+}
+.formMenuItem.section3 span{
+    color: #9C6F93;
+}
+.section3 div.active{
+    background-color: #9C6F93;
+}
+.formContent.section_background_4{
+    background-color: #FDEFE4;
+}
+.section4 div{
+    border-color: #DC8D50;
+}
+.formMenuItem.section4 span{
+    color: #DC8D50;
+}
+.section4 div.active{
+    background-color: #DC8D50;
+}
+.formContent.section_background_5{
+    background-color: #ccf3a8;
+}
+.section5 div{
+    border-color: #3AB662;
+}
+.formMenuItem.section5 span{
+    color: #3AB662;
+}
+.section5 div.active{
+    background-color: #3AB662;
+}
+.formContent.section_background_6{
+    background-color: #DCA065;
+}
+.section6 div{
+    border-color: #C96844;
+}
+.formMenuItem.section6 span{
+    color: #C96844;
+}
+.section6 div.active{
+    background-color: #C96844;
+}
