@@ -69,6 +69,7 @@ public class SicFormService {
     }
 
     public void setSicCs2Entity(SicCs2ViewModel model) {
+        sicCs2Service.manualPopulation(model);
         SicCs2 entity = entityModelMapperService.convert(model, SicCs2.class);
     }
     /************************* SicCs2 : End ***********************/
