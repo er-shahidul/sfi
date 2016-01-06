@@ -18,7 +18,7 @@
     </li>
         <ul id="sfi_sic">
             <li style="margin-left: 20px;" th:class="(${title} == sfi) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
-                <a href="list.html" th:href="@{/admin/form/sfi}">Program Participant</a>
+                <a href="list.html" th:href="@{/admin/form/pp}">Program Participant</a>
             </li>
             <li style="margin-left: 20px;" th:class="(${title} == sic) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
                 <a href="list.html" th:href="@{/admin/form/sic}">SIC</a>

@@ -139,15 +139,27 @@ public class PpFormController {
         return diff / (24 * 60 * 60 * 1000);
     }
 
-    @RequestMapping(value = "/admin/company/sfi/form/{id}", method = RequestMethod.GET)
-    public String editPassword(@PathVariable Integer id, ModelMap model) {
+    @RequestMapping(value = "/admin/company/pp/form/{id}", method = RequestMethod.GET)
+    public String adminSfiFormEdit(@PathVariable Integer id, ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.get(id);
         populateFormContent(model, sfiPpFormData);
+        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("mode", "edit");
 
         return "/core/form/index";
     }
 
-    @RequestMapping(value = "/admin/form/sfi", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/company/pp/form/view/{id}", method = RequestMethod.GET)
+    public String adminSfiFormView(@PathVariable Integer id, ModelMap model) throws ParseException {
+        SfiPpFormData sfiPpFormData = sfiPpFormDataService.get(id);
+        populateFormContent(model, sfiPpFormData);
+        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("mode", "view");
+
+        return "/core/form/index";
+    }
+
+    @RequestMapping(value = "/admin/form/pp", method = RequestMethod.GET)
     public String adminSfiForm(ModelMap model) {
         model.addAttribute("title", "sfi");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
