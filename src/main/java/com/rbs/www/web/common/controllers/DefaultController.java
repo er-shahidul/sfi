@@ -39,15 +39,8 @@ public class DefaultController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(SecurityContextHolderAwareRequestWrapper request, ModelMap model, HttpSession session) {
         model.addAttribute("title", "home");
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) return "/dashboard";
-
-        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
-        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
-        if (request.isUserInRole("USER")) return "redirect:/sfiPpForm";
-
-        return "redirect:/sfiPpForm";
+        return "dashboard";
     }
 
     @RequestMapping(value = "/privacy", method = RequestMethod.GET)

@@ -70,8 +70,8 @@ sfiSicApp
                     .then(function(response){
 
                         if(response.data){
-                            $scope.cs1Form.$setPristine();
-                            $rootScope.form.cs1 = response.data;
+                            $scope.cs2Form.$setPristine();
+                            $rootScope.form.cs2 = response.data;
                             Message.success('Section successfully saved', '.msg-cont', true);
                         }
 

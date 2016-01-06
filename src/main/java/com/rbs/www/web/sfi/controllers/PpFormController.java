@@ -53,8 +53,14 @@ public class PpFormController {
 
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
-        String companyLogo = DatatypeConverter
-                .printBase64Binary(TypeConversionUtils.toPrimitiveType(sfiPpFormData.getCompany().getLogo()));
+        if(sfiPpFormData.getCompany().getLogo() != null){
+            String companyLogo = DatatypeConverter
+                    .printBase64Binary(TypeConversionUtils.toPrimitiveType(sfiPpFormData.getCompany().getLogo()));
+            model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
+        }else {
+            String companyLogo = null;
+            model.addAttribute("companyLogo", companyLogo);
+        }
 
         model.addAttribute("form", sfiPpFormData);
         model.addAttribute("cs1", formService.getCs1ViewModel(id));
@@ -69,7 +75,6 @@ public class PpFormController {
         model.addAttribute("cs10", formService.getCs10ViewModel(id));
 
         model.addAttribute("company", sfiPpFormData.getCompany());
-        model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
         model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
@@ -77,22 +82,14 @@ public class PpFormController {
         model.addAttribute("mode", "edit");
     }
 
-    @RequestMapping(value = "/form", method = RequestMethod.GET)
-    public String home(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
+    @RequestMapping(value = "/sfiPpForm", method = RequestMethod.GET)
+    public String form(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken)
-            return "redirect:/login";
-
+        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
         if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
         if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
-        if (request.isUserInRole("USER")) return "redirect:/sfiPpForm";
 
-        return "redirect:/dashboard";
-    }
-
-    @RequestMapping(value = "/sfiPpForm", method = RequestMethod.GET)
-    public String form(ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
 
