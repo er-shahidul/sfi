@@ -1,6 +1,8 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -141,9 +143,32 @@ public class SicCs2 extends BaseEntityModel {
     @Column(name = "spendActivityDetails13", nullable = true)
     private String spendActivityDetails13;
 
+    @Column(name = "cs2_committeeFeeSpecify1", nullable = true)
+    private String committeeFeeSpecify1;
+
+    @Column(name = "cs2_committeeFeeSpecify2", nullable = true)
+    private String committeeFeeSpecify2;
+
+    @Column(name = "cs2_committeeFeeSpecify3", nullable = true)
+    private String committeeFeeSpecify3;
+
+    @Column(name = "cs2_committeeFeeSpecify4", nullable = true)
+    private String committeeFeeSpecify4;
+
+    @Column(name = "cs2_committeeFeeSpecify5", nullable = true)
+    private String committeeFeeSpecify5;
+
+    @Column(name = "cs2_committeeFeeSpecify6", nullable = true)
+    private String committeeFeeSpecify6;
+
     @OneToMany(targetEntity = SicPpFormNeighborEvent.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SicPpFormNeighborEvent> sicNeighborEvents;
+
+    @Column(name = "cs10_biodiversityItems1", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> committeeFeeStructure;
 
     @Override
     public Integer getId() {
@@ -504,5 +529,61 @@ public class SicCs2 extends BaseEntityModel {
 
     public void setSpendActivityDetails13(String spendActivityDetails13) {
         this.spendActivityDetails13 = spendActivityDetails13;
+    }
+
+    public String getCommitteeFeeSpecify1() {
+        return committeeFeeSpecify1;
+    }
+
+    public void setCommitteeFeeSpecify1(String committeeFeeSpecify1) {
+        this.committeeFeeSpecify1 = committeeFeeSpecify1;
+    }
+
+    public String getCommitteeFeeSpecify2() {
+        return committeeFeeSpecify2;
+    }
+
+    public void setCommitteeFeeSpecify2(String committeeFeeSpecify2) {
+        this.committeeFeeSpecify2 = committeeFeeSpecify2;
+    }
+
+    public String getCommitteeFeeSpecify3() {
+        return committeeFeeSpecify3;
+    }
+
+    public void setCommitteeFeeSpecify3(String committeeFeeSpecify3) {
+        this.committeeFeeSpecify3 = committeeFeeSpecify3;
+    }
+
+    public String getCommitteeFeeSpecify4() {
+        return committeeFeeSpecify4;
+    }
+
+    public void setCommitteeFeeSpecify4(String committeeFeeSpecify4) {
+        this.committeeFeeSpecify4 = committeeFeeSpecify4;
+    }
+
+    public String getCommitteeFeeSpecify5() {
+        return committeeFeeSpecify5;
+    }
+
+    public void setCommitteeFeeSpecify5(String committeeFeeSpecify5) {
+        this.committeeFeeSpecify5 = committeeFeeSpecify5;
+    }
+
+    public String getCommitteeFeeSpecify6() {
+        return committeeFeeSpecify6;
+    }
+
+    public void setCommitteeFeeSpecify6(String committeeFeeSpecify6) {
+        this.committeeFeeSpecify6 = committeeFeeSpecify6;
+    }
+
+    public Set<Integer> getCommitteeFeeStructure() {
+        return committeeFeeStructure;
+    }
+
+    public void setCommitteeFeeStructure(Set<Integer> committeeFeeStructure) {
+        addAll(this.committeeFeeStructure, committeeFeeStructure);
     }
 }

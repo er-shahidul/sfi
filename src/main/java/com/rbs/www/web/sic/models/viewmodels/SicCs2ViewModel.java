@@ -49,7 +49,14 @@ public class SicCs2ViewModel extends BaseViewModel {
     private String spendActivityDetails11;
     private String spendActivityDetails12;
     private String spendActivityDetails13;
+    private String committeeFeeSpecify1;
+    private String committeeFeeSpecify2;
+    private String committeeFeeSpecify3;
+    private String committeeFeeSpecify4;
+    private String committeeFeeSpecify5;
+    private String committeeFeeSpecify6;
     private Set<SicPpFormNeighborEventViewModel> sicNeighborEvents;
+    private Set<Integer> committeeFeeStructure;
 
     @Override
     public Integer getId() {
@@ -410,5 +417,61 @@ public class SicCs2ViewModel extends BaseViewModel {
 
     public void setSpendActivityDetails13(String spendActivityDetails13) {
         this.spendActivityDetails13 = spendActivityDetails13;
+    }
+
+    public String getCommitteeFeeSpecify1() {
+        return committeeFeeSpecify1;
+    }
+
+    public void setCommitteeFeeSpecify1(String committeeFeeSpecify1) {
+        this.committeeFeeSpecify1 = committeeFeeSpecify1;
+    }
+
+    public String getCommitteeFeeSpecify2() {
+        return committeeFeeSpecify2;
+    }
+
+    public void setCommitteeFeeSpecify2(String committeeFeeSpecify2) {
+        this.committeeFeeSpecify2 = committeeFeeSpecify2;
+    }
+
+    public String getCommitteeFeeSpecify3() {
+        return committeeFeeSpecify3;
+    }
+
+    public void setCommitteeFeeSpecify3(String committeeFeeSpecify3) {
+        this.committeeFeeSpecify3 = committeeFeeSpecify3;
+    }
+
+    public String getCommitteeFeeSpecify4() {
+        return committeeFeeSpecify4;
+    }
+
+    public void setCommitteeFeeSpecify4(String committeeFeeSpecify4) {
+        this.committeeFeeSpecify4 = committeeFeeSpecify4;
+    }
+
+    public String getCommitteeFeeSpecify5() {
+        return committeeFeeSpecify5;
+    }
+
+    public void setCommitteeFeeSpecify5(String committeeFeeSpecify5) {
+        this.committeeFeeSpecify5 = committeeFeeSpecify5;
+    }
+
+    public String getCommitteeFeeSpecify6() {
+        return committeeFeeSpecify6;
+    }
+
+    public void setCommitteeFeeSpecify6(String committeeFeeSpecify6) {
+        this.committeeFeeSpecify6 = committeeFeeSpecify6;
+    }
+
+    public Set<Integer> getCommitteeFeeStructure() {
+        return committeeFeeStructure;
+    }
+
+    public void setCommitteeFeeStructure(Set<Integer> committeeFeeStructure) {
+        this.committeeFeeStructure = committeeFeeStructure;
     }
 }
