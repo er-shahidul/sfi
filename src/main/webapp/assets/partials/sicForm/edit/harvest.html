@@ -1,0 +1,506 @@
+<div class="row" id="sec-con">
+
+    <div ng-init="errors = cs4.errors" ng-include="'/assets/partials/form/error.html'"></div>
+
+    <div class="col-sm-7">
+        <h5>3. Harvest &amp; Reforestation</h5>
+        <form name="cs4Form">
+
+            <!-- Section for USA -->
+            <div ng-show="operateInUsa()" class="formSection">
+                <p>
+                    <h6><strong>USA</strong> - Program Participant Land covered under the scope of your SFI certificate</h6>
+                </p>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('usaTotalHervArea')}">
+                    <label tooltip data-html="true" data-placement="top"
+                           data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2014. This includes harvesting activities that were started in 2013 and completed in 2014, but not those that were still underway by the end of the 2014 calendar/fiscal year.">What is the total area of harvest units completed last year by clearcutting?</label>
+                    <input type="number" class="form-control required shortest" name="usaTotalHervArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.usaTotalHervArea"> {{ unit }}
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('usaAvgHervArea')}">
+                    <label>What was the average area of clear-cut (even-aged) harvest units?</label>
+                    <input type="number" class="form-control required shortest" name="usaAvgHervArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.usaAvgHervArea" > {{ unit }}
+                </div>
+
+                <div class="form-group" ng-show="showExplCheckboxs('usa')">
+
+                    <label>Check all that apply and provide an explanation for each</label>
+
+                    <div class="form-group">
+
+                        <input type="checkbox" class="form-group icheck" icheck ng-model="cs4.usaGovRegulation">
+                        <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
+                        <br>
+
+                        <div class="form-group" ng-show="cs4.usaGovRegulation">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.usaGovRegulation" customerror
+                                   ng-model="cs4.usaGovRegulationExp">
+                        </div>
+
+
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResDiseaseInsects">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
+                        <br>
+
+                        <div class="form-group" ng-show="cs4.usaDisResDiseaseInsects">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.usaDisResDiseaseInsects" customerror
+                                   ng-model="cs4.usaDiseaseInsectsExp">
+                        </div>
+
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResFireSalvage">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
+                        <br>
+
+                        <div class="form-group" ng-show="cs4.usaDisResFireSalvage">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.usaDisResFireSalvage" customerror
+                                   ng-model="cs4.usaFireSalvageExp">
+                        </div>
+
+
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResWindthrow">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
+                        <br>
+
+                        <div class="form-group" ng-show="cs4.usaDisResWindthrow">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.usaDisResWindthrow" customerror
+                                   ng-model="cs4.usaWindthrowExp">
+                        </div>
+
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResHurricane">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
+                        <br>
+
+                        <div class="form-group" ng-show="cs4.usaDisResHurricane">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.usaDisResHurricane" customerror
+                                   ng-model="cs4.usaHurricaneExp">
+                        </div>
+
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResIceStorm">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
+                        <br>
+
+                        <div class="form-group" ng-show="cs4.usaDisResIceStorm">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.usaDisResIceStorm" customerror
+                                   ng-model="cs4.usaIceStormExp">
+                        </div>
+
+
+                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaOthersApply">
+                        <label class="checkboxLabel"> &nbsp;Other</label>
+
+                        <div class="form-group" ng-show="cs4.usaOthersApply">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.usaOthersApply" customerror
+                                   ng-model="cs4.usaOthersExp">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('usaSeedShelterWoodArea')}">
+
+                    <label>What was the total area of harvest units completed last year by <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>seed tree</b> the cutting of all trees except for a small number of widely dispersed trees retained for seed production and to produce a new age class in fully exposed microenvironment —note seed trees are usually removed after regeneration is established (SAF dictionaryofforestry.org)'
+                            >seed tree</span> and <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>shelterwood</b> the cutting of most trees, leaving those needed to produce sufficient shade to produce a new age class in a moderated microenvironment —note the sequence of treatments can include three types of cuttings: (a) an optional preparatory cut to enhance conditions for seed production, (b) an establishment cut to prepare the seed bed and to create a new age class, and (c) a removal cut to release established regeneration from competition with the overwood; cutting may be done uniformly throughout the stand (uniform shelterwood), in groups or patches (group shelterwood), or in strips (strip shelterwood); in a strip shelterwood, regeneration cuttings may progress against the prevailing wind. (SAF dictionaryofforestry.org) '
+                            >shelterwood</span>?</label>
+
+
+
+                    <input type="number" class="form-control required shortest" name="usaSeedShelterWoodArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.usaSeedTreeShelterWoodArea"> {{ unit }}
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('usaSelectionMethodArea')}">
+                    <label>What was the total area of harvest units completed last year by <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>selection methods</b> regenerate and maintain a multiaged structure by removing some trees in all size classes either singly, in small groups, or in strips —synonym all-aged methods. (SAF dictionaryofforestry.org)'
+                            >selection methods</span>?</label>
+
+                    <input type="number" class="form-control required shortest" name="usaSelectionMethodArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.usaSelectionMethodArea"> {{ unit }}
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('usaThinningSanitationArea')}">
+
+                    <label>What was the total area of harvest units completed last year by <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>Thinning</b> is a cultural treatment made to reduce stand density of trees primarily to improve growth, enhance forest health, or recover potential mortality; types of thinning include the following (SAF dictionaryofforestry.org)'
+                            >thinning</span> or <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>Sanitation salvage</b> is the removal of trees to improve stand health by stopping or reducing the actual or anticipated spread of insects and disease. (SAF dictionaryofforestry.org)'
+                            >sanitation salvage</span>? </label>
+
+                    <input type="number" class="form-control required shortest" name="usasanitation salvageSanitationArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.usaSanitationArea"> {{ unit }}
+                </div>
+
+            </div>
+            <!-- end -->
+
+            <!-- Section for Canada -->
+            <div ng-show="operateInCa()">
+                <p>
+                    <h6><strong>Canada</strong> - Program Participant Land covered under the scope of your SFI certificate</h6>
+                </p>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('caTotalArea')}">
+
+                    <label tooltip data-html="true" data-placement="top"
+                           data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2014. This includes harvesting activities that were started in 2013 and completed in 2014, but not those that were still underway by the end of the 2014 calendar/fiscal year.">What is the total area of harvest units completed last year by clearcutting?</label>
+
+                    <input type="number" class="form-control required shortest" name="caTotalArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.caTotalHervArea"> {{ unit }}
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('caAverageArea')}">
+                    <label>What was the average area of clear-cut (even-aged) harvest units?</label>
+                    <input type="number" class="form-control required shortest" name="caAverageArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.caAvgHervArea" > {{ unit }}
+                </div>
+
+                <div class="form-group" ng-show="showExplCheckboxs('ca')">
+
+                    <label>Check all that apply and provide an explanation for each</label>
+
+                    <div class="form-group">
+
+
+                        <input type="checkbox" class="icheck" icheck
+                               ng-model="cs4.caGovRegulation">
+                        <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
+                        <br>
+                        <div class="form-group" ng-show="cs4.caGovRegulation">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.caGovRegulation" customerror
+                                   ng-model="cs4.caGovRegulationExp">
+                        </div>
+
+
+                        <input type="checkbox" class="icheck" icheck
+                               ng-model="cs4.caDisResDiseaseInsects">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
+                        <br>
+                        <div class="form-group" ng-show="cs4.caDisResDiseaseInsects">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.caDisResDiseaseInsects" customerror
+                                   ng-model="cs4.caDiseaseInsectsExp">
+                        </div>
+
+
+
+                        <input type="checkbox" class="icheck" icheck
+                               ng-model="cs4.caDisResFireSalvage">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
+                        <br>
+
+                        <div class="form-group" ng-show="cs4.caDisResFireSalvage">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.caDisResFireSalvage" customerror
+                                   ng-model="cs4.caFireSalvageExp">
+                        </div>
+
+
+                        <input type="checkbox" class="icheck" icheck
+                               ng-model="cs4.caDisResWindthrow">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
+                        <br>
+                        <div class="form-group" ng-show="cs4.caDisResWindthrow">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.caDisResWindthrow" customerror
+                                   ng-model="cs4.caWindthrowExp">
+                        </div>
+
+                        <input type="checkbox" class="icheck" icheck
+                               ng-model="cs4.caDisResHurricane">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
+                        <br>
+                        <div class="form-group" ng-show="cs4.caDisResHurricane">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.caDisResHurricane" customerror
+                                   ng-model="cs4.caHurricaneExp">
+                        </div>
+
+                        <input type="checkbox" class="icheck" icheck
+                               ng-model="cs4.caDisResIceStorm">
+                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
+                        <br>
+                        <div class="form-group" ng-show="cs4.caDisResIceStorm">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.caDisResIceStorm" customerror
+                                   ng-model="cs4.caIceStormExp">
+                        </div>
+
+
+                        <input type="checkbox" class="icheck" icheck
+                               ng-model="cs4.caOthersApply">
+                        <label class="checkboxLabel"> &nbsp;Other</label>
+
+                        <div class="form-group" ng-show="cs4.caOthersApply">
+                            <label>Explain</label>
+                            <input type="text" class="form-control required shorter"
+                                   ng-required="cs4.caOthersApply" customerror
+                                   ng-model="cs4.caOthersExp">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('caSeedShelterWoodArea')}">
+
+                    <label>What was the total area of harvest units completed last year by <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>seed tree</b> the cutting of all trees except for a small number of widely dispersed trees retained for seed production and to produce a new age class in fully exposed microenvironment —note seed trees are usually removed after regeneration is established (SAF dictionaryofforestry.org)'
+                            >seed tree</span> and <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>shelterwood</b> the cutting of most trees, leaving those needed to produce sufficient shade to produce a new age class in a moderated microenvironment —note the sequence of treatments can include three types of cuttings: (a) an optional preparatory cut to enhance conditions for seed production, (b) an establishment cut to prepare the seed bed and to create a new age class, and (c) a removal cut to release established regeneration from competition with the overwood; cutting may be done uniformly throughout the stand (uniform shelterwood), in groups or patches (group shelterwood), or in strips (strip shelterwood); in a strip shelterwood, regeneration cuttings may progress against the prevailing wind. (SAF dictionaryofforestry.org) '
+                            >shelterwood</span>?</label>
+
+
+                    <input type="number" class="form-control required shortest" name="caSeedShelterWoodArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.caSeedTreeShelterWoodArea"> {{ unit }}
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('caSelectionMethodArea')}">
+                    <label>What was the total area of harvest units completed last year by <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>selection methods</b> regenerate and maintain a multiaged structure by removing some trees in all size classes either singly, in small groups, or in strips —synonym all-aged methods. (SAF dictionaryofforestry.org)'
+                            >selection methods</span>?</label>
+
+
+                    <input type="number" class="form-control required shortest" name="caSelectionMethodArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.caSelectionMethodArea"> {{ unit }}
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('caThinningSanitationArea')}">
+                    <label>What was the total area of harvest units completed last year by <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>Thinning</b> is a cultural treatment made to reduce stand density of trees primarily to improve growth, enhance forest health, or recover potential mortality; types of thinning include the following (SAF dictionaryofforestry.org)'
+                            >thinning</span> or <span
+                            tooltip data-placement="top" data-container="body" data-html="true"
+                            data-title='<b>Sanitation salvage</b> is the removal of trees to improve stand health by stopping or reducing the actual or anticipated spread of insects and disease. (SAF dictionaryofforestry.org)'
+                            >sanitation salvage</span>? </label>
+
+                    <input type="number" class="form-control required shortest" name="caThinningSanitationArea"
+                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                           ng-model="cs4.caSanitationArea"> {{ unit }}
+                </div>
+
+            </div>
+            <!-- end -->
+
+
+            <p>
+                Reforestation - activities and five year assessment for organizations managing forestlands. The following data is collected for your activities related to area under the scope of your SFI certification.
+            </p>
+            <p>
+                Replanting and Direct Seeding Timing. The replanting "clock" starts after the entire unit is harvested or the sale has been completed (see guidance under completed harvest units above). Do not include areas that were replanted due to poor seedling survival. "Failed plantation" data are ultimately captured in the five year regeneration success question.
+            </p>
+
+            <!-- Section for USA -->
+            <div class="form-group formSection" ng-show="operateInUsa()">
+
+                <h6>Reforestation Data for <strong>USA</strong></h6>
+
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Regeneration Type</th>
+                        <th>Within 1 year of final harvest </th>
+                        <th>Within 2 years of final harvest</th>
+                        <th>More than 2 years of final harvest</th>
+                        <th>Total for 2014</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+                        <td>Artificial - Planting</td>
+
+                        <td ng-class="{'has-error' : hasError('usaPlantingOne')}">
+                            <input type="number" class="form-control required shorter" name="usaPlantingOne"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.usaPlantingOneYr"> {{ unit }}</td>
+
+                        <td ng-class="{'has-error' : hasError('usaPlantingTwo')}">
+                            <input type="number" class="form-control required shorter" name="usaPlantingTwo"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.usaPlantingTwoYr"> {{ unit }}</td>
+
+                        <td ng-class="{'has-error' : hasError('usaPlantingTwoPlus')}">
+                            <input type="number" class="form-control required shorter" name="usaPlantingTwoPlus"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.usaPlantingTwoPlusYr"> {{ unit }}</td>
+
+                        <td class="vert-align-middle"> {{ getPlantingTotal('usa', 'planting') }} {{ unit }} </td>
+                    </tr>
+
+                    <tr>
+                        <td>Artificial - Direct seeding</td>
+
+                        <td ng-class="{'has-error' : hasError('usaSeedingOne')}">
+                            <input type="number" class="form-control required shorter" name="usaSeedingOne"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.usaSeedingOneYr"> {{ unit }}</td>
+
+                        <td ng-class="{'has-error' : hasError('usaSeedingTwo')}">
+                            <input type="number" class="form-control required shorter" name="usaSeedingTwo"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.usaSeedingTwoYr"> {{ unit }}</td>
+
+                        <td ng-class="{'has-error' : hasError('usaSeedingTwoPlus')}">
+                            <input type="number" class="form-control required shorter" name="usaSeedingTwoPlus"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.usaSeedingTwoPlusYr"> {{ unit }}</td>
+
+                        <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('usa', 'seeding') }} {{ unit }} </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('usanaturalRegen2014')}">
+                    <label>What was the Natural Regeneration - All types in 2014?</label>
+                    <input type="number" class="form-control required shortest" name="usanaturalRegen2014"
+                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                           ng-model="cs4.usaNatRegen2014"> {{ unit }}
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('usaharvestRegenPerc')}">
+                    <label tooltip data-placement="top" data-container="body" data-html="true"
+                           data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
+                        >What was the percent of harvest units regenerated after 5 growing seasons?</label>
+
+
+                    <input type="number" class="form-control required shortest" name="usaharvestRegenPerc" max="100" min="0"
+                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                           ng-model="cs4.usaRegenPerc5Yr"> %
+                </div>
+
+            </div >
+            <!-- end -->
+
+            <!-- Section for Canada -->
+            <div class="form-group formSection" ng-show="operateInCa()">
+                <h6>Reforestation Data for <strong>Canada</strong></h6>
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Regeneration Type</th>
+                        <th>Within 1 year of final harvest </th>
+                        <th>Within 2 years of final harvest</th>
+                        <th>More than 2 years of final harvest</th>
+                        <th>Total for 2014</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td>Artificial - Planting</td>
+                        <td ng-class="{'has-error' : hasError('caPlantingOne')}">
+                            <input type="number" class="form-control required shorter" name="caPlantingOne" min="0"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.caPlantingOneYr"> {{ unit }}</td>
+
+                        <td ng-class="{'has-error' : hasError('caPlantingTwo')}">
+                            <input type="number" class="form-control required shorter" name="caPlantingTwo" min="0"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.caPlantingTwoYr"> {{ unit }}</td>
+
+                        <td ng-class="{'has-error' : hasError('caPlantingTwoPlus')}">
+                            <input type="number" class="form-control required shorter" name="caPlantingTwoPlus" min="0"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.caPlantingTwoPlusYr"> {{ unit }}</td>
+
+                        <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('ca', 'planting') }} {{ unit }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Artificial - Direct seeding</td>
+                        <td ng-class="{'has-error' : hasError('caSeedingOne')}">
+                            <input type="number" class="form-control required shorter" name="caSeedingOne" min="0"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.caSeedingOneYr"> {{ unit }}</td>
+
+                        <td ng-class="{'has-error' : hasError('caSeedingTwo')}">
+                            <input type="number" class="form-control required shorter" name="caSeedingTwo" min="0"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.caSeedingTwoYr"> {{ unit }}</td>
+
+                        <td ng-class="{'has-error' : hasError('caSeedingTwo')}">
+                            <input type="number" class="form-control required shorter" name="caSeedingTwo" min="0"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                   ng-model="cs4.caSeedingTwoPlusYr"> {{ unit }}</td>
+
+                        <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('ca', 'seeding') }} {{ unit }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            <!-- end -->
+
+
+                <div class="form-group" ng-class="{'has-error' : hasError('naturalRegen2014')}">
+                    <label>What was the Natural Regeneration - All types in 2014?</label>
+                    <input type="number" class="form-control required shortest" name="naturalRegen2014" min="0"
+                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                           ng-model="cs4.caNatRegen2014"> {{ unit }}
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : hasError('harvestRegenPerc')}">
+                    <label tooltip data-placement="top" data-container="body" data-html="true"
+                           data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
+                            >What was the percent of harvest units regenerated after 5 growing seasons?</label>
+
+                    <input type="number" class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"
+                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                           ng-model="cs4.caRegenPerc5Yr"> %
+                </div>
+            </div >
+        </form>
+
+        {{ setForms() }}
+        <div class="col-sm-6 col-sm-offset-6">
+            <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+            <button type="button" class="btn btn-success" ng-click="save('true')">Save and Go to Step 4</button>
+        </div>
+    </div>
+    <div class="col-sm-offset-1 col-sm-4">
+
+    </div>
+</div>

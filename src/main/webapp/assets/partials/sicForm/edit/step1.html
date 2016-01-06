@@ -1,0 +1,724 @@
+<div class="row">
+    <form name="cs1Form">
+    <div class="col-lg-12">
+        <!--Introduction start-->
+        <div>
+            <p>
+                The information SFI Implementation Committees (SICs) annually report to the Sustainable Forestry
+                Initiative Inc. is of tremendous value in demonstrating SFI program improvement and impact. Your
+                responses help us measure progress in achieving SIC goals and SFI Standard objectives and are a great
+                vehicle to summarize SIC activities. SICs are encouraged to highlight key achievements and provide
+                additional attachments.
+                <b>All files uploaded will be utilized for best practices sharing through the SIC Member's only
+                    area. </b>
+            </p>
+        </div>
+        <br>
+        <!--Introduction End-->
+
+
+        <!--Right Side Start
+        -------------
+        -------------------------------
+        ----------------------------------->
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+                <h5>
+                    1. Committee Structure and Membership
+                </h5>
+
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <p>Attach a copy of SIC organizational guidelines (charter, bylaws, etc.).</p>
+
+                    <div class="input-group input-large"
+                         ng-file-select ng-model="uploadFile1"
+                         ng-file-change="uploadFile(uploadFile1, guideFile)"
+                         ng-multiple="false"
+                         ng-accept="'image/*,application/pdf'">
+
+                        <div class="form-control uneditable-input input-fixed input-medium">
+                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                            <span class="fileinput-filename">{{ guideFile.originalDocumentName }}</span>
+                        </div>
+                        <span class="input-group-addon btn default btn-file">
+                            <span ng-hide="guideFile.originalDocumentName" class="fileinput-new">Select file </span>
+                            <span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>
+                        </span>
+                        <a ng-click="guideFile = {}; " ng-show="guideFile.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                    </div>
+                    Files can be one of the following formats: .pdf, .doc, .xls)
+                </div>
+
+                <div class="text-right" ng-show="guideFile.originalDocumentName">
+                    <input type="submit" class="btn default" value="Upload" ng-click="saveUploadedFile(guideFile, cs1.guideFiles)">
+                </div>
+
+                <div id="selectedItem" ng-repeat="file in cs1.guideFiles">{{ file.originalDocumentName }}
+                    <button ng-click="deleteByIndex($index, cs1.guideFiles)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" ng-show="cs1.guideFiles.length">
+            <div class="col-lg-8">
+
+                <p>Copy of organizational guidelines attached?</p>
+
+                <label><input name="orgDocAttached" ng-value="true"  ng-model="cs1.orgDocAttached" ng-checked="cs1.orgDocAttached" type="radio"> Yes</label>
+                <label><input name="orgDocAttached" ng-value="false" ng-model="cs1.orgDocAttached" ng-checked="!cs1.orgDocAttached" type="radio"> No</label>
+                <br>
+
+                <div ng-show="cs1.orgDocAttached == true" style="padding-left: 50px; padding-top: 10px; display: inline-block">
+                    <label class="form-inline"> Please indicate why?
+                        <textarea mg-model="cs1.orgDocAttachedWhy" class="form-control" rows="2" cols="38" style="vertical-align: top"></textarea>
+                    </label>
+                </div>
+                <div style="padding-left: 25px; padding-top: 10px;" ng-class="{'has-error' : cs1Form.sicWebsite.$invalid }">
+                    <label class="form-inline">
+                        SIC Website:
+                        <input type="text"  class="form-control" style="width: 450px;"
+                            ng-model="cs1.sicWebsite" ng-maxlength="200" name="sicWebsite"
+                            ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
+                            pattern-msg="Please enter a valid url" customerror />
+                    </label>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-bottom: 20px;">
+            <div class="col-lg-8">
+
+                <div style="padding-bottom: 20px">
+                    <p>Please choose the best description of how the SFI Implementation Committee (SIC) is organized? (new!)</p>
+                    <select style="width: 560px;" class="form-control" ng-model="$scope.sicOrgDescription">
+                        <option ng-selected="!$scope.sicOrgDescription">Fully independent (IRS or state designated non-profit status)</option>
+                        <option value="1">Fully independent (IRS or state designated non-profit status)</option>
+                        <option value="2"> Semi-autonomous with services or support provided from local forestry association, i.e. independent sub-committee</option>
+                        <option value="3">forestry association committee (with forestry association staffing)</option>
+                        <option value="4">Other</option>
+                    </select>
+                </div>
+
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <p>
+                        Attach a list of committee members and SIC Supporters, with full contact information, for
+                        incorporating into SFI's contact database to ensure committee members get the latest SFI
+                        information directly. Please use excel template provided by SFI Inc.
+                    </p>
+
+                    <div class="input-group input-large"
+                         ng-file-select ng-model="uploadFile2"
+                         ng-file-change="uploadFile(uploadFile2, contactFile)"
+                         ng-multiple="false"
+                         ng-accept="'image/*,application/pdf'">
+
+                        <div class="form-control uneditable-input input-fixed input-medium">
+                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                            <span class="fileinput-filename">{{ contactFile.originalDocumentName }}</span>
+                        </div>
+                        <span class="input-group-addon btn default btn-file">
+                            <span ng-hide="contactFile.originalDocumentName" class="fileinput-new">Select file </span>
+                            <span ng-show="contactFile.originalDocumentName" class="fileinput-exists">Change </span>
+                        </span>
+                        <a ng-click="guideFile = {}; " ng-show="contactFile.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                    </div>
+                    Files can be one of the following formats: .pdf, .doc, .xls)
+                </div>
+                <div class="text-right" ng-show="contactFile.originalDocumentName">
+                    <input type="submit" class="btn default" value="Upload" ng-click="saveUploadedFile(contactFile, cs1.contactFiles)">
+                </div>
+
+                <div id="selectedItem" ng-repeat="file in cs1.contactFiles">{{ file.originalDocumentName }}
+                    <button ng-click="deleteByIndex($index, cs1.contactFiles)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+                <p>
+                    Report the number of committee members and SIC Supporters for each of the following categories:
+                </p>
+                <table border="1" style="line-height: 30px;" class="boxsize">
+                    <tr>
+                        <th>
+                            SFI Applicants and SFI Program Participants (include number of individuals represented in
+                            the below categories.)
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Industry SFI Program Participant
+                            </div>
+                            <div class="col-lg-5 " ng-class="{'has-error' : cs1Form.membersIndustrySFI.$invalid }">
+                                <input class="form-control" type="number" name="membersIndustrySFI" ng-model="cs1.membersIndustrySFI">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Government Agency SFI Program Participant
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersGovernmentAgency.$invalid }">
+                                <input class="form-control" type="number" name="membersGovernmentAgency" ng-model="cs1.membersGovernmentAgency">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                University SFI Program Participant
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersUniversitySFI.$invalid }">
+                                <input class="form-control" type="number" name="membersUniversitySFI" ng-model="cs1.membersUniversitySFI">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Conservation SFI Program Participant
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersConservationSFI.$invalid }">
+                                <input class="form-control" type="number" name="membersConservationSFI" ng-model="cs1.membersConservationSFI">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                SFI Applicant Organizations
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersSFIOrganization.$invalid }">
+                                <input class="form-control" type="number" name="membersSFIOrganization" ng-model="cs1.membersSFIOrganization">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div>
+                                <div class="col-lg-7">
+                                    Other SFI Program Participant
+                                </div>
+                                <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersOtherSFIParticipant.$invalid }">
+                                    <input class="form-control" type="number" name="membersOtherSFIParticipant" ng-model="cs1.membersOtherSFIParticipant">
+                                </div>
+                            </div>
+                            <br>
+
+                            <div style="padding-left: 25px; padding-top: 10px;">
+                                <label class="form-inline" ng-class="{'has-error' : cs1Form.membersOtherSFISpecify.$invalid }">
+                                    Please Specify <input class="form-control" name="membersOtherSFISpecify" style="width: 425px; height: 30px;" type="text" ng-model="cs1.membersOtherSFISpecify">
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="tipbox">
+                    <p style="padding-top: 10px;">
+                        <b>Did You Know?</b><br>
+                        This unique grassroots network of close to 1,000 people includes private landowners, independent
+                        loggers, forestry professionals, local government agencies, academics, scientists and
+                        conservationists.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <table border="1" style="line-height: 30px;" class="boxsize">
+                    <tr>
+                        <th>
+                            SIC Supporters (individuals and organizations that are not SFI applicants or SFI Program
+                            Participants. Include number of individuals represented in the below categories.)
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Other local forest product sector company
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterOtherLocal.$invalid }">
+                                <input class="form-control" type="number" name="supporterOtherLocal" ng-model="cs1.supporterOtherLocal">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Government Agency
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterGovAgency.$invalid }">
+                                <input class="form-control" type="number" name="supporterGovAgency" ng-model="cs1.supporterGovAgency">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Conservation Organization
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterConservationOrg.$invalid }">
+                                <input class="form-control" type="number" name="supporterConservationOrg" ng-model="cs1.supporterConservationOrg">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Family Forest Owner
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterFamForestOwner.$invalid }">
+                                <input class="form-control" type="number" name="supporterFamForestOwner" ng-model="cs1.supporterFamForestOwner">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Logger
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterLogger.$invalid }">
+                                <input class="form-control" type="number" name="supporterLogger" ng-model="cs1.supporterLogger">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Consultant
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterConsultant.$invalid }">
+                                <input class="form-control" type="number" name="supporterConsultant" ng-model="cs1.supporterConsultant">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div class="col-lg-7">
+                                Forestry Association
+                            </div>
+                            <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterForestryAssoc.$invalid }">
+                                <input class="form-control" type="number" name="supporterForestryAssoc" ng-model="cs1.supporterForestryAssoc">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-12">
+                            <div>
+                                <div class="col-lg-7">
+                                    Other
+                                </div>
+                                <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterOther.$invalid }">
+                                    <input class="form-control" type="number" name="supporterOther" ng-model="cs1.supporterOther">
+                                </div>
+                            </div>
+                            <br>
+
+                            <div style="padding-left: 25px; padding-top: 10px;">
+                                <label class="form-inline">
+                                    Please Specify <input class="form-control" style="width: 425px; height: 30px;" type="text" ng-model="cs1.supporterOtherSpecify">
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    Current SIC Chair
+                </p>
+
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Name
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicChairName">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Company/Organization
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicChairCompany">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Street Address
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicChairStreet">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        City
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicChairCity">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        State/Province
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicChairState">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Zip/Postal Code
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicChairZip">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Phone
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicChairPhone">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        E-mail
+                    </div>
+                    <div class="col-lg-8 input-size" ng-class="{'has-error' : cs1Form.sicChairEmail.$invalid }">
+                        <input class="form-control" type="email" name="sicChairEmail" ng-model="cs1.sicChairEmail">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    Current SIC Coordinator (optional)
+                </p>
+
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Name
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicCoordinatorName">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Company/Organization
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicCoordinatorCompany">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Street Address
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicCoordinatorStreet">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        City
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicCoordinatorCity">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        State/Province
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicCoordinatorState">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Zip/Postal Code
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicCoordinatorZip">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        Phone
+                    </div>
+                    <div class="col-lg-8 input-size">
+                        <input class="form-control" type="text" ng-model="cs1.sicCoordinatorPhone">
+                    </div>
+                </div>
+                <div class="pading-botom">
+                    <div class="col-lg-4">
+                        E-mail
+                    </div>
+                    <div class="col-lg-8 input-size" ng-class="{'has-error' : cs1Form.sicCoordinatorEmail.$invalid }">
+                        <input class="form-control" type="email" name="sicCoordinatorEmail" ng-model="cs1.sicCoordinatorEmail">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    Please list sub-committees and provide email address for sub-committee chair (if applicable):
+                </p>
+
+                <div>
+                    <ng-form role="form" name="subCommitteeForm">
+                        <div class="row" ng-repeat="commitee in cs1.subCommittees" style="margin-top:12px;">
+                            <div class="col-md-4">
+                                <p ng-if="$index == 0">Sub-Committee Name</p>
+                                <input type="text" class="form-control" ng-model="committee.name">
+                            </div>
+                            <div class="col-md-4">
+                                <p ng-if="$index == 0">Chair</p>
+                                <input type="text" class="form-control" ng-model="committee.chair">
+                            </div>
+                            <div class="col-md-4">
+                                <p ng-if="$index == 0">Email Address</p>
+                                <input type="email" class="form-control" ng-model="committee.email" requireds>
+                            </div>
+                        </div>
+                        <p style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()">+ Add Another Line</p>
+
+                    </ng-form>
+                </div>
+
+
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                </p>
+
+                <div>
+                    <ng-form role="form" name="meetingListForm">
+                        <div class="row" ng-repeat="meeting in cs1.meetingList" style="margin-top:12px;">
+                            <div class="col-md-6">
+                                <p ng-if="$index == 0">Meeting Type</p>
+                                <select class="form-control" name="meetingType" ng-model="meeting.type">
+                                    <option ng-selected="!meeting.type">Select</option>
+                                    <option value="1">In-person</option>
+                                    <option value="2">Conference Call</option>
+                                    <option value="3">Webiner</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <p ng-if="$index == 0">Date</p>
+                                <input type="date" name="meetingDate"class="form-control" ng-model="meeting.date">
+                            </div>
+                        </div>
+
+                        <p style="text-align: right;padding-top: 30px;padding-right: 100px;" ng-click="addMeeting()">+ Add Another Line</p>
+
+                    </ng-form>
+                </div>
+
+
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                </p>
+
+                <div>
+                    <ng-form role="form" name="participatingMeetingForm">
+                        <div class="row" ng-repeat="meeting in cs1.participatingMeetingList" style="margin-top:12px;">
+                            <div class="col-lg-3">
+                                <p ng-if="$index == 0" class="pading-botoms">Meeting Name</p>
+                                <input type="text" class="form-control" ng-model="meeting.name">
+                            </div>
+                            <div class="col-md-3">
+                                <p ng-if="$index == 0" class="pading-botoms">Date</p>
+                                <input type="date" class="form-control" ng-model="meeting.date">
+                            </div>
+                            <div class="col-md-3">
+                                <p ng-if="$index == 0" class="pading-botoms">Location</p>
+                                <select class="form-control" ng-model="meeting.location">
+                                    <option ng-selected="!meeting.location">Select</option>
+                                    <option ng-repeat="region in regions">{{ region.name }}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <p ng-if="$index == 0" style="padding-bottom:17px;">SIC involvement, if not a committee meeting?</p>
+                                <select class="form-control" ng-model="meeting.involvement" >
+                                    <option ng-selected="!meeting.involvement">Select</option>
+                                    <option value="1">Attending</option>
+                                    <option value="2">Sponsoring</option>
+                                    <option value="3">Exhibiting</option>
+                                    <option value="4">Speaking</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <p style="text-align: right;padding-top: 30px;" ng-click="addParticipatingMeeting()">+ Add Another Line</p>
+
+                    </ng-form>
+                </div>
+
+
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    Is the SIC willing to represent the SFI program, on SFI Inc.'s behalf, at local conferences,
+                    tradeshows and events, etc.?
+                </p>
+                <label>
+                    <input type="radio" name="sicRepresentSfi" ng-model="cs1.sicRepresentSfi" ng-value="true" ng-checked="cs1.sicRepresentSfi"> Yes
+                </label>
+                <label>
+                    <input type="radio" name="sicRepresentSfi" ng-model="cs1.sicRepresentSfi" ng-value="false" ng-checked="!cs1.sicRepresentSfi"> No
+                </label>
+
+                <div style="padding-left: 25px;" ng-show="cs1.sicRepresentSfi">
+                    Provide any additional comments or feedback
+                    <div class="form-group">
+                        <textarea class="form-control" ng-model="cs1.sicRepresentSfiComments" rows="4" cols="70"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    Did your SIC recruit any new SFI applicants or SFI Program Participants last year?
+                </p>
+                <label>
+                    <input type="radio" name="sicRecruitSfi" ng-model="cs1.sicRecruitSfi" ng-value="true" ng-checked="cs1.sicRecruitSfi"> Yes
+                </label>
+                <label>
+                    <input type="radio" name="sicRecruitSfi" ng-model="cs1.sicRecruitSfi" ng-value="false" ng-checked="!cs1.sicRecruitSfi"> No
+                </label>
+
+                <div style="padding-left: 25px;" ng-show="cs1.sicRecruitSfi">
+                    Please list all newly recruited SFI Applicants or SFI Program Participants.
+                    <div class="form-group">
+                        <textarea class="form-control" ng-model="cs1.sicRecruitSfiComments" rows="4" cols="70"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    Does your SIC workplan/annual goals/annual activities include recruitment efforts this year?
+                </p>
+                <label>
+                    <input type="radio" name="sicPlanRecruitment" ng-model="cs1.sicPlanRecruitment" ng-value="false" ng-checked="cs1.sicPlanRecruitment"> Yes
+                </label>
+                <label>
+                    <input type="radio" name="sicPlanRecruitment" ng-model="cs1.sicPlanRecruitment" ng-value="false" ng-checked="!cs1.sicPlanRecruitment"> No
+                </label>
+
+                <div ng-show="cs1.sicPlanRecruitment">
+                    <p>
+                        Please list organizations currently identified for SFI Program Participation recruitment
+                        efforts. [Please note SFI Inc. is available for assistance in recruitment efforts.]
+                    </p>
+
+                    <div class="form-group">
+                        <ul class="list-style">
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="sicRecruitmentOrgs" checklist-model="cs1.sicRecruitmentOrgs" checklist-value="1"> Industry
+                                </label>
+
+                                <div style="padding-left: 25px;" ng-show="isSelected(cs1.sicRecruitmentOrgs, 1)">
+                                    Please specify:
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="4" cols="70" ng-model="cs1.sicRecrOrgsSpecify1"></textarea>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="sicRecruitmentOrgs" checklist-model="cs1.sicRecruitmentOrgs" checklist-value="2"> Government Agency
+
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="sicRecruitmentOrgs" checklist-model="cs1.sicRecruitmentOrgs" checklist-value="3"> University
+                                </label>
+
+                                <div style="padding-left: 25px;" ng-show="isSelected(cs1.sicRecruitmentOrgs, 3)">
+                                    Please specify:
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="4" cols="70" ng-model="cs1.sicRecrOrgsSpecify3"></textarea>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="sicRecruitmentOrgs" checklist-model="cs1.sicRecruitmentOrgs" checklist-value="4"> Conservation Organization
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="sicRecruitmentOrgs" checklist-model="cs1.sicRecruitmentOrgs" checklist-value="5"> Other
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
+            <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
+            <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 2</button>
+        </div>
+    </div>
+    </form>
+    {{ init() }}
+</div>

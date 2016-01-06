@@ -1,0 +1,481 @@
+
+<div class="row">
+<div ng-init="errors = cs6.errors" ng-include="'/assets/partials/form/error.html'"></div>
+
+<div class="col-sm-12">
+<h5>4. Raw Material Supply</h5>
+<p>
+    (The following questions should be answered for manufacturing facilities covered under the scope of your SFI 2015-2019 Fiber Sourcing Standard certificate)
+</p>
+
+
+<!-- Top section -->
+<form name="cs6Form">
+<table class="table table-striped vert-align-middle">
+    <thead>
+    <tr>
+        <th>Private Forest Landowners</th>
+        <th ng-class="{'disabled' : !operateInUsa()}">US</th>
+        <th ng-class="{'disabled' : !operateInCa()}" >Canada</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td tooltip data-html="true" data-placement="top" data-container="body"
+            data-title="Landowners selling timber directly to your organization” means those private landowners with which your organization has a contractual relationship to purchase or harvest timber (i.e., stumpage or logs)."
+            >Number of private forest landowners selling timber (stumpage, logs or chips) directly to your organization last year.</td>
+
+        <td>
+            <input type="number" class="form-control  shorter"
+                   ng-model="cs6.numPrivateForeOwersUs" ng-class="{'disabled' : !operateInUsa()}">
+        </td>
+
+        <td>
+            <input type="number" class="form-control  shorter"
+                   ng-model="cs6.numPrivateForeOwersCa" ng-disabled="!operateInCa()" >
+        </td>
+    </tr>
+    </tbody>
+</table>
+</form>
+<!-- End Top Section -->
+
+
+
+<!-- YES/NO Section 2 -->
+<div class="form-group">
+    <label>To assist in implementing Objective 8 of the SFI Standard Principles and Objectives, our organization has clearly defined in writing, and distributed to loggers, chip suppliers, dealers and other raw material suppliers, our organization specific procurement policy, program or plan.</label>
+    <div class="form-group hasRadioBoxes">
+        <input type="radio" name="answer" name="toAssistObj8" ng-model="cs6.toAssistObj8" ng-value="1" class="icheck" icheck />
+        <label class="checkboxLabel">Yes</label>
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="answer" name="toAssistObj8" ng-model="cs6.toAssistObj8" ng-value="0" class="icheck" icheck />
+        <label class="checkboxLabel">No</label>
+    </div>
+</div>
+<br/><br/>
+<!-- -->
+
+<!-- GRID Section 3 -->
+<div class="form-group">
+
+    <label><span tooltip data-html="true" data-placement="top" data-container="body"
+           data-title="Raw Material Consumption. In this question SFI Inc. is seeking the volume of raw material (roundwood and whole log chips) your manufacturing facilities (including log and chip exports) used sourced directly from the forest. Volumes do not have to be absolutely precise; they should be rounded to the nearest unit. Please specify the units (board feet, cubic feet, cords, tons, etc.) you are reporting in column 2. ANNEX 1, which can be found at the end of this document, contains the multipliers that are used by SFI Inc. staff to convert various volume units to “thousands of cubic feet” for reporting totals. If you are converting volumes for this report, please use the appropriate multiplier from the table in ANNEX 1, unless you have a more accurate multiplier or conversion factor for your specific region and species."
+            >Raw Material Supply -procured directly from the forest to your SFI manufacturing facilities (new!)</span>
+    </label>
+    (can now drill down to more specific regions for sourcing of fiber supply)
+    <a style="text-decoration:underline;" ng-click="lastYearPop()">How we used your data last year</a>
+
+    <br/><br/>
+    <span>Select the country, state or province using the drop-down below. Please note, you may either select or report raw material supply for individual states or provinces or select ‘All States’ or ‘All Provinces’ from the list to report your procured volume by country.</span>
+
+    <br/><br/>
+    <div class="content-header" style="height:40px;">
+        <label>
+            Starting in 2017, SFI will be asking all program participants with raw material supply to track and report the data by state or province.
+        </label>
+    </div>
+
+    <table class="table table-striped" ng-show="usCanada.length || usOthers.length">
+        <thead>
+        <tr>
+            <th>Regions</th>
+            <th>Raw Material Sources</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Normal supply -->
+        <tr ng-repeat="supply in usCanada">
+            <td>{{ supply.region.name }}, {{ supply.region.country.country }}</td>
+            <td>{{ usCanadaTitle(supply) }}</td>
+
+            <td><a href="" ng-click="editUsCanada(supply.region.id)">Edit</a></td>
+            <td><a href="" ng-click="deleteUsCanada(supply.region.id)">Delete</a></td>
+        </tr>
+        <!-- -->
+
+        <!-- Other country supply -->
+        <tr ng-repeat="other in usOthers">
+            <td>{{ other.country.country }}</td>
+            <td>{{ usOtherTitle(other)}}</td>
+            <td><a href="" ng-click="editOther(other.country.id)">Edit</a></td>
+            <td><a href="" ng-click="deleteOther(other.country.id)">Delete</a></td>
+        </tr>
+        <!-- -->
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<!-- FORM 1 / Regional Supply -->
+
+<div class="form-group">
+    <h6><strong>Raw Material Supply (procured directly from the forest to your SFI manufacturing facilities)</strong></h6>
+    <label>Select the country, state or province using the drop-down below. Please note, you may either select and report raw material supply for individual states or provinces or select ‘All States’ or ‘All Provinces’ from the list to report your procured volume by country.</label>
+    <select ng-model="regionId" id="regionId" ng-change="isUsCanadaExist()">
+        <option value="0">&lt;Select the region of your fiber source&gt;</option>
+        <option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
+        <option ng-show="operateInOthers()" value="-1">Outside USA & Canada</option>
+    </select>
+</div>
+
+<table class="table table-striped" ng-show="regionId > 0">
+
+<!-- Header -->
+<thead>
+<tr>
+    <th>Raw Material Sources</th>
+    <th style="width:175px; text-align:center;">Units &amp; Volume</th>
+
+    <th style="width:120px;  text-align:center;"
+        tooltip data-html="true" data-placement="top" data-container="body"
+        data-title="A person with specialized skills in timber harvesting gained through experience or formal training who has successfully completed wood producer training programs and continued education requirements recognized by SFI Implementation Committees."
+            >% Delivered by Qualified Logging Professionals</th>
+
+    <th style="width:120px; text-align:center;"
+        tooltip data-html="true" data-placement="top" data-container="body"
+        data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the SFI Standard."
+            >% from SFI only certified forests</th>
+
+    <th style="width:120px; text-align:center;"
+        tooltip data-html="true" data-placement="top" data-container="body"
+        data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the American Tree Farm Standard. <br/>Did you know ATFS has a verification certification database to help you determine ATFS certified and ATFS non-certified lands. For more information visit: www.treefarmsystem.org/ atfsverificationdatabase"
+            >% from ATFS only certified forests</th>
+    <th style="width:120px; text-align:center;"
+        tooltip data-html="true" data-placement="top" data-container="body"
+        data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the Canadian Standards Association standards."
+
+            >% from CSA only  certified forests</th>
+    <th style="width:120px; text-align:center;"
+        tooltip data-html="true" data-placement="top" data-container="body"
+        data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to Forest Stewardship Council Standards"
+            >% from FSC only certified forests (new!)</th>
+    <th style="width:180px; text-align:center;">Select standard combination if reporting volume certified to more than one standard (new!)</th>
+    <th style="width:120px; text-align:center;"
+        tooltip data-html="true" data-placement="top" data-container="body"
+        data-title="Your best estimate of fiber sourced from dual or triple certified forests. Note that material sourced from an area certified to only one standard should be reported in the relevant certification standard column."
+            >% certified forest to more than one standard (new!)</th>
+
+</tr>
+</thead>
+<!-- -->
+
+
+<!-- FORM -->
+
+<tbody>
+
+    <tr ng-repeat-start="section in sections" ng-if="section.row == 1">
+        <th>Private</th>
+        <th colspan="8"></th>
+    </tr>
+
+    <tr ng-if="section.row == 7">
+        <th>Public</th>
+        <th colspan="8"></th>
+    </tr>
+
+    <tr ng-if="section.row == 11">
+        <th>Other</th>
+        <th colspan="8"></th>
+    </tr>
+
+
+    <tr ng-repeat-end ng-form="innerForm">
+
+        <td ng-init="section.form = innerForm" tooltip data-html="true" data-placement="top" data-container="body"
+            data-title="{{ section.tooltip }}"
+                >
+
+            <input type="checkbox" name="otherEnable" id="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
+                   ng-if="section.row == 11" ng-model="section.otherEnable"/>
+            {{section.name}}
+
+
+            <div ng-show="section.otherEnable && otherLabel">
+                <a ng-click="showPopUp3(section)">{{ otherLabel | limitTo: 20 }}</a>
+            </div>
+
+        </td>
+
+        <td>
+
+            <div ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item1.$invalid}">
+
+                <select class="form-control" name="item1"
+                        ng-model="section.unit"
+                        ng-required="isSectionDirty(innerForm)"
+                        ng-disabled="isDisabled(section)"  >
+
+                    <option value="" ng-selected="!section.unit" >Select Units</option>
+                    <option ng-repeat="item in opt1" value="{{ item.id }}" >{{item.name}}</option>
+
+                </select>
+            </div>
+
+            <div class="form-group padded alignright"
+                 ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item2.$invalid}" ng-show="section.unit > 0">
+
+                Volume <input type="text" style="width: 105px" class="form-control shortest2" name="item2" ng-required="isSectionDirty(innerForm)"
+                              ng-disabled="isDisabled(section)" ng-model="section.volume"
+                              ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+
+                              ng-model-options="{allowInvalid:true}"  />
+            </div>
+        </td>
+
+        <td align="center" ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item3.$invalid}">
+            <input type="text" class="form-control shorter" max="100" min="0" name="item3" ng-required="isSectionDirty(innerForm)"
+                   ng-model="section.percDeliveredQualifiedLogging" ng-disabled="isDisabled(section)"
+                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+
+            <a href="" id="pop-item-{{$index}}"
+               ng-show="showPop1Link($index)"
+               ng-click="showPopUp1($index)">
+                <div><small>Reason less than 100%</small></div>
+            </a>
+        </td>
+
+        <td align="center" ng-class="{'has-error' : innerForm.item4.$invalid}">
+            <input type="text" class="form-control shorter" name="item4"
+                   ng-disabled="isDisabled(section)" ng-model="section.percSFIOnlyCertified"
+                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+        </td>
+
+        <td align="center" ng-class="{'has-error' : innerForm.item5.$invalid}">
+            <input type="text" class="form-control  shorter" name="item5"
+                   ng-disabled="isDisabled(section)" ng-model="section.percATFSOnlyCertified"
+                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+        </td>
+
+        <td align="center" ng-class="{'has-error' : innerForm.item6.$invalid}">
+            <input type="text" class="form-control  shorter" name="item6"
+                   ng-disabled="isDisabled(section)" ng-model="section.percCSAOnlyCertified"
+                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+        </td>
+
+        <td align="center" ng-class="{'has-error' : innerForm.item7.$invalid}">
+            <input type="text" class="form-control  shorter" name="item7"
+                   ng-disabled="isDisabled(section)" ng-model="section.percFSCOnlyCertified"
+                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+        </td>
+
+        <td align="center">
+
+            <div ng-show="section.percCertifedMoreThanOneStandard1">
+                <span>SFI/FSC</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard2">
+                <span>SFI/ATFS</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard3">
+                <span>SFI/CSA</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard4">
+                <span>ATFS/FSC</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard5">
+                <span>CSA/FSC</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard6">
+                <span>SFI/ATFS/FSC</span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard7">
+                <span>SFI/CSA/FSC</span>
+            </div>
+
+            <a ng-hide="isDisabled(section)" ng-click="showPopUp2($index)" id="pop-link-{{$index}}">Select Standard</a>
+            <span ng-show="isDisabled(section)">Select Standard</span>
+        </td>
+
+        <td align="center" ng-class="{'has-error' : innerForm.item8.$invalid}">
+
+            <!--<input type="hidden" ng-model="section.standardValues">-->
+            <!--<div ng-repeat="item in section.standardValues">-->
+                <!--<span ng-if="item">{{ item }}%</span>-->
+            <!--</div>-->
+
+            <div ng-show="section.percCertifedMoreThanOneStandard1">
+                <span>{{ section.percCertifedMoreThanOneStandard1}} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard2">
+                <span>{{ section.percCertifedMoreThanOneStandard2 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard3">
+                <span>{{ section.percCertifedMoreThanOneStandard3 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard4">
+                <span>{{ section.percCertifedMoreThanOneStandard4 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard5">
+                <span>{{ section.percCertifedMoreThanOneStandard5 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard6">
+                <span>{{ section.percCertifedMoreThanOneStandard6 }} </span>
+            </div>
+            <div ng-show="section.percCertifedMoreThanOneStandard7">
+                <span>{{ section.percCertifedMoreThanOneStandard7 }} </span>
+            </div>
+        </td>
+    </tr>
+</tbody>
+
+
+<!-- Form End -->
+</table>
+
+<!-- Form 1 buttons -->
+<div class="col-sm-4 col-sm-offset-8 alignright" ng-show="regionId > 0">
+    <button type="button" class="btn secondary" ng-click="cancelUsCanada()">Cancel</button>
+    <!-- v2 -->
+    <!-- button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save, and enter another region</button-->
+    <button type="button" class="btn btn-success" ng-click="saveUsCanada()">Enter another region</button>
+</div>
+<div class="control-group">&nbsp;</div>
+<!-- -->
+
+
+
+<!-- FORM 2 -->
+<div class="col-sm-12" ng-show="regionId == -1">
+    <div class="form-group">
+        <label>SFI Inc. is often asked for details on fiber supply and is interested in how much program participant fiber (used by manufacturing facilities in the US or Canada that are covered in the scope of SFI certification) is procured from outside the USA and Canada. The SFI definition of procurement is:  Acquisition of roundwood (sawlogs or pulpwood) and field-manufactured or primary-mill residual chips, pulp, and veneer to support a forest products manufacturing facility.</label>
+    </div>
+</div>
+
+<table class="table table-striped" ng-show="regionId == -1">
+
+    <!-- Header -->
+    <thead>
+    <tr>
+        <th>Outside Canada & USA</th>
+        <th width="15%">Units</th>
+        <th>Volume</th>
+        <th>% PEFC certified forest content (new!)</th>
+        <th>% FSC certified forest content (new!)</th>
+        <th>% Dual PEFC/FSC forest content (new!)</th>
+        <th>% SFI Fiber Sourcing (new!)</th>
+        <th>% Other (new!)</th>
+    </tr>
+    </thead>
+
+
+    <!-- Form 2 -->
+    <tbody>
+    <tr ng-form="innerForm">
+
+        <td ng-init="other.form = innerForm" ng-class="{'has-error' :  innerForm.other1.$invalid}">
+            <select class="form-control" name="other1" id="countryId" customerror
+                    ng-model="other.country.id" ng-required="isOtherDirty()">
+                <option value>&lt; Select Country &gt;</option>
+                <option ng-repeat="item in otherCountries" value="{{ item.id }}">{{item.country}}</option>
+            </select>
+        </td>
+
+        <td ng-class="{'has-error' : innerForm.other2.$invalid}">
+            <select class="form-control" name="other2" ng-model="other.units" ng-required="isOtherDirty()" customerror>
+                <option value="">&lt; Select Units &gt;</option>
+                <option ng-repeat="item in opt1" value="{{ item.id }}">{{item.name}}</option>
+            </select>
+
+        </td>
+
+        <td ng-class="{'has-error' : innerForm.other3.$invalid}">
+            <input type="number" class="form-control shorter" name="other3" ng-required="isOtherDirty()"
+                          ng-model="other.volume" ng-pattern="/^\d*(\.\d{1,4})?$/"
+                          pattern-msg="Enter decimal number up to 4 precision points" customerror>
+        </td>
+
+        <td ng-class="{'has-error' : innerForm.other4.$invalid}">
+            <input type="number" class="form-control shorter" max="100" min="0" name="other4"
+                   ng-model="other.percPEFCCertified" ng-pattern="/^\d*(\.\d{1,2})?$/" min="0" max="100"
+                   pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+        </td>
+
+        <td ng-class="{'has-error' : innerForm.other5.$invalid}">
+            <input type="number" class="form-control shorter" name="other5" min="0" max="100"
+                   ng-model="other.percFSCCertified" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                   pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+        </td>
+
+        <td ng-class="{'has-error' : innerForm.other6.$invalid}">
+            <input type="number" class="form-control shorter" name="other6" min="0" max="100"
+                   ng-model="other.percPEFCFSCCertified" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                   pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+        </td>
+
+        <td ng-class="{'has-error' : innerForm.other7.$invalid}">
+            <input type="number" class="form-control  shorter" name="other7" min="0" max="100"
+                   ng-model="other.percSFIFiberSourcing" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                   pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+        </td>
+
+        <td ng-class="{'has-error' : innerForm.other8.$invalid}">
+
+            <input type="number" class="form-control  shorter" name="other8" id="other8" min="0" max="100"
+                   ng-model="other.percOther" ng-pattern="/^\d*(\.\d{1,2})?$/" ng-keyup="showPopUp4()" ng-click="showPopUp4()"
+                   pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+
+            <div ng-show="other.percOther && other.percOtherReason">
+                <a ng-click="showPopUp4()">Assurance responsible sources of supply</a>
+            </div>
+
+        </td>
+    </tr>
+    <!-- -->
+    </tbody>
+</table>
+
+<!-- Form2 button -->
+<div class="col-sm-4 col-sm-offset-8 alignright" ng-show="regionId == -1">
+    <button type="button" class="btn secondary" ng-click="cancelOther()">Cancel</button>
+    <button type="button" class="btn btn-success" ng-click="saveOther()">Save, and enter another region</button>
+</div>
+<!-- -->
+
+
+
+<!-- Modals -->
+<div id="delete1" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete <span id="region-text"></span> as a raw material supply?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">ok</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="confirm" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>
+            </div>
+            <div class="modal-body">
+                <p>Atleast provide one sources data</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="">Ok</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -->
+
+</div>
+<div class="col-sm-6 col-sm-offset-4">
+    <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+    <button type="button" class="btn btn-success" ng-click="save(true)">Save and Go to Step 5</button>
+</div>
+</div>

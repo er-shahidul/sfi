@@ -1,0 +1,348 @@
+<div class="row" id="secCont">
+
+    <div ng-init="errors = cs3.errors" ng-include="'/assets/partials/form/error.html'"></div>
+
+    <div class="col-sm-7">
+
+        <h5>6. Research, Conservation and Community Projects & Partnerships</h5>
+
+        <div class="form-group hasRadioBoxes">
+            <form name="cs3Form">
+                <div class="form-group">If you fulfill your research funding requirements through forest related research outside your organization, please complete this page.</div>
+
+                <div class="form-group">
+                    Is your organization currently involved in any conservation partnerships?
+
+                    <div class="floatright">
+                    <input type="radio" name="cs3_isInPartnership" ng-model="cs3.isInPartnership" value="1" icheck/>
+                    <label class="checkboxLabel">Yes</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="cs3_isInPartnership" ng-model="cs3.isInPartnership" value="0" icheck/>
+                    <label class="checkboxLabel">No</label>
+                </div>
+            </div>
+
+            </form>
+
+        </div>
+
+        <table class="table table-striped" ng-show="cs3.isInPartnership == true && getProjects().length">
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Project Objective</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="project in getProjects()">
+                    <td>{{ project.name }}</td>
+                    <td>{{ project.objective }}</td>
+                    <td><a href="" ng-click="editProject($index)">Edit</a></td>
+                    <td><a href="" ng-click="deleteProject($index)">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div class="cs3-project" ng-show="cs3.isInPartnership">
+
+            <form name="innerFrom"  novalidate>
+
+            <div class="form-group"
+                 ng-class="{'has-error' : isDirty() && innerFrom.name.$invalid }">
+
+                <label>Project name</label>
+                <input type="text" class="form-control" name="name" ng-required="isDirty()" maxlength="200" customerror
+                       tooltip data-placement="right" data-container="#secCont" data-title="If this is a partnership project with an official title, please provide the official project name."
+                       ng-model="project.name"/>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{'has-error' : isDirty() && innerFrom.objective.$invalid }">
+
+                <label>Project objective</label>
+                <input type="text" class="form-control" name="objective" ng-required="isDirty()" maxlength="200" customerror
+                       ng-model="project.objective"/>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{'has-error' : isDirty() && innerFrom.description.$invalid }">
+
+                <label>Short project description (include main point of contact and other relevant information - max. 650 words)</label>
+                <textarea class="form-control" name="description" ng-required="isDirty()"
+                          style="resize:none;" maxlength="4000" max-word-count="650" customerror
+                          ng-model="project.description"></textarea>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{'has-error' : isDirty() && innerFrom.standardObject.$invalid }">
+
+                <label>SFI 2010-2014 Standard Objective most relevant to project (new!)</label>
+                <select class="form-control" name="standardObject"  customerror
+                        ng-model="project.StandardObject">
+                    <option value="0" ng-selected="!project.StandardObject">Please select</option>
+                    <option ng-repeat="item in standObjective" value="{{item.cs3_sfiStandardObj}}">{{item.cs3_sfiStandardObjDesc}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Select state(s)/province(s) for this project (new!)</label>
+                <select class="form-control" name="region"
+                        ng-model="project.regionItem" ng-change="addRegion()"
+                        ng-options="region.name for region in regions track by region.id" >
+                    <option value ng-selected="!project.regionItem">Please select</option>
+                </select>
+
+                <div id="selectedItem" ng-repeat="regionId in project.locations">{{ regionName(regionId) }}
+                    <button ng-click="delRegion(regionId)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                </div>
+
+            </div>
+
+            <!-- Org list -->
+            <div class="form-group">
+                <label>Project Partners (enter details for at least one of the following)</label>
+
+                <span ng-show="isDirty() && !hasAnyOrg()" class="error">Enter details for at least one of the following</span>
+
+                <div class="form-group">
+                    <div class="col-sm-2">
+                        <label>Academic</label>
+                    </div>
+                    <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.academicList.$invalid }">
+                        <input type="text" class="form-control" name="academicList"
+                               ng-maxlength="200" customerror ng-model="project.academicList" >
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <div class="col-sm-2">
+                        <label>Research</label>
+                    </div>
+                    <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.researchList.$invalid }">
+                        <input type="text" class="form-control" name="researchList"
+                               ng-maxlength="200" customerror ng-model="project.researchList" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2">
+                        <label>Conservation</label>
+                    </div>
+                    <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.conservationList.$invalid }">
+                        <input type="text" class="form-control" name="conservationList"
+                               ng-maxlength="200" customerror ng-model="project.conservationList" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2">
+                        <label>Government</label>
+                    </div>
+                    <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.governmentList.$invalid }">
+                        <input type="text" class="form-control" name="governmentList"
+                               ng-maxlength="200" customerror ng-model="project.governmentList" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2"><label>Community</label></div>
+                    <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.communityList.$invalid }">
+                        <input type="text" name="communityList" class="form-control"
+                               ng-maxlength="200" customerror ng-model="project.communityList" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2"><label>Other</label></div>
+                    <div class="col-sm-10" ng-class="{'has-error' : isDirty() && innerFrom.otherList.$invalid }">
+                        <input type="text" name="otherList" class="form-control"
+                               ng-maxlength="200" customerror ng-model="project.otherList" >
+                    </div>
+                </div>
+            </div>
+            <!-- --/-- -->
+
+            <div class="form-group">
+
+
+                <label>Estimated project dates</label>
+                <div class="col-sm-4 nopadding"
+                     ng-class="{'has-error' : isDirty() && innerFrom.start_date.$invalid}">
+
+                    <div class="col-sm-4 nopadding" style="line-height: 32px;">Start date</div>
+
+                    <div class="col-sm-8 nopadding">
+                        <div class='input-group date datetimepicker' datetimepicker>
+                            <input type='text' class="form-control datepicker" name="start_date"
+                                   ng-required="isDirty()" customerror
+                                   ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}$/"
+                                   pattern-msg="Please enter a valid date(YYYY-MM-DD)"
+                                   ng-model="project.startDate">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4 col-sm-offset-2 nopadding"
+                     ng-class="{'has-error' : isDirty() && innerFrom.end_date.$invalid}">
+                    <div class="col-sm-4 nopadding" style="line-height: 32px;">
+                        End date
+                    </div>
+                    <div class="col-sm-8 nopadding">
+                        <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
+                            <input type='text' class="form-control" name="end_date" customerror
+                                   ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}$/"
+                                   pattern-msg="Please enter a valid date(YYYY-MM-DD)"
+                                   ng-model="project.endDate">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{'has-error' : isDirty() && innerFrom.estimated_cost.$invalid}">
+
+                <label>Estimated project cost</label>
+                <select class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
+                        ng-model="project.totalProjectCost">
+                    <option value ng-selected="!project.totalProjectCost">Select estimated project cost</option>
+                    <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>
+                </select>
+
+                <u>
+                    <span class="currPop" id="currPop1"
+                          ng-click="currPopPp('currPop1', 'totalProjectCostCurr')">{{ gerCurrText(project.totalProjectCostCurr) }}</span>
+                </u>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{'has-error' : isDirty() && innerFrom.org_contribution.$invalid}">
+
+                <label>Organization contribution</label>
+                <select class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
+                        ng-model="project.orgContribution">
+                    <option value ng-selected="!project.orgContribution">Select organization contribution</option>
+                    <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>
+                </select>
+                <u>
+                    <span class="currPop" id="currPop2"
+                          ng-click="currPopPp('currPop2', 'orgContributionCurr')">{{ gerCurrText(project.orgContributionCurr) }}</span>
+                </u>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-5 nopadding">
+                    <label>Supporting documentation (optional)</label>
+                </div>
+                <div class="col-sm-7 nopadding"
+                     style="cursor: pointer;"
+                     ng-file-select ng-model="myFiles"
+                     ng-file-change="fileSelected(files)"
+                     ng-multiple="false"
+                     ng-accept="'image/*,application/pdf'" >
+                    <div>Click to add files from your computer</div>
+                    <div><small><u>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</u></small></div>
+                </div>
+                <div id="valdfil">
+                    <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted">&nbsp;{{ doc.filename }}&nbsp;
+                        <button ng-click="delSupportDoc($index)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" name="incResFunding" icheck ng-model="project.incResFunding"/>
+
+                <label style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if this project is included in your Research Funding dollars reported in Section 5 of this form to meet SFI Standard Requirements.</label>
+            </div>
+
+
+            <div class="form-group">
+                <input type="checkbox" name="consent" icheck ng-model="project.shareConserData"/>
+                <label style="width: 600px; vertical-align: middle;" class="checkboxLabel">May SFI share this conservation partnership data externally as part of a compiled summary across SFI Program Participants (to ensure confidentiality)?</label>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <input ng-model="validate" ng-hide="true">
+                <a href="" ng-click="addProject()" ng-show="cs3.isInPartnership">+ Add another project</a>
+            </div>
+
+            </form>
+
+        </div>
+        <div class="col-sm-6 col-sm-offset-6">
+            <button type="submit" class="btn btn-success" ng-click="saveForm()">Save</button>
+            <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 7</button>
+        </div>
+
+
+    </div>
+
+    <div class="col-sm-offset-1 col-sm-4">
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Did you know?</h3>
+            </div>
+            <div class="panel-body">
+                SFI Inc. gives conservation awards to organizations and individuals involved in conservation partnerships on a regular basis and SFI would like to be aware of any conservation projects you currently have underway.
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Did you know?</h3>
+            </div>
+            <div class="panel-body">
+                Since 2010, SFI has awarded more than 50 SFI Conservation and Community Partnerships grants totaling more than $1.9 million to foster research and to pilot efforts to better inform future decisions about our forests.
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Did you know?</h3>
+            </div>
+            <div class="panel-body">
+                SFI presents one or more Conservation Awards annually to organizations and individuals involved in outstanding conservation partnerships. Include a note in the description if you recommend the project for consideration as eligible for SFI's Conservation Award and why.
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Did you know?</h3>
+            </div>
+            <div class="panel-body">
+                Community and/or Conservation Partnership Projects of interest can vary widely in topics. Projects of interest may include field days, community-outreach programs, school or children’s activities, or community-building activities that demonstrate the active relationship between Program Participant and their local communities. Conservation projects of interest typically add value and understanding to the practice of sustainable forestry (eg. Species inventories, ongoing field studies, wildlife, ecological or water related research etc.), or demonstrate methods and/or value relative to conservation on sustainably managed lands.
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div id="delete1" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete <span id="project-name"></span>?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" data-dismiss="modal" id="btnConfirm" ng-click="deleteProjectOk()"class="btn confirm">Yes, delete this project</a>
+                    <a href="#" data-dismiss="modal" aria-hidden="true" ng-click="deleteProjectCancel()" class="btn secondary">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
