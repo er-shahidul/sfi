@@ -1,6 +1,6 @@
-package com.rbs.www.web.sfi.models.viewmodels;
+package com.rbs.www.web.common.models.viewmodels;
 
-public class FileNames {
+public class FileNamesViewModel {
     private String originalName;
     private String uniqueName;
 

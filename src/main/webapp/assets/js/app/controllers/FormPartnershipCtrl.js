@@ -250,7 +250,7 @@ sfiFormApp
 
             var file = $scope.myFiles[i];
             $scope.upload = $upload.upload({
-                url: '/files/upload',
+                url: '/files/upload/sfi',
                 method: 'POST',
                 data: $scope.cs1,
                 file: file

@@ -72,7 +72,7 @@ sfiSicApp
             _.each(model, function(file){
 
                 $scope.upload = $upload.upload({
-                    url: '/files/upload',
+                    url: '/files/upload/sic',
                     method: 'POST',
                     data: {},
                     file: file

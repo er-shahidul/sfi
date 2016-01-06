@@ -1,7 +1,6 @@
 package com.rbs.www.web.sfi.controllers;
 
 import com.rbs.www.common.util.Util;
-import com.rbs.www.common.services.FIleIOHelperService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import com.rbs.www.web.sfi.models.viewmodels.*;
 import com.rbs.www.web.sfi.services.FormService;
@@ -13,12 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
 import java.text.ParseException;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -28,9 +22,6 @@ public class PpResponseController {
 
     @Autowired
     private FormService formService;
-
-    @Autowired
-    private FIleIOHelperService fIleIOHelperService;
 
     @Autowired
     SfiPpFormDataService sfiPpFormDataService;
@@ -117,14 +108,5 @@ public class PpResponseController {
     public ResponseEntity<String> formCs10(@RequestBody Cs10ViewModel model, BindingResult result) {
         formService.setCs10Entity(model);
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/files/upload", method = RequestMethod.POST)
-    public @ResponseBody ResponseEntity<String> fileUpload(@RequestParam("file") MultipartFile file,
-                                                           HttpServletRequest request, HttpServletResponse response) {
-        FileNames fileNames = fIleIOHelperService.saveFile(file, request.getSession().getServletContext().getRealPath("."));
-        HttpStatus responseStatus = fileNames == null ? HttpStatus.BAD_REQUEST : HttpStatus.OK;
-
-        return new ResponseEntity<String>(Util.getAsString(fileNames), responseStatus);
     }
 }

@@ -1,6 +1,6 @@
 package com.rbs.www.common.services;
 
-import com.rbs.www.web.sfi.models.viewmodels.FileNames;
+import com.rbs.www.web.common.models.viewmodels.FileNamesViewModel;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Date;
 
 @Service
-public class FIleIOHelperService {
+public class FileIOHelperService {
     public String createDirectory(String rootPath, String subPath) {
         String currentPath = rootPath;
         for (String folderName : subPath.split("/")) {
@@ -27,18 +27,18 @@ public class FIleIOHelperService {
         return Long.toString(new Date().getTime());
     }
 
-    private FileNames getFileNames(String fileName) {
-        FileNames fileNames = new FileNames();
+    private FileNamesViewModel getFileNames(String fileName) {
+        FileNamesViewModel fileNames = new FileNamesViewModel();
         fileNames.setOriginalName(fileName);
         fileNames.setUniqueName(this.generateUniqueName());
 
         return fileNames;
     }
 
-    public FileNames saveFile(MultipartFile file, String path) {
-        FileNames fileNames = getFileNames(file.getOriginalFilename());
+    public FileNamesViewModel saveFile(MultipartFile file, String folder, String path) {
+        FileNamesViewModel fileNames = getFileNames(file.getOriginalFilename());
 
-        String originalPath = this.createDirectory(path, "uploads/sfi");
+        String originalPath = this.createDirectory(path, "uploads/" + folder);
         originalPath += "/" + fileNames.getUniqueName();
 
         try {

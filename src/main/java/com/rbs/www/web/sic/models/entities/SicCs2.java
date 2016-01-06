@@ -161,14 +161,14 @@ public class SicCs2 extends BaseEntityModel {
     @Column(name = "cs2_committeeFeeSpecify6", nullable = true)
     private String committeeFeeSpecify6;
 
-    @OneToMany(targetEntity = SicPpFormNeighborEvent.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<SicPpFormNeighborEvent> sicNeighborEvents;
-
-    @Column(name = "cs10_biodiversityItems1", nullable = true)
+    @Column(name = "cs2_committeeFeeStructure", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> committeeFeeStructure;
+
+    @OneToMany(targetEntity = SicPpFormNeighborEvent.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SicPpFormNeighborEvent> sicNeighborEvents;
 
     @Override
     public Integer getId() {

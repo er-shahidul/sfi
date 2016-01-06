@@ -1,6 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.web.common.models.viewmodels.FileNamesViewModel;
 
 import java.util.Set;
 
@@ -20,9 +21,12 @@ public class SicCs1ViewModel extends BaseViewModel {
     private Integer supporterLogger;
     private Integer supporterOther;
     private Integer supporterOtherLocal;
+    private Boolean orgDocAttached;
     private Boolean sicRecruitSfi;
     private Boolean sicRepresentSfi;
     private Boolean sicPlanRecruitment;
+    private String orgDocAttachedWhy;
+    private String sicWebsite;
     private String membersOtherSFISpecify;
     private String sicChairCity;
     private String sicChairCompany;
@@ -46,6 +50,8 @@ public class SicCs1ViewModel extends BaseViewModel {
     private Set<SicPpFormCommitteeViewModel> subCommittees;
     private Set<SicPpFormMeetingViewModel> participatingMeetingList;
     private Set<SicPpFormMeetingTypeViewModel> meetingList;
+    private Set<SicPpFormImageViewModel> contactFiles;
+    private Set<SicPpFormImageViewModel> guideFiles;
 
     @Override
     public Integer getId() {
@@ -190,6 +196,14 @@ public class SicCs1ViewModel extends BaseViewModel {
 
     public void setSicPlanRecruitment(Boolean sicPlanRecruitment) {
         this.sicPlanRecruitment = sicPlanRecruitment;
+    }
+
+    public String getOrgDocAttachedWhy() {
+        return orgDocAttachedWhy;
+    }
+
+    public void setOrgDocAttachedWhy(String orgDocAttachedWhy) {
+        this.orgDocAttachedWhy = orgDocAttachedWhy;
     }
 
     public String getMembersOtherSFISpecify() {
@@ -374,5 +388,37 @@ public class SicCs1ViewModel extends BaseViewModel {
 
     public void setMeetingList(Set<SicPpFormMeetingTypeViewModel> meetingList) {
         this.meetingList = meetingList;
+    }
+
+    public Boolean getOrgDocAttached() {
+        return orgDocAttached;
+    }
+
+    public void setOrgDocAttached(Boolean orgDocAttached) {
+        this.orgDocAttached = orgDocAttached;
+    }
+
+    public String getSicWebsite() {
+        return sicWebsite;
+    }
+
+    public void setSicWebsite(String sicWebsite) {
+        this.sicWebsite = sicWebsite;
+    }
+
+    public Set<SicPpFormImageViewModel> getContactFiles() {
+        return contactFiles;
+    }
+
+    public void setContactFiles(Set<SicPpFormImageViewModel> contactFiles) {
+        this.contactFiles = contactFiles;
+    }
+
+    public Set<SicPpFormImageViewModel> getGuideFiles() {
+        return guideFiles;
+    }
+
+    public void setGuideFiles(Set<SicPpFormImageViewModel> guideFiles) {
+        this.guideFiles = guideFiles;
     }
 }

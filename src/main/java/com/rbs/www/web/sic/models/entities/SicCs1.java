@@ -54,6 +54,9 @@ public class SicCs1 extends BaseEntityModel {
     @Column(name = "cs1_supporterOtherLocal", nullable = true)
     private Integer supporterOtherLocal;
 
+    @Column(name = "cs1_orgDocAttached", nullable = true)
+    private Boolean orgDocAttached;
+
     @Column(name = "cs1_sicRecruitSfi", nullable = true)
     private Boolean sicRecruitSfi;
 
@@ -62,6 +65,12 @@ public class SicCs1 extends BaseEntityModel {
 
     @Column(name = "cs1_sicPlanRecruitment", nullable = true)
     private Boolean sicPlanRecruitment;
+
+    @Column(name = "cs1_orgDocAttachedWhy", nullable = true)
+    private String orgDocAttachedWhy;
+
+    @Column(name = "cs1_sicWebsite", nullable = true)
+    private String sicWebsite;
 
     @Column(name = "cs1_membersOtherSFISpecify", nullable = true)
     private String membersOtherSFISpecify;
@@ -134,6 +143,14 @@ public class SicCs1 extends BaseEntityModel {
     @OneToMany(targetEntity = SicPpFormMeetingType.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SicPpFormMeetingType> meetingList;
+
+    @OneToMany(targetEntity = SicPpFormContactFile.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SicPpFormContactFile> contactFiles;
+
+    @OneToMany(targetEntity = SicPpFormGuideFile.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SicPpFormGuideFile> guideFiles;
 
     @Override
     public Integer getId() {
@@ -256,6 +273,14 @@ public class SicCs1 extends BaseEntityModel {
         this.supporterOtherLocal = supporterOtherLocal;
     }
 
+    public Boolean getOrgDocAttached() {
+        return orgDocAttached;
+    }
+
+    public void setOrgDocAttached(Boolean orgDocAttached) {
+        this.orgDocAttached = orgDocAttached;
+    }
+
     public Boolean getSicRecruitSfi() {
         return sicRecruitSfi;
     }
@@ -276,8 +301,24 @@ public class SicCs1 extends BaseEntityModel {
         return sicPlanRecruitment;
     }
 
+    public String getOrgDocAttachedWhy() {
+        return orgDocAttachedWhy;
+    }
+
+    public void setOrgDocAttachedWhy(String orgDocAttachedWhy) {
+        this.orgDocAttachedWhy = orgDocAttachedWhy;
+    }
+
     public void setSicPlanRecruitment(Boolean sicPlanRecruitment) {
         this.sicPlanRecruitment = sicPlanRecruitment;
+    }
+
+    public String getSicWebsite() {
+        return sicWebsite;
+    }
+
+    public void setSicWebsite(String sicWebsite) {
+        this.sicWebsite = sicWebsite;
     }
 
     public String getMembersOtherSFISpecify() {
@@ -462,5 +503,21 @@ public class SicCs1 extends BaseEntityModel {
 
     public void setMeetingList(Set<SicPpFormMeetingType> meetingList) {
         addAll(this.meetingList, meetingList);
+    }
+
+    public Set<SicPpFormContactFile> getContactFiles() {
+        return contactFiles;
+    }
+
+    public void setContactFiles(Set<SicPpFormContactFile> contactFiles) {
+        addAll(this.contactFiles, contactFiles);
+    }
+
+    public Set<SicPpFormGuideFile> getGuideFiles() {
+        return guideFiles;
+    }
+
+    public void setGuideFiles(Set<SicPpFormGuideFile> guideFiles) {
+        addAll(this.guideFiles, guideFiles);
     }
 }
