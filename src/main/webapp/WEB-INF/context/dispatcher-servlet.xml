@@ -17,7 +17,6 @@
     <mvc:annotation-driven />
 
     <!-- - - - - thymeleaf start - - - - -->
-
     <bean id="templateResolver"
           class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
         <property name="prefix" value="/WEB-INF/views/" />
@@ -40,9 +39,6 @@
     <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine" />
     </bean>
-
-
-
     <!-- - - - - thymeleaf end - - - - -->
 
     <bean id="messageSource"

@@ -84,7 +84,8 @@ public class PpFormController {
         if (auth instanceof AnonymousAuthenticationToken)
             return "redirect:/login";
 
-        if (request.isUserInRole("ADMIN")) return "redirect:/admin/form";
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
         if (request.isUserInRole("USER")) return "redirect:/sfiPpForm";
 
         return "redirect:/dashboard";
@@ -126,20 +127,12 @@ public class PpFormController {
         return "/core/form/index";
     }
 
-    @RequestMapping(value = "/admin/form", method = RequestMethod.GET)
-    public String adminForm(ModelMap model) {
-        model.addAttribute("title", "form");
-        model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
-
-        return "/core/form/admin_form";
-    }
-
     @RequestMapping(value = "/admin/form/sfi", method = RequestMethod.GET)
     public String adminSfiForm(ModelMap model) {
         model.addAttribute("title", "sfi");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
 
-        return "/core/form/admin_form_sfi";
+        return "admin/form/admin_form_sfi";
     }
 
     @RequestMapping(value = "/admin/form/sic", method = RequestMethod.GET)
@@ -147,6 +140,6 @@ public class PpFormController {
         model.addAttribute("title", "sic");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
 
-        return "/core/form/admin_form_sic";
+        return "admin/form/admin_form_sic";
     }
 }

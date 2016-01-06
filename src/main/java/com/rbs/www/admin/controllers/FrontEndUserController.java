@@ -100,4 +100,18 @@ public class FrontEndUserController {
         return ("redirect:/user/profile");
     }
 
+    @RequestMapping(value = {"/frontend/user/email/edit/{id}"}, method = RequestMethod.POST)
+    public String updateEmail(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id, HttpServletRequest request) {
+        boolean isInvalidEmail = !userService.isValidEmailUpdate(user.getEmail());
+
+        if (result.hasErrors() || isInvalidEmail) {
+            model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
+            return "redirect:/user/profile";
+        }
+        userService.updateEmail(user);
+
+        model.addAttribute("success", "User " + "" + " updated successfully");
+        return ("redirect:/logout");
+    }
+
 }

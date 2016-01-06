@@ -16,6 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -54,7 +55,7 @@ public class UserController {
         model.addAttribute("title", "home");
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
 
-        return "admin";
+        return "admin/user/dashboard";
     }
 
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
@@ -62,7 +63,7 @@ public class UserController {
         model.addAttribute("user", getPrincipal());
         model.addAttribute("title", "user");
 
-        return "accessDenied";
+        return "common/access_denied";
     }
 
     public void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
@@ -114,7 +115,8 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/admin/user/profile"})
-    public ModelAndView profile(ModelMap model) {
+    public ModelAndView profile(SecurityContextHolderAwareRequestWrapper request, ModelMap model) {
+        if (request.isUserInRole("GENERAL")) return new ModelAndView("redirect:/user/profile");
         User user = userService.findByUsername(getCurrentUsername());
         model.addAttribute("user", user);
         model.addAttribute("title", "profile");
@@ -145,7 +147,7 @@ public class UserController {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "admin/user/editPass";
+            return "redirect:/admin/user/edit/password/" + user.getId() ;
         }
         userService.updatePassword(user);
 
@@ -193,9 +195,18 @@ public class UserController {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "admin/user/edit";
+            return "redirect:/admin/user/edit" + user.getId();
         }
         userService.updateUser(user);
+
+//        String recipient = user.getEmail();
+//        String subject = "Email Verification";
+//        String message = "not implemented";
+//        String mailType = "confirm";
+//
+//        if(user.getSendInvitation()){
+//            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+//        }
 
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/admin/user/list");
@@ -214,7 +225,7 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/admin/user/email/edit/{id}"}, method = RequestMethod.POST)
-    public String updateEmail(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
+    public String updateEmail(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id, HttpServletRequest request) {
         boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
 
         if (result.hasErrors() || isInvalidEmail) {
@@ -240,7 +251,9 @@ public class UserController {
 
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
-            model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
+            model.addAttribute("errorPassword", isInvalidPassword
+                    ? messageSource.getMessage("NotEmpty.password", new String[] { user.getPassword() }, Locale.getDefault())
+                    : "");
             return "redirect:/admin/user/profile";
         }
         userService.updatePassword(user);
@@ -257,7 +270,7 @@ public class UserController {
         List<CompanyViewModel> companies = companyService.list();
         model.addAttribute("companies", companies);
 
-        List<Group> groups = groupService.list();
+            List<Group> groups = groupService.list();
         model.addAttribute("groups", groups);
 
         return "admin/user/new";
@@ -275,7 +288,7 @@ public class UserController {
         User user = userService.findUserIdByToken(token);
 
         if (user == null) {
-            return "accessDenied";
+            return "common/access_denied";
         } else {
             return ("redirect:/user/password/reset/" + user.getId());
         }
@@ -284,7 +297,7 @@ public class UserController {
     @RequestMapping(value = "/user/forgot/password")
     public String forgotPassword() {
 
-        return "forgot_password";
+        return "common/forgot_password";
     }
 
     @RequestMapping(value = "/user/forgot/password", method = RequestMethod.POST)
@@ -303,13 +316,13 @@ public class UserController {
             sendEmail(email, subject, message, user, mailType, request.getLocalName());
         }
 
-        return "login";
+        return "common/login";
     }
 
     private String userCheck(User user) {
         if (user == null) {
             return "accessDenied";
-        } else if (user.getToken() == true) {
+        } else if (user.getToken()) {
             return "index";
         } else {
             return ("redirect:/user/password/set/" + user.getId());
@@ -323,7 +336,7 @@ public class UserController {
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
 
-        return "password";
+        return "common/password";
     }
 
     @RequestMapping(value = {"/user/password/reset/{id}"}, method = RequestMethod.POST)
@@ -331,20 +344,20 @@ public class UserController {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "password";
+            return "redirect:/user/password/reset/" + user.getId();
         }
         userService.updatePassword(user);
 
-        return ("redirect:/login");
+        return "common/after_password";
     }
 
     @RequestMapping(value = "/user/password/set/{id}", method = RequestMethod.GET)
     public String passwordSet(@PathVariable Integer id, ModelMap model) {
         model.addAttribute("title", "user");
-        UserViewModel user = userService.getViewModelById(id);
+        User user = userService.findByID(id);
         model.addAttribute("user", user);
 
-        return "password";
+        return "common/password";
     }
 
     @RequestMapping(value = {"/user/password/set/{id}"}, method = RequestMethod.POST)
@@ -352,12 +365,12 @@ public class UserController {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors()) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "password";
+            return "redirect:/user/password/set/" + user.getId();
         }
         userService.updatePassword(user);
         userService.verificationToken(user);
 
-        return ("redirect:/login");
+        return "common/after_password";
     }
 
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.POST)
@@ -379,19 +392,19 @@ public class UserController {
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
-            return "admin/user/new";
+            return "redirect:/admin/user/new";
         }
 
         if (!userService.isUserUsernameUnique(user.getId(), user.getUsername())) {
             FieldError ssoError = new FieldError("user", "username", messageSource.getMessage("non.unique.username", new String[]{user.getUsername()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "admin/user/new";
+            return "redirect:admin/user/new";
         }
 
         if (!userService.isUserEmailUnique(user.getId(), user.getEmail())) {
             FieldError ssoError = new FieldError("user", "email", messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "admin/user/new";
+            return "redirect:admin/user/new";
         }
 
         userService.save(user);
@@ -400,7 +413,10 @@ public class UserController {
         String subject = "Email Verification";
         String message = request.getLocalName() + "/user/verification/" + randomUUIDString;
         String mailType = "confirm";
-        sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+
+        if (user.getSendInvitation()) {
+            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+        }
 
         model.addAttribute("success", "User " + "" + " has been registered successfully");
         return "redirect:/admin/user/list";

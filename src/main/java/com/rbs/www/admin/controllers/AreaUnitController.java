@@ -40,7 +40,7 @@ public class AreaUnitController {
     public String save(@Valid AreaUnitViewModel areaUnit, BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {
-            return "admin/area/new";
+            return "redirect:/admin/area/new";
         }
 
         areaUnitService.setAreaUnitEntity(areaUnit);
@@ -64,7 +64,7 @@ public class AreaUnitController {
         model.addAttribute("id", id);
 
         if (result.hasErrors()) {
-            return "admin/area/edit";
+            return "redirect:/admin/area/edit" + areaUnit.getId();
         }
         areaUnitService.setAreaUnitEntity(areaUnit);
 

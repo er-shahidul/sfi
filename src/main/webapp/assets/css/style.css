@@ -984,6 +984,15 @@ label a {
     padding-top: 5px;
 
 }
+.content-header-admin{
+	width: 100%;
+	height: 30px;
+	background-color: #86b253;
+	text-align: center;
+}
+.container-fluid{
+	background-color: #86b253;
+}
 .content-header2{
     width: 100%;
     height: 80px;
@@ -1032,3 +1041,12 @@ textarea {
     z-index: 1044;
 }
 
+.field_width{
+	width: 430px;
+}
+
+.textarea_width{
+	width: 593px;
+}
+
+src/main/webapp/assets/fonts/glyphicons-halflings-regular.eot

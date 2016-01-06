@@ -7,9 +7,13 @@
 
 	<http auto-config="true">
         <intercept-url pattern="/login" access="permitAll" />
-        <intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
-        <intercept-url pattern="/frontend/**" access="hasAnyRole('USER','GENERAL')" />
-        <intercept-url pattern="/user/profile/**" access="hasAnyRole('ADMIN','USER','GENERAL')" />
+		<intercept-url pattern="/admin/form/**" access="hasAnyRole('ADMIN','GENERAL')" />
+		<intercept-url pattern="/admin/company/**" access="hasAnyRole('ADMIN','GENERAL')" />
+		<intercept-url pattern="/admin/dashboard" access="hasAnyRole('ADMIN','GENERAL')" />
+		<intercept-url pattern="/user/profile" access="hasAnyRole('ADMIN','USER','GENERAL')" />
+		<intercept-url pattern="/admin/user/profile" access="hasAnyRole('ADMIN','USER','GENERAL')" />
+		<intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
+		<intercept-url pattern="/frontend/**" access="hasAnyRole('USER','GENERAL')" />
         <intercept-url pattern="/sfiPpForm" access="isAuthenticated()" />
         <intercept-url pattern="/" access="permitAll" />
 

@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <section class="content-header">
+                            <section class="content-header-admin">
                                 <nav class="navbar navbar-default" role="navigation">
                                     <div class="navbar-header">
                                         <span class="navbar-brand">
@@ -87,7 +87,7 @@
                                                                     </label>
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
-                                                                        <input type="text" th:path="*{firstName}" th:field="*{firstName}" class="form-control" required="required" />
+                                                                        <input type="text" th:path="*{firstName}" th:field="*{firstName}" class="form-control field_width" required="required" />
                                                                         <errors th:text="${errorFirstName}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
@@ -98,7 +98,7 @@
                                                                     </label>
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
-                                                                        <input type="text" th:path="*{lastName}" th:field="*{lastName}" class="form-control" required="required" />
+                                                                        <input type="text" th:path="*{lastName}" th:field="*{lastName}" class="form-control field_width" required="required" />
                                                                         <errors th:path="*{lastName}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
@@ -110,7 +110,7 @@
                                                                     </label>
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
-                                                                        <input type="text" th:path="*{email}" th:field="*{email}" id="email" class="form-control" required="required" />
+                                                                        <input type="text" th:path="*{email}" th:field="*{email}" id="email" class="form-control field_width" required="required" />
                                                                         <errors th:text="${errorEmail}" class="help-inline"/>
                                                                     </div>
                                                                 </div>
@@ -136,7 +136,7 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural">
 
-                                                                        <select  th:field="*{company.id}" class="form-control">
+                                                                        <select  th:field="*{company.id}" class="form-control field_width">
                                                                             <!--<option value=""> Select a Company to Assign this User to </option>-->
                                                                             <option th:each="com : ${companies}" th:value="${com.id}" th:text="${com.name}"></option>
                                                                         </select>
@@ -154,6 +154,17 @@
                                                                     </div>
                                                                 </div>
 
+                                                                <div class="form-group" id="sonata-ba-field-container-sendInvitation">
+                                                                    <label class="control-label" style="text-align: left;">
+                                                                        Send invitation mail (When checked clicking the Update or Update and close button will send an invite)
+                                                                    </label>
+
+                                                                    <div class="sonata-ba-field sonata-ba-field-standard-natural">
+
+                                                                        <input th:class="btn-default" type="checkbox" th:field="*{sendInvitation}" id="sendInvitation" class="form-control"/>
+                                                                    </div>
+                                                                </div>
+
                                                                 <div class="form-group" id="sonata-ba-field-container-s563afbac0122b_invitation_msg">
                                                                     <label class=" control-label" style="text-align: left;">
                                                                         Welcome message (optional)
@@ -161,7 +172,7 @@
 
                                                                     <div class=" sonata-ba-field sonata-ba-field-standard-natural  ">
 
-                                                                        <textarea th:field="*{invitationMsg}" id="invitationMsg" class="form-control" rows="5"></textarea>
+                                                                        <textarea th:field="*{invitationMsg}" id="invitationMsg" class="form-control textarea_width" rows="5"></textarea>
 
                                                                     </div>
                                                                 </div>
@@ -175,7 +186,7 @@
 
                                         </div>
 
-                                        <div class="well well-small form-actions">
+                                        <div class="well-small form-actions">
                                             <!--<button class="btn btn-success" type="submit" name="btn_create_and_edit"><i class="fa fa-save"></i> Create</button>-->
                                             <button type="submit" class="btn btn-success" name="btn_create_and_list"><i class="fa fa-save"></i> <i class="fa fa-list"></i> Create and return to list</button>
                                             <!--<button class="btn btn-success" type="submit" name="btn_create_and_create"><i class="fa fa-plus-circle"></i> Create and add another</button>-->

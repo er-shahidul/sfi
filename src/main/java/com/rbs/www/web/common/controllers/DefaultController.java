@@ -18,6 +18,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -36,20 +37,23 @@ public class DefaultController {
     UserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(SecurityContextHolderAwareRequestWrapper request, ModelMap model) {
+    public String home(SecurityContextHolderAwareRequestWrapper request, ModelMap model, HttpSession session) {
         model.addAttribute("title", "home");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (auth instanceof AnonymousAuthenticationToken) return "/dashboard";
 
         if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        if (request.isUserInRole("USER")) return "redirect:/sfiPpForm";
+
         return "redirect:/sfiPpForm";
     }
 
     @RequestMapping(value = "/privacy", method = RequestMethod.GET)
     public String privacy(ModelMap model) {
         model.addAttribute("title", "privacy");
-        return "privacy";
+        return "common/privacy";
     }
 
     @RequestMapping(value = "/country/list", method = RequestMethod.GET)
