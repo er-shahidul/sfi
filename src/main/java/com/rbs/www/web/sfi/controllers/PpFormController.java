@@ -82,22 +82,14 @@ public class PpFormController {
         model.addAttribute("mode", "edit");
     }
 
-    @RequestMapping(value = "/form", method = RequestMethod.GET)
-    public String home(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
+    @RequestMapping(value = "/sfiPpForm", method = RequestMethod.GET)
+    public String form(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken)
-            return "redirect:/login";
-
+        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/";
         if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
         if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
-        if (request.isUserInRole("USER")) return "redirect:/sfiPpForm";
 
-        return "redirect:/dashboard";
-    }
-
-    @RequestMapping(value = "/sfiPpForm", method = RequestMethod.GET)
-    public String form(ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
 
