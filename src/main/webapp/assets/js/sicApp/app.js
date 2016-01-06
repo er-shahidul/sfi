@@ -33,33 +33,33 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs2FormCtrl'
                 }
             }
-        }) /*
-        .state('cs4', {
+        })
+        .state('cs3', {
             url : "/step3",
             views: {
                 editContainer : {
-                    templateUrl : '/assets/partials/form/harvest.html',
-                    controller  : 'FormHarvestCtrl'
+                    templateUrl : '/assets/partials/sicForm/edit/step3.html',
+                    controller  : 'SicCs3FormCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewHarvest,
-                    controller  : 'FormHarvestCtrl'
+                    template    : '/assets/partials/sicForm/edit/step3.html',
+                    controller  : 'SicCs3FormCtrl'
                 }
             }
         })
-        .state('cs5', {
+        .state('cs4', {
             url : "/step4",
             views: {
                 editContainer : {
-                    templateUrl : '/assets/partials/form/research-funding.html',
-                    controller  : 'FormResFundingCtrl'
+                    templateUrl : '/assets/partials/sicForm/edit/step4.html',
+                    controller  : 'SicCs4FormCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewResearchFunding,
-                    controller  : 'FormResFundingCtrl'
+                    template    : '/assets/partials/sicForm/edit/step4.html',
+                    controller  : 'SicCs4FormCtrl'
                 }
             }
-        })
+        }) /*
         .state('cs6', {
             url : "/step5",
             views: {
