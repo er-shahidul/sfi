@@ -155,12 +155,17 @@ public class CompanyController {
         User user = userService.findByUsername(getCurrentUsername());
         CompanyViewModel company = companyService.getViewModelById(user.getCompany().getId());
 
-        String companyLogo = DatatypeConverter
-                .printBase64Binary(TypeConversionUtils.toPrimitiveType(user.getCompany().getLogo()));
+        if(user.getCompany().getLogo() != null){
+            String companyLogo = DatatypeConverter
+                    .printBase64Binary(TypeConversionUtils.toPrimitiveType(user.getCompany().getLogo()));
+            model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
+        }else {
+            String companyLogo = null;
+            model.addAttribute("companyLogo", companyLogo);
+        }
 
         List<AreaUnitViewModel> areaUnities = areaUnitService.list();
         model.addAttribute("areaUnities", areaUnities);
-        model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("title", "company_setting");
         model.addAttribute("company", company);
         model.addAttribute("edit", true);
