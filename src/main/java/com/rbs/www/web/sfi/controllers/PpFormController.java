@@ -77,9 +77,13 @@ public class PpFormController {
         model.addAttribute("company", sfiPpFormData.getCompany());
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
-        model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
+        model.addAttribute("createdAt", sfiPpFormData.getCreatedAt());
+        model.addAttribute("createdBy", sfiPpFormData.getCreatedBy());
+        model.addAttribute("updateAt", sfiPpFormData.getUpdatedAt());
+        model.addAttribute("updateBy", sfiPpFormData.getUpdatedBy());
+        model.addAttribute("status", sfiPpFormData.getStatus());
 
-        model.addAttribute("mode", "edit");
+        model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
     }
 
     @RequestMapping(value = "/sfiPpForm", method = RequestMethod.GET)
@@ -94,11 +98,25 @@ public class PpFormController {
         populateFormContent(model, sfiPpFormData);
 
         model.addAttribute("days_until", getDiffDays());
-        model.addAttribute("createdAt", sfiPpFormData.getCreatedAt());
-        model.addAttribute("createdBy", sfiPpFormData.getCreatedBy());
-        model.addAttribute("updateAt", sfiPpFormData.getUpdatedAt());
-        model.addAttribute("updateBy", sfiPpFormData.getUpdatedBy());
-        model.addAttribute("status", sfiPpFormData.getStatus());
+        model.addAttribute("mode", "edit");
+
+        model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
+        return "/core/form/index";
+    }
+
+    @RequestMapping(value = "/sfiPpForm/view", method = RequestMethod.GET)
+    public String viewForm(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+
+        SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
+        populateFormContent(model, sfiPpFormData);
+
+        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("mode", "view");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/core/form/index";
