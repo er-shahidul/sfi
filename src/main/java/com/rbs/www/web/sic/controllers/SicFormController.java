@@ -27,8 +27,14 @@ public class SicFormController {
 
     private void populateFormContent(ModelMap model, SicFormData sicFormData) {
         Integer id = sicFormData.getId();
-        String companyLogo = DatatypeConverter
-                .printBase64Binary(TypeConversionUtils.toPrimitiveType(sicFormData.getCompany().getLogo()));
+        if(sicFormData.getCompany().getLogo() != null){
+            String companyLogo = DatatypeConverter
+                    .printBase64Binary(TypeConversionUtils.toPrimitiveType(sicFormData.getCompany().getLogo()));
+            model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
+        }else {
+            String companyLogo = null;
+            model.addAttribute("companyLogo", companyLogo);
+        }
 
         model.addAttribute("form", sicFormData);
         model.addAttribute("cs1", formService.getSicCs1ViewModel(id));
@@ -43,8 +49,6 @@ public class SicFormController {
         model.addAttribute("cs10", formService.getSicCs10ViewModel(id));
 
         model.addAttribute("company", sicFormData.getCompany());
-        model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
-
         model.addAttribute("mode", "edit");
     }
 
