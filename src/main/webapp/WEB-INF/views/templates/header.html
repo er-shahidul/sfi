@@ -18,6 +18,11 @@
                     Program Participant Survey
                 </a>
             </li>
+            <li>
+                <a th:href="@{/sicForm}" class="tab">
+                    SIC
+                </a>
+            </li>
         </ul>
 
         <div sec:authorize="hasAnyRole('ADMIN', 'GENERAL', 'USER')" >
