@@ -1,7 +1,6 @@
 package com.rbs.www.web.sfi.services;
 
 import com.rbs.www.common.models.BaseViewModel;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
