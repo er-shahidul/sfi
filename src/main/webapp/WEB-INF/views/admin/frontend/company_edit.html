@@ -30,7 +30,12 @@
                                     <h4>Company Logo</h4><br/>
 
                                     <div class="col-sm-2">
+                                        <div th:if="${companyLogo != null}">
                                             <img th:src="${{companyLogo}}" width="111px;" height="61px;"/>
+                                        </div>
+                                        <div th:unless="${ companyLogo }">
+                                            <img src="/assets/images/logo-placeholder.png" align="left" alt="logo-placeholder" width="111px;" height="61px;"/>
+                                        </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <input type="file" name="file" class="form-control"/>
