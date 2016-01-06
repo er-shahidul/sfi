@@ -53,8 +53,14 @@ public class PpFormController {
 
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
-        String companyLogo = DatatypeConverter
-                .printBase64Binary(TypeConversionUtils.toPrimitiveType(sfiPpFormData.getCompany().getLogo()));
+        if(sfiPpFormData.getCompany().getLogo() != null){
+            String companyLogo = DatatypeConverter
+                    .printBase64Binary(TypeConversionUtils.toPrimitiveType(sfiPpFormData.getCompany().getLogo()));
+            model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
+        }else {
+            String companyLogo = null;
+            model.addAttribute("companyLogo", companyLogo);
+        }
 
         model.addAttribute("form", sfiPpFormData);
         model.addAttribute("cs1", formService.getCs1ViewModel(id));
@@ -69,7 +75,6 @@ public class PpFormController {
         model.addAttribute("cs10", formService.getCs10ViewModel(id));
 
         model.addAttribute("company", sfiPpFormData.getCompany());
-        model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
         model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
