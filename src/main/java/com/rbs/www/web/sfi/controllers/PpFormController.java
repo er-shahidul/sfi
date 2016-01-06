@@ -86,7 +86,7 @@ public class PpFormController {
     public String form(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/";
+        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
         if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
         if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
 

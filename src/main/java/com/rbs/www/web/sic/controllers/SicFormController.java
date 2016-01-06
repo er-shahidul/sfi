@@ -5,6 +5,10 @@ import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.sic.services.*;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,7 +57,13 @@ public class SicFormController {
     }
 
     @RequestMapping(value = "/sicForm", method = RequestMethod.GET)
-    public String form(ModelMap model) {
+    public String form(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sicFormData);
 
