@@ -11,6 +11,30 @@ public class SicCs3 extends BaseEntityModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "cs3_brochure", nullable = true)
+    private Boolean brochure;
+
+    @Column(name = "cs3_other", nullable = true)
+    private Boolean other;
+
+    @Column(name = "cs3_tours", nullable = true)
+    private Boolean tours;
+
+    @Column(name = "cs3_workshop", nullable = true)
+    private Boolean workshop;
+
+    @Column(name = "cs3_brochureSpecify", nullable = true)
+    private String brochureSpecify;
+
+    @Column(name = "cs3_otherSpecify", nullable = true)
+    private String otherSpecify;
+
+    @Column(name = "cs3_toursSpecify", nullable = true)
+    private String toursSpecify;
+
+    @Column(name = "cs3_workshopSpecify", nullable = true)
+    private String workshopSpecify;
+
     @Override
     public Integer getId() {
         return id;
@@ -18,5 +42,69 @@ public class SicCs3 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getBrochure() {
+        return brochure;
+    }
+
+    public void setBrochure(Boolean brochure) {
+        this.brochure = brochure;
+    }
+
+    public Boolean getOther() {
+        return other;
+    }
+
+    public void setOther(Boolean other) {
+        this.other = other;
+    }
+
+    public Boolean getTours() {
+        return tours;
+    }
+
+    public void setTours(Boolean tours) {
+        this.tours = tours;
+    }
+
+    public Boolean getWorkshop() {
+        return workshop;
+    }
+
+    public void setWorkshop(Boolean workshop) {
+        this.workshop = workshop;
+    }
+
+    public String getBrochureSpecify() {
+        return brochureSpecify;
+    }
+
+    public void setBrochureSpecify(String brochureSpecify) {
+        this.brochureSpecify = brochureSpecify;
+    }
+
+    public String getOtherSpecify() {
+        return otherSpecify;
+    }
+
+    public void setOtherSpecify(String otherSpecify) {
+        this.otherSpecify = otherSpecify;
+    }
+
+    public String getToursSpecify() {
+        return toursSpecify;
+    }
+
+    public void setToursSpecify(String toursSpecify) {
+        this.toursSpecify = toursSpecify;
+    }
+
+    public String getWorkshopSpecify() {
+        return workshopSpecify;
+    }
+
+    public void setWorkshopSpecify(String workshopSpecify) {
+        this.workshopSpecify = workshopSpecify;
     }
 }
