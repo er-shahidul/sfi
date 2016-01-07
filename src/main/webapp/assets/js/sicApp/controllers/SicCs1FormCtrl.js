@@ -1,7 +1,7 @@
 sfiSicApp
     .controller('SicCs1FormCtrl',
-        ['$rootScope', '$scope', '$http', 'Message', '$upload', '_',
-            function ($rootScope , $scope, $http, Message, $upload, _){
+        ['$rootScope', '$scope', '$http', 'Message', '_',
+            function ($rootScope , $scope, $http, Message, _){
 
 
         $scope.cs1 = angular.copy($rootScope.form.cs1);
@@ -67,36 +67,6 @@ sfiSicApp
             }
         }
 
-        $scope.uploadFile = function(model, bucket) {
 
-            _.each(model, function(file){
-
-                $scope.upload = $upload.upload({
-                    url: '/files/upload/sic',
-                    method: 'POST',
-                    data: {},
-                    file: file
-
-                }).progress(function(evt) {
-                    console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
-                }).success(function(data, status, headers, config) {
-
-                    bucket.originalDocumentName  = data.originalName;
-                    bucket.uniqueDocumentName    = data.uniqueName;
-
-                });
-
-            });
-
-        }
-
-        $scope.saveUploadedFile = function(model, bucket){
-
-            if(model.originalDocumentName){
-                bucket.push(model);
-            }
-
-            model = {};
-        }
 
     }]);

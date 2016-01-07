@@ -1,0 +1,387 @@
+<div class="row">
+    <form name="cs5Form">
+    <div class="col-sm-12">
+
+        <!--Right Side Start
+        -------------
+        -------------------------------
+        ----------------------------------->
+        <div class="col-lg-12 passage-bold" style="padding-bottom: 30px;">
+            <div class="col-lg-8">
+                <h5>
+                    5. <span data-toggle="tooltip"
+                             title="From SIC Governance document - Inconsistent Practices Core Mission Priority. Establish protocols for addressing, investigating, and responding to SFI Standard non-conformity allegations and inconsistent practices, and allegations regarding non-program participant forest management practices.">Inconsistent Practices (Core Mission Priority)</span>
+                </h5>
+
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <p>What is the SIC’s mechanism in place to address concerns regarding Inconsistent Practices?</p>
+
+                    <div class="input-group input-large"
+                         ng-file-select ng-model="uploadFile1"
+                         ng-file-change="uploadFile(uploadFile1, mechanismDoc)"
+                         ng-multiple="false"
+                         ng-accept="'image/*,application/pdf'">
+
+                        <div class="form-control uneditable-input input-fixed input-medium">
+                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                            <span class="fileinput-filename">{{ mechanismDoc.originalDocumentName }}</span>
+                        </div>
+                        <span class="input-group-addon btn default btn-file">
+                            <span ng-hide="mechanismDoc.originalDocumentName" class="fileinput-new">Select file </span>
+                            <span ng-show="mechanismDoc.originalDocumentName" class="fileinput-exists">Change </span>
+                        </span>
+                        <a ng-click="mechanismDoc = {}; " ng-show="mechanismDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                    </div>
+                    Files can be one of the following formats: .pdf, .doc, .xls)
+                </div>
+                <div class="text-right" ng-show="mechanismDoc.originalDocumentName">
+                    <input type="submit" class="btn default" value="Upload" ng-click="mechanismDoc = saveUploadedFile(mechanismDoc, cs5.mechanismDocs)">
+                </div>
+
+                <div id="selectedItem" ng-repeat="file in cs5.mechanismDocs">{{ file.originalDocumentName }}
+                    <button ng-click="deleteByIndex($index, cs5.mechanismDocs)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="col-lg-12 passage-bold" style="padding-bottom: 20px;">
+            <div class="col-lg-10">
+                <p>What mechanism does your SIC utilize to receive inquiries?</p>
+                <ul style="list-style: none">
+                    <li class="col-lg-3">
+                        <input type="checkbox" ng-modol="cs5.receiveInquiryPhone"> Phone number
+                    </li>
+                    <li class="col-lg-3">
+                        <input type="checkbox" ng-modol="cs5.receiveInquiryWebsite"> Website contact form
+                    </li>
+                    <li class="col-lg-3">
+                        <input type="checkbox" ng-modol="cs5.receiveInquiryLetter"> Formal letter
+                    </li>
+                    <li class="col-lg-3">
+                        <input type="checkbox" ng-modol="cs5.receiveInquiryOther"> Other
+                        <br/>
+                        <br/>
+                        <span ng-show="cs5.receiveInquiryOther">
+                            <p>Please Specify:</p>
+                            <input class="form-control" type="text" ng-model="cs5.receiveInquiryOtherSpecify">
+                        </span>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="col-lg-12 passage-bold" style="padding-bottom: 30px;">
+            <div class="col-lg-10">
+                <p>Describe how your SIC advertises or communicates the inconsistent practices process:</p>
+                <ul style="list-style: none">
+                    <li class="col-lg-3">
+                        <input class="form-control" type="text" ng-model="cs5.advertisePublications"> Publications
+                    </li>
+                    <li class="col-lg-3">
+                        <input class="form-control" type="text" ng-model="cs5.advertiseWebsites">  Websites
+                    </li>
+                    <li class="col-lg-3">
+                        <input class="form-control" type="text" ng-model="cs5.advertiseBillboards"> Billboards
+                    </li>
+                    <li class="col-lg-3">
+                        <input class="form-control" type="text" ng-model="cs5.advertiseOther">  Other
+                        <br>
+                        <br>
+                        <span ng-show="cs5.advertiseOther">
+                            <p>Please Specify:</p>
+                            <input class="form-control" type="text" ng-model="cs5.advertiseOtherSpecify">
+                        </span>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="col-lg-12 passage-bold" style="padding-bottom: 30px;">
+            <div class="col-lg-8">
+                <p>Which version of the SFI Standard does your Inconsistent Practices policy reflect? (new!)</p>
+                <ul style="list-style: none">
+                    <li class="col-lg-6">
+                        <input type="radio" name="sfiStandards" ng-model="cs5.sfiStandardVersion" ng-value="1"> SFI 2015-2019 Standards and Rules
+                    </li>
+                    <li class="col-lg-6">
+                        <input type="radio" name="sfiStandards" ng-model="cs5.sfiStandardVersion" ng-value="2">  SFI 2010-2014 Standard
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-12 passage-bold" style="padding-bottom: 30px;" ng-show="cs5.sfiStandardVersion == 1">
+            <div class="col-lg-12">
+                <p>SFI 2015-2019 Forest Management Standard Objectives (Optional)</p>
+                <ng-form name="forest2015Form">
+                    <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th><p>Objective</p></th>
+                    <th colspan="2">
+                        <p style="padding-left: 15px;">Number of inconsistent practices involving SFI Participants</p>
+                        <div class="col-lg-6"><p style="padding-bottom: 8px;">Addressed & Resolved</p></div>
+                        <div class="col-lg-6"><p style="padding-bottom: 8px;">Addressed & Unresolved</p></div>
+                    </th>
+                    <th><p>Number of SFI participants with <br/> More than One Inconsistent<br/> Practice</p></th>
+                    <th><p>Edit</p></th>
+                    <th><p>Delete</p></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in cs5.forestStandards2015">
+                        <td>
+                            {{ forestObjectives[ item.objective ] }}
+                        </td>
+                        <td align="center">
+                            {{ item.resolved }}
+                        </td>
+                        <td align="center">
+                            {{ item.unresolved }}
+                        </td>
+                        <td align="center">
+                            {{ item.inconsistentPractice }}
+                        </td>
+                        <th><p class="myButton"  ng-click="editStandard($index, 'forest2015', cs5.forestStandards2015)">Edit</p></th>
+                        <th><p class="myButton"  ng-click="deleteStandard($index, cs5.forestStandards2015)">Delete</p></th>
+
+                    </tr>
+                    <tr>
+
+                        <td width="35%">
+                            <select class="form-control" ng-model="forest2015.objective" ng-required="hasData(forest2015)" customerror>
+                                <option ng-selected="!forest2015.objective">Select</option>
+                                <option ng-selected="forest2015.objective == $index" ng-repeat="objective in forestObjectives" ng-value="$index">{{ objective }}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input class="form-control" type="number" ng-required="hasData(forest2015)" name="forest2015resolved" ng-model="forest2015.resolved" customerror>
+                        </td>
+                        <td>
+                            <input class="form-control" type="number" ng-required="hasData(forest2015)" name="forest2015Unresolved" ng-model="forest2015.unresolved" customerror>
+                        </td>
+                        <td>
+                            <input class="form-control" type="number" ng-required="hasData(forest2015)" name="forest2015InconsistentPractice" ng-model="forest2015.inconsistentPractice" customerror>
+                        </td>
+                        <td colspan="2" nowrap="">
+                            <p class="myButton"  ng-click="forest2015 = addStandard('forest2015', forest2015, cs5.forestStandards2015)">+ Add Another Line</p>
+                        </td>
+
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+                </ng-form>
+            </div>
+
+        </div>
+
+        <div class="col-lg-12 passage-bold" style="padding-bottom: 30px;" ng-show="cs5.sfiStandardVersion == 1">
+            <div class="col-lg-12">
+                <p>SFI 2015-2019 Fiber Sourcing Standards (Optional)</p>
+                <ng-form name="fiber2015Form">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th><p>Objective</p></th>
+                        <th colspan="2">
+                            <p style="padding-left: 15px;">Number of inconsistent practices involving SFI Participants</p>
+                            <div class="col-lg-6"><p style="padding-bottom: 8px;">Addressed & Resolved</p></div>
+                            <div class="col-lg-6"><p style="padding-bottom: 8px;">Addressed & Unresolved</p></div>
+                        </th>
+                        <th><p>Number of SFI participants with <br/> More than One Inconsistent<br/> Practice</p></th>
+                        <th><p>Edit</p></th>
+                        <th><p>Delete</p></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in cs5.fiberSourcing2015">
+                        <td>
+                            {{ fiberObjectives[ item.objective ] }}
+                        </td>
+                        <td align="center">
+                            {{ item.resolved }}
+                        </td>
+                        <td align="center">
+                            {{ item.unresolved }}
+                        </td>
+                        <td align="center">
+                            {{ item.inconsistentPractice }}
+                        </td>
+                        <th><p class="myButton"  ng-click="editStandard($index, 'fiber2015', cs5.fiberSourcing2015)">Edit</p></th>
+                        <th><p class="myButton"  ng-click="deleteStandard($index, cs5.fiberSourcing2015)">Delete</p></th>
+
+                    </tr>
+                    <tr>
+                        <td width="35%">
+                            <select class="form-control" ng-required="hasData(fiber2015)" customerror ng-model="fiber2015.objective">
+                                <option ng-selected="!fiber2015.objective">Select</option>
+                                <option ng-selected="fiber2015.objective == $index" ng-repeat="objective in fiberObjectives" ng-value="$index">{{ objective }}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" name="forest2015resolved" ng-model="fiber2015.resolved" customerror>
+                        </td>
+                        <td>
+                            <input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" name="forest2015Unresolved" ng-model="fiber2015.unresolved" customerror>
+                        </td>
+                        <td>
+                            <input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" name="forest2015InconsistentPractice" ng-model="fiber2015.inconsistentPractice" customerror>
+                        </td>
+                        <td colspan="2" nowrap="">
+                            <p class="myButton"  ng-click="fiber2015 = addStandard('fiber2015', fiber2015, cs5.fiberSourcing2015)">+ Add Another Line</p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </ng-form>
+            </div>
+        </div>
+
+        <div class="col-lg-12 passage-bold" style="padding-bottom: 30px;" ng-show="cs5.sfiStandardVersion == 2">
+            <div class="col-lg-12">
+
+                <p>SFI 2010-2014 Standard Objectives  (Optional)</p>
+                <ng-form name="standard2010Form">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th width="35%"><p>Objective</p></th>
+                        <th colspan="2" width="40%">
+                            <p style="padding-left: 15px;">Number of inconsistent practices involving SFI Participants</p>
+                            <div class="col-lg-6"><p style="padding-bottom: 8px;">Addressed & Resolved</p></div>
+                            <div class="col-lg-6"><p style="padding-bottom: 8px;">Addressed & Unresolved</p></div>
+                        </th>
+                        <th width="25%"><p>Number of SFI participants with <br/> More than One Inconsistent<br/> Practice</p></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in cs5.standardObjectives2010">
+                        <td>
+                            {{ standardObjectives[ item.objective ] }}
+                        </td>
+                        <td align="center">
+                            {{ item.resolved }}
+                        </td>
+                        <td align="center">
+                            {{ item.unresolved }}
+                        </td>
+                        <td align="center">
+                            {{ item.inconsistentPractice }}
+                            <p class="myButton"  ng-click="editStandard($index, 'standard2010', cs5.standardObjectives2010)">Edit</p>
+                            <p class="myButton"  ng-click="deleteStandard($index, cs5.standardObjectives2010)">Delete</p>
+                            <p>
+                                {{ item.circumstanceDescription }}
+                            </p>
+                            <div id="selectedItem" ng-show="item.circumstancesDoc.originalDocumentName">{{ item.circumstancesDoc.originalDocumentName }}</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="35%" ng-init="standard2010.circumstancesDoc = standard2010.circumstancesDoc || {}">
+                            <select class="form-control" ng-model="standard2010.objective" ng-required="hasData(standard2010)" customerror>
+                                <option ng-selected="!standard2010.objective">Select</option>
+                                <option ng-selected="standard2010.objective == $index" ng-repeat="objective in standardObjectives" ng-value="$index">{{ objective }}</option>
+                            </select>
+                        </td>
+                        <td width="20%">
+                            <input class="form-control" style="width:150px;" ng-required="hasData(standard2010)" customerror type="number" name="forest2015resolved" ng-model="standard2010.resolved" customerror>
+                        </td>
+                        <td width="20%">
+                            <input class="form-control" style="width:150px;" ng-required="hasData(standard2010)" customerror type="number" name="forest2015Unresolved" ng-model="standard2010.unresolved" customerror>
+                        </td>
+                        <td width="25%">
+                            <input class="form-control" type="number" ng-required="hasData(standard2010)" customerror name="forest2015InconsistentPractice" ng-model="standard2010.inconsistentPractice" customerror>
+
+                            <p class="myButton"  ng-hide="standard2010.objective" ng-click="standard2010 = addStandard('standard2010', standard2010, cs5.standardObjectives2010)">+ Add Another Line</p>
+                        </td>
+
+                    </tr>
+                    <tr ng-show="standard2010.objective">
+                        <td colspan="2"></td>
+                        <td colspan="2">
+                            <p>Describe circumstances (without names) for each unresolved inconsistent practices claim,
+                                status, and plans to resolve:
+                            </p>
+                            <textarea ng-model="standard2010.circumstanceDescription" class="form-control" rows="2" cols="54"></textarea>
+                            <br/>
+
+                            <div class="fileinput fileinput-new" data-provides="fileinput" style="width:90%">
+                                <div class="input-group input-large"
+                                     ng-file-select ng-model="uploadFile3"
+                                     ng-file-change="uploadFile(uploadFile3, standardDoc)"
+                                     ng-multiple="false"
+                                     ng-accept="'image/*,application/pdf'">
+
+                                    <div class="form-control uneditable-input input-fixed input-medium">
+                                        <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                        <span class="fileinput-filename">{{ standardDoc.originalDocumentName }}</span>
+                                    </div>
+                                    <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="standardDoc.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-show="standardDoc.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+                                    <a ng-click="standardDoc = {}; " ng-show="standardDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                                </div>
+                                Files can be one of the following formats: .pdf, .doc, .xls)
+                            </div>
+                            <div class="text-right" ng-show="standardDoc.originalDocumentName">
+                                <input type="submit" class="btn default" value="Upload" ng-click="standardDoc = saveUploadedFile(standardDoc, standard2010.circumstancesDoc, true)">
+                            </div>
+
+
+                            <div id="selectedItem" ng-show="standard2010.circumstancesDoc.originalDocumentName">{{ standard2010.circumstancesDoc.originalDocumentName }}
+                                <button ng-click="standard2010.circumstancesDoc = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            </div>
+                            <br/>
+                            <p class="myButton pull-right"  ng-click="standard2010 = addStandard('standard2010', standard2010, cs5.standardObjectives2010)">+ Add Another Line</p>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                </ng-form>
+            </div>
+        </div>
+
+        <div class="col-lg-12 passage-bold" style="padding-bottom: 30px;">
+            <div class="col-lg-8">
+                <p>Provide aggregate reporting information (no names) on inconsistent practices below.</p>
+
+                <div style="padding-left: 30px;">
+
+                    <label style="padding-bottom: 20px;">
+                        <p>
+                            Total number of inquiries received last yeat - valid or not, SFI & non-SFI
+                        </p>
+                        <input class="form-control" style="width: 200px;" ng-model="cs5.totalInquiriesReceived" type="number" customerror>
+                    </label>
+
+                    <label style="padding-bottom: 20px;">
+                        <p>
+                            Of the total number of inconsistent practices reported above, how many were SFI-specific?
+                        </p>
+                        <input class="form-control" style="width: 200px;" ng-model="cs5.totalInconsistentPractices" type="number" customerror>
+
+                        <div class="error-box" ng-hide="cs5.totalInconsistentPractices == getTotalInquiriesReceived()">
+                            This number must equal the total number of inconsistent practices involving SFI <br/>
+                            participants both; addressed & resolved, and addressed & unresolved
+                        </div>
+                    </label>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
+            <button type="button" class="btn btn-success" ng>Save</button>
+            <button type="button" class="btn btn-success">Save and Go to Step 6</button>
+        </div>
+    </div>
+    </form>
+</div>

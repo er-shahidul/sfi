@@ -59,21 +59,21 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs4FormCtrl'
                 }
             }
-        }) /*
-        .state('cs6', {
+        })
+        .state('cs5', {
             url : "/step5",
             views: {
                 editContainer : {
-                    templateUrl : '/assets/partials/form/raw-material.html',
-                    controller  : 'FormRawMaterialCtrl'
+                    templateUrl : '/assets/partials/sicForm/edit/step5.html',
+                    controller  : 'SicCs5FormCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewRawMaterial,
-                    controller  : 'FormRawMaterialCtrl'
+                    template    : '/assets/partials/sicForm/edit/step5.html',
+                    controller  : 'SicCs5FormCtrl'
                 }
             }
         })
-
+        /*
         .state('cs3', {
             url : "/step6",
             views: {
@@ -758,7 +758,48 @@ sfiSicApp.run(['$rootScope', '_', function($rootScope, _) {
 
 }]);
 
-sfiSicApp.run(['$rootScope', '_', function($rootScope, _) {
+sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
 
+        $rootScope.uploadFile = function(model, bucket) {
+
+            _.each(model, function(file){
+
+                $rootScope.upload = $upload.upload({
+                    url: '/files/upload/sic',
+                    method: 'POST',
+                    data: {},
+                    file: file
+
+                }).progress(function(evt) {
+                    console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
+                }).success(function(data, status, headers, config) {
+
+                    bucket.originalDocumentName  = data.originalName;
+                    bucket.uniqueDocumentName    = data.uniqueName;
+
+                });
+
+            });
+
+        }
+
+        $rootScope.saveUploadedFile = function(model, bucket, singleMode){
+
+            if(model.originalDocumentName){
+
+                if(singleMode){
+
+
+                    bucket.originalDocumentName = model.originalDocumentName;
+                    bucket.uniqueDocumentName   = model.uniqueDocumentName;
+
+                }else{
+                    bucket.push(model);
+                }
+
+            }
+                console.log(model, bucket, singleMode);
+            return {};
+        }
 
 }]);

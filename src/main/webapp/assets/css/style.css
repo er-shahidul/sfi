@@ -383,6 +383,11 @@ button {
     display: block;
 }
 
+.error-box {
+    color: #da4453!important;
+    border-color:#da4453;
+    display: block;
+}
 
 
 
@@ -1049,4 +1054,6 @@ textarea {
 	width: 593px;
 }
 
-src/main/webapp/assets/fonts/glyphicons-halflings-regular.eot
+.myButton {
+text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
+}

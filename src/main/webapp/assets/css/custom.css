@@ -323,3 +323,8 @@ label a {
 .section6 div.active{
     background-color: #C96844;
 }
+
+
+.myButton {
+text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
+}

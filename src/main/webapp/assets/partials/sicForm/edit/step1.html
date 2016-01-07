@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="text-right" ng-show="guideFile.originalDocumentName">
-                    <input type="submit" class="btn default" value="Upload" ng-click="saveUploadedFile(guideFile, cs1.guideFiles)">
+                    <input type="submit" class="btn default" value="Upload" ng-click="guideFile = saveUploadedFile(guideFile, cs1.guideFiles)">
                 </div>
 
                 <div id="selectedItem" ng-repeat="file in cs1.guideFiles">{{ file.originalDocumentName }}
@@ -129,7 +129,7 @@
                     Files can be one of the following formats: .pdf, .doc, .xls)
                 </div>
                 <div class="text-right" ng-show="contactFile.originalDocumentName">
-                    <input type="submit" class="btn default" value="Upload" ng-click="saveUploadedFile(contactFile, cs1.contactFiles)">
+                    <input type="submit" class="btn default" value="Upload" ng-click="contactFile = saveUploadedFile(contactFile, cs1.contactFiles)">
                 </div>
 
                 <div id="selectedItem" ng-repeat="file in cs1.contactFiles">{{ file.originalDocumentName }}
