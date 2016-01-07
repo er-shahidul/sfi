@@ -2,6 +2,7 @@ package com.rbs.www.web.sic.services;
 
 import com.rbs.www.common.mapper.EntityModelMapperService;
 import com.rbs.www.common.mapper.ViewModelMapperService;
+import com.rbs.www.web.common.services.ModelValidationService;
 import com.rbs.www.web.sic.models.entities.*;
 import com.rbs.www.web.sic.models.viewmodels.*;
 import com.rbs.www.web.sic.repositories.*;
@@ -49,6 +50,9 @@ public class SicFormService {
 
     @Autowired
     private EntityModelMapperService entityModelMapperService;
+
+    @Autowired
+    private ModelValidationService modelValidationService;
 
     /************************* SicCs1 : Begin *************************/
     public SicCs1ViewModel getSicCs1ViewModel(Integer id) {
@@ -161,4 +165,23 @@ public class SicFormService {
         SicCs10 entity = entityModelMapperService.convert(model, SicCs10.class);
     }
     /************************* SicCs9 : End ***********************/
+
+    /************************* ErrorViewModel : Begin ***********************/
+    public ErrorViewModel getErrorViewModel(Integer id) {
+        ErrorViewModel model = new ErrorViewModel();
+
+        model.setSicCs1Errors(modelValidationService.validate(this.getSicCs1ViewModel(id)));
+        model.setSicCs2Errors(modelValidationService.validate(this.getSicCs2ViewModel(id)));
+        model.setSicCs3Errors(modelValidationService.validate(this.getSicCs3ViewModel(id)));
+        model.setSicCs4Errors(modelValidationService.validate(this.getSicCs4ViewModel(id)));
+        model.setSicCs5Errors(modelValidationService.validate(this.getSicCs5ViewModel(id)));
+        model.setSicCs6Errors(modelValidationService.validate(this.getSicCs6ViewModel(id)));
+        model.setSicCs7Errors(modelValidationService.validate(this.getSicCs7ViewModel(id)));
+        model.setSicCs8Errors(modelValidationService.validate(this.getSicCs8ViewModel(id)));
+        model.setSicCs9Errors(modelValidationService.validate(this.getSicCs9ViewModel(id)));
+        model.setSicCs10Errors(modelValidationService.validate(this.getSicCs10ViewModel(id)));
+
+        return model;
+    }
+    /************************ ErrorViewModel : End ***********************/
 }
