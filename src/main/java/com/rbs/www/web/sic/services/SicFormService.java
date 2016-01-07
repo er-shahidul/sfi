@@ -115,6 +115,7 @@ public class SicFormService {
     }
 
     public void setSicCs5Entity(SicCs5ViewModel model) {
+        sicCs5Service.manualPopulation(model);
         SicCs5 entity = entityModelMapperService.convert(model, SicCs5.class);
         sicFormDataService.setAuditInfo(model.getId(), pending);
     }
