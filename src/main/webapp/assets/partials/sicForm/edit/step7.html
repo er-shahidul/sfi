@@ -1,0 +1,187 @@
+<div class="row">
+    <form name="cs7Form">
+    <div class="col-sm-12">
+
+        <!--Right Side Start
+        -------------
+        -------------------------------
+        ----------------------------------->
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+
+                <h5>
+                    7. Best Management Practices for Water Quality
+                </h5>
+                <div style="padding-left: 10px;">
+                    <p>
+                        Does your state/provincial forest agency monitor voluntary compliance with BMP's?
+                    </p>
+                    <label>
+                        <input type="radio" name="monitorBMPCompliance" ng-value="true" ng-model="cs7.monitorBMPCompliance"> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="monitorBMPCompliance" ng-value="false" ng-model="cs7.monitorBMPCompliance"> No
+                    </label>
+
+                    <div style="padding-top: 10px;" ng-show="cs7.monitorBMPCompliance == false">
+                        <p>
+                            How is compliance with BMPs monitored or evaluated in your state/province?
+                        </p>
+                        <textarea class="form-control" cols="76" rows="3" ng-model="cs7.monitoringBMPDetails"></textarea>
+
+                    </div>
+                    <div style="padding-top: 10px;" ng-show="cs7.monitorBMPCompliance == true">
+                        <p>Please provide the most current overall figure on the rate of compliance for BMPs</p>
+                        <div style="text-align: center;" >
+                            <label class="form-inline">
+                                % compliance
+                                <input name="bmpComplianceRate" ng-model="cs7.bmpComplianceRate"
+                                       class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                       pattern-msg="Enter decimal number up to 2 precision points" customerror>
+                            </label>
+                            <br>
+                            <label class="form-inline" style="padding-left: 11px;">
+                                Year/period
+                                <input name="bmpCompliancePeriod" ng-model="cs7.bmpCompliancePeriod"
+                                       class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                       pattern-msg="Enter decimal number up to 2 precision points" customerror>
+                            </label>
+                        </div>
+                    </div>
+                    <div style="padding-top: 20px;" ng-show="cs7.monitorBMPCompliance == true">
+                        <p>If available, please send a copy of the state/provincial BMP report on compliance.</p>
+
+                        <div class="fileinput fileinput-new" data-provides="fileinput" style="width:90%">
+                            <div class="input-group input-large"
+                                 ng-file-select ng-model="fileModel"
+                                 ng-file-change="uploadFile(fileModel, bmpReportDoc)"
+                                 ng-multiple="false"
+                                 ng-accept="'image/*,application/pdf'">
+
+                                <div class="form-control uneditable-input input-fixed input-medium">
+                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                    <span class="fileinput-filename">{{ bmpReportDoc.originalDocumentName }}</span>
+                                </div>
+                                    <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="bmpReportDoc.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-show="bmpReportDoc.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+                                <a ng-click="bmpReportDoc = {}; " ng-show="bmpReportDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                            </div>
+                            Files can be one of the following formats: .pdf, .doc, .xls)
+                        </div>
+                        <div class="text-right" ng-show="bmpReportDoc.originalDocumentName">
+                            <input type="submit" class="btn default" value="Upload" ng-click="bmpReportDoc = saveUploadedFile(bmpReportDoc, cs7.bmpReportDoc, true)">
+                        </div>
+
+
+                        <div id="selectedItem" ng-show="cs7.bmpReportDoc.originalDocumentName">{{ cs7.bmpReportDoc.originalDocumentName }}
+                            <button ng-click="cs7.bmpReportDoc = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        </div>
+                        <br/>
+
+
+                        <p style="text-align: right;padding-top: 30px; text-decoration: underline;">+ Add Another Line</p>
+
+                    </div>
+                </div>
+
+
+                <div style="padding-left: 10px;">
+                    <p style="padding-top: 30px;">
+                        In addition, does this SIC recognized logger training program have the added designation of being a “certified logging professional” program, as defined in the SFI 2015 - 2019 Standards and Rules, Section 13? (new!)
+                    </p>
+                    <label>
+                        <input type="radio" name="sicProgramCertifiedDesignation" ng-model="cs7.sicProgramCertifiedDesignation" ng-value="true"> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="sicProgramCertifiedDesignation" ng-model="cs7.sicProgramCertifiedDesignation" ng-value="false"> No
+                    </label>
+                </div>
+                <div style="padding-top: 20px; padding-left: 10px;" ng-show="cs7.sicProgramCertifiedDesignation">
+                    <p>Please provide the most current rate of BMP compliance on lands certified to the SFI Forest Management Standard (Optional) (new!)</p>
+                    <div>
+                        <label class="form-inline">
+                            % compliance
+                            <input name="sfiForestManagementBmpRate" ng-model="cs7.sfiForestManagementBmpRate"
+                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror>
+                        </label>
+                        <br>
+                        <label class="form-inline" style="padding-left: 13px;">
+                            Year/period
+                            <input name="sfiForestManagementBmpPeriod" ng-model="cs7.sfiForestManagementBmpPeriod"
+                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror>
+                        </label>
+                        <br>
+                        <label class="form-inline" style="padding-left: 37px;">
+                            Source
+                            <input style="width: 450px;" class="form-control" type="text" ng-model="cs7.sfiForestManagementBmpSource">
+                        </label>
+                    </div>
+                </div>
+                <div style="padding-top: 20px; padding-left: 10px;" ng-show="cs7.sicProgramCertifiedDesignation">
+                    <p>Please provide the most current rate of BMP compliance on lands that provide fiber through the SFI Fiber Sourcing Standard. (Optional) (new!)</p>
+                    <div>
+                        <label class="form-inline">
+                            % compliance
+                            <input name="sfiFiberSourcingBmpRate" ng-model="cs7.sfiFiberSourcingBmpRate"
+                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror>
+                        </label>
+                        <br>
+                        <label class="form-inline" style="padding-left: 13px;">
+                            Year/period
+                            <input name="sfiFiberSourcingBmpPeriod" ng-model="cs7.sfiFiberSourcingBmpPeriod"
+                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror>
+                        </label>
+                        <br>
+                        <label class="form-inline" style="padding-left: 37px;">
+                            Source
+                            <input style="width: 450px;" class="form-control" type="text" ng-model="cs7.sfiFiberSourcingBmpSource">
+                        </label>
+                    </div>
+                </div>
+                <div style="padding-top: 20px; padding-left: 10px;" ng-show="cs7.sicProgramCertifiedDesignation">
+                    <p>
+                        Please provide the most current rate of BMP compliance on non-certified lands and lands that do not provide fiber
+                        through the SFI Fiber Sourcing Standard. (Optional) (new!)
+                    </p>
+                    <div>
+                        <label class="form-inline">
+                            % compliance
+                            <input name="sfiNonCertifiedBmpRate" ng-model="cs7.sfiNonCertifiedBmpRate"
+                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror>
+                        </label>
+                        <br>
+                        <label class="form-inline" style="padding-left: 13px;">
+                            Year/period
+                            <input name="sfiNonCertifiedBmpPeriod" ng-model="cs7.sfiNonCertifiedBmpPeriod"
+                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror>
+                        </label>
+                        <br>
+                        <label class="form-inline" style="padding-left: 37px;">
+                            Source
+                            <input style="width: 450px;" class="form-control" type="text" ng-model="cs7.sfiNonCertifiedBmpSource">
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <div class="col-lg-4" style="text-align: right">
+                <img src="/assets/images/u80.png" style="width: 250px;">
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
+            <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
+            <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 8</button>
+        </div>
+    </div>
+    </form>
+</div>

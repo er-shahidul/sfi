@@ -7,7 +7,7 @@ sfiSicApp
         cs5 = $scope;
 
         $scope.mechanismDoc = {}
-        $scope.cs5.mechanismDocs = $scope.cs5.mechanismDocs || [];
+        $scope.cs5.mechanismDocs = $scope.cs5.mechanismDocs || {};
 
         $scope.editIndex  = {};
 

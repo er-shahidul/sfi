@@ -35,11 +35,11 @@
                     Files can be one of the following formats: .pdf, .doc, .xls)
                 </div>
                 <div class="text-right" ng-show="mechanismDoc.originalDocumentName">
-                    <input type="submit" class="btn default" value="Upload" ng-click="mechanismDoc = saveUploadedFile(mechanismDoc, cs5.mechanismDocs)">
+                    <input type="submit" class="btn default" value="Upload" ng-click="mechanismDoc = saveUploadedFile(mechanismDoc, cs5.mechanismDocs, true)">
                 </div>
 
-                <div id="selectedItem" ng-repeat="file in cs5.mechanismDocs">{{ file.originalDocumentName }}
-                    <button ng-click="deleteByIndex($index, cs5.mechanismDocs)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                <div id="selectedItem" ng-show="cs5.mechanismDocs.originalDocumentName">{{ cs5.mechanismDocs.originalDocumentName }}
+                    <button ng-click="cs5.mechanismDocs = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                 </div>
             </div>
             <br>
