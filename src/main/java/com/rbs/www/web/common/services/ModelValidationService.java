@@ -1,4 +1,4 @@
-package com.rbs.www.web.sfi.services;
+package com.rbs.www.web.common.services;
 
 import com.rbs.www.common.models.BaseViewModel;
 import org.springframework.stereotype.Service;
