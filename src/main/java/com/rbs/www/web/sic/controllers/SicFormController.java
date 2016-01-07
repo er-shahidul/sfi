@@ -5,6 +5,7 @@ import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.sic.services.*;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,6 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.xml.bind.DatatypeConverter;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Objects;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
@@ -29,6 +37,9 @@ public class SicFormController {
 
     @Autowired
     SicFormDataService sicFormDataService;
+
+    @Autowired
+    private MessageSource messageSource;
 
     private void populateFormContent(ModelMap model, SicFormData sicFormData) {
         Integer id = sicFormData.getId();
@@ -50,11 +61,32 @@ public class SicFormController {
         model.addAttribute("cs10", formService.getSicCs10ViewModel(id));
 
         model.addAttribute("company", sicFormData.getCompany());
-        model.addAttribute("mode", "edit");
     }
 
     @RequestMapping(value = "/sicForm", method = RequestMethod.GET)
-    public String form(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
+    public String form(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+
+        SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
+        if (request.isUserInRole("USER")
+                && Objects.equals(sicFormData.getStatus().getStatus(), "submitted")) {
+            return "redirect:/sicForm/view";
+        }
+
+        populateFormContent(model, sicFormData);
+        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("mode", "edit");
+
+        model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
+        return "/web/sic/index";
+    }
+
+    @RequestMapping(value = "/sicForm/view", method = RequestMethod.GET)
+    public String viewForm(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
@@ -63,8 +95,22 @@ public class SicFormController {
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sicFormData);
+        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("mode", "view");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/web/sic/index";
+    }
+
+    private long getDiffDays() throws ParseException {
+        String dateStart = messageSource.getMessage("startDate", new String[]{}, Locale.getDefault());
+        DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+        Date dateE = new Date();
+        String dateStop = format.format(dateE);
+
+        Date d1 = format.parse(dateStop);
+        Date d2 = format.parse(dateStart);
+        long diff = d2.getTime() - d1.getTime();
+        return diff / (24 * 60 * 60 * 1000);
     }
 }
