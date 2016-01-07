@@ -20,6 +20,7 @@ import static com.rbs.www.common.util.Util.getCurrentUsername;
 
 @Controller
 public class SicFormController {
+
     @Autowired
     UserService userService;
 
@@ -31,14 +32,10 @@ public class SicFormController {
 
     private void populateFormContent(ModelMap model, SicFormData sicFormData) {
         Integer id = sicFormData.getId();
-        if(sicFormData.getCompany().getLogo() != null){
-            String companyLogo = DatatypeConverter
-                    .printBase64Binary(TypeConversionUtils.toPrimitiveType(sicFormData.getCompany().getLogo()));
-            model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
-        }else {
-            String companyLogo = null;
-            model.addAttribute("companyLogo", companyLogo);
-        }
+
+        String companyLogo = TypeConversionUtils.toBase64Binary(sicFormData.getCompany().getLogo());
+        if (companyLogo != null) companyLogo = "data:image/jpeg;base64," + companyLogo;
+        model.addAttribute("companyLogo", companyLogo);
 
         model.addAttribute("form", sicFormData);
         model.addAttribute("cs1", formService.getSicCs1ViewModel(id));

@@ -54,14 +54,10 @@ public class PpFormController {
 
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
-        if(sfiPpFormData.getCompany().getLogo() != null){
-            String companyLogo = DatatypeConverter
-                    .printBase64Binary(TypeConversionUtils.toPrimitiveType(sfiPpFormData.getCompany().getLogo()));
-            model.addAttribute("companyLogo", "data:image/jpeg;base64," + companyLogo);
-        }else {
-            String companyLogo = null;
-            model.addAttribute("companyLogo", companyLogo);
-        }
+
+        String companyLogo = TypeConversionUtils.toBase64Binary(sfiPpFormData.getCompany().getLogo());
+        if (companyLogo != null) companyLogo = "data:image/jpeg;base64," + companyLogo;
+        model.addAttribute("companyLogo", companyLogo);
 
         model.addAttribute("form", sfiPpFormData);
         model.addAttribute("cs1", formService.getCs1ViewModel(id));
@@ -96,7 +92,9 @@ public class PpFormController {
         if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
 
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
-        if (request.isUserInRole("USER") && Objects.equals(sfiPpFormData.getStatus().getStatus(), "submitted") && sfiPpFormData.getIsComplete()){
+        if (request.isUserInRole("USER")
+                && Objects.equals(sfiPpFormData.getStatus().getStatus(), "submitted")
+                && sfiPpFormData.getIsComplete()) {
             return "redirect:/sfiPpForm/view";
         }
 

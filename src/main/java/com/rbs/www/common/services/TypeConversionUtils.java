@@ -1,5 +1,7 @@
 package com.rbs.www.common.services;
 
+import javax.xml.bind.DatatypeConverter;
+
 public class TypeConversionUtils {
     public static byte[] toPrimitiveType(final Byte[] array) {
         if (array == null || array.length == 0) {
@@ -23,5 +25,10 @@ public class TypeConversionUtils {
             result[i] = array[i];
 
         return result;
+    }
+
+    public static String toBase64Binary(final Byte[] array) {
+        if (array == null) return null;
+        return DatatypeConverter.printBase64Binary(TypeConversionUtils.toPrimitiveType(array));
     }
 }
