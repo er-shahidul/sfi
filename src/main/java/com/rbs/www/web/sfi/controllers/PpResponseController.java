@@ -28,7 +28,7 @@ public class PpResponseController {
 
     private String submitted = "submitted";
 
-    @RequestMapping(value = "/form/submit/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/pp/form/submit/{id}", method = RequestMethod.GET)
     public ResponseEntity<String> formSubmit( @PathVariable Integer id, ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.getPpForm(id);
 
