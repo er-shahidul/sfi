@@ -25,7 +25,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Objects;
+//import java.util.Objects;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
@@ -92,11 +92,11 @@ public class PpFormController {
         if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
 
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
-        if (request.isUserInRole("USER")
-                && Objects.equals(sfiPpFormData.getStatus().getStatus(), "submitted")
-                && sfiPpFormData.getIsComplete()) {
-            return "redirect:/sfiPpForm/view";
-        }
+//        if (request.isUserInRole("USER")
+//                && Objects.equals(sfiPpFormData.getStatus().getStatus(), "submitted")
+//                && sfiPpFormData.getIsComplete()) {
+//            return "redirect:/sfiPpForm/view";
+//        }
 
         populateFormContent(model, sfiPpFormData);
 

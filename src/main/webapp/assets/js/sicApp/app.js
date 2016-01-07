@@ -73,20 +73,20 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                 }
             }
         })
-        /*
-        .state('cs3', {
+
+        .state('cs6', {
             url : "/step6",
             views: {
                 editContainer : {
-                    templateUrl : '/assets/partials/form/partnership.html',
-                    controller  : 'FormPartnershipCtrl'
+                    templateUrl : '/assets/partials/sicForm/edit/step6.html',
+                    controller  : 'SicCs6FormCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewPartnership,
-                    controller  : 'FormPartnershipCtrl'
+                    template    : '/assets/partials/sicForm/edit/step6.html',
+                    controller  : 'SicCs6FormCtrl'
                 }
             }
-        })
+        })/*
         .state('cs7', {
             url : "/step7",
             views: {
