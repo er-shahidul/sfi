@@ -15,16 +15,13 @@ import java.util.*;
 public class Util {
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public static Date getCurrentDate() {
-        return Calendar.getInstance().getTime();
-    }
+    public static Date getCurrentDate() { return Calendar.getInstance().getTime(); }
 
     public static String getCurrentUsername() {
-        Object principal = SecurityContextHolder.getContext()
-                .getAuthentication().getPrincipal();
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = null;
         if (principal instanceof UserDetails) {
-            username = ((UserDetails) principal).getUsername();
+            username = ((UserDetails)principal).getUsername();
         } else {
             username = principal.toString();
         }
