@@ -14,6 +14,9 @@ import javax.transaction.Transactional;
 @Service
 @Transactional
 public class SicFormService {
+
+    private final String pending = "pending";
+
     @Autowired
     private SicFormDataService sicFormDataService;
 
@@ -56,7 +59,6 @@ public class SicFormService {
     @Autowired
     private ModelValidationService modelValidationService;
 
-    private String pending = "pending";
 
     /************************* SicCs1 : Begin *************************/
     public SicCs1ViewModel getSicCs1ViewModel(Integer id) {

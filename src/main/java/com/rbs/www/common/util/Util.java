@@ -1,13 +1,19 @@
 package com.rbs.www.common.util;
 
+import org.springframework.context.MessageSource;
+import org.springframework.security.core.SpringSecurityMessageSource;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.IOException;
-import java.lang.reflect.Method;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import java.util.*;
 
 public class Util {
@@ -36,5 +42,15 @@ public class Util {
         } catch (JsonProcessingException ex) {
             return null;
         }
+    }
+
+    public static long getDiffDays() throws ParseException {
+        Date currentDate = new Date();
+
+        String endDateString = new SpringSecurityMessageSource().getMessage("endDate", new String[]{}, Locale.getDefault());
+        Date endDate = new SimpleDateFormat("MM/DD/YYYY").parse(endDateString);
+
+        long diff = endDate.getTime() - currentDate.getTime();
+        return diff / (24 * 60 * 60 * 1000);
     }
 }

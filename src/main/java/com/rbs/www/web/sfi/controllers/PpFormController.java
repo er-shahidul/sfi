@@ -2,12 +2,12 @@ package com.rbs.www.web.sfi.controllers;
 
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,16 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.xml.bind.DatatypeConverter;
-
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-//import java.util.Objects;
-
-import static com.rbs.www.common.util.Util.getCurrentUsername;
 
 @Controller
 public class PpFormController {
@@ -48,9 +39,6 @@ public class PpFormController {
 
     @Autowired
     SfiPpFormCs3ProjectStandardObjectiveService sfiPpFormCs3ProjectStandardObjectiveService;
-
-    @Autowired
-    private MessageSource messageSource;
 
     private void populateFormContent(ModelMap model, SfiPpFormData sfiPpFormData) {
         Integer id = sfiPpFormData.getId();
@@ -91,19 +79,12 @@ public class PpFormController {
         if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
         if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
 
-        SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
-//        if (request.isUserInRole("USER")
-//                && Objects.equals(sfiPpFormData.getStatus().getStatus(), "submitted")
-//                && sfiPpFormData.getIsComplete()) {
-//            return "redirect:/sfiPpForm/view";
-//        }
+        populateFormContent(model, sfiPpFormDataService.createOrGetByCurrentUsersCompany());
 
-        populateFormContent(model, sfiPpFormData);
-
-        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays());
         model.addAttribute("mode", "edit");
+        model.addAttribute("user", userService.findByUsername(Util.getCurrentUsername()));
 
-        model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/core/form/index";
     }
 
@@ -118,30 +99,18 @@ public class PpFormController {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
 
-        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays());
         model.addAttribute("mode", "view");
 
-        model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
+        model.addAttribute("user", userService.findByUsername(Util.getCurrentUsername()));
         return "/core/form/index";
-    }
-
-    private long getDiffDays() throws ParseException {
-        String dateStart = messageSource.getMessage("startDate", new String[]{}, Locale.getDefault());
-        DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
-        Date dateE = new Date();
-        String dateStop = format.format(dateE);
-
-        Date d1 = format.parse(dateStop);
-        Date d2 = format.parse(dateStart);
-        long diff = d2.getTime() - d1.getTime();
-        return diff / (24 * 60 * 60 * 1000);
     }
 
     @RequestMapping(value = "/admin/company/pp/form/{id}", method = RequestMethod.GET)
     public String adminSfiFormEdit(@PathVariable Integer id, ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.get(id);
         populateFormContent(model, sfiPpFormData);
-        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays());
         model.addAttribute("mode", "edit");
 
         return "/core/form/index";
@@ -151,7 +120,7 @@ public class PpFormController {
     public String adminSfiFormView(@PathVariable Integer id, ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.get(id);
         populateFormContent(model, sfiPpFormData);
-        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays());
         model.addAttribute("mode", "view");
 
         return "/core/form/index";

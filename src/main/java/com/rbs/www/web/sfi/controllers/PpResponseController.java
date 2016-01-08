@@ -5,7 +5,6 @@ import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import com.rbs.www.web.sfi.models.viewmodels.*;
 import com.rbs.www.web.sfi.services.FormService;
 import com.rbs.www.web.sfi.services.SfiPpFormDataService;
-//import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +19,14 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 public class PpResponseController {
 
+    private final String submitted = "submitted";
+
     @Autowired
     private FormService formService;
 
     @Autowired
     SfiPpFormDataService sfiPpFormDataService;
 
-    private String submitted = "submitted";
 
     @RequestMapping(value = "/pp/form/submit/{id}", method = RequestMethod.GET)
     public ResponseEntity<String> formSubmit( @PathVariable Integer id, ModelMap model) throws ParseException {

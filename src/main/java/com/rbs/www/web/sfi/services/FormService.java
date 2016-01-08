@@ -15,6 +15,9 @@ import java.util.List;
 @Service
 @Transactional
 public class FormService {
+
+    private String pending = "pending";
+
     @Autowired
     private SfiPpFormDataService sfiPpFormDataService;
 
@@ -61,9 +64,6 @@ public class FormService {
     private SfiPpFormResearchTypeService sfiPpFormResearchTypeService;
 
     @Autowired
-    private SfiPpFormCs3ProjectSupportDocsService sfiPpFormCs3ProjectSupportDocsService;
-
-    @Autowired
     private ViewModelMapperService viewModelMapperService;
 
     @Autowired
@@ -72,47 +72,6 @@ public class FormService {
     @Autowired
     private ModelValidationService modelValidationService;
 
-    private String pending = "pending";
-
-//    public PpFormViewModel formSubmit(Integer id) {
-//        SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
-//
-//        Cs1ViewModel   cs1ViewModel = getCs1ViewModel(sfiPpFormData.getId());
-//
-//        SfiPpFormDataViewModel   sfiPpFormDataViewModel = getSfiPpFormDataViewModel(sfiPpFormData.getId());
-//        Cs2ViewModel   cs2ViewModel = getCs2ViewModel(sfiPpFormData.getId());
-//        Cs3ViewModel   cs3ViewModel = getCs3ViewModel(sfiPpFormData.getId());
-//        Cs4ViewModel   cs4ViewModel = getCs4ViewModel(sfiPpFormData.getId());
-//        Cs5ViewModel   cs5ViewModel = getCs5ViewModel(sfiPpFormData.getId());
-//        Cs6ViewModel   cs6ViewModel = getCs6ViewModel(sfiPpFormData.getId());
-//        Cs7ViewModel   cs7ViewModel = getCs7ViewModel(sfiPpFormData.getId());
-//        Cs8ViewModel   cs8ViewModel = getCs8ViewModel(sfiPpFormData.getId());
-//        Cs9ViewModel   cs9ViewModel = getCs9ViewModel(sfiPpFormData.getId());
-//        Cs10ViewModel cs10ViewModel = getCs10ViewModel(sfiPpFormData.getId());
-//
-//        PpFormViewModel model = new PpFormViewModel();
-//
-//        model.getSfiPpFormDataViewModel(sfiPpFormDataViewModel);
-//        model.getCs1ViewModel(cs1ViewModel);
-//        model.getCs2ViewModel(cs2ViewModel);
-//        model.getCs3ViewModel(cs3ViewModel);
-//        model.getCs4ViewModel(cs4ViewModel);
-//        model.getCs5ViewModel(cs5ViewModel);
-//        model.getCs6ViewModel(cs6ViewModel);
-//        model.getCs7ViewModel(cs7ViewModel);
-//        model.getCs8ViewModel(cs8ViewModel);
-//        model.getCs9ViewModel(cs9ViewModel);
-//        model.getCs10ViewModel(cs10ViewModel);
-//
-//        return model;
-//    }
-
-    /************************* SfiPpFormData : Begin ***********************/
-    public SfiPpFormDataViewModel getSfiPpFormDataViewModel(Integer id) {
-        SfiPpFormData entity = sfiPpFormDataService.get(id);
-        return viewModelMapperService.convert(entity, SfiPpFormDataViewModel.class);
-    }
-    /************************ SfiPpFormData : End ***********************/
 
     /************************* Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
