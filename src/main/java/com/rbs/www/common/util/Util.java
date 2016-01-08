@@ -1,24 +1,19 @@
 package com.rbs.www.common.util;
 
-import org.springframework.context.MessageSource;
-import org.springframework.security.core.SpringSecurityMessageSource;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 import java.util.*;
 
 public class Util {
-
-    private final static ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public static Date getCurrentDate() {
         return Calendar.getInstance().getTime();
@@ -44,10 +39,8 @@ public class Util {
         }
     }
 
-    public static long getDiffDays() throws ParseException {
-        Date currentDate = new Date();
-
-        String endDateString = new SpringSecurityMessageSource().getMessage("endDate", new String[]{}, Locale.getDefault());
+    public static long getDiffDays(final String endDateString) throws ParseException {
+        Date currentDate = getCurrentDate();
         Date endDate = new SimpleDateFormat("MM/DD/YYYY").parse(endDateString);
 
         long diff = endDate.getTime() - currentDate.getTime();

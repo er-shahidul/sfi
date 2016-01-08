@@ -6,6 +6,7 @@ import com.rbs.www.common.util.Util;
 import com.rbs.www.web.sic.services.*;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -30,6 +31,9 @@ import static com.rbs.www.common.util.Util.getCurrentUsername;
 @Controller
 public class SicFormController {
 
+    @Value("#{messages[endDate]}")
+    private String endDate;
+
     @Autowired
     UserService userService;
 
@@ -38,9 +42,6 @@ public class SicFormController {
 
     @Autowired
     SicFormDataService sicFormDataService;
-
-    @Autowired
-    private MessageSource messageSource;
 
     private void populateFormContent(ModelMap model, SicFormData sicFormData) {
         Integer id = sicFormData.getId();
@@ -79,7 +80,7 @@ public class SicFormController {
         }
 
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
@@ -96,7 +97,7 @@ public class SicFormController {
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));

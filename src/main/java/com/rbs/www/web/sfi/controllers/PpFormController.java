@@ -8,6 +8,7 @@ import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,6 +23,10 @@ import java.text.ParseException;
 
 @Controller
 public class PpFormController {
+
+    @Value("#{messages[endDate]}")
+    private String endDate;
+
     @Autowired
     UserService userService;
 
@@ -81,7 +86,7 @@ public class PpFormController {
 
         populateFormContent(model, sfiPpFormDataService.createOrGetByCurrentUsersCompany());
 
-        model.addAttribute("days_until", Util.getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
         model.addAttribute("user", userService.findByUsername(Util.getCurrentUsername()));
 
@@ -99,7 +104,7 @@ public class PpFormController {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
 
-        model.addAttribute("days_until", Util.getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
 
         model.addAttribute("user", userService.findByUsername(Util.getCurrentUsername()));
@@ -110,7 +115,7 @@ public class PpFormController {
     public String adminSfiFormEdit(@PathVariable Integer id, ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.get(id);
         populateFormContent(model, sfiPpFormData);
-        model.addAttribute("days_until", Util.getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
 
         return "/core/form/index";
@@ -120,7 +125,7 @@ public class PpFormController {
     public String adminSfiFormView(@PathVariable Integer id, ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.get(id);
         populateFormContent(model, sfiPpFormData);
-        model.addAttribute("days_until", Util.getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
 
         return "/core/form/index";
