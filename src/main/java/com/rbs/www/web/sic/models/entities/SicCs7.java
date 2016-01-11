@@ -1,6 +1,9 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.web.common.models.viewmodels.DocNames;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -51,9 +54,10 @@ public class SicCs7 extends BaseEntityModel {
     @Column(name = "cs7_sicProgramCertifiedDesignation", nullable = true)
     private Boolean sicProgramCertifiedDesignation;
 
-    @OneToMany(targetEntity = Cs7BmpReportDoc.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Cs7BmpReportDoc> bmpReportDocs;
+    @Column(name = "cs7_bmpReportDocs", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<DocNames> bmpReportDocs;
 
     @Override
     public Integer getId() {
@@ -168,11 +172,11 @@ public class SicCs7 extends BaseEntityModel {
         this.sicProgramCertifiedDesignation = sicProgramCertifiedDesignation;
     }
 
-    public Set<Cs7BmpReportDoc> getBmpReportDocs() {
+    public Set<DocNames> getBmpReportDocs() {
         return bmpReportDocs;
     }
 
-    public void setBmpReportDocs(Set<Cs7BmpReportDoc> bmpReportDocs) {
+    public void setBmpReportDocs(Set<DocNames> bmpReportDocs) {
         addAll(this.bmpReportDocs, bmpReportDocs);
     }
 }

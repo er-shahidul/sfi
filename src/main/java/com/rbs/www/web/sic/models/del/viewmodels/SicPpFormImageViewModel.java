@@ -1,8 +1,8 @@
-package com.rbs.www.web.sic.models.viewmodels;
+package com.rbs.www.web.sic.models.del.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 
-public class Cs5CircumstancesDocViewModel extends BaseViewModel {
+public class SicPpFormImageViewModel extends BaseViewModel {
     private Integer id;
     private Integer sicPpForm;
     private String originalDocumentName;

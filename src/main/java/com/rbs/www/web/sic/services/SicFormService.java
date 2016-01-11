@@ -142,7 +142,6 @@ public class SicFormService {
     }
 
     public void setSicCs7Entity(SicCs7ViewModel model) {
-        sicCs7Service.manualPopulation(model);
         SicCs7 entity = entityModelMapperService.convert(model, SicCs7.class);
         sicFormDataService.setAuditInfo(model.getId(), pending);
     }

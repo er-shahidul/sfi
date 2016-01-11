@@ -1,12 +1,12 @@
-package com.rbs.www.web.sic.models.entities;
+package com.rbs.www.web.sic.models.del.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "sic_pp_form_cs5_circumstances_doc")
-public class Cs5CircumstancesDoc extends BaseEntityModel {
+@Table(name = "sic_pp_form_cs1_guide_file")
+public class SicPpFormGuideFile extends BaseEntityModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
@@ -53,4 +53,3 @@ public class Cs5CircumstancesDoc extends BaseEntityModel {
         this.uniqueDocumentName = uniqueDocumentName;
     }
 }
-

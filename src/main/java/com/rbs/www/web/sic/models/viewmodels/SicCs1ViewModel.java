@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.web.common.models.viewmodels.FileNamesViewModel;
+import com.rbs.www.web.common.models.viewmodels.DocNames;
 
 import java.util.Set;
 
@@ -50,8 +50,8 @@ public class SicCs1ViewModel extends BaseViewModel {
     private Set<SicPpFormCommitteeViewModel> subCommittees;
     private Set<SicPpFormMeetingViewModel> participatingMeetingList;
     private Set<SicPpFormMeetingTypeViewModel> meetingList;
-    private Set<SicPpFormImageViewModel> contactFiles;
-    private Set<SicPpFormImageViewModel> guideFiles;
+    private Set<DocNames> contactFiles;
+    private Set<DocNames> guideFiles;
 
     @Override
     public Integer getId() {
@@ -406,19 +406,19 @@ public class SicCs1ViewModel extends BaseViewModel {
         this.sicWebsite = sicWebsite;
     }
 
-    public Set<SicPpFormImageViewModel> getContactFiles() {
+    public Set<DocNames> getContactFiles() {
         return contactFiles;
     }
 
-    public void setContactFiles(Set<SicPpFormImageViewModel> contactFiles) {
+    public void setContactFiles(Set<DocNames> contactFiles) {
         this.contactFiles = contactFiles;
     }
 
-    public Set<SicPpFormImageViewModel> getGuideFiles() {
+    public Set<DocNames> getGuideFiles() {
         return guideFiles;
     }
 
-    public void setGuideFiles(Set<SicPpFormImageViewModel> guideFiles) {
+    public void setGuideFiles(Set<DocNames> guideFiles) {
         this.guideFiles = guideFiles;
     }
 }

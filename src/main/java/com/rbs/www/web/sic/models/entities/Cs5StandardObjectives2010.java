@@ -1,6 +1,9 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.web.common.models.viewmodels.DocNames;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -18,12 +21,10 @@ public class Cs5StandardObjectives2010 extends BaseEntityModel {
     @Column(name = "circumstanceDescription", nullable = true)
     private String circumstanceDescription;
 
-    @OneToMany(targetEntity = Cs5CircumstancesDoc.class, fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinTable(name = "sic_pp_form_cs5_standard_objectives_2010_circumstancesDoc",
-            joinColumns = {@JoinColumn(name = "sic_pp_form_cs5_standard_objectives_2010_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "circumstancesDoc_id", referencedColumnName = "id")})
-    private Set<Cs5CircumstancesDoc> circumstancesDoc;
+    @Column(name = "circumstancesDoc", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<DocNames> circumstancesDoc;
 
     @Column(name = "inconsistentPractice", nullable = true)
     private Integer inconsistentPractice;
@@ -62,12 +63,12 @@ public class Cs5StandardObjectives2010 extends BaseEntityModel {
         this.circumstanceDescription = circumstanceDescription;
     }
 
-    public Set<Cs5CircumstancesDoc> getCircumstancesDoc() {
+    public Set<DocNames> getCircumstancesDoc() {
         return circumstancesDoc;
     }
 
-    public void setCircumstancesDoc(Set<Cs5CircumstancesDoc> circumstancesDoc) {
-        this.circumstancesDoc = circumstancesDoc;
+    public void setCircumstancesDoc(Set<DocNames> circumstancesDoc) {
+        addAll(this.circumstancesDoc, circumstancesDoc);
     }
 
     public Integer getInconsistentPractice() {

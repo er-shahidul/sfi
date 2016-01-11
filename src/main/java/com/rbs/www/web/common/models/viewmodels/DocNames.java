@@ -1,29 +1,10 @@
-package com.rbs.www.web.sic.models.viewmodels;
+package com.rbs.www.web.common.models.viewmodels;
 
-import com.rbs.www.common.models.BaseViewModel;
+import java.io.Serializable;
 
-public class Cs7BmpReportDocViewModel extends BaseViewModel {
-    protected Integer id;
-    protected Integer sicPpForm;
+public class DocNames implements Cloneable, Serializable {
     protected String originalDocumentName;
     protected String uniqueDocumentName;
-
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getSicPpForm() {
-        return sicPpForm;
-    }
-
-    public void setSicPpForm(Integer sicPpForm) {
-        this.sicPpForm = sicPpForm;
-    }
 
     public String getOriginalDocumentName() {
         return originalDocumentName;
@@ -39,5 +20,14 @@ public class Cs7BmpReportDocViewModel extends BaseViewModel {
 
     public void setUniqueDocumentName(String uniqueDocumentName) {
         this.uniqueDocumentName = uniqueDocumentName;
+    }
+
+    @Override
+    public DocNames clone() throws CloneNotSupportedException {
+        DocNames docNames = (DocNames) super.clone();
+        docNames.setOriginalDocumentName(this.getOriginalDocumentName());
+        docNames.setUniqueDocumentName(this.getUniqueDocumentName());
+
+        return docNames;
     }
 }

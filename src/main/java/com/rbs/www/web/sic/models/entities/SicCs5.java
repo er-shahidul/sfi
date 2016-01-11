@@ -1,6 +1,9 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.web.common.models.viewmodels.DocNames;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -48,9 +51,10 @@ public class SicCs5 extends BaseEntityModel {
     @Column(name = "cs5_sfiStandardVersion", nullable = true)
     private Integer sfiStandardVersion;
 
-    @OneToMany(targetEntity = Cs5MechanismDoc.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Cs5MechanismDoc> mechanismDocs;
+    @Column(name = "cs5_mechanismDocs", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<DocNames> mechanismDocs;
 
     @OneToMany(targetEntity = Cs5ForestStandards2015.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
@@ -137,11 +141,11 @@ public class SicCs5 extends BaseEntityModel {
         this.sfiStandardVersion = sfiStandardVersion;
     }
 
-    public Set<Cs5MechanismDoc> getMechanismDocs() {
+    public Set<DocNames> getMechanismDocs() {
         return mechanismDocs;
     }
 
-    public void setMechanismDocs(Set<Cs5MechanismDoc> mechanismDocs) {
+    public void setMechanismDocs(Set<DocNames> mechanismDocs) {
         addAll(this.mechanismDocs, mechanismDocs);
     }
 

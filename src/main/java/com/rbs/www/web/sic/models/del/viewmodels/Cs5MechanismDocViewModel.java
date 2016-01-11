@@ -1,24 +1,12 @@
-package com.rbs.www.web.sic.models.entities;
+package com.rbs.www.web.sic.models.del.viewmodels;
 
-import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.common.models.BaseViewModel;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "sic_pp_form_cs7_bmp_report_doc")
-public class Cs7BmpReportDoc extends BaseEntityModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer id;
-
-    @Column(name = "form_id", nullable = true)
-    protected Integer sicPpForm;
-
-    @Column(name = "originalDocumentName", nullable = true)
-    protected String originalDocumentName;
-
-    @Column(name = "uniqueDocumentName", nullable = true)
-    protected String uniqueDocumentName;
+public class Cs5MechanismDocViewModel extends BaseViewModel {
+    private Integer id;
+    private Integer sicPpForm;
+    private String originalDocumentName;
+    private String uniqueDocumentName;
 
     @Override
     public Integer getId() {
@@ -53,4 +41,3 @@ public class Cs7BmpReportDoc extends BaseEntityModel {
         this.uniqueDocumentName = uniqueDocumentName;
     }
 }
-

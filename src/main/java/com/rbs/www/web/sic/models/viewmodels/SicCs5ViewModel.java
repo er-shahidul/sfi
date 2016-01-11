@@ -1,6 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.web.common.models.viewmodels.DocNames;
 
 import java.util.Set;
 
@@ -22,7 +23,7 @@ public class SicCs5ViewModel extends BaseViewModel {
     private Boolean receiveInquiryLetter;
     private Boolean receiveInquiryOther;
 
-    private Set<Cs5MechanismDocViewModel> mechanismDocs;
+    private Set<DocNames> mechanismDocs;
     private Set<Cs5ForestStandards2015ViewModel> forestStandards2015;
     private Set<Cs5FiberSourcing2015ViewModel> fiberSourcing2015;
     private Set<Cs5StandardObjectives2010ViewModel> standardObjectives2010;
@@ -100,11 +101,11 @@ public class SicCs5ViewModel extends BaseViewModel {
         this.sfiStandardVersion = sfiStandardVersion;
     }
 
-    public Set<Cs5MechanismDocViewModel> getMechanismDocs() {
+    public Set<DocNames> getMechanismDocs() {
         return mechanismDocs;
     }
 
-    public void setMechanismDocs(Set<Cs5MechanismDocViewModel> mechanismDocs) {
+    public void setMechanismDocs(Set<DocNames> mechanismDocs) {
         this.mechanismDocs = mechanismDocs;
     }
 

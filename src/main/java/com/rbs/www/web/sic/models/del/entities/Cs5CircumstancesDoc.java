@@ -1,18 +1,18 @@
-package com.rbs.www.web.sic.models.entities;
+package com.rbs.www.web.sic.models.del.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "sic_pp_form_cs5_mechanism_doc")
-public class Cs5MechanismDoc extends BaseEntityModel {
+@Table(name = "sic_pp_form_cs5_circumstances_doc")
+public class Cs5CircumstancesDoc extends BaseEntityModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
 
-    @Column(name = "form_id", nullable = true)
-    protected Integer sicPpForm;
+    @Column(name = "standard_objectives_2010_id", nullable = true)
+    protected Integer standardObjectives2010Id;
 
     @Column(name = "originalDocumentName", nullable = true)
     protected String originalDocumentName;
@@ -29,12 +29,12 @@ public class Cs5MechanismDoc extends BaseEntityModel {
         this.id = id;
     }
 
-    public Integer getSicPpForm() {
-        return sicPpForm;
+    public Integer getStandardObjectives2010Id() {
+        return standardObjectives2010Id;
     }
 
-    public void setSicPpForm(Integer sicPpForm) {
-        this.sicPpForm = sicPpForm;
+    public void setStandardObjectives2010Id(Integer standardObjectives2010Id) {
+        this.standardObjectives2010Id = standardObjectives2010Id;
     }
 
     public String getOriginalDocumentName() {
