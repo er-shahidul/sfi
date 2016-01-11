@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.web.common.models.viewmodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.DocNames;
 
 import java.util.Set;
 

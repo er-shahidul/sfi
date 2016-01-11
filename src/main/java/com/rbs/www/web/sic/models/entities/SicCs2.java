@@ -296,7 +296,7 @@ public class SicCs2 extends BaseEntityModel {
     }
 
     public void setIsSicNeighborEvents(Boolean isSicNeighborEvents) {
-       this.isSicNeighborEvents = isSicNeighborEvents;
+        this.isSicNeighborEvents = isSicNeighborEvents;
     }
 
     public Set<SicPpFormNeighborEvent> getSicNeighborEvents() {

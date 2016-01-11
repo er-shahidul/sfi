@@ -1,6 +1,6 @@
 package com.rbs.www.common.services;
 
-import com.rbs.www.web.common.models.viewmodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.DocNames;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 

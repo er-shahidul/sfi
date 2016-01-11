@@ -42,8 +42,6 @@ public class Cs9 extends BaseEntityModel {
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> indigenousPeoplesPublicItems;
 
-
-
     @Column(name = "cs9_trainingEducationItems", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -290,16 +288,16 @@ public class Cs9 extends BaseEntityModel {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Set<SfiPpFormStory> getStories() {
         return stories;
     }
 
     public void setStories(Set<SfiPpFormStory> stories) {
         addAll(this.stories, stories);
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Set<Integer> getProtectionMaintenanceWaterResItems1() {

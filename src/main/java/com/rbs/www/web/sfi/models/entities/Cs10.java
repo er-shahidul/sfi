@@ -36,47 +36,47 @@ public class Cs10 extends BaseEntityModel {
     @Column(name = "cs10_biodiversityItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityItems1;
+    private Set<Integer> biodiversityItems1;
 
     @Column(name = "cs10_biodiversityItems2", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityItems2;
+    private Set<Integer> biodiversityItems2;
 
     @Column(name = "cs10_biodiversityManagementItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityManagementItems1;
+    private Set<Integer> biodiversityManagementItems1;
 
     @Column(name = "cs10_biodiversityManagementItems2", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityManagementItems2;
+    private Set<Integer> biodiversityManagementItems2;
 
     @Column(name = "cs10_biodiversityNatureItems", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityNatureItems;
+    private Set<Integer> biodiversityNatureItems;
 
     @Column(name = "cs10_biodiversityStateForestItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityStateForestItems1;
+    private Set<Integer> biodiversityStateForestItems1;
 
     @Column(name = "cs10_biodiversityStateForestItems2", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityStateForestItems2;
+    private Set<Integer> biodiversityStateForestItems2;
 
     @Column(name = "cs10_biodiversityTrainingItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityTrainingItems1;
+    private Set<Integer> biodiversityTrainingItems1;
 
     @Column(name = "cs10_biodiversityTrainingItems2", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Integer>biodiversityTrainingItems2;
+    private Set<Integer> biodiversityTrainingItems2;
 
     @Column(name = "cs10_legalComplianceOutsideItems", nullable = true)
     @ElementCollection
