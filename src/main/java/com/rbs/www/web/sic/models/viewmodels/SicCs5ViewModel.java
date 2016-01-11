@@ -13,6 +13,7 @@ public class SicCs5ViewModel extends BaseViewModel {
     private String advertiseOtherSpecify;
     private String advertisePublications;
     private String advertiseWebsites;
+    private String receiveInquiryOtherSpecify;
 
     private Integer totalInquiriesReceived;
     private Integer totalInconsistentPractices;
@@ -35,6 +36,14 @@ public class SicCs5ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getReceiveInquiryOtherSpecify() {
+        return receiveInquiryOtherSpecify;
+    }
+
+    public void setReceiveInquiryOtherSpecify(String receiveInquiryOtherSpecify) {
+        this.receiveInquiryOtherSpecify = receiveInquiryOtherSpecify;
     }
 
     public String getAdvertiseBillboards() {

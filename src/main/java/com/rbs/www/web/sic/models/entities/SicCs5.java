@@ -42,6 +42,9 @@ public class SicCs5 extends BaseEntityModel {
     @Column(name = "cs5_advertiseWebsites", nullable = true)
     private String advertiseWebsites;
 
+    @Column(name = "cs5_receiveInquiryOtherSpecify", nullable = true)
+    private String receiveInquiryOtherSpecify;
+
     @Column(name = "cs5_totalInquiriesReceived", nullable = true)
     private Integer totalInquiriesReceived;
 
@@ -75,6 +78,14 @@ public class SicCs5 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getReceiveInquiryOtherSpecify() {
+        return receiveInquiryOtherSpecify;
+    }
+
+    public void setReceiveInquiryOtherSpecify(String receiveInquiryOtherSpecify) {
+        this.receiveInquiryOtherSpecify = receiveInquiryOtherSpecify;
     }
 
     public String getAdvertiseBillboards() {
