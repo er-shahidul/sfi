@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
-import com.rbs.www.web.common.models.viewmodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.DocNames;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 

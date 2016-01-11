@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
-import com.rbs.www.web.common.models.viewmodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.DocNames;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -306,16 +306,16 @@ public class SicCs1 extends BaseEntityModel {
         return sicPlanRecruitment;
     }
 
+    public void setSicPlanRecruitment(Boolean sicPlanRecruitment) {
+        this.sicPlanRecruitment = sicPlanRecruitment;
+    }
+
     public String getOrgDocAttachedWhy() {
         return orgDocAttachedWhy;
     }
 
     public void setOrgDocAttachedWhy(String orgDocAttachedWhy) {
         this.orgDocAttachedWhy = orgDocAttachedWhy;
-    }
-
-    public void setSicPlanRecruitment(Boolean sicPlanRecruitment) {
-        this.sicPlanRecruitment = sicPlanRecruitment;
     }
 
     public String getSicWebsite() {
