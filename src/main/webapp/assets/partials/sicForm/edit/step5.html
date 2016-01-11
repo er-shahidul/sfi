@@ -49,16 +49,17 @@
                 <p>What mechanism does your SIC utilize to receive inquiries?</p>
                 <ul style="list-style: none">
                     <li class="col-lg-3">
-                        <input type="checkbox" ng-modol="cs5.receiveInquiryPhone"> Phone number
+
+                        <input type="checkbox" ng-model="cs5.receiveInquiryPhone" name="receiveInquiry" > Phone number
                     </li>
                     <li class="col-lg-3">
-                        <input type="checkbox" ng-modol="cs5.receiveInquiryWebsite"> Website contact form
+                        <input type="checkbox" ng-model="cs5.receiveInquiryWebsite" name="receiveInquiry"> Website contact form
                     </li>
                     <li class="col-lg-3">
-                        <input type="checkbox" ng-modol="cs5.receiveInquiryLetter"> Formal letter
+                        <input type="checkbox" ng-model="cs5.receiveInquiryLetter" name="receiveInquiry"> Formal letter
                     </li>
                     <li class="col-lg-3">
-                        <input type="checkbox" ng-modol="cs5.receiveInquiryOther"> Other
+                        <input type="checkbox" ng-model="cs5.receiveInquiryOther" name="receiveInquiry"> Other
                         <br/>
                         <br/>
                         <span ng-show="cs5.receiveInquiryOther">
