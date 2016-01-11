@@ -54,10 +54,8 @@ public class SicCs7 extends BaseEntityModel {
     @Column(name = "cs7_sicProgramCertifiedDesignation", nullable = true)
     private Boolean sicProgramCertifiedDesignation;
 
-    @Column(name = "cs7_bmpReportDocs", nullable = true)
-    @ElementCollection
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<DocNames> bmpReportDocs;
+    @Column(name = "cs7_bmpReportDoc", nullable = true)
+    private DocNames bmpReportDoc;
 
     @Override
     public Integer getId() {
@@ -172,11 +170,11 @@ public class SicCs7 extends BaseEntityModel {
         this.sicProgramCertifiedDesignation = sicProgramCertifiedDesignation;
     }
 
-    public Set<DocNames> getBmpReportDocs() {
-        return bmpReportDocs;
+    public DocNames getBmpReportDoc() {
+        return bmpReportDoc;
     }
 
-    public void setBmpReportDocs(Set<DocNames> bmpReportDocs) {
-        addAll(this.bmpReportDocs, bmpReportDocs);
+    public void setBmpReportDoc(DocNames bmpReportDoc) {
+        this.bmpReportDoc = bmpReportDoc;
     }
 }
