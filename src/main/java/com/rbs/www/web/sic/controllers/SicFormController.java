@@ -3,6 +3,9 @@ package com.rbs.www.web.sic.controllers;
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.common.util.Util;
+import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
+import com.rbs.www.web.common.services.SfiPpFormRegionService;
+import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
 import com.rbs.www.web.sic.services.*;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +39,15 @@ public class SicFormController {
     @Autowired
     SicFormDataService sicFormDataService;
 
+    @Autowired
+    SfiPpFormCs3ProjectStandardObjectiveService sfiPpFormCs3ProjectStandardObjectiveService;
+
+    @Autowired
+    SfiPpFormAllCountryService sfiPpFormAllCountryService;
+
+    @Autowired
+    SfiPpFormRegionService sfiPpFormRegionService;
+
     private void populateFormContent(ModelMap model, SicFormData sicFormData) {
         Integer id = sicFormData.getId();
 
@@ -56,6 +68,15 @@ public class SicFormController {
         model.addAttribute("cs10", formService.getSicCs10ViewModel(id));
 
         model.addAttribute("company", sicFormData.getCompany());
+        model.addAttribute("createdAt", sicFormData.getCreatedAt());
+        model.addAttribute("createdBy", sicFormData.getCreatedBy());
+        model.addAttribute("updateAt", sicFormData.getUpdatedAt());
+        model.addAttribute("updateBy", sicFormData.getUpdatedBy());
+        model.addAttribute("status", sicFormData.getStatus());
+
+        model.addAttribute("regions", sfiPpFormRegionService.getAll());
+        model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
+        model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
     }
 
     @RequestMapping(value = "/sicForm", method = RequestMethod.GET)
