@@ -24,7 +24,7 @@ public class SicCs5ViewModel extends BaseViewModel {
     private Boolean receiveInquiryLetter;
     private Boolean receiveInquiryOther;
 
-    private Set<DocNames> mechanismDocs;
+    private DocNames mechanismDoc;
     private Set<Cs5ForestStandards2015ViewModel> forestStandards2015;
     private Set<Cs5FiberSourcing2015ViewModel> fiberSourcing2015;
     private Set<Cs5StandardObjectives2010ViewModel> standardObjectives2010;
@@ -110,12 +110,12 @@ public class SicCs5ViewModel extends BaseViewModel {
         this.sfiStandardVersion = sfiStandardVersion;
     }
 
-    public Set<DocNames> getMechanismDocs() {
-        return mechanismDocs;
+    public DocNames getMechanismDoc() {
+        return mechanismDoc;
     }
 
-    public void setMechanismDocs(Set<DocNames> mechanismDocs) {
-        this.mechanismDocs = mechanismDocs;
+    public void setMechanismDoc(DocNames mechanismDoc) {
+        this.mechanismDoc = mechanismDoc;
     }
 
     public Set<Cs5ForestStandards2015ViewModel> getForestStandards2015() {
