@@ -126,20 +126,22 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs9FormCtrl'
                 }
             }
-        }) /*
+        })
         .state('cs10', {
-            url : "/step10",
-            views: {
-                editContainer : {
-                    templateUrl : '/assets/partials/form/fiber_sourcing_standard.html',
-                    controller  : 'FormFiberSourcingStandardCtrl'
-                },
-                viewContainer : {
-                    template    : Templates.ViewFiberSourcingStandard,
-                    controller  : 'FormFiberSourcingStandardCtrl'
+                url : "/step10",
+                views: {
+                    editContainer : {
+                        templateUrl : '/assets/partials/sicForm/edit/step10.html',
+                        controller  : 'SicCs10FormCtrl'
+                    },
+                    viewContainer : {
+                        template    : '/assets/partials/sicForm/edit/step10.html',
+                        controller  : 'SicCs10FormCtrl'
+                    }
                 }
-            }
-        }).state('print-all', {
+        })
+        /*
+        .state('print-all', {
             url : "/print-all",
             views: {
                 viewContainer : {
