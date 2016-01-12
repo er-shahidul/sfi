@@ -125,7 +125,7 @@
                     <td>
                         <label>We plan on investing in research with Genetically Engineered trees via forest tree biotechnology</label>
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-10">
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
@@ -137,9 +137,12 @@
                                            ng-model="cs7.planInvestResIfPlan" ng-checked="cs7.planInvestResIfPlan == false">
                                     <label class="checkboxLabel">No</label>
                                 </div>
+
                                 <div ng-show="cs7.planInvestResIfPlan">
-                                    <div class="group2">
-                                        <p>Anticipated year research will begin</p>
+
+
+                                    <div class="col-sm-6">
+                                        <label>Anticipated year research will begin</label>
                                         <select class="form-control" name="select" ng-model="cs7.planInvestResYear">
                                             <option value="0" ng-selected="!cs7.planInvestResYear">Select Year</option>
                                             <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
@@ -186,6 +189,9 @@
                                         <button type="button" class="close" aria-hidden="1"
                                                 ng-click="cs7.investResCountries = delCountry(cs7.investResCountries, country.id)">x</button>
                                     </div>
+
+
+
                                 </div>
                             </div>
                         </div>

@@ -41,9 +41,9 @@ sfiFormApp
 
         $scope.addProject = function(){
 
-            if($scope.innerFrom.$invalid){
-                return false;
-            }
+            //if($scope.innerFrom.$invalid){
+            //    return false;
+            //}
 
             if(!$scope.isDirty()){
                 return false;
@@ -198,9 +198,9 @@ sfiFormApp
 
             if ($scope.isDirty()){
 
-                if($scope.innerFrom.$invalid){
-                    return false;
-                }
+                //if($scope.innerFrom.$invalid){
+                //    return false;
+                //}
 
                 $scope.addProject();
             }
