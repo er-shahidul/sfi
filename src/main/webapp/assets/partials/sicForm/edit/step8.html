@@ -368,6 +368,7 @@
 
                             Files can be one of the following formats: .pdf, .doc, .xls)
                         </div>
+
                         <div class="text-right" ng-show="supportDoc.originalDocumentName">
                             <input type="submit" class="btn default" value="Upload" ng-click="supportDoc = saveUploadedFile(supportDoc, project.supportDocs)">
                         </div>
@@ -407,8 +408,8 @@
 
 
         <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
-            <button type="button" class="btn btn-success">Save</button>
-            <button type="button" class="btn btn-success">Save and Go to Step 9</button>
+            <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
+            <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 9</button>
         </div>
     </div>
 </div>
