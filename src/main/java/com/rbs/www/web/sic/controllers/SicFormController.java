@@ -16,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -116,5 +117,33 @@ public class SicFormController {
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/web/sic/index";
+    }
+
+    @RequestMapping(value = "/admin/company/sic/form/{id}", method = RequestMethod.GET)
+    public String adminSicFormEdit(@PathVariable Integer id, ModelMap model) throws ParseException {
+        SicFormData sicFormData = sicFormDataService.get(id);
+        populateFormContent(model, sicFormData);
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("mode", "edit");
+
+        return "web/sic/index";
+    }
+
+    @RequestMapping(value = "/admin/company/sic/form/view/{id}", method = RequestMethod.GET)
+    public String adminSicFormView(@PathVariable Integer id, ModelMap model) throws ParseException {
+        SicFormData sicFormData = sicFormDataService.get(id);
+        populateFormContent(model, sicFormData);
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("mode", "view");
+
+        return "web/sic/index";
+    }
+
+    @RequestMapping(value = "/admin/form/sic", method = RequestMethod.GET)
+    public String adminSicForm(ModelMap model) {
+        model.addAttribute("title", "sic");
+        model.addAttribute("sicPpForms", sicFormDataService.getAll());
+
+        return "admin/form/admin_form_sic";
     }
 }
