@@ -74,6 +74,12 @@ public class Cs7 extends BaseEntityModel {
     @Column(name = "cs7_comments", nullable = true)
     private String comments;
 
+    @Column(name = "cs7_investResIfInve", nullable = true)
+    private Boolean investResIfInve;
+
+    @Column(name = "cs7_planCommPlantYear", nullable = true)
+    private String planCommPlantYear;
+
     @Override
     public Integer getId() {
         return id;
@@ -81,6 +87,22 @@ public class Cs7 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getInvestResIfInve() {
+        return investResIfInve;
+    }
+
+    public void setInvestResIfInve(Boolean investResIfInve) {
+        this.investResIfInve = investResIfInve;
+    }
+
+    public String getPlanCommPlantYear() {
+        return planCommPlantYear;
+    }
+
+    public void setPlanCommPlantYear(String planCommPlantYear) {
+        this.planCommPlantYear = planCommPlantYear;
     }
 
     public Boolean getEmerIssuIntMarket() {
