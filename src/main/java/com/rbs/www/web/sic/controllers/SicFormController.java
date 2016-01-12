@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.text.ParseException;
-import java.util.Objects;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
@@ -89,7 +88,7 @@ public class SicFormController {
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         if (request.isUserInRole("USER")
-                && Objects.equals(sicFormData.getStatus().getStatus(), "submitted")) {
+                && "submitted".equals(sicFormData.getStatus().getStatus())) {
             return "redirect:/sicForm/view";
         }
 
