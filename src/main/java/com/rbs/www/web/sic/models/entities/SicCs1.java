@@ -1,11 +1,12 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
-import com.rbs.www.web.common.models.viewmodels.DocNames;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
+import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.web.common.models.datamodels.DocNames;
+import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -147,15 +148,13 @@ public class SicCs1 extends BaseEntityModel {
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SicPpFormMeetingType> meetingList;
 
-    @Column(name = "cs1_contactFiles", nullable = true)
-    @ElementCollection
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<DocNames> contactFiles;
+    @Lob
+    @Column(name = "contactFiles", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] contactFilesAsByteArray;
 
-    @Column(name = "cs1_guideFiles", nullable = true)
-    @ElementCollection
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<DocNames> guideFiles;
+    @Lob
+    @Column(name = "guideFiles", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray;
 
     @Override
     public Integer getId() {
@@ -306,16 +305,16 @@ public class SicCs1 extends BaseEntityModel {
         return sicPlanRecruitment;
     }
 
+    public void setSicPlanRecruitment(Boolean sicPlanRecruitment) {
+        this.sicPlanRecruitment = sicPlanRecruitment;
+    }
+
     public String getOrgDocAttachedWhy() {
         return orgDocAttachedWhy;
     }
 
     public void setOrgDocAttachedWhy(String orgDocAttachedWhy) {
         this.orgDocAttachedWhy = orgDocAttachedWhy;
-    }
-
-    public void setSicPlanRecruitment(Boolean sicPlanRecruitment) {
-        this.sicPlanRecruitment = sicPlanRecruitment;
     }
 
     public String getSicWebsite() {
@@ -510,19 +509,45 @@ public class SicCs1 extends BaseEntityModel {
         addAll(this.meetingList, meetingList);
     }
 
+    private Byte[] getContactFilesAsByteArray() {
+        return contactFilesAsByteArray;
+    }
+
+    private void setContactFilesAsByteArray(Byte[] contactFilesAsByteArray) {
+        this.contactFilesAsByteArray = contactFilesAsByteArray;
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
     public Set<DocNames> getContactFiles() {
-        return contactFiles;
+        return (Set<DocNames>) SerializationUtils
+                .deserialize(TypeConversionUtils
+                        .toPrimitiveType(contactFilesAsByteArray));
     }
 
-    public void setContactFiles(Set<DocNames> contactFiles) {
-        addAll(this.contactFiles, contactFiles);
+    public void setContactFiles(HashSet<DocNames> contactFiles) {
+        this.contactFilesAsByteArray = TypeConversionUtils
+                .toObjectType(SerializationUtils.serialize(contactFiles));
     }
 
+    private Byte[] getGuideFilesAsByteArray() {
+        return guideFilesAsByteArray;
+    }
+
+    private void setGuideFilesAsByteArray(Byte[] guideFilesAsByteArray) {
+        this.guideFilesAsByteArray = guideFilesAsByteArray;
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
     public Set<DocNames> getGuideFiles() {
-        return guideFiles;
+        return (Set<DocNames>) SerializationUtils
+                .deserialize((TypeConversionUtils
+                        .toPrimitiveType(guideFilesAsByteArray)));
     }
 
-    public void setGuideFiles(Set<DocNames> guideFiles) {
-        addAll(this.guideFiles, guideFiles);
+    public void setGuideFiles(HashSet<DocNames> guideFiles) {
+        this.guideFilesAsByteArray = TypeConversionUtils
+                .toObjectType(SerializationUtils.serialize(guideFiles));
     }
 }

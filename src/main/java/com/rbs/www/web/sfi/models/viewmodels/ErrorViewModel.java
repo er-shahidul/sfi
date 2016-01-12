@@ -2,7 +2,7 @@ package com.rbs.www.web.sfi.models.viewmodels;
 
 import java.util.Map;
 
-public class ErrorViewModel{
+public class ErrorViewModel {
     private Map<String, String> cs1Errors;
     private Map<String, String> cs2Errors;
     private Map<String, String> cs3Errors;

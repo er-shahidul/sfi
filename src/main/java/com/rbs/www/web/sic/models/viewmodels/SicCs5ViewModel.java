@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.web.common.models.viewmodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.DocNames;
 
 import java.util.Set;
 
@@ -13,6 +13,7 @@ public class SicCs5ViewModel extends BaseViewModel {
     private String advertiseOtherSpecify;
     private String advertisePublications;
     private String advertiseWebsites;
+    private String receiveInquiryOtherSpecify;
 
     private Integer totalInquiriesReceived;
     private Integer totalInconsistentPractices;
@@ -23,7 +24,7 @@ public class SicCs5ViewModel extends BaseViewModel {
     private Boolean receiveInquiryLetter;
     private Boolean receiveInquiryOther;
 
-    private Set<DocNames> mechanismDocs;
+    private DocNames mechanismDoc;
     private Set<Cs5ForestStandards2015ViewModel> forestStandards2015;
     private Set<Cs5FiberSourcing2015ViewModel> fiberSourcing2015;
     private Set<Cs5StandardObjectives2010ViewModel> standardObjectives2010;
@@ -35,6 +36,14 @@ public class SicCs5ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getReceiveInquiryOtherSpecify() {
+        return receiveInquiryOtherSpecify;
+    }
+
+    public void setReceiveInquiryOtherSpecify(String receiveInquiryOtherSpecify) {
+        this.receiveInquiryOtherSpecify = receiveInquiryOtherSpecify;
     }
 
     public String getAdvertiseBillboards() {
@@ -101,12 +110,12 @@ public class SicCs5ViewModel extends BaseViewModel {
         this.sfiStandardVersion = sfiStandardVersion;
     }
 
-    public Set<DocNames> getMechanismDocs() {
-        return mechanismDocs;
+    public DocNames getMechanismDoc() {
+        return mechanismDoc;
     }
 
-    public void setMechanismDocs(Set<DocNames> mechanismDocs) {
-        this.mechanismDocs = mechanismDocs;
+    public void setMechanismDoc(DocNames mechanismDoc) {
+        this.mechanismDoc = mechanismDoc;
     }
 
     public Set<Cs5ForestStandards2015ViewModel> getForestStandards2015() {

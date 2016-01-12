@@ -1,9 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.web.common.models.viewmodels.DocNames;
-
-import java.util.Set;
+import com.rbs.www.web.common.models.datamodels.DocNames;
 
 public class SicCs7ViewModel extends BaseViewModel {
     private Integer id;
@@ -20,7 +18,7 @@ public class SicCs7ViewModel extends BaseViewModel {
     private String sfiNonCertifiedBmpSource;
     private Boolean monitorBMPCompliance;
     private Boolean sicProgramCertifiedDesignation;
-    private Set<DocNames> bmpReportDocs;
+    private DocNames bmpReportDoc;
 
     @Override
     public Integer getId() {
@@ -135,11 +133,11 @@ public class SicCs7ViewModel extends BaseViewModel {
         this.sicProgramCertifiedDesignation = sicProgramCertifiedDesignation;
     }
 
-    public Set<DocNames> getBmpReportDocs() {
-        return bmpReportDocs;
+    public DocNames getBmpReportDoc() {
+        return bmpReportDoc;
     }
 
-    public void setBmpReportDocs(Set<DocNames> bmpReportDocs) {
-        this.bmpReportDocs = bmpReportDocs;
+    public void setBmpReportDoc(DocNames bmpReportDoc) {
+        this.bmpReportDoc = bmpReportDoc;
     }
 }

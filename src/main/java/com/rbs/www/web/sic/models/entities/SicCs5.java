@@ -1,9 +1,9 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
-import com.rbs.www.web.common.models.viewmodels.DocNames;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
+import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.web.common.models.datamodels.DocNames;
+import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -42,6 +42,9 @@ public class SicCs5 extends BaseEntityModel {
     @Column(name = "cs5_advertiseWebsites", nullable = true)
     private String advertiseWebsites;
 
+    @Column(name = "cs5_receiveInquiryOtherSpecify", nullable = true)
+    private String receiveInquiryOtherSpecify;
+
     @Column(name = "cs5_totalInquiriesReceived", nullable = true)
     private Integer totalInquiriesReceived;
 
@@ -51,10 +54,9 @@ public class SicCs5 extends BaseEntityModel {
     @Column(name = "cs5_sfiStandardVersion", nullable = true)
     private Integer sfiStandardVersion;
 
-    @Column(name = "cs5_mechanismDocs", nullable = true)
-    @ElementCollection
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<DocNames> mechanismDocs;
+    @Lob
+    @Column(name = "mechanismDoc", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] mechanismDocAsByteArray;
 
     @OneToMany(targetEntity = Cs5ForestStandards2015.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
@@ -75,6 +77,14 @@ public class SicCs5 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getReceiveInquiryOtherSpecify() {
+        return receiveInquiryOtherSpecify;
+    }
+
+    public void setReceiveInquiryOtherSpecify(String receiveInquiryOtherSpecify) {
+        this.receiveInquiryOtherSpecify = receiveInquiryOtherSpecify;
     }
 
     public String getAdvertiseBillboards() {
@@ -141,14 +151,6 @@ public class SicCs5 extends BaseEntityModel {
         this.sfiStandardVersion = sfiStandardVersion;
     }
 
-    public Set<DocNames> getMechanismDocs() {
-        return mechanismDocs;
-    }
-
-    public void setMechanismDocs(Set<DocNames> mechanismDocs) {
-        addAll(this.mechanismDocs, mechanismDocs);
-    }
-
     public Set<Cs5ForestStandards2015> getForestStandards2015() {
         return forestStandards2015;
     }
@@ -203,5 +205,26 @@ public class SicCs5 extends BaseEntityModel {
 
     public void setReceiveInquiryOther(Boolean receiveInquiryOther) {
         this.receiveInquiryOther = receiveInquiryOther;
+    }
+
+    public Byte[] getMechanismDocAsByteArray() {
+        return mechanismDocAsByteArray;
+    }
+
+    public void setMechanismDocAsByteArray(Byte[] mechanismDocAsByteArray) {
+        this.mechanismDocAsByteArray = mechanismDocAsByteArray;
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public DocNames getMechanismDoc() {
+        return (DocNames) SerializationUtils
+                .deserialize(TypeConversionUtils
+                        .toPrimitiveType(mechanismDocAsByteArray));
+    }
+
+    public void setMechanismDoc(DocNames mechanismDoc) {
+        this.mechanismDocAsByteArray = TypeConversionUtils
+                .toObjectType(SerializationUtils.serialize(mechanismDoc));
     }
 }

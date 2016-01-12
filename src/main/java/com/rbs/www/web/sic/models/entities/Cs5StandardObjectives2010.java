@@ -1,12 +1,11 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
-import com.rbs.www.web.common.models.viewmodels.DocNames;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
+import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.web.common.models.datamodels.DocNames;
+import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "sic_pp_form_cs5_standard_objectives_2010")
@@ -21,10 +20,9 @@ public class Cs5StandardObjectives2010 extends BaseEntityModel {
     @Column(name = "circumstanceDescription", nullable = true)
     private String circumstanceDescription;
 
-    @Column(name = "circumstancesDoc", nullable = true)
-    @ElementCollection
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<DocNames> circumstancesDoc;
+    @Lob
+    @Column(name = "circumstancesDoc", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] circumstancesDocAsByteArray;
 
     @Column(name = "inconsistentPractice", nullable = true)
     private Integer inconsistentPractice;
@@ -63,14 +61,6 @@ public class Cs5StandardObjectives2010 extends BaseEntityModel {
         this.circumstanceDescription = circumstanceDescription;
     }
 
-    public Set<DocNames> getCircumstancesDoc() {
-        return circumstancesDoc;
-    }
-
-    public void setCircumstancesDoc(Set<DocNames> circumstancesDoc) {
-        addAll(this.circumstancesDoc, circumstancesDoc);
-    }
-
     public Integer getInconsistentPractice() {
         return inconsistentPractice;
     }
@@ -101,6 +91,27 @@ public class Cs5StandardObjectives2010 extends BaseEntityModel {
 
     public void setObjective(String objective) {
         this.objective = objective;
+    }
+
+    private Byte[] getCircumstancesDocAsByteArray() {
+        return circumstancesDocAsByteArray;
+    }
+
+    private void setCircumstancesDocAsByteArray(Byte[] circumstancesDocAsByteArray) {
+        this.circumstancesDocAsByteArray = circumstancesDocAsByteArray;
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public DocNames getCircumstancesDoc() {
+        return (DocNames) SerializationUtils
+                .deserialize(TypeConversionUtils
+                        .toPrimitiveType(circumstancesDocAsByteArray));
+    }
+
+    public void setCircumstancesDoc(DocNames circumstancesDoc) {
+        this.circumstancesDocAsByteArray = TypeConversionUtils
+                .toObjectType(SerializationUtils.serialize(circumstancesDoc));
     }
 }
 

@@ -6,8 +6,8 @@ sfiSicApp
         $scope.cs5 = angular.copy($rootScope.form.cs5);
         cs5 = $scope;
 
-        $scope.mechanismDocs = {}
-        $scope.cs5.mechanismDocs = $scope.cs5.mechanismDocs || {};
+        $scope.mechanismDoc = {}
+        $scope.cs5.mechanismDoc = $scope.cs5.mechanismDoc || {};
 
         $scope.editIndex  = {};
 

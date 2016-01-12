@@ -1,4 +1,4 @@
-package com.rbs.www.web.common.models.viewmodels;
+package com.rbs.www.web.common.models.datamodels;
 
 import java.io.Serializable;
 
