@@ -20,19 +20,9 @@ public class SicCs5Service {
     }
 
     public void manualPopulation(SicCs5ViewModel model) {
-        setCs5MechanismDocSicPpForm(model);
         setCs5ForestStandards2015SicPpForm(model);
         setCs5FiberSourcing2015SicPpForm(model);
         setCs5StandardObjectives2010SicPpForm(model);
-    }
-
-    private void setCs5MechanismDocSicPpForm(SicCs5ViewModel model) {
-        Set<Cs5MechanismDocViewModel> cs5MechanismDocViewModels = model.getMechanismDocs();
-
-        for (Cs5MechanismDocViewModel cs5MechanismDocViewModel : cs5MechanismDocViewModels) {
-            if (cs5MechanismDocViewModel.getSicPpForm() != null) continue;
-            cs5MechanismDocViewModel.setSicPpForm(model.getId().hashCode());
-        }
     }
 
     private void setCs5ForestStandards2015SicPpForm(SicCs5ViewModel model) {

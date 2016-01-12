@@ -1,6 +1,6 @@
 package com.rbs.www.common.services;
 
-import com.rbs.www.web.common.models.viewmodels.FileNamesViewModel;
+import com.rbs.www.web.common.models.datamodels.DocNames;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,19 +27,19 @@ public class FileIOHelperService {
         return Long.toString(new Date().getTime());
     }
 
-    private FileNamesViewModel getFileNames(String fileName) {
-        FileNamesViewModel fileNames = new FileNamesViewModel();
-        fileNames.setOriginalName(fileName);
-        fileNames.setUniqueName(this.generateUniqueName());
+    private DocNames getFileNames(String fileName) {
+        DocNames fileNames = new DocNames();
+        fileNames.setOriginalDocumentName(fileName);
+        fileNames.setUniqueDocumentName(this.generateUniqueName());
 
         return fileNames;
     }
 
-    public FileNamesViewModel saveFile(MultipartFile file, String folder, String path) {
-        FileNamesViewModel fileNames = getFileNames(file.getOriginalFilename());
+    public DocNames saveFile(MultipartFile file, String folder, String path) {
+        DocNames fileNames = getFileNames(file.getOriginalFilename());
 
         String originalPath = this.createDirectory(path, "uploads/" + folder);
-        originalPath += "/" + fileNames.getUniqueName();
+        originalPath += "/" + fileNames.getUniqueDocumentName();
 
         try {
             file.transferTo(new File(originalPath));

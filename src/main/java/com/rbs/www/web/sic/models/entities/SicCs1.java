@@ -1,6 +1,9 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.web.common.models.datamodels.DocNames;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -144,13 +147,15 @@ public class SicCs1 extends BaseEntityModel {
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SicPpFormMeetingType> meetingList;
 
-    @OneToMany(targetEntity = SicPpFormContactFile.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<SicPpFormContactFile> contactFiles;
+    @Column(name = "cs1_contactFiles", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<DocNames> contactFiles;
 
-    @OneToMany(targetEntity = SicPpFormGuideFile.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<SicPpFormGuideFile> guideFiles;
+    @Column(name = "cs1_guideFiles", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<DocNames> guideFiles;
 
     @Override
     public Integer getId() {
@@ -301,16 +306,16 @@ public class SicCs1 extends BaseEntityModel {
         return sicPlanRecruitment;
     }
 
+    public void setSicPlanRecruitment(Boolean sicPlanRecruitment) {
+        this.sicPlanRecruitment = sicPlanRecruitment;
+    }
+
     public String getOrgDocAttachedWhy() {
         return orgDocAttachedWhy;
     }
 
     public void setOrgDocAttachedWhy(String orgDocAttachedWhy) {
         this.orgDocAttachedWhy = orgDocAttachedWhy;
-    }
-
-    public void setSicPlanRecruitment(Boolean sicPlanRecruitment) {
-        this.sicPlanRecruitment = sicPlanRecruitment;
     }
 
     public String getSicWebsite() {
@@ -505,19 +510,19 @@ public class SicCs1 extends BaseEntityModel {
         addAll(this.meetingList, meetingList);
     }
 
-    public Set<SicPpFormContactFile> getContactFiles() {
+    public Set<DocNames> getContactFiles() {
         return contactFiles;
     }
 
-    public void setContactFiles(Set<SicPpFormContactFile> contactFiles) {
+    public void setContactFiles(Set<DocNames> contactFiles) {
         addAll(this.contactFiles, contactFiles);
     }
 
-    public Set<SicPpFormGuideFile> getGuideFiles() {
+    public Set<DocNames> getGuideFiles() {
         return guideFiles;
     }
 
-    public void setGuideFiles(Set<SicPpFormGuideFile> guideFiles) {
+    public void setGuideFiles(Set<DocNames> guideFiles) {
         addAll(this.guideFiles, guideFiles);
     }
 }

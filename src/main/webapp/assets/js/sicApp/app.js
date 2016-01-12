@@ -777,8 +777,8 @@ sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
                     console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
                 }).success(function(data, status, headers, config) {
 
-                    bucket.originalDocumentName  = data.originalName;
-                    bucket.uniqueDocumentName    = data.uniqueName;
+                    bucket.originalDocumentName  = data.originalDocumentName;
+                    bucket.uniqueDocumentName    = data.uniqueDocumentName;
 
                 });
 

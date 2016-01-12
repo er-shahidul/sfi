@@ -1,9 +1,9 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.web.common.models.datamodels.DocNames;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "sic_forms")
@@ -51,9 +51,8 @@ public class SicCs7 extends BaseEntityModel {
     @Column(name = "cs7_sicProgramCertifiedDesignation", nullable = true)
     private Boolean sicProgramCertifiedDesignation;
 
-    @OneToMany(targetEntity = Cs7BmpReportDoc.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Cs7BmpReportDoc> bmpReportDocs;
+    @Column(name = "cs7_bmpReportDoc", nullable = true)
+    private DocNames bmpReportDoc;
 
     @Override
     public Integer getId() {
@@ -168,11 +167,11 @@ public class SicCs7 extends BaseEntityModel {
         this.sicProgramCertifiedDesignation = sicProgramCertifiedDesignation;
     }
 
-    public Set<Cs7BmpReportDoc> getBmpReportDocs() {
-        return bmpReportDocs;
+    public DocNames getBmpReportDoc() {
+        return bmpReportDoc;
     }
 
-    public void setBmpReportDocs(Set<Cs7BmpReportDoc> bmpReportDocs) {
-        addAll(this.bmpReportDocs, bmpReportDocs);
+    public void setBmpReportDoc(DocNames bmpReportDoc) {
+        this.bmpReportDoc = bmpReportDoc;
     }
 }

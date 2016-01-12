@@ -3,7 +3,6 @@ package com.rbs.www.web.sic.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "sic_pp_form_cs5_forest_standards_2015")

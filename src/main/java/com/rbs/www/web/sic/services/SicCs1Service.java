@@ -1,9 +1,6 @@
 package com.rbs.www.web.sic.services;
 
-import com.rbs.www.web.common.models.viewmodels.FileNamesViewModel;
 import com.rbs.www.web.sic.models.entities.SicCs1;
-import com.rbs.www.web.sic.models.entities.SicPpFormMeeting;
-import com.rbs.www.web.sic.models.entities.SicPpFormMeetingType;
 import com.rbs.www.web.sic.models.viewmodels.*;
 import com.rbs.www.web.sic.repositories.SicCs1Repository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,26 +23,6 @@ public class SicCs1Service {
         setSubCommitteesSicPpForm(model);
         setParticipatingMeetingListSicPpForm(model);
         setMeetingListSicPpForm(model);
-        setContactFileSicPpForm(model);
-        setGuideFileSicPpForm(model);
-    }
-
-    private void setGuideFileSicPpForm(SicCs1ViewModel model) {
-        Set<SicPpFormImageViewModel> guideFiles = model.getGuideFiles();
-
-        for (SicPpFormImageViewModel guideFile : guideFiles) {
-            if (guideFile.getSicPpForm() != null) continue;
-            guideFile.setSicPpForm(model.getId().hashCode());
-        }
-    }
-
-    private void setContactFileSicPpForm(SicCs1ViewModel model) {
-        Set<SicPpFormImageViewModel> contactFiles = model.getContactFiles();
-
-        for (SicPpFormImageViewModel contactFile : contactFiles) {
-            if (contactFile.getSicPpForm() != null) continue;
-            contactFile.setSicPpForm(model.getId().hashCode());
-        }
     }
 
     private void setMeetingListSicPpForm(SicCs1ViewModel model) {

@@ -13,15 +13,15 @@ public class Cs10ViewModel extends BaseViewModel {
     private Date createdAt;
     private Date submittedAt;
     private Date updatedAt;
-    private Set<Integer>biodiversityItems1;
-    private Set<Integer>biodiversityItems2;
-    private Set<Integer>biodiversityManagementItems1;
-    private Set<Integer>biodiversityManagementItems2;
-    private Set<Integer>biodiversityNatureItems;
-    private Set<Integer>biodiversityStateForestItems1;
-    private Set<Integer>biodiversityStateForestItems2;
-    private Set<Integer>biodiversityTrainingItems1;
-    private Set<Integer>biodiversityTrainingItems2;
+    private Set<Integer> biodiversityItems1;
+    private Set<Integer> biodiversityItems2;
+    private Set<Integer> biodiversityManagementItems1;
+    private Set<Integer> biodiversityManagementItems2;
+    private Set<Integer> biodiversityNatureItems;
+    private Set<Integer> biodiversityStateForestItems1;
+    private Set<Integer> biodiversityStateForestItems2;
+    private Set<Integer> biodiversityTrainingItems1;
+    private Set<Integer> biodiversityTrainingItems2;
     private Set<Integer> legalComplianceOutsideItems;
     private String biodiversityFiberSourcing;
     private String biodiversityManagement;
@@ -37,6 +37,7 @@ public class Cs10ViewModel extends BaseViewModel {
     private String biodiversityNoDescribe;
 
     private Set<SfiPpFormStoryCs10ViewModel> stories;
+
     @Override
     public Integer getId() {
         return id;

@@ -3,7 +3,6 @@ package com.rbs.www.web.sfi.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "sfi_pp_form_cs9_stories")
