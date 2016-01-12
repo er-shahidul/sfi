@@ -38,7 +38,7 @@ public class Util {
 
     public static long getDiffDays(final String endDateString) throws ParseException {
         Date currentDate = getCurrentDate();
-        Date endDate = new SimpleDateFormat("MM/DD/YYYY").parse(endDateString);
+        Date endDate = new SimpleDateFormat("MM/DD/yyyy").parse(endDateString);
 
         long diff = endDate.getTime() - currentDate.getTime();
         return diff / (24 * 60 * 60 * 1000);
