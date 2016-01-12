@@ -268,28 +268,33 @@
                         <div class="radio">
                             <label class="checkboxLabel">
                                 <input type="radio" name="forestlandOwnMng3"  ng-disabled="!operateInCa()"  ng-model="cs2.caCrownForestlandOwnMng" value="1" icheck class="icheck">
-                                Federal</label>
+                                Industrial</label>
                         </div>
 
                         <div class="radio">
                             <label class="checkboxLabel">
                                 <input type="radio" name="forestlandOwnMng3"  ng-disabled="!operateInCa()"  ng-model="cs2.caCrownForestlandOwnMng" value="2" icheck class="icheck" >
-                                State</label>
+                                Provincial</label>
                         </div>
 
                         <div class="radio">
                             <label class="checkboxLabel">
                                 <input type="radio" name="forestlandOwnMng3"  ng-disabled="!operateInCa()"  ng-model="cs2.caCrownForestlandOwnMng" value="3" icheck class="icheck">
-                                Country</label>
+                                Federal</label>
                         </div>
 
                         <div class="radio">
                             <label class="checkboxLabel">
                                 <input type="radio" name="forestlandOwnMng3"  ng-disabled="!operateInCa()"  ng-model="cs2.caCrownForestlandOwnMng" value="4" icheck class="icheck">
+                                Aboriginal</label>
+                        </div>
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng3"  ng-disabled="!operateInCa()"  ng-model="cs2.caCrownForestlandOwnMng" value="5" icheck class="icheck">
                                 Other</label>
                         </div>
                         <input type="text" name="forestlandOwnMng3Other" class="form-control shorter"
-                               ng-show="cs2.caCrownForestlandOwnMng == 4" ng-model="cs2.usaPrivateForestlandOwnMngOther">
+                               ng-show="cs2.caCrownForestlandOwnMng == 5" ng-model="cs2.usaPrivateForestlandOwnMngOther">
                     </td>
                     <!-- -/- -->
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item17.$invalid}">
@@ -371,28 +376,39 @@
                         <div class="radio">
                             <label class="checkboxLabel">
                                 <input type="radio" name="forestlandOwnMng4"  ng-disabled="!operateInCa()"  ng-model="cs2.caPrivateForestlandOwnMng" value="1" icheck class="icheck">
-                                Federal</label>
+                                Industrial</label>
                         </div>
 
                         <div class="radio">
                             <label class="checkboxLabel">
                                 <input type="radio" name="forestlandOwnMng4"  ng-disabled="!operateInCa()"  ng-model="cs2.caPrivateForestlandOwnMng" value="2" icheck class="icheck" >
-                                State</label>
+                                Aboriginal</label>
                         </div>
 
                         <div class="radio">
                             <label class="checkboxLabel">
                                 <input type="radio" name="forestlandOwnMng4"  ng-disabled="!operateInCa()"  ng-model="cs2.caPrivateForestlandOwnMng" value="3" icheck class="icheck">
-                                Country</label>
+                                Family owned</label>
                         </div>
 
                         <div class="radio">
                             <label class="checkboxLabel">
                                 <input type="radio" name="forestlandOwnMng4"  ng-disabled="!operateInCa()"  ng-model="cs2.caPrivateForestlandOwnMng" value="4" icheck class="icheck">
+                                Non-profit</label>
+                        </div>
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng4"  ng-disabled="!operateInCa()"  ng-model="cs2.caPrivateForestlandOwnMng" value="5" icheck class="icheck">
+                                Conservation</label>
+                        </div>
+
+                        <div class="radio">
+                            <label class="checkboxLabel">
+                                <input type="radio" name="forestlandOwnMng4"  ng-disabled="!operateInCa()"  ng-model="cs2.caPrivateForestlandOwnMng" value="6" icheck class="icheck">
                                 Other</label>
                         </div>
                         <input type="text" name="forestlandOwnMng4Other" class="form-control shorter"
-                               ng-model="cs2.caPrivateForestlandOwnMngOther" ng-show="cs2.caPrivateForestlandOwnMng == 4">
+                               ng-model="cs2.caPrivateForestlandOwnMngOther" ng-show="cs2.caPrivateForestlandOwnMng == 6">
                     </td>
                     <!-- -/- -->
 

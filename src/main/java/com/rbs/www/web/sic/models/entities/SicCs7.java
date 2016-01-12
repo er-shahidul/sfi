@@ -1,7 +1,9 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.models.datamodels.DocNames;
+import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
 
@@ -51,8 +53,9 @@ public class SicCs7 extends BaseEntityModel {
     @Column(name = "cs7_sicProgramCertifiedDesignation", nullable = true)
     private Boolean sicProgramCertifiedDesignation;
 
-    @Column(name = "cs7_bmpReportDoc", nullable = true)
-    private DocNames bmpReportDoc;
+    @Lob
+    @Column(name = "cs7_bmpReportDoc", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] bmpReportDocAsByteArray;
 
     @Override
     public Integer getId() {
@@ -167,11 +170,23 @@ public class SicCs7 extends BaseEntityModel {
         this.sicProgramCertifiedDesignation = sicProgramCertifiedDesignation;
     }
 
+    private Byte[] getBmpReportDocAsByteArray() {
+        return bmpReportDocAsByteArray;
+    }
+
+    private void setBmpReportDocAsByteArray(Byte[] bmpReportDocAsByteArray) {
+        this.bmpReportDocAsByteArray = bmpReportDocAsByteArray;
+    }
+
+    @Transient
     public DocNames getBmpReportDoc() {
-        return bmpReportDoc;
+        return (DocNames) SerializationUtils
+                .deserialize(TypeConversionUtils
+                        .toPrimitiveType(bmpReportDocAsByteArray));
     }
 
     public void setBmpReportDoc(DocNames bmpReportDoc) {
-        this.bmpReportDoc = bmpReportDoc;
+        this.bmpReportDocAsByteArray = TypeConversionUtils
+                .toObjectType(SerializationUtils.serialize(bmpReportDoc));
     }
 }

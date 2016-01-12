@@ -294,17 +294,7 @@
                                 <span ng-show="hasStory[8]">Edit Your Story</span>
                             </a>
                         </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input icheck type="checkbox" checklist-model="cs10.biodiversityItems2" checklist-value="2">
-                            The Nature Conservancy
-                            <a ng-click="shareHistory(9, 'biodiversityItems2_2', $event)" ng-show="isSelected(cs10.biodiversityItems2, 2)">
-                                <span ng-hide="hasStory[9]">Share Your Story</span>
-                                <span ng-show="hasStory[9]">Edit Your Story</span>
-                            </a>
-                        </label>
-                        <ul style="list-style-type: none" ng-show="isSelected(cs10.biodiversityItems2, 2)">
+                        <ul style="list-style-type: none" ng-show="isSelected(cs10.biodiversityItems2, 1)">
                             <p>Select all that apply</p>
 
                             <li>
@@ -343,6 +333,17 @@
                     </li>
                     <li>
                         <label>
+                            <input icheck type="checkbox" checklist-model="cs10.biodiversityItems2" checklist-value="2">
+                            The Nature Conservancy
+                            <a ng-click="shareHistory(9, 'biodiversityItems2_2', $event)" ng-show="isSelected(cs10.biodiversityItems2, 2)">
+                                <span ng-hide="hasStory[9]">Share Your Story</span>
+                                <span ng-show="hasStory[9]">Edit Your Story</span>
+                            </a>
+                        </label>
+
+                    </li>
+                    <li>
+                        <label>
                             <input icheck type="checkbox" checklist-model="cs10.biodiversityItems2" checklist-value="3">
                             Conservation International
                             <a ng-click="shareHistory(10, 'biodiversityItems2_3', $event)" ng-show="isSelected(cs10.biodiversityItems2, 3)">
@@ -370,7 +371,19 @@
                                 <span ng-show="hasStory[12]">Edit Your Story</span>
                             </a>
                         </label>
-                        <ul style="list-style-type: none" ng-show="isSelected(cs10.biodiversityItems2, 5)">
+
+
+                    </li>
+                    <li>
+                        <label>
+                            <input icheck type="checkbox" checklist-model="cs10.biodiversityItems2" checklist-value="6">
+                            NatureServe
+                            <a ng-click="shareHistory(13, 'biodiversityItems2_6', $event)" ng-show="isSelected(cs10.biodiversityItems2, 6)">
+                                <span ng-hide="hasStory[13]">Share Your Story</span>
+                                <span ng-show="hasStory[13]">Edit Your Story</span>
+                            </a>
+                        </label>
+                        <ul style="list-style-type: none" ng-show="isSelected(cs10.biodiversityItems2, 6)">
                             <p>Select all that apply</p>
 
                             <li>
@@ -406,17 +419,6 @@
                             </li>
 
                         </ul>
-
-                    </li>
-                    <li>
-                        <label>
-                            <input icheck type="checkbox" checklist-model="cs10.biodiversityItems2" checklist-value="6">
-                            NatureServe
-                            <a ng-click="shareHistory(13, 'biodiversityItems2_6', $event)" ng-show="isSelected(cs10.biodiversityItems2, 6)">
-                                <span ng-hide="hasStory[13]">Share Your Story</span>
-                                <span ng-show="hasStory[13]">Edit Your Story</span>
-                            </a>
-                        </label>
                     </li>
                     <li>
                         <label>
@@ -519,7 +521,7 @@
                         <label>
 
                             <input icheck type="checkbox" checklist-model="cs10.biodiversityManagementItems2" checklist-value="1">
-                            Are now contained in purchase order
+                            Are contained in purchase order
                             <a ng-click="shareHistory(18, 'biodiversityManagementItems2_1', $event)" ng-show="isSelected(cs10.biodiversityManagementItems2, 1)">
                                 <span ng-hide="hasStory[18]">Share Your Story</span>
                                 <span ng-show="hasStory[18]">Edit Your Story</span>
@@ -530,7 +532,7 @@
                     <li>
                         <label>
                             <input icheck type="checkbox" checklist-model="cs10.biodiversityManagementItems2" checklist-value="2">
-                            Are now contained in purchase contract
+                            Are contained in purchase contract
                             <a ng-click="shareHistory(19, 'biodiversityManagementItems2_2', $event)" ng-show="isSelected(cs10.biodiversityManagementItems2, 2)">
                                 <span ng-hide="hasStory[19]">Share Your Story</span>
                                 <span ng-show="hasStory[19]">Edit Your Story</span>
@@ -540,7 +542,7 @@
                     <li>
                         <label>
                             <input icheck type="checkbox" checklist-model="cs10.biodiversityManagementItems2" checklist-value="3">
-                            Are now contained in another format
+                            Are contained in another format
                             <a ng-click="shareHistory(20, 'biodiversityManagementItems2_3', $event)" ng-show="isSelected(cs10.biodiversityManagementItems2, 3)">
                                 <span ng-hide="hasStory[20]">Share Your Story</span>
                                 <span ng-show="hasStory[20]">Edit Your Story</span>
