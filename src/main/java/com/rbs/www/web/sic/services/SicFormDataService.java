@@ -12,10 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class SicFormDataService {
-
     @Autowired
     private UserService userService;
 
@@ -52,8 +53,7 @@ public class SicFormDataService {
 
     public SicFormData getSicForm(Integer id) {
         Company company = companyService.findById(id);
-        SicFormData entity = repository.getByCompany(company);
-        return entity;
+        return repository.getByCompany(company);
     }
 
     public void setAuditInfo(int id, String status) {
@@ -62,5 +62,13 @@ public class SicFormDataService {
         entity.setStatus(sfiPpFormStatusService.getByStatus(status));
         entity.setUpdatedAt(Util.getCurrentDate());
         entity.setUpdatedBy(user);
+    }
+
+    public List<SicFormData> getAll() {
+        return repository.getAll();
+    }
+
+    public SicFormData get(int id) {
+        return repository.get(id);
     }
 }
