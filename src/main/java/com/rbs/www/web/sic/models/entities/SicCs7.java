@@ -54,7 +54,7 @@ public class SicCs7 extends BaseEntityModel {
     private Boolean sicProgramCertifiedDesignation;
 
     @Lob
-    @Column(name = "cs7_bmpReportDoc", length = Integer.MAX_VALUE - 1, nullable = true)
+    @Column(name = "cs7_bmpReportDoc", length = 1000, nullable = true)
     private Byte[] bmpReportDocAsByteArray;
 
     @Override
@@ -180,12 +180,14 @@ public class SicCs7 extends BaseEntityModel {
 
     @Transient
     public DocNames getBmpReportDoc() {
+        if (bmpReportDocAsByteArray == null) return null;
         return (DocNames) SerializationUtils
                 .deserialize(TypeConversionUtils
                         .toPrimitiveType(bmpReportDocAsByteArray));
     }
 
     public void setBmpReportDoc(DocNames bmpReportDoc) {
+        if (bmpReportDoc == null) return;
         this.bmpReportDocAsByteArray = TypeConversionUtils
                 .toObjectType(SerializationUtils.serialize(bmpReportDoc));
     }

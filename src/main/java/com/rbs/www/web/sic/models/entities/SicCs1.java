@@ -4,6 +4,8 @@ import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.models.datamodels.DocNames;
 import org.apache.commons.lang3.SerializationUtils;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -149,12 +151,32 @@ public class SicCs1 extends BaseEntityModel {
     private Set<SicPpFormMeetingType> meetingList;
 
     @Lob
-    @Column(name = "contactFiles", length = Integer.MAX_VALUE - 1, nullable = true)
+    @Column(name = "cs1_contactFiles", length = Integer.MAX_VALUE - 1, nullable = true)
     private Byte[] contactFilesAsByteArray;
 
     @Lob
-    @Column(name = "guideFiles", length = Integer.MAX_VALUE - 1, nullable = true)
+    @Column(name = "cs1_guideFiles", length = Integer.MAX_VALUE - 1, nullable = true)
     private Byte[] guideFilesAsByteArray;
+
+    @Column(name = "cs1_sicRecrOrgsSpecify1", nullable = true)
+    private String sicRecrOrgsSpecify1;
+
+    @Column(name = "cs1_sicRecrOrgsSpecify2", nullable = true)
+    private String sicRecrOrgsSpecify2;
+
+    @Column(name = "cs1_sicRecrOrgsSpecify3", nullable = true)
+    private String sicRecrOrgsSpecify3;
+
+    @Column(name = "cs1_sicRecrOrgsSpecify4", nullable = true)
+    private String sicRecrOrgsSpecify4;
+
+    @Column(name = "cs1_sicRecrOrgsSpecify5", nullable = true)
+    private String sicRecrOrgsSpecify5;
+
+    @Column(name = "cs2_sicRecruitmentOrgs", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> sicRecruitmentOrgs;
 
     @Override
     public Integer getId() {
@@ -520,12 +542,14 @@ public class SicCs1 extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getContactFiles() {
+        if (contactFilesAsByteArray == null) return null;
         return (Set<DocNames>) SerializationUtils
                 .deserialize(TypeConversionUtils
                         .toPrimitiveType(contactFilesAsByteArray));
     }
 
     public void setContactFiles(HashSet<DocNames> contactFiles) {
+        if (contactFiles == null) return;
         this.contactFilesAsByteArray = TypeConversionUtils
                 .toObjectType(SerializationUtils.serialize(contactFiles));
     }
@@ -538,15 +562,65 @@ public class SicCs1 extends BaseEntityModel {
         this.guideFilesAsByteArray = guideFilesAsByteArray;
     }
 
+    public String getSicRecrOrgsSpecify1() {
+        return sicRecrOrgsSpecify1;
+    }
+
+    public void setSicRecrOrgsSpecify1(String sicRecrOrgsSpecify1) {
+        this.sicRecrOrgsSpecify1 = sicRecrOrgsSpecify1;
+    }
+
+    public String getSicRecrOrgsSpecify2() {
+        return sicRecrOrgsSpecify2;
+    }
+
+    public void setSicRecrOrgsSpecify2(String sicRecrOrgsSpecify2) {
+        this.sicRecrOrgsSpecify2 = sicRecrOrgsSpecify2;
+    }
+
+    public String getSicRecrOrgsSpecify3() {
+        return sicRecrOrgsSpecify3;
+    }
+
+    public void setSicRecrOrgsSpecify3(String sicRecrOrgsSpecify3) {
+        this.sicRecrOrgsSpecify3 = sicRecrOrgsSpecify3;
+    }
+
+    public String getSicRecrOrgsSpecify4() {
+        return sicRecrOrgsSpecify4;
+    }
+
+    public void setSicRecrOrgsSpecify4(String sicRecrOrgsSpecify4) {
+        this.sicRecrOrgsSpecify4 = sicRecrOrgsSpecify4;
+    }
+
+    public String getSicRecrOrgsSpecify5() {
+        return sicRecrOrgsSpecify5;
+    }
+
+    public void setSicRecrOrgsSpecify5(String sicRecrOrgsSpecify5) {
+        this.sicRecrOrgsSpecify5 = sicRecrOrgsSpecify5;
+    }
+
+    public Set<Integer> getSicRecruitmentOrgs() {
+        return sicRecruitmentOrgs;
+    }
+
+    public void setSicRecruitmentOrgs(Set<Integer> sicRecruitmentOrgs) {
+        addAll(this.sicRecruitmentOrgs, sicRecruitmentOrgs);
+    }
+
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getGuideFiles() {
+        if (guideFilesAsByteArray == null) return null;
         return (Set<DocNames>) SerializationUtils
                 .deserialize((TypeConversionUtils
                         .toPrimitiveType(guideFilesAsByteArray)));
     }
 
     public void setGuideFiles(HashSet<DocNames> guideFiles) {
+        if (guideFiles == null) return;
         this.guideFilesAsByteArray = TypeConversionUtils
                 .toObjectType(SerializationUtils.serialize(guideFiles));
     }

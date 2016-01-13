@@ -125,46 +125,44 @@
                     <td>
                         <label>We plan on investing in research with Genetically Engineered trees via forest tree biotechnology</label>
 
-                        <div class="col-sm-10">
+
+                        <div class="col-sm-6">
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
-                                    <input type="radio" icheck name="test2" value=true
-                                           ng-model="cs7.planInvestResIfPlan" ng-checked="cs7.planInvestResIfPlan == true">
+                                    <input type="radio"   icheck name="test3" ng-model="cs7.investRes_ifInve" value="1">
                                     <label class="checkboxLabel">Yes</label>
                                     &nbsp;&nbsp;&nbsp;
-                                    <input type="radio" icheck name="test2" value=false
-                                           ng-model="cs7.planInvestResIfPlan" ng-checked="cs7.planInvestResIfPlan == false">
+                                    <input type="radio"   icheck name="test3" ng-model="cs7.investRes_ifInve" value="0">
                                     <label class="checkboxLabel">No</label>
                                 </div>
+                                <p></p>
 
-                                <div ng-show="cs7.planInvestResIfPlan">
-                                    <div class="col-sm-6">
-                                        <label>In what countries?</label>
-                                        <select class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs7.planInvestResIfPlan, other3)">
-                                            <option value="0">Select country</option>
-                                            <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
-                                        </select>
+                                <div ng-show="cs7.investRes_ifInve">
 
-                                        <div ng-repeat="country in cs7.planInvestResIfPlan" id="selectedItem">{{ country.country }}
-                                            <button ng-click="cs7.planInvestResIfPlan = delCountry(cs7.planInvestResIfPlan, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                                        </div>
+                                    <label>In what countries?</label>
+                                    <select class="form-control" ng-model="other1" ng-change="other1 = addOtherCountry(cs7.investRes_countryID, other1)">
+                                        <option value="0">Select country</option>
+                                        <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
+                                    </select>
 
-
+                                    <div ng-repeat="country in cs7.investRes_countryID" id="selectedItem">{{country.country}}
+                                        <button ng-click="cs7.investRes_countryID = delCountry(cs7.investRes_countryID, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     </div>
 
-                                    <div class="col-sm-6">
-                                        <label>Anticipated year research will begin</label>
-                                        <select class="form-control" name="select" ng-model="cs7.planInvestResYear">
-                                            <option value="0" ng-selected="!cs7.planInvestResYear">Select Year</option>
-                                            <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
-                                                    ng-value="{{year}}">{{year}}</option>
-                                        </select>
-                                    </div>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="col-sm-6" ng-show="cs7.investRes_ifInve">
+                            <br>
+                            <div class="group3">
+                                <p>% of your current supply into US and Canadian mills from forest tree biotechnology</p>
+                                <input type="number"  class="form-control shortest" max="100" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs7.investResperc_currSupply"> %
+                            </div>
+                        </div>
                     </td>
                 </tr>
 
@@ -176,42 +174,40 @@
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
-                                    <input type="radio" icheck name="test3" value=true
-                                           ng-model="cs7.investResIfInve" ng-checked="cs7.investResIfInve == true">
+                                    <input type="radio"   icheck name="test2" ng-model="cs7.planInvestRes_ifPlan" value="1">
                                     <label class="checkboxLabel">Yes</label>
                                     &nbsp;&nbsp;&nbsp;
-                                    <input type="radio" icheck name="test3" value=false
-                                           ng-model="cs7.investResIfInve" ng-checked="cs7.investResIfInve == false">
+                                    <input type="radio"   icheck name="test2" ng-model="cs7.planInvestRes_ifPlan" value="0">
                                     <label class="checkboxLabel">No</label>
                                 </div>
                                 <p></p>
 
-                                <div ng-show="cs7.investResIfInve">
-
+                                <div ng-show="cs7.planInvestRes_ifPlan">
                                     <label>In what countries?</label>
-                                    <select class="form-control" name="select"
-                                            ng-model="country1"
-                                            ng-change="country1 = addCountry(cs7.investResCountries, country1)">
+                                    <select  class="form-control" name="select"
+                                            ng-model="country2"
+                                            ng-change="country2 = addCountry(cs7.planInvestRes_countryID, country2)">
                                         <option value="">Select Country</option>
-                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.country }}</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
                                     </select>
 
-
-                                    <div id="selectedItem" ng-repeat="country in cs7.investResCountries ">{{country.country}}
-                                        <button type="button" class="close" aria-hidden="1"
-                                                ng-click="cs7.investResCountries = delCountry(cs7.investResCountries, country.id)">x</button>
-                                    </div>
-                                    <div class="padded-left">
-                                        % of your current supply into US and Canadian mills from forest tree biology <input type="text" class="form-control" ng-model="cs7.investResIfInve" ng-pattern="/^\d*(\.\d{1,2})?$/">
-                                    </div>
-
-
+                                    <div id="selectedItem" ng-repeat="country in cs7.planInvestRes_countryID ">{{country.name}}&nbsp;</div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" ng-show="cs7.planInvestRes_ifPlan">
+                            <br><br>
+                            <div class="group2">
+                                <p>Anticipated year research will begin</p>
+                                <select  class="form-control" name="select" ng-model="cs7.planInvestRes_year">
+                                    <option value="0" ng-selected="!cs7.planInvestRes_year">Select Year</option>
+                                    <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
+                                            ng-value="{{year}}">{{year}}</option>
+                                </select>
                             </div>
                         </div>
                     </td>
                 </tr>
-
 
                 <tr>
                     <td>
@@ -221,15 +217,47 @@
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
-                                    <input type="radio" icheck name="test" value=true
-                                           ng-model="cs7.planCommPlantIfPlanGE" ng-checked="cs7.planCommPlantIfPlanGE == true">
+                                    <input type="radio"   icheck name="test" ng-model="cs7.planCommPlant_ifPlanGE" value="1">
                                     <label class="checkboxLabel">Yes</label>
                                     &nbsp;&nbsp;&nbsp;
-                                    <input type="radio" icheck name="test" value=false
-                                           ng-model="cs7.planCommPlantIfPlanGE" ng-checked="cs7.planCommPlantIfPlanGE == false">
+                                    <input type="radio"   icheck name="test" ng-model="cs7.planCommPlant_ifPlanGE" value="0">
                                     <label class="checkboxLabel">No</label>
                                 </div>
+                                <p></p>
+
+                                <div class="group1" ng-show="cs7.planCommPlant_ifPlanGE">
+                                    <label>In what countries?</label>
+
+                                    <select  class="form-control" name="select"
+                                            ng-model="country3"
+                                            ng-change="country3 = addCountry(cs7.planCommPlant_countryID, country3)">
+                                        <option value="">Select Country</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+                                    </select>
+
+                                    <div id="selectedItem" ng-repeat="country in cs7.planCommPlant_countryID ">{{country.name}}&nbsp;</div>
+                                </div>
                             </div>
+                        </div>
+                        <div class="col-sm-6" ng-show="cs7.planCommPlant_ifPlanGE">
+                            <div class="group1">
+                                <br><br>
+                                <p>Anticipated year of harvest</p>
+                                <select  class="form-control" name="select" ng-model="cs7.planCommPlant_year">
+                                    <option value="0" ng-selected="!cs7.planCommPlant_year">Select Year</option>
+                                    <option value="1">2015 to 2019</option>
+                                    <option value="2">2020 to 2024</option>
+                                    <option value="3">2025 to 2029</option>
+                                    <option value="4">2030 to 2034</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="padded-left  group1" ng-show="cs7.planCommPlant_ifPlanGE">
+                            <p><label>Anticipated % of total harvest will be of fiber derived from forest tree
+                                biotechnology in 5 years?</label></p>
+                            <input type="text"  class="form-control shortest" max="100" min="0"
+                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                   ng-model="cs7.planCommPlantPerc"> %
                         </div>
                     </td>
                 </tr>

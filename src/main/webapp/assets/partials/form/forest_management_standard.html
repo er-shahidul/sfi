@@ -886,7 +886,13 @@
                 <div>
                     <input type="radio" icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity415" value=1>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicator
-
+                    <div class="content-pading">
+                    <div class="form-group">
+                    Initiated practices to ensure conservation of significant species of concern (please explain and note
+                    the species that are now addressed)<br/>
+                    <textarea rows="4" cols="70" ng-model="cs9.conservationBiodiversity415Exp"></textarea>
+                    </div>
+                    </div>
 
             <label>
                 <input type="radio" icheck name="conservationBiodiversity415item" ng-model="cs9.conservationBiodiversity415item" value=2>
@@ -947,7 +953,7 @@
                     <input type="radio" icheck name="indigenousPeoplesPublic" ng-model="cs9.indigenousPeoplesPublic" value=2>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators.
 
-                    <ul style="list-style-type: none" ng-show="cs9.indigenousPeoplesPublic == 2">
+                    <ul style="list-style-type: none" >
                         <p>Select all that apply</p>
                         <li>
                             <label>
@@ -1067,7 +1073,7 @@
                     <input type="radio" icheck name="indigenousPeoplesPrivate" ng-model="cs9.indigenousPeoplesPrivate" value=2>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators.
 
-                    <ul style="list-style-type: none" ng-show="cs9.indigenousPeoplesPrivate == 2">
+                    <ul style="list-style-type: none" >
                         <p>Select all that apply</p>
                         <li>
                             <label>
@@ -1162,7 +1168,7 @@
                     <input type="radio" icheck name="indigenousPeoplesForest" ng-model="cs9.indigenousPeoplesForest" value=1>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators.
 
-                    <ul style="list-style-type: none" ng-show="cs9.indigenousPeoplesForest == 1">
+                    <ul style="list-style-type: none" >
                         <p>Select all that apply</p>
                         <li>
                             <label>
@@ -1289,7 +1295,7 @@
                     Yes, requirements for the use of qualified logging professionals and/or
                     certified logging professionals and/or wood producers are now factored in:
 
-                    <ul style="list-style-type: none" ng-show="cs9.trainingEducation == 1">
+                    <ul style="list-style-type: none" >
                         <p>Select all that apply</p>
                         <li>
                             <label>
@@ -1792,14 +1798,15 @@
                     <thead>
                         <td><label>Acres converted of our managed forest land</label></td>
                         <td><label>Region</label></td>
+                        <td></td>
                     </thead>
                     <tbody>
                         <tr ng-repeat="forestlandArea in cs9.forestlandAreas">
                             <td class="col-lg-5">{{ forestlandArea.area }} AC</td>
                             <td class="col-lg-5">{{ forestlandArea.region.name }}</td>
                             <td class="col-lg-2">
-                                <a style="text-align: right;padding-top: 30px;" ng-click="editRegionArea($index)">Edit</a> &nbsp;
-                                <a style="text-align: right;padding-top: 30px;" ng-click="deleteRegionArea($index)">Delete</a>
+                                <a style="text-align: right;padding-top: 10px;" ng-click="editRegionArea($index)">Edit</a> &nbsp; &nbsp;
+                                <a style="text-align: right;padding-top: 10px;" ng-click="deleteRegionArea($index)">Delete</a>
                             </td>
                         </tr>
                         <tr></tr>
