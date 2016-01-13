@@ -1,10 +1,15 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.web.common.models.datamodels.DocNames;
 import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
+import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "sic_pp_form_cs8_projects")
@@ -126,11 +131,13 @@ public class SicCs8Project extends BaseEntityModel {
 
     @Lob
     @Column(name = "cs8_supportDocs", length = Integer.MAX_VALUE - 1, nullable = true)
-    private Byte[] supportDocs;
+    private Byte[] supportDocsAsByteArray;
     
-    @ManyToOne(targetEntity = SfiPpFormRegion.class, optional = true)
-    @JoinColumn(name = "cs8_region", referencedColumnName = "id", nullable = true)
-    private SfiPpFormRegion region;
+    @ManyToMany(targetEntity = SfiPpFormRegion.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "sic_pp_form_cs8_projects_region",
+               joinColumns = {@JoinColumn(name = "project_id")},
+               inverseJoinColumns = {@JoinColumn(name = "region_id", referencedColumnName = "id")})
+    private Set<SfiPpFormRegion> regions;
 
     @Override
     public Integer getId() {
@@ -437,20 +444,33 @@ public class SicCs8Project extends BaseEntityModel {
         this.startDate = startDate;
     }
 
-    public Byte[] getSupportDocs() {
-        return supportDocs;
+    public Set<SfiPpFormRegion> getRegions() {
+        return regions;
     }
 
-    public void setSupportDocs(Byte[] supportDocs) {
-        this.supportDocs = supportDocs;
+    public void setRegions(Set<SfiPpFormRegion> regions) {
+        addAll(this.regions, regions);
     }
 
-    public SfiPpFormRegion getRegion() {
-        return region;
+    private Byte[] getSupportDocsAsByteArray() {
+        return supportDocsAsByteArray;
     }
 
-    public void setRegion(SfiPpFormRegion region) {
-        this.region = region;
+    private void setSupportDocsAsByteArray(Byte[] supportDocsAsByteArray) {
+        this.supportDocsAsByteArray = supportDocsAsByteArray;
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<DocNames> getSupportDocs() {
+        return (Set<DocNames>) SerializationUtils
+                .deserialize(TypeConversionUtils
+                        .toPrimitiveType(supportDocsAsByteArray));
+    }
+
+    public void setSupportDocs(HashSet<DocNames> supportDocs) {
+        this.supportDocsAsByteArray = TypeConversionUtils
+                .toObjectType(SerializationUtils.serialize(supportDocs));
     }
 }
 

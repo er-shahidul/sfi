@@ -51,7 +51,7 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
     private Date endDate;
     private Date startDate;
 
-    private SfiPpFormRegionViewModel region;
+    private Set<SfiPpFormRegionViewModel> regions;
     private Set<DocNames> supportDocs;
 
     @Override
@@ -359,12 +359,12 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
         this.startDate = startDate;
     }
 
-    public SfiPpFormRegionViewModel getRegion() {
-        return region;
+    public Set<SfiPpFormRegionViewModel> getRegions() {
+        return regions;
     }
 
-    public void setRegion(SfiPpFormRegionViewModel region) {
-        this.region = region;
+    public void setRegions(Set<SfiPpFormRegionViewModel> regions) {
+        this.regions = regions;
     }
 
     public Set<DocNames> getSupportDocs() {
