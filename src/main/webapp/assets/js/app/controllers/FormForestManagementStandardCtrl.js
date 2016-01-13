@@ -32,8 +32,14 @@ sfiFormApp
 
             if($scope.editIndex){
                 $scope.cs9.forestlandAreas[$scope.editIndex] = forestlandArea;
+
+            }
+            else if($scope.editIndex == 0){
+                $scope.cs9.forestlandAreas[$scope.editIndex] = forestlandArea;
+
             }else{
                 $scope.cs9.forestlandAreas.push(forestlandArea);
+
             }
 
             $scope.editIndex = null;

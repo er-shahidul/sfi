@@ -188,8 +188,7 @@
     <tr ng-repeat-end ng-form="innerForm">
 
         <td ng-init="section.form = innerForm" tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="{{ section.tooltip }}"
-                >
+            data-title="{{ section.tooltip }}">
 
             <input type="checkbox" name="otherEnable" id="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
                    ng-if="section.row == 11" ng-model="section.otherEnable"/>

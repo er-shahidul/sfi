@@ -1,7 +1,7 @@
 var ngScope = null;
 sfiFormApp.controller('FormEmergingIssuesCtrl',
-    ['$rootScope', '$scope', 'Countries',  '$http', '_', 'Message',
-        function ($rootScope , $scope, Countries, $http, _, Message){
+    ['$rootScope', '$scope','$state', 'Countries',  '$http', '_', 'Message',
+        function ($rootScope , $scope, $state, Countries, $http, _, Message){
 
     $scope.cs7 = angular.copy($rootScope.form.cs7);
 
@@ -11,62 +11,6 @@ sfiFormApp.controller('FormEmergingIssuesCtrl',
 
     $scope.user = [];
 
-    $scope.countries = Countries.getAll();
-
-
-    $scope.findCountry = function(bucket, id){
-
-        return _.find(bucket, function(country){
-            return country.id == id;
-        });
-    }
-
-            $scope.findotherCountry = function(bucket, id){
-
-                return _.find(bucket, function(country){
-                    return country.id == id;
-                });
-            }
-
-    $scope.addCountry = function(model, id){
-
-        //check if already exists
-        if($scope.findCountry(model, id)){
-            return "";
-        }
-
-        var country = $scope.findCountry($scope.countries, id);
-        if(country){
-            model.push(country);
-        }
-
-        return "";
-    };
-
-            $scope.addOtherCountry = function(model, id){
-
-                //check if already exists
-                if($scope.findotherCountry(model, id)){
-                    return "";
-                }
-
-                var country = $scope.findotherCountry($scope.countries, id);
-                if(country){
-                    model.push(country);
-                }
-
-                return "";
-            };
-
-    $scope.delCountry = function(bucket, id){
-
-        bucket = _.filter(bucket, function(country){
-            return country.id != id;
-        });
-
-        return bucket;
-
-    };
 
 
     $scope.setForms = function(){

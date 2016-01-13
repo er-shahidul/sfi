@@ -586,16 +586,17 @@
                 <div>
                     <input type="radio" icheck ng-model="cs10.biodiversityTraining" value=1>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators.
-                    <ul style="list-style-type: none" ng-show="cs10.biodiversityTraining == 1">
+                    <!--<ul style="list-style-type: none" ng-show="cs10.biodiversityTraining == 1">-->
+                    <ul style="list-style-type: none" >
                         <p>Select all that apply</p>
                         <li>
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs10.biodiversityTrainingItems1" checklist-value="1">
                                 Are now factored into purchase contracts
-                                <a ng-click="shareHistory(21, 'biodiversityTrainingItems1_1', $event)" ng-show="isSelected(cs10.biodiversityTrainingItems1, 1)">
-                                    <span ng-hide="hasStory[21]">Share Your Story</span>
-                                    <span ng-show="hasStory[21]">Edit Your Story</span>
-                                </a>
+                                <!--<a ng-click="shareHistory(21, 'biodiversityTrainingItems1_1', $event)" ng-show="isSelected(cs10.biodiversityTrainingItems1, 1)">-->
+                                    <!--<span ng-hide="hasStory[21]">Share Your Story</span>-->
+                                    <!--<span ng-show="hasStory[21]">Edit Your Story</span>-->
+                                <!--</a>-->
                             </label>
 
                         </li>
@@ -603,10 +604,10 @@
                             <label>
                                 <input icheck type="checkbox" checklist-model="cs10.biodiversityTrainingItems1" checklist-value="2">
                                 Are now factored into purchase orders
-                                <a ng-click="shareHistory(22, 'biodiversityTrainingItems1_2', $event)" ng-show="isSelected(cs10.biodiversityTrainingItems1, 2)">
-                                    <span ng-hide="hasStory[22]">Share Your Story</span>
-                                    <span ng-show="hasStory[22]">Edit Your Story</span>
-                                </a>
+                                <!--<a ng-click="shareHistory(22, 'biodiversityTrainingItems1_2', $event)" ng-show="isSelected(cs10.biodiversityTrainingItems1, 2)">-->
+                                    <!--<span ng-hide="hasStory[22]">Share Your Story</span>-->
+                                    <!--<span ng-show="hasStory[22]">Edit Your Story</span>-->
+                                <!--</a>-->
                             </label>
                         </li>
                     </ul>
