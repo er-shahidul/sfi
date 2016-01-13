@@ -139,7 +139,19 @@
                                 </div>
 
                                 <div ng-show="cs7.planInvestResIfPlan">
+                                    <div class="col-sm-6">
+                                        <label>In what countries?</label>
+                                        <select class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs7.planInvestResIfPlan, other3)">
+                                            <option value="0">Select country</option>
+                                            <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
+                                        </select>
 
+                                        <div ng-repeat="country in cs7.planInvestResIfPlan" id="selectedItem">{{ country.country }}
+                                            <button ng-click="cs7.planInvestResIfPlan = delCountry(cs7.planInvestResIfPlan, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                        </div>
+
+
+                                    </div>
 
                                     <div class="col-sm-6">
                                         <label>Anticipated year research will begin</label>
@@ -189,7 +201,9 @@
                                         <button type="button" class="close" aria-hidden="1"
                                                 ng-click="cs7.investResCountries = delCountry(cs7.investResCountries, country.id)">x</button>
                                     </div>
-
+                                    <div class="padded-left">
+                                        % of your current supply into US and Canadian mills from forest tree biology <input type="text" class="form-control" ng-model="cs7.investResIfInve" ng-pattern="/^\d*(\.\d{1,2})?$/">
+                                    </div>
 
 
                                 </div>

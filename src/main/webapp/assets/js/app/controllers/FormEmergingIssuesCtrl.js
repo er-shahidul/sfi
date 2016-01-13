@@ -21,6 +21,13 @@ sfiFormApp.controller('FormEmergingIssuesCtrl',
         });
     }
 
+            $scope.findotherCountry = function(bucket, id){
+
+                return _.find(bucket, function(country){
+                    return country.id == id;
+                });
+            }
+
     $scope.addCountry = function(model, id){
 
         //check if already exists
@@ -35,6 +42,21 @@ sfiFormApp.controller('FormEmergingIssuesCtrl',
 
         return "";
     };
+
+            $scope.addOtherCountry = function(model, id){
+
+                //check if already exists
+                if($scope.findotherCountry(model, id)){
+                    return "";
+                }
+
+                var country = $scope.findotherCountry($scope.countries, id);
+                if(country){
+                    model.push(country);
+                }
+
+                return "";
+            };
 
     $scope.delCountry = function(bucket, id){
 

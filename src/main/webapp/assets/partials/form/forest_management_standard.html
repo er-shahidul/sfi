@@ -651,7 +651,7 @@
                     <li>
                         <label>
                             <input type="checkbox" icheck checklist-model="cs9.conservationBiodiversity413Items2" checklist-value="4">
-                            We worked within the context of a collaborative effort to support forest diversity at the landscape level.
+                            We worked within the context of a collaborative effort to support forest diversity at the landscape level. (note the name of the collaborative effort if appropriate, or the lead organization for the collaborative)
                             <a  ng-click="shareHistory(25, 'conservationBiodiversity413Items2_4', $event)" ng-show="isSelected(cs9.conservationBiodiversity413Items2, 4)">
                                 <span ng-hide="hasStory[25]">Share Your Story</span>
                                 <span ng-show="hasStory[25]">Edit Your Story</span>
@@ -885,9 +885,15 @@
             <label>
                 <div>
                     <input type="radio" icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity415" value=1>
-                    Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators
+                    Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicator
 
-                    <a  ng-click="shareHistory(67, 'conservationBiodiversity415', $event)" ng-show="cs9.conservationBiodiversity415 == 1">
+
+            <label>
+                <input type="radio" icheck name="conservationBiodiversity415item" ng-model="cs9.conservationBiodiversity415item" value=2>
+                We previously addressed the requirements in the SFI 2015-2019 Standard through the following indicator.
+            </label>
+
+                    <a  ng-click="shareHistory(67, 'conservationBiodiversity415item', $event)" ng-show="cs9.conservationBiodiversity415item == 2">
                         <span ng-hide="hasStory[67]">Share Your Story</span>
                         <span ng-show="hasStory[67]">Edit Your Story</span>
                     </a>
@@ -897,32 +903,28 @@
             </label>
 
             <div class="content-pading">
-                <div class="form-group" ng-show="cs9.conservationBiodiversity415 == 1">
+                <div class="form-group" ng-show="cs9.conservationBiodiversity415item == 2">
                     Initiated practices to ensure conservation of significant species of concern (please explain and note
                     the species that are now addressed)<br/>
                     <textarea rows="4" cols="70" ng-model="cs9.conservation415Explain1_1"></textarea>
                 </div>
             </div>
+            <!--<div class="content-pading">-->
+                <!--<div class="form-group" ng-show="cs9.conservationBiodiversity415item == 2">-->
+                    <!--Initiated practices to ensure conservation of significant species of concern (please explain and note-->
+                    <!--the species that are now addressed)<br/>-->
+                    <!--<textarea rows="4" cols="70" ng-model="cs9.conservation415Explain1_2"></textarea>-->
+                <!--</div>-->
+            <!--</div>-->
             <label>
-                <input type="radio" icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity414" value=2>
-                We previously addressed the requirements in the SFI 2015-2019 Standard through the following indicators.
-            </label>
-            <div class="content-pading">
-                <div class="form-group" ng-show="cs9.conservationBiodiversity415 == 2">
-                    Initiated practices to ensure conservation of significant species of concern (please explain and note
-                    the species that are now addressed)<br/>
-                    <textarea rows="4" cols="70" ng-model="cs9.conservation415Explain1_2"></textarea>
-                </div>
-            </div>
-            <label>
-                <input type="radio" icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity415" value=3>
+                <input type="radio" icheck name="conservationBiodiversity415item2" ng-model="cs9.conservationBiodiversity415item2" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
 
-            <div class="form-group" ng-show="cs9.conservationBiodiversity415 == 3">
+            <!--<div class="form-group" ng-show="cs9.conservationBiodiversity415 == 3">
                 Provide rationale<br/>
                 <textarea rows="4" cols="70" ng-model="cs9.conservation415Rationale"></textarea>
-            </div>
+            </div>-->
         </div>
         <br>
 
