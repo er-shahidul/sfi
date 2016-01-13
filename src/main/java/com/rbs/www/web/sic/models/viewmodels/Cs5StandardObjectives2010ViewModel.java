@@ -1,9 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.web.common.models.datamodels.DocNames;
-
-import java.util.Set;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 
 public class Cs5StandardObjectives2010ViewModel extends BaseViewModel {
     private Integer id;
@@ -14,7 +12,7 @@ public class Cs5StandardObjectives2010ViewModel extends BaseViewModel {
     private Integer unresolved;
     private String objective;
     private String circumstanceDescription;
-    private DocNames circumstancesDoc;
+    private BlobNames circumstancesDoc;
 
     @Override
     public Integer getId() {
@@ -73,11 +71,11 @@ public class Cs5StandardObjectives2010ViewModel extends BaseViewModel {
         this.circumstanceDescription = circumstanceDescription;
     }
 
-    public DocNames getCircumstancesDoc() {
+    public BlobNames getCircumstancesDoc() {
         return circumstancesDoc;
     }
 
-    public void setCircumstancesDoc(DocNames circumstancesDoc) {
+    public void setCircumstancesDoc(BlobNames circumstancesDoc) {
         this.circumstancesDoc = circumstancesDoc;
     }
 }

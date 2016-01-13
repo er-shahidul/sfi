@@ -170,6 +170,15 @@ public class SicCs2 extends BaseEntityModel {
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SicPpFormNeighborEvent> sicNeighborEvents;
 
+    @Column(name = "cs2_supportCurrency", nullable = true)
+    private Integer supportCurrency;
+
+    @Column(name = "cs2_committeeCurrency", nullable = true)
+    private Integer committeeCurrency;
+
+    @Column(name = "cs2_directCurrency", nullable = true)
+    private Integer directCurrency;
+
     @Override
     public Integer getId() {
         return id;
@@ -585,5 +594,29 @@ public class SicCs2 extends BaseEntityModel {
 
     public void setCommitteeFeeStructure(Set<Integer> committeeFeeStructure) {
         addAll(this.committeeFeeStructure, committeeFeeStructure);
+    }
+
+    public Integer getSupportCurrency() {
+        return supportCurrency;
+    }
+
+    public void setSupportCurrency(Integer supportCurrency) {
+        this.supportCurrency = supportCurrency;
+    }
+
+    public Integer getCommitteeCurrency() {
+        return committeeCurrency;
+    }
+
+    public void setCommitteeCurrency(Integer committeeCurrency) {
+        this.committeeCurrency = committeeCurrency;
+    }
+
+    public Integer getDirectCurrency() {
+        return directCurrency;
+    }
+
+    public void setDirectCurrency(Integer directCurrency) {
+        this.directCurrency = directCurrency;
     }
 }

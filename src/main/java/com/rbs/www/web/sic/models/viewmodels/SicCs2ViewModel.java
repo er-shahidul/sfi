@@ -58,6 +58,10 @@ public class SicCs2ViewModel extends BaseViewModel {
     private Set<SicPpFormNeighborEventViewModel> sicNeighborEvents;
     private Set<Integer> committeeFeeStructure;
 
+    private Integer supportCurrency;
+    private Integer committeeCurrency;
+    private Integer directCurrency;
+
     @Override
     public Integer getId() {
         return id;
@@ -473,5 +477,29 @@ public class SicCs2ViewModel extends BaseViewModel {
 
     public void setCommitteeFeeStructure(Set<Integer> committeeFeeStructure) {
         this.committeeFeeStructure = committeeFeeStructure;
+    }
+
+    public Integer getSupportCurrency() {
+        return supportCurrency;
+    }
+
+    public void setSupportCurrency(Integer supportCurrency) {
+        this.supportCurrency = supportCurrency;
+    }
+
+    public Integer getCommitteeCurrency() {
+        return committeeCurrency;
+    }
+
+    public void setCommitteeCurrency(Integer committeeCurrency) {
+        this.committeeCurrency = committeeCurrency;
+    }
+
+    public Integer getDirectCurrency() {
+        return directCurrency;
+    }
+
+    public void setDirectCurrency(Integer directCurrency) {
+        this.directCurrency = directCurrency;
     }
 }

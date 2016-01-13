@@ -1,6 +1,6 @@
 package com.rbs.www.common.services;
 
-import com.rbs.www.web.common.models.datamodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Date;
 
 @Service
-public class FileIOHelperService {
+public class BlobStoreHelper {
     public String createDirectory(String rootPath, String subPath) {
         String currentPath = rootPath;
         for (String folderName : subPath.split("/")) {
@@ -27,16 +27,16 @@ public class FileIOHelperService {
         return Long.toString(new Date().getTime());
     }
 
-    private DocNames getFileNames(String fileName) {
-        DocNames fileNames = new DocNames();
+    private BlobNames getNames(String fileName) {
+        BlobNames fileNames = new BlobNames();
         fileNames.setOriginalDocumentName(fileName);
         fileNames.setUniqueDocumentName(this.generateUniqueName());
 
         return fileNames;
     }
 
-    public DocNames saveFile(MultipartFile file, String folder, String path) {
-        DocNames fileNames = getFileNames(file.getOriginalFilename());
+    public BlobNames store(MultipartFile file, String folder, String path) {
+        BlobNames fileNames = getNames(file.getOriginalFilename());
 
         String originalPath = this.createDirectory(path, "uploads/" + folder);
         originalPath += "/" + fileNames.getUniqueDocumentName();
@@ -48,5 +48,14 @@ public class FileIOHelperService {
         }
 
         return fileNames;
+    }
+
+    public boolean isTypeOf(String fileName, String[] extensions) {
+        for (String extension : extensions) {
+            if (fileName.endsWith(extension))
+                return true;
+        }
+
+        return false;
     }
 }

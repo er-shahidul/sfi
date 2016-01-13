@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.web.common.models.datamodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 
 import java.util.Set;
 
@@ -41,23 +41,23 @@ public class SicCs9ViewModel extends BaseViewModel {
     private Boolean activityLastYrTradeshow;
     private Boolean activityLastYrVideo;
     private Boolean promoteSFI;
-    private Set<DocNames> supportDocCurrentYrAdvPrinted;
-    private Set<DocNames> supportDocCurrentYrAdvTV;
-    private Set<DocNames> supportDocCurrentYrEventSponsor;
-    private Set<DocNames> supportDocCurrentYrOther;
-    private Set<DocNames> supportDocCurrentYrPrinted;
-    private Set<DocNames> supportDocCurrentYrSocialMedia;
-    private Set<DocNames> supportDocCurrentYrTradeshow;
-    private Set<DocNames> supportDocCurrentYrVideo;
-    private DocNames supportDocLastYrAdvPrinted;
-    private DocNames supportDocLastYrAdvTV;
-    private DocNames supportDocLastYrEventSponsor;
-    private DocNames supportDocLastYrOther;
-    private DocNames supportDocLastYrPrinted;
-    private DocNames supportDocLastYrSocialMedia;
-    private DocNames supportDocLastYrTradeshow;
-    private DocNames supportDocLastYrVideo;
-    private DocNames supportDocPrinted;
+    private Set<BlobNames> supportDocCurrentYrAdvPrinted;
+    private Set<BlobNames> supportDocCurrentYrAdvTV;
+    private Set<BlobNames> supportDocCurrentYrEventSponsor;
+    private Set<BlobNames> supportDocCurrentYrOther;
+    private Set<BlobNames> supportDocCurrentYrPrinted;
+    private Set<BlobNames> supportDocCurrentYrSocialMedia;
+    private Set<BlobNames> supportDocCurrentYrTradeshow;
+    private Set<BlobNames> supportDocCurrentYrVideo;
+    private BlobNames supportDocLastYrAdvPrinted;
+    private BlobNames supportDocLastYrAdvTV;
+    private BlobNames supportDocLastYrEventSponsor;
+    private BlobNames supportDocLastYrOther;
+    private BlobNames supportDocLastYrPrinted;
+    private BlobNames supportDocLastYrSocialMedia;
+    private BlobNames supportDocLastYrTradeshow;
+    private BlobNames supportDocLastYrVideo;
+    private BlobNames supportDocPrinted;
 
     @Override
     public Integer getId() {
@@ -340,139 +340,139 @@ public class SicCs9ViewModel extends BaseViewModel {
         this.promoteSFI = promoteSFI;
     }
 
-    public Set<DocNames> getSupportDocCurrentYrAdvPrinted() {
+    public Set<BlobNames> getSupportDocCurrentYrAdvPrinted() {
         return supportDocCurrentYrAdvPrinted;
     }
 
-    public void setSupportDocCurrentYrAdvPrinted(Set<DocNames> supportDocCurrentYrAdvPrinted) {
+    public void setSupportDocCurrentYrAdvPrinted(Set<BlobNames> supportDocCurrentYrAdvPrinted) {
         this.supportDocCurrentYrAdvPrinted = supportDocCurrentYrAdvPrinted;
     }
 
-    public Set<DocNames> getSupportDocCurrentYrAdvTV() {
+    public Set<BlobNames> getSupportDocCurrentYrAdvTV() {
         return supportDocCurrentYrAdvTV;
     }
 
-    public void setSupportDocCurrentYrAdvTV(Set<DocNames> supportDocCurrentYrAdvTV) {
+    public void setSupportDocCurrentYrAdvTV(Set<BlobNames> supportDocCurrentYrAdvTV) {
         this.supportDocCurrentYrAdvTV = supportDocCurrentYrAdvTV;
     }
 
-    public Set<DocNames> getSupportDocCurrentYrEventSponsor() {
+    public Set<BlobNames> getSupportDocCurrentYrEventSponsor() {
         return supportDocCurrentYrEventSponsor;
     }
 
-    public void setSupportDocCurrentYrEventSponsor(Set<DocNames> supportDocCurrentYrEventSponsor) {
+    public void setSupportDocCurrentYrEventSponsor(Set<BlobNames> supportDocCurrentYrEventSponsor) {
         this.supportDocCurrentYrEventSponsor = supportDocCurrentYrEventSponsor;
     }
 
-    public Set<DocNames> getSupportDocCurrentYrOther() {
+    public Set<BlobNames> getSupportDocCurrentYrOther() {
         return supportDocCurrentYrOther;
     }
 
-    public void setSupportDocCurrentYrOther(Set<DocNames> supportDocCurrentYrOther) {
+    public void setSupportDocCurrentYrOther(Set<BlobNames> supportDocCurrentYrOther) {
         this.supportDocCurrentYrOther = supportDocCurrentYrOther;
     }
 
-    public Set<DocNames> getSupportDocCurrentYrPrinted() {
+    public Set<BlobNames> getSupportDocCurrentYrPrinted() {
         return supportDocCurrentYrPrinted;
     }
 
-    public void setSupportDocCurrentYrPrinted(Set<DocNames> supportDocCurrentYrPrinted) {
+    public void setSupportDocCurrentYrPrinted(Set<BlobNames> supportDocCurrentYrPrinted) {
         this.supportDocCurrentYrPrinted = supportDocCurrentYrPrinted;
     }
 
-    public Set<DocNames> getSupportDocCurrentYrSocialMedia() {
+    public Set<BlobNames> getSupportDocCurrentYrSocialMedia() {
         return supportDocCurrentYrSocialMedia;
     }
 
-    public void setSupportDocCurrentYrSocialMedia(Set<DocNames> supportDocCurrentYrSocialMedia) {
+    public void setSupportDocCurrentYrSocialMedia(Set<BlobNames> supportDocCurrentYrSocialMedia) {
         this.supportDocCurrentYrSocialMedia = supportDocCurrentYrSocialMedia;
     }
 
-    public Set<DocNames> getSupportDocCurrentYrTradeshow() {
+    public Set<BlobNames> getSupportDocCurrentYrTradeshow() {
         return supportDocCurrentYrTradeshow;
     }
 
-    public void setSupportDocCurrentYrTradeshow(Set<DocNames> supportDocCurrentYrTradeshow) {
+    public void setSupportDocCurrentYrTradeshow(Set<BlobNames> supportDocCurrentYrTradeshow) {
         this.supportDocCurrentYrTradeshow = supportDocCurrentYrTradeshow;
     }
 
-    public Set<DocNames> getSupportDocCurrentYrVideo() {
+    public Set<BlobNames> getSupportDocCurrentYrVideo() {
         return supportDocCurrentYrVideo;
     }
 
-    public void setSupportDocCurrentYrVideo(Set<DocNames> supportDocCurrentYrVideo) {
+    public void setSupportDocCurrentYrVideo(Set<BlobNames> supportDocCurrentYrVideo) {
         this.supportDocCurrentYrVideo = supportDocCurrentYrVideo;
     }
 
-    public DocNames getSupportDocLastYrAdvPrinted() {
+    public BlobNames getSupportDocLastYrAdvPrinted() {
         return supportDocLastYrAdvPrinted;
     }
 
-    public void setSupportDocLastYrAdvPrinted(DocNames supportDocLastYrAdvPrinted) {
+    public void setSupportDocLastYrAdvPrinted(BlobNames supportDocLastYrAdvPrinted) {
         this.supportDocLastYrAdvPrinted = supportDocLastYrAdvPrinted;
     }
 
-    public DocNames getSupportDocLastYrAdvTV() {
+    public BlobNames getSupportDocLastYrAdvTV() {
         return supportDocLastYrAdvTV;
     }
 
-    public void setSupportDocLastYrAdvTV(DocNames supportDocLastYrAdvTV) {
+    public void setSupportDocLastYrAdvTV(BlobNames supportDocLastYrAdvTV) {
         this.supportDocLastYrAdvTV = supportDocLastYrAdvTV;
     }
 
-    public DocNames getSupportDocLastYrEventSponsor() {
+    public BlobNames getSupportDocLastYrEventSponsor() {
         return supportDocLastYrEventSponsor;
     }
 
-    public void setSupportDocLastYrEventSponsor(DocNames supportDocLastYrEventSponsor) {
+    public void setSupportDocLastYrEventSponsor(BlobNames supportDocLastYrEventSponsor) {
         this.supportDocLastYrEventSponsor = supportDocLastYrEventSponsor;
     }
 
-    public DocNames getSupportDocLastYrOther() {
+    public BlobNames getSupportDocLastYrOther() {
         return supportDocLastYrOther;
     }
 
-    public void setSupportDocLastYrOther(DocNames supportDocLastYrOther) {
+    public void setSupportDocLastYrOther(BlobNames supportDocLastYrOther) {
         this.supportDocLastYrOther = supportDocLastYrOther;
     }
 
-    public DocNames getSupportDocLastYrPrinted() {
+    public BlobNames getSupportDocLastYrPrinted() {
         return supportDocLastYrPrinted;
     }
 
-    public void setSupportDocLastYrPrinted(DocNames supportDocLastYrPrinted) {
+    public void setSupportDocLastYrPrinted(BlobNames supportDocLastYrPrinted) {
         this.supportDocLastYrPrinted = supportDocLastYrPrinted;
     }
 
-    public DocNames getSupportDocLastYrSocialMedia() {
+    public BlobNames getSupportDocLastYrSocialMedia() {
         return supportDocLastYrSocialMedia;
     }
 
-    public void setSupportDocLastYrSocialMedia(DocNames supportDocLastYrSocialMedia) {
+    public void setSupportDocLastYrSocialMedia(BlobNames supportDocLastYrSocialMedia) {
         this.supportDocLastYrSocialMedia = supportDocLastYrSocialMedia;
     }
 
-    public DocNames getSupportDocLastYrTradeshow() {
+    public BlobNames getSupportDocLastYrTradeshow() {
         return supportDocLastYrTradeshow;
     }
 
-    public void setSupportDocLastYrTradeshow(DocNames supportDocLastYrTradeshow) {
+    public void setSupportDocLastYrTradeshow(BlobNames supportDocLastYrTradeshow) {
         this.supportDocLastYrTradeshow = supportDocLastYrTradeshow;
     }
 
-    public DocNames getSupportDocLastYrVideo() {
+    public BlobNames getSupportDocLastYrVideo() {
         return supportDocLastYrVideo;
     }
 
-    public void setSupportDocLastYrVideo(DocNames supportDocLastYrVideo) {
+    public void setSupportDocLastYrVideo(BlobNames supportDocLastYrVideo) {
         this.supportDocLastYrVideo = supportDocLastYrVideo;
     }
 
-    public DocNames getSupportDocPrinted() {
+    public BlobNames getSupportDocPrinted() {
         return supportDocPrinted;
     }
 
-    public void setSupportDocPrinted(DocNames supportDocPrinted) {
+    public void setSupportDocPrinted(BlobNames supportDocPrinted) {
         this.supportDocPrinted = supportDocPrinted;
     }
 }

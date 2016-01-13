@@ -2,8 +2,7 @@ package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
-import com.rbs.www.web.common.models.datamodels.DocNames;
-import org.apache.commons.lang3.SerializationUtils;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -541,17 +540,12 @@ public class SicCs1 extends BaseEntityModel {
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getContactFiles() {
-        if (contactFilesAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(contactFilesAsByteArray));
+    public Set<BlobNames> getContactFiles() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(contactFilesAsByteArray);
     }
 
-    public void setContactFiles(HashSet<DocNames> contactFiles) {
-        if (contactFiles == null) return;
-        this.contactFilesAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(contactFiles));
+    public void setContactFiles(HashSet<BlobNames> contactFiles) {
+        this.contactFilesAsByteArray = TypeConversionUtils.serialize(contactFiles);
     }
 
     private Byte[] getGuideFilesAsByteArray() {
@@ -612,16 +606,11 @@ public class SicCs1 extends BaseEntityModel {
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getGuideFiles() {
-        if (guideFilesAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize((TypeConversionUtils
-                        .toPrimitiveType(guideFilesAsByteArray)));
+    public Set<BlobNames> getGuideFiles() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray);
     }
 
-    public void setGuideFiles(HashSet<DocNames> guideFiles) {
-        if (guideFiles == null) return;
-        this.guideFilesAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(guideFiles));
+    public void setGuideFiles(HashSet<BlobNames> guideFiles) {
+        this.guideFilesAsByteArray = TypeConversionUtils.serialize(guideFiles);
     }
 }
