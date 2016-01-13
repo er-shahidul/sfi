@@ -2,7 +2,7 @@ package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
-import com.rbs.www.web.common.models.datamodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -605,163 +605,163 @@ public class SicCs9 extends BaseEntityModel {
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getSupportDocCurrentYrAdvPrinted() {
-        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrAdvPrintedAsByteArray);
+    public Set<BlobNames> getSupportDocCurrentYrAdvPrinted() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(supportDocCurrentYrAdvPrintedAsByteArray);
     }
 
-    public void setSupportDocCurrentYrAdvPrinted(HashSet<DocNames> supportDocCurrentYrAdvPrinted) {
+    public void setSupportDocCurrentYrAdvPrinted(HashSet<BlobNames> supportDocCurrentYrAdvPrinted) {
         this.supportDocCurrentYrAdvPrintedAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrAdvPrinted);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getSupportDocCurrentYrAdvTV() {
-        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrAdvTVAsByteArray);
+    public Set<BlobNames> getSupportDocCurrentYrAdvTV() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(supportDocCurrentYrAdvTVAsByteArray);
     }
 
-    public void setSupportDocCurrentYrAdvTV(HashSet<DocNames> supportDocCurrentYrAdvTV) {
+    public void setSupportDocCurrentYrAdvTV(HashSet<BlobNames> supportDocCurrentYrAdvTV) {
         if (supportDocCurrentYrAdvTV == null) return;
         this.supportDocCurrentYrAdvTVAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrAdvTV);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getSupportDocCurrentYrEventSponsor() {
-        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrEventSponsorAsByteArray);
+    public Set<BlobNames> getSupportDocCurrentYrEventSponsor() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(supportDocCurrentYrEventSponsorAsByteArray);
     }
 
-    public void setSupportDocCurrentYrEventSponsor(HashSet<DocNames> supportDocCurrentYrEventSponsor) {
+    public void setSupportDocCurrentYrEventSponsor(HashSet<BlobNames> supportDocCurrentYrEventSponsor) {
         this.supportDocCurrentYrEventSponsorAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrEventSponsor);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getSupportDocCurrentYrOther() {
-        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrOtherAsByteArray);
+    public Set<BlobNames> getSupportDocCurrentYrOther() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(supportDocCurrentYrOtherAsByteArray);
     }
 
-    public void setSupportDocCurrentYrOther(HashSet<DocNames> supportDocCurrentYrOther) {
+    public void setSupportDocCurrentYrOther(HashSet<BlobNames> supportDocCurrentYrOther) {
         this.supportDocCurrentYrOtherAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrOther);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getSupportDocCurrentYrPrinted() {
-        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrPrintedAsByteArray);
+    public Set<BlobNames> getSupportDocCurrentYrPrinted() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(supportDocCurrentYrPrintedAsByteArray);
     }
 
-    public void setSupportDocCurrentYrPrinted(HashSet<DocNames> supportDocCurrentYrPrinted) {
+    public void setSupportDocCurrentYrPrinted(HashSet<BlobNames> supportDocCurrentYrPrinted) {
         this.supportDocCurrentYrPrintedAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrPrinted);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getSupportDocCurrentYrSocialMedia() {
-        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrSocialMediaAsByteArray);
+    public Set<BlobNames> getSupportDocCurrentYrSocialMedia() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(supportDocCurrentYrSocialMediaAsByteArray);
     }
 
-    public void setSupportDocCurrentYrSocialMedia(HashSet<DocNames> supportDocCurrentYrSocialMedia) {
+    public void setSupportDocCurrentYrSocialMedia(HashSet<BlobNames> supportDocCurrentYrSocialMedia) {
         this.supportDocCurrentYrSocialMediaAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrSocialMedia);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getSupportDocCurrentYrTradeshow() {
-        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrTradeshowAsByteArray);
+    public Set<BlobNames> getSupportDocCurrentYrTradeshow() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(supportDocCurrentYrTradeshowAsByteArray);
     }
 
-    public void setSupportDocCurrentYrTradeshow(HashSet<DocNames> supportDocCurrentYrTradeshow) {
+    public void setSupportDocCurrentYrTradeshow(HashSet<BlobNames> supportDocCurrentYrTradeshow) {
         this.supportDocCurrentYrTradeshowAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrTradeshow);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getSupportDocCurrentYrVideo() {
-        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrVideoAsByteArray);
+    public Set<BlobNames> getSupportDocCurrentYrVideo() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(supportDocCurrentYrVideoAsByteArray);
     }
 
-    public void setSupportDocCurrentYrVideo(HashSet<DocNames> supportDocCurrentYrVideo) {
+    public void setSupportDocCurrentYrVideo(HashSet<BlobNames> supportDocCurrentYrVideo) {
         this.supportDocCurrentYrVideoAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrVideo);
     }
 
     @Transient
-    public DocNames getSupportDocLastYrAdvPrinted() {
-        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrAdvPrintedAsByteArray);
+    public BlobNames getSupportDocLastYrAdvPrinted() {
+        return (BlobNames) TypeConversionUtils.deserialize(supportDocLastYrAdvPrintedAsByteArray);
     }
 
-    public void setSupportDocLastYrAdvPrinted(DocNames supportDocLastYrAdvPrinted) {
+    public void setSupportDocLastYrAdvPrinted(BlobNames supportDocLastYrAdvPrinted) {
         this.supportDocLastYrAdvPrintedAsByteArray = TypeConversionUtils.serialize(supportDocLastYrAdvPrinted);
     }
 
     @Transient
-    public DocNames getSupportDocLastYrAdvTV() {
-        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrAdvTVAsByteArray);
+    public BlobNames getSupportDocLastYrAdvTV() {
+        return (BlobNames) TypeConversionUtils.deserialize(supportDocLastYrAdvTVAsByteArray);
     }
 
-    public void setSupportDocLastYrAdvTV(DocNames supportDocLastYrAdvTV) {
+    public void setSupportDocLastYrAdvTV(BlobNames supportDocLastYrAdvTV) {
         this.supportDocLastYrAdvTVAsByteArray = TypeConversionUtils.serialize(supportDocLastYrAdvTV);
     }
 
     @Transient
-    public DocNames getSupportDocLastYrEventSponsor() {
-        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrEventSponsorAsByteArray);
+    public BlobNames getSupportDocLastYrEventSponsor() {
+        return (BlobNames) TypeConversionUtils.deserialize(supportDocLastYrEventSponsorAsByteArray);
     }
 
-    public void setSupportDocLastYrEventSponsor(DocNames supportDocLastYrEventSponsor) {
+    public void setSupportDocLastYrEventSponsor(BlobNames supportDocLastYrEventSponsor) {
         this.supportDocLastYrEventSponsorAsByteArray = TypeConversionUtils.serialize(supportDocLastYrEventSponsor);
     }
 
     @Transient
-    public DocNames getSupportDocLastYrOther() {
-        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrOtherAsByteArray);
+    public BlobNames getSupportDocLastYrOther() {
+        return (BlobNames) TypeConversionUtils.deserialize(supportDocLastYrOtherAsByteArray);
     }
 
-    public void setSupportDocLastYrOther(DocNames supportDocLastYrOther) {
+    public void setSupportDocLastYrOther(BlobNames supportDocLastYrOther) {
         this.supportDocLastYrOtherAsByteArray = TypeConversionUtils.serialize(supportDocLastYrOther);
     }
 
     @Transient
-    public DocNames getSupportDocLastYrPrinted() {
-        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrPrintedAsByteArray);
+    public BlobNames getSupportDocLastYrPrinted() {
+        return (BlobNames) TypeConversionUtils.deserialize(supportDocLastYrPrintedAsByteArray);
     }
 
-    public void setSupportDocLastYrPrinted(DocNames supportDocLastYrPrinted) {
+    public void setSupportDocLastYrPrinted(BlobNames supportDocLastYrPrinted) {
         this.supportDocLastYrPrintedAsByteArray = TypeConversionUtils.serialize(supportDocLastYrPrinted);
     }
 
     @Transient
-    public DocNames getSupportDocLastYrSocialMedia() {
-        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrSocialMediaAsByteArray);
+    public BlobNames getSupportDocLastYrSocialMedia() {
+        return (BlobNames) TypeConversionUtils.deserialize(supportDocLastYrSocialMediaAsByteArray);
     }
 
-    public void setSupportDocLastYrSocialMedia(DocNames supportDocLastYrSocialMedia) {
+    public void setSupportDocLastYrSocialMedia(BlobNames supportDocLastYrSocialMedia) {
         this.supportDocLastYrSocialMediaAsByteArray = TypeConversionUtils.serialize(supportDocLastYrSocialMedia);
     }
 
     @Transient
-    public DocNames getSupportDocLastYrTradeshow() {
-        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrTradeshowAsByteArray);
+    public BlobNames getSupportDocLastYrTradeshow() {
+        return (BlobNames) TypeConversionUtils.deserialize(supportDocLastYrTradeshowAsByteArray);
     }
 
-    public void setSupportDocLastYrTradeshow(DocNames supportDocLastYrTradeshow) {
+    public void setSupportDocLastYrTradeshow(BlobNames supportDocLastYrTradeshow) {
         this.supportDocLastYrTradeshowAsByteArray = TypeConversionUtils.serialize(supportDocLastYrTradeshow);
     }
 
     @Transient
-    public DocNames getSupportDocLastYrVideo() {
-        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrVideoAsByteArray);
+    public BlobNames getSupportDocLastYrVideo() {
+        return (BlobNames) TypeConversionUtils.deserialize(supportDocLastYrVideoAsByteArray);
     }
 
-    public void setSupportDocLastYrVideo(DocNames supportDocLastYrVideo) {
+    public void setSupportDocLastYrVideo(BlobNames supportDocLastYrVideo) {
         this.supportDocLastYrVideoAsByteArray = TypeConversionUtils.serialize(supportDocLastYrVideo);
     }
 
     @Transient
-    public DocNames getSupportDocPrinted() {
-        return (DocNames) TypeConversionUtils.deserialize(supportDocPrintedAsByteArray);
+    public BlobNames getSupportDocPrinted() {
+        return (BlobNames) TypeConversionUtils.deserialize(supportDocPrintedAsByteArray);
     }
 
-    public void setSupportDocPrinted(DocNames supportDocPrinted) {
+    public void setSupportDocPrinted(BlobNames supportDocPrinted) {
         this.supportDocPrintedAsByteArray = TypeConversionUtils.serialize(supportDocPrinted);
     }
 }

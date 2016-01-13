@@ -2,7 +2,7 @@ package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
-import com.rbs.www.web.common.models.datamodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
 
 import javax.persistence.*;
@@ -461,11 +461,11 @@ public class SicCs8Project extends BaseEntityModel {
 
     @Transient
     @SuppressWarnings("unchecked")
-    public Set<DocNames> getSupportDocs() {
-        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocsAsByteArray);
+    public Set<BlobNames> getSupportDocs() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(supportDocsAsByteArray);
     }
 
-    public void setSupportDocs(HashSet<DocNames> supportDocs) {
+    public void setSupportDocs(HashSet<BlobNames> supportDocs) {
         this.supportDocsAsByteArray = TypeConversionUtils.serialize(supportDocs);
     }
 }

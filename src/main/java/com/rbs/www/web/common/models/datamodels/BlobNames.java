@@ -2,7 +2,7 @@ package com.rbs.www.web.common.models.datamodels;
 
 import java.io.Serializable;
 
-public class DocNames implements Cloneable, Serializable {
+public class BlobNames implements Cloneable, Serializable {
     private String originalDocumentName;
     private String uniqueDocumentName;
 
@@ -23,11 +23,11 @@ public class DocNames implements Cloneable, Serializable {
     }
 
     @Override
-    public DocNames clone() throws CloneNotSupportedException {
-        DocNames docNames = (DocNames) super.clone();
-        docNames.setOriginalDocumentName(this.getOriginalDocumentName());
-        docNames.setUniqueDocumentName(this.getUniqueDocumentName());
+    public BlobNames clone() throws CloneNotSupportedException {
+        BlobNames blobNames = (BlobNames) super.clone();
+        blobNames.setOriginalDocumentName(this.getOriginalDocumentName());
+        blobNames.setUniqueDocumentName(this.getUniqueDocumentName());
 
-        return docNames;
+        return blobNames;
     }
 }

@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.web.common.models.datamodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 
 import java.util.Set;
 
@@ -50,8 +50,8 @@ public class SicCs1ViewModel extends BaseViewModel {
     private Set<SicPpFormCommitteeViewModel> subCommittees;
     private Set<SicPpFormMeetingViewModel> participatingMeetingList;
     private Set<SicPpFormMeetingTypeViewModel> meetingList;
-    private Set<DocNames> contactFiles;
-    private Set<DocNames> guideFiles;
+    private Set<BlobNames> contactFiles;
+    private Set<BlobNames> guideFiles;
 
     private String sicRecrOrgsSpecify1;
     private String sicRecrOrgsSpecify2;
@@ -413,19 +413,19 @@ public class SicCs1ViewModel extends BaseViewModel {
         this.sicWebsite = sicWebsite;
     }
 
-    public Set<DocNames> getContactFiles() {
+    public Set<BlobNames> getContactFiles() {
         return contactFiles;
     }
 
-    public void setContactFiles(Set<DocNames> contactFiles) {
+    public void setContactFiles(Set<BlobNames> contactFiles) {
         this.contactFiles = contactFiles;
     }
 
-    public Set<DocNames> getGuideFiles() {
+    public Set<BlobNames> getGuideFiles() {
         return guideFiles;
     }
 
-    public void setGuideFiles(Set<DocNames> guideFiles) {
+    public void setGuideFiles(Set<BlobNames> guideFiles) {
         this.guideFiles = guideFiles;
     }
 

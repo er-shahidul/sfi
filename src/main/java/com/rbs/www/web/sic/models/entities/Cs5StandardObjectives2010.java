@@ -2,7 +2,7 @@ package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
-import com.rbs.www.web.common.models.datamodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 
 import javax.persistence.*;
 
@@ -102,11 +102,11 @@ public class Cs5StandardObjectives2010 extends BaseEntityModel {
 
     @Transient
     @SuppressWarnings("unchecked")
-    public DocNames getCircumstancesDoc() {
-        return (DocNames) TypeConversionUtils.deserialize(circumstancesDocAsByteArray);
+    public BlobNames getCircumstancesDoc() {
+        return (BlobNames) TypeConversionUtils.deserialize(circumstancesDocAsByteArray);
     }
 
-    public void setCircumstancesDoc(DocNames circumstancesDoc) {
+    public void setCircumstancesDoc(BlobNames circumstancesDoc) {
         this.circumstancesDocAsByteArray = TypeConversionUtils.serialize(circumstancesDoc);
     }
 }

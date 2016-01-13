@@ -2,7 +2,7 @@ package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
-import com.rbs.www.web.common.models.datamodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -216,11 +216,11 @@ public class SicCs5 extends BaseEntityModel {
 
     @Transient
     @SuppressWarnings("unchecked")
-    public DocNames getMechanismDoc() {
-        return (DocNames) TypeConversionUtils.deserialize(mechanismDocAsByteArray);
+    public BlobNames getMechanismDoc() {
+        return (BlobNames) TypeConversionUtils.deserialize(mechanismDocAsByteArray);
     }
 
-    public void setMechanismDoc(DocNames mechanismDoc) {
+    public void setMechanismDoc(BlobNames mechanismDoc) {
         this.mechanismDocAsByteArray = TypeConversionUtils.serialize(mechanismDoc);
     }
 }

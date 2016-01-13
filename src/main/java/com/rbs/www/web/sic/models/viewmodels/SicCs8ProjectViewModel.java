@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.web.common.models.datamodels.DocNames;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
 
 import java.util.Date;
@@ -52,7 +52,7 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
     private Date startDate;
 
     private Set<SfiPpFormRegionViewModel> regions;
-    private Set<DocNames> supportDocs;
+    private Set<BlobNames> supportDocs;
 
     @Override
     public Integer getId() {
@@ -367,11 +367,11 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
         this.regions = regions;
     }
 
-    public Set<DocNames> getSupportDocs() {
+    public Set<BlobNames> getSupportDocs() {
         return supportDocs;
     }
 
-    public void setSupportDocs(Set<DocNames> supportDocs) {
+    public void setSupportDocs(Set<BlobNames> supportDocs) {
         this.supportDocs = supportDocs;
     }
 }
