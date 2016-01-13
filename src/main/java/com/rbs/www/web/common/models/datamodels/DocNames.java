@@ -3,8 +3,8 @@ package com.rbs.www.web.common.models.datamodels;
 import java.io.Serializable;
 
 public class DocNames implements Cloneable, Serializable {
-    protected String originalDocumentName;
-    protected String uniqueDocumentName;
+    private String originalDocumentName;
+    private String uniqueDocumentName;
 
     public String getOriginalDocumentName() {
         return originalDocumentName;

@@ -21,7 +21,7 @@ public class Cs5StandardObjectives2010 extends BaseEntityModel {
     private String circumstanceDescription;
 
     @Lob
-    @Column(name = "circumstancesDoc", length = Integer.MAX_VALUE - 1, nullable = true)
+    @Column(name = "circumstancesDoc", length = 1000, nullable = true)
     private Byte[] circumstancesDocAsByteArray;
 
     @Column(name = "inconsistentPractice", nullable = true)
@@ -104,12 +104,14 @@ public class Cs5StandardObjectives2010 extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public DocNames getCircumstancesDoc() {
+        if (circumstancesDocAsByteArray == null) return null;
         return (DocNames) SerializationUtils
                 .deserialize(TypeConversionUtils
                         .toPrimitiveType(circumstancesDocAsByteArray));
     }
 
     public void setCircumstancesDoc(DocNames circumstancesDoc) {
+        if (circumstancesDoc == null) return;
         this.circumstancesDocAsByteArray = TypeConversionUtils
                 .toObjectType(SerializationUtils.serialize(circumstancesDoc));
     }
