@@ -149,11 +149,11 @@ public class SicCs1 extends BaseEntityModel {
     private Set<SicPpFormMeetingType> meetingList;
 
     @Lob
-    @Column(name = "contactFiles", length = Integer.MAX_VALUE - 1, nullable = true)
+    @Column(name = "cs1_contactFiles", length = Integer.MAX_VALUE - 1, nullable = true)
     private Byte[] contactFilesAsByteArray;
 
     @Lob
-    @Column(name = "guideFiles", length = Integer.MAX_VALUE - 1, nullable = true)
+    @Column(name = "cs1_guideFiles", length = Integer.MAX_VALUE - 1, nullable = true)
     private Byte[] guideFilesAsByteArray;
 
     @Override
@@ -520,12 +520,14 @@ public class SicCs1 extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getContactFiles() {
+        if (contactFilesAsByteArray == null) return null;
         return (Set<DocNames>) SerializationUtils
                 .deserialize(TypeConversionUtils
                         .toPrimitiveType(contactFilesAsByteArray));
     }
 
     public void setContactFiles(HashSet<DocNames> contactFiles) {
+        if (contactFiles == null) return;
         this.contactFilesAsByteArray = TypeConversionUtils
                 .toObjectType(SerializationUtils.serialize(contactFiles));
     }
@@ -541,12 +543,14 @@ public class SicCs1 extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getGuideFiles() {
+        if (guideFilesAsByteArray == null) return null;
         return (Set<DocNames>) SerializationUtils
                 .deserialize((TypeConversionUtils
                         .toPrimitiveType(guideFilesAsByteArray)));
     }
 
     public void setGuideFiles(HashSet<DocNames> guideFiles) {
+        if (guideFiles == null) return;
         this.guideFilesAsByteArray = TypeConversionUtils
                 .toObjectType(SerializationUtils.serialize(guideFiles));
     }

@@ -55,7 +55,7 @@ public class SicCs5 extends BaseEntityModel {
     private Integer sfiStandardVersion;
 
     @Lob
-    @Column(name = "mechanismDoc", length = Integer.MAX_VALUE - 1, nullable = true)
+    @Column(name = "mechanismDoc", length = 1000, nullable = true)
     private Byte[] mechanismDocAsByteArray;
 
     @OneToMany(targetEntity = Cs5ForestStandards2015.class, mappedBy = "sicPpForm", fetch = FetchType.EAGER,
@@ -218,12 +218,14 @@ public class SicCs5 extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public DocNames getMechanismDoc() {
+        if (mechanismDocAsByteArray == null) return null;
         return (DocNames) SerializationUtils
                 .deserialize(TypeConversionUtils
                         .toPrimitiveType(mechanismDocAsByteArray));
     }
 
     public void setMechanismDoc(DocNames mechanismDoc) {
+        if (mechanismDoc == null) return;
         this.mechanismDocAsByteArray = TypeConversionUtils
                 .toObjectType(SerializationUtils.serialize(mechanismDoc));
     }

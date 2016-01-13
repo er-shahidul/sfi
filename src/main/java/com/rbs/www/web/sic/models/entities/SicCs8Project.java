@@ -463,12 +463,14 @@ public class SicCs8Project extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocs() {
+        if (supportDocsAsByteArray == null) return null;
         return (Set<DocNames>) SerializationUtils
                 .deserialize(TypeConversionUtils
                         .toPrimitiveType(supportDocsAsByteArray));
     }
 
     public void setSupportDocs(HashSet<DocNames> supportDocs) {
+        if (supportDocs == null) return;
         this.supportDocsAsByteArray = TypeConversionUtils
                 .toObjectType(SerializationUtils.serialize(supportDocs));
     }
