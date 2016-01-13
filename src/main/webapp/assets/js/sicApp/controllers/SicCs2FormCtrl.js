@@ -24,6 +24,21 @@ sfiSicApp
         $scope.cs2.committeeCurrency = $scope.cs2.committeeCurrency || 1;
         $scope.cs2.directCurrency    = $scope.cs2.directCurrency || 1;
 
+
+        $scope.getTotal = function(){
+
+            var total = 0;
+
+            for(var i = 1; i <= 13; i++){
+
+                total += $scope.cs2["directSpending" + i];
+
+            }
+
+            return total;
+
+        }
+
         $scope.saveForm = function(go){
 
             if($scope.cs2Form.$valid){
