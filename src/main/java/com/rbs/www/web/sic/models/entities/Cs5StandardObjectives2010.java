@@ -3,7 +3,6 @@ package com.rbs.www.web.sic.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.models.datamodels.DocNames;
-import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
 
@@ -104,16 +103,11 @@ public class Cs5StandardObjectives2010 extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public DocNames getCircumstancesDoc() {
-        if (circumstancesDocAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(circumstancesDocAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(circumstancesDocAsByteArray);
     }
 
     public void setCircumstancesDoc(DocNames circumstancesDoc) {
-        if (circumstancesDoc == null) return;
-        this.circumstancesDocAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(circumstancesDoc));
+        this.circumstancesDocAsByteArray = TypeConversionUtils.serialize(circumstancesDoc);
     }
 }
 

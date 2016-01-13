@@ -3,7 +3,6 @@ package com.rbs.www.web.sic.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.models.datamodels.DocNames;
-import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
 
@@ -180,15 +179,10 @@ public class SicCs7 extends BaseEntityModel {
 
     @Transient
     public DocNames getBmpReportDoc() {
-        if (bmpReportDocAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(bmpReportDocAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(bmpReportDocAsByteArray);
     }
 
     public void setBmpReportDoc(DocNames bmpReportDoc) {
-        if (bmpReportDoc == null) return;
-        this.bmpReportDocAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(bmpReportDoc));
+        this.bmpReportDocAsByteArray = TypeConversionUtils.serialize(bmpReportDoc);
     }
 }

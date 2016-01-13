@@ -1,6 +1,9 @@
 package com.rbs.www.common.services;
 
+import org.apache.commons.lang3.SerializationUtils;
+
 import javax.xml.bind.DatatypeConverter;
+import java.io.Serializable;
 
 public class TypeConversionUtils {
     public static byte[] toPrimitiveType(final Byte[] array) {
@@ -30,5 +33,15 @@ public class TypeConversionUtils {
     public static String toBase64Binary(final Byte[] array) {
         if (array == null) return null;
         return DatatypeConverter.printBase64Binary(TypeConversionUtils.toPrimitiveType(array));
+    }
+
+    public static Byte[] serialize(Serializable obj) {
+        if (obj == null) return null;
+        return toObjectType(SerializationUtils.serialize(obj));
+    }
+
+    public static Object deserialize(Byte[] objectData) {
+        if (objectData == null) return null;
+        return SerializationUtils.deserialize(toPrimitiveType(objectData));
     }
 }

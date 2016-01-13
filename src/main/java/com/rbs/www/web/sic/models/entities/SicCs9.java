@@ -3,7 +3,6 @@ package com.rbs.www.web.sic.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.models.datamodels.DocNames;
-import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -607,246 +606,162 @@ public class SicCs9 extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocCurrentYrAdvPrinted() {
-        if (supportDocCurrentYrAdvPrintedAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocCurrentYrAdvPrintedAsByteArray));
+        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrAdvPrintedAsByteArray);
     }
 
     public void setSupportDocCurrentYrAdvPrinted(HashSet<DocNames> supportDocCurrentYrAdvPrinted) {
-        if (supportDocCurrentYrAdvPrinted == null) return;
-        this.supportDocCurrentYrAdvPrintedAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocCurrentYrAdvPrinted));
+        this.supportDocCurrentYrAdvPrintedAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrAdvPrinted);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocCurrentYrAdvTV() {
-        if (supportDocCurrentYrAdvTVAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocCurrentYrAdvTVAsByteArray));
+        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrAdvTVAsByteArray);
     }
 
     public void setSupportDocCurrentYrAdvTV(HashSet<DocNames> supportDocCurrentYrAdvTV) {
         if (supportDocCurrentYrAdvTV == null) return;
-        this.supportDocCurrentYrAdvTVAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocCurrentYrAdvTV));
+        this.supportDocCurrentYrAdvTVAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrAdvTV);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocCurrentYrEventSponsor() {
-        if (supportDocCurrentYrEventSponsorAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocCurrentYrEventSponsorAsByteArray));
+        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrEventSponsorAsByteArray);
     }
 
     public void setSupportDocCurrentYrEventSponsor(HashSet<DocNames> supportDocCurrentYrEventSponsor) {
-        if (supportDocCurrentYrEventSponsor == null) return;
-        this.supportDocCurrentYrEventSponsorAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocCurrentYrEventSponsor));
+        this.supportDocCurrentYrEventSponsorAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrEventSponsor);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocCurrentYrOther() {
-        if (supportDocCurrentYrOtherAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocCurrentYrOtherAsByteArray));
+        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrOtherAsByteArray);
     }
 
     public void setSupportDocCurrentYrOther(HashSet<DocNames> supportDocCurrentYrOther) {
-        if (supportDocCurrentYrOther == null) return;
-        this.supportDocCurrentYrOtherAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocCurrentYrOther));
+        this.supportDocCurrentYrOtherAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrOther);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocCurrentYrPrinted() {
-        if (supportDocCurrentYrPrintedAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocCurrentYrPrintedAsByteArray));
+        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrPrintedAsByteArray);
     }
 
     public void setSupportDocCurrentYrPrinted(HashSet<DocNames> supportDocCurrentYrPrinted) {
-        if (supportDocCurrentYrPrinted == null) return;
-        this.supportDocCurrentYrPrintedAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocCurrentYrPrinted));
+        this.supportDocCurrentYrPrintedAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrPrinted);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocCurrentYrSocialMedia() {
-        if (supportDocCurrentYrSocialMediaAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocCurrentYrSocialMediaAsByteArray));
+        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrSocialMediaAsByteArray);
     }
 
     public void setSupportDocCurrentYrSocialMedia(HashSet<DocNames> supportDocCurrentYrSocialMedia) {
-        if (supportDocCurrentYrSocialMedia == null) return;
-        this.supportDocCurrentYrSocialMediaAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocCurrentYrSocialMedia));
+        this.supportDocCurrentYrSocialMediaAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrSocialMedia);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocCurrentYrTradeshow() {
-        if (supportDocCurrentYrTradeshowAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocCurrentYrTradeshowAsByteArray));
+        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrTradeshowAsByteArray);
     }
 
     public void setSupportDocCurrentYrTradeshow(HashSet<DocNames> supportDocCurrentYrTradeshow) {
-        if (supportDocCurrentYrTradeshow == null) return;
-        this.supportDocCurrentYrTradeshowAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocCurrentYrTradeshow));
+        this.supportDocCurrentYrTradeshowAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrTradeshow);
     }
 
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocCurrentYrVideo() {
-        if (supportDocCurrentYrVideoAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocCurrentYrVideoAsByteArray));
+        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocCurrentYrVideoAsByteArray);
     }
 
     public void setSupportDocCurrentYrVideo(HashSet<DocNames> supportDocCurrentYrVideo) {
-        if (supportDocCurrentYrVideo == null) return;
-        this.supportDocCurrentYrVideoAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocCurrentYrVideo));
+        this.supportDocCurrentYrVideoAsByteArray = TypeConversionUtils.serialize(supportDocCurrentYrVideo);
     }
 
     @Transient
     public DocNames getSupportDocLastYrAdvPrinted() {
-        if (supportDocLastYrAdvPrintedAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocLastYrAdvPrintedAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrAdvPrintedAsByteArray);
     }
 
     public void setSupportDocLastYrAdvPrinted(DocNames supportDocLastYrAdvPrinted) {
-        if (supportDocLastYrAdvPrinted == null) return;
-        this.supportDocLastYrAdvPrintedAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocLastYrAdvPrinted));
+        this.supportDocLastYrAdvPrintedAsByteArray = TypeConversionUtils.serialize(supportDocLastYrAdvPrinted);
     }
 
     @Transient
     public DocNames getSupportDocLastYrAdvTV() {
-        if (supportDocLastYrAdvTVAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocLastYrAdvTVAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrAdvTVAsByteArray);
     }
 
     public void setSupportDocLastYrAdvTV(DocNames supportDocLastYrAdvTV) {
-        if (supportDocLastYrAdvTV == null) return;
-        this.supportDocLastYrAdvTVAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocLastYrAdvTV));
+        this.supportDocLastYrAdvTVAsByteArray = TypeConversionUtils.serialize(supportDocLastYrAdvTV);
     }
 
     @Transient
     public DocNames getSupportDocLastYrEventSponsor() {
-        if (supportDocLastYrEventSponsorAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocLastYrEventSponsorAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrEventSponsorAsByteArray);
     }
 
     public void setSupportDocLastYrEventSponsor(DocNames supportDocLastYrEventSponsor) {
-        if (supportDocLastYrEventSponsor == null) return;
-        this.supportDocLastYrEventSponsorAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocLastYrEventSponsor));
+        this.supportDocLastYrEventSponsorAsByteArray = TypeConversionUtils.serialize(supportDocLastYrEventSponsor);
     }
 
     @Transient
     public DocNames getSupportDocLastYrOther() {
-        if (supportDocLastYrOtherAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocLastYrOtherAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrOtherAsByteArray);
     }
 
     public void setSupportDocLastYrOther(DocNames supportDocLastYrOther) {
-        if (supportDocLastYrOther == null) return;
-        this.supportDocLastYrOtherAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocLastYrOther));
+        this.supportDocLastYrOtherAsByteArray = TypeConversionUtils.serialize(supportDocLastYrOther);
     }
 
     @Transient
     public DocNames getSupportDocLastYrPrinted() {
-        if (supportDocLastYrPrintedAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocLastYrPrintedAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrPrintedAsByteArray);
     }
 
     public void setSupportDocLastYrPrinted(DocNames supportDocLastYrPrinted) {
-        if (supportDocLastYrPrinted == null) return;
-        this.supportDocLastYrPrintedAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocLastYrPrinted));
+        this.supportDocLastYrPrintedAsByteArray = TypeConversionUtils.serialize(supportDocLastYrPrinted);
     }
 
     @Transient
     public DocNames getSupportDocLastYrSocialMedia() {
-        if (supportDocLastYrSocialMediaAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocLastYrSocialMediaAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrSocialMediaAsByteArray);
     }
 
     public void setSupportDocLastYrSocialMedia(DocNames supportDocLastYrSocialMedia) {
-        if (supportDocLastYrSocialMedia == null) return;
-        this.supportDocLastYrSocialMediaAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocLastYrSocialMedia));
+        this.supportDocLastYrSocialMediaAsByteArray = TypeConversionUtils.serialize(supportDocLastYrSocialMedia);
     }
 
     @Transient
     public DocNames getSupportDocLastYrTradeshow() {
-        if (supportDocLastYrTradeshowAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocLastYrTradeshowAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrTradeshowAsByteArray);
     }
 
     public void setSupportDocLastYrTradeshow(DocNames supportDocLastYrTradeshow) {
-        if (supportDocLastYrTradeshow == null) return;
-        this.supportDocLastYrTradeshowAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocLastYrTradeshow));
+        this.supportDocLastYrTradeshowAsByteArray = TypeConversionUtils.serialize(supportDocLastYrTradeshow);
     }
 
     @Transient
     public DocNames getSupportDocLastYrVideo() {
-        if (supportDocLastYrVideoAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocLastYrVideoAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(supportDocLastYrVideoAsByteArray);
     }
 
     public void setSupportDocLastYrVideo(DocNames supportDocLastYrVideo) {
-        if (supportDocLastYrVideo == null) return;
-        this.supportDocLastYrVideoAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocLastYrVideo));
+        this.supportDocLastYrVideoAsByteArray = TypeConversionUtils.serialize(supportDocLastYrVideo);
     }
 
     @Transient
     public DocNames getSupportDocPrinted() {
-        if (supportDocPrintedAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocPrintedAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(supportDocPrintedAsByteArray);
     }
 
     public void setSupportDocPrinted(DocNames supportDocPrinted) {
-        if (supportDocPrinted == null) return;
-        this.supportDocPrintedAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocPrinted));
+        this.supportDocPrintedAsByteArray = TypeConversionUtils.serialize(supportDocPrinted);
     }
 }

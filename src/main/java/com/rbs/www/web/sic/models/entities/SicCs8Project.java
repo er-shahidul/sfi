@@ -4,7 +4,6 @@ import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.models.datamodels.DocNames;
 import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
-import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -132,11 +131,11 @@ public class SicCs8Project extends BaseEntityModel {
     @Lob
     @Column(name = "cs8_supportDocs", length = Integer.MAX_VALUE - 1, nullable = true)
     private Byte[] supportDocsAsByteArray;
-    
+
     @ManyToMany(targetEntity = SfiPpFormRegion.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(name = "sic_pp_form_cs8_projects_region",
-               joinColumns = {@JoinColumn(name = "project_id")},
-               inverseJoinColumns = {@JoinColumn(name = "region_id", referencedColumnName = "id")})
+            joinColumns = {@JoinColumn(name = "project_id")},
+            inverseJoinColumns = {@JoinColumn(name = "region_id", referencedColumnName = "id")})
     private Set<SfiPpFormRegion> regions;
 
     @Override
@@ -463,16 +462,11 @@ public class SicCs8Project extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public Set<DocNames> getSupportDocs() {
-        if (supportDocsAsByteArray == null) return null;
-        return (Set<DocNames>) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(supportDocsAsByteArray));
+        return (Set<DocNames>) TypeConversionUtils.deserialize(supportDocsAsByteArray);
     }
 
     public void setSupportDocs(HashSet<DocNames> supportDocs) {
-        if (supportDocs == null) return;
-        this.supportDocsAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(supportDocs));
+        this.supportDocsAsByteArray = TypeConversionUtils.serialize(supportDocs);
     }
 }
 

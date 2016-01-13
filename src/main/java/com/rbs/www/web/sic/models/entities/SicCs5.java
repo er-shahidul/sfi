@@ -3,7 +3,6 @@ package com.rbs.www.web.sic.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.models.datamodels.DocNames;
-import org.apache.commons.lang3.SerializationUtils;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -218,15 +217,10 @@ public class SicCs5 extends BaseEntityModel {
     @Transient
     @SuppressWarnings("unchecked")
     public DocNames getMechanismDoc() {
-        if (mechanismDocAsByteArray == null) return null;
-        return (DocNames) SerializationUtils
-                .deserialize(TypeConversionUtils
-                        .toPrimitiveType(mechanismDocAsByteArray));
+        return (DocNames) TypeConversionUtils.deserialize(mechanismDocAsByteArray);
     }
 
     public void setMechanismDoc(DocNames mechanismDoc) {
-        if (mechanismDoc == null) return;
-        this.mechanismDocAsByteArray = TypeConversionUtils
-                .toObjectType(SerializationUtils.serialize(mechanismDoc));
+        this.mechanismDocAsByteArray = TypeConversionUtils.serialize(mechanismDoc);
     }
 }
