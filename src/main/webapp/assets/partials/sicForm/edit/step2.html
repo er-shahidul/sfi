@@ -379,18 +379,18 @@
                     <input class="form-control" type="radio" name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" ng-checked="!cs2.sicNeighborEvents">  No
                 </label>
 
-                <div class="aditional-line" ng-repeat="event in cs2.sicNeighborEvents">
+                <div class="aditional-line" ng-repeat="event in cs2.sicNeighborEvents" style="margin-top: 10px;">
                     <div style="padding: 10px;">
                         <div class="col-lg-12">
                             <div class="col-lg-10">
                                 <p>
                                     <b>Which SIC:</b>
-                                    {{ event.whichSic }}
+                                    {{ whichSicText(event.whichSic) }}
                                 </p>
                             </div>
                             <div class="col-lg-2">
                                 <button class="btn-group-sm btn-danger">
-                                    <a  data-toggle="modal" ng-click="deleteEvent($index)">Delete</a>
+                                    <a  data-toggle="modal" ng-click="deleteNeighborEvents($index)">Delete</a>
                                 </button>
                             </div>
                         </div>
@@ -408,7 +408,8 @@
                     <div class="form-inline">
                         Which SIC:
                         <select class="form-control" ng-model="event.whichSic">
-                            <option><-select One-></option>
+                            <option ng-selected="!event.whichSic"><-select One-></option>
+                            <option ng-repeat="sic in sicList" ng-value="1 * $index"> {{ sic }}</option>
                         </select>
                     </div>
                     <br>
