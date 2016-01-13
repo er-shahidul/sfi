@@ -595,4 +595,28 @@ public class SicCs2 extends BaseEntityModel {
     public void setCommitteeFeeStructure(Set<Integer> committeeFeeStructure) {
         addAll(this.committeeFeeStructure, committeeFeeStructure);
     }
+
+    public Integer getSupportCurrency() {
+        return supportCurrency;
+    }
+
+    public void setSupportCurrency(Integer supportCurrency) {
+        this.supportCurrency = supportCurrency;
+    }
+
+    public Integer getCommitteeCurrency() {
+        return committeeCurrency;
+    }
+
+    public void setCommitteeCurrency(Integer committeeCurrency) {
+        this.committeeCurrency = committeeCurrency;
+    }
+
+    public Integer getDirectCurrency() {
+        return directCurrency;
+    }
+
+    public void setDirectCurrency(Integer directCurrency) {
+        this.directCurrency = directCurrency;
+    }
 }

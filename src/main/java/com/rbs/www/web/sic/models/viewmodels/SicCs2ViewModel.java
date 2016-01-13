@@ -479,10 +479,6 @@ public class SicCs2ViewModel extends BaseViewModel {
         this.committeeFeeStructure = committeeFeeStructure;
     }
 
-    public void setSicNeighborEvents(Boolean sicNeighborEvents) {
-        isSicNeighborEvents = sicNeighborEvents;
-    }
-
     public Integer getSupportCurrency() {
         return supportCurrency;
     }
