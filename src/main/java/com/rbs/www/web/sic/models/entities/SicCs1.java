@@ -607,7 +607,7 @@ public class SicCs1 extends BaseEntityModel {
     }
 
     public void setSicRecruitmentOrgs(Set<Integer> sicRecruitmentOrgs) {
-        this.sicRecruitmentOrgs = sicRecruitmentOrgs;
+        addAll(this.sicRecruitmentOrgs, sicRecruitmentOrgs);
     }
 
     @Transient
