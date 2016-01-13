@@ -690,7 +690,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         if(!$el.data('bs.popover')){
 
             var content = $('#pop2tpl').html();
-
+            content = content.replace("]]>", "");
             $el.popover({
                 trigger : 'manual',
                 content : content,
@@ -698,7 +698,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
                 html : true
             });
         }
-
+        //console.log(content);
         $el.popover('show');
         var $popover = $el.data('bs.popover');
         var $text = $popover.$tip.find("textarea"),
