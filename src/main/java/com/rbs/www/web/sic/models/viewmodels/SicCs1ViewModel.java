@@ -53,6 +53,13 @@ public class SicCs1ViewModel extends BaseViewModel {
     private Set<DocNames> contactFiles;
     private Set<DocNames> guideFiles;
 
+    private String sicRecrOrgsSpecify1;
+    private String sicRecrOrgsSpecify2;
+    private String sicRecrOrgsSpecify3;
+    private String sicRecrOrgsSpecify4;
+    private String sicRecrOrgsSpecify5;
+    private Set<Integer> sicRecruitmentOrgs;
+
     @Override
     public Integer getId() {
         return id;
@@ -420,5 +427,53 @@ public class SicCs1ViewModel extends BaseViewModel {
 
     public void setGuideFiles(Set<DocNames> guideFiles) {
         this.guideFiles = guideFiles;
+    }
+
+    public String getSicRecrOrgsSpecify1() {
+        return sicRecrOrgsSpecify1;
+    }
+
+    public void setSicRecrOrgsSpecify1(String sicRecrOrgsSpecify1) {
+        this.sicRecrOrgsSpecify1 = sicRecrOrgsSpecify1;
+    }
+
+    public String getSicRecrOrgsSpecify2() {
+        return sicRecrOrgsSpecify2;
+    }
+
+    public void setSicRecrOrgsSpecify2(String sicRecrOrgsSpecify2) {
+        this.sicRecrOrgsSpecify2 = sicRecrOrgsSpecify2;
+    }
+
+    public String getSicRecrOrgsSpecify3() {
+        return sicRecrOrgsSpecify3;
+    }
+
+    public void setSicRecrOrgsSpecify3(String sicRecrOrgsSpecify3) {
+        this.sicRecrOrgsSpecify3 = sicRecrOrgsSpecify3;
+    }
+
+    public String getSicRecrOrgsSpecify4() {
+        return sicRecrOrgsSpecify4;
+    }
+
+    public void setSicRecrOrgsSpecify4(String sicRecrOrgsSpecify4) {
+        this.sicRecrOrgsSpecify4 = sicRecrOrgsSpecify4;
+    }
+
+    public String getSicRecrOrgsSpecify5() {
+        return sicRecrOrgsSpecify5;
+    }
+
+    public void setSicRecrOrgsSpecify5(String sicRecrOrgsSpecify5) {
+        this.sicRecrOrgsSpecify5 = sicRecrOrgsSpecify5;
+    }
+
+    public Set<Integer> getSicRecruitmentOrgs() {
+        return sicRecruitmentOrgs;
+    }
+
+    public void setSicRecruitmentOrgs(Set<Integer> sicRecruitmentOrgs) {
+        this.sicRecruitmentOrgs = sicRecruitmentOrgs;
     }
 }
