@@ -794,10 +794,8 @@ sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
 
                 if(singleMode){
 
-
                     bucket.originalDocumentName = model.originalDocumentName;
                     bucket.uniqueDocumentName   = model.uniqueDocumentName;
-
                 }else{
                     bucket.push(model);
                 }
@@ -822,45 +820,90 @@ sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
             var $el  = $("#" + key);
             var value = bucket[key];
 
-
             function getOptions($el){
+                return $el.data('bs.popover').$tip.find('input');
+            }
 
-                var $popover = $el.data('bs.popover');
-                var $tip = $popover.$tip;
-                return $tip.find('input');
+            function setValue ($el, value){
+                getOptions($el).filter('[value=' + value + ']').prop('checked', true);
+            }
 
+            function getValue($el){
+                return getOptions($el).filter(':checked').val();
             }
 
 
-            if(!$el.data('bs.popover')){
+            if($el.data('bs.popover')){
+                $el.popover('toggle');
+            }else{
 
                 $el.popover(popSettings);
                 $el.popover('show');
 
                 $el.on('shown.bs.popover', function(){
 
-                    var $options = getOptions($el);
-
-                    $options.change(function(){
-                        var $input = $options.filter(':checked');
-                        bucket[key] = 1 * $input.val();
+                    getOptions($el).change(function(){
+                        bucket[key] = 1 * getValue($el)
                         $el.popover('hide');
                         $rootScope.$digest();
                     });
                 });
-
-                return;
-
             }
 
-            $el.popover('toggle');
-            var $options = getOptions($el);
-            $options.filter('[value=' + value + ']').prop('checked', true);
+            setValue($el, value);
         }
 
         $rootScope.gerCurrency = function(val){
             return (val == 1) ? "USD" : "CAD";
         }
 
+        $rootScope.getOtherValue = function(key, bucket){
+
+            var $el   = $("#" + key);
+            var value = bucket[key];
+
+            if(!$el.is(":checked")){
+                $el.data('bs.popover') && $el.popover('hide');
+                return;
+            }
+
+            function $find(selector){
+                return $el.data('bs.popover').$tip.find(selector);
+            }
+
+
+            if($el.data('bs.popover')){
+                $el.popover('show');
+            }else{
+
+                var content = '<div style="width:300px;">'+
+                    '<textarea class="form-control"></textarea>' +
+                    '<div class="col-sm-6 specialpadding alignleft"><button type="button" class="btn btn-cancel">Cancel</button></div>'+
+                    '<div class="col-sm-6 specialpadding alignright"><button type="button" class="btn btn-success">Ok</button> </div>' +
+                    '</div>';
+
+                $el.popover({
+                    trigger   : 'manual',
+                    content   : content,
+                    html      : true,
+                    placement : 'bottom'
+                });
+
+                $el.popover('show');
+
+                $el.on('shown.bs.popover', function(){
+
+                    $find(".btn-success")
+                       .click(function(){
+
+                            bucket[key] = $find("textarea").val();
+                            $el.popover('hide');
+                            $rootScope.$digest();
+                       });
+                });
+            }
+
+            $find("textarea").val(value);
+        }
 
 }]);

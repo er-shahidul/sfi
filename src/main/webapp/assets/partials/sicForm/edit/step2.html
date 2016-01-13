@@ -305,10 +305,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><div>
+                        <td>
                             <label>
-                                <input  type="radio" > Other
-                            </label></div>
+                                <input  type="checkbox" id="activityOtherSpecify1"
+                                        ng-model="cs2.activityOther1"
+                                        ng-change="getOtherValue('activityOtherSpecify1', cs2)" > Other
+                            </label>
                         </td>
                         <td ng-class="{'has-error' : cs2Form.directSpending12.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending12" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending12">
@@ -326,10 +328,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><div>
+                        <td>
                             <label>
-                                <input  type="radio" > Other
-                            </label></div>
+                                <input  type="checkbox" id="activityOtherSpecify2"
+                                        ng-model="cs2.activityOther2"
+                                        ng-change="getOtherValue('activityOtherSpecify2', cs2)" > Other
+                            </label>
                         </td>
                         <td ng-class="{'has-error' : cs2Form.directSpending13.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending13" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending13">
