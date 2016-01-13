@@ -807,4 +807,60 @@ sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
             return {};
         }
 
+
+
+        var popSettings = {
+            title       : '',
+            html        : true,
+            content     : '<div class="form-group"><input type="radio" class="icheck" value="1" name="test" data-name="USD"><label class="checkboxLabel">USD</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="icheck" value="2" name="test" data-name="CAD"><label class="checkboxLabel">CAD</label></div></div>',
+            placement   : 'bottom',
+            trigger     : 'manual'
+        }
+
+        $rootScope.setCurrency = function(key, bucket){
+
+            var $el  = $("#" + key);
+            var value = bucket[key];
+
+
+            function getOptions($el){
+
+                var $popover = $el.data('bs.popover');
+                var $tip = $popover.$tip;
+                return $tip.find('input');
+
+            }
+
+
+            if(!$el.data('bs.popover')){
+
+                $el.popover(popSettings);
+                $el.popover('show');
+
+                $el.on('shown.bs.popover', function(){
+
+                    var $options = getOptions($el);
+
+                    $options.change(function(){
+                        var $input = $options.filter(':checked');
+                        bucket[key] = 1 * $input.val();
+                        $el.popover('hide');
+                        $rootScope.$digest();
+                    });
+                });
+
+                return;
+
+            }
+
+            $el.popover('toggle');
+            var $options = getOptions($el);
+            $options.filter('[value=' + value + ']').prop('checked', true);
+        }
+
+        $rootScope.gerCurrency = function(val){
+            return (val == 1) ? "USD" : "CAD";
+        }
+
+
 }]);

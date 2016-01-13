@@ -76,10 +76,7 @@
                 <label class="form-inline">
                     Amount
                     <input class="form-control" type="number" ng-model="cs2.spentBySicSupporters">
-                    <button class="btn-group-sm btn-success currency-brn" type="button" ng-click="currencyPop($event, 'sicSupportersCurrency')">
-                        USD
-                    </button>
-
+                    <button class="btn-group-sm btn-success curency" type="button" id="supportCurrency" ng-click="setCurrency('supportCurrency', cs2)">{{ gerCurrency(cs2.supportCurrency) }}</button>
                 </label>
 
             </div>
@@ -93,8 +90,7 @@
                 <label class="form-inline">
                     Amount
                     <input class="form-control" type="number" ng-model="cs2.spentByYourCommittee">
-                    <button class="btn-group-sm btn-success curency" confirmation title="Choose the Currency" data-placement="top" data-btn-ok-label="USD" data-btn-ok-icon="icon-like" data-btn-ok-class="btn-success" data-btn-cancel-label="CAD" data-btn-cancel-icon="icon-close" data-btn-cancel-class="btn-danger">USD</button>
-
+                    <button class="btn-group-sm btn-success curency" type="button" id="committeeCurrency" ng-click="setCurrency('committeeCurrency', cs2)">{{ gerCurrency(cs2.committeeCurrency) }}</button>
                 </label>
 
             </div>
@@ -108,7 +104,10 @@
                 <table border="1" style="line-height: 15px;" class="boxsize">
                     <tr>
                         <th class="col-lg-2">Activity or Project</th>
-                        <th class="col-lg-2">Direct Spending <button class="btn-group-sm btn-success curency" title="Choose the Currency" data-toggle="confirmation" data-placement="top" data-btn-ok-label="USD" data-btn-ok-icon="icon-like" data-btn-ok-class="btn-success" data-btn-cancel-label="CAD" data-btn-cancel-icon="icon-close" data-btn-cancel-class="btn-danger">USD</button></th>
+                        <th class="col-lg-2">
+                            Direct Spending
+                            <button class="btn-group-sm btn-success curency" type="button" id="directCurrency" ng-click="setCurrency('directCurrency', cs2)">{{ gerCurrency(cs2.directCurrency) }}</button>
+                        </th>
                         <th class="col-lg-3">In-Kind Support</th>
                         <th class="col-lg-3">Details</th>
                     </tr>
@@ -119,10 +118,14 @@
                             <input class="form-control" style="width: 80px;" name="directSpending1" type="number" ng-model="cs2.directSpending1">
                         </td>
                         <td>
-                            <label>
-                                <input class="form-control" type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="true" ng-checked="cs2.inKindSupport1">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="false" ng-checked="!cs2.inKindSupport1">  No
-                            </label>
+                            <div>
+                                <label>
+                                    <input type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="true" ng-checked="cs2.inKindSupport1">  Yes
+                                </label>
+                                <label>
+                                    <input type="radio" type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="false" ng-checked="!cs2.inKindSupport1">  No
+                                </label>
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails1">
@@ -135,10 +138,14 @@
                             <input class="form-control" style="width: 80px;" name="directSpending2" type="number" ng-model="cs2.directSpending2">
                         </td>
                         <td>
-                            <label>
-                                <input class="form-control" type="radio" name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="true" ng-checked="cs2.inKindSupport2">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="false" ng-checked="!cs2.inKindSupport2">  No
-                            </label>
+                            <div>
+                                <label>
+                                    <input  type="radio"  name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="true" ng-checked="cs2.inKindSupport2">  Yes
+                                </label>
+                                <label>
+                                    <input  type="radio"  name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="false" ng-checked="!cs2.inKindSupport2">  No
+                                </label>
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails2">
@@ -149,11 +156,13 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending3.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending3" type="number" ng-model="cs2.directSpending3">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="true" ng-checked="cs2.inKindSupport3">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="false" ng-checked="!cs2.inKindSupport3">  No
+                                <input  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="true" ng-checked="cs2.inKindSupport3">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="false" ng-checked="!cs2.inKindSupport3">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails3">
@@ -164,11 +173,13 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending4.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending4" type="number" ng-model="cs2.directSpending4">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="true" ng-checked="cs2.inKindSupport4">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="false" ng-checked="!cs2.inKindSupport4">  No
+                                <input  type="radio"  name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="true" ng-checked="cs2.inKindSupport4">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="false" ng-checked="!cs2.inKindSupport4">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails4">
@@ -179,11 +190,13 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending5.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending5" type="number" ng-model="cs2.directSpending5">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="true" ng-checked="cs2.inKindSupport5">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="false" ng-checked="!cs2.inKindSupport5">  No
+                                <input  type="radio"  name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="true" ng-checked="cs2.inKindSupport5">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="false" ng-checked="!cs2.inKindSupport5">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails5">
@@ -194,11 +207,13 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending6.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending6" type="number" ng-model="cs2.directSpending6">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="true" ng-checked="cs2.inKindSupport6">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="false" ng-checked="!cs2.inKindSupport6">  No
+                                <input  type="radio"  name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="true" ng-checked="cs2.inKindSupport6">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="false" ng-checked="!cs2.inKindSupport6">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails6">
@@ -209,11 +224,13 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending7.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending7" type="number" ng-model="cs2.directSpending7">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="true" ng-checked="cs2.inKindSupport7">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="false" ng-checked="!cs2.inKindSupport7">  No
+                                <input  type="radio"  name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="true" ng-checked="cs2.inKindSupport7">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="false" ng-checked="!cs2.inKindSupport7">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails7">
@@ -224,11 +241,13 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending8.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending8" type="number" ng-model="cs2.directSpending8">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="true" ng-checked="cs2.inKindSupport8">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="false" ng-checked="!cs2.inKindSupport8">  No
+                                <input  type="radio"  name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="true" ng-checked="cs2.inKindSupport8">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="false" ng-checked="!cs2.inKindSupport8">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails8">
@@ -239,11 +258,13 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending9.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending9" type="number" ng-model="cs2.directSpending9">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="true" ng-checked="cs2.inKindSupport9">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="false" ng-checked="!cs2.inKindSupport9">  No
+                                <input  type="radio"  name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="true" ng-checked="cs2.inKindSupport9">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="false" ng-checked="!cs2.inKindSupport9">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails9">
@@ -254,11 +275,13 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending10.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending10" type="number" ng-model="cs2.directSpending10">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="true" ng-checked="cs2.inKindSupport10">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="false" ng-checked="!cs2.inKindSupport10">  No
+                                <input  type="radio"  name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="true" ng-checked="cs2.inKindSupport10">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="false" ng-checked="!cs2.inKindSupport10">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails10">
@@ -269,49 +292,55 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending11.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending11" type="number" ng-model="cs2.directSpending11">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="true" ng-checked="cs2.inKindSupport11">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="false" ng-checked="!cs2.inKindSupport11">  No
+                                <input  type="radio"  name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="true" ng-checked="cs2.inKindSupport11">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="false" ng-checked="!cs2.inKindSupport11">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails11">
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio"> Other
-                            </label>
+                                <input  type="radio" > Other
+                            </label></div>
                         </td>
                         <td ng-class="{'has-error' : cs2Form.directSpending12.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending12" type="number" ng-model="cs2.directSpending12">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="true" ng-checked="cs2.inKindSupport12">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="false" ng-checked="!cs2.inKindSupport12">  No
+                                <input  type="radio"  name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="true" ng-checked="cs2.inKindSupport12">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="false" ng-checked="!cs2.inKindSupport12">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails12">
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio"> Other
-                            </label>
+                                <input  type="radio" > Other
+                            </label></div>
                         </td>
                         <td ng-class="{'has-error' : cs2Form.directSpending13.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending13" type="number" ng-model="cs2.directSpending13">
                         </td>
-                        <td>
+                        <td><div>
                             <label>
-                                <input class="form-control" type="radio" name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="true" ng-checked="cs2.inKindSupport13">  Yes
-                                <input class="form-control" type="radio" name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="false" ng-checked="!cs2.inKindSupport13">  No
+                                <input  type="radio"  name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="true" ng-checked="cs2.inKindSupport13">  Yes
                             </label>
+                            <label>
+                                <input  type="radio"  name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="false" ng-checked="!cs2.inKindSupport13">  No
+                            </label></div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails13">
