@@ -35,7 +35,7 @@
                          ng-file-select ng-model="uploadFile1"
                          ng-file-change="uploadFile(uploadFile1, guideFile)"
                          ng-multiple="false"
-                         ng-accept="'image/*,application/pdf'">
+                         ng-accept="'image/*,application/pdf,.doc,.docx,.xls,.xlsx'">
 
                         <div class="form-control uneditable-input input-fixed input-medium">
                             <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -45,13 +45,15 @@
                             <span ng-hide="guideFile.originalDocumentName" class="fileinput-new">Select file </span>
                             <span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>
                         </span>
-                        <a ng-click="guideFile = {}; " ng-show="guideFile.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
-                    </div>
-                    Files can be one of the following formats: .pdf, .doc, .xls)
-                </div>
 
-                <div class="text-right" ng-show="guideFile.originalDocumentName">
-                    <input type="submit" class="btn default" value="Upload" ng-click="guideFile = saveUploadedFile(guideFile, cs1.guideFiles)">
+                    </div>
+                    <p>Files can be one of the following formats: .doc, .docx, .pdf, .xls, .xlsx)</p>
+
+                    <div class="text-right" ng-show="guideFile.originalDocumentName">
+                        <a ng-click="guideFile = {}; " ng-show="guideFile.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile = saveUploadedFile(guideFile, cs1.guideFiles)">
+                    </div>
+
                 </div>
 
                 <div id="selectedItem" ng-repeat="file in cs1.guideFiles">{{ file.originalDocumentName }}
@@ -95,10 +97,10 @@
                 <div style="padding-bottom: 20px">
                     <p>Please choose the best description of how the SFI Implementation Committee (SIC) is organized? (new!)</p>
                     <select style="width: 560px;" class="form-control" ng-model="$scope.sicOrgDescription">
-                        <option ng-selected="!$scope.sicOrgDescription">Fully independent (IRS or state designated non-profit status)</option>
+                        <option ng-selected="!$scope.sicOrgDescription">Select</option>
                         <option value="1">Fully independent (IRS or state designated non-profit status)</option>
-                        <option value="2"> Semi-autonomous with services or support provided from local forestry association, i.e. independent sub-committee</option>
-                        <option value="3">forestry association committee (with forestry association staffing)</option>
+                        <option value="2">Semi-autonomous with services or support provided from local forestry association, i.e. independent sub-committee</option>
+                        <option value="3">Forestry association committee (with forestry association staffing)</option>
                         <option value="4">Other</option>
                     </select>
                 </div>
@@ -114,7 +116,7 @@
                          ng-file-select ng-model="uploadFile2"
                          ng-file-change="uploadFile(uploadFile2, contactFile)"
                          ng-multiple="false"
-                         ng-accept="'image/*,application/pdf'">
+                         ng-accept="'image/*,.doc,.docx,.xls,.xlsx'">
 
                         <div class="form-control uneditable-input input-fixed input-medium">
                             <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -124,11 +126,12 @@
                             <span ng-hide="contactFile.originalDocumentName" class="fileinput-new">Select file </span>
                             <span ng-show="contactFile.originalDocumentName" class="fileinput-exists">Change </span>
                         </span>
-                        <a ng-click="guideFile = {}; " ng-show="contactFile.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+
                     </div>
-                    Files can be one of the following formats: .pdf, .doc, .xls)
+                    Files can be one of the following formats: doc,.docx,.xls,xlsx.
                 </div>
                 <div class="text-right" ng-show="contactFile.originalDocumentName">
+                    <a ng-click="guideFile = {}; " ng-show="contactFile.originalDocumentName" href="javascript:;" class="btn red fileinput-exists" >Remove </a>
                     <input type="submit" class="btn default" value="Upload" ng-click="contactFile = saveUploadedFile(contactFile, cs1.contactFiles)">
                 </div>
 
@@ -615,10 +618,10 @@
                     <input type="radio" name="sicRepresentSfi" ng-model="cs1.sicRepresentSfi" ng-value="true" ng-checked="cs1.sicRepresentSfi"> Yes
                 </label>
                 <label>
-                    <input type="radio" name="sicRepresentSfi" ng-model="cs1.sicRepresentSfi" ng-value="false" ng-checked="!cs1.sicRepresentSfi"> No
+                    <input type="radio" name="sicRepresentSfi" ng-model="cs1.sicRepresentSfi" ng-value="false" ng-checked="cs1.sicRepresentSfi == false"> No
                 </label>
 
-                <div style="padding-left: 25px;" ng-show="cs1.sicRepresentSfi">
+                <div style="padding-left: 25px;" ng-show="cs1.sicRepresentSfi == true || cs1.sicRepresentSfi == false">
                     Provide any additional comments or feedback
                     <div class="form-group">
                         <textarea class="form-control" ng-model="cs1.sicRepresentSfiComments" rows="4" cols="70"></textarea>
@@ -637,10 +640,10 @@
                     <input type="radio" name="sicRecruitSfi" ng-model="cs1.sicRecruitSfi" ng-value="true" ng-checked="cs1.sicRecruitSfi"> Yes
                 </label>
                 <label>
-                    <input type="radio" name="sicRecruitSfi" ng-model="cs1.sicRecruitSfi" ng-value="false" ng-checked="!cs1.sicRecruitSfi"> No
+                    <input type="radio" name="sicRecruitSfi" ng-model="cs1.sicRecruitSfi" ng-value="false" ng-checked="cs1.sicRecruitSfi == false"> No
                 </label>
 
-                <div style="padding-left: 25px;" ng-show="cs1.sicRecruitSfi">
+                <div style="padding-left: 25px;"  ng-show="cs1.sicRecruitSfi == true || cs1.sicRecruitSfi == false">
                     Please list all newly recruited SFI Applicants or SFI Program Participants.
                     <div class="form-group">
                         <textarea class="form-control" ng-model="cs1.sicRecruitSfiComments" rows="4" cols="70"></textarea>
@@ -656,13 +659,13 @@
                     Does your SIC workplan/annual goals/annual activities include recruitment efforts this year?
                 </p>
                 <label>
-                    <input type="radio" name="sicPlanRecruitment" ng-model="cs1.sicPlanRecruitment" ng-value="false" ng-checked="cs1.sicPlanRecruitment"> Yes
+                    <input type="radio" name="sicPlanRecruitment" ng-model="cs1.sicPlanRecruitment" ng-value="true" ng-checked="cs1.sicPlanRecruitment"> Yes
                 </label>
                 <label>
-                    <input type="radio" name="sicPlanRecruitment" ng-model="cs1.sicPlanRecruitment" ng-value="false" ng-checked="!cs1.sicPlanRecruitment"> No
+                    <input type="radio" name="sicPlanRecruitment" ng-model="cs1.sicPlanRecruitment" ng-value="false" ng-checked="cs1.sicPlanRecruitment == false"> No
                 </label>
 
-                <div ng-show="cs1.sicPlanRecruitment">
+                <div ng-show="cs1.sicPlanRecruitment == true || cs1.sicPlanRecruitment == false">
                     <p>
                         Please list organizations currently identified for SFI Program Participation recruitment
                         efforts. [Please note SFI Inc. is available for assistance in recruitment efforts.]
@@ -685,8 +688,15 @@
                             <li>
                                 <label>
                                     <input type="checkbox" name="sicRecruitmentOrgs" checklist-model="cs1.sicRecruitmentOrgs" checklist-value="2"> Government Agency
-
                                 </label>
+                                <div style="padding-left: 25px;" ng-show="isSelected(cs1.sicRecruitmentOrgs, 2)">
+
+                                    Please specify:
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="4" cols="70" ng-model="cs1.sicRecrOrgsSpecify2"></textarea>
+                                    </div>
+                                </div>
+
                             </li>
                             <li>
                                 <label>
@@ -704,11 +714,24 @@
                                 <label>
                                     <input type="checkbox" name="sicRecruitmentOrgs" checklist-model="cs1.sicRecruitmentOrgs" checklist-value="4"> Conservation Organization
                                 </label>
+                                <div style="padding-left: 25px;" ng-show="isSelected(cs1.sicRecruitmentOrgs, 4)">
+                                    Please specify:
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="4" cols="70" ng-model="cs1.sicRecrOrgsSpecify4"></textarea>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <label>
                                     <input type="checkbox" name="sicRecruitmentOrgs" checklist-model="cs1.sicRecruitmentOrgs" checklist-value="5"> Other
                                 </label>
+
+                                <div style="padding-left: 25px;" ng-show="isSelected(cs1.sicRecruitmentOrgs, 5)">
+                                    Please specify:
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="4" cols="70" ng-model="cs1.sicRecrOrgsSpecify5"></textarea>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
