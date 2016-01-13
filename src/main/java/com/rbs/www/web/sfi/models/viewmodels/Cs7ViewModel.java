@@ -28,6 +28,9 @@ public class Cs7ViewModel extends BaseViewModel {
     private Set<Integer> intMarketCountries;
     private String intMarketCountryOther;
 
+    private Boolean investResIfInve;
+    private String planCommPlantYear;
+
     @Override
     public Integer getId() {
         return id;
@@ -35,6 +38,22 @@ public class Cs7ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getInvestResIfInve() {
+        return investResIfInve;
+    }
+
+    public void setInvestResIfInve(Boolean investResIfInve) {
+        this.investResIfInve = investResIfInve;
+    }
+
+    public String getPlanCommPlantYear() {
+        return planCommPlantYear;
+    }
+
+    public void setPlanCommPlantYear(String planCommPlantYear) {
+        this.planCommPlantYear = planCommPlantYear;
     }
 
     public Boolean getEmerIssuIntMarket() {

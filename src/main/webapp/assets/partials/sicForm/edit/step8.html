@@ -1,0 +1,415 @@
+<div class="row">
+    <div class="col-sm-12">
+
+        <!--Right Side Start
+        -------------
+        -------------------------------
+        ----------------------------------->
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+                <h5>
+                    8. <span data-toggle="tooltip"
+                             title="Include Conservation Research projects, as well as community partnership projects with organizations like Habitat for Humanity, Scouting organizations, etc.  Also, from SIC Governance document – Research secondary mission priority:  Research – Promote forestry research, science, and technology, upon which sustainable forest management decisions are based."> Research, Conservation and Community Projects & Partnerships </span>
+                </h5>
+                <form name="cs8Form">
+                <div style="padding-left: 10px;">
+                    <p>
+                        Is your SIC currently involved in, or supporting, any research, conservation and/or community
+                        partnership projects? (new!)
+                    </p>
+                    <label>
+                        <input type="radio" name="inPartnershipProjects" ng-model="cs8.inPartnershipProjects" ng-value="true"> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="inPartnershipProjects" ng-model="cs8.inPartnershipProjects" ng-value="false"> No
+                    </label>
+                </div>
+                </form>
+
+
+                <table class="table table-striped" ng-show="cs8.inPartnershipProjects && cs8.projects.length">
+                    <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Project Start Date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat-start="project in cs8.projects">
+                        <td>{{ project.name }}</td>
+                        <td>{{ project.startDate }}</td>
+                        <td><a href="" ng-click="editProject($index)">Edit</a></td>
+                        <td><a href="" ng-click="deleteProject($index)">Delete</a></td>
+                    </tr>
+                    <tr ng-repeat-end>
+                        <td colspan="4">
+                            {{ project.description }}
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <form name="projectForm">
+
+                <div class="col-lg-12 passage-bold"  ng-show="cs8.inPartnershipProjects">
+                    <div class="form-group">
+                        <label class="control-label col-lg-3" style="text-align: left">
+                            Project Name
+                        </label>
+
+                        <div class="col-lg-9" ng-class="{'has-error' : projectForm.name.$invalid }">
+                            <input class="form-control" type="text" name="name" ng-model="project.name" customerror ng-required="isProjectDirty()">
+                        </div>
+                    </div>
+                    <p style="padding-top: 30px;">Lead Organization and Main Contact</p>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3" style="text-align: left">
+                            Organization Name
+                        </label>
+
+                        <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
+                            <input class="form-control" type="text" name="organization" ng-model="project.organization" customerror ng-required="isProjectDirty()">
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <label class="control-label col-lg-3" style="text-align: left">
+                            Main Contact's Name
+                        </label>
+
+                        <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
+                            <input class="form-control" type="text" name="contactName" ng-model="project.contactName" customerror ng-required="isProjectDirty()">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-3" style="text-align: left">
+                            Main Contact's Email
+                        </label>
+
+                        <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
+                            <input class="form-control" type="email" name="contactEmail" ng-model="project.contactEmail" customerror ng-required="isProjectDirty()">
+                        </div>
+                    </div>
+                    <p style="padding-top: 30px;">Project Details</p>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3" style="text-align: left">
+                            Project Description
+                            (max. 300 words)
+                        </label>
+
+                        <div class="col-lg-9" ng-class="{'has-error' : projectForm.description.$invalid }">
+                            <textarea class="form-control" rows="4" name="description" ng-model="project.description" customerror ng-required="isProjectDirty()"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-3" style="text-align: left">
+                            Project Partners
+                            (check all that apply)
+                        </label>
+
+                        <div class="col-lg-9">
+                            <ul class="list-style" style="padding-top: 10px;">
+                                <li>
+                                    <label>
+                                        <input type="checkbox"  ng-model="project.partnerAcademic"> Academic
+                                    </label>
+
+                                </li>
+                                <label style="padding-left: 25px" class="form-inline" ng-show="project.partnerAcademic">
+                                    Please Specify <input class="form-control" ng-model="project.partnerAcademicSpecify">
+                                </label>
+                                <li>
+                                    <label>
+                                        <input type="checkbox"  ng-model="project.partnerResearch"> Research organization
+                                    </label>
+                                </li>
+                                <label style="padding-left: 25px" class="form-inline" ng-show="project.partnerResearch">
+                                    Please Specify <input class="form-control" ng-model="project.partnerResearchSpecify">
+                                </label>
+                                <li>
+                                    <label>
+                                        <input type="checkbox"  ng-model="project.partnerConservation">  Conservation organization
+                                    </label>
+                                </li>
+                                <label style="padding-left: 25px" class="form-inline" ng-show="project.partnerConservation">
+                                    Please Specify <input class="form-control" ng-model="project.partnerConservationSpecify">
+                                </label>
+                                <li>
+                                    <label>
+                                        <input type="checkbox"  ng-model="project.partnerGovernment"> Government agency
+                                    </label>
+                                </li>
+                                <label style="padding-left: 25px" class="form-inline" ng-show="project.partnerGovernment">
+                                    Please Specify <input class="form-control" ng-model="project.partnerGovernmentSpecify">
+                                </label>
+
+                                <li>
+                                    <label>
+                                        <input type="checkbox"  ng-model="project.partnerCommunity">
+                                        Community organization (including but not limited to
+                                        Habitat for Humanity, Scouting organizations, 4-H, Future Farmers of
+                                        America, etc.)
+                                    </label>
+                                    <ul class="list-style" style="padding-left: 25px;" ng-show="project.partnerCommunity">
+                                        <p>Check all that apply</p>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunity4H"> 4-H
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityBoyScout"> Boy Scouts of America
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityCCAB">
+                                                Canadian Council for Aboriginal Business (CCAB)
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityEarth"> Earth Rangers
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityGirlGuide"> Girl Guides
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityGirlScout"> Girl Scouts of America
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityHumanityCanada"> Habitat for Humanity Canada
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityHumanityInter"> Habitat for Humanity International
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityInterTimberCouncil"> International Timber Council
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityNatTurkeyFederation">  National Wild Turkey Federation
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityProjectTree"> Project Learning Tree
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityScoutsCanada"> Scouts Canada
+
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox"  ng-model="project.partnerCommunityOther"> Other
+                                            </label>
+                                        </li>
+                                        <label style="padding-left: 25px" class="form-inline" ng-show="project.partnerCommunityOther">
+                                            Please Specify <input class="form-control" ng-model="project.partnerCommunityOtherSpecify">
+                                        </label>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox"  ng-model="project.partnerOtherSIC"> Other SIC
+
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox"  ng-model="project.partnerOther"> Other
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 passage-bold" ng-show="cs8.inPartnershipProjects">
+
+                    <div class="col-lg-8 pading-botoms">
+                        <p>SFI Standard Objective most Relevant to Project (optional)</p>
+
+                        <div ng-class="{'has-error' : projectForm.sfiStandardObjective.$invalid }">
+                            <select class="form-control" name="sfiStandardObjective" ng-model="project.sfiStandardObjective" customerror ng-required="isProjectDirty()">
+                                <option ng-selected="!project.sfiStandardObjective"><-Select an SFI standard Objective-></option>
+                                <option ng-repeat="object in standardObjects" ng-value="object.id * 1">{{ object.sfiStandardObjDesc }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 pading-botoms">
+
+                        <p>Select Region (optional)</p>
+                        <div ng-init="project.regions = project.regions || []">
+                            <select class="form-control" name="region"
+                                    ng-init="region = 0"
+                                    ng-model="region"
+                                    ng-change="region = addBucket(project.regions, region, regions)">
+                                <option value="0" >Please select</option>
+                                <option ng-repeat="region in regions" ng-value={{region.id}}>{{region.name}}</option>
+                            </select>
+                            <div id="selectedItem" ng-repeat="region in project.regions">{{ region.name }}
+                                <button ng-click="project.regions = deleteBucket(region.id, project.regions)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 pading-botoms">
+
+                        <div class="col-lg-6">
+                            <div class="col-sm-4 nopadding" style="line-height: 32px;">Start date</div>
+                            <div class='input-group date datetimepicker' datetimepicker>
+                                <input type='text' class="form-control datepicker" name="start_date"
+                                               ng-required="isProjectDirty()" customerror
+                                               ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
+                                               pattern-msg="Please enter a valid date(YYYY-MM-DD)"
+                                               ng-model="project.startDate">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="col-sm-4 nopadding" style="line-height: 32px;">End date</div>
+                            <div class='input-group date datetimepicker' datetimepicker>
+                                <input type='text' class="form-control datepicker" name="end_date"
+                                               ng-required="isProjectDirty()" customerror
+                                               ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
+                                               pattern-msg="Please enter a valid date(YYYY-MM-DD)"
+                                               ng-model="project.endDate">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 pading-botoms">
+                        <div style="padding-left: 10px;">
+                            <p>Estimated Total Project Cost</p>
+
+                            <div class="col-lg-8 form-inline">
+                                <input type="number" class="form-control shorter" name="totalCost"
+                                       ng-model="project.totalCost"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                       pattern-msg="Enter decimal number up to 2 precision points" customerror />
+
+                                <button class="btn-group-sm btn-success curency" data-toggle="confirmation"
+                                        title="Choose the Currency" data-placement="top" data-btn-ok-label="USD"
+                                        data-btn-ok-icon="icon-like" data-btn-ok-class="btn-success" data-btn-cancel-label="CAD"
+                                        data-btn-cancel-icon="icon-close" data-btn-cancel-class="btn-danger">USD
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 pading-botoms">
+                        <div style="padding-left: 10px;">
+                            <p>SIC Contribution</p>
+
+                            <div class="col-lg-8 form-inline">
+                                <input type="number" class="form-control shorter" name="sicContribution"
+                                       ng-model="project.sicContribution"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                       pattern-msg="Enter decimal number up to 2 precision points" customerror />
+
+                                <label>
+                                    <button class="btn-group-sm btn-success curency" data-toggle="confirmation"
+                                            title="Choose the Currency" data-placement="top" data-btn-ok-label="USD"
+                                            data-btn-ok-icon="icon-like" data-btn-ok-class="btn-success"
+                                            data-btn-cancel-label="CAD" data-btn-cancel-icon="icon-close"
+                                            data-btn-cancel-class="btn-danger">USD
+                                    </button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 pading-botoms" ng-init="project.supportDocs = project.supportDocs || []">
+                        <div class="fileinput fileinput-new" style="padding-left: 10px;" data-provides="fileinput">
+                            <p>
+                                Supporting Documentation (optional)
+                            </p>
+
+                            <div class="input-group input-large"
+                                 ng-init="supportDoc = {}"
+                                 ng-file-select ng-model="uploadFile1"
+                                 ng-file-change="uploadFile(uploadFile1, supportDoc)"
+                                 ng-multiple="false"
+                                 ng-accept="'image/*,application/pdf'">
+
+                                <div class="form-control uneditable-input input-fixed input-medium">
+                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                    <span class="fileinput-filename">{{ supportDoc.originalDocumentName }}</span>
+                                </div>
+
+                                <span class="input-group-addon btn default btn-file">
+                                    <span ng-hide="supportDoc.originalDocumentName" class="fileinput-new">Select file </span>
+                                    <span ng-show="supportDoc.originalDocumentName" class="fileinput-exists">Change </span>
+                                </span>
+                                <a ng-click="supportDoc = {}; " ng-show="supportDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                            </div>
+
+                            Files can be one of the following formats: .pdf, .doc, .xls)
+                        </div>
+
+                        <div class="text-right" ng-show="supportDoc.originalDocumentName">
+                            <input type="submit" class="btn default" value="Upload" ng-click="supportDoc = saveUploadedFile(supportDoc, project.supportDocs)">
+                        </div>
+
+                        <div id="selectedItem" ng-repeat="file in project.supportDocs">{{ file.originalDocumentName }}
+                            <button ng-click="deleteByIndex($index, cs1.guideFiles)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 pading-botoms">
+                        <div style="padding-left: 10px;">
+                            <p>
+                                Is your SIC currently involved in, or supporting, any research, conservation and/or community
+                                partnership projects? (new!)
+                            </p>
+                            <label>
+                                <input type="radio" name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > No
+                            </label>
+                        </div>
+                        <p class="myButton" ng-click="addProject()">+ Add Another Project</p>
+
+                    </div>
+
+
+                </div>
+                </form>
+            </div>
+            <div class="col-lg-4" style="text-align: right">
+                <img src="/assets/images/u77.png" style="width: 250px;">
+            </div>
+            <br>
+        </div>
+
+
+
+        <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
+            <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
+            <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 9</button>
+        </div>
+    </div>
+</div>

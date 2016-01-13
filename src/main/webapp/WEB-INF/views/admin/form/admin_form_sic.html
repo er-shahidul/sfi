@@ -50,18 +50,21 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <!--<tr th:each="sfiPpForm, iterationStatus : ${sfiPpForms}">-->
-                                                    <!--<td th:text="${sfiPpForm.company.name}"></td>-->
-                                                    <!--<td th:text="${sfiPpForm.createdBy.username}"></td>-->
-                                                    <!--<td th:text="${sfiPpForm.createdAt}"></td>-->
-                                                    <!--<td th:text="${sfiPpForm.status.status}"></td>-->
-                                                    <!--<td th:text="${sfiPpForm.updatedAt}"></td>-->
-                                                    <!--<td>-->
-                                                        <!--<a th:href="@{'/admin/company/sfi/form/' + ${sfiPpForm.id}}">-->
-                                                            <!--<button th:text="Open"></button>-->
-                                                        <!--</a>-->
-                                                    <!--</td>-->
-                                                <!--</tr>-->
+                                                <tr th:each="sicPpForm, iterationStatus : ${sicPpForms}">
+                                                    <td th:text="${sicPpForm.company.name}"></td>
+                                                    <td th:text="${sicPpForm.createdBy.username}"></td>
+                                                    <td th:text="${sicPpForm.createdAt}"></td>
+                                                    <td th:text="${sicPpForm.status.status}"></td>
+                                                    <td th:text="${sicPpForm.updatedAt}"></td>
+                                                    <td>
+                                                        <a th:href="@{'/admin/company/sic/form/view/' + ${sicPpForm.id}}">
+                                                            <button th:text="Open" style="width:47px;"></button>
+                                                        </a>
+                                                        <a th:href="@{'/admin/company/sic/form/' + ${sicPpForm.id}}">
+                                                            <button th:text="Edit" style="width:47px;"></button>
+                                                        </a>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>

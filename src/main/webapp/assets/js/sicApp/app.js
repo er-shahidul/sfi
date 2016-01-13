@@ -99,45 +99,49 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs7FormCtrl'
                 }
             }
-        })/*
+        })
         .state('cs8', {
             url : "/step8",
             views: {
                 editContainer : {
-                    templateUrl : '/assets/partials/form/market_survey.html',
-                    controller  : 'FormMarketSurveyCtrl'
+                    templateUrl : '/assets/partials/sicForm/edit/step8.html',
+                    controller  : 'SicCs8FormCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewMarketSurvey,
-                    controller  : 'FormMarketSurveyCtrl'
+                    template    : '/assets/partials/sicForm/edit/step8.html',
+                    controller  : 'SicCs8FormCtrl'
                 }
             }
-        }).state('cs9', {
+        })
+
+        .state('cs9', {
             url : "/step9",
             views: {
                 editContainer : {
-                    templateUrl : '/assets/partials/form/forest_management_standard.html',
-                    controller  : 'FormForestManagementStandardCtrl'
+                    templateUrl : '/assets/partials/sicForm/edit/step9.html',
+                    controller  : 'SicCs9FormCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewForestManagementStandard,
-                    controller  : 'FormForestManagementStandardCtrl'
-                }
-
-            }
-        }).state('cs10', {
-            url : "/step10",
-            views: {
-                editContainer : {
-                    templateUrl : '/assets/partials/form/fiber_sourcing_standard.html',
-                    controller  : 'FormFiberSourcingStandardCtrl'
-                },
-                viewContainer : {
-                    template    : Templates.ViewFiberSourcingStandard,
-                    controller  : 'FormFiberSourcingStandardCtrl'
+                    template    : '/assets/partials/sicForm/edit/step9.html',
+                    controller  : 'SicCs9FormCtrl'
                 }
             }
-        }).state('print-all', {
+        })
+        .state('cs10', {
+                url : "/step10",
+                views: {
+                    editContainer : {
+                        templateUrl : '/assets/partials/sicForm/edit/step10.html',
+                        controller  : 'SicCs10FormCtrl'
+                    },
+                    viewContainer : {
+                        template    : '/assets/partials/sicForm/edit/step10.html',
+                        controller  : 'SicCs10FormCtrl'
+                    }
+                }
+        })
+        /*
+        .state('print-all', {
             url : "/print-all",
             views: {
                 viewContainer : {
