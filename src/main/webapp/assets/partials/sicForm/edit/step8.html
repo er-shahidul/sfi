@@ -252,7 +252,7 @@
                         <div ng-class="{'has-error' : projectForm.sfiStandardObjective.$invalid }">
                             <select class="form-control" name="sfiStandardObjective" ng-model="project.sfiStandardObjective" customerror ng-required="isProjectDirty()">
                                 <option ng-selected="!project.sfiStandardObjective"><-Select an SFI standard Objective-></option>
-                                <option ng-repeat="object in standardObjects" ng-value="object.id * 1">{{ object.sfiStandardObjDesc }}</option>
+                                <option ng-repeat="object in standardObjects" ng-value="object.id*1">{{ object.sfiStandardObjDesc }}</option>
                             </select>
                         </div>
                     </div>
@@ -306,38 +306,31 @@
                         <div style="padding-left: 10px;">
                             <p>Estimated Total Project Cost</p>
 
-                            <div class="col-lg-8 form-inline">
+                            <div class="form-inline">
                                 <input type="number" class="form-control shorter" name="totalCost"
                                        ng-model="project.totalCost"
                                        ng-pattern="/^\d*(\.\d{1,2})?$/"
                                        pattern-msg="Enter decimal number up to 2 precision points" customerror />
+                                <button class="btn-group-sm btn-success curency" type="button" id="projectCostCurrency"
+                                        ng-init="project.projectCostCurrency = project.projectCostCurrency || 1"
+                                        ng-click="setCurrency('projectCostCurrency', project)">{{ gerCurrency(project.projectCostCurrency) }}</button>
 
-                                <button class="btn-group-sm btn-success curency" data-toggle="confirmation"
-                                        title="Choose the Currency" data-placement="top" data-btn-ok-label="USD"
-                                        data-btn-ok-icon="icon-like" data-btn-ok-class="btn-success" data-btn-cancel-label="CAD"
-                                        data-btn-cancel-icon="icon-close" data-btn-cancel-class="btn-danger">USD
-                                </button>
                             </div>
+
                         </div>
                     </div>
                     <div class="col-lg-8 pading-botoms">
                         <div style="padding-left: 10px;">
                             <p>SIC Contribution</p>
 
-                            <div class="col-lg-8 form-inline">
+                            <div class="form-inline">
                                 <input type="number" class="form-control shorter" name="sicContribution"
                                        ng-model="project.sicContribution"
                                        ng-pattern="/^\d*(\.\d{1,2})?$/"
                                        pattern-msg="Enter decimal number up to 2 precision points" customerror />
-
-                                <label>
-                                    <button class="btn-group-sm btn-success curency" data-toggle="confirmation"
-                                            title="Choose the Currency" data-placement="top" data-btn-ok-label="USD"
-                                            data-btn-ok-icon="icon-like" data-btn-ok-class="btn-success"
-                                            data-btn-cancel-label="CAD" data-btn-cancel-icon="icon-close"
-                                            data-btn-cancel-class="btn-danger">USD
-                                    </button>
-                                </label>
+                                <button class="btn-group-sm btn-success curency" type="button" id="sicContributionCurrency"
+                                        ng-init="project.sicContributionCurrency = project.sicContributionCurrency || 1"
+                                        ng-click="setCurrency('sicContributionCurrency', project)">{{ gerCurrency(project.sicContributionCurrency) }}</button>
                             </div>
                         </div>
                     </div>

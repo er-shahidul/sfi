@@ -122,6 +122,12 @@ public class SicCs8Project extends BaseEntityModel {
     @Column(name = "cs8_sfiStandardObjective", nullable = true)
     private String sfiStandardObjective;
 
+    @Column(name = "cs8_projectCostCurrency", nullable = true)
+    private Integer projectCostCurrency;
+
+    @Column(name = "cs8_sicContributionCurrency", nullable = true)
+    private Integer sicContributionCurrency;
+
     @Column(name = "cs8_endDate", nullable = true)
     private Date endDate;
 
@@ -145,6 +151,30 @@ public class SicCs8Project extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getSfiStandardObjective() {
+        return sfiStandardObjective;
+    }
+
+    public void setSfiStandardObjective(String sfiStandardObjective) {
+        this.sfiStandardObjective = sfiStandardObjective;
+    }
+
+    public Integer getProjectCostCurrency() {
+        return projectCostCurrency;
+    }
+
+    public void setProjectCostCurrency(Integer projectCostCurrency) {
+        this.projectCostCurrency = projectCostCurrency;
+    }
+
+    public Integer getSicContributionCurrency() {
+        return sicContributionCurrency;
+    }
+
+    public void setSicContributionCurrency(Integer sicContributionCurrency) {
+        this.sicContributionCurrency = sicContributionCurrency;
     }
 
     public Integer getSicPpForm() {
@@ -417,14 +447,6 @@ public class SicCs8Project extends BaseEntityModel {
 
     public void setPartnerResearchSpecify(String partnerResearchSpecify) {
         this.partnerResearchSpecify = partnerResearchSpecify;
-    }
-
-    public String getSfiStandardObjective() {
-        return sfiStandardObjective;
-    }
-
-    public void setSfiStandardObjective(String sfiStandardObjective) {
-        this.sfiStandardObjective = sfiStandardObjective;
     }
 
     public Date getEndDate() {
