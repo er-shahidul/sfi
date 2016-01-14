@@ -46,7 +46,7 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
     private String partnerConservationSpecify;
     private String partnerGovernmentSpecify;
     private String partnerResearchSpecify;
-    private String sfiStandardObjective;
+    private Integer sfiStandardObjective;
 
     private Date endDate;
     private Date startDate;
@@ -61,6 +61,14 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getSfiStandardObjective() {
+        return sfiStandardObjective;
+    }
+
+    public void setSfiStandardObjective(Integer sfiStandardObjective) {
+        this.sfiStandardObjective = sfiStandardObjective;
     }
 
     public Integer getSicPpForm() {
@@ -333,14 +341,6 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
 
     public void setPartnerResearchSpecify(String partnerResearchSpecify) {
         this.partnerResearchSpecify = partnerResearchSpecify;
-    }
-
-    public String getSfiStandardObjective() {
-        return sfiStandardObjective;
-    }
-
-    public void setSfiStandardObjective(String sfiStandardObjective) {
-        this.sfiStandardObjective = sfiStandardObjective;
     }
 
     public Date getEndDate() {
