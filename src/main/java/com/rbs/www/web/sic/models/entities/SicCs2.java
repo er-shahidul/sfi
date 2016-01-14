@@ -179,6 +179,12 @@ public class SicCs2 extends BaseEntityModel {
     @Column(name = "cs2_directCurrency", nullable = true)
     private Integer directCurrency;
 
+    @Column(name = "cs2_activityOther1", nullable = true)
+    private Boolean activityOther1;
+
+    @Column(name = "cs2_activityOther2", nullable = true)
+    private Boolean activityOther2;
+
     @Override
     public Integer getId() {
         return id;
@@ -186,6 +192,22 @@ public class SicCs2 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getActivityOther1() {
+        return activityOther1;
+    }
+
+    public void setActivityOther1(Boolean activityOther1) {
+        this.activityOther1 = activityOther1;
+    }
+
+    public Boolean getActivityOther2() {
+        return activityOther2;
+    }
+
+    public void setActivityOther2(Boolean activityOther2) {
+        this.activityOther2 = activityOther2;
     }
 
     public Boolean getFreesProgramApplicants() {
