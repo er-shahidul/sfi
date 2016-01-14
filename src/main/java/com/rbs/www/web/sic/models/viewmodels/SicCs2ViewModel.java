@@ -64,6 +64,9 @@ public class SicCs2ViewModel extends BaseViewModel {
     private Boolean activityOther1;
     private Boolean activityOther2;
 
+    private String activityOtherSpecify1;
+    private String activityOtherSpecify2;
+
     @Override
     public Integer getId() {
         return id;
@@ -71,6 +74,22 @@ public class SicCs2ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getActivityOtherSpecify1() {
+        return activityOtherSpecify1;
+    }
+
+    public void setActivityOtherSpecify1(String activityOtherSpecify1) {
+        this.activityOtherSpecify1 = activityOtherSpecify1;
+    }
+
+    public String getActivityOtherSpecify2() {
+        return activityOtherSpecify2;
+    }
+
+    public void setActivityOtherSpecify2(String activityOtherSpecify2) {
+        this.activityOtherSpecify2 = activityOtherSpecify2;
     }
 
     public Boolean getActivityOther1() {

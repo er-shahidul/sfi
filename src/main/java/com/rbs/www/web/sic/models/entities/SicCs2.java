@@ -185,6 +185,12 @@ public class SicCs2 extends BaseEntityModel {
     @Column(name = "cs2_activityOther2", nullable = true)
     private Boolean activityOther2;
 
+    @Column(name = "cs2_activityOtherSpecify1", nullable = true)
+    private String activityOtherSpecify1;
+
+    @Column(name = "cs2_activityOtherSpecify2", nullable = true)
+    private String activityOtherSpecify2;
+
     @Override
     public Integer getId() {
         return id;
@@ -192,6 +198,22 @@ public class SicCs2 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getActivityOtherSpecify1() {
+        return activityOtherSpecify1;
+    }
+
+    public void setActivityOtherSpecify1(String activityOtherSpecify1) {
+        this.activityOtherSpecify1 = activityOtherSpecify1;
+    }
+
+    public String getActivityOtherSpecify2() {
+        return activityOtherSpecify2;
+    }
+
+    public void setActivityOtherSpecify2(String activityOtherSpecify2) {
+        this.activityOtherSpecify2 = activityOtherSpecify2;
     }
 
     public Boolean getActivityOther1() {
