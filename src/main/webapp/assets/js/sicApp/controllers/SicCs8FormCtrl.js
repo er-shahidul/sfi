@@ -11,6 +11,9 @@ sfiSicApp
         $scope.project  = {}
         $scope.cs8.projects = $scope.cs8.projects || [];
 
+//        $scope.cs8.sicContributionCurrency = $scope.cs8.sicContributionCurrency || 1;
+//        $scope.cs8.projectCostCurrency = $scope.cs8.projectCostCurrency || 1;
+
 
         $scope.isProjectDirty = function(){
 
