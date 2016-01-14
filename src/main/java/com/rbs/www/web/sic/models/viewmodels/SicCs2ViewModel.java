@@ -57,10 +57,15 @@ public class SicCs2ViewModel extends BaseViewModel {
     private String committeeFeeSpecify6;
     private Set<SicPpFormNeighborEventViewModel> sicNeighborEvents;
     private Set<Integer> committeeFeeStructure;
-
     private Integer supportCurrency;
     private Integer committeeCurrency;
     private Integer directCurrency;
+
+    private Boolean activityOther1;
+    private Boolean activityOther2;
+
+    private String activityOtherSpecify1;
+    private String activityOtherSpecify2;
 
     @Override
     public Integer getId() {
@@ -69,6 +74,38 @@ public class SicCs2ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getActivityOtherSpecify1() {
+        return activityOtherSpecify1;
+    }
+
+    public void setActivityOtherSpecify1(String activityOtherSpecify1) {
+        this.activityOtherSpecify1 = activityOtherSpecify1;
+    }
+
+    public String getActivityOtherSpecify2() {
+        return activityOtherSpecify2;
+    }
+
+    public void setActivityOtherSpecify2(String activityOtherSpecify2) {
+        this.activityOtherSpecify2 = activityOtherSpecify2;
+    }
+
+    public Boolean getActivityOther1() {
+        return activityOther1;
+    }
+
+    public void setActivityOther1(Boolean activityOther1) {
+        this.activityOther1 = activityOther1;
+    }
+
+    public Boolean getActivityOther2() {
+        return activityOther2;
+    }
+
+    public void setActivityOther2(Boolean activityOther2) {
+        this.activityOther2 = activityOther2;
     }
 
     public Boolean getFreesProgramApplicants() {

@@ -120,7 +120,7 @@ public class SicCs8Project extends BaseEntityModel {
     private String partnerResearchSpecify;
 
     @Column(name = "cs8_sfiStandardObjective", nullable = true)
-    private String sfiStandardObjective;
+    private Integer sfiStandardObjective;
 
     @Column(name = "cs8_endDate", nullable = true)
     private Date endDate;
@@ -145,6 +145,14 @@ public class SicCs8Project extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getSfiStandardObjective() {
+        return sfiStandardObjective;
+    }
+
+    public void setSfiStandardObjective(Integer sfiStandardObjective) {
+        this.sfiStandardObjective = sfiStandardObjective;
     }
 
     public Integer getSicPpForm() {
@@ -417,14 +425,6 @@ public class SicCs8Project extends BaseEntityModel {
 
     public void setPartnerResearchSpecify(String partnerResearchSpecify) {
         this.partnerResearchSpecify = partnerResearchSpecify;
-    }
-
-    public String getSfiStandardObjective() {
-        return sfiStandardObjective;
-    }
-
-    public void setSfiStandardObjective(String sfiStandardObjective) {
-        this.sfiStandardObjective = sfiStandardObjective;
     }
 
     public Date getEndDate() {
