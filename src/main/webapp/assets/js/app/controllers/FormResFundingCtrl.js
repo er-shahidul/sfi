@@ -312,6 +312,10 @@ sfiFormApp
 
         }
 
+
+
+
+
         $scope.delSupportDoc = function(index){
 
             if(confirm("Are you sure to remove this doc ?")){
