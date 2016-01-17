@@ -1,0 +1,124 @@
+<div class="row">
+    <div class="col-sm-12">
+
+        <!--Right Side Start
+        -------------
+        -------------------------------
+        ----------------------------------->
+        <form name="cs10Form">
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+                <h5>
+                    10. How Can SFI Serve You Better?
+                </h5>
+                <p>
+                    SFI Implementation Committees are SFI Inc.’s strongest asset in communities across North America.  SICs represent a grassroots network working with local conservation groups, government agencies, forestry and professional associations, landowner groups and many others to conduct landowner outreach, logger training and other community engagement activities.  Please list below any ideas or opportunities where SFI Inc. could better serve your committee. Choose from all that apply, or include other items not already listed.
+                </p>
+                <ul class="list-style">
+                    <li>
+                        <p>
+                            <input type="checkbox" disabled  name="sfiCouldServe" ng-model="cs10.sfiCouldServeMarketing">
+                            Development of marketing materials<br/>
+                        </p>
+                        <label ng-show="cs10.sfiCouldServeMarketing">
+                            Please Specify
+                            <textarea readonly  rows="3" cols="50" class="form-control" ng-model="cs10.sfiMarketingDetail"></textarea>
+                        </label>
+                    </li>
+                    <li>
+                        <p>
+                            <input type="checkbox" disabled  name="sfiCouldServe" ng-model="cs10.sfiCouldServeEducation">
+                            Development of presentation templates for training and educational purposes, i.e. SFI 101, It Starts at Home, SFI Standard Requirements, etc.
+                        </p>
+
+                        <label ng-show="cs10.sfiCouldServeEducation">
+                            Please Specify
+                            <textarea readonly  rows="3" cols="50" class="form-control" ng-model="cs10.sfiEducationDetail"></textarea>
+                        </label>
+
+                    </li>
+                    <li>
+                        <p>
+                            <input type="checkbox" disabled  name="sfiCouldServe" ng-model="cs10.sfiCouldServeInformation">
+                            Facilitating information sharing more effectively
+                        </p>
+                        <label ng-show="cs10.sfiCouldServeInformation">
+                            Please Specify
+                            <textarea readonly  rows="3" cols="50" class="form-control" ng-model="cs10.sfiInformationDetail"></textarea>
+                        </label>
+                    </li>
+                    <li>
+                        <p>
+                            <input type="checkbox" disabled  name="sfiCouldServe" ng-model="cs10.sfiCouldServeWebinar">
+                            Issue-specific webinars or discussions
+                        </p>
+                        <label ng-show="cs10.sfiCouldServeWebinar">
+                            Please Specify
+                            <textarea readonly  rows="3" cols="50" class="form-control" ng-model="cs10.sfiWebinarDetail"></textarea>
+                        </label>
+                    </li>
+                    <li>
+                        <p>
+                            <input type="checkbox" disabled  name="sfiCouldServe" ng-model="cs10.sfiCouldServeWebContent">
+                            Assistance with website content and graphics
+                        </p>
+                        <label ng-show="cs10.sfiCouldServeWebContent">
+                            Please Specify
+                            <textarea readonly  rows="3" cols="50" class="form-control" ng-model="cs10.sfiWebContentDetail"></textarea>
+                        </label>
+                    </li>
+                    <li>
+                        <p>
+                            <input type="checkbox" disabled  name="sfiCouldServe" ng-model="cs10.sfiCouldServeOther">
+                            Other
+                        </p>
+                        <label ng-show="cs10.sfiCouldServeOther">
+                            Please Specify
+                            <textarea readonly  rows="3" cols="50" class="form-control" ng-model="cs10.sfiOtherDetail"></textarea>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+                <hr style="border-top: groove;color: #1a1a1a;padding-bottom: 30px;">
+
+                <ul class="list-style">
+                    <li>
+                        <label>
+                            <input type="checkbox" disabled  name="confirm" ng-model="cs10.confirmation">
+                            I confirm the information provided herein is final and accurate to the best of my knowledge.
+                        </label>
+                        <p>
+                            Please enter your full name
+                        </p>
+                        <label class="form-inline">
+                            <input class="form-control" name="name" ng-model="cs10.fullName">  {{ today | date:'yyyy-MM-dd'}}
+                        </label>
+                    </li>
+                </ul>
+                <p>
+                    May SFI Inc. share your completed report with all SFI Implementation Committees and/or post on the SIC Member's Only Area of the SFI website?
+                </p>
+                <label class="form-inline">
+                    <input class="form-control" type="radio" disabled  name="shareReport" ng-model="cs10.shareReport" ng-value="true">  Yes
+                </label>
+                <label class="form-inline">
+                    <input class="form-control" type="radio" disabled  name="shareReport" ng-model="cs10.shareReport" ng-value="false">  No
+                </label>
+
+            </div>
+            <br>
+        </div>
+
+        </form>
+        <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
+            <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
+            <button type="button" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+</div>

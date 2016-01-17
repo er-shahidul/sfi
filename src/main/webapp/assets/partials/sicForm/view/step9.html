@@ -17,10 +17,10 @@
                     Does your SIC specifically promote the SFI® program in communications and marketing efforts, as part of the Market Outreach secondary mission priority?
                 </p>
                 <label>
-                    <input type="radio" name="promoteSFI" ng-value="true" ng-model="cs9.promoteSFI">   Yes
+                    <input type="radio" disabled  name="promoteSFI" ng-value="true" ng-model="cs9.promoteSFI">   Yes
                 </label>
                 <label>
-                    <input type="radio" name="promoteSFI" ng-value="false" ng-model="cs9.promoteSFI">  No
+                    <input type="radio" disabled  name="promoteSFI" ng-value="true" ng-model="cs9.promoteSFI">  No
                 </label>
             </div>
             <div class="pading-botoms" style="padding-left: 10px;">
@@ -31,27 +31,20 @@
                     <p>Communication Activity</p>
                     <li ng-class="{ 'list-select-drop' : cs9.activityLastYrPrinted}">
                         <label>
-                            <input type="checkbox" name="activityLastYr" ng-model="cs9.activityLastYrPrinted">  Printed publications
+                            <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrPrinted">  Printed publications
                         </label>
                         <div class="col-lg-12" ng-show="cs9.activityLastYrPrinted">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="3" ng-model="cs9.lastYrDetailsPrinted"></textarea>
+                                <textarea readonly   class="form-control" rows="3" ng-model="cs9.lastYrDetailsPrinted"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="doc1 = {}"
-                                     ng-file-select
-                                     ng-model="upload1"
-                                     ng-file-change="uploadFile(upload1, doc1)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -59,7 +52,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc1.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="doc1.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="doc1.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -68,38 +61,28 @@
 
                                 Files can be one of the following formats: .pdf, .doc, .xls)
                             </div>
-                            <div class="text-right" ng-show="doc1.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc1 = saveUploadedFile(doc1, cs9.supportDocLastYrPrinted, true)">
-                            </div>
+                            <div class="text-right" ng-show="doc1.originalDocumentName"></div>
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrPrinted.originalDocumentName">{{ cs9.supportDocLastYrPrinted.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrPrinted = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityLastYrAdvTV}">
                         <label>
-                            <input type="checkbox" name="activityLastYr" ng-model="cs9.activityLastYrAdvTV"> Advertisements,TV & Radio
+                            <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrAdvTV"> Advertisements,TV & Radio
                         </label>
                         <div class="col-lg-22" ng-show="cs9.activityLastYrAdvTV">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="3" ng-model="cs9.lastYrDetailsAdvTV"></textarea>
+                                <textarea readonly   class="form-control" rows="3" ng-model="cs9.lastYrDetailsAdvTV"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="doc2 = {}"
-                                     ng-file-select
-                                     ng-model="upload2"
-                                     ng-file-change="uploadFile(upload2, doc2)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -107,7 +90,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc2.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="doc2.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="doc2.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -121,33 +104,25 @@
                             </div>
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvTV.originalDocumentName">{{ cs9.supportDocLastYrAdvTV.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrAdvTV = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityLastYrAdvPrinted}">
                         <label>
-                            <input type="checkbox" name="activityLastYr" ng-model="cs9.activityLastYrAdvPrinted"> Printed Advertisements, e.g. magazines, newspapers, billboards
+                            <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrAdvPrinted"> Printed Advertisements, e.g. magazines, newspapers, billboards
                         </label>
                         <div class="col-lg-32" ng-show="cs9.activityLastYrAdvPrinted">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="3" ng-model="cs9.lastYrDetailsAdvPrinted"></textarea>
+                                <textarea readonly   class="form-control" rows="3" ng-model="cs9.lastYrDetailsAdvPrinted"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="doc3 = {}"
-                                     ng-file-select
-                                     ng-model="upload3"
-                                     ng-file-change="uploadFile(upload3, doc3)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -155,7 +130,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc3.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="doc3.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="doc3.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -169,34 +144,26 @@
                             </div>
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvPrinted.originalDocumentName">{{ cs9.supportDocLastYrAdvPrinted.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrAdvPrinted = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
 
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityLastYrTradeshow}">
                         <label>
-                            <input type="checkbox" name="activityLastYr" ng-model="cs9.activityLastYrTradeshow">  Tradeshow or Conference attendance
+                            <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrTradeshow">  Tradeshow or Conference attendance
                         </label>
                         <div class="col-lg-42" ng-show="cs9.activityLastYrTradeshow">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="4" ng-model="cs9.lastYrDetailsTradeshow"></textarea>
+                                <textarea readonly   class="form-control" rows="4" ng-model="cs9.lastYrDetailsTradeshow"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="doc4 = {}"
-                                     ng-file-select
-                                     ng-model="upload4"
-                                     ng-file-change="uploadFile(upload4, doc4)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -204,7 +171,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc4.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="doc4.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="doc4.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -218,33 +185,25 @@
                             </div>
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrTradeshow.originalDocumentName">{{ cs9.supportDocLastYrTradeshow.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrTradeshow = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityLastYrEventSponsor}">
                         <label>
-                            <input type="checkbox" name="activityLastYr" ng-model="cs9.activityLastYrEventSponsor">  Event Sponsorship
+                            <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrEventSponsor">  Event Sponsorship
                         </label>
                         <div class="col-lg-52" ng-show="cs9.activityLastYrEventSponsor">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="5" ng-model="cs9.lastYrDetailsEventSponsor"></textarea>
+                                <textarea readonly   class="form-control" rows="5" ng-model="cs9.lastYrDetailsEventSponsor"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="doc5 = {}"
-                                     ng-file-select
-                                     ng-model="upload5"
-                                     ng-file-change="uploadFile(upload5, doc5)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -252,7 +211,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc5.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="doc5.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="doc5.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -266,33 +225,25 @@
                             </div>
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrEventSponsor.originalDocumentName" >{{ cs9.supportDocLastYrEventSponsor.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrEventSponsor = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityLastYrSocialMedia}">
                         <label>
-                            <input type="checkbox" name="activityLastYr" ng-model="cs9.activityLastYrSocialMedia">  Social Media
+                            <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrSocialMedia">  Social Media
                         </label>
                         <div class="col-lg-62" ng-show="cs9.activityLastYrSocialMedia">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="6" ng-model="cs9.lastYrDetailsSocialMedia"></textarea>
+                                <textarea readonly   class="form-control" rows="6" ng-model="cs9.lastYrDetailsSocialMedia"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="doc6 = {}"
-                                     ng-file-select
-                                     ng-model="upload6"
-                                     ng-file-change="uploadFile(upload6, doc6)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -300,7 +251,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc6.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="doc6.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="doc6.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -314,33 +265,25 @@
                             </div>
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrSocialMedia.originalDocumentName">{{ cs9.supportDocLastYrSocialMedia.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrSocialMedia = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityLastYrVideo}">
                         <label>
-                            <input type="checkbox" name="activityLastYr" ng-model="cs9.activityLastYrVideo">  Video
+                            <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrVideo">  Video
                         </label>
                         <div class="col-lg-72" ng-show="cs9.activityLastYrVideo">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="7" ng-model="cs9.lastYrDetailsYrVideo"></textarea>
+                                <textarea readonly   class="form-control" rows="7" ng-model="cs9.lastYrDetailsYrVideo"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="doc7 = {}"
-                                     ng-file-select
-                                     ng-model="upload7"
-                                     ng-file-change="uploadFile(upload7, doc7)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -348,7 +291,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc7.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="doc7.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="doc7.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -362,33 +305,26 @@
                             </div>
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrVideo.originalDocumentName">{{ cs9.supportDocLastYrVideo.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrVideo = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityLastYrOther}">
                         <label>
-                            <input type="checkbox" name="activityLastYr" ng-model="cs9.activityLastYrOther">  Other
+                            <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrOther">  Other
                         </label>
                         <div class="col-lg-82" ng-show="cs9.activityLastYrOther">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="8" ng-model="cs9.lastYrDetailsYrOther"></textarea>
+                                <textarea readonly   class="form-control" rows="8" ng-model="cs9.lastYrDetailsYrOther"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
                                 <div class="input-group input-large"
-
-                                     ng-init="doc8 = {}"
-                                     ng-file-select
-                                     ng-model="upload8"
-                                     ng-file-change="uploadFile(upload8, doc8)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+>
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -396,7 +332,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc8.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="doc8.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="doc8.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -410,7 +346,6 @@
                             </div>
 
                             <div id="selectedItem" >{{ cs9.supportDocLastYrOther.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrOther = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -426,27 +361,21 @@
 
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrPrinted}">
                         <label>
-                            <input type="checkbox" name="activityCurrentYr" ng-model="cs9.activityCurrentYrPrinted">  Printed publications
+                            <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrPrinted">  Printed publications
                         </label>
                         <div class="col-lg-12" ng-show="cs9.activityCurrentYrPrinted">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="3" ng-model="cs9.currentYrDetailsPrinted"></textarea>
+                                <textarea readonly   class="form-control" rows="3" ng-model="cs9.currentYrDetailsPrinted"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
                                 <div class="input-group input-large"
-
-                                     ng-init="curDoc1 = {}"
-                                     ng-file-select
-                                     ng-model="curUpload1"
-                                     ng-file-change="uploadFile(curUpload1, curDoc1)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+>
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -454,7 +383,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc1.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="curDoc1.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="curDoc1.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -469,7 +398,6 @@
 
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrPrinted" >{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrPrinted)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
 
@@ -477,27 +405,20 @@
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrAdvTV}">
                         <label>
-                            <input type="checkbox" name="activityCurrentYr" ng-model="cs9.activityCurrentYrAdvTV"> Advertisements,TV & Radio
+                            <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrAdvTV"> Advertisements,TV & Radio
                         </label>
                         <div class="col-lg-22" ng-show="cs9.activityCurrentYrAdvTV">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="3" ng-model="cs9.currentYrDetailsAdvTV"></textarea>
+                                <textarea readonly   class="form-control" rows="3" ng-model="cs9.currentYrDetailsAdvTV"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="curDoc2 = {}"
-                                     ng-file-select
-                                     ng-model="curUpload2"
-                                     ng-file-change="uploadFile(curUpload2, curDoc2)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -505,7 +426,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc2.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="curDoc2.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="curDoc2.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -519,7 +440,6 @@
                             </div>
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrAdvTV" >{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrAdvTV)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
 
@@ -527,27 +447,20 @@
                     </li>
                     <li class="'list-select-drop'">
                         <label>
-                            <input type="checkbox" name="activityCurrentYr" ng-model="cs9.activityCurrentYrAdvPrinted"> Printed Advertisements, e.g. magazines, newspapers, billboards
+                            <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrAdvPrinted"> Printed Advertisements, e.g. magazines, newspapers, billboards
                         </label>
                         <div class="col-lg-32" ng-show="cs9.activityCurrentYrAdvPrinted">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="3" ng-model="cs9.currentYrDetailsAdvPrinted"></textarea>
+                                <textarea readonly   class="form-control" rows="3" ng-model="cs9.currentYrDetailsAdvPrinted"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="curDoc3 = {}"
-                                     ng-file-select
-                                     ng-model="curUpload3"
-                                     ng-file-change="uploadFile(curUpload3, curDoc3)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -555,7 +468,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc3.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="curDoc3.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="curDoc3.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -569,7 +482,6 @@
                             </div>
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrAdvPrinted" >{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrAdvPrinted)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
 
@@ -578,27 +490,20 @@
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrTradeshow}">
                         <label>
-                            <input type="checkbox" name="activityCurrentYr" ng-model="cs9.activityCurrentYrTradeshow">  Tradeshow or Conference attendance
+                            <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrTradeshow">  Tradeshow or Conference attendance
                         </label>
                         <div class="col-lg-42" ng-show="cs9.activityCurrentYrTradeshow">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="4" ng-model="cs9.currentYrDetailsTradeshow"></textarea>
+                                <textarea readonly   class="form-control" rows="4" ng-model="cs9.currentYrDetailsTradeshow"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="curDoc4 = {}"
-                                     ng-file-select
-                                     ng-model="curUpload4"
-                                     ng-file-change="uploadFile(curUpload4, curDoc4)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -606,7 +511,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc4.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="curDoc4.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="curDoc4.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -620,34 +525,26 @@
                             </div>
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrTradeshow" >{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrTradeshow)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrEventSponsor}">
                         <label>
-                            <input type="checkbox" name="activityCurrentYr" ng-model="cs9.activityCurrentYrEventSponsor">  Event Sponsorship
+                            <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrEventSponsor">  Event Sponsorship
                         </label>
                         <div class="col-lg-52" ng-show="cs9.activityCurrentYrEventSponsor">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="5" ng-model="cs9.currentYrDetailsEventSponsor"></textarea>
+                                <textarea readonly   class="form-control" rows="5" ng-model="cs9.currentYrDetailsEventSponsor"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="curDoc5 = {}"
-                                     ng-file-select
-                                     ng-model="curUpload5"
-                                     ng-file-change="uploadFile(curUpload5, curDoc5)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -655,7 +552,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc5.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="curDoc5.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="curDoc5.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -670,34 +567,26 @@
 
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrEventSponsor" >{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrEventSponsor)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrSocialMedia }">
                         <label>
-                            <input type="checkbox" name="activityCurrentYr" ng-model="cs9.activityCurrentYrSocialMedia">  Social Media
+                            <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrSocialMedia">  Social Media
                         </label>
                         <div class="col-lg-62" ng-show="cs9.activityCurrentYrSocialMedia">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="6" ng-model="cs9.currentYrDetailsSocialMedia"></textarea>
+                                <textarea readonly   class="form-control" rows="6" ng-model="cs9.currentYrDetailsSocialMedia"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="curDoc6 = {}"
-                                     ng-file-select
-                                     ng-model="curUpload6"
-                                     ng-file-change="uploadFile(curUpload6, curDoc6)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -705,7 +594,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc6.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="curDoc6.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="curDoc6.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -719,34 +608,27 @@
                             </div>
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrSocialMedia" >{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrSocialMedia)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+
                             </div>
 
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrVideo}">
                         <label>
-                            <input type="checkbox" name="activityCurrentYr" ng-model="cs9.activityCurrentYrVideo">  Video
+                            <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrVideo">  Video
                         </label>
                         <div class="col-lg-72" ng-show="cs9.activityCurrentYrVideo">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="7" ng-model="cs9.currentYrDetailsYrVideo"></textarea>
+                                <textarea readonly   class="form-control" rows="7" ng-model="cs9.currentYrDetailsYrVideo"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
                                     Supporting documentation. Uploaded files will be shared through the SIC member’s area information sharing portal.
                                 </p>
-                                <div class="input-group input-large"
-
-                                     ng-init="curDoc7 = {}"
-                                     ng-file-select
-                                     ng-model="curUpload7"
-                                     ng-file-change="uploadFile(curUpload7, curDoc7)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                <div class="input-group input-large">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -754,7 +636,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc7.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="curDoc7.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="curDoc7.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -768,20 +650,19 @@
                             </div>
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrVideo" >{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrVideo)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrOther}">
                         <label>
-                            <input type="checkbox" name="activityCurrentYr" ng-model="cs9.activityCurrentYrOther">  Other
+                            <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrOther">  Other
                         </label>
                         <div class="col-lg-82" ng-show="cs9.activityCurrentYrOther">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
                                 </p>
-                                <textarea  class="form-control" rows="8" ng-model="cs9.currentYrDetailsYrOther"></textarea>
+                                <textarea readonly   class="form-control" rows="8" ng-model="cs9.currentYrDetailsYrOther"></textarea>
                             </div>
                             <div class="fileinput fileinput-new" style="padding-left: 10px;padding-top: 20px;" data-provides="fileinput">
                                 <p>
@@ -789,12 +670,7 @@
                                 </p>
                                 <div class="input-group input-large"
 
-                                     ng-init="curDoc8 = {}"
-                                     ng-file-select
-                                     ng-model="curUpload8"
-                                     ng-file-change="uploadFile(curUpload8, curDoc8)"
-                                     ng-multiple="false"
-                                     ng-accept="'image/*,application/pdf'">
+                                     >
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -802,7 +678,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc8.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="curDoc8.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="curDoc8.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -816,7 +692,7 @@
                             </div>
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrOther" >{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrOther)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                
                             </div>
                         </div>
                     </li>
@@ -828,7 +704,7 @@
                 <p>
                     List outlets where the SFI program is promoted and mentioned, i.e. websites, supporting organization’s websites, promotional publications, news articles, etc. (new!)
                 </p>
-                <textarea class="form-control" rows="3" ng-model="cs9.sfiProgramOutlets"></textarea>
+                <textarea readonly class="form-control" rows="3" ng-model="cs9.sfiProgramOutlets"></textarea>
             </div>
 
         </div>
