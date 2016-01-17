@@ -20,12 +20,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
 @Controller
-public class SicFormController {
+public class SicFormController{
 
     @Value("#{messages[endDate]}")
     private String endDate;
@@ -67,16 +70,20 @@ public class SicFormController {
         model.addAttribute("cs9", formService.getSicCs9ViewModel(id));
         model.addAttribute("cs10", formService.getSicCs10ViewModel(id));
 
+        model.addAttribute("createdAt", "[ "+ getDateFormat(sicFormData.getCreatedAt()) + " ]");
+        model.addAttribute("updateAt", "[ "+ getDateFormat(sicFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sicFormData.getCompany());
-        model.addAttribute("createdAt", sicFormData.getCreatedAt());
         model.addAttribute("createdBy", sicFormData.getCreatedBy());
-        model.addAttribute("updateAt", sicFormData.getUpdatedAt());
         model.addAttribute("updateBy", sicFormData.getUpdatedBy());
         model.addAttribute("status", sicFormData.getStatus());
 
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
+    }
+
+    public String getDateFormat(Date date) {
+        return new SimpleDateFormat("dd-MM, yyyy h:mma").format((Date) date);
     }
 
     @RequestMapping(value = "/sicForm", method = RequestMethod.GET)
@@ -94,7 +101,7 @@ public class SicFormController {
         }
 
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("days_until", getDiffDays());
         model.addAttribute("mode", "edit");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
@@ -111,7 +118,7 @@ public class SicFormController {
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("days_until", getDiffDays());
         model.addAttribute("mode", "view");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
@@ -122,7 +129,7 @@ public class SicFormController {
     public String adminSicFormEdit(@PathVariable Integer id, ModelMap model) throws ParseException {
         SicFormData sicFormData = sicFormDataService.get(id);
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("days_until", getDiffDays());
         model.addAttribute("mode", "edit");
 
         return "web/sic/index";
@@ -132,7 +139,7 @@ public class SicFormController {
     public String adminSicFormView(@PathVariable Integer id, ModelMap model) throws ParseException {
         SicFormData sicFormData = sicFormDataService.get(id);
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("days_until", getDiffDays());
         model.addAttribute("mode", "view");
 
         return "web/sic/index";
@@ -152,5 +159,17 @@ public class SicFormController {
         model.addAttribute("sicPpForms", sicFormDataService.createOrGetByCurrentUsersCompany());
 
         return "admin/form/admin_form_sic";
+    }
+
+    private long getDiffDays() throws ParseException {
+        String dateStart = endDate;
+        DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+        Date dateE = new Date();
+        String dateStop = format.format(dateE);
+
+        Date d1 = format.parse(dateStop);
+        Date d2 = format.parse(dateStart);
+        long diff = d2.getTime() - d1.getTime();
+        return diff / (24 * 60 * 60 * 1000);
     }
 }
