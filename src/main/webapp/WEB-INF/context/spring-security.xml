@@ -13,6 +13,7 @@
 		<intercept-url pattern="/user/profile" access="hasAnyRole('ADMIN','USER','GENERAL')" />
 		<intercept-url pattern="/admin/user/profile" access="hasAnyRole('ADMIN','USER','GENERAL')" />
 		<intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
+		<intercept-url pattern="/user/form/**" access="hasRole('USER')" />
 		<intercept-url pattern="/frontend/**" access="hasAnyRole('USER','GENERAL')" />
         <intercept-url pattern="/sfiPpForm" access="isAuthenticated()" />
         <intercept-url pattern="/" access="permitAll" />

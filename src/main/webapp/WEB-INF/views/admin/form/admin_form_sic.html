@@ -56,11 +56,19 @@
                                                     <td th:text="${sicPpForm.createdAt}"></td>
                                                     <td th:text="${sicPpForm.status.status}"></td>
                                                     <td th:text="${sicPpForm.updatedAt}"></td>
-                                                    <td>
+                                                    <td sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
                                                         <a th:href="@{'/admin/company/sic/form/view/' + ${sicPpForm.id}}">
                                                             <button th:text="Open" style="width:47px;"></button>
                                                         </a>
                                                         <a th:href="@{'/admin/company/sic/form/' + ${sicPpForm.id}}">
+                                                            <button th:text="Edit" style="width:47px;"></button>
+                                                        </a>
+                                                    </td>
+                                                    <td sec:authorize="hasAnyRole('ROLE_USER')">
+                                                        <a th:href="@{'/sicForm/view'}">
+                                                            <button th:text="Open" style="width:47px;"></button>
+                                                        </a>
+                                                        <a th:href="@{'/sicForm'}">
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
