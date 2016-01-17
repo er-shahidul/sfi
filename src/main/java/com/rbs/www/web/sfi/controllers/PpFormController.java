@@ -72,7 +72,6 @@ public class PpFormController{
         model.addAttribute("company", sfiPpFormData.getCompany());
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
-        model.addAttribute("updateAt", sfiPpFormData.getUpdatedAt());
         model.addAttribute("updateBy", sfiPpFormData.getUpdatedBy());
         model.addAttribute("status", sfiPpFormData.getStatus());
 
