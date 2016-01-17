@@ -17,10 +17,10 @@
                         Does your state/provincial forest agency monitor voluntary compliance with BMP's?
                     </p>
                     <label>
-                        <input type="radio" name="monitorBMPCompliance" ng-value="true" ng-model="cs7.monitorBMPCompliance"> Yes
+                        <input type="radio" disabled   name="monitorBMPCompliance" ng-value="true" ng-model="cs7.monitorBMPCompliance"> Yes
                     </label>
                     <label>
-                        <input type="radio" name="monitorBMPCompliance" ng-value="false" ng-model="cs7.monitorBMPCompliance"> No
+                        <input type="radio" disabled   name="monitorBMPCompliance" ng-value="false" ng-model="cs7.monitorBMPCompliance"> No
                     </label>
 
                     <div style="padding-top: 10px;" ng-show="cs7.monitorBMPCompliance == false">
@@ -36,14 +36,14 @@
                             <label class="form-inline">
                                 % compliance
                                 <input name="bmpComplianceRate" ng-model="cs7.bmpComplianceRate"
-                                       class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                       class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,2})?$/"
                                        pattern-msg="Enter decimal number up to 2 precision points" customerror>
                             </label>
                             <br>
                             <label class="form-inline" style="padding-left: 11px;">
                                 Year/period
                                 <input name="bmpCompliancePeriod" ng-model="cs7.bmpCompliancePeriod"
-                                       class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                       class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,2})?$/"
                                        pattern-msg="Enter decimal number up to 2 precision points" customerror>
                             </label>
                         </div>
@@ -52,18 +52,14 @@
                         <p>If available, please send a copy of the state/provincial BMP report on compliance.</p>
 
                         <div class="fileinput fileinput-new" data-provides="fileinput" style="width:90%">
-                            <div class="input-group input-large"
-                                 ng-file-select ng-model="fileModel"
-                                 ng-file-change="uploadFile(fileModel, bmpReportDoc)"
-                                 ng-multiple="false"
-                                 ng-accept="'image/*,application/pdf'">
+                            <div class="input-group input-large">
 
                                 <div class="form-control uneditable-input input-fixed input-medium">
                                     <i class="fa fa-file fileinput-exists"></i>&nbsp;
                                     <span class="fileinput-filename">{{ bmpReportDoc.originalDocumentName }}</span>
                                 </div>
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="bmpReportDoc.originalDocumentName" class="fileinput-new">Select file </span>
+                                        <span ng-hide="bmpReportDoc.originalDocumentName" class="fileinput-new disabled">Select file </span>
                                         <span ng-show="bmpReportDoc.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
                                 <a ng-click="bmpReportDoc = {}; " ng-show="bmpReportDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
@@ -79,20 +75,18 @@
                             <button ng-click="cs7.bmpReportDoc = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
                         <br/>
-
                     </div>
                 </div>
-
 
                 <div style="padding-left: 10px;">
                     <p style="padding-top: 30px;">
                         In addition, does this SIC recognized logger training program have the added designation of being a “certified logging professional” program, as defined in the SFI 2015 - 2019 Standards and Rules, Section 13? (new!)
                     </p>
                     <label>
-                        <input type="radio" name="sicProgramCertifiedDesignation" ng-model="cs7.sicProgramCertifiedDesignation" ng-value="true"> Yes
+                        <input type="radio" disabled   name="sicProgramCertifiedDesignation" ng-model="cs7.sicProgramCertifiedDesignation" ng-value="true"> Yes
                     </label>
                     <label>
-                        <input type="radio" name="sicProgramCertifiedDesignation" ng-model="cs7.sicProgramCertifiedDesignation" ng-value="false"> No
+                        <input type="radio" disabled   name="sicProgramCertifiedDesignation" ng-model="cs7.sicProgramCertifiedDesignation" ng-value="false"> No
                     </label>
                 </div>
                 <div style="padding-top: 20px; padding-left: 10px;" ng-show="cs7.sicProgramCertifiedDesignation">
@@ -101,20 +95,20 @@
                         <label class="form-inline">
                             % compliance
                             <input name="sfiForestManagementBmpRate" ng-model="cs7.sfiForestManagementBmpRate"
-                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror>
                         </label>
                         <br>
                         <label class="form-inline" style="padding-left: 13px;">
                             Year/period
                             <input name="sfiForestManagementBmpPeriod" ng-model="cs7.sfiForestManagementBmpPeriod"
-                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror>
                         </label>
                         <br>
                         <label class="form-inline" style="padding-left: 37px;">
                             Source
-                            <input style="width: 450px;" class="form-control" type="text" ng-model="cs7.sfiForestManagementBmpSource">
+                            <input style="width: 450px;" class="form-control" type="text" readonly  ng-model="cs7.sfiForestManagementBmpSource">
                         </label>
                     </div>
                 </div>
@@ -124,20 +118,20 @@
                         <label class="form-inline">
                             % compliance
                             <input name="sfiFiberSourcingBmpRate" ng-model="cs7.sfiFiberSourcingBmpRate"
-                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror>
                         </label>
                         <br>
                         <label class="form-inline" style="padding-left: 13px;">
                             Year/period
                             <input name="sfiFiberSourcingBmpPeriod" ng-model="cs7.sfiFiberSourcingBmpPeriod"
-                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror>
                         </label>
                         <br>
                         <label class="form-inline" style="padding-left: 37px;">
                             Source
-                            <input style="width: 450px;" class="form-control" type="text" ng-model="cs7.sfiFiberSourcingBmpSource">
+                            <input style="width: 450px;" class="form-control" type="text" readonly  ng-model="cs7.sfiFiberSourcingBmpSource">
                         </label>
                     </div>
                 </div>
@@ -150,20 +144,20 @@
                         <label class="form-inline">
                             % compliance
                             <input name="sfiNonCertifiedBmpRate" ng-model="cs7.sfiNonCertifiedBmpRate"
-                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror>
                         </label>
                         <br>
                         <label class="form-inline" style="padding-left: 13px;">
                             Year/period
                             <input name="sfiNonCertifiedBmpPeriod" ng-model="cs7.sfiNonCertifiedBmpPeriod"
-                                   class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror>
                         </label>
                         <br>
                         <label class="form-inline" style="padding-left: 37px;">
                             Source
-                            <input style="width: 450px;" class="form-control" type="text" ng-model="cs7.sfiNonCertifiedBmpSource">
+                            <input style="width: 450px;" class="form-control" type="text" readonly  ng-model="cs7.sfiNonCertifiedBmpSource">
                         </label>
                     </div>
                 </div>
