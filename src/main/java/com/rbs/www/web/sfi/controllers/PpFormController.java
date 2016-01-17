@@ -138,4 +138,12 @@ public class PpFormController {
 
         return "admin/form/admin_form_sfi";
     }
+
+    @RequestMapping(value = "/user/form/pp", method = RequestMethod.GET)
+    public String userSfiForm(ModelMap model) {
+        model.addAttribute("title", "sfi");
+        model.addAttribute("sfiPpForms", sfiPpFormDataService.createOrGetByCurrentUsersCompany());
+
+        return "admin/form/admin_form_sfi";
+    }
 }

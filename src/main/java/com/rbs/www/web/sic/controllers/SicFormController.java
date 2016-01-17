@@ -145,4 +145,12 @@ public class SicFormController {
 
         return "admin/form/admin_form_sic";
     }
+
+    @RequestMapping(value = "/user/form/sic", method = RequestMethod.GET)
+    public String userSicForm(ModelMap model) {
+        model.addAttribute("title", "sic");
+        model.addAttribute("sicPpForms", sicFormDataService.createOrGetByCurrentUsersCompany());
+
+        return "admin/form/admin_form_sic";
+    }
 }

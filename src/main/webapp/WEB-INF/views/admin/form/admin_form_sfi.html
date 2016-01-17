@@ -56,11 +56,19 @@
                                                     <td th:text="${sfiPpForm.createdAt}"></td>
                                                     <td th:text="${sfiPpForm.status.status}"></td>
                                                     <td th:text="${sfiPpForm.updatedAt}"></td>
-                                                    <td>
+                                                    <td sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
                                                         <a th:href="@{'/admin/company/pp/form/view/' + ${sfiPpForm.id}}">
                                                             <button th:text="Open" style="width:47px;"></button>
                                                         </a>
                                                         <a th:href="@{'/admin/company/pp/form/' + ${sfiPpForm.id}}">
+                                                            <button th:text="Edit" style="width:47px;"></button>
+                                                        </a>
+                                                    </td>
+                                                    <td sec:authorize="hasAnyRole('ROLE_USER')">
+                                                        <a th:href="@{'/sfiPpForm/view'}">
+                                                            <button th:text="Open" style="width:47px;"></button>
+                                                        </a>
+                                                        <a th:href="@{'/sfiPpForm'}">
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
