@@ -398,13 +398,13 @@ public class UserController {
         if (!userService.isUserUsernameUnique(user.getId(), user.getUsername())) {
             FieldError ssoError = new FieldError("user", "username", messageSource.getMessage("non.unique.username", new String[]{user.getUsername()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "redirect:admin/user/new";
+            return "redirect:/admin/user/new";
         }
 
         if (!userService.isUserEmailUnique(user.getId(), user.getEmail())) {
             FieldError ssoError = new FieldError("user", "email", messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "redirect:admin/user/new";
+            return "redirect:/admin/user/new";
         }
 
         userService.save(user);
