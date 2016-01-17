@@ -20,9 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
-public class PpFormController {
+public class PpFormController{
 
     @Value("#{messages[endDate]}")
     private String endDate;
@@ -64,16 +66,20 @@ public class PpFormController {
         model.addAttribute("cs9", formService.getCs9ViewModel(id));
         model.addAttribute("cs10", formService.getCs10ViewModel(id));
 
+        model.addAttribute("createdAt", "[ "+ getDateFormat(sfiPpFormData.getCreatedAt()) + " ]");
+        model.addAttribute("updateAt", "[ "+ getDateFormat(sfiPpFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sfiPpFormData.getCompany());
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
-        model.addAttribute("createdAt", sfiPpFormData.getCreatedAt());
-        model.addAttribute("createdBy", sfiPpFormData.getCreatedBy());
         model.addAttribute("updateAt", sfiPpFormData.getUpdatedAt());
         model.addAttribute("updateBy", sfiPpFormData.getUpdatedBy());
         model.addAttribute("status", sfiPpFormData.getStatus());
 
         model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
+    }
+
+    public String getDateFormat(Date date) {
+        return new SimpleDateFormat("dd-MM, yyyy h:mma").format((Date) date);
     }
 
     @RequestMapping(value = "/sfiPpForm", method = RequestMethod.GET)

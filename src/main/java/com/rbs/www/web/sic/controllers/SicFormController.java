@@ -21,11 +21,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
 @Controller
-public class SicFormController {
+public class SicFormController{
 
     @Value("#{messages[endDate]}")
     private String endDate;
@@ -67,16 +69,20 @@ public class SicFormController {
         model.addAttribute("cs9", formService.getSicCs9ViewModel(id));
         model.addAttribute("cs10", formService.getSicCs10ViewModel(id));
 
+        model.addAttribute("createdAt", "[ "+ getDateFormat(sicFormData.getCreatedAt()) + " ]");
+        model.addAttribute("updateAt", "[ "+ getDateFormat(sicFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sicFormData.getCompany());
-        model.addAttribute("createdAt", sicFormData.getCreatedAt());
         model.addAttribute("createdBy", sicFormData.getCreatedBy());
-        model.addAttribute("updateAt", sicFormData.getUpdatedAt());
         model.addAttribute("updateBy", sicFormData.getUpdatedBy());
         model.addAttribute("status", sicFormData.getStatus());
 
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
+    }
+
+    public String getDateFormat(Date date) {
+        return new SimpleDateFormat("dd-MM, yyyy h:mma").format((Date) date);
     }
 
     @RequestMapping(value = "/sicForm", method = RequestMethod.GET)
