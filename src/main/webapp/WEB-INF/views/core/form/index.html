@@ -45,8 +45,8 @@
             <div class="col-xs-3" id="formActions">
 
                 <div class="formActionsNotice">
-                    <span ng-show="daysLeft >= 0 "><big>{{ daysLeft }}</big> days until form is due!</span>
-                    <span ng-show="daysLeft &lt; 0" class="dueDate">Oh no! Your form is {{ daysLeft * -1}} days overdue!</span>
+                    <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> days until form is due!</span>
+                    <span ng-show="daysLeft &lt; 0" class="dueDate">Oh no! Your form is <big th:text="- ${{ days_until }}"></big> days overdue!</span>
                     <br/>
                     <a href="mailto:rachel.dierolf@sfiprogram.org" ng-class="{'dueDate':  daysLeft &lt; 0}">Need help?</a>
                 </div>

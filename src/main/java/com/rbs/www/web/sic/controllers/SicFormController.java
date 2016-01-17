@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -100,7 +101,7 @@ public class SicFormController{
         }
 
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("days_until", getDiffDays());
         model.addAttribute("mode", "edit");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
@@ -117,7 +118,7 @@ public class SicFormController{
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("days_until", getDiffDays());
         model.addAttribute("mode", "view");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
@@ -128,7 +129,7 @@ public class SicFormController{
     public String adminSicFormEdit(@PathVariable Integer id, ModelMap model) throws ParseException {
         SicFormData sicFormData = sicFormDataService.get(id);
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("days_until", getDiffDays());
         model.addAttribute("mode", "edit");
 
         return "web/sic/index";
@@ -138,7 +139,7 @@ public class SicFormController{
     public String adminSicFormView(@PathVariable Integer id, ModelMap model) throws ParseException {
         SicFormData sicFormData = sicFormDataService.get(id);
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("days_until", getDiffDays());
         model.addAttribute("mode", "view");
 
         return "web/sic/index";
@@ -158,5 +159,17 @@ public class SicFormController{
         model.addAttribute("sicPpForms", sicFormDataService.createOrGetByCurrentUsersCompany());
 
         return "admin/form/admin_form_sic";
+    }
+
+    private long getDiffDays() throws ParseException {
+        String dateStart = endDate;
+        DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+        Date dateE = new Date();
+        String dateStop = format.format(dateE);
+
+        Date d1 = format.parse(dateStop);
+        Date d2 = format.parse(dateStart);
+        long diff = d2.getTime() - d1.getTime();
+        return diff / (24 * 60 * 60 * 1000);
     }
 }
