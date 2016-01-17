@@ -38,7 +38,8 @@ sfiSicApp
             return window.print();
         }
 
-        var url = Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#' + $location.$$path;
+        var url = '/sicForm/view' + '#' + $location.$$path;
+        //Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#' + $location.$$path;
         var win = window.open(url, '_blank');
 
 
