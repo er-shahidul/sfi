@@ -70,8 +70,8 @@ public class SicFormController{
         model.addAttribute("cs9", formService.getSicCs9ViewModel(id));
         model.addAttribute("cs10", formService.getSicCs10ViewModel(id));
 
-        model.addAttribute("createdAt", "[ "+ getDateFormat(sicFormData.getCreatedAt()) + " ]");
-        model.addAttribute("updateAt", "[ "+ getDateFormat(sicFormData.getUpdatedAt()) + " ]");
+        model.addAttribute("createdAt", "[ "+ Util.getDateFormat(sicFormData.getCreatedAt()) + " ]");
+        model.addAttribute("updateAt", "[ "+ Util.getDateFormat(sicFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sicFormData.getCompany());
         model.addAttribute("createdBy", sicFormData.getCreatedBy());
         model.addAttribute("updateBy", sicFormData.getUpdatedBy());
@@ -82,17 +82,12 @@ public class SicFormController{
         model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
     }
 
-    public String getDateFormat(Date date) {
-        return new SimpleDateFormat("dd-MM, yyyy h:mma").format((Date) date);
-    }
-
     @RequestMapping(value = "/sicForm", method = RequestMethod.GET)
     public String form(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
-        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
-        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        String x = authCheck(request, auth);
+        if (x != null) return x;
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         if (request.isUserInRole("USER")
@@ -101,7 +96,7 @@ public class SicFormController{
         }
 
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
@@ -112,24 +107,30 @@ public class SicFormController{
     public String viewForm(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
-        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
-        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        String x = authCheck(request, auth);
+        if (x != null) return x;
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/web/sic/index";
     }
 
+    private String authCheck(SecurityContextHolderAwareRequestWrapper request, Authentication auth) {
+        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        return null;
+    }
+
     @RequestMapping(value = "/admin/company/sic/form/{id}", method = RequestMethod.GET)
     public String adminSicFormEdit(@PathVariable Integer id, ModelMap model) throws ParseException {
         SicFormData sicFormData = sicFormDataService.get(id);
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
 
         return "web/sic/index";
@@ -139,7 +140,7 @@ public class SicFormController{
     public String adminSicFormView(@PathVariable Integer id, ModelMap model) throws ParseException {
         SicFormData sicFormData = sicFormDataService.get(id);
         populateFormContent(model, sicFormData);
-        model.addAttribute("days_until", getDiffDays());
+        model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
 
         return "web/sic/index";
@@ -159,17 +160,5 @@ public class SicFormController{
         model.addAttribute("sicPpForms", sicFormDataService.createOrGetByCurrentUsersCompany());
 
         return "admin/form/admin_form_sic";
-    }
-
-    private long getDiffDays() throws ParseException {
-        String dateStart = endDate;
-        DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
-        Date dateE = new Date();
-        String dateStop = format.format(dateE);
-
-        Date d1 = format.parse(dateStop);
-        Date d2 = format.parse(dateStart);
-        long diff = d2.getTime() - d1.getTime();
-        return diff / (24 * 60 * 60 * 1000);
     }
 }
