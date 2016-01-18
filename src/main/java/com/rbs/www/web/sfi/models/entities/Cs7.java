@@ -54,6 +54,39 @@ public class Cs7 extends BaseEntityModel {
             inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
     private Set<SfiPpFormAllCountry> investResCountries;
 
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "sfi_pp_form_cs7_iplan_comm_plant_countries",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> planCommPlantCountries;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "sfi_pp_form_cs7_plan_invest_res_countries",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> planInvestResCountries;
+
+    @Column(name = "cs7_investResperc_currSupply", nullable = true)
+    private Integer investResperc_currSupply;
+
+    @Column(name = "cs7_investRes_ifInve", nullable = true)
+    private String investRes_ifInve;
+
+    @Column(name = "cs7_planCommPlantPerc", nullable = true)
+    private String planCommPlantPerc;
+
+    @Column(name = "cs7_planCommPlant_ifPlanGE", nullable = true)
+    private String planCommPlant_ifPlanGE;
+
+    @Column(name = "cs7_planCommPlant_year", nullable = true)
+    private String planCommPlant_year;
+
+    @Column(name = "cs7_planInvestRes_ifPlan", nullable = true)
+    private String planInvestRes_ifPlan;
+
+    @Column(name = "cs7_planInvestRes_year", nullable = true)
+    private String planInvestRes_year;
+
     @Column(name = "cs7_emerIssuEurop", nullable = true)
     private Boolean emerIssuEurop;
 
@@ -247,5 +280,77 @@ public class Cs7 extends BaseEntityModel {
 
     public void setInvestResCountries(Set<SfiPpFormAllCountry> investResCountries) {
         addAll(this.investResCountries, investResCountries);
+    }
+
+    public Set<SfiPpFormAllCountry> getPlanCommPlantCountries() {
+        return planCommPlantCountries;
+    }
+
+    public void setPlanCommPlantCountries(Set<SfiPpFormAllCountry> planCommPlantCountries) {
+        addAll(this.planCommPlantCountries, planCommPlantCountries);
+    }
+
+    public Set<SfiPpFormAllCountry> getPlanInvestResCountries() {
+        return planInvestResCountries;
+    }
+
+    public void setPlanInvestResCountries(Set<SfiPpFormAllCountry> planInvestResCountries) {
+        addAll(this.planInvestResCountries, planInvestResCountries);
+    }
+
+    public Integer getInvestResperc_currSupply() {
+        return investResperc_currSupply;
+    }
+
+    public void setInvestResperc_currSupply(Integer investResperc_currSupply) {
+        this.investResperc_currSupply = investResperc_currSupply;
+    }
+
+    public String getInvestRes_ifInve() {
+        return investRes_ifInve;
+    }
+
+    public void setInvestRes_ifInve(String investRes_ifInve) {
+        this.investRes_ifInve = investRes_ifInve;
+    }
+
+    public String getPlanCommPlantPerc() {
+        return planCommPlantPerc;
+    }
+
+    public void setPlanCommPlantPerc(String planCommPlantPerc) {
+        this.planCommPlantPerc = planCommPlantPerc;
+    }
+
+    public String getPlanCommPlant_ifPlanGE() {
+        return planCommPlant_ifPlanGE;
+    }
+
+    public void setPlanCommPlant_ifPlanGE(String planCommPlant_ifPlanGE) {
+        this.planCommPlant_ifPlanGE = planCommPlant_ifPlanGE;
+    }
+
+    public String getPlanCommPlant_year() {
+        return planCommPlant_year;
+    }
+
+    public void setPlanCommPlant_year(String planCommPlant_year) {
+        this.planCommPlant_year = planCommPlant_year;
+    }
+
+    public String getPlanInvestRes_ifPlan() {
+        return planInvestRes_ifPlan;
+    }
+
+    public void setPlanInvestRes_ifPlan(String planInvestRes_ifPlan) {
+        this.planInvestRes_ifPlan = planInvestRes_ifPlan;
+    }
+
+    public String getPlanInvestRes_year() {
+        return planInvestRes_year;
+    }
+
+    public void setPlanInvestRes_year(String planInvestRes_year) {
+        this.planInvestRes_year = planInvestRes_year;
     }
 }
