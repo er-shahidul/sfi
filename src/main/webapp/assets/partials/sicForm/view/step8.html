@@ -18,45 +18,24 @@
                         partnership projects? (new!)
                     </p>
                     <label>
-                        <input type="radio" name="inPartnershipProjects" ng-model="cs8.inPartnershipProjects" ng-value="true"> Yes
+                        <input type="radio" disabled  name="inPartnershipProjects" ng-model="cs8.inPartnershipProjects" ng-value="true"> Yes
                     </label>
                     <label>
-                        <input type="radio" name="inPartnershipProjects" ng-model="cs8.inPartnershipProjects" ng-value="false"> No
+                        <input type="radio" disabled  name="inPartnershipProjects" ng-model="cs8.inPartnershipProjects" ng-value="false"> No
                     </label>
                 </div>
                 </form>
 
+                <form name="projectForm" ng-repeat="project in cs8.projects">
 
-                <table class="table table-striped" ng-show="cs8.inPartnershipProjects && cs8.projects.length">
-                    <thead>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Project Start Date</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <tr ng-repeat="project in cs8.projects">
-                        <td>{{ project.name }}</td>
-                        <td>{{ project.startDate }}</td>
-                        <td><a href="" ng-click="editProject($index)">Edit</a></td>
-                        <td><a href="" ng-click="deleteProject($index)">Delete</a></td>
-                    </tr>
-                    
-                    </tbody>
-                </table>
-                <form name="projectForm">
-
-                <div class="col-lg-12 passage-bold"  ng-show="cs8.inPartnershipProjects">
+                <div class="col-lg-12 passage-bold"  ng-show="cs8.inPartnershipProjects" >
                     <div class="form-group">
                         <label class="control-label col-lg-3" style="text-align: left">
                             Project Name
                         </label>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.name.$invalid }">
-                            <input class="form-control" type="text" name="name" ng-model="project.name" customerror ng-required="isProjectDirty()">
+                            <input class="form-control" type="text" readonly   readonly   name="name" ng-model="project.name" customerror ng-required="isProjectDirty()">
                         </div>
                     </div>
                     <p style="padding-top: 30px;">Lead Organization and Main Contact</p>
@@ -67,7 +46,7 @@
                         </label>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
-                            <input class="form-control" type="text" name="organization" ng-model="project.organization" customerror ng-required="isProjectDirty()">
+                            <input class="form-control" type="text" readonly   readonly   name="organization" ng-model="project.organization" customerror ng-required="isProjectDirty()">
                         </div>
                     </div>
                     <div class="form-group" >
@@ -76,7 +55,7 @@
                         </label>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
-                            <input class="form-control" type="text" name="contactName" ng-model="project.contactName" customerror ng-required="isProjectDirty()">
+                            <input class="form-control" type="text" readonly   readonly   name="contactName" ng-model="project.contactName" customerror ng-required="isProjectDirty()">
                         </div>
                     </div>
                     <div class="form-group">
@@ -85,7 +64,7 @@
                         </label>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
-                            <input class="form-control" type="email" name="contactEmail" ng-model="project.contactEmail" customerror ng-required="isProjectDirty()">
+                            <input class="form-control" type="email" readonly   name="contactEmail" ng-model="project.contactEmail" customerror ng-required="isProjectDirty()">
                         </div>
                     </div>
                     <p style="padding-top: 30px;">Project Details</p>
@@ -97,7 +76,7 @@
                         </label>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.description.$invalid }">
-                            <textarea class="form-control" rows="4" name="description" ng-model="project.description" customerror ng-required="isProjectDirty()"></textarea>
+                            <textarea readonly  class="form-control" rows="4" name="description" ng-model="project.description" customerror ng-required="isProjectDirty()"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -110,7 +89,7 @@
                             <ul class="list-style" style="padding-top: 10px;">
                                 <li>
                                     <label>
-                                        <input type="checkbox"  ng-model="project.partnerAcademic"> Academic
+                                        <input type="checkbox" disabled   ng-model="project.partnerAcademic"> Academic
                                     </label>
 
                                 </li>
@@ -119,7 +98,7 @@
                                 </label>
                                 <li>
                                     <label>
-                                        <input type="checkbox"  ng-model="project.partnerResearch"> Research organization
+                                        <input type="checkbox" disabled   ng-model="project.partnerResearch"> Research organization
                                     </label>
                                 </li>
                                 <label style="padding-left: 25px" class="form-inline" ng-show="project.partnerResearch">
@@ -127,7 +106,7 @@
                                 </label>
                                 <li>
                                     <label>
-                                        <input type="checkbox"  ng-model="project.partnerConservation">  Conservation organization
+                                        <input type="checkbox" disabled   ng-model="project.partnerConservation">  Conservation organization
                                     </label>
                                 </li>
                                 <label style="padding-left: 25px" class="form-inline" ng-show="project.partnerConservation">
@@ -135,7 +114,7 @@
                                 </label>
                                 <li>
                                     <label>
-                                        <input type="checkbox"  ng-model="project.partnerGovernment"> Government agency
+                                        <input type="checkbox" disabled   ng-model="project.partnerGovernment"> Government agency
                                     </label>
                                 </li>
                                 <label style="padding-left: 25px" class="form-inline" ng-show="project.partnerGovernment">
@@ -144,7 +123,7 @@
 
                                 <li>
                                     <label>
-                                        <input type="checkbox"  ng-model="project.partnerCommunity">
+                                        <input type="checkbox" disabled   ng-model="project.partnerCommunity">
                                         Community organization (including but not limited to
                                         Habitat for Humanity, Scouting organizations, 4-H, Future Farmers of
                                         America, etc.)
@@ -153,69 +132,69 @@
                                         <p>Check all that apply</p>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunity4H"> 4-H
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunity4H"> 4-H
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityBoyScout"> Boy Scouts of America
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityBoyScout"> Boy Scouts of America
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityCCAB">
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityCCAB">
                                                 Canadian Council for Aboriginal Business (CCAB)
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityEarth"> Earth Rangers
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityEarth"> Earth Rangers
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityGirlGuide"> Girl Guides
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityGirlGuide"> Girl Guides
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityGirlScout"> Girl Scouts of America
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityGirlScout"> Girl Scouts of America
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityHumanityCanada"> Habitat for Humanity Canada
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityHumanityCanada"> Habitat for Humanity Canada
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityHumanityInter"> Habitat for Humanity International
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityHumanityInter"> Habitat for Humanity International
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityInterTimberCouncil"> International Timber Council
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityInterTimberCouncil"> International Timber Council
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityNatTurkeyFederation">  National Wild Turkey Federation
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityNatTurkeyFederation">  National Wild Turkey Federation
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityProjectTree"> Project Learning Tree
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityProjectTree"> Project Learning Tree
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityScoutsCanada"> Scouts Canada
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityScoutsCanada"> Scouts Canada
 
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="checkbox"  ng-model="project.partnerCommunityOther"> Other
+                                                <input type="checkbox" disabled   ng-model="project.partnerCommunityOther"> Other
                                             </label>
                                         </li>
                                         <label style="padding-left: 25px" class="form-inline" ng-show="project.partnerCommunityOther">
@@ -225,13 +204,13 @@
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="checkbox"  ng-model="project.partnerOtherSIC"> Other SIC
+                                        <input type="checkbox" disabled   ng-model="project.partnerOtherSIC"> Other SIC
 
                                     </label>
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="checkbox"  ng-model="project.partnerOther"> Other
+                                        <input type="checkbox" disabled   ng-model="project.partnerOther"> Other
                                     </label>
                                 </li>
                             </ul>
@@ -245,7 +224,7 @@
                         <p>SFI Standard Objective most Relevant to Project (optional)</p>
 
                         <div ng-class="{'has-error' : projectForm.sfiStandardObjective.$invalid }">
-                            <select class="form-control" name="sfiStandardObjective" ng-model="project.sfiStandardObjective" customerror ng-required="isProjectDirty()">
+                            <select readonly class="form-control" name="sfiStandardObjective" ng-model="project.sfiStandardObjective" customerror ng-required="isProjectDirty()">
                                 <option ng-selected="!project.sfiStandardObjective"><-Select an SFI standard Objective-></option>
                                 <option ng-repeat="object in standardObjects" ng-value="object.id*1">{{ object.sfiStandardObjDesc }}</option>
                             </select>
@@ -256,7 +235,7 @@
 
                         <p>Select Region (optional)</p>
                         <div ng-init="project.regions = project.regions || []">
-                            <select class="form-control" name="region"
+                            <select readonly class="form-control" name="region"
                                     ng-init="region = 0"
                                     ng-model="region"
                                     ng-change="region = addBucket(project.regions, region, regions)">
@@ -302,7 +281,7 @@
                             <p>Estimated Total Project Cost</p>
 
                             <div class="form-inline">
-                                <input type="number" class="form-control shorter" name="totalCost"
+                                <input type="number" readonly   class="form-control shorter" name="totalCost"
                                        ng-model="project.totalCost"
                                        ng-pattern="/^\d*(\.\d{1,2})?$/"
                                        pattern-msg="Enter decimal number up to 2 precision points" customerror />
@@ -319,7 +298,7 @@
                             <p>SIC Contribution</p>
 
                             <div class="form-inline">
-                                <input type="number" class="form-control shorter" name="sicContribution"
+                                <input type="number" readonly   class="form-control shorter" name="sicContribution"
                                        ng-model="project.sicContribution"
                                        ng-pattern="/^\d*(\.\d{1,2})?$/"
                                        pattern-msg="Enter decimal number up to 2 precision points" customerror />
@@ -373,18 +352,17 @@
                                 partnership projects? (new!)
                             </p>
                             <label>
-                                <input type="radio" name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > Yes
+                                <input type="radio" disabled  name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > Yes
                             </label>
                             <label>
-                                <input type="radio" name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > No
+                                <input type="radio" disabled  name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > No
                             </label>
                         </div>
-                        <p class="myButton" ng-click="addProject()">+ Add Another Project</p>
 
                     </div>
 
 
-                </div>
+                </div >
                 </form>
             </div>
             <div class="col-lg-4" style="text-align: right">

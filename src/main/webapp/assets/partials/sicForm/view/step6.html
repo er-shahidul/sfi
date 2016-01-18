@@ -1,0 +1,58 @@
+<div class="row">
+    <form name="cs6Form">
+    <div class="col-sm-12">
+
+        <!--Right Side Start
+        -------------
+        -------------------------------
+        ----------------------------------->
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+
+                <h5>
+                    6. <span data-toggle="tooltip" title="From SIC Governance document – Logger Training and Education core mission priority:  Establish criteria and identify delivery mechanisms for qualified logging professional, qualified resource professional and wood producer training. Establish criteria for recognition of logger certification professional programs, where they exist.">Logger Training and Education</span>
+                </h5>
+                <div style="padding-left: 10px;">
+                    <p>
+                        Please select the SIC-recognized logger training and education program in your state/province. (new!)
+                    </p>
+
+                    <select readonly class="form-control" style="width: 100%"
+                            ng-model="model1"
+                            ng-init="model1 = '0'"
+                            ng-change="model1 = addFra(model1)">
+                        <option ng-selected="model1 == '0' " value="0">Select</option>
+                        <option ng-repeat="items in fraItems" ng-value="$index">{{items}}</option>
+                    </select>
+
+                    <div id="selectedItem" ng-repeat="programIndex in cs6.trainingPrograms ">{{ fraItems[programIndex] }}
+                        <button ng-click="deleteByIndex($index, cs6.trainingPrograms)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    </div>
+
+
+                    <p style="padding-top: 30px;">
+                        In addition, does this SIC recognized logger training program have the added designation of being a “certified logging professional” program, as defined in the SFI 2015 - 2019 Standards and Rules, Section 13? (new!)
+                    </p>
+                    <label>
+                        <input type="radio" disabled name="certifiedLoggingProfessional"  ng-model="cs6.certifiedLoggingProfessional"  ng-value="true">   Yes
+                    </label>
+                    <label>
+                        <input type="radio" disabled name="certifiedLoggingProfessional"  ng-model="cs6.certifiedLoggingProfessional"  ng-value="false">    No
+                    </label>
+                </div>
+
+            </div>
+            <br>
+            <div class="col-lg-4" style="text-align: right">
+                <img src="images/u1.png" style="width: 250px;">
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
+            <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
+            <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 7</button>
+        </div>
+    </div>
+    </form>
+</div>

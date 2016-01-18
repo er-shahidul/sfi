@@ -16,7 +16,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs1FormCtrl'
                 },
                 viewContainer : {
-                    template    : '/assets/partials/sicForm/view/step1.html',
+                    templateUrl : '/assets/partials/sicForm/view/step1.html',
                     controller  : 'SicCs1FormCtrl'
                 }
             }
@@ -29,7 +29,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs2FormCtrl'
                 },
                 viewContainer : {
-                    template    : '/assets/partials/sicForm/view/step2.html',
+                    templateUrl : '/assets/partials/sicForm/view/step2.html',
                     controller  : 'SicCs2FormCtrl'
                 }
             }
@@ -42,7 +42,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs3FormCtrl'
                 },
                 viewContainer : {
-                    template    : '/assets/partials/sicForm/edit/step3.html',
+                    templateUrl : '/assets/partials/sicForm/view/step3.html',
                     controller  : 'SicCs3FormCtrl'
                 }
             }
@@ -55,7 +55,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs4FormCtrl'
                 },
                 viewContainer : {
-                    template    : '/assets/partials/sicForm/edit/step4.html',
+                    templateUrl : '/assets/partials/sicForm/view/step4.html',
                     controller  : 'SicCs4FormCtrl'
                 }
             }
@@ -68,7 +68,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs5FormCtrl'
                 },
                 viewContainer : {
-                    template    : '/assets/partials/sicForm/edit/step5.html',
+                    templateUrl : '/assets/partials/sicForm/view/step5.html',
                     controller  : 'SicCs5FormCtrl'
                 }
             }
@@ -82,7 +82,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs6FormCtrl'
                 },
                 viewContainer : {
-                    template    : '/assets/partials/sicForm/edit/step6.html',
+                    templateUrl : '/assets/partials/sicForm/view/step6.html',
                     controller  : 'SicCs6FormCtrl'
                 }
             }
@@ -95,7 +95,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs7FormCtrl'
                 },
                 viewContainer : {
-                    template    : '/assets/partials/sicForm/edit/step7.html',
+                    templateUrl : '/assets/partials/sicForm/view/step7.html',
                     controller  : 'SicCs7FormCtrl'
                 }
             }
@@ -108,7 +108,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs8FormCtrl'
                 },
                 viewContainer : {
-                    template    : '/assets/partials/sicForm/edit/step8.html',
+                    templateUrl : '/assets/partials/sicForm/view/step8.html',
                     controller  : 'SicCs8FormCtrl'
                 }
             }
@@ -122,7 +122,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     controller  : 'SicCs9FormCtrl'
                 },
                 viewContainer : {
-                    template    : '/assets/partials/sicForm/edit/step9.html',
+                    templateUrl : '/assets/partials/sicForm/view/step9.html',
                     controller  : 'SicCs9FormCtrl'
                 }
             }
@@ -135,7 +135,7 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                         controller  : 'SicCs10FormCtrl'
                     },
                     viewContainer : {
-                        template    : '/assets/partials/sicForm/edit/step10.html',
+                        templateUrl : '/assets/partials/sicForm/view/step10.html',
                         controller  : 'SicCs10FormCtrl'
                     }
                 }

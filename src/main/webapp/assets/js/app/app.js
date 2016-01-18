@@ -1,4 +1,3 @@
-//var sfiFormApp = angular.module('sfiFormApp', ['ui.router', 'checklist-model',  'ngSanitize', /*'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.popover', */ 'angularFileUpload', 'ui.bootstrap']);
 
 var sfiFormApp = angular.module('sfiFormApp', ['ui.router', 'checklist-model',  'ngSanitize', 'mgcrea.ngStrap', 'angularFileUpload']);
 
@@ -159,6 +158,38 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                 }
             }
         });
+}]);
+
+sfiFormApp.run(['$rootScope', '$state', function($rootScope, $state) {
+
+    $rootScope.isSfiSecondary = function(){
+        return $rootScope.company.primary;
+    }
+
+    $rootScope.isStepAllowed = function(step){
+
+        if($rootScope.company.sfi){
+            if(step != "cs1" &&  step != "cs8"){
+                if($rootScope.isSfiSecondary()){
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+
+    $rootScope.$on('$stateChangeStart', function(e, to) {
+
+        if(/cs[1-9]*/.test(to.name)){
+            if(!$rootScope.isStepAllowed(to.name)){
+                e.preventDefault();
+            }
+        }
+    });
 }]);
 
 
@@ -706,24 +737,21 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
 
 
     $rootScope.isFieldsEnabled = function(){
-        //return true;
         return $rootScope.form.cs1.ownsMngLands;
     }
 
     $rootScope.operateInUsa = function(){
 
-        //return true;
         return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInUSA;
     }
 
     $rootScope.operateInCa = function(){
 
-        //return true;
         return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInCA;
     }
 
     $rootScope.operateInOthers = function(){
-        //return true;
+
         return $rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.ownsMngLandsInOther;
     }
 

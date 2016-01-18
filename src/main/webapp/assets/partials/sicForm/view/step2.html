@@ -1,0 +1,448 @@
+<div class="row">
+
+    <div class="col-sm-12">
+        <form name="cs2Form">
+        <!--Right Side Start
+        -------------
+        -------------------------------
+        ----------------------------------->
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+                <h5>
+                    2. Funding & Expenditures
+                </h5>
+                <p>What is your committee’s fee structure? (new!)</p>
+                <ul class="list-style">
+                    <li>
+                        <label class="form-inline">
+                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="1">  Assessment on Production and/or acreage
+                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 1)" ng-model="cs2.committeeFeeSpecify1">
+                        </label>
+                    </li>
+                    <li>
+                        <label class="form-inline">
+                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="2">  Sliding Scale/Tiered approach
+                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 2)" ng-model="cs2.committeeFeeSpecify2">
+                        </label>
+                    </li>
+                    <li>
+                        <label class="form-inline">
+                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="3"> Flat Fee
+                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 3)" ng-model="cs2.committeeFeeSpecify3">
+                        </label>
+                    </li>
+                    <li>
+                        <label class="form-inline">
+                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="4"> Fundraising activities
+                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 4)" ng-model="cs2.committeeFeeSpecify4">
+                        </label>
+                    </li>
+                    <li>
+                        <label class="form-inline">
+                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="5"> In-kind contributions
+                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 5)" ng-model="cs2.committeeFeeSpecify5">
+                        </label>
+                    </li>
+                    <li>
+                        <label class="form-inline">
+                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="6"> Other
+                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 6)" ng-model="cs2.committeeFeeSpecify6">
+                        </label>
+                    </li>
+                </ul>
+                <br>
+                <div>
+                    <p>
+                        Are fees only for SFI Program Participants and SFI Applicants?
+                    </p>
+                    <label>
+                        <input type="radio" disabled  name="freesProgramApplicants" ng-model="cs2.freesProgramApplicants" ng-value="true" ng-checked="cs2.freesProgramApplicants">  Yes
+                    </label>
+                    <label>
+                        <input type="radio" disabled  name="freesProgramApplicants" ng-model="cs2.freesProgramApplicants" ng-value="false" ng-checked="!cs2.freesProgramApplicants">   No
+                    </label>
+                </div>
+            </div>
+            <div class="col-lg-4" style="text-align: right">
+                <img src="/assets/images/u271.png">
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-12 passage-bold">
+            <div class="col-lg-8">
+                <p>
+                    How much money was contributed last calendar year by SIC supporters and project partners for SFI Implementation Committee – sponsored activities and projects? (new!)
+                </p>
+                <label class="form-inline">
+                    Amount
+                    <input class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  customerror ng-model="cs2.spentBySicSupporters">
+                    <button class="btn-group-sm btn-success curency" type="button" id="supportCurrency">{{ gerCurrency(cs2.supportCurrency) }}</button>
+                </label>
+
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    How much money was spent last calendar year by your committee for SFI Implementation Committee-sponsored activities and projects?
+                </p>
+                <label class="form-inline">
+                    Amount
+                    <input class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.spentByYourCommittee">
+                    <button class="btn-group-sm btn-success curency" type="button" id="committeeCurrency" >{{ gerCurrency(cs2.committeeCurrency) }}</button>
+                </label>
+
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    How much was spent on the following activities? (Based on the above reported total, please break down how funds were spent, as best possible) (new!)
+                </p>
+                <table border="1" style="line-height: 15px;" class="boxsize">
+                    <tr>
+                        <th class="col-lg-2">Activity or Project</th>
+                        <th class="col-lg-2">
+                            Direct Spending
+                            <button class="btn-group-sm btn-success curency" type="button" id="directCurrency" >{{ gerCurrency(cs2.directCurrency) }}</button>
+                        </th>
+                        <th class="col-lg-3">In-Kind Support</th>
+                        <th class="col-lg-3">Details</th>
+                    </tr>
+
+                    <tr>
+                        <td>Logger training and education</td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending1.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending1" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending1">
+                        </td>
+                        <td>
+                            <div>
+                                <label>
+                                    <input type="radio" disabled  name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="true" ng-checked="cs2.inKindSupport1">  Yes
+                                </label>
+                                <label>
+                                    <input type="radio" disabled  type="radio" disabled  name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="false" ng-checked="!cs2.inKindSupport1">  No
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails1">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Landowner outreach</td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending2.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending2" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending2">
+                        </td>
+                        <td>
+                            <div>
+                                <label>
+                                    <input  type="radio" disabled   name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="true" ng-checked="cs2.inKindSupport2">  Yes
+                                </label>
+                                <label>
+                                    <input  type="radio" disabled   name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="false" ng-checked="!cs2.inKindSupport2">  No
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>American Tree Farm System activities</td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending3.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending3" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending3">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="true" ng-checked="cs2.inKindSupport3">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="false" ng-checked="!cs2.inKindSupport3">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails3">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Project Learning Tree activities</td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending4.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending4" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending4">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="true" ng-checked="cs2.inKindSupport4">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="false" ng-checked="!cs2.inKindSupport4">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span data-toggle="tooltip" title="Provide further details in Section 3">Other Youth Education/Outreach</span></td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending5.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending5" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending5">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="true" ng-checked="cs2.inKindSupport5">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="false" ng-checked="!cs2.inKindSupport5">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails5">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span data-toggle="tooltip" title="Provide further details in Section 3">Other Community outreach activities</span></td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending6.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending6" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending6">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="true" ng-checked="cs2.inKindSupport6">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="false" ng-checked="!cs2.inKindSupport6">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails6">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Communication/market outreach</td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending7.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending7" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending7">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="true" ng-checked="cs2.inKindSupport7">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="false" ng-checked="!cs2.inKindSupport7">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails7">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <span data-toggle="tooltip" title="includes research, watershed protection, or water conservation projects”">Water Quality Protection</span></td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending8.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending8" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending8">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="true" ng-checked="cs2.inKindSupport8">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="false" ng-checked="!cs2.inKindSupport8">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails8">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span data-toggle="tooltip" title="Provide further details in Section 3">Conservation Research</span></td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending9.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending9" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending9">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="true" ng-checked="cs2.inKindSupport9">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="false" ng-checked="!cs2.inKindSupport9">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails9">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span data-toggle="tooltip" title="Provide further details in Section 3">Other Research</span></td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending10.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending10" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending10">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="true" ng-checked="cs2.inKindSupport10">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="false" ng-checked="!cs2.inKindSupport10">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails10">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Administration</td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending11.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending11" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending11">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="true" ng-checked="cs2.inKindSupport11">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="false" ng-checked="!cs2.inKindSupport11">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails11">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <input  type="checkbox" disabled  id="activityOtherSpecify1"
+                                        ng-model="cs2.activityOther1"
+                                        ng-change="getOtherValue('activityOtherSpecify1', cs2)" > Other
+                            </label>
+                        </td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending12.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending12" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending12">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="true" ng-checked="cs2.inKindSupport12">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="false" ng-checked="!cs2.inKindSupport12">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails12">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <input  type="checkbox" disabled  id="activityOtherSpecify2"
+                                        ng-model="cs2.activityOther2"
+                                        ng-change="getOtherValue('activityOtherSpecify2', cs2)" > Other
+                            </label>
+                        </td>
+                        <td ng-class="{'has-error' : cs2Form.directSpending13.$invalid }">
+                            <input class="form-control" style="width: 80px;" name="directSpending13" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending13">
+                        </td>
+                        <td><div>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="true" ng-checked="cs2.inKindSupport13">  Yes
+                            </label>
+                            <label>
+                                <input  type="radio" disabled   name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="false" ng-checked="!cs2.inKindSupport13">  No
+                            </label></div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails13">
+                        </td>
+                    </tr>
+                    <tfoot>
+                    <tr>
+                        <td>
+                            TOTAL
+                        </td>
+                        <td>
+                            <input class="form-control" style="width: 80px;" value="{{ getTotal() }}" readonly>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <p>
+                    Did your SIC jointly support and/or organize any events or activities with neighboring SICs? (new!)
+                </p>
+
+
+                <label>
+                    <input class="form-control" type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="true" ng-checked="cs2.sicNeighborEvents">  Yes
+                </label>
+                <label>
+                    <input class="form-control" type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" ng-checked="!cs2.sicNeighborEvents">  No
+                </label>
+
+                <div class="aditional-line" ng-repeat="event in cs2.sicNeighborEvents" style="margin-top: 10px;">
+                    <div style="padding: 10px;">
+                        <div class="col-lg-12">
+                            <div class="col-lg-10">
+                                <p>
+                                    <b>Which SIC:</b>
+                                    {{ whichSicText(event.whichSic) }}
+                                </p>
+                            </div>
+                            <div class="col-lg-2">
+                                <button class="btn-group-sm btn-danger">
+                                    <a  data-toggle="modal" >Delete</a>
+                                </button>
+                            </div>
+                        </div>
+                        <b>Highlights of project, event or activity:</b><br>
+                        {{ event.comment }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+        <ng-form name="eventForm">
+        <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
+            <div class="col-lg-8">
+                <div style="padding-left: 25px;">
+                    <div class="form-inline">
+                        Which SIC:
+                        <select readonly  class="form-control" ng-model="event.whichSic">
+                            <option ng-selected="!event.whichSic"><-select One-></option>
+                            <option ng-repeat="sic in sicList" ng-value="1 * $index"> {{ sic }}</option>
+                        </select>
+                    </div>
+                    <br>
+                    Provide any additional comments or feedback
+                    <div class="form-group">
+                        <textarea readonly  class="form-control" rows="4" cols="74" ng-model="event.comment"></textarea>
+                    </div>
+                    <p style="text-align: right;padding-top: 30px;" ng-click="addEvent()">+ Add Another Line</p>
+                </div>
+            </div>
+        </div>
+        </ng-form>
+    </div>
+    <br>
+    <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
+        <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
+        <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 3</button>
+    </div>
+
+    <script type="text/ng-template" id="calendar-item-popover.html">
+        <div class="form-group">
+            <label class="checkboxLabel">
+                {{ cs2.currency }}
+                <input type="radio" disabled  ng-value="1" name="currency" ng-model="po" ng-change="setCurrency()" data-name="USD">USD
+            </label>
+            <label class="checkboxLabel">
+                {{ cs2.spentBySicSuppCurr }}
+                <input type="radio" disabled  ng-value="2" name="currency" ng-model="cs2.currency" ng-change="setCurrency()"  data-name="CAD">CAD
+            </label>
+        </div>
+    </script>
+</div>

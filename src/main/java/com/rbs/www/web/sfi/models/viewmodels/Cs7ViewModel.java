@@ -19,6 +19,15 @@ public class Cs7ViewModel extends BaseViewModel {
     private String planInvestResYear;
     private Boolean planCommPlantIfPlanGE;
     private Set<SfiPpFormAllCountryViewModel> investResCountries;
+    private Set<SfiPpFormAllCountryViewModel> planCommPlantCountries;
+    private Set<SfiPpFormAllCountryViewModel> planInvestResCountries;
+    private Integer investResperc_currSupply;
+    private String investRes_ifInve;
+    private String planCommPlantPerc;
+    private String planCommPlant_ifPlanGE;
+    private String planCommPlant_year;
+    private String planInvestRes_ifPlan;
+    private String planInvestRes_year;
 
     private Boolean emerIssuEurop;
     private Boolean emerIssuBioConsrv;
@@ -198,5 +207,77 @@ public class Cs7ViewModel extends BaseViewModel {
 
     public void setInvestResCountries(Set<SfiPpFormAllCountryViewModel> investResCountries) {
         this.investResCountries = investResCountries;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getPlanCommPlantCountries() {
+        return planCommPlantCountries;
+    }
+
+    public void setPlanCommPlantCountries(Set<SfiPpFormAllCountryViewModel> planCommPlantCountries) {
+        this.planCommPlantCountries = planCommPlantCountries;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getPlanInvestResCountries() {
+        return planInvestResCountries;
+    }
+
+    public void setPlanInvestResCountries(Set<SfiPpFormAllCountryViewModel> planInvestResCountries) {
+        this.planInvestResCountries = planInvestResCountries;
+    }
+
+    public Integer getInvestResperc_currSupply() {
+        return investResperc_currSupply;
+    }
+
+    public void setInvestResperc_currSupply(Integer investResperc_currSupply) {
+        this.investResperc_currSupply = investResperc_currSupply;
+    }
+
+    public String getInvestRes_ifInve() {
+        return investRes_ifInve;
+    }
+
+    public void setInvestRes_ifInve(String investRes_ifInve) {
+        this.investRes_ifInve = investRes_ifInve;
+    }
+
+    public String getPlanCommPlantPerc() {
+        return planCommPlantPerc;
+    }
+
+    public void setPlanCommPlantPerc(String planCommPlantPerc) {
+        this.planCommPlantPerc = planCommPlantPerc;
+    }
+
+    public String getPlanCommPlant_ifPlanGE() {
+        return planCommPlant_ifPlanGE;
+    }
+
+    public void setPlanCommPlant_ifPlanGE(String planCommPlant_ifPlanGE) {
+        this.planCommPlant_ifPlanGE = planCommPlant_ifPlanGE;
+    }
+
+    public String getPlanCommPlant_year() {
+        return planCommPlant_year;
+    }
+
+    public void setPlanCommPlant_year(String planCommPlant_year) {
+        this.planCommPlant_year = planCommPlant_year;
+    }
+
+    public String getPlanInvestRes_ifPlan() {
+        return planInvestRes_ifPlan;
+    }
+
+    public void setPlanInvestRes_ifPlan(String planInvestRes_ifPlan) {
+        this.planInvestRes_ifPlan = planInvestRes_ifPlan;
+    }
+
+    public String getPlanInvestRes_year() {
+        return planInvestRes_year;
+    }
+
+    public void setPlanInvestRes_year(String planInvestRes_year) {
+        this.planInvestRes_year = planInvestRes_year;
     }
 }

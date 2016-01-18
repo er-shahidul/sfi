@@ -29,6 +29,10 @@ sfiSicApp
 
         $scope.addProject = function(){
 
+            if(!$scope.isProjectDirty()){
+                return false;
+            }
+
             if($scope.projectForm.$valid){
 
                 if($scope.projectIndex){

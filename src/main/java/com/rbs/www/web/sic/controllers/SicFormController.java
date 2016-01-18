@@ -20,12 +20,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
 @Controller
-public class SicFormController {
+public class SicFormController{
 
     @Value("#{messages[endDate]}")
     private String endDate;
@@ -67,10 +70,10 @@ public class SicFormController {
         model.addAttribute("cs9", formService.getSicCs9ViewModel(id));
         model.addAttribute("cs10", formService.getSicCs10ViewModel(id));
 
+        model.addAttribute("createdAt", "[ "+ Util.getDateFormat(sicFormData.getCreatedAt()) + " ]");
+        model.addAttribute("updateAt", "[ "+ Util.getDateFormat(sicFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sicFormData.getCompany());
-        model.addAttribute("createdAt", sicFormData.getCreatedAt());
         model.addAttribute("createdBy", sicFormData.getCreatedBy());
-        model.addAttribute("updateAt", sicFormData.getUpdatedAt());
         model.addAttribute("updateBy", sicFormData.getUpdatedBy());
         model.addAttribute("status", sicFormData.getStatus());
 
@@ -83,9 +86,8 @@ public class SicFormController {
     public String form(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
-        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
-        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        String x = authCheck(request, auth);
+        if (x != null) return x;
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         if (request.isUserInRole("USER")
@@ -105,9 +107,8 @@ public class SicFormController {
     public String viewForm(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
-        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
-        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        String x = authCheck(request, auth);
+        if (x != null) return x;
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sicFormData);
@@ -116,6 +117,13 @@ public class SicFormController {
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/web/sic/index";
+    }
+
+    private String authCheck(SecurityContextHolderAwareRequestWrapper request, Authentication auth) {
+        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        return null;
     }
 
     @RequestMapping(value = "/admin/company/sic/form/{id}", method = RequestMethod.GET)
@@ -142,6 +150,14 @@ public class SicFormController {
     public String adminSicForm(ModelMap model) {
         model.addAttribute("title", "sic");
         model.addAttribute("sicPpForms", sicFormDataService.getAll());
+
+        return "admin/form/admin_form_sic";
+    }
+
+    @RequestMapping(value = "/user/form/sic", method = RequestMethod.GET)
+    public String userSicForm(ModelMap model) {
+        model.addAttribute("title", "sic");
+        model.addAttribute("sicPpForms", sicFormDataService.createOrGetByCurrentUsersCompany());
 
         return "admin/form/admin_form_sic";
     }

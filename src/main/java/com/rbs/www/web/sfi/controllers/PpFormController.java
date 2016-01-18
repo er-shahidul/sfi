@@ -20,9 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
-public class PpFormController {
+public class PpFormController{
 
     @Value("#{messages[endDate]}")
     private String endDate;
@@ -64,12 +66,11 @@ public class PpFormController {
         model.addAttribute("cs9", formService.getCs9ViewModel(id));
         model.addAttribute("cs10", formService.getCs10ViewModel(id));
 
+        model.addAttribute("createdAt", "[ "+ Util.getDateFormat(sfiPpFormData.getCreatedAt()) + " ]");
+        model.addAttribute("updateAt", "[ "+ Util.getDateFormat(sfiPpFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sfiPpFormData.getCompany());
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
-        model.addAttribute("createdAt", sfiPpFormData.getCreatedAt());
-        model.addAttribute("createdBy", sfiPpFormData.getCreatedBy());
-        model.addAttribute("updateAt", sfiPpFormData.getUpdatedAt());
         model.addAttribute("updateBy", sfiPpFormData.getUpdatedBy());
         model.addAttribute("status", sfiPpFormData.getStatus());
 
@@ -80,9 +81,8 @@ public class PpFormController {
     public String form(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
-        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
-        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        String x = authCheck(request, auth);
+        if (x != null) return x;
 
         populateFormContent(model, sfiPpFormDataService.createOrGetByCurrentUsersCompany());
 
@@ -93,13 +93,19 @@ public class PpFormController {
         return "/core/form/index";
     }
 
+    private String authCheck(SecurityContextHolderAwareRequestWrapper request, Authentication auth) {
+        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
+        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        return null;
+    }
+
     @RequestMapping(value = "/sfiPpForm/view")
     public String viewForm(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (auth instanceof AnonymousAuthenticationToken) return "redirect:/login";
-        if (request.isUserInRole("ADMIN")) return "redirect:/admin/dashboard";
-        if (request.isUserInRole("GENERAL")) return "redirect:/user/profile";
+        String x = authCheck(request, auth);
+        if (x != null) return x;
 
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
@@ -135,6 +141,14 @@ public class PpFormController {
     public String adminSfiForm(ModelMap model) {
         model.addAttribute("title", "sfi");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
+
+        return "admin/form/admin_form_sfi";
+    }
+
+    @RequestMapping(value = "/user/form/pp", method = RequestMethod.GET)
+    public String userSfiForm(ModelMap model) {
+        model.addAttribute("title", "sfi");
+        model.addAttribute("sfiPpForms", sfiPpFormDataService.createOrGetByCurrentUsersCompany());
 
         return "admin/form/admin_form_sfi";
     }
