@@ -170,7 +170,7 @@ sfiFormApp.run(['$rootScope', '$state', function($rootScope, $state) {
 
         if($rootScope.company.sfi){
             if(step != "cs1" &&  step != "cs8"){
-                if($rootScope.isSfiSecondary()){
+                if(!$rootScope.isSfiSecondary()){
                     return false;
                 }
             }

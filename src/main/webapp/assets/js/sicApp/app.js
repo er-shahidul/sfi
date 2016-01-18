@@ -321,7 +321,7 @@ sfiSicApp
                 $(cont).append(
 
                     '<div class="alert alert-success alert-dismissable">' +
-                        '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' +
+                        '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#x274C;</button>' +
                         '<strong>Success!</strong> ' + message +
                     '</div>'
                 );
