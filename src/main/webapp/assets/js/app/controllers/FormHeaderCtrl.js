@@ -23,7 +23,7 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
     $rootScope.formSubmit = function(){
 
         $http
-            .put(Routing.generate("sfi_cs10_form_submit", urlData))
+            .get("/pp/form/submit/" + urlData.companyId)
             .then(function(){
                 window.location.reload();
             })
