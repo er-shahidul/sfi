@@ -163,7 +163,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
 sfiFormApp.run(['$rootScope', '$state', function($rootScope, $state) {
 
     $rootScope.isSfiSecondary = function(){
-        return !$rootScope.company.primary && $rootScope.company.secondary;
+        return $rootScope.company.primary;
     }
 
     $rootScope.isStepAllowed = function(step){
