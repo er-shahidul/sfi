@@ -27,7 +27,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormProfileCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewProfile,
+                    templateUrl : '/assets/partials/view/profile.html',
                     controller  : 'FormProfileCtrl'
                 }
             }
@@ -40,7 +40,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormForestlandCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewForestlandInfo,
+                    templateUrl : '/assets/partials/view/forestland-info.html',
                     controller  : 'FormForestlandCtrl'
                 }
             }
@@ -53,7 +53,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormHarvestCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewHarvest,
+                    templateUrl : '/assets/partials/view/harvest.html',
                     controller  : 'FormHarvestCtrl'
                 }
             }
@@ -66,7 +66,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormResFundingCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewResearchFunding,
+                    templateUrl : '/assets/partials/view/research-funding.html',
                     controller  : 'FormResFundingCtrl'
                 }
             }
@@ -79,7 +79,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormRawMaterialCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewRawMaterial,
+                    templateUrl : '/assets/partials/view/raw-material.html',
                     controller  : 'FormRawMaterialCtrl'
                 }
             }
@@ -93,7 +93,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormPartnershipCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewPartnership,
+                    templateUrl : '/assets/partials/view/partnership.html',
                     controller  : 'FormPartnershipCtrl'
                 }
             }
@@ -106,7 +106,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormEmergingIssuesCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewEmergingIssues,
+                    templateUrl : '/assets/partials/view/emerging-issues.html',
                     controller  : 'FormEmergingIssuesCtrl'
                 }
             }
@@ -118,7 +118,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormMarketSurveyCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewMarketSurvey,
+                    templateUrl : '/assets/partials/view/market_survey.html',
                     controller  : 'FormMarketSurveyCtrl'
                 }
             }
@@ -130,7 +130,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormForestManagementStandardCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewForestManagementStandard,
+                    templateUrl : '/assets/partials/view/forest_management_standard.html',
                     controller  : 'FormForestManagementStandardCtrl'
                 }
 
@@ -143,7 +143,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
                     controller  : 'FormFiberSourcingStandardCtrl'
                 },
                 viewContainer : {
-                    template    : Templates.ViewFiberSourcingStandard,
+                    templateUrl : '/assets/partials/view/fiber_sourcing_standard.html',
                     controller  : 'FormFiberSourcingStandardCtrl'
                 }
             }
@@ -163,7 +163,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
 sfiFormApp.run(['$rootScope', '$state', function($rootScope, $state) {
 
     $rootScope.isSfiSecondary = function(){
-        return $rootScope.company.primary;
+        return !$rootScope.company.primary && $rootScope.company.secondary;
     }
 
     $rootScope.isStepAllowed = function(step){

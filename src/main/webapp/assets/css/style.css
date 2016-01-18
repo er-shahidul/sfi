@@ -1059,3 +1059,14 @@ textarea {
 .myButton {
 text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 }
+
+.typeahead.ng-hide { display: block !important; visibility: hidden !important; overflow: hidden; }
+
+.dropdown-menu{
+	position : static;
+}
+
+
+.dropdown-menu li a {
+    color: #000000;
+}
