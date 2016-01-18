@@ -11,6 +11,157 @@ sfiFormApp
         $scope.cs5 = angular.copy($rootScope.form.cs5);
         $scope.cs5.isOtherEnabled = ($scope.cs5.other) ? true: false;
 
+
+        $scope.academicOptions = [
+            "Auburn University",
+            "Clemson University",
+            "Duke University",
+            "Lakehead University",
+            "Laval University",
+            "Michigan State University",
+            "Mississippi State University",
+            "North Carolina State University",
+            "Oregon State University",
+            "Stephen F. Austin State University",
+            "Texas A&M University",
+            "University of Alberta",
+            "University of British Columbia",
+            "University of Florida",
+            "University of Georgia",
+            "University of Georgia",
+            "University of Idaho",
+            "University of Maine",
+            "University of Minnesota",
+            "University of Montana",
+            "University of New Brunswick",
+            "University of Washington",
+            "Virginia Polytechnic Institute"
+        ];
+
+        $scope.researchList = [
+            "FP Innovations",
+            "National Council for Air and Stream Improvement",
+            "Wood Supply Resources Institute"
+        ];
+
+        $scope.conservationList = [
+
+            "Ducks Unlimited",
+            "Ducks Unlimited Canada",
+            "Forest Ecosystems Science Co-op",
+            "Longleaf Alliance",
+            "New Brunswick Tree Improvement Council",
+            "Pacific Salmon Foundation",
+            "Rocky Mountain Elk Foundation",
+            "Ruffed Grouse Society",
+            "The Nature Conservancy",
+            "The Nature Conservancy of Canada"
+        ]
+
+        $scope.governmentList = [
+            "Canadian Forest Service",
+            "US Fish & Wildlife Service",
+            "US Forest Service"
+        ];
+
+        $scope.communityList = [
+
+            "Boy Scouts of America",
+            "Girl Guides",
+            "Girl Guides of Canada",
+            "Habitat for Humanity",
+            "Habitat for Humanity Canada",
+            "Intertribal Timber Council",
+            "Scouts Canada",
+            "Alabama SIC",
+            "Alaska SIC",
+            "Arkansas SIC",
+            "California SIC",
+            "Central Canada SIC",
+            "Central Rockies SIC",
+            "Florida SIC",
+            "Georgia SIC",
+            "Idaho SIC",
+            "Kentucky SIC",
+            "Louisiana SIC",
+            "Maine SIC",
+            "Maritime SIC",
+            "Maryland/Delaware SIC",
+            "Michigan SIC",
+            "Minnesota SIC",
+            "Mississippi SIC",
+            "Montana SIC",
+            "New Hampshire SIC",
+            "New York SIC",
+            "North Carolina SIC",
+            "Ohio SIC",
+            "Oregon SIC",
+            "Pennsylvania SIC",
+            "Quebec SIC",
+            "South Carolina SIC",
+            "Tennessee SIC",
+            "Texas SIC",
+            "Vermont SIC",
+            "Virginia SIC",
+            "Washington SIC",
+            "West Virginia SIC",
+            "Western Canada SIC",
+            "Wisconsin SIC"
+        ];
+
+        $scope.otherList = [
+            "America Forest and Paper Association",
+            "American Forest Foundation",
+            "Forest Products Association of Canada",
+            "Forest Resources Association",
+            "Society of American Foresters",
+            "Sustainable Forestry Initiative Inc"
+        ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         cs5 = $scope;
 
         $scope.init = function(){
