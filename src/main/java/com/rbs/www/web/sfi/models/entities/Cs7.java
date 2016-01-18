@@ -36,16 +36,16 @@ public class Cs7 extends BaseEntityModel {
     @Column(name = "cs7_emerIssu_otherSpec", nullable = true)
     private String emerIssuOtherSpec;
 
-    @Column(name = "cs7_investResperc_currSupply", nullable = true)
+    @Column(name = "cs7_investRespercCurrSupply", nullable = true)
     private Float investRespercCurrSupply;
 
-    @Column(name = "cs7_planInvestRes_ifPlan", nullable = true)
+    @Column(name = "cs7_planInvestResIfPlan", nullable = true)
     private Boolean planInvestResIfPlan;
 
-    @Column(name = "cs7_planInvestRes_year", nullable = true)
+    @Column(name = "cs7_planInvestResYear", nullable = true)
     private String planInvestResYear;
 
-    @Column(name = "cs7_planCommPlant_ifPlanGE", nullable = true)
+    @Column(name = "cs7_planCommPlantIfPlanGE", nullable = true)
     private Boolean planCommPlantIfPlanGE;
 
     @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
