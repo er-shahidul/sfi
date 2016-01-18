@@ -1,0 +1,976 @@
+<p class="pading-botoms">
+    <span data-toggle="tootlip" title="Your answers to this question will help SFI understand distribution of certified and labeled products in the marketplace.">Of the products your organization sold during the last 12 months, estimate percentage using a certification label or claim:</span>
+</p>
+
+<div class="form-group col-sm-12" ng-show="printingWritingPaper()">
+    <table class="table table-striped vert-align-middle">
+        <thead>
+        <tr>
+            <th width="30%">Printing writing paper</th>
+            <th width="10%" style="text-align:center">none</th>
+            <th width="10%" style="text-align:center"><20%</th>
+            <th width="10%" style="text-align:center">21-40%</th>
+            <th width="10%" style="text-align:center">41-60%</th>
+            <th width="10%" style="text-align:center">61-80%</th>
+            <th width="10%" style="text-align:center">81-100%</th>
+            <th width="10%" style="text-align:center">N/A</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>SFI Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio1" ng-value="0" ng-model="cs8.sfiChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio1" ng-value="1" ng-model="cs8.sfiChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio1" ng-value="2" ng-model="cs8.sfiChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio1" ng-value="3" ng-model="cs8.sfiChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio1" ng-value="4" ng-model="cs8.sfiChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio1" ng-value="5" ng-model="cs8.sfiChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio1" ng-value="6" ng-model="cs8.sfiChainCustody1"></td>
+        </tr>
+        <tr>
+            <td>SFI Certified Sourcing</td>
+            <td align="center"><input type="radio" icheck name="myRadio2" ng-value="0" ng-model="cs8.sfiCertifiedSourcing1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio2" ng-value="1" ng-model="cs8.sfiCertifiedSourcing1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio2" ng-value="2" ng-model="cs8.sfiCertifiedSourcing1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio2" ng-value="3" ng-model="cs8.sfiCertifiedSourcing1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio2" ng-value="4" ng-model="cs8.sfiCertifiedSourcing1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio2" ng-value="5" ng-model="cs8.sfiCertifiedSourcing1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio2" ng-value="6" ng-model="cs8.sfiCertifiedSourcing1"></td>
+        </tr>
+        <tr>
+            <td>PEFC Chain-of-Custody</td>   `
+            <td align="center"><input type="radio" icheck name="myRadio3" ng-value="0" ng-model="cs8.pefcChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio3" ng-value="1" ng-model="cs8.pefcChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio3" ng-value="2" ng-model="cs8.pefcChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio3" ng-value="3" ng-model="cs8.pefcChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio3" ng-value="4" ng-model="cs8.pefcChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio3" ng-value="5" ng-model="cs8.pefcChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio3" ng-value="6" ng-model="cs8.pefcChainCustody1"></td>
+        </tr>
+        <tr>
+            <td>FSC Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio4" ng-value="0" ng-model="cs8.fscChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio4" ng-value="1" ng-model="cs8.fscChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio4" ng-value="2" ng-model="cs8.fscChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio4" ng-value="3" ng-model="cs8.fscChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio4" ng-value="4" ng-model="cs8.fscChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio4" ng-value="5" ng-model="cs8.fscChainCustody1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio4" ng-value="6" ng-model="cs8.fscChainCustody1"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="cs8.fscChainCustody1Other"> &nbsp; Other
+                <div ng-show="cs8.fscChainCustody1Other">
+                    Please Describe<br/>
+                    <input class="form-control" type="text" ng-model="cs8.fscChainCustody1OtherDescribe"/>
+                </div>
+            </td>
+            <td align="center"><input type="radio" icheck name="myRadio5" ng-value="0" ng-model="cs8.percCerfiedOther1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio5" ng-value="1" ng-model="cs8.percCerfiedOther1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio5" ng-value="2" ng-model="cs8.percCerfiedOther1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio5" ng-value="3" ng-model="cs8.percCerfiedOther1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio5" ng-value="4" ng-model="cs8.percCerfiedOther1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio5" ng-value="5" ng-model="cs8.percCerfiedOther1"></td>
+            <td align="center"><input type="radio" icheck name="myRadio5" ng-value="6" ng-model="cs8.percCerfiedOther1"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form-group col-sm-12" ng-show="packaging()">
+    <table class="table table-striped vert-align-middle">
+        <thead>
+        <tr>
+            <th width="30%">Packaging</th>
+            <th width="10%" style="text-align:center">none</th>
+            <th width="10%" style="text-align:center"><20%</th>
+            <th width="10%" style="text-align:center">21-40%</th>
+            <th width="10%" style="text-align:center">41-60%</th>
+            <th width="10%" style="text-align:center">61-80%</th>
+            <th width="10%" style="text-align:center">81-100%</th>
+            <th width="10%" style="text-align:center">N/A</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>SFI Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio6" ng-value="0" ng-model="cs8.sfiChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio6" ng-value="1" ng-model="cs8.sfiChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio6" ng-value="2" ng-model="cs8.sfiChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio6" ng-value="3" ng-model="cs8.sfiChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio6" ng-value="4" ng-model="cs8.sfiChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio6" ng-value="5" ng-model="cs8.sfiChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio6" ng-value="6" ng-model="cs8.sfiChainCustody2"></td>
+        </tr>
+        <tr>
+            <td>SFI Certified Sourcing</td>
+            <td align="center"><input type="radio" icheck name="myRadio7" ng-value="0" ng-model="cs8.sfiCertifiedSourcing2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio7" ng-value="1" ng-model="cs8.sfiCertifiedSourcing2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio7" ng-value="2" ng-model="cs8.sfiCertifiedSourcing2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio7" ng-value="3" ng-model="cs8.sfiCertifiedSourcing2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio7" ng-value="4" ng-model="cs8.sfiCertifiedSourcing2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio7" ng-value="5" ng-model="cs8.sfiCertifiedSourcing2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio7" ng-value="6" ng-model="cs8.sfiCertifiedSourcing2"></td>
+        </tr>
+        <tr>
+            <td>PEFC Chain-of-Custody</td>   `
+            <td align="center"><input type="radio" icheck name="myRadio8" ng-value="0" ng-model="cs8.pefcChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio8" ng-value="1" ng-model="cs8.pefcChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio8" ng-value="2" ng-model="cs8.pefcChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio8" ng-value="3" ng-model="cs8.pefcChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio8" ng-value="4" ng-model="cs8.pefcChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio8" ng-value="5" ng-model="cs8.pefcChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio8" ng-value="6" ng-model="cs8.pefcChainCustody2"></td>
+        </tr>
+        <tr>
+            <td>FSC Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio9" ng-value="0" ng-model="cs8.fscChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio9" ng-value="1" ng-model="cs8.fscChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio9" ng-value="2" ng-model="cs8.fscChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio9" ng-value="3" ng-model="cs8.fscChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio9" ng-value="4" ng-model="cs8.fscChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio9" ng-value="5" ng-model="cs8.fscChainCustody2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio9" ng-value="6" ng-model="cs8.fscChainCustody2"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="cs8.fscChainCustody2Other"> &nbsp; Other
+                <div ng-show="cs8.fscChainCustody2Other">
+                    Please Describe<br/>
+                    <input class="form-control" type="text" ng-model="cs8.fscChainCustody2OtherDescribe"/>
+                </div>
+            </td>
+            <td align="center"><input type="radio" icheck name="myRadio10" ng-value="0" ng-model="cs8.percCerfiedOther2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio10" ng-value="1" ng-model="cs8.percCerfiedOther2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio10" ng-value="2" ng-model="cs8.percCerfiedOther2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio10" ng-value="3" ng-model="cs8.percCerfiedOther2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio10" ng-value="4" ng-model="cs8.percCerfiedOther2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio10" ng-value="5" ng-model="cs8.percCerfiedOther2"></td>
+            <td align="center"><input type="radio" icheck name="myRadio10" ng-value="6" ng-model="cs8.percCerfiedOther2"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form-group col-sm-12" ng-show="bioenergy()">
+    <table class="table table-striped vert-align-middle">
+        <thead>
+        <tr>
+            <th width="30%">Bioenergy</th>
+            <th width="10%" style="text-align:center">none</th>
+            <th width="10%" style="text-align:center"><20%</th>
+            <th width="10%" style="text-align:center">21-40%</th>
+            <th width="10%" style="text-align:center">41-60%</th>
+            <th width="10%" style="text-align:center">61-80%</th>
+            <th width="10%" style="text-align:center">81-100%</th>
+            <th width="10%" style="text-align:center">N/A</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>SFI Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio11" ng-value="0" ng-model="cs8.sfiChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio11" ng-value="1" ng-model="cs8.sfiChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio11" ng-value="2" ng-model="cs8.sfiChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio11" ng-value="3" ng-model="cs8.sfiChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio11" ng-value="4" ng-model="cs8.sfiChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio11" ng-value="5" ng-model="cs8.sfiChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio11" ng-value="6" ng-model="cs8.sfiChainCustody3"></td>
+        </tr>
+        <tr>
+            <td>SFI Certified Sourcing</td>
+            <td align="center"><input type="radio" icheck name="myRadio12" ng-value="0" ng-model="cs8.sfiCertifiedSourcing3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio12" ng-value="1" ng-model="cs8.sfiCertifiedSourcing3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio12" ng-value="2" ng-model="cs8.sfiCertifiedSourcing3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio12" ng-value="3" ng-model="cs8.sfiCertifiedSourcing3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio12" ng-value="4" ng-model="cs8.sfiCertifiedSourcing3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio12" ng-value="5" ng-model="cs8.sfiCertifiedSourcing3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio12" ng-value="6" ng-model="cs8.sfiCertifiedSourcing3"></td>
+        </tr>
+        <tr>
+            <td>PEFC Chain-of-Custody</td>   `
+            <td align="center"><input type="radio" icheck name="myRadio13" ng-value="0" ng-model="cs8.pefcChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio13" ng-value="1" ng-model="cs8.pefcChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio13" ng-value="2" ng-model="cs8.pefcChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio13" ng-value="3" ng-model="cs8.pefcChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio13" ng-value="4" ng-model="cs8.pefcChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio13" ng-value="5" ng-model="cs8.pefcChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio13" ng-value="6" ng-model="cs8.pefcChainCustody3"></td>
+        </tr>
+        <tr>
+            <td>FSC Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio14" ng-value="0" ng-model="cs8.fscChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio14" ng-value="1" ng-model="cs8.fscChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio14" ng-value="2" ng-model="cs8.fscChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio14" ng-value="3" ng-model="cs8.fscChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio14" ng-value="4" ng-model="cs8.fscChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio14" ng-value="5" ng-model="cs8.fscChainCustody3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio14" ng-value="6" ng-model="cs8.fscChainCustody3"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="cs8.fscChainCustody3Other"> &nbsp; Other
+                <div ng-show="cs8.fscChainCustody3Other">
+                    Please Describe<br/>
+                    <input class="form-control" type="text" ng-model="cs8.fscChainCustody3OtherDescribe"/>
+                </div>
+            </td>
+            <td align="center"><input type="radio" icheck name="myRadio15" ng-value="0" ng-model="cs8.percCerfiedOther3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio15" ng-value="1" ng-model="cs8.percCerfiedOther3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio15" ng-value="2" ng-model="cs8.percCerfiedOther3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio15" ng-value="3" ng-model="cs8.percCerfiedOther3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio15" ng-value="4" ng-model="cs8.percCerfiedOther3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio15" ng-value="5" ng-model="cs8.percCerfiedOther3"></td>
+            <td align="center"><input type="radio" icheck name="myRadio15" ng-value="6" ng-model="cs8.percCerfiedOther3"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form-group col-sm-12" ng-show="pulp()">
+<table class="table table-striped vert-align-middle">
+    <thead>
+    <tr>
+        <th width="30%">Pulp</th>
+        <th width="10%" style="text-align:center">none</th>
+        <th width="10%" style="text-align:center"><20%</th>
+        <th width="10%" style="text-align:center">21-40%</th>
+        <th width="10%" style="text-align:center">41-60%</th>
+        <th width="10%" style="text-align:center">61-80%</th>
+        <th width="10%" style="text-align:center">81-100%</th>
+        <th width="10%" style="text-align:center">N/A</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>SFI Chain-of-Custody</td>
+        <td align="center"><input type="radio" icheck name="myRadio16" ng-value="0" ng-model="cs8.sfiChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio16" ng-value="1" ng-model="cs8.sfiChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio16" ng-value="2" ng-model="cs8.sfiChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio16" ng-value="3" ng-model="cs8.sfiChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio16" ng-value="4" ng-model="cs8.sfiChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio16" ng-value="5" ng-model="cs8.sfiChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio16" ng-value="6" ng-model="cs8.sfiChainCustody4"></td>
+    </tr>
+    <tr>
+        <td>SFI Certified Sourcing</td>
+        <td align="center"><input type="radio" icheck name="myRadio17" ng-value="0" ng-model="cs8.sfiCertifiedSourcing4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio17" ng-value="1" ng-model="cs8.sfiCertifiedSourcing4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio17" ng-value="2" ng-model="cs8.sfiCertifiedSourcing4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio17" ng-value="3" ng-model="cs8.sfiCertifiedSourcing4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio17" ng-value="4" ng-model="cs8.sfiCertifiedSourcing4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio17" ng-value="5" ng-model="cs8.sfiCertifiedSourcing4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio17" ng-value="6" ng-model="cs8.sfiCertifiedSourcing4"></td>
+    </tr>
+    <tr>
+        <td>PEFC Chain-of-Custody</td>   `
+        <td align="center"><input type="radio" icheck name="myRadio18" ng-value="0" ng-model="cs8.pefcChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio18" ng-value="1" ng-model="cs8.pefcChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio18" ng-value="2" ng-model="cs8.pefcChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio18" ng-value="3" ng-model="cs8.pefcChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio18" ng-value="4" ng-model="cs8.pefcChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio18" ng-value="5" ng-model="cs8.pefcChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio18" ng-value="6" ng-model="cs8.pefcChainCustody4"></td>
+    </tr>
+    <tr>
+        <td>FSC Chain-of-Custody</td>
+        <td align="center"><input type="radio" icheck name="myRadio19" ng-value="0" ng-model="cs8.fscChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio19" ng-value="1" ng-model="cs8.fscChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio19" ng-value="2" ng-model="cs8.fscChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio19" ng-value="3" ng-model="cs8.fscChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio19" ng-value="4" ng-model="cs8.fscChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio19" ng-value="5" ng-model="cs8.fscChainCustody4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio19" ng-value="6" ng-model="cs8.fscChainCustody4"></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" ng-model="cs8.fscChainCustody4Other"> &nbsp; Other
+            <div ng-show="cs8.fscChainCustody4Other">
+                Please Describe<br/>
+                <input class="form-control" type="text" ng-model="cs8.fscChainCustody4OtherDescribe"/>
+            </div>
+        </td>
+        <td align="center"><input type="radio" icheck name="myRadio20" ng-value="0" ng-model="cs8.percCerfiedOther4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio20" ng-value="1" ng-model="cs8.percCerfiedOther4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio20" ng-value="2" ng-model="cs8.percCerfiedOther4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio20" ng-value="3" ng-model="cs8.percCerfiedOther4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio20" ng-value="4" ng-model="cs8.percCerfiedOther4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio20" ng-value="5" ng-model="cs8.percCerfiedOther4"></td>
+        <td align="center"><input type="radio" icheck name="myRadio20" ng-value="6" ng-model="cs8.percCerfiedOther4"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<div class="form-group col-sm-12" ng-show="land()">
+<table class="table table-striped vert-align-middle">
+<thead>
+<tr>
+    <th width="30%">Land Only</th>
+    <th width="10%" style="text-align:center">none</th>
+    <th width="10%" style="text-align:center"><20%</th>
+    <th width="10%" style="text-align:center">21-40%</th>
+    <th width="10%" style="text-align:center">41-60%</th>
+    <th width="10%" style="text-align:center">61-80%</th>
+    <th width="10%" style="text-align:center">81-100%</th>
+    <th width="10%" style="text-align:center">N/A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>SFI Chain-of-Custody</td>
+    <td align="center"><input type="radio" icheck name="myRadio21" ng-value="0" ng-model="cs8.sfiChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio21" ng-value="1" ng-model="cs8.sfiChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio21" ng-value="2" ng-model="cs8.sfiChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio21" ng-value="3" ng-model="cs8.sfiChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio21" ng-value="4" ng-model="cs8.sfiChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio21" ng-value="5" ng-model="cs8.sfiChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio21" ng-value="6" ng-model="cs8.sfiChainCustody5"></td>
+</tr>
+<tr>
+    <td>SFI Certified Sourcing</td>
+    <td align="center"><input type="radio" icheck name="myRadio22" ng-value="0" ng-model="cs8.sfiCertifiedSourcing5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio22" ng-value="1" ng-model="cs8.sfiCertifiedSourcing5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio22" ng-value="2" ng-model="cs8.sfiCertifiedSourcing5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio22" ng-value="3" ng-model="cs8.sfiCertifiedSourcing5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio22" ng-value="4" ng-model="cs8.sfiCertifiedSourcing5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio22" ng-value="5" ng-model="cs8.sfiCertifiedSourcing5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio22" ng-value="6" ng-model="cs8.sfiCertifiedSourcing5"></td>
+</tr>
+<tr>
+    <td>PEFC Chain-of-Custody</td>   `
+    <td align="center"><input type="radio" icheck name="myRadio23" ng-value="0" ng-model="cs8.pefcChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio23" ng-value="1" ng-model="cs8.pefcChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio23" ng-value="2" ng-model="cs8.pefcChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio23" ng-value="3" ng-model="cs8.pefcChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio23" ng-value="4" ng-model="cs8.pefcChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio23" ng-value="5" ng-model="cs8.pefcChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio23" ng-value="6" ng-model="cs8.pefcChainCustody5"></td>
+</tr>
+<tr>
+    <td>FSC Chain-of-Custody</td>
+    <td align="center"><input type="radio" icheck name="myRadio24" ng-value="0" ng-model="cs8.fscChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio24" ng-value="1" ng-model="cs8.fscChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio24" ng-value="2" ng-model="cs8.fscChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio24" ng-value="3" ng-model="cs8.fscChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio24" ng-value="4" ng-model="cs8.fscChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio24" ng-value="5" ng-model="cs8.fscChainCustody5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio24" ng-value="6" ng-model="cs8.fscChainCustody5"></td>
+</tr>
+<tr>
+    <td>
+        <input type="checkbox" ng-model="cs8.fscChainCustody5Other"> &nbsp; Other
+        <div ng-show="cs8.fscChainCustody5Other">
+            Please Describe<br/>
+            <input class="form-control" type="text" ng-model="cs8.fscChainCustody5OtherDescribe"/>
+        </div>
+    </td>
+    <td align="center"><input type="radio" icheck name="myRadio25" ng-value="0" ng-model="cs8.percCerfiedOther5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio25" ng-value="1" ng-model="cs8.percCerfiedOther5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio25" ng-value="2" ng-model="cs8.percCerfiedOther5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio25" ng-value="3" ng-model="cs8.percCerfiedOther5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio25" ng-value="4" ng-model="cs8.percCerfiedOther5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio25" ng-value="5" ng-model="cs8.percCerfiedOther5"></td>
+    <td align="center"><input type="radio" icheck name="myRadio25" ng-value="6" ng-model="cs8.percCerfiedOther5"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="form-group col-sm-12" ng-show="solidWood()">
+<table class="table table-striped vert-align-middle">
+    <thead>
+    <tr>
+        <th width="30%">Solid wood products (includes logs)</th>
+        <th width="10%" style="text-align:center">none</th>
+        <th width="10%" style="text-align:center"><20%</th>
+        <th width="10%" style="text-align:center">21-40%</th>
+        <th width="10%" style="text-align:center">41-60%</th>
+        <th width="10%" style="text-align:center">61-80%</th>
+        <th width="10%" style="text-align:center">81-100%</th>
+        <th width="10%" style="text-align:center">N/A</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>SFI Chain-of-Custody</td>
+        <td align="center"><input type="radio" icheck name="myRadio26" ng-value="0" ng-model="cs8.sfiChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio26" ng-value="1" ng-model="cs8.sfiChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio26" ng-value="2" ng-model="cs8.sfiChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio26" ng-value="3" ng-model="cs8.sfiChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio26" ng-value="4" ng-model="cs8.sfiChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio26" ng-value="5" ng-model="cs8.sfiChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio26" ng-value="6" ng-model="cs8.sfiChainCustody6"></td>
+    </tr>
+    <tr>
+        <td>SFI Certified Sourcing</td>
+        <td align="center"><input type="radio" icheck name="myRadio27" ng-value="0" ng-model="cs8.sfiCertifiedSourcing6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio27" ng-value="1" ng-model="cs8.sfiCertifiedSourcing6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio27" ng-value="2" ng-model="cs8.sfiCertifiedSourcing6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio27" ng-value="3" ng-model="cs8.sfiCertifiedSourcing6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio27" ng-value="4" ng-model="cs8.sfiCertifiedSourcing6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio27" ng-value="5" ng-model="cs8.sfiCertifiedSourcing6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio27" ng-value="6" ng-model="cs8.sfiCertifiedSourcing6"></td>
+    </tr>
+    <tr>
+        <td>PEFC Chain-of-Custody</td>   `
+        <td align="center"><input type="radio" icheck name="myRadio28" ng-value="0" ng-model="cs8.pefcChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio28" ng-value="1" ng-model="cs8.pefcChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio28" ng-value="2" ng-model="cs8.pefcChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio28" ng-value="3" ng-model="cs8.pefcChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio28" ng-value="4" ng-model="cs8.pefcChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio28" ng-value="5" ng-model="cs8.pefcChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio28" ng-value="6" ng-model="cs8.pefcChainCustody6"></td>
+    </tr>
+    <tr>
+        <td>FSC Chain-of-Custody</td>
+        <td align="center"><input type="radio" icheck name="myRadio29" ng-value="0" ng-model="cs8.fscChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio29" ng-value="1" ng-model="cs8.fscChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio29" ng-value="2" ng-model="cs8.fscChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio29" ng-value="3" ng-model="cs8.fscChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio29" ng-value="4" ng-model="cs8.fscChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio29" ng-value="5" ng-model="cs8.fscChainCustody6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio29" ng-value="6" ng-model="cs8.fscChainCustody6"></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" ng-model="cs8.fscChainCustody6Other"> &nbsp; Other
+            <div ng-show="cs8.fscChainCustody6Other">
+                Please Describe<br/>
+                <input class="form-control" type="text" ng-model="cs8.fscChainCustody6OtherDescribe"/>
+            </div>
+        </td>
+        <td align="center"><input type="radio" icheck name="myRadio30" ng-value="0" ng-model="cs8.percCerfiedOther6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio30" ng-value="1" ng-model="cs8.percCerfiedOther6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio30" ng-value="2" ng-model="cs8.percCerfiedOther6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio30" ng-value="3" ng-model="cs8.percCerfiedOther6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio30" ng-value="4" ng-model="cs8.percCerfiedOther6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio30" ng-value="5" ng-model="cs8.percCerfiedOther6"></td>
+        <td align="center"><input type="radio" icheck name="myRadio30" ng-value="6" ng-model="cs8.percCerfiedOther6"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<div class="form-group col-sm-12" ng-show="paperMerchant()">
+<table class="table table-striped vert-align-middle">
+    <thead>
+    <tr>
+        <th width="30%">Paper Broker/Merchant</th>
+        <th width="10%" style="text-align:center">none</th>
+        <th width="10%" style="text-align:center"><20%</th>
+        <th width="10%" style="text-align:center">21-40%</th>
+        <th width="10%" style="text-align:center">41-60%</th>
+        <th width="10%" style="text-align:center">61-80%</th>
+        <th width="10%" style="text-align:center">81-100%</th>
+        <th width="10%" style="text-align:center">N/A</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>SFI Chain-of-Custody</td>
+        <td align="center"><input type="radio" icheck name="myRadio31" ng-value="0" ng-model="cs8.sfiChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio31" ng-value="1" ng-model="cs8.sfiChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio31" ng-value="2" ng-model="cs8.sfiChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio31" ng-value="3" ng-model="cs8.sfiChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio31" ng-value="4" ng-model="cs8.sfiChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio31" ng-value="5" ng-model="cs8.sfiChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio31" ng-value="6" ng-model="cs8.sfiChainCustody7"></td>
+    </tr>
+    <tr>
+        <td>SFI Certified Sourcing</td>
+        <td align="center"><input type="radio" icheck name="myRadio32" ng-value="0" ng-model="cs8.sfiCertifiedSourcing7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio32" ng-value="1" ng-model="cs8.sfiCertifiedSourcing7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio32" ng-value="2" ng-model="cs8.sfiCertifiedSourcing7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio32" ng-value="3" ng-model="cs8.sfiCertifiedSourcing7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio32" ng-value="4" ng-model="cs8.sfiCertifiedSourcing7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio32" ng-value="5" ng-model="cs8.sfiCertifiedSourcing7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio32" ng-value="6" ng-model="cs8.sfiCertifiedSourcing7"></td>
+    </tr>
+    <tr>
+        <td>PEFC Chain-of-Custody</td>   `
+        <td align="center"><input type="radio" icheck name="myRadio33" ng-value="0" ng-model="cs8.pefcChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio33" ng-value="1" ng-model="cs8.pefcChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio33" ng-value="2" ng-model="cs8.pefcChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio33" ng-value="3" ng-model="cs8.pefcChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio33" ng-value="4" ng-model="cs8.pefcChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio33" ng-value="5" ng-model="cs8.pefcChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio33" ng-value="6" ng-model="cs8.pefcChainCustody7"></td>
+    </tr>
+    <tr>
+        <td>FSC Chain-of-Custody</td>
+        <td align="center"><input type="radio" icheck name="myRadio34" ng-value="0" ng-model="cs8.fscChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio34" ng-value="1" ng-model="cs8.fscChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio34" ng-value="2" ng-model="cs8.fscChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio34" ng-value="3" ng-model="cs8.fscChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio34" ng-value="4" ng-model="cs8.fscChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio34" ng-value="5" ng-model="cs8.fscChainCustody7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio34" ng-value="6" ng-model="cs8.fscChainCustody7"></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" ng-model="cs8.fscChainCustody7Other"> &nbsp; Other
+            <div ng-show="cs8.fscChainCustody7Other">
+                Please Describe<br/>
+                <input class="form-control" type="text" ng-model="cs8.fscChainCustody7OtherDescribe"/>
+            </div>
+        </td>
+        <td align="center"><input type="radio" icheck name="myRadio35" ng-value="0" ng-model="cs8.percCerfiedOther7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio35" ng-value="1" ng-model="cs8.percCerfiedOther7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio35" ng-value="2" ng-model="cs8.percCerfiedOther7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio35" ng-value="3" ng-model="cs8.percCerfiedOther7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio35" ng-value="4" ng-model="cs8.percCerfiedOther7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio35" ng-value="5" ng-model="cs8.percCerfiedOther7"></td>
+        <td align="center"><input type="radio" icheck name="myRadio35" ng-value="6" ng-model="cs8.percCerfiedOther7"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<div class="form-group col-sm-12" ng-show="paperBoard()">
+    <table class="table table-striped vert-align-middle">
+        <thead>
+        <tr>
+            <th width="30%">Paperboard Converter</th>
+            <th width="10%" style="text-align:center">none</th>
+            <th width="10%" style="text-align:center"><20%</th>
+            <th width="10%" style="text-align:center">21-40%</th>
+            <th width="10%" style="text-align:center">41-60%</th>
+            <th width="10%" style="text-align:center">61-80%</th>
+            <th width="10%" style="text-align:center">81-100%</th>
+            <th width="10%" style="text-align:center">N/A</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>SFI Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="0" ng-model="cs8.sfiChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="1" ng-model="cs8.sfiChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="2" ng-model="cs8.sfiChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="3" ng-model="cs8.sfiChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="4" ng-model="cs8.sfiChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="5" ng-model="cs8.sfiChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="6" ng-model="cs8.sfiChainCustody8"></td>
+        </tr>
+        <tr>
+            <td>SFI Certified Sourcing</td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="0" ng-model="cs8.sfiCertifiedSourcing8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="1" ng-model="cs8.sfiCertifiedSourcing8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="2" ng-model="cs8.sfiCertifiedSourcing8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="3" ng-model="cs8.sfiCertifiedSourcing8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="4" ng-model="cs8.sfiCertifiedSourcing8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="5" ng-model="cs8.sfiCertifiedSourcing8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="6" ng-model="cs8.sfiCertifiedSourcing8"></td>
+        </tr>
+        <tr>
+            <td>PEFC Chain-of-Custody</td>   `
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="0" ng-model="cs8.pefcChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="1" ng-model="cs8.pefcChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="2" ng-model="cs8.pefcChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="3" ng-model="cs8.pefcChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="4" ng-model="cs8.pefcChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="5" ng-model="cs8.pefcChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="6" ng-model="cs8.pefcChainCustody8"></td>
+        </tr>
+        <tr>
+            <td>FSC Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="0" ng-model="cs8.fscChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="1" ng-model="cs8.fscChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="2" ng-model="cs8.fscChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="3" ng-model="cs8.fscChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="4" ng-model="cs8.fscChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="5" ng-model="cs8.fscChainCustody8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="6" ng-model="cs8.fscChainCustody8"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="cs8.fscChainCustody8Other"> &nbsp; Other
+                <div ng-show="cs8.fscChainCustody8Other">
+                    Please Describe<br/>
+                    <input class="form-control" type="text" ng-model="cs8.fscChainCustody8OtherDescribe"/>
+                </div>
+            </td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="0" ng-model="cs8.percCerfiedOther8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="1" ng-model="cs8.percCerfiedOther8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="2" ng-model="cs8.percCerfiedOther8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="3" ng-model="cs8.percCerfiedOther8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="4" ng-model="cs8.percCerfiedOther8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="5" ng-model="cs8.percCerfiedOther8"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="6" ng-model="cs8.percCerfiedOther8"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="form-group col-sm-12" ng-show="furniture()">
+    <label>Furniture</label>
+    <table class="table table-striped vert-align-middle">
+        <thead>
+        <tr>
+            <th width="30%">Paperboard Converter</th>
+            <th width="10%" style="text-align:center">none</th>
+            <th width="10%" style="text-align:center"><20%</th>
+            <th width="10%" style="text-align:center">21-40%</th>
+            <th width="10%" style="text-align:center">41-60%</th>
+            <th width="10%" style="text-align:center">61-80%</th>
+            <th width="10%" style="text-align:center">81-100%</th>
+            <th width="10%" style="text-align:center">N/A</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>SFI Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="0" ng-model="cs8.sfiChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="1" ng-model="cs8.sfiChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="2" ng-model="cs8.sfiChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="3" ng-model="cs8.sfiChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="4" ng-model="cs8.sfiChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="5" ng-model="cs8.sfiChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio39" ng-value="6" ng-model="cs8.sfiChainCustody9"></td>
+        </tr>
+        <tr>
+            <td>SFI Certified Sourcing</td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="0" ng-model="cs8.sfiCertifiedSourcing9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="1" ng-model="cs8.sfiCertifiedSourcing9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="2" ng-model="cs8.sfiCertifiedSourcing9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="3" ng-model="cs8.sfiCertifiedSourcing9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="4" ng-model="cs8.sfiCertifiedSourcing9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="5" ng-model="cs8.sfiCertifiedSourcing9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio36" ng-value="6" ng-model="cs8.sfiCertifiedSourcing9"></td>
+        </tr>
+        <tr>
+            <td>PEFC Chain-of-Custody</td>   `
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="0" ng-model="cs8.pefcChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="1" ng-model="cs8.pefcChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="2" ng-model="cs8.pefcChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="3" ng-model="cs8.pefcChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="4" ng-model="cs8.pefcChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="5" ng-model="cs8.pefcChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio37" ng-value="6" ng-model="cs8.pefcChainCustody9"></td>
+        </tr>
+        <tr>
+            <td>FSC Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="0" ng-model="cs8.fscChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="1" ng-model="cs8.fscChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="2" ng-model="cs8.fscChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="3" ng-model="cs8.fscChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="4" ng-model="cs8.fscChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="5" ng-model="cs8.fscChainCustody9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio38" ng-value="6" ng-model="cs8.fscChainCustody9"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="cs8.fscChainCustody9Other"> &nbsp; Other
+                <div ng-show="cs8.fscChainCustody9Other">
+                    Please Describe<br/>
+                    <input class="form-control" type="text" ng-model="cs8.fscChainCustody9OtherDescribe"/>
+                </div>
+            </td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="0" ng-model="cs8.percCerfiedOther9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="1" ng-model="cs8.percCerfiedOther9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="2" ng-model="cs8.percCerfiedOther9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="3" ng-model="cs8.percCerfiedOther9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="4" ng-model="cs8.percCerfiedOther9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="5" ng-model="cs8.percCerfiedOther9"></td>
+            <td align="center"><input type="radio" icheck name="myRadio40" ng-value="6" ng-model="cs8.percCerfiedOther9"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="form-group col-sm-12" ng-show="towelTissue()">
+
+    <table class="table table-striped vert-align-middle">
+        <thead>
+        <tr>
+            <th width="30%">Towel/tissue</th>
+            <th width="10%" style="text-align:center">none</th>
+            <th width="10%" style="text-align:center"><20%</th>
+            <th width="10%" style="text-align:center">21-40%</th>
+            <th width="10%" style="text-align:center">41-60%</th>
+            <th width="10%" style="text-align:center">61-80%</th>
+            <th width="10%" style="text-align:center">81-100%</th>
+            <th width="10%" style="text-align:center">N/A</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>SFI Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio41" ng-value="0" ng-model="cs8.sfiChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio41" ng-value="1" ng-model="cs8.sfiChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio41" ng-value="2" ng-model="cs8.sfiChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio41" ng-value="3" ng-model="cs8.sfiChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio41" ng-value="4" ng-model="cs8.sfiChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio41" ng-value="5" ng-model="cs8.sfiChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio41" ng-value="6" ng-model="cs8.sfiChainCustody10"></td>
+        </tr>
+        <tr>
+            <td>SFI Certified Sourcing</td>
+            <td align="center"><input type="radio" icheck name="myRadio42" ng-value="0" ng-model="cs8.sfiCertifiedSourcing10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio42" ng-value="1" ng-model="cs8.sfiCertifiedSourcing10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio42" ng-value="2" ng-model="cs8.sfiCertifiedSourcing10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio42" ng-value="3" ng-model="cs8.sfiCertifiedSourcing10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio42" ng-value="4" ng-model="cs8.sfiCertifiedSourcing10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio42" ng-value="5" ng-model="cs8.sfiCertifiedSourcing10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio42" ng-value="6" ng-model="cs8.sfiCertifiedSourcing10"></td>
+        </tr>
+        <tr>
+            <td>PEFC Chain-of-Custody</td>   `
+            <td align="center"><input type="radio" icheck name="myRadio43" ng-value="0" ng-model="cs8.pefcChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio43" ng-value="1" ng-model="cs8.pefcChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio43" ng-value="2" ng-model="cs8.pefcChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio43" ng-value="3" ng-model="cs8.pefcChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio43" ng-value="4" ng-model="cs8.pefcChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio43" ng-value="5" ng-model="cs8.pefcChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio43" ng-value="6" ng-model="cs8.pefcChainCustody10"></td>
+        </tr>
+        <tr>
+            <td>FSC Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio44" ng-value="0" ng-model="cs8.fscChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio44" ng-value="1" ng-model="cs8.fscChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio44" ng-value="2" ng-model="cs8.fscChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio44" ng-value="3" ng-model="cs8.fscChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio44" ng-value="4" ng-model="cs8.fscChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio44" ng-value="5" ng-model="cs8.fscChainCustody10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio44" ng-value="6" ng-model="cs8.fscChainCustody10"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="cs8.fscChainCustody10Other"> &nbsp; Other
+                <div ng-show="cs8.fscChainCustody10Other">
+                    Please Describe<br/>
+                    <input class="form-control" type="text" ng-model="cs8.fscChainCustody10OtherDescribe"/>
+                </div>
+            </td>
+            <td align="center"><input type="radio" icheck name="myRadio45" ng-value="0" ng-model="cs8.percCerfiedOther10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio45" ng-value="1" ng-model="cs8.percCerfiedOther10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio45" ng-value="2" ng-model="cs8.percCerfiedOther10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio45" ng-value="3" ng-model="cs8.percCerfiedOther10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio45" ng-value="4" ng-model="cs8.percCerfiedOther10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio45" ng-value="5" ng-model="cs8.percCerfiedOther10"></td>
+            <td align="center"><input type="radio" icheck name="myRadio45" ng-value="6" ng-model="cs8.percCerfiedOther10"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="form-group col-sm-12" ng-show="printer()">
+
+    <table class="table table-striped vert-align-middle">
+        <thead>
+        <tr>
+            <th width="30%">Printer</th>
+            <th width="10%" style="text-align:center">none</th>
+            <th width="10%" style="text-align:center"><20%</th>
+            <th width="10%" style="text-align:center">21-40%</th>
+            <th width="10%" style="text-align:center">41-60%</th>
+            <th width="10%" style="text-align:center">61-80%</th>
+            <th width="10%" style="text-align:center">81-100%</th>
+            <th width="10%" style="text-align:center">N/A</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>SFI Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio46" ng-value="0" ng-model="cs8.sfiChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio46" ng-value="1" ng-model="cs8.sfiChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio46" ng-value="2" ng-model="cs8.sfiChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio46" ng-value="3" ng-model="cs8.sfiChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio46" ng-value="4" ng-model="cs8.sfiChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio46" ng-value="5" ng-model="cs8.sfiChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio46" ng-value="6" ng-model="cs8.sfiChainCustody11"></td>
+        </tr>
+        <tr>
+            <td>SFI Certified Sourcing</td>
+            <td align="center"><input type="radio" icheck name="myRadio47" ng-value="0" ng-model="cs8.sfiCertifiedSourcing11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio47" ng-value="1" ng-model="cs8.sfiCertifiedSourcing11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio47" ng-value="2" ng-model="cs8.sfiCertifiedSourcing11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio47" ng-value="3" ng-model="cs8.sfiCertifiedSourcing11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio47" ng-value="4" ng-model="cs8.sfiCertifiedSourcing11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio47" ng-value="5" ng-model="cs8.sfiCertifiedSourcing11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio47" ng-value="6" ng-model="cs8.sfiCertifiedSourcing11"></td>
+        </tr>
+        <tr>
+            <td>PEFC Chain-of-Custody</td>   `
+            <td align="center"><input type="radio" icheck name="myRadio48" ng-value="0" ng-model="cs8.pefcChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio48" ng-value="1" ng-model="cs8.pefcChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio48" ng-value="2" ng-model="cs8.pefcChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio48" ng-value="3" ng-model="cs8.pefcChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio48" ng-value="4" ng-model="cs8.pefcChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio48" ng-value="5" ng-model="cs8.pefcChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio48" ng-value="6" ng-model="cs8.pefcChainCustody11"></td>
+        </tr>
+        <tr>
+            <td>FSC Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio49" ng-value="0" ng-model="cs8.fscChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio49" ng-value="1" ng-model="cs8.fscChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio49" ng-value="2" ng-model="cs8.fscChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio49" ng-value="3" ng-model="cs8.fscChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio49" ng-value="4" ng-model="cs8.fscChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio49" ng-value="5" ng-model="cs8.fscChainCustody11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio49" ng-value="6" ng-model="cs8.fscChainCustody11"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="cs8.fscChainCustody11Other"> &nbsp; Other
+                <div ng-show="cs8.fscChainCustody11Other">
+                    Please Describe<br/>
+                    <input class="form-control" type="text" ng-model="cs8.fscChainCustody11OtherDescribe"/>
+                </div>
+            </td>
+            <td align="center"><input type="radio" icheck name="myRadio50" ng-value="0" ng-model="cs8.percCerfiedOther11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio50" ng-value="1" ng-model="cs8.percCerfiedOther11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio50" ng-value="2" ng-model="cs8.percCerfiedOther11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio50" ng-value="3" ng-model="cs8.percCerfiedOther11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio50" ng-value="4" ng-model="cs8.percCerfiedOther11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio50" ng-value="5" ng-model="cs8.percCerfiedOther11"></td>
+            <td align="center"><input type="radio" icheck name="myRadio50" ng-value="6" ng-model="cs8.percCerfiedOther11"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="form-group col-sm-12" ng-show="woodMerchant()">
+    <table class="table table-striped vert-align-middle">
+        <thead>
+        <tr>
+            <th width="30%">Wood Broker/paperMerchant</th>
+            <th width="10%" style="text-align:center">none</th>
+            <th width="10%" style="text-align:center"><20%</th>
+            <th width="10%" style="text-align:center">21-40%</th>
+            <th width="10%" style="text-align:center">41-60%</th>
+            <th width="10%" style="text-align:center">61-80%</th>
+            <th width="10%" style="text-align:center">81-100%</th>
+            <th width="10%" style="text-align:center">N/A</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>SFI Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio51" ng-value="0" ng-model="cs8.sfiChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio51" ng-value="1" ng-model="cs8.sfiChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio51" ng-value="2" ng-model="cs8.sfiChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio51" ng-value="3" ng-model="cs8.sfiChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio51" ng-value="4" ng-model="cs8.sfiChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio51" ng-value="5" ng-model="cs8.sfiChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio51" ng-value="6" ng-model="cs8.sfiChainCustody12"></td>
+        </tr>
+        <tr>
+            <td>SFI Certified Sourcing</td>
+            <td align="center"><input type="radio" icheck name="myRadio52" ng-value="0" ng-model="cs8.sfiCertifiedSourcing12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio52" ng-value="1" ng-model="cs8.sfiCertifiedSourcing12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio52" ng-value="2" ng-model="cs8.sfiCertifiedSourcing12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio52" ng-value="3" ng-model="cs8.sfiCertifiedSourcing12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio52" ng-value="4" ng-model="cs8.sfiCertifiedSourcing12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio52" ng-value="5" ng-model="cs8.sfiCertifiedSourcing12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio52" ng-value="6" ng-model="cs8.sfiCertifiedSourcing12"></td>
+        </tr>
+        <tr>
+            <td>PEFC Chain-of-Custody</td>   `
+            <td align="center"><input type="radio" icheck name="myRadio53" ng-value="0" ng-model="cs8.pefcChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio53" ng-value="1" ng-model="cs8.pefcChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio53" ng-value="2" ng-model="cs8.pefcChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio53" ng-value="3" ng-model="cs8.pefcChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio53" ng-value="4" ng-model="cs8.pefcChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio53" ng-value="5" ng-model="cs8.pefcChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio53" ng-value="6" ng-model="cs8.pefcChainCustody12"></td>
+        </tr>
+        <tr>
+            <td>FSC Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio54" ng-value="0" ng-model="cs8.fscChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio54" ng-value="1" ng-model="cs8.fscChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio54" ng-value="2" ng-model="cs8.fscChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio54" ng-value="3" ng-model="cs8.fscChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio54" ng-value="4" ng-model="cs8.fscChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio54" ng-value="5" ng-model="cs8.fscChainCustody12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio54" ng-value="6" ng-model="cs8.fscChainCustody12"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="cs8.fscChainCustody12Other"> &nbsp; Other
+                <div ng-show="cs8.fscChainCustody12Other">
+                    Please Describe<br/>
+                    <input class="form-control" type="text" ng-model="cs8.fscChainCustody12OtherDescribe"/>
+                </div>
+            </td>
+            <td align="center"><input type="radio" icheck name="myRadio55" ng-value="0" ng-model="cs8.percCerfiedOther12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio55" ng-value="1" ng-model="cs8.percCerfiedOther12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio55" ng-value="2" ng-model="cs8.percCerfiedOther12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio55" ng-value="3" ng-model="cs8.percCerfiedOther12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio55" ng-value="4" ng-model="cs8.percCerfiedOther12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio55" ng-value="5" ng-model="cs8.percCerfiedOther12"></td>
+            <td align="center"><input type="radio" icheck name="myRadio55" ng-value="6" ng-model="cs8.percCerfiedOther12"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="form-group col-sm-12" ng-show="other()">
+    <table class="table table-striped vert-align-middle">
+        <thead>
+        <tr>
+            <th width="30%">Other</th>
+            <th width="10%" style="text-align:center">none</th>
+            <th width="10%" style="text-align:center"><20%</th>
+            <th width="10%" style="text-align:center">21-40%</th>
+            <th width="10%" style="text-align:center">41-60%</th>
+            <th width="10%" style="text-align:center">61-80%</th>
+            <th width="10%" style="text-align:center">81-100%</th>
+            <th width="10%" style="text-align:center">N/A</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>SFI Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio56" ng-value="0" ng-model="cs8.sfiChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio56" ng-value="1" ng-model="cs8.sfiChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio56" ng-value="2" ng-model="cs8.sfiChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio56" ng-value="3" ng-model="cs8.sfiChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio56" ng-value="4" ng-model="cs8.sfiChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio56" ng-value="5" ng-model="cs8.sfiChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio56" ng-value="6" ng-model="cs8.sfiChainCustody13"></td>
+        </tr>
+        <tr>
+            <td>SFI Certified Sourcing</td>
+            <td align="center"><input type="radio" icheck name="myRadio57" ng-value="0" ng-model="cs8.sfiCertifiedSourcing13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio57" ng-value="1" ng-model="cs8.sfiCertifiedSourcing13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio57" ng-value="2" ng-model="cs8.sfiCertifiedSourcing13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio57" ng-value="3" ng-model="cs8.sfiCertifiedSourcing13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio57" ng-value="4" ng-model="cs8.sfiCertifiedSourcing13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio57" ng-value="5" ng-model="cs8.sfiCertifiedSourcing13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio57" ng-value="6" ng-model="cs8.sfiCertifiedSourcing13"></td>
+        </tr>
+        <tr>
+            <td>PEFC Chain-of-Custody</td>   `
+            <td align="center"><input type="radio" icheck name="myRadio58" ng-value="0" ng-model="cs8.pefcChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio58" ng-value="1" ng-model="cs8.pefcChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio58" ng-value="2" ng-model="cs8.pefcChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio58" ng-value="3" ng-model="cs8.pefcChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio58" ng-value="4" ng-model="cs8.pefcChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio58" ng-value="5" ng-model="cs8.pefcChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio58" ng-value="6" ng-model="cs8.pefcChainCustody13"></td>
+        </tr>
+        <tr>
+            <td>FSC Chain-of-Custody</td>
+            <td align="center"><input type="radio" icheck name="myRadio59" ng-value="0" ng-model="cs8.fscChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio59" ng-value="1" ng-model="cs8.fscChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio59" ng-value="2" ng-model="cs8.fscChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio59" ng-value="3" ng-model="cs8.fscChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio59" ng-value="4" ng-model="cs8.fscChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio59" ng-value="5" ng-model="cs8.fscChainCustody13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio59" ng-value="6" ng-model="cs8.fscChainCustody13"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="cs8.fscChainCustody13Other"> &nbsp; Other
+                <div ng-show="cs8.fscChainCustody13Other">
+                    Please Describe<br/>
+                    <input class="form-control" type="text" ng-model="cs8.fscChainCustody13OtherDescribe"/>
+                </div>
+            </td>
+            <td align="center"><input type="radio" icheck name="myRadio60" ng-value="0" ng-model="cs8.percCerfiedOther13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio60" ng-value="1" ng-model="cs8.percCerfiedOther13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio60" ng-value="2" ng-model="cs8.percCerfiedOther13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio60" ng-value="3" ng-model="cs8.percCerfiedOther13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio60" ng-value="4" ng-model="cs8.percCerfiedOther13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio60" ng-value="5" ng-model="cs8.percCerfiedOther13"></td>
+            <td align="center"><input type="radio" icheck name="myRadio60" ng-value="6" ng-model="cs8.percCerfiedOther13"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

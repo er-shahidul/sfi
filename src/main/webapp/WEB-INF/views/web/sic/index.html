@@ -6,17 +6,16 @@
 <div layout:fragment="content">
 
 
-    <div class="container" ng-app="sfiSicApp">
+    <div class="container" ng-app="sfiSicApp" style="margin-top: 15px;">
 
         <div class="row" ng-controller="FormHeaderCtrl">
             <div class="col-xs-2">
 
                 <div th:if="${companyLogo != null}">
-                    <img th:src="${{companyLogo}}" width="200"/>
+                    <img th:src="${{companyLogo}}" width="150" height="80"/>
                 </div>
                 <div th:unless="${ companyLogo }">
                     <img src="/assets/images/logo-placeholder.png" align="left" alt="logo-placeholder"/>
-                    <!--<div style="height: 80px; width: 150px; background-color:#e2e1e1; border: 1px solid #707070;"></div>-->
                 </div>
 
             </div>

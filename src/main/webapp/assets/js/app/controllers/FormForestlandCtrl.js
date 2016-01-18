@@ -1,4 +1,4 @@
-var ngScope = null;
+
 var cs2 = null;
 sfiFormApp
     .controller('FormForestlandCtrl',
