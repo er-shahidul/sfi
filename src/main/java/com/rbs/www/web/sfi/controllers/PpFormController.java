@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 @Controller
 public class PpFormController{
@@ -101,11 +103,16 @@ public class PpFormController{
     }
 
     @RequestMapping(value = "/sfiPpForm/view")
-    public String viewForm(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
+    public String viewForm(ModelMap model, SecurityContextHolderAwareRequestWrapper request, HttpServletRequest url) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         String x = authCheck(request, auth);
         if (x != null) return x;
+
+        String print = url.getQueryString();
+        if(Objects.equals(print, "print")){
+            model.addAttribute("print", true);
+        }
 
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sfiPpFormData);
@@ -128,11 +135,16 @@ public class PpFormController{
     }
 
     @RequestMapping(value = "/admin/company/pp/form/view/{id}", method = RequestMethod.GET)
-    public String adminSfiFormView(@PathVariable Integer id, ModelMap model) throws ParseException {
+    public String adminSfiFormView(@PathVariable Integer id, ModelMap model, HttpServletRequest url) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.get(id);
         populateFormContent(model, sfiPpFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
+
+        String print = url.getQueryString();
+        if(Objects.equals(print, "print")){
+            model.addAttribute("print", true);
+        }
 
         return "/core/form/index";
     }
