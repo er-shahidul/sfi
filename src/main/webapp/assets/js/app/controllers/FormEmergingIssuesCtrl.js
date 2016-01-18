@@ -9,6 +9,10 @@ sfiFormApp.controller('FormEmergingIssuesCtrl',
         $scope.cs7.planCommPlantYear = null;
     }
 
+    $scope.cs7.investResCountries = $scope.cs7.investResCountries || [];
+    $scope.cs7.planInvestResCountries = $scope.cs7.planInvestResCountries || [];
+    $scope.cs7.planCommPlantCountries = $scope.cs7.planCommPlantCountries || [];
+
     $scope.user = [];
 
 

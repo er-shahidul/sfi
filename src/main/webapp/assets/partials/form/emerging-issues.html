@@ -141,13 +141,17 @@
                                 <div ng-show="cs7.investRes_ifInve">
 
                                     <label>In what countries?</label>
-                                    <select class="form-control" ng-model="other1" ng-change="other1 = addOtherCountry(cs7.investRes_countryID, other1)">
+                                    <select class="form-control" name="select"
+                                            ng-init="country1=0"
+                                            ng-model="country1"
+                                            ng-change="country1 = addCountry(cs7.investResCountries, country1)">
                                         <option value="0">Select country</option>
-                                        <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
                                     </select>
 
-                                    <div ng-repeat="country in cs7.investRes_countryID" id="selectedItem">{{country.country}}
-                                        <button ng-click="cs7.investRes_countryID = delCountry(cs7.investRes_countryID, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+
+                                    <div id="selectedItem" ng-repeat="country in cs7.investResCountries ">{{country.country}}&nbsp;
+                                        <button ng-click="cs7.investResCountries = delCountry(cs7.investResCountries, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     </div>
 
                                 </div>
@@ -183,15 +187,21 @@
                                 <p></p>
 
                                 <div ng-show="cs7.planInvestRes_ifPlan">
+
                                     <label>In what countries?</label>
-                                    <select  class="form-control" name="select"
+                                    <select class="form-control" name="select"
+                                            ng-init="country2=0"
                                             ng-model="country2"
-                                            ng-change="country2 = addCountry(cs7.planInvestRes_countryID, country2)">
-                                        <option value="">Select Country</option>
-                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+                                            ng-change="country2 = addCountry(cs7.planInvestResCountries, country2)">
+                                        <option value="0">Select country</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
                                     </select>
 
-                                    <div id="selectedItem" ng-repeat="country in cs7.planInvestRes_countryID ">{{country.name}}&nbsp;</div>
+
+                                    <div id="selectedItem" ng-repeat="country in cs7.planInvestResCountries ">{{country.country}}&nbsp;
+                                        <button ng-click="cs7.investResCountries = delCountry(cs7.planInvestResCountries, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -226,16 +236,21 @@
                                 <p></p>
 
                                 <div class="group1" ng-show="cs7.planCommPlant_ifPlanGE">
-                                    <label>In what countries?</label>
 
-                                    <select  class="form-control" name="select"
+                                    <label>In what countries?</label>
+                                    <select class="form-control" name="select"
+                                            ng-init="country3=0"
                                             ng-model="country3"
-                                            ng-change="country3 = addCountry(cs7.planCommPlant_countryID, country3)">
-                                        <option value="">Select Country</option>
-                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+                                            ng-change="country3 = addCountry(cs7.planCommPlantCountries, country3)">
+                                        <option value="0">Select country</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
                                     </select>
 
-                                    <div id="selectedItem" ng-repeat="country in cs7.planCommPlant_countryID ">{{country.name}}&nbsp;</div>
+
+                                    <div id="selectedItem" ng-repeat="country in cs7.planCommPlantCountries ">{{country.country}}&nbsp;
+                                        <button ng-click="cs7.planCommPlantCountries = delCountry(cs7.planCommPlantCountries, country.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
