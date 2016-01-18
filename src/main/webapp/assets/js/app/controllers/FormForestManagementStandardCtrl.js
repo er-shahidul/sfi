@@ -7,6 +7,9 @@ sfiFormApp
 
     $scope.hasStory = {};
 
+    //$scope.cs9.stopWho1A1B = "";
+    //$scope.cs9.useWho1A1B = "";
+
     _.each($scope.cs9.stories, function(story){
         $scope.hasStory[story.index] = true;
     });

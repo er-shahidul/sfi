@@ -20,10 +20,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
@@ -104,11 +106,16 @@ public class SicFormController{
     }
 
     @RequestMapping(value = "/sicForm/view", method = RequestMethod.GET)
-    public String viewForm(ModelMap model, SecurityContextHolderAwareRequestWrapper request) throws ParseException {
+    public String viewForm(ModelMap model, SecurityContextHolderAwareRequestWrapper request, HttpServletRequest url) throws ParseException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         String x = authCheck(request, auth);
         if (x != null) return x;
+
+        String print = url.getQueryString();
+        if(Objects.equals(print, "print")){
+            model.addAttribute("print", true);
+        }
 
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sicFormData);
@@ -137,11 +144,16 @@ public class SicFormController{
     }
 
     @RequestMapping(value = "/admin/company/sic/form/view/{id}", method = RequestMethod.GET)
-    public String adminSicFormView(@PathVariable Integer id, ModelMap model) throws ParseException {
+    public String adminSicFormView(@PathVariable Integer id, ModelMap model, HttpServletRequest url) throws ParseException {
         SicFormData sicFormData = sicFormDataService.get(id);
         populateFormContent(model, sicFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
+
+        String print = url.getQueryString();
+        if(Objects.equals(print, "print")){
+            model.addAttribute("print", true);
+        }
 
         return "web/sic/index";
     }

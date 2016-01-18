@@ -7,6 +7,9 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         $scope.cs8 = {} ;
         $scope.cs8Data = angular.copy($rootScope.form.cs8);
 
+
+
+
         _.each($scope.cs8Data, function(val){
             $scope.cs8 = _.extend($scope.cs8, val);
         });
