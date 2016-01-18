@@ -34,14 +34,14 @@ sfiSicApp
     $rootScope.printSection = function(){
 
         if($rootScope.mode == "view"){
-
             return window.print();
         }
 
-        var url = '/sicForm/view' + '#' + $location.$$path;
-        //Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#' + $location.$$path;
-        var win = window.open(url, '_blank');
+        //var url = Routing.generate("sfi_form_view", angular.extend({},
+        //urlData, {print: true}), true) + '#' + $location.$$path;
 
+        var url = "/sicForm/view?print" + '#' + $location.$$path;
+        var win = window.open(url, '_blank');
 
         win.focus();
     }
@@ -63,12 +63,14 @@ sfiSicApp
             return;
         }
 
-        var url = Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#print-all'; // + $location.$$path;
+
+        //var url = Routing.generate("sfi_form_view", angular.extend({},
+        //urlData, {print: true}), true) + '#print-all'; // + $location.$$path;
+
+        var url = "/sicForm/view?print" + '#print-all';
         var win = window.open(url, '_blank');
         win.focus();
     }
-
-
 
     $scope.submitText = function(){
 

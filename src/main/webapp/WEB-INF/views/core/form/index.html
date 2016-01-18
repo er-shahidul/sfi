@@ -253,6 +253,7 @@
 
         };
 
+        var isPrint     = [[${print}]];
         var mode      = [[${mode}]];
         var company   = [[${company}]];
         var countries = [[${countries}]];
@@ -372,6 +373,21 @@
         </div>
 
          ]]>
+    </script>
+
+
+    <script type="text/javascript">
+
+    // <![CDATA[
+
+        $( window ).load(function(){
+
+            setTimeout(function(){
+                isPrint && window.print()
+            }, 2000);
+        });
+
+    // ]]>
     </script>
 
 </div>
