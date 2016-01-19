@@ -120,6 +120,7 @@ public class UserController {
         User user = userService.findByUsername(getCurrentUsername());
         model.addAttribute("user", user);
         model.addAttribute("title", "profile");
+        model.addAttribute("company", user.getCompany());
 
         return new ModelAndView("admin/user/profile", "user", user);
     }
@@ -264,16 +265,20 @@ public class UserController {
 
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.GET)
     public String create(ModelMap model) {
+        contantForNewUser(model);
+
+        return "admin/user/new";
+    }
+
+    private void contantForNewUser(ModelMap model) {
         UserViewModel user = new UserViewModel();
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
         List<CompanyViewModel> companies = companyService.list();
         model.addAttribute("companies", companies);
 
-            List<Group> groups = groupService.list();
+        List<Group> groups = groupService.list();
         model.addAttribute("groups", groups);
-
-        return "admin/user/new";
     }
 
     @RequestMapping(value = "/user/verification/{token}", method = RequestMethod.GET)
@@ -310,7 +315,7 @@ public class UserController {
             user.setUserToken(randomUUIDString);
             userService.passwordResetTokenUpdate(user);
 
-            String subject = "Password Reset";
+            String subject = "SFI Annual Reporting & Survey Tool Password Reset";
             String message = request.getLocalName() + "/user/password/" + randomUUIDString;
             String mailType = "reset";
             sendEmail(email, subject, message, user, mailType, request.getLocalName());
@@ -329,7 +334,6 @@ public class UserController {
         }
     }
 
-
     @RequestMapping(value = "/user/password/reset/{id}", method = RequestMethod.GET)
     public String passwordReset(@PathVariable Integer id, ModelMap model) {
         UserViewModel user = userService.getViewModelById(id);
@@ -340,15 +344,18 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/user/password/reset/{id}"}, method = RequestMethod.POST)
-    public String passwordReset(@Valid User user, BindingResult result, ModelMap model) {
+    public String passwordReset(@Valid User user, BindingResult result, ModelMap model, @RequestParam("password") String password, @RequestParam("userName") String userName) {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "redirect:/user/password/reset/" + user.getId();
         }
+        model.addAttribute("password", password);
+        model.addAttribute("userName", userName);
+        model.addAttribute("user", user);
         userService.updatePassword(user);
 
-        return "common/after_password";
+        return "common/login";
     }
 
     @RequestMapping(value = "/user/password/set/{id}", method = RequestMethod.GET)
@@ -361,12 +368,14 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/user/password/set/{id}"}, method = RequestMethod.POST)
-    public String passwordSet(@Valid User user, BindingResult result, ModelMap model) {
+    public String passwordSet(@Valid User user, BindingResult result, ModelMap model, @RequestParam("password") String password, @RequestParam("userName") String userName) {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors()) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "redirect:/user/password/set/" + user.getId();
         }
+        model.addAttribute("password", password);
+        model.addAttribute("userName", userName);
         userService.updatePassword(user);
         userService.verificationToken(user);
 
@@ -392,25 +401,28 @@ public class UserController {
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
-            return "redirect:/admin/user/new";
+            contantForNewUser(model);
+            return "admin/user/new";
         }
 
         if (!userService.isUserUsernameUnique(user.getId(), user.getUsername())) {
             FieldError ssoError = new FieldError("user", "username", messageSource.getMessage("non.unique.username", new String[]{user.getUsername()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "redirect:/admin/user/new";
+            contantForNewUser(model);
+            return "admin/user/new";
         }
 
         if (!userService.isUserEmailUnique(user.getId(), user.getEmail())) {
             FieldError ssoError = new FieldError("user", "email", messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "redirect:/admin/user/new";
+            contantForNewUser(model);
+            return "admin/user/new";
         }
 
         userService.save(user);
 
         String recipient = user.getEmail();
-        String subject = "Email Verification";
+        String subject = "Welcome to SFI Annual Reporting & Survey Tool";
         String message = request.getLocalName() + "/user/verification/" + randomUUIDString;
         String mailType = "confirm";
 

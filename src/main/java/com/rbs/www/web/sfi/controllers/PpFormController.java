@@ -6,7 +6,9 @@ import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
-import com.rbs.www.web.sfi.services.*;
+import com.rbs.www.web.sfi.services.FormService;
+import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
+import com.rbs.www.web.sfi.services.SfiPpFormDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -21,8 +23,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Objects;
 
 @Controller
@@ -72,10 +72,9 @@ public class PpFormController{
         model.addAttribute("updateAt", "[ "+ Util.getDateFormat(sfiPpFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sfiPpFormData.getCompany());
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
-        model.addAttribute("regions", sfiPpFormRegionService.getAll());
-        model.addAttribute("updateBy", sfiPpFormData.getUpdatedBy());
-        model.addAttribute("status", sfiPpFormData.getStatus());
 
+        model.addAttribute("regions", sfiPpFormRegionService.getAll());
+        model.addAttribute("status", sfiPpFormData.getStatus());
         model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
     }
 
@@ -161,6 +160,8 @@ public class PpFormController{
     public String userSfiForm(ModelMap model) {
         model.addAttribute("title", "sfi");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.createOrGetByCurrentUsersCompany());
+        SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
+        model.addAttribute("company", sfiPpFormData.getCompany());
 
         return "admin/form/admin_form_sfi";
     }

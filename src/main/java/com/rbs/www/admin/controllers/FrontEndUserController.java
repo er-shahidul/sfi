@@ -1,36 +1,28 @@
 package com.rbs.www.admin.controllers;
 
-import com.rbs.www.admin.models.entities.Group;
 import com.rbs.www.admin.models.entities.User;
-import com.rbs.www.admin.models.viewmodels.CompanyViewModel;
-import com.rbs.www.admin.models.viewmodels.UserViewModel;
 import com.rbs.www.admin.services.CompanyService;
 import com.rbs.www.admin.services.GroupService;
 import com.rbs.www.admin.services.UserService;
-import com.rbs.www.common.listeners.AuditListener;
-import com.rbs.www.common.util.MailHelper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.List;
 import java.util.Locale;
-import java.util.UUID;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
 
@@ -60,6 +52,7 @@ public class FrontEndUserController {
 
         User user = userService.findByUsername(getCurrentUsername());
         model.addAttribute("user", user);
+        model.addAttribute("company", user.getCompany());
         model.addAttribute("title", "profile");
 
         return new ModelAndView("admin/frontend/profile", "user", user);

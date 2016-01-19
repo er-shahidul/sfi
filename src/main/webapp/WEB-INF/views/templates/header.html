@@ -8,21 +8,23 @@
 
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
-            <li>
+            <li style="margin-right: 70px;">
                 <a th:href="@{/}" class="tab">
                     Home
                 </a>
             </li>
-            <li>
-                <a th:href="@{/sfiPpForm}" class="tab">
-                    Program Participant Survey
+
+            <li sec:authorize="hasRole('USER')">
+                <a th:href="@{/user/profile}" class="tab">
+                    Survey
                 </a>
             </li>
-            <li>
-                <a th:href="@{/sicForm}" class="tab">
-                    SIC
+            <li sec:authorize="hasAnyRole('ADMIN', 'GENERAL')">
+                <a th:href="@{/admin/user/profile}" class="tab">
+                    Survey
                 </a>
             </li>
+
         </ul>
 
         <div sec:authorize="hasAnyRole('ADMIN', 'GENERAL', 'USER')" >
