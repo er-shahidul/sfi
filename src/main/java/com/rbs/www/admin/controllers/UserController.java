@@ -340,15 +340,18 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/user/password/reset/{id}"}, method = RequestMethod.POST)
-    public String passwordReset(@Valid User user, BindingResult result, ModelMap model) {
+    public String passwordReset(@Valid User user, BindingResult result, ModelMap model, @RequestParam("password") String password, @RequestParam("userName") String userName) {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors() || isInvalidPassword) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "redirect:/user/password/reset/" + user.getId();
         }
+        model.addAttribute("password", password);
+        model.addAttribute("userName", userName);
+        model.addAttribute("user", user);
         userService.updatePassword(user);
 
-        return "common/after_password";
+        return "common/login";
     }
 
     @RequestMapping(value = "/user/password/set/{id}", method = RequestMethod.GET)
@@ -361,12 +364,14 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/user/password/set/{id}"}, method = RequestMethod.POST)
-    public String passwordSet(@Valid User user, BindingResult result, ModelMap model) {
+    public String passwordSet(@Valid User user, BindingResult result, ModelMap model, @RequestParam("password") String password, @RequestParam("userName") String userName) {
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         if (result.hasErrors()) {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "redirect:/user/password/set/" + user.getId();
         }
+        model.addAttribute("password", password);
+        model.addAttribute("userName", userName);
         userService.updatePassword(user);
         userService.verificationToken(user);
 
