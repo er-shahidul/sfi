@@ -91,6 +91,13 @@
             <version>${hibernate.version}</version>
         </dependency>
 
+        <!-- Javax validation -->
+        <!--<dependency>-->
+            <!--<groupId>javax.validation</groupId>-->
+            <!--<artifactId>validation-api</artifactId>-->
+            <!--<version>1.0.0.GA</version>-->
+        <!--</dependency>-->
+
         <!-- Hibernate validation -->
         <dependency>
             <groupId>org.hibernate</groupId>
