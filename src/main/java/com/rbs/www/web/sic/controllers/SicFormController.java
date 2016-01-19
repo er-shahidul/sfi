@@ -75,8 +75,6 @@ public class SicFormController{
         model.addAttribute("createdAt", "[ "+ Util.getDateFormat(sicFormData.getCreatedAt()) + " ]");
         model.addAttribute("updateAt", "[ "+ Util.getDateFormat(sicFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sicFormData.getCompany());
-        model.addAttribute("createdBy", sicFormData.getCreatedBy());
-        model.addAttribute("updateBy", sicFormData.getUpdatedBy());
         model.addAttribute("status", sicFormData.getStatus());
 
         model.addAttribute("regions", sfiPpFormRegionService.getAll());

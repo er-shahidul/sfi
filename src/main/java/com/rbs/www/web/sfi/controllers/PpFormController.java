@@ -72,10 +72,9 @@ public class PpFormController{
         model.addAttribute("updateAt", "[ "+ Util.getDateFormat(sfiPpFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sfiPpFormData.getCompany());
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
-        model.addAttribute("regions", sfiPpFormRegionService.getAll());
-        model.addAttribute("updateBy", sfiPpFormData.getUpdatedBy());
-        model.addAttribute("status", sfiPpFormData.getStatus());
 
+        model.addAttribute("regions", sfiPpFormRegionService.getAll());
+        model.addAttribute("status", sfiPpFormData.getStatus());
         model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
     }
 
