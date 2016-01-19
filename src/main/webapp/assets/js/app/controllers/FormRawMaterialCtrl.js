@@ -1,18 +1,12 @@
-var cs6;
-
 sfiFormApp.controller('FormRawMaterialCtrl',
     ['$rootScope', '$scope', '$state', '$http', 'Countries', 'RegionList', '$popover', '$compile' , '_', 'Message', '$', '$modal',
         function ($rootScope , $scope, $state, $http, CountryList , RegionList, $popover, $compile, _, Message, $, $modal){
 
-    $scope.usCanada = [];
-    $scope.usOthers = [];
 
     $scope.usCanadaEdit   = false;
     $scope.usCanadaDelete = null;
 
     $scope.cs6 = angular.copy($rootScope.form.cs6);
-
-    cs6 = $scope;
 
     $scope.init = function(){
 
@@ -33,6 +27,9 @@ sfiFormApp.controller('FormRawMaterialCtrl',
                 caTimberSellers = null;
             }
         }
+
+        $scope.usCanada = [];
+        $scope.usOthers = [];
 
         _.each($scope.cs6.usCanada, function(usCanada){
 
@@ -260,19 +257,14 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         angular.element('#regionId')[0].value = $scope.regionId;
     }
 
-
     $scope.setForms = function(){
-
         $rootScope.$form = [$scope.cs6Form ,$scope.innerForm];
     }
-
 
     $scope.isDataDirty = false;
 
     $rootScope.isSectionDirty = function(){
-
         return $scope.cs6Form.$dirty || $scope.isDataDirty ;
-
     }
 
     $scope.preparePayload = function(){
@@ -320,9 +312,6 @@ sfiFormApp.controller('FormRawMaterialCtrl',
 
         var data = $scope.preparePayload();
 
-        //console.log(data);
-        //return;
-
         $http
             .put("/form/cs6", data)
             .then(function(response){
@@ -331,17 +320,9 @@ sfiFormApp.controller('FormRawMaterialCtrl',
 
                     $scope.isDataDirty = false;
                     $scope.cs6Form.$setPristine();
-
-                    //$rootScope.form = response.data;
-                    //$scope.cs6 = $rootScope.form.cs6;
-                    //$scope.errors = $scope.cs6.errors;
-                    //$scope.cs6.supplies = $rootScope.form.cs6.supplies;
-                    //$scope.cs6.others = $rootScope.form.cs6.others;
-
-                    //$scope.parseSupplies();
-                    //$scope.parseOthers();
-
-
+                    $rootScope.form.cs6 = response.data;
+                    $scope.cs6 = angular.copy($rootScope.form.cs6);
+                    $scope.init();
                     Message.success('Section successfully saved', '.msg-cont');
                 }
 
@@ -771,14 +752,6 @@ sfiFormApp.controller('FormRawMaterialCtrl',
 
     $scope.isDisabled = function(section){
 
-//        if(section.isUsa && !$scope.operateInUsa()){
-//            return true;
-//        }
-//
-//        if(section.isCa && !$scope.operateInCa()){
-//            return true;
-//        }
-
         if(section.otherEnable === false){
             return true;
         }
@@ -791,9 +764,6 @@ sfiFormApp.controller('FormRawMaterialCtrl',
             }
 
         }
-
-
-
 
         return false;
     }

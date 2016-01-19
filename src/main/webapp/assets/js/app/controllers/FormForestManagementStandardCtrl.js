@@ -7,14 +7,9 @@ sfiFormApp
 
     $scope.hasStory = {};
 
-    //$scope.cs9.stopWho1A1B = "";
-    //$scope.cs9.useWho1A1B = "";
-
     _.each($scope.cs9.stories, function(story){
         $scope.hasStory[story.index] = true;
     });
-
-    cs9 = $scope;
 
 
     $scope.cs9.stories = $scope.cs9.stories || [];
@@ -75,9 +70,6 @@ sfiFormApp
         $scope.regionId = 0;
     }
 
-
-
-
     $scope.isRequired = function(){
         return $rootScope.form.cs1.hasOperationsYards;
     }
@@ -94,10 +86,9 @@ sfiFormApp
 
                 if(response.data){
 
-                    //$rootScope.form = response.data;
-                    //$scope.cs9 = angular.copy($rootScope.form.cs9);
-                    //$scope.errors = $scope.cs9.errors;
-
+                    $scope.cs9Form.$setPristine();
+                    $rootScope.form.cs9 = response.data;
+                    $scope.cs9 = angular.copy($rootScope.form.cs9);
                     Message.success('Section successfully saved', '.msg-cont');
                 }
 

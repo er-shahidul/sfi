@@ -1,14 +1,10 @@
-var ngScope = null;
+
 sfiFormApp.controller('FormMarketSurveyCtrl',
     ['$rootScope', '$scope', 'Countries',  '$http', '_', 'Message',
         function ($rootScope , $scope, Countries, $http, _ , Message){
 
-        ngScope = $scope;
         $scope.cs8 = {} ;
         $scope.cs8Data = angular.copy($rootScope.form.cs8);
-
-
-
 
         _.each($scope.cs8Data, function(val){
             $scope.cs8 = _.extend($scope.cs8, val);
@@ -61,8 +57,6 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
             }
         }
 
-
-
         $scope.contact = {};
         $scope.contactIndex = null;
 
@@ -109,8 +103,8 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         }
 
 
-    $scope.user = [];
-    $scope.countries = Countries.getAll();
+        $scope.user = [];
+        $scope.countries = Countries.getAll();
 
 
         $scope.anySelect = function(){
@@ -199,42 +193,39 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
 
 
 
-    $scope.isSelected = function(model, val){
+        $scope.isSelected = function(model, val){
 
-        return _.indexOf(model, val) > -1;
-    }
-
-    $scope.setForms = function(){
-        $rootScope.$form = $scope.cs8Form;
-    }
-
-
-    $scope.saveForm = function(go){
-
-        if($scope.cs8Form.$valid){
-
-            $http
-                .put("/form/cs8", $scope.formData())
-                .then(function(response){
-
-                    if(response.data){
-
-                        $scope.cs8Form.$setPristine();
-
-                        //$rootScope.form = response.data;
-                        //$scope.cs8 = angular.copy($rootScope.form.cs8);
-                        //$scope.errors = $scope.cs8.errors;
-                        Message.success('Section successfully saved', '.msg-cont');
-                    }
-
-
-                    if(go){
-                        $rootScope.goStep("cs9")
-                    }
-
-                });
+            return _.indexOf(model, val) > -1;
         }
 
-    }
+        $scope.setForms = function(){
+            $rootScope.$form = $scope.cs8Form;
+        }
+
+
+        $scope.saveForm = function(go){
+
+            if($scope.cs8Form.$valid){
+
+                $http
+                    .put("/form/cs8", $scope.formData())
+                    .then(function(response){
+
+                        if(response.data){
+
+                            $scope.cs8Form.$setPristine();
+                            $rootScope.form.cs8 = response.data;
+                            Message.success('Section successfully saved', '.msg-cont');
+                        }
+
+
+                        if(go){
+                            $rootScope.goStep("cs9")
+                        }
+
+                    });
+            }
+
+        }
 
 }]);

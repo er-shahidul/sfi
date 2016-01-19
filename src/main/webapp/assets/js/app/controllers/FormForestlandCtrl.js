@@ -1,16 +1,12 @@
-
-var cs2 = null;
 sfiFormApp
     .controller('FormForestlandCtrl',
         ['$rootScope', '$scope', '$state', '$http', 'Countries', 'certifyBodies', '_', 'Message', '$', '$modal',
             function ($rootScope , $scope, $state, $http, Countries, certifyBodies, _, Message, $, $modal){
 
-    cs2 = $scope;
-
     $scope.error = true;
     $scope.certifyBodies  = certifyBodies;
     $scope.otherCountries = Countries.getOthers();
-    $scope.cs2 = angular.copy( $rootScope.form.cs2);
+    $scope.cs2 = angular.copy($rootScope.form.cs2);
 
     $scope.init = function(){
 
@@ -41,7 +37,6 @@ sfiFormApp
         }
     }
 
-
     $scope.addOther = function(){
 
         $scope.cs2.outsideCountries.push({
@@ -70,22 +65,16 @@ sfiFormApp
 
         $http
             .put("/form/cs2",  $scope.cs2)
-            //.put("/form/cs1", sfiV2.getSectionData('cs2', $scope.cs2))
             .then(function(response){
 
                 if(response.data){
 
                     $scope.cs2Form.$setPristine();
-
-                    /*
-                    formData = response.data
-                    $rootScope.form = sfiV2.prepareForm(formData);
-
+                    $rootScope.form.cs2 = response.data;
                     $scope.cs2 = angular.copy($rootScope.form.cs2);
-                    $scope.errors = $scope.cs2.errors; */
-
                     Message.success('Section successfully saved', '.msg-cont');
                     $scope.init();
+
                 }
 
                 if(go){
@@ -95,14 +84,11 @@ sfiFormApp
             });
     }
 
-
     $scope.isDirty = function(other){
 
         return other.countryId ||
             other.areaManaged ||
             other.certified ;
-
-
     }
 
     $("#table1 > tbody > tr ").each(function(){
