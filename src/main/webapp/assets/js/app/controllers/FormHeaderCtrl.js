@@ -23,7 +23,7 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
     $rootScope.formSubmit = function(){
 
         $http
-            .put(Routing.generate("sfi_cs10_form_submit", urlData))
+            .get("/pp/form/submit/" + urlData.companyId)
             .then(function(){
                 window.location.reload();
             })
@@ -33,11 +33,12 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
     $rootScope.printSection = function(){
 
         if($rootScope.mode == "view"){
-
             return window.print();
         }
 
-        var url = Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#' + $location.$$path;
+        //var url = Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#' + $location.$$path;
+
+        var url = "/sfiPpForm/view?print" + '#' + $location.$$path;
         var win = window.open(url, '_blank');
 
 
@@ -61,7 +62,10 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
             return;
         }
 
-        var url = Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#print-all'; // + $location.$$path;
+
+//        var url = Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#print-all'; // + $location.$$path;
+
+        var url = "/sfiPpForm/view?print" + '#print-all';
         var win = window.open(url, '_blank');
         win.focus();
     }

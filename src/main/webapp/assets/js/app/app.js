@@ -1,18 +1,6 @@
 
 var sfiFormApp = angular.module('sfiFormApp', ['ui.router', 'checklist-model',  'ngSanitize', 'mgcrea.ngStrap', 'angularFileUpload']);
 
-
-sfiFormApp.run(function($templateCache) {
-
-    if(Templates){
-        for(var key in Templates){
-            $templateCache.put(key + '.html', Templates[key]);
-        }
-    }
-
-});
-
-
 sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
     $urlRouterProvider.otherwise("/profile");
@@ -151,7 +139,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
             url : "/print-all",
             views: {
                 viewContainer : {
-                    template  : Templates.ViewAllSectionView,
+                    templateUrl  : '/assets/partials/view/view-all.html',
                     controller: function($rootScope) {
 
                     }

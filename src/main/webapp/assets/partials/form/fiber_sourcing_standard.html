@@ -289,7 +289,7 @@
                         <label>
                             <input icheck type="checkbox" checklist-model="cs10.biodiversityItems2" checklist-value="1">
                             World Resources Institute Risk
-                            <a style="text-decoration:underline;" ng-style="{text-decoration: underline}" ng-click="shareHistory(8, 'biodiversityItems2_1', $event)" ng-show="isSelected(cs10.biodiversityItems2, 1)" >
+                            <a style="text-decoration:underline;" ng-click="shareHistory(8, 'biodiversityItems2_1', $event)" ng-show="isSelected(cs10.biodiversityItems2, 1)" >
                                 <span ng-hide="hasStory[8]">Share Your Story</span>
                                 <span ng-show="hasStory[8]">Edit Your Story</span>
                             </a>
@@ -700,10 +700,10 @@
                 Did you identify any risk of illegal logging through your risk assessment?
             </p>
             <label>
-                <input type="radio" icheck ng-model="cs10.legalComplianceUsCanada" value=1> Yes
+                <input type="radio" icheck ng-model="cs10.legalComplianceUsCanada" ng-value="true"> Yes
             </label>
             <label>
-                <input type="radio" icheck ng-model="cs10.legalComplianceUsCanada" value=0> No
+                <input type="radio" icheck ng-model="cs10.legalComplianceUsCanada" ng-value="false">  No
             </label>
             <div style="padding-left: 25px;" ng-show="cs10.legalComplianceUsCanada">
                 Please describe what you did to address this risk
@@ -721,10 +721,10 @@
                 Do you source fiber from outside the U.S. and Canada?
             </p>
             <label>
-                <input type="radio" icheck ng-model="cs10.legalComplianceOutside" value=1> Yes
+                <input type="radio" icheck ng-model="cs10.legalComplianceOutside" ng-value="true"> Yes
             </label>
             <label>
-                <input type="radio" icheck ng-model="cs10.legalComplianceOutside" value=0>  No
+                <input type="radio" icheck ng-model="cs10.legalComplianceOutside" ng-value="false">  No
             </label>
         </div>
         <br>
