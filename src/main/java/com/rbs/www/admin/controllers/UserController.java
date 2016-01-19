@@ -265,16 +265,20 @@ public class UserController {
 
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.GET)
     public String create(ModelMap model) {
+        contantForNewUser(model);
+
+        return "admin/user/new";
+    }
+
+    private void contantForNewUser(ModelMap model) {
         UserViewModel user = new UserViewModel();
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
         List<CompanyViewModel> companies = companyService.list();
         model.addAttribute("companies", companies);
 
-            List<Group> groups = groupService.list();
+        List<Group> groups = groupService.list();
         model.addAttribute("groups", groups);
-
-        return "admin/user/new";
     }
 
     @RequestMapping(value = "/user/verification/{token}", method = RequestMethod.GET)
@@ -329,7 +333,6 @@ public class UserController {
             return ("redirect:/user/password/set/" + user.getId());
         }
     }
-
 
     @RequestMapping(value = "/user/password/reset/{id}", method = RequestMethod.GET)
     public String passwordReset(@PathVariable Integer id, ModelMap model) {
@@ -398,19 +401,22 @@ public class UserController {
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
-            return "redirect:/admin/user/new";
+            contantForNewUser(model);
+            return "admin/user/new";
         }
 
         if (!userService.isUserUsernameUnique(user.getId(), user.getUsername())) {
             FieldError ssoError = new FieldError("user", "username", messageSource.getMessage("non.unique.username", new String[]{user.getUsername()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "redirect:/admin/user/new";
+            contantForNewUser(model);
+            return "admin/user/new";
         }
 
         if (!userService.isUserEmailUnique(user.getId(), user.getEmail())) {
             FieldError ssoError = new FieldError("user", "email", messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
             result.addError(ssoError);
-            return "redirect:/admin/user/new";
+            contantForNewUser(model);
+            return "admin/user/new";
         }
 
         userService.save(user);
