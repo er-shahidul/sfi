@@ -120,6 +120,7 @@ public class UserController {
         User user = userService.findByUsername(getCurrentUsername());
         model.addAttribute("user", user);
         model.addAttribute("title", "profile");
+        model.addAttribute("company", user.getCompany());
 
         return new ModelAndView("admin/user/profile", "user", user);
     }

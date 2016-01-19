@@ -168,6 +168,8 @@ public class SicFormController{
     public String userSicForm(ModelMap model) {
         model.addAttribute("title", "sic");
         model.addAttribute("sicPpForms", sicFormDataService.createOrGetByCurrentUsersCompany());
+        SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
+        model.addAttribute("company", sicFormData.getCompany());
 
         return "admin/form/admin_form_sic";
     }
