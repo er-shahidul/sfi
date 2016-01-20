@@ -16,7 +16,7 @@
 
     <context:property-placeholder location="classpath:application.properties" />
 
-    <util:properties id="messages" location="classpath:message.properties" />
+    <util:properties id="messages" location="classpath:messages.properties" />
 
     <bean id="auditListener" class="com.rbs.www.common.listeners.AuditListener" />
 
