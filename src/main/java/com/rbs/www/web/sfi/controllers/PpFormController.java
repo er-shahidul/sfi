@@ -89,6 +89,7 @@ public class PpFormController{
 
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
+        model.addAttribute("isAdmin", false);
         model.addAttribute("user", userService.findByUsername(Util.getCurrentUsername()));
 
         return "/core/form/index";
@@ -118,6 +119,7 @@ public class PpFormController{
 
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
+        model.addAttribute("isAdmin", false);
 
         model.addAttribute("user", userService.findByUsername(Util.getCurrentUsername()));
         return "/core/form/index";
@@ -129,6 +131,7 @@ public class PpFormController{
         populateFormContent(model, sfiPpFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
+        model.addAttribute("isAdmin", true);
 
         return "/core/form/index";
     }
@@ -139,6 +142,7 @@ public class PpFormController{
         populateFormContent(model, sfiPpFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
+        model.addAttribute("isAdmin", true);
 
         String print = url.getQueryString();
         if(Objects.equals(print, "print")){
