@@ -1,7 +1,7 @@
 package com.rbs.www.web.sfi.services;
 
-import com.rbs.www.common.mapper.EntityModelMapperService;
-import com.rbs.www.common.mapper.ViewModelMapperService;
+import com.rbs.www.common.modules.mapper.EntityModelMapperService;
+import com.rbs.www.common.modules.mapper.ViewModelMapperService;
 import com.rbs.www.web.common.services.ModelValidationService;
 import com.rbs.www.web.sfi.models.entities.*;
 import com.rbs.www.web.sfi.models.viewmodels.*;

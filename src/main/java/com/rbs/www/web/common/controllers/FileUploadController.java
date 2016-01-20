@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class FileUploadController {
 
-    private final String[] validFileExtensions = { "pdf", "doc", "xls", "xlsx", "docx" };
+    private final String[] validExtensions = { "pdf", "doc", "xls", "xlsx", "docx" };
 
     @Autowired
     private BlobStoreHelper blobStoreHelper;
@@ -25,11 +25,10 @@ public class FileUploadController {
                                                            @RequestParam("file") MultipartFile file,
                                                            HttpServletRequest request) {
         BlobNames fileNames = null;
-        if (file != null && blobStoreHelper.isTypeOf(file.getOriginalFilename(), validFileExtensions)) {
+        if (file != null && blobStoreHelper.isTypeOf(file.getOriginalFilename(), validExtensions))
             fileNames = blobStoreHelper.store(file, form, request.getSession()
                                                                  .getServletContext()
                                                                  .getRealPath("."));
-        }
 
         HttpStatus responseStatus = fileNames == null ? HttpStatus.BAD_REQUEST : HttpStatus.OK;
         String responseMessage = fileNames == null ? "Invalid File Type" : Util.getAsString(fileNames);

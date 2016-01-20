@@ -493,9 +493,9 @@ sfiFormApp.directive('customerror', [ '_', function(_){
         required : 'This field is required',
         min : 'Number can not be less than <%= min %>',
         max : 'Number can not be greater than <%= max %>',
-        maxlength : 'Please enter a max length of <%= ngMaxlength %>',
-        minlength : 'Please enter a max length of <%= ngMinlength %>',
-        maxWordCount : 'Please enter text not more than <%= maxWordCount %> words',
+        maxlength : 'Provide value with max length of <%= ngMaxlength %>',
+        minlength : 'Provide value with min length of <%= ngMinlength %>',
+        maxWordCount : 'Provide text not more than <%= maxWordCount %> words',
         pattern : '<%=  patternMsg %>'
 
     };
