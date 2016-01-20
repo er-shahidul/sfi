@@ -17,7 +17,7 @@ public class Util {
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public static String getDateFormat(Date date) {
-        return new SimpleDateFormat("dd-MMM, yyyy h:mma").format((Date) date);
+        return new SimpleDateFormat("dd-MMM, yyyy h:mma").format(date);
     }
 
     public static Date getCurrentDate() { return Calendar.getInstance().getTime(); }

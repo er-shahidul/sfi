@@ -1,11 +1,11 @@
 package com.rbs.www.web.common.services;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.CustomTraversableResolver;
+import org.hibernate.validator.HibernateValidator;
 import org.springframework.stereotype.Service;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
+import javax.validation.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -15,8 +15,15 @@ public class ModelValidationService {
     private Validator validator;
 
     public ModelValidationService() {
-        this.validator = Validation.buildDefaultValidatorFactory()
-                                   .getValidator();
+        Configuration<?> configuration = Validation
+                .byProvider(HibernateValidator.class)
+                .configure();
+
+        ValidatorFactory factory = configuration
+                .traversableResolver(new CustomTraversableResolver())
+                .buildValidatorFactory();
+
+        this.validator = factory.getValidator();
     }
 
     private Map<String, String> generateMapModel(Set<ConstraintViolation<BaseViewModel>> errors) {

@@ -16,13 +16,11 @@
 
     <context:property-placeholder location="classpath:application.properties" />
 
-    <util:properties id="messages" location="classpath:message.properties" />
+    <util:properties id="messages" location="classpath:messages.properties" />
 
     <bean id="auditListener" class="com.rbs.www.common.listeners.AuditListener" />
 
     <bean id="autowireHelper" class="com.rbs.www.common.util.AutowireHelper"/>
-
-    <bean id="fileValidator" class="com.rbs.www.common.validator.FileValidator" />
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
