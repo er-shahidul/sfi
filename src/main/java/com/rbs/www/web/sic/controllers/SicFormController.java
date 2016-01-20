@@ -98,6 +98,7 @@ public class SicFormController{
         populateFormContent(model, sicFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
+        model.addAttribute("isAdmin", false);
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/web/sic/index";
@@ -119,6 +120,7 @@ public class SicFormController{
         populateFormContent(model, sicFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
+        model.addAttribute("isAdmin", false);
 
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
         return "/web/sic/index";
@@ -137,6 +139,7 @@ public class SicFormController{
         populateFormContent(model, sicFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
+        model.addAttribute("isAdmin", true);
 
         return "web/sic/index";
     }
@@ -147,6 +150,7 @@ public class SicFormController{
         populateFormContent(model, sicFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "view");
+        model.addAttribute("isAdmin", true);
 
         String print = url.getQueryString();
         if(Objects.equals(print, "print")){

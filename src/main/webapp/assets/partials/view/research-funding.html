@@ -16,7 +16,7 @@
                 <table class="table table-striped vert-align-middle">
                     <thead>
                     <tr>
-                        <th>Research Funding Category</th>
+                        <th width="500px;">Research Funding Category</th>
                         <th ng-class="{'disabled' : !operateInUsa()}">
                         <span tooltip data-title="forest-related research within your organization (internal)" data-placement="top">
                             Internal USD
@@ -47,42 +47,50 @@
 
                         <td align="right" ng-class="{'has-error' : innerForm.otherText.$invalid}">
 
-                            <input type="checkbox" disabled name="otherEnable" class="icheck" icheck
+                            <input type="checkbox" disabled   name="otherEnable" class="icheck" icheck
                                    ng-if="item.id == 13"
                                    ng-model="cs5.isOtherEnabled"
                                     />
 
                             {{ item.description }}
-                            <input type="text" readonly  class="form-control   shorter" name="otherText"
+                            <input type="text" readonly  class="form-control" name="otherText"
                                    ng-show="cs5.isOtherEnabled" ng-model="cs5.other"
-                                   ng-required="item.isOtherEnabled" customerror
+                                   ng-required="item.isOtherEnabled"
                                    ng-if="item.id == 13"
                                    customerror />
                         </td>
 
 
 
-                        <td ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
-                            <input type="number" readonly  class="form-control   shorter" min="0" name="internalUsd"
-                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                        <td ng-class="{'has-error' : innerForm.internalUsd.$invalid}" style="vertical-align:top;">
+                            <input type="number" readonly  class="form-control" min="0" name="internalUsd"
+                                   ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   ng-maxlength="13" customerror
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror
                                    ng-model="item.internalUsd" ng-disabled="!operateInUsa()"/>
                         </td>
 
-                        <td ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
-                            <input type="number" readonly  class="form-control   shorter" name="externalUsd"
-                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                        <td ng-class="{'has-error' : innerForm.externalUsd.$invalid}" style="vertical-align:top;">
+                            <input type="number" readonly  class="form-control" name="externalUsd"
+                                   ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   ng-maxlength="13" customerror
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror
                                    ng-model="item.externalUsd" ng-disabled="!operateInUsa()">
                         </td>
 
-                        <td ng-class="{'has-error' : innerForm.internalCad.$invalid}">
-                            <input type="number" readonly  class="form-control   shorter" name="internalCad"
-                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                        <td ng-class="{'has-error' : innerForm.internalCad.$invalid}" style="vertical-align:top;">
+                            <input type="number" readonly  class="form-control" name="internalCad"
+                                   ng-maxlength="13" customerror
+                                   ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror
                                    ng-model="item.internalCad" ng-disabled="!operateInCa()">
                         </td>
 
-                        <td ng-class="{'has-error' : innerForm.externalCad.$invalid}">
-                            <input type="number" readonly  class="form-control   shorter" name="externalCad"
-                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                        <td ng-class="{'has-error' : innerForm.externalCad.$invalid}" style="vertical-align:top;">
+                            <input type="number" readonly  class="form-control" name="externalCad"
+                                   ng-maxlength="13" customerror
+                                   ng-pattern="/^\d*(\.\d{1,2})?$/"
+                                   pattern-msg="Enter decimal number up to 2 precision points" customerror
                                    ng-model="item.externalCad" ng-disabled="!operateInCa()">
                         </td>
 
@@ -203,15 +211,35 @@
                 <div class="form-group hasRadioBoxes" >
 
                     <div>
-                        <input type="radio" disabled  name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == true" ng-model="cs5.isInPartnership" value=true icheck/>
+                        <input type="radio" disabled   name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == true" ng-model="cs5.isInPartnership" value=true icheck/>
                         <label class="checkboxLabel">Yes</label>
                         &nbsp;&nbsp;&nbsp;
-                        <input type="radio" disabled  name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == false" ng-model="cs5.isInPartnership" value=false icheck/>
+                        <input type="radio" disabled   name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == false" ng-model="cs5.isInPartnership" value=false icheck/>
                         <label class="checkboxLabel">No</label>
                     </div>
                 </div>
 
-                <div class="cs3-project" ng-show="cs5.isInPartnership" ng-repeat="project in getProjects()">
+                <table class="table table-striped" ng-show="cs5.isInPartnership == true && getProjects().length">
+                    <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Project Objective</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="project in getProjects()">
+                        <td>{{ project.projectNm }}</td>
+                        <td>{{ project.projectObj }}</td>
+                        <td><a href="" ng-click="editProject($index)">Edit</a></td>
+                        <td><a href="" ng-click="deleteProject($index)">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <div class="cs3-project" ng-show="cs5.isInPartnership">
                     <form name="innerFrom"  novalidate>
 
                         <div class="form-group"
@@ -473,12 +501,12 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="checkbox" disabled name="incResFunding" icheck ng-model="project.incResFunding"/>
+                            <input type="checkbox" disabled   name="incResFunding" icheck ng-model="project.incResFunding"/>
                             <label style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements.</label>
                         </div>
 
                         <div class="form-group">
-                            <input type="checkbox" disabled name="incSFIConservation" icheck ng-model="project.incSFIConservation"/>
+                            <input type="checkbox" disabled   name="incSFIConservation" icheck ng-model="project.incSFIConservation"/>
                             <label style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if this project is part of a 2015 SFI Conservation or Community Grant.</label>
                         </div>
 
@@ -488,17 +516,17 @@
                                 the areas of conservation and community engagement?</label><br/>
 
                             <div>
-                                <input type="radio" disabled  name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>
+                                <input type="radio" disabled   name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>
                                 <label class="radioLabel">Share – with our organization’s name</label>
                             </div>
 
                             <div>
-                                <input type="radio" disabled  name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />
+                                <input type="radio" disabled   name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />
                                 <label class="radioLabel">Share – don’t use our organization’s name</label>
                             </div>
 
                             <div>
-                                <input type="radio" disabled  name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>
+                                <input type="radio" disabled   name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>
                                 <label class="radioLabel">Please don’t share</label>
                             </div>
 
@@ -527,17 +555,19 @@
                     <tbody>
 
                     <tr>
-                        <td tooltip data-html="true" data-placement="top" data-container="body"
+                        <td tooltip data-html="true" data-placement="top" data-container="body" width="500px"
                             data-title="Include all funding your organization provided last year to SFI Implementation Committees and others for logger training and education and all other SFI program implementation activities at the state or provincial level.">
-                            Funding provided last year for SFI program implementation committee activities at the state or provincial level<br/>
-                            (Support for US SICs in $US. Support for Canadian SICs in $CA.)
+                            Funding provided last year for SFI program implementation committee activities at the<br/>
+                            state or provincial level (Support for US SICs in $US. Support for Canadian<br/> SICs in $CA.)
                         </td>
-                        <td>
-                            <input  type="number" readonly   class="form-control  shorter "
+                        <td style="vertical-align:top">
+                            <input  type="number" readonly   class="form-control"
+                                    ng-maxlength="13" customerror
                                     ng-model="cs5.fundSFIActivStateProviUs" ng-class="{'disabled' : !operateInUsa()}" >
                         </td>
-                        <td>
-                            <input type="number" readonly  class="form-control  shorter numberBox"
+                        <td style="vertical-align:top">
+                            <input type="number" readonly  class="form-control"
+                                   ng-maxlength="13" customerror
                                    ng-model="cs5.fundSFIActivStateProviCa" ng-disabled="!operateInCa()" >
                         </td>
                     </tr>
@@ -553,7 +583,10 @@
 
 
     </form>
-
+    <div class="col-sm-6 col-sm-offset-4">
+        <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+        <button type="button" class="btn btn-success" ng-click="save(true)">Save and Go to Step 6</button>
+    </div>
 </div>
 <div class="col-sm-offset-1 col-sm-4">
 

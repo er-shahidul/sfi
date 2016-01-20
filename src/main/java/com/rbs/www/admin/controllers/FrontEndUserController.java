@@ -65,7 +65,7 @@ public class FrontEndUserController {
             return "redirect:/user/profile";
         }
         userService.updateName(user);
-
+        model.addAttribute("company", user.getCompany());
         model.addAttribute("success", "User " + "" + " updated successfully");
 
         return ("redirect:/user/profile");
@@ -88,7 +88,7 @@ public class FrontEndUserController {
             return "redirect:/user/profile";
         }
         userService.updatePassword(user);
-
+        model.addAttribute("company", user.getCompany());
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/user/profile");
     }
@@ -102,7 +102,7 @@ public class FrontEndUserController {
             return "redirect:/user/profile";
         }
         userService.updateEmail(user);
-
+        model.addAttribute("company", user.getCompany());
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/logout");
     }
