@@ -82,7 +82,7 @@ public class MailHelper
                         "</tr>\n" +
 
                         "<tr>\n" +
-                        "<td colspan=\"3\" style=\"border-bottom: 1px solid #009900;\">\n" +
+                        "<td colspan=\"3\" style=\"border-bottom: 1px solid #009900;border-top: 1px solid #009900;text-align:right;\">\n" +
                         "<img src=\"" + imagePath + "\" alt=\"\" style=\"border: none;\" />\n" +
                         "</td>\n" +
                         "</tr>\n" +
@@ -146,7 +146,7 @@ public class MailHelper
                         "</tr>\n" +
 
                         "<tr>\n" +
-                        "<td colspan=\"3\" style=\"border-bottom: 1px solid #009900;\">\n" +
+                        "<td colspan=\"3\" style=\"border-bottom: 1px solid #009900;border-top: 1px solid #009900;text-align:right;\">\n" +
                         "<img src=\"" + imagePath + "\" alt=\"\" style=\"border: none;\" />\n" +
                         "</td>\n" +
                         "</tr>\n" +
