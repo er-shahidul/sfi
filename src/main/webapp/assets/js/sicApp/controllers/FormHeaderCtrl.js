@@ -37,10 +37,10 @@ sfiSicApp
             return window.print();
         }
 
-        //var url = Routing.generate("sfi_form_view", angular.extend({},
-        //urlData, {print: true}), true) + '#' + $location.$$path;
+        var url = urlData.isAdmin ?
+            "/admin/company/sic/form/view/" + formData.id + "?print#" + $location.$$path :
+            "/sicForm/view?print#" + $location.$$path;
 
-        var url = "/sicForm/view?print" + '#' + $location.$$path;
         var win = window.open(url, '_blank');
 
         win.focus();
@@ -64,10 +64,10 @@ sfiSicApp
         }
 
 
-        //var url = Routing.generate("sfi_form_view", angular.extend({},
-        //urlData, {print: true}), true) + '#print-all'; // + $location.$$path;
+        var url = urlData.isAdmin ?
+            "/admin/company/sic/form/view/" + formData.id + "?print#print-all" :
+            "/sicForm/view?print#print-all" ;
 
-        var url = "/sicForm/view?print" + '#print-all';
         var win = window.open(url, '_blank');
         win.focus();
     }
