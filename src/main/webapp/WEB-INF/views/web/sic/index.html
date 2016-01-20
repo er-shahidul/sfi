@@ -178,6 +178,7 @@
         };
 
         var mode      = [[${mode}]];
+        var isAdmin   = [[${isAdmin}]];
         var company   = [[${company}]];
         var countries = [[${countries}]];
         var regions   = [[${regions}]];
@@ -206,7 +207,13 @@
 
     // <![CDATA[
 
-        var urlData = {companyId : company.id};
+        var urlData = {
+            companyId : company.id,
+            isAdmin   : isAdmin
+        };
+
+
+
         sfiSicApp.run(function($rootScope) {
             $rootScope.mode     = mode;
             $rootScope.company  = company;

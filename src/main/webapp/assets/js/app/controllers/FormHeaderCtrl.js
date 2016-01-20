@@ -36,12 +36,12 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
             return window.print();
         }
 
-        //var url = Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#' + $location.$$path;
 
-        var url = "/sfiPpForm/view?print" + '#' + $location.$$path;
+        var url = urlData.isAdmin ?
+            "/admin/company/pp/form/view/" + formData.id + "?print#" + $location.$$path :
+            "/sfiPpForm/view?print#" + $location.$$path;
+
         var win = window.open(url, '_blank');
-
-
         win.focus();
     }
 
@@ -62,10 +62,10 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
             return;
         }
 
+        var url = urlData.isAdmin ?
+            "/admin/company/pp/form/view/" + formData.id + "?print#print-all" :
+            "/sfiPpForm/view?print#print-all" ;
 
-//        var url = Routing.generate("sfi_form_view", angular.extend({}, urlData, {print: true}), true) + '#print-all'; // + $location.$$path;
-
-        var url = "/sfiPpForm/view?print" + '#print-all';
         var win = window.open(url, '_blank');
         win.focus();
     }

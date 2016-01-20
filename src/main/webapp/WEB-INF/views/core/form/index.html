@@ -253,7 +253,8 @@
 
         };
 
-        var isPrint     = [[${print}]];
+        var isPrint   = [[${print}]];
+        var isAdmin   = [[${isAdmin}]];
         var mode      = [[${mode}]];
         var company   = [[${company}]];
         var countries = [[${countries}]];
@@ -282,7 +283,11 @@
 
     // <![CDATA[
 
-        var urlData = {companyId : company.id};
+        var urlData = {
+            companyId : company.id,
+            isAdmin   : isAdmin
+        };
+
         sfiFormApp.run(function($rootScope) {
             $rootScope.mode     = mode;
             $rootScope.company  = company;
