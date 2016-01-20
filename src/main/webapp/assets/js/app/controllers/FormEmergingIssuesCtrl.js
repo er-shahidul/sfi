@@ -15,8 +15,6 @@ sfiFormApp.controller('FormEmergingIssuesCtrl',
 
     $scope.user = [];
 
-
-
     $scope.setForms = function(){
         $rootScope.$form = $scope.cs7Form;
     }
@@ -32,10 +30,8 @@ sfiFormApp.controller('FormEmergingIssuesCtrl',
                     if(response.data){
 
                         $scope.cs7Form.$setPristine();
-
-                        //$rootScope.form = response.data;
-                        //$scope.cs7 = angular.copy($rootScope.form.cs7);
-                        //$scope.errors = $scope.cs7.errors;
+                        $rootScope.form.cs7 = response.data;
+                        $scope.cs7 = angular.copy($rootScope.form.cs7);
                         Message.success('Section successfully saved', '.msg-cont');
                     }
 

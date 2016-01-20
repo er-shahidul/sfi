@@ -75,8 +75,6 @@ public class SicFormController{
         model.addAttribute("createdAt", "[ "+ Util.getDateFormat(sicFormData.getCreatedAt()) + " ]");
         model.addAttribute("updateAt", "[ "+ Util.getDateFormat(sicFormData.getUpdatedAt()) + " ]");
         model.addAttribute("company", sicFormData.getCompany());
-        model.addAttribute("createdBy", sicFormData.getCreatedBy());
-        model.addAttribute("updateBy", sicFormData.getUpdatedBy());
         model.addAttribute("status", sicFormData.getStatus());
 
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
@@ -170,6 +168,8 @@ public class SicFormController{
     public String userSicForm(ModelMap model) {
         model.addAttribute("title", "sic");
         model.addAttribute("sicPpForms", sicFormDataService.createOrGetByCurrentUsersCompany());
+        SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
+        model.addAttribute("company", sicFormData.getCompany());
 
         return "admin/form/admin_form_sic";
     }

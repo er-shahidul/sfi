@@ -1,4 +1,3 @@
-var cs5;
 sfiFormApp
     .controller('FormResFundingCtrl',
         ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects',
@@ -7,10 +6,9 @@ sfiFormApp
         $scope.validate = false;
         $scope.isDataDirty = false;
         $scope.standardObjects = standardObjects;
-        console.log($scope.standardObjects);
+
         $scope.cs5 = angular.copy($rootScope.form.cs5);
         $scope.cs5.isOtherEnabled = ($scope.cs5.other) ? true: false;
-
 
         $scope.academicOptions = [
             "Auburn University",
@@ -117,52 +115,6 @@ sfiFormApp
             "Society of American Foresters",
             "Sustainable Forestry Initiative Inc"
         ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        cs5 = $scope;
 
         $scope.init = function(){
 
@@ -327,8 +279,6 @@ sfiFormApp
 
         }
 
-
-
         $scope.init();
         $scope.resetProject();
 
@@ -337,48 +287,48 @@ sfiFormApp
             $rootScope.$form = $scope.cs5Form;
         }
 
-
         $scope.save = function(go){
 
 
-        if($scope.cs5Form.$invalid){
-            return false;
-        }
-
-        if($scope.cs5.isInPartnership == true){
-
-            if ($scope.isDirty()){
-
-                //if($scope.innerFrom.$invalid){
-                //    return false;
-                //}
-
-                $scope.addProject();
+            if($scope.cs5Form.$invalid){
+                return false;
             }
+
+            if($scope.cs5.isInPartnership == true){
+
+                if ($scope.isDirty()){
+
+                    //if($scope.innerFrom.$invalid){
+                    //    return false;
+                    //}
+
+                    $scope.addProject();
+                }
+            }
+
+
+            $http
+                .put("/form/cs5", $scope.cs5)
+                .then(function(response){
+
+                    if(response.data){
+
+                        $scope.cs5Form.$setPristine();
+                        $scope.isDataDirty  = false;
+                        $rootScope.form.cs5 = response.data;
+                        $scope.cs5 = angular.copy($rootScope.form.cs5);
+                        Message.success('Section successfully saved', '.msg-cont');
+
+                        $scope.init();
+                        $scope.resetProject();
+                    }
+
+                    if(go){
+                        $rootScope.goStep("cs7")
+                    }
+
+                });
         }
-
-
-        $http
-            .put("/form/cs5", $scope.cs5)
-            .then(function(response){
-
-                if(response.data){
-
-                    $scope.cs5Form.$setPristine();
-                    $scope.isDataDirty = false;
-
-                    //$rootScope.form = response.data;
-                    //$scope.cs5 = angular.copy($rootScope.form.cs5);
-                    //$scope.errors = $scope.cs5.errors;
-                    Message.success('Section successfully saved', '.msg-cont');
-                }
-
-                if(go){
-                    $rootScope.goStep("cs7")
-                }
-
-            });
-    }
 
 
         $scope.myFiles = [];

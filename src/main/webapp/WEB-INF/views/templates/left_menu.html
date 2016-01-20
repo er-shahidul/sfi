@@ -18,17 +18,23 @@
     </li>
         <ul id="sfi_sic">
             <li style="margin-left: 20px;" th:class="(${title} == sfi) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
-                <a href="list.html" th:href="@{/admin/form/pp}">Program Participant</a>
+
+                    <a href="list.html" th:href="@{/admin/form/pp}">Program Participant</a>
+
             </li>
             <li style="margin-left: 20px;" th:class="(${title} == sic) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
                 <a href="list.html" th:href="@{/admin/form/sic}">SIC</a>
             </li>
-            <li style="margin-left: 20px;" th:class="(${title} == sfi) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_USER')">
-                <a href="list.html" th:href="@{/user/form/pp}">Program Participant</a>
-            </li>
-            <li style="margin-left: 20px;" th:class="(${title} == sic) ? 'selected' : ''" sec:authorize="hasAnyRole('ROLE_USER')">
-                <a href="list.html" th:href="@{/user/form/sic}">SIC</a>
-            </li>
+            <span th:class="(${company.getSfi()} == true) ? '' : 'hidden'" sec:authorize="hasAnyRole('ROLE_USER')">
+                <li style="margin-left: 20px;" th:class="(${title} == sfi) ? 'selected' : ''">
+                    <a href="list.html" th:href="@{/user/form/pp}">Program Participant</a>
+                </li>
+            </span>
+            <span th:class="(${company.getSci()} == true) ? '' : 'hidden'" sec:authorize="hasAnyRole('ROLE_USER')">
+                <li style="margin-left: 20px;" th:class="(${title} == sic) ? 'selected' : ''" >
+                    <a href="list.html" th:href="@{/user/form/sic}">SIC</a>
+                </li>
+            </span>
         </ul>
     <li th:class="(${title} == company_setting) ? 'selected' : ''" sec:authorize="hasRole('ROLE_USER')">
         <a href="list.html" th:href="@{/user/company/setting}">Company Settings</a>

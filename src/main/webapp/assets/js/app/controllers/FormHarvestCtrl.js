@@ -3,9 +3,7 @@ sfiFormApp
         ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message',
             function ($rootScope , $scope, $state, $http, Countries, _, Message){
 
-
         $scope.cs4 = angular.copy($rootScope.form.cs4);
-
 
         $scope.showExplCheckboxs = function(country){
 
@@ -37,7 +35,6 @@ sfiFormApp
             return total.toFixed(4);
         }
 
-
         $scope.hasError = function(name){
 
             if($scope.cs4Form && $scope.cs4Form[name]){
@@ -46,7 +43,6 @@ sfiFormApp
 
             return false;
         }
-
 
         $scope.save = function(go){
 
@@ -63,11 +59,8 @@ sfiFormApp
                     if(response.data){
 
                         $scope.cs4Form.$setPristine();
-
-                        //$rootScope.form = response.data;
-                        //$scope.cs4 = angular.copy($rootScope.form.cs4);
-                        //$scope.errors = $scope.cs4.errors;
-
+                        $rootScope.form.cs4 = response.data;
+                        $scope.cs4 = angular.copy($rootScope.form.cs4);
                         Message.success('Section successfully saved', '.msg-cont', true);
                     }
 

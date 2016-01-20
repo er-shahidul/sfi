@@ -30,11 +30,8 @@ sfiFormApp
                 if(response.data){
 
                     $scope.cs10Form.$setPristine();
-                    //$rootScope.form = response.data;
-                    //$scope.cs10 = angular.copy($rootScope.form.cs10);
-                    //$scope.errors = $scope.cs10.errors;
-
-
+                    $rootScope.form.cs10 = response.data;
+                    $scope.cs10 = angular.copy($rootScope.form.cs10);
                     Message.success('Section successfully saved', '.msg-cont');
                 }
             });

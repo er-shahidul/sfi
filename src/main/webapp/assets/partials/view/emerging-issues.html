@@ -158,13 +158,15 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6" ng-show="cs7.investResIfInve">
+                        <div class="col-sm-6" ng-show="cs7.investResIfInve" style="margin-top:15px;">
                             <br>
-                            <div class="group3">
-                                <p>% of your current supply into US and Canadian mills from forest tree biotechnology</p>
-                                <input type="number" readonly   class="form-control shortest" max="100" min="0"
-                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                                       ng-model="cs7.investResperc_currSupply"> %
+                            <div class="group2">
+                                <p>Anticipated year research will begin</p>
+                                <select readonly   class="form-control" name="select" ng-model="cs7.planInvestRes_year">
+                                    <option value="0" ng-selected="!cs7.planInvestRes_year">Select Year</option>
+                                    <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
+                                            ng-value="{{year}}">{{year}}</option>
+                                </select>
                             </div>
                         </div>
                     </td>
@@ -207,14 +209,13 @@
                         </div>
                         <div class="col-sm-6" ng-show="cs7.planInvestResIfPlan">
                             <br><br>
-                            <div class="group2">
-                                <p>Anticipated year research will begin</p>
-                                <select readonly   class="form-control" name="select" ng-model="cs7.planInvestRes_year">
-                                    <option value="0" ng-selected="!cs7.planInvestRes_year">Select Year</option>
-                                    <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
-                                            ng-value="{{year}}">{{year}}</option>
-                                </select>
+                            <div class="group3" style="margin-top:-18px;">
+                                <p>% of your current supply into US and Canadian mills from forest tree biotechnology</p>
+                                <input type="number" readonly   class="form-control shortest" max="100" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs7.investResperc_currSupply"> %
                             </div>
+
                         </div>
                     </td>
                 </tr>
