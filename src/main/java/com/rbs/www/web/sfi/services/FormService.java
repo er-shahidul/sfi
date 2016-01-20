@@ -2,7 +2,9 @@ package com.rbs.www.web.sfi.services;
 
 import com.rbs.www.common.modules.mapper.EntityModelMapperService;
 import com.rbs.www.common.modules.mapper.ViewModelMapperService;
+import com.rbs.www.web.common.models.viewmodels.UpdateAtViewModel;
 import com.rbs.www.web.common.services.ModelValidationService;
+import com.rbs.www.web.common.services.UpdateAtViewModelService;
 import com.rbs.www.web.sfi.models.entities.*;
 import com.rbs.www.web.sfi.models.viewmodels.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +73,9 @@ public class FormService {
 
     @Autowired
     private ModelValidationService modelValidationService;
+
+    @Autowired
+    private UpdateAtViewModelService updateAtViewModelService;
 
 
     /************************* Cs1 : Begin ***********************/
@@ -268,4 +273,19 @@ public class FormService {
         return model;
     }
     /************************ ErrorViewModel : End ***********************/
+
+    /************************* UpdateAtViewModel : Begin ***********************/
+    public UpdateAtViewModel getUpdateAtViewModel(Integer id) {
+        UpdateAtViewModel model = new UpdateAtViewModel();
+
+//        model.setUpdatedAt(updateAtViewModelService.getUpdatedAt(getSfiPpFormDataViewModel(id)));
+
+        return model;
+    }
+
+    public SfiPpFormData getSfiPpFormDataViewModel(Integer id) {
+        SfiPpFormData entity = sfiPpFormDataService.get(id);
+        return viewModelMapperService.convert(entity, SfiPpFormData.class);
+    }
+    /************************ UpdateAtViewModel : End ***********************/
 }
