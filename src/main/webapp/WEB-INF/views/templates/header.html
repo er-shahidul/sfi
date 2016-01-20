@@ -15,15 +15,33 @@
             </li>
 
             <li sec:authorize="hasRole('USER')">
-                <a th:href="@{/user/profile}" class="tab">
+                <a data-toggle="dropdown" data-hover="dropdown"  data-close-others="true" class="tab">
                     Survey
                 </a>
+                <ul class="dropdown-menu" style="position: absolute;">
+                    <li th:class="(${company.getSfi()} == true) ? '' : 'hidden'">
+                        <a href="list.html" th:href="@{/sfiPpForm}"><i class="fa fa-user"></i>Program Participant</a>
+                    </li>
+                     <li th:class="(${company.getSci()} == true) ? '' : 'hidden'">
+                         <a href="list.html" th:href="@{/sicForm}"><i class="fa fa-cogs"></i>SIC</a>
+                     </li>
+                </ul>
             </li>
+
             <li sec:authorize="hasAnyRole('ADMIN', 'GENERAL')">
-                <a th:href="@{/admin/user/profile}" class="tab">
+                <a data-toggle="dropdown" data-hover="dropdown"  data-close-others="true" class="tab">
                     Survey
                 </a>
+                <ul class="dropdown-menu" style="position: absolute;">
+                    <li>
+                        <a href="list.html" th:href="@{/admin/form/pp}"><i class="fa fa-user"></i>Program Participant</a>
+                    </li>
+                    <li>
+                        <a href="list.html" th:href="@{/admin/form/sic}"><i class="fa fa-cogs"></i>SIC</a>
+                    </li>
+                </ul>
             </li>
+
 
         </ul>
 

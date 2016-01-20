@@ -54,7 +54,6 @@ public class UserController {
     public String homePage(ModelMap model) {
         model.addAttribute("title", "home");
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
-
         return "admin/user/dashboard";
     }
 
@@ -339,6 +338,7 @@ public class UserController {
         UserViewModel user = userService.getViewModelById(id);
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
+        model.addAttribute("company", user.getCompany());
 
         return "common/password";
     }
@@ -353,6 +353,7 @@ public class UserController {
         model.addAttribute("password", password);
         model.addAttribute("userName", userName);
         model.addAttribute("user", user);
+        model.addAttribute("company", user.getCompany());
         userService.updatePassword(user);
 
         return "common/login";
@@ -363,6 +364,7 @@ public class UserController {
         model.addAttribute("title", "user");
         User user = userService.findByID(id);
         model.addAttribute("user", user);
+        model.addAttribute("company", user.getCompany());
 
         return "common/password";
     }
@@ -376,6 +378,7 @@ public class UserController {
         }
         model.addAttribute("password", password);
         model.addAttribute("userName", userName);
+        model.addAttribute("company", user.getCompany());
         userService.updatePassword(user);
         userService.verificationToken(user);
 

@@ -1068,5 +1068,14 @@ text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 
 
 .dropdown-menu li a {
-    color: #000000;
+    color: #ffffff;
+}
+.dropdown-menu {
+	background-color: #2C4E11;
+}
+.dropdown-menu li a:hover
+{
+	color: #777;
+	background-color: #86B253;
+	outline: 0;
 }
