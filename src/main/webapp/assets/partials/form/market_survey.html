@@ -347,7 +347,8 @@
                             </p>
                             <label class="form-inline">
                                 SFI primary producers
-                                <select class="form-control" name="producerSource" ng-model="producer.source"
+                                <select class="form-control" name="producerSource"
+                                        ng-model="producer.source"
                                         ng-options="idx*1 as item for (idx, item) in producers">
                                     <option ng-selected="!producer.source">Select</option>
                                 </select>
