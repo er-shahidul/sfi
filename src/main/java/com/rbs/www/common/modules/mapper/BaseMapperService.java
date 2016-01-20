@@ -1,4 +1,4 @@
-package com.rbs.www.common.mapper;
+package com.rbs.www.common.modules.mapper;
 
 import com.rbs.www.common.models.IModel;
 import com.rbs.www.common.services.ReflectionHelperService;

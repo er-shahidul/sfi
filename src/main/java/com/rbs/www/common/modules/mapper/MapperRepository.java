@@ -1,4 +1,4 @@
-package com.rbs.www.common.mapper;
+package com.rbs.www.common.modules.mapper;
 
 import com.rbs.www.common.repositories.BaseRepository;
 import org.springframework.stereotype.Repository;

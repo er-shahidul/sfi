@@ -1,4 +1,4 @@
-package com.rbs.www.common.mapper;
+package com.rbs.www.common.modules.mapper;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import org.springframework.stereotype.Service;
