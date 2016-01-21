@@ -34,7 +34,7 @@
                     <div class="input-group input-large"
                          ng-file-select ng-model="uploadFile1"
                          ng-file-change="uploadFile(uploadFile1, guideFile)"
-                         ng-multiple="false"
+                         ng-multiple="true"
                          ng-accept="'image/*,application/pdf,.doc,.docx,.xls,.xlsx'">
 
                         <div class="form-control uneditable-input input-fixed input-medium">
@@ -47,7 +47,7 @@
                         </span>
 
                     </div>
-                    <p>Files can be one of the following formats: .doc, .docx, .pdf, .xls, .xlsx)</p>
+                    <p>Files can be one of the following formats: .doc, .docx, .pdf, .xls, .xlsx.</p>
 
                     <div class="text-right" ng-show="guideFile.originalDocumentName">
                         <a ng-click="guideFile = {}; " ng-show="guideFile.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
@@ -68,11 +68,11 @@
 
                 <p>Copy of organizational guidelines attached?</p>
 
-                <label><input name="orgDocAttached" ng-value="true"  ng-model="cs1.orgDocAttached" ng-checked="cs1.orgDocAttached" type="radio"> Yes</label>
-                <label><input name="orgDocAttached" ng-value="false" ng-model="cs1.orgDocAttached" ng-checked="!cs1.orgDocAttached" type="radio"> No</label>
+                <label><input name="orgDocAttached" ng-value="true"  ng-model="cs1.orgDocAttached" ng-checked="!cs1.orgDocAttached" type="radio"> Yes</label>
+                <label><input name="orgDocAttached" ng-value="false" ng-model="cs1.orgDocAttached"  type="radio"> No</label>
                 <br>
 
-                <div ng-show="cs1.orgDocAttached == true" style="padding-left: 50px; padding-top: 10px; display: inline-block">
+                <div ng-show="cs1.orgDocAttached == false" style="padding-left: 50px; padding-top: 10px; display: inline-block">
                     <label class="form-inline"> Please indicate why?
                         <textarea ng-model="cs1.orgDocAttachedWhy" class="form-control" rows="2" cols="38" style="vertical-align: top"></textarea>
                     </label>
@@ -161,7 +161,8 @@
                                 Industry SFI Program Participant
                             </div>
                             <div class="col-lg-5 " ng-class="{'has-error' : cs1Form.membersIndustrySFI.$invalid }">
-                                <input class="form-control" type="number"  customerror name="membersIndustrySFI" ng-model="cs1.membersIndustrySFI">
+                                <input class="form-control" type="number"  customerror name="membersIndustrySFI" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.membersIndustrySFI">
+
                             </div>
                         </td>
                     </tr>
@@ -171,7 +172,7 @@
                                 Government Agency SFI Program Participant
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersGovernmentAgency.$invalid }">
-                                <input class="form-control" type="number"  customerror name="membersGovernmentAgency" ng-model="cs1.membersGovernmentAgency">
+                                <input class="form-control" type="number"  customerror name="membersGovernmentAgency" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.membersGovernmentAgency">
                             </div>
                         </td>
                     </tr>
@@ -181,7 +182,7 @@
                                 University SFI Program Participant
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersUniversitySFI.$invalid }">
-                                <input class="form-control" type="number"  customerror name="membersUniversitySFI" ng-model="cs1.membersUniversitySFI">
+                                <input class="form-control" type="number"  customerror name="membersUniversitySFI" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.membersUniversitySFI">
                             </div>
                         </td>
                     </tr>
@@ -191,7 +192,7 @@
                                 Conservation SFI Program Participant
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersConservationSFI.$invalid }">
-                                <input class="form-control" type="number"  customerror name="membersConservationSFI" ng-model="cs1.membersConservationSFI">
+                                <input class="form-control" type="number"  customerror name="membersConservationSFI" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.membersConservationSFI">
                             </div>
                         </td>
                     </tr>
@@ -201,7 +202,7 @@
                                 SFI Applicant Organizations
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersSFIOrganization.$invalid }">
-                                <input class="form-control" type="number"  customerror name="membersSFIOrganization" ng-model="cs1.membersSFIOrganization">
+                                <input class="form-control" type="number"  customerror name="membersSFIOrganization" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.membersSFIOrganization">
                             </div>
                         </td>
                     </tr>
@@ -212,15 +213,19 @@
                                     Other SFI Program Participant
                                 </div>
                                 <div class="col-lg-5" ng-class="{'has-error' : cs1Form.membersOtherSFIParticipant.$invalid }">
-                                    <input class="form-control" type="number"  customerror name="membersOtherSFIParticipant" ng-model="cs1.membersOtherSFIParticipant">
+                                    <input class="form-control" type="number"  customerror name="membersOtherSFIParticipant" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.membersOtherSFIParticipant">
                                 </div>
                             </div>
                             <br>
-
-                            <div style="padding-left: 25px; padding-top: 10px;">
-                                <label class="form-inline" ng-class="{'has-error' : cs1Form.membersOtherSFISpecify.$invalid }">
-                                    Please Specify <input class="form-control" name="membersOtherSFISpecify" style="width: 425px; height: 30px;" type="text" ng-model="cs1.membersOtherSFISpecify">
+                            <div style="padding-left: 25px; padding-top: 20px;">
+                                <div class="col-lg-4">
+                                <label class="form-inline">
+                                    Please Specify
                                 </label>
+                                </div>
+                                <div class="col-lg-8">
+                                <input class="form-control pull-right" name="membersOtherSFISpecify" style="width: 450px; height: 30px;" type="text" ng-model="cs1.membersOtherSFISpecify">
+                                </div>
                             </div>
                         </td>
                     </tr>
@@ -228,13 +233,15 @@
 
             </div>
             <div class="col-lg-4">
-                <div class="tipbox">
-                    <p style="padding-top: 10px;">
-                        <b>Did You Know?</b><br>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Did You Know?</h3>
+                    </div>
+                    <div class="panel-body">
                         This unique grassroots network of close to 1,000 people includes private landowners, independent
                         loggers, forestry professionals, local government agencies, academics, scientists and
                         conservationists.
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -255,7 +262,7 @@
                                 Other local forest product sector company
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterOtherLocal.$invalid }">
-                                <input class="form-control" type="number"  customerror name="supporterOtherLocal" ng-model="cs1.supporterOtherLocal">
+                                <input class="form-control" type="number"  customerror name="supporterOtherLocal" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.supporterOtherLocal">
                             </div>
                         </td>
                     </tr>
@@ -265,7 +272,7 @@
                                 Government Agency
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterGovAgency.$invalid }">
-                                <input class="form-control" type="number"  customerror name="supporterGovAgency" ng-model="cs1.supporterGovAgency">
+                                <input class="form-control" type="number"  customerror name="supporterGovAgency" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.supporterGovAgency">
                             </div>
                         </td>
                     </tr>
@@ -275,7 +282,7 @@
                                 Conservation Organization
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterConservationOrg.$invalid }">
-                                <input class="form-control" type="number"  customerror name="supporterConservationOrg" ng-model="cs1.supporterConservationOrg">
+                                <input class="form-control" type="number"  customerror name="supporterConservationOrg" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.supporterConservationOrg">
                             </div>
                         </td>
                     </tr>
@@ -285,7 +292,7 @@
                                 Family Forest Owner
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterFamForestOwner.$invalid }">
-                                <input class="form-control" type="number"  customerror name="supporterFamForestOwner" ng-model="cs1.supporterFamForestOwner">
+                                <input class="form-control" type="number"  customerror name="supporterFamForestOwner" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.supporterFamForestOwner">
                             </div>
                         </td>
                     </tr>
@@ -295,7 +302,7 @@
                                 Logger
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterLogger.$invalid }">
-                                <input class="form-control" type="number"  customerror name="supporterLogger" ng-model="cs1.supporterLogger">
+                                <input class="form-control" type="number"  customerror name="supporterLogger" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.supporterLogger">
                             </div>
                         </td>
                     </tr>
@@ -305,7 +312,7 @@
                                 Consultant
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterConsultant.$invalid }">
-                                <input class="form-control" type="number"  customerror name="supporterConsultant" ng-model="cs1.supporterConsultant">
+                                <input class="form-control" type="number"  customerror name="supporterConsultant" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.supporterConsultant">
                             </div>
                         </td>
                     </tr>
@@ -315,7 +322,7 @@
                                 Forestry Association
                             </div>
                             <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterForestryAssoc.$invalid }">
-                                <input class="form-control" type="number"  customerror name="supporterForestryAssoc" ng-model="cs1.supporterForestryAssoc">
+                                <input class="form-control" type="number"  customerror name="supporterForestryAssoc" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.supporterForestryAssoc">
                             </div>
                         </td>
                     </tr>
@@ -326,16 +333,21 @@
                                     Other
                                 </div>
                                 <div class="col-lg-5" ng-class="{'has-error' : cs1Form.supporterOther.$invalid }">
-                                    <input class="form-control" type="number"  customerror name="supporterOther" ng-model="cs1.supporterOther">
+                                    <input class="form-control" type="number"  customerror name="supporterOther" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" ng-model="cs1.supporterOther">
                                 </div>
                             </div>
                             <br>
-
-                            <div style="padding-left: 25px; padding-top: 10px;">
-                                <label class="form-inline">
-                                    Please Specify <input class="form-control" style="width: 425px; height: 30px;" type="text" ng-model="cs1.supporterOtherSpecify">
-                                </label>
+                            <div style="padding-left: 25px; padding-top: 20px;">
+                                <div class="col-lg-4">
+                                    <label class="form-inline">
+                                        Please Specify
+                                    </label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input class="form-control pull-right" name="supporterOtherSpecify" style="width: 450px; height: 30px;" type="text" ng-model="cs1.supporterOtherSpecify">
+                                </div>
                             </div>
+
                         </td>
                     </tr>
                 </table>

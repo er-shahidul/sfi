@@ -28,7 +28,7 @@
                         </span>
                         <a ng-click="mechanismDoc = {}; " ng-show="mechanismDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                     </div>
-                    Files can be one of the following formats:(.doc,.docx,.pdf,.xls,.xlsx)
+                    Files can be one of the following formats:.doc,.docx,.pdf,.xls,.xlsx.
                 </div>
                 <div class="text-right" ng-show="mechanismDoc.originalDocumentName">
                     <input type="submit" class="btn default" value="Upload" ng-click="mechanismDoc = saveUploadedFile(mechanismDoc, cs5.mechanismDoc, true)">
@@ -72,23 +72,24 @@
                 <p>Describe how your SIC advertises or communicates the inconsistent practices process:</p>
                 <ul style="list-style: none">
                     <li class="col-lg-3">
-                        <input class="form-control" type="text" readonly  ng-model="cs5.advertisePublications"> Publications
+                        <input  type="checkbox" disabled ng-model="cs5.advertisePublications" name="advertisePublications"> Publications
                     </li>
                     <li class="col-lg-3">
-                        <input class="form-control" type="text" readonly  ng-model="cs5.advertiseWebsites">  Websites
+                        <input type="checkbox" disabled ng-model="cs5.advertiseWebsites" name="advertiseWebsites">  Websites
                     </li>
                     <li class="col-lg-3">
-                        <input class="form-control" type="text" readonly  ng-model="cs5.advertiseBillboards"> Billboards
+                        <input type="checkbox" disabled ng-model="cs5.advertiseBillboards" name="advertiseBillboards"> Billboards
                     </li>
                     <li class="col-lg-3">
-                        <input class="form-control" type="text" readonly  ng-model="cs5.advertiseOther">  Other
+                        <input type="checkbox" disabled ng-model="cs5.advertiseOther" name="advertiseOther">  Other
                         <br>
                         <br>
                         <span ng-show="cs5.advertiseOther">
                             <p>Please Specify:</p>
-                            <input class="form-control" type="text" readonly  ng-model="cs5.advertiseOtherSpecify">
+                            <input class="form-control" type="text" readonly ng-model="cs5.advertiseOtherSpecify">
                         </span>
                     </li>
+
                 </ul>
 
 
@@ -122,7 +123,7 @@
                         <div class="col-lg-6"><p style="padding-bottom: 8px;">Addressed & Unresolved</p></div>
                     </th>
                     <th><p>Number of SFI participants with <br/> More than One Inconsistent<br/> Practice</p></th>
-                    <th><p>Edit</p></th>
+                    <!--<th><p>Edit</p></th>-->
                     <th><p>Delete</p></th>
                 </tr>
                 </thead>
@@ -140,7 +141,7 @@
                         <td align="center">
                             {{ item.inconsistentPractice }}
                         </td>
-                        <th><p class="myButton"  >Edit</p></th>
+                        <!--<th><p class="myButton"  >Edit</p></th>-->
                         <th><p class="myButton"  >Delete</p></th>
 
                     </tr>
@@ -190,7 +191,7 @@
                             <div class="col-lg-6"><p style="padding-bottom: 8px;">Addressed & Unresolved</p></div>
                         </th>
                         <th><p>Number of SFI participants with <br/> More than One Inconsistent<br/> Practice</p></th>
-                        <th><p>Edit</p></th>
+                        <!--<th><p>Edit</p></th>-->
                         <th><p>Delete</p></th>
                     </tr>
                     </thead>
@@ -208,7 +209,7 @@
                         <td align="center">
                             {{ item.inconsistentPractice }}
                         </td>
-                        <th><p class="myButton"  >Edit</p></th>
+                        <!--<th><p class="myButton"  >Edit</p></th>-->
                         <th><p class="myButton"  >Delete</p></th>
 
                     </tr>
@@ -318,7 +319,7 @@
                                     </span>
                                     <a ng-click="standardDoc = {}; " ng-show="standardDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
-                                Files can be one of the following formats: .pdf, .doc, .xls)
+                                Files can be one of the following formats: .pdf, .doc, .xls.
                             </div>
                             <div class="text-right" ng-show="standardDoc.originalDocumentName">
                                 <input type="submit" class="btn default" value="Upload" ng-click="standardDoc = saveUploadedFile(standardDoc, standard2010.circumstancesDoc, true)">
