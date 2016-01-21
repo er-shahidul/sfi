@@ -305,7 +305,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/forgot/password", method = RequestMethod.POST)
-    public String forgotPassword(@RequestParam("email") String email, HttpServletRequest request) {
+    public String forgotPassword(@RequestParam("email") String email, HttpServletRequest request, ModelMap model) {
         User user = userService.findByUsername(email);
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
@@ -319,6 +319,9 @@ public class UserController {
             String mailType = "reset";
             sendEmail(email, subject, message, user, mailType, request.getLocalName());
         }
+
+        String forgotText = "A new password has been sent to the email address you provided. Once logged in you can change your password in your Profile.";
+        model.addAttribute("forgotText", forgotText);
 
         return "common/login";
     }

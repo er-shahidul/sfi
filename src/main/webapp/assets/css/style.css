@@ -1079,3 +1079,22 @@ text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 	background-color: #86B253;
 	outline: 0;
 }
+
+#u14 {
+	left: 490px;
+	top: 420px;
+	width: 290px;
+	height: 48px;
+	margin-bottom: 15px;
+}
+
+.ax_paragraph {
+	font-family: 'Arial Regular', 'Arial';
+	font-weight: 400;
+	font-style: normal;
+	font-size: 13px;
+	color: #333333;
+	text-align: left;
+	line-height: normal;
+}
+

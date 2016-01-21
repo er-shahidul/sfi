@@ -28,7 +28,9 @@
                         </div>
 
                         <div class="form-group">
-                            <a  th:href="@{'/user/forgot/password'}">Forgot password?</a>
+                            <u>
+                            <a th:href="@{'/user/forgot/password'}">Forgot password?</a>
+                            </u>
                             <button type="submit" class="btn btn-success">Login</button>
                         </div>
 
@@ -40,6 +42,11 @@
                         <div th:if="${param.logout != null}">
                             <div class="alert alert-success">
                                 <p>You have been logged out successfully.</p>
+                            </div>
+                        </div>
+                        <div id="u14" class="ax_paragraph">
+                            <div id="u15" class="text">
+                                <p><span th:text="${forgotText}"></span></p>
                             </div>
                         </div>
 
