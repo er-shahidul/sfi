@@ -1098,3 +1098,7 @@ text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 	line-height: normal;
 }
 
+.sfiStep2TableHeader .table>thead>tr>th {
+	vertical-align: top;
+}
+
