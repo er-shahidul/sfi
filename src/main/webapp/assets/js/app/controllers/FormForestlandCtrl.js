@@ -133,9 +133,20 @@ sfiFormApp
         show: false
     });
 
+    var lastYear2Modal = $modal({
+        scope: $scope,
+        template: '/assets/partials/form/last-year-2modal.html',
+        show: false
+    });
+
 
     $scope.lastYearPop = function(){
         lastYearModal.$promise.then(lastYearModal.show);
+        return false;
+    }
+
+    $scope.lastYear2Pop = function(){
+        lastYearModal.$promise.then(lastYear2Modal.show);
         return false;
     }
 
