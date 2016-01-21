@@ -51,12 +51,13 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr th:each="sfiPpForm, iterationStatus : ${sfiPpForms}">
-                                                    <td th:text="${sfiPpForm.company.name}"></td>
-                                                    <td th:text="${sfiPpForm.createdBy.username}"></td>
-                                                    <td th:text="${sfiPpForm.createdAt}"></td>
-                                                    <td th:text="${sfiPpForm.status.status}"></td>
-                                                    <td th:text="${sfiPpForm.updatedAt}"></td>
-                                                    <td sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
+
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" th:text="${sfiPpForm.company.name}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.createdBy.username}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.createdAt}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.status.status}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.updatedAt}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
                                                         <a th:href="@{'/admin/company/pp/form/view/' + ${sfiPpForm.id}}">
                                                             <button th:text="Open" style="width:47px;"></button>
                                                         </a>
@@ -64,7 +65,7 @@
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
-                                                    <td sec:authorize="hasAnyRole('ROLE_USER')">
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  sec:authorize="hasAnyRole('ROLE_USER')">
                                                         <a th:href="@{'/sfiPpForm/view'}">
                                                             <button th:text="Open" style="width:47px;"></button>
                                                         </a>
@@ -72,6 +73,7 @@
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
+
                                                 </tr>
                                                 </tbody>
                                             </table>
