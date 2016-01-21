@@ -13,7 +13,7 @@
             <div class="form-group"
                  ng-class="{'has-error has-feedback':  cs1Form.companyWebsite.$invalid}">
 
-                <label>Company website</label>
+                <label>Organization website (e.g. www.google.com)</label>
                 <input type="text" name="companyWebsite" class="form-control"
                        ng-model="cs1.companyWebsite" ng-maxlength="200"
                        ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
@@ -23,12 +23,14 @@
             <!-- Number of employees -->
             <div class="form-group">
 
-                <label>Number of employees</label>
+                <label>Number of employees (enter a number)</label>
 
                 <!-- v2 -->
                 <div class="form-horizontal">
                     <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.numberEmployeesUSA.$invalid}">
-                        <label class="col-sm-2 control-label">United States:</label>
+                        <div class="col-sm-3" style="padding-right: 0;line-height: 3;">
+                            <label class="control-label">United States:</label>
+                        </div>
                         <div class="col-sm-5">
                             <input type="number" class="form-control shorter" maxlength="200"
                                    name="numberEmployeesUSA" ng-model="cs1.numberEmployeesUSA">
@@ -37,7 +39,9 @@
 
                     <div>
                         <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.numberEmployeesCA.$invalid}">
-                            <label class="col-sm-2 control-label">Canada:</label>
+                            <div class="col-sm-3" style="padding-right: 0;line-height: 3;">
+                                <label class="control-label">Canada:</label>
+                            </div>
                             <div class="col-sm-5">
                                 <input type="number" class="form-control shorter" maxlength="200"
                                        name="numberEmployeesCA" ng-model="cs1.numberEmployeesCA">
@@ -46,7 +50,9 @@
                     </div>
                     <div>
                         <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.numberEmployeesOther.$invalid}">
-                            <label class="col-sm-2 control-label">Outside US/Canada:</label>
+                            <div class="col-sm-3" style="padding-right: 0;line-height: 3;">
+                                <label class="control-label">Outside US/Canada:</label>
+                            </div>
                             <div class="col-sm-5">
                                 <input type="number" class="form-control shorter" maxlength="200"
                                        name="numberEmployeesOther" ng-model="cs1.numberEmployeesOther">
@@ -59,7 +65,7 @@
 
             <!-- Company description -->
             <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.companyDesc.$invalid}">
-                <label>Company description</label>
+                <label>Short organization profile: (max. 650 words)</label>
                 <textarea class="form-control" name="companyDesc"
                           ng-model="cs1.companyDesc" ng-maxlength="4000" max-word-count="650" customerror
                           tooltip data-placement="right" data-container="body"
@@ -249,7 +255,7 @@
                 <h3 class="panel-title">About the Form</h3>
             </div>
             <div class="panel-body">
-                This 2014 survey addresses SFI 2010-2014 Program requirements for annual reporting on standard conformance. Questions outside standard requirement language will help SFI to promote the program and connect with program participants on relevant topics. All questions are for the calendar year 2014.
+                Thank you to all participants who submitted data last year! This year we are sharing key summary data points collected trhough this survey. Use the 'How we used your data last year' hyperlink to see additional data summaries.
             </div>
         </div>
         <div class="panel panel-success">
@@ -258,10 +264,9 @@
             </div>
             <div class="panel-body">
                 <ul>
-                    <li>Depending on your selections you may not have to fill out all sections of this form.  If an area is 'greyed out' don't fill it out.</li>
-                    <li>Click the form section titles to move to that section.</li>
-                    <li>The 'Save' button - saves are your selections throughout the entire form.</li>
-                    <li>The 'Submit' button - submits your form to SFI if nothing is missing.</li>
+                    <li>Use section titles to navigate through the survey</li>
+                    <li>Use the 'Save' button to save your data</li>
+                    <li>Use the 'Submit' button to submit your survey</li>
                 </ul>
             </div>
         </div>
