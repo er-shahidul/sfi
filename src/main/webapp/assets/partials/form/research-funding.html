@@ -16,7 +16,7 @@
                 <table class="table table-striped vert-align-middle">
                 <thead>
                 <tr>
-                    <th width="500px;">Research Funding Category</th>
+                    <th>Research Funding Category</th>
                     <th ng-class="{'disabled' : !operateInUsa()}">
                         <span tooltip data-title="forest-related research within your organization (internal)" data-placement="top">
                             Internal USD
@@ -53,44 +53,36 @@
                                 />
 
                         {{ item.description }}
-                        <input type="text" class="form-control" name="otherText"
+                        <input type="text" class="form-control   shorter" name="otherText"
                                ng-show="cs5.isOtherEnabled" ng-model="cs5.other"
-                               ng-required="item.isOtherEnabled"
+                               ng-required="item.isOtherEnabled" customerror
                                ng-if="item.id == 13"
                                customerror />
                     </td>
 
 
 
-                    <td ng-class="{'has-error' : innerForm.internalUsd.$invalid}" style="vertical-align:top;">
-                        <input type="number" class="form-control" min="0" name="internalUsd"
-                               ng-pattern="/^\d*(\.\d{1,2})?$/"
-                               ng-maxlength="13" customerror
-                               pattern-msg="Enter decimal number up to 2 precision points" customerror
+                    <td ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
+                        <input type="number" class="form-control   shorter" min="0" name="internalUsd"
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                ng-model="item.internalUsd" ng-disabled="!operateInUsa()"/>
                     </td>
 
-                    <td ng-class="{'has-error' : innerForm.externalUsd.$invalid}" style="vertical-align:top;">
-                        <input type="number" class="form-control" name="externalUsd"
-                               ng-pattern="/^\d*(\.\d{1,2})?$/"
-                               ng-maxlength="13" customerror
-                               pattern-msg="Enter decimal number up to 2 precision points" customerror
+                    <td ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
+                        <input type="number" class="form-control   shorter" name="externalUsd"
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                ng-model="item.externalUsd" ng-disabled="!operateInUsa()">
                     </td>
 
-                    <td ng-class="{'has-error' : innerForm.internalCad.$invalid}" style="vertical-align:top;">
-                        <input type="number" class="form-control" name="internalCad"
-                               ng-maxlength="13" customerror
-                               ng-pattern="/^\d*(\.\d{1,2})?$/"
-                               pattern-msg="Enter decimal number up to 2 precision points" customerror
+                    <td ng-class="{'has-error' : innerForm.internalCad.$invalid}">
+                        <input type="number" class="form-control   shorter" name="internalCad"
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                ng-model="item.internalCad" ng-disabled="!operateInCa()">
                     </td>
 
-                    <td ng-class="{'has-error' : innerForm.externalCad.$invalid}" style="vertical-align:top;">
-                        <input type="number" class="form-control" name="externalCad"
-                               ng-maxlength="13" customerror
-                               ng-pattern="/^\d*(\.\d{1,2})?$/"
-                               pattern-msg="Enter decimal number up to 2 precision points" customerror
+                    <td ng-class="{'has-error' : innerForm.externalCad.$invalid}">
+                        <input type="number" class="form-control   shorter" name="externalCad"
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                ng-model="item.externalCad" ng-disabled="!operateInCa()">
                     </td>
 
@@ -710,19 +702,17 @@
                     <tbody>
 
                     <tr>
-                        <td tooltip data-html="true" data-placement="top" data-container="body" width="500px"
+                        <td tooltip data-html="true" data-placement="top" data-container="body"
                             data-title="Include all funding your organization provided last year to SFI Implementation Committees and others for logger training and education and all other SFI program implementation activities at the state or provincial level.">
-                            Funding provided last year for SFI program implementation committee activities at the<br/>
-                            state or provincial level (Support for US SICs in $US. Support for Canadian<br/> SICs in $CA.)
+                            Funding provided last year for SFI program implementation committee activities at the state or provincial level<br/>
+                            (Support for US SICs in $US. Support for Canadian SICs in $CA.)
                         </td>
-                        <td style="vertical-align:top">
-                            <input  type="number"  class="form-control"
-                                    ng-maxlength="13" customerror
-                                    ng-model="cs5.fundSFIActivStateProviUs" ng-class="{'disabled' : !operateInUsa()}" >
+                        <td>
+                            <input  type="number"  class="form-control  shorter "
+                                   ng-model="cs5.fundSFIActivStateProviUs" ng-class="{'disabled' : !operateInUsa()}" >
                         </td>
-                        <td style="vertical-align:top">
-                            <input type="number" class="form-control"
-                                   ng-maxlength="13" customerror
+                        <td>
+                            <input type="number" class="form-control  shorter numberBox"
                                    ng-model="cs5.fundSFIActivStateProviCa" ng-disabled="!operateInCa()" >
                         </td>
                     </tr>

@@ -26,11 +26,39 @@ public class ModelValidationService {
         this.validator = factory.getValidator();
     }
 
+    private String getRealPropertyName(Path path) {
+        if (path == null) return "";
+
+        String reversedPropertyName =
+                new StringBuilder(path.toString()).reverse().toString();
+
+        StringBuilder realPropertyName = new StringBuilder("");
+        for (char ch : reversedPropertyName.toCharArray()) {
+            if (Character.isLetterOrDigit(ch) || ch == '_') realPropertyName.append(ch);
+            else break;
+        }
+
+        return realPropertyName.reverse().toString();
+    }
+
     private Map<String, String> generateMapModel(Set<ConstraintViolation<BaseViewModel>> errors) {
         Map<String, String> mapModel = new HashMap<String, String>();
 
         for (ConstraintViolation<BaseViewModel> error : errors) {
-            mapModel.put(error.getPropertyPath().toString(), error.getMessage());
+            String propertyNameFromAnnotation =
+                    (String) error.getConstraintDescriptor()
+                            .getAttributes()
+                            .get("property");
+
+            String propertyName =
+                    (propertyNameFromAnnotation == null || propertyNameFromAnnotation.isEmpty())
+                            ? getRealPropertyName(error.getPropertyPath())
+                            : propertyNameFromAnnotation;
+
+            BaseViewModel model = (BaseViewModel) error.getLeafBean();
+            if (model.getErrors() == null) model.setErrors(new HashMap<String, String>());
+
+            model.getErrors().put(propertyName, error.getMessage());
         }
 
         return mapModel;

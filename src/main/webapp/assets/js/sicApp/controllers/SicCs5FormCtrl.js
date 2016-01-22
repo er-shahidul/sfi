@@ -64,7 +64,7 @@ sfiSicApp
 
         $scope.deleteStandard = function(index, bucket){
 
-            if(confirm("Are you sure to delete this item ?")){
+            if(confirm("Are you sure you want to delete this entry?")){
                 $rootScope.deleteByIndex(index, bucket)
             }
         }

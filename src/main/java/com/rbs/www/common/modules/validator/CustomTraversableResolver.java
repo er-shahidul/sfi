@@ -8,6 +8,7 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.expression.spel.support.StandardTypeConverter;
 
 import javax.validation.Path;
+import java.lang.annotation.Annotation;
 import java.lang.annotation.ElementType;
 
 public class CustomTraversableResolver extends DefaultTraversableResolver {
@@ -21,13 +22,15 @@ public class CustomTraversableResolver extends DefaultTraversableResolver {
                                 Class<?> rootBeanType,
                                 Path pathToTraversableObject,
                                 ElementType elementType) {
+        CascadeIf cascadeAnnotation = ReflectionUtils.extractFieldLevelAnnotation(
+                rootBeanType, traversableProperty.toString(), CascadeIf.class
+        );
+
         return super.isCascadable(
                 traversableObject, traversableProperty, rootBeanType, pathToTraversableObject, elementType
-        ) && evaluate(
-                traversableObject, ReflectionUtils.extractFieldLevelAnnotation(
-                        rootBeanType, traversableProperty.toString(), CascadeIf.class
-                ).value()
-        );
+        ) && (cascadeAnnotation == null || evaluate(
+                traversableObject, cascadeAnnotation.value()
+        ));
     }
 
     private boolean evaluate(Object rootObject, String expressionString) {

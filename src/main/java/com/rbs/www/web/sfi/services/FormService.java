@@ -1,10 +1,10 @@
 package com.rbs.www.web.sfi.services;
 
+import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.mapper.EntityModelMapperService;
 import com.rbs.www.common.modules.mapper.ViewModelMapperService;
-import com.rbs.www.web.common.models.viewmodels.UpdateAtViewModel;
+import com.rbs.www.web.common.models.datamodels.UpdateDate;
 import com.rbs.www.web.common.services.ModelValidationService;
-import com.rbs.www.web.common.services.UpdateAtViewModelService;
 import com.rbs.www.web.sfi.models.entities.*;
 import com.rbs.www.web.sfi.models.viewmodels.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -74,14 +75,11 @@ public class FormService {
     @Autowired
     private ModelValidationService modelValidationService;
 
-    @Autowired
-    private UpdateAtViewModelService updateAtViewModelService;
-
 
     /************************* Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
         Cs1 entity = cs1Service.get(id);
-        return viewModelMapperService.convert(entity, Cs1ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, Cs1ViewModel.class));
     }
 
     public void setCs1Entity(Cs1ViewModel model) {
@@ -106,7 +104,7 @@ public class FormService {
     /************************* Cs3 : Begin ***********************/
     public Cs3ViewModel getCs3ViewModel(Integer id) {
         Cs3 entity = cs3Service.get(id);
-        return viewModelMapperService.convert(entity, Cs3ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, Cs3ViewModel.class));
     }
 
     public void setCs3Entity(Cs3ViewModel model) {
@@ -118,7 +116,7 @@ public class FormService {
     /************************* Cs4 : Begin ***********************/
     public Cs4ViewModel getCs4ViewModel(Integer id) {
         Cs4 entity = cs4Service.get(id);
-        return viewModelMapperService.convert(entity, Cs4ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, Cs4ViewModel.class));
     }
 
     public void setCs4Entity(Cs4ViewModel model) {
@@ -133,7 +131,7 @@ public class FormService {
         Cs5ViewModel model = viewModelMapperService.convert(entity, Cs5ViewModel.class);
         model.setItems(this.getSfiPpFormCs5ViewModels(id));
 
-        return model;
+        return this.validate(model);
     }
 
     public void setCs5Entity(Cs5ViewModel model) {
@@ -146,7 +144,7 @@ public class FormService {
     /************************* Cs6 : Begin ***********************/
     public Cs6ViewModel getCs6ViewModel(Integer id) {
         Cs6 entity = cs6Service.get(id);
-        return viewModelMapperService.convert(entity, Cs6ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, Cs6ViewModel.class));
     }
 
     public void setCs6Entity(Cs6ViewModel model) {
@@ -159,7 +157,7 @@ public class FormService {
     /************************* Cs7 : Begin ***********************/
     public Cs7ViewModel getCs7ViewModel(Integer id) {
         Cs7 entity = cs7Service.get(id);
-        return viewModelMapperService.convert(entity, Cs7ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, Cs7ViewModel.class));
     }
 
     public void setCs7Entity(Cs7ViewModel model) {
@@ -174,9 +172,12 @@ public class FormService {
         Cs8PartialB partialEntityB = cs8PartialBService.get(id);
         Cs8PartialC partialEntityC = cs8PartialCService.get(id);
 
-        Cs8PartialAViewModel partialAViewModel = viewModelMapperService.convert(partialEntityA, Cs8PartialAViewModel.class);
-        Cs8PartialBViewModel partialBViewModel = viewModelMapperService.convert(partialEntityB, Cs8PartialBViewModel.class);
-        Cs8PartialCViewModel partialCViewModel = viewModelMapperService.convert(partialEntityC, Cs8PartialCViewModel.class);
+        Cs8PartialAViewModel partialAViewModel =
+                this.validate(viewModelMapperService.convert(partialEntityA, Cs8PartialAViewModel.class));
+        Cs8PartialBViewModel partialBViewModel =
+                this.validate(viewModelMapperService.convert(partialEntityB, Cs8PartialBViewModel.class));
+        Cs8PartialCViewModel partialCViewModel =
+                this.validate(viewModelMapperService.convert(partialEntityC, Cs8PartialCViewModel.class));
 
         Cs8ViewModel model = new Cs8ViewModel();
         model.setCs8PartialAViewModel(partialAViewModel);
@@ -203,7 +204,7 @@ public class FormService {
     /************************* Cs9 : Begin ***********************/
     public Cs9ViewModel getCs9ViewModel(Integer id) {
         Cs9 entity = cs9Service.get(id);
-        return viewModelMapperService.convert(entity, Cs9ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, Cs9ViewModel.class));
     }
 
     public void setCs9Entity(Cs9ViewModel model) {
@@ -216,7 +217,7 @@ public class FormService {
     /************************* Cs10 : Begin ***********************/
     public Cs10ViewModel getCs10ViewModel(Integer id) {
         Cs10 entity = cs10Service.get(id);
-        return viewModelMapperService.convert(entity, Cs10ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, Cs10ViewModel.class));
     }
 
     public void setCs10Entity(Cs10ViewModel model) {
@@ -250,42 +251,17 @@ public class FormService {
     }
     /************************ SfiPpFormCs5 : End ***********************/
 
-    /************************* ErrorViewModel : Begin ***********************/
-    public ErrorViewModel getErrorViewModel(Integer id) {
-        ErrorViewModel model = new ErrorViewModel();
-
-        model.setCs1Errors(modelValidationService.validate(this.getCs1ViewModel(id)));
-        model.setCs2Errors(modelValidationService.validate(this.getCs2ViewModel(id)));
-        model.setCs3Errors(modelValidationService.validate(this.getCs3ViewModel(id)));
-        model.setCs4Errors(modelValidationService.validate(this.getCs4ViewModel(id)));
-        model.setCs5Errors(modelValidationService.validate(this.getCs5ViewModel(id)));
-        model.setCs6Errors(modelValidationService.validate(this.getCs6ViewModel(id)));
-        model.setCs7Errors(modelValidationService.validate(this.getCs7ViewModel(id)));
-
-        Cs8ViewModel cs8ViewModel = this.getCs8ViewModel(id);
-        model.setCs8PartialAErrors(modelValidationService.validate(cs8ViewModel.getCs8PartialAViewModel()));
-        model.setCs8PartialBErrors(modelValidationService.validate(cs8ViewModel.getCs8PartialBViewModel()));
-        model.setCs8PartialCErrors(modelValidationService.validate(cs8ViewModel.getCs8PartialCViewModel()));
-
-        model.setCs9Errors(modelValidationService.validate(this.getCs9ViewModel(id)));
-        model.setCs10Errors(modelValidationService.validate(this.getCs10ViewModel(id)));
+    /************************* UpdateDate : Begin ***********************/
+    public UpdateDate getUpdateDate(Integer id) {
+        UpdateDate model = new UpdateDate();
+        model.setUpdateDate(sfiPpFormDataService.getUpdateAt(id).toString());
 
         return model;
     }
-    /************************ ErrorViewModel : End ***********************/
+    /************************* UpdateDate : End ***********************/
 
-    /************************* UpdateAtViewModel : Begin ***********************/
-    public UpdateAtViewModel getUpdateAtViewModel(Integer id) {
-        UpdateAtViewModel model = new UpdateAtViewModel();
-
-//        model.setUpdatedAt(updateAtViewModelService.getUpdatedAt(getSfiPpFormDataViewModel(id)));
-
+    private <T extends BaseViewModel> T validate(T model) {
+        modelValidationService.validate(model);
         return model;
     }
-
-    public SfiPpFormData getSfiPpFormDataViewModel(Integer id) {
-        SfiPpFormData entity = sfiPpFormDataService.get(id);
-        return viewModelMapperService.convert(entity, SfiPpFormData.class);
-    }
-    /************************ UpdateAtViewModel : End ***********************/
 }
