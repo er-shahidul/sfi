@@ -1,6 +1,8 @@
 package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -13,25 +15,39 @@ public class Cs5 extends BaseEntityModel {
     private Integer id;
 
     @Column(name = "cs5_organization_list_academic", nullable = true)
-    private String organizationListAcademic;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListAcademic;
 
     @Column(name = "cs5_organization_list_research", nullable = true)
-    private String organizationListResearch;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListResearch;
 
     @Column(name = "cs5_organization_list_conservation", nullable = true)
-    private String organizationListConservation;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListConservation;
 
     @Column(name = "cs5_organization_list_government", nullable = true)
-    private String organizationListGovernment;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListGovernment;
 
     @Column(name = "cs5_organization_list_community", nullable = true)
-    private String organizationListCommunity;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListCommunity;
 
     @Column(name = "cs5_organization_list_other", nullable = true)
-    private String organizationListOther;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListOther;
 
     @Column(name = "cs5_other", nullable = true)
-    private String other;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> other;
 
     @Column(name = "cs5_isInPartnership", nullable = true)
     private Boolean isInPartnership;
@@ -87,59 +103,59 @@ public class Cs5 extends BaseEntityModel {
         addAll(this.projects, projects);
     }
 
-    public String getOrganizationListAcademic() {
+    public Set<String> getOrganizationListAcademic() {
         return organizationListAcademic;
     }
 
-    public void setOrganizationListAcademic(String organizationListAcademic) {
-        this.organizationListAcademic = organizationListAcademic;
+    public void setOrganizationListAcademic(Set<String> organizationListAcademic) {
+        addAll(this.organizationListAcademic, organizationListAcademic);
     }
 
-    public String getOrganizationListResearch() {
+    public Set<String> getOrganizationListResearch() {
         return organizationListResearch;
     }
 
-    public void setOrganizationListResearch(String organizationListResearch) {
-        this.organizationListResearch = organizationListResearch;
+    public void setOrganizationListResearch(Set<String> organizationListResearch) {
+        addAll(this.organizationListResearch, organizationListResearch);
     }
 
-    public String getOrganizationListConservation() {
+    public Set<String> getOrganizationListConservation() {
         return organizationListConservation;
     }
 
-    public void setOrganizationListConservation(String organizationListConservation) {
-        this.organizationListConservation = organizationListConservation;
+    public void setOrganizationListConservation(Set<String> organizationListConservation) {
+        addAll(this.organizationListConservation, organizationListConservation);
     }
 
-    public String getOrganizationListGovernment() {
+    public Set<String> getOrganizationListGovernment() {
         return organizationListGovernment;
     }
 
-    public void setOrganizationListGovernment(String organizationListGovernment) {
-        this.organizationListGovernment = organizationListGovernment;
+    public void setOrganizationListGovernment(Set<String> organizationListGovernment) {
+        addAll(this.organizationListGovernment, organizationListGovernment);
     }
 
-    public String getOrganizationListCommunity() {
+    public Set<String> getOrganizationListCommunity() {
         return organizationListCommunity;
     }
 
-    public void setOrganizationListCommunity(String organizationListCommunity) {
-        this.organizationListCommunity = organizationListCommunity;
+    public void setOrganizationListCommunity(Set<String> organizationListCommunity) {
+        addAll(this.organizationListCommunity, organizationListCommunity);
     }
 
-    public String getOrganizationListOther() {
+    public Set<String> getOrganizationListOther() {
         return organizationListOther;
     }
 
-    public void setOrganizationListOther(String organizationListOther) {
-        this.organizationListOther = organizationListOther;
+    public void setOrganizationListOther(Set<String> organizationListOther) {
+        addAll(this.organizationListOther, organizationListOther);
     }
 
-    public String getOther() {
+    public Set<String> getOther() {
         return other;
     }
 
-    public void setOther(String other) {
-        this.other = other;
+    public void setOther(Set<String> other) {
+        addAll(this.other, other);
     }
 }

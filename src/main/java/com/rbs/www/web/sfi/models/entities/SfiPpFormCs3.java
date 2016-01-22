@@ -2,6 +2,8 @@ package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -74,22 +76,39 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     private Integer orgContributionCurr;
 
     @Column(name = "cs3_organization_list_academic", nullable = true)
-    private String organizationListAcademic;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListAcademic;
 
     @Column(name = "cs3_organization_list_research", nullable = true)
-    private String organizationListResearch;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListResearch;
 
     @Column(name = "cs3_organization_list_conservation", nullable = true)
-    private String organizationListConservation;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListConservation;
 
     @Column(name = "cs3_organization_list_government", nullable = true)
-    private String organizationListGovernment;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListGovernment;
 
     @Column(name = "cs3_organization_list_community", nullable = true)
-    private String organizationListCommunity;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListCommunity;
 
     @Column(name = "cs3_organization_list_other", nullable = true)
-    private String organizationListOther;
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> organizationListOther;
+
+    @Column(name = "cs3_other", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<String> other;
 
     @OneToMany(targetEntity = SfiPpFormCs3ProjectSupportDocs.class, fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
@@ -293,54 +312,6 @@ public class SfiPpFormCs3 extends BaseEntityModel {
         this.orgContributionCurr = orgContributionCurr;
     }
 
-    public String getOrganizationListAcademic() {
-        return organizationListAcademic;
-    }
-
-    public void setOrganizationListAcademic(String organizationListAcademic) {
-        this.organizationListAcademic = organizationListAcademic;
-    }
-
-    public String getOrganizationListResearch() {
-        return organizationListResearch;
-    }
-
-    public void setOrganizationListResearch(String organizationListResearch) {
-        this.organizationListResearch = organizationListResearch;
-    }
-
-    public String getOrganizationListConservation() {
-        return organizationListConservation;
-    }
-
-    public void setOrganizationListConservation(String organizationListConservation) {
-        this.organizationListConservation = organizationListConservation;
-    }
-
-    public String getOrganizationListGovernment() {
-        return organizationListGovernment;
-    }
-
-    public void setOrganizationListGovernment(String organizationListGovernment) {
-        this.organizationListGovernment = organizationListGovernment;
-    }
-
-    public String getOrganizationListCommunity() {
-        return organizationListCommunity;
-    }
-
-    public void setOrganizationListCommunity(String organizationListCommunity) {
-        this.organizationListCommunity = organizationListCommunity;
-    }
-
-    public String getOrganizationListOther() {
-        return organizationListOther;
-    }
-
-    public void setOrganizationListOther(String organizationListOther) {
-        this.organizationListOther = organizationListOther;
-    }
-
     public Set<SfiPpFormCs3ProjectSupportDocs> getSupportDocs() {
         return supportDocs;
     }
@@ -355,5 +326,61 @@ public class SfiPpFormCs3 extends BaseEntityModel {
 
     public void setIncludeResearchFunding(Boolean includeResearchFunding) {
         this.includeResearchFunding = includeResearchFunding;
+    }
+
+    public Set<String> getOrganizationListAcademic() {
+        return organizationListAcademic;
+    }
+
+    public void setOrganizationListAcademic(Set<String> organizationListAcademic) {
+        addAll(this.organizationListAcademic, organizationListAcademic);
+    }
+
+    public Set<String> getOrganizationListResearch() {
+        return organizationListResearch;
+    }
+
+    public void setOrganizationListResearch(Set<String> organizationListResearch) {
+        addAll(this.organizationListResearch, organizationListResearch);
+    }
+
+    public Set<String> getOrganizationListConservation() {
+        return organizationListConservation;
+    }
+
+    public void setOrganizationListConservation(Set<String> organizationListConservation) {
+        addAll(this.organizationListConservation, organizationListConservation);
+    }
+
+    public Set<String> getOrganizationListGovernment() {
+        return organizationListGovernment;
+    }
+
+    public void setOrganizationListGovernment(Set<String> organizationListGovernment) {
+        addAll(this.organizationListGovernment, organizationListGovernment);
+    }
+
+    public Set<String> getOrganizationListCommunity() {
+        return organizationListCommunity;
+    }
+
+    public void setOrganizationListCommunity(Set<String> organizationListCommunity) {
+        addAll(this.organizationListCommunity, organizationListCommunity);
+    }
+
+    public Set<String> getOrganizationListOther() {
+        return organizationListOther;
+    }
+
+    public void setOrganizationListOther(Set<String> organizationListOther) {
+        addAll(this.organizationListOther, organizationListOther);
+    }
+
+    public Set<String> getOther() {
+        return other;
+    }
+
+    public void setOther(Set<String> other) {
+        addAll(this.other, other);
     }
 }

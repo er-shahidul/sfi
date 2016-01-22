@@ -1,18 +1,18 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.common.modules.validator.SpELAssert;
+//import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.Set;
 
-@SpELAssert.List({
-        @SpELAssert(value = "false", message = "head spel first set"), // wrong again
-        @SpELAssert(value = "false", message = "head spel second set", property = "world")
-})
+//@SpELAssert.List({
+//        @SpELAssert(value = "false", message = "head spel first set"), // wrong again
+//        @SpELAssert(value = "false", message = "head spel second set", property = "world")
+//})
 public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer id;
     private Integer totalProjectCost;
@@ -20,18 +20,20 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer orgContribution;
     private Integer orgContributionCurr;
 
-    @NotNull
-    @Size(min = 1000, max = 1000, message = "{large.string}")
+//    @NotNull
+//    @Size(min = 1000, max = 1000, message = "{large.string}")
     private String projectNm;
     private String projectObj;
     private String projectDescr;
     private String conservatonPartners;
-    private String organizationListAcademic;
-    private String organizationListResearch;
-    private String organizationListConservation;
-    private String organizationListGovernment;
-    private String organizationListCommunity;
-    private String organizationListOther;
+
+    private Set<String> organizationListAcademic;
+    private Set<String> organizationListResearch;
+    private Set<String> organizationListConservation;
+    private Set<String> organizationListGovernment;
+    private Set<String> organizationListCommunity;
+    private Set<String> organizationListOther;
+    private Set<String> other;
 
     private Boolean includeResearchFunding;
 
@@ -201,54 +203,6 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.conservatonPartners = conservatonPartners;
     }
 
-    public String getOrganizationListAcademic() {
-        return organizationListAcademic;
-    }
-
-    public void setOrganizationListAcademic(String organizationListAcademic) {
-        this.organizationListAcademic = organizationListAcademic;
-    }
-
-    public String getOrganizationListResearch() {
-        return organizationListResearch;
-    }
-
-    public void setOrganizationListResearch(String organizationListResearch) {
-        this.organizationListResearch = organizationListResearch;
-    }
-
-    public String getOrganizationListConservation() {
-        return organizationListConservation;
-    }
-
-    public void setOrganizationListConservation(String organizationListConservation) {
-        this.organizationListConservation = organizationListConservation;
-    }
-
-    public String getOrganizationListGovernment() {
-        return organizationListGovernment;
-    }
-
-    public void setOrganizationListGovernment(String organizationListGovernment) {
-        this.organizationListGovernment = organizationListGovernment;
-    }
-
-    public String getOrganizationListCommunity() {
-        return organizationListCommunity;
-    }
-
-    public void setOrganizationListCommunity(String organizationListCommunity) {
-        this.organizationListCommunity = organizationListCommunity;
-    }
-
-    public String getOrganizationListOther() {
-        return organizationListOther;
-    }
-
-    public void setOrganizationListOther(String organizationListOther) {
-        this.organizationListOther = organizationListOther;
-    }
-
     public Boolean getIncludeResearchFunding() {
         return includeResearchFunding;
     }
@@ -295,5 +249,61 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setSupportDocs(Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs) {
         this.supportDocs = supportDocs;
+    }
+
+    public Set<String> getOrganizationListAcademic() {
+        return organizationListAcademic;
+    }
+
+    public void setOrganizationListAcademic(Set<String> organizationListAcademic) {
+        this.organizationListAcademic = organizationListAcademic;
+    }
+
+    public Set<String> getOrganizationListResearch() {
+        return organizationListResearch;
+    }
+
+    public void setOrganizationListResearch(Set<String> organizationListResearch) {
+        this.organizationListResearch = organizationListResearch;
+    }
+
+    public Set<String> getOrganizationListConservation() {
+        return organizationListConservation;
+    }
+
+    public void setOrganizationListConservation(Set<String> organizationListConservation) {
+        this.organizationListConservation = organizationListConservation;
+    }
+
+    public Set<String> getOrganizationListGovernment() {
+        return organizationListGovernment;
+    }
+
+    public void setOrganizationListGovernment(Set<String> organizationListGovernment) {
+        this.organizationListGovernment = organizationListGovernment;
+    }
+
+    public Set<String> getOrganizationListCommunity() {
+        return organizationListCommunity;
+    }
+
+    public void setOrganizationListCommunity(Set<String> organizationListCommunity) {
+        this.organizationListCommunity = organizationListCommunity;
+    }
+
+    public Set<String> getOrganizationListOther() {
+        return organizationListOther;
+    }
+
+    public void setOrganizationListOther(Set<String> organizationListOther) {
+        this.organizationListOther = organizationListOther;
+    }
+
+    public Set<String> getOther() {
+        return other;
+    }
+
+    public void setOther(Set<String> other) {
+        this.other = other;
     }
 }

@@ -4,35 +4,36 @@ import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.CascadeIf;
 import com.rbs.www.common.modules.validator.SpELAssert;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+//import javax.validation.Valid;
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.Set;
 
-@SpELAssert.List({
-        @SpELAssert(value = "false", message = "head spel first"), // wrong
-        @SpELAssert(value = "false", message = "head spel second", property = "world")
-})
+//@SpELAssert.List({
+//        @SpELAssert(value = "false", message = "head spel first"), // wrong
+//        @SpELAssert(value = "false", message = "head spel second", property = "world")
+//})
 public class Cs5ViewModel extends BaseViewModel {
     private Integer id;
-    private String organizationListAcademic;
-    private String organizationListResearch;
-    private String organizationListConservation;
-    private String organizationListGovernment;
-    private String organizationListCommunity;
-    private String organizationListOther;
 
-    @NotNull
-    @Size(min = 1000, max = 1000, message = "{large.string}")
-    private String other;
+    private Set<String> organizationListAcademic;
+    private Set<String> organizationListResearch;
+    private Set<String> organizationListConservation;
+    private Set<String> organizationListGovernment;
+    private Set<String> organizationListCommunity;
+    private Set<String> organizationListOther;
+    private Set<String> other;
+
+//    @NotNull
+//    @Size(min = 1000, max = 1000, message = "{large.string}")
     private Boolean isInPartnership;
 
-    @Valid
+//    @Valid
     @CascadeIf(value = "true")
     private Set<SfiPpFormCs3ViewModel> projects;
 
-    @Valid
+//    @Valid
     @CascadeIf(value = "false")
     private List<SfiPpFormCs5ViewModel> items;
     private Integer fundSFIActivStateProviCa;
@@ -63,62 +64,6 @@ public class Cs5ViewModel extends BaseViewModel {
         this.fundSFIActivStateProviCa = fundSFIActivStateProviCa;
     }
 
-    public String getOrganizationListAcademic() {
-        return organizationListAcademic;
-    }
-
-    public void setOrganizationListAcademic(String organizationListAcademic) {
-        this.organizationListAcademic = organizationListAcademic;
-    }
-
-    public String getOrganizationListResearch() {
-        return organizationListResearch;
-    }
-
-    public void setOrganizationListResearch(String organizationListResearch) {
-        this.organizationListResearch = organizationListResearch;
-    }
-
-    public String getOrganizationListConservation() {
-        return organizationListConservation;
-    }
-
-    public void setOrganizationListConservation(String organizationListConservation) {
-        this.organizationListConservation = organizationListConservation;
-    }
-
-    public String getOrganizationListGovernment() {
-        return organizationListGovernment;
-    }
-
-    public void setOrganizationListGovernment(String organizationListGovernment) {
-        this.organizationListGovernment = organizationListGovernment;
-    }
-
-    public String getOrganizationListCommunity() {
-        return organizationListCommunity;
-    }
-
-    public void setOrganizationListCommunity(String organizationListCommunity) {
-        this.organizationListCommunity = organizationListCommunity;
-    }
-
-    public String getOrganizationListOther() {
-        return organizationListOther;
-    }
-
-    public void setOrganizationListOther(String organizationListOther) {
-        this.organizationListOther = organizationListOther;
-    }
-
-    public String getOther() {
-        return other;
-    }
-
-    public void setOther(String other) {
-        this.other = other;
-    }
-
     public Boolean getIsInPartnership() {
         return isInPartnership;
     }
@@ -141,5 +86,61 @@ public class Cs5ViewModel extends BaseViewModel {
 
     public void setItems(List<SfiPpFormCs5ViewModel> items) {
         this.items = items;
+    }
+
+    public Set<String> getOrganizationListAcademic() {
+        return organizationListAcademic;
+    }
+
+    public void setOrganizationListAcademic(Set<String> organizationListAcademic) {
+        this.organizationListAcademic = organizationListAcademic;
+    }
+
+    public Set<String> getOrganizationListResearch() {
+        return organizationListResearch;
+    }
+
+    public void setOrganizationListResearch(Set<String> organizationListResearch) {
+        this.organizationListResearch = organizationListResearch;
+    }
+
+    public Set<String> getOrganizationListConservation() {
+        return organizationListConservation;
+    }
+
+    public void setOrganizationListConservation(Set<String> organizationListConservation) {
+        this.organizationListConservation = organizationListConservation;
+    }
+
+    public Set<String> getOrganizationListGovernment() {
+        return organizationListGovernment;
+    }
+
+    public void setOrganizationListGovernment(Set<String> organizationListGovernment) {
+        this.organizationListGovernment = organizationListGovernment;
+    }
+
+    public Set<String> getOrganizationListCommunity() {
+        return organizationListCommunity;
+    }
+
+    public void setOrganizationListCommunity(Set<String> organizationListCommunity) {
+        this.organizationListCommunity = organizationListCommunity;
+    }
+
+    public Set<String> getOrganizationListOther() {
+        return organizationListOther;
+    }
+
+    public void setOrganizationListOther(Set<String> organizationListOther) {
+        this.organizationListOther = organizationListOther;
+    }
+
+    public Set<String> getOther() {
+        return other;
+    }
+
+    public void setOther(Set<String> other) {
+        this.other = other;
     }
 }
