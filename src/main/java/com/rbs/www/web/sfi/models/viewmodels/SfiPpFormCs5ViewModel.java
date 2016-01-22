@@ -1,7 +1,15 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@SpELAssert.List({
+        @SpELAssert(value = "false", message = "head spel first list", property = "hello"),
+        @SpELAssert(value = "false", message = "head spel second list", property = "world")
+})
 public class SfiPpFormCs5ViewModel extends BaseViewModel {
     private Integer id;
     private Integer form;
@@ -10,6 +18,9 @@ public class SfiPpFormCs5ViewModel extends BaseViewModel {
     private Float externalUsd;
     private Float internalCad;
     private Float externalCad;
+
+    @NotNull
+    @Size(min = 1000, max = 1000, message = "{large.string}")
     private String description;
 
     @Override

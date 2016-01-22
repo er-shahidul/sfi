@@ -1,5 +1,6 @@
 package com.rbs.www.web.sic.services;
 
+import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.mapper.EntityModelMapperService;
 import com.rbs.www.common.modules.mapper.ViewModelMapperService;
 import com.rbs.www.web.common.services.ModelValidationService;
@@ -62,7 +63,7 @@ public class SicFormService {
     /************************* SicCs1 : Begin *************************/
     public SicCs1ViewModel getSicCs1ViewModel(Integer id) {
         SicCs1 entity = sicCs1Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs1ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs1ViewModel.class));
     }
 
     public void setSicCs1Entity(SicCs1ViewModel model) {
@@ -75,7 +76,7 @@ public class SicFormService {
     /************************* SicCs2 : Begin *************************/
     public SicCs2ViewModel getSicCs2ViewModel(Integer id) {
         SicCs2 entity = sicCs2Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs2ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs2ViewModel.class));
     }
 
     public void setSicCs2Entity(SicCs2ViewModel model) {
@@ -88,7 +89,7 @@ public class SicFormService {
     /************************* SicCs3 : Begin ***********************/
     public SicCs3ViewModel getSicCs3ViewModel(Integer id) {
         SicCs3 entity = sicCs3Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs3ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs3ViewModel.class));
     }
 
     public void setSicCs3Entity(SicCs3ViewModel model) {
@@ -100,7 +101,7 @@ public class SicFormService {
     /************************* SicCs4 : Begin ***********************/
     public SicCs4ViewModel getSicCs4ViewModel(Integer id) {
         SicCs4 entity = sicCs4Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs4ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs4ViewModel.class));
     }
 
     public void setSicCs4Entity(SicCs4ViewModel model) {
@@ -112,7 +113,7 @@ public class SicFormService {
     /************************* SicCs5 : Begin ***********************/
     public SicCs5ViewModel getSicCs5ViewModel(Integer id) {
         SicCs5 entity = sicCs5Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs5ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs5ViewModel.class));
     }
 
     public void setSicCs5Entity(SicCs5ViewModel model) {
@@ -125,7 +126,7 @@ public class SicFormService {
     /************************* SicCs6 : Begin ***********************/
     public SicCs6ViewModel getSicCs6ViewModel(Integer id) {
         SicCs6 entity = sicCs6Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs6ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs6ViewModel.class));
     }
 
     public void setSicCs6Entity(SicCs6ViewModel model) {
@@ -137,7 +138,7 @@ public class SicFormService {
     /************************* SicCs7 : Begin ***********************/
     public SicCs7ViewModel getSicCs7ViewModel(Integer id) {
         SicCs7 entity = sicCs7Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs7ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs7ViewModel.class));
     }
 
     public void setSicCs7Entity(SicCs7ViewModel model) {
@@ -149,7 +150,7 @@ public class SicFormService {
     /************************* SicCs8 : Begin ***********************/
     public SicCs8ViewModel getSicCs8ViewModel(Integer id) {
         SicCs8 entity = sicCs8Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs8ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs8ViewModel.class));
     }
 
     public void setSicCs8Entity(SicCs8ViewModel model) {
@@ -162,7 +163,7 @@ public class SicFormService {
     /************************* SicCs9 : Begin ***********************/
     public SicCs9ViewModel getSicCs9ViewModel(Integer id) {
         SicCs9 entity = sicCs9Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs9ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs9ViewModel.class));
     }
 
     public void setSicCs9Entity(SicCs9ViewModel model) {
@@ -174,7 +175,7 @@ public class SicFormService {
     /************************ SicCs10 : Begin ***********************/
     public SicCs10ViewModel getSicCs10ViewModel(Integer id) {
         SicCs10 entity = sicCs10Service.get(id);
-        return viewModelMapperService.convert(entity, SicCs10ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, SicCs10ViewModel.class));
     }
 
     public void setSicCs10Entity(SicCs10ViewModel model) {
@@ -183,22 +184,8 @@ public class SicFormService {
     }
     /************************ SicCs10 : End *************************/
 
-    /***************** ErrorViewModel : Begin ***********************/
-    public ErrorViewModel getErrorViewModel(Integer id) {
-        ErrorViewModel model = new ErrorViewModel();
-
-        model.setSicCs1Errors(modelValidationService.validate(this.getSicCs1ViewModel(id)));
-        model.setSicCs2Errors(modelValidationService.validate(this.getSicCs2ViewModel(id)));
-        model.setSicCs3Errors(modelValidationService.validate(this.getSicCs3ViewModel(id)));
-        model.setSicCs4Errors(modelValidationService.validate(this.getSicCs4ViewModel(id)));
-        model.setSicCs5Errors(modelValidationService.validate(this.getSicCs5ViewModel(id)));
-        model.setSicCs6Errors(modelValidationService.validate(this.getSicCs6ViewModel(id)));
-        model.setSicCs7Errors(modelValidationService.validate(this.getSicCs7ViewModel(id)));
-        model.setSicCs8Errors(modelValidationService.validate(this.getSicCs8ViewModel(id)));
-        model.setSicCs9Errors(modelValidationService.validate(this.getSicCs9ViewModel(id)));
-        model.setSicCs10Errors(modelValidationService.validate(this.getSicCs10ViewModel(id)));
-
+    private <T extends BaseViewModel> T validate(T model) {
+        modelValidationService.validate(model);
         return model;
     }
-    /***************** ErrorViewModel : End *************************/
 }

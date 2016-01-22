@@ -1062,10 +1062,17 @@ text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 
 .typeahead.ng-hide { display: block !important; visibility: hidden !important; overflow: hidden; }
 
+/*
 .dropdown-menu{
 	position : static;
 }
+*/
 
+.form-group-hack{
+	min-height : 50px !important;
+	margin-left: 30px;
+	overflow: visible;
+}
 
 .dropdown-menu li a {
     color: #ffffff;
