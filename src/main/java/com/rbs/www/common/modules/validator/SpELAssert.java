@@ -19,6 +19,7 @@ public @interface SpELAssert {
 
     String value();
     String applyIf() default "";
+    String property() default "";
     Class<?>[] helpers() default {};
 
     @Retention(RUNTIME)
