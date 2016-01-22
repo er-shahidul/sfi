@@ -1,8 +1,10 @@
+var cs5;
 sfiFormApp
     .controller('FormResFundingCtrl',
         ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects',
             function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects){
 
+        cs5 = $scope;
         $scope.validate = false;
         $scope.isDataDirty = false;
         $scope.standardObjects = standardObjects;
@@ -414,29 +416,28 @@ sfiFormApp
         }
 
 
-
-
-
         $scope.delSupportDoc = function(index){
 
             if(confirm("Are you sure to remove this doc ?")){
-
                 var doc = $scope.project.supportDocs[index];
                 doc.isDeleted = true;
             }
 
         }
 
+        $scope.cs5.organizationListAcademic = $scope.cs5.organizationListAcademic || [];
 
-//        if(!$rootScope.regions){
-//
-//                RegionList
-//                    .load()
-//                    .then(function(reponse){
-//                        $rootScope.regions = reponse.data;
-//                    });
-//            }
+        $scope.addList = function(bucket, model){
 
+            _.isArray(bucket) || (bucket = []);
+            bucket.push(model);
+            return _.unique(bucket);
+        }
+
+        $scope.withoutList = function(item, bucket){
+            bucket = _.without(bucket, item);
+            return bucket;
+        }
 
 
 
