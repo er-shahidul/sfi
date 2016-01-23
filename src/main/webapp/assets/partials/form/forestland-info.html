@@ -7,35 +7,34 @@
 
         <form name="cs2Form" novalidate ng-class="{'disabled' : !isFieldsEnabled()}" >
             <span>
-
                 Provide forestland information on all forests your organization owns/manages as well as forestland
                 included under the scope of your SFI certification.
             </span>
 
-            <table class="table table-striped" id="table1" border="1">
+            <table class="table table-striped" id="table1" border="1" style="margin-top: 6px;">
                 <thead>
                 <tr>
-                    <th width="12%">USA & <br/>Canada <span tooltip data-placement="top" data-container="body" data-html="true"
+                    <th style="min-width: 80px;"><span style="margin-top: -5px;">USA & </span><br/>Canada <span tooltip data-placement="top" data-container="body" data-html="true"
                                                        data-title='<b>A forested area</b> is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>Forestlands</span>
                     </th>
                     <th>USA & Canada Forestlands-Ownership /Management</th>
-                    <th>Total area your organization owns/manages</th>
-                    <th>
+                    <th style="min-width: 145px;">Total area your organization owns/manages</th>
+                    <th style="min-width: 145px;">
                         Total area certified to the SFI forest management standard<br/>
                         <u>
                         <a ng-click="lastYear2Pop()">How we used your <br/>data last year</a>
                         </u>
                     </th>
-                    <th style="min-width: 140px;">
+                    <th style="min-width: 145px;">
                         Area managed open to public for recreation<br/>
                     </th>
                     <th style="min-width: 145px;">
-                        Area certified to SFI<br/>standard open to public<br/>for recreation (new!)<br/>
+                        Area certified to SFI<br/>standard open to public<br/>for recreation<br/>
                         <u>
                             <a ng-click="lastYearPop()">How we used your <br/>data last year</a>
                         </u>
                     </th>
-                    <th width="25%">Check all recreation categories that<br/>apply to areas open to recreation on<br/>your managed land (new!)</th>
+                    <th width="25%">Check all recreation categories that<br/>apply to areas open to recreation on<br/>your managed land</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -92,28 +91,28 @@
 
                     <td style="text-align: left;" ng-class="{'has-error has-feedback': error && cs2Form.item1.$invalid}">
 
-                        <input type="number" class="form-control shorter"  min="0" name="item1"
+                        <input style="margin-top: 90px;" type="number" class="form-control shorter"  min="0" name="item1"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPrivateTotalAreaOwnOrManage"
                                ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
                     <td style="text-align: left;" ng-class="{'has-error has-feedback': error && cs2Form.item2.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item2"
+                        <input style="margin-top: 90px;" type="number" class="form-control shorter" min="0" name="item2"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPrivateTotalAreaCertified"
                                ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
                     <td style="text-align: left;" ng-class="{'has-error has-feedback': error && cs2Form.item3.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item3"
+                        <input style="margin-top: 90px;" type="number" class="form-control shorter" min="0" name="item3"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPrivateAreaManagedForPublic"
                                ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
                     <td style="text-align: left;" ng-class="{'has-error has-feedback': error && cs2Form.item4.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item4"
+                        <input style="margin-top: 90px;" type="number" class="form-control shorter" min="0" name="item4"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPrivateAreaCertifiedForPublic"
                                ng-disabled="!operateInUsa()"> {{ unit }}
@@ -142,7 +141,7 @@
                             </tr>
 
                             <tr>
-                                <td style="height: 20px;"> </td>
+                                <td style="height: 50px;"> </td>
                             </tr>
 
                             <tr>
@@ -207,28 +206,28 @@
                     <!-- -/- -->
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item9.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item9"
+                        <input style="margin-top: 55px;" type="number" class="form-control shorter" min="0" name="item9"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPublicTotalAreaOwnOrManage"
                                ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item10.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item10"
+                        <input style="margin-top: 55px;" type="number" class="form-control shorter" min="0" name="item10"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPublicTotalAreaCertified"
                                ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item11.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item11"
+                        <input style="margin-top: 55px;" type="number" class="form-control shorter" min="0" name="item11"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPublicAreaManagedForPublic"
                                ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item12.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item12"
+                        <input style="margin-top: 55px;" type="number" class="form-control shorter" min="0" name="item12"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPublicAreaCertifiedForPublic"
                                ng-disabled="!operateInUsa()">  {{ unit }}
@@ -259,7 +258,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="height: 20px;"> </td>
+                                <td style="height: 50px;"> </td>
                             </tr>
                             <tr>
                                 <td>
@@ -326,28 +325,28 @@
                     </td>
                     <!-- -/- -->
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item17.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item17"
+                        <input style="margin-top: 55px;" type="number" class="form-control shorter" min="0" name="item17"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caCrownTotalAreaOwnOrManage"
                                ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item18.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item18"
+                        <input style="margin-top: 55px;" type="number" class="form-control shorter" min="0" name="item18"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caCrownTotalAreaCertified"
                                ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item19.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item19"
+                        <input style="margin-top: 55px;" type="number" class="form-control shorter" min="0" name="item19"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caCrownAreaManagedForPublic"
                                ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item20.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item20"
+                        <input style="margin-top: 55px;" type="number" class="form-control shorter" min="0" name="item20"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caCrownAreaCertifiedForPublic"
                                ng-disabled="!operateInCa()"> {{ unit }}
@@ -377,7 +376,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="height: 20px;"> </td>
+                                <td style="height: 50px;"> </td>
                             </tr>
                             <tr>
 
@@ -452,28 +451,28 @@
                     <!-- -/- -->
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item25.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item25"
+                        <input style="margin-top: 65px;" type="number" class="form-control shorter" min="0" name="item25"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caPrivateTotalAreaOwnOrManage"
                                ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item26.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item26"
+                        <input style="margin-top: 65px;" type="number" class="form-control shorter" min="0" name="item26"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caPrivateTotalAreaCertified"
                                ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item27.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item27"
+                        <input style="margin-top: 65px;" type="number" class="form-control shorter" min="0" name="item27"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caPrivateAreaManagedForPublic"
                                ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item28.$invalid}">
-                        <input type="number" class="form-control shorter" min="0" name="item28"
+                        <input style="margin-top: 65px;" type="number" class="form-control shorter" min="0" name="item28"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caPrivateAreaCertifiedForPublic"
                                ng-disabled="!operateInCa()"> {{ unit }}
@@ -502,7 +501,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="height: 20px;"> </td>
+                                <td style="height: 50px;"> </td>
                             </tr>
                             <tr>
                                 <td>
