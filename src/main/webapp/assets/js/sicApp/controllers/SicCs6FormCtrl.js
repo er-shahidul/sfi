@@ -71,6 +71,7 @@ sfiSicApp
             33 : 'West Virginia Logger Training and Education',
             34 : 'Western Canada Basic Logger Training Requirements',
             35 : 'Wisconsin Logger Training and Education Program',
+            35 : 'Other',
         }
 
 
