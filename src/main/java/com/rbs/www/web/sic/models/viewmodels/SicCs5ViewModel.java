@@ -8,12 +8,13 @@ import java.util.Set;
 public class SicCs5ViewModel extends BaseViewModel {
     private Integer id;
 
-    private String advertiseBillboards;
-    private String advertiseOther;
-    private String advertiseOtherSpecify;
-    private String advertisePublications;
-    private String advertiseWebsites;
+    private Boolean advertiseBillboards;
+    private Boolean advertiseOther;
+    private Boolean advertisePublications;
+    private Boolean advertiseWebsites;
+
     private String receiveInquiryOtherSpecify;
+    private String advertiseOtherSpecify;
 
     private Integer totalInquiriesReceived;
     private Integer totalInconsistentPractices;
@@ -46,44 +47,12 @@ public class SicCs5ViewModel extends BaseViewModel {
         this.receiveInquiryOtherSpecify = receiveInquiryOtherSpecify;
     }
 
-    public String getAdvertiseBillboards() {
-        return advertiseBillboards;
-    }
-
-    public void setAdvertiseBillboards(String advertiseBillboards) {
-        this.advertiseBillboards = advertiseBillboards;
-    }
-
-    public String getAdvertiseOther() {
-        return advertiseOther;
-    }
-
-    public void setAdvertiseOther(String advertiseOther) {
-        this.advertiseOther = advertiseOther;
-    }
-
     public String getAdvertiseOtherSpecify() {
         return advertiseOtherSpecify;
     }
 
     public void setAdvertiseOtherSpecify(String advertiseOtherSpecify) {
         this.advertiseOtherSpecify = advertiseOtherSpecify;
-    }
-
-    public String getAdvertisePublications() {
-        return advertisePublications;
-    }
-
-    public void setAdvertisePublications(String advertisePublications) {
-        this.advertisePublications = advertisePublications;
-    }
-
-    public String getAdvertiseWebsites() {
-        return advertiseWebsites;
-    }
-
-    public void setAdvertiseWebsites(String advertiseWebsites) {
-        this.advertiseWebsites = advertiseWebsites;
     }
 
     public Integer getTotalInquiriesReceived() {
@@ -172,5 +141,37 @@ public class SicCs5ViewModel extends BaseViewModel {
 
     public void setReceiveInquiryOther(Boolean receiveInquiryOther) {
         this.receiveInquiryOther = receiveInquiryOther;
+    }
+
+    public Boolean getAdvertiseBillboards() {
+        return advertiseBillboards;
+    }
+
+    public void setAdvertiseBillboards(Boolean advertiseBillboards) {
+        this.advertiseBillboards = advertiseBillboards;
+    }
+
+    public Boolean getAdvertiseOther() {
+        return advertiseOther;
+    }
+
+    public void setAdvertiseOther(Boolean advertiseOther) {
+        this.advertiseOther = advertiseOther;
+    }
+
+    public Boolean getAdvertisePublications() {
+        return advertisePublications;
+    }
+
+    public void setAdvertisePublications(Boolean advertisePublications) {
+        this.advertisePublications = advertisePublications;
+    }
+
+    public Boolean getAdvertiseWebsites() {
+        return advertiseWebsites;
+    }
+
+    public void setAdvertiseWebsites(Boolean advertiseWebsites) {
+        this.advertiseWebsites = advertiseWebsites;
     }
 }

@@ -15,7 +15,7 @@ public class SicCs5 extends BaseEntityModel {
     private Integer id;
 
     @Column(name = "cs5_advertiseBillboards", nullable = true)
-    private String advertiseBillboards;
+    private Boolean advertiseBillboards;
 
     @Column(name = "cs5_receiveInquiryPhone", nullable = true)
     private Boolean receiveInquiryPhone;
@@ -30,16 +30,16 @@ public class SicCs5 extends BaseEntityModel {
     private Boolean receiveInquiryOther;
 
     @Column(name = "cs5_advertiseOther", nullable = true)
-    private String advertiseOther;
+    private Boolean advertiseOther;
 
     @Column(name = "cs5_advertiseOtherSpecify", nullable = true)
     private String advertiseOtherSpecify;
 
     @Column(name = "cs5_advertisePublications", nullable = true)
-    private String advertisePublications;
+    private Boolean advertisePublications;
 
     @Column(name = "cs5_advertiseWebsites", nullable = true)
-    private String advertiseWebsites;
+    private Boolean advertiseWebsites;
 
     @Column(name = "cs5_receiveInquiryOtherSpecify", nullable = true)
     private String receiveInquiryOtherSpecify;
@@ -86,44 +86,12 @@ public class SicCs5 extends BaseEntityModel {
         this.receiveInquiryOtherSpecify = receiveInquiryOtherSpecify;
     }
 
-    public String getAdvertiseBillboards() {
-        return advertiseBillboards;
-    }
-
-    public void setAdvertiseBillboards(String advertiseBillboards) {
-        this.advertiseBillboards = advertiseBillboards;
-    }
-
-    public String getAdvertiseOther() {
-        return advertiseOther;
-    }
-
-    public void setAdvertiseOther(String advertiseOther) {
-        this.advertiseOther = advertiseOther;
-    }
-
     public String getAdvertiseOtherSpecify() {
         return advertiseOtherSpecify;
     }
 
     public void setAdvertiseOtherSpecify(String advertiseOtherSpecify) {
         this.advertiseOtherSpecify = advertiseOtherSpecify;
-    }
-
-    public String getAdvertisePublications() {
-        return advertisePublications;
-    }
-
-    public void setAdvertisePublications(String advertisePublications) {
-        this.advertisePublications = advertisePublications;
-    }
-
-    public String getAdvertiseWebsites() {
-        return advertiseWebsites;
-    }
-
-    public void setAdvertiseWebsites(String advertiseWebsites) {
-        this.advertiseWebsites = advertiseWebsites;
     }
 
     public Integer getTotalInquiriesReceived() {
@@ -212,6 +180,38 @@ public class SicCs5 extends BaseEntityModel {
 
     public void setMechanismDocAsByteArray(Byte[] mechanismDocAsByteArray) {
         this.mechanismDocAsByteArray = mechanismDocAsByteArray;
+    }
+
+    public Boolean getAdvertiseBillboards() {
+        return advertiseBillboards;
+    }
+
+    public void setAdvertiseBillboards(Boolean advertiseBillboards) {
+        this.advertiseBillboards = advertiseBillboards;
+    }
+
+    public Boolean getAdvertiseOther() {
+        return advertiseOther;
+    }
+
+    public void setAdvertiseOther(Boolean advertiseOther) {
+        this.advertiseOther = advertiseOther;
+    }
+
+    public Boolean getAdvertisePublications() {
+        return advertisePublications;
+    }
+
+    public void setAdvertisePublications(Boolean advertisePublications) {
+        this.advertisePublications = advertisePublications;
+    }
+
+    public Boolean getAdvertiseWebsites() {
+        return advertiseWebsites;
+    }
+
+    public void setAdvertiseWebsites(Boolean advertiseWebsites) {
+        this.advertiseWebsites = advertiseWebsites;
     }
 
     @Transient
