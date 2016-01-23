@@ -22,7 +22,7 @@ sfiSicApp
 
         $scope.deleteNeighborEvents = function($index){
 
-            if(confirm("Are you sure to delete this ?")){
+            if(confirm("Are you sure you want to delete this entry?")){
                 $scope.cs2.sicNeighborEvents.splice($index, 1);
             }
 
