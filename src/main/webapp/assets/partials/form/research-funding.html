@@ -62,25 +62,25 @@
 
 
 
-                    <td ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
+                    <td align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" min="0" name="internalUsd"
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                ng-model="item.internalUsd" ng-disabled="!operateInUsa()"/>
                     </td>
 
-                    <td ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
+                    <td align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalUsd"
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                ng-model="item.externalUsd" ng-disabled="!operateInUsa()">
                     </td>
 
-                    <td ng-class="{'has-error' : innerForm.internalCad.$invalid}">
+                    <td align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="internalCad"
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                ng-model="item.internalCad" ng-disabled="!operateInCa()">
                     </td>
 
-                    <td ng-class="{'has-error' : innerForm.externalCad.$invalid}">
+                    <td align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalCad"
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                ng-model="item.externalCad" ng-disabled="!operateInCa()">
