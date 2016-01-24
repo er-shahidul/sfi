@@ -960,5 +960,12 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         return false;
     }
 
+    $scope.lastYearClose = function()
+    {
+        lastYearModal.$promise.then(lastYearModal.hide);
+    }
+
+
+
 
 }]);

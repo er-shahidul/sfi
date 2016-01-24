@@ -1,29 +1,29 @@
-<div ng-include="'/assets/partials/view/profile.html'"
+<div ng-if="isStepAllowed('cs1')"  ng-include="'/assets/partials/view/profile.html'"
      ng-controller='FormProfileCtrl'></div>
 
-<div ng-include="'/assets/partials/view/forestland-info.html'"
+<div ng-if="isStepAllowed('cs2')"  ng-include="'/assets/partials/view/forestland-info.html'"
      ng-controller='FormForestlandCtrl'></div>
 
-<div ng-include="'/assets/partials/view/harvest.html'"
+<div ng-if="isStepAllowed('cs4')" ng-include="'/assets/partials/view/harvest.html'"
      ng-controller='FormHarvestCtrl'></div>
 
-<div ng-include="'/assets/partials/view/raw-material.html'"
+<div ng-if="isStepAllowed('cs6')" ng-include="'/assets/partials/view/raw-material.html'"
      ng-controller='FormRawMaterialCtrl'></div>
 
 
-<div ng-include="'/assets/partials/view/research-funding.html'"
+<div ng-if="isStepAllowed('cs5')" ng-include="'/assets/partials/view/research-funding.html'"
      ng-controller='FormResFundingCtrl'></div>
 
 
-<div ng-include="'/assets/partials/view/emerging-issues.html'"
+<div ng-if="isStepAllowed('cs7')" ng-include="'/assets/partials/view/emerging-issues.html'"
      ng-controller='FormEmergingIssuesCtrl'></div>
 
-<div ng-include="'/assets/partials/view/forest_management_standard.html'"
+<div ng-if="isStepAllowed('cs9')" ng-include="'/assets/partials/view/forest_management_standard.html'"
      ng-controller='FormForestManagementStandardCtrl'></div>
 
-<div ng-include="'/assets/partials/view/fiber_sourcing_standard.html'"
+<div ng-if="isStepAllowed('cs10')" ng-include="'/assets/partials/view/fiber_sourcing_standard.html'"
      ng-controller='FormFiberSourcingStandardCtrl'></div>
 
 
-<div ng-include="'/assets/partials/view/market_survey.html'"
+<div ng-if="isStepAllowed('cs8')" ng-include="'/assets/partials/view/market_survey.html'"
      ng-controller='FormMarketSurveyCtrl'></div>
