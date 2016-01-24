@@ -283,6 +283,10 @@ label a {
 .section2 div{
     border-color: #048F98;
 }
+.section2Btn{
+    border-color: #048F98;
+    background-color: #048F98;
+}
 .formMenuItem.section2 span{
     color: #048F98 !important;
 }
@@ -301,6 +305,10 @@ label a {
 }
 .section3 div{
     border-color: #9C6F93;
+}
+.section3Btn{
+    border-color: #9C6F93;
+    background-color: #9C6F93;
 }
 .formMenuItem.section3 span{
     color: #9C6F93 !important;
@@ -321,6 +329,10 @@ label a {
 .section4 div{
     border-color: #DC8D50;
 }
+.section4Btn{
+    border-color: #DC8D50;
+    background-color: #DC8D50;
+}
 .formMenuItem.section4 span{
     color: #DC8D50 !important;
 }
@@ -339,6 +351,10 @@ label a {
 }
 .section5 div{
     border-color: #3AB662;
+}
+.section5Btn{
+    border-color: #3AB662;
+    background-color: #3AB662;
 }
 .formMenuItem.section5 span{
     color: #3AB662 !important;
@@ -365,6 +381,10 @@ label a {
 .section6 div.active{
     background-color: #C96844;
     color: white !important;
+}
+.section6Btn{
+    border-color: #C96844;
+    background-color: #C96844;
 }
 .panel{
     margin-top: 20px;
