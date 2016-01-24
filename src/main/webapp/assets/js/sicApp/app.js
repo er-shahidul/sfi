@@ -516,6 +516,11 @@ sfiSicApp.directive('customerror', [ '_', function(_){
 
                     if($model.$error[key] && messages[key]){
 
+                        if(attrs.patternMsg){
+                            key = 'pattern';
+                        }
+
+
                         var message = _.template(messages[key], attrs);
                         return getMsgBox($el).text(message).show();
                     }
