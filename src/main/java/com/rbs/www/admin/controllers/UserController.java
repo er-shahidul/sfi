@@ -379,6 +379,7 @@ public class UserController {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "redirect:/user/password/set/" + user.getId();
         }
+        model.addAttribute("user", userService.findByID(user.getId()));
         model.addAttribute("password", password);
         model.addAttribute("userName", userName);
         model.addAttribute("company", user.getCompany());
