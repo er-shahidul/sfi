@@ -93,15 +93,15 @@
 
                 <div class="form-group">
                     <div class="col-sm-12 ">
-                        <label>
+                        <span>
                             For each category below enter the organizations you worked with in 2014 as part of your research funding reporting
-                        </label>
+                        </span>
                     </div>
                 </div>
 
                 <div class="form-group-hack">
                     <div class="col-sm-3">
-                        <label>University or College</label>
+                        <span>University or College</span>
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.universityCollege.$invalid }">
 
@@ -132,7 +132,7 @@
 
                 <div class="form-group-hack" >
                     <div class="col-sm-3">
-                        <label>Research Institution</label>
+                        <span>Research Institution</span>
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListResearch.$invalid }">
 
@@ -161,7 +161,7 @@
 
                 <div class="form-group-hack">
                     <div class="col-sm-3">
-                        <label>Conservation Organisation</label>
+                        <span>Conservation Organisation</span>
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListConservation.$invalid }">
 
@@ -188,7 +188,7 @@
 
                 <div class="form-group-hack">
                     <div class="col-sm-3">
-                        <label>Government</label>
+                        <span>Government</span>
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListGovernment.$invalid }">
 
@@ -215,7 +215,7 @@
 
                 <div class="form-group-hack">
                     <div class="col-sm-3">
-                        <label>Community Organization</label>
+                        <span>Community Organization</span>
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListCommunity.$invalid }">
 
@@ -242,7 +242,7 @@
 
                 <div class="form-group-hack">
                     <div class="col-sm-3">
-                        <label>Other</label>
+                        <span>Other</span>
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListOther.$invalid }">
 
@@ -322,7 +322,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.name.$invalid }">
 
-                        <label>Project name</label>
+                        <span>Project Name</span>
                         <input type="text" class="form-control" name="name" ng-required="isDirty()" maxlength="200" customerror
                                tooltip data-placement="right" data-container="#secCont" data-title="If this is a partnership project with an official title, please provide the official project name."
                                ng-model="project.projectNm"/>
@@ -331,7 +331,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.projectObj.$invalid }">
 
-                        <label>Project objective</label>
+                        <span>Project Objective</span>
                         <input type="text" class="form-control" name="projectObj" ng-required="isDirty()" maxlength="200" customerror
                                ng-model="project.projectObj"/>
                     </div>
@@ -339,7 +339,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.projectDescr.$invalid }">
 
-                        <label>Short project description (include main point of contact and other relevant information - max. 650 words)</label>
+                        <span>Short project description (include main point of contact and other relevant information - max. 650 words)</span>
                         <textarea class="form-control" name="projectDescr" ng-required="isDirty()"
                                   style="resize:none;" maxlength="4000" max-word-count="650" customerror
                                   ng-model="project.projectDescr"></textarea>
@@ -348,7 +348,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
-                        <label>SFI 2015-2019 Standard Objective most relevant to project</label>
+                        <span>SFI 2015-2019 Standard Objective most relevant to project</span>
                         <select class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"
                                 ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects)">
                             <option value="0" ng-selected="!project.sfiStandard10">Please select</option>
@@ -364,7 +364,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
-                        <label>SFI 2010-2014 Standard Objective most relevant to project</label>
+                        <span>SFI 2010-2014 Standard Objective most relevant to project</span>
                         <select class="form-control" name="sfiStandard15" customerror ng-init="sfiStandard15 = 0"
                                 ng-model="sfiStandard15" ng-change="sfiStandard15 = addBucket(project.sfiStandard15, sfiStandard15, standardObjects)">
                             <option value="0" ng-selected="!project.sfiStandard15">Please select</option>
@@ -377,7 +377,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Select state(s)/province(s) for this project (new!)</label>
+                        <span>Select state(s)/province(s) for this project (new!)</span>
                         <select class="form-control" name="region" ng-init="regionModel = 0"
                                 ng-model="regionModel" ng-change="regionModel = addBucket(project.projectLocations, regionModel, regions)">
                             <option value="0" >Please select</option>
@@ -392,13 +392,13 @@
 
                     <!-- Org list -->
                     <div class="form-group-hack">
-                        <label>Project Partners (enter details for at least one of the following)</label>
+                        <span>Project Partners (enter details for at least one of the following)</span>
 
                         <span ng-show="isDirty() && !hasAnyOrg()" class="error">Enter details for at least one of the following</span>
 
                         <div class="form-group-hack form-group">
                             <div class="col-sm-2">
-                                <label>University or College</label>
+                                <span>University or College</span>
                             </div>
                             <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
 
@@ -426,7 +426,7 @@
 
                         <div class="form-group-hack form-group" >
                             <div class="col-sm-2">
-                                <label>Research Institution</label>
+                                <span>Research Institution</span>
                             </div>
                             <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListResearch.$invalid }">
 
@@ -452,7 +452,7 @@
 
                         <div class="form-group-hack form-group">
                             <div class="col-sm-2">
-                                <label>Conservation Organisation</label>
+                                <span>Conservation Organisation</span>
                             </div>
                             <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
 
@@ -478,7 +478,7 @@
 
                         <div class="form-group-hack form-group">
                             <div class="col-sm-2">
-                                <label>Government</label>
+                                <span>Government</span>
                             </div>
                             <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListGovernment.$invalid }">
 
@@ -505,7 +505,7 @@
 
                         <div class="form-group-hack form-group">
                             <div class="col-sm-2">
-                                <label>Community Organization</label>
+                                <span>Community Organization</span>
                             </div>
                             <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListCommunity.$invalid }">
 
@@ -532,7 +532,7 @@
 
                         <div class="form-group-hack form-group">
                             <div class="col-sm-2">
-                                <label>Other</label>
+                                <span>Other</span>
                             </div>
                             <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListOther.$invalid }">
 
@@ -600,7 +600,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.estimated_cost.$invalid}">
 
-                        <label>Estimated project cost</label>
+                        <span>Estimated project cost</span>
                         <select class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
                                 ng-model="project.totalProjectCost">
                             <option value ng-selected="!project.totalProjectCost">Select estimated project cost</option>
@@ -616,7 +616,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.org_contribution.$invalid}">
 
-                        <label>Organization contribution</label>
+                        <span>Organization contribution</span>
                         <select class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
                                 ng-model="project.orgContribution">
                             <option value ng-selected="!project.orgContribution">Select organization contribution</option>
@@ -630,7 +630,7 @@
 
                     <div class="form-group">
                         <div class="col-sm-5 nopadding">
-                            <label>Supporting documentation (optional)</label>
+                            <span>Supporting documentation (optional)</span>
                         </div>
                         <div class="col-sm-7 nopadding"
                              style="cursor: pointer;"
@@ -650,32 +650,32 @@
 
                     <div class="form-group">
                         <input type="checkbox" name="incResFunding" icheck ng-model="project.incResFunding"/>
-                        <label style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements.</label>
+                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements.</span>
                     </div>
 
                     <div class="form-group">
                         <input type="checkbox" name="incSFIConservation" icheck ng-model="project.incSFIConservation"/>
-                        <label style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if this project is part of a 2015 SFI Conservation or Community Grant.</label>
+                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if this project is part of a 2015 SFI Conservation or Community Grant.</span>
                     </div>
 
 
                     <div class="form-group">
-                        <label style="width: 600px; vertical-align: middle;" class="checkboxLabel">May SFI use this project as an example in communications, to help convey the exemplary work of SFI Program Participants in
-                            the areas of conservation and community engagement?</label><br/>
+                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">May SFI use this project as an example in communications, to help convey the exemplary work of SFI Program Participants in
+                            the areas of conservation and community engagement?</span><br/>
 
                         <div>
                             <input type="radio" name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>
-                            <label class="radioLabel">Share – with our organization’s name</label>
+                            <span class="radioLabel">Share – with our organization’s name</span>
                         </div>
 
                         <div>
                             <input type="radio" name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />
-                            <label class="radioLabel">Share – don’t use our organization’s name</label>
+                            <span class="radioLabel">Share – don’t use our organization’s name</span>
                         </div>
 
                         <div>
                             <input type="radio" name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>
-                            <label class="radioLabel">Please don’t share</label>
+                            <span class="radioLabel">Please don’t share</span>
                         </div>
 
                     </div>
