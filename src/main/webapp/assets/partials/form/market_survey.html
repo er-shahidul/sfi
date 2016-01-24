@@ -333,7 +333,7 @@
                             <tbody>
 
                             <tr ng-repeat="item in cs8.primaryProducers">
-                                <td class="ng-binding">{{ producers[item.source] }}</td>
+                                <td class="ng-binding">{{ producers[item.source - 1] }}</td>
                                 <td class="ng-binding">{{ item.percPurchased }} </td>
 
                                 <td><a href="" ng-click="editProducer($index, item)">Edit</a></td>
@@ -348,10 +348,19 @@
                             <label class="form-inline">
                                 SFI primary producers
                                 <select class="form-control" name="producerSource"
-                                        ng-model="producer.source"
-                                        ng-options="idx*1 as item for (idx, item) in producers">
+                                        ng-model="producer.source">
+
                                     <option ng-selected="!producer.source">Select</option>
+                                    <option ng-value="$index + 1" ng-repeat="item in producers" ng-selected="producer.source == $index + 1">{{item}}</option>
                                 </select>
+
+                                <!--ng-options="idx*1 + 1 as item for (idx, item) in producers'">-->
+                                <!--<select  class="form-control" name="producerSource" ng-model="producer.source"-->
+                                        <!--ng-options="$index*1 + 1 as item for item in producers">-->
+                                    <!--<option ng-selected="!producer.source">Select</option>-->
+
+                                <!--</select>-->
+
                             </label>
                             <label class="form-inline">
                                 How much of your total annual purchased supply does this supplier represent (estimate)

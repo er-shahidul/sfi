@@ -333,11 +333,11 @@
                             <tbody>
 
                             <tr ng-repeat="item in cs8.primaryProducers">
-                                <td class="ng-binding">{{ producers[item.source] }}</td>
+                                <td class="ng-binding">{{ producers[item.source - 1] }}</td>
                                 <td class="ng-binding">{{ item.percPurchased }} </td>
 
-                                <td><a href="" ng-click="editProducer($index, item)">Edit</a></td>
-                                <td><a href="" ng-click="deleteProducer($index)">Delete</a></td>
+                                <td class="disabled"><a href="" ng-click="">Edit</a></td>
+                                <td class="disabled"><a href="" ng-click="">Delete</a></td>
                             </tr>
                             </tbody>
                         </table><br/>
@@ -347,9 +347,18 @@
                             </p>
                             <label class="form-inline">
                                 SFI primary producers
-                                <select readonly class="form-control" name="producerSource" ng-model="producer.source"
-                                        ng-options="idx*1 as item for (idx, item) in producers">
+
+                                <!--<select readonly class="form-control" name="producerSource" ng-model="producer.source"-->
+                                        <!--ng-options="$index*1 + 1 as item for item in producers">-->
+                                    <!--<option ng-selected="!producer.source">Select</option>-->
+
+                                <!--</select>-->
+
+                                <select readonly class="form-control" name="producerSource"
+                                        ng-model="producer.source">
+
                                     <option ng-selected="!producer.source">Select</option>
+                                    <option ng-value="$index + 1" ng-repeat="item in producers" ng-selected="producer.source == $index + 1">{{item}}</option>
                                 </select>
                             </label>
                             <label class="form-inline">
@@ -357,7 +366,7 @@
                                 <input type="number" readonly ng-model="producer.percPurchased" name="percPurchased" class="form-control" style="width: 60px;"> %
                             </label>
 
-                        <p style="text-align: right;padding-top: 10px;padding-right: 60px;" ng-click="addProducer()">+ Add Another</p>
+                        <!--<p style="text-align: right;padding-top: 10px;padding-right: 60px;" ng-click="addProducer()">+ Add Another</p>-->
                         </form>
                     </div>
 
