@@ -121,12 +121,12 @@
     </select>
 </div>
 
-<table class="table table-striped" ng-show="regionId > 0">
+<table class="table table-striped"  border="1px solid;" ng-show="regionId > 0">
 
 <!-- Header -->
 <thead>
 <tr>
-    <th>Raw Material Sources</th>
+    <th style="text-align:center;width: 120px;">Raw Material Sources</th>
     <th style="width:175px; text-align:center;">Units &amp; Volume</th>
 
     <th style="width:120px;  text-align:center;"
@@ -178,14 +178,14 @@
     </tr>
 
     <tr ng-if="section.row == 11">
-        <th>Other</th>
+        <th>Other Sources </th>
         <th colspan="8"></th>
     </tr>
 
 
     <tr ng-repeat-end ng-form="innerForm">
 
-        <td ng-init="section.form = innerForm" tooltip data-html="true" data-placement="top" data-container="body"
+        <td style="text-align: right;" ng-init="section.form = innerForm" tooltip data-html="true" data-placement="top" data-container="body"
             data-title="{{ section.tooltip }}">
 
             <input type="checkbox" name="otherEnable" id="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
@@ -193,8 +193,8 @@
             {{section.name}}
 
 
-            <div ng-show="section.otherEnable && otherLabel">
-                <a ng-click="showPopUp3(section)">{{ otherLabel | limitTo: 20 }}</a>
+            <div style="text-align: left;margin-top: 10px;" ng-show="section.otherEnable && otherLabel">
+                <u><a ng-click="showPopUp3(section)">{{ otherLabel | limitTo: 20 }}</a></u>
             </div>
 
         </td>
@@ -217,7 +217,7 @@
             <div class="form-group padded alignright"
                  ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item2.$invalid}" ng-show="section.unit > 0">
 
-                Volume <input type="text" style="width: 105px" class="form-control shortest2" name="item2" ng-required="isSectionDirty(innerForm)"
+                Volume <input type="text" style="width: 70px" class="form-control shortest2" name="item2" ng-required="isSectionDirty(innerForm)"
                               ng-disabled="isDisabled(section)" ng-model="section.volume"
                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
 
@@ -233,7 +233,7 @@
             <a href="" id="pop-item-{{$index}}"
                ng-show="showPop1Link($index)"
                ng-click="showPopUp1($index)">
-                <div><small>Reason less than 100%</small></div>
+                <div><u><small>Reason less than 100%</small></u></div>
             </a>
         </td>
 
@@ -285,8 +285,10 @@
                 <span>SFI/CSA/FSC</span>
             </div>
 
-            <a ng-hide="isDisabled(section)" ng-click="showPopUp2($index)" id="pop-link-{{$index}}">Select Standard</a>
-            <span ng-show="isDisabled(section)">Select Standard</span>
+            <u>
+            <a ng-hide="isDisabled(section)" ng-click="showPopUp2($index)" id="pop-link-{{$index}}">Select Standards</a>
+            <span ng-show="isDisabled(section)">Select Standards</span>
+            </u>
         </td>
 
         <td align="center" ng-class="{'has-error' : innerForm.item8.$invalid}">
@@ -321,21 +323,22 @@
     </tr>
 </tbody>
 
+    <tr>
+        <td colspan="9">
+        <!-- Form 1 buttons -->
+        <div style="margin-top: 20px;" class="col-sm-4 col-sm-offset-8 alignright" ng-show="regionId > 0">
+            <button type="button" class="btn secondary" ng-click="cancelUsCanada()">Cancel</button>
+            <!-- v2 -->
+            <!-- button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save, and enter another region</button-->
+            <button type="button" class="btn btn-success" ng-click="saveUsCanada()">Enter another region</button>
+        </div>
+        <div class="control-group">&nbsp;</div>
+        <!-- -->
+        </td>
+    </tr>
 
 <!-- Form End -->
 </table>
-
-<!-- Form 1 buttons -->
-<div class="col-sm-4 col-sm-offset-8 alignright" ng-show="regionId > 0">
-    <button type="button" class="btn secondary" ng-click="cancelUsCanada()">Cancel</button>
-    <!-- v2 -->
-    <!-- button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save, and enter another region</button-->
-    <button type="button" class="btn btn-success" ng-click="saveUsCanada()">Enter another region</button>
-</div>
-<div class="control-group">&nbsp;</div>
-<!-- -->
-
-
 
 <!-- FORM 2 -->
 <div class="col-sm-12" ng-show="regionId == -1">
