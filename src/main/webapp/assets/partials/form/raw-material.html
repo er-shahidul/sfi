@@ -114,8 +114,6 @@
 <!-- FORM 1 / Regional Supply -->
 
 <div class="form-group">
-    <h6><strong>Raw Material Supply (procured directly from the forest to your SFI manufacturing facilities)</strong></h6>
-    <label>Select the country, state or province using the drop-down below. Please note, you may either select and report raw material supply for individual states or provinces or select ‘All States’ or ‘All Provinces’ from the list to report your procured volume by country.</label>
     <select ng-model="regionId" id="regionId" ng-change="isUsCanadaExist()">
         <option value="0">&lt;Select the region of your fiber source&gt;</option>
         <option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
