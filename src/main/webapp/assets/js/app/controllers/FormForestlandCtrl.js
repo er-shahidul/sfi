@@ -95,7 +95,7 @@ sfiFormApp
 
         var tooltip = {
             html : true,
-            placement : "bottom",
+            placement : "left",
             container : "#cont-body",
             trigger   : 'hover focus'
         }
