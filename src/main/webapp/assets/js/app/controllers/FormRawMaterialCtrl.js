@@ -943,9 +943,20 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         show: false
     });
 
+    var lastYear3Modal = $modal({
+        scope: $scope,
+        template: '/assets/partials/form/last-year-3modal.html',
+        show: false
+    });
+
 
     $scope.lastYearPop = function(){
         lastYearModal.$promise.then(lastYearModal.show);
+        return false;
+    }
+
+    $scope.lastYear3Pop = function(){
+        lastYearModal.$promise.then(lastYear3Modal.show);
         return false;
     }
 
