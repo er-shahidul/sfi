@@ -146,8 +146,18 @@ sfiFormApp
     }
 
     $scope.lastYear2Pop = function(){
-        lastYearModal.$promise.then(lastYear2Modal.show);
+        lastYear2Modal.$promise.then(lastYear2Modal.show);
         return false;
+    }
+
+    $scope.lastYearClose = function()
+    {
+        lastYearModal.$promise.then(lastYearModal.hide);
+    }
+
+    $scope.lastYear2Close = function()
+    {
+        lastYear2Modal.$promise.then(lastYear2Modal.hide);
     }
 
 
