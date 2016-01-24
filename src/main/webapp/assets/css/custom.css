@@ -265,67 +265,110 @@ label a {
 /*
  Section color Change individual
 */
-.formContent.section_background_2{
+.formContent{
+    border: 0px;
+    -webkit-box-shadow: inset 0 0px 0px ;
+    box-shadow: inset 0 0px 0px;
+    background-color: #ECF0F1;
+}
+.row.section_background_2{
     background-color: #E1F2F3;
+}
+.row.section_background_2 #selectedItem{
+    background-color: #048F98;
+}
+.row.section_background_2 .panel-success>.panel-heading{
+    background-color: #048F98;
 }
 .section2 div{
     border-color: #048F98;
 }
 .formMenuItem.section2 span{
-    color: #048F98;
+    color: #048F98 !important;
 }
 .section2 div.active{
     background-color: #048F98;
+    color: white !important;
 }
-.formContent.section_background_3{
+.row.section_background_3{
     background-color: #F2EAF1;
+}
+.row.section_background_3 #selectedItem{
+    background-color: #9C6F93;
+}
+.row.section_background_3 .panel-success>.panel-heading{
+    background-color: #9C6F93;
 }
 .section3 div{
     border-color: #9C6F93;
 }
 .formMenuItem.section3 span{
-    color: #9C6F93;
+    color: #9C6F93 !important;
 }
 .section3 div.active{
     background-color: #9C6F93;
+    color: white !important;
 }
-.formContent.section_background_4{
+.row.section_background_4{
     background-color: #FDEFE4;
+}
+.row.section_background_4 #selectedItem{
+    background-color: #DC8D50;
+}
+.row.section_background_4 .panel-success>.panel-heading{
+    background-color: #DC8D50;
 }
 .section4 div{
     border-color: #DC8D50;
 }
 .formMenuItem.section4 span{
-    color: #DC8D50;
+    color: #DC8D50 !important;
 }
 .section4 div.active{
     background-color: #DC8D50;
+    color: white !important;
 }
-.formContent.section_background_5{
+.row.section_background_5{
     background-color: #ccf3a8;
+}
+.row.section_background_5 #selectedItem{
+    background-color: #3AB662;
+}
+.row.section_background_5 .panel-success>.panel-heading{
+    background-color: #3AB662;
 }
 .section5 div{
     border-color: #3AB662;
 }
 .formMenuItem.section5 span{
-    color: #3AB662;
+    color: #3AB662 !important;
 }
 .section5 div.active{
     background-color: #3AB662;
+    color: white !important;
 }
-.formContent.section_background_6{
-    background-color: #DCA065;
+.row.section_background_6{
+    background-color: #E3C4A4;
+}
+.row.section_background_6 #selectedItem{
+    background-color: #C96844;
+}
+.row.section_background_6 .panel-success>.panel-heading{
+    background-color: #C96844;
 }
 .section6 div{
     border-color: #C96844;
 }
 .formMenuItem.section6 span{
-    color: #C96844;
+    color: #C96844 !important;
 }
 .section6 div.active{
     background-color: #C96844;
+    color: white !important;
 }
-
+.panel{
+    margin-top: 20px;
+}
 
 .myButton {
 text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
