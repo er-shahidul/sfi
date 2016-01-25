@@ -68,12 +68,13 @@
 
             <div class="form-group">
                 <p>Please answer the following questions for ALL of your forestland and manufacturing operations/mills/log yards for your organization whether they fall under the scope of your SFI certificate or not:</p>
-                <label>My company/organization:</label>
+
+                <label ng-if="!isSfiSecondary()">My company/organization:</label>
 
                 <div class="form-group">
 
                     <!-- Owns and/or manages forest land -->
-                    <div class="form-group">
+                    <div class="form-group" ng-if="!isSfiSecondary()">
 
 
                         <input type="checkbox" disabled name="ownsMngLands" class="icheck" icheck ng-model="cs1.ownsMngLands"/>
@@ -120,7 +121,8 @@
 
 
                     <!-- Has primary manufacturing operations/mills/log yards located in -->
-                    <div class="form-group">
+                    <div class="form-group" ng-if="!isSfiSecondary()">
+
                         <input type="checkbox" disabled name="hasPrimaryOperMillsYards"
                                ng-model="cs1.hasPrimaryOperMillsYards" class="icheck" icheck />
                         <label class="checkboxLabel">Has primary manufacturing operations/mills/log yards located in</label>
@@ -166,10 +168,16 @@
                     <!-- Has secondary manufacturing facilities -->
                     <div class="form-group">
 
-                        <input type="checkbox" disabled name="hasSecondaryOperMillsYards"
-                               ng-model="cs1.hasSecondaryOperMillsYards" class="icheck" icheck />
+                        <div ng-hide="isSfiSecondary()">
+                            <input type="checkbox" disabled name="hasSecondaryOperMillsYards"
+                                   ng-model="cs1.hasSecondaryOperMillsYards" class="icheck" icheck />
 
-                        <label class="checkboxLabel">Has secondary manufacturing facilities located in:</label>
+                            <label class="checkboxLabel">Has secondary manufacturing facilities located in:</label>
+                        </div>
+
+                        <!-- lable for secondary -->
+                        <label ng-show="isSfiSecondary()">My company/organization has secondary manufacturing facilities located in:</label>
+                        <!-- -/- -->
 
                         <div class="form-group" ng-show="cs1.hasSecondaryOperMillsYards">
 

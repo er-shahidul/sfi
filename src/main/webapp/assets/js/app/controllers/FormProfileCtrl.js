@@ -9,6 +9,9 @@ sfiFormApp
             $rootScope.$form = $scope.cs1Form;
         }
 
+
+        $rootScope.isSfiSecondary() && ($scope.cs1.hasSecondaryOperMillsYards = true);
+
         $scope.saveForm = function(go){
 
             if($scope.cs1Form.$valid){
