@@ -3,6 +3,7 @@ package com.rbs.www.web.sic.services;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.mapper.EntityModelMapperService;
 import com.rbs.www.common.modules.mapper.ViewModelMapperService;
+import com.rbs.www.web.common.models.datamodels.UpdateDate;
 import com.rbs.www.web.common.services.ModelValidationService;
 import com.rbs.www.web.sic.models.entities.*;
 import com.rbs.www.web.sic.models.viewmodels.*;
@@ -184,6 +185,15 @@ public class SicFormService {
     }
     /************************ SicCs10 : End *************************/
 
+    /************************* UpdateDate : Begin ***********************/
+    public UpdateDate getUpdateDate(Integer id) {
+        UpdateDate model = new UpdateDate();
+        model.setUpdateDate(sicFormDataService.getUpdateAt(id).toString());
+
+        return model;
+    }
+
+    /************************* UpdateDate : End ***********************/
     private <T extends BaseViewModel> T validate(T model) {
         modelValidationService.validate(model);
         return model;
