@@ -1,5 +1,6 @@
 package com.rbs.www.admin.models.entities;
 
+import org.hibernate.annotations.Type;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -42,6 +43,7 @@ public class User extends Audit implements UserDetails {
     private Boolean token = false;
 
     @Column(name = "invitation_msg", nullable = true)
+    @Type(type="text")
     private String invitationMsg;
 
     @ManyToMany(targetEntity = Group.class, fetch = FetchType.EAGER)
