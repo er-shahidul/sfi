@@ -393,3 +393,13 @@ label a {
 .myButton {
 text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 }
+h5 .section-header{
+ font-size: 18px;
+}
+.question-style{
+  font-size: 12px;
+  font-weight: 700;
+}
+.ng-scope{
+
+}
