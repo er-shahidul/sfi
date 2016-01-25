@@ -1198,9 +1198,9 @@ public class Cs8PartialA extends BaseEntityModel {
 
     @Column(name = "cs8_fscDemandDeveloping_4", columnDefinition = "TEXT", nullable = true)
     private String fscDemandDeveloping_4;
-
-    @Column(name = "cs8_chainOfCustody_FSCCertification", columnDefinition = "TEXT", nullable = true)
-    private String chainOfCustody_FSCCertification;
+//
+//    @Column(name = "cs8_chainOfCustody_FSCCertification", columnDefinition = "TEXT", nullable = true)
+//    private String chainOfCustody_FSCCertification;
 
     @Override
     public Integer getId() {

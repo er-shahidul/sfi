@@ -356,7 +356,7 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private String fscChainCustody12OtherDescribe;
     private String fscChainCustody13OtherDescribe;
 
-    private String chainOfCustody_FSCCertification;
+//    private String chainOfCustody_FSCCertification;
 
     @Override
     public Integer getId() {
