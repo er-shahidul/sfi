@@ -1098,7 +1098,7 @@ text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 }
 
 .ax_paragraph {
-	font-family: 'Arial Regular', 'Arial';
+	font-family: 'sans-serif';
 	font-weight: 400;
 	font-style: normal;
 	font-size: 13px;
@@ -1111,3 +1111,6 @@ text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 	vertical-align: top;
 }
 
+body{
+  font-family: sans-serif;
+}
