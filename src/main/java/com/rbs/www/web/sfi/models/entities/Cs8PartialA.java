@@ -4,6 +4,7 @@ import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.web.common.models.entities.SfiPpFormAllCountry;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -871,39 +872,51 @@ public class Cs8PartialA extends BaseEntityModel {
     private String pefcDemandDeveloping_9;
 
     @Column(name = "cs8_planSfiLabelUseComment10", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment10;
 
     @Column(name = "cs8_planSfiLabelUseComment11", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment11;
 
     @Column(name = "cs8_planSfiLabelUseComment12", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment12;
 
     @Column(name = "cs8_planSfiLabelUseComment1", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment1;
 
     @Column(name = "cs8_planSfiLabelUseComment2", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment2;
 
     @Column(name = "cs8_planSfiLabelUseComment3", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment3;
 
     @Column(name = "cs8_planSfiLabelUseComment4", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment4;
 
     @Column(name = "cs8_planSfiLabelUseComment5", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment5;
 
     @Column(name = "cs8_planSfiLabelUseComment6", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment6;
 
     @Column(name = "cs8_planSfiLabelUseComment7", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment7;
 
     @Column(name = "cs8_planSfiLabelUseComment8", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment8;
 
     @Column(name = "cs8_planSfiLabelUseComment9", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String planSfiLabelUseComment9;
 
     @Column(name = "cs8_planSfiLabelUseIncrease10", columnDefinition = "TEXT", nullable = true)
@@ -1177,6 +1190,7 @@ public class Cs8PartialA extends BaseEntityModel {
     private String sfiMarketExplain2;
 
     @Column(name = "cs8_sfiServeComments", columnDefinition = "TEXT", nullable = true)
+    @Type(type="text")
     private String sfiServeComments;
 
     @Column(name = "cs8_fscCocCertificationItemsWhy_2", columnDefinition = "TEXT", nullable = true)
@@ -1184,6 +1198,9 @@ public class Cs8PartialA extends BaseEntityModel {
 
     @Column(name = "cs8_fscDemandDeveloping_4", columnDefinition = "TEXT", nullable = true)
     private String fscDemandDeveloping_4;
+
+    @Column(name = "cs8_chainOfCustody_FSCCertification", columnDefinition = "TEXT", nullable = true)
+    private String chainOfCustody_FSCCertification;
 
     @Override
     public Integer getId() {
