@@ -55,7 +55,9 @@ sfiFormApp
             "Rocky Mountain Elk Foundation",
             "Ruffed Grouse Society",
             "The Nature Conservancy",
-            "The Nature Conservancy of Canada"
+            "The Nature Conservancy of Canada",
+            "NatureServe",
+            "NatureServe Canada"
         ]
 
         $scope.governmentList = [

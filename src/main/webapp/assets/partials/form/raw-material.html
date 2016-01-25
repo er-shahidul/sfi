@@ -65,6 +65,7 @@
     </label>
     (can now drill down to more specific regions for sourcing of fiber supply)
     <a style="text-decoration:underline;" ng-click="lastYear3Pop()">How we used your data last year</a>
+    <!--<a style="text-decoration:underline;" href="/assets/images/u588.png" target="_blank">How we used your data last year</a>-->
 
     <br/><br/>
     <span>Select the country, state or province using the drop-down below. Please note, you may either select or report raw material supply for individual states or <br/>provinces or select ‘All States’ or ‘All Provinces’ from the list to report your procured volume by country.</span>
@@ -121,7 +122,7 @@
     </select>
 </div>
 
-<table class="table table-striped"  border="1px solid;" ng-show="regionId > 0">
+<table class="table table-striped table-bordered" ng-show="regionId > 0">
 
 <!-- Header -->
 <thead>
@@ -151,12 +152,12 @@
     <th style="width:120px; text-align:center;"
         tooltip data-html="true" data-placement="top" data-container="body"
         data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to Forest Stewardship Council Standards"
-            >% from FSC only certified forests (new!)</th>
-    <th style="width:180px; text-align:center;">Select standard combination if reporting volume certified to more than one standard (new!)</th>
+            >% from FSC only certified forests </th>
+    <th style="width:180px; text-align:center;">Select standard combination if reporting volume certified to more than one standard </th>
     <th style="width:120px; text-align:center;"
         tooltip data-html="true" data-placement="top" data-container="body"
         data-title="Your best estimate of fiber sourced from dual or triple certified forests. Note that material sourced from an area certified to only one standard should be reported in the relevant certification standard column."
-            >% certified forest to more than one standard (new!)</th>
+            >% certified forest to more than one standard </th>
 
 </tr>
 </thead>
