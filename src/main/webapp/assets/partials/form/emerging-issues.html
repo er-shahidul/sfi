@@ -3,11 +3,11 @@
     <div ng-init="errors = cs7.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
     <div class="col-sm-8">
-        <h5>6. Emerging Issues</h5>
+        <h5>6. Issues of Interest</h5>
 
         <form name="cs7Form">
             <div class="form-group">
-                <label>Select the emerging issues you are interested in. This way we can keep you informed on these topics.</label>
+                <label>Select the following Issues of Interest. This way we can keep you informed on these topics.</label>
 
                 <div class="form-group hasRadioBoxes nopadding">
 
@@ -61,10 +61,15 @@
 
                             <input type="checkbox" name="answer"
                                    checklist-model="cs7.intMarketCountries" checklist-value="8" ng-model="intCountry" icheck>
+                            <label class="checkboxLabel">Africa</label>
+                            <div></div>
+
+                            <input type="checkbox" name="answer"
+                                   checklist-model="cs7.intMarketCountries" checklist-value="9" ng-model="intCountry" icheck>
                             <label class="checkboxLabel">Other</label>
                             <div></div>
 
-                            <div class="padded-left" ng-show="isSelected(cs7.intMarketCountries, 8)">
+                            <div class="padded-left" ng-show="isSelected(cs7.intMarketCountries, 9)">
                                 Please Explain <input type="text" class="form-control shorter" ng-model="cs7.intMarketCountryOther">
                             </div>
                         </div>

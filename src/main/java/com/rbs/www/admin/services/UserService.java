@@ -172,6 +172,10 @@ public class UserService {
         return !validationService.isEmptyString(firstName);
     }
 
+    public Boolean welcomeMsg(String msg) {
+        return !validationService.welcomeMsg(msg);
+    }
+
     public Boolean isValidEmail(String email) {
         if (validationService.isEmptyString(email)) return false;
         if (!validationService.isValidEmail(email)) return false;
