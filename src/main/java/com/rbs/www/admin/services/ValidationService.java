@@ -20,4 +20,8 @@ public class ValidationService {
     public boolean isValidPassword(String password) {
         return password.length() >= 6;
     }
+
+    public boolean welcomeMsg(String msg) {
+        return msg.length() <= 650;
+    }
 }
