@@ -331,7 +331,7 @@
             <button type="button" class="btn secondary" ng-click="cancelUsCanada()">Cancel</button>
             <!-- v2 -->
             <!-- button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save, and enter another region</button-->
-            <button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save, and enter another region</button>
+            <button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save and enter another region</button>
         </div>
         <div class="control-group">&nbsp;</div>
         <!-- -->
@@ -451,8 +451,8 @@
                 <p class="question-style">Are you sure you want to delete <span id="region-text"></span> as a raw material supply?</p>
             </div>
             <div class="modal-footer">
-                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">ok</a>
                 <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
+                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">Yes, delete this region</a>
             </div>
         </div>
     </div>

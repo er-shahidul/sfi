@@ -160,8 +160,8 @@
                 </div>
 
                 <div class="form-group-hack">
-                    <div class="col-sm-3">
-                        <span>Conservation Organisation</span>
+                    <div class="col-sm-3" style="padding-right:0;">
+                        <span>Conservation Organization</span>
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListConservation.$invalid }">
 
@@ -170,7 +170,7 @@
                                name="organizationListConservation"
                                ng-model="conservationModel"
                                ng-options="item for item in conservationList"
-                               placeholder="Conservation Organisation"
+                               placeholder="Conservation Organization"
                                data-auto-select="true" watchOptions="true" bs-typeahead>
 
                         <div id="selectedItem" ng-repeat="item in cs5.organizationListConservation">{{ item }}
@@ -318,24 +318,27 @@
 
                 <div class="cs3-project" ng-show="cs5.isInPartnership">
                 <form name="innerFrom"  novalidate>
-
-                    <div class="form-group"
+                    <div class="form-group">
+                    <div class="col-sm-2"
                          ng-class="{'has-error' : isDirty() && innerFrom.name.$invalid }">
 
-                        <span>Project Name</span>
+                        <span>Project Name</span></div>
+                    <div class="col-sm-10">
                         <input type="text" class="form-control" name="name" ng-required="isDirty()" maxlength="200" customerror
                                tooltip data-placement="right" data-container="#secCont" data-title="If this is a partnership project with an official title, please provide the official project name."
                                ng-model="project.projectNm"/>
                     </div>
-
-                    <div class="form-group"
+                </div>
+                    <div class="form-group">
+                    <div class="col-sm-2" style="padding-right:0; "
                          ng-class="{'has-error' : isDirty() && innerFrom.projectObj.$invalid }">
 
-                        <span>Project Objective</span>
+                        <span>Project Objective</span></div>
+                    <div class="col-sm-10">
                         <input type="text" class="form-control" name="projectObj" ng-required="isDirty()" maxlength="200" customerror
                                ng-model="project.projectObj"/>
                     </div>
-
+                    </div>
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.projectDescr.$invalid }">
 
@@ -375,9 +378,10 @@
                             <button ng-click="project.sfiStandard15 = deleteBucket(item.id, project.sfiStandard15)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <span>Select state(s)/province(s) for this project (new!)</span>
+                    <div class="col-sm-5">
+                        <span>Select state(s)/province(s) for this project</span>  </div>
+                    <div class="col-sm-7" style="padding-right: 0;">
                         <select class="form-control" name="region" ng-init="regionModel = 0"
                                 ng-model="regionModel" ng-change="regionModel = addBucket(project.projectLocations, regionModel, regions)">
                             <option value="0" >Please select</option>
@@ -387,9 +391,9 @@
                         <div id="selectedItem" ng-repeat="region in project.projectLocations">{{ region.name }}
                             <button ng-click="project.projectLocations = deleteBucket(region.id, project.projectLocations)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
-
                     </div>
-
+                    </div>
+                    <br>
                     <!-- Org list -->
                     <div class="form-group-hack">
                         <span>Project Partners (enter details for at least one of the following)</span>
@@ -452,7 +456,7 @@
 
                         <div class="form-group-hack form-group">
                             <div class="col-sm-2">
-                                <span>Conservation Organisation</span>
+                                <span>Conservation Organization</span>
                             </div>
                             <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
 
@@ -461,7 +465,7 @@
                                        name="organizationListConservation2"
                                        ng-model="conservationModel2"
                                        ng-options="item for item in conservationList"
-                                       placeholder="Conservation Organisation"
+                                       placeholder="Conservation Organization"
                                        data-auto-select="true" watchOptions="true" bs-typeahead>
 
                                 <div id="selectedItem" ng-repeat="item in project.organizationListConservation">{{ item }}
@@ -561,7 +565,7 @@
                     <div class="form-group">
 
 
-                        <label>Estimated project dates</label>
+                        <label style="line-height: 32px;font-weight:unset;">Estimated project dates</label>
                         <div class="col-sm-4 nopadding" style="margin-left: 13.666667%;"
                              ng-class="{'has-error' : isDirty() && innerFrom.start_date.$invalid}">
 
@@ -629,16 +633,16 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-5 nopadding">
-                            <span>Supporting documentation (optional)</span>
-                        </div>
+                        <!--<div class="col-sm-5 nopadding">-->
+                            <!--<span>Supporting documentation (optional)</span>-->
+                        <!--</div>-->
                         <div class="col-sm-7 nopadding"
                              style="cursor: pointer;"
                              ng-file-select ng-model="myFiles"
                              ng-file-change="fileSelected(files)"
                              ng-multiple="false"
                              ng-accept="'image/*,application/pdf'" >
-                            <div>Click to add files from your computer</div>
+                            <div>Supporting documentation (optional)</div>
                             <div><small><u>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</u></small></div>
                         </div>
                         <div id="valdfil">
@@ -650,7 +654,7 @@
 
                     <div class="form-group">
                         <input type="checkbox" name="incResFunding" icheck ng-model="project.incResFunding"/>
-                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements.</span>
+                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements as it relates to the research requirement in the standard.</span>
                     </div>
 
                     <div class="form-group">
@@ -691,7 +695,7 @@
                 </form>
             </div>
                 <br>
-                <h5>III. SIC Funding</h5>
+                <h5>III. SFI Implementation Committees Funding</h5>
                 <table class="table vert-align-middle">
                     <thead>
                     <tr>
