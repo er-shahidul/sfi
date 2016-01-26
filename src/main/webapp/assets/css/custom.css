@@ -400,6 +400,10 @@ h5 .section-header{
   font-size: 12px;
   font-weight: 700;
 }
-.ng-scope{
-
+.formSection{
+  background-color:transparent;
+  border-bottom: 0px;
+}
+.fm-stl label{
+ font-weight: normal;
 }
