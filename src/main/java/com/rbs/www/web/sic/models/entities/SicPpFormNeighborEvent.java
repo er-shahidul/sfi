@@ -1,6 +1,7 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -15,6 +16,7 @@ public class SicPpFormNeighborEvent extends BaseEntityModel {
     private Integer sicPpForm;
 
     @Column(name = "comment", nullable = true)
+    @Type(type="text")
     private String comment;
 
     @Column(name = "whichSic", nullable = true)
