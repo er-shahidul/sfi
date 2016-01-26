@@ -46,7 +46,7 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs;
 
     private Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard10;
-    private Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard15;
+    private Set<SfiPpFormCs3ProjectStandardObjective2015ViewModel> sfiStandard15;
 
     private Boolean shareConceptData;
     private Boolean shareConceptNoName;
@@ -91,11 +91,11 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.sfiStandard10 = sfiStandard10;
     }
 
-    public Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> getSfiStandard15() {
+    public Set<SfiPpFormCs3ProjectStandardObjective2015ViewModel> getSfiStandard15() {
         return sfiStandard15;
     }
 
-    public void setSfiStandard15(Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard15) {
+    public void setSfiStandard15(Set<SfiPpFormCs3ProjectStandardObjective2015ViewModel> sfiStandard15) {
         this.sfiStandard15 = sfiStandard15;
     }
 

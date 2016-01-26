@@ -5,7 +5,9 @@ import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormCs3ProjectStandardObjective;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
+import com.rbs.www.web.sfi.models.entities.SfiPpFormCs3ProjectStandardObjective2015;
 import com.rbs.www.web.sfi.services.FormService;
+import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjective2015Service;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sic.services.SicFormService;
@@ -34,6 +36,9 @@ public class DefaultController {
 
     @Autowired
     private SfiPpFormCs3ProjectStandardObjectiveService sfiPpFormCs3ProjectStandardObjectiveService;
+
+    @Autowired
+    private SfiPpFormCs3ProjectStandardObjective2015Service sfiPpFormCs3ProjectStandardObjective2015Service;
 
     @Autowired
     private SfiPpFormRegionService sfiPpFormRegionService;
@@ -111,6 +116,12 @@ public class DefaultController {
     @RequestMapping(value = "/project/standard/objective/list", method = RequestMethod.GET)
     public ResponseEntity<String> projectStandardObjectiveList() {
         List<SfiPpFormCs3ProjectStandardObjective> projectStandardObjectives = sfiPpFormCs3ProjectStandardObjectiveService.getAll();
+        return new ResponseEntity<String>(Util.getAsString(projectStandardObjectives), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/project/standard/objective/2015/list", method = RequestMethod.GET)
+    public ResponseEntity<String> projectStandardObjective2015List() {
+        List<SfiPpFormCs3ProjectStandardObjective2015> projectStandardObjectives = sfiPpFormCs3ProjectStandardObjective2015Service.getAll();
         return new ResponseEntity<String>(Util.getAsString(projectStandardObjectives), HttpStatus.OK);
     }
 }
