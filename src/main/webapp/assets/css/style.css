@@ -507,7 +507,11 @@ form.bordered .form-group {
 	margin-bottom: 10px;
 	overflow: hidden;
 }
+.form-group-new {
+	overflow: unset;
+	padding-bottom: 0px;
 
+}
 .form-group label {
 	display: block;
 }
@@ -890,7 +894,7 @@ div.form-control {
 }
 
 .box-shadow{
-    width: auto;
+    width: 275px;
     height: auto;
     background-color: #666666;
     box-shadow: 5px 5px 5px #888888;
