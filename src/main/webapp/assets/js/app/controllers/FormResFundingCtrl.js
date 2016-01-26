@@ -219,7 +219,6 @@ sfiFormApp
                     || projectObj
                     || description
                     || sfiStandardObj
-
                     || startDate
                     || endDate
                     || totalProjectCost
