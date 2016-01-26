@@ -324,6 +324,19 @@
     </tr>
 </tbody>
 
+    <tr>
+        <td colspan="9">
+        <!-- Form 1 buttons -->
+        <div style="margin-top: 20px;" class="col-sm-5 col-sm-offset-7 alignright" ng-show="regionId > 0">
+            <button type="button" class="btn secondary" ng-click="cancelUsCanada()">Cancel</button>
+            <!-- v2 -->
+            <!-- button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save, and enter another region</button-->
+            <button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save and enter another region</button>
+        </div>
+        <div class="control-group">&nbsp;</div>
+        <!-- -->
+        </td>
+    </tr>
 
 <!-- Form End -->
 </table>
@@ -438,8 +451,8 @@
                 <p class="question-style">Are you sure you want to delete <span id="region-text"></span> as a raw material supply?</p>
             </div>
             <div class="modal-footer">
-                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">ok</a>
                 <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
+                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">Yes, delete this region</a>
             </div>
         </div>
     </div>

@@ -168,7 +168,8 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         if(usCanada){
 
             $scope.usCanadaDelete = usCanada;
-            $('#delete1 #region-text').text(usCanada.regionName);
+            //console.log( usCanada.);
+            $('#region-text').text(usCanada.regionName);
             $('#delete1').modal();
         }
     }
