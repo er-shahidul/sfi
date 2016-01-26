@@ -324,6 +324,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
                     $scope.cs6 = angular.copy($rootScope.form.cs6);
                     $scope.init();
                     Message.success('Section successfully saved', '.msg-cont');
+                    $rootScope.updateFormMeta();
                 }
 
                 if(go){

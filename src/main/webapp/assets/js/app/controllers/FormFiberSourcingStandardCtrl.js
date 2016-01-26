@@ -33,6 +33,7 @@ sfiFormApp
                     $rootScope.form.cs10 = response.data;
                     $scope.cs10 = angular.copy($rootScope.form.cs10);
                     Message.success('Section successfully saved', '.msg-cont');
+                    $rootScope.updateFormMeta();
                 }
             });
     };

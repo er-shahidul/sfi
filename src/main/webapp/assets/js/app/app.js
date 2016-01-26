@@ -1,7 +1,7 @@
 
 var sfiFormApp = angular.module('sfiFormApp', ['ui.router', 'checklist-model',  'ngSanitize', 'mgcrea.ngStrap', 'angularFileUpload']);
 
-sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+sfiFormApp.config(['$stateProvider', '$urlRouterProvider',  function($stateProvider, $urlRouterProvider){
 
     $urlRouterProvider.otherwise("/profile");
 
@@ -63,7 +63,7 @@ sfiFormApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
             url : "/raw-material",
             views: {
                 editContainer : {
-                    templateUrl : '/assets/partials/form/raw-material.html',
+                    templateUrl :  '/assets/partials/form/raw-material.html',
                     controller  : 'FormRawMaterialCtrl'
                 },
                 viewContainer : {
@@ -726,6 +726,10 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
         }).replace(/\s+/g, '');
     }
 
+    $rootScope.hasPrimaryYards = function(){
+
+        return $rootScope.form.cs1.hasPrimaryOperMillsYards;
+    }
 
 
     $rootScope.isFieldsEnabled = function(){
@@ -754,7 +758,6 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
 
     $rootScope.addBucket = function(bucket, model, list){
 
-        console.log(bucket, model, list);
 
         var item = _.find(bucket, function(item){
             return item.id == model;
@@ -779,4 +782,20 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
         });
     }
 
+}]);
+
+sfiFormApp.run(['$rootScope', '$http', function($rootScope, $http) {
+    $rootScope.updateFormMeta = function(){
+
+        var url = "/updateDate/" + $rootScope.form.cs10.id;
+        $http
+            .get(url)
+            .then(function(response){
+
+                if(response.data){
+                    $rootScope.form.cs10.updatedAt = response.data.updateDate;
+                }
+
+            });
+    }
 }]);

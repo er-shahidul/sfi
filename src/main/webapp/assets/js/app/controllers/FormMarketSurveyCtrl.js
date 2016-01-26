@@ -946,6 +946,7 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
                             $scope.cs8Form.$setPristine();
                             $rootScope.form.cs8 = response.data;
                             Message.success('Section successfully saved', '.msg-cont');
+                            $rootScope.updateFormMeta();
                         }
 
 

@@ -17,6 +17,7 @@ sfiSicApp
 
                         $scope.cs4Form.$setPristine();
                         Message.success('Section successfully saved', '.msg-cont', true);
+                        $rootScope.updateFormMeta();
                     }
 
 
