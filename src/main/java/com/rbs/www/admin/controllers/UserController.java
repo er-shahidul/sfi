@@ -196,13 +196,13 @@ public class UserController {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "admin/user/edit" + user.getId();
+            return "redirect:/admin/user/edit/" + user.getId();
         }
 
         if (isWelcomeMsg) {
             model.addAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
             contantForNewUser(model);
-            return "admin/user/edit" + user.getId();
+            return "redirect:/admin/user/edit/" + user.getId();
         }
 
         userService.updateUser(user);
