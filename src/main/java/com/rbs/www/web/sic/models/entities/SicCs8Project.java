@@ -4,6 +4,7 @@ import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.models.datamodels.BlobNames;
 import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -96,6 +97,7 @@ public class SicCs8Project extends BaseEntityModel {
     private String contactName;
 
     @Column(name = "cs8_description", nullable = true)
+    @Type(type="text")
     private String description;
 
     @Column(name = "cs8_name", nullable = true)

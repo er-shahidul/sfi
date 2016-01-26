@@ -562,7 +562,7 @@
 
 
                         <label>Estimated project dates</label>
-                        <div class="col-sm-4 nopadding"
+                        <div class="col-sm-4 nopadding" style="margin-left: 13.666667%;"
                              ng-class="{'has-error' : isDirty() && innerFrom.start_date.$invalid}">
 
                             <div class="col-sm-4 nopadding" style="line-height: 32px;">Start date</div>
@@ -580,7 +580,7 @@
 
                         </div>
 
-                        <div class="col-sm-4 col-sm-offset-2 nopadding"
+                        <div class="col-sm-4 nopadding" style="margin-left: 10.333333%;"
                              ng-class="{'has-error' : isDirty() && innerFrom.end_date.$invalid}">
                             <div class="col-sm-4 nopadding" style="line-height: 32px;">
                                 End date
@@ -600,7 +600,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.estimated_cost.$invalid}">
 
-                        <span>Estimated project cost</span>
+                        <div class="col-sm-3 nopadding" style="line-height: 32px;">Estimated project cost</div>
                         <select class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
                                 ng-model="project.totalProjectCost">
                             <option value ng-selected="!project.totalProjectCost">Select estimated project cost</option>
@@ -608,7 +608,7 @@
                         </select>
 
                         <u>
-                    <span class="currPop" id="currPop1"
+                         <span class="currPop" id="currPop1"
                           ng-click="currPopPp('currPop1', 'totalProjectCostCurr')">{{ gerCurrText(project.totalProjectCostCurr) }}</span>
                         </u>
                     </div>
@@ -616,7 +616,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.org_contribution.$invalid}">
 
-                        <span>Organization contribution</span>
+                        <div class="col-sm-3 nopadding" style="line-height: 32px;">Organization contribution</div>
                         <select class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
                                 ng-model="project.orgContribution">
                             <option value ng-selected="!project.orgContribution">Select organization contribution</option>
@@ -692,7 +692,7 @@
             </div>
                 <br>
                 <h5>III. SIC Funding</h5>
-                <table class="table table-striped vert-align-middle">
+                <table class="table vert-align-middle">
                     <thead>
                     <tr>
                         <th></th>
