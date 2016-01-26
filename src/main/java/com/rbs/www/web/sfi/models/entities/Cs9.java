@@ -3,6 +3,7 @@ package com.rbs.www.web.sfi.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -68,24 +69,35 @@ public class Cs9 extends BaseEntityModel {
     private Boolean useWho1A1B;
 
     @Column(name = "cs9_convertForestLandExplain", nullable = true)
+    @Type(type="text")
     private String convertForestLandExplain;
 
+    @Column(name = "cs9_conservationBiodiversity415Exp", nullable = true)
+    @Type(type="text")
+    private String conservationBiodiversity415Exp;
+
     @Column(name = "cs9_economicOtherExplain", nullable = true)
+    @Type(type="text")
     private String economicOtherExplain;
 
     @Column(name = "cs9_environmentalHarmOtherExplain", nullable = true)
+    @Type(type="text")
     private String environmentalHarmOtherExplain;
 
     @Column(name = "cs9_respondingOtherExplain", nullable = true)
+    @Type(type="text")
     private String respondingOtherExplain;
 
     @Column(name = "cs9_restorationOtherExplain", nullable = true)
+    @Type(type="text")
     private String restorationOtherExplain;
 
     @Column(name = "cs9_stopWho1A1BNote", nullable = true)
+    @Type(type="text")
     private String stopWho1A1BNote;
 
     @Column(name = "cs9_useWho1A1BNote", nullable = true)
+    @Type(type="text")
     private String useWho1A1BNote;
 
     @Column(name = "cs9_conservationBiodiversity413", nullable = true)
@@ -239,21 +251,34 @@ public class Cs9 extends BaseEntityModel {
     private Set<Integer> trainingEducationItems1;
 
     @Column(name = "cs9_conservation413DataSource1_2", nullable = true)
+    @Type(type="text")
     private String conservation413DataSource1_2;
+
     @Column(name = "cs9_conservation413DataSource1_4", nullable = true)
+    @Type(type="text")
     private String conservation413DataSource1_4;
+
     @Column(name = "cs9_conservation413DataSource2_2", nullable = true)
     private String conservation413DataSource2_2;
     @Column(name = "cs9_conservation413DataSource2_4", nullable = true)
     private String conservation413DataSource2_4;
+
     @Column(name = "cs9_conservation414Explain1_1", nullable = true)
+    @Type(type="text")
     private String conservation414Explain1_1;
+
     @Column(name = "cs9_conservation414Explain1_2", nullable = true)
+    @Type(type="text")
     private String conservation414Explain1_2;
+
     @Column(name = "cs9_conservation414Explain1_5", nullable = true)
+    @Type(type="text")
     private String conservation414Explain1_5;
+
     @Column(name = "cs9_conservation414Explain1_6", nullable = true)
+    @Type(type="text")
     private String conservation414Explain1_6;
+
     @Column(name = "cs9_conservation414Explain2_1", nullable = true)
     private String conservation414Explain2_1;
     @Column(name = "cs9_conservation414Explain2_2", nullable = true)
@@ -280,7 +305,9 @@ public class Cs9 extends BaseEntityModel {
     private String indigenousPrivateRationale;
     @Column(name = "cs9_indigenousForestPractice", nullable = true)
     private String indigenousForestPractice;
+
     @Column(name = "cs9_trainingEduRationale", nullable = true)
+    @Type(type="text")
     private String trainingEduRationale;
 
     @Override
@@ -290,6 +317,14 @@ public class Cs9 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getConservationBiodiversity415Exp() {
+        return conservationBiodiversity415Exp;
+    }
+
+    public void setConservationBiodiversity415Exp(String conservationBiodiversity415Exp) {
+        this.conservationBiodiversity415Exp = conservationBiodiversity415Exp;
     }
 
     public Set<SfiPpFormStory> getStories() {

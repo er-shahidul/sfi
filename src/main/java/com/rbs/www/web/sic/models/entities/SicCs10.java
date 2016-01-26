@@ -1,6 +1,7 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -39,21 +40,27 @@ public class SicCs10 extends BaseEntityModel {
     private String fullName;
 
     @Column(name = "cs10_sfiEducationDetail", nullable = true)
+    @Type(type="text")
     private String sfiEducationDetail;
 
     @Column(name = "cs10_sfiInformationDetail", nullable = true)
+    @Type(type="text")
     private String sfiInformationDetail;
 
     @Column(name = "cs10_sfiMarketingDetail", nullable = true)
+    @Type(type="text")
     private String sfiMarketingDetail;
 
     @Column(name = "cs10_sfiOtherDetail", nullable = true)
+    @Type(type="text")
     private String sfiOtherDetail;
 
     @Column(name = "cs10_sfiWebContentDetail", nullable = true)
+    @Type(type="text")
     private String sfiWebContentDetail;
 
     @Column(name = "cs10_sfiWebinarDetail", nullable = true)
+    @Type(type="text")
     private String sfiWebinarDetail;
 
     @Override

@@ -5,6 +5,7 @@ import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
+import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjective2015Service;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
 import com.rbs.www.web.sic.services.*;
 import com.rbs.www.web.sic.models.entities.SicFormData;
@@ -48,6 +49,9 @@ public class SicFormController{
     SfiPpFormCs3ProjectStandardObjectiveService sfiPpFormCs3ProjectStandardObjectiveService;
 
     @Autowired
+    SfiPpFormCs3ProjectStandardObjective2015Service sfiPpFormCs3ProjectStandardObjective2015Service;
+
+    @Autowired
     SfiPpFormAllCountryService sfiPpFormAllCountryService;
 
     @Autowired
@@ -80,6 +84,7 @@ public class SicFormController{
         model.addAttribute("regions", sfiPpFormRegionService.getAll());
         model.addAttribute("countries", sfiPpFormAllCountryService.getAll());
         model.addAttribute("standardObjects", sfiPpFormCs3ProjectStandardObjectiveService.getAll());
+        model.addAttribute("standardObjects2015", sfiPpFormCs3ProjectStandardObjective2015Service.getAll());
     }
 
     @RequestMapping(value = "/sicForm", method = RequestMethod.GET)

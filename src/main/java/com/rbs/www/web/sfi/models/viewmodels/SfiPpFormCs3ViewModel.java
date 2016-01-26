@@ -1,18 +1,18 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-//import com.rbs.www.common.modules.validator.SpELAssert;
+import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
 
-//import javax.validation.constraints.NotNull;
-//import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.Set;
 
-//@SpELAssert.List({
-//        @SpELAssert(value = "false", message = "head spel first set"), // wrong again
-//        @SpELAssert(value = "false", message = "head spel second set", property = "world")
-//})
+@SpELAssert.List({
+        @SpELAssert(value = "false", message = "head spel first set"), // wrong again
+        @SpELAssert(value = "false", message = "head spel second set", property = "world")
+})
 public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer id;
     private Integer totalProjectCost;
@@ -20,8 +20,8 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer orgContribution;
     private Integer orgContributionCurr;
 
-//    @NotNull
-//    @Size(min = 1000, max = 1000, message = "{large.string}")
+    @NotNull
+    @Size(min = 1000, max = 1000, message = "{large.string}")
     private String projectNm;
     private String projectObj;
     private String projectDescr;
@@ -46,7 +46,7 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Set<SfiPpFormCs3ProjectSupportDocsViewModel> supportDocs;
 
     private Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard10;
-    private Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard15;
+    private Set<SfiPpFormCs3ProjectStandardObjective2015ViewModel> sfiStandard15;
 
     private Boolean shareConceptData;
     private Boolean shareConceptNoName;
@@ -91,11 +91,11 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.sfiStandard10 = sfiStandard10;
     }
 
-    public Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> getSfiStandard15() {
+    public Set<SfiPpFormCs3ProjectStandardObjective2015ViewModel> getSfiStandard15() {
         return sfiStandard15;
     }
 
-    public void setSfiStandard15(Set<SfiPpFormCs3ProjectStandardObjectiveViewModel> sfiStandard15) {
+    public void setSfiStandard15(Set<SfiPpFormCs3ProjectStandardObjective2015ViewModel> sfiStandard15) {
         this.sfiStandard15 = sfiStandard15;
     }
 

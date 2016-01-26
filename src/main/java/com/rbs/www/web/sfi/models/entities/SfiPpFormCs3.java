@@ -4,6 +4,7 @@ import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -32,6 +33,7 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     private String projectObj;
 
     @Column(name = "cs3_projectDescr", nullable = true)
+    @Type(type="text")
     private String projectDescr;
 
     @OneToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective.class, fetch = FetchType.EAGER,
@@ -41,12 +43,12 @@ public class SfiPpFormCs3 extends BaseEntityModel {
             inverseJoinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_project_standard_objectives_id", referencedColumnName = "id")})
     private Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard10;
 
-    @OneToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective.class, fetch = FetchType.EAGER,
+    @OneToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective2015.class, fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "sfi_pp_form_cs3_project_standard_objectives_sfiStandard15",
             joinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_projects_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_project_standard_objectives_id", referencedColumnName = "id")})
-    private Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard15;
+    private Set<SfiPpFormCs3ProjectStandardObjective2015> sfiStandard15;
 
     @ManyToMany(targetEntity = SfiPpFormRegion.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(name = "sfi_pp_form_cs3_project_locations",
@@ -168,11 +170,11 @@ public class SfiPpFormCs3 extends BaseEntityModel {
         addAll(this.sfiStandard10, sfiStandard10);
     }
 
-    public Set<SfiPpFormCs3ProjectStandardObjective> getSfiStandard15() {
+    public Set<SfiPpFormCs3ProjectStandardObjective2015> getSfiStandard15() {
         return sfiStandard15;
     }
 
-    public void setSfiStandard15(Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard15) {
+    public void setSfiStandard15(Set<SfiPpFormCs3ProjectStandardObjective2015> sfiStandard15) {
         addAll(this.sfiStandard15, sfiStandard15);
     }
 

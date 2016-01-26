@@ -1,13 +1,13 @@
-<div class="row">
+<div class="row section_background_6">
 
     <div ng-init="errors = cs7.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
     <div class="col-sm-8">
-        <h5>6. Emerging Issues</h5>
+        <h5 class="section-header">6. Issues of Interest</h5>
 
         <form name="cs7Form">
             <div class="form-group">
-                <label>Select the emerging issues you are interested in. This way we can keep you informed on these topics.</label>
+                <label>Select the following Issues of Interest. This way we can keep you informed on these topics.</label>
 
                 <div class="form-group hasRadioBoxes nopadding">
 
@@ -61,10 +61,15 @@
 
                             <input type="checkbox" name="answer"
                                    checklist-model="cs7.intMarketCountries" checklist-value="8" ng-model="intCountry" icheck>
+                            <label class="checkboxLabel">Africa</label>
+                            <div></div>
+
+                            <input type="checkbox" name="answer"
+                                   checklist-model="cs7.intMarketCountries" checklist-value="9" ng-model="intCountry" icheck>
                             <label class="checkboxLabel">Other</label>
                             <div></div>
 
-                            <div class="padded-left" ng-show="isSelected(cs7.intMarketCountries, 8)">
+                            <div class="padded-left" ng-show="isSelected(cs7.intMarketCountries, 9)">
                                 Please Explain <input type="text" class="form-control shorter" ng-model="cs7.intMarketCountryOther">
                             </div>
                         </div>
@@ -140,7 +145,7 @@
 
                                 <div ng-show="cs7.investResIfInve">
 
-                                    <label>In what countries?</label>
+                                    <label class="question-style">In what countries?</label>
                                     <select class="form-control" name="select"
                                             ng-init="country1=0"
                                             ng-model="country1"
@@ -190,7 +195,7 @@
 
                                 <div ng-show="cs7.planInvestResIfPlan">
 
-                                    <label>In what countries?</label>
+                                    <label class="question-style">In what countries?</label>
                                     <select class="form-control" name="select"
                                             ng-init="country2=0"
                                             ng-model="country2"
@@ -241,7 +246,7 @@
 
                                 <div class="group1" ng-show="cs7.planCommPlantIfPlanGE">
 
-                                    <label>In what countries?</label>
+                                    <label class="question-style">In what countries?</label>
                                     <select class="form-control" name="select"
                                             ng-init="country3=0"
                                             ng-model="country3"
@@ -272,7 +277,7 @@
                             </div>
                         </div>
                         <div class="padded-left  group1" ng-show="cs7.planCommPlantIfPlanGE">
-                            <p><label>Anticipated % of total harvest will be of fiber derived from forest tree
+                            <p><label class="question-style">Anticipated % of total harvest will be of fiber derived from forest tree
                                 biotechnology in 5 years?</label></p>
                             <input type="text"  class="form-control shortest" max="100" min="0"
                                    ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
@@ -295,14 +300,14 @@
         {{ setForms() }}
 
         <div class="col-sm-6 col-sm-offset-4">
-            <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
-            <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 7</button>
+            <button type="button" class="btn section6Btn" ng-click="saveForm()">Save</button>
+            <button type="button" class="btn section6Btn" ng-click="saveForm(true)">Save and Go to Step 7</button>
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="panel panel-success">
+        <div class="panel panel-success pull-right" style="width: 275px;">
             <div class="panel-heading">
-                <h3 class="panel-title">Did you know?</h3>
+                <h3 class="panel-title question-style">Did you know?</h3>
             </div>
             <div class="panel-body">
                 <p>As commonly used, forest tree biotechnology encompasses structural and functional studies of genes

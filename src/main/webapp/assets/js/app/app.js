@@ -192,6 +192,9 @@ sfiFormApp
     .factory('standardObjects', function() {
         return window.standardObjects;
     })
+    .factory('standardObjects2015', function() {
+        return window.standardObjects2015;
+    })
     .factory('Countries', ['$http', '$q','_', function($http, $q) {
 
         var factory = {

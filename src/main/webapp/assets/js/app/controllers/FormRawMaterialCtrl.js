@@ -725,6 +725,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         var section = $scope.sections[index];
         var reason  = section.percDeliveredQualifiedLoggingReason || "";
         $text.val(reason);
+        console.log(reason);
 
         $ok.click(function(e){
 
@@ -742,7 +743,9 @@ sfiFormApp.controller('FormRawMaterialCtrl',
                 var $input2 = $tip.find("input[name=" + key2 +"]");
 
                 var key = "percCertifedMoreThanOneStandard" + i;
-                section[key] = $input2.is(":checked") ?  $input1.val() : null;
+               // console.log($input1.val());
+               var inputValue = $input1.val().replace("-"," ");
+                section[key] = $input2.is(":checked") ?  inputValue : null;
             }
 
             $scope.$digest()
@@ -944,9 +947,20 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         show: false
     });
 
+    var lastYear3Modal = $modal({
+        scope: $scope,
+        template: '/assets/partials/form/last-year-3modal.html',
+        show: false
+    });
+
 
     $scope.lastYearPop = function(){
         lastYearModal.$promise.then(lastYearModal.show);
+        return false;
+    }
+
+    $scope.lastYear3Pop = function(){
+        lastYearModal.$promise.then(lastYear3Modal.show);
         return false;
     }
 
@@ -954,7 +968,10 @@ sfiFormApp.controller('FormRawMaterialCtrl',
     {
         lastYearModal.$promise.then(lastYearModal.hide);
     }
-
+    $scope.lastYear3Close = function()
+      {
+        lastYearModal.$promise.then(lastYear3Modal.hide);
+     }
 
 
 

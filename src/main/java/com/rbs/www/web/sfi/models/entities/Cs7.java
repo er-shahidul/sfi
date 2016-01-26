@@ -4,6 +4,7 @@ import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.web.common.models.entities.SfiPpFormAllCountry;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -105,6 +106,7 @@ public class Cs7 extends BaseEntityModel {
     private String intMarketCountryOther;
 
     @Column(name = "cs7_comments", nullable = true)
+    @Type(type="text")
     private String comments;
 
     @Column(name = "cs7_investResIfInve", nullable = true)

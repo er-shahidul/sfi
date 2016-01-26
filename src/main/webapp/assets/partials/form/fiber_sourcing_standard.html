@@ -4,7 +4,7 @@
     <div class="col-sm-12">
     <!--Introduction start-->
     <div>
-        <h5>8. FS New Standard Impacts</h5>
+        <h5 class="section-header">8. Fiber Sourcing New Standard Impacts</h5>
         <p>
             The SFI 2015-2019 Forest Management Standard has several new and enhanced requirements. These changes were part of the SFI 2015-2019 Standard and Rules revision process. Many of the changes came from consultations with the SFI community  -- people like you.
         </p>
@@ -34,7 +34,7 @@
 
     <!--Left Side Start-->
     <div class="col-lg-4">
-        <div class="box-shadow" style="height: 400px;">
+        <div class="box-shadow" >
             <h6>
                 Indicator 1.1.1
             </h6>
@@ -56,7 +56,7 @@
             </ul>
         </div>
         <br>
-        <div class="box-shadow" style="height: 150px;">
+        <div class="box-shadow" >
             <h6>
                 Indicator 2.1.2
             </h6>
@@ -65,7 +65,7 @@
             </p>
         </div>
         <br>
-        <div class="box-shadow" style="height: 200px;">
+        <div class="box-shadow">
             <h6>
                 Indicator 6.1.5
             </h6>
@@ -74,7 +74,7 @@
             </p>
         </div>
         <br>
-        <div class="box-shadow" style="height: 200px;">
+        <div class="box-shadow">
             <h6>
                 Indicator 4.1.4
             </h6>
@@ -96,7 +96,7 @@
             </ul>
         </div>
         <br>
-        <div class="box-shadow" style="height: 200px;">
+        <div class="box-shadow" >
             <h6>
                 Indicator 12.1.1
             </h6>
@@ -121,7 +121,7 @@
             <h5>
                 Biodiversity in Fiber Sourcing
             </h5>
-            <p>
+            <p class="question-style">
                 Have you made changes to your fiber procurement planning and practices with respect to conservation of biodiversity in fiber sourcing according to Indicator 1.1.1?
             </p>
             <label>
@@ -467,7 +467,7 @@
             <h5>
                 Best Management Practices in Fiber Sourcing
             </h5>
-            <p>
+            <p class="question-style">
                 Have you made changes to your fiber procurement planning and practices with respect to best management practices in fiber sourcing according to Indicator 2.1.2?                         </p>
             <label>
                 <div>
@@ -579,7 +579,7 @@
             <h5>
                 Training and Education
             </h5>
-            <p>
+            <p class="question-style">
                 Have the changes to Indicator 6.1.5 helped to improve your fiber procurement planning and practices with respect to the training and education of qualified professionals or wood producers?
             </p>
             <label>
@@ -669,17 +669,20 @@
         </div>
         <br>
         <div>
-            <p>
+            <p class="question-style">
                 In your opinion, has the number of trained wood producers in the region of your manufacturing facilities changed as compared with last year?
             </p>
             <label>
                 <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs10.trainedWoodProducersChanged" value=1> Increased
             </label>
             <label>
-                <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs10.trainedWoodProducersChanged" value=2> IncreasedDecreased
+                <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs10.trainedWoodProducersChanged" value=2> Increased
             </label>
             <label>
-                <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs10.trainedWoodProducersChanged" value=3> Remained the same
+                <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs10.trainedWoodProducersChanged" value=3> Decreased
+            </label>
+            <label>
+                <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs10.trainedWoodProducersChanged" value=4> Remained the same
             </label>
         </div>
         <br>
@@ -696,7 +699,7 @@
         </h5>
         <br>
         <div>
-            <p>
+            <p class="question-style">
                 Did you identify any risk of illegal logging through your risk assessment?
             </p>
             <label>
@@ -717,7 +720,7 @@
             <h5>
                 Avoidance of Controversial Sources Including Illegal Logging (outside of the US and Canada)
             </h5>
-            <p>
+            <p class="question-style">
                 Do you source fiber from outside the U.S. and Canada?
             </p>
             <label>
@@ -729,7 +732,7 @@
         </div>
         <br>
         <div>
-            <p>
+            <p class="question-style">
                 During your process to avoid sourcing illegally logged fiber by assesses and mitigating risk within your fiber sourcing program, what tools did you use?
             </p>
             <ul style="list-style-type: none" ng-hide="cs10.legalComplianceOutside == 0">
@@ -773,7 +776,7 @@
 
     <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
         <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
-        <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 9</button>
+        <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to SFI Market Survey</button>
     </div>
 </div>
 </div>

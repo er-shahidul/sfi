@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row section_background_4">
 <div ng-init="errors = cs6.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
 <div class="col-sm-12">
@@ -128,7 +128,7 @@
 <!-- Header -->
 <thead>
 <tr>
-    <th>Raw Material Sources</th>
+    <th style="text-align:center;width: 120px;">Raw Material Sources</th>
     <th style="width:175px; text-align:center;">Units &amp; Volume</th>
 
     <th style="width:120px;  text-align:center;"
@@ -170,17 +170,17 @@
 <tbody>
 
     <tr ng-repeat-start="section in sections" ng-if="section.row == 1">
-        <th>Private</th>
+        <th style="text-align: center;">Private</th>
         <th colspan="8"></th>
     </tr>
 
     <tr ng-if="section.row == 7">
-        <th>Public</th>
+        <th style="text-align: center;">Public</th>
         <th colspan="8"></th>
     </tr>
 
     <tr ng-if="section.row == 11">
-        <th>Other</th>
+        <th style="text-align: center;">Other Sources</th>
         <th colspan="8"></th>
     </tr>
 
@@ -195,8 +195,8 @@
             {{section.name}}
 
 
-            <div ng-show="section.otherEnable && otherLabel">
-                <a ng-click="showPopUp3(section)">{{ otherLabel | limitTo: 20 }}</a>
+            <div style="text-align: left;margin-top: 10px;" ng-show="section.otherEnable && otherLabel">
+                <u><a ng-click="showPopUp3(section)">{{ otherLabel | limitTo: 20 }}</a></u>
             </div>
 
         </td>
@@ -219,7 +219,7 @@
             <div class="form-group padded alignright"
                  ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item2.$invalid}" ng-show="section.unit > 0">
 
-                Volume <input type="text" readonly  style="width: 105px" class="form-control shortest2" name="item2" ng-required="isSectionDirty(innerForm)"
+                Volume <input type="text" readonly  style="width: 70px" class="form-control shortest2" name="item2" ng-required="isSectionDirty(innerForm)"
                               ng-disabled="isDisabled(section)" ng-model="section.volume"
                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
 

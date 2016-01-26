@@ -5,9 +5,12 @@ import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormCs3ProjectStandardObjective;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
+import com.rbs.www.web.sfi.models.entities.SfiPpFormCs3ProjectStandardObjective2015;
 import com.rbs.www.web.sfi.services.FormService;
+import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjective2015Service;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
+import com.rbs.www.web.sic.services.SicFormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +38,9 @@ public class DefaultController {
     private SfiPpFormCs3ProjectStandardObjectiveService sfiPpFormCs3ProjectStandardObjectiveService;
 
     @Autowired
+    private SfiPpFormCs3ProjectStandardObjective2015Service sfiPpFormCs3ProjectStandardObjective2015Service;
+
+    @Autowired
     private SfiPpFormRegionService sfiPpFormRegionService;
 
     @Autowired
@@ -42,6 +48,9 @@ public class DefaultController {
 
     @Autowired
     private FormService formService;
+
+    @Autowired
+    private SicFormService sicFormService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(SecurityContextHolderAwareRequestWrapper request, ModelMap model, HttpSession session) throws ParseException {
@@ -61,6 +70,22 @@ public class DefaultController {
 
         try {
             response = Util.getAsString(formService.getUpdateDate(id));
+            responseStatus = HttpStatus.OK;
+        } catch (Exception ex) {
+            response = "Invalid Id";
+            responseStatus = HttpStatus.BAD_REQUEST;
+        }
+
+        return new ResponseEntity<String>(response, responseStatus);
+    }
+
+    @RequestMapping(value = "/sic/updateDate/{id}", method = RequestMethod.GET)
+    public @ResponseBody ResponseEntity<String> getSicUpdateDate(@PathVariable Integer id) {
+        HttpStatus responseStatus;
+        String response;
+
+        try {
+            response = Util.getAsString(sicFormService.getUpdateDate(id));
             responseStatus = HttpStatus.OK;
         } catch (Exception ex) {
             response = "Invalid Id";
@@ -91,6 +116,12 @@ public class DefaultController {
     @RequestMapping(value = "/project/standard/objective/list", method = RequestMethod.GET)
     public ResponseEntity<String> projectStandardObjectiveList() {
         List<SfiPpFormCs3ProjectStandardObjective> projectStandardObjectives = sfiPpFormCs3ProjectStandardObjectiveService.getAll();
+        return new ResponseEntity<String>(Util.getAsString(projectStandardObjectives), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/project/standard/objective/2015/list", method = RequestMethod.GET)
+    public ResponseEntity<String> projectStandardObjective2015List() {
+        List<SfiPpFormCs3ProjectStandardObjective2015> projectStandardObjectives = sfiPpFormCs3ProjectStandardObjective2015Service.getAll();
         return new ResponseEntity<String>(Util.getAsString(projectStandardObjectives), HttpStatus.OK);
     }
 }

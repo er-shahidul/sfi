@@ -190,13 +190,21 @@ public class UserController {
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
         boolean isInvalidEmail = !userService.isValidEmailUpdate(user.getEmail());
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
+        boolean isWelcomeMsg = userService.welcomeMsg(user.getInvitationMsg());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail || isInvalidPassword) {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
-            return "redirect:/admin/user/edit" + user.getId();
+            return "admin/user/edit" + user.getId();
         }
+
+        if (isWelcomeMsg) {
+            model.addAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
+            contantForNewUser(model);
+            return "admin/user/edit" + user.getId();
+        }
+
         userService.updateUser(user);
 
 //        String recipient = user.getEmail();
@@ -379,6 +387,7 @@ public class UserController {
             model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "redirect:/user/password/set/" + user.getId();
         }
+        model.addAttribute("user", userService.findByID(user.getId()));
         model.addAttribute("password", password);
         model.addAttribute("userName", userName);
         model.addAttribute("company", user.getCompany());
@@ -403,6 +412,7 @@ public class UserController {
 
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
         boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
+        boolean isWelcomeMsg = userService.welcomeMsg(user.getInvitationMsg());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
@@ -414,6 +424,12 @@ public class UserController {
         if (!userService.isUserUsernameUnique(user.getId(), user.getUsername())) {
             FieldError ssoError = new FieldError("user", "username", messageSource.getMessage("non.unique.username", new String[]{user.getUsername()}, Locale.getDefault()));
             result.addError(ssoError);
+            contantForNewUser(model);
+            return "admin/user/new";
+        }
+
+        if (isWelcomeMsg) {
+            model.addAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
             contantForNewUser(model);
             return "admin/user/new";
         }
