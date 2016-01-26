@@ -1,13 +1,14 @@
 var cs5;
 sfiFormApp
     .controller('FormResFundingCtrl',
-        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects',
-            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects){
+        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects', 'standardObjects2015',
+            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects, standardObjects2015){
 
         cs5 = $scope;
         $scope.validate = false;
         $scope.isDataDirty = false;
         $scope.standardObjects = standardObjects;
+        $scope.standardObjects2015 = standardObjects2015;
 
         $scope.cs5 = angular.copy($rootScope.form.cs5);
         $scope.cs5.isOtherEnabled = ($scope.cs5.other) ? true: false;
@@ -218,6 +219,7 @@ sfiFormApp
                     || projectObj
                     || description
                     || sfiStandardObj
+
                     || startDate
                     || endDate
                     || totalProjectCost

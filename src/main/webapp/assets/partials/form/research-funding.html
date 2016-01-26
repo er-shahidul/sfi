@@ -352,7 +352,7 @@
                         <select class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"
                                 ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects)">
                             <option value="0" ng-selected="!project.sfiStandard10">Please select</option>
-                            <option ng-repeat="item in standardObjects" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                            <option ng-repeat="item in standardObjects2015" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
                         </select>
 
                         <div id="selectedItem" ng-repeat="item in project.sfiStandard10">{{ item.sfiStandardObjDesc }}
