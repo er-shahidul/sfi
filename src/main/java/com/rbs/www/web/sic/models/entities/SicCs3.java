@@ -1,6 +1,7 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -24,15 +25,19 @@ public class SicCs3 extends BaseEntityModel {
     private Boolean workshop;
 
     @Column(name = "cs3_brochureSpecify", nullable = true)
+    @Type(type="text")
     private String brochureSpecify;
 
     @Column(name = "cs3_otherSpecify", nullable = true)
+    @Type(type="text")
     private String otherSpecify;
 
     @Column(name = "cs3_toursSpecify", nullable = true)
+    @Type(type="text")
     private String toursSpecify;
 
     @Column(name = "cs3_workshopSpecify", nullable = true)
+    @Type(type="text")
     private String workshopSpecify;
 
     @Override

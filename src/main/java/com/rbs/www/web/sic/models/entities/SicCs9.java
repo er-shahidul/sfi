@@ -3,6 +3,7 @@ package com.rbs.www.web.sic.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.web.common.models.datamodels.BlobNames;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -16,54 +17,71 @@ public class SicCs9 extends BaseEntityModel {
     private Integer id;
 
     @Column(name = "cs9_currentYrDetailsAdvPrinted", nullable = true)
+    @Type(type="text")
     private String currentYrDetailsAdvPrinted;
 
     @Column(name = "cs9_currentYrDetailsAdvTV", nullable = true)
+    @Type(type="text")
     private String currentYrDetailsAdvTV;
 
     @Column(name = "cs9_currentYrDetailsEventSponsor", nullable = true)
+    @Type(type="text")
     private String currentYrDetailsEventSponsor;
 
     @Column(name = "cs9_currentYrDetailsPrinted", nullable = true)
+    @Type(type="text")
     private String currentYrDetailsPrinted;
 
     @Column(name = "cs9_currentYrDetailsSocialMedia", nullable = true)
+    @Type(type="text")
     private String currentYrDetailsSocialMedia;
 
     @Column(name = "cs9_currentYrDetailsTradeshow", nullable = true)
+    @Type(type="text")
     private String currentYrDetailsTradeshow;
 
     @Column(name = "cs9_currentYrDetailsYrOther", nullable = true)
+    @Type(type="text")
     private String currentYrDetailsYrOther;
 
     @Column(name = "cs9_currentYrDetailsYrVideo", nullable = true)
+    @Type(type="text")
     private String currentYrDetailsYrVideo;
 
     @Column(name = "cs9_lastYrDetailsAdvPrinted", nullable = true)
+    @Type(type="text")
     private String lastYrDetailsAdvPrinted;
 
     @Column(name = "cs9_lastYrDetailsAdvTV", nullable = true)
+    @Type(type="text")
     private String lastYrDetailsAdvTV;
 
     @Column(name = "cs9_lastYrDetailsEventSponsor", nullable = true)
+    @Type(type="text")
     private String lastYrDetailsEventSponsor;
 
     @Column(name = "cs9_lastYrDetailsPrinted", nullable = true)
+    @Type(type="text")
     private String lastYrDetailsPrinted;
 
     @Column(name = "cs9_lastYrDetailsSocialMedia", nullable = true)
+    @Type(type="text")
     private String lastYrDetailsSocialMedia;
 
     @Column(name = "cs9_lastYrDetailsTradeshow", nullable = true)
+    @Type(type="text")
     private String lastYrDetailsTradeshow;
 
     @Column(name = "cs9_lastYrDetailsYrOther", nullable = true)
+    @Type(type="text")
     private String lastYrDetailsYrOther;
 
     @Column(name = "cs9_lastYrDetailsYrVideo", nullable = true)
+    @Type(type="text")
     private String lastYrDetailsYrVideo;
 
     @Column(name = "cs9_sfiProgramOutlets", nullable = true)
+    @Type(type="text")
     private String sfiProgramOutlets;
 
     @Column(name = "cs9_activityCurrentYrAdvPrinted", nullable = true)

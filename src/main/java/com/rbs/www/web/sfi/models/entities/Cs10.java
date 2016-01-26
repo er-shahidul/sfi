@@ -3,6 +3,7 @@ package com.rbs.www.web.sfi.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -93,21 +94,26 @@ public class Cs10 extends BaseEntityModel {
     private String biodiversityTraining;
 
     @Column(name = "cs10_legalComplianceOutsideOtherExplain", nullable = true)
+    @Type(type="text")
     private String legalComplianceOutsideOtherExplain;
 
     @Column(name = "cs10_trainedWoodProducersChanged", nullable = true)
     private String trainedWoodProducersChanged;
 
     @Column(name = "cs10_biodiversityManagementMechanismDescribe", nullable = true)
+    @Type(type="text")
     private String biodiversityManagementMechanismDescribe;
 
     @Column(name = "cs10_biodiversityTrainingMechanismDescribe", nullable = true)
+    @Type(type="text")
     private String biodiversityTrainingMechanismDescribe;
 
     @Column(name = "cs10_biodiversityTrainingNoDescribe", nullable = true)
+    @Type(type="text")
     private String biodiversityTrainingNoDescribe;
 
     @Column(name = "cs10_biodiversityManagementNoDescribe", nullable = true)
+    @Type(type="text")
     private String biodiversityManagementNoDescribe;
 
     @Column(name = "cs10_biodiversityMechanismDescribe", nullable = true)
