@@ -3,7 +3,7 @@
     <div ng-init="errors = cs2.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
     <div class="col-sm-12 sfiStep2TableHeader">
-        <h5>2. Forestland Information</h5>
+        <h5 class="section-header">2. Forestland Information</h5>
 
         <form name="cs2Form" novalidate ng-class="{'disabled' : !isFieldsEnabled()}" >
             <span>
@@ -11,7 +11,7 @@
                 included under the scope of your SFI certification.
             </span>
 
-            <table class="table table-striped" id="table1" border="1" style="margin-top: 6px;">
+            <table class="table table-striped table-bordered" id="table1" border="1" style="margin-top: 6px;">
                 <thead>
                 <tr>
                     <th style="min-width: 80px;"><span style="margin-top: -5px;">USA & </span><br/>Canada <span tooltip data-placement="top" data-container="body" data-html="true"
@@ -536,10 +536,10 @@
                 <tr>
                     <th tooltip data-placement="top" data-container="body"
                         data-title="SFI is including this new question as it is helpful for SFI to know where companies have a presence so SFI can work together with program participants on emerging issues in different countries and relevant procurement policies.">
-                        Forestlands Outside USA & Canada (new!)
+                        Forestlands Outside USA & Canada
                     </th>
                     <th>Total area managed</th>
-                    <th width="50%">Is this area certified under a certification standard?</th>
+                    <th class="question-style" width="50%">Is this area certified under a certification standard?</th>
                 </tr>
                 </thead>
                 <tbody>

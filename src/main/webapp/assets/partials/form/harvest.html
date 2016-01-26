@@ -8,13 +8,13 @@
 
             <!-- Section for USA -->
             <div ng-show="operateInUsa()" class="formSection">
-                <p>
+                <label tooltip data-html="true" data-placement="top"
+                          data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2015. This includes harvesting activities that were started in 2013 and completed in 2015, but not those that were still underway by the end of the 2015 calendar/fiscal year.">
                     <h6><strong>USA</strong> - Program Participant Land covered under the scope of your SFI certificate</h6>
-                </p>
+                </label>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaTotalHervArea')}">
-                    <label tooltip data-html="true" data-placement="top"
-                           data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2014. This includes harvesting activities that were started in 2013 and completed in 2014, but not those that were still underway by the end of the 2014 calendar/fiscal year.">What is the total area of harvest units completed last year by clearcutting?</label>
+                    <label> What is the total area of harvest units completed last year by clearcutting?</label>
                     <input type="number" class="form-control required shortest" name="usaTotalHervArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                            ng-model="cs4.usaTotalHervArea"> {{ unit }}
@@ -170,7 +170,7 @@
                 <div class="form-group" ng-class="{'has-error' : hasError('caTotalArea')}">
 
                     <label tooltip data-html="true" data-placement="top"
-                           data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2014. This includes harvesting activities that were started in 2013 and completed in 2014, but not those that were still underway by the end of the 2014 calendar/fiscal year.">What is the total area of harvest units completed last year by clearcutting?</label>
+                           data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2015. This includes harvesting activities that were started in 2013 and completed in 2015, but not those that were still underway by the end of the 2015 calendar/fiscal year.">What is the total area of harvest units completed last year by clearcutting?</label>
 
                     <input type="number" class="form-control required shortest" name="caTotalArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
@@ -343,7 +343,7 @@
                         <th>Within 1 year of final harvest </th>
                         <th>Within 2 years of final harvest</th>
                         <th>More than 2 years of final harvest</th>
-                        <th>Total for 2014</th>
+                        <th>Total for 2015</th>
                     </tr>
                     </thead>
 
@@ -394,7 +394,7 @@
                 </table>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usanaturalRegen2014')}">
-                    <label>What was the Natural Regeneration - All types in 2014?</label>
+                    <label>What was the Natural Regeneration - All types in 2015?</label>
                     <input type="number" class="form-control required shortest" name="usanaturalRegen2014"
                            ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                            ng-model="cs4.usaNatRegen2014"> {{ unit }}
@@ -402,7 +402,7 @@
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaharvestRegenPerc')}">
                     <label tooltip data-placement="top" data-container="body" data-html="true"
-                           data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
+                           data-title='Objective 2. Forest Productivity from SFI 2010-2015 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
                         >What was the percent of harvest units regenerated after 5 growing seasons?</label>
 
 
@@ -425,7 +425,7 @@
                         <th>Within 1 year of final harvest </th>
                         <th>Within 2 years of final harvest</th>
                         <th>More than 2 years of final harvest</th>
-                        <th>Total for 2014</th>
+                        <th>Total for 2015</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -476,7 +476,7 @@
 
 
                 <div class="form-group" ng-class="{'has-error' : hasError('naturalRegen2014')}">
-                    <label>What was the Natural Regeneration - All types in 2014?</label>
+                    <label>What was the Natural Regeneration - All types in 2015?</label>
                     <input type="number" class="form-control required shortest" name="naturalRegen2014" min="0"
                            ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                            ng-model="cs4.caNatRegen2014"> {{ unit }}
@@ -484,7 +484,7 @@
 
                 <div class="form-group" ng-class="{'has-error' : hasError('harvestRegenPerc')}">
                     <label tooltip data-placement="top" data-container="body" data-html="true"
-                           data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
+                           data-title='Objective 2. Forest Productivity from SFI 2010-2015 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
                             >What was the percent of harvest units regenerated after 5 growing seasons?</label>
 
                     <input type="number" class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"

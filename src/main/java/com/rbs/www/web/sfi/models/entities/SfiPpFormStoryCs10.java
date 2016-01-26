@@ -1,6 +1,7 @@
 package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -21,6 +22,7 @@ public class SfiPpFormStoryCs10 extends BaseEntityModel {
     private String email;
 
     @Column(name = "description", nullable = true)
+    @Type(type="text")
     private String description;
 
     @Column(name = "lastName", nullable = true)

@@ -4,6 +4,7 @@ import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -32,6 +33,7 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     private String projectObj;
 
     @Column(name = "cs3_projectDescr", nullable = true)
+    @Type(type="text")
     private String projectDescr;
 
     @OneToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective.class, fetch = FetchType.EAGER,

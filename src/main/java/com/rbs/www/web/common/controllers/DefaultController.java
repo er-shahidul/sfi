@@ -8,6 +8,7 @@ import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.sfi.services.FormService;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
+import com.rbs.www.web.sic.services.SicFormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +44,9 @@ public class DefaultController {
     @Autowired
     private FormService formService;
 
+    @Autowired
+    private SicFormService sicFormService;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(SecurityContextHolderAwareRequestWrapper request, ModelMap model, HttpSession session) throws ParseException {
         if (request.isUserInRole("USER")){
@@ -61,6 +65,22 @@ public class DefaultController {
 
         try {
             response = Util.getAsString(formService.getUpdateDate(id));
+            responseStatus = HttpStatus.OK;
+        } catch (Exception ex) {
+            response = "Invalid Id";
+            responseStatus = HttpStatus.BAD_REQUEST;
+        }
+
+        return new ResponseEntity<String>(response, responseStatus);
+    }
+
+    @RequestMapping(value = "/sic/updateDate/{id}", method = RequestMethod.GET)
+    public @ResponseBody ResponseEntity<String> getSicUpdateDate(@PathVariable Integer id) {
+        HttpStatus responseStatus;
+        String response;
+
+        try {
+            response = Util.getAsString(sicFormService.getUpdateDate(id));
             responseStatus = HttpStatus.OK;
         } catch (Exception ex) {
             response = "Invalid Id";

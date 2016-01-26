@@ -98,6 +98,8 @@ public class Cs9ViewModel extends BaseViewModel {
     private String indigenousForestPractice;
     private String trainingEduRationale;
 
+    private String conservationBiodiversity415Exp;
+
     @Override
     public Integer getId() {
         return id;
@@ -105,6 +107,14 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getConservationBiodiversity415Exp() {
+        return conservationBiodiversity415Exp;
+    }
+
+    public void setConservationBiodiversity415Exp(String conservationBiodiversity415Exp) {
+        this.conservationBiodiversity415Exp = conservationBiodiversity415Exp;
     }
 
     public Set<Integer> getProtectionMaintenanceWaterResItems1() {

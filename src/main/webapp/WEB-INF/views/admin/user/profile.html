@@ -20,11 +20,8 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <h3>My Profile</h3>
-                            <div class="form-group">
+                            <h5>My Profile</h5>
 
-
-                            </div>
                             <form th:class="bordered" th:action="'/admin/user/name/edit/' + ${user.id}" th:object="${user}" method="POST" class="form-horizontal">
                                 <input type="hidden" th:field="*{id}" />
                                 <div class="form-group">

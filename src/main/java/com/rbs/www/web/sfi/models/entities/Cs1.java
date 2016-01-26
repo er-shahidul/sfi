@@ -2,6 +2,7 @@ package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
 import com.rbs.www.web.common.models.entities.SfiPpFormAllCountry;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -26,6 +27,7 @@ public class Cs1 extends BaseEntityModel {
     private Integer numberEmployeesOther;
 
     @Column(name = "cs1_companyDescr", nullable = true)
+    @Type(type="text")
     private String companyDesc;
 
     @Column(name = "cs1_ownsMngLands", nullable = false, columnDefinition = "Boolean default false")

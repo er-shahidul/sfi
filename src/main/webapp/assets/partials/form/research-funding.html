@@ -3,8 +3,8 @@
     <form name="cs5Form" novalidate>
 
         <div class="col-sm-12">
-            <h5>
-                <span popover data-html="true" data-placement="right" data-content="The SFI ERP requested more information on research dollars spent by SFI Program Participants in a reporting year. This brings closer alignment between the research dollars and Standard requirements. The list of research funding categories included in this question are from the current SFI 2010-2014 Standard.<br/>DID YOU KNOW Internal and External Research Funding:<br/>List the amount of funding in $US your organization provided this year for forest-related research within your organization (internal) and outside your organization (external) through grants, in-kind assistance, cooperatives, etc. Internal research funding includes salaries for forest-related research staff. While it is difficult in many instances to identify to which category research funding should be allocated, use your best judgment as to the primary intent of the given research project. If you find it impossible to allocate funding to the categories listed, list the total funding you provided in the “other” category and note as such.">
+            <h5 class="section-header">
+                <span popover data-html="true" data-placement="right" data-content="The SFI ERP requested more information on research dollars spent by SFI Program Participants in a reporting year. This brings closer alignment between the research dollars and Standard requirements. The list of research funding categories included in this question are from the current SFI 2010-2015 Standard.<br/>DID YOU KNOW Internal and External Research Funding:<br/>List the amount of funding in $US your organization provided this year for forest-related research within your organization (internal) and outside your organization (external) through grants, in-kind assistance, cooperatives, etc. Internal research funding includes salaries for forest-related research staff. While it is difficult in many instances to identify to which category research funding should be allocated, use your best judgment as to the primary intent of the given research project. If you find it impossible to allocate funding to the categories listed, list the total funding you provided in the “other” category and note as such.">
                     5. Research, Conservation and Community
                 </span>
             </h5>
@@ -13,7 +13,7 @@
             <br/>
             <div class="col-sm-9">
                 <h5>I. Research Funding</h5>
-                <table class="table table-striped vert-align-middle" border="1">
+                <table class="table table-striped vert-align-middle table-bordered" >
                 <thead>
                 <tr>
                     <th style="text-align: center;">Research Funding Category</th>
@@ -94,7 +94,7 @@
                 <div class="form-group">
                     <div class="col-sm-12 ">
                         <span>
-                            For each category below enter the organizations you worked with in 2014 as part of your research funding reporting
+                            For each category below enter the organizations you worked with in 2015 as part of your research funding reporting
                         </span>
                     </div>
                 </div>
@@ -270,7 +270,7 @@
             </div>
 
             <div class="col-sm-3">
-                <img width="110%" src="/assets/images/u206.png">
+                <img width="110%" style="margin-top:50px;" src="/assets/images/u206.png">
             </div>
         </div>
 
@@ -364,7 +364,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
-                        <span>SFI 2010-2014 Standard Objective most relevant to project</span>
+                        <span>SFI 2010-2015 Standard Objective most relevant to project</span>
                         <select class="form-control" name="sfiStandard15" customerror ng-init="sfiStandard15 = 0"
                                 ng-model="sfiStandard15" ng-change="sfiStandard15 = addBucket(project.sfiStandard15, sfiStandard15, standardObjects)">
                             <option value="0" ng-selected="!project.sfiStandard15">Please select</option>
@@ -660,20 +660,20 @@
 
 
                     <div class="form-group">
-                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">May SFI use this project as an example in communications, to help convey the exemplary work of SFI Program Participants in
+                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel question-style">May SFI use this project as an example in communications, to help convey the exemplary work of SFI Program Participants in
                             the areas of conservation and community engagement?</span><br/>
 
-                        <div>
+                        <div style="padding-left: 15px;">
                             <input type="radio" name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>
                             <span class="radioLabel">Share – with our organization’s name</span>
                         </div>
 
-                        <div>
+                        <div style="padding-left: 15px;">
                             <input type="radio" name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />
                             <span class="radioLabel">Share – don’t use our organization’s name</span>
                         </div>
 
-                        <div>
+                        <div style="padding-left: 15px;">
                             <input type="radio" name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>
                             <span class="radioLabel">Please don’t share</span>
                         </div>
@@ -695,8 +695,8 @@
                 <table class="table table-striped vert-align-middle">
                     <thead>
                     <tr>
-                        <th>Private Forest Landowners and SFI Implementation Committee details</th>
-                        <th ng-class="{'disabled' : !operateInUsa()}">US</th>
+                        <th></th>
+                        <th ng-class="{'disabled' : !operateInUsa()}" align="center">US</th>
                         <th ng-class="{'disabled' : !operateInCa()}" >Canada</th>
                     </tr>
                     </thead>
@@ -705,7 +705,7 @@
                     <tr>
                         <td tooltip data-html="true" data-placement="top" data-container="body"
                             data-title="Include all funding your organization provided last year to SFI Implementation Committees and others for logger training and education and all other SFI program implementation activities at the state or provincial level.">
-                            Funding provided last year for SFI program implementation committee activities at the state or provincial level<br/>
+                            Funding provided last year for SFI Implementation Committee activities at the state or provincial level<br/>
                             (Support for US SICs in $US. Support for Canadian SICs in $CA.)
                         </td>
                         <td>
