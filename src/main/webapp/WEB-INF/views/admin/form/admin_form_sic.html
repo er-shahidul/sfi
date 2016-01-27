@@ -54,12 +54,16 @@
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.status.status}"></td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.updatedAt}"></td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
+                                                        <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
                                                         <a th:href="@{'/admin/company/sic/form/view/' + ${sicPpForm.id}}">
                                                             <button th:text="Open" style="width:47px;"></button>
                                                         </a>
+                                                        </div>
+                                                        <div sec:authorize="hasAnyRole('ROLE_ADMIN')">
                                                         <a th:href="@{'/admin/company/sic/form/' + ${sicPpForm.id}}">
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
+                                                        </div>
                                                     </td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" sec:authorize="hasAnyRole('ROLE_USER')">
                                                         <a th:href="@{'/sicForm/view'}">
