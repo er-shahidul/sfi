@@ -6,39 +6,38 @@ import com.rbs.www.common.modules.validator.SpELAssert;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.Set;
 
 @SpELAssert.List({
-        @SpELAssert(value = "false", message = "head spel first"), // wrong
-        @SpELAssert(value = "false", message = "head spel second", property = "world")
+        @SpELAssert(value = "projects != null && projects.size() > 20",
+                    applyIf = "isInPartnership != null && isInPartnership",
+                    message = "There must be more than 20 projects",
+                    property = "projects")
 })
 public class Cs5ViewModel extends BaseViewModel {
+    // Don't use "property" in field level validation
+    @SpELAssert(value = "#this != null && #this > 42", message = "Id must be greater than 42")
     private Integer id;
 
-    @NotNull
-    @Size(min = 10, max = 1000, message = "{large.string}")
     private Set<String> organizationListAcademic;
     private Set<String> organizationListResearch;
     private Set<String> organizationListConservation;
     private Set<String> organizationListGovernment;
     private Set<String> organizationListCommunity;
     private Set<String> organizationListOther;
-
-    @NotNull
-    @Size(min = 1000, max = 1000, message = "{large.string}")
     private Set<String> other;
 
     @NotNull
     private Boolean isInPartnership;
 
+    // "projects" will be validated if the following expression is true
     @Valid
-    @CascadeIf(value = "true")
+    @CascadeIf(value = "isInPartnership != null && isInPartnership")
     private Set<SfiPpFormCs3ViewModel> projects;
 
+    // if there's no CascadeIf, "items" will always be validated unless it is null
     @Valid
-    @CascadeIf(value = "false")
     private List<SfiPpFormCs5ViewModel> items;
     private Integer fundSFIActivStateProviCa;
     private Integer fundSFIActivStateProviUs;
