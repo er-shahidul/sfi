@@ -11,7 +11,7 @@
                 included under the scope of your SFI certification.
             </span>
 
-            <table class="table table-striped table-bordered" id="table1" border="1" style="margin-top: 6px;">
+            <table class="table table-bordered" id="table1" border="1" style="margin-top: 6px;">
                 <thead>
                 <tr>
                     <th style="min-width: 80px;"><span style="margin-top: -5px;">USA & </span><br/>Canada <span tooltip data-placement="top" data-container="body" data-html="true"
@@ -38,7 +38,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <tr class="info">
                     <td style="text-align: left;" align="left" ng-class="{'disabled' : !operateInUsa()}">United <br> States<br>(Private)</td>
 
                     <td style="text-align: left;" nowrap ng-class="{'disabled' : !operateInUsa()}">
@@ -168,7 +168,7 @@
                     </td>
                 </tr>
 
-                <tr>
+                <tr class="active">
                     <td align="left" ng-class="{'disabled' : !operateInUsa()}">United<br>States<br>(Public)</td>
                     <!-- v2 -->
                     <td nowrap ng-class="{'disabled' : !operateInUsa()}">
@@ -285,7 +285,7 @@
                 </tr>
 
 
-                <tr>
+                <tr class="info">
                     <td align="left" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Crown <br>License)</td>
                     <!-- v2 -->
                     <td nowrap ng-class="{'disabled' : !operateInCa()}">
@@ -404,7 +404,7 @@
                     </td>
                 </tr>
 
-                <tr>
+                <tr class="active">
                     <td align="left" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Private<br> Land)</td>
                     <!-- v2 -->
                     <td nowrap ng-class="{'disabled' : !operateInCa()}">
