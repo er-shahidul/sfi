@@ -103,4 +103,10 @@ public class CompanyService
             companyRepository.persist(entity);
         }
     }
+
+    public Boolean isValidName(String name) {
+        Company company = companyRepository.findByName(name);
+        if (company == null)return false;
+        return true;
+    }
 }
