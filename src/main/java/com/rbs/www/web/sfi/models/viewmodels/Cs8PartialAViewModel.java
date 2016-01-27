@@ -104,7 +104,6 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_7;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_8;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_9;
-
     private Set<OrgContactViewModel> orgContacts;
     private Set<PrimaryProducerViewModel> primaryProducers;
     private Set<String> alsoFSCLabel_10;
@@ -356,6 +355,162 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private String fscChainCustody11OtherDescribe;
     private String fscChainCustody12OtherDescribe;
     private String fscChainCustody13OtherDescribe;
+
+    private Integer sfiLogoUseMotivation_1_1;
+    private Integer sfiLogoUseMotivation_1_2;
+    private Integer sfiLogoUseMotivation_1_3;
+    private Integer sfiLogoUseMotivation_1_4;
+    private Integer sfiLogoUseMotivation_1_5;
+    private Integer sfiLogoUseMotivation_1_6;
+    private Integer sfiLogoUseMotivation_1_7;
+    private Integer sfiLogoUseMotivation_1_8;
+    private Integer sfiLogoUseMotivation_1_9;
+    private Integer sfiLogoUseMotivation_1_10;
+    private Integer sfiLogoUseMotivation_1_11;
+
+    private Integer sfiLogoUseMotivation_2_1;
+    private Integer sfiLogoUseMotivation_2_2;
+    private Integer sfiLogoUseMotivation_2_3;
+    private Integer sfiLogoUseMotivation_2_4;
+    private Integer sfiLogoUseMotivation_2_5;
+    private Integer sfiLogoUseMotivation_2_6;
+    private Integer sfiLogoUseMotivation_2_7;
+    private Integer sfiLogoUseMotivation_2_8;
+    private Integer sfiLogoUseMotivation_2_9;
+    private Integer sfiLogoUseMotivation_2_10;
+    private Integer sfiLogoUseMotivation_2_11;
+
+    private Integer sfiLogoUseMotivation_3_1;
+    private Integer sfiLogoUseMotivation_3_2;
+    private Integer sfiLogoUseMotivation_3_3;
+    private Integer sfiLogoUseMotivation_3_4;
+    private Integer sfiLogoUseMotivation_3_5;
+    private Integer sfiLogoUseMotivation_3_6;
+    private Integer sfiLogoUseMotivation_3_7;
+    private Integer sfiLogoUseMotivation_3_8;
+    private Integer sfiLogoUseMotivation_3_9;
+    private Integer sfiLogoUseMotivation_3_10;
+    private Integer sfiLogoUseMotivation_3_11;
+
+    private Integer sfiLogoUseMotivation_4_1;
+    private Integer sfiLogoUseMotivation_4_2;
+    private Integer sfiLogoUseMotivation_4_3;
+    private Integer sfiLogoUseMotivation_4_4;
+    private Integer sfiLogoUseMotivation_4_5;
+    private Integer sfiLogoUseMotivation_4_6;
+    private Integer sfiLogoUseMotivation_4_7;
+    private Integer sfiLogoUseMotivation_4_8;
+    private Integer sfiLogoUseMotivation_4_9;
+    private Integer sfiLogoUseMotivation_4_10;
+    private Integer sfiLogoUseMotivation_4_11;
+
+    private Integer sfiLogoUseMotivation_5_1;
+    private Integer sfiLogoUseMotivation_5_2;
+    private Integer sfiLogoUseMotivation_5_3;
+    private Integer sfiLogoUseMotivation_5_4;
+    private Integer sfiLogoUseMotivation_5_5;
+    private Integer sfiLogoUseMotivation_5_6;
+    private Integer sfiLogoUseMotivation_5_7;
+    private Integer sfiLogoUseMotivation_5_8;
+    private Integer sfiLogoUseMotivation_5_9;
+    private Integer sfiLogoUseMotivation_5_10;
+    private Integer sfiLogoUseMotivation_5_11;
+
+    private Integer sfiLogoUseMotivation_6_1;
+    private Integer sfiLogoUseMotivation_6_2;
+    private Integer sfiLogoUseMotivation_6_3;
+    private Integer sfiLogoUseMotivation_6_4;
+    private Integer sfiLogoUseMotivation_6_5;
+    private Integer sfiLogoUseMotivation_6_6;
+    private Integer sfiLogoUseMotivation_6_7;
+    private Integer sfiLogoUseMotivation_6_8;
+    private Integer sfiLogoUseMotivation_6_9;
+    private Integer sfiLogoUseMotivation_6_10;
+    private Integer sfiLogoUseMotivation_6_11;
+
+    private Integer sfiLogoUseMotivation_7_1;
+    private Integer sfiLogoUseMotivation_7_2;
+    private Integer sfiLogoUseMotivation_7_3;
+    private Integer sfiLogoUseMotivation_7_4;
+    private Integer sfiLogoUseMotivation_7_5;
+    private Integer sfiLogoUseMotivation_7_6;
+    private Integer sfiLogoUseMotivation_7_7;
+    private Integer sfiLogoUseMotivation_7_8;
+    private Integer sfiLogoUseMotivation_7_9;
+    private Integer sfiLogoUseMotivation_7_10;
+    private Integer sfiLogoUseMotivation_7_11;
+
+    private Integer sfiLogoUseMotivation_8_1;
+    private Integer sfiLogoUseMotivation_8_2;
+    private Integer sfiLogoUseMotivation_8_3;
+    private Integer sfiLogoUseMotivation_8_4;
+    private Integer sfiLogoUseMotivation_8_5;
+    private Integer sfiLogoUseMotivation_8_6;
+    private Integer sfiLogoUseMotivation_8_7;
+    private Integer sfiLogoUseMotivation_8_8;
+    private Integer sfiLogoUseMotivation_8_9;
+    private Integer sfiLogoUseMotivation_8_10;
+    private Integer sfiLogoUseMotivation_8_11;
+
+    private Integer sfiLogoUseMotivation_9_1;
+    private Integer sfiLogoUseMotivation_9_2;
+    private Integer sfiLogoUseMotivation_9_3;
+    private Integer sfiLogoUseMotivation_9_4;
+    private Integer sfiLogoUseMotivation_9_5;
+    private Integer sfiLogoUseMotivation_9_6;
+    private Integer sfiLogoUseMotivation_9_7;
+    private Integer sfiLogoUseMotivation_9_8;
+    private Integer sfiLogoUseMotivation_9_9;
+    private Integer sfiLogoUseMotivation_9_10;
+    private Integer sfiLogoUseMotivation_9_11;
+
+    private Integer sfiLogoUseMotivation_10_1;
+    private Integer sfiLogoUseMotivation_10_2;
+    private Integer sfiLogoUseMotivation_10_3;
+    private Integer sfiLogoUseMotivation_10_4;
+    private Integer sfiLogoUseMotivation_10_5;
+    private Integer sfiLogoUseMotivation_10_6;
+    private Integer sfiLogoUseMotivation_10_7;
+    private Integer sfiLogoUseMotivation_10_8;
+    private Integer sfiLogoUseMotivation_10_9;
+    private Integer sfiLogoUseMotivation_10_10;
+    private Integer sfiLogoUseMotivation_10_11;
+
+    private Integer sfiLogoUseMotivation_11_1;
+    private Integer sfiLogoUseMotivation_11_2;
+    private Integer sfiLogoUseMotivation_11_3;
+    private Integer sfiLogoUseMotivation_11_4;
+    private Integer sfiLogoUseMotivation_11_5;
+    private Integer sfiLogoUseMotivation_11_6;
+    private Integer sfiLogoUseMotivation_11_7;
+    private Integer sfiLogoUseMotivation_11_8;
+    private Integer sfiLogoUseMotivation_11_9;
+    private Integer sfiLogoUseMotivation_11_10;
+    private Integer sfiLogoUseMotivation_11_11;
+
+    private Integer sfiLogoUseMotivation_12_1;
+    private Integer sfiLogoUseMotivation_12_2;
+    private Integer sfiLogoUseMotivation_12_3;
+    private Integer sfiLogoUseMotivation_12_4;
+    private Integer sfiLogoUseMotivation_12_5;
+    private Integer sfiLogoUseMotivation_12_6;
+    private Integer sfiLogoUseMotivation_12_7;
+    private Integer sfiLogoUseMotivation_12_8;
+    private Integer sfiLogoUseMotivation_12_9;
+    private Integer sfiLogoUseMotivation_12_10;
+    private Integer sfiLogoUseMotivation_12_11;
+
+    private Integer sfiLogoUseMotivation_13_1;
+    private Integer sfiLogoUseMotivation_13_2;
+    private Integer sfiLogoUseMotivation_13_3;
+    private Integer sfiLogoUseMotivation_13_4;
+    private Integer sfiLogoUseMotivation_13_5;
+    private Integer sfiLogoUseMotivation_13_6;
+    private Integer sfiLogoUseMotivation_13_7;
+    private Integer sfiLogoUseMotivation_13_8;
+    private Integer sfiLogoUseMotivation_13_9;
+    private Integer sfiLogoUseMotivation_13_10;
+    private Integer sfiLogoUseMotivation_13_11;
 
 //    private String chainOfCustody_FSCCertification;
 
@@ -3118,5 +3273,1149 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     public void setFscDemandDeveloping_4(String fscDemandDeveloping_4) {
         this.fscDemandDeveloping_4 = fscDemandDeveloping_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_1() {
+        return sfiLogoUseMotivation_1_1;
+    }
+
+    public void setSfiLogoUseMotivation_1_1(Integer sfiLogoUseMotivation_1_1) {
+        this.sfiLogoUseMotivation_1_1 = sfiLogoUseMotivation_1_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_2() {
+        return sfiLogoUseMotivation_1_2;
+    }
+
+    public void setSfiLogoUseMotivation_1_2(Integer sfiLogoUseMotivation_1_2) {
+        this.sfiLogoUseMotivation_1_2 = sfiLogoUseMotivation_1_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_3() {
+        return sfiLogoUseMotivation_1_3;
+    }
+
+    public void setSfiLogoUseMotivation_1_3(Integer sfiLogoUseMotivation_1_3) {
+        this.sfiLogoUseMotivation_1_3 = sfiLogoUseMotivation_1_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_4() {
+        return sfiLogoUseMotivation_1_4;
+    }
+
+    public void setSfiLogoUseMotivation_1_4(Integer sfiLogoUseMotivation_1_4) {
+        this.sfiLogoUseMotivation_1_4 = sfiLogoUseMotivation_1_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_5() {
+        return sfiLogoUseMotivation_1_5;
+    }
+
+    public void setSfiLogoUseMotivation_1_5(Integer sfiLogoUseMotivation_1_5) {
+        this.sfiLogoUseMotivation_1_5 = sfiLogoUseMotivation_1_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_6() {
+        return sfiLogoUseMotivation_1_6;
+    }
+
+    public void setSfiLogoUseMotivation_1_6(Integer sfiLogoUseMotivation_1_6) {
+        this.sfiLogoUseMotivation_1_6 = sfiLogoUseMotivation_1_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_7() {
+        return sfiLogoUseMotivation_1_7;
+    }
+
+    public void setSfiLogoUseMotivation_1_7(Integer sfiLogoUseMotivation_1_7) {
+        this.sfiLogoUseMotivation_1_7 = sfiLogoUseMotivation_1_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_8() {
+        return sfiLogoUseMotivation_1_8;
+    }
+
+    public void setSfiLogoUseMotivation_1_8(Integer sfiLogoUseMotivation_1_8) {
+        this.sfiLogoUseMotivation_1_8 = sfiLogoUseMotivation_1_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_9() {
+        return sfiLogoUseMotivation_1_9;
+    }
+
+    public void setSfiLogoUseMotivation_1_9(Integer sfiLogoUseMotivation_1_9) {
+        this.sfiLogoUseMotivation_1_9 = sfiLogoUseMotivation_1_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_10() {
+        return sfiLogoUseMotivation_1_10;
+    }
+
+    public void setSfiLogoUseMotivation_1_10(Integer sfiLogoUseMotivation_1_10) {
+        this.sfiLogoUseMotivation_1_10 = sfiLogoUseMotivation_1_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_1_11() {
+        return sfiLogoUseMotivation_1_11;
+    }
+
+    public void setSfiLogoUseMotivation_1_11(Integer sfiLogoUseMotivation_1_11) {
+        this.sfiLogoUseMotivation_1_11 = sfiLogoUseMotivation_1_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_1() {
+        return sfiLogoUseMotivation_2_1;
+    }
+
+    public void setSfiLogoUseMotivation_2_1(Integer sfiLogoUseMotivation_2_1) {
+        this.sfiLogoUseMotivation_2_1 = sfiLogoUseMotivation_2_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_2() {
+        return sfiLogoUseMotivation_2_2;
+    }
+
+    public void setSfiLogoUseMotivation_2_2(Integer sfiLogoUseMotivation_2_2) {
+        this.sfiLogoUseMotivation_2_2 = sfiLogoUseMotivation_2_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_3() {
+        return sfiLogoUseMotivation_2_3;
+    }
+
+    public void setSfiLogoUseMotivation_2_3(Integer sfiLogoUseMotivation_2_3) {
+        this.sfiLogoUseMotivation_2_3 = sfiLogoUseMotivation_2_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_4() {
+        return sfiLogoUseMotivation_2_4;
+    }
+
+    public void setSfiLogoUseMotivation_2_4(Integer sfiLogoUseMotivation_2_4) {
+        this.sfiLogoUseMotivation_2_4 = sfiLogoUseMotivation_2_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_5() {
+        return sfiLogoUseMotivation_2_5;
+    }
+
+    public void setSfiLogoUseMotivation_2_5(Integer sfiLogoUseMotivation_2_5) {
+        this.sfiLogoUseMotivation_2_5 = sfiLogoUseMotivation_2_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_6() {
+        return sfiLogoUseMotivation_2_6;
+    }
+
+    public void setSfiLogoUseMotivation_2_6(Integer sfiLogoUseMotivation_2_6) {
+        this.sfiLogoUseMotivation_2_6 = sfiLogoUseMotivation_2_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_7() {
+        return sfiLogoUseMotivation_2_7;
+    }
+
+    public void setSfiLogoUseMotivation_2_7(Integer sfiLogoUseMotivation_2_7) {
+        this.sfiLogoUseMotivation_2_7 = sfiLogoUseMotivation_2_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_8() {
+        return sfiLogoUseMotivation_2_8;
+    }
+
+    public void setSfiLogoUseMotivation_2_8(Integer sfiLogoUseMotivation_2_8) {
+        this.sfiLogoUseMotivation_2_8 = sfiLogoUseMotivation_2_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_9() {
+        return sfiLogoUseMotivation_2_9;
+    }
+
+    public void setSfiLogoUseMotivation_2_9(Integer sfiLogoUseMotivation_2_9) {
+        this.sfiLogoUseMotivation_2_9 = sfiLogoUseMotivation_2_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_10() {
+        return sfiLogoUseMotivation_2_10;
+    }
+
+    public void setSfiLogoUseMotivation_2_10(Integer sfiLogoUseMotivation_2_10) {
+        this.sfiLogoUseMotivation_2_10 = sfiLogoUseMotivation_2_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_2_11() {
+        return sfiLogoUseMotivation_2_11;
+    }
+
+    public void setSfiLogoUseMotivation_2_11(Integer sfiLogoUseMotivation_2_11) {
+        this.sfiLogoUseMotivation_2_11 = sfiLogoUseMotivation_2_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_1() {
+        return sfiLogoUseMotivation_3_1;
+    }
+
+    public void setSfiLogoUseMotivation_3_1(Integer sfiLogoUseMotivation_3_1) {
+        this.sfiLogoUseMotivation_3_1 = sfiLogoUseMotivation_3_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_2() {
+        return sfiLogoUseMotivation_3_2;
+    }
+
+    public void setSfiLogoUseMotivation_3_2(Integer sfiLogoUseMotivation_3_2) {
+        this.sfiLogoUseMotivation_3_2 = sfiLogoUseMotivation_3_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_3() {
+        return sfiLogoUseMotivation_3_3;
+    }
+
+    public void setSfiLogoUseMotivation_3_3(Integer sfiLogoUseMotivation_3_3) {
+        this.sfiLogoUseMotivation_3_3 = sfiLogoUseMotivation_3_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_4() {
+        return sfiLogoUseMotivation_3_4;
+    }
+
+    public void setSfiLogoUseMotivation_3_4(Integer sfiLogoUseMotivation_3_4) {
+        this.sfiLogoUseMotivation_3_4 = sfiLogoUseMotivation_3_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_5() {
+        return sfiLogoUseMotivation_3_5;
+    }
+
+    public void setSfiLogoUseMotivation_3_5(Integer sfiLogoUseMotivation_3_5) {
+        this.sfiLogoUseMotivation_3_5 = sfiLogoUseMotivation_3_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_6() {
+        return sfiLogoUseMotivation_3_6;
+    }
+
+    public void setSfiLogoUseMotivation_3_6(Integer sfiLogoUseMotivation_3_6) {
+        this.sfiLogoUseMotivation_3_6 = sfiLogoUseMotivation_3_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_7() {
+        return sfiLogoUseMotivation_3_7;
+    }
+
+    public void setSfiLogoUseMotivation_3_7(Integer sfiLogoUseMotivation_3_7) {
+        this.sfiLogoUseMotivation_3_7 = sfiLogoUseMotivation_3_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_8() {
+        return sfiLogoUseMotivation_3_8;
+    }
+
+    public void setSfiLogoUseMotivation_3_8(Integer sfiLogoUseMotivation_3_8) {
+        this.sfiLogoUseMotivation_3_8 = sfiLogoUseMotivation_3_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_9() {
+        return sfiLogoUseMotivation_3_9;
+    }
+
+    public void setSfiLogoUseMotivation_3_9(Integer sfiLogoUseMotivation_3_9) {
+        this.sfiLogoUseMotivation_3_9 = sfiLogoUseMotivation_3_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_10() {
+        return sfiLogoUseMotivation_3_10;
+    }
+
+    public void setSfiLogoUseMotivation_3_10(Integer sfiLogoUseMotivation_3_10) {
+        this.sfiLogoUseMotivation_3_10 = sfiLogoUseMotivation_3_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_3_11() {
+        return sfiLogoUseMotivation_3_11;
+    }
+
+    public void setSfiLogoUseMotivation_3_11(Integer sfiLogoUseMotivation_3_11) {
+        this.sfiLogoUseMotivation_3_11 = sfiLogoUseMotivation_3_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_1() {
+        return sfiLogoUseMotivation_4_1;
+    }
+
+    public void setSfiLogoUseMotivation_4_1(Integer sfiLogoUseMotivation_4_1) {
+        this.sfiLogoUseMotivation_4_1 = sfiLogoUseMotivation_4_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_2() {
+        return sfiLogoUseMotivation_4_2;
+    }
+
+    public void setSfiLogoUseMotivation_4_2(Integer sfiLogoUseMotivation_4_2) {
+        this.sfiLogoUseMotivation_4_2 = sfiLogoUseMotivation_4_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_3() {
+        return sfiLogoUseMotivation_4_3;
+    }
+
+    public void setSfiLogoUseMotivation_4_3(Integer sfiLogoUseMotivation_4_3) {
+        this.sfiLogoUseMotivation_4_3 = sfiLogoUseMotivation_4_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_4() {
+        return sfiLogoUseMotivation_4_4;
+    }
+
+    public void setSfiLogoUseMotivation_4_4(Integer sfiLogoUseMotivation_4_4) {
+        this.sfiLogoUseMotivation_4_4 = sfiLogoUseMotivation_4_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_5() {
+        return sfiLogoUseMotivation_4_5;
+    }
+
+    public void setSfiLogoUseMotivation_4_5(Integer sfiLogoUseMotivation_4_5) {
+        this.sfiLogoUseMotivation_4_5 = sfiLogoUseMotivation_4_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_6() {
+        return sfiLogoUseMotivation_4_6;
+    }
+
+    public void setSfiLogoUseMotivation_4_6(Integer sfiLogoUseMotivation_4_6) {
+        this.sfiLogoUseMotivation_4_6 = sfiLogoUseMotivation_4_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_7() {
+        return sfiLogoUseMotivation_4_7;
+    }
+
+    public void setSfiLogoUseMotivation_4_7(Integer sfiLogoUseMotivation_4_7) {
+        this.sfiLogoUseMotivation_4_7 = sfiLogoUseMotivation_4_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_8() {
+        return sfiLogoUseMotivation_4_8;
+    }
+
+    public void setSfiLogoUseMotivation_4_8(Integer sfiLogoUseMotivation_4_8) {
+        this.sfiLogoUseMotivation_4_8 = sfiLogoUseMotivation_4_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_9() {
+        return sfiLogoUseMotivation_4_9;
+    }
+
+    public void setSfiLogoUseMotivation_4_9(Integer sfiLogoUseMotivation_4_9) {
+        this.sfiLogoUseMotivation_4_9 = sfiLogoUseMotivation_4_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_10() {
+        return sfiLogoUseMotivation_4_10;
+    }
+
+    public void setSfiLogoUseMotivation_4_10(Integer sfiLogoUseMotivation_4_10) {
+        this.sfiLogoUseMotivation_4_10 = sfiLogoUseMotivation_4_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_4_11() {
+        return sfiLogoUseMotivation_4_11;
+    }
+
+    public void setSfiLogoUseMotivation_4_11(Integer sfiLogoUseMotivation_4_11) {
+        this.sfiLogoUseMotivation_4_11 = sfiLogoUseMotivation_4_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_1() {
+        return sfiLogoUseMotivation_5_1;
+    }
+
+    public void setSfiLogoUseMotivation_5_1(Integer sfiLogoUseMotivation_5_1) {
+        this.sfiLogoUseMotivation_5_1 = sfiLogoUseMotivation_5_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_2() {
+        return sfiLogoUseMotivation_5_2;
+    }
+
+    public void setSfiLogoUseMotivation_5_2(Integer sfiLogoUseMotivation_5_2) {
+        this.sfiLogoUseMotivation_5_2 = sfiLogoUseMotivation_5_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_3() {
+        return sfiLogoUseMotivation_5_3;
+    }
+
+    public void setSfiLogoUseMotivation_5_3(Integer sfiLogoUseMotivation_5_3) {
+        this.sfiLogoUseMotivation_5_3 = sfiLogoUseMotivation_5_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_4() {
+        return sfiLogoUseMotivation_5_4;
+    }
+
+    public void setSfiLogoUseMotivation_5_4(Integer sfiLogoUseMotivation_5_4) {
+        this.sfiLogoUseMotivation_5_4 = sfiLogoUseMotivation_5_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_5() {
+        return sfiLogoUseMotivation_5_5;
+    }
+
+    public void setSfiLogoUseMotivation_5_5(Integer sfiLogoUseMotivation_5_5) {
+        this.sfiLogoUseMotivation_5_5 = sfiLogoUseMotivation_5_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_6() {
+        return sfiLogoUseMotivation_5_6;
+    }
+
+    public void setSfiLogoUseMotivation_5_6(Integer sfiLogoUseMotivation_5_6) {
+        this.sfiLogoUseMotivation_5_6 = sfiLogoUseMotivation_5_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_7() {
+        return sfiLogoUseMotivation_5_7;
+    }
+
+    public void setSfiLogoUseMotivation_5_7(Integer sfiLogoUseMotivation_5_7) {
+        this.sfiLogoUseMotivation_5_7 = sfiLogoUseMotivation_5_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_8() {
+        return sfiLogoUseMotivation_5_8;
+    }
+
+    public void setSfiLogoUseMotivation_5_8(Integer sfiLogoUseMotivation_5_8) {
+        this.sfiLogoUseMotivation_5_8 = sfiLogoUseMotivation_5_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_9() {
+        return sfiLogoUseMotivation_5_9;
+    }
+
+    public void setSfiLogoUseMotivation_5_9(Integer sfiLogoUseMotivation_5_9) {
+        this.sfiLogoUseMotivation_5_9 = sfiLogoUseMotivation_5_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_10() {
+        return sfiLogoUseMotivation_5_10;
+    }
+
+    public void setSfiLogoUseMotivation_5_10(Integer sfiLogoUseMotivation_5_10) {
+        this.sfiLogoUseMotivation_5_10 = sfiLogoUseMotivation_5_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_5_11() {
+        return sfiLogoUseMotivation_5_11;
+    }
+
+    public void setSfiLogoUseMotivation_5_11(Integer sfiLogoUseMotivation_5_11) {
+        this.sfiLogoUseMotivation_5_11 = sfiLogoUseMotivation_5_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_1() {
+        return sfiLogoUseMotivation_6_1;
+    }
+
+    public void setSfiLogoUseMotivation_6_1(Integer sfiLogoUseMotivation_6_1) {
+        this.sfiLogoUseMotivation_6_1 = sfiLogoUseMotivation_6_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_2() {
+        return sfiLogoUseMotivation_6_2;
+    }
+
+    public void setSfiLogoUseMotivation_6_2(Integer sfiLogoUseMotivation_6_2) {
+        this.sfiLogoUseMotivation_6_2 = sfiLogoUseMotivation_6_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_3() {
+        return sfiLogoUseMotivation_6_3;
+    }
+
+    public void setSfiLogoUseMotivation_6_3(Integer sfiLogoUseMotivation_6_3) {
+        this.sfiLogoUseMotivation_6_3 = sfiLogoUseMotivation_6_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_4() {
+        return sfiLogoUseMotivation_6_4;
+    }
+
+    public void setSfiLogoUseMotivation_6_4(Integer sfiLogoUseMotivation_6_4) {
+        this.sfiLogoUseMotivation_6_4 = sfiLogoUseMotivation_6_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_5() {
+        return sfiLogoUseMotivation_6_5;
+    }
+
+    public void setSfiLogoUseMotivation_6_5(Integer sfiLogoUseMotivation_6_5) {
+        this.sfiLogoUseMotivation_6_5 = sfiLogoUseMotivation_6_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_6() {
+        return sfiLogoUseMotivation_6_6;
+    }
+
+    public void setSfiLogoUseMotivation_6_6(Integer sfiLogoUseMotivation_6_6) {
+        this.sfiLogoUseMotivation_6_6 = sfiLogoUseMotivation_6_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_7() {
+        return sfiLogoUseMotivation_6_7;
+    }
+
+    public void setSfiLogoUseMotivation_6_7(Integer sfiLogoUseMotivation_6_7) {
+        this.sfiLogoUseMotivation_6_7 = sfiLogoUseMotivation_6_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_8() {
+        return sfiLogoUseMotivation_6_8;
+    }
+
+    public void setSfiLogoUseMotivation_6_8(Integer sfiLogoUseMotivation_6_8) {
+        this.sfiLogoUseMotivation_6_8 = sfiLogoUseMotivation_6_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_9() {
+        return sfiLogoUseMotivation_6_9;
+    }
+
+    public void setSfiLogoUseMotivation_6_9(Integer sfiLogoUseMotivation_6_9) {
+        this.sfiLogoUseMotivation_6_9 = sfiLogoUseMotivation_6_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_10() {
+        return sfiLogoUseMotivation_6_10;
+    }
+
+    public void setSfiLogoUseMotivation_6_10(Integer sfiLogoUseMotivation_6_10) {
+        this.sfiLogoUseMotivation_6_10 = sfiLogoUseMotivation_6_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_6_11() {
+        return sfiLogoUseMotivation_6_11;
+    }
+
+    public void setSfiLogoUseMotivation_6_11(Integer sfiLogoUseMotivation_6_11) {
+        this.sfiLogoUseMotivation_6_11 = sfiLogoUseMotivation_6_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_1() {
+        return sfiLogoUseMotivation_7_1;
+    }
+
+    public void setSfiLogoUseMotivation_7_1(Integer sfiLogoUseMotivation_7_1) {
+        this.sfiLogoUseMotivation_7_1 = sfiLogoUseMotivation_7_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_2() {
+        return sfiLogoUseMotivation_7_2;
+    }
+
+    public void setSfiLogoUseMotivation_7_2(Integer sfiLogoUseMotivation_7_2) {
+        this.sfiLogoUseMotivation_7_2 = sfiLogoUseMotivation_7_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_3() {
+        return sfiLogoUseMotivation_7_3;
+    }
+
+    public void setSfiLogoUseMotivation_7_3(Integer sfiLogoUseMotivation_7_3) {
+        this.sfiLogoUseMotivation_7_3 = sfiLogoUseMotivation_7_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_4() {
+        return sfiLogoUseMotivation_7_4;
+    }
+
+    public void setSfiLogoUseMotivation_7_4(Integer sfiLogoUseMotivation_7_4) {
+        this.sfiLogoUseMotivation_7_4 = sfiLogoUseMotivation_7_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_5() {
+        return sfiLogoUseMotivation_7_5;
+    }
+
+    public void setSfiLogoUseMotivation_7_5(Integer sfiLogoUseMotivation_7_5) {
+        this.sfiLogoUseMotivation_7_5 = sfiLogoUseMotivation_7_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_6() {
+        return sfiLogoUseMotivation_7_6;
+    }
+
+    public void setSfiLogoUseMotivation_7_6(Integer sfiLogoUseMotivation_7_6) {
+        this.sfiLogoUseMotivation_7_6 = sfiLogoUseMotivation_7_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_7() {
+        return sfiLogoUseMotivation_7_7;
+    }
+
+    public void setSfiLogoUseMotivation_7_7(Integer sfiLogoUseMotivation_7_7) {
+        this.sfiLogoUseMotivation_7_7 = sfiLogoUseMotivation_7_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_8() {
+        return sfiLogoUseMotivation_7_8;
+    }
+
+    public void setSfiLogoUseMotivation_7_8(Integer sfiLogoUseMotivation_7_8) {
+        this.sfiLogoUseMotivation_7_8 = sfiLogoUseMotivation_7_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_9() {
+        return sfiLogoUseMotivation_7_9;
+    }
+
+    public void setSfiLogoUseMotivation_7_9(Integer sfiLogoUseMotivation_7_9) {
+        this.sfiLogoUseMotivation_7_9 = sfiLogoUseMotivation_7_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_10() {
+        return sfiLogoUseMotivation_7_10;
+    }
+
+    public void setSfiLogoUseMotivation_7_10(Integer sfiLogoUseMotivation_7_10) {
+        this.sfiLogoUseMotivation_7_10 = sfiLogoUseMotivation_7_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_7_11() {
+        return sfiLogoUseMotivation_7_11;
+    }
+
+    public void setSfiLogoUseMotivation_7_11(Integer sfiLogoUseMotivation_7_11) {
+        this.sfiLogoUseMotivation_7_11 = sfiLogoUseMotivation_7_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_1() {
+        return sfiLogoUseMotivation_8_1;
+    }
+
+    public void setSfiLogoUseMotivation_8_1(Integer sfiLogoUseMotivation_8_1) {
+        this.sfiLogoUseMotivation_8_1 = sfiLogoUseMotivation_8_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_2() {
+        return sfiLogoUseMotivation_8_2;
+    }
+
+    public void setSfiLogoUseMotivation_8_2(Integer sfiLogoUseMotivation_8_2) {
+        this.sfiLogoUseMotivation_8_2 = sfiLogoUseMotivation_8_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_3() {
+        return sfiLogoUseMotivation_8_3;
+    }
+
+    public void setSfiLogoUseMotivation_8_3(Integer sfiLogoUseMotivation_8_3) {
+        this.sfiLogoUseMotivation_8_3 = sfiLogoUseMotivation_8_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_4() {
+        return sfiLogoUseMotivation_8_4;
+    }
+
+    public void setSfiLogoUseMotivation_8_4(Integer sfiLogoUseMotivation_8_4) {
+        this.sfiLogoUseMotivation_8_4 = sfiLogoUseMotivation_8_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_5() {
+        return sfiLogoUseMotivation_8_5;
+    }
+
+    public void setSfiLogoUseMotivation_8_5(Integer sfiLogoUseMotivation_8_5) {
+        this.sfiLogoUseMotivation_8_5 = sfiLogoUseMotivation_8_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_6() {
+        return sfiLogoUseMotivation_8_6;
+    }
+
+    public void setSfiLogoUseMotivation_8_6(Integer sfiLogoUseMotivation_8_6) {
+        this.sfiLogoUseMotivation_8_6 = sfiLogoUseMotivation_8_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_7() {
+        return sfiLogoUseMotivation_8_7;
+    }
+
+    public void setSfiLogoUseMotivation_8_7(Integer sfiLogoUseMotivation_8_7) {
+        this.sfiLogoUseMotivation_8_7 = sfiLogoUseMotivation_8_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_8() {
+        return sfiLogoUseMotivation_8_8;
+    }
+
+    public void setSfiLogoUseMotivation_8_8(Integer sfiLogoUseMotivation_8_8) {
+        this.sfiLogoUseMotivation_8_8 = sfiLogoUseMotivation_8_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_9() {
+        return sfiLogoUseMotivation_8_9;
+    }
+
+    public void setSfiLogoUseMotivation_8_9(Integer sfiLogoUseMotivation_8_9) {
+        this.sfiLogoUseMotivation_8_9 = sfiLogoUseMotivation_8_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_10() {
+        return sfiLogoUseMotivation_8_10;
+    }
+
+    public void setSfiLogoUseMotivation_8_10(Integer sfiLogoUseMotivation_8_10) {
+        this.sfiLogoUseMotivation_8_10 = sfiLogoUseMotivation_8_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_8_11() {
+        return sfiLogoUseMotivation_8_11;
+    }
+
+    public void setSfiLogoUseMotivation_8_11(Integer sfiLogoUseMotivation_8_11) {
+        this.sfiLogoUseMotivation_8_11 = sfiLogoUseMotivation_8_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_1() {
+        return sfiLogoUseMotivation_9_1;
+    }
+
+    public void setSfiLogoUseMotivation_9_1(Integer sfiLogoUseMotivation_9_1) {
+        this.sfiLogoUseMotivation_9_1 = sfiLogoUseMotivation_9_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_2() {
+        return sfiLogoUseMotivation_9_2;
+    }
+
+    public void setSfiLogoUseMotivation_9_2(Integer sfiLogoUseMotivation_9_2) {
+        this.sfiLogoUseMotivation_9_2 = sfiLogoUseMotivation_9_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_3() {
+        return sfiLogoUseMotivation_9_3;
+    }
+
+    public void setSfiLogoUseMotivation_9_3(Integer sfiLogoUseMotivation_9_3) {
+        this.sfiLogoUseMotivation_9_3 = sfiLogoUseMotivation_9_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_4() {
+        return sfiLogoUseMotivation_9_4;
+    }
+
+    public void setSfiLogoUseMotivation_9_4(Integer sfiLogoUseMotivation_9_4) {
+        this.sfiLogoUseMotivation_9_4 = sfiLogoUseMotivation_9_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_5() {
+        return sfiLogoUseMotivation_9_5;
+    }
+
+    public void setSfiLogoUseMotivation_9_5(Integer sfiLogoUseMotivation_9_5) {
+        this.sfiLogoUseMotivation_9_5 = sfiLogoUseMotivation_9_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_6() {
+        return sfiLogoUseMotivation_9_6;
+    }
+
+    public void setSfiLogoUseMotivation_9_6(Integer sfiLogoUseMotivation_9_6) {
+        this.sfiLogoUseMotivation_9_6 = sfiLogoUseMotivation_9_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_7() {
+        return sfiLogoUseMotivation_9_7;
+    }
+
+    public void setSfiLogoUseMotivation_9_7(Integer sfiLogoUseMotivation_9_7) {
+        this.sfiLogoUseMotivation_9_7 = sfiLogoUseMotivation_9_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_8() {
+        return sfiLogoUseMotivation_9_8;
+    }
+
+    public void setSfiLogoUseMotivation_9_8(Integer sfiLogoUseMotivation_9_8) {
+        this.sfiLogoUseMotivation_9_8 = sfiLogoUseMotivation_9_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_9() {
+        return sfiLogoUseMotivation_9_9;
+    }
+
+    public void setSfiLogoUseMotivation_9_9(Integer sfiLogoUseMotivation_9_9) {
+        this.sfiLogoUseMotivation_9_9 = sfiLogoUseMotivation_9_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_10() {
+        return sfiLogoUseMotivation_9_10;
+    }
+
+    public void setSfiLogoUseMotivation_9_10(Integer sfiLogoUseMotivation_9_10) {
+        this.sfiLogoUseMotivation_9_10 = sfiLogoUseMotivation_9_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_9_11() {
+        return sfiLogoUseMotivation_9_11;
+    }
+
+    public void setSfiLogoUseMotivation_9_11(Integer sfiLogoUseMotivation_9_11) {
+        this.sfiLogoUseMotivation_9_11 = sfiLogoUseMotivation_9_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_1() {
+        return sfiLogoUseMotivation_10_1;
+    }
+
+    public void setSfiLogoUseMotivation_10_1(Integer sfiLogoUseMotivation_10_1) {
+        this.sfiLogoUseMotivation_10_1 = sfiLogoUseMotivation_10_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_2() {
+        return sfiLogoUseMotivation_10_2;
+    }
+
+    public void setSfiLogoUseMotivation_10_2(Integer sfiLogoUseMotivation_10_2) {
+        this.sfiLogoUseMotivation_10_2 = sfiLogoUseMotivation_10_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_3() {
+        return sfiLogoUseMotivation_10_3;
+    }
+
+    public void setSfiLogoUseMotivation_10_3(Integer sfiLogoUseMotivation_10_3) {
+        this.sfiLogoUseMotivation_10_3 = sfiLogoUseMotivation_10_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_4() {
+        return sfiLogoUseMotivation_10_4;
+    }
+
+    public void setSfiLogoUseMotivation_10_4(Integer sfiLogoUseMotivation_10_4) {
+        this.sfiLogoUseMotivation_10_4 = sfiLogoUseMotivation_10_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_5() {
+        return sfiLogoUseMotivation_10_5;
+    }
+
+    public void setSfiLogoUseMotivation_10_5(Integer sfiLogoUseMotivation_10_5) {
+        this.sfiLogoUseMotivation_10_5 = sfiLogoUseMotivation_10_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_6() {
+        return sfiLogoUseMotivation_10_6;
+    }
+
+    public void setSfiLogoUseMotivation_10_6(Integer sfiLogoUseMotivation_10_6) {
+        this.sfiLogoUseMotivation_10_6 = sfiLogoUseMotivation_10_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_7() {
+        return sfiLogoUseMotivation_10_7;
+    }
+
+    public void setSfiLogoUseMotivation_10_7(Integer sfiLogoUseMotivation_10_7) {
+        this.sfiLogoUseMotivation_10_7 = sfiLogoUseMotivation_10_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_8() {
+        return sfiLogoUseMotivation_10_8;
+    }
+
+    public void setSfiLogoUseMotivation_10_8(Integer sfiLogoUseMotivation_10_8) {
+        this.sfiLogoUseMotivation_10_8 = sfiLogoUseMotivation_10_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_9() {
+        return sfiLogoUseMotivation_10_9;
+    }
+
+    public void setSfiLogoUseMotivation_10_9(Integer sfiLogoUseMotivation_10_9) {
+        this.sfiLogoUseMotivation_10_9 = sfiLogoUseMotivation_10_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_10() {
+        return sfiLogoUseMotivation_10_10;
+    }
+
+    public void setSfiLogoUseMotivation_10_10(Integer sfiLogoUseMotivation_10_10) {
+        this.sfiLogoUseMotivation_10_10 = sfiLogoUseMotivation_10_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_10_11() {
+        return sfiLogoUseMotivation_10_11;
+    }
+
+    public void setSfiLogoUseMotivation_10_11(Integer sfiLogoUseMotivation_10_11) {
+        this.sfiLogoUseMotivation_10_11 = sfiLogoUseMotivation_10_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_1() {
+        return sfiLogoUseMotivation_11_1;
+    }
+
+    public void setSfiLogoUseMotivation_11_1(Integer sfiLogoUseMotivation_11_1) {
+        this.sfiLogoUseMotivation_11_1 = sfiLogoUseMotivation_11_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_2() {
+        return sfiLogoUseMotivation_11_2;
+    }
+
+    public void setSfiLogoUseMotivation_11_2(Integer sfiLogoUseMotivation_11_2) {
+        this.sfiLogoUseMotivation_11_2 = sfiLogoUseMotivation_11_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_3() {
+        return sfiLogoUseMotivation_11_3;
+    }
+
+    public void setSfiLogoUseMotivation_11_3(Integer sfiLogoUseMotivation_11_3) {
+        this.sfiLogoUseMotivation_11_3 = sfiLogoUseMotivation_11_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_4() {
+        return sfiLogoUseMotivation_11_4;
+    }
+
+    public void setSfiLogoUseMotivation_11_4(Integer sfiLogoUseMotivation_11_4) {
+        this.sfiLogoUseMotivation_11_4 = sfiLogoUseMotivation_11_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_5() {
+        return sfiLogoUseMotivation_11_5;
+    }
+
+    public void setSfiLogoUseMotivation_11_5(Integer sfiLogoUseMotivation_11_5) {
+        this.sfiLogoUseMotivation_11_5 = sfiLogoUseMotivation_11_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_6() {
+        return sfiLogoUseMotivation_11_6;
+    }
+
+    public void setSfiLogoUseMotivation_11_6(Integer sfiLogoUseMotivation_11_6) {
+        this.sfiLogoUseMotivation_11_6 = sfiLogoUseMotivation_11_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_7() {
+        return sfiLogoUseMotivation_11_7;
+    }
+
+    public void setSfiLogoUseMotivation_11_7(Integer sfiLogoUseMotivation_11_7) {
+        this.sfiLogoUseMotivation_11_7 = sfiLogoUseMotivation_11_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_8() {
+        return sfiLogoUseMotivation_11_8;
+    }
+
+    public void setSfiLogoUseMotivation_11_8(Integer sfiLogoUseMotivation_11_8) {
+        this.sfiLogoUseMotivation_11_8 = sfiLogoUseMotivation_11_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_9() {
+        return sfiLogoUseMotivation_11_9;
+    }
+
+    public void setSfiLogoUseMotivation_11_9(Integer sfiLogoUseMotivation_11_9) {
+        this.sfiLogoUseMotivation_11_9 = sfiLogoUseMotivation_11_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_10() {
+        return sfiLogoUseMotivation_11_10;
+    }
+
+    public void setSfiLogoUseMotivation_11_10(Integer sfiLogoUseMotivation_11_10) {
+        this.sfiLogoUseMotivation_11_10 = sfiLogoUseMotivation_11_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_11_11() {
+        return sfiLogoUseMotivation_11_11;
+    }
+
+    public void setSfiLogoUseMotivation_11_11(Integer sfiLogoUseMotivation_11_11) {
+        this.sfiLogoUseMotivation_11_11 = sfiLogoUseMotivation_11_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_1() {
+        return sfiLogoUseMotivation_12_1;
+    }
+
+    public void setSfiLogoUseMotivation_12_1(Integer sfiLogoUseMotivation_12_1) {
+        this.sfiLogoUseMotivation_12_1 = sfiLogoUseMotivation_12_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_2() {
+        return sfiLogoUseMotivation_12_2;
+    }
+
+    public void setSfiLogoUseMotivation_12_2(Integer sfiLogoUseMotivation_12_2) {
+        this.sfiLogoUseMotivation_12_2 = sfiLogoUseMotivation_12_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_3() {
+        return sfiLogoUseMotivation_12_3;
+    }
+
+    public void setSfiLogoUseMotivation_12_3(Integer sfiLogoUseMotivation_12_3) {
+        this.sfiLogoUseMotivation_12_3 = sfiLogoUseMotivation_12_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_4() {
+        return sfiLogoUseMotivation_12_4;
+    }
+
+    public void setSfiLogoUseMotivation_12_4(Integer sfiLogoUseMotivation_12_4) {
+        this.sfiLogoUseMotivation_12_4 = sfiLogoUseMotivation_12_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_5() {
+        return sfiLogoUseMotivation_12_5;
+    }
+
+    public void setSfiLogoUseMotivation_12_5(Integer sfiLogoUseMotivation_12_5) {
+        this.sfiLogoUseMotivation_12_5 = sfiLogoUseMotivation_12_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_6() {
+        return sfiLogoUseMotivation_12_6;
+    }
+
+    public void setSfiLogoUseMotivation_12_6(Integer sfiLogoUseMotivation_12_6) {
+        this.sfiLogoUseMotivation_12_6 = sfiLogoUseMotivation_12_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_7() {
+        return sfiLogoUseMotivation_12_7;
+    }
+
+    public void setSfiLogoUseMotivation_12_7(Integer sfiLogoUseMotivation_12_7) {
+        this.sfiLogoUseMotivation_12_7 = sfiLogoUseMotivation_12_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_8() {
+        return sfiLogoUseMotivation_12_8;
+    }
+
+    public void setSfiLogoUseMotivation_12_8(Integer sfiLogoUseMotivation_12_8) {
+        this.sfiLogoUseMotivation_12_8 = sfiLogoUseMotivation_12_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_9() {
+        return sfiLogoUseMotivation_12_9;
+    }
+
+    public void setSfiLogoUseMotivation_12_9(Integer sfiLogoUseMotivation_12_9) {
+        this.sfiLogoUseMotivation_12_9 = sfiLogoUseMotivation_12_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_10() {
+        return sfiLogoUseMotivation_12_10;
+    }
+
+    public void setSfiLogoUseMotivation_12_10(Integer sfiLogoUseMotivation_12_10) {
+        this.sfiLogoUseMotivation_12_10 = sfiLogoUseMotivation_12_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_12_11() {
+        return sfiLogoUseMotivation_12_11;
+    }
+
+    public void setSfiLogoUseMotivation_12_11(Integer sfiLogoUseMotivation_12_11) {
+        this.sfiLogoUseMotivation_12_11 = sfiLogoUseMotivation_12_11;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_1() {
+        return sfiLogoUseMotivation_13_1;
+    }
+
+    public void setSfiLogoUseMotivation_13_1(Integer sfiLogoUseMotivation_13_1) {
+        this.sfiLogoUseMotivation_13_1 = sfiLogoUseMotivation_13_1;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_2() {
+        return sfiLogoUseMotivation_13_2;
+    }
+
+    public void setSfiLogoUseMotivation_13_2(Integer sfiLogoUseMotivation_13_2) {
+        this.sfiLogoUseMotivation_13_2 = sfiLogoUseMotivation_13_2;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_3() {
+        return sfiLogoUseMotivation_13_3;
+    }
+
+    public void setSfiLogoUseMotivation_13_3(Integer sfiLogoUseMotivation_13_3) {
+        this.sfiLogoUseMotivation_13_3 = sfiLogoUseMotivation_13_3;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_4() {
+        return sfiLogoUseMotivation_13_4;
+    }
+
+    public void setSfiLogoUseMotivation_13_4(Integer sfiLogoUseMotivation_13_4) {
+        this.sfiLogoUseMotivation_13_4 = sfiLogoUseMotivation_13_4;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_5() {
+        return sfiLogoUseMotivation_13_5;
+    }
+
+    public void setSfiLogoUseMotivation_13_5(Integer sfiLogoUseMotivation_13_5) {
+        this.sfiLogoUseMotivation_13_5 = sfiLogoUseMotivation_13_5;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_6() {
+        return sfiLogoUseMotivation_13_6;
+    }
+
+    public void setSfiLogoUseMotivation_13_6(Integer sfiLogoUseMotivation_13_6) {
+        this.sfiLogoUseMotivation_13_6 = sfiLogoUseMotivation_13_6;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_7() {
+        return sfiLogoUseMotivation_13_7;
+    }
+
+    public void setSfiLogoUseMotivation_13_7(Integer sfiLogoUseMotivation_13_7) {
+        this.sfiLogoUseMotivation_13_7 = sfiLogoUseMotivation_13_7;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_8() {
+        return sfiLogoUseMotivation_13_8;
+    }
+
+    public void setSfiLogoUseMotivation_13_8(Integer sfiLogoUseMotivation_13_8) {
+        this.sfiLogoUseMotivation_13_8 = sfiLogoUseMotivation_13_8;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_9() {
+        return sfiLogoUseMotivation_13_9;
+    }
+
+    public void setSfiLogoUseMotivation_13_9(Integer sfiLogoUseMotivation_13_9) {
+        this.sfiLogoUseMotivation_13_9 = sfiLogoUseMotivation_13_9;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_10() {
+        return sfiLogoUseMotivation_13_10;
+    }
+
+    public void setSfiLogoUseMotivation_13_10(Integer sfiLogoUseMotivation_13_10) {
+        this.sfiLogoUseMotivation_13_10 = sfiLogoUseMotivation_13_10;
+    }
+
+    public Integer getSfiLogoUseMotivation_13_11() {
+        return sfiLogoUseMotivation_13_11;
+    }
+
+    public void setSfiLogoUseMotivation_13_11(Integer sfiLogoUseMotivation_13_11) {
+        this.sfiLogoUseMotivation_13_11 = sfiLogoUseMotivation_13_11;
     }
 }
