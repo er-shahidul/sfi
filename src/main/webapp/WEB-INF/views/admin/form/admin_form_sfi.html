@@ -54,12 +54,16 @@
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.status.status}"></td>
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.updatedAt}"></td>
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
+                                                        <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
                                                         <a th:href="@{'/admin/company/pp/form/view/' + ${sfiPpForm.id}}">
                                                             <button th:text="Open" style="width:47px;"></button>
                                                         </a>
+                                                        </div>
+                                                        <div sec:authorize="hasAnyRole('ROLE_ADMIN')">
                                                         <a th:href="@{'/admin/company/pp/form/' + ${sfiPpForm.id}}">
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
+                                                        </div>
                                                     </td>
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  sec:authorize="hasAnyRole('ROLE_USER')">
                                                         <a th:href="@{'/sfiPpForm/view'}">
