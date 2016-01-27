@@ -1,6 +1,7 @@
 package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.web.common.models.entities.SfiPpFormAllCountry;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -159,6 +160,84 @@ public class Cs8PartialC extends BaseEntityModel {
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> sfiServeBetter;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_1",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_1;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_2",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_2;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_3",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_3;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_4",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_4;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_5",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_5;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_6",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_6;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_7",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_7;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_8",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_8;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_9",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_9;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_10",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_10;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_11",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_11;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_12",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_12;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "alsoFSCLabelFSC_Country_13",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_13;
 
     @Override
     public Integer getId() {
@@ -399,5 +478,109 @@ public class Cs8PartialC extends BaseEntityModel {
 
     public void setSfiServeBetter(Set<Integer> sfiServeBetter) {
         addAll(this.sfiServeBetter, sfiServeBetter);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_1() {
+        return alsoFSCLabelFSC_Country_1;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_1(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_1) {
+        addAll(this.alsoFSCLabelFSC_Country_1, alsoFSCLabelFSC_Country_1);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_2() {
+        return alsoFSCLabelFSC_Country_2;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_2(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_2) {
+        addAll(this.alsoFSCLabelFSC_Country_2, alsoFSCLabelFSC_Country_2);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_3() {
+        return alsoFSCLabelFSC_Country_3;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_3(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_3) {
+        addAll(this.alsoFSCLabelFSC_Country_3, alsoFSCLabelFSC_Country_3);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_4() {
+        return alsoFSCLabelFSC_Country_4;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_4(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_4) {
+        addAll(this.alsoFSCLabelFSC_Country_4, alsoFSCLabelFSC_Country_4);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_5() {
+        return alsoFSCLabelFSC_Country_5;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_5(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_5) {
+        addAll(this.alsoFSCLabelFSC_Country_5, alsoFSCLabelFSC_Country_5);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_6() {
+        return alsoFSCLabelFSC_Country_6;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_6(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_6) {
+        addAll(this.alsoFSCLabelFSC_Country_6, alsoFSCLabelFSC_Country_6);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_7() {
+        return alsoFSCLabelFSC_Country_7;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_7(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_7) {
+        addAll(this.alsoFSCLabelFSC_Country_7, alsoFSCLabelFSC_Country_7);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_8() {
+        return alsoFSCLabelFSC_Country_8;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_8(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_8) {
+        addAll(this.alsoFSCLabelFSC_Country_8, alsoFSCLabelFSC_Country_8);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_9() {
+        return alsoFSCLabelFSC_Country_9;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_9(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_9) {
+        addAll(this.alsoFSCLabelFSC_Country_9, alsoFSCLabelFSC_Country_9);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_10() {
+        return alsoFSCLabelFSC_Country_10;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_10(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_10) {
+        addAll(this.alsoFSCLabelFSC_Country_10, alsoFSCLabelFSC_Country_10);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_11() {
+        return alsoFSCLabelFSC_Country_11;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_11(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_11) {
+        addAll(this.alsoFSCLabelFSC_Country_11, alsoFSCLabelFSC_Country_11);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_12() {
+        return alsoFSCLabelFSC_Country_12;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_12(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_12) {
+        addAll(this.alsoFSCLabelFSC_Country_12, alsoFSCLabelFSC_Country_12);
+    }
+
+    public Set<SfiPpFormAllCountry> getAlsoFSCLabelFSC_Country_13() {
+        return alsoFSCLabelFSC_Country_13;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_13(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_13) {
+        addAll(this.alsoFSCLabelFSC_Country_13, alsoFSCLabelFSC_Country_13);
     }
 }
