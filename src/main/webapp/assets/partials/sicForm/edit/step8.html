@@ -109,41 +109,31 @@
                         <div class="col-lg-9">
                             <ul class="list-style" style="padding-top: 10px;">
                                 <li>
-                                    <label>
+                                    <label class="form-inline">
                                         <input type="checkbox"  ng-model="project.partnerAcademic"> Academic
+                                        <input style="font:caption;" placeholder="Please Specify"  ng-show="project.partnerAcademic" class="form-control pull-right" ng-model="project.partnerAcademicSpecify">
                                     </label>
-
                                 </li>
 
-                                    <div style="padding-left: 25px" class="form-inline" ng-show="project.partnerAcademic">
-                                            Please Specify
-                                        <input class="form-control" ng-model="project.partnerAcademicSpecify">
-                                    </div>
-
                                 <li>
-                                    <label>
+                                    <label class="form-inline">
                                         <input type="checkbox"  ng-model="project.partnerResearch"> Research organization
+                                        <input style="font:caption;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerResearch" ng-model="project.partnerResearchSpecify">
                                     </label>
                                 </li>
-                                <div style="padding-left: 25px" class="form-inline" ng-show="project.partnerResearch">
-                                    Please Specify <input class="form-control" ng-model="project.partnerResearchSpecify">
-                                </div>
+
                                 <li>
-                                    <label>
+                                    <label class="form-inline">
                                         <input type="checkbox"  ng-model="project.partnerConservation">  Conservation organization
+                                        <input style="font:caption;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerConservation" ng-model="project.partnerConservationSpecify">
                                     </label>
                                 </li>
-                                <div style="padding-left: 25px" class="form-inline" ng-show="project.partnerConservation">
-                                    Please Specify <input class="form-control" ng-model="project.partnerConservationSpecify">
-                                </div>
                                 <li>
-                                    <label>
+                                    <label class="form-inline">
                                         <input type="checkbox"  ng-model="project.partnerGovernment"> Government agency
+                                        <input style="font:caption;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerGovernmentSpecify" ng-show="project.partnerGovernment">
                                     </label>
                                 </li>
-                                <div style="padding-left: 25px" class="form-inline" ng-show="project.partnerGovernment">
-                                    Please Specify <input class="form-control" ng-model="project.partnerGovernmentSpecify">
-                                </div>
 
                                 <li>
                                     <label>
@@ -217,13 +207,11 @@
                                             </label>
                                         </li>
                                         <li>
-                                            <label>
+                                            <label class="form-inline">
                                                 <input type="checkbox"  ng-model="project.partnerCommunityOther"> Other
+                                                <input style="font:caption;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerCommunityOtherSpecify" ng-show="project.partnerCommunityOther">
                                             </label>
                                         </li>
-                                        <div style="padding-left: 25px" class="form-inline" ng-show="project.partnerCommunityOther">
-                                            Please Specify <input class="form-control" ng-model="project.partnerCommunityOtherSpecify">
-                                        </div>
                                     </ul>
                                 </li>
                                 <li>

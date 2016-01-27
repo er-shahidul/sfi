@@ -521,12 +521,6 @@ public class Cs8PartialA extends BaseEntityModel {
             inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
     private Set<SfiPpFormAllCountry> sfiLabelProductSellCountry_8;
 
-    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    @JoinTable(name = "sfi_pp_form_cs8_sfiLabelProductSellCountry_9",
-            joinColumns = {@JoinColumn(name = "form_id")},
-            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
-    private Set<SfiPpFormAllCountry> sfiLabelProductSellCountry_9;
-
     @OneToMany(targetEntity = OrgContact.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<OrgContact> orgContacts;
@@ -534,6 +528,12 @@ public class Cs8PartialA extends BaseEntityModel {
     @OneToMany(targetEntity = PrimaryProducer.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<PrimaryProducer> primaryProducers;
+
+    @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(name = "sfi_pp_form_cs8_sfiLabelProductSellCountry_9",
+            joinColumns = {@JoinColumn(name = "form_id")},
+            inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
+    private Set<SfiPpFormAllCountry> sfiLabelProductSellCountry_9;
 
     @Column(name = "cs8_alsoFSCLabel_10", nullable = true)
     @ElementCollection

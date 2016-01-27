@@ -30,6 +30,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.Principal;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
@@ -199,17 +200,26 @@ public class CompanyController {
     }
 
     @RequestMapping(value = "/admin/company/new", method = RequestMethod.POST)
-    public ModelAndView save(@Valid Logo logo, @ModelAttribute("company") Company company, BindingResult result, Errors errors, @RequestParam String action) {
+    public ModelAndView save(@Valid Logo logo, @ModelAttribute("company") Company company, BindingResult result, Errors errors, @RequestParam String action, ModelMap model) {
         MultipartFile file = logo.getFile();
 //        fileValidator.validate(logo, result);
-
+        boolean isInvalidName = companyService.isValidName(company.getName());
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
         String fileName = file.getOriginalFilename();
         String name = randomUUIDString + "." + getFileExtension(fileName);
 
         if (result.hasErrors()) {
-            return new ModelAndView("redirect:/admin/company/new");
+            List<AreaUnitViewModel> areaUnities = areaUnitService.list();
+            model.addAttribute("areaUnities", areaUnities);
+            return new ModelAndView("admin/company/new");
+        }
+
+        if (isInvalidName) {
+            List<AreaUnitViewModel> areaUnities = areaUnitService.list();
+            model.addAttribute("areaUnities", areaUnities);
+            model.addAttribute("nameError", "Company name is duplicate");
+            return new ModelAndView("admin/company/new");
         }
 
         try {

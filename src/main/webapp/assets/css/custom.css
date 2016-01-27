@@ -271,6 +271,7 @@ label a {
     box-shadow: inset 0 0px 0px;
     background-color: #ECF0F1;
 }
+/*
 .row.section_background_2{
     background-color: #E1F2F3;
 }
@@ -385,7 +386,7 @@ label a {
 .section6Btn{
     border-color: #C96844;
     background-color: #C96844;
-}
+}*/
 .panel{
     margin-top: 20px;
 }
@@ -400,6 +401,10 @@ h5 .section-header{
   font-size: 12px;
   font-weight: 700;
 }
-.ng-scope{
-
+.formSection{
+  background-color:transparent;
+  border-bottom: 0px;
+}
+.fm-stl label{
+ font-weight: normal;
 }

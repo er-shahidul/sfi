@@ -233,6 +233,7 @@ sfiFormApp
                 $scope.errors = $scope.cs3.errors;
 
                 Message.success('Section successfully saved', '.msg-cont');
+                $rootScope.updateFormMeta();
 
                 if(go){
                     $rootScope.goStep("cs7");

@@ -168,7 +168,8 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         if(usCanada){
 
             $scope.usCanadaDelete = usCanada;
-            $('#delete1 #region-text').text(usCanada.regionName);
+            //console.log( usCanada.);
+            $('#region-text').text(usCanada.regionName);
             $('#delete1').modal();
         }
     }
@@ -324,6 +325,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
                     $scope.cs6 = angular.copy($rootScope.form.cs6);
                     $scope.init();
                     Message.success('Section successfully saved', '.msg-cont');
+                    $rootScope.updateFormMeta();
                 }
 
                 if(go){

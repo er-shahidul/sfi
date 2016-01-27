@@ -104,6 +104,7 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_7;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_8;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_9;
+
     private Set<OrgContactViewModel> orgContacts;
     private Set<PrimaryProducerViewModel> primaryProducers;
     private Set<String> alsoFSCLabel_10;

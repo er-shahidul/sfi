@@ -9,8 +9,12 @@ sfiFormApp.controller('FormNavigationCtrl', ['$rootScope', '$scope', '$state', '
     };
 
     $scope.isEnabled = function(step){
+
+        if(step == 'cs2'){
+            return $rootScope.form.cs1.ownsMngLands;
+        }
+
         return true;
-        //sreturn $rootScope.form[step].isSectionEnabled;
     }
 
     $rootScope.isCompleted = function(){
@@ -52,9 +56,9 @@ sfiFormApp.controller('FormNavigationCtrl', ['$rootScope', '$scope', '$state', '
 
     $rootScope.goStep = function(step){
 
-//        if(!$scope.isEnabled(step)){
-//            return false;
-//        }
+        if(!$scope.isEnabled(step)){
+            return false;
+        }
 
         $state.go(step);
     }
