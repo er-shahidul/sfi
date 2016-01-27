@@ -1,6 +1,7 @@
 package com.rbs.www.admin.models.entities;
 
 import org.hibernate.annotations.Type;
+import org.springframework.security.core.CredentialsContainer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,7 +13,7 @@ import java.util.*;
 
 @Entity
 @Table(name = "users")
-public class User extends Audit implements UserDetails {
+public class User extends Audit implements UserDetails, CredentialsContainer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -235,6 +236,11 @@ public class User extends Audit implements UserDetails {
 
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+    }
+
+    @Override
+    public void eraseCredentials() {
+        password = null;
     }
 
     private static class AuthorityComparator implements Comparator<GrantedAuthority>, Serializable {
