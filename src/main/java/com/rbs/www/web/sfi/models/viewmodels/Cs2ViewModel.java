@@ -1,9 +1,13 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
 import java.util.Set;
 
+@SpELAssert.List({
+        @SpELAssert(value = "!standardType", applyIf = "underCertifiedStandard", message = "standardType Should not be null", property = "standardType"),
+})
 public class Cs2ViewModel extends BaseViewModel {
     private Integer id;
     private Integer usaPublicForestlandOwnMng;

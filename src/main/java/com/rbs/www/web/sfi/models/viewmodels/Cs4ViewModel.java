@@ -1,7 +1,25 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
+@SpELAssert.List({
+        @SpELAssert(value = "!usaGovRegulation", applyIf = "usaGovRegulation", message = "usaGovRegulation Should not be null", property = "usaGovRegulation"),
+        @SpELAssert(value = "!usaDisResDiseaseInsect", applyIf = "usaDisResDiseaseInsects", message = "usaDisResDiseaseInsect Should not be null", property = "usaDisResDiseaseInsect"),
+        @SpELAssert(value = "!usaDisResFireSalvage", applyIf = "usaDisResFireSalvage", message = "usaDisResFireSalvage Should not be null", property = "usaDisResFireSalvage"),
+        @SpELAssert(value = "!usaDisResWindthrow", applyIf = "usaDisResWindthrow", message = "usaDisResWindthrow Should not be null", property = "usaDisResWindthrow"),
+        @SpELAssert(value = "!usaDisResHurricane", applyIf = "usaDisResHurricane", message = "usaDisResHurricane Should not be null", property = "usaDisResHurricane"),
+        @SpELAssert(value = "!usaDisResIceStorm", applyIf = "usaDisResIceStorm", message = "usaDisResIceStorm Should not be null", property = "usaDisResIceStorm"),
+        @SpELAssert(value = "!usaOthersApply", applyIf = "usaOthersApply", message = "usaOthersApply Should not be null", property = "usaOthersApply"),
+
+        @SpELAssert(value = "!caGovRegulation", applyIf = "caGovRegulation", message = "caGovRegulation Should not be null", property = "caGovRegulation"),
+        @SpELAssert(value = "!caDisResDiseaseInsects", applyIf = "caDisResDiseaseInsects", message = "caDisResDiseaseInsects Should not be null", property = "caDisResDiseaseInsects"),
+        @SpELAssert(value = "!caDisResFireSalvage", applyIf = "caDisResFireSalvage", message = "caDisResFireSalvage Should not be null", property = "caDisResFireSalvage"),
+        @SpELAssert(value = "!caDisResWindthrow", applyIf = "caDisResWindthrow", message = "caDisResWindthrow Should not be null", property = "caDisResWindthrow"),
+        @SpELAssert(value = "!caDisResHurricane", applyIf = "caDisResHurricane", message = "caDisResHurricane Should not be null", property = "caDisResHurricane"),
+        @SpELAssert(value = "!caDisResIceStorm", applyIf = "caDisResIceStorm", message = "caDisResIceStorm Should not be null", property = "caDisResIceStorm"),
+        @SpELAssert(value = "!caOthersApply", applyIf = "caOthersApply", message = "caOthersApply Should not be null", property = "caOthersApply"),
+})
 public class Cs4ViewModel extends BaseViewModel {
     private Integer id;
     private Float usaTotalHervArea;
