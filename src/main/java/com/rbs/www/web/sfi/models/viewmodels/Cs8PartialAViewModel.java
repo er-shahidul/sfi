@@ -104,6 +104,19 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_7;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_8;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductSellCountry_9;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_1;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_2;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_3;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_4;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_5;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_6;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_7;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_8;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_9;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_10;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_11;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_12;
+    private Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_13;
     private Set<OrgContactViewModel> orgContacts;
     private Set<PrimaryProducerViewModel> primaryProducers;
     private Set<String> alsoFSCLabel_10;
@@ -3117,5 +3130,109 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     public void setFscDemandDeveloping_4(String fscDemandDeveloping_4) {
         this.fscDemandDeveloping_4 = fscDemandDeveloping_4;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_1() {
+        return alsoFSCLabelFSC_Country_1;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_1(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_1) {
+        this.alsoFSCLabelFSC_Country_1 = alsoFSCLabelFSC_Country_1;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_2() {
+        return alsoFSCLabelFSC_Country_2;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_2(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_2) {
+        this.alsoFSCLabelFSC_Country_2 = alsoFSCLabelFSC_Country_2;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_3() {
+        return alsoFSCLabelFSC_Country_3;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_3(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_3) {
+        this.alsoFSCLabelFSC_Country_3 = alsoFSCLabelFSC_Country_3;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_4() {
+        return alsoFSCLabelFSC_Country_4;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_4(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_4) {
+        this.alsoFSCLabelFSC_Country_4 = alsoFSCLabelFSC_Country_4;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_5() {
+        return alsoFSCLabelFSC_Country_5;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_5(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_5) {
+        this.alsoFSCLabelFSC_Country_5 = alsoFSCLabelFSC_Country_5;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_6() {
+        return alsoFSCLabelFSC_Country_6;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_6(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_6) {
+        this.alsoFSCLabelFSC_Country_6 = alsoFSCLabelFSC_Country_6;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_7() {
+        return alsoFSCLabelFSC_Country_7;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_7(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_7) {
+        this.alsoFSCLabelFSC_Country_7 = alsoFSCLabelFSC_Country_7;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_8() {
+        return alsoFSCLabelFSC_Country_8;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_8(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_8) {
+        this.alsoFSCLabelFSC_Country_8 = alsoFSCLabelFSC_Country_8;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_9() {
+        return alsoFSCLabelFSC_Country_9;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_9(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_9) {
+        this.alsoFSCLabelFSC_Country_9 = alsoFSCLabelFSC_Country_9;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_10() {
+        return alsoFSCLabelFSC_Country_10;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_10(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_10) {
+        this.alsoFSCLabelFSC_Country_10 = alsoFSCLabelFSC_Country_10;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_11() {
+        return alsoFSCLabelFSC_Country_11;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_11(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_11) {
+        this.alsoFSCLabelFSC_Country_11 = alsoFSCLabelFSC_Country_11;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_12() {
+        return alsoFSCLabelFSC_Country_12;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_12(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_12) {
+        this.alsoFSCLabelFSC_Country_12 = alsoFSCLabelFSC_Country_12;
+    }
+
+    public Set<SfiPpFormAllCountryViewModel> getAlsoFSCLabelFSC_Country_13() {
+        return alsoFSCLabelFSC_Country_13;
+    }
+
+    public void setAlsoFSCLabelFSC_Country_13(Set<SfiPpFormAllCountryViewModel> alsoFSCLabelFSC_Country_13) {
+        this.alsoFSCLabelFSC_Country_13 = alsoFSCLabelFSC_Country_13;
     }
 }
