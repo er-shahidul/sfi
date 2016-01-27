@@ -912,3 +912,19 @@ sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
         }
 
 }]);
+
+sfiSicApp.run(['$rootScope', '$http', function($rootScope, $http) {
+    $rootScope.updateFormMeta = function(){
+
+        var url = "/sic/updateDate/" + $rootScope.formInfo.id;
+        $http
+            .get(url)
+            .then(function(response){
+
+                if(response.data){
+                    $rootScope.formInfo.updatedAt = response.data.updateDate;
+                }
+
+            });
+    }
+}]);
