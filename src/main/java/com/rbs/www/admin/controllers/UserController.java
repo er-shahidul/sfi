@@ -23,6 +23,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -186,21 +187,21 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/admin/user/edit/{id}"}, method = RequestMethod.POST)
-    public String update(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id) {
+    public String update(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id, RedirectAttributes redirect) {
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
         boolean isInvalidEmail = !userService.isValidEmailUpdate(user.getEmail());
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
         boolean isWelcomeMsg = userService.welcomeMsg(user.getInvitationMsg());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail || isInvalidPassword) {
-            model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
-            model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
-            model.addAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
+            redirect.addFlashAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
+            redirect.addFlashAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
+            redirect.addFlashAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
             return "redirect:/admin/user/edit/" + user.getId();
         }
 
         if (isWelcomeMsg) {
-            model.addAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
+            redirect.addFlashAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
             contantForNewUser(model);
             return "redirect:/admin/user/edit/" + user.getId();
         }
