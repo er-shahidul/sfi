@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class FileUploadController {
 
-    private final String[] validExtensions = { "pdf", "doc", "xls", "xlsx", "docx" };
+    private final String[] validExtensions = { "pdf", "doc", "xls", "xlsx", "docx", "png","jpg" };
 
     @Autowired
     private BlobStoreHelper blobStoreHelper;

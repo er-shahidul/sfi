@@ -257,10 +257,26 @@ sfiFormApp
 
         $scope.deleteProject = function(index){
 
-            if(confirm("Are you sure to delete this project ?")){
-                $scope.cs5.projects.splice(index, 1);
-            }
+            $('#delete1').modal();
+            //if(confirm("Are you sure to delete this project ?")){
+            //    $scope.cs5.projects.splice(index, 1);
+            //}
         }
+
+                $scope.deleteConfirm = function(index){
+
+                    $scope.cs5.projects.splice(index, 1);
+
+                }
+
+                //$scope.deleteCancel = function(){
+                //    $scope.cancelOther();
+                //    $scope.resetSection();
+                //}
+
+
+
+
 
         $scope.editProject = function(index){
 
@@ -330,7 +346,7 @@ sfiFormApp
                     }
 
                     if(go){
-                        $rootScope.goStep("cs7")
+                        $rootScope.goStep("cs7");
                     }
 
                 });

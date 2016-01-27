@@ -65,25 +65,25 @@
                     <td align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" min="0" name="internalUsd"
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                               ng-model="item.internalUsd" ng-disabled="!operateInUsa()"/>
+                               ng-model="item.internalUsd" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInUsa()))"/>
                     </td>
 
                     <td align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalUsd"
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                               ng-model="item.externalUsd" ng-disabled="!operateInUsa()">
+                               ng-model="item.externalUsd" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInUsa()))">
                     </td>
 
                     <td align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="internalCad"
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                               ng-model="item.internalCad" ng-disabled="!operateInCa()">
+                               ng-model="item.internalCad" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInCa()))">
                     </td>
 
                     <td align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalCad"
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                               ng-model="item.externalCad" ng-disabled="!operateInCa()">
+                               ng-model="item.externalCad" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInCa()))">
                     </td>
 
                 </tr>
@@ -319,22 +319,22 @@
                 <div class="cs3-project" ng-show="cs5.isInPartnership">
                 <form name="innerFrom"  novalidate>
                     <div class="form-group">
-                    <div class="col-sm-2"
+                    <div class="col-sm-2" style="padding-left: 0;"
                          ng-class="{'has-error' : isDirty() && innerFrom.name.$invalid }">
 
                         <span>Project Name</span></div>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10" style="padding-right: 0px;">
                         <input type="text" class="form-control" name="name" ng-required="isDirty()" maxlength="200" customerror
                                tooltip data-placement="right" data-container="#secCont" data-title="If this is a partnership project with an official title, please provide the official project name."
                                ng-model="project.projectNm"/>
                     </div>
                 </div>
                     <div class="form-group">
-                    <div class="col-sm-2" style="padding-right:0; "
+                    <div class="col-sm-2" style="padding-left:0;"
                          ng-class="{'has-error' : isDirty() && innerFrom.projectObj.$invalid }">
 
                         <span>Project Objective</span></div>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10" style="padding-right: 0px;">
                         <input type="text" class="form-control" name="projectObj" ng-required="isDirty()" maxlength="200" customerror
                                ng-model="project.projectObj"/>
                     </div>
@@ -367,7 +367,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
-                        <span>SFI 2010-2015 Standard Objective most relevant to project</span>
+                        <span>SFI 2010-2014 Standard Objective most relevant to project</span>
                         <select class="form-control" name="sfiStandard15" customerror ng-init="sfiStandard15 = 0"
                                 ng-model="sfiStandard15" ng-change="sfiStandard15 = addBucket(project.sfiStandard15, sfiStandard15, standardObjects)">
                             <option value="0" ng-selected="!project.sfiStandard15">Please select</option>
@@ -379,7 +379,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                    <div class="col-sm-5">
+                    <div class="col-sm-5" style="padding-left: 0;">
                         <span>Select state(s)/province(s) for this project</span>  </div>
                     <div class="col-sm-7" style="padding-right: 0;">
                         <select class="form-control" name="region" ng-init="regionModel = 0"
@@ -395,7 +395,7 @@
                     </div>
                     <br>
                     <!-- Org list -->
-                    <div class="form-group-hack">
+                    <div class="form-group" style="padding-left: 0;">
                         <span>Project Partners (enter details for at least one of the following)</span>
 
                         <span ng-show="isDirty() && !hasAnyOrg()" class="error">Enter details for at least one of the following</span>
@@ -632,29 +632,83 @@
                         </u>
                     </div>
 
-                    <div class="form-group">
-                        <!--<div class="col-sm-5 nopadding">-->
-                            <!--<span>Supporting documentation (optional)</span>-->
+                    <!--<div class="form-group">-->
+                        <!--&lt;!&ndash;<div class="col-sm-5 nopadding">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span>Supporting documentation (optional)</span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--<div>Supporting documentation (optional)</div>-->
+                        <!--<div class="col-sm-7 nopadding"-->
+                             <!--style="cursor: pointer;"-->
+                             <!--ng-file-select ng-model="myFiles"-->
+                             <!--ng-file-change="fileSelected(files)"-->
+                             <!--ng-multiple="false"-->
+                             <!--ng-accept="'image/*,application/pdf'" >-->
+
+                            <!--<div><small><u>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</u></small></div>-->
                         <!--</div>-->
-                        <div class="col-sm-7 nopadding"
-                             style="cursor: pointer;"
+                        <!--<div id="valdfil">-->
+                            <!--<div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted">&nbsp;{{ doc.projectOriginalDocumentName }}&nbsp;-->
+                                <!--<button ng-click="delSupportDoc($index)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--start-->
+                    <div class="form-group" style="padding-left:0 ">
+
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <div class="col-sm-3" style="padding-left:0 ">
+                        <p>Supporting documentation (optional).</p>
+                        </div>
+                        <div class="col-sm-8" style="padding-left:0 ">
+                        <div class="input-group input-large"
                              ng-file-select ng-model="myFiles"
                              ng-file-change="fileSelected(files)"
                              ng-multiple="false"
-                             ng-accept="'image/*,application/pdf'" >
-                            <div>Supporting documentation (optional)</div>
-                            <div><small><u>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</u></small></div>
+                             ng-accept="'image/*,application/pdf,.doc,.docx,.xls,.xlsx'">
+
+                            <div class="form-control uneditable-input input-fixed input-medium">
+                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                <span class="fileinput-filename">{{ file.originalDocumentName }}</span>
+                            </div>
+                        <span class="input-group-addon btn default btn-file">
+                            <span class="fileinput-new">Browse </span>
+                            <!--<span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>-->
+                        </span>
+
                         </div>
+                        <p>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</p>
+
+                        <!--<div class="text-right" ng-show="guideFile.originalDocumentName">-->
+                            <!--<a ng-click="guideFile = {}; " ng-show="guideFile.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>-->
+                            <!--<input type="submit" class="btn default" value="Upload" ng-click="guideFile = saveUploadedFile(guideFile, cs1.guideFiles)">-->
+                        <!--</div>-->
                         <div id="valdfil">
                             <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted">&nbsp;{{ doc.projectOriginalDocumentName }}&nbsp;
                                 <button ng-click="delSupportDoc($index)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
+
+                    </div>
+                    </div>
+                    </div>
                     </div>
 
+                    <!--end-->
+
                     <div class="form-group">
-                        <input type="checkbox" name="incResFunding" icheck ng-model="project.incResFunding"/>
+                        <input type="checkbox" name="incResFunding" icheck checklist-model="project.incResFunding" checklist-value="2"/>
                         <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements as it relates to the research requirement in the standard.</span>
+
+                        <div class="form-group" ng-show="isSelected(project.incResFunding, 2)">
+                            <div class="col-lg-2" style="padding-left: 0;">
+                            $<input type="text" style="width: 100px;" name="incResFundingText"  customerror
+                                   ng-model="project.incResFundingText"/>
+                            </div>
+                            <div class="col-lg-10">
+                            <span>Portion of funds spent towards research-related contributions reported in the Research Funding table at the top of this page</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -693,7 +747,7 @@
                     </div>
 
                 </form>
-            </div>
+
                 <br>
                 <h5>III. SFI Implementation Committees Funding</h5>
                 <table class="table vert-align-middle">
@@ -741,6 +795,22 @@
     <div class="col-sm-offset-1 col-sm-4">
 
     </div>
+    </div>
 </div>
-
-
+<!-- Modals -->
+<div id="delete1" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>
+            </div>
+            <div class="modal-body">
+                <p class="question-style">Are you sure to delete this project ?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">Ok</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>

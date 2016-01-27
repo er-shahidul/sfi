@@ -35,6 +35,9 @@ sfiFormApp
                     Message.success('Section successfully saved', '.msg-cont');
                     $rootScope.updateFormMeta();
                 }
+                if(go){
+                    $rootScope.goStep("cs8");
+                }
             });
     };
 

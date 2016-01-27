@@ -764,7 +764,7 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
 
             if($scope.cs8Form.producerSource.$valid && $scope.cs8Form.percPurchased.$valid){
 
-                alert($scope.producer.source);
+                //alert($scope.producer.source);
                 if(!$scope.producerIndex){
 
                     $scope.cs8.primaryProducers.push($scope.producer);
@@ -781,11 +781,18 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         }
 
         $scope.deleteProducer = function(index){
-
-            if(confirm('Are you sure to delete this item ?')){
-                $scope.cs8.primaryProducers.cs8.primaryProducers(index, 1);
-            }
+            //
+            //if(confirm('Are you sure to delete this item ?')){
+            //    $scope.cs8.primaryProducers.splice(index, 1);
+            //}
+            $('#delete2').modal();
         }
+
+        $scope.deleteConfirm2 = function(index){
+
+            $scope.cs8.primaryProducers.splice(index, 1);
+
+         }
 
         $scope.contact = {};
         $scope.contactIndex = null;
@@ -826,12 +833,17 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         }
 
         $scope.deleteContact = function(index, contact){
-            if(confirm("Are you sure to delete this ?")){
-                $scope.cs8.orgContacts.splice(index, 1);
-            }
+            //if(confirm("Are you sure to delete this ?")){
+            //    $scope.cs8.orgContacts.splice(index, 1);
+            //}
+            $('#delete1').modal();
 
         }
+            $scope.deleteConfirm = function(index){
 
+                $scope.cs8.orgContacts.splice(index, 1);
+
+            }
 
         $scope.user = [];
         $scope.countries = Countries.getAll();

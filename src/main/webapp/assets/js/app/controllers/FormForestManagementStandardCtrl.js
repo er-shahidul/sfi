@@ -59,11 +59,16 @@ sfiFormApp
 
     $scope.deleteRegionArea = function(index){
 
-        if(confirm('Are you sure to delete this item ?')){
-            $scope.cs9.forestlandAreas.splice(index, 1);
-        }
+        //if(confirm('Are you sure to delete this item ?')){
+        //    $scope.cs9.forestlandAreas.splice(index, 1);
+        //}
+        $('#delete1').modal();
     }
+    $scope.deleteConfirm = function(index){
 
+        $scope.cs9.forestlandAreas.splice(index, 1);
+
+    }
 
     $scope.resetRegionArea = function(){
         $scope.regionArea = null;
@@ -94,7 +99,7 @@ sfiFormApp
                 }
 
                 if(go){
-                    $rootScope.goStep("cs10")
+                    $rootScope.goStep("cs10");
                 }
 
             });
