@@ -83,6 +83,8 @@ sfiSicApp
 
         }
 
+
+
         $scope.whichSicText = function(index){
             console.log(index);
             return $scope.sicList[index];
