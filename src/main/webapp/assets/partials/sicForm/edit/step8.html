@@ -105,7 +105,10 @@
                         </label>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.description.$invalid }">
-                            <textarea class="form-control" rows="4" name="description" ng-model="project.description" customerror ng-required="isProjectDirty()"></textarea>
+                            <textarea class="form-control" rows="4" name="description"
+                                      ng-required="isProjectDirty()" ng-maxlength="2000" max-word-count="300" customerror
+                                      pattern-msg="Provide text of max 2000 length (approx 300 words)"
+                                      ng-model="project.description" ></textarea>
                         </div>
                     </div>
                     <div class="form-group">
