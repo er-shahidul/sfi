@@ -47,15 +47,15 @@
                     <td align="right" ng-class="{'has-error' : innerForm.otherText.$invalid}">
 
                         <input type="checkbox" name="otherEnable" class="icheck" icheck
-                               ng-if="item.id == 13"
+                               ng-if="item.description == 'Other'"
                                ng-model="cs5.isOtherEnabled"
                                 />
 
                         {{ item.description }}
                         <input type="text" class="form-control   shorter" name="otherText"
-                               ng-show="cs5.isOtherEnabled" ng-model="cs5.other"
-                               ng-required="item.isOtherEnabled" customerror
-                               ng-if="item.id == 13"
+                               ng-show="cs5.isOtherEnabled" ng-model="cs5.otherText"
+                               ng-required="cs5.isOtherEnabled" customerror
+                               ng-if="item.description == 'Other'"
                                customerror />
                     </td>
 
