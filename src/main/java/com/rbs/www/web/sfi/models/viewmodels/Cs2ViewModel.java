@@ -6,7 +6,7 @@ import com.rbs.www.common.modules.validator.SpELAssert;
 import java.util.Set;
 
 @SpELAssert.List({
-        @SpELAssert(value = "!standardType", applyIf = "underCertifiedStandard", message = "standardType Should not be null", property = "standardType"),
+        @SpELAssert(value = "outsideCountries == null", message = "outsideCountries Should not be null", property = "outsideCountries"),
 })
 public class Cs2ViewModel extends BaseViewModel {
     private Integer id;

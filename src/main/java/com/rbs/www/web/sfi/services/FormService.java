@@ -91,7 +91,7 @@ public class FormService {
     /************************* Cs2 : Begin ***********************/
     public Cs2ViewModel getCs2ViewModel(Integer id) {
         Cs2 entity = cs2Service.get(id);
-        return viewModelMapperService.convert(entity, Cs2ViewModel.class);
+        return this.validate(viewModelMapperService.convert(entity, Cs2ViewModel.class));
     }
 
     public void setCs2Entity(Cs2ViewModel model) {

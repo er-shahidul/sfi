@@ -7,14 +7,14 @@ import com.rbs.www.web.common.models.viewmodels.SfiPpFormAllCountryViewModel;
 import java.util.Set;
 
 @SpELAssert.List({
-        @SpELAssert(value = "false", message = "companyWebsite Should not be null", property = "companyWebsite"),
-        @SpELAssert(value = "!ownsMngLandsInUSA || !ownsMngLandsInCA || !ownsMngLandsInOther", applyIf = "ownsMngLands", message = "ownsMngLandsInUSA-ownsMngLandsInCA-ownsMngLandsInOther Should not be null", property = "ownsMngLandsInUSA-ownsMngLandsInCA-ownsMngLandsInOther"),
-        @SpELAssert(value = "!hasPrimaryOperMillsYardsInOther || !hasPrimaryOperMillsYardsInCA || !hasPrimaryOperMillsYardsInUSA", applyIf = "hasPrimaryOperMillsYards", message = "hasSecondaryOperMillsYardsInOther-hasSecondaryOperMillsYardsInCA-hasSecondaryOperMillsYardsInUSA Should not be null", property = "hasSecondaryOperMillsYardsInOther-hasSecondaryOperMillsYardsInCA-hasSecondaryOperMillsYardsInUSA"),
-        @SpELAssert(value = "!hasSecondaryOperMillsYardsInOther || !hasSecondaryOperMillsYardsInCA || !hasSecondaryOperMillsYardsInUSA", applyIf = "hasSecondaryOperMillsYards", message = "hasSecondaryOperMillsYardsInOther-hasSecondaryOperMillsYardsInCA-hasSecondaryOperMillsYardsInUSA Should not be null", property = "hasSecondaryOperMillsYardsInOther-hasSecondaryOperMillsYardsInCA-hasSecondaryOperMillsYardsInUSA"),
+        @SpELAssert(value = "companyWebsite == null", message = "companyWebsite Should not be null", property = "companyWebsite"),
+        @SpELAssert(value = "ownsMngLandsInUSA || ownsMngLandsInCA || ownsMngLandsInOther", applyIf = "ownsMngLands", message = "ownsMngLandsInUSA-ownsMngLandsInCA-ownsMngLandsInOther Should not be null", property = "ownsMngLandsInUSA-ownsMngLandsInCA-ownsMngLandsInOther"),
+        @SpELAssert(value = "hasPrimaryOperMillsYardsInOther || hasPrimaryOperMillsYardsInCA || hasPrimaryOperMillsYardsInUSA", applyIf = "hasPrimaryOperMillsYards", message = "hasSecondaryOperMillsYardsInOther-hasSecondaryOperMillsYardsInCA-hasSecondaryOperMillsYardsInUSA Should not be null", property = "hasSecondaryOperMillsYardsInOther-hasSecondaryOperMillsYardsInCA-hasSecondaryOperMillsYardsInUSA"),
+        @SpELAssert(value = "hasSecondaryOperMillsYardsInOther || hasSecondaryOperMillsYardsInCA || hasSecondaryOperMillsYardsInUSA", applyIf = "hasSecondaryOperMillsYards", message = "hasSecondaryOperMillsYardsInOther-hasSecondaryOperMillsYardsInCA-hasSecondaryOperMillsYardsInUSA Should not be null", property = "hasSecondaryOperMillsYardsInOther-hasSecondaryOperMillsYardsInCA-hasSecondaryOperMillsYardsInUSA"),
 
-        @SpELAssert(value = "!ownsMngLandsOtherCountries", applyIf = "ownsMngLandsInOther", message = "ownsMngLandsOtherCountries Should not be null", property = "ownsMngLandsOtherCountries"),
-        @SpELAssert(value = "!primaryOperMillsYardsOtherCountries", applyIf = "hasPrimaryOperMillsYardsInOther", message = "primaryOperMillsYardsOtherCountries Should not be null", property = "primaryOperMillsYardsOtherCountries"),
-        @SpELAssert(value = "!secondaryOperMillsYardsOtherCountries", applyIf = "hasSecondaryOperMillsYardsInOther", message = "secondaryOperMillsYardsOtherCountries Should not be null", property = "secondaryOperMillsYardsOtherCountries"),
+        @SpELAssert(value = "ownsMngLandsOtherCountries", applyIf = "ownsMngLandsInOther", message = "ownsMngLandsOtherCountries Should not be null", property = "ownsMngLandsOtherCountries"),
+        @SpELAssert(value = "primaryOperMillsYardsOtherCountries", applyIf = "hasPrimaryOperMillsYardsInOther", message = "primaryOperMillsYardsOtherCountries Should not be null", property = "primaryOperMillsYardsOtherCountries"),
+        @SpELAssert(value = "secondaryOperMillsYardsOtherCountries", applyIf = "hasSecondaryOperMillsYardsInOther", message = "secondaryOperMillsYardsOtherCountries Should not be null", property = "secondaryOperMillsYardsOtherCountries"),
 })
 public class Cs1ViewModel extends BaseViewModel {
     private Integer id;
