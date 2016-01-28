@@ -796,7 +796,7 @@ sfiFormApp.run(['$rootScope', '$http', function($rootScope, $http) {
             .then(function(response){
 
                 if(response.data){
-                    $rootScope.form.cs10.updatedAt = response.data.updateDate;
+                    $rootScope.form.cs10.updatedAt = new Date(response.data.updateDate);
                 }
 
             });

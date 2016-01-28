@@ -9,8 +9,8 @@
         <div class="col-lg-12 passage-bold" style="padding-bottom: 30px;">
             <div class="col-lg-8">
                 <h5>
-                    5. <span data-toggle="tooltip"
-                             title="From SIC Governance document - Inconsistent Practices Core Mission Priority. Establish protocols for addressing, investigating, and responding to SFI Standard non-conformity allegations and inconsistent practices, and allegations regarding non-program participant forest management practices.">Inconsistent Practices (Core Mission Priority)</span>
+                    5. <span tooltip data-placement="top" data-container="body" data-html="true"
+                             data-title="From SIC Governance document - Inconsistent Practices Core Mission Priority. Establish protocols for addressing, investigating, and responding to SFI Standard non-conformity allegations and inconsistent practices, and allegations regarding non-program participant forest management practices.">Inconsistent Practices (Core Mission Priority)</span>
                 </h5>
 
                 <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -267,13 +267,24 @@
                         <td align="center">
                             {{ item.unresolved }}
                         </td>
-                        <td align="center">
-                            {{ item.inconsistentPractice }}
-                            <p class="myButton"  >Edit</p>
-                            <p class="myButton"  >Delete</p>
-                            <p>
+                        <td>
+
+                            <div>
+                                <div style="float:left;">
+                                    {{ item.inconsistentPractice }}
+                                </div>
+                                <div style="float:right;">
+                                    <label class="myButton" >Edit</label> &nbsp;
+                                    <label class="myButton" >Delete</label>
+                                </div>
+                                <div class="clear-fix"></div>
+                            </div>
+                            <br/>
+                            <div>
+
                                 {{ item.circumstanceDescription }}
-                            </p>
+                            </div>
+                            <br/>
                             <div id="selectedItem" ng-show="item.circumstancesDoc.originalDocumentName">{{ item.circumstancesDoc.originalDocumentName }}</div>
                         </td>
                     </tr>

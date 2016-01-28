@@ -385,7 +385,8 @@ sfiFormApp
             html : true,
             content : '<div class="form-group"><input type="radio" class="icheck" value="1" name="test" data-projectNm="USD"><label class="checkboxLabel">USD</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="icheck" value="2" name="test" data-name="CAD"><label class="checkboxLabel">CAD</label></div></div>',
             placement : 'bottom',
-            trigger : 'manual'
+            trigger : 'manual',
+            container: 'body'
         }
 
         $scope.currPopPp = function(id, key){
