@@ -13,7 +13,7 @@
 
             <table class="table table-bordered" id="table1" border="1" style="margin-top: 6px;">
                 <thead>
-                <tr>
+                <tr style="background-color: white;">
                     <th style="min-width: 80px;"><span style="margin-top: -5px;">USA & </span><br/>Canada <span tooltip data-placement="top" data-container="body" data-html="true"
                                                        data-title='<b>A forested area</b> is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>Forestlands</span>
                     </th>
@@ -38,7 +38,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="info">
+                <tr style="background-color: #E4E4E4;">
                     <td style="text-align: left;" align="left" ng-class="{'disabled' : !operateInUsa()}">United <br> States<br>(Private)</td>
 
                     <td style="text-align: left;" nowrap ng-class="{'disabled' : !operateInUsa()}">
@@ -285,7 +285,7 @@
                 </tr>
 
 
-                <tr class="info">
+                <tr style="background-color: #E4E4E4;">
                     <td align="left" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Crown <br>License)</td>
                     <!-- v2 -->
                     <td nowrap ng-class="{'disabled' : !operateInCa()}">
@@ -613,7 +613,7 @@
     </div>
     {{setForms()}}
     <div class="col-sm-6 col-sm-offset-4">
-        <button type="button" class="btn section2Btn" ng-click="save()">Save</button>
-        <button type="button" class="btn section2Btn" ng-click="save('true')">Save and Go to Step 3</button>
+        <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+        <button type="button" class="btn btn-success" ng-click="save('true')">Save and Go to Step 3</button>
     </div>
 </div>

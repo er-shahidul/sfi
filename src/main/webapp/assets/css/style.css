@@ -626,7 +626,7 @@ button.close {
 }
 
 .form-control.shorter {
-	width: 66%;
+	width: 60%;
 	display: inline-block;
 }
 
@@ -1117,4 +1117,8 @@ text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 
 body{
   font-family: sans-serif;
+}
+.disabledMenu {
+   color: #A5A5A5!important;
+   border-color: #A5A5A5;
 }
