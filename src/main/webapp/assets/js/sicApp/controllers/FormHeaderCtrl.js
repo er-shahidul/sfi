@@ -24,7 +24,7 @@ sfiSicApp
     $rootScope.formSubmit = function(){
 
         $http
-            .put(Routing.generate("sfi_cs10_form_submit", urlData))
+            .get('/sic/form/submit/' + urlData.companyId)
             .then(function(){
                 window.location.reload();
             })
@@ -83,15 +83,15 @@ sfiSicApp
 
     $scope.canSubmit = function(){
 
-        var form = $rootScope.form;
-
-        if(!form.isSaved){
-            return false;
-        }
-
-        if(form.status == 3 && !form.isAdmin){
-            return false;
-        }
+//        var form = $rootScope.form;
+//
+//        if(!form.isSaved){
+//            return false;
+//        }
+//
+//        if(form.status == 3 && !form.isAdmin){
+//            return false;
+//        }
 
         return true;
     }
