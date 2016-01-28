@@ -104,8 +104,7 @@
             </h6>
 
             <p>
-                Document diversity of forest cover types and age or size classes at the individual ownership or forest
-                tenure level, and where credible data are available, at the landscape scale.
+                Working individually or collaboratively to support diversity of native forest cover types and age or size classes that enhance biological diversity at the landscape scale.
             </p>
         </div>
         <br>
@@ -242,14 +241,14 @@
                 Program Participants shall not convert one forest cover type to another forest cover type, unless the
                 conversion:
             </p>
-            <ul style="list-style-type: decimal">
-                <li>
+            <ul style="list-style-type: none;">
+                <li>1.<span style="padding-left: 30px;"></span>
                     Is in compliance with relevant national and regional policy and legislation related to land use and
                     forest management; and
                 </li>
-                <li>
-                    Would not convert native forest types that are rare and ecologically significant at the landscape
-                    level or put any native forest types at risk of becoming rare; and Does not create significant
+                <li>2.
+                    <span style="padding-left: 30px;"></span>Would not convert native forest types that are rare and ecologically significant at the landscape
+                    level or put any native forest types at risk of becoming rare; and <br> Does not create significant
                     long-term adverse impacts on Forests with Exceptional Conservation Value, old-growth forests,
                     forests critical to threatened and endangered species, and special sites.
                 </li>
@@ -1845,4 +1844,21 @@
         <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 8</button>
     </div>
 </div>
+</div>
+<!-- Modals -->
+<div id="delete1" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>
+            </div>
+            <div class="modal-body">
+                <p class="question-style">Are you sure you want to delete this item?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">Ok</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
+            </div>
+        </div>
+    </div>
 </div>
