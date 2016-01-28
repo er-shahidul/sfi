@@ -28,6 +28,9 @@ public class Cs5ViewModel extends BaseViewModel {
     private Set<String> organizationListOther;
     private Set<String> other;
 
+    private Boolean isOtherEnabled;
+    private String otherText;
+
     @NotNull
     private Boolean isInPartnership;
 
@@ -49,6 +52,22 @@ public class Cs5ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getIsOtherEnabled() {
+        return isOtherEnabled;
+    }
+
+    public void setIsOtherEnabled(Boolean isOtherEnabled) {
+        this.isOtherEnabled = isOtherEnabled;
+    }
+
+    public String getOtherText() {
+        return otherText;
+    }
+
+    public void setOtherText(String otherText) {
+        this.otherText = otherText;
     }
 
     public Integer getFundSFIActivStateProviUs() {
