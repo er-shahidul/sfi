@@ -16,7 +16,7 @@
 
             <li sec:authorize="hasRole('USER')">
                 <a data-toggle="dropdown" data-hover="dropdown"  data-close-others="true" class="tab">
-                    <h6>  Survey </h6>
+                    <h6> Survey </h6>
                 </a>
                 <ul class="dropdown-menu" style="position: absolute;">
                     <li th:class="(${company.getSfi()} == true) ? '' : 'hidden'">

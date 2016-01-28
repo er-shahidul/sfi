@@ -1,10 +1,19 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormAllCountryViewModel;
 
 import java.util.Set;
 
+@SpELAssert.List({
+        @SpELAssert(value = "intMarketCountries == null", applyIf = "emerIssuIntMarket", message = "intMarketCountries Should not be null", property = "intMarketCountries"),
+        @SpELAssert(value = "investResCountries == null && planInvestRes_year == null", applyIf = "investResIfInve", message = "investResCountries Should not be null", property = "investResCountries-planInvestRes_year"),
+        @SpELAssert(value = "planInvestResCountries == null && investResperc_currSupply == null", applyIf = "planInvestResIfPlan", message = "planInvestResCountries Should not be null", property = "planInvestResCountries-investResperc_currSupply"),
+        @SpELAssert(value = "planCommPlantCountries == null && planCommPlant_year == null && planCommPlantPerc == null", applyIf = "planCommPlantIfPlanGE", message = "planCommPlantCountries Should not be null", property = "planCommPlantCountries-planCommPlant_year-planCommPlantPerc"),
+
+        @SpELAssert(value = "emerIssuOtherSpec == null", applyIf = "emerIssuOther", message = "emerIssuOtherSpec Should not be null", property = "emerIssuOtherSpec"),
+})
 public class Cs7ViewModel extends BaseViewModel {
     private Integer id;
     private Boolean emerIssuBioe;

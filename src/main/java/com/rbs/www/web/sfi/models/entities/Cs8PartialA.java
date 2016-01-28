@@ -536,131 +536,157 @@ public class Cs8PartialA extends BaseEntityModel {
     private Set<SfiPpFormAllCountry> sfiLabelProductSellCountry_9;
 
     @Column(name = "cs8_alsoFSCLabel_10", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_10;
 
     @Column(name = "cs8_alsoFSCLabel_11", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_11;
 
     @Column(name = "cs8_alsoFSCLabel_12", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_12;
 
     @Column(name = "cs8_alsoFSCLabel_13", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_13;
 
     @Column(name = "cs8_alsoFSCLabel_1", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_1;
 
     @Column(name = "cs8_alsoFSCLabel_2", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_2;
 
     @Column(name = "cs8_alsoFSCLabel_3", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_3;
 
     @Column(name = "cs8_alsoFSCLabel_4", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_4;
 
     @Column(name = "cs8_alsoFSCLabel_5", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_5;
 
     @Column(name = "cs8_alsoFSCLabel_6", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_6;
 
     @Column(name = "cs8_alsoFSCLabel_7", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_7;
 
     @Column(name = "cs8_alsoFSCLabel_8", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_8;
 
     @Column(name = "cs8_alsoFSCLabel_9", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> alsoFSCLabel_9;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_10", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_10;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_11", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_11;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_12", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_12;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_13", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_13;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_1", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_1;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_2", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_2;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_3", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_3;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_4", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_4;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_5", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_5;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_6", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_6;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_7", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_7;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_8", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_8;
 
     @Column(name = "cs8_sfiLabelProductGroupContain_9", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductGroupContain_9;
