@@ -191,7 +191,7 @@ public class UserController {
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
         boolean isInvalidEmail = !userService.isValidEmailUpdate(user.getEmail());
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
-        boolean isWelcomeMsg = userService.welcomeMsg(user.getInvitationMsg());
+//        boolean isWelcomeMsg = userService.welcomeMsg(user.getInvitationMsg());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail || isInvalidPassword) {
             redirect.addFlashAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
@@ -200,11 +200,11 @@ public class UserController {
             return "redirect:/admin/user/edit/" + user.getId();
         }
 
-        if (isWelcomeMsg) {
-            redirect.addFlashAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
-            contantForNewUser(model);
-            return "redirect:/admin/user/edit/" + user.getId();
-        }
+//        if (isWelcomeMsg) {
+//            redirect.addFlashAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
+//            contantForNewUser(model);
+//            return "redirect:/admin/user/edit/" + user.getId();
+//        }
 
         userService.updateUser(user);
 
@@ -413,7 +413,7 @@ public class UserController {
 
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
         boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
-        boolean isWelcomeMsg = userService.welcomeMsg(user.getInvitationMsg());
+//        boolean isWelcomeMsg = userService.welcomeMsg(user.getInvitationMsg());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
@@ -429,11 +429,11 @@ public class UserController {
             return "admin/user/new";
         }
 
-        if (isWelcomeMsg) {
-            model.addAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
-            contantForNewUser(model);
-            return "admin/user/new";
-        }
+//        if (isWelcomeMsg) {
+//            model.addAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
+//            contantForNewUser(model);
+//            return "admin/user/new";
+//        }
 
         if (!userService.isUserEmailUnique(user.getId(), user.getEmail())) {
             FieldError ssoError = new FieldError("user", "email", messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
