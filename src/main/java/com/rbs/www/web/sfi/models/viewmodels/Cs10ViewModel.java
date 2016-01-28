@@ -1,10 +1,14 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
 import java.util.Date;
 import java.util.Set;
 
+@SpELAssert.List({
+        @SpELAssert(value = "biodiversityNoDescribe == null", applyIf = "biodiversityFiberSourcing == 3", message = "biodiversityNoDescribe Should not be null", property = "biodiversityNoDescribe"),
+})
 public class Cs10ViewModel extends BaseViewModel {
     private Integer id;
     private Boolean acknowledge;
