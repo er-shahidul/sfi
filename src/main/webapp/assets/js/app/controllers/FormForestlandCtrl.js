@@ -101,22 +101,22 @@ sfiFormApp
             trigger   : 'hover focus'
         }
 
-        $(this).children('td:eq(2)').tooltip($.extend(tooltip,{
+        $(this).children('td:eq(3)').tooltip($.extend(tooltip,{
             title : "Include only forest management certifications on the acres managed."
         }));
 
 
-        $(this).children('td:eq(3)').tooltip($.extend(tooltip, {
+        $(this).children('td:eq(4)').tooltip($.extend(tooltip, {
             title : "Examples of recreational activities include: Viewing natural features, Hiking, Hunting, Cross-country skiing, Bicycling, Gathering forest products, OHV use, Resort use, Motorized Trail Activity, Non-motorized Water, Primitive Camping, Motorized Water Activities, Snowmobiling, Backpacking, Horseback Riding, etc."
         }));
 
 
         $(this)
-            .children('td:eq(4)').tooltip($.extend(tooltip, {
+            .children('td:eq(5)').tooltip($.extend(tooltip, {
                 title : "This new question was added in response to the SFI ERP requesting more specific information on recreation area as compared with certified forest lands as well as details on examples of recreational activities on those lands."
             }));
 
-        $(this).children('td:eq(5)').tooltip($.extend(tooltip, {
+        $(this).children('td:eq(6)').tooltip($.extend(tooltip, {
             placement : "left",
             title : "1. Motorized: fee basis (e.g. hunting, fishing, snowmobiling, camping, etc.)<br/>" +
                     "2. Motorized: no fee (e.g. motorized water activities, snowmobiling, camping, etc.)<br/>" +

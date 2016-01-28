@@ -18,7 +18,7 @@
                             <input type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="1">  Assessment on Production and/or acreage
 
                         </label>
-                        <input style="font-weight:400; width: 55%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 1)" ng-model="cs2.committeeFeeSpecify1">
+                        <input style="font-weight:400; width: 50%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 1)" ng-model="cs2.committeeFeeSpecify1">
                     </li>
                     <li>
                         <label class="form-inline">
@@ -38,13 +38,13 @@
                         <label class="form-inline">
                             <input type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="4"> Fundraising activities
                             </label>
-                        <input style="font-weight:400; width: 75%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 4)" ng-model="cs2.committeeFeeSpecify4">
+                        <input style="font-weight:400; width: 70%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 4)" ng-model="cs2.committeeFeeSpecify4">
                     </li>
                     <li>
                         <label class="form-inline">
                             <input type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="5"> In-kind contributions
                              </label>
-                        <input style="font-weight:400; width: 75%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 5)" ng-model="cs2.committeeFeeSpecify5">
+                        <input style="font-weight:400; width: 70%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 5)" ng-model="cs2.committeeFeeSpecify5">
                     </li>
                     <li>
                         <label class="form-inline">
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="col-lg-4" style="text-align: right">
-                <img src="/assets/images/u271.png">
+                <img style="width: 275px;" src="/assets/images/u271.png">
             </div>
         </div>
         <br>
@@ -376,15 +376,15 @@
         <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Did your SIC jointly support and/or organize any events or activities with neighboring SICs? (new!)
+                    Did your SIC jointly support and/or organize any events or activities with neighboring SICs?
                 </p>
 
 
                 <label>
-                    <input class="form-control" type="radio" name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="true" ng-checked="cs2.sicNeighborEvents">  Yes
+                    <input  type="radio" name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="true" ng-checked="cs2.sicNeighborEvents">  Yes
                 </label>
                 <label>
-                    <input class="form-control" type="radio" name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" ng-checked="!cs2.sicNeighborEvents">  No
+                    <input  type="radio" name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" ng-checked="!cs2.sicNeighborEvents">  No
                 </label>
 
                 <div class="aditional-line" ng-repeat="event in cs2.sicNeighborEvents" style="margin-top: 10px;">
@@ -417,7 +417,7 @@
                         Which SIC:
                         <select class="form-control" ng-model="event.whichSic">
                             <option ng-selected="!event.whichSic"><-select One-></option>
-                            <option ng-repeat="sic in sicList" ng-value="1 * $index"> {{ sic }}</option>
+                            <option ng-repeat="sic in sicList" ng-value="$index"> {{ sic }}</option>
                         </select>
                     </div>
                     <br>
