@@ -26,6 +26,7 @@ import java.util.Set;
 public class Cs9ViewModel extends BaseViewModel {
     private Integer id;
     private Boolean acknowledge;
+    @SpELAssert(value = "#this == null", message = "convertForestCover Should not be null")
     private Boolean convertForestCover;
     private Boolean convertForestLand;
     private Boolean ecologicalImpactsLandscape;
