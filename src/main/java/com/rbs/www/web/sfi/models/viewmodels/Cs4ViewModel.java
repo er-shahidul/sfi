@@ -22,7 +22,9 @@ import com.rbs.www.common.modules.validator.SpELAssert;
 })
 public class Cs4ViewModel extends BaseViewModel {
     private Integer id;
+    @SpELAssert(value = "#this == null", message = "usaTotalHervArea Should not be null")
     private Float usaTotalHervArea;
+    @SpELAssert(value = "#this == null", message = "caTotalHervArea Should not be null")
     private Float caTotalHervArea;
     private Float usaAvgHervArea;
     private Float caAvgHervArea;
