@@ -63,25 +63,29 @@
 
                     <td align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" min="0" name="internalUsd"
-                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                               ng-maxlength="11" customerror
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
                                ng-model="item.internalUsd" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInUsa()))"/>
                     </td>
 
                     <td align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalUsd"
-                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                               ng-maxlength="11" customerror
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
                                ng-model="item.externalUsd" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInUsa()))">
                     </td>
 
                     <td align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="internalCad"
-                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                               ng-maxlength="11" customerror
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
                                ng-model="item.internalCad" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInCa()))">
                     </td>
 
                     <td align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalCad"
-                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                               ng-maxlength="11" customerror
+                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
                                ng-model="item.externalCad" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInCa()))">
                     </td>
 
@@ -768,10 +772,12 @@
                         </td>
                         <td>
                             <input  type="number"  class="form-control  shorter "
-                                   ng-model="cs5.fundSFIActivStateProviUs" ng-class="{'disabled' : !operateInUsa()}" >
+                                    ng-maxlength="11" customerror
+                                    ng-model="cs5.fundSFIActivStateProviUs" ng-class="{'disabled' : !operateInUsa()}" >
                         </td>
                         <td>
                             <input type="number" class="form-control  shorter numberBox"
+                                   ng-maxlength="11" customerror
                                    ng-model="cs5.fundSFIActivStateProviCa" ng-disabled="!operateInCa()" >
                         </td>
                     </tr>
