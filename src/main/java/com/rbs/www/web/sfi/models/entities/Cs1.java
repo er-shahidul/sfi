@@ -27,7 +27,7 @@ public class Cs1 extends BaseEntityModel {
     private Integer numberEmployeesOther;
 
     @Column(name = "cs1_companyDescr", nullable = true)
-    @Type(type="text")
+    @Type(type = "text")
     private String companyDesc;
 
     @Column(name = "cs1_ownsMngLands", nullable = false, columnDefinition = "Boolean default false")
