@@ -922,7 +922,7 @@ sfiSicApp.run(['$rootScope', '$http', function($rootScope, $http) {
             .then(function(response){
 
                 if(response.data){
-                    $rootScope.formInfo.updatedAt = response.data.updateDate;
+                    $rootScope.formInfo.updatedAt = new Date(response.data.updateDate);
                 }
 
             });
