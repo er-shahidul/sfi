@@ -1,12 +1,15 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
 import java.util.Set;
 
 public class Cs6ViewModel extends BaseViewModel {
     private Integer id;
+    @SpELAssert(value = "#this == null", message = "numPrivateForeOwersUs Should not be null")
     private Integer numPrivateForeOwersUs;
+    @SpELAssert(value = "#this == null", message = "numPrivateForeOwersCa Should not be null")
     private Integer numPrivateForeOwersCa;
     private Integer numPrivateLandOwersUs;
     private Integer numPrivateLandOwersCa;
