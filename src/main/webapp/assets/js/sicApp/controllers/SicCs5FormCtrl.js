@@ -176,6 +176,7 @@ sfiSicApp
                     if(response.data){
                         $scope.cs5Form.$setPristine();
                         Message.success('Section successfully saved', '.msg-cont', true);
+                        $rootScope.form.cs5 = response.data;
                         $rootScope.updateFormMeta();
                     }
 

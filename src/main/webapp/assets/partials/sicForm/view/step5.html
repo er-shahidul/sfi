@@ -267,13 +267,24 @@
                         <td align="center">
                             {{ item.unresolved }}
                         </td>
-                        <td align="center">
-                            {{ item.inconsistentPractice }}
-                            <p class="myButton"  >Edit</p>
-                            <p class="myButton"  >Delete</p>
-                            <p>
+                        <td>
+
+                            <div>
+                                <div style="float:left;">
+                                    {{ item.inconsistentPractice }}
+                                </div>
+                                <div style="float:right;">
+                                    <label class="myButton" >Edit</label> &nbsp;
+                                    <label class="myButton" >Delete</label>
+                                </div>
+                                <div class="clear-fix"></div>
+                            </div>
+                            <br/>
+                            <div>
+
                                 {{ item.circumstanceDescription }}
-                            </p>
+                            </div>
+                            <br/>
                             <div id="selectedItem" ng-show="item.circumstancesDoc.originalDocumentName">{{ item.circumstancesDoc.originalDocumentName }}</div>
                         </td>
                     </tr>

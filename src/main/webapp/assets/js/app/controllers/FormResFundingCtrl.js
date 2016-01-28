@@ -257,10 +257,26 @@ sfiFormApp
 
         $scope.deleteProject = function(index){
 
-            if(confirm("Are you sure to delete this project ?")){
-                $scope.cs5.projects.splice(index, 1);
-            }
+            $('#delete1').modal();
+            //if(confirm("Are you sure to delete this project ?")){
+            //    $scope.cs5.projects.splice(index, 1);
+            //}
         }
+
+                $scope.deleteConfirm = function(index){
+
+                    $scope.cs5.projects.splice(index, 1);
+
+                }
+
+                //$scope.deleteCancel = function(){
+                //    $scope.cancelOther();
+                //    $scope.resetSection();
+                //}
+
+
+
+
 
         $scope.editProject = function(index){
 
@@ -330,7 +346,7 @@ sfiFormApp
                     }
 
                     if(go){
-                        $rootScope.goStep("cs7")
+                        $rootScope.goStep("cs7");
                     }
 
                 });
@@ -369,7 +385,8 @@ sfiFormApp
             html : true,
             content : '<div class="form-group"><input type="radio" class="icheck" value="1" name="test" data-projectNm="USD"><label class="checkboxLabel">USD</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="icheck" value="2" name="test" data-name="CAD"><label class="checkboxLabel">CAD</label></div></div>',
             placement : 'bottom',
-            trigger : 'manual'
+            trigger : 'manual',
+            container: 'body'
         }
 
         $scope.currPopPp = function(id, key){

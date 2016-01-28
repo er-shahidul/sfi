@@ -537,7 +537,7 @@
                             </div>
                             <div class="col-md-4">
                                 <p ng-if="$index == 0">Date</p>
-                                <input readonly  type="date" name="meetingDate"class="form-control" ng-model="meeting.date">
+                                <input readonly  type="date" datetimepicker name="meetingDate"class="form-control" ng-model="meeting.date">
                             </div>
                         </div>
 
@@ -566,7 +566,7 @@
                             </div>
                             <div class="col-md-3">
                                 <p ng-if="$index == 0" class="pading-botoms">Date</p>
-                                <input readonly  type="date" class="form-control" ng-model="meeting.date">
+                                <input readonly  type="date" datetimepicker class="form-control" ng-model="meeting.date">
                             </div>
                             <div class="col-md-3">
                                 <p ng-if="$index == 0" class="pading-botoms">Location</p>
@@ -634,7 +634,7 @@
                     <input readonly  type="radio" disabled  name="sicRecruitSfi" ng-model="cs1.sicRecruitSfi" ng-value="false" ng-checked="cs1.sicRecruitSfi == false"> No
                 </label>
 
-                <div style="padding-left: 25px;"  ng-show="cs1.sicRecruitSfi == true || cs1.sicRecruitSfi == false">
+                <div style="padding-left: 25px;"  ng-show="cs1.sicRecruitSfi == true">
                     Please list all newly recruited SFI Applicants or SFI Program Participants.
                     <div class="form-group">
                         <textarea readonly  class="form-control" ng-model="cs1.sicRecruitSfiComments" rows="4" cols="70"></textarea>
@@ -656,7 +656,7 @@
                     <input readonly  type="radio" disabled  name="sicPlanRecruitment" ng-model="cs1.sicPlanRecruitment" ng-value="false" ng-checked="cs1.sicPlanRecruitment == false"> No
                 </label>
 
-                <div ng-show="cs1.sicPlanRecruitment == true || cs1.sicPlanRecruitment == false">
+                <div ng-show="cs1.sicPlanRecruitment == true">
                     <p>
                         Please list organizations currently identified for SFI Program Participation recruitment
                         efforts. [Please note SFI Inc. is available for assistance in recruitment efforts.]

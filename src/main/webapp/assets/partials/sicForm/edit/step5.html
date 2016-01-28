@@ -272,13 +272,23 @@
                         <td align="center">
                             {{ item.unresolved }}
                         </td>
-                        <td align="center">
-                            {{ item.inconsistentPractice }}
-                            <p class="myButton"  ng-click="editStandard($index, 'standard2010', cs5.standardObjectives2010)">Edit</p>
-                            <p class="myButton"  ng-click="deleteStandard($index, cs5.standardObjectives2010)">Delete</p>
-                            <p>
+                        <td>
+                            <div>
+                                <div style="float:left;">
+                                    {{ item.inconsistentPractice }}
+                                </div>
+                                <div style="float:right;">
+                                    <label class="myButton"  ng-click="editStandard($index, 'standard2010', cs5.standardObjectives2010)">Edit</label> &nbsp;
+                                    <label class="myButton"  ng-click="deleteStandard($index, cs5.standardObjectives2010)">Delete</label>
+                                </div>
+                                <div class="clear-fix"></div>
+                            </div>
+                            <br/>
+                            <div>
+
                                 {{ item.circumstanceDescription }}
-                            </p>
+                            </div>
+                            <br/>
                             <div id="selectedItem" ng-show="item.circumstancesDoc.originalDocumentName">{{ item.circumstancesDoc.originalDocumentName }}</div>
                         </td>
                     </tr>
