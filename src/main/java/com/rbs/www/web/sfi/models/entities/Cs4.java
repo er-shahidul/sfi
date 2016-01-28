@@ -1,6 +1,7 @@
 package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -27,84 +28,98 @@ public class Cs4 extends BaseEntityModel {
     private Boolean usaGovRegulation;
 
     @Column(name = "cs4_havestArea_explain_usa", nullable = true)
+    @Type(type = "text")
     private String usaGovRegulationExp;
 
     @Column(name = "cs4_havestArea_ca", nullable = true)
     private Boolean caGovRegulation;
 
     @Column(name = "cs4_havestArea_explain_ca", nullable = true)
+    @Type(type = "text")
     private String caGovRegulationExp;
 
     @Column(name = "cs4_naturDisasterInsects_usa", nullable = true)
     private Boolean usaDisResDiseaseInsects;
 
     @Column(name = "cs4_naturDisasterInsects_explain_usa", nullable = true)
+    @Type(type = "text")
     private String usaDiseaseInsectsExp;
 
     @Column(name = "cs4_naturDisasterInsects_ca", nullable = true)
     private Boolean caDisResDiseaseInsects;
 
     @Column(name = "cs4_naturDisasterInsects_explain_ca", nullable = true)
+    @Type(type = "text")
     private String caDiseaseInsectsExp;
 
     @Column(name = "cs4_naturDisasterFire_usa", nullable = true)
     private Boolean usaDisResFireSalvage;
 
     @Column(name = "cs4_naturDisasterFire_explain_usa", nullable = true)
+    @Type(type = "text")
     private String usaFireSalvageExp;
 
     @Column(name = "cs4_naturDisasterFire_ca", nullable = true)
     private Boolean caDisResFireSalvage;
 
     @Column(name = "cs4_naturDisasterFire_explain_ca", nullable = true)
+    @Type(type = "text")
     private String caFireSalvageExp;
 
     @Column(name = "cs4_naturDisasterWindthrow_usa", nullable = true)
     private Boolean usaDisResWindthrow;
 
     @Column(name = "cs4_naturDisasterFireWindthrow_explain_usa", nullable = true)
+    @Type(type = "text")
     private String usaWindthrowExp;
 
     @Column(name = "cs4_naturDisasterWindthrow_ca", nullable = true)
     private Boolean caDisResWindthrow;
 
     @Column(name = "cs4_naturDisasterFireWindthrow_explain_ca", nullable = true)
+    @Type(type = "text")
     private String caWindthrowExp;
 
     @Column(name = "cs4_naturDisasterHurricane_usa", nullable = true)
     private Boolean usaDisResHurricane;
 
     @Column(name = "cs4_naturDisasterHurricane_explain_usa", nullable = true)
+    @Type(type = "text")
     private String usaHurricaneExp;
 
     @Column(name = "cs4_naturDisasterHurricane_ca", nullable = true)
     private Boolean caDisResHurricane;
 
     @Column(name = "cs4_naturDisasterHurricane_explain_ca", nullable = true)
+    @Type(type = "text")
     private String caHurricaneExp;
 
     @Column(name = "cs4_naturDisasterIceStorms_usa", nullable = true)
     private Boolean usaDisResIceStorm;
 
     @Column(name = "cs4_naturDisasterIceStorms_explain_usa", nullable = true)
+    @Type(type = "text")
     private String usaIceStormExp;
 
     @Column(name = "cs4_naturDisasterIceStorms_ca", nullable = true)
     private Boolean caDisResIceStorm;
 
     @Column(name = "cs4_naturDisasterIceStorms_explain_ca", nullable = true)
+    @Type(type = "text")
     private String caIceStormExp;
 
     @Column(name = "cs4_naturDisasterOther_usa", nullable = true)
     private Boolean usaOthersApply;
 
     @Column(name = "cs4_naturDisasterOther_explain_usa", nullable = true)
+    @Type(type = "text")
     private String usaOthersExp;
 
     @Column(name = "cs4_naturDisasterOther_ca", nullable = true)
     private Boolean caOthersApply;
 
     @Column(name = "cs4_naturDisasterOther_explain_ca", nullable = true)
+    @Type(type = "text")
     private String caOthersExp;
 
     @Column(name = "cs4_totalAreaBySeedTreeAndShelt_usa", nullable = true)

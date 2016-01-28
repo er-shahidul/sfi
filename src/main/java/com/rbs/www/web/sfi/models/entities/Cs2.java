@@ -3,6 +3,7 @@ package com.rbs.www.web.sfi.models.entities;
 import com.rbs.www.common.models.BaseEntityModel;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -28,6 +29,7 @@ public class Cs2 extends BaseEntityModel {
     private Float usaPrivateAreaCertifiedForPublic;
 
     @Column(name = "cs2_usaPrivate_categories", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> usaPrivateRecreationCategories;
@@ -46,6 +48,7 @@ public class Cs2 extends BaseEntityModel {
     private Float usaPublicAreaCertifiedForPublic;
 
     @Column(name = "cs2_usaPublic_categories", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> usaPublicRecreationCategories;
@@ -65,6 +68,7 @@ public class Cs2 extends BaseEntityModel {
     private Float caCrownAreaCertifiedForPublic;
 
     @Column(name = "cs2_caCrown_categories", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> caCrownRecreationCategories;
@@ -85,6 +89,7 @@ public class Cs2 extends BaseEntityModel {
     private Float caPrivateAreaCertifiedForPublic;
 
     @Column(name = "cs2_caPrivate_categories", nullable = true)
+    @Type(type = "text")
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> caPrivateRecreationCategories;
