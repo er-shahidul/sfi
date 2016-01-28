@@ -56,7 +56,9 @@
                         </label>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.name.$invalid }">
-                            <input class="form-control" type="text" name="name" ng-model="project.name" customerror ng-required="isProjectDirty()">
+                            <input class="form-control" type="text" name="name"
+                                   ng-maxlength="200" pattern-msg="Provide text with max length 200" customerror
+                                   ng-model="project.name" ng-required="isProjectDirty()">
                         </div>
                     </div>
                     <p style="padding-top: 30px;">Lead Organization and Main Contact</p>
@@ -67,7 +69,9 @@
                         </label>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
-                            <input class="form-control" type="text" name="organization" ng-model="project.organization" customerror ng-required="isProjectDirty()">
+                            <input class="form-control" type="text" name="organization"
+                                   ng-maxlength="200" pattern-msg="Provide text with max length 200" customerror
+                                   ng-model="project.organization" ng-required="isProjectDirty()">
                         </div>
                     </div>
                     <div class="form-group" >
@@ -75,8 +79,10 @@
                             Main Contact's Name
                         </label>
 
-                        <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
-                            <input class="form-control" type="text" name="contactName" ng-model="project.contactName" customerror ng-required="isProjectDirty()">
+                        <div class="col-lg-9" ng-class="{'has-error' : projectForm.contactName.$invalid }">
+                            <input class="form-control" type="text" name="contactName"
+                                   ng-maxlength="200" pattern-msg="Provide text with max length 200" customerror
+                                   ng-model="project.contactName"  ng-required="isProjectDirty()">
                         </div>
                     </div>
                     <div class="form-group">
@@ -84,8 +90,10 @@
                             Main Contact's Email
                         </label>
 
-                        <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
-                            <input class="form-control" type="email" name="contactEmail" ng-model="project.contactEmail" customerror ng-required="isProjectDirty()">
+                        <div class="col-lg-9" ng-class="{'has-error' : projectForm.contactEmail.$invalid }">
+                            <input class="form-control" type="email" name="contactEmail"
+                                   ng-maxlength="200" pattern-msg="Provide email with max length 200" customerror
+                                   ng-model="project.contactEmail" ng-required="isProjectDirty()">
                         </div>
                     </div>
                     <p style="padding-top: 30px;">Project Details</p>
@@ -97,7 +105,10 @@
                         </label>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.description.$invalid }">
-                            <textarea class="form-control" rows="4" name="description" ng-model="project.description" customerror ng-required="isProjectDirty()"></textarea>
+                            <textarea class="form-control" rows="4" name="description"
+                                      ng-required="isProjectDirty()" ng-maxlength="2000" max-word-count="300" customerror
+                                      pattern-msg="Provide text of max 2000 length (approx 300 words)"
+                                      ng-model="project.description" ></textarea>
                         </div>
                     </div>
                     <div class="form-group">
