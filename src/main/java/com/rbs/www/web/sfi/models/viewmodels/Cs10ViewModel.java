@@ -12,6 +12,7 @@ import java.util.Set;
 public class Cs10ViewModel extends BaseViewModel {
     private Integer id;
     private Boolean acknowledge;
+    @SpELAssert(value = "#this == null", message = "legalComplianceOutside Should not be null")
     private Boolean legalComplianceOutside;
     private Boolean legalComplianceUsCanada;
     private Date createdAt;
@@ -31,6 +32,7 @@ public class Cs10ViewModel extends BaseViewModel {
     private String biodiversityManagement;
     private String biodiversityTraining;
     private String legalComplianceOutsideOtherExplain;
+    @SpELAssert(value = "#this == null", message = "trainedWoodProducersChanged Should not be null")
     private String trainedWoodProducersChanged;
 
     private String biodiversityManagementMechanismDescribe;
