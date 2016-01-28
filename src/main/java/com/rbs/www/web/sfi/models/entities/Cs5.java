@@ -52,6 +52,12 @@ public class Cs5 extends BaseEntityModel {
     @Column(name = "cs5_isInPartnership", nullable = true)
     private Boolean isInPartnership;
 
+    @Column(name = "cs5_isOtherEnabled", nullable = true)
+    private Boolean isOtherEnabled;
+
+    @Column(name = "cs5_otherText", nullable = true)
+    private String otherText;
+
     @OneToMany(targetEntity = SfiPpFormCs3.class, mappedBy = "sfiPpForm", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SfiPpFormCs3> projects;
@@ -69,6 +75,22 @@ public class Cs5 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getIsOtherEnabled() {
+        return isOtherEnabled;
+    }
+
+    public void setIsOtherEnabled(Boolean isOtherEnabled) {
+        this.isOtherEnabled = isOtherEnabled;
+    }
+
+    public String getOtherText() {
+        return otherText;
+    }
+
+    public void setOtherText(String otherText) {
+        this.otherText = otherText;
     }
 
     public Integer getFundSFIActivStateProviCa() {

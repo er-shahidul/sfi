@@ -6,7 +6,7 @@
         -------------
         -------------------------------
         ----------------------------------->
-        <div class="col-lg-12 passage-bold">
+        <div class="passage-bold">
             <div class="col-lg-8">
                 <h5>
                     2. Funding & Expenditures
@@ -63,8 +63,8 @@
                     </label>
                 </div>
             </div>
-            <div class="col-lg-4" style="text-align: right">
-                <img src="/assets/images/u271.png">
+            <div class="col-lg-4" style="text-align: right; padding-right: 0;">
+                <img style="width: 275px;" src="/assets/images/u271.png">
             </div>
         </div>
         <br>
@@ -372,15 +372,15 @@
         <div class="col-lg-12 passage-bold" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Did your SIC jointly support and/or organize any events or activities with neighboring SICs? (new!)
+                    Did your SIC jointly support and/or organize any events or activities with neighboring SICs?
                 </p>
 
 
                 <label>
-                    <input class="form-control" type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="true" ng-checked="cs2.sicNeighborEvents">  Yes
+                    <input type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="true" ng-checked="cs2.sicNeighborEvents">  Yes
                 </label>
                 <label>
-                    <input class="form-control" type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" ng-checked="!cs2.sicNeighborEvents">  No
+                    <input type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" ng-checked="!cs2.sicNeighborEvents">  No
                 </label>
 
                 <div class="aditional-line" ng-repeat="event in cs2.sicNeighborEvents" style="margin-top: 10px;">

@@ -297,7 +297,12 @@
     <!-- FOOTER -->
     <div class="col-sm-6 col-sm-offset-4">
         <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
+        <span ng-if="company.primary">
         <button type="button" class="btn btn-success" ng-click="saveForm('true')">Save and Go to Step 2</button>
+        </span>
+        <span ng-if="!company.primary">
+           <button type="button" class="btn btn-success" ng-click="saveForm('stp9')">Save and Go to SFI Market Survey</button>
+        </span>
     </div>
     <!-- -/- -->
 

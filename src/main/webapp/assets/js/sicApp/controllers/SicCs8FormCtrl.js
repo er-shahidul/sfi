@@ -51,9 +51,14 @@ sfiSicApp
 
         $scope.deleteProject = function($index){
 
-            $scope.cs8.projects.splice($index, 1);
+           // $scope.cs8.projects.splice($index, 1);
+            $('#delete1').modal();
         }
+        $scope.deleteConfirm = function($index){
 
+            $scope.cs8.projects.splice($index, 1);
+
+        }
 
 
         $scope.saveForm = function(go){

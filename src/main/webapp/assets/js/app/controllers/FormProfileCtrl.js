@@ -26,8 +26,9 @@ sfiFormApp
                             Message.success('Section successfully saved', '.msg-cont', true);
                             $rootScope.updateFormMeta();
                         }
-
-                        if(go) $rootScope.goStep("cs2");
+                       //console.log(go); //stp9
+                        if(go == 'stp9') $rootScope.goStep("cs8");
+                        else if(go) $rootScope.goStep("cs2");
                     });
             }
         }

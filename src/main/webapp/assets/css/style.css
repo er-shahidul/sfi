@@ -985,7 +985,7 @@ label a {
     padding-top: 10px;
 }
 .list-select-drop {
-    height: 320px;
+    height: auto;
     width: 100%;background-color: #F2F2F2; border-radius: 10px;
 
 }
