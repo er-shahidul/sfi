@@ -2,7 +2,7 @@
 <div class="row section_background_4">
 <div ng-init="errors = cs6.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
-<div class="col-sm-12">
+<div class="col-sm-12" ng-class="{'disabled' : !hasPrimaryYards()}">
 <h5 class="section-header">4. Raw Material Supply</h5>
 <p>
     (The following questions should be answered for manufacturing facilities covered under the scope of your SFI 2015-2019 Fiber Sourcing Standard certificate)

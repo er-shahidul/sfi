@@ -730,29 +730,59 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
     }
 
     $rootScope.hasPrimaryYards = function(){
-
         return $rootScope.form.cs1.hasPrimaryOperMillsYards;
     }
 
+    $rootScope.hasPrimaryYardsUsa = function(){
 
-    $rootScope.isFieldsEnabled = function(){
+        return $rootScope.hasPrimaryYards () && $rootScope.form.cs1.hasPrimaryOperMillsYardsInUSA;
+    }
+
+    $rootScope.hasPrimaryYardsCa = function(){
+
+        return $rootScope.hasPrimaryYards () && $rootScope.form.cs1.hasPrimaryOperMillsYardsInCA;
+    }
+
+    $rootScope.hasPrimaryYardsOther = function(){
+
+        return $rootScope.hasPrimaryYards () && $rootScope.form.cs1.hasPrimaryOperMillsYardsInOther;
+    }
+
+    $rootScope.ownsForestLands = function(){
         return $rootScope.form.cs1.ownsMngLands;
     }
 
+    $rootScope.ownsForestLandsUsa = function(){
+        return $rootScope.ownsForestLands() && $rootScope.form.cs1.ownsMngLandsInCA;
+    }
+
+    $rootScope.ownsForestLandsCa = function(){
+        return $rootScope.ownsForestLands() && $rootScope.form.cs1.ownsMngLands;
+    }
+
+    $rootScope.ownsForestLandsOther = function(){
+        return $rootScope.ownsForestLands() && $rootScope.form.cs1.ownsMngLandsInOther;
+    }
+
+
     $rootScope.operateInUsa = function(){
 
-        return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInUSA;
+        return $rootScope.hasPrimaryYardsUsa() || $rootScope.ownsForestLandsUsa();
     }
 
     $rootScope.operateInCa = function(){
-
-        return $rootScope.isFieldsEnabled () && $rootScope.form.cs1.ownsMngLandsInCA;
+        return $rootScope.hasPrimaryYardsCa() || $rootScope.ownsForestLandsCa();
     }
 
     $rootScope.operateInOthers = function(){
-
-        return $rootScope.isFieldsEnabled () &&  $rootScope.form.cs1.ownsMngLandsInOther;
+        return $rootScope.hasPrimaryYardsOther() || $rootScope.ownsForestLandsOther();
     }
+
+
+//    $rootScope.isFieldsEnabled = function(){
+//        return $rootScope.form.cs1.ownsMngLands;
+//    }
+
 
     $rootScope.isSelected = function(model, val){
         return _.indexOf(model, val) > -1;

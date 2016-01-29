@@ -9,11 +9,6 @@ sfiFormApp.controller('FormNavigationCtrl', ['$rootScope', '$scope', '$state', '
     };
 
     $scope.isEnabled = function(step){
-
-        if(step == 'cs2'){
-            return $rootScope.form.cs1.ownsMngLands;
-        }
-
         return true;
     }
 

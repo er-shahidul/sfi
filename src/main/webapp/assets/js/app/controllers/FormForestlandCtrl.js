@@ -161,5 +161,19 @@ sfiFormApp
         lastYear2Modal.$promise.then(lastYear2Modal.hide);
     }
 
+    /** overwrite disabling rules here */
+    $scope.operateInUsa = function(){
+        return $rootScope.ownsForestLands() && $rootScope.operateInUsa();
+    }
+
+
+    $scope.operateInCa = function(){
+        return $rootScope.ownsForestLands()  && $rootScope.operateInCa();
+    }
+
+    $scope.operateInOthers = function(){
+        return $rootScope.ownsForestLands()  && $rootScope.operateInOthers();
+    }
+
 
 }]);

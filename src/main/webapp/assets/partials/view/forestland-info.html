@@ -2,10 +2,10 @@
 
     <div ng-init="errors = cs2.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
-    <div class="col-sm-12">
+    <div class="col-sm-12" ng-class="{'disabled' : !isFieldsEnabled()}" >
         <h5>2. Forestland Information</h5>
 
-        <form name="cs2Form" novalidate ng-class="{'disabled' : !isFieldsEnabled()}" >
+        <form name="cs2Form" novalidate>
             <span>
 
                 Provide forestland information on all forests your organization owns/manages as well as forestland
