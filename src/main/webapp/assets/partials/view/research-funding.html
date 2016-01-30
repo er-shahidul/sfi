@@ -63,7 +63,7 @@
 
 
                         <td align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}" style="vertical-align:top;">
-                            <input type="number" readonly  class="form-control" min="0" name="internalUsd"
+                            <input type="number" readonly  class="form-control" min="0" name="internalUsd" style="width:100px;"
                                    ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    ng-maxlength="13" customerror
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror
@@ -71,7 +71,7 @@
                         </td>
 
                         <td align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}" style="vertical-align:top;">
-                            <input type="number" readonly  class="form-control" name="externalUsd"
+                            <input type="number" readonly  class="form-control" name="externalUsd" style="width:100px;"
                                    ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    ng-maxlength="13" customerror
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror
@@ -79,7 +79,7 @@
                         </td>
 
                         <td align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}" style="vertical-align:top;">
-                            <input type="number" readonly  class="form-control" name="internalCad"
+                            <input type="number" readonly  class="form-control" name="internalCad" style="width:100px;"
                                    ng-maxlength="13" customerror
                                    ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror
@@ -87,7 +87,7 @@
                         </td>
 
                         <td align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}" style="vertical-align:top;">
-                            <input type="number" readonly  class="form-control" name="externalCad"
+                            <input type="number" readonly  class="form-control" name="externalCad" style="width:100px;"
                                    ng-maxlength="13" customerror
                                    ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    pattern-msg="Enter decimal number up to 2 precision points" customerror
@@ -734,12 +734,12 @@
                         </td>
                         <td style="vertical-align:top">
                             <input  type="number" readonly   class="form-control"
-                                    ng-maxlength="13" customerror
+                                    ng-maxlength="13" customerror style="width:120px"
                                     ng-model="cs5.fundSFIActivStateProviUs" ng-class="{'disabled' : !operateInUsa()}" >
                         </td>
                         <td style="vertical-align:top">
                             <input type="number" readonly  class="form-control"
-                                   ng-maxlength="13" customerror
+                                   ng-maxlength="13" customerror style="width:120px"
                                    ng-model="cs5.fundSFIActivStateProviCa" ng-disabled="!operateInCa()" >
                         </td>
                     </tr>
