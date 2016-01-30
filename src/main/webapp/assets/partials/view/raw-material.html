@@ -219,10 +219,9 @@
             <div class="form-group padded alignright"
                  ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item2.$invalid}" ng-show="section.unit > 0">
 
-                Volume <input type="text" readonly  style="width: 70px" class="form-control shortest2" name="item2" ng-required="isSectionDirty(innerForm)"
+                Volume <input type="text" readonly  style="width: 100px" class="form-control shortest2" name="item2" ng-required="isSectionDirty(innerForm)"
                               ng-disabled="isDisabled(section)" ng-model="section.volume"
                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
-
                               ng-model-options="{allowInvalid:true}"  />
             </div>
         </td>
