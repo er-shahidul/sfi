@@ -67,8 +67,8 @@
             <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.companyDesc.$invalid}">
                 <label>Short organization profile: (max. 650 words)</label>
                 <textarea class="form-control" name="companyDesc"
-                          ng-model="cs1.companyDesc" ng-maxlength="4000" max-word-count="650" customerror
-                          pattern-msg="Provide text of max 4000 length (approx 650 words)"
+                              ng-model="cs1.companyDesc" ng-maxlength="4000" max-word-count="650" customerror
+                              pattern-msg="Provide text of max 4000 length (approx 650 words)"
                           tooltip data-placement="right" data-container="body"
                           data-title="Provide a short company description."></textarea>
             </div>
@@ -217,7 +217,7 @@
 
                                 <div class="form-group form-group-new" ng-init="other3 = 0">
 
-                                    <div class="padded" ng-show="cs1.hasSecondaryOperMillsYardsInOther" ng-class="{'has-error has-feedback':  cs1.hasSecondaryOperMillsYardsInOther && !cs1.hasSecondaryOperMillsYardsInOther.length}">
+                                    <div class="padded" ng-show="cs1.hasSecondaryOperMillsYardsInOther" ng-class="{'has-error has-feedback':  cs1.hasSecondaryOperMillsYardsInOther && !cs1.secondaryOperMillsYardsOtherCountries.length}">
 
                                         <select class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs1.secondaryOperMillsYardsOtherCountries, other3)">
                                             <option value="0">Select country</option>

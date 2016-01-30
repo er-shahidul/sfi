@@ -202,7 +202,7 @@
 
                                 <div class="form-group" ng-init="other3 = 0">
 
-                                    <div class="padded" ng-show="cs1.hasSecondaryOperMillsYardsInOther" ng-class="{'has-error has-feedback':  cs1.hasSecondaryOperMillsYardsInOther && !cs1.hasSecondaryOperMillsYardsInOther.length}">
+                                    <div class="padded" ng-show="cs1.hasSecondaryOperMillsYardsInOther" ng-class="{'has-error has-feedback':  cs1.hasSecondaryOperMillsYardsInOther && !cs1.secondaryOperMillsYardsOtherCountries.length}">
 
                                         <select readonly class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs1.secondaryOperMillsYardsOtherCountries, other3)">
                                             <option value="0">Select country</option>
