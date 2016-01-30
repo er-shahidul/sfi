@@ -550,6 +550,34 @@
                         <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=2 icheck>
                         Yes, but decided against FSC certification
                     </label><br>
+
+                    <div class="padded-left" ng-show="cs8.FSCLandCertification == 2">
+
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCost1" icheck> Cost</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscLackOfResponse1" icheck> Lack of responsiveness</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscComplexity1" icheck> Complexity</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscNoMarkerDemand1" icheck> No FSC market demand</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscUncertainty1" icheck> Uncertainty</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscLackOfSupply1" icheck> Lack of FSC supply</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscInconsistent1" icheck> Inconsistent approaches</p>
+                            <p>
+                                <input type="checkbox" name="temp47" ng-model="cs8.fscOther1" icheck> Other<br/>
+                                <label ng-show="cs8.fscOther1">
+                                    Please Specify
+                                    <input type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherSpecify1" icheck>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
                     <label class="form-inline">
                         <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=3 icheck>
                         Yes, and we are planning to become certified to both SFI and FSC in the future
@@ -562,13 +590,47 @@
                         <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=5 icheck>
                         We were previously certified to FSC but dropped it after obtaining SFI certification, please specify
                     </label><br>
+
+                    <div class="padded-left" ng-show="cs8.FSCLandCertification == 5">
+
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCost2" icheck> Cost</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscLackOfResponse2" icheck> Lack of responsiveness</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscComplexity2" icheck> Complexity</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscNoMarkerDemand2" icheck> No FSC market demand</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscUncertainty2" icheck> Uncertainty</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscLackOfSupply2" icheck> Lack of FSC supply</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscInconsistent2" icheck> Inconsistent approaches</p>
+                            <p>
+                                <input type="checkbox" name="temp47" ng-model="cs8.fscOther2" icheck> Other<br/>
+                                <label ng-show="cs8.fscOther2">
+                                    Please Specify
+                                    <input type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherSpecify2" icheck>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
                     <label class="form-inline">
                         <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=6 icheck>
                         Yes, and we are considering dropping SFI once we have obtained FSC certification
                     </label><br>
                     <label class="form-inline">
                         <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=7 icheck>
-                        Other
+                        Other<br/>
+
+                        <label ng-show="cs8.FSCLandCertification == 7">
+                            Please Explain
+                            <input type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherExplain" icheck>
+                        </label>
+
                     </label>
                 </div>
             </div>
@@ -587,6 +649,37 @@
                         <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=2 icheck>
                         Yes, but decided against FSC certification
                     </label><br>
+
+                    <div class="padded-left" ng-show="cs8.ChainOfCustody_FSCCertification == 2">
+
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocCost1" icheck> Cost</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocLackOfResponse1" icheck> Lack of responsiveness</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocComplexity1" icheck> Complexity</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocNoMarkerDemand1" icheck> No FSC market demand</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocUncertainty1" icheck> Uncertainty</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocLackOfSupply1" icheck> Lack of FSC supply</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocInconsistent1" icheck> Inconsistent approaches</p>
+                            <p>
+                                <input type="checkbox" name="temp47" ng-model="cs8.fscCocOther1" icheck> Other<br/>
+                                <label ng-show="cs8.fscCocOther1">
+                                    Please Specify
+                                    <input type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherSpecify1" icheck>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
+
+
+
                     <label class="form-inline">
                         <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=3 icheck>
                         Yes, and we are planning to become certified to both SFI and FSC in the future
@@ -599,6 +692,34 @@
                         <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=5 icheck>
                         We were previously certified to FSC but dropped it after obtaining SFI certification, please specify
                     </label><br>
+
+                    <div class="padded-left" ng-show="cs8.ChainOfCustody_FSCCertification == 5">
+
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocCost2" icheck> Cost</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocLackOfResponse2" icheck> Lack of responsiveness</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocComplexity2" icheck> Complexity</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocNoMarkerDemand2" icheck> No FSC market demand</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocUncertainty2" icheck> Uncertainty</p>
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocLackOfSupply2" icheck> Lack of FSC supply</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocInconsistent2" icheck> Inconsistent approaches</p>
+                            <p>
+                                <input type="checkbox" name="temp47" ng-model="cs8.fscCocOther2" icheck> Other<br/>
+                                <label ng-show="cs8.fscOther2">
+                                    Please Specify
+                                    <input type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherSpecify2" icheck>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
                     <label class="form-inline">
                         <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=6 icheck>
                         Yes, and we are considering dropping SFI once we have obtained FSC certification
@@ -606,6 +727,11 @@
                     <label class="form-inline">
                         <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=7 icheck>
                         Other
+                        <label ng-show="cs8.ChainOfCustody_FSCCertification == 7">
+                            Please Explain
+                            <input type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherExplain" icheck>
+                        </label>
+
                     </label>
                 </div>
             </div>
