@@ -647,21 +647,24 @@
                         <label class="form-inline">
                             <input type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="8" ng-model="sfiMarket" >
                             Other
-                        </label><br>
+                        </label><br/>
+
                         <label class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 8)">
                             Please Explain:
                             <input class="form-control" type="text" ng-model="cs8.sfiMarketExplain1">
                         </label>
-                        <br>
+                        <br ng-show="isSelected(cs8.sfiMarketExternally, 8)" />
+
                         <label class="form-inline">
                             <input type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="9" ng-model="sfiMarket" >
                             n/a we don’t  communicate SFI certified status
-                        </label><br>
+                        </label><br/>
+
                         <label class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 9)">
-                            Please Explain:
+                            <br/>Please Explain:
                             <input class="form-control" type="text" ng-model="cs8.sfiMarketExplain2">
                         </label>
-                        <br>
+                        <br ng-show="isSelected(cs8.sfiMarketExternally, 9)" />
                     </div>
 
 
