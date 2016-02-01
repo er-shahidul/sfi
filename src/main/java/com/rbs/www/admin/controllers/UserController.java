@@ -202,7 +202,7 @@ public class UserController {
 
 //        if (isWelcomeMsg) {
 //            redirect.addFlashAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
-//            contantForNewUser(model);
+//            contentForNewUser(model);
 //            return "redirect:/admin/user/edit/" + user.getId();
 //        }
 
@@ -273,12 +273,12 @@ public class UserController {
 
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.GET)
     public String create(ModelMap model) {
-        contantForNewUser(model);
+        contentForNewUser(model);
 
         return "admin/user/new";
     }
 
-    private void contantForNewUser(ModelMap model) {
+    private void contentForNewUser(ModelMap model) {
         UserViewModel user = new UserViewModel();
         model.addAttribute("user", user);
         model.addAttribute("title", "user");
@@ -418,27 +418,27 @@ public class UserController {
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             model.addAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
-            contantForNewUser(model);
+            contentForNewUser(model);
             return "admin/user/new";
         }
 
         if (!userService.isUserUsernameUnique(user.getId(), user.getUsername())) {
             FieldError ssoError = new FieldError("user", "username", messageSource.getMessage("non.unique.username", new String[]{user.getUsername()}, Locale.getDefault()));
             result.addError(ssoError);
-            contantForNewUser(model);
+            contentForNewUser(model);
             return "admin/user/new";
         }
 
 //        if (isWelcomeMsg) {
 //            model.addAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
-//            contantForNewUser(model);
+//            contentForNewUser(model);
 //            return "admin/user/new";
 //        }
 
         if (!userService.isUserEmailUnique(user.getId(), user.getEmail())) {
             FieldError ssoError = new FieldError("user", "email", messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
             result.addError(ssoError);
-            contantForNewUser(model);
+            contentForNewUser(model);
             return "admin/user/new";
         }
 

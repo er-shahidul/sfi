@@ -160,7 +160,7 @@ public class PpFormController{
     @RequestMapping(value = "/admin/form/pp", method = RequestMethod.GET)
     public String adminSfiForm(ModelMap model) {
         model.addAttribute("title", "sfi");
-        model.addAttribute("sfiPpForms", sfiPpFormDataService.getAll());
+        model.addAttribute("sfiPpForms", sfiPpFormDataService.getAllActiveForms());
 
         return "admin/form/admin_form_sfi";
     }

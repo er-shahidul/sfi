@@ -53,6 +53,13 @@ public abstract class BaseRepository<T extends Object> {
     }
 
     @SuppressWarnings("unchecked")
+    public List<T> getAllActiveForms() {
+        return getSession()
+                .createQuery("from " + getDomainClassName() + " E where E.createdBy is not null")
+                .list();
+    }
+
+    @SuppressWarnings("unchecked")
     public List<T> getAll() {
         return getSession()
                 .createQuery("from " + getDomainClassName())
