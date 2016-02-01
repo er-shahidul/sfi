@@ -8,7 +8,7 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class ReflectionUtils {
+public class ReflectionUtils {
 
     public static List<Method> extractStaticMethods(Class<?> clazz) {
         Method[] allMethods = clazz.getMethods();
