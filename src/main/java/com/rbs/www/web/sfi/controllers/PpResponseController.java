@@ -1,6 +1,5 @@
 package com.rbs.www.web.sfi.controllers;
 
-import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.ModelValidationService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;

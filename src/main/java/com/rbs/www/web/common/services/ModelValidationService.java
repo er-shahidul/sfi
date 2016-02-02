@@ -28,7 +28,7 @@ public class ModelValidationService {
     }
 
     public <T extends BaseViewModel> T validate(T model) {
-        Set<ConstraintViolation<T>> errors  = this.validator.validate(model);
+        Set<ConstraintViolation<T>> errors = this.validator.validate(model);
 
         for (ConstraintViolation<T> error : errors) {
             BaseViewModel currentModel = (BaseViewModel) error.getLeafBean();
