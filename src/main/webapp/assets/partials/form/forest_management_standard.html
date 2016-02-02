@@ -320,7 +320,7 @@
                 <div>
                     <input type="radio" icheck ng-model="cs9.protectionMaintenanceWaterRes" name="protectionMaintenanceWaterRes" value=1>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators
-
+                    <br>
                     <ul style="list-style-type: none" ng-show="!cs9.protectionMaintenanceWaterRes || cs9.protectionMaintenanceWaterRes == 1">
 
                         <p>Select all that apply</p>
@@ -549,7 +549,7 @@
                 <div>
                     <input icheck type="radio" ng-model="cs9.conservationBiodiversity413" value=1>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators.
-
+                    <br>
                     <ul style="list-style-type: none" ng-show="!cs9.conservationBiodiversity413 || cs9.conservationBiodiversity413 == 1">
                         <p>Select all that apply</p>
                         <li>
@@ -954,7 +954,7 @@
                 <div>
                     <input type="radio" icheck name="indigenousPeoplesPublic" ng-model="cs9.indigenousPeoplesPublic" value=2>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators.
-
+                    <br>
                     <ul style="list-style-type: none" >
                         <p>Select all that apply</p>
                         <li>
@@ -1074,7 +1074,7 @@
                 <div>
                     <input type="radio" icheck name="indigenousPeoplesPrivate" ng-model="cs9.indigenousPeoplesPrivate" value=2>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators.
-
+                    <br>
                     <ul style="list-style-type: none" >
                         <p>Select all that apply</p>
                         <li>
@@ -1169,7 +1169,7 @@
                 <div>
                     <input type="radio" icheck name="indigenousPeoplesForest" ng-model="cs9.indigenousPeoplesForest" value=1>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators.
-
+                    <br>
                     <ul style="list-style-type: none" >
                         <p>Select all that apply</p>
                         <li>
@@ -1384,7 +1384,7 @@
                 <input type="radio" icheck name="trainingEducation" ng-model="cs9.trainingEducation" value=4>
                 We have another mechanism
             </label>
-            <div class="form-group" ng-show="cs9.trainingEducation == 4">
+            <div style="padding-top: 5px;" class="form-group" ng-show="cs9.trainingEducation == 4">
                 Describe the practice<br/>
                 <textarea rows="4" cols="70" ng-model="cs9.trainingEduRationale"></textarea>
             </div>
@@ -1499,7 +1499,7 @@
                     <input icheck type="radio" name="convertForestCover" ng-model="cs9.convertForestCover" ng-value="true"  > Yes
                     <input icheck type="radio" name="convertForestCover" ng-model="cs9.convertForestCover" ng-value="false" > No
                 </label>
-                <ul style="list-style-type: none" ng-show="cs9.convertForestCover">
+                <ul style="list-style-type: none;width:55%;" ng-show="cs9.convertForestCover">
                     <p>Select all that apply</p>
                     <li>
                         <label>
@@ -1520,7 +1520,7 @@
 
                                 <div class="sub-content" ng-show="cs9.restorationRiparianProtection">
                                     Area Converted
-                                    <select style="width: 200px;" ng-mode="cs9.restorationRiparianArea">
+                                    <select style="width: 100%;" ng-mode="cs9.restorationRiparianArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1539,7 +1539,7 @@
 
                                 <div class="sub-content" ng-show="cs9.restorationNativeForest">
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.restorationNativeArea">
+                                    <select style="width: 100%;" ng-model="cs9.restorationNativeArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1554,9 +1554,9 @@
 
                                 <div class="sub-content" ng-show="cs9.restorationOther">
                                     <p>Please explain</p>
-                                    <textarea rows="2" cols="38" ng-model="cs9.restorationOtherExplain"></textarea><br><br>
+                                    <textarea rows="2" style="width: 100%;" ng-model="cs9.restorationOtherExplain"></textarea><br><br>
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.restorationOtherArea">
+                                    <select style="width: 100%;" ng-model="cs9.restorationOtherArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1582,7 +1582,7 @@
 
                                 <div class="sub-content" ng-show="cs9.respondingInvasiveSpecies">
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.respondingInvasiveArea">
+                                    <select style="width: 100%;" ng-model="cs9.respondingInvasiveArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1592,12 +1592,12 @@
                             <li>
                                 <label>
                                     <input icheck type="checkbox" ng-model="cs9.respondingDiseaseIssues">
-                                    <span tooltip title="planting western red-cedar in areas with Douglas fir root rot; planting Douglas fir in areas with western white pine blister rust (PNW)">Disease issues</span>
+                                    <span tooltip title="Planting western red-cedar in areas with Douglas fir root rot; planting Douglas fir in areas with western white pine blister rust (PNW)">Disease issues</span>
                                 </label>
 
                                 <div class="sub-content" ng-show="cs9.respondingDiseaseIssues">
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.respondingDiseaseArea">
+                                    <select style="width: 100%;" ng-model="cs9.respondingDiseaseArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1613,7 +1613,7 @@
 
                                 <div class="sub-content" ng-show="cs9.respondingInsect">
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.respondingInsectArea">
+                                    <select style="width: 100%;" ng-model="cs9.respondingInsectArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1628,9 +1628,9 @@
 
                                 <div class="sub-content" ng-show="cs9.respondingOther">
                                     <p>Please explain</p>
-                                    <textarea rows="2" cols="38" ng-model="cs9.respondingOtherExplain"></textarea><br><br>
+                                    <textarea rows="2" style="width: 100%;" ng-model="cs9.respondingOtherExplain"></textarea><br><br>
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.respondingOtherArea">
+                                    <select style="width: 100%;" ng-model="cs9.respondingOtherArea">
                                         <option>
                                         <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1656,7 +1656,7 @@
 
                                 <div class="sub-content" ng-show="cs9.ecologicalImpactsSite">
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.ecologicalImpactsSiteArea">
+                                    <select style="width: 100%;" ng-model="cs9.ecologicalImpactsSiteArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1671,7 +1671,7 @@
 
                                 <div class="sub-content" ng-show="cs9.ecologicalImpactsLandscape">
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.ecologicalImpactsLandscapeArea">
+                                    <select style="width: 100%;" ng-model="cs9.ecologicalImpactsLandscapeArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1685,9 +1685,9 @@
 
                                 <div class="sub-content" ng-show="cs9.environmentalHarmOther">
                                     <p>Please explain</p>
-                                    <textarea rows="2" cols="38" ng-model="cs9.environmentalHarmOtherExplain"></textarea><br><br>
+                                    <textarea rows="2" style="width: 100%;" ng-model="cs9.environmentalHarmOtherExplain"></textarea><br><br>
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.environmentalHarmOtherArea">
+                                    <select style="width: 100%;" ng-model="cs9.environmentalHarmOtherArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1713,7 +1713,7 @@
 
                                 <div class="sub-content" ng-show="cs9.economicProductivity">
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.economicProductivityArea">
+                                    <select style="width: 100%;" ng-model="cs9.economicProductivityArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1728,7 +1728,7 @@
 
                                 <div class="sub-content" ng-show="cs9.economicStandQuality">
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.economicStandArea">
+                                    <select style="width: 100%;" ng-model="cs9.economicStandArea">
                                         <option>
                                             <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                         </option>
@@ -1743,9 +1743,9 @@
 
                                 <div class="sub-content" ng-show="cs9.economicOther">
                                     <p>Please explain</p>
-                                    <textarea rows="2" cols="38" ng-model="cs9.economicOtherExplain"></textarea><br><br>
+                                    <textarea rows="2" style="width: 100%;" ng-model="cs9.economicOtherExplain"></textarea><br><br>
                                     Area Converted
-                                    <select style="width: 200px;" ng-model="cs9.economicOtherArea">
+                                    <select style="width: 100%;" ng-model="cs9.economicOtherArea">
                                         <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
                                     </select>
                                 </div>
@@ -1810,15 +1810,14 @@
                                 <a style="text-align: right;padding-top: 10px;" ng-click="deleteRegionArea($index)">Delete</a>
                             </td>
                         </tr>
-                        <tr></tr>
-                        <tr>
+                        <tr style="background-color:#ECF0F1">
                             <td>
                                 <label>
                                     <input type="number" name="area" ng-model="regionArea"> AC
                                 </label>
                             </td>
-                            <td ng-init="regionId = 0" >
-                                <label>
+                            <td ng-init="regionId = 0">
+                                <label style="width:100%;">
                                     <select class="col-lg-12" ng-model="regionId" id="regionId">
                                         <option value=0>< Select Region ></option>
                                         <option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
@@ -1826,7 +1825,7 @@
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="background-color:#ECF0F1;">
                             <td></td>
 
                             <td style="text-align: right;">

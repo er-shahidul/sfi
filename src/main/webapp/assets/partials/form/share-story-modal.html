@@ -31,7 +31,7 @@
                             </div>
 
                             <span class="input-group-addon btn default btn-file">
-                                <span ng-hide="story.originalDocumentName" class="fileinput-new">Select file </span>
+                                <span ng-hide="story.originalDocumentName" class="fileinput-new">Browse </span>
                                 <span ng-show="story.originalDocumentName" class="fileinput-exists">Change </span>
                             </span>
                             <a ng-click="story.originalDocumentName = null; story.uniqueDocumentName = null;" ng-show="story.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
@@ -69,18 +69,18 @@
                     <div style="padding-top: 20px;">
                         <p>Choose what SFI can do with your story</p>
 
-                        <div ng-class="{'error': !isStoryDirty() }">
-                            <label >
+                        <div ng-class="{'story': !isStoryDirty() }">
+
                                 <input icheck type="radio" ng-value=true name="shareOrgName" ng-model="story.shareOrgName" ng-checked="story.shareOrgName == true"/> Share – with our organization’s name
-                            </label>
+
                             <br>
-                            <label>
+
                                 <input icheck type="radio" ng-value=true name="shareOrgName"  ng-model="story.shareNoUse" ng-checked="story.shareNoUse == true"/> Share – don't use our organization’s name
-                            </label>
+
                             <br>
-                            <label>
+
                                 <input icheck type="radio" ng-value=true name="shareOrgName"  ng-model="story.shareUseAggregate" ng-checked="story.shareUseAggregate == true"/> Only use in aggregate
-                            </label>
+
                         </div>
                     </div>
                     </form>
