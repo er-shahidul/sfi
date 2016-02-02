@@ -1,6 +1,5 @@
 package com.rbs.www.web.sfi.services;
 
-import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.mapper.EntityModelMapperService;
 import com.rbs.www.common.modules.mapper.ViewModelMapperService;
 import com.rbs.www.web.common.models.datamodels.UpdateDate;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -79,19 +77,19 @@ public class FormService {
     /************************* Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
         Cs1 entity = cs1Service.get(id);
-        return this.validate(viewModelMapperService.convert(entity, Cs1ViewModel.class));
+        return modelValidationService.validate(viewModelMapperService.convert(entity, Cs1ViewModel.class));
     }
 
     public void setCs1Entity(Cs1ViewModel model) {
         Cs1 entity = entityModelMapperService.convert(model, Cs1.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
-    /************************ Cs1 : End ***********************/
+    /************************* Cs1 : End   ***********************/
 
     /************************* Cs2 : Begin ***********************/
     public Cs2ViewModel getCs2ViewModel(Integer id) {
         Cs2 entity = cs2Service.get(id);
-        return this.validate(viewModelMapperService.convert(entity, Cs2ViewModel.class));
+        return modelValidationService.validate(viewModelMapperService.convert(entity, Cs2ViewModel.class));
     }
 
     public void setCs2Entity(Cs2ViewModel model) {
@@ -99,31 +97,31 @@ public class FormService {
         Cs2 entity = entityModelMapperService.convert(model, Cs2.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
-    /************************ Cs2 : End ***********************/
+    /************************* Cs2 : End   ***********************/
 
     /************************* Cs3 : Begin ***********************/
     public Cs3ViewModel getCs3ViewModel(Integer id) {
         Cs3 entity = cs3Service.get(id);
-        return this.validate(viewModelMapperService.convert(entity, Cs3ViewModel.class));
+        return modelValidationService.validate(viewModelMapperService.convert(entity, Cs3ViewModel.class));
     }
 
     public void setCs3Entity(Cs3ViewModel model) {
         Cs3 entity = entityModelMapperService.convert(model, Cs3.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
-    /************************ Cs3 : End ***********************/
+    /************************* Cs3 : End   ***********************/
 
     /************************* Cs4 : Begin ***********************/
     public Cs4ViewModel getCs4ViewModel(Integer id) {
         Cs4 entity = cs4Service.get(id);
-        return this.validate(viewModelMapperService.convert(entity, Cs4ViewModel.class));
+        return modelValidationService.validate(viewModelMapperService.convert(entity, Cs4ViewModel.class));
     }
 
     public void setCs4Entity(Cs4ViewModel model) {
         Cs4 entity = entityModelMapperService.convert(model, Cs4.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
-    /************************ Cs4 : End ***********************/
+    /************************* Cs4 : End   ***********************/
 
     /************************* Cs5 : Begin ***********************/
     public Cs5ViewModel getCs5ViewModel(Integer id) {
@@ -131,7 +129,7 @@ public class FormService {
         Cs5ViewModel model = viewModelMapperService.convert(entity, Cs5ViewModel.class);
         model.setItems(this.getSfiPpFormCs5ViewModels(id));
 
-        return this.validate(model);
+        return modelValidationService.validate(model);
     }
 
     public void setCs5Entity(Cs5ViewModel model) {
@@ -139,12 +137,12 @@ public class FormService {
         Cs5 entity = entityModelMapperService.convert(model, Cs5.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
-    /************************ Cs5 : End ***********************/
+    /************************* Cs5 : End   ***********************/
 
     /************************* Cs6 : Begin ***********************/
     public Cs6ViewModel getCs6ViewModel(Integer id) {
         Cs6 entity = cs6Service.get(id);
-        return this.validate(viewModelMapperService.convert(entity, Cs6ViewModel.class));
+        return modelValidationService.validate(viewModelMapperService.convert(entity, Cs6ViewModel.class));
     }
 
     public void setCs6Entity(Cs6ViewModel model) {
@@ -152,19 +150,19 @@ public class FormService {
         Cs6 entity = entityModelMapperService.convert(model, Cs6.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
-    /************************ Cs6 : End ***********************/
+    /************************* Cs6 : End   ***********************/
 
     /************************* Cs7 : Begin ***********************/
     public Cs7ViewModel getCs7ViewModel(Integer id) {
         Cs7 entity = cs7Service.get(id);
-        return this.validate(viewModelMapperService.convert(entity, Cs7ViewModel.class));
+        return modelValidationService.validate(viewModelMapperService.convert(entity, Cs7ViewModel.class));
     }
 
     public void setCs7Entity(Cs7ViewModel model) {
         Cs7 entity = entityModelMapperService.convert(model, Cs7.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
-    /************************ Cs7 : End ***********************/
+    /************************* Cs7 : End   ***********************/
 
     /************************* Cs8 : Begin ***********************/
     public Cs8ViewModel getCs8ViewModel(Integer id) {
@@ -173,11 +171,11 @@ public class FormService {
         Cs8PartialC partialEntityC = cs8PartialCService.get(id);
 
         Cs8PartialAViewModel partialAViewModel =
-                this.validate(viewModelMapperService.convert(partialEntityA, Cs8PartialAViewModel.class));
+                modelValidationService.validate(viewModelMapperService.convert(partialEntityA, Cs8PartialAViewModel.class));
         Cs8PartialBViewModel partialBViewModel =
-                this.validate(viewModelMapperService.convert(partialEntityB, Cs8PartialBViewModel.class));
+                modelValidationService.validate(viewModelMapperService.convert(partialEntityB, Cs8PartialBViewModel.class));
         Cs8PartialCViewModel partialCViewModel =
-                this.validate(viewModelMapperService.convert(partialEntityC, Cs8PartialCViewModel.class));
+                modelValidationService.validate(viewModelMapperService.convert(partialEntityC, Cs8PartialCViewModel.class));
 
         Cs8ViewModel model = new Cs8ViewModel();
         model.setCs8PartialAViewModel(partialAViewModel);
@@ -199,12 +197,12 @@ public class FormService {
         Cs8PartialC partialEntityC = entityModelMapperService.convert(partialCViewModel, Cs8PartialC.class);
         sfiPpFormDataService.setAuditInfo(partialAViewModel.getId(), pending);
     }
-    /************************ Cs8 : End ***********************/
+    /************************* Cs8 : End   ***********************/
 
     /************************* Cs9 : Begin ***********************/
     public Cs9ViewModel getCs9ViewModel(Integer id) {
         Cs9 entity = cs9Service.get(id);
-        return this.validate(viewModelMapperService.convert(entity, Cs9ViewModel.class));
+        return modelValidationService.validate(viewModelMapperService.convert(entity, Cs9ViewModel.class));
     }
 
     public void setCs9Entity(Cs9ViewModel model) {
@@ -212,12 +210,12 @@ public class FormService {
         Cs9 entity = entityModelMapperService.convert(model, Cs9.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
-    /************************ Cs9 : End ***********************/
+    /************************* Cs9 : End   ***********************/
 
     /************************* Cs10 : Begin ***********************/
     public Cs10ViewModel getCs10ViewModel(Integer id) {
         Cs10 entity = cs10Service.get(id);
-        return this.validate(viewModelMapperService.convert(entity, Cs10ViewModel.class));
+        return modelValidationService.validate(viewModelMapperService.convert(entity, Cs10ViewModel.class));
     }
 
     public void setCs10Entity(Cs10ViewModel model) {
@@ -225,7 +223,7 @@ public class FormService {
         Cs10 entity = entityModelMapperService.convert(model, Cs10.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
-    /************************ Cs10 : End ***********************/
+    /************************* Cs10 : End   ***********************/
 
     /************************* SfiPpFormCs5 : Begin ***********************/
     public List<SfiPpFormCs5ViewModel> getSfiPpFormCs5ViewModels(Integer formId) {
@@ -249,7 +247,7 @@ public class FormService {
             SfiPpFormCs5 entity = entityModelMapperService.convert(model, SfiPpFormCs5.class);
         }
     }
-    /************************ SfiPpFormCs5 : End ***********************/
+    /************************* SfiPpFormCs5 : End ***********************/
 
     /************************* UpdateDate : Begin ***********************/
     public UpdateDate getUpdateDate(Integer id) {
@@ -258,10 +256,5 @@ public class FormService {
 
         return model;
     }
-    /************************* UpdateDate : End ***********************/
-
-    private <T extends BaseViewModel> T validate(T model) {
-        modelValidationService.validate(model);
-        return model;
-    }
+    /************************* UpdateDate : End   ***********************/
 }

@@ -1,6 +1,7 @@
 package com.rbs.www.web.sic.controllers;
 
 import com.rbs.www.common.util.Util;
+import com.rbs.www.web.common.services.ModelValidationService;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import com.rbs.www.web.sic.models.viewmodels.*;
 import com.rbs.www.web.sic.services.SicFormDataService;
@@ -19,13 +20,16 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 public class SicResponseController {
 
+    private String submitted = "submitted";
+
     @Autowired
     private SicFormService sicFormService;
 
     @Autowired
     SicFormDataService sicFormDataService;
 
-    private String submitted = "submitted";
+    @Autowired
+    private ModelValidationService modelValidationService;
 
     @RequestMapping(value = "/sic/form/submit/{id}", method = RequestMethod.GET)
     public ResponseEntity<String> formSubmit( @PathVariable Integer id, ModelMap model) throws ParseException {

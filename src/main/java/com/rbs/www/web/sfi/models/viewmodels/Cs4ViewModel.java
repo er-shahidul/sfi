@@ -3,6 +3,9 @@ package com.rbs.www.web.sfi.models.viewmodels;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
+
 @SpELAssert.List({
         @SpELAssert(value = "!usaGovRegulation", applyIf = "usaGovRegulation", message = "usaGovRegulation Should not be null", property = "usaGovRegulation"),
         @SpELAssert(value = "!usaDisResDiseaseInsect", applyIf = "usaDisResDiseaseInsects", message = "usaDisResDiseaseInsect Should not be null", property = "usaDisResDiseaseInsect"),
@@ -21,13 +24,17 @@ import com.rbs.www.common.modules.validator.SpELAssert;
         @SpELAssert(value = "!caOthersApply", applyIf = "caOthersApply", message = "caOthersApply Should not be null", property = "caOthersApply"),
 })
 public class Cs4ViewModel extends BaseViewModel {
+    @Null
     private Integer id;
+
     @SpELAssert(value = "#this == null", message = "usaTotalHervArea Should not be null")
     private Float usaTotalHervArea;
     @SpELAssert(value = "#this == null", message = "caTotalHervArea Should not be null")
     private Float caTotalHervArea;
     private Float usaAvgHervArea;
     private Float caAvgHervArea;
+
+    @NotNull
     private Float usaSeedTreeShelterWoodArea;
     private Float caSeedTreeShelterWoodArea;
     private Float usaSelectionMethodArea;

@@ -6,6 +6,7 @@ import org.hibernate.validator.HibernateValidator;
 import org.springframework.stereotype.Service;
 
 import javax.validation.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -26,45 +27,16 @@ public class ModelValidationService {
         this.validator = factory.getValidator();
     }
 
-    private String getRealPropertyName(Path path) {
-        if (path == null) return "";
+    public <T extends BaseViewModel> T validate(T model) {
+        Set<ConstraintViolation<T>> errors  = this.validator.validate(model);
 
-        String reversedPropertyName =
-                new StringBuilder(path.toString()).reverse().toString();
+        for (ConstraintViolation<T> error : errors) {
+            BaseViewModel currentModel = (BaseViewModel) error.getLeafBean();
+            if (currentModel.getErrors() == null) currentModel.setErrors(new ArrayList<String>());
 
-        StringBuilder realPropertyName = new StringBuilder("");
-        for (char ch : reversedPropertyName.toCharArray()) {
-            if (Character.isLetterOrDigit(ch) || ch == '_') realPropertyName.append(ch);
-            else break;
+            currentModel.getErrors().add(error.getMessage());
         }
 
-        return realPropertyName.reverse().toString();
-    }
-
-    private Map<String, String> generateMapModel(Set<ConstraintViolation<BaseViewModel>> errors) {
-        Map<String, String> mapModel = new HashMap<String, String>();
-
-        for (ConstraintViolation<BaseViewModel> error : errors) {
-            String propertyNameFromAnnotation =
-                    (String) error.getConstraintDescriptor()
-                            .getAttributes()
-                            .get("property");
-
-            String propertyName =
-                    (propertyNameFromAnnotation == null || propertyNameFromAnnotation.isEmpty())
-                            ? getRealPropertyName(error.getPropertyPath())
-                            : propertyNameFromAnnotation;
-
-            BaseViewModel model = (BaseViewModel) error.getLeafBean();
-            if (model.getErrors() == null) model.setErrors(new HashMap<String, String>());
-
-            model.getErrors().put(propertyName, error.getMessage());
-        }
-
-        return mapModel;
-    }
-
-    public Map<String, String> validate(BaseViewModel model) {
-        return this.generateMapModel(validator.validate(model));
+        return model;
     }
 }
