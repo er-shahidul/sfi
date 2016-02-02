@@ -18,7 +18,7 @@
                 <a data-toggle="dropdown" data-hover="dropdown"  data-close-others="true" class="tab">
                     <h6> Survey </h6>
                 </a>
-                <ul class="dropdown-menu" style="position: absolute;">
+                <ul class="dropdown-menu" style="position: absolute; background-color: #2C4E11;">
                     <li th:class="(${company.getSfi()} == true) ? '' : 'hidden'">
                         <a href="list.html" th:href="@{/sfiPpForm}"><i class="fa fa-user"></i>Program Participant Survey</a>
                     </li>
@@ -32,7 +32,7 @@
                 <a data-toggle="dropdown" data-hover="dropdown"  data-close-others="true" class="tab">
                     <h6> Survey</h6>
                 </a>
-                <ul class="dropdown-menu" style="position: absolute;">
+                <ul class="dropdown-menu" style="position: absolute; background-color: #2C4E11;">
                     <li>
                         <a href="list.html" th:href="@{/admin/form/pp}"><i class="fa fa-user"></i>Program Participant Survey</a>
                     </li>
