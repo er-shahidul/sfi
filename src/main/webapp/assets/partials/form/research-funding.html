@@ -304,7 +304,7 @@
             </div>
 
             <div class="col-sm-3" style="padding-left: 4px;">
-                <img width="275px;" src="/assets/images/Section_5_SurveyImage_Research_v2_.jpg">
+                <img width="250px;" src="/assets/images/Section_5_SurveyImage_Research_v2_.jpg">
             </div>
         </div>
 
@@ -389,7 +389,12 @@
                         <select class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"
                                 ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects2015)">
                             <option value="0" ng-selected="!project.sfiStandard10">Please select</option>
-                            <option ng-repeat="item in standardObjects2015" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                            <optgroup label="SFI 2015-2019 Forest Land Management Objectives Objective">
+                            <option ng-repeat="item in standardObjects2015" ng-if="item.id <= 15" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                            </optgroup>
+                            <optgroup label="SFI 2015-2019 Fiber Sourcing Objectives Objective">
+                                <option ng-repeat="item in standardObjects2015" ng-if="item.id > 15" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                            </optgroup>
                         </select>
 
                         <div id="selectedItem" ng-repeat="item in project.sfiStandard10">{{ item.sfiStandardObjDesc }}
@@ -817,7 +822,7 @@
                 </table>
             </div>
             <div class="col-sm-3" style="padding-left: 4px;">
-                <img  width="275px;" src="/assets/images/Section_5_SurveyImage_Every_Day_Every_Way.jpg">
+                <img  width="250px;" src="/assets/images/Section_5_SurveyImage_Every_Day_Every_Way.jpg">
             </div>
         </div>
 
