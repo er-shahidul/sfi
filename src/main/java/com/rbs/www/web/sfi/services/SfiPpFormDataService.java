@@ -42,6 +42,10 @@ public class SfiPpFormDataService {
         entity.setUpdatedBy(user);
     }
 
+    public List<SfiPpFormData> getAllActiveForms() {
+        return repository.getAllActiveForms();
+    }
+
     public List<SfiPpFormData> getAll() {
         return repository.getAll();
     }
@@ -65,6 +69,13 @@ public class SfiPpFormDataService {
         User user = userService.findByUsername(Util.getCurrentUsername());
         SfiPpFormData entity = repository.getByCompany(user.getCompany());
         if (entity == null) entity = create(user);
+        else if (entity.getCreatedBy() == null) {
+            entity.setCreatedBy(user);
+            entity.setUpdatedBy(user);
+            entity.setCreatedAt(Util.getCurrentDate());
+            entity.setUpdatedAt(Util.getCurrentDate());
+        }
+
         return entity;
     }
 

@@ -20,9 +20,6 @@ public class Cs5Service {
         return repository.get(id);
     }
 
-    @Autowired
-    private SfiPpFormCs3Service sfiPpFormCs3Service;
-
     public void manualPopulation(Cs5ViewModel model) {
         setProjects(model);
     }

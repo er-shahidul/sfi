@@ -1119,11 +1119,14 @@ body{
   font-family: sans-serif;
 }
 .disabledMenu {
-   color: #A5A5A5!important;
-   border-color: #A5A5A5;
+   color: #7B7979!important;
+   border-color: #7B7979;
 }
 
 .calender-color{
 	color: #000000 !important;
 	background-color: #ffffff !important;
 }
+ul p {
+       margin: 10px 0px 10px;
+   }
