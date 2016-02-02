@@ -894,7 +894,7 @@ div.form-control {
 }
 
 .box-shadow{
-    width: 275px;
+    width: auto;
     height: auto;
     background-color: #666666;
     box-shadow: 5px 5px 5px #888888;

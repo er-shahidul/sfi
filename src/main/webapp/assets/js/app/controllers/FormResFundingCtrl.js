@@ -10,6 +10,7 @@ sfiFormApp
         $scope.standardObjects = standardObjects;
         $scope.standardObjects2015 = standardObjects2015;
 
+
         $scope.cs5 = angular.copy($rootScope.form.cs5);
         //$scope.cs5.isOtherEnabled = ($scope.cs5.other) ? true: false;
 
