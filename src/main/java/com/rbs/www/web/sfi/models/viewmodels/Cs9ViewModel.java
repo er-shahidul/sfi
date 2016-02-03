@@ -6,16 +6,16 @@ import com.rbs.www.common.modules.validator.SpELAssert;
 import java.util.Set;
 
 @SpELAssert.List({
-        @SpELAssert(value = "protectionMaintenanceRationale == null", applyIf = "protectionMaintenanceWaterRes == 3", message = "protectionMaintenanceRationale Should not be null", property = "protectionMaintenanceRationale"),
-        @SpELAssert(value = "conservation413Rationale == null", applyIf = "conservationBiodiversity413 == 3", message = "conservation413Rationale Should not be null", property = "conservation413Rationale"),
-        @SpELAssert(value = "conservation414Rationale == null", applyIf = "conservationBiodiversity414 == 3", message = "conservation414Rationale Should not be null", property = "conservation414Rationale"),
+        @SpELAssert(value = "protectionMaintenanceRationale == null", applyIf = "protectionMaintenanceWaterRes == 3", message = "protectionMaintenanceRationale Should not be null"),
+        @SpELAssert(value = "conservation413Rationale == null", applyIf = "conservationBiodiversity413 == 3", message = "conservation413Rationale Should not be null"),
+        @SpELAssert(value = "conservation414Rationale == null", applyIf = "conservationBiodiversity414 == 3", message = "conservation414Rationale Should not be null"),
 //        @SpELAssert(value = "conservation415Explain1_1 == null", applyIf = "conservationBiodiversity415item ==2", message = "conservation415Explain1_1 Should not be null", property = "conservation415Explain1_1"),
 //        @SpELAssert(value = "conservationBiodiversity415Exp == null", applyIf = "conservationBiodiversity415 ==1", message = "conservationBiodiversity415Exp Should not be null", property = "conservationBiodiversity415Exp"),
 //        @SpELAssert(value = "indigenousPublicRationale == null", applyIf = "indigenousPeoplesPublic == 4", message = "indigenousPublicRationale Should not be null", property = "indigenousPublicRationale"),
 //        @SpELAssert(value = "indigenousPrivateRationale == null", applyIf = "indigenousPeoplesPrivate ==4", message = "indigenousPrivateRationale Should not be null", property = "indigenousPrivateRationale"),
 //        @SpELAssert(value = "indigenousForestPractice == null", applyIf = "indigenousPeoplesForest == 3", message = "indigenousForestPractice Should not be null", property = "indigenousForestPractice"),
 //        @SpELAssert(value = "trainingEduRationale == null", applyIf = "trainingEducation == 3", message = "trainingEduRationale Should not be null", property = "trainingEduRationale"),
-        @SpELAssert(value = "useWho1A1BNote == null", applyIf = "useWho1A1B", message = "useWho1A1BNote Should not be null", property = "useWho1A1BNote"),
+        @SpELAssert(value = "useWho1A1BNote == null", applyIf = "useWho1A1B", message = "useWho1A1BNote Should not be null"),
 //        @SpELAssert(value = "stopWho1A1BNote == null", applyIf = "stopWho1A1B", message = "stopWho1A1BNote Should not be null", property = "stopWho1A1BNote"),
 //        @SpELAssert(value = "restorationOtherExplain == null", applyIf = "restorationOther == 1", message = "restorationOtherExplain Should not be null", property = "restorationOtherExplain"),
 //        @SpELAssert(value = "environmentalHarmOtherExplain == null", applyIf = "environmentalHarmOther", message = "environmentalHarmOtherExplain Should not be null", property = "environmentalHarmOtherExplain"),

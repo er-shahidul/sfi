@@ -37,7 +37,6 @@ public class PpResponseController {
         model.addAttribute("form", sfiPpFormData);
         model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpFormData.getId()));
         model.addAttribute("cs2", formService.getCs2ViewModel(sfiPpFormData.getId()));
-        model.addAttribute("cs3", formService.getCs3ViewModel(sfiPpFormData.getId()));
         model.addAttribute("cs4", formService.getCs4ViewModel(sfiPpFormData.getId()));
         model.addAttribute("cs5", formService.getCs5ViewModel(sfiPpFormData.getId()));
         model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpFormData.getId()));
@@ -60,12 +59,6 @@ public class PpResponseController {
     @RequestMapping(value = "/form/cs2", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs2(@RequestBody Cs2ViewModel model, BindingResult result) {
         formService.setCs2Entity(model);
-        return new ResponseEntity<String>(Util.getAsString(modelValidationService.validate(model)), HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/form/cs3", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> formCs3(@RequestBody Cs3ViewModel model, BindingResult result) {
-        formService.setCs3Entity(model);
         return new ResponseEntity<String>(Util.getAsString(modelValidationService.validate(model)), HttpStatus.OK);
     }
 

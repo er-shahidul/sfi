@@ -63,7 +63,6 @@ public class PpFormController{
         model.addAttribute("form", sfiPpFormData);
         model.addAttribute("cs1", formService.getCs1ViewModel(id));
         model.addAttribute("cs2", formService.getCs2ViewModel(id));
-        model.addAttribute("cs3", formService.getCs3ViewModel(id));
         model.addAttribute("cs4", formService.getCs4ViewModel(id));
         model.addAttribute("cs5", formService.getCs5ViewModel(id));
         model.addAttribute("cs6", formService.getCs6ViewModel(id));

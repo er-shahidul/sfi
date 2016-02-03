@@ -29,9 +29,6 @@ public class FormService {
     private Cs2Service cs2Service;
 
     @Autowired
-    private Cs3Service cs3Service;
-
-    @Autowired
     private Cs4Service cs4Service;
 
     @Autowired
@@ -98,18 +95,6 @@ public class FormService {
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************* Cs2 : End   ***********************/
-
-    /************************* Cs3 : Begin ***********************/
-    public Cs3ViewModel getCs3ViewModel(Integer id) {
-        Cs3 entity = cs3Service.get(id);
-        return modelValidationService.validate(viewModelMapperService.convert(entity, Cs3ViewModel.class));
-    }
-
-    public void setCs3Entity(Cs3ViewModel model) {
-        Cs3 entity = entityModelMapperService.convert(model, Cs3.class);
-        sfiPpFormDataService.setAuditInfo(model.getId(), pending);
-    }
-    /************************* Cs3 : End   ***********************/
 
     /************************* Cs4 : Begin ***********************/
     public Cs4ViewModel getCs4ViewModel(Integer id) {
