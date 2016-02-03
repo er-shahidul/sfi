@@ -73,9 +73,10 @@ public class UserController {
     }
 
     @RequestMapping("/admin/user/list")
-    public ModelAndView list(ModelMap model) {
+    public ModelAndView list(ModelMap model, HttpServletRequest request) {
         List users = userService.list();
         model.addAttribute("title", "user");
+        model.addAttribute("hostUrl", request.getLocalName());
 
         return new ModelAndView("admin/user/list", "users", users);
     }
