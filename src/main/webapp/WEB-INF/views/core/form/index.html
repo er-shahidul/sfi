@@ -45,7 +45,7 @@
                 <div class="formActionsNotice">
                     <span th:if="${status.getId() != 1}">
                         <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> days until form is due!</span>
-                        <span ng-show="daysLeft &lt; 0" class="dueDate">Oh no! Your form is <span th:text=" - ${{ days_until }}"></span> days overdue!</span>
+                        <span ng-show="daysLeft &lt; 0" class="dueDate ng-hide">Oh no! Your form is <span th:text=" - ${{ days_until }}"></span> days overdue!</span>
                     </span>
                      <span th:if="${status.getId() == 1}">
                          <span>Due March 31 2016</span>

@@ -3,38 +3,72 @@ package com.rbs.www.web.sfi.models.viewmodels;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormAllCountryViewModel;
+import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @SpELAssert.List({
         @SpELAssert(
-                value = "companyWebsite != null || companyWebsite != ''",
-                message = "Please provider organization website"
+                value = "ownsMngLandsInUSA || ownsMngLandsInCA || ownsMngLandsInOther",
+                applyIf = "ownsMngLands != null && ownsMngLands",
+                message = "{cs1.ownsMngLands}"
         ),
         @SpELAssert(
-                value = "ownsMngLandsInUSA || ownsMngLandsInCA || ownsMngLandsInOther", applyIf = "ownsMngLands", message = "Please provide country where your organization owns and/or manages forest lands"),
-        @SpELAssert(value = "hasPrimaryOperMillsYardsInOther || hasPrimaryOperMillsYardsInCA || hasPrimaryOperMillsYardsInUSA", applyIf = "hasPrimaryOperMillsYards", message = "Please provide country where your organization's primary manufacturing operations/mills/log yards located"),
-        @SpELAssert(value = "hasSecondaryOperMillsYardsInOther || hasSecondaryOperMillsYardsInCA || hasSecondaryOperMillsYardsInUSA", applyIf = "hasSecondaryOperMillsYards", message = "Please provide country where your organization's secondary manufacturing facilities located"),
+                value = "ownsMngLandsOtherCountries != null && !ownsMngLandsOtherCountries.isEmpty()",
+                applyIf = "ownsMngLandsInOther != null && ownsMngLandsInOther",
+                message = "{cs1.ownsMngLandsOtherCountries}"
+        ),
 
-        @SpELAssert(value = "ownsMngLandsOtherCountries", applyIf = "ownsMngLandsInOther", message = "Provide at least one other country where your organization owns and/or manages forest lands"),
-        @SpELAssert(value = "primaryOperMillsYardsOtherCountries", applyIf = "hasPrimaryOperMillsYardsInOther", message = "Provide at least one other country where your organization's primary manufacturing operations/mills/log yards located"),
-        @SpELAssert(value = "secondaryOperMillsYardsOtherCountries", applyIf = "hasSecondaryOperMillsYardsInOther", message = "Provide at least one other country where your organization's secondary manufacturing operations/mills/log yards located"),
+        @SpELAssert(
+                value = "hasPrimaryOperMillsYardsInOther || hasPrimaryOperMillsYardsInCA || hasPrimaryOperMillsYardsInUSA",
+                applyIf = "hasPrimaryOperMillsYards != null && hasPrimaryOperMillsYards",
+                message = "{cs1.hasPrimaryOperMillsYards}"
+        ),
+        @SpELAssert(
+                value = "primaryOperMillsYardsOtherCountries != null && !primaryOperMillsYardsOtherCountries.isEmpty()",
+                applyIf = "hasPrimaryOperMillsYardsInOther != null && hasPrimaryOperMillsYardsInOther",
+                message = "{cs1.primaryOperMillsYardsOtherCountries}"
+        ),
+
+        @SpELAssert(
+                value = "hasSecondaryOperMillsYardsInOther || hasSecondaryOperMillsYardsInCA || hasSecondaryOperMillsYardsInUSA",
+                applyIf = "hasSecondaryOperMillsYards != null && hasSecondaryOperMillsYards",
+                message = "{cs1.hasSecondaryOperMillsYards}"
+        ),
+        @SpELAssert(
+                value = "secondaryOperMillsYardsOtherCountries != null && !secondaryOperMillsYardsOtherCountries.isEmpty()",
+                applyIf = "hasSecondaryOperMillsYardsInOther != null && hasSecondaryOperMillsYardsInOther",
+                message = "{cs1.secondaryOperMillsYardsOtherCountries}"
+        ),
+
+        @SpELAssert(
+                value = "sellsCountries != null && !sellsCountries.isEmpty()",
+                message = "{cs1.sellsCountries}"
+        )
 })
 public class Cs1ViewModel extends BaseViewModel {
     private Integer id;
     private Integer numberEmployeesUSA;
     private Integer numberEmployeesCA;
     private Integer numberEmployeesOther;
+
+    @NotNull(message = "{cs1.companyWebsite}")
     private String companyWebsite;
+
+    @Length(max = 40000, message = "{cs1.companyDesc}")
     private String companyDesc;
+
     private Boolean ownsMngLands;
     private Boolean ownsMngLandsInUSA;
     private Boolean ownsMngLandsInCA;
     private Boolean ownsMngLandsInOther;
+
     private Boolean hasPrimaryOperMillsYards;
     private Boolean hasPrimaryOperMillsYardsInUSA;
     private Boolean hasPrimaryOperMillsYardsInCA;
     private Boolean hasPrimaryOperMillsYardsInOther;
+
     private Boolean hasSecondaryOperMillsYards;
     private Boolean hasSecondaryOperMillsYardsInUSA;
     private Boolean hasSecondaryOperMillsYardsInCA;
