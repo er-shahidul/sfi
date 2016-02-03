@@ -1,5 +1,6 @@
 package com.rbs.www.web.sfi.controllers;
 
+import com.rbs.www.common.enums.FormStatus;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.ModelValidationService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
@@ -19,8 +20,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 public class PpResponseController {
-
-    private final String submitted = "submitted";
 
     @Autowired
     private FormService formService;
@@ -47,7 +46,7 @@ public class PpResponseController {
         model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpFormData.getId()));
         model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpFormData.getId()));
 
-        sfiPpFormDataService.setAuditInfo(sfiPpFormData.getId(), submitted);
+        sfiPpFormDataService.setAuditInfo(sfiPpFormData.getId(), FormStatus.SUBMITTED.getCode());
 
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }

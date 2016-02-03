@@ -1,5 +1,6 @@
 package com.rbs.www.web.sic.services;
 
+import com.rbs.www.common.enums.FormStatus;
 import com.rbs.www.common.modules.mapper.EntityModelMapperService;
 import com.rbs.www.common.modules.mapper.ViewModelMapperService;
 import com.rbs.www.web.common.models.datamodels.UpdateDate;
@@ -15,10 +16,11 @@ import javax.transaction.Transactional;
 @Transactional
 public class SicFormService {
 
-    private final String pending = "pending";
+    @Autowired
+    private SicFormDataService sicFormDataService;
 
     @Autowired
-    private SicFormDataService sicFormDataService; @Autowired private SicCs1Service sicCs1Service;
+    private SicCs1Service sicCs1Service;
 
     @Autowired
     private SicCs2Service sicCs2Service;
@@ -66,7 +68,7 @@ public class SicFormService {
     public void setSicCs1Entity(SicCs1ViewModel model) {
         sicCs1Service.manualPopulation(model);
         SicCs1 entity = entityModelMapperService.convert(model, SicCs1.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************* SicCs1 : End   ***********************/
 
@@ -79,7 +81,7 @@ public class SicFormService {
     public void setSicCs2Entity(SicCs2ViewModel model) {
         sicCs2Service.manualPopulation(model);
         SicCs2 entity = entityModelMapperService.convert(model, SicCs2.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************* SicCs2 : End   ***********************/
 
@@ -91,7 +93,7 @@ public class SicFormService {
 
     public void setSicCs3Entity(SicCs3ViewModel model) {
         SicCs3 entity = entityModelMapperService.convert(model, SicCs3.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************* SicCs3 : End   ***********************/
 
@@ -103,7 +105,7 @@ public class SicFormService {
 
     public void setSicCs4Entity(SicCs4ViewModel model) {
         SicCs4 entity = entityModelMapperService.convert(model, SicCs4.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************* SicCs4 : End   ***********************/
 
@@ -116,7 +118,7 @@ public class SicFormService {
     public void setSicCs5Entity(SicCs5ViewModel model) {
         sicCs5Service.manualPopulation(model);
         SicCs5 entity = entityModelMapperService.convert(model, SicCs5.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************* SicCs5 : End   ***********************/
 
@@ -128,7 +130,7 @@ public class SicFormService {
 
     public void setSicCs6Entity(SicCs6ViewModel model) {
         SicCs6 entity = entityModelMapperService.convert(model, SicCs6.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************* SicCs6 : End   ***********************/
 
@@ -140,7 +142,7 @@ public class SicFormService {
 
     public void setSicCs7Entity(SicCs7ViewModel model) {
         SicCs7 entity = entityModelMapperService.convert(model, SicCs7.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************* SicCs7 : End   ***********************/
 
@@ -153,7 +155,7 @@ public class SicFormService {
     public void setSicCs8Entity(SicCs8ViewModel model) {
         sicCs8Service.manualPopulation(model);
         SicCs8 entity = entityModelMapperService.convert(model, SicCs8.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************* SicCs8 : End   ***********************/
 
@@ -165,7 +167,7 @@ public class SicFormService {
 
     public void setSicCs9Entity(SicCs9ViewModel model) {
         SicCs9 entity = entityModelMapperService.convert(model, SicCs9.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************* SicCs9 : End   ***********************/
 
@@ -177,7 +179,7 @@ public class SicFormService {
 
     public void setSicCs10Entity(SicCs10ViewModel model) {
         SicCs10 entity = entityModelMapperService.convert(model, SicCs10.class);
-        sicFormDataService.setAuditInfo(model.getId(), pending);
+        sicFormDataService.setAuditInfo(model.getId(), FormStatus.PENDING.getCode());
     }
     /************************ SicCs10 : End   ***********************/
 
