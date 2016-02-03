@@ -44,14 +44,14 @@
 
                 <div class="formActionsNotice">
                     <span th:if="${status.getId() != 1}">
-                        <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> until form is due!</span>
+                        <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> days until form is due!</span>
                         <span ng-show="daysLeft &lt; 0" class="dueDate">Oh no! Your form is <span th:text=" - ${{ days_until }}"></span> days overdue!</span>
                     </span>
                      <span th:if="${status.getId() == 1}">
                          <span>Due March 31 2016</span>
                      </span>
                     <br/>
-                    <a href="mailto:rachel.dierolf@sfiprogram.org" ng-class="{'dueDate':  daysLeft &lt; 0}">Need help?</a>
+                    <a href="mailto: amy.doty@sfiprogram.org" ng-class="{'dueDate':  daysLeft &lt; 0}">Need help?</a>
                 </div>
 
                 <span class="glyphicon glyphicon-file print pull-right" tooltip="" aria-hidden="true" data-container="body" data-title="Print the entire form"  ng-click="printAllSection()"></span>
@@ -152,9 +152,9 @@
                     <div style="padding-left: 20px;" ng-show="isStepAllowed('cs8')"  class="formMenuItem section9" ng-click="goStep('cs8')">
                         <!--<div class="circle {{ getClass('cs9') }}">9</div>-->
                         <div class=" {{ getClass('cs8') }}">&nbsp;</div>
-                        <span style="width: 250%;top: -12px" >
+                        <span style="width: 230%;top: -12px" >
 
-                            <img  width="100%" src="/assets/images/nav/{{ImageName}}" align="right" alt="logo-placeholder"/>
+                            <img  src="/assets/images/nav/{{ImageName}}" align="right" alt="logo-placeholder"/>
                         </span>
                     </div>
                     <br/>
