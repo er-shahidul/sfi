@@ -1,7 +1,7 @@
 package com.rbs.www.web.sic.controllers;
 
 import com.rbs.www.common.util.Util;
-import com.rbs.www.web.common.services.ModelValidationService;
+import com.rbs.www.web.common.services.ValidationService;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import com.rbs.www.web.sic.models.viewmodels.*;
 import com.rbs.www.web.sic.services.SicFormDataService;
@@ -29,7 +29,7 @@ public class SicResponseController {
     SicFormDataService sicFormDataService;
 
     @Autowired
-    private ModelValidationService modelValidationService;
+    private ValidationService validationService;
 
     @RequestMapping(value = "/sic/form/submit/{id}", method = RequestMethod.GET)
     public ResponseEntity<String> formSubmit( @PathVariable Integer id, ModelMap model) throws ParseException {

@@ -4,6 +4,7 @@ import com.rbs.www.admin.models.entities.Group;
 import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.admin.models.viewmodels.UserViewModel;
 import com.rbs.www.admin.repositories.UserRepository;
+import com.rbs.www.common.util.SimpleValidationUtil;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.common.modules.mapper.EntityModelMapperService;
 import com.rbs.www.common.modules.mapper.ViewModelMapperService;
@@ -24,9 +25,6 @@ public class UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private ValidationService validationService;
 
     @Autowired
     private ViewModelMapperService viewModelMapperService;
@@ -169,28 +167,24 @@ public class UserService {
     }
 
     public Boolean isValidFirstName(String firstName) {
-        return !validationService.isEmptyString(firstName);
-    }
-
-    public Boolean welcomeMsg(String msg) {
-        return !validationService.welcomeMsg(msg);
+        return !SimpleValidationUtil.isEmptyString(firstName);
     }
 
     public Boolean isValidEmail(String email) {
-        if (validationService.isEmptyString(email)) return false;
-        if (!validationService.isValidEmail(email)) return false;
+        if (SimpleValidationUtil.isEmptyString(email)) return false;
+        if (!SimpleValidationUtil.isValidEmail(email)) return false;
         if (userRepository.findByEmail(email) != null) return false;
         return true;
     }
 
     public Boolean isValidEmailUpdate(String email) {
-        if (validationService.isEmptyString(email)) return false;
-        if (!validationService.isValidEmail(email)) return false;
+        if (SimpleValidationUtil.isEmptyString(email)) return false;
+        if (!SimpleValidationUtil.isValidEmail(email)) return false;
         return true;
     }
 
     public boolean isValidPassword(String password) {
-        return validationService.isValidPassword(password);
+        return SimpleValidationUtil.isValidPassword(password);
     }
 
 

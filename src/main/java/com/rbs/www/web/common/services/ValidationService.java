@@ -7,15 +7,13 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 @Service
-public class ModelValidationService {
+public class ValidationService {
     private Validator validator;
 
-    public ModelValidationService() {
+    public ValidationService() {
         Configuration<?> configuration = Validation
                 .byProvider(HibernateValidator.class)
                 .configure();
