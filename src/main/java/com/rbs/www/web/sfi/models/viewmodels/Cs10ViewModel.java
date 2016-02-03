@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Set;
 
 @SpELAssert.List({
-        @SpELAssert(value = "biodiversityNoDescribe == null", applyIf = "biodiversityFiberSourcing == 3", message = "biodiversityNoDescribe Should not be null", property = "biodiversityNoDescribe"),
+        @SpELAssert(value = "biodiversityNoDescribe == null", applyIf = "biodiversityFiberSourcing == 3", message = "biodiversityNoDescribe Should not be null"),
 })
 public class Cs10ViewModel extends BaseViewModel {
     private Integer id;

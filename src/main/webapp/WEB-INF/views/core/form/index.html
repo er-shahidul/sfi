@@ -44,7 +44,7 @@
 
                 <div class="formActionsNotice">
                     <span th:if="${status.getId() != 1}">
-                        <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> until form is due!</span>
+                        <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> days until form is due!</span>
                         <span ng-show="daysLeft &lt; 0" class="dueDate">Oh no! Your form is <span th:text=" - ${{ days_until }}"></span> days overdue!</span>
                     </span>
                      <span th:if="${status.getId() == 1}">
@@ -147,6 +147,14 @@
                             SFI<br/>
                             Market<br/>
                             Survey
+                        </span>
+                    </div>
+                    <div style="padding-left: 20px;" ng-show="isStepAllowed('cs8')"  class="formMenuItem section9" ng-click="goStep('cs8')">
+                        <!--<div class="circle {{ getClass('cs9') }}">9</div>-->
+                        <div class=" {{ getClass('cs8') }}">&nbsp;</div>
+                        <span style="width: 230%;top: -12px" >
+
+                            <img  src="/assets/images/nav/{{ImageName}}" align="right" alt="logo-placeholder"/>
                         </span>
                     </div>
                     <br/>

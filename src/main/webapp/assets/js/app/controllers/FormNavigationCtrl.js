@@ -3,7 +3,7 @@ sfiFormApp.controller('FormNavigationCtrl', ['$rootScope', '$scope', '$state', '
 
 
     rootScope = $scope;
-
+    $scope.ImageName = 'cs1.png';
     $scope.isActive = function($name){
         return $state.current.name == $name;
     };
@@ -47,14 +47,22 @@ sfiFormApp.controller('FormNavigationCtrl', ['$rootScope', '$scope', '$state', '
         return 'disabledMenu';
     }
 
+    $scope.getRightImage = function(step){
 
+
+        var imageName = step+'.png';
+
+        return imageName;
+    }
 
     $rootScope.goStep = function(step){
 
         if(!$scope.isEnabled(step)){
             return false;
         }
-
+        //alert(step);
+        $scope.ImageName =  $scope.getRightImage(step);
+        //alert($scope.ImageName);
         $state.go(step);
     }
 

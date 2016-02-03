@@ -1,23 +1,11 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.common.modules.validator.CascadeIf;
-import com.rbs.www.common.modules.validator.SpELAssert;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Set;
 
-@SpELAssert.List({
-        @SpELAssert(value = "projects != null && projects.size() > 20",
-                    applyIf = "isInPartnership != null && isInPartnership",
-                    message = "There must be more than 20 projects",
-                    property = "projects")
-})
 public class Cs5ViewModel extends BaseViewModel {
-    // Don't use "property" in field level validation
-    @SpELAssert(value = "#this != null && #this > 42", message = "Id must be greater than 42")
     private Integer id;
 
     private Set<String> organizationListAcademic;
@@ -31,16 +19,10 @@ public class Cs5ViewModel extends BaseViewModel {
     private Boolean isOtherEnabled;
     private String otherText;
 
-    @NotNull
     private Boolean isInPartnership;
 
-    // "projects" will be validated if the following expression is true
-    @Valid
-    @CascadeIf(value = "isInPartnership != null && isInPartnership")
     private Set<SfiPpFormCs3ViewModel> projects;
 
-    // if there's no CascadeIf, "items" will always be validated unless it is null
-    @Valid
     private List<SfiPpFormCs5ViewModel> items;
     private Integer fundSFIActivStateProviCa;
     private Integer fundSFIActivStateProviUs;

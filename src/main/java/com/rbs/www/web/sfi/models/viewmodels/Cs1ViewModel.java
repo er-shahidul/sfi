@@ -7,14 +7,18 @@ import com.rbs.www.web.common.models.viewmodels.SfiPpFormAllCountryViewModel;
 import java.util.Set;
 
 @SpELAssert.List({
-        @SpELAssert(value = "companyWebsite != null || companyWebsite != '' ", message = "Please provider organization website", property = "companyWebsite"),
-        @SpELAssert(value = "ownsMngLandsInUSA || ownsMngLandsInCA || ownsMngLandsInOther", applyIf = "ownsMngLands", message = "Please provide country where your organization owns and/or manages forest lands", property = "ownsMngLands"),
-        @SpELAssert(value = "hasPrimaryOperMillsYardsInOther || hasPrimaryOperMillsYardsInCA || hasPrimaryOperMillsYardsInUSA", applyIf = "hasPrimaryOperMillsYards", message = "Please provide country where your organization's primary manufacturing operations/mills/log yards located", property = "hasPrimaryOperMillsYards"),
-        @SpELAssert(value = "hasSecondaryOperMillsYardsInOther || hasSecondaryOperMillsYardsInCA || hasSecondaryOperMillsYardsInUSA", applyIf = "hasSecondaryOperMillsYards", message = "Please provide country where your organization's secondary manufacturing facilities located", property = "hasSecondaryOperMillsYards"),
+        @SpELAssert(
+                value = "companyWebsite != null || companyWebsite != ''",
+                message = "Please provider organization website"
+        ),
+        @SpELAssert(
+                value = "ownsMngLandsInUSA || ownsMngLandsInCA || ownsMngLandsInOther", applyIf = "ownsMngLands", message = "Please provide country where your organization owns and/or manages forest lands"),
+        @SpELAssert(value = "hasPrimaryOperMillsYardsInOther || hasPrimaryOperMillsYardsInCA || hasPrimaryOperMillsYardsInUSA", applyIf = "hasPrimaryOperMillsYards", message = "Please provide country where your organization's primary manufacturing operations/mills/log yards located"),
+        @SpELAssert(value = "hasSecondaryOperMillsYardsInOther || hasSecondaryOperMillsYardsInCA || hasSecondaryOperMillsYardsInUSA", applyIf = "hasSecondaryOperMillsYards", message = "Please provide country where your organization's secondary manufacturing facilities located"),
 
-        @SpELAssert(value = "ownsMngLandsOtherCountries", applyIf = "ownsMngLandsInOther", message = "Provide at least one other country where your organization owns and/or manages forest lands", property = "ownsMngLandsOtherCountries"),
-        @SpELAssert(value = "primaryOperMillsYardsOtherCountries", applyIf = "hasPrimaryOperMillsYardsInOther", message = "Provide at least one other country where your organization's primary manufacturing operations/mills/log yards located", property = "primaryOperMillsYardsOtherCountries"),
-        @SpELAssert(value = "secondaryOperMillsYardsOtherCountries", applyIf = "hasSecondaryOperMillsYardsInOther", message = "Provide at least one other country where your organization's secondary manufacturing operations/mills/log yards located", property = "secondaryOperMillsYardsOtherCountries"),
+        @SpELAssert(value = "ownsMngLandsOtherCountries", applyIf = "ownsMngLandsInOther", message = "Provide at least one other country where your organization owns and/or manages forest lands"),
+        @SpELAssert(value = "primaryOperMillsYardsOtherCountries", applyIf = "hasPrimaryOperMillsYardsInOther", message = "Provide at least one other country where your organization's primary manufacturing operations/mills/log yards located"),
+        @SpELAssert(value = "secondaryOperMillsYardsOtherCountries", applyIf = "hasSecondaryOperMillsYardsInOther", message = "Provide at least one other country where your organization's secondary manufacturing operations/mills/log yards located"),
 })
 public class Cs1ViewModel extends BaseViewModel {
     private Integer id;
