@@ -1123,8 +1123,11 @@ body{
 
 .calender-color{
 	color: #000000 !important;
-	background-color: #ffffff !important;
 }
 ul p {
        margin: 10px 0px 10px;
    }
+.ng-cloak { display: none; }
+.label_width label{
+	width: 85%;
+}
