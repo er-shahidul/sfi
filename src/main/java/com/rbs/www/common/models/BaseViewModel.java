@@ -1,18 +1,18 @@
 package com.rbs.www.common.models;
 
-import java.util.Map;
+import java.util.List;
 
 public abstract class BaseViewModel implements IModel {
-    Map<String, String> errors;
+    List<String> errors;
 
     @Override
     public abstract Integer getId();
 
-    public Map<String, String> getErrors() {
+    public List<String> getErrors() {
         return errors;
     }
 
-    public void setErrors(Map<String, String> errors) {
+    public void setErrors(List<String> errors) {
         this.errors = errors;
     }
 }
