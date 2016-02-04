@@ -47,6 +47,9 @@ public class Cs8PartialBViewModel extends BaseViewModel {
     private String fscCocOtherSpecify1;
     private String fscCocOtherSpecify2;
 
+    private Integer FSCLandCertification;
+    private Integer ChainOfCustody_FSCCertification;
+
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_1;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_2;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainFSC_Country_3;
@@ -76,6 +79,22 @@ public class Cs8PartialBViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getFSCLandCertification() {
+        return FSCLandCertification;
+    }
+
+    public void setFSCLandCertification(Integer FSCLandCertification) {
+        this.FSCLandCertification = FSCLandCertification;
+    }
+
+    public Integer getChainOfCustody_FSCCertification() {
+        return ChainOfCustody_FSCCertification;
+    }
+
+    public void setChainOfCustody_FSCCertification(Integer chainOfCustody_FSCCertification) {
+        ChainOfCustody_FSCCertification = chainOfCustody_FSCCertification;
     }
 
     public String getFscCocOtherSpecify2() {
