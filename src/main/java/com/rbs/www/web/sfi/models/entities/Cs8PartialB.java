@@ -132,6 +132,12 @@ public class Cs8PartialB extends BaseEntityModel {
     @Type(type = "text")
     private String fscCocOtherSpecify2;
 
+    @Column(name = "cs8_FSCLandCertification", nullable = true)
+    private Integer FSCLandCertification;
+
+    @Column(name = "cs8_ChainOfCustody_FSCCertification", nullable = true)
+    private Integer ChainOfCustody_FSCCertification;
+
     @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(name = "sfi_pp_form_cs8_sfiLabelProductGroupContainFSC_Country_1",
             joinColumns = {@JoinColumn(name = "form_id")},
@@ -259,6 +265,22 @@ public class Cs8PartialB extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getFSCLandCertification() {
+        return FSCLandCertification;
+    }
+
+    public void setFSCLandCertification(Integer FSCLandCertification) {
+        this.FSCLandCertification = FSCLandCertification;
+    }
+
+    public Integer getChainOfCustody_FSCCertification() {
+        return ChainOfCustody_FSCCertification;
+    }
+
+    public void setChainOfCustody_FSCCertification(Integer chainOfCustody_FSCCertification) {
+        ChainOfCustody_FSCCertification = chainOfCustody_FSCCertification;
     }
 
     public String getFscCocOtherSpecify2() {
