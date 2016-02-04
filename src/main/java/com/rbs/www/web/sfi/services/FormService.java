@@ -62,6 +62,9 @@ public class FormService {
     private SfiPpFormResearchTypeService sfiPpFormResearchTypeService;
 
     @Autowired
+    private UsaCaSelectorService usaCaSelectorService;
+
+    @Autowired
     private ViewModelMapperService viewModelMapperService;
 
     @Autowired
@@ -233,6 +236,13 @@ public class FormService {
         }
     }
     /************************* SfiPpFormCs5 : End ***********************/
+
+    /************************* UsaCaSelector : Begin ********************/
+    public UsaCaSelectorViewModel getUsaCaSelectorViewModel(Integer id) {
+        UsaCaSelector entity = usaCaSelectorService.get(id);
+        return viewModelMapperService.convert(entity, UsaCaSelectorViewModel.class);
+    }
+    /************************* UsaCaSelector : End **********************/
 
     /************************* UpdateDate : Begin ***********************/
     public UpdateDate getUpdateDate(Integer id) {

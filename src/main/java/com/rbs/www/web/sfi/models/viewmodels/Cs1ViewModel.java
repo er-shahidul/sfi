@@ -4,8 +4,8 @@ import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormAllCountryViewModel;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @SpELAssert.List({
@@ -53,7 +53,7 @@ public class Cs1ViewModel extends BaseViewModel {
     private Integer numberEmployeesCA;
     private Integer numberEmployeesOther;
 
-    @NotNull(message = "{cs1.companyWebsite}")
+    @NotEmpty(message = "{cs1.companyWebsite}")
     private String companyWebsite;
 
     @Length(max = 40000, message = "{cs1.companyDesc}")

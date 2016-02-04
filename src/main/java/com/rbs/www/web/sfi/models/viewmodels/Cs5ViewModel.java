@@ -1,10 +1,26 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
+import com.rbs.www.web.sfi.validation.Cs5OrgList.Cs5OrgList;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Set;
 
+@Cs5OrgList(message = "{cs5.orgList}")
+@SpELAssert.List({
+        @SpELAssert(
+                value = "otherText != null && !otherText.isEmpty()",
+                applyIf = "isOtherEnabled != null && isOtherEnabled",
+                message = "{cs5.otherText}"
+        ),
+        @SpELAssert(
+                value = "projects != null && !projects.isEmpty()",
+                applyIf = "isInPartnership != null && isInPartnership",
+                message = "{cs5.isInPartnership}"
+        )
+})
 public class Cs5ViewModel extends BaseViewModel {
     private Integer id;
 
@@ -21,6 +37,7 @@ public class Cs5ViewModel extends BaseViewModel {
 
     private Boolean isInPartnership;
 
+    @Valid
     private Set<SfiPpFormCs3ViewModel> projects;
 
     private List<SfiPpFormCs5ViewModel> items;
