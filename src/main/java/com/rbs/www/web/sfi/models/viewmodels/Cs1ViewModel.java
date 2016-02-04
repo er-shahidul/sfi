@@ -6,7 +6,6 @@ import com.rbs.www.web.common.models.viewmodels.SfiPpFormAllCountryViewModel;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @SpELAssert.List({

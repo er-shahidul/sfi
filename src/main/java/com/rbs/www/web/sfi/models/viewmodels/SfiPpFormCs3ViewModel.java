@@ -2,7 +2,9 @@ package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
+import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Set;
 
@@ -13,9 +15,15 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer orgContribution;
     private Integer orgContributionCurr;
 
+    @NotNull(message = "{project.name}")
     private String projectNm;
+
+    @NotNull(message = "{project.objective}")
     private String projectObj;
+
+    @Length(max = 4000, message = "{project.description}")
     private String projectDescr;
+
     private String conservatonPartners;
 
     private Set<String> organizationListAcademic;
@@ -28,7 +36,10 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     private Boolean includeResearchFunding;
 
+    @NotNull(message = "{project.startdate}")
     private Date startDate;
+
+    @NotNull(message = "{project.enddate}")
     private Date endDate;
 
     private Integer sfiPpForm;
