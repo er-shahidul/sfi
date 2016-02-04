@@ -116,7 +116,7 @@ sfiFormApp
     $scope.isStoryDirty = function(){
 
         if($scope.story){
-            return $scope.story.shareOrgName || $scope.story.shareNoUse || $scope.story.shareUseAggregate ;
+            return $scope.story.shareKey;
         }
 
         return false;
@@ -136,13 +136,27 @@ sfiFormApp
         if(!story){
             story = {
                 index : index,
-                key   : key
+                key   : key,
+                shareKey : null
             }
         }
 
         story.label = label;
 
         $scope.story = angular.copy(story);
+
+        if(story.shareOrgName){
+            $scope.story.shareKey = 1;
+        }
+
+        if(story.shareNoUse){
+            $scope.story.shareKey = 2;
+        }
+
+        if(story.shareUseAggregate){
+            $scope.story.shareKey = 3;
+        }
+
         $scope.story.myFiles = [];
 
         shareStoryModal.$promise.then(shareStoryModal.show);
@@ -184,9 +198,11 @@ sfiFormApp
         story.lastName      = $scope.story.lastName;
         story.email         = $scope.story.email;
         story.description   = $scope.story.description;
-        story.shareOrgName  = $scope.story.shareOrgName || false;
-        story.shareNoUse    = $scope.story.shareNoUse || false;
-        story.shareUseAggregate = $scope.story.shareUseAggregate || false;
+
+        story.shareOrgName  = $scope.story.shareKey == 1;
+        story.shareNoUse    = $scope.story.shareKey == 2;
+        story.shareUseAggregate = $scope.story.shareKey == 3;
+
 
         //story.supportDocs = $scope.story.supportDocs;
 
