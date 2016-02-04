@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class LoginController {
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = {"/login", "/login?error"}, method = RequestMethod.GET)
     public String loginPage() {
         return "common/login";
     }
