@@ -9,13 +9,13 @@
             <div class="col-lg-8">
                 <h5>
                     8. <span tooltip data-placement="top" data-container="body" data-html="true"
-                             data-title="Include Conservation Research projects, as well as community partnership projects with organizations like Habitat for Humanity, Scouting organizations, etc.  Also, from SIC Governance document – Research secondary mission priority:  Research – Promote forestry research, science, and technology, upon which sustainable forest management decisions are based."> Research, Conservation and Community Projects & Partnerships </span>
+                             data-title="Include Conservation Research projects, as well as community partnership projects with organizations like Habitat for Humanity, Scouting organizations, etc.  Also, from SIC Governance document – Research secondary mission priority:  Research – Promote forestry research, science, and technology, upon which sustainable forest management decisions are based."> Research, Conservation and Community Projects & Partnerships (Secondary Mission Priority) </span>
                 </h5>
                 <form name="cs8Form">
                 <div style="padding-left: 10px;">
                     <p>
                         Is your SIC currently involved in, or supporting, any research, conservation and/or community
-                        partnership projects? (new!)
+                        partnership projects?
                     </p>
                     <label>
                         <input type="radio" disabled  name="inPartnershipProjects" ng-model="cs8.inPartnershipProjects" ng-value="true"> Yes
@@ -90,25 +90,25 @@
                                 <li>
                                     <label class="form-inline">
                                         <input type="checkbox" disabled  ng-model="project.partnerAcademic"> Academic
-                                        <input style="font:caption;" placeholder="Please Specify"  ng-show="project.partnerAcademic" class="form-control pull-right" ng-model="project.partnerAcademicSpecify">
+                                        <input style="font-weight: normal;" placeholder="Please Specify"  ng-show="project.partnerAcademic" class="form-control pull-right" ng-model="project.partnerAcademicSpecify">
                                     </label>
                                 </li>
                                 <li>
                                     <label class="form-inline">
                                         <input type="checkbox" disabled  ng-model="project.partnerResearch"> Research organization
-                                        <input style="font:caption;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerResearch" ng-model="project.partnerResearchSpecify">
+                                        <input style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerResearch" ng-model="project.partnerResearchSpecify">
                                     </label>
                                 </li>
                                 <li>
                                     <label class="form-inline">
                                         <input type="checkbox" disabled  ng-model="project.partnerConservation">  Conservation organization
-                                        <input style="font:caption;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerConservation" ng-model="project.partnerConservationSpecify">
+                                        <input style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerConservation" ng-model="project.partnerConservationSpecify">
                                     </label>
                                 </li>
                                 <li>
                                     <label class="form-inline">
                                         <input type="checkbox" disabled  ng-model="project.partnerGovernment"> Government agency
-                                        <input style="font:caption;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerGovernmentSpecify" ng-show="project.partnerGovernment">
+                                        <input style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerGovernmentSpecify" ng-show="project.partnerGovernment">
                                     </label>
                                 </li>
 
@@ -186,7 +186,7 @@
                                         <li>
                                             <label class="form-inline">
                                                 <input type="checkbox" disabled ng-model="project.partnerCommunityOther"> Other
-                                                <input style="font:caption;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerCommunityOtherSpecify" ng-show="project.partnerCommunityOther">
+                                                <input style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerCommunityOtherSpecify" ng-show="project.partnerCommunityOther">
                                             </label>
                                         </li>
                                     </ul>
@@ -210,7 +210,7 @@
                 <div class="col-lg-12 passage-bold" ng-show="cs8.inPartnershipProjects">
 
                     <div class="col-lg-8 pading-botoms">
-                        <p>SFI Standard Objective most Relevant to Project (optional)</p>
+                        <p>SFI Standard Objective most Relevant to Project </p>
 
                         <div ng-class="{'has-error' : projectForm.sfiStandardObjective.$invalid }">
                             <select readonly class="form-control" name="sfiStandardObjective" ng-model="project.sfiStandardObjective" customerror ng-required="isProjectDirty()">
@@ -222,7 +222,7 @@
 
                     <div class="col-lg-8 pading-botoms">
 
-                        <p>Select Region (optional)</p>
+                        <p>Select Region</p>
                         <div ng-init="project.regions = project.regions || []">
                             <select readonly class="form-control" name="region"
                                     ng-init="region = 0"
@@ -274,9 +274,9 @@
                                        ng-model="project.totalCost"
                                        ng-pattern="/^\d*(\.\d{1,2})?$/"
                                        pattern-msg="Enter decimal number up to 2 precision points" customerror />
-                                <button class="btn-group-sm btn-success curency" type="button" id="projectCostCurrency"
+                                <u><span class="curency" type="button" id="projectCostCurrency"
                                         ng-init="project.projectCostCurrency = project.projectCostCurrency || 1"
-                                        ng-click="setCurrency('projectCostCurrency', project)">{{ gerCurrency(project.projectCostCurrency) }}</button>
+                                        ng-click="setCurrency('projectCostCurrency', project)">{{ gerCurrency(project.projectCostCurrency) }}</span></u>
 
                             </div>
 
@@ -291,9 +291,9 @@
                                        ng-model="project.sicContribution"
                                        ng-pattern="/^\d*(\.\d{1,2})?$/"
                                        pattern-msg="Enter decimal number up to 2 precision points" customerror />
-                                <button class="btn-group-sm btn-success curency" type="button" id="sicContributionCurrency"
+                               <u><span class="curency" type="button" id="sicContributionCurrency"
                                         ng-init="project.sicContributionCurrency = project.sicContributionCurrency || 1"
-                                        ng-click="setCurrency('sicContributionCurrency', project)">{{ gerCurrency(project.sicContributionCurrency) }}</button>
+                                        ng-click="setCurrency('sicContributionCurrency', project)">{{ gerCurrency(project.sicContributionCurrency) }}</span></u>
                             </div>
                         </div>
                     </div>
@@ -338,7 +338,7 @@
                         <div style="padding-left: 10px;">
                             <p>
                                 Is your SIC currently involved in, or supporting, any research, conservation and/or community
-                                partnership projects? (new!)
+                                partnership projects?
                             </p>
                             <label>
                                 <input type="radio" disabled  name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > Yes

@@ -90,10 +90,6 @@ ul {
 	color: white;
 }
 
-.dropdown-menu {
-	background-color: #fff;
-}
-
 #settings {
 	float: right;
 	width:120px;
@@ -1083,12 +1079,18 @@ text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
 .dropdown-menu li a {
     color: #ffffff;
 }
-
+.dropdown-menu {
+	background-color: #2C4E11;
+}
 .dropdown-menu li a:hover
 {
 	color: #777;
 	background-color: #86B253;
 	outline: 0;
+}
+.dropdown-menu table
+{
+	color: white;
 }
 
 #u14 {
@@ -1122,7 +1124,8 @@ body{
 }
 
 .calender-color{
-	color: #000000 !important;
+	color: #aab2bd !important;
+	background-color: white;
 }
 ul p {
        margin: 10px 0px 10px;

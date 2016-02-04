@@ -1,19 +1,31 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.common.modules.validator.SpELAssert;
+import com.rbs.www.web.sfi.validation.Cs2Ca.Cs2Ca;
+import com.rbs.www.web.sfi.validation.Cs2Other.Cs2Other;
+import com.rbs.www.web.sfi.validation.Cs2Usa.Cs2Usa;
 
 import java.util.Set;
 
-@SpELAssert.List({
-        @SpELAssert(value = "outsideCountries == null", message = "outsideCountries Should not be null"),
-})
+@Cs2Usa(message = "{cs2.usaEmpty}")
+@Cs2Ca(message = "{cs2.caEmpty}")
+@Cs2Other(message = "{cs2.otherEmpty}")
 public class Cs2ViewModel extends BaseViewModel {
     private Integer id;
+
+//  region: for validation purpose
+    private Boolean ownsMngLands;
+    private Boolean ownsMngLandsInUSA;
+    private Boolean ownsMngLandsInCA;
+    private Boolean ownsMngLandsInOther;
+    private Boolean hasPrimaryOperMillsYards;
+    private Boolean hasPrimaryOperMillsYardsInUSA;
+    private Boolean hasPrimaryOperMillsYardsInCA;
+    private Boolean hasPrimaryOperMillsYardsInOther;
+//  region: ends
+
     private Integer usaPublicForestlandOwnMng;
     private Integer usaPrivateForestlandOwnMng;
-    private Integer caCrownForestlandOwnMng;
-    private Integer caPrivateForestlandOwnMng;
     private Float usaPrivateTotalAreaOwnOrManage;
     private Float usaPrivateTotalAreaCertified;
     private Float usaPrivateAreaManagedForPublic;
@@ -22,6 +34,13 @@ public class Cs2ViewModel extends BaseViewModel {
     private Float usaPublicTotalAreaCertified;
     private Float usaPublicAreaManagedForPublic;
     private Float usaPublicAreaCertifiedForPublic;
+    private String usaPrivateForestlandOwnMngOther;
+    private String usaPublicForestlandOwnMngOther;
+    private Set<String> usaPrivateRecreationCategories;
+    private Set<String> usaPublicRecreationCategories;
+
+    private Integer caCrownForestlandOwnMng;
+    private Integer caPrivateForestlandOwnMng;
     private Float caCrownTotalAreaOwnOrManage;
     private Float caCrownTotalAreaCertified;
     private Float caCrownAreaManagedForPublic;
@@ -30,14 +49,11 @@ public class Cs2ViewModel extends BaseViewModel {
     private Float caPrivateTotalAreaCertified;
     private Float caPrivateAreaManagedForPublic;
     private Float caPrivateAreaCertifiedForPublic;
-    private String usaPrivateForestlandOwnMngOther;
-    private String usaPublicForestlandOwnMngOther;
     private String caCrownForestlandOwnMngOther;
     private String caPrivateForestlandOwnMngOther;
-    private Set<String> usaPrivateRecreationCategories;
-    private Set<String> usaPublicRecreationCategories;
     private Set<String> caCrownRecreationCategories;
     private Set<String> caPrivateRecreationCategories;
+
     private Set<SfiPpFormCs2OutsideUsaCaViewModel> outsideCountries;
 
     @Override
@@ -47,6 +63,70 @@ public class Cs2ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getOwnsMngLands() {
+        return ownsMngLands;
+    }
+
+    public void setOwnsMngLands(Boolean ownsMngLands) {
+        this.ownsMngLands = ownsMngLands;
+    }
+
+    public Boolean getOwnsMngLandsInUSA() {
+        return ownsMngLandsInUSA;
+    }
+
+    public void setOwnsMngLandsInUSA(Boolean ownsMngLandsInUSA) {
+        this.ownsMngLandsInUSA = ownsMngLandsInUSA;
+    }
+
+    public Boolean getOwnsMngLandsInCA() {
+        return ownsMngLandsInCA;
+    }
+
+    public void setOwnsMngLandsInCA(Boolean ownsMngLandsInCA) {
+        this.ownsMngLandsInCA = ownsMngLandsInCA;
+    }
+
+    public Boolean getOwnsMngLandsInOther() {
+        return ownsMngLandsInOther;
+    }
+
+    public Boolean getHasPrimaryOperMillsYards() {
+        return hasPrimaryOperMillsYards;
+    }
+
+    public void setHasPrimaryOperMillsYards(Boolean hasPrimaryOperMillsYards) {
+        this.hasPrimaryOperMillsYards = hasPrimaryOperMillsYards;
+    }
+
+    public Boolean getHasPrimaryOperMillsYardsInUSA() {
+        return hasPrimaryOperMillsYardsInUSA;
+    }
+
+    public void setHasPrimaryOperMillsYardsInUSA(Boolean hasPrimaryOperMillsYardsInUSA) {
+        this.hasPrimaryOperMillsYardsInUSA = hasPrimaryOperMillsYardsInUSA;
+    }
+
+    public Boolean getHasPrimaryOperMillsYardsInCA() {
+        return hasPrimaryOperMillsYardsInCA;
+    }
+
+    public void setHasPrimaryOperMillsYardsInCA(Boolean hasPrimaryOperMillsYardsInCA) {
+        this.hasPrimaryOperMillsYardsInCA = hasPrimaryOperMillsYardsInCA;
+    }
+
+    public Boolean getHasPrimaryOperMillsYardsInOther() {
+        return hasPrimaryOperMillsYardsInOther;
+    }
+
+    public void setHasPrimaryOperMillsYardsInOther(Boolean hasPrimaryOperMillsYardsInOther) {
+        this.hasPrimaryOperMillsYardsInOther = hasPrimaryOperMillsYardsInOther;
+    }
+
+    public void setOwnsMngLandsInOther(Boolean ownsMngLandsInOther) {
+        this.ownsMngLandsInOther = ownsMngLandsInOther;
     }
 
     public Float getUsaPrivateTotalAreaOwnOrManage() {
