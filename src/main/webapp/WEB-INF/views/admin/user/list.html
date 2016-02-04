@@ -57,6 +57,7 @@
                                                     <th>Created</th>
                                                     <th>Admin User</th>
                                                     <th>Enabled</th>
+                                                    <th>Activate-url</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -94,6 +95,11 @@
                                                         </p>
                                                         <p th:if="${u.enabled} == false">
                                                             <span class="label label-danger">no</span>
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p th:if="${u.token} == false">
+                                                            <span th:text="@{'http://'+${hostUrl}+'/user/verification/'+${u.userToken}}"></span>
                                                         </p>
                                                     </td>
                                                 </tr>
