@@ -18,7 +18,7 @@
         <intercept-url pattern="/sfiPpForm" access="isAuthenticated()" />
         <intercept-url pattern="/" access="permitAll" />
 
-		<form-login login-page="/login" username-parameter="username" password-parameter="password" />
+		<form-login login-page="/login" username-parameter="username" password-parameter="password" authentication-failure-url="/login?error" />
 		<csrf disabled="true" />
 	</http>
 

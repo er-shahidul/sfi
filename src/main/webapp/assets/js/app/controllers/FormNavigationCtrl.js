@@ -4,6 +4,7 @@ sfiFormApp.controller('FormNavigationCtrl', ['$rootScope', '$scope', '$state', '
 
     rootScope = $scope;
     $scope.ImageName = 'cs1.png';
+
     $scope.isActive = function($name){
         return $state.current.name == $name;
     };
