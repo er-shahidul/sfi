@@ -70,15 +70,15 @@
 
                         <div ng-class="{'story': !isStoryDirty() }">
 
-                                <input icheck type="radio" ng-value=true name="shareOrgName" ng-model="story.shareOrgName" ng-checked="story.shareOrgName == true"/> Share – with our organization’s name
+                                <input icheck type="radio" ng-value=1 name="shareOrgName" ng-model="story.shareOrgName" ng-checked="story.shareOrgName == 1"/> Share – with our organization’s name
 
                             <br>
 
-                                <input icheck type="radio" ng-value=true name="shareOrgName"  ng-model="story.shareNoUse" ng-checked="story.shareNoUse == true"/> Share – don't use our organization’s name
+                                <input icheck type="radio" ng-value=2 name="shareOrgName"  ng-model="story.shareOrgName" ng-checked="story.shareOrgName == 2"/> Share – don't use our organization’s name
 
                             <br>
 
-                                <input icheck type="radio" ng-value=true name="shareOrgName"  ng-model="story.shareUseAggregate" ng-checked="story.shareUseAggregate == true"/> Only use in aggregate
+                                <input icheck type="radio" ng-value=3 name="shareOrgName"  ng-model="story.shareOrgName" ng-checked="story.shareOrgName == 3"/> Only use in aggregate
 
                         </div>
                     </div>
