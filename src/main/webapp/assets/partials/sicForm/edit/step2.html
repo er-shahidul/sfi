@@ -74,7 +74,7 @@
                     <label class="form-inline">
                         Amount
                         <input class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  customerror ng-model="cs2.spentBySicSupporters">
-                        <button class="btn-group-sm btn-success curency" type="button" id="supportCurrency" ng-click="setCurrency('supportCurrency', cs2)">{{ gerCurrency(cs2.supportCurrency) }}</button>
+                        <u><span class="curency" id="supportCurrency" ng-click="setCurrency('supportCurrency', cs2)">{{ gerCurrency(cs2.supportCurrency) }}</span></u>
                     </label>
 
                 </div>
@@ -88,7 +88,7 @@
                     <label class="form-inline">
                         Amount
                         <input class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.spentByYourCommittee">
-                        <button class="btn-group-sm btn-success curency" type="button" id="committeeCurrency" ng-click="setCurrency('committeeCurrency', cs2)">{{ gerCurrency(cs2.committeeCurrency) }}</button>
+                        <u> <span class="curency" id="committeeCurrency" ng-click="setCurrency('committeeCurrency', cs2)">{{ gerCurrency(cs2.committeeCurrency) }}</span></u>
                     </label>
 
                 </div>
@@ -111,7 +111,7 @@
                         <th class="col-lg-2">Activity or Project</th>
                         <th class="col-lg-2">
                             Direct Spending
-                            <button class="btn-group-sm btn-success curency" type="button" id="directCurrency" ng-click="setCurrency('directCurrency', cs2)">{{ gerCurrency(cs2.directCurrency) }}</button>
+                         <u><span class="curency" id="directCurrency" ng-click="setCurrency('directCurrency', cs2)">{{ gerCurrency(cs2.directCurrency) }}</span></u>
                         </th>
                         <th class="col-lg-3">In-Kind Support</th>
                         <th class="col-lg-3">Details</th>
