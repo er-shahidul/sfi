@@ -15,6 +15,26 @@ public class Cs2 extends BaseEntityModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+//  region: for validation purpose
+    @Column(name = "cs1_ownsMngLands", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean ownsMngLands;
+    @Column(name = "cs1_ownsMngLands_inUSA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean ownsMngLandsInUSA;
+    @Column(name = "cs1_ownsMngLands_inCA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean ownsMngLandsInCA;
+    @Column(name = "cs1_ownsMngLands_inOther", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean ownsMngLandsInOther;
+
+    @Column(name = "cs1_hasPrimaryOperMillsYards", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasPrimaryOperMillsYards;
+    @Column(name = "cs1_hasPrimaryOperMillsYards_inUSA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasPrimaryOperMillsYardsInUSA;
+    @Column(name = "cs1_hasPrimaryOperMillsYards_inCA", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasPrimaryOperMillsYardsInCA;
+    @Column(name = "cs1_hasPrimaryOperMillsYards_inOther", nullable = false, columnDefinition = "Boolean default false")
+    private Boolean hasPrimaryOperMillsYardsInOther;
+//  region: ends
+
     @Column(name = "cs2_usaPrivate_totalOwnMng", nullable = true)
     private Float usaPrivateTotalAreaOwnOrManage;
     @Column(name = "cs2_usaPrivate_forestlandOwnMng", nullable = true)
@@ -105,6 +125,38 @@ public class Cs2 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getOwnsMngLands() {
+        return ownsMngLands;
+    }
+
+    public Boolean getOwnsMngLandsInUSA() {
+        return ownsMngLandsInUSA;
+    }
+
+    public void setOwnsMngLandsInUSA(Boolean ownsMngLandsInUSA) {
+        this.ownsMngLandsInUSA = ownsMngLandsInUSA;
+    }
+
+    public Boolean getOwnsMngLandsInCA() {
+        return ownsMngLandsInCA;
+    }
+
+    public void setOwnsMngLandsInCA(Boolean ownsMngLandsInCA) {
+        this.ownsMngLandsInCA = ownsMngLandsInCA;
+    }
+
+    public Boolean getOwnsMngLandsInOther() {
+        return ownsMngLandsInOther;
+    }
+
+    public void setOwnsMngLandsInOther(Boolean ownsMngLandsInOther) {
+        this.ownsMngLandsInOther = ownsMngLandsInOther;
+    }
+
+    public void setOwnsMngLands(Boolean ownsMngLands) {
+        this.ownsMngLands = ownsMngLands;
     }
 
     public Float getUsaPrivateTotalAreaOwnOrManage() {
