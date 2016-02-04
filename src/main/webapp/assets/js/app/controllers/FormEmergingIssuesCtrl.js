@@ -33,7 +33,9 @@ sfiFormApp.controller('FormEmergingIssuesCtrl',
                         $rootScope.form.cs7 = response.data;
                         $scope.cs7 = angular.copy($rootScope.form.cs7);
                         Message.success('Section successfully saved', '.msg-cont');
+
                         $rootScope.updateFormMeta();
+                        $rootScope.setProgress();
                     }
 
                     if(go){

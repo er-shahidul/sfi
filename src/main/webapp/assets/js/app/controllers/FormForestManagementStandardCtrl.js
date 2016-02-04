@@ -95,7 +95,9 @@ sfiFormApp
                     $rootScope.form.cs9 = response.data;
                     $scope.cs9 = angular.copy($rootScope.form.cs9);
                     Message.success('Section successfully saved', '.msg-cont');
+
                     $rootScope.updateFormMeta();
+                    $rootScope.setProgress();
                 }
 
                 if(go){

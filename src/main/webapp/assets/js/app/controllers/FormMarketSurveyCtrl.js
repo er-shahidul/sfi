@@ -3,6 +3,7 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
     ['$rootScope', '$scope', 'Countries',  '$http', '_', 'Message',
         function ($rootScope , $scope, Countries, $http, _ , Message){
 
+        cs8 = $scope;
         $scope.cs8 = {} ;
         $scope.cs8Data = angular.copy($rootScope.form.cs8);
 
@@ -441,7 +442,9 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
                             $scope.cs8Form.$setPristine();
                             $rootScope.form.cs8 = response.data;
                             Message.success('Section successfully saved', '.msg-cont');
+
                             $rootScope.updateFormMeta();
+                            $rootScope.setProgress();
                         }
 
 

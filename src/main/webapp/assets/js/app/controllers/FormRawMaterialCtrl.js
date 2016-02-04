@@ -328,6 +328,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
                     $scope.init();
                     Message.success('Section successfully saved', '.msg-cont');
                     $rootScope.updateFormMeta();
+                    $rootScope.setProgress();
                 }
 
                 if(go){
