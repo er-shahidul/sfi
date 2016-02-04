@@ -1,89 +1,68 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.common.modules.validator.SpELAssert;
+import com.rbs.www.web.sfi.validation.Cs4Ca.Cs4Ca;
+import com.rbs.www.web.sfi.validation.Cs4Usa.Cs4Usa;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-
-@SpELAssert.List({
-        @SpELAssert(value = "!usaGovRegulation", applyIf = "usaGovRegulation", message = "usaGovRegulation Should not be null"),
-        @SpELAssert(value = "!usaDisResDiseaseInsect", applyIf = "usaDisResDiseaseInsects", message = "usaDisResDiseaseInsect Should not be null"),
-        @SpELAssert(value = "!usaDisResFireSalvage", applyIf = "usaDisResFireSalvage", message = "usaDisResFireSalvage Should not be null"),
-        @SpELAssert(value = "!usaDisResWindthrow", applyIf = "usaDisResWindthrow", message = "usaDisResWindthrow Should not be null"),
-        @SpELAssert(value = "!usaDisResHurricane", applyIf = "usaDisResHurricane", message = "usaDisResHurricane Should not be null"),
-        @SpELAssert(value = "!usaDisResIceStorm", applyIf = "usaDisResIceStorm", message = "usaDisResIceStorm Should not be null"),
-        @SpELAssert(value = "!usaOthersApply", applyIf = "usaOthersApply", message = "usaOthersApply Should not be null"),
-
-        @SpELAssert(value = "!caGovRegulation", applyIf = "caGovRegulation", message = "caGovRegulation Should not be null"),
-        @SpELAssert(value = "!caDisResDiseaseInsects", applyIf = "caDisResDiseaseInsects", message = "caDisResDiseaseInsects Should not be null"),
-        @SpELAssert(value = "!caDisResFireSalvage", applyIf = "caDisResFireSalvage", message = "caDisResFireSalvage Should not be null"),
-        @SpELAssert(value = "!caDisResWindthrow", applyIf = "caDisResWindthrow", message = "caDisResWindthrow Should not be null"),
-        @SpELAssert(value = "!caDisResHurricane", applyIf = "caDisResHurricane", message = "caDisResHurricane Should not be null"),
-        @SpELAssert(value = "!caDisResIceStorm", applyIf = "caDisResIceStorm", message = "caDisResIceStorm Should not be null"),
-        @SpELAssert(value = "!caOthersApply", applyIf = "caOthersApply", message = "caOthersApply Should not be null"),
-})
+@Cs4Usa(message = "{usaEmpty}")
+@Cs4Ca(message = "{caEmpty}")
 public class Cs4ViewModel extends BaseViewModel {
-    @Null
     private Integer id;
 
-    @SpELAssert(value = "#this == null", message = "usaTotalHervArea Should not be null")
     private Float usaTotalHervArea;
-    @SpELAssert(value = "#this == null", message = "caTotalHervArea Should not be null")
-    private Float caTotalHervArea;
     private Float usaAvgHervArea;
-    private Float caAvgHervArea;
-
-    @NotNull
     private Float usaSeedTreeShelterWoodArea;
-    private Float caSeedTreeShelterWoodArea;
     private Float usaSelectionMethodArea;
     private Float usaSanitationArea;
+    private Float usaPlantingOneYr;
+    private Float usaPlantingTwoYr;
+    private Float usaPlantingTwoPlusYr;
+    private Float usaSeedingOneYr;
+    private Float usaSeedingTwoYr;
+    private Float usaSeedingTwoPlusYr;
+    private Float usaNatRegen2014;
+    private Float usaRegenPerc5Yr;
+    private String usaGovRegulationExp;
+    private String usaDiseaseInsectsExp;
+    private String usaFireSalvageExp;
+    private String usaWindthrowExp;
+    private String usaHurricaneExp;
+    private String usaIceStormExp;
+    private String usaOthersExp;
+    private Boolean usaGovRegulation;
+    private Boolean usaDisResDiseaseInsects;
+    private Boolean usaDisResFireSalvage;
+    private Boolean usaDisResWindthrow;
+    private Boolean usaDisResHurricane;
+    private Boolean usaDisResIceStorm;
+    private Boolean usaOthersApply;
+
+    private Float caTotalHervArea;
+    private Float caAvgHervArea;
+    private Float caSeedTreeShelterWoodArea;
     private Float caSanitationArea;
     private Float caSelectionMethodArea;
-    private Float usaPlantingOneYr;
     private Float caPlantingOneYr;
-    private Float usaPlantingTwoYr;
     private Float caPlantingTwoYr;
-    private Float usaPlantingTwoPlusYr;
     private Float caPlantingTwoPlusYr;
-    private Float usaSeedingOneYr;
     private Float caSeedingOneYr;
-    private Float usaSeedingTwoYr;
     private Float caSeedingTwoYr;
-    private Float usaSeedingTwoPlusYr;
     private Float caSeedingTwoPlusYr;
-    private Float usaNatRegen2014;
     private Float caNatRegen2014;
-    private Float usaRegenPerc5Yr;
     private Float caRegenPerc5Yr;
-    private String usaGovRegulationExp;
     private String caGovRegulationExp;
-    private String usaDiseaseInsectsExp;
     private String caDiseaseInsectsExp;
-    private String usaFireSalvageExp;
     private String caFireSalvageExp;
-    private String usaWindthrowExp;
     private String caWindthrowExp;
-    private String usaHurricaneExp;
     private String caHurricaneExp;
-    private String usaIceStormExp;
     private String caIceStormExp;
-    private String usaOthersExp;
     private String caOthersExp;
-    private Boolean usaGovRegulation;
     private Boolean caGovRegulation;
-    private Boolean usaDisResDiseaseInsects;
     private Boolean caDisResDiseaseInsects;
-    private Boolean usaDisResFireSalvage;
     private Boolean caDisResFireSalvage;
-    private Boolean usaDisResWindthrow;
     private Boolean caDisResWindthrow;
-    private Boolean usaDisResHurricane;
     private Boolean caDisResHurricane;
-    private Boolean usaDisResIceStorm;
     private Boolean caDisResIceStorm;
-    private Boolean usaOthersApply;
     private Boolean caOthersApply;
 
     @Override
