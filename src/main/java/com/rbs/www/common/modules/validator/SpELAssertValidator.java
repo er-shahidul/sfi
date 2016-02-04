@@ -25,6 +25,7 @@ public class SpELAssertValidator implements ConstraintValidator<SpELAssert, Obje
     private List<Method> functions = new LinkedList<>();
     private BeanFactory beanFactory;
 
+    @Override
     public void initialize(SpELAssert constraint) {
         ExpressionParser parser = new SpelExpressionParser();
 
@@ -37,6 +38,7 @@ public class SpELAssertValidator implements ConstraintValidator<SpELAssert, Obje
         }
     }
 
+    @Override
     public boolean isValid(Object object, ConstraintValidatorContext context) {
         if (object == null) return true;
         EvaluationContext evalContext = createEvaluationContext(object);
