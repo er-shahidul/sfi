@@ -35,17 +35,22 @@ sfiSicApp
 
             if($scope.projectForm.$valid){
 
-                if($scope.projectIndex){
+                if($scope.projectIndex != null){
                     $scope.cs8.projects[$scope.projectIndex]  = angular.copy($scope.project);
                 }else{
                     $scope.cs8.projects.push(angular.copy($scope.project));
                 }
+
+                $scope.projectIndex = null;
+                $scope.project = {};
+                return true;
             }
 
-            $scope.project = {};
+            return false;
         }
 
         $scope.editProject = function($index){
+            $scope.projectIndex = $index;
             $scope.project = angular.copy($scope.cs8.projects[$index]);
         }
 
@@ -57,13 +62,17 @@ sfiSicApp
         $scope.deleteConfirm = function($index){
 
             $scope.cs8.projects.splice($index, 1);
+            $scope.projectIndex = null;
 
         }
 
 
         $scope.saveForm = function(go){
 
-            $scope.addProject();
+            if($scope.isProjectDirty() && !$scope.addProject()){
+                return false
+            }
+
 
             if($scope.cs8Form.$invalid){
                 return false;

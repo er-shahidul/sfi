@@ -156,7 +156,7 @@
                         <td width="35%">
                             <select class="form-control" ng-model="forest2015.objective" ng-required="hasData(forest2015)" customerror>
                                 <option ng-selected="!forest2015.objective">Select</option>
-                                <option ng-selected="forest2015.objective == $index" ng-repeat="objective in forestObjectives" ng-value="$index">{{ objective }}</option>
+                                <option ng-selected="forest2015.objective == $index" ng-repeat="objective in forestObjectives | orderBy:orderByValue" ng-value="$index">{{ objective }}</option>
                             </select>
                         </td>
                         <td>
@@ -223,7 +223,7 @@
                         <td width="35%">
                             <select class="form-control" ng-required="hasData(fiber2015)" customerror ng-model="fiber2015.objective">
                                 <option ng-selected="!fiber2015.objective">Select</option>
-                                <option ng-selected="fiber2015.objective == $index" ng-repeat="objective in fiberObjectives" ng-value="$index">{{ objective }}</option>
+                                <option ng-selected="fiber2015.objective == $index" ng-repeat="objective in fiberObjectives | orderBy:orderByValue" ng-value="$index">{{ objective }}</option>
                             </select>
                         </td>
                         <td>

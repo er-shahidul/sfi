@@ -126,7 +126,8 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         });
 
         if(!isValid || !hasValidSection){
-            return $('#confirm').modal();
+            $('#confirm').modal();
+            return false;
         }
 
 
@@ -147,6 +148,8 @@ sfiFormApp.controller('FormRawMaterialCtrl',
 
         $scope.isDataDirty = true;
         $scope.resetSection();
+
+        return true;
     }
 
     $scope.resetSection = function(){
@@ -308,10 +311,15 @@ sfiFormApp.controller('FormRawMaterialCtrl',
             return false;
         }
 
-
         if($scope.innerForm.$invalid){
             return false;
         }
+
+        if($scope.regionId && !$scope.saveUsCanada()){
+            return false;
+        }
+
+
 
         var data = $scope.preparePayload();
 
@@ -328,6 +336,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
                     $scope.init();
                     Message.success('Section successfully saved', '.msg-cont');
                     $rootScope.updateFormMeta();
+                    $rootScope.setProgress();
                 }
 
                 if(go){

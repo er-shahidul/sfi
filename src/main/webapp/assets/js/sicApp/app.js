@@ -140,18 +140,16 @@ sfiSicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
                     }
                 }
         })
-        /*
         .state('print-all', {
             url : "/print-all",
             views: {
                 viewContainer : {
-                    template  : Templates.ViewAllSectionView,
+                    templateUrl  : '/assets/partials/sicForm/view/view-all.html',
                     controller: function($rootScope) {
-
                     }
                 }
             }
-        }); */
+        });
 }]);
 
 

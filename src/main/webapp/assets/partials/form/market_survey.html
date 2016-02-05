@@ -510,7 +510,7 @@
                 <div class="pading-botoms"></div>
                 <img src="/assets/images/SurveyImage_DemandGrowing.jpg" style="width: 250px;">
                 <div class="pading-botom-2350"></div>
-                <img src="/assets/images/u2102.png" style="width: 250px;">
+                <img ng-if="!isSfiSecondary()" src="/assets/images/u2102.png" style="width: 250px;">
             </div>
         </div>
 
@@ -624,11 +624,11 @@
                     <div class="clear"></div>
 
                     <label class="form-inline">
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=6 icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value="6" icheck>
                         Yes, and we are considering dropping SFI once we have obtained FSC certification
                     </label><br>
                     <label>
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=7 icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value="7" icheck>
                         Other<br/>
 
                         <label style="padding-left: 15px;" ng-show="cs8.FSCLandCertification == 7">

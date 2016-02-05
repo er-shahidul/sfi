@@ -92,7 +92,7 @@
                 </tr>
                 </tbody>
             </table>
-                <div class="form-group">
+                <div class="form-group-hack">
 
                 <div class="form-group">
                     <div class="col-sm-12 ">
@@ -108,16 +108,6 @@
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.universityCollege.$invalid }">
 
-                        <!--ng-model="cs5.organizationListAcademic"-->
-
-                        <!--<input type="text"-->
-                               <!--class="form-control"-->
-                               <!--ng-model="academicModel"-->
-                               <!--name="organizationListAcademic"-->
-                               <!--placeholder="University or College"-->
-                               <!--ng-options="item for item in academicOptions"-->
-                               <!--data-auto-select="true" watchOptions="true" bs-typeahead>-->
-
                         <!--start-->
                         <select class="form-control" ng-model="academicModel" name="organizationListAcademic" ng-change="cs5.organizationListAcademic = addList(cs5.organizationListAcademic, academicModel)" >
                             <option ng-selected="!academicModel" value="0">Select</option>
@@ -128,14 +118,6 @@
                             <button ng-click="cs5.organizationListAcademic = withoutList(item, cs5.organizationListAcademic)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
                     </div>
-                    <!--<div class="col-sm-1">-->
-                        <!--<a style="text-decoration:underline;">-->
-                            <!--<label ng-show="academicModel && academicModel.trim()"-->
-                                   <!--ng-click="cs5.organizationListAcademic = addList(cs5.organizationListAcademic, academicModel) ; academicModel = null">+ Save</label>-->
-                        <!--</a>-->
-                    <!--</div>-->
-
-
 
                 </div>
 
@@ -145,13 +127,6 @@
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListResearch.$invalid }">
 
-                        <!--<input type="text"-->
-                               <!--class="form-control"-->
-                               <!--ng-model="researchModel"-->
-                               <!--name="organizationListResearch"-->
-                               <!--placeholder="Research Institution"-->
-                               <!--ng-options="item for item in researchList"-->
-                               <!--data-auto-select="true" watchOptions="true" bs-typeahead>-->
                         <!--start-->
                         <select class="form-control" ng-model="researchModel" name="organizationListResearch" ng-change="cs5.organizationListResearch = addList(cs5.organizationListResearch, researchModel)" >
                             <option ng-selected="!researchList" value="0">Select</option>
@@ -163,14 +138,6 @@
                         </div>
 
                     </div>
-                    <!--<div class="col-sm-1">-->
-                        <!--<a style="text-decoration:underline;">-->
-                            <!--<label ng-show="researchModel && researchModel.trim()"-->
-                                   <!--ng-click="cs5.organizationListResearch = addList(cs5.organizationListResearch, researchModel) ; researchModel = null">+ Save</label>-->
-                        <!--</a>-->
-                    <!--</div>-->
-
-
                 </div>
 
                 <div class="form-group-hack">
@@ -179,13 +146,6 @@
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListConservation.$invalid }">
 
-                        <!--<input type="text"-->
-                               <!--class="form-control"-->
-                               <!--name="organizationListConservation"-->
-                               <!--ng-model="conservationModel"-->
-                               <!--ng-options="item for item in conservationList"-->
-                               <!--placeholder="Conservation Organization"-->
-                               <!--data-auto-select="true" watchOptions="true" bs-typeahead>-->
                         <!--start-->
                         <select class="form-control" ng-model="conservationModel" name="organizationListConservation" ng-change="cs5.organizationListConservation = addList(cs5.organizationListConservation, conservationModel)" >
                             <option ng-selected="!conservationList" value="0">Select</option>
@@ -196,13 +156,6 @@
                             <button ng-click="cs5.organizationListConservation = withoutList(item, cs5.organizationListConservation)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
                     </div>
-                    <!--<div class="col-sm-1">-->
-                        <!--<a style="text-decoration:underline;">-->
-                            <!--<label ng-show="conservationModel && conservationModel.trim()"-->
-                                   <!--ng-click="cs5.organizationListConservation = addList(cs5.organizationListConservation, conservationModel) ; conservationModel = null">+ Save</label>-->
-                        <!--</a>-->
-                    <!--</div>-->
-
                 </div>
 
                 <div class="form-group-hack">
@@ -211,13 +164,6 @@
                     </div>
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListGovernment.$invalid }">
 
-                        <!--<input type="text"-->
-                               <!--class="form-control"-->
-                               <!--placeholder="Government"-->
-                               <!--ng-model="governmentModel"-->
-                               <!--name="organizationListGovernment"-->
-                               <!--ng-options="item for item in governmentList"-->
-                               <!--data-auto-select="true" watchOptions="true" bs-typeahead>-->
                         <!--start-->
                         <select class="form-control" ng-model="governmentModel" name="organizationListGovernment" ng-change="cs5.organizationListGovernment = addList(cs5.organizationListGovernment, governmentModel)" >
                             <option ng-selected="!governmentList" value="0">Select</option>
@@ -228,13 +174,6 @@
                             <button ng-click="cs5.organizationListGovernment = withoutList(item, cs5.organizationListGovernment)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
                     </div>
-                    <!--<div class="col-sm-1">-->
-                        <!--<a style="text-decoration:underline;">-->
-                            <!--<label ng-show="governmentModel && governmentModel.trim()"-->
-                                   <!--ng-click="cs5.organizationListGovernment = addList(cs5.organizationListGovernment, governmentModel) ; governmentModel = null">+ Save</label>-->
-                        <!--</a>-->
-                    <!--</div>-->
-
                 </div>
 
                 <div class="form-group-hack">
@@ -276,6 +215,7 @@
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListOther.$invalid }" style="z-index: auto">
 
                         <input type="text"
+                               data-trigger="click"
                                placeholder="Other"
                                class="form-control"
                                ng-model="otherModel"
@@ -440,18 +380,26 @@
                         <span ng-show="isDirty() && !hasAnyOrg()" class="error">Enter details for at least one of the following</span>
 
                         <div class="form-group-hack form-group">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <span>University or College</span>
                             </div>
-                            <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
+                            <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
 
-                                <input type="text"
-                                       class="form-control"
-                                       ng-model="academicModel2"
-                                       name="organizationListAcademic2"
-                                       placeholder="University or College"
-                                       ng-options="item for item in academicOptions"
-                                       data-auto-select="true" watchOptions="true" bs-typeahead>
+                                <!--<input type="text"-->
+                                       <!--class="form-control"-->
+                                       <!--ng-model="academicModel2"-->
+                                       <!--name="organizationListAcademic2"-->
+                                       <!--placeholder="University or College"-->
+                                       <!--ng-options="item.name for item in academicOptions"-->
+                                       <!--data-auto-select="true" watchOptions="true" bs-typeahead>-->
+
+                                <select class="form-control"
+                                        ng-model="academicModel2"
+                                        name="organizationListAcademic2"
+                                        ng-change="project.organizationListAcademic = addList(project.organizationListAcademic, academicModel2)" >
+                                    <option ng-selected="!academicModel" value="0">Select</option>
+                                    <option ng-repeat="item in academicOptions" value="{{item.name}}">{{ item.name }}</option>
+                                </select>
 
                                 <div id="selectedItem" ng-repeat="item in project.organizationListAcademic">{{ item }}
                                     <button ng-click="project.organizationListAcademic = withoutList(item, project.organizationListAcademic)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -459,79 +407,95 @@
                             </div>
 
                             <div class="col-sm-1">
-                                <a style="text-decoration:underline;">
-                                    <label ng-show="academicModel2 && academicModel2.trim()"
-                                           ng-click="project.organizationListAcademic = addList(project.organizationListAcademic, academicModel2) ; academicModel2 = null">+ Save</label>
-                                </a>
+                                <!--<a style="text-decoration:underline;">-->
+                                    <!--<label ng-show="academicModel2 && academicModel2.id"-->
+                                           <!--ng-click="project.organizationListAcademic = addList(project.organizationListAcademic, academicModel2.name) ; academicModel2 = null">+ Save</label>-->
+                                <!--</a>-->
                             </div>
 
                         </div>
 
                         <div class="form-group-hack form-group" >
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <span>Research Institution</span>
                             </div>
-                            <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListResearch.$invalid }">
+                            <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListResearch.$invalid }">
 
-                                <input type="text"
-                                       class="form-control"
-                                       name="organizationListResearch2"
-                                       ng-model="researchModel2"
-                                       ng-options="item for item in researchList"
-                                       placeholder="Research Institution"
-                                       data-auto-select="true" watchOptions="true" bs-typeahead>
+                                <select class="form-control"
+                                        ng-model="researchModel2"
+                                        name="organizationListResearch2"
+                                        ng-change="project.organizationListResearch = addList(project.organizationListResearch, researchModel2)" >
+                                    <option ng-selected="!researchList" value="0">Select</option>
+                                    <option ng-repeat="item in researchList" value="{{item.name}}">{{ item.name }}</option>
+                                </select>
 
                                 <div id="selectedItem" ng-repeat="item in project.organizationListResearch">{{ item }}
                                     <button ng-click="project.organizationListResearch = withoutList(item, project.organizationListResearch)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
                             </div>
                             <div class="col-sm-1">
-                                <a style="text-decoration:underline;">
-                                    <label ng-show="researchModel2 && researchModel2.trim()"
-                                           ng-click="project.organizationListResearch = addList(project.organizationListResearch, researchModel2) ; researchModel2 = null">+ Save</label>
-                                </a>
+                                <!--<a style="text-decoration:underline;">-->
+                                    <!--<label ng-show="researchModel2 && researchModel2.trim()"-->
+                                           <!--ng-click="project.organizationListResearch = addList(project.organizationListResearch, researchModel2) ; researchModel2 = null">+ Save</label>-->
+                                <!--</a>-->
                             </div>
                         </div>
 
                         <div class="form-group-hack form-group">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <span>Conservation Organization</span>
                             </div>
-                            <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
+                            <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
 
-                                <input type="text"
-                                       class="form-control"
-                                       name="organizationListConservation2"
-                                       ng-model="conservationModel2"
-                                       ng-options="item for item in conservationList"
-                                       placeholder="Conservation Organization"
-                                       data-auto-select="true" watchOptions="true" bs-typeahead>
+                                <!--<input type="text"-->
+                                       <!--class="form-control"-->
+                                       <!--name="organizationListConservation2"-->
+                                       <!--ng-model="conservationModel2"-->
+                                       <!--ng-options="item for item in conservationList"-->
+                                       <!--placeholder="Conservation Organization"-->
+                                       <!--data-auto-select="true" watchOptions="true" bs-typeahead>-->
+
+                                <select class="form-control"
+                                        ng-model="organizationListConservation2"
+                                        name="conservationModel2"
+                                        ng-change="project.organizationListConservation = addList(project.organizationListConservation, organizationListConservation2)" >
+                                    <option ng-selected="!conservationList" value="0">Select</option>
+                                    <option ng-repeat="item in conservationList" value="{{item.name}}">{{ item.name }}</option>
+                                </select>
 
                                 <div id="selectedItem" ng-repeat="item in project.organizationListConservation">{{ item }}
                                     <button ng-click="project.organizationListConservation = withoutList(item, project.organizationListConservation)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
                             </div>
                             <div class="col-sm-1">
-                                <a style="text-decoration:underline;">
-                                    <label ng-show="conservationModel2 && conservationModel2.trim()"
-                                           ng-click="project.organizationListConservation = addList(project.organizationListConservation, conservationModel2) ; conservationModel2 = null">+ Save</label>
-                                </a>
+                                <!--<a style="text-decoration:underline;">-->
+                                    <!--<label ng-show="conservationModel2 && conservationModel2.trim()"-->
+                                           <!--ng-click="project.organizationListConservation = addList(project.organizationListConservation, conservationModel2) ; conservationModel2 = null">+ Save</label>-->
+                                <!--</a>-->
                             </div>
                         </div>
 
                         <div class="form-group-hack form-group">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <span>Government</span>
                             </div>
-                            <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListGovernment.$invalid }">
+                            <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListGovernment.$invalid }">
 
-                                <input type="text"
-                                       class="form-control"
-                                       name="organizationListGovernment2"
-                                       ng-model="governmentModel2"
-                                       ng-options="item for item in governmentList"
-                                       placeholder="Government"
-                                       data-auto-select="true" watchOptions="true" bs-typeahead>
+                                <!--<input type="text"-->
+                                       <!--class="form-control"-->
+                                       <!--name="organizationListGovernment2"-->
+                                       <!--ng-model="governmentModel2"-->
+                                       <!--ng-options="item for item in governmentList"-->
+                                       <!--placeholder="Government"-->
+                                       <!--data-auto-select="true" watchOptions="true" bs-typeahead>-->
+
+                                <select class="form-control"
+                                        ng-model="governmentModel2"
+                                        name="organizationListGovernment2"
+                                        ng-change="project.organizationListGovernment = addList(project.organizationListGovernment, governmentModel2)" >
+                                    <option ng-selected="!governmentList" value="0">Select</option>
+                                    <option ng-repeat="item in governmentList" value="{{item.name}}">{{ item.name }}</option>
+                                </select>
 
                                 <div id="selectedItem" ng-repeat="item in project.organizationListGovernment">{{ item }}
                                     <button ng-click="project.organizationListGovernment = withoutList(item, project.organizationListGovernment)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -539,45 +503,53 @@
 
                             </div>
                             <div class="col-sm-1">
-                                <a style="text-decoration:underline;">
-                                    <label ng-show="governmentModel2 && governmentModel2.trim()"
-                                           ng-click="project.organizationListGovernment = addList(project.organizationListGovernment, governmentModel2) ; governmentModel2 = null">+ Save</label>
-                                </a>
+                                <!--<a style="text-decoration:underline;">-->
+                                    <!--<label ng-show="governmentModel2 && governmentModel2.trim()"-->
+                                           <!--ng-click="project.organizationListGovernment = addList(project.organizationListGovernment, governmentModel2) ; governmentModel2 = null">+ Save</label>-->
+                                <!--</a>-->
                             </div>
                         </div>
 
                         <div class="form-group-hack form-group">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <span>Community Organization</span>
                             </div>
-                            <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListCommunity.$invalid }">
+                            <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListCommunity.$invalid }">
 
 
-                                <input type="text"
-                                       class="form-control" n
-                                       ame="organizationListCommunity2"
-                                       ng-model="communityModel2"
-                                       ng-options="item for item in communityList"
-                                       placeholder="Community Organization"
-                                       data-auto-select="true" data-watch-options="true" bs-typeahead>
+                                <!--<input type="text"-->
+                                       <!--class="form-control" -->
+                                       <!--ame="organizationListCommunity2"-->
+                                       <!--ng-model="communityModel2"-->
+                                       <!--ng-options="item for item in communityList"-->
+                                       <!--placeholder="Community Organization"-->
+                                       <!--data-auto-select="true" data-watch-options="true" bs-typeahead>-->
+
+                                <select class="form-control"
+                                        ng-model="communityModel2"
+                                        name="organizationListCommunity2"
+                                        ng-change="project.organizationListCommunity = addList(project.organizationListCommunity, communityModel2)" >
+                                    <option ng-selected="!communityList" value="0">Select</option>
+                                    <option ng-repeat="item in communityList" value="{{item.name}}">{{ item.name }}</option>
+                                </select>
 
                                 <div id="selectedItem" ng-repeat="item in project.organizationListCommunity">{{ item }}
                                     <button ng-click="project.organizationListAcademic = withoutList(item, project.organizationListCommunity)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
                             </div>
                             <div class="col-sm-1">
-                                <a style="text-decoration:underline;">
-                                    <label ng-show="communityModel2 && communityModel2.trim()"
-                                           ng-click="project.organizationListCommunity = addList(project.organizationListCommunity, communityModel2) ; communityModel2 = null">+ Save</label>
-                                </a>
+                                <!--<a style="text-decoration:underline;">-->
+                                    <!--<label ng-show="communityModel2 && communityModel2.trim()"-->
+                                           <!--ng-click="project.organizationListCommunity = addList(project.organizationListCommunity, communityModel2) ; communityModel2 = null">+ Save</label>-->
+                                <!--</a>-->
                             </div>
                         </div>
 
                         <div class="form-group-hack form-group">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <span>Other</span>
                             </div>
-                            <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListOther.$invalid }">
+                            <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListOther.$invalid }">
 
                                 <input type="text"
                                        class="form-control"
