@@ -229,13 +229,61 @@
                                 <li>
                                     <label>
                                         <input type="checkbox"  ng-model="project.partnerOtherSIC"> Other SIC
-
                                     </label>
+
+                                    <div ng-show="project.partnerOtherSIC">
+                                        <label class="form-inline">
+                                            Please select
+                                            <select class="form-control" name="partnerOtherSICStare"
+                                                ng-model="project.partnerOtherSICState">
+                                                <option value="1">Alabama</option>
+                                                <option value="2">Alaska</option>
+                                                <option value="3">Arkansas</option>
+                                                <option value="4">California</option>
+                                                <option value="5">Central Canada</option>
+                                                <option value="6">Central Rockies</option>
+                                                <option value="6">Florida</option>
+                                                <option value="7">Georgia</option>
+                                                <option value="8">Idaho</option>
+                                                <option value="9">Kentucky</option>
+                                                <option value="10">Louisiana</option>
+                                                <option value="11">Maine</option>
+                                                <option value="12">Maritime</option>
+                                                <option value="13">Maryland/Delaware</option>
+                                                <option value="14">Michigan</option>
+                                                <option value="15">Minnesota</option>
+                                                <option value="16">Mississippi</option>
+                                                <option value="16">Montana</option>
+                                                <option value="17">New Hampshire</option>
+                                                <option value="18">New York</option>
+                                                <option value="19">North Carolina</option>
+                                                <option value="20">Ohio</option>
+                                                <option value="21">Oregon</option>
+                                                <option value="22">Pennsylvania</option>
+                                                <option value="23">Quebec</option>
+                                                <option value="24">South Carolina</option>
+                                                <option value="25">Tennessee</option>
+                                                <option value="26">Texas</option>
+                                                <option value="26">Vermont</option>
+                                                <option value="27">Virginia</option>
+                                                <option value="28">Washington</option>
+                                                <option value="29">West Virginia</option>
+                                                <option value="30">Western Canada</option>
+                                                <option value="31">Wisconsin</option>
+                                            </select>
+                                        </label>
+                                    </div>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="checkbox"  ng-model="project.partnerOther"> Other
                                     </label>
+                                    <div ng-show="project.partnerOther">
+                                        <label class="form-inline">
+                                            Please specify&nbsp;
+                                            <input type="text" style="font-weight: normal;" class="form-control" name="partnerOtherSpecify" ng-model="project.partnerOtherSpecify">
+                                        </label>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
