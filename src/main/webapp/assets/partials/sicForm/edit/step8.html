@@ -1,6 +1,6 @@
 <div class="row">
     <div ng-init="errors = cs8.errors" ng-include="'/assets/partials/form/error.html'"></div>
-    <div class="col-sm-12">
+    <div class="col-sm-12 fm-stl">
 
         <!--Right Side Start
         -------------
@@ -52,9 +52,11 @@
 
                 <div class="col-lg-12"  ng-show="cs8.inPartnershipProjects">
                     <div class="form-group">
-                        <label class="control-label col-lg-3" style="text-align: left">
-                            Project Name
+                        <div class="col-lg-3">
+                        <label class="control-label" style="margin-top: 7px;">
+                           <b>Project Name</b>
                         </label>
+                        </div>
 
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.name.$invalid }">
                             <input class="form-control" type="text" name="name"
@@ -62,24 +64,26 @@
                                    ng-model="project.name" ng-required="isProjectDirty()">
                         </div>
                     </div>
-                    <p style="padding-top: 30px;">Lead Organization and Main Contact</p>
+                    <p style="padding-top: 30px;padding-left: 15px;"><b>Lead Organization and Main Contact</b></p>
 
                     <div class="form-group">
-                        <label class="control-label col-lg-3" style="text-align: left">
+                        <div class="col-lg-3">
+                        <label class="control-label" style="margin-top: 7px;">
                             Organization Name
                         </label>
-
+                        </div>
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.organization.$invalid }">
                             <input class="form-control" type="text" name="organization"
                                    ng-maxlength="200" pattern-msg="Provide text with max length 200" customerror
                                    ng-model="project.organization" ng-required="isProjectDirty()">
                         </div>
                     </div>
-                    <div class="form-group" >
-                        <label class="control-label col-lg-3" style="text-align: left">
+                    <div class="form-group">
+                        <div class="col-lg-3">
+                        <label class="control-label" style="margin-top: 7px;">
                             Main Contact's Name
                         </label>
-
+                        </div>
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.contactName.$invalid }">
                             <input class="form-control" type="text" name="contactName"
                                    ng-maxlength="200" pattern-msg="Provide text with max length 200" customerror
@@ -87,24 +91,26 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-lg-3" style="text-align: left">
+                        <div class="col-lg-3">
+                        <label class="control-label" style="margin-top: 7px;">
                             Main Contact's Email
                         </label>
-
+                        </div>
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.contactEmail.$invalid }">
                             <input class="form-control" type="email" name="contactEmail"
                                    ng-maxlength="200" pattern-msg="Provide email with max length 200" customerror
                                    ng-model="project.contactEmail" ng-required="isProjectDirty()">
                         </div>
                     </div>
-                    <p style="padding-top: 30px;">Project Details</p>
+                    <p style="padding-top: 30px;padding-left: 15px;"><b>Project Details</b></p>
 
                     <div class="form-group">
-                        <label class="control-label col-lg-3" style="text-align: left">
+                        <div class="col-lg-3">
+                        <label class="control-label" style="margin-top: 7px;">
                             Project Description
                             (max. 300 words)
                         </label>
-
+                        </div>
                         <div class="col-lg-9" ng-class="{'has-error' : projectForm.description.$invalid }">
                             <textarea class="form-control" rows="4" name="description"
                                       ng-required="isProjectDirty()" ng-maxlength="2000" max-word-count="300" customerror
@@ -113,10 +119,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-lg-3" style="text-align: left">
+                        <div class="col-lg-3">
+                        <label class="control-label" style="margin-top: 7px;">
                             Project Partners
                             (check all that apply)
                         </label>
+                        </div>
 
                         <div class="col-lg-9">
                             <ul class="list-style" style="padding-top: 10px;">
@@ -324,9 +332,9 @@
                     <div class="col-lg-8 pading-botoms">
 
                         <div class="col-lg-6">
-                            <div class="col-sm-4 nopadding" style="line-height: 32px;">Start date</div>
+                            <!--<div class="col-sm-4 nopadding" style="line-height: 32px;">Start date</div>-->
                             <div class='input-group date datetimepicker' datetimepicker>
-                                <input type='text' class="form-control datepicker" name="start_date"
+                                <input type='text' placeholder="Start date" class="form-control datepicker" name="start_date"
                                                ng-required="isProjectDirty()" customerror
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                                pattern-msg="Please enter a valid date(YYYY-MM-DD)"
@@ -336,9 +344,9 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <div class="col-sm-4 nopadding" style="line-height: 32px;">End date</div>
+                            <!--<div class="col-sm-4 nopadding" style="line-height: 32px;">End date</div>-->
                             <div class='input-group date datetimepicker' datetimepicker>
-                                <input type='text' class="form-control datepicker" name="end_date"
+                                <input type='text' placeholder="End date" class="form-control datepicker" name="end_date"
                                                ng-required="isProjectDirty()" customerror
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                                pattern-msg="Please enter a valid date(YYYY-MM-DD)"
@@ -399,7 +407,7 @@
                                 </div>
 
                                 <span class="input-group-addon btn default btn-file">
-                                    <span ng-hide="supportDoc.originalDocumentName" class="fileinput-new">Select file </span>
+                                    <span ng-hide="supportDoc.originalDocumentName" class="fileinput-new">Browse</span>
                                     <span ng-show="supportDoc.originalDocumentName" class="fileinput-exists">Change </span>
                                 </span>
                                 <a ng-click="supportDoc = {}; " ng-show="supportDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
@@ -417,12 +425,16 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-8 pading-botoms">
+                    <div class="col-lg-12 pading-botoms">
                         <div style="padding-left: 10px;">
                             <p>
-                                Is your SIC currently involved in, or supporting, any research, conservation and/or community
-                                partnership projects?
+                                May SFI Inc. share this project partnership data externally, as part of a compiled summary across SFI Implementation Committees and SFI Program Participants, ensuring confidentiality?
                             </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 pading-botoms">
+                        <div style="padding-left: 10px;">
                             <label>
                                 <input type="radio" name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > Yes
                             </label>
@@ -430,7 +442,7 @@
                                 <input type="radio" name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > No
                             </label>
                         </div>
-                        <p class="myButton" ng-click="addProject()">+ Add Another Project</p>
+                        <p class="myButton pull-right" ng-click="addProject()"><b><u>+ Add Another Project</u></b></p>
 
                     </div>
 
