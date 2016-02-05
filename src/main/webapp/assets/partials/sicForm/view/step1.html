@@ -29,7 +29,7 @@
                 </h5>
 
                 <div class="fileinput fileinput-new" data-provides="fileinput">
-                    <p>Attach a copy of SIC organizational guidelines (charter, bylaws, etc.).</p>
+                    <p><b>Attach a copy of SIC organizational guidelines (charter, bylaws, etc.).</b></p>
                     <div class="input-group input-large">
 
                         <div class="form-control uneditable-input input-fixed input-medium">
@@ -59,7 +59,7 @@
         <div class="col-lg-12 passage-bold" ng-show="cs1.guideFiles.length">
             <div class="col-lg-8">
 
-                <p>Copy of organizational guidelines attached?</p>
+                <p><b>Copy of organizational guidelines attached?</b></p>
 
                 <label><input readonly  name="orgDocAttached" ng-value="true"  ng-model="cs1.orgDocAttached" ng-checked="cs1.orgDocAttached" type="radio" disabled > Yes</label>
                 <label><input readonly  name="orgDocAttached" ng-value="false" ng-model="cs1.orgDocAttached" ng-checked="!cs1.orgDocAttached" type="radio" disabled > No</label>
@@ -88,7 +88,7 @@
             <div class="col-lg-8">
 
                 <div style="padding-bottom: 20px">
-                    <p>Please choose the best description of how the SFI Implementation Committee (SIC) is organized? (new!)</p>
+                    <p><b>Please choose the best description of how the SFI Implementation Committee (SIC) is organized? (new!)</b></p>
                     <select readonly  style="width: 560px;" class="form-control" ng-model="$scope.sicOrgDescription">
                         <option ng-selected="!$scope.sicOrgDescription">Select</option>
                         <option value="1">Fully independent (IRS or state designated non-profit status)</option>
@@ -100,9 +100,11 @@
 
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                     <p>
-                        Attach a list of committee members and SIC Supporters, with full contact information, for
-                        incorporating into SFI's contact database to ensure committee members get the latest SFI
-                        information directly. Please use excel template provided by SFI Inc.
+                        <b>
+                            Attach a list of committee members and SIC Supporters, with full contact information, for
+                            incorporating into SFI's contact database to ensure committee members get the latest SFI
+                            information directly. Please use excel template provided by SFI Inc.
+                        </b>
                     </p>
 
                     <div class="input-group input-large">
@@ -135,7 +137,9 @@
         <div class="col-lg-12 passage-bold">
             <div class="col-lg-8">
                 <p>
-                    Report the number of committee members and SIC Supporters for each of the following categories:
+                    <b>
+                        Report the number of committee members and SIC Supporters for each of the following categories:
+                    </b>
                 </p>
                 <table border="1" style="line-height: 30px;" class="boxsize table-bordered">
                     <tr>
@@ -206,7 +210,7 @@
                             </div>
                             <br>
 
-                            <div style="padding-left: 25px; padding-top: 10px;">
+                            <div style="padding-left: 25px; padding-top: 10px;" class="fm-stl">
                                 <label class="form-inline" ng-class="{'has-error' : cs1Form.membersOtherSFISpecify.$invalid }">
                                     Please Specify <input readonly  class="form-control" name="membersOtherSFISpecify" style="width: 425px; height: 30px;" type="text" ng-model="cs1.membersOtherSFISpecify">
                                 </label>
@@ -322,7 +326,7 @@
                             </div>
                             <br>
 
-                            <div style="padding-left: 25px; padding-top: 10px;">
+                            <div style="padding-left: 25px; padding-top: 10px;" class="fm-stl">
                                 <label class="form-inline">
                                     Please Specify <input readonly  class="form-control" style="width: 425px; height: 30px;" type="text" ng-model="cs1.supporterOtherSpecify">
                                 </label>
@@ -338,7 +342,9 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Current SIC Chair
+                    <b>
+                        Current SIC Chair
+                    </b>
                 </p>
 
                 <div class="pading-botom">
@@ -413,7 +419,9 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Current SIC Coordinator (optional)
+                    <b>
+                        Current SIC Coordinator (optional)
+                    </b>
                 </p>
 
                 <div class="pading-botom">
@@ -488,7 +496,9 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Please list sub-committees and provide email address for sub-committee chair (if applicable):
+                    <b>
+                        Please list sub-committees and provide email address for sub-committee chair (if applicable):
+                    </b>
                 </p>
 
                 <div>
@@ -520,7 +530,9 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                    <b>
+                        List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                    </b>
                 </p>
 
                 <div>
@@ -554,7 +566,9 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                    <b>
+                        List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                    </b>
                 </p>
 
                 <div>
@@ -602,8 +616,10 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Is the SIC willing to represent the SFI program, on SFI Inc.'s behalf, at local conferences,
-                    tradeshows and events, etc.?
+                    <b>
+                        Is the SIC willing to represent the SFI program, on SFI Inc.'s behalf, at local conferences,
+                        tradeshows and events, etc.?
+                    </b>
                 </p>
                 <label>
                     <input readonly  type="radio" disabled  name="sicRepresentSfi" ng-model="cs1.sicRepresentSfi" ng-value="true" ng-checked="cs1.sicRepresentSfi"> Yes
@@ -625,7 +641,9 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Did your SIC recruit any new SFI applicants or SFI Program Participants last year?
+                    <b>
+                        Did your SIC recruit any new SFI applicants or SFI Program Participants last year?
+                    </b>
                 </p>
                 <label>
                     <input readonly  type="radio" disabled  name="sicRecruitSfi" ng-model="cs1.sicRecruitSfi" ng-value="true" ng-checked="cs1.sicRecruitSfi"> Yes
@@ -647,7 +665,9 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Does your SIC workplan/annual goals/annual activities include recruitment efforts this year?
+                    <b>
+                        Does your SIC workplan/annual goals/annual activities include recruitment efforts this year?
+                    </b>
                 </p>
                 <label>
                     <input readonly  type="radio" disabled  name="sicPlanRecruitment" ng-model="cs1.sicPlanRecruitment" ng-value="true" ng-checked="cs1.sicPlanRecruitment"> Yes
