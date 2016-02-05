@@ -12,7 +12,7 @@
             <h5>
                 9. <span tooltip data-placement="top" data-container="body" data-html="true" data-title="From SIC Governance Document - Market Outreach secondary mission priority:  Sponsor active market outreach efforts in local communities that may include paid advertising."> Communications and Market Outreach (Secondary Mission Priority)</span>
             </h5>
-            <div class="pading-botoms" style="padding-left: 10px;">
+            <div class="pading-botoms col-lg-12" style="padding-left: 10px;">
                 <p style="padding-top: 30px;">
                     Does your SIC specifically promote the SFI® program in communications and marketing efforts, as part of the Market Outreach secondary mission priority?
                 </p>
@@ -23,17 +23,17 @@
                     <input type="radio" disabled  name="promoteSFI" ng-value="true" ng-model="cs9.promoteSFI">  No
                 </label>
             </div>
-            <div class="pading-botoms" style="padding-left: 10px;">
+            <div class="pading-botoms col-lg-12" style="padding-left: 10px;">
                 <p>
                     Use the form below to describe SFI communications activities completed <u><b>last year</b></u>.  For each item checked, please include details regarding the activity.  (If possible, please include any files as examples for posting on the SIC member’s area information sharing portal.) (new!)
                 </p>
-                <ul class="list-style list-pading">
-                    <p>Communication Activity</p>
+                <ul class="list-style">
+                    <p><b>Communication Activity</b></p>
                     <li ng-class="{ 'list-select-drop' : cs9.activityLastYrPrinted}">
                         <label>
                             <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrPrinted">  Printed publications
                         </label>
-                        <div class="col-lg-12" ng-show="cs9.activityLastYrPrinted">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityLastYrPrinted">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -52,7 +52,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc1.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="doc1.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="doc1.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -71,7 +71,7 @@
                         <label>
                             <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrAdvTV"> Advertisements,TV & Radio
                         </label>
-                        <div class="col-lg-22" ng-show="cs9.activityLastYrAdvTV">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityLastYrAdvTV">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -90,7 +90,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc2.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="doc2.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="doc2.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -111,7 +111,7 @@
                         <label>
                             <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrAdvPrinted"> Printed Advertisements, e.g. magazines, newspapers, billboards
                         </label>
-                        <div class="col-lg-32" ng-show="cs9.activityLastYrAdvPrinted">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityLastYrAdvPrinted">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -130,7 +130,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc3.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="doc3.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="doc3.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -152,7 +152,7 @@
                         <label>
                             <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrTradeshow">  Tradeshow or Conference attendance
                         </label>
-                        <div class="col-lg-42" ng-show="cs9.activityLastYrTradeshow">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityLastYrTradeshow">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -171,7 +171,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc4.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="doc4.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="doc4.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -192,7 +192,7 @@
                         <label>
                             <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrEventSponsor">  Event Sponsorship
                         </label>
-                        <div class="col-lg-52" ng-show="cs9.activityLastYrEventSponsor">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityLastYrEventSponsor">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -211,7 +211,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc5.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="doc5.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="doc5.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -232,7 +232,7 @@
                         <label>
                             <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrSocialMedia">  Social Media
                         </label>
-                        <div class="col-lg-62" ng-show="cs9.activityLastYrSocialMedia">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityLastYrSocialMedia">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -251,7 +251,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc6.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="doc6.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="doc6.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -272,7 +272,7 @@
                         <label>
                             <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrVideo">  Video
                         </label>
-                        <div class="col-lg-72" ng-show="cs9.activityLastYrVideo">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityLastYrVideo">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -291,7 +291,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc7.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="doc7.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="doc7.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -312,7 +312,7 @@
                         <label>
                             <input type="checkbox" disabled  name="activityLastYr" ng-model="cs9.activityLastYrOther">  Other
                         </label>
-                        <div class="col-lg-82" ng-show="cs9.activityLastYrOther">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityLastYrOther">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -332,7 +332,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="doc8.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="doc8.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="doc8.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -353,17 +353,17 @@
 
             </div>
 
-            <div class="pading-botoms" style="padding-left: 10px;">
+            <div class="pading-botoms col-lg-12" style="padding-left: 10px;">
                 <p>
                     Use the form below to describe SFI communications activities planned for the <u><b>current year</b></u> year. For each item checked, please indicate the topic/theme of the activity. (If possible, please include any files as examples.)  (new!)
                 </p>
-                <ul class="list-style list-pading">
+                <ul class="list-style">
 
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrPrinted}">
-                        <label>
+                        <label class="col-lg-12">
                             <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrPrinted">  Printed publications
                         </label>
-                        <div class="col-lg-12" ng-show="cs9.activityCurrentYrPrinted">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityCurrentYrPrinted">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -383,7 +383,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc1.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="curDoc1.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="curDoc1.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -404,10 +404,10 @@
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrAdvTV}">
-                        <label>
+                        <labe class="col-lg-12"l>
                             <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrAdvTV"> Advertisements,TV & Radio
                         </label>
-                        <div class="col-lg-22" ng-show="cs9.activityCurrentYrAdvTV">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityCurrentYrAdvTV">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -426,7 +426,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc2.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="curDoc2.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="curDoc2.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -446,10 +446,10 @@
                         </div>
                     </li>
                     <li class="'list-select-drop'">
-                        <label>
+                        <label class="col-lg-12">
                             <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrAdvPrinted"> Printed Advertisements, e.g. magazines, newspapers, billboards
                         </label>
-                        <div class="col-lg-32" ng-show="cs9.activityCurrentYrAdvPrinted">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityCurrentYrAdvPrinted">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -468,7 +468,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc3.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="curDoc3.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="curDoc3.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -489,10 +489,10 @@
 
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrTradeshow}">
-                        <label>
+                        <label class="col-lg-12">
                             <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrTradeshow">  Tradeshow or Conference attendance
                         </label>
-                        <div class="col-lg-42" ng-show="cs9.activityCurrentYrTradeshow">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityCurrentYrTradeshow">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -511,7 +511,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc4.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="curDoc4.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="curDoc4.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -530,10 +530,10 @@
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrEventSponsor}">
-                        <label>
+                        <label class="col-lg-12">
                             <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrEventSponsor">  Event Sponsorship
                         </label>
-                        <div class="col-lg-52" ng-show="cs9.activityCurrentYrEventSponsor">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityCurrentYrEventSponsor">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -552,7 +552,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc5.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="curDoc5.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="curDoc5.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -572,10 +572,10 @@
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrSocialMedia }">
-                        <label>
+                        <label class="col-lg-12">
                             <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrSocialMedia">  Social Media
                         </label>
-                        <div class="col-lg-62" ng-show="cs9.activityCurrentYrSocialMedia">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityCurrentYrSocialMedia">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -594,7 +594,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc6.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="curDoc6.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="curDoc6.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -614,10 +614,10 @@
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrVideo}">
-                        <label>
+                        <label class="col-lg-12">
                             <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrVideo">  Video
                         </label>
-                        <div class="col-lg-72" ng-show="cs9.activityCurrentYrVideo">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityCurrentYrVideo">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -636,7 +636,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc7.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="curDoc7.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="curDoc7.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
@@ -654,10 +654,10 @@
                         </div>
                     </li>
                     <li ng-class="{ 'list-select-drop' : cs9.activityCurrentYrOther}">
-                        <label>
+                        <label class="col-lg-12">
                             <input type="checkbox" disabled  name="activityCurrentYr" ng-model="cs9.activityCurrentYrOther">  Other
                         </label>
-                        <div class="col-lg-82" ng-show="cs9.activityCurrentYrOther">
+                        <div class="col-lg-8 pading-botom" ng-show="cs9.activityCurrentYrOther">
                             <div style="padding-left: 10px;">
                                 <p>
                                     Details regarding activity (e.g. main message, name of media outlet, how many people reached, costs associated, etc.)
@@ -678,7 +678,7 @@
                                     </div>
 
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="curDoc8.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="curDoc8.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="curDoc8.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
