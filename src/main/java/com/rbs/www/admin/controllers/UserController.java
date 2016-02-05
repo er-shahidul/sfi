@@ -338,7 +338,7 @@ public class UserController {
 
     private String userCheck(User user) {
         if (user == null) {
-            return "accessDenied";
+            return "redirect:/Access_Denied";
         } else if (user.getToken()) {
             return "index";
         } else {
