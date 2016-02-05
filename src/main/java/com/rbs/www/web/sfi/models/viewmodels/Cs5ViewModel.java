@@ -8,7 +8,7 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Set;
 
-@Cs5OrgList(message = "{cs5.orgList}")
+@Cs5OrgList(message = "{orgList}")
 @SpELAssert.List({
         @SpELAssert(
                 value = "otherText != null && !otherText.isEmpty()",

@@ -2,12 +2,14 @@ package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
+import com.rbs.www.web.sfi.validation.SfiPpFormCs3OrgList.SfiPpFormCs3OrgList;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Set;
 
+@SfiPpFormCs3OrgList(message = "{orgList}")
 public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer id;
     private Integer totalProjectCost;
