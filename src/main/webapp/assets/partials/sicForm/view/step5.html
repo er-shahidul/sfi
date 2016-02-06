@@ -130,7 +130,7 @@
                 <tbody>
                     <tr ng-repeat="item in cs5.forestStandards2015">
                         <td>
-                            {{ forestObjectives[ item.objective ] }}
+                            {{ forestObjectives[ item.objective ].value }}
                         </td>
                         <td align="center">
                             {{ item.resolved }}
@@ -198,7 +198,7 @@
                     <tbody>
                     <tr ng-repeat="item in cs5.fiberSourcing2015">
                         <td>
-                            {{ fiberObjectives[ item.objective ] }}
+                            {{ fiberObjectives[ item.objective ].value }}
                         </td>
                         <td align="center">
                             {{ item.resolved }}
@@ -259,7 +259,7 @@
                     <tbody>
                     <tr ng-repeat="item in cs5.standardObjectives2010">
                         <td>
-                            {{ standardObjectives[ item.objective ] }}
+                            {{ standardObjectives[ item.objective ].value }}
                         </td>
                         <td align="center">
                             {{ item.resolved }}
