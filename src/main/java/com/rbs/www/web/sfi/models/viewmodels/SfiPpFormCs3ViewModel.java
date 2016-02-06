@@ -62,6 +62,9 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private String conversionPattern;
     private String description;
 
+    private String incResFundingText;
+    private Integer sfiStandardObj;
+
     @Override
     public Integer getId() {
         return id;
@@ -69,6 +72,22 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getIncResFundingText() {
+        return incResFundingText;
+    }
+
+    public void setIncResFundingText(String incResFundingText) {
+        this.incResFundingText = incResFundingText;
+    }
+
+    public Integer getSfiStandardObj() {
+        return sfiStandardObj;
+    }
+
+    public void setSfiStandardObj(Integer sfiStandardObj) {
+        this.sfiStandardObj = sfiStandardObj;
     }
 
     public String getConversionPattern() {
