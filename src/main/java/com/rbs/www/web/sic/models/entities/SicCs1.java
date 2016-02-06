@@ -177,6 +177,9 @@ public class SicCs1 extends BaseEntityModel {
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> sicRecruitmentOrgs;
 
+    @Column(name = "cs1_sicOrgDescription", nullable = true)
+    private Integer sicOrgDescription;
+
     @Override
     public Integer getId() {
         return id;
@@ -184,6 +187,14 @@ public class SicCs1 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getSicOrgDescription() {
+        return sicOrgDescription;
+    }
+
+    public void setSicOrgDescription(Integer sicOrgDescription) {
+        this.sicOrgDescription = sicOrgDescription;
     }
 
     public Integer getMembersConservationSFI() {
