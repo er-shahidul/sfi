@@ -6,13 +6,47 @@ import com.rbs.www.common.modules.validator.SpELAssert;
 import java.util.Date;
 import java.util.Set;
 
+
 @SpELAssert.List({
-        @SpELAssert(value = "biodiversityNoDescribe == null", applyIf = "biodiversityFiberSourcing == 3", message = "biodiversityNoDescribe Should not be null"),
+        @SpELAssert(
+                value = "biodiversityItems1 != null && !biodiversityItems1.isEmpty()",
+                applyIf = "biodiversityFiberSourcing != null && biodiversityFiberSourcing.equals('1')",
+                message = "{cs9.biodiversityItems1}"
+        ),
+        @SpELAssert(
+                value = "biodiversityItems2 != null && !biodiversityItems2.isEmpty()",
+                applyIf = "biodiversityFiberSourcing != null && biodiversityFiberSourcing.equals('2')",
+                message = "{cs9.biodiversityItems2}"
+        ),
+        @SpELAssert(
+                value = "biodiversityNoDescribe != null && !biodiversityNoDescribe.isEmpty()",
+                applyIf = "biodiversityFiberSourcing != null && biodiversityFiberSourcing.equals('3')",
+                message = "{cs9.biodiversityNoDescribe}"
+        ),
+        @SpELAssert(
+                value = "biodiversityMechanismDescribe != null && !biodiversityMechanismDescribe.isEmpty()",
+                applyIf = "biodiversityFiberSourcing != null && biodiversityFiberSourcing.equals('4')",
+                message = "{cs9.biodiversityMechanismDescribe}"
+        ),
+        @SpELAssert(
+                value = "biodiversityManagementItems1 != null && !biodiversityManagementItems1.isEmpty()",
+                applyIf = "biodiversityManagement != null && biodiversityManagement.equals('1')",
+                message = "{cs9.biodiversityManagementItems1}"
+        ),
+        @SpELAssert(
+                value = "biodiversityManagementItems2 != null && !biodiversityManagementItems2.isEmpty()",
+                applyIf = "biodiversityManagement != null && biodiversityManagement.equals('2')",
+                message = "{cs9.biodiversityManagementItems2}"
+        ),
+        @SpELAssert(
+                value = "biodiversityManagementNoDescribe != null && !biodiversityManagementNoDescribe.isEmpty()",
+                applyIf = "biodiversityManagement != null && biodiversityManagement.equals('3')",
+                message = "{cs9.biodiversityManagementNoDescribe}"
+        )
 })
 public class Cs10ViewModel extends BaseViewModel {
     private Integer id;
     private Boolean acknowledge;
-    @SpELAssert(value = "#this == null", message = "legalComplianceOutside Should not be null")
     private Boolean legalComplianceOutside;
     private Boolean legalComplianceUsCanada;
     private Date createdAt;
@@ -32,7 +66,6 @@ public class Cs10ViewModel extends BaseViewModel {
     private String biodiversityManagement;
     private String biodiversityTraining;
     private String legalComplianceOutsideOtherExplain;
-    @SpELAssert(value = "#this == null", message = "trainedWoodProducersChanged Should not be null")
     private String trainedWoodProducersChanged;
 
     private String biodiversityManagementMechanismDescribe;

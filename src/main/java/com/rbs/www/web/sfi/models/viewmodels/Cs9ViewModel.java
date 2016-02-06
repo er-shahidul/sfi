@@ -3,30 +3,89 @@ package com.rbs.www.web.sfi.models.viewmodels;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @SpELAssert.List({
-        @SpELAssert(value = "protectionMaintenanceRationale == null", applyIf = "protectionMaintenanceWaterRes == 3", message = "protectionMaintenanceRationale Should not be null"),
-        @SpELAssert(value = "conservation413Rationale == null", applyIf = "conservationBiodiversity413 == 3", message = "conservation413Rationale Should not be null"),
-        @SpELAssert(value = "conservation414Rationale == null", applyIf = "conservationBiodiversity414 == 3", message = "conservation414Rationale Should not be null"),
-//        @SpELAssert(value = "conservation415Explain1_1 == null", applyIf = "conservationBiodiversity415item ==2", message = "conservation415Explain1_1 Should not be null", property = "conservation415Explain1_1"),
-//        @SpELAssert(value = "conservationBiodiversity415Exp == null", applyIf = "conservationBiodiversity415 ==1", message = "conservationBiodiversity415Exp Should not be null", property = "conservationBiodiversity415Exp"),
-//        @SpELAssert(value = "indigenousPublicRationale == null", applyIf = "indigenousPeoplesPublic == 4", message = "indigenousPublicRationale Should not be null", property = "indigenousPublicRationale"),
-//        @SpELAssert(value = "indigenousPrivateRationale == null", applyIf = "indigenousPeoplesPrivate ==4", message = "indigenousPrivateRationale Should not be null", property = "indigenousPrivateRationale"),
-//        @SpELAssert(value = "indigenousForestPractice == null", applyIf = "indigenousPeoplesForest == 3", message = "indigenousForestPractice Should not be null", property = "indigenousForestPractice"),
-//        @SpELAssert(value = "trainingEduRationale == null", applyIf = "trainingEducation == 3", message = "trainingEduRationale Should not be null", property = "trainingEduRationale"),
-        @SpELAssert(value = "useWho1A1BNote == null", applyIf = "useWho1A1B", message = "useWho1A1BNote Should not be null"),
-//        @SpELAssert(value = "stopWho1A1BNote == null", applyIf = "stopWho1A1B", message = "stopWho1A1BNote Should not be null", property = "stopWho1A1BNote"),
-//        @SpELAssert(value = "restorationOtherExplain == null", applyIf = "restorationOther == 1", message = "restorationOtherExplain Should not be null", property = "restorationOtherExplain"),
-//        @SpELAssert(value = "environmentalHarmOtherExplain == null", applyIf = "environmentalHarmOther", message = "environmentalHarmOtherExplain Should not be null", property = "environmentalHarmOtherExplain"),
-//        @SpELAssert(value = "respondingOtherExplain == null", applyIf = "respondingOther", message = "respondingOtherExplain Should not be null", property = "respondingOtherExplain"),
-//        @SpELAssert(value = "economicOtherExplain == null", applyIf = "economicOther", message = "economicOtherExplain Should not be null", property = "economicOtherExplain"),
-//        @SpELAssert(value = "convertForestLandExplain == null", applyIf = "convertForestLand", message = "convertForestLandExplain Should not be null", property = "convertForestLandExplain"),
+        @SpELAssert(
+                value = "protectionMaintenanceWaterResItems1 != null && !protectionMaintenanceWaterResItems1.isEmpty()",
+                applyIf = "protectionMaintenanceWaterRes != null && protectionMaintenanceWaterRes.equals('1')",
+                message = "{cs9.protectionMaintenanceWaterResItems1}"
+        ),
+        @SpELAssert(
+                value = "protectionMaintenanceWaterResItems2 != null && !protectionMaintenanceWaterResItems2.isEmpty()",
+                applyIf = "protectionMaintenanceWaterRes != null && protectionMaintenanceWaterRes.equals('2')",
+                message = "{cs9.protectionMaintenanceWaterResItems2}"
+        ),
+        @SpELAssert(
+                value = "protectionMaintenanceRationale != null && !protectionMaintenanceRationale.isEmpty()",
+                applyIf = "protectionMaintenanceWaterRes != null && protectionMaintenanceWaterRes.equals('3')",
+                message = "{cs9.protectionMaintenanceRationale}"
+        ),
+        @SpELAssert(
+                value = "conservationBiodiversity413Items1 != null && !conservationBiodiversity413Items1.isEmpty()",
+                applyIf = "conservationBiodiversity413 != null && conservationBiodiversity413.equals('1')",
+                message = "{cs9.conservationBiodiversity413Items1}"
+        ),
+        @SpELAssert(
+                value = "conservationBiodiversity413Items2 != null && !conservationBiodiversity413Items2.isEmpty()",
+                applyIf = "conservationBiodiversity413 != null && conservationBiodiversity413.equals('2')",
+                message = "{cs9.conservationBiodiversity413Items2}"
+        ),
+        @SpELAssert(
+                value = "conservation413Rationale != null && !conservation413Rationale.isEmpty()",
+                applyIf = "conservationBiodiversity413 != null && conservationBiodiversity413.equals('3')",
+                message = "{cs9.conservation413Rationale}"
+        ),
+        @SpELAssert(
+                value = "conservationBiodiversity414Items1 != null && !conservationBiodiversity414Items1.isEmpty()",
+                applyIf = "conservationBiodiversity414 != null && conservationBiodiversity414.equals('1')",
+                message = "{cs9.conservationBiodiversity414Items1}"
+        ),
+        @SpELAssert(
+                value = "conservationBiodiversity414Items2 != null && !conservationBiodiversity414Items2.isEmpty()",
+                applyIf = "conservationBiodiversity414 != null && conservationBiodiversity414.equals('2')",
+                message = "{cs9.conservationBiodiversity414Items2}"
+        ),
+        @SpELAssert(
+                value = "conservation414Rationale != null && !conservation414Rationale.isEmpty()",
+                applyIf = "conservationBiodiversity414 != null && conservationBiodiversity413.equals('3')",
+                message = "{cs9.conservation414Rationale}"
+        ),
+        @SpELAssert(
+                value = "trainingEducationItems1 != null && !trainingEducationItems1.isEmpty()",
+                applyIf = "trainingEducation != null && trainingEducation.equals('1')",
+                message = "{cs9.trainingEducationItems1}"
+        ),
+        @SpELAssert(
+                value = "trainingEducationItems2 != null && !trainingEducationItems2.isEmpty()",
+                applyIf = "trainingEducation != null && trainingEducation.equals('2')",
+                message = "{cs9.trainingEducationItems2}"
+        ),
+        @SpELAssert(
+                value = "trainingEduRationale != null && !trainingEduRationale.isEmpty()",
+                applyIf = "trainingEducation != null && trainingEducation.equals('3')",
+                message = "{cs9.trainingEduRationale}"
+        ),
+        @SpELAssert(
+                value = "useWho1A1BNote != null && !useWho1A1BNote.isEmpty()",
+                applyIf = "useWho1A1B != null && useWho1A1B",
+                message = "{cs9.useWho1A1BNote}"
+        ),
+        @SpELAssert(
+                value = "stopWho1A1BNote != null && !stopWho1A1BNote.isEmpty()",
+                applyIf = "stopWho1A1B != null && stopWho1A1B",
+                message = "{cs9.stopWho1A1BNote}"
+        ),
+        @SpELAssert(
+                value = "convertForestLandExplain != null && !convertForestLandExplain.isEmpty()",
+                applyIf = "convertForestLand != null && convertForestLand",
+                message = "{cs9.convertForestLandExplain}"
+        )
 })
 public class Cs9ViewModel extends BaseViewModel {
     private Integer id;
     private Boolean acknowledge;
-    @SpELAssert(value = "#this == null", message = "convertForestCover Should not be null")
     private Boolean convertForestCover;
     private Boolean convertForestLand;
     private Boolean ecologicalImpactsLandscape;
@@ -82,6 +141,8 @@ public class Cs9ViewModel extends BaseViewModel {
     private String restorationOtherExplain;
     private String restorationRiparianArea;
     private String stopWho1A1BNote;
+
+    @NotNull(message = "{cs9.trainedWoodProducersChanged}")
     private String trainedWoodProducersChanged;
     private String trainingEducation;
     private String useWho1A1BNote;
@@ -89,7 +150,9 @@ public class Cs9ViewModel extends BaseViewModel {
     private Set<Integer> protectionMaintenanceWaterResItems1;
     private Set<Integer> protectionMaintenanceWaterResItems2;
     private Set<Integer> conservationBiodiversity413Items1;
+    private Set<Integer> conservationBiodiversity413Items2;
     private Set<Integer> conservationBiodiversity414Items1;
+    private Set<Integer> conservationBiodiversity414Items2;
     private Set<Integer> indigenousPeoplesPublicItems1;
     private Set<Integer> indigenousPeoplesPrivateItems1;
     private Set<Integer> indigenousPeoplesForestItems1;
@@ -559,6 +622,7 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setConservationBiodiversity413Items(Set<Integer> conservationBiodiversity413Items) {
         this.conservationBiodiversity413Items = conservationBiodiversity413Items;
+        this.conservationBiodiversity413Items2 = conservationBiodiversity413Items;
     }
 
     public Set<Integer> getConservationBiodiversity414Items() {
@@ -567,6 +631,7 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setConservationBiodiversity414Items(Set<Integer> conservationBiodiversity414Items) {
         this.conservationBiodiversity414Items = conservationBiodiversity414Items;
+        this.conservationBiodiversity414Items2 = conservationBiodiversity414Items;
     }
 
     public Set<Integer> getIndigenousPeoplesForestItems() {
@@ -847,5 +912,23 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setUseWho1A1BNote(String useWho1A1BNote) {
         this.useWho1A1BNote = useWho1A1BNote;
+    }
+
+    public Set<Integer> getConservationBiodiversity413Items2() {
+        return conservationBiodiversity413Items2;
+    }
+
+    public void setConservationBiodiversity413Items2(Set<Integer> conservationBiodiversity413Items2) {
+        this.conservationBiodiversity413Items2 = conservationBiodiversity413Items2;
+        this.conservationBiodiversity413Items = conservationBiodiversity413Items2;
+    }
+
+    public Set<Integer> getConservationBiodiversity414Items2() {
+        return conservationBiodiversity414Items2;
+    }
+
+    public void setConservationBiodiversity414Items2(Set<Integer> conservationBiodiversity414Items2) {
+        this.conservationBiodiversity414Items2 = conservationBiodiversity414Items2;
+        this.conservationBiodiversity414Items = conservationBiodiversity414Items2;
     }
 }
