@@ -340,7 +340,7 @@ public class UserController {
         if (user == null) {
             return "redirect:/Access_Denied";
         } else if (user.getToken()) {
-            return "index";
+            return "redirect:/Access_Denied";
         } else {
             return ("redirect:/user/password/set/" + user.getId());
         }
