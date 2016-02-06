@@ -7,12 +7,51 @@ import com.rbs.www.web.common.models.viewmodels.SfiPpFormAllCountryViewModel;
 import java.util.Set;
 
 @SpELAssert.List({
-        @SpELAssert(value = "intMarketCountries == null", applyIf = "emerIssuIntMarket", message = "intMarketCountries Should not be null"),
-        @SpELAssert(value = "investResCountries == null && planInvestRes_year == null", applyIf = "investResIfInve", message = "investResCountries Should not be null"),
-        @SpELAssert(value = "planInvestResCountries == null && investResperc_currSupply == null", applyIf = "planInvestResIfPlan", message = "planInvestResCountries Should not be null"),
-        @SpELAssert(value = "planCommPlantCountries == null && planCommPlant_year == null && planCommPlantPerc == null", applyIf = "planCommPlantIfPlanGE", message = "planCommPlantCountries Should not be null"),
-
-        @SpELAssert(value = "emerIssuOtherSpec == null", applyIf = "emerIssuOther", message = "emerIssuOtherSpec Should not be null"),
+        @SpELAssert(
+                value = "emerIssuOtherSpec != null",
+                applyIf = "emerIssuOther != null && emerIssuOther",
+                message = "{cs7.otherIssuesOfInterest}"
+        ),
+        @SpELAssert(
+                value = "intMarketCountries != null && !intMarketCountries.isEmpty()",
+                applyIf = "emerIssuIntMarket != null && emerIssuIntMarket",
+                message = "{cs7.otherInternationalMarkets}"
+        ),
+        @SpELAssert(
+                value = "investResCountries != null && !investResCountries.isEmpty()",
+                applyIf = "investResIfInve != null && investResIfInve",
+                message = "{cs7.planCountries}"
+        ),
+        @SpELAssert(
+                value = "planInvestRes_year != null && !planInvestRes_year.isEmpty()",
+                applyIf = "investResIfInve != null && investResIfInve",
+                message = "{cs7.planYear}"
+        ),
+        @SpELAssert(
+                value = "planInvestResCountries != null && !planInvestResCountries.isEmpty()",
+                applyIf = "planInvestResIfPlan != null && planInvestResIfPlan",
+                message = "{cs7.investCountries}"
+        ),
+        @SpELAssert(
+                value = "investResperc_currSupply != null",
+                applyIf = "planInvestResIfPlan != null && planInvestResIfPlan",
+                message = "{cs7.investPercent}"
+        ),
+        @SpELAssert(
+                value = "planCommPlantCountries != null && !planCommPlantCountries.isEmpty()",
+                applyIf = "planCommPlantIfPlanGE != null && planCommPlantIfPlanGE",
+                message = "{cs7.legalPlantCountries}"
+        ),
+        @SpELAssert(
+                value = "planCommPlant_year != null && !planCommPlant_year.isEmpty()",
+                applyIf = "planCommPlantIfPlanGE != null && planCommPlantIfPlanGE",
+                message = "{cs7.legalPlantYar}"
+        ),
+        @SpELAssert(
+                value = "planCommPlantPerc != null && !planCommPlantPerc.isEmpty()",
+                applyIf = "planCommPlantIfPlanGE != null && planCommPlantIfPlanGE",
+                message = "{cs7.legalPlantPlan}"
+        )
 })
 public class Cs7ViewModel extends BaseViewModel {
     private Integer id;
