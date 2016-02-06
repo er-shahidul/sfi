@@ -199,11 +199,11 @@ sfiFormApp
                 incSFIConservation  : null,
                 supportDocs         : [],
                 organizationListAcademic        : [],
-                organizationListResearch        : "",
-                organizationListConservation    : "",
-                organizationListGovernment      : "",
-                organizationListCommunity       : "",
-                organizationListOther           : ""
+                organizationListResearch        : [],
+                organizationListConservation    : [],
+                organizationListGovernment      : [],
+                organizationListCommunity       : [],
+                organizationListOther           : []
 
             };
 

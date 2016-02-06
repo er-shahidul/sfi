@@ -309,6 +309,7 @@ sfiSicApp
     .factory('certifyBodies', function() {
         return window.certifyBodies
     })
+
     .factory('Message', ['$', function($) {
         return {
 

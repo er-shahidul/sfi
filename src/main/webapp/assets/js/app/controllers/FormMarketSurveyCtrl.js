@@ -33,7 +33,7 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
         $scope.producers = [
             "A&A Trading Ltd.",
             "ABITIBI RIVER FOREST MANAGEMENT INC",
-            "American Forest Management (AFM) – PNW Group",
+            "American Forest Management (AFM) - PNW Group",
             "ANC Timber Ltd.",
             "Anthony Forest Products",
             "Arbec Forest Products G.P.",

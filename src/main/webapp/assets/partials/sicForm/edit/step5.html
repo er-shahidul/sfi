@@ -156,7 +156,7 @@
                         <td width="35%">
                             <select class="form-control" ng-model="forest2015.objective" ng-required="hasData(forest2015)" customerror>
                                 <option ng-selected="!forest2015.objective">Select</option>
-                                <option ng-selected="forest2015.objective == $index" ng-repeat="objective in forestObjectives | orderBy:orderByValue" ng-value="$index">{{ objective }}</option>
+                                <option ng-selected="forest2015.objective == $index" ng-repeat="objective in forestObjectives | orderBy:'id':reverse" ng-value="$index">{{ objective.value }}</option>
                             </select>
                         </td>
                         <td>
@@ -223,7 +223,7 @@
                         <td width="35%">
                             <select class="form-control" ng-required="hasData(fiber2015)" customerror ng-model="fiber2015.objective">
                                 <option ng-selected="!fiber2015.objective">Select</option>
-                                <option ng-selected="fiber2015.objective == $index" ng-repeat="objective in fiberObjectives | orderBy:orderByValue" ng-value="$index">{{ objective }}</option>
+                                <option ng-selected="fiber2015.objective == $index" ng-repeat="objective in fiberObjectives | orderBy:'id':reverse" ng-value="$index">{{ objective.value }}</option>
                             </select>
                         </td>
                         <td>
@@ -297,7 +297,7 @@
                         <td width="35%" ng-init="standard2010.circumstancesDoc = standard2010.circumstancesDoc || {}">
                             <select class="form-control" ng-model="standard2010.objective" ng-required="hasData(standard2010)" customerror>
                                 <option ng-selected="!standard2010.objective">Select</option>
-                                <option ng-selected="standard2010.objective == $index" ng-repeat="objective in standardObjectives" ng-value="$index">{{ objective }}</option>
+                                <option ng-selected="standard2010.objective == $index" ng-repeat="objective in standardObjectives | orderBy:'id':reverse" ng-value="$index">{{ objective.value }}</option>
                             </select>
                         </td>
                         <td width="20%">
