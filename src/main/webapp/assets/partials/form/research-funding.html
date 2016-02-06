@@ -330,7 +330,7 @@
                                 ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects2015)">
                             <option value="0" ng-selected="!project.sfiStandard10">Please select</option>
                             <optgroup label="SFI 2015-2019 Forest Land Management Objectives">
-                            <option ng-repeat="item in standardObjects2015" ng-if="item.id <= 15" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                                <option ng-repeat="item in standardObjects2015" ng-if="item.id <= 15" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
                             </optgroup>
                             <optgroup label="SFI 2015-2019 Fiber Sourcing Objectives">
                                 <option ng-repeat="item in standardObjects2015" ng-if="item.id > 15" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
@@ -703,7 +703,7 @@
                     </div>
                     </div>
                     </div>
-                    </div>
+
 
                     <!--end-->
 
@@ -759,7 +759,7 @@
                     </div>
 
                 </form>
-
+                </div>
                 <br>
                 <h5>III. SFI Implementation Committees Funding</h5>
                 <table class="table vert-align-middle">
