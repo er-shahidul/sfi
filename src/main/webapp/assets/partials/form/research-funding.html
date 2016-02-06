@@ -52,8 +52,9 @@
                                 />
 
                         {{ item.description }}
+                        {{ cs5.isOtherEnabled }}
                         <input type="text" class="form-control   shorter" name="otherText"
-                               ng-show="cs5.isOtherEnabled" ng-model="cs5.otherText"
+                               ng-disabled="(item.description == 'Other' && cs5.isOtherEnabled != true)" ng-model="cs5.otherText"
                                ng-required="cs5.isOtherEnabled" customerror
                                ng-if="item.description == 'Other'"
                                customerror />
@@ -65,28 +66,29 @@
                         <input type="number" class="form-control   shorter" min="0" name="internalUsd" style="width:100px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
-                               ng-model="item.internalUsd" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInUsa()))"/>
+                               ng-model="item.internalUsd"
+                               ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInUsa()))"/>
                     </td>
 
                     <td align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalUsd" style="width:100px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
-                               ng-model="item.externalUsd" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInUsa()))">
+                               ng-model="item.externalUsd" ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInUsa()))">
                     </td>
 
                     <td align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="internalCad" style="width:100px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
-                               ng-model="item.internalCad" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInCa()))">
+                               ng-model="item.internalCad" ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInCa()))">
                     </td>
 
                     <td align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalCad" style="width:100px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
-                               ng-model="item.externalCad" ng-disabled="((item.id == 13 && cs5.isOtherEnabled == false) || (!operateInCa()))">
+                               ng-model="item.externalCad" ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInCa()))">
                     </td>
 
                 </tr>
