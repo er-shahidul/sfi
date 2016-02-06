@@ -1,25 +1,63 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.datamodels.BlobNames;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
+@SpELAssert.List({
+        @SpELAssert(
+                value = "sicRecruitSfiComments != null && !sicRecruitSfiComments.isEmpty()",
+                applyIf = "sicRecruitSfi != null && sicRecruitSfi",
+                message = "{sic.cs1.sicRecruitSfiComments}"
+        ),
+        @SpELAssert(
+                value = "sicRecruitmentOrgs != null && !sicRecruitmentOrgs.isEmpty()",
+                applyIf = "sicPlanRecruitment != null && sicPlanRecruitment",
+                message = "{sic.cs1.sicRecruitmentOrgs}"
+        )
+})
 public class SicCs1ViewModel extends BaseViewModel {
     private Integer id;
+
+    @NotNull(message = "{sic.cs1.membersConservationSFI}")
     private Integer membersConservationSFI;
+
+    @NotNull(message = "{sic.cs1.membersGovernmentAgency}")
     private Integer membersGovernmentAgency;
+
+    @NotNull(message = "{sic.cs1.membersIndustrySFI}")
     private Integer membersIndustrySFI;
     private Integer membersOtherSFIParticipant;
+
+    @NotNull(message = "{sic.cs1.membersSFIOrganization}")
     private Integer membersSFIOrganization;
+
+    @NotNull(message = "{sic.cs1.membersUniversitySFI}")
     private Integer membersUniversitySFI;
+
+    @NotNull(message = "{sic.cs1.supporterConservationOrg}")
     private Integer supporterConservationOrg;
+
+    @NotNull(message = "{sic.cs1.supporterConsultant}")
     private Integer supporterConsultant;
+
+    @NotNull(message = "{sic.cs1.supporterFamForestOwner}")
     private Integer supporterFamForestOwner;
+
+    @NotNull(message = "{sic.cs1.supporterForestryAssoc}")
     private Integer supporterForestryAssoc;
+
+    @NotNull(message = "{sic.cs1.supporterGovAgency}")
     private Integer supporterGovAgency;
+
+    @NotNull(message = "{sic.cs1.supporterLogger}")
     private Integer supporterLogger;
     private Integer supporterOther;
+
+    @NotNull(message = "{sic.cs1.supporterOtherLocal}")
     private Integer supporterOtherLocal;
     private Boolean orgDocAttached;
     private Boolean sicRecruitSfi;
@@ -28,14 +66,31 @@ public class SicCs1ViewModel extends BaseViewModel {
     private String orgDocAttachedWhy;
     private String sicWebsite;
     private String membersOtherSFISpecify;
+
+    @NotNull(message = "{sic.cs1.sicChairCity}")
     private String sicChairCity;
+
+    @NotNull(message = "{sic.cs1.sicChairCompany}")
     private String sicChairCompany;
+
+    @NotNull(message = "{sic.cs1.sicChairEmail}")
     private String sicChairEmail;
+
+    @NotNull(message = "{sic.cs1.sicChairName}")
     private String sicChairName;
+
+    @NotNull(message = "{sic.cs1.sicChairPhone}")
     private String sicChairPhone;
+
+    @NotNull(message = "{sic.cs1.sicChairState}")
     private String sicChairState;
+
+    @NotNull(message = "{sic.cs1.sicChairStreet}")
     private String sicChairStreet;
+
+    @NotNull(message = "{sic.cs1.sicChairZip}")
     private String sicChairZip;
+
     private String sicCoordinatorCity;
     private String sicCoordinatorCompany;
     private String sicCoordinatorEmail;
