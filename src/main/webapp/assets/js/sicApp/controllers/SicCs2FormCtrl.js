@@ -33,6 +33,8 @@ sfiSicApp
         $scope.cs2.directCurrency    = $scope.cs2.directCurrency || 1;
 
 
+        $scope.cs2.spentByYourCommittee = $scope.cs2.spentByYourCommittee || 0;
+
         $scope.getTotal = function(){
 
             var total = 0;
@@ -43,6 +45,8 @@ sfiSicApp
 
             return total;
         }
+
+
 
         $scope.sicList = {
             1  : 'Alabama',
@@ -109,6 +113,8 @@ sfiSicApp
                     });
             }
         }
+
+        $scope.getTotal
 
 
     }]);
