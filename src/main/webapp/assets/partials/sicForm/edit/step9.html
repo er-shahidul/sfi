@@ -424,6 +424,7 @@
                                     </span>
 
                                     <a ng-click="doc8 = {}; " ng-show="doc8.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+
                                 </div>
 
                                 Files can be one of the following formats: .pdf, .doc, .xls.
@@ -432,9 +433,14 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="doc8 = saveUploadedFile(doc8, cs9.supportDocLastYrOther, true)">
                             </div>
 
-                            <div id="selectedItem" >{{ cs9.supportDocLastYrOther.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrOther = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrOther">{{ cs9.supportDocLastYrOther.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrOther)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+
                             </div>
+
+                            <!--<div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrOther" >{{ file.originalDocumentName }}-->
+                                <!--<button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrOther)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>-->
+                            <!--</div>-->
                         </div>
                     </li>
                 </ul>
