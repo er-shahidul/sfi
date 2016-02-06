@@ -109,7 +109,7 @@
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.universityCollege.$invalid }">
 
                         <!--start-->
-                        <select class="form-control" ng-model="academicModel" name="organizationListAcademic" ng-change="cs5.organizationListAcademic = addList(cs5.organizationListAcademic, academicModel)" >
+                        <select class="form-control" ng-model="academicModel" name="organizationListAcademic" ng-change="cs5.organizationListAcademic = addList(cs5.organizationListAcademic, academicModel); academicModel = 0;" >
                             <option ng-selected="!academicModel" value="0">Select</option>
                             <option ng-repeat="item in academicOptions" value="{{item.name}}">{{ item.name }}</option>
                         </select>
@@ -128,7 +128,7 @@
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListResearch.$invalid }">
 
                         <!--start-->
-                        <select class="form-control" ng-model="researchModel" name="organizationListResearch" ng-change="cs5.organizationListResearch = addList(cs5.organizationListResearch, researchModel)" >
+                        <select class="form-control" ng-model="researchModel" name="organizationListResearch" ng-change="cs5.organizationListResearch = addList(cs5.organizationListResearch, researchModel); researchModel = 0" >
                             <option ng-selected="!researchList" value="0">Select</option>
                             <option ng-repeat="item in researchList" value="{{item.name}}">{{ item.name }}</option>
                         </select>
@@ -147,7 +147,7 @@
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListConservation.$invalid }">
 
                         <!--start-->
-                        <select class="form-control" ng-model="conservationModel" name="organizationListConservation" ng-change="cs5.organizationListConservation = addList(cs5.organizationListConservation, conservationModel)" >
+                        <select class="form-control" ng-model="conservationModel" name="organizationListConservation" ng-change="cs5.organizationListConservation = addList(cs5.organizationListConservation, conservationModel); conservationModel = 0;" >
                             <option ng-selected="!conservationList" value="0">Select</option>
                             <option ng-repeat="item in conservationList" value="{{item.name}}">{{ item.name }}</option>
                         </select>
@@ -165,7 +165,7 @@
                     <div class="col-sm-8" ng-class="{'has-error' : cs5Form.organizationListGovernment.$invalid }">
 
                         <!--start-->
-                        <select class="form-control" ng-model="governmentModel" name="organizationListGovernment" ng-change="cs5.organizationListGovernment = addList(cs5.organizationListGovernment, governmentModel)" >
+                        <select class="form-control" ng-model="governmentModel" name="organizationListGovernment" ng-change="cs5.organizationListGovernment = addList(cs5.organizationListGovernment, governmentModel); governmentModel = 0;" >
                             <option ng-selected="!governmentList" value="0">Select</option>
                             <option ng-repeat="item in governmentList" value="{{item.name}}">{{ item.name }}</option>
                         </select>
@@ -190,7 +190,7 @@
                                <!--ng-options="item for item in communityList"-->
                                <!--data-auto-select="true" data-watch-options="true" bs-typeahead>-->
                         <!--start-->
-                        <select class="form-control" ng-model="communityModel" name="organizationListCommunity" ng-change="cs5.organizationListCommunity = addList(cs5.organizationListCommunity, communityModel)" >
+                        <select class="form-control" ng-model="communityModel" name="organizationListCommunity" ng-change="cs5.organizationListCommunity = addList(cs5.organizationListCommunity, communityModel); communityModel = 0;" >
                             <option ng-selected="!communityList" value="0">Select</option>
                             <option ng-repeat="item in communityList" value="{{item.name}}">{{ item.name }}</option>
                         </select>
@@ -385,18 +385,10 @@
                             </div>
                             <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
 
-                                <!--<input type="text"-->
-                                       <!--class="form-control"-->
-                                       <!--ng-model="academicModel2"-->
-                                       <!--name="organizationListAcademic2"-->
-                                       <!--placeholder="University or College"-->
-                                       <!--ng-options="item.name for item in academicOptions"-->
-                                       <!--data-auto-select="true" watchOptions="true" bs-typeahead>-->
-
                                 <select class="form-control"
                                         ng-model="academicModel2"
                                         name="organizationListAcademic2"
-                                        ng-change="project.organizationListAcademic = addList(project.organizationListAcademic, academicModel2)" >
+                                        ng-change="project.organizationListAcademic = addList(project.organizationListAcademic, academicModel2); academicModel2 = 0;" >
                                     <option ng-selected="!academicModel" value="0">Select</option>
                                     <option ng-repeat="item in academicOptions" value="{{item.name}}">{{ item.name }}</option>
                                 </select>
@@ -424,7 +416,7 @@
                                 <select class="form-control"
                                         ng-model="researchModel2"
                                         name="organizationListResearch2"
-                                        ng-change="project.organizationListResearch = addList(project.organizationListResearch, researchModel2)" >
+                                        ng-change="project.organizationListResearch = addList(project.organizationListResearch, researchModel2); researchModel2 = 0;" >
                                     <option ng-selected="!researchList" value="0">Select</option>
                                     <option ng-repeat="item in researchList" value="{{item.name}}">{{ item.name }}</option>
                                 </select>
@@ -458,7 +450,7 @@
                                 <select class="form-control"
                                         ng-model="organizationListConservation2"
                                         name="conservationModel2"
-                                        ng-change="project.organizationListConservation = addList(project.organizationListConservation, organizationListConservation2)" >
+                                        ng-change="project.organizationListConservation = addList(project.organizationListConservation, organizationListConservation2); organizationListConservation2 = 0" >
                                     <option ng-selected="!conservationList" value="0">Select</option>
                                     <option ng-repeat="item in conservationList" value="{{item.name}}">{{ item.name }}</option>
                                 </select>
@@ -492,7 +484,7 @@
                                 <select class="form-control"
                                         ng-model="governmentModel2"
                                         name="organizationListGovernment2"
-                                        ng-change="project.organizationListGovernment = addList(project.organizationListGovernment, governmentModel2)" >
+                                        ng-change="project.organizationListGovernment = addList(project.organizationListGovernment, governmentModel2); governmentModel2 = 0" >
                                     <option ng-selected="!governmentList" value="0">Select</option>
                                     <option ng-repeat="item in governmentList" value="{{item.name}}">{{ item.name }}</option>
                                 </select>
@@ -528,7 +520,7 @@
                                 <select class="form-control"
                                         ng-model="communityModel2"
                                         name="organizationListCommunity2"
-                                        ng-change="project.organizationListCommunity = addList(project.organizationListCommunity, communityModel2)" >
+                                        ng-change="project.organizationListCommunity = addList(project.organizationListCommunity, communityModel2); communityModel2 = 0" >
                                     <option ng-selected="!communityList" value="0">Select</option>
                                     <option ng-repeat="item in communityList" value="{{item.name}}">{{ item.name }}</option>
                                 </select>
@@ -560,7 +552,7 @@
                                        data-auto-select="true" watchOptions="true" bs-typeahead>
 
                                 <div id="selectedItem" ng-repeat="item in project.organizationListOther">{{ item }}
-                                    <button ng-click="project.organizationListOther = withoutList(item, project.organizationListOther)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                    <button ng-click="project.organizationListOther = withoutList(item, project.organizationListOther);" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
                             </div>
                             <div class="col-sm-1">
