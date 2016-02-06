@@ -519,18 +519,18 @@
                         <div class="row" ng-repeat="committee in cs1.subCommittees" style="margin-top:12px;">
                             <div class="col-md-4">
                                 <p ng-if="$index == 0">Sub-Committee Name</p>
-                                <input type="text" class="form-control" ng-model="committee.name">
+                                <input type="text" ng-maxlength="200" pattern-msg="Provide text with max length 200" class="form-control" name="name" ng-model="committee.name" customerror>
                             </div>
                             <div class="col-md-4">
                                 <p ng-if="$index == 0">Chair</p>
-                                <input type="text" class="form-control" ng-model="committee.chair">
+                                <input type="text" ng-maxlength="200" pattern-msg="Provide text with max length 200" name="chair" class="form-control" ng-model="committee.chair">
                             </div>
                             <div class="col-md-4">
                                 <p ng-if="$index == 0">Email Address</p>
                                 <input type="email" customerror class="form-control" ng-model="committee.email" requireds>
                             </div>
                         </div>
-                        <p style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()">+ Add Another Line</p>
+                        <a class="pull-right" style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()">+ Add Another Line</a>
 
                     </ng-form>
                 </div>
@@ -564,7 +564,7 @@
                             </div>
                         </div>
 
-                        <p style="text-align: right;padding-top: 30px;padding-right: 100px;" ng-click="addMeeting()">+ Add Another Line</p>
+                        <a class="pull-right" style="text-align: right;padding-top: 30px;padding-right: 100px;" ng-click="addMeeting()">+ Add Another Line</a>
 
                     </ng-form>
                 </div>
@@ -619,7 +619,7 @@
                         </div>
                         <br>
 
-                        <p style="text-align: right;padding-top: 30px;" ng-click="addParticipatingMeeting()">+ Add Another Line</p>
+                        <a class="pull-right" style="text-align: right;padding-top: 30px;" ng-click="addParticipatingMeeting()">+ Add Another Line</a>
 
                     </ng-form>
                 </div>
