@@ -95,12 +95,15 @@
                         How much money was spent last calendar year by your committee for SFI Implementation Committee-sponsored activities and projects?
                         </b>
                     </p>
-                    <label class="form-inline">
+                    <label class="form-inline" ng-class="{'has-error' : cs2.spentByYourCommittee != getTotal() }">
                         Amount
-                        <input class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.spentByYourCommittee">
-                        <u> <span class="curency" id="committeeCurrency" ng-click="setCurrency('committeeCurrency', cs2)">{{ gerCurrency(cs2.committeeCurrency) }}</span></u>
+                        <input class="form-control" name="spentByYourCommittee" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.spentByYourCommittee">
+                        <u><span class="curency" id="committeeCurrency" ng-click="setCurrency('committeeCurrency', cs2)">{{ gerCurrency(cs2.committeeCurrency) }}</span></u>
                     </label>
 
+                    <span class="error" ng-show="cs2.spentByYourCommittee != getTotal()">
+                    This total number must equal the total reported in previous question "How much money was spent last calendar year by your committee for SFI Implementation Committee-sponsored activities and projects?
+                    </span>
                 </div>
 
             </div>
