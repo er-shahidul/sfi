@@ -104,64 +104,64 @@ sfiSicApp
             return total;
         }
 
-        $scope.forestObjectives = {
-            1  : 'Forest Management Planning',
-            2  : 'Forest Health and Productivity',
-            3  : 'Protection and Maintenance of Water Resources',
-            4  : 'Conservation of Biological Diversity',
-            5  : 'Management of Visual Quality and Recreation Benefits',
-            6  : 'Protection of Special Sites',
-            7  : 'Efficient Use of Fiber Resources',
-            8  : 'Recognize and Respect Indigenous People\'s Right',
-            9  : 'Legal and Regulatory Compliance',
-            10 : 'Forestry Research, Science and Technology',
-            11 : 'Training and Education',
-            12 : 'Community Involvement and Landowner Outreach',
-            13 : 'Public Land Management Responsibilities',
-            14 : 'Communications and Public Reporting',
-            15 : 'Management Review and Continual Improvement'
-        };
+        $scope.forestObjectives = [
+            { id:1 , value: 'Communications and Public Reporting'},
+            { id:2 , value: 'Community Involvement and Landowner Outreach'},
+            { id:3 , value: 'Conservation of Biological Diversity'},
+            { id:4 , value: 'Efficient Use of Fiber Resources'},
+            { id:5 , value: 'Forest Health and Productivity'},
+            { id:6 , value:'Forest Management Planning'},
+            { id:7 , value: 'Forestry Research, Science and Technology'},
+            { id:8 , value: 'Legal and Regulatory Compliance'},
+            { id:9 , value: 'Management Review and Continual Improvement'},
+            { id:10 , value: 'Management of Visual Quality and Recreation Benefits'},
+            { id:11 , value: 'Protection and Maintenance of Water Resources'},
+            { id:12 , value: 'Protection of Special Sites'},
+            { id:13 , value: 'Public Land Management Responsibilities'},
+            { id:14 , value: 'Recognize and Respect Indigenous People\'s Right'},
+            { id:15 , value: 'Training and Education'}
+        ];
 
-        $scope.fiberObjectives = {
-            1  : 'Biodiversity in Fiber Sourcing',
-            2  : 'Adherence to Best Management Practices',
-            3  : 'Use of Qualified Resources and Qualified Logging Professionals',
-            4  : 'Legal and Regulatory Compliance',
-            5  : 'Forestry Research, Science and Technology',
-            6  : 'Training and Education',
-            7  : 'Community Involvement and Landowner Outreach',
-            8  : 'Public Land Management Responsibilities',
-            9  : 'Communications and Public Reporting',
-            10 : 'Management Review and Continual Improvement',
-            11 : 'Promote Conservation of Biological Diversity, Biodiversity Hotspots and High-Biodiversity Wilderness Areas',
-            12 : 'Avoidance of Controversial Sources including Illegal Logging',
-            13 : 'Avoidance of Controversial Sources including Fiber Sources from Areas without Effective Social Laws'
-        };
+        $scope.fiberObjectives = [
+            { id:1 , value: 'Adherence to Best Management Practices'},
+            { id:2 , value: 'Avoidance of Controversial Sources including Fiber Sources from Areas without Effective Social Laws'},
+            { id:3 , value: 'Avoidance of Controversial Sources including Illegal Logging'},
+            { id:4 , value: 'Biodiversity in Fiber Sourcing'},
+            { id:5 , value: 'Communications and Public Reporting'},
+            { id:6 , value: 'Community Involvement and Landowner Outreach'},
+            { id:7 , value: 'Forestry Research, Science and Technology'},
+            { id:8 , value: 'Legal and Regulatory Compliance'},
+            { id:9 , value: 'Management Review and Continual Improvement'},
+            { id:10 , value: 'Promote Conservation of Biological Diversity, Biodiversity Hotspots and High-Biodiversity Wilderness Areas'},
+            { id:11 , value: 'Public Land Management Responsibilities'},
+            { id:12 , value: 'Training and Education'},
+            { id:13 , value: 'Use of Qualified Resources and Qualified Logging Professionals'}
 
-        $scope.standardObjectives = {
+        ];
 
-            1  : 'Forest Management Planning',
-            2  : 'Forest Productivity',
-            3  : 'Protection and Maintenance of Water Resources',
-            4  : 'Conservation of Biological Diversity including Forest with Exceptional Conservation Value',
-            5  : 'Management of Visual Quslity and Recreation Benefits',
-            6  : 'Protection of Special Sites',
-            7  : 'Efficienct Use of Fiber Resources',
-            8  : 'Landowner Outreach',
-            9  : 'Use of Qualified Logging Professional',
-            10 : 'Adherence to Best Management Practices',
-            11 : 'Promote Conservation of Biological Diversity, Biodiversity Hotspots and High-Biodiversity Wilderness Areas',
-            12 : 'Avoidance of Controvercial Sources, including illegal logging',
-            13 : 'Avoidance of Controversial Sources including Fiber Sources from areas Without Effective Social Laws',
-            14 : 'Legal and Requlatory Compliance',
-            15 : 'Forestry Research, Science and Technology',
-            16 : 'Training and Education',
-            17 : 'Community Involvement in the Practice of Sustainable Forestry',
-            18 : 'Public Land Management Responsibilities',
-            19 : 'Communications and Public Reporting',
-            20 : 'Management Review and Continual Improvement'
+        $scope.standardObjectives = [
+            { id: 1 , value: 'Adherence to Best Management Practices'},
+            { id: 2 , value: 'Avoidance of Controvercial Sources, including illegal logging'},
+            { id: 3 , value: 'Avoidance of Controversial Sources including Fiber Sources from areas Without Effective Social Laws'},
+            { id: 4 , value: 'Community Involvement in the Practice of Sustainable Forestry'},
+            { id: 5 , value: 'Communications and Public Reporting'},
+            { id: 6 , value: 'Conservation of Biological Diversity including Forest with Exceptional Conservation Value'},
+            { id: 7  , value: 'Efficienct Use of Fiber Resources'},
+            { id: 8  , value: 'Forest Management Planning'},
+            { id: 9  , value: 'Forest Productivity'},
+            { id: 10 , value: 'Forestry Research, Science and Technology'},
+            { id: 11 , value: 'Landowner Outreach'},
+            { id: 12 , value: 'Legal and Requlatory Compliance'},
+            { id: 13 , value: 'Management of Visual Quslity and Recreation Benefits'},
+            { id: 14 , value: 'Management Review and Continual Improvement'},
+            { id: 15 , value: 'Protection and Maintenance of Water Resources'},
+            { id: 16  , value: 'Protection of Special Sites'},
+            { id: 17 , value: 'Promote Conservation of Biological Diversity, Biodiversity Hotspots and High-Biodiversity Wilderness Areas'},
+            { id: 18 , value: 'Public Land Management Responsibilities'},
+            { id: 19 , value: 'Training and Education'},
+            { id: 20 , value: 'Use of Qualified Logging Professional'}
 
-        }
+        ];
 
         $scope.saveForm = function(go){
 

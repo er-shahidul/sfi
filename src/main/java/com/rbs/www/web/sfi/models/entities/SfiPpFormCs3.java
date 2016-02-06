@@ -137,6 +137,12 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Column(name = "cs3_incSFIConservation", nullable = true)
     private Boolean incSFIConservation;
 
+    @Column(name = "cs3_incResFundingText", nullable = true)
+    private String incResFundingText;
+
+    @Column(name = "cs3_sfiStandardObj", nullable = true)
+    private Integer sfiStandardObj;
+
     @Override
     public Integer getId() {
         return id;
@@ -144,6 +150,22 @@ public class SfiPpFormCs3 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getIncResFundingText() {
+        return incResFundingText;
+    }
+
+    public void setIncResFundingText(String incResFundingText) {
+        this.incResFundingText = incResFundingText;
+    }
+
+    public Integer getSfiStandardObj() {
+        return sfiStandardObj;
+    }
+
+    public void setSfiStandardObj(Integer sfiStandardObj) {
+        this.sfiStandardObj = sfiStandardObj;
     }
 
     public String getConversionPattern() {

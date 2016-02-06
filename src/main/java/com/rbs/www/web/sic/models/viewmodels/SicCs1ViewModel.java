@@ -59,6 +59,7 @@ public class SicCs1ViewModel extends BaseViewModel {
     private String sicRecrOrgsSpecify4;
     private String sicRecrOrgsSpecify5;
     private Set<Integer> sicRecruitmentOrgs;
+    private Integer sicOrgDescription;
 
     @Override
     public Integer getId() {
@@ -67,6 +68,14 @@ public class SicCs1ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getSicOrgDescription() {
+        return sicOrgDescription;
+    }
+
+    public void setSicOrgDescription(Integer sicOrgDescription) {
+        this.sicOrgDescription = sicOrgDescription;
     }
 
     public Integer getMembersConservationSFI() {
