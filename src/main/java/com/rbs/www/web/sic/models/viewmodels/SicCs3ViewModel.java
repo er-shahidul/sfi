@@ -1,7 +1,30 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
+@SpELAssert.List({
+        @SpELAssert(
+                value = "brochureSpecify != null && !brochureSpecify.isEmpty()",
+                applyIf = "brochure != null && brochure",
+                message = "{sic.cs3.brochureSpecify}"
+        ),
+        @SpELAssert(
+                value = "otherSpecify != null && !otherSpecify.isEmpty()",
+                applyIf = "other != null && other",
+                message = "{sic.cs3.otherSpecify}"
+        ),
+        @SpELAssert(
+                value = "toursSpecify != null && !toursSpecify.isEmpty()",
+                applyIf = "tours != null && tours",
+                message = "{sic.cs3.toursSpecify}"
+        ),
+        @SpELAssert(
+                value = "workshopSpecify != null && !workshopSpecify.isEmpty()",
+                applyIf = "workshop != null && workshop",
+                message = "{sic.cs3.workshopSpecify}"
+        )
+})
 public class SicCs3ViewModel extends BaseViewModel {
     private Integer id;
 

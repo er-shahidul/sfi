@@ -1,7 +1,30 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
+@SpELAssert.List({
+        @SpELAssert(
+                value = "governmentSpecify != null && !governmentSpecify.isEmpty()",
+                applyIf = "governmentAgencyOutreach != null && governmentAgencyOutreach",
+                message = "{sic.cs4.governmentSpecify}"
+        ),
+        @SpELAssert(
+                value = "legislatureSpecify != null && !legislatureSpecify.isEmpty()",
+                applyIf = "legislatureOutreach != null && legislatureOutreach",
+                message = "{sic.cs4.legislatureSpecify}"
+        ),
+        @SpELAssert(
+                value = "otherSpecify != null && !otherSpecify.isEmpty()",
+                applyIf = "other != null && other",
+                message = "{sic.cs4.otherSpecify}"
+        ),
+        @SpELAssert(
+                value = "universitySpecify != null && !universitySpecify.isEmpty()",
+                applyIf = "universityOutreach != null && universityOutreach",
+                message = "{sic.cs4.universitySpecify}"
+        )
+})
 public class SicCs4ViewModel extends BaseViewModel {
     private Integer id;
 

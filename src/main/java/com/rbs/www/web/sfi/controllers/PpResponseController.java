@@ -90,6 +90,9 @@ public class PpResponseController {
     @RequestMapping(value = "/form/cs8", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs8(@RequestBody Cs8ViewModel model, BindingResult result) {
         formService.setCs8Entity(model);
+        validationService.validate(model.getCs8PartialAViewModel());
+        validationService.validate(model.getCs8PartialBViewModel());
+        validationService.validate(model.getCs8PartialCViewModel());
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 

@@ -1,11 +1,47 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
+@SpELAssert.List({
+        @SpELAssert(
+                value = "committeeFeeSpecify1 != null && !committeeFeeSpecify1.isEmpty()",
+                applyIf = "committeeFeeStructure != null && committeeFeeStructure.contains(1)",
+                message = "{sic.cs2.committeeFeeSpecify1}"
+        ),
+        @SpELAssert(
+                value = "committeeFeeSpecify2 != null && !committeeFeeSpecify2.isEmpty()",
+                applyIf = "committeeFeeStructure != null && committeeFeeStructure.contains(2)",
+                message = "{sic.cs2.committeeFeeSpecify2}"
+        ),
+        @SpELAssert(
+                value = "committeeFeeSpecify3 != null && !committeeFeeSpecify3.isEmpty()",
+                applyIf = "committeeFeeStructure != null && committeeFeeStructure.contains(3)",
+                message = "{sic.cs2.committeeFeeSpecify3}"
+        ),
+        @SpELAssert(
+                value = "committeeFeeSpecify4 != null && !committeeFeeSpecify4.isEmpty()",
+                applyIf = "committeeFeeStructure != null && committeeFeeStructure.contains(4)",
+                message = "{sic.cs2.committeeFeeSpecify4}"
+        ),
+        @SpELAssert(
+                value = "committeeFeeSpecify5 != null && !committeeFeeSpecify5.isEmpty()",
+                applyIf = "committeeFeeStructure != null && committeeFeeStructure.contains(5)",
+                message = "{sic.cs2.committeeFeeSpecify5}"
+        ),
+        @SpELAssert(
+                value = "committeeFeeSpecify6 != null && !committeeFeeSpecify6.isEmpty()",
+                applyIf = "committeeFeeStructure != null && committeeFeeStructure.contains(6)",
+                message = "{sic.cs2.committeeFeeSpecify6}"
+        )
+})
 public class SicCs2ViewModel extends BaseViewModel {
     private Integer id;
+
+    @NotNull(message = "{sic.cs2.freesProgramApplicants}")
     private Boolean freesProgramApplicants;
     private Boolean inKindSupport1;
     private Boolean inKindSupport2;
@@ -20,6 +56,8 @@ public class SicCs2ViewModel extends BaseViewModel {
     private Boolean inKindSupport11;
     private Boolean inKindSupport12;
     private Boolean inKindSupport13;
+
+    @NotNull(message = "{sic.cs2.isSicNeighborEvents}")
     private Boolean isSicNeighborEvents;
     private Integer directSpending1;
     private Integer directSpending2;
@@ -34,8 +72,13 @@ public class SicCs2ViewModel extends BaseViewModel {
     private Integer directSpending11;
     private Integer directSpending12;
     private Integer directSpending13;
+
+    @NotNull(message = "{sic.cs2.spentBySicSupporters}")
     private Integer spentBySicSupporters;
+
+    @NotNull(message = "{sic.cs2.spentByYourCommittee}")
     private Integer spentByYourCommittee;
+
     private String spendActivityDetails1;
     private String spendActivityDetails2;
     private String spendActivityDetails3;
