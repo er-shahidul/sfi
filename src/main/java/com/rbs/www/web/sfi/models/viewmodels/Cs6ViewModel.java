@@ -1,9 +1,13 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.web.sfi.validation.Cs6Ca.Cs6Ca;
+import com.rbs.www.web.sfi.validation.Cs6Usa.Cs6Usa;
 
 import java.util.Set;
 
+@Cs6Usa(message = "{usaEmpty}")
+@Cs6Ca(message = "{caEmpty}")
 public class Cs6ViewModel extends BaseViewModel {
     private Integer id;
     private Integer numPrivateForeOwersUs;
