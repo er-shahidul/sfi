@@ -14,7 +14,7 @@
                 </h5>
 
                 <div class="fileinput fileinput-new" data-provides="fileinput">
-                    <p>What is the SIC’s mechanism in place to address concerns regarding Inconsistent Practices?</p>
+                    <p><b>What is the SIC’s mechanism in place to address concerns regarding Inconsistent Practices?</b></p>
 
                     <div class="input-group input-large">
 
@@ -23,7 +23,7 @@
                             <span class="fileinput-filename">{{ mechanismDoc.originalDocumentName }}</span>
                         </div>
                         <span class="input-group-addon btn default btn-file">
-                            <span ng-hide="mechanismDoc.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                            <span ng-hide="mechanismDoc.originalDocumentName" class="fileinput-new disabled">Browse</span>
                             <span ng-show="mechanismDoc.originalDocumentName" class="fileinput-exists">Change </span>
                         </span>
                         <a ng-click="mechanismDoc = {}; " ng-show="mechanismDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
@@ -40,7 +40,7 @@
         </div>
         <div class="col-lg-12" style="padding-bottom: 20px;">
             <div class="col-lg-10">
-                <p>What mechanism does your SIC utilize to receive inquiries?</p>
+                <p><b>What mechanism does your SIC utilize to receive inquiries?</b></p>
                 <ul style="list-style: none">
                     <li class="col-lg-3">
 
@@ -69,7 +69,7 @@
         </div>
         <div class="col-lg-12" style="padding-bottom: 30px;">
             <div class="col-lg-10">
-                <p>Describe how your SIC advertises or communicates the inconsistent practices process:</p>
+                <p><b>Describe how your SIC advertises or communicates the inconsistent practices process:</b></p>
                 <ul style="list-style: none">
                     <li class="col-lg-3">
                         <input  type="checkbox" disabled ng-model="cs5.advertisePublications" name="advertisePublications"> Publications
@@ -97,7 +97,7 @@
         </div>
         <div class="col-lg-12" style="padding-bottom: 30px;">
             <div class="col-lg-8">
-                <p>Which version of the SFI Standard does your Inconsistent Practices policy reflect? (new!)</p>
+                <p><b>Which version of the SFI Standard does your Inconsistent Practices policy reflect? (new!)</b></p>
                 <ul style="list-style: none">
                     <li class="col-lg-6">
                         <input type="radio" disabled  name="sfiStandards" ng-model="cs5.sfiStandardVersion" ng-value="1"> SFI 2015-2019 Standards and Rules
@@ -163,7 +163,7 @@
                             <input class="form-control" type="number" readonly  ng-required="hasData(forest2015)" name="forest2015InconsistentPractice" ng-model="forest2015.inconsistentPractice" customerror>
                         </td>
                         <td colspan="2" nowrap="">
-                            <p class="myButton"  ng-click="forest2015 = addStandard('forest2015', forest2015, cs5.forestStandards2015)">+ Add Another Line</p>
+                            <p class="myButton"  ng-click="forest2015 = addStandard('forest2015', forest2015, cs5.forestStandards2015)"><b><u>+ Add Another Line</u></b></p>
                         </td>
 
 
@@ -230,7 +230,7 @@
                             <input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" readonly  name="forest2015InconsistentPractice" ng-model="fiber2015.inconsistentPractice" customerror>
                         </td>
                         <td colspan="2" nowrap="">
-                            <p class="myButton"  ng-click="fiber2015 = addStandard('fiber2015', fiber2015, cs5.fiberSourcing2015)">+ Add Another Line</p>
+                            <p class="myButton"  ng-click="fiber2015 = addStandard('fiber2015', fiber2015, cs5.fiberSourcing2015)"><b><u>+ Add Another Line</u></b></p>
                         </td>
                     </tr>
                     </tbody>
@@ -304,7 +304,7 @@
                         <td width="25%">
                             <input class="form-control" type="number" readonly  ng-required="hasData(standard2010)" customerror name="forest2015InconsistentPractice" ng-model="standard2010.inconsistentPractice" customerror>
 
-                            <p class="myButton"  ng-hide="standard2010.objective" ng-click="standard2010 = addStandard('standard2010', standard2010, cs5.standardObjectives2010)">+ Add Another Line</p>
+                            <p class="myButton"  ng-hide="standard2010.objective" ng-click="standard2010 = addStandard('standard2010', standard2010, cs5.standardObjectives2010)"><b><u>+ Add Another Line</u></b></p>
                         </td>
 
                     </tr>
@@ -325,7 +325,7 @@
                                         <span class="fileinput-filename">{{ standardDoc.originalDocumentName }}</span>
                                     </div>
                                     <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="standardDoc.originalDocumentName" class="fileinput-new disabled">Select file </span>
+                                        <span ng-hide="standardDoc.originalDocumentName" class="fileinput-new disabled">Browse</span>
                                         <span ng-show="standardDoc.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
                                     <a ng-click="standardDoc = {}; " ng-show="standardDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
@@ -340,7 +340,7 @@
                             <div id="selectedItem" ng-show="standard2010.circumstancesDoc.originalDocumentName">{{ standard2010.circumstancesDoc.originalDocumentName }}
                             </div>
                             <br/>
-                            <p class="myButton pull-right"  ng-click="standard2010 = addStandard('standard2010', standard2010, cs5.standardObjectives2010)">+ Add Another Line</p>
+                            <p class="myButton pull-right"  ng-click="standard2010 = addStandard('standard2010', standard2010, cs5.standardObjectives2010)"><b><u>+ Add Another Line</u></b></p>
                         </td>
                     </tr>
 
@@ -351,8 +351,8 @@
         </div>
 
         <div class="col-lg-12" style="padding-bottom: 30px;">
-            <div class="col-lg-8">
-                <p>Provide aggregate reporting information (no names) on inconsistent practices below.</p>
+            <div class="col-lg-8 fm-stl">
+                <p><b>Provide aggregate reporting information (no names) on inconsistent practices below.</b></p>
 
                 <div style="padding-left: 30px;">
 

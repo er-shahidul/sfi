@@ -210,6 +210,15 @@ label {
 	font-size: 12px;
 }
 
+.fm-stl label{
+ font-weight: normal;
+ margin-right: 10px;
+}
+.question-style{
+  font-size: 12px;
+  font-weight: 700;
+}
+
 button {
  	margin:0 10px 0 10px;
 }

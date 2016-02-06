@@ -234,6 +234,7 @@ sfiFormApp
 
                 Message.success('Section successfully saved', '.msg-cont');
                 $rootScope.updateFormMeta();
+                $rootScope.setProgress();
 
                 if(go){
                     $rootScope.goStep("cs7");

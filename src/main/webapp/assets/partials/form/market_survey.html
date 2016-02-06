@@ -228,12 +228,12 @@
                         <tr>
                             <td>it provides enhanced corporate reputation and provides social license
                                 to operate.</td>
-                            <td><input icheck name="whyChoseSFI4" ng-model="cs8.whyChoseSFI14" value="1" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI4" ng-model="cs8.whyChoseSFI14" value="2" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI4" ng-model="cs8.whyChoseSFI14" value="3" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI4" ng-model="cs8.whyChoseSFI14" value="4" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI4" ng-model="cs8.whyChoseSFI14" value="5" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI4" ng-model="cs8.whyChoseSFI14" value="6" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI14" ng-model="cs8.whyChoseSFI14" value="1" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI14" ng-model="cs8.whyChoseSFI14" value="2" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI14" ng-model="cs8.whyChoseSFI14" value="3" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI14" ng-model="cs8.whyChoseSFI14" value="4" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI14" ng-model="cs8.whyChoseSFI14" value="5" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI14" ng-model="cs8.whyChoseSFI14" value="6" type="radio"></td>
                         </tr>
                         <tr>
                             <td>it is a tool to address pressure from environmental/consumer/other interest groups about our company's products</td>
@@ -256,12 +256,12 @@
                         </tr>
                         <tr>
                             <td>it is required for current market access.</td>
-                            <td><input icheck name="whyChoseSFI7" ng-model="cs8.whyChoseSFI17" value="1" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI7" ng-model="cs8.whyChoseSFI17" value="2" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI7" ng-model="cs8.whyChoseSFI17" value="3" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI7" ng-model="cs8.whyChoseSFI17" value="4" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI7" ng-model="cs8.whyChoseSFI17" value="5" type="radio"></td>
-                            <td><input icheck name="whyChoseSFI7" ng-model="cs8.whyChoseSFI17" value="6" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI17" ng-model="cs8.whyChoseSFI17" value="1" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI17" ng-model="cs8.whyChoseSFI17" value="2" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI17" ng-model="cs8.whyChoseSFI17" value="3" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI17" ng-model="cs8.whyChoseSFI17" value="4" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI17" ng-model="cs8.whyChoseSFI17" value="5" type="radio"></td>
+                            <td><input icheck name="whyChoseSFI17" ng-model="cs8.whyChoseSFI17" value="6" type="radio"></td>
                         </tr>
                         <tr>
                             <td>it is a tool to access potential new markets and clients.</td>
@@ -500,16 +500,20 @@
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec5-comments.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec6-why-product-logo.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec7-product-grp-contain.html'" ng-if="!isSfiSecondary()" ></div>
-                <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec8-fsc-product-grp-contain.html'" ng-if="!isSfiSecondary()" ></div>
             </div>
 
-
-            <br>
             <div class="col-lg-4" style="text-align: right">
                 <img src="/assets/images/SurveyImage_GlobalReach_v2.jpg" style="width: 250px;">
                 <div class="pading-botoms"></div>
                 <img src="/assets/images/SurveyImage_DemandGrowing.jpg" style="width: 250px;">
-                <div class="pading-botom-2350"></div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 pading-botoms" ng-show="anySelect()">
+            <div class="col-lg-8">
+                <div ng-include="'/assets/partials/form/cs8/sec8-fsc-product-grp-contain.html'" ng-if="!isSfiSecondary()" ></div>
+            </div>
+            <div class="col-lg-4" style="text-align: right">
                 <img ng-if="!isSfiSecondary()" src="/assets/images/u2102.png" style="width: 250px;">
             </div>
         </div>
@@ -624,11 +628,11 @@
                     <div class="clear"></div>
 
                     <label class="form-inline">
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=6 icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value="6" icheck>
                         Yes, and we are considering dropping SFI once we have obtained FSC certification
                     </label><br>
                     <label>
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=7 icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value="7" icheck>
                         Other<br/>
 
                         <label style="padding-left: 15px;" ng-show="cs8.FSCLandCertification == 7">

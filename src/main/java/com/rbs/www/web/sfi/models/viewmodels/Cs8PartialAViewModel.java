@@ -85,6 +85,9 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private Integer sfiChainCustody7;
     private Integer sfiChainCustody8;
     private Integer sfiChainCustody9;
+    private Integer FSCLandCertification;
+    private Integer ChainOfCustody_FSCCertification;
+
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_4;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_5;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_6;
@@ -145,7 +148,6 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private Set<String> sfiLabelProductSell_7;
     private Set<String> sfiLabelProductSell_8;
     private Set<String> sfiLabelProductSell_9;
-    private String ChainOfCustody_FSCCertification;
     private String demandDeveloping_10;
     private String demandDeveloping_11;
     private String demandDeveloping_12;
@@ -178,7 +180,6 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private String fscForestCertification;
     private String fscForestCertificationExplain;
     private String fscForestCertificationWhy_1;
-    private String FSCLandCertification;
     private String pefcDemandDeveloping_10;
     private String pefcDemandDeveloping_11;
     private String pefcDemandDeveloping_12;
@@ -511,8 +512,6 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private Integer sfiLogoUseMotivation_13_9;
     private Integer sfiLogoUseMotivation_13_10;
     private Integer sfiLogoUseMotivation_13_11;
-
-//    private String chainOfCustody_FSCCertification;
 
     @Override
     public Integer getId() {
@@ -2059,14 +2058,6 @@ public class Cs8PartialAViewModel extends BaseViewModel {
         this.sfiLabelProductSell_9 = sfiLabelProductSell_9;
     }
 
-    public String getChainOfCustody_FSCCertification() {
-        return ChainOfCustody_FSCCertification;
-    }
-
-    public void setChainOfCustody_FSCCertification(String chainOfCustody_FSCCertification) {
-        ChainOfCustody_FSCCertification = chainOfCustody_FSCCertification;
-    }
-
     public String getDemandDeveloping_10() {
         return demandDeveloping_10;
     }
@@ -2321,14 +2312,6 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     public void setFscForestCertificationWhy_1(String fscForestCertificationWhy_1) {
         this.fscForestCertificationWhy_1 = fscForestCertificationWhy_1;
-    }
-
-    public String getFSCLandCertification() {
-        return FSCLandCertification;
-    }
-
-    public void setFSCLandCertification(String FSCLandCertification) {
-        this.FSCLandCertification = FSCLandCertification;
     }
 
     public String getPefcDemandDeveloping_10() {
@@ -4409,6 +4392,22 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     public void setSfiLogoUseMotivation_13_10(Integer sfiLogoUseMotivation_13_10) {
         this.sfiLogoUseMotivation_13_10 = sfiLogoUseMotivation_13_10;
+    }
+
+    public Integer getFSCLandCertification() {
+        return FSCLandCertification;
+    }
+
+    public void setFSCLandCertification(Integer FSCLandCertification) {
+        this.FSCLandCertification = FSCLandCertification;
+    }
+
+    public Integer getChainOfCustody_FSCCertification() {
+        return ChainOfCustody_FSCCertification;
+    }
+
+    public void setChainOfCustody_FSCCertification(Integer chainOfCustody_FSCCertification) {
+        ChainOfCustody_FSCCertification = chainOfCustody_FSCCertification;
     }
 
     public Integer getSfiLogoUseMotivation_13_11() {

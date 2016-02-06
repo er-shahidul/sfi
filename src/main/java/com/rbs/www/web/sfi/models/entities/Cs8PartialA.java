@@ -413,6 +413,12 @@ public class Cs8PartialA extends BaseEntityModel {
     @Column(name = "cs8_sfiChainCustody9", nullable = true)
     private Integer sfiChainCustody9;
 
+    @Column(name = "cs8_FSCLandCertification", nullable = true)
+    private Integer FSCLandCertification;
+
+    @Column(name = "cs8_ChainOfCustody_FSCCertification", nullable = true)
+    private Integer ChainOfCustody_FSCCertification;
+
     @ManyToMany(targetEntity = SfiPpFormAllCountry.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(name = "sfi_pp_form_cs8_sfiLabelProductGroupContainPEFC_Country_4",
             joinColumns = {@JoinColumn(name = "form_id")},
@@ -756,9 +762,6 @@ public class Cs8PartialA extends BaseEntityModel {
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<String> sfiLabelProductSell_9;
 
-    @Column(name = "cs8_ChainOfCustody_FSCCertification", columnDefinition = "TEXT", nullable = true)
-    private String ChainOfCustody_FSCCertification;
-
     @Column(name = "cs8_demandDeveloping_10", columnDefinition = "TEXT", nullable = true)
     private String demandDeveloping_10;
 
@@ -854,9 +857,6 @@ public class Cs8PartialA extends BaseEntityModel {
 
     @Column(name = "cs8_fscForestCertificationWhy_1", columnDefinition = "TEXT", nullable = true)
     private String fscForestCertificationWhy_1;
-
-    @Column(name = "cs8_FSCLandCertification", columnDefinition = "TEXT", nullable = true)
-    private String FSCLandCertification;
 
     @Column(name = "cs8_pefcDemandDeveloping_10", columnDefinition = "TEXT", nullable = true)
     private String pefcDemandDeveloping_10;
@@ -2589,6 +2589,22 @@ public class Cs8PartialA extends BaseEntityModel {
         this.sfiChainCustody9 = sfiChainCustody9;
     }
 
+    public Integer getFSCLandCertification() {
+        return FSCLandCertification;
+    }
+
+    public void setFSCLandCertification(Integer FSCLandCertification) {
+        this.FSCLandCertification = FSCLandCertification;
+    }
+
+    public Integer getChainOfCustody_FSCCertification() {
+        return ChainOfCustody_FSCCertification;
+    }
+
+    public void setChainOfCustody_FSCCertification(Integer chainOfCustody_FSCCertification) {
+        ChainOfCustody_FSCCertification = chainOfCustody_FSCCertification;
+    }
+
     public Set<SfiPpFormAllCountry> getSfiLabelProductGroupContainPEFC_Country_4() {
         return sfiLabelProductGroupContainPEFC_Country_4;
     }
@@ -3069,14 +3085,6 @@ public class Cs8PartialA extends BaseEntityModel {
         addAll(this.sfiLabelProductSell_9, sfiLabelProductSell_9);
     }
 
-    public String getChainOfCustody_FSCCertification() {
-        return ChainOfCustody_FSCCertification;
-    }
-
-    public void setChainOfCustody_FSCCertification(String chainOfCustody_FSCCertification) {
-        ChainOfCustody_FSCCertification = chainOfCustody_FSCCertification;
-    }
-
     public String getDemandDeveloping_10() {
         return demandDeveloping_10;
     }
@@ -3331,14 +3339,6 @@ public class Cs8PartialA extends BaseEntityModel {
 
     public void setFscForestCertificationWhy_1(String fscForestCertificationWhy_1) {
         this.fscForestCertificationWhy_1 = fscForestCertificationWhy_1;
-    }
-
-    public String getFSCLandCertification() {
-        return FSCLandCertification;
-    }
-
-    public void setFSCLandCertification(String FSCLandCertification) {
-        this.FSCLandCertification = FSCLandCertification;
     }
 
     public String getPefcDemandDeveloping_10() {

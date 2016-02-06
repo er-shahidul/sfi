@@ -8,6 +8,9 @@ public class SicCs8ViewModel extends BaseViewModel {
     private Integer id;
 
     private Boolean inPartnershipProjects;
+    private Integer partnerOtherSICState;
+    private String partnerOtherSpecify;
+
     private Set<SicCs8ProjectViewModel> projects;
 
     @Override
@@ -25,6 +28,22 @@ public class SicCs8ViewModel extends BaseViewModel {
 
     public void setInPartnershipProjects(Boolean inPartnershipProjects) {
         this.inPartnershipProjects = inPartnershipProjects;
+    }
+
+    public Integer getPartnerOtherSICState() {
+        return partnerOtherSICState;
+    }
+
+    public void setPartnerOtherSICState(Integer partnerOtherSICState) {
+        this.partnerOtherSICState = partnerOtherSICState;
+    }
+
+    public String getPartnerOtherSpecify() {
+        return partnerOtherSpecify;
+    }
+
+    public void setPartnerOtherSpecify(String partnerOtherSpecify) {
+        this.partnerOtherSpecify = partnerOtherSpecify;
     }
 
     public Set<SicCs8ProjectViewModel> getProjects() {

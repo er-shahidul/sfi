@@ -63,6 +63,7 @@ sfiFormApp
                         $scope.cs4 = angular.copy($rootScope.form.cs4);
                         Message.success('Section successfully saved', '.msg-cont', true);
                         $rootScope.updateFormMeta();
+                        $rootScope.setProgress();
                     }
 
 

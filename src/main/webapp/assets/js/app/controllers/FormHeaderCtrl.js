@@ -1,11 +1,27 @@
-sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$location', '$state',  function ($rootScope , $scope, $http, $location, $state){
+sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$location', '$state',  '_', function ($rootScope , $scope, $http, $location, $state, _){
 
-    $scope.progress = function(){
-        return $rootScope.form.progress;
+    $rootScope.formProgress = 0;
+
+    $rootScope.setProgress = function(){
+
+        $rootScope.formProgress = 0;
+
+        _.each($rootScope.form , function(cs){
+
+            if(cs && cs.errors){
+                if(Object.keys(cs.errors).length){
+                    return;
+                }
+            }
+
+            $rootScope.formProgress += 10;
+        });
     }
 
+    $rootScope.setProgress();
+
     $scope.progressClass = function(){
-        return { width: $rootScope.form.progress + "%" };
+        return { width: $rootScope.formProgress + "%" };
     }
 
     $scope.printDate = function(timestamp){
