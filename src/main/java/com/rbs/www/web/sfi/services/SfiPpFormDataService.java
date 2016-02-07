@@ -88,4 +88,9 @@ public class SfiPpFormDataService {
     public Date getUpdateAt(Integer id) {
         return repository.getUpdateAt(id);
     }
+
+    public void setIsComplete(Integer id) {
+        SfiPpFormData entity = repository.get(id);
+        entity.setIsComplete(true);
+    }
 }
