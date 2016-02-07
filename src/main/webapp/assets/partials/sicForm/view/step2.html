@@ -391,10 +391,10 @@
 
 
                 <label>
-                    <input type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="true" ng-checked="cs2.sicNeighborEvents">  Yes
+                    <input type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="true" >  Yes
                 </label>
                 <label>
-                    <input type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" ng-checked="!cs2.sicNeighborEvents">  No
+                    <input type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" >  No
                 </label>
 
                 <div class="aditional-line" ng-repeat="event in cs2.sicNeighborEvents" style="margin-top: 10px;">
@@ -431,8 +431,8 @@
                         </select>
                     </div>
                     <br>
-                    Highlights of project, event or activity:
-                    <div class="form-group">
+                    <div class="form-group" ng-show="cs2.isSicNeighborEvents">
+                        <label>Highlights of project, event or activity:</label>
                         <textarea readonly  class="form-control" rows="4" cols="74" ng-model="event.comment"></textarea>
                     </div>
                     <p style="text-align: right;padding-top: 10px;" ng-click="addEvent()"><b><u>+ Add Another Line</u></b></p>
