@@ -47,67 +47,91 @@ public class SicResponseController {
         model.addAttribute("cs9", sicFormService.getSicCs9ViewModel(sicFormData.getId()));
         model.addAttribute("cs10", sicFormService.getSicCs10ViewModel(sicFormData.getId()));
 
-        sicFormDataService.setAuditInfo(sicFormData.getId(), submitted);
+        sicFormDataService.setIsComplete(sicFormData.getId());
+
+        if( validationService.validate(sicFormService.getSicCs1ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs2ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs3ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs4ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs5ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs6ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs7ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs8ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs9ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs10ViewModel(sicFormData.getId())).getErrors() == null) {
+
+            sicFormDataService.setAuditInfo(sicFormData.getId(), submitted);
+        }
 
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs1", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs1(@RequestBody SicCs1ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs1Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs2", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs2(@RequestBody SicCs2ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs2Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs3", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs3(@RequestBody SicCs3ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs3Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs4", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs4(@RequestBody SicCs4ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs4Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs5", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs5(@RequestBody SicCs5ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs5Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs6", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs6(@RequestBody SicCs6ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs6Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs7", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs7(@RequestBody SicCs7ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs7Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs8", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs8(@RequestBody SicCs8ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs8Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs9", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs9(@RequestBody SicCs9ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs9Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/sicForm/cs10", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs10(@RequestBody SicCs10ViewModel model, BindingResult result) {
+        model.setErrors(null);
         sicFormService.setSicCs10Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }

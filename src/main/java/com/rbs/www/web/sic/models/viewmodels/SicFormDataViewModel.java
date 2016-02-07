@@ -15,6 +15,8 @@ public class SicFormDataViewModel extends BaseViewModel {
     private UserViewModel updatedBy;
     private Date createdAt;
     private Date updatedAt;
+    private Boolean isSaved;
+    private Boolean isComplete;
 
     @Override
     public Integer getId() {
@@ -23,6 +25,22 @@ public class SicFormDataViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getIsSaved() {
+        return isSaved;
+    }
+
+    public void setIsSaved(Boolean isSaved) {
+        this.isSaved = isSaved;
+    }
+
+    public Boolean getIsComplete() {
+        return isComplete;
+    }
+
+    public void setIsComplete(Boolean isComplete) {
+        this.isComplete = isComplete;
     }
 
     public SfiPpFormStatusViewModel getStatus() {
