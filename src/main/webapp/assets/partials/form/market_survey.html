@@ -496,7 +496,6 @@
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec4-request-went-market.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec5-comments.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec6-why-product-logo.html'" ></div>
-                <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec7-product-grp-contain.html'" ng-if="!isSfiSecondary()" ></div>
             </div>
 
             <div class="col-lg-4" style="text-align: right">
@@ -508,6 +507,8 @@
 
         <div class="col-lg-12 pading-botoms" ng-show="anySelect()">
             <div class="col-lg-8">
+                <div ng-include="'/assets/partials/form/cs8/sec7-product-grp-contain.html'" ng-if="!isSfiSecondary()" ></div>
+
                 <div ng-include="'/assets/partials/form/cs8/sec8-fsc-product-grp-contain.html'" ng-if="!isSfiSecondary()" ></div>
             </div>
             <div class="col-lg-4" style="text-align: right">
