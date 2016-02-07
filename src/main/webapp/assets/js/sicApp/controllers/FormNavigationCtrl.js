@@ -18,6 +18,7 @@ sfiSicApp
     }
 
     $scope.isSuccess = function(step){
+        return $rootScope.form[step].errors && $rootScope.form[step].errors.length;
         return $rootScope.form[step].isSectionValid;
     }
 
