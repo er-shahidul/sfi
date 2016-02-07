@@ -9,12 +9,12 @@ import java.util.Set;
 
 @SpELAssert.List({
         @SpELAssert(
-                value = "receiveInquiryOtherSpecify == null && receiveInquiryOtherSpecify.isEmpty()",
+                value = "receiveInquiryOtherSpecify == null",
                 applyIf = "receiveInquiryOther != null && receiveInquiryOther",
                 message = "{sic.cs5.receiveInquiryOtherSpecify}"
         ),
         @SpELAssert(
-                value = "advertiseOtherSpecify == null && advertiseOtherSpecify.isEmpty()",
+                value = "advertiseOtherSpecify == null",
                 applyIf = "advertiseOther != null && advertiseOther",
                 message = "{sic.cs5.advertiseOtherSpecify}"
         )
