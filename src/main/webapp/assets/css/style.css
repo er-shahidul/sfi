@@ -1153,6 +1153,7 @@ display: -webkit-flex; /* Safari */
 .tooltip-inner {
     background-color: #9A9A9A;
     color: #fff;
+    max-width:300px;
 }
 
 .tooltip.top .tooltip-arrow {
