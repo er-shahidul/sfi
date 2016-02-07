@@ -122,6 +122,9 @@ public class Cs10 extends BaseEntityModel {
     @Column(name = "cs10_biodiversityNoDescribe", nullable = true)
     private String biodiversityNoDescribe;
 
+    @Column(name = "cs10_legalComplianceUsCanadaDescribe", nullable = true)
+    private String legalComplianceUsCanadaDescribe;
+
     @OneToMany(targetEntity = SfiPpFormStoryCs10.class, fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SfiPpFormStoryCs10> stories;
@@ -133,6 +136,14 @@ public class Cs10 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getLegalComplianceUsCanadaDescribe() {
+        return legalComplianceUsCanadaDescribe;
+    }
+
+    public void setLegalComplianceUsCanadaDescribe(String legalComplianceUsCanadaDescribe) {
+        this.legalComplianceUsCanadaDescribe = legalComplianceUsCanadaDescribe;
     }
 
     public Set<SfiPpFormStoryCs10> getStories() {
