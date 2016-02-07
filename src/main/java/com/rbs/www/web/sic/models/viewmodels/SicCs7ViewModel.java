@@ -3,6 +3,8 @@ package com.rbs.www.web.sic.models.viewmodels;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.web.common.models.datamodels.BlobNames;
 
+import javax.validation.constraints.NotNull;
+
 public class SicCs7ViewModel extends BaseViewModel {
     private Integer id;
     private Integer bmpCompliancePeriod;
@@ -16,7 +18,9 @@ public class SicCs7ViewModel extends BaseViewModel {
     private String sfiFiberSourcingBmpSource;
     private String sfiForestManagementBmpSource;
     private String sfiNonCertifiedBmpSource;
+    @NotNull(message = "{sic.cs7.receiveInquiryLetter}")
     private Boolean monitorBMPCompliance;
+    @NotNull(message = "{sic.cs7.sicProgramCertifiedDesignation}")
     private Boolean sicProgramCertifiedDesignation;
     private BlobNames bmpReportDoc;
 

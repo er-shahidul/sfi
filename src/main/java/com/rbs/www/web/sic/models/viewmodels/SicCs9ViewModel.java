@@ -3,6 +3,7 @@ package com.rbs.www.web.sic.models.viewmodels;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.web.common.models.datamodels.BlobNames;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 public class SicCs9ViewModel extends BaseViewModel {
@@ -40,6 +41,7 @@ public class SicCs9ViewModel extends BaseViewModel {
     private Boolean activityLastYrSocialMedia;
     private Boolean activityLastYrTradeshow;
     private Boolean activityLastYrVideo;
+    @NotNull(message = "{sic.cs9.promoteSFI}")
     private Boolean promoteSFI;
     private Set<BlobNames> supportDocCurrentYrAdvPrinted;
     private Set<BlobNames> supportDocCurrentYrAdvTV;

@@ -2,11 +2,13 @@ package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 public class SicCs8ViewModel extends BaseViewModel {
     private Integer id;
 
+    @NotNull(message = "{sic.cs8.inPartnershipProjects}")
     private Boolean inPartnershipProjects;
     private Integer partnerOtherSICState;
     private String partnerOtherSpecify;
