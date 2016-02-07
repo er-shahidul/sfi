@@ -1,6 +1,7 @@
 package com.rbs.www.web.sfi.controllers;
 
 import com.rbs.www.admin.services.UserService;
+import com.rbs.www.common.enums.FormStatus;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
@@ -95,6 +96,10 @@ public class PpFormController{
         model.addAttribute("mode", "edit");
         model.addAttribute("isAdmin", false);
         model.addAttribute("user", userService.findByUsername(Util.getCurrentUsername()));
+
+        if(Objects.equals(sfiPpFormDataService.createOrGetByCurrentUsersCompany().getStatus().getStatus(), "submitted")){
+            return "redirect:/sfiPpForm/view";
+        }
 
         return "/core/form/index";
     }

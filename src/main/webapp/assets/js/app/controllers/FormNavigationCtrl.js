@@ -14,11 +14,12 @@ sfiFormApp.controller('FormNavigationCtrl', ['$rootScope', '$scope', '$state', '
     }
 
     $rootScope.isCompleted = function(){
-        return $rootScope.form.isComplete;
+        return $rootScope.formInfo.isComplete;
     }
 
     $scope.isSuccess = function(step){
-        return $rootScope.form[step].isSectionValid;
+        return !($rootScope.form[step].errors && $rootScope.form[step].errors.length);
+        //return $rootScope.form[step].isSectionValid;
     }
 
     $scope.getClass = function(step){

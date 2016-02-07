@@ -104,8 +104,12 @@ public class SicFormController{
         model.addAttribute("days_until", Util.getDiffDays(endDate));
         model.addAttribute("mode", "edit");
         model.addAttribute("isAdmin", false);
-
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
+
+        if(Objects.equals(sicFormDataService.createOrGetByCurrentUsersCompany().getStatus().getStatus(), "submitted")){
+            return "redirect:/sicForm/view";
+        }
+
         return "/web/sic/index";
     }
 

@@ -384,9 +384,8 @@
                 </div>
             </div>
 
-        <div class="col-lg-12 pading-botoms">
+        <div class="col-lg-12">
 
-            <div class="col-lg-10 pading-botoms">
                 <label>Our organization is part of the following sector(s)</label>
                 <p>This is a functional question that customizes the remainder of the form by product sector</p>
                 <div>
@@ -478,8 +477,6 @@
                         </div>
 
                     </div>
-
-                </div>
         </div>
 
         <!--Section 1-->
@@ -499,7 +496,6 @@
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec4-request-went-market.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec5-comments.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec6-why-product-logo.html'" ></div>
-                <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec7-product-grp-contain.html'" ng-if="!isSfiSecondary()" ></div>
             </div>
 
             <div class="col-lg-4" style="text-align: right">
@@ -511,6 +507,8 @@
 
         <div class="col-lg-12 pading-botoms" ng-show="anySelect()">
             <div class="col-lg-8">
+                <div ng-include="'/assets/partials/form/cs8/sec7-product-grp-contain.html'" ng-if="!isSfiSecondary()" ></div>
+
                 <div ng-include="'/assets/partials/form/cs8/sec8-fsc-product-grp-contain.html'" ng-if="!isSfiSecondary()" ></div>
             </div>
             <div class="col-lg-4" style="text-align: right">
@@ -537,14 +535,11 @@
             </div>
         </div>
 
-        <div class="col-lg-12pading-botoms">
-
-            <br>
-            <div class="col-lg-10 pading-botoms" ng-if="!isSfiSecondary()">
+        <div class="col-lg-12" ng-if="!isSfiSecondary()">
                 <label class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
                     If you own or manage forestland, have you ever considered seeking FSC Forest Management certification?
                 </label>
-                <div class="padding-left-10 label_width ">
+                <div class="padding-left-10 label_width">
                     <p>Choose one of the following</p>
                     <label class="form-inline">
                         <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=1 icheck>
@@ -643,24 +638,24 @@
 
                     </label>
                 </div>
-            </div>
+        </div>
             <br>
-            <div class="col-lg-10 pading-botoms">
+            <div class="col-lg-10">
                 <label class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
                     Have you ever considered obtaining FSC chain-of-custody certification?
                 </label>
                 <div class="padding-left-10 label_width">
                     <p>Choose one of the following</p>
                     <label class="form-inline">
-                        <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=1 icheck>
+                        <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=1 icheck>
                         We are satisfied with SFI certification and don't consider FSC certification
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=2 icheck>
+                        <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=2 icheck>
                         Yes, but decided against FSC certification
                     </label><br>
 
-                    <div class="padded-left" ng-show="cs8.ChainOfCustody_FSCCertification == 2">
+                    <div class="padded-left" ng-show="cs8.chainOfCustody_FSCCertification == 2">
 
                         <div class="checkboxlist">
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocCost1" icheck> Cost</p>
@@ -690,23 +685,20 @@
                     </div>
                     <div class="clear"></div>
 
-
-
-
                     <label class="form-inline">
-                        <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=3 icheck>
+                        <input type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=3 icheck>
                         Yes, and we are planning to become certified to both SFI and FSC in the future
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=4 icheck>
+                        <input type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=4 icheck>
                         We are already certified to both SFI and FSC
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=5 icheck>
+                        <input type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=5 icheck>
                         We were previously certified to FSC but dropped it after obtaining SFI certification, please specify
                     </label><br>
 
-                    <div class="padded-left" ng-show="cs8.ChainOfCustody_FSCCertification == 5">
+                    <div class="padded-left" ng-show="cs8.chainOfCustody_FSCCertification == 5">
 
                         <div class="checkboxlist">
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocCost2" icheck> Cost</p>
@@ -736,13 +728,13 @@
                     <div class="clear"></div>
 
                     <label class="form-inline">
-                        <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=6 icheck>
+                        <input type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=6 icheck>
                         Yes, and we are considering dropping SFI once we have obtained FSC certification
                     </label><br>
                     <label>
-                        <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=7 icheck>
+                        <input type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=7 icheck>
                         Other<br/>
-                        <label style="padding-left: 15px;" ng-show="cs8.ChainOfCustody_FSCCertification == 7">
+                        <label style="padding-left: 15px;" ng-show="cs8.chainOfCustody_FSCCertification == 7">
                             Please explain
                             <br>
                             <input type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherExplain" icheck>
@@ -754,7 +746,7 @@
 
                 <div class="col-lg-8">
                     <h4 class="content-header">Communications</h4>
-                    <p class="pading-botoms">
+                    <p>
                         <span class="question-style" tooltip title="SFI would like to understand your organization's communications strategies, so that we can provide information about relevant topics."> To help us understand how you market your SFI certification, please tell us how you communicate your SFI certification externally (e.g. to customers) and/or internally (to employees)? </span>
                     </p>
                     <div class="pading-botoms padding-left-10">
@@ -814,7 +806,7 @@
                         <span class="question-style" tooltip title="SFI would like to ensure we are equipping you to tell your story effectively! If you have ideas that are not on this list, please let us know.">How could SFI help you in your external and internal communication activities?</span>
                     </p>
 
-                    <div class="pading-botoms padding-left-10">
+                    <div class="padding-left-10">
                         <label class="form-inline">
                             <input type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="1" ng-model="sfiHelp" >
                             Presentation materials (sales presentations, benefits of SFI certification, benefits of sustainable forest management)

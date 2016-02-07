@@ -77,6 +77,8 @@ public class Cs10ViewModel extends BaseViewModel {
 
     private Set<SfiPpFormStoryCs10ViewModel> stories;
 
+    private String legalComplianceUsCanadaDescribe;
+
     @Override
     public Integer getId() {
         return id;
@@ -84,6 +86,14 @@ public class Cs10ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getLegalComplianceUsCanadaDescribe() {
+        return legalComplianceUsCanadaDescribe;
+    }
+
+    public void setLegalComplianceUsCanadaDescribe(String legalComplianceUsCanadaDescribe) {
+        this.legalComplianceUsCanadaDescribe = legalComplianceUsCanadaDescribe;
     }
 
     public Set<SfiPpFormStoryCs10ViewModel> getStories() {
