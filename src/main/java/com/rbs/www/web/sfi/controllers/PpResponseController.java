@@ -47,6 +47,18 @@ public class PpResponseController {
 
         sfiPpFormDataService.setAuditInfo(sfiPpFormData.getId(), FormStatus.SUBMITTED.getCode());
 
+        if(validationService.validate(formService.getCs1ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+           validationService.validate(formService.getCs2ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+           validationService.validate(formService.getCs4ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+           validationService.validate(formService.getCs5ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+           validationService.validate(formService.getCs6ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+           validationService.validate(formService.getCs7ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+           validationService.validate(formService.getCs9ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+           validationService.validate(formService.getCs10ViewModel(sfiPpFormData.getId())).getErrors() == null ){
+
+                sfiPpFormDataService.setIsComplete(sfiPpFormData.getId());
+        }
+
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 

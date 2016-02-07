@@ -1149,3 +1149,24 @@ display: -webkit-flex; /* Safari */
     display: flex;
     align-items: flex-start;
     }
+
+.tooltip-inner {
+    background-color: #9A9A9A;
+    color: #fff;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #9A9A9A;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #9A9A9A;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #9A9A9A;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: #9A9A9A;
+}

@@ -2,9 +2,12 @@ package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 
+import javax.validation.constraints.NotNull;
+
 public class SicCs10ViewModel extends BaseViewModel {
     private Integer id;
 
+    @NotNull(message = "{sic.cs10.confirmation}")
     private Boolean confirmation;
     private Boolean sfiCouldServeEducation;
     private Boolean sfiCouldServeInformation;

@@ -19,6 +19,6 @@ public class SfiPpFormRegionService {
     }
 
     public List<SfiPpFormRegion> getAll() {
-        return repository.getList();
+        return repository.getAll();
     }
 }
