@@ -20,10 +20,11 @@ sfiSicApp
             $scope.event = {}
         }
 
-        $scope.deleteNeighborEvents = function($index){
-
+        $scope.deleteNeighborEvents = function(index){
+            //alert(1);
+            console.log(index);
             if(confirm("Are you sure you want to delete this entry?")){
-                $scope.cs2.sicNeighborEvents.splice($index, 1);
+                $scope.cs2.sicNeighborEvents.splice(index, 1);
             }
 
         }
@@ -88,7 +89,7 @@ sfiSicApp
 
         $scope.whichSicText = function(index){
             console.log(index);
-            return $scope.sicList[index];
+            return $scope.sicList[index].value;
         }
 
         $scope.saveForm = function(go){

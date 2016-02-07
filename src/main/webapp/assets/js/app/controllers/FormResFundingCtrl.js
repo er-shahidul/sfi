@@ -185,6 +185,7 @@ sfiFormApp
                 sfiStandard10     : [],
                 sfiStandard15     : [],
                 projectLocations    : [],
+                regionModel    : [],
                 conversionPattern   : "",
                 startDate           : "",
                 endDate             : "",
@@ -293,7 +294,12 @@ sfiFormApp
 
 
         $scope.delRegion = function(regionId){
-            $scope.project.projectLocations = _.without($scope.project.projectLocations, regionId);
+            //console.log(regionId);
+            //console.log($scope.project.projectLocations);
+            $scope.project.projectLocations.splice($scope.project.projectLocations.indexOf(regionId),1);
+            //$scope.project.projectLocations = _.without($scope.project.projectLocations, regionId);
+             //$scope.project.projectLocations.splice(regionId, 1);
+
         }
 
         $rootScope.isSectionDirty = function(){
