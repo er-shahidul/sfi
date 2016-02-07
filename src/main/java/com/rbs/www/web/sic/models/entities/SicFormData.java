@@ -39,6 +39,12 @@ public class SicFormData extends BaseEntityModel {
     @Column(name = "updated_at")
     private Date updatedAt;
 
+    @Column(name = "isSaved", nullable = true)
+    private Boolean isSaved;
+
+    @Column(name = "isComplete", nullable = true)
+    private Boolean isComplete;
+
     @Override
     public Integer getId() {
         return id;
@@ -46,6 +52,22 @@ public class SicFormData extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getIsSaved() {
+        return isSaved;
+    }
+
+    public void setIsSaved(Boolean isSaved) {
+        this.isSaved = isSaved;
+    }
+
+    public Boolean getIsComplete() {
+        return isComplete;
+    }
+
+    public void setIsComplete(Boolean isComplete) {
+        this.isComplete = isComplete;
     }
 
     public SfiPpFormStatus getStatus() {

@@ -76,4 +76,9 @@ public class SicFormDataService {
     public Date getUpdateAt(Integer id) {
         return repository.getUpdateAt(id);
     }
+
+    public void setIsComplete(Integer id) {
+        SicFormData entity = repository.get(id);
+        entity.setIsComplete(true);
+    }
 }

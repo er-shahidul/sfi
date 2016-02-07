@@ -49,6 +49,20 @@ public class SicResponseController {
 
         sicFormDataService.setAuditInfo(sicFormData.getId(), submitted);
 
+        if( validationService.validate(sicFormService.getSicCs1ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs2ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs3ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs4ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs5ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs6ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs7ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs8ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs9ViewModel(sicFormData.getId())).getErrors()  == null &&
+            validationService.validate(sicFormService.getSicCs10ViewModel(sicFormData.getId())).getErrors() == null ){
+
+            sicFormDataService.setIsComplete(sicFormData.getId());
+        }
+
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
     }
 
