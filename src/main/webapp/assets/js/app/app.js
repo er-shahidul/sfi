@@ -809,7 +809,7 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
 
 
     $rootScope.deleteBucket = function(id, bucket){
-
+//console.log(id);
         return _.filter(bucket, function(item){
             return item.id == id;
         });
