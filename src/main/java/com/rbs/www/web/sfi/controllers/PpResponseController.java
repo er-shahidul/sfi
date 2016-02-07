@@ -45,7 +45,7 @@ public class PpResponseController {
         model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpFormData.getId()));
         model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpFormData.getId()));
 
-        sfiPpFormDataService.setAuditInfo(sfiPpFormData.getId(), FormStatus.SUBMITTED.getCode());
+        sfiPpFormDataService.setIsComplete(sfiPpFormData.getId());
 
         if(validationService.validate(formService.getCs1ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
            validationService.validate(formService.getCs2ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
@@ -54,9 +54,9 @@ public class PpResponseController {
            validationService.validate(formService.getCs6ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
            validationService.validate(formService.getCs7ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
            validationService.validate(formService.getCs9ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
-           validationService.validate(formService.getCs10ViewModel(sfiPpFormData.getId())).getErrors() == null ){
+           validationService.validate(formService.getCs10ViewModel(sfiPpFormData.getId())).getErrors() == null) {
 
-                sfiPpFormDataService.setIsComplete(sfiPpFormData.getId());
+            sfiPpFormDataService.setAuditInfo(sfiPpFormData.getId(), FormStatus.SUBMITTED.getCode());
         }
 
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
@@ -64,24 +64,28 @@ public class PpResponseController {
 
     @RequestMapping(value = "/form/cs1", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs1(@RequestBody Cs1ViewModel model, BindingResult result) {
+        model.setErrors(null);
         formService.setCs1Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/form/cs2", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs2(@RequestBody Cs2ViewModel model, BindingResult result) {
+        model.setErrors(null);
         formService.setCs2Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/form/cs4", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs4(@RequestBody Cs4ViewModel model, BindingResult result) {
+        model.setErrors(null);
         formService.setCs4Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/form/cs5", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs5(@RequestBody Cs5ViewModel model, BindingResult result) {
+        model.setErrors(null);
         formService.setSfiPpFormCs5Entities(model.getItems());
         formService.setCs5Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
@@ -89,12 +93,14 @@ public class PpResponseController {
 
     @RequestMapping(value = "/form/cs6", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs6(@RequestBody Cs6ViewModel model, BindingResult result) {
+        model.setErrors(null);
         formService.setCs6Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/form/cs7", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs7(@RequestBody Cs7ViewModel model, BindingResult result) {
+        model.setErrors(null);
         formService.setCs7Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
@@ -110,12 +116,14 @@ public class PpResponseController {
 
     @RequestMapping(value = "/form/cs9", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs9(@RequestBody Cs9ViewModel model, BindingResult result) {
+        model.setErrors(null);
         formService.setCs9Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/form/cs10", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})
     public ResponseEntity<String> formCs10(@RequestBody Cs10ViewModel model, BindingResult result) {
+        model.setErrors(null);
         formService.setCs10Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
