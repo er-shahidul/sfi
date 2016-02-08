@@ -1524,6 +1524,9 @@ public class Cs8PartialA extends BaseEntityModel {
     @Column(name = "cs8_fscDemandDeveloping_13_11", nullable = true)
     private Integer sfiLogoUseMotivation_13_11;
 
+    @Column(name = "cs8_fscDemandDeveloping_13", nullable = true)
+    private Integer fscDemandDeveloping_13;
+
     @Override
     public Integer getId() {
         return id;
@@ -1531,6 +1534,14 @@ public class Cs8PartialA extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getFscDemandDeveloping_13() {
+        return fscDemandDeveloping_13;
+    }
+
+    public void setFscDemandDeveloping_13(Integer fscDemandDeveloping_13) {
+        this.fscDemandDeveloping_13 = fscDemandDeveloping_13;
     }
 
     public Boolean getWhyChoseSFI20Other() {
