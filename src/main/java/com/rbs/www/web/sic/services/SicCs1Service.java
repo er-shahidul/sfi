@@ -12,6 +12,7 @@ import java.util.Set;
 @Service
 @Transactional
 public class SicCs1Service {
+
     @Autowired
     private SicCs1Repository repository;
 

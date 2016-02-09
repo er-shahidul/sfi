@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/security"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:beans="http://www.springframework.org/schema/beans" 
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
     http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
-	<http auto-config="true">
+    <http auto-config="true">
         <intercept-url pattern="/login" access="permitAll" />
-		<intercept-url pattern="/admin/form/**" access="hasAnyRole('ADMIN','GENERAL')" />
-		<intercept-url pattern="/admin/company/**" access="hasAnyRole('ADMIN','GENERAL')" />
-		<intercept-url pattern="/admin/dashboard" access="hasAnyRole('ADMIN','GENERAL')" />
-		<intercept-url pattern="/user/profile" access="hasAnyRole('ADMIN','USER','GENERAL')" />
-		<intercept-url pattern="/admin/user/profile" access="hasAnyRole('ADMIN','USER','GENERAL')" />
-		<intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
-		<intercept-url pattern="/user/form/**" access="hasRole('USER')" />
-		<intercept-url pattern="/frontend/**" access="hasAnyRole('USER','GENERAL')" />
+        <intercept-url pattern="/admin/form/**" access="hasAnyRole('ADMIN','GENERAL')" />
+        <intercept-url pattern="/admin/company/**" access="hasAnyRole('ADMIN','GENERAL')" />
+        <intercept-url pattern="/admin/dashboard" access="hasAnyRole('ADMIN','GENERAL')" />
+        <intercept-url pattern="/user/profile" access="hasAnyRole('ADMIN','USER','GENERAL')" />
+        <intercept-url pattern="/admin/user/profile" access="hasAnyRole('ADMIN','USER','GENERAL')" />
+        <intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
+        <intercept-url pattern="/user/form/**" access="hasRole('USER')" />
+        <intercept-url pattern="/frontend/**" access="hasAnyRole('USER','GENERAL')" />
         <intercept-url pattern="/sfiPpForm" access="isAuthenticated()" />
         <intercept-url pattern="/" access="permitAll" />
 
-		<form-login login-page="/login" username-parameter="username" password-parameter="password" authentication-failure-url="/login?error" />
-		<csrf disabled="true" />
-	</http>
+        <form-login login-page="/login" username-parameter="username" password-parameter="password" authentication-failure-url="/login?error" />
+        <csrf disabled="true" />
+    </http>
 
-	<beans:bean id="bcryptEncoder"
-		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+    <beans:bean id="bcryptEncoder"
+                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 
-	<authentication-manager>
-		<authentication-provider user-service-ref="UserLoginService">
-			<password-encoder ref="bcryptEncoder" />
-		</authentication-provider>
-	</authentication-manager>
+    <authentication-manager>
+        <authentication-provider user-service-ref="UserLoginService">
+            <password-encoder ref="bcryptEncoder" />
+        </authentication-provider>
+    </authentication-manager>
 
 </beans:beans>
