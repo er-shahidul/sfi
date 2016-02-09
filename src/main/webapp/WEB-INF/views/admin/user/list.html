@@ -77,7 +77,11 @@
                                                             <span></span>
                                                         </p>
                                                     </td>
-                                                    <td th:text="${u.createdAt}"></td>
+                                                    <td>
+                                                        <th:block th:if="${u.createdAt}">
+                                                            <th:block th:text="${#dates.format(u.createdAt, 'yyyy-MM-dd')}"></th:block>
+                                                        </th:block>
+                                                    </td>
                                                     <td th:each="g,iterationStatus  : ${u.group}">
                                                         <p th:if="${g.role} == ADMIN">
                                                             <span class="label label-success">yes</span>
