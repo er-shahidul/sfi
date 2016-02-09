@@ -239,7 +239,7 @@
                     </div>
                     <div class="panel-body">
                         This unique grassroots network of close to 1,000 people includes private landowners, independent loggers, forestry professionals, local government agencies, academics, scientists and conservationists.
-                        <br>
+                        <br/><br/>
                         The SFI program responds to local needs across North America through 34 SFI Implementation Committees at the state, provincial or regional level.
                     </div>
                 </div>
@@ -584,11 +584,11 @@
                     <ng-form role="form" name="participatingMeetingForm">
                         <div class="row" ng-repeat="meeting in cs1.participatingMeetingList" style="margin-top:12px;">
                             <div class="col-lg-3">
-                                <p ng-if="$index == 0" class="pading-botoms">Meeting Name</p>
+                                <p ng-if="$index == 0" class="margin-top-30">Meeting Name</p>
                                 <input type="text" class="form-control" ng-model="meeting.name">
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" class="pading-botoms">Date</p>
+                                <p ng-if="$index == 0" class="margin-top-30">Date</p>
 
                                 <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
                                     <input type='text' class="form-control" customerror
@@ -599,14 +599,14 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" class="pading-botoms">Location</p>
+                                <p ng-if="$index == 0" class="margin-top-30">Location</p>
                                 <select class="form-control" ng-model="meeting.location">
                                     <option ng-selected="!meeting.location">Select</option>
                                     <option ng-repeat="region in regions">{{ region.name }}</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" style="padding-bottom:17px;">SIC involvement, if not a committee meeting?</p>
+                                <p ng-if="$index == 0" style="padding-top:13px;">SIC involvement, if not a committee meeting?</p>
                                 <select class="form-control" ng-model="meeting.involvement" >
                                     <option ng-selected="!meeting.involvement">Select</option>
                                     <option value="1">Attending</option>

@@ -174,7 +174,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
             //console.log( usCanada.region.name);
             //console.log( usCanada.region.country.country);
             //console.log(usCanada);
-            $('#region-text').text(usCanada.region.name+' , '+usCanada.region.country.country);
+            $('#region-text').text(usCanada.region.name+', '+usCanada.region.country.country);
             $('#delete1').modal();
         }
     }

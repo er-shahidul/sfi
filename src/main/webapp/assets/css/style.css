@@ -367,14 +367,14 @@ button {
 }
 
 
-.active {
-	color: #3b464a!important;
+#formNavigation .active {
+	color: #3b464a;
 	border-color:#3b464a;
 }
 
 .success {
 	color: #8cc152!important;
-	border-color:#8cc152;	
+	border-color:#8cc152;
 }
 
 .success-active {
@@ -1149,7 +1149,7 @@ display: -webkit-flex; /* Safari */
     display: flex;
     align-items: flex-start;
     }
-
+/*
 .tooltip-inner {
     background-color: #9A9A9A;
     color: #fff;
@@ -1170,4 +1170,11 @@ display: -webkit-flex; /* Safari */
 
 .tooltip.left .tooltip-arrow {
     border-left-color: #9A9A9A;
+}
+*/
+.margin-top-30 {
+ margin-top: 30px;
+}
+.toolip h5:hover{
+color:#9A9A9A;
 }

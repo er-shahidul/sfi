@@ -97,7 +97,7 @@
                     <p>
                         <span tooltip title="Understanding why companies choose to certify to SFI will help us understand markets, and help us develop messaging to promote demand."> Why did you choose to get certified to SFI? Rate the following reasons for obtaining SFI.</span>
                     </p>
-                    <table border="1" style="line-height: 15px;" class="boxsize">
+                    <table border="1" style="line-height: 15px;border: 1px solid #ddd;" class="boxsize">
                         <tr>
                             <th class="col-lg-6">SFI certification is important for our organization because:</th>
                             <th class="col-lg-1">Strongly agree</th>
@@ -322,12 +322,14 @@
                     <p>
                         By responding to this part of the survey, SFI can help create links between you and the conservation and community stories that your SFI participation helps support. Here are a few hypothetical examples to illustrate the relationship of SFI certified activities, to the inherent value of your own products:
                     </p>
+                    <div style="border: 1px solid #ddd;padding: 5px;">
                     <img src="/assets/images/Section_9__Linking_to_the_Forests_v11.jpg" style="width: 100%;">
+                    </div>
                     <!--<p class="pading-botoms" style="padding-top: 25px;">-->
                         <!--Who are the main contacts for your organization that should be receiving SFI related information? Please include your organization's Head of Communications.-->
                     <!--</p>-->
                     <div>
-                        <table class="table table-striped" ng-show="cs8.primaryProducers.length">
+                        <table  class="table table-striped" ng-show="cs8.primaryProducers.length">
                             <thead>
                             <tr>
                                 <th>Name of primary producer</th>
@@ -353,7 +355,7 @@
                             </p>
                             <label class="form-inline">
                                 SFI primary producers
-                                <select class="form-control" name="producerSource"
+                                <select class="form-control" style="font-weight:normal;" name="producerSource"
                                         ng-model="producer.source">
 
                                     <option ng-selected="!producer.source">Select</option>
