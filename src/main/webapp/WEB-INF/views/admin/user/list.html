@@ -82,16 +82,18 @@
                                                             <th:block th:text="${#dates.format(u.createdAt, 'yyyy-MM-dd')}"></th:block>
                                                         </th:block>
                                                     </td>
-                                                    <td th:each="g,iterationStatus  : ${u.group}">
-                                                        <p th:if="${g.role} == ADMIN">
-                                                            <span class="label label-success">yes</span>
-                                                        </p>
-                                                        <p th:if="${g.role} == GENERAL">
-                                                            <span class="label label-danger">no</span>
-                                                        </p>
-                                                        <p th:if="${g.role} == USER">
-                                                            <span class="label label-danger">no</span>
-                                                        </p>
+                                                    <td>
+                                                        <th:block th:each="g,iterationStatus  : ${u.group}">
+                                                            <p th:if="${g.role} == ADMIN">
+                                                                <span class="label label-success">yes</span>
+                                                            </p>
+                                                            <p th:if="${g.role} == GENERAL">
+                                                                <span class="label label-danger">no</span>
+                                                            </p>
+                                                            <p th:if="${g.role} == USER">
+                                                                <span class="label label-danger">no</span>
+                                                            </p>
+                                                        </th:block>
                                                     </td>
                                                     <td>
                                                         <p th:if="${u.enabled} == true">
