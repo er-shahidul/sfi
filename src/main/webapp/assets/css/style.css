@@ -1137,7 +1137,7 @@ body{
 	background-color: white;
 }
 ul p {
-       margin: 10px 0px 10px;
+       margin: 10px 0px 0px;
    }
 .ng-cloak { display: none; }
 .label_width label{
