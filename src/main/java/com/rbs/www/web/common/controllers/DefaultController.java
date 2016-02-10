@@ -96,8 +96,10 @@ public class DefaultController {
     }
 
     @RequestMapping(value = "/privacy", method = RequestMethod.GET)
-    public String privacy(ModelMap model) {
+    public String privacy(ModelMap model, SecurityContextHolderAwareRequestWrapper request) {
+        User user = userService.findByUsername(getCurrentUsername());
         model.addAttribute("title", "privacy");
+        if (request.isUserInRole("USER"))  model.addAttribute("company", user.getCompany());
         return "common/privacy";
     }
 

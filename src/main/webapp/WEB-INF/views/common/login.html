@@ -40,16 +40,13 @@
                             <!--</div>-->
                         </div>
                         <div th:if="${param.logout != null}">
-                            <div class="alert alert-success">
+                            <!--<div class="alert alert-success">-->
                                 <p>You have been logged out successfully.</p>
-                            </div>
+                            <!--</div>-->
                         </div>
-                        <div id="u14" class="ax_paragraph">
-                            <div id="u15" class="text">
-                                <p><span th:text="${forgotText}"></span></p>
-                            </div>
+                        <div>
+                            <p><span th:text="${forgotText}"></span></p>
                         </div>
-
                     </form>
                 </div>
             </div>
