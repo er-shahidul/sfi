@@ -191,6 +191,45 @@ public class SicCs2 extends BaseEntityModel {
     @Column(name = "cs2_activityOtherSpecify2", nullable = true)
     private String activityOtherSpecify2;
 
+    @Column(name = "cs2_inKindSupportText1", nullable = true)
+    private String inKindSupportText1;
+
+    @Column(name = "cs2_inKindSupportText2", nullable = true)
+    private String inKindSupportText2;
+
+    @Column(name = "cs2_inKindSupportText3", nullable = true)
+    private String inKindSupportText3;
+
+    @Column(name = "cs2_inKindSupportText4", nullable = true)
+    private String inKindSupportText4;
+
+    @Column(name = "cs2_inKindSupportText5", nullable = true)
+    private String inKindSupportText5;
+
+    @Column(name = "cs2_inKindSupportText6", nullable = true)
+    private String inKindSupportText6;
+
+    @Column(name = "cs2_inKindSupportText7", nullable = true)
+    private String inKindSupportText7;
+
+    @Column(name = "cs2_inKindSupportText8", nullable = true)
+    private String inKindSupportText8;
+
+    @Column(name = "cs2_inKindSupportText9", nullable = true)
+    private String inKindSupportText9;
+
+    @Column(name = "cs2_inKindSupportText10", nullable = true)
+    private String inKindSupportText10;
+
+    @Column(name = "cs2_inKindSupportText11", nullable = true)
+    private String inKindSupportText11;
+
+    @Column(name = "cs2_inKindSupportText12", nullable = true)
+    private String inKindSupportText12;
+
+    @Column(name = "cs2_inKindSupportText13", nullable = true)
+    private String inKindSupportText13;
+
     @Override
     public Integer getId() {
         return id;
@@ -198,6 +237,110 @@ public class SicCs2 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getInKindSupportText1() {
+        return inKindSupportText1;
+    }
+
+    public void setInKindSupportText1(String inKindSupportText1) {
+        this.inKindSupportText1 = inKindSupportText1;
+    }
+
+    public String getInKindSupportText2() {
+        return inKindSupportText2;
+    }
+
+    public void setInKindSupportText2(String inKindSupportText2) {
+        this.inKindSupportText2 = inKindSupportText2;
+    }
+
+    public String getInKindSupportText3() {
+        return inKindSupportText3;
+    }
+
+    public void setInKindSupportText3(String inKindSupportText3) {
+        this.inKindSupportText3 = inKindSupportText3;
+    }
+
+    public String getInKindSupportText4() {
+        return inKindSupportText4;
+    }
+
+    public void setInKindSupportText4(String inKindSupportText4) {
+        this.inKindSupportText4 = inKindSupportText4;
+    }
+
+    public String getInKindSupportText5() {
+        return inKindSupportText5;
+    }
+
+    public void setInKindSupportText5(String inKindSupportText5) {
+        this.inKindSupportText5 = inKindSupportText5;
+    }
+
+    public String getInKindSupportText6() {
+        return inKindSupportText6;
+    }
+
+    public void setInKindSupportText6(String inKindSupportText6) {
+        this.inKindSupportText6 = inKindSupportText6;
+    }
+
+    public String getInKindSupportText7() {
+        return inKindSupportText7;
+    }
+
+    public void setInKindSupportText7(String inKindSupportText7) {
+        this.inKindSupportText7 = inKindSupportText7;
+    }
+
+    public String getInKindSupportText8() {
+        return inKindSupportText8;
+    }
+
+    public void setInKindSupportText8(String inKindSupportText8) {
+        this.inKindSupportText8 = inKindSupportText8;
+    }
+
+    public String getInKindSupportText9() {
+        return inKindSupportText9;
+    }
+
+    public void setInKindSupportText9(String inKindSupportText9) {
+        this.inKindSupportText9 = inKindSupportText9;
+    }
+
+    public String getInKindSupportText10() {
+        return inKindSupportText10;
+    }
+
+    public void setInKindSupportText10(String inKindSupportText10) {
+        this.inKindSupportText10 = inKindSupportText10;
+    }
+
+    public String getInKindSupportText11() {
+        return inKindSupportText11;
+    }
+
+    public void setInKindSupportText11(String inKindSupportText11) {
+        this.inKindSupportText11 = inKindSupportText11;
+    }
+
+    public String getInKindSupportText12() {
+        return inKindSupportText12;
+    }
+
+    public void setInKindSupportText12(String inKindSupportText12) {
+        this.inKindSupportText12 = inKindSupportText12;
+    }
+
+    public String getInKindSupportText13() {
+        return inKindSupportText13;
+    }
+
+    public void setInKindSupportText13(String inKindSupportText13) {
+        this.inKindSupportText13 = inKindSupportText13;
     }
 
     public String getActivityOtherSpecify1() {
