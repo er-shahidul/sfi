@@ -753,11 +753,11 @@ sfiFormApp.run(['$rootScope', '_', function($rootScope, _) {
     }
 
     $rootScope.ownsForestLandsUsa = function(){
-        return $rootScope.ownsForestLands() && $rootScope.form.cs1.ownsMngLandsInCA;
+        return $rootScope.ownsForestLands() && $rootScope.form.cs1.ownsMngLandsInUSA;
     }
 
     $rootScope.ownsForestLandsCa = function(){
-        return $rootScope.ownsForestLands() && $rootScope.form.cs1.ownsMngLands;
+        return $rootScope.ownsForestLands() && $rootScope.form.cs1.ownsMngLandsInCA;
     }
 
     $rootScope.ownsForestLandsOther = function(){
