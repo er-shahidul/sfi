@@ -127,239 +127,280 @@
                     <tr>
                         <td>Logger training and education</td>
                         <td ng-class="{'has-error' : cs2Form.directSpending1.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending1" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending1">
+                            <input class="form-control" style="width: 80px;" name="directSpending1" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending1">
                         </td>
                         <td>
                             <div class="fm-stl">
                                 <label>
-                                    <input type="radio" disabled  name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="true" ng-checked="cs2.inKindSupport1">  Yes
+                                    <input type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="true" ng-checked="cs2.inKindSupport1">  Yes
                                 </label>
                                 <label>
-                                    <input type="radio" disabled  type="radio" disabled  name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="false" ng-checked="!cs2.inKindSupport1">  No
+                                    <input type="radio" type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="false" ng-checked="!cs2.inKindSupport1">  No
                                 </label>
+                            </div>
+                            <div ng-show="cs2.inKindSupport1">
+                                <input type="text" class="form-control" readonly name="inKindSupportText1" ng-model="cs2.inKindSupportText1" />
                             </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails1">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails1">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Landowner outreach</td>
                         <td ng-class="{'has-error' : cs2Form.directSpending2.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending2" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending2">
+                            <input class="form-control" style="width: 80px;" name="directSpending2" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending2">
                         </td>
                         <td>
                             <div class="fm-stl">
                                 <label>
-                                    <input  type="radio" disabled   name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="true" ng-checked="cs2.inKindSupport2">  Yes
+                                    <input  type="radio"  name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="true" ng-checked="cs2.inKindSupport2">  Yes
                                 </label>
                                 <label>
-                                    <input  type="radio" disabled   name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="false" ng-checked="!cs2.inKindSupport2">  No
+                                    <input  type="radio"  name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="false" ng-checked="!cs2.inKindSupport2">  No
                                 </label>
+                            </div>
+                            <div ng-show="cs2.inKindSupport2">
+                                <input type="text" class="form-control" readonly name="inKindSupportText2" ng-model="cs2.inKindSupportText2" />
                             </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails2">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails2">
                         </td>
                     </tr>
                     <tr>
                         <td>American Tree Farm System activities</td>
                         <td ng-class="{'has-error' : cs2Form.directSpending3.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending3" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending3">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio" disabled   name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="true" ng-checked="cs2.inKindSupport3">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio" disabled   name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="false" ng-checked="!cs2.inKindSupport3">  No
-                            </label></div>
+                            <input class="form-control" style="width: 80px;" name="directSpending3" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending3">
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails3">
+                            <div class="fm-stl">
+                                <label>
+                                    <input  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="true" ng-checked="cs2.inKindSupport3">  Yes
+                                </label>
+                                <label>
+                                    <input  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="false" ng-checked="!cs2.inKindSupport3">  No
+                                </label>
+                            </div>
+                            <div ng-show="cs2.inKindSupport3">
+                                <input type="text" class="form-control" readonly name="inKindSupportText3" ng-model="cs2.inKindSupportText3" />
+                            </div>
+                        </td>
+                        <td>
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails3">
                         </td>
                     </tr>
                     <tr>
                         <td>Project Learning Tree activities</td>
                         <td ng-class="{'has-error' : cs2Form.directSpending4.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending4" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending4">
+                            <input class="form-control" style="width: 80px;" name="directSpending4" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending4">
                         </td>
                         <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="true" ng-checked="cs2.inKindSupport4">  Yes
+                                <input  type="radio"  name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="true" ng-checked="cs2.inKindSupport4">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="false" ng-checked="!cs2.inKindSupport4">  No
+                                <input  type="radio"  name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="false" ng-checked="!cs2.inKindSupport4">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport4">
+                                <input type="text" class="form-control" readonly name="inKindSupportText4" ng-model="cs2.inKindSupportText4" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails4">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails4">
                         </td>
                     </tr>
                     <tr>
-                        <td><span tooltip data-placement="top" data-container="body" data-html="true"  data-title="Provide further details in Section 3">Other Youth Education/Outreach</span></td>
+                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="Provide further details in Section 3">Other Youth Education/Outreach</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending5.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending5" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending5">
+                            <input class="form-control" style="width: 80px;" name="directSpending5" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending5">
                         </td>
                         <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="true" ng-checked="cs2.inKindSupport5">  Yes
+                                <input  type="radio"  name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="true" ng-checked="cs2.inKindSupport5">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="false" ng-checked="!cs2.inKindSupport5">  No
+                                <input  type="radio"  name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="false" ng-checked="!cs2.inKindSupport5">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport5">
+                                <input type="text" class="form-control" readonly name="inKindSupportText5" ng-model="cs2.inKindSupportText5" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails5">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails5">
                         </td>
                     </tr>
                     <tr>
                         <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="Provide further details in Section 3">Other Community outreach activities</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending6.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending6" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending6">
+                            <input class="form-control" style="width: 80px;" name="directSpending6" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending6">
                         </td>
                         <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="true" ng-checked="cs2.inKindSupport6">  Yes
+                                <input  type="radio"  name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="true" ng-checked="cs2.inKindSupport6">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="false" ng-checked="!cs2.inKindSupport6">  No
+                                <input  type="radio"  name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="false" ng-checked="!cs2.inKindSupport6">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport6">
+                                <input type="text" class="form-control" readonly name="inKindSupportText6" ng-model="cs2.inKindSupportText6" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails6">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails6">
                         </td>
                     </tr>
                     <tr>
                         <td>Communication/market outreach</td>
                         <td ng-class="{'has-error' : cs2Form.directSpending7.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending7" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending7">
+                            <input class="form-control" style="width: 80px;" name="directSpending7" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending7">
                         </td>
                         <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="true" ng-checked="cs2.inKindSupport7">  Yes
+                                <input  type="radio"  name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="true" ng-checked="cs2.inKindSupport7">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="false" ng-checked="!cs2.inKindSupport7">  No
+                                <input  type="radio"  name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="false" ng-checked="!cs2.inKindSupport7">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport7">
+                                <input type="text" class="form-control" readonly name="inKindSupportText7" ng-model="cs2.inKindSupportText7" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails7">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails7">
                         </td>
                     </tr>
                     <tr>
-                        <td> <span tooltip data-placement="top" data-container="body" data-html="true" data-title="includes research, watershed protection, or water conservation projects”">Water Quality Protection</span></td>
+                        <td> <span tooltip data-placement="top" data-container="body" data-html="true"  data-title="includes research, watershed protection, or water conservation projects”">Water Quality Protection</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending8.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending8" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending8">
+                            <input class="form-control" style="width: 80px;" name="directSpending8" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending8">
                         </td>
                         <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="true" ng-checked="cs2.inKindSupport8">  Yes
+                                <input  type="radio"  name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="true" ng-checked="cs2.inKindSupport8">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="false" ng-checked="!cs2.inKindSupport8">  No
+                                <input  type="radio"  name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="false" ng-checked="!cs2.inKindSupport8">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport8">
+                                <input type="text" class="form-control" readonly name="inKindSupportText8" ng-model="cs2.inKindSupportText8" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails8">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails8">
                         </td>
                     </tr>
                     <tr>
                         <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="Provide further details in Section 3">Conservation Research</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending9.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending9" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending9">
+                            <input class="form-control" style="width: 80px;" name="directSpending9" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending9">
                         </td>
                         <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="true" ng-checked="cs2.inKindSupport9">  Yes
+                                <input  type="radio"  name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="true" ng-checked="cs2.inKindSupport9">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="false" ng-checked="!cs2.inKindSupport9">  No
+                                <input  type="radio"  name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="false" ng-checked="!cs2.inKindSupport9">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport9">
+                                <input type="text" class="form-control" readonly name="inKindSupportText9" ng-model="cs2.inKindSupportText9" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails9">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails9">
                         </td>
                     </tr>
                     <tr>
                         <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="Provide further details in Section 3">Other Research</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending10.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending10" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending10">
+                            <input class="form-control" style="width: 80px;" name="directSpending10" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending10">
                         </td>
                         <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="true" ng-checked="cs2.inKindSupport10">  Yes
+                                <input  type="radio"  name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="true" ng-checked="cs2.inKindSupport10">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="false" ng-checked="!cs2.inKindSupport10">  No
+                                <input  type="radio"  name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="false" ng-checked="!cs2.inKindSupport10">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport10">
+                                <input type="text" class="form-control" readonly name="inKindSupportText10" ng-model="cs2.inKindSupportText10" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails10">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails10">
                         </td>
                     </tr>
                     <tr>
                         <td>Administration</td>
                         <td ng-class="{'has-error' : cs2Form.directSpending11.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending11" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending11">
+                            <input class="form-control" style="width: 80px;" name="directSpending11" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending11">
                         </td>
                         <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="true" ng-checked="cs2.inKindSupport11">  Yes
+                                <input  type="radio"  name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="true" ng-checked="cs2.inKindSupport11">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="false" ng-checked="!cs2.inKindSupport11">  No
+                                <input  type="radio"  name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="false" ng-checked="!cs2.inKindSupport11">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport11">
+                                <input type="text" class="form-control" readonly name="inKindSupportText11" ng-model="cs2.inKindSupportText11" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails11">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails11">
                         </td>
                     </tr>
                     <tr>
                         <td class="fm-stl">
                             <label>
-                                <input  type="checkbox" disabled  id="activityOtherSpecify1"
+                                <input  type="checkbox" id="activityOtherSpecify1"
                                         ng-model="cs2.activityOther1"
                                         ng-change="getOtherValue('activityOtherSpecify1', cs2)" > Other
                             </label>
                         </td>
                         <td ng-class="{'has-error' : cs2Form.directSpending12.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending12" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending12">
+                            <input class="form-control" style="width: 80px;" name="directSpending12" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending12">
                         </td>
-                        <td><div>
+                        <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="true" ng-checked="cs2.inKindSupport12">  Yes
+                                <input  type="radio"  name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="true" ng-checked="cs2.inKindSupport12">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="false" ng-checked="!cs2.inKindSupport12">  No
+                                <input  type="radio"  name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="false" ng-checked="!cs2.inKindSupport12">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport12">
+                                <input type="text" class="form-control" readonly name="inKindSupportText12" ng-model="cs2.inKindSupportText12" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails12">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails12">
                         </td>
                     </tr>
                     <tr>
                         <td class="fm-stl">
                             <label>
-                                <input  type="checkbox" disabled  id="activityOtherSpecify2"
+                                <input  type="checkbox" id="activityOtherSpecify2"
                                         ng-model="cs2.activityOther2"
                                         ng-change="getOtherValue('activityOtherSpecify2', cs2)" > Other
                             </label>
                         </td>
                         <td ng-class="{'has-error' : cs2Form.directSpending13.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending13" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending13">
+                            <input class="form-control" style="width: 80px;" name="directSpending13" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending13">
                         </td>
                         <td><div class="fm-stl">
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="true" ng-checked="cs2.inKindSupport13">  Yes
+                                <input  type="radio"  name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="true" ng-checked="cs2.inKindSupport13">  Yes
                             </label>
                             <label>
-                                <input  type="radio" disabled   name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="false" ng-checked="!cs2.inKindSupport13">  No
+                                <input  type="radio"  name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="false" ng-checked="!cs2.inKindSupport13">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport13">
+                                <input type="text" class="form-control" readonly name="inKindSupportText13" ng-model="cs2.inKindSupportText13" />
+                            </div>
                         </td>
                         <td>
-                            <input class="form-control" name="" type="text" readonly  ng-model="cs2.spendActivityDetails13">
+                            <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails13">
                         </td>
                     </tr>
                     <tfoot>
