@@ -165,6 +165,7 @@ public class PpFormController{
     public String adminSfiForm(ModelMap model) {
         model.addAttribute("title", "sfi");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.getAllActiveForms());
+        model.addAttribute("sfiPpFormsOld", sfiPpForm2014Service.getAll());
 
         return "admin/form/admin_form_sfi";
     }
