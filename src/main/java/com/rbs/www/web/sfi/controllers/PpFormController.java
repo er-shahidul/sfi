@@ -7,10 +7,7 @@ import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
-import com.rbs.www.web.sfi.services.FormService;
-import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjective2015Service;
-import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
-import com.rbs.www.web.sfi.services.SfiPpFormDataService;
+import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -38,6 +35,9 @@ public class PpFormController{
 
     @Autowired
     SfiPpFormDataService sfiPpFormDataService;
+
+    @Autowired
+    SfiPpForm2014Service sfiPpForm2014Service;
 
     @Autowired
     SfiPpFormAllCountryService sfiPpFormAllCountryService;
@@ -173,6 +173,7 @@ public class PpFormController{
     public String userSfiForm(ModelMap model) {
         model.addAttribute("title", "sfi");
         model.addAttribute("sfiPpForms", sfiPpFormDataService.createOrGetByCurrentUsersCompany());
+        model.addAttribute("sfiPpFormsOld", sfiPpForm2014Service.createOrGetByCurrentUsersCompany());
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.createOrGetByCurrentUsersCompany();
         model.addAttribute("company", sfiPpFormData.getCompany());
 
