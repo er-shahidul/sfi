@@ -146,6 +146,9 @@
                                     <input type="radio" type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="false" ng-checked="!cs2.inKindSupport1">  No
                                 </label>
                             </div>
+                            <div ng-show="cs2.inKindSupport1">
+                                <input type="text" class="form-control" name="inKindSupportText1" ng-model="cs2.inKindSupportText1" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails1">
@@ -166,6 +169,9 @@
                                     <input  type="radio"  name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="false" ng-checked="!cs2.inKindSupport2">  No
                                 </label>
                             </div>
+                            <div ng-show="cs2.inKindSupport2">
+                                <input type="text" class="form-control" name="inKindSupportText2" ng-model="cs2.inKindSupportText2" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails2">
@@ -176,13 +182,18 @@
                         <td ng-class="{'has-error' : cs2Form.directSpending3.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending3" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending3">
                         </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="true" ng-checked="cs2.inKindSupport3">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="false" ng-checked="!cs2.inKindSupport3">  No
-                            </label></div>
+                        <td>
+                            <div class="fm-stl">
+                                <label>
+                                    <input  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="true" ng-checked="cs2.inKindSupport3">  Yes
+                                </label>
+                                <label>
+                                    <input  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="false" ng-checked="!cs2.inKindSupport3">  No
+                                </label>
+                            </div>
+                            <div ng-show="cs2.inKindSupport3">
+                                <input type="text" class="form-control" name="inKindSupportText3" ng-model="cs2.inKindSupportText3" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails3">
@@ -200,6 +211,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="false" ng-checked="!cs2.inKindSupport4">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport4">
+                                <input type="text" class="form-control" name="inKindSupportText4" ng-model="cs2.inKindSupportText4" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails4">
@@ -217,6 +231,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="false" ng-checked="!cs2.inKindSupport5">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport5">
+                                <input type="text" class="form-control" name="inKindSupportText5" ng-model="cs2.inKindSupportText5" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails5">
@@ -234,6 +251,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="false" ng-checked="!cs2.inKindSupport6">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport6">
+                                <input type="text" class="form-control" name="inKindSupportText6" ng-model="cs2.inKindSupportText6" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails6">
@@ -251,6 +271,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="false" ng-checked="!cs2.inKindSupport7">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport7">
+                                <input type="text" class="form-control" name="inKindSupportText7" ng-model="cs2.inKindSupportText7" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails7">
@@ -268,6 +291,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="false" ng-checked="!cs2.inKindSupport8">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport8">
+                                <input type="text" class="form-control" name="inKindSupportText8" ng-model="cs2.inKindSupportText8" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails8">
@@ -285,6 +311,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="false" ng-checked="!cs2.inKindSupport9">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport9">
+                                <input type="text" class="form-control" name="inKindSupportText9" ng-model="cs2.inKindSupportText9" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails9">
@@ -302,6 +331,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="false" ng-checked="!cs2.inKindSupport10">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport10">
+                                <input type="text" class="form-control" name="inKindSupportText10" ng-model="cs2.inKindSupportText10" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails10">
@@ -319,6 +351,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="false" ng-checked="!cs2.inKindSupport11">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport11">
+                                <input type="text" class="form-control" name="inKindSupportText11" ng-model="cs2.inKindSupportText11" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails11">
@@ -342,6 +377,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="false" ng-checked="!cs2.inKindSupport12">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport12">
+                                <input type="text" class="form-control" name="inKindSupportText12" ng-model="cs2.inKindSupportText12" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails12">
@@ -365,6 +403,9 @@
                             <label>
                                 <input  type="radio"  name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="false" ng-checked="!cs2.inKindSupport13">  No
                             </label></div>
+                            <div ng-show="cs2.inKindSupport13">
+                                <input type="text" class="form-control" name="inKindSupportText13" ng-model="cs2.inKindSupportText13" />
+                            </div>
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails13">
