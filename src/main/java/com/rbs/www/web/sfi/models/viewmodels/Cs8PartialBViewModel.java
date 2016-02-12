@@ -22,7 +22,7 @@ public class Cs8PartialBViewModel extends BaseViewModel {
     private Boolean fscCocNoMarkerDemand2;
     private Boolean fscCocOther1;
     private Boolean fscCocOther2;
-    private Boolean fscCocOtherExplain;
+
     private Boolean fscCocUncertainty1;
     private Boolean fscCocUncertainty2;
     private Boolean fscComplexity1;
@@ -39,7 +39,7 @@ public class Cs8PartialBViewModel extends BaseViewModel {
     private Boolean fscNoMarkerDemand2;
     private Boolean fscOther1;
     private Boolean fscOther2;
-    private Boolean fscOtherExplain;
+
     private Boolean fscUncertainty1;
     private Boolean fscUncertainty2;
     private String fscOtherSpecify1;
@@ -72,6 +72,9 @@ public class Cs8PartialBViewModel extends BaseViewModel {
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_12;
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_13;
 
+    private String fscOtherExplain;
+    private String fscCocOtherExplain;
+
     @Override
     public Integer getId() {
         return id;
@@ -87,6 +90,22 @@ public class Cs8PartialBViewModel extends BaseViewModel {
 
     public void setFSCLandCertification(Integer FSCLandCertification) {
         this.FSCLandCertification = FSCLandCertification;
+    }
+
+    public String getFscOtherExplain() {
+        return fscOtherExplain;
+    }
+
+    public void setFscOtherExplain(String fscOtherExplain) {
+        this.fscOtherExplain = fscOtherExplain;
+    }
+
+    public String getFscCocOtherExplain() {
+        return fscCocOtherExplain;
+    }
+
+    public void setFscCocOtherExplain(String fscCocOtherExplain) {
+        this.fscCocOtherExplain = fscCocOtherExplain;
     }
 
     public Integer getChainOfCustody_FSCCertification() {
@@ -217,14 +236,6 @@ public class Cs8PartialBViewModel extends BaseViewModel {
         this.fscCocOther2 = fscCocOther2;
     }
 
-    public Boolean getFscCocOtherExplain() {
-        return fscCocOtherExplain;
-    }
-
-    public void setFscCocOtherExplain(Boolean fscCocOtherExplain) {
-        this.fscCocOtherExplain = fscCocOtherExplain;
-    }
-
     public Boolean getFscCocUncertainty1() {
         return fscCocUncertainty1;
     }
@@ -351,14 +362,6 @@ public class Cs8PartialBViewModel extends BaseViewModel {
 
     public void setFscOther2(Boolean fscOther2) {
         this.fscOther2 = fscOther2;
-    }
-
-    public Boolean getFscOtherExplain() {
-        return fscOtherExplain;
-    }
-
-    public void setFscOtherExplain(Boolean fscOtherExplain) {
-        this.fscOtherExplain = fscOtherExplain;
     }
 
     public Boolean getFscUncertainty1() {
