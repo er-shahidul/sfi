@@ -33,7 +33,7 @@
 
                     <div class="input-group input-large"
                          ng-file-select ng-model="uploadFile1"
-                         ng-file-change="uploadFile(uploadFile1, guideFile)"
+                         ng-file-change="uploadFile(uploadFile1, guideFile, '.doc,.docx,.xls,.xlsx')"
                          ng-multiple="true"
                          ng-accept="'.doc,.docx,.xls,.xlsx'">
 
@@ -114,7 +114,7 @@
 
                     <div class="input-group input-large"
                          ng-file-select ng-model="uploadFile2"
-                         ng-file-change="uploadFile(uploadFile2, contactFile)"
+                         ng-file-change="uploadFile(uploadFile2, contactFile, '.doc,.docx,.xls,.xlsx')"
                          ng-multiple="false"
                          ng-accept="'.doc,.docx,.xls,.xlsx'">
 
