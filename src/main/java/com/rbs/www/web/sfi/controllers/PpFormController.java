@@ -180,4 +180,12 @@ public class PpFormController{
 
         return "admin/form/admin_form_sfi";
     }
+
+    @RequestMapping(value = "/sfiPpForm/pdf/{fileName}", method = RequestMethod.GET)
+    public String viewPdf(@PathVariable String fileName, HttpServletRequest request) {
+        String path = request.getSession().getServletContext().getRealPath(".");
+        String originalPath = path+"/uploads/pdf/"+fileName;
+
+        return null;
+    }
 }

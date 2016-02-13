@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 @Transactional
@@ -199,7 +200,12 @@ public class UserService {
     }
 
     public void deleteUserEntity(UserViewModel model) {
+        UUID uuid = UUID.randomUUID();
+        String randomUUIDString = uuid.toString();
         model.setIsActive(false);
+        model.setEnabled(false);
+        model.setEmail(randomUUIDString+"@.com");
+        model.setUsername(randomUUIDString+"@.com");
         User entity = entityModelMapperService.convert(model, User.class);
     }
 }

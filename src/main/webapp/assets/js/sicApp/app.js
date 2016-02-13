@@ -769,7 +769,32 @@ sfiSicApp.run(['$rootScope', '_', function($rootScope, _) {
 
 sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
 
-        $rootScope.uploadFile = function(model, bucket) {
+        $rootScope.uploadFile = function(model, bucket, type) {
+
+            var isValid = true;
+
+            if(type){
+
+                var types = type.split(',');
+                _.each(model, function(file){
+                    var fileExt = "." + /[^.]+$/.exec(file.name);
+
+                    if(types.indexOf(file.type) < 0 && types.indexOf(fileExt) < 0  ){
+                        isValid = false;
+                    }
+
+                });
+
+                if(!isValid) {
+                    return alert("File type doen't match");
+                }
+            }
+
+
+
+
+
+            console.log(model);
 
             _.each(model, function(file){
 
