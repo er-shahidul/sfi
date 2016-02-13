@@ -459,7 +459,13 @@ sfiFormApp
         $scope.addList = function(bucket, model){
 
             _.isArray(bucket) || (bucket = []);
-            bucket.push(model);
+
+            if(_.isObject(model)){
+                bucket.push(model.name);
+            }else{
+                bucket.push(model);
+            }
+
             return _.unique(bucket);
         }
 
