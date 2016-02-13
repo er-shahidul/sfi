@@ -14,7 +14,7 @@ sfiSicApp
     }
 
     $rootScope.isCompleted = function(){
-        return $rootScope.form.isComplete;
+        return $rootScope.formInfo.isComplete;
     }
 
     $scope.isSuccess = function(step){

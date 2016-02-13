@@ -1,5 +1,5 @@
 <div class="col-sm-12 msg-cont"></div>
-<div class="col-sm-12 top-msg-cont">
+<div class="col-sm-12 top-msg-cont" ng-show="isCompleted()">
     <!--ng-show="isCompleted()">-->
     <div ng-repeat="error in errors | limitTo:3" class="alert alert-danger">
         <strong>Error!</strong> {{ error }}
