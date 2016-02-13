@@ -1,12 +1,37 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.datamodels.BlobNames;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.Set;
 
+@SpELAssert.List({
+        @SpELAssert(
+                value = "partnerAcademicSpecify != null && !partnerAcademicSpecify.isEmpty()",
+                applyIf = "partnerAcademic != null && partnerAcademic",
+                message = "{sic.cs8.project.partnerAcademicSpecify}"
+        ),
+        @SpELAssert(
+                value = "partnerResearchSpecify != null && !partnerResearchSpecify.isEmpty()",
+                applyIf = "partnerResearch != null && partnerResearch",
+                message = "{sic.cs8.project.partnerResearchSpecify}"
+        ),
+        @SpELAssert(
+                value = "partnerConservationSpecify != null && !partnerConservationSpecify.isEmpty()",
+                applyIf = "partnerConservation != null && partnerConservation",
+                message = "{sic.cs8.project.partnerConservationSpecify}"
+        ),
+        @SpELAssert(
+                value = "partnerGovernmentSpecify != null && !partnerGovernmentSpecify.isEmpty()",
+                applyIf = "partnerGovernment != null && partnerGovernment",
+                message = "{sic.cs8.project.partnerGovernmentSpecify}"
+        )
+})
 public class SicCs8ProjectViewModel extends BaseViewModel {
     private Integer id;
     private Integer sicPpForm;
@@ -36,21 +61,38 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
     private Integer sicContribution;
     private Integer totalCost;
 
+    @Size(max = 200, message = "{sic.cs8.project.contactEmail.size}")
+    @NotNull(message = "{sic.cs8.project.contactEmail}")
     private String contactEmail;
+
+    @NotNull(message = "{sic.cs8.project.contactName}")
     private String contactName;
+
+    @NotNull(message = "{sic.cs8.project.description}")
     private String description;
+
+    @NotNull(message = "{sic.cs8.project.name}")
     private String name;
+
+    @NotNull(message = "{sic.cs8.project.organization}")
     private String organization;
+
     private String partnerAcademicSpecify;
     private String partnerCommunityOtherSpecify;
     private String partnerConservationSpecify;
     private String partnerGovernmentSpecify;
     private String partnerResearchSpecify;
+
+    @NotNull(message = "{sic.cs8.project.sfiStandardObjective}")
     private String sfiStandardObjective;
+
     private Integer projectCostCurrency;
     private Integer sicContributionCurrency;
 
+    @NotNull(message = "{sic.cs8.project.endDate}")
     private Date endDate;
+
+    @NotNull(message = "{sic.cs8.project.startDate}")
     private Date startDate;
 
     private Set<SfiPpFormRegionViewModel> regions;

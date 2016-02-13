@@ -220,8 +220,23 @@ sfiFormApp
 
     $scope.fileSelected = function() {
 
+        var type = '.pdf, .doc, .xls';
+
+
         for (var i = 0; i < $scope.story.myFiles.length; i++) {
             var file = $scope.story.myFiles[i];
+            var isValid = true;
+
+            var fileExt = "." + /[^.]+$/.exec(file.name);
+
+            if(type.search(file.type) < 0 && type.search(fileExt) < 0  ){
+                isValid = false;
+            }
+
+            if(!isValid) {
+                return alert("File type doesn't match");
+            }
+
 
             $scope.upload = $upload.upload({
                 url: '/files/upload/sfi',
@@ -234,12 +249,9 @@ sfiFormApp
 
                 $scope.story.originalDocumentName = data.originalDocumentName;
                 $scope.story.uniqueDocumentName = data.uniqueDocumentName;
-
-
-                //console.log(data, status, headers, config)
-                //$scope.project.supportDocs.push(data);
+            }).error(function(data, status, headers, config){
+                alert("File upload failed, provide valid type file");
             });
-
         }
     }
 
