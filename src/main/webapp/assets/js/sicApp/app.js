@@ -792,12 +792,6 @@ sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
                 }
             }
 
-
-
-
-
-            console.log(model);
-
             _.each(model, function(file){
 
                 $rootScope.upload = $upload.upload({
@@ -813,7 +807,11 @@ sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
                     bucket.originalDocumentName  = data.originalDocumentName;
                     bucket.uniqueDocumentName    = data.uniqueDocumentName;
 
-                });
+                }).error(function(data, status, headers, config){
+
+                    alert("File upload failed, provide valid type file")
+
+                })
 
             });
 
