@@ -43,7 +43,7 @@
             </div>
             <div class="col-xs-3" id="formActions">
 
-                <div class="formActionsNotice">
+                <div class="formActionsNotice" style="width:100%">
                     <span th:if="${status.getId() != 1}">
                        <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> days until form is due!</span>
                         <!--<span ng-show="daysLeft &lt; 0" class="dueDate ng-cloak">Oh no! Your form is <span th:text=" - ${{ days_until }}"></span> days overdue!</span> days overdue!-->

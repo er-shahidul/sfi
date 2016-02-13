@@ -57,7 +57,7 @@ public class Cs8PartialB extends BaseEntityModel {
     private Boolean fscCocOther2;
 
     @Column(name = "cs8_fscCocOtherExplain", nullable = true)
-    private Boolean fscCocOtherExplain;
+    private String fscCocOtherExplain;
 
     @Column(name = "cs8_fscCocUncertainty1", nullable = true)
     private Boolean fscCocUncertainty1;
@@ -108,7 +108,7 @@ public class Cs8PartialB extends BaseEntityModel {
     private Boolean fscOther2;
 
     @Column(name = "cs8_fscOtherExplain", nullable = true)
-    private Boolean fscOtherExplain;
+    private String fscOtherExplain;
 
     @Column(name = "cs8_fscUncertainty1", nullable = true)
     private Boolean fscUncertainty1;
@@ -267,6 +267,22 @@ public class Cs8PartialB extends BaseEntityModel {
         this.id = id;
     }
 
+    public String getFscCocOtherExplain() {
+        return fscCocOtherExplain;
+    }
+
+    public void setFscCocOtherExplain(String fscCocOtherExplain) {
+        this.fscCocOtherExplain = fscCocOtherExplain;
+    }
+
+    public String getFscOtherExplain() {
+        return fscOtherExplain;
+    }
+
+    public void setFscOtherExplain(String fscOtherExplain) {
+        this.fscOtherExplain = fscOtherExplain;
+    }
+
     public Integer getFSCLandCertification() {
         return FSCLandCertification;
     }
@@ -403,14 +419,6 @@ public class Cs8PartialB extends BaseEntityModel {
         this.fscCocOther2 = fscCocOther2;
     }
 
-    public Boolean getFscCocOtherExplain() {
-        return fscCocOtherExplain;
-    }
-
-    public void setFscCocOtherExplain(Boolean fscCocOtherExplain) {
-        this.fscCocOtherExplain = fscCocOtherExplain;
-    }
-
     public Boolean getFscCocUncertainty1() {
         return fscCocUncertainty1;
     }
@@ -537,14 +545,6 @@ public class Cs8PartialB extends BaseEntityModel {
 
     public void setFscOther2(Boolean fscOther2) {
         this.fscOther2 = fscOther2;
-    }
-
-    public Boolean getFscOtherExplain() {
-        return fscOtherExplain;
-    }
-
-    public void setFscOtherExplain(Boolean fscOtherExplain) {
-        this.fscOtherExplain = fscOtherExplain;
     }
 
     public Boolean getFscUncertainty1() {
