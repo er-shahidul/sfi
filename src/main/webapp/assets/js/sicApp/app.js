@@ -776,17 +776,19 @@ sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
             if(type){
 
                 var types = type.split(',');
+
                 _.each(model, function(file){
+
                     var fileExt = "." + /[^.]+$/.exec(file.name);
 
-                    if(types.indexOf(file.type) < 0 && types.indexOf(fileExt) < 0  ){
+                    if(type.search(file.type) < 0 && type.search(fileExt) < 0  ){
                         isValid = false;
                     }
 
                 });
 
                 if(!isValid) {
-                    return alert("File type doen't match");
+                    return alert("File type doesn't match");
                 }
             }
 
