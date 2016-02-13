@@ -33,7 +33,7 @@
 
                     <div class="input-group input-large"
                          ng-file-select ng-model="uploadFile1"
-                         ng-file-change="uploadFile(uploadFile1, guideFile)"
+                         ng-file-change="uploadFile(uploadFile1, guideFile, '.doc,.docx,.xls,.xlsx')"
                          ng-multiple="true"
                          ng-accept="'.doc,.docx,.xls,.xlsx'">
 
@@ -114,7 +114,7 @@
 
                     <div class="input-group input-large"
                          ng-file-select ng-model="uploadFile2"
-                         ng-file-change="uploadFile(uploadFile2, contactFile)"
+                         ng-file-change="uploadFile(uploadFile2, contactFile, '.doc,.docx,.xls,.xlsx')"
                          ng-multiple="false"
                          ng-accept="'.doc,.docx,.xls,.xlsx'">
 
@@ -123,7 +123,7 @@
                             <span class="fileinput-filename">{{ contactFile.originalDocumentName }}</span>
                         </div>
                         <span class="input-group-addon btn default btn-file">
-                            <span ng-hide="contactFile.originalDocumentName" class="fileinput-new">Select file </span>
+                            <span ng-hide="contactFile.originalDocumentName" class="fileinput-new">Browse</span>
                             <span ng-show="contactFile.originalDocumentName" class="fileinput-exists">Change </span>
                         </span>
 
@@ -629,7 +629,7 @@
         </div>
         <br>
 
-        <div class="col-lg-12" style="padding-top: 30px;">
+        <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
                     Is the SIC willing to represent the SFI program, on SFI Inc.'s behalf, at local conferences,
@@ -652,7 +652,7 @@
         </div>
         <br>
 
-        <div class="col-lg-12" style="padding-top: 30px;">
+        <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
                     Did your SIC recruit any new SFI Applicants or SFI Program Participants last year?
@@ -674,7 +674,7 @@
         </div>
         <br>
 
-        <div class="col-lg-12" style="padding-top: 30px;">
+        <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
                     Does your SIC workplan/annual goals/annual activities include recruitment efforts this year?

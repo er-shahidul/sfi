@@ -21,9 +21,9 @@
                         Upload File
                         <div class="input-group input-large" style="width: 510px;"
                              ng-file-select ng-model="story.myFiles"
-                             ng-file-change="fileSelected(files)"
+                             ng-file-change="fileSelected()"
                              ng-multiple="false"
-                             ng-accept="'image/*,application/pdf'" >
+                             ng-accept="'.pdf, .doc, .xls'" >
                             <div class="form-control uneditable-input input-fixed input-medium">
                                 <i class="fa fa-file fileinput-exists"></i>&nbsp;
                                 <span class="fileinput-filename">{{ story.originalDocumentName }}</span>

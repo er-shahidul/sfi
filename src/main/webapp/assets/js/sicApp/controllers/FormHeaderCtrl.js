@@ -25,7 +25,17 @@ sfiSicApp
 
         $http
             .get('/sic/form/submit/' + urlData.companyId)
-            .then(function(){
+            .then(function(response){
+
+                if(response.data){
+                    var form = response.data.form;
+                    if(form.status.id == 3){
+                        alert("Form submitted successfully");
+                    }else{
+                        alert("Please provide required information")
+                    }
+                }
+
                 window.location.reload();
             })
     }

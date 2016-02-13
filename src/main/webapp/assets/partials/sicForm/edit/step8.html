@@ -397,9 +397,9 @@
                             <div class="input-group input-large"
                                  ng-init="supportDoc = {}"
                                  ng-file-select ng-model="uploadFile1"
-                                 ng-file-change="uploadFile(uploadFile1, supportDoc)"
+                                 ng-file-change="uploadFile(uploadFile1, supportDoc, '.pdf, .doc, .xls')"
                                  ng-multiple="false"
-                                 ng-accept="'image/*,application/pdf'">
+                                 ng-accept="'.pdf, .doc, .xls'">
 
                                 <div class="form-control uneditable-input input-fixed input-medium">
                                     <i class="fa fa-file fileinput-exists"></i>&nbsp;
