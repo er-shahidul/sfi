@@ -73,14 +73,14 @@
                     </label>
                 </div>
 
-                <div>
+                <div class="fm-stl">
                     <p>
                         <b>
                         How much money was contributed last calendar year by SIC supporters and project partners for SFI Implementation Committee – sponsored activities and projects? (new!)
                         </b>
                     </p>
                     <label class="form-inline">
-                        Amount
+                        <b>Amount</b>
                         <input class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  customerror ng-model="cs2.spentBySicSupporters">
                         <u><span style="font-weight: normal;" class="curency" id="supportCurrency" ng-click="setCurrency('supportCurrency', cs2)">{{ gerCurrency(cs2.supportCurrency) }}</span></u>
                     </label>
@@ -89,14 +89,14 @@
 
                 <br>
 
-                <div>
+                <div class="fm-stl">
                     <p>
                         <b>
                         How much money was spent last calendar year by your committee for SFI Implementation Committee-sponsored activities and projects?
                         </b>
                     </p>
                     <label class="form-inline" ng-class="{'has-error' : cs2.spentByYourCommittee != getTotal() }">
-                        Amount
+                        <b>Amount</b>
                         <input class="form-control" name="spentByYourCommittee" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.spentByYourCommittee">
                         <u><span style="font-weight: normal;" class="curency" id="committeeCurrency" ng-click="setCurrency('committeeCurrency', cs2)">{{ gerCurrency(cs2.committeeCurrency) }}</span></u>
                     </label>
