@@ -1,6 +1,9 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.CascadeIf;
+
+import javax.validation.Valid;
 import java.util.Set;
 
 public class SicCs8ViewModel extends BaseViewModel {
@@ -10,6 +13,8 @@ public class SicCs8ViewModel extends BaseViewModel {
     private Integer partnerOtherSICState;
     private String partnerOtherSpecify;
 
+    @Valid
+    @CascadeIf("inPartnershipProjects")
     private Set<SicCs8ProjectViewModel> projects;
 
     @Override
