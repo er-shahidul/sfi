@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import java.awt.*;
+import java.io.File;
 import java.text.ParseException;
 import java.util.Objects;
 
@@ -184,8 +186,30 @@ public class PpFormController{
     @RequestMapping(value = "/sfiPpForm/pdf/{fileName}", method = RequestMethod.GET)
     public String viewPdf(@PathVariable String fileName, HttpServletRequest request) {
         String path = request.getSession().getServletContext().getRealPath(".");
-        String originalPath = path+"/uploads/pdf/"+fileName;
+        String originalPath = path+"uploads/pdf/"+fileName+".pdf";
 
-        return null;
+        try {
+
+            File pdfFile = new File(originalPath);
+            if (pdfFile.exists()) {
+
+                if (Desktop.isDesktopSupported()) {
+                    Desktop.getDesktop().open(pdfFile);
+                } else {
+                    System.out.println("Awt Desktop is not supported!");
+                }
+
+            } else {
+                System.out.println("File is not exists!");
+            }
+
+            System.out.println("Done");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        if (request.isUserInRole("USER")) return "redirect:/user/form/pp";
+        return "redirect:/admin/form/pp";
     }
 }
