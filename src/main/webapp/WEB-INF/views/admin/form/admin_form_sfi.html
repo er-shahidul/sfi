@@ -37,6 +37,7 @@
                                             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead style="background: #ccc;">
                                                 <tr>
+                                                    <th>Year</th>
                                                     <th>Company Name</th>
                                                     <th>Created By</th>
                                                     <th>Date Created</th>
@@ -48,11 +49,20 @@
                                                 <tbody>
                                                 <tr th:each="sfiPpForm, iterationStatus : ${sfiPpForms}">
 
+                                                    <td>2015</td>
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" th:text="${sfiPpForm.company.name}"></td>
-                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.createdBy.username}"></td>
-                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.createdAt}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" th:text="${sfiPpForm.createdBy.username}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" >
+                                                        <th:block th:if="${sfiPpForm.createdAt}">
+                                                            <th:block th:text="${#dates.format(sfiPpForm.createdAt, 'yyyy-MM-dd')}"></th:block>
+                                                        </th:block>
+                                                    </td>
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.status.status}"></td>
-                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.updatedAt}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'">
+                                                        <th:block th:if="${sfiPpForm.updatedAt}">
+                                                            <th:block th:text="${#dates.format(sfiPpForm.updatedAt, 'yyyy-MM-dd')}"></th:block>
+                                                        </th:block>
+                                                    </td>
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
                                                         <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_GENERAL')">
                                                         <a th:href="@{'/admin/company/pp/form/view/' + ${sfiPpForm.id}}">
@@ -78,16 +88,18 @@
                                                 <!--<tr th:each="sfiPpFormOld, iterationStatus : ${sfiPpFormsOld}">-->
 
                                                     <!--<td>2014</td>-->
-                                                    <!--<td></td>-->
-                                                    <!--<td></td>-->
-                                                    <!--<td></td>-->
-                                                    <!--<td></td>-->
                                                     <!--<td>-->
-                                                        <!--<a th:href="@{'/sfiPpForm/pdf'}">-->
-                                                            <!--<button th:text="PDF" style="width:47px;"></button>-->
+                                                        <!--<span th:text="${sfiPpFormOld.company.name}"></span>-->
+                                                    <!--</td>-->
+                                                    <!--<td></td>-->
+                                                    <!--<td>2014-04-29</td>-->
+                                                    <!--<td>Submitted</td>-->
+                                                    <!--<td>2014-04-29</td>-->
+                                                    <!--<td>-->
+                                                        <!--<a th:href="@{'/sfiPpForm/pdf/' + ${sfiPpFormOld.id}}">-->
+                                                            <!--<u>Open PDF</u>-->
                                                         <!--</a>-->
                                                     <!--</td>-->
-
                                                 <!--</tr>-->
                                                 </tbody>
                                             </table>
