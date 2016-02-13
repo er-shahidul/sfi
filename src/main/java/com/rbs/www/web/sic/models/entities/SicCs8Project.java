@@ -146,6 +146,13 @@ public class SicCs8Project extends BaseEntityModel {
             inverseJoinColumns = {@JoinColumn(name = "region_id", referencedColumnName = "id")})
     private Set<SfiPpFormRegion> regions;
 
+    @Column(name = "cs8_partnerOtherSICState", nullable = true)
+    private Integer partnerOtherSICState;
+
+    @Column(name = "cs8_partnerOtherSpecify", nullable = true)
+    @Type(type = "text")
+    private String partnerOtherSpecify;
+
     @Override
     public Integer getId() {
         return id;
@@ -153,6 +160,22 @@ public class SicCs8Project extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getPartnerOtherSICState() {
+        return partnerOtherSICState;
+    }
+
+    public void setPartnerOtherSICState(Integer partnerOtherSICState) {
+        this.partnerOtherSICState = partnerOtherSICState;
+    }
+
+    public String getPartnerOtherSpecify() {
+        return partnerOtherSpecify;
+    }
+
+    public void setPartnerOtherSpecify(String partnerOtherSpecify) {
+        this.partnerOtherSpecify = partnerOtherSpecify;
     }
 
     public String getSfiStandardObjective() {

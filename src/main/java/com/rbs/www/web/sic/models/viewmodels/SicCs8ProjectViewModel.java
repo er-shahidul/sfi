@@ -56,6 +56,9 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
     private Set<SfiPpFormRegionViewModel> regions;
     private Set<BlobNames> supportDocs;
 
+    private Integer partnerOtherSICState;
+    private String partnerOtherSpecify;
+
     @Override
     public Integer getId() {
         return id;
@@ -63,6 +66,22 @@ public class SicCs8ProjectViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getPartnerOtherSICState() {
+        return partnerOtherSICState;
+    }
+
+    public void setPartnerOtherSICState(Integer partnerOtherSICState) {
+        this.partnerOtherSICState = partnerOtherSICState;
+    }
+
+    public String getPartnerOtherSpecify() {
+        return partnerOtherSpecify;
+    }
+
+    public void setPartnerOtherSpecify(String partnerOtherSpecify) {
+        this.partnerOtherSpecify = partnerOtherSpecify;
     }
 
     public String getSfiStandardObjective() {
