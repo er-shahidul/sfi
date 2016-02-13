@@ -164,16 +164,16 @@ sfiFormApp
 
     /** overwrite disabling rules here */
     $scope.operateInUsa = function(){
-        return $rootScope.ownsForestLands() && $rootScope.operateInUsa();
+        return $rootScope.ownsForestLands() && $rootScope.ownsForestLandsUsa();
     }
 
 
     $scope.operateInCa = function(){
-        return $rootScope.ownsForestLands()  && $rootScope.operateInCa();
+        return $rootScope.ownsForestLands()  && $rootScope.ownsForestLandsCa();
     }
 
     $scope.operateInOthers = function(){
-        return $rootScope.ownsForestLands()  && $rootScope.operateInOthers();
+        return $rootScope.ownsForestLands()  && $rootScope.ownsForestLandsOther();
     }
 
 
