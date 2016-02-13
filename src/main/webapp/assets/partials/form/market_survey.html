@@ -291,7 +291,7 @@
                             <td><input  icheck name="whyChoseSFI20" ng-model="cs8.whyChoseSFI20" value="6" type="radio"></td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="fm-stl">
                                 <label class="form-inline">
                                     <input class="form-control" style="margin: 0px;" type="checkbox" ng-model="cs8.whyChoseSFI20Other">  Other
                                 </label>
@@ -388,7 +388,7 @@
                 </div>
             </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 fm-stl">
 
                 <label>Our organization is part of the following sector(s)</label>
                 <p>This is a functional question that customizes the remainder of the form by product sector</p>
@@ -539,9 +539,9 @@
             </div>
         </div>
 
-        <div class="col-lg-12" ng-if="!isSfiSecondary()">
+        <div class="col-lg-12 fm-stl" ng-if="!isSfiSecondary()">
                 <label class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
-                    If you own or manage forestland, have you ever considered seeking FSC Forest Management certification?
+                    <b>If you own or manage forestland, have you ever considered seeking FSC Forest Management certification?</b>
                 </label>
                 <div class="padding-left-10 label_width">
                     <p>Choose one of the following</p>
@@ -555,6 +555,7 @@
                     </label><br>
 
                     <div class="padded-left" ng-show="cs8.FSCLandCertification == 2">
+                        <p><b>Please specify</b></p>
 
                         <div class="checkboxlist">
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscCost1" icheck> Cost</p>
@@ -575,7 +576,7 @@
                             <p>
                                 <input type="checkbox" name="temp47" ng-model="cs8.fscOther1" icheck> Other<br/>
                                 <label ng-show="cs8.fscOther1">
-                                    Please explain
+                                    <b>Please specify</b>
                                     <input type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherSpecify1" icheck>
                                 </label>
                             </p>
@@ -597,7 +598,7 @@
                     </label><br>
 
                     <div class="padded-left" ng-show="cs8.FSCLandCertification == 5">
-
+                        <p><b>Please specify</b></p>
                         <div class="checkboxlist">
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscCost2" icheck> Cost</p>
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscUncertainty2" icheck> Uncertainty</p>
@@ -618,7 +619,7 @@
                             <p>
                                 <input type="checkbox" name="temp47" ng-model="cs8.fscOther2" icheck> Other<br/>
                                 <label ng-show="cs8.fscOther2">
-                                    Please explain
+                                    <b>Please specify</b>
                                     <input type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherSpecify2" icheck>
                                 </label>
                             </p>
@@ -635,7 +636,7 @@
                         Other<br/>
 
                         <label style="padding-left: 15px;" ng-show="cs8.FSCLandCertification == 7">
-                            Please explain
+                           <b>Explain</b>
                             <br>
                             <input  type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherExplain" icheck>
                         </label>
@@ -644,9 +645,9 @@
                 </div>
         </div>
             <br>
-            <div class="col-lg-10">
+        <div class="col-lg-10 fm-stl">
                 <label class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
-                    Have you ever considered obtaining FSC chain-of-custody certification?
+                    <b>Have you ever considered obtaining FSC chain-of-custody certification?</b>
                 </label>
                 <div class="padding-left-10 label_width">
                     <p>Choose one of the following</p>
@@ -660,7 +661,7 @@
                     </label><br>
 
                     <div class="padded-left" ng-show="cs8.chainOfCustody_FSCCertification == 2">
-
+                        <p><b>Please specify</b></p>
                         <div class="checkboxlist">
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocCost1" icheck> Cost</p>
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocUncertainty1" icheck> Uncertainty</p>
@@ -681,7 +682,7 @@
                             <p>
                                 <input type="checkbox" name="temp47" ng-model="cs8.fscCocOther1" icheck> Other<br/>
                                 <label ng-show="cs8.fscCocOther1">
-                                    Please explain
+                                    <b>Please specify</b>
                                     <input type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherSpecify1" icheck>
                                 </label>
                             </p>
@@ -703,7 +704,7 @@
                     </label><br>
 
                     <div class="padded-left" ng-show="cs8.chainOfCustody_FSCCertification == 5">
-
+                        <p><b>Please specify</b></p>
                         <div class="checkboxlist">
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocCost2" icheck> Cost</p>
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscCocUncertainty2" icheck> Uncertainty</p>
@@ -723,7 +724,7 @@
                             <p>
                                 <input type="checkbox" name="temp47" ng-model="cs8.fscCocOther2" icheck> Other<br/>
                                 <label ng-show="cs8.fscCocOther2">
-                                    Please explain
+                                    <b>Please specify</b>
                                     <input type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherSpecify2" icheck>
                                 </label>
                             </p>
@@ -739,7 +740,7 @@
                         <input type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=7 icheck>
                         Other<br/>
                         <label style="padding-left: 15px;" ng-show="cs8.chainOfCustody_FSCCertification == 7">
-                            Please explain
+                            <b>Explain</b>
                             <br>
                             <input type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherExplain" icheck>
                         </label>
@@ -748,11 +749,11 @@
                 </div>
             </div>
 
-                <div class="col-lg-8">
+                <div class="col-lg-8 fm-stl">
                     <h4 class="content-header">Communications</h4>
-                    <p>
+                    <p><b>
                         <span class="question-style" tooltip title="SFI would like to understand your organization's communications strategies, so that we can provide information about relevant topics."> To help us understand how you market your SFI certification, please tell us how you communicate your SFI certification externally (e.g. to customers) and/or internally (to employees)? </span>
-                    </p>
+                    </b></p>
                     <div class="pading-botoms padding-left-10">
                         <label class="form-inline">
                             <input type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="1" ng-model="sfiMarket" >
@@ -806,9 +807,9 @@
                     </div>
 
 
-                    <p>
+                    <p><b>
                         <span class="question-style" tooltip title="SFI would like to ensure we are equipping you to tell your story effectively! If you have ideas that are not on this list, please let us know.">How could SFI help you in your external and internal communication activities?</span>
-                    </p>
+                    </b></p>
 
                     <div class="padding-left-10">
                         <label class="form-inline">

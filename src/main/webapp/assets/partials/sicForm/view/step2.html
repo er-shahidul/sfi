@@ -74,7 +74,7 @@
             </div>
         </div>
         <br>
-        <div class="col-lg-12">
+        <div class="col-lg-12 fm-stl">
             <div class="col-lg-8">
                 <p>
                     <b>
@@ -82,7 +82,7 @@
                     </b>
                 </p>
                 <label class="form-inline">
-                    Amount
+                    <b>Amount</b>
                     <input class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  customerror ng-model="cs2.spentBySicSupporters">
                     <u><span style="font-weight: normal;" class="curency" id="supportCurrency" ng-mouseover="setCurrency('supportCurrency', cs2)">{{ gerCurrency(cs2.supportCurrency) }}</span></u>
                 </label>
@@ -90,7 +90,7 @@
             </div>
         </div>
         <br>
-        <div class="col-lg-12" style="padding-top: 30px;">
+        <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
                     <b>
@@ -98,7 +98,7 @@
                     </b>
                 </p>
                 <label class="form-inline">
-                    Amount
+                    <b>Amount</b>
                     <input class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.spentByYourCommittee">
                     <u> <span style="font-weight: normal;" class="curency" id="committeeCurrency" ng-mouseover="setCurrency('committeeCurrency', cs2)">{{ gerCurrency(cs2.committeeCurrency) }}</span></u>
                 </label>
