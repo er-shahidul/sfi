@@ -1142,7 +1142,26 @@ body{
 .calender-color{
 	color: #aab2bd !important;
 	background-color: white;
+	cursor:pointer;
 }
+
+.calender-color:hover{
+	color: #8cc152 !important;
+	background-color: white;
+}
+
+.currPop:hover{
+	color: #8cc152 !important;
+	cursor:pointer;
+}
+
+.curency:hover{
+	color: #8cc152 !important;
+	cursor:pointer;
+}
+
+
+
 ul p {
        margin: 10px 0px 0px;
    }
