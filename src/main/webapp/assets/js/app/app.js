@@ -208,8 +208,6 @@ sfiFormApp
                 var defer = $q.defer();
 
                 $http.get("/country/list").then(function(data){
-
-                    console.log(data);
                     defer.resolve(data);
                 });
 
@@ -235,12 +233,9 @@ sfiFormApp
 
                     this.countries = window.countries;
                     this.sellCountries = window.countries;
-                    this.otherCountries = window.countries;
-
-                    //this.sellCountries = window.sellCountries;
-                    //this.otherCountries = window.otherCountries;
-
-                    return;
+                    this.otherCountries = _.filter(this.countries, function(country){
+                        return country.id > 2;
+                    });
                 }
 
                 this.load().then(function(response){

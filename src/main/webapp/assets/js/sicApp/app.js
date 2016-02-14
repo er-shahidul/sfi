@@ -204,7 +204,10 @@ sfiSicApp
 
                     this.countries = window.countries;
                     this.sellCountries = window.countries;
-                    this.otherCountries = window.countries;
+
+                    this.otherCountries = _.filter(this.countries, function(country){
+                        return country.id > 2;
+                    });
 
                     //this.sellCountries = window.sellCountries;
                     //this.otherCountries = window.otherCountries;
@@ -594,6 +597,9 @@ sfiSicApp.run(['$rootScope', 'Countries', 'RegionList', function($rootScope, Cou
 
     $rootScope.countries      = Countries.getAll();
     $rootScope.otherCountries = Countries.getOthers();
+
+
+
     $rootScope.sellCountries  = Countries.getSells();
 
     $rootScope.regions = RegionList.getAll();
