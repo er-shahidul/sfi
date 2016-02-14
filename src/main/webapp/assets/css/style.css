@@ -1068,7 +1068,14 @@ textarea {
 }
 
 .myButton {
-text-align: right;padding-top: 8px; text-decoration: underline; cursor: pointer;
+text-align: right;
+padding-top: 8px;
+text-decoration: underline;
+cursor: pointer;
+}
+
+.myButton:hover{
+color :#8cc152;
 }
 
 .typeahead.ng-hide { display: block !important; visibility: hidden !important; overflow: hidden; }
