@@ -105,6 +105,7 @@ sfiSicApp
                             $rootScope.form.cs2 = response.data;
                             Message.success('Section successfully saved', '.msg-cont', true);
                             $rootScope.updateFormMeta();
+                            $rootScope.setProgress();
                         }
 
                         if(go) $rootScope.goStep("cs3");

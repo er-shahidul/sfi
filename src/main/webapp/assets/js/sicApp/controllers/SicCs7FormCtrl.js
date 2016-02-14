@@ -25,6 +25,7 @@ sfiSicApp
                         Message.success('Section successfully saved', '.msg-cont', true);
                         $rootScope.form.cs7 = response.data;
                         $rootScope.updateFormMeta();
+                        $rootScope.setProgress();
                     }
 
 

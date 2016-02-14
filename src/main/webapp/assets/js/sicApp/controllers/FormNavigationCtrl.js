@@ -18,8 +18,16 @@ sfiSicApp
     }
 
     $scope.isSuccess = function(step){
-        return $rootScope.form[step].errors && $rootScope.form[step].errors.length;
-        return $rootScope.form[step].isSectionValid;
+
+        var cs = $rootScope.form[step];
+
+        if(cs && cs.errors){
+            if(Object.keys(cs.errors).length){
+                return false;
+            }
+        }
+
+        return true;
     }
 
     $scope.getClass = function(step){

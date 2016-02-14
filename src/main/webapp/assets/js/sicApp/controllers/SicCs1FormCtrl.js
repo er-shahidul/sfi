@@ -60,7 +60,9 @@ sfiSicApp
                             $scope.cs1Form.$setPristine();
                             $rootScope.form.cs1 = response.data;
                             Message.success('Section successfully saved', '.msg-cont', true);
+
                             $rootScope.updateFormMeta();
+                            $rootScope.setProgress();
                         }
 
                         if(go) $rootScope.goStep("cs2");

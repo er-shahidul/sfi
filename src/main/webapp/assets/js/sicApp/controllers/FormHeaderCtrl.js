@@ -1,12 +1,37 @@
+var root;
 sfiSicApp
     .controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$location', '$state',  function ($rootScope , $scope, $http, $location, $state){
+
+    root = $rootScope;
+
+    $rootScope.formProgress = 0;
+
+    $rootScope.setProgress = function(){
+
+        var formProgress = 0;
+
+        _.each($rootScope.form , function(cs, key){
+
+            if(cs && cs.errors){
+                if(Object.keys(cs.errors).length){
+                    return;
+                }
+            }
+
+            formProgress += 10;
+        });
+
+        $rootScope.formProgress = formProgress;
+    }
+
+    $rootScope.setProgress();
 
     $scope.progress = function(){
         return $rootScope.form.progress;
     }
 
     $scope.progressClass = function(){
-        return { width: $rootScope.form.progress + "%" };
+        return { width: $rootScope.formProgress + "%" };
     }
 
     $scope.printDate = function(timestamp){
