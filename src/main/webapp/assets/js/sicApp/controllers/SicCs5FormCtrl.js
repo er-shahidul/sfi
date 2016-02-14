@@ -62,10 +62,25 @@ sfiSicApp
             return model;
         }
 
+        $scope.deleteIndex  = null;
+        $scope.deleteBucket = null;
+
         $scope.deleteStandard = function(index, bucket){
 
-            if(confirm("Are you sure you want to delete this entry?")){
-                $rootScope.deleteByIndex(index, bucket)
+            $scope.deleteIndex  = index;
+            $scope.deleteBucket = bucket;
+
+            $("#deleteConfirm").modal();
+
+        }
+
+        $scope.deleteConfirm = function(){
+
+            if($scope.deleteIndex != null && $scope.deleteBucket){
+
+                $rootScope.deleteByIndex($scope.deleteIndex, $scope.deleteBucket);
+                $scope.deleteIndex  = null;
+                $scope.deleteBucket = null;
             }
         }
 
