@@ -58,11 +58,6 @@ import java.util.Set;
                 message = "{cs9.trainingEducationItems1}"
         ),
         @SpELAssert(
-                value = "trainingEducationItems2 != null && !trainingEducationItems2.isEmpty()",
-                applyIf = "trainingEducation != null && trainingEducation.equals('2')",
-                message = "{cs9.trainingEducationItems2}"
-        ),
-        @SpELAssert(
                 value = "trainingEduRationale != null && !trainingEduRationale.isEmpty()",
                 applyIf = "trainingEducation != null && trainingEducation.equals('3')",
                 message = "{cs9.trainingEduRationale}"
