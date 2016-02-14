@@ -30,6 +30,9 @@ body{
     position: relative;
     opacity: 1;
 }
+label{
+   display:block;
+}
 
 /*
 .iradio_square-green {
