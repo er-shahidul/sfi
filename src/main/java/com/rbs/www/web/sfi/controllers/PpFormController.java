@@ -10,6 +10,10 @@ import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +27,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.Objects;
 
@@ -183,33 +191,22 @@ public class PpFormController{
         return "admin/form/admin_form_sfi";
     }
 
-    @RequestMapping(value = "/sfiPpForm/pdf/{fileName}", method = RequestMethod.GET)
-    public String viewPdf(@PathVariable String fileName, HttpServletRequest request) {
-        String path = request.getSession().getServletContext().getRealPath(".");
-        String originalPath = path+"uploads/pdf/"+fileName+".pdf";
+    @RequestMapping(value = "/sfiPpForm/pdf/{fileName}", method = RequestMethod.GET, produces = "application/pdf")
+    public ResponseEntity<byte[]> viewPdf(@PathVariable String fileName, HttpServletRequest request) {
+        String originalPath = request.getSession().getServletContext().getRealPath(".")+"uploads/pdf/";
 
+        Path path = Paths.get(originalPath+fileName+".pdf");
+        byte[] pdfContents = null;
         try {
-
-            File pdfFile = new File(originalPath);
-            if (pdfFile.exists()) {
-
-                if (Desktop.isDesktopSupported()) {
-                    Desktop.getDesktop().open(pdfFile);
-                } else {
-                    System.out.println("Awt Desktop is not supported!");
-                }
-
-            } else {
-                System.out.println("File is not exists!");
-            }
-
-            System.out.println("Done");
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            pdfContents = Files.readAllBytes(path);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        if (request.isUserInRole("USER")) return "redirect:/user/form/pp";
-        return "redirect:/admin/form/pp";
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("content-disposition", "inline;filename=" + path);
+        ResponseEntity<byte[]> response = new ResponseEntity<byte[]>(
+                pdfContents, headers, HttpStatus.OK);
+        return response;
     }
 }
