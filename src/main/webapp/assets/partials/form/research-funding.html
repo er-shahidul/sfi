@@ -54,7 +54,6 @@
                                 />
 
                         {{ item.description }}
-                        {{ cs5.isOtherEnabled }}
                         <input type="text" class="form-control   shorter" name="otherText"
                                ng-disabled="(item.description == 'Other' && cs5.isOtherEnabled != true)" ng-model="cs5.otherText"
                                ng-required="cs5.isOtherEnabled" customerror
