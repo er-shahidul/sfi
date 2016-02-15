@@ -103,6 +103,7 @@ sfiSicApp
                         if(response.data){
                             $scope.cs2Form.$setPristine();
                             $rootScope.form.cs2 = response.data;
+                            $scope.errors = $rootScope.form.cs2.errors;
                             Message.success('Section successfully saved', '.msg-cont', true);
                             $rootScope.updateFormMeta();
                             $rootScope.setProgress();
