@@ -248,7 +248,12 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
 
             if($scope.cs8Form.producerSource.$valid && $scope.cs8Form.percPurchased.$valid){
 
-                //alert($scope.producer.source);
+
+                if(!$scope.producer.source || !$scope.producer.percPurchased){
+                    return;
+                }
+
+
                 if(!$scope.producerIndex){
 
                     $scope.cs8.primaryProducers.push($scope.producer);
