@@ -193,7 +193,7 @@ public class PpFormController{
 
     @RequestMapping(value = "/sfiPpForm/pdf/{fileName}", method = RequestMethod.GET, produces = "application/pdf")
     public ResponseEntity<byte[]> viewPdf(@PathVariable String fileName, HttpServletRequest request) {
-        String originalPath = request.getSession().getServletContext().getRealPath(".")+"uploads/pdf/";
+        String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/pdf/";
 
         Path path = Paths.get(originalPath+fileName+".pdf");
         byte[] pdfContents = null;

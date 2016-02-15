@@ -17,7 +17,7 @@ public class MailHelper
 
     public void sendMail(String to, String subject, String url, User user, String mailType, String path) {
         String form = "rachel.dierolf@sfiprogram.org";
-        String msg = "https://"+url;
+        String msg = "https://reporting.sfiprogram.org"+url;
         try{
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);

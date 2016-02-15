@@ -44,8 +44,10 @@
                                 <p>You have been logged out successfully.</p>
                             <!--</div>-->
                         </div>
-                        <div>
-                            <p><span th:text="${forgotText}"></span></p>
+                        <div th:if="${param.msg != null}">
+                            <!--<div class="alert alert-success">-->
+                                <p>A new password has been sent to the email address you provided. Once logged in you can change your password in your Profile.</p>
+                            <!--</div>-->
                         </div>
                     </form>
                 </div>
