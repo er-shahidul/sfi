@@ -137,7 +137,6 @@ public class Cs9ViewModel extends BaseViewModel {
     private String restorationRiparianArea;
     private String stopWho1A1BNote;
 
-    @NotNull(message = "{cs9.trainedWoodProducersChanged}")
     private String trainedWoodProducersChanged;
     private String trainingEducation;
     private String useWho1A1BNote;
