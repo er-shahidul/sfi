@@ -5,13 +5,13 @@
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:email.properties" />
+    <context:property-placeholder location="classpath:email.properties"/>
 
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="${host}"/>
         <property name="port" value="${port}"/>
-        <property name="username" value="${username}"/>
-        <property name="password" value="${password}"/>
+        <property name="username" value="admin@reporting.sfiprogram.org"/>
+        <property name="password" value="srxc8kgay3fp"/>
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.transport.protocol">${mail.transport.protocol}</prop>
@@ -23,7 +23,7 @@
     </bean>
 
     <bean id="mailMail" class="com.rbs.www.common.util.MailHelper">
-        <property name="mailSender" ref="mailSender" />
+        <property name="mailSender" ref="mailSender"/>
     </bean>
 
 </beans>
