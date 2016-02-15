@@ -330,10 +330,7 @@ public class UserController {
             sendEmail(email, subject, message, user, mailType, request.getLocalName());
         }
 
-        String forgotText = "A new password has been sent to the email address you provided. Once logged in you can change your password in your Profile.";
-        model.addAttribute("forgotText", forgotText);
-
-        return "common/login";
+        return "redirect:/login?msg";
     }
 
     private String userCheck(User user) {
