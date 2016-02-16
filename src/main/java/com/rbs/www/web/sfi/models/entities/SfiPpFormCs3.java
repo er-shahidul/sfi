@@ -17,6 +17,9 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Transient
+    private Integer customOrder;
+
     @Column(name = "form_id", nullable = true)
     private Integer sfiPpForm;
 
@@ -406,5 +409,13 @@ public class SfiPpFormCs3 extends BaseEntityModel {
 
     public void setOther(Set<String> other) {
         addAll(this.other, other);
+    }
+
+    public Integer getCustomOrder() {
+        return customOrder;
+    }
+
+    public void setCustomOrder(Integer customOrder) {
+        this.customOrder = customOrder;
     }
 }

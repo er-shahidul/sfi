@@ -27,7 +27,9 @@ public class Cs5Service {
     public void setProjects(Cs5ViewModel model) {
         Set<SfiPpFormCs3ViewModel> projects = model.getProjects();
 
+        Integer counter = 1;
         for (SfiPpFormCs3ViewModel project : projects) {
+            project.setCustomOrder(counter++);
             if (project.getSfiPpForm() != null) continue;
             project.setSfiPpForm(model.getId().hashCode());
         }

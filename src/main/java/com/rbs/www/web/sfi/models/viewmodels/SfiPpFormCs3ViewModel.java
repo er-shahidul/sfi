@@ -12,6 +12,9 @@ import java.util.Set;
 @SfiPpFormCs3OrgList(message = "{orgList}")
 public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Integer id;
+
+    private Integer customOrder;
+
     private Integer totalProjectCost;
     private Integer totalProjectCostCurr;
     private Integer orgContribution;
@@ -328,5 +331,13 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setOther(Set<String> other) {
         this.other = other;
+    }
+
+    public Integer getCustomOrder() {
+        return customOrder;
+    }
+
+    public void setCustomOrder(Integer customOrder) {
+        this.customOrder = customOrder;
     }
 }
