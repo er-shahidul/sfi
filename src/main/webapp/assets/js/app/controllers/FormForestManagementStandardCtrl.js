@@ -220,7 +220,7 @@ sfiFormApp
 
     $scope.fileSelected = function() {
 
-        var type = '.pdf, .doc, .xls';
+        var type = '.pdf, .doc, .docx, .xls';
 
 
         for (var i = 0; i < $scope.story.myFiles.length; i++) {
