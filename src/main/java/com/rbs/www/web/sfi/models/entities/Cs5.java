@@ -50,7 +50,7 @@ public class Cs5 extends BaseEntityModel {
     private Set<String> other;
 
     @Column(name = "cs5_isInPartnership", nullable = true)
-    private Boolean isInPartnership;
+    private Boolean isInPartnership = false;
 
     @Column(name = "cs5_isOtherEnabled", nullable = true)
     private Boolean isOtherEnabled;
