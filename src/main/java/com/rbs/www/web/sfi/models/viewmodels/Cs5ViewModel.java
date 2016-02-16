@@ -1,6 +1,7 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.modules.validator.CascadeIf;
 import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.sfi.validation.Cs5OrgList.Cs5OrgList;
 
@@ -38,6 +39,7 @@ public class Cs5ViewModel extends BaseViewModel {
     private Boolean isInPartnership;
 
     @Valid
+    @CascadeIf("isInPartnership != null && isInPartnership")
     private Set<SfiPpFormCs3ViewModel> projects;
 
     private List<SfiPpFormCs5ViewModel> items;
