@@ -1,8 +1,9 @@
+var cs6;
 sfiFormApp.controller('FormRawMaterialCtrl',
     ['$rootScope', '$scope', '$state', '$http', 'Countries', 'RegionList', '$popover', '$compile' , '_', 'Message', '$', '$modal',
         function ($rootScope , $scope, $state, $http, CountryList , RegionList, $popover, $compile, _, Message, $, $modal){
 
-
+    cs6 = $scope;
     $scope.usCanadaEdit   = false;
     $scope.usCanadaDelete = null;
 
@@ -171,9 +172,6 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         if(usCanada){
 
             $scope.usCanadaDelete = usCanada;
-            //console.log( usCanada.region.name);
-            //console.log( usCanada.region.country.country);
-            //console.log(usCanada);
             $('#region-text').text(usCanada.region.name+', '+usCanada.region.country.country);
             $('#delete1').modal();
         }
@@ -220,7 +218,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         dest.percFSCOnlyCertified                = src.percFSCOnlyCertified || null;
         dest.percSFIOnlyCertified                = src.percSFIOnlyCertified || null;
         dest.moreThanOneStandard                 = src.moreThanOneStandard || null;
-        dest.percDeliveredQualifiedLogging       = src.percDeliveredQualifiedLogging || null;
+        dest.percDeliveredQualifiedLogging       = src.percDeliveredQualifiedLogging || "";
         dest.percDeliveredQualifiedLoggingReason = src.percDeliveredQualifiedLoggingReason || "";
 
         for(var i = 1; i<= 7; i++){
@@ -383,19 +381,19 @@ sfiFormApp.controller('FormRawMaterialCtrl',
 
     $scope.sections = [
         {row : 1,  name : 'Fee and long-term lease', percDeliveredQualifiedLogging : ""},
-        {row : 2,  name : 'Direct purchase from TIMOs & REITs'},
-        {row : 3,  name : 'Direct purchase from family forest owners'},
-        {row : 4,  name : 'Direct purchase from Aboriginal/Tribal lands'},
-        {row : 5,  name : 'Direct purchase from conservation lands'},
+        {row : 2,  name : 'Direct purchase from TIMOs & REITs', percDeliveredQualifiedLogging : ""},
+        {row : 3,  name : 'Direct purchase from family forest owners', percDeliveredQualifiedLogging : ""},
+        {row : 4,  name : 'Direct purchase from Aboriginal/Tribal lands', percDeliveredQualifiedLogging : ""},
+        {row : 5,  name : 'Direct purchase from conservation lands', percDeliveredQualifiedLogging : ""},
 
-        {row : 6,  name : 'All other direct purchase from private landowners'},
+        {row : 6,  name : 'All other direct purchase from private landowners', percDeliveredQualifiedLogging : ""},
 
-        {row : 7,  name : 'U.S. Federal lands', isUsa : true},
-        {row : 8,  name : 'All other U.S. public lands', isUsa : true},
-        {row : 9, name : 'Crown land', isCa : true},
-        {row : 10, name : 'Non-controlled crown land', isCa : true},
+        {row : 7,  name : 'U.S. Federal lands', isUsa : true, percDeliveredQualifiedLogging : ""},
+        {row : 8,  name : 'All other U.S. public lands', isUsa : true, percDeliveredQualifiedLogging : ""},
+        {row : 9, name : 'Crown land', isCa : true , percDeliveredQualifiedLogging : ""},
+        {row : 10, name : 'Non-controlled crown land', isCa : true , percDeliveredQualifiedLogging : ""},
 
-        {row : 11, name : 'Other sources', otherEnable : false}
+        {row : 11, name : 'Other sources', otherEnable : false , percDeliveredQualifiedLogging : ""},
     ];
 
 

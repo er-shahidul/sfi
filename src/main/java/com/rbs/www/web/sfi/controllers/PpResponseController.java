@@ -34,29 +34,38 @@ public class PpResponseController {
     public ResponseEntity<String> formSubmit(@PathVariable Integer id, ModelMap model) throws ParseException {
         SfiPpFormData sfiPpFormData = sfiPpFormDataService.getPpForm(id);
 
-        model.addAttribute("form", sfiPpFormData);
-        model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpFormData.getId()));
-        model.addAttribute("cs2", formService.getCs2ViewModel(sfiPpFormData.getId()));
-        model.addAttribute("cs4", formService.getCs4ViewModel(sfiPpFormData.getId()));
-        model.addAttribute("cs5", formService.getCs5ViewModel(sfiPpFormData.getId()));
-        model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpFormData.getId()));
-        model.addAttribute("cs7", formService.getCs7ViewModel(sfiPpFormData.getId()));
-        model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpFormData.getId()));
-        model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpFormData.getId()));
-        model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpFormData.getId()));
-
         sfiPpFormDataService.setIsComplete(sfiPpFormData.getId());
 
-        if(validationService.validate(formService.getCs1ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
-           validationService.validate(formService.getCs2ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
-           validationService.validate(formService.getCs4ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
-           validationService.validate(formService.getCs5ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
-           validationService.validate(formService.getCs6ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
-           validationService.validate(formService.getCs7ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
-           validationService.validate(formService.getCs9ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
-           validationService.validate(formService.getCs10ViewModel(sfiPpFormData.getId())).getErrors() == null) {
+        if(sfiPpFormData.getCompany().getPrimary()){
+            model.addAttribute("form", sfiPpFormData);
+            model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpFormData.getId()));
+            model.addAttribute("cs2", formService.getCs2ViewModel(sfiPpFormData.getId()));
+            model.addAttribute("cs4", formService.getCs4ViewModel(sfiPpFormData.getId()));
+            model.addAttribute("cs5", formService.getCs5ViewModel(sfiPpFormData.getId()));
+            model.addAttribute("cs6", formService.getCs6ViewModel(sfiPpFormData.getId()));
+            model.addAttribute("cs7", formService.getCs7ViewModel(sfiPpFormData.getId()));
+            model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpFormData.getId()));
+            model.addAttribute("cs9", formService.getCs9ViewModel(sfiPpFormData.getId()));
+            model.addAttribute("cs10", formService.getCs10ViewModel(sfiPpFormData.getId()));
 
-            sfiPpFormDataService.setAuditInfo(sfiPpFormData.getId(), FormStatus.SUBMITTED.getCode());
+            if(validationService.validate(formService.getCs1ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+                    validationService.validate(formService.getCs2ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+                    validationService.validate(formService.getCs4ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+                    validationService.validate(formService.getCs5ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+                    validationService.validate(formService.getCs6ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+                    validationService.validate(formService.getCs7ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+                    validationService.validate(formService.getCs9ViewModel(sfiPpFormData.getId())).getErrors()  == null &&
+                    validationService.validate(formService.getCs10ViewModel(sfiPpFormData.getId())).getErrors() == null) {
+
+                sfiPpFormDataService.setAuditInfo(sfiPpFormData.getId(), FormStatus.SUBMITTED.getCode());
+            }
+        }else{
+            model.addAttribute("form", sfiPpFormData);
+            model.addAttribute("cs1", formService.getCs1ViewModel(sfiPpFormData.getId()));
+            model.addAttribute("cs8", formService.getCs8ViewModel(sfiPpFormData.getId()));
+            if(validationService.validate(formService.getCs1ViewModel(sfiPpFormData.getId())).getErrors()  == null) {
+                sfiPpFormDataService.setAuditInfo(sfiPpFormData.getId(), FormStatus.SUBMITTED.getCode());
+            }
         }
 
         return new ResponseEntity<String>(Util.getAsString(model), HttpStatus.OK);
