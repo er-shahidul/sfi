@@ -354,8 +354,8 @@
                             <p>
                                 Select companies/manufacturers/mills from which you sourced SFI material in 2015:
                             </p>
-                            <label class="form-inline">
-                                SFI primary producers
+                            <div class="form-inline">
+                                <b>SFI primary producers</b>
                                 <select class="form-control" style="font-weight:normal;" name="producerSource"
                                         ng-model="producer.source">
 
@@ -370,11 +370,12 @@
 
                                 <!--</select>-->
 
-                            </label>
-                            <label class="form-inline">
-                                How much of your total annual purchased supply does this supplier represent (estimate)
-                                <input type="number" ng-model="producer.percPurchased" name="percPurchased" value="0" class="form-control" style="width: 60px;"> %
-                            </label>
+                            </div>
+                            <br/>
+                            <div class="form-inline">
+                                <b>How much of your total annual purchased supply does this supplier represent (estimate)</b>
+                                <input type="number" ng-model="producer.percPurchased" name="percPurchased" value="0" class="form-control" style="width: 75px;"> %
+                            </div>
 
                         <p class="myButton" style="text-align: right;padding-top: 10px;padding-right: 60px;" ng-click="addProducer()">+ Add Another</p>
                         </form>
