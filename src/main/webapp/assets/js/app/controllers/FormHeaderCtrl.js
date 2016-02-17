@@ -2,17 +2,41 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
 
     $rootScope.formProgress = 0;
 
+    $rootScope.hasSectionError = function(cs){
+        if(cs && cs.errors){
+            if(Object.keys(cs.errors).length){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     $rootScope.setProgress = function(){
+
+
+        if($rootScope.isSfiSecondary()){
+            var cs1 = $rootScope.form.cs1;
+            $rootScope.formProgress = $rootScope.hasSectionError(cs1) ? 0 : 100;
+            return;
+        }
+
 
         $rootScope.formProgress = 0;
 
-        _.each($rootScope.form , function(cs){
+        _.each($rootScope.form , function(cs, key){
 
-            if(cs && cs.errors){
-                if(Object.keys(cs.errors).length){
-                    return;
-                }
+
+            if($rootScope.hasSectionError(cs)){
+                return;
             }
+
+//            if(cs && cs.errors){
+//                if(Object.keys(cs.errors).length){
+//                    return;
+//                }
+//            }
 
             if($rootScope.mode == "view"){
                 $rootScope.formProgress = 100;
@@ -20,6 +44,8 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
                 $rootScope.formProgress += 10;
             }
         });
+
+
     }
 
     $rootScope.setProgress();
