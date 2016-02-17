@@ -34,7 +34,7 @@ public class MailHelper
     }
 
     private void confirmBody(String msg, User user, MimeMessageHelper helper, String path) throws MessagingException {
-            String imagePath = "http://" + path + "/assets/images/u4.png";
+            String imagePath = "https://reporting.sfiprogram.org/assets/images/u4.png";
             helper.setText(
                 "<html><body>" +
 
@@ -98,7 +98,7 @@ public class MailHelper
     }
 
     private void resetBody(String msg, User user, MimeMessageHelper helper, String path) throws MessagingException {
-            String imagePath = "http://" + path + "/assets/images/u4.png";
+            String imagePath = "https://reporting.sfiprogram.org/assets/images/u4.png";
             helper.setText(
                 "<html><body>" +
 
