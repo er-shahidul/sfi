@@ -123,6 +123,15 @@ public class FormService {
     public void setCs5Entity(Cs5ViewModel model) {
         cs5Service.manualPopulation(model);
         Cs5 entity = entityModelMapperService.convert(model, Cs5.class);
+
+        for (SfiPpFormCs3ViewModel childModel : model.getProjects()) {
+            for (SfiPpFormCs3 childEntity : entity.getProjects()) {
+                if (!childModel.getCustomOrder().equals(childEntity.getCustomOrder())) continue;
+
+                childModel.setId(childEntity.getId());
+            }
+        }
+
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
     /************************* Cs5 : End   ***********************/
