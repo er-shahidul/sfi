@@ -55,7 +55,7 @@ public abstract class BaseRepository<T extends Object> {
     @SuppressWarnings("unchecked")
     public List<T> getAllActiveForms() {
         return getSession()
-                .createQuery("from " + getDomainClassName() + " E where E.createdBy is not null")
+                .createQuery("from " + getDomainClassName() + " E where E.createdBy is not null and E.company.isActive is true")
                 .list();
     }
 
