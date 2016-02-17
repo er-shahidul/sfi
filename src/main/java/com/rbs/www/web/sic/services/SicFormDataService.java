@@ -66,7 +66,7 @@ public class SicFormDataService {
     }
 
     public List<SicFormData> getAll() {
-        return repository.getAll();
+        return repository.getAllActiveForms();
     }
 
     public SicFormData get(int id) {
