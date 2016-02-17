@@ -14,7 +14,11 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
                 }
             }
 
-            $rootScope.formProgress += 10;
+            if($rootScope.mode == "view"){
+                $rootScope.formProgress = 100;
+            }else{
+                $rootScope.formProgress += 10;
+            }
         });
     }
 
