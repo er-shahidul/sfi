@@ -675,6 +675,15 @@
                         <div class="form-group">
                             <input type="checkbox" disabled   name="incResFunding" icheck ng-model="project.incResFunding"/>
                             <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements.</span>
+                            <div class="form-group" ng-show="project.incResFunding">
+                                <div class="col-lg-2" style="padding-left: 0;">
+                                    $<input type="text" class="" style="width: 100px;" name="incResFundingText" readonly  customerror
+                                            ng-model="project.incResFundingText"/>
+                                </div>
+                                <div class="col-lg-10" padding-left: 0px;>
+                                    <span>Portion of funds spent towards research-related contributions reported in the Research Funding table at the top of this page</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">

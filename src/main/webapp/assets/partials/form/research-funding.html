@@ -788,13 +788,13 @@
                     <!--end-->
 
                     <div class="form-group">
-                        <input type="checkbox" name="incResFunding" icheck checklist-model="project.incResFunding" checklist-value="2"/>
+                        <input type="checkbox" name="incResFunding" icheck ng-model="project.incResFunding" />
 
                         <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements as it relates to the research requirement in the standard.</span>
 
-                        <div class="form-group" ng-show="isSelected(project.incResFunding, 2)">
+                        <div class="form-group" ng-show="project.incResFunding">
                             <div class="col-lg-2" style="padding-left: 0;">
-                            $<input type="text" style="width: 100px;" name="incResFundingText"  customerror
+                            $<input type="text" class="" style="width: 100px;" name="incResFundingText"  customerror
                                    ng-model="project.incResFundingText"/>
                             </div>
                             <div class="col-lg-10" padding-left: 0px;>
