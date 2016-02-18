@@ -840,6 +840,7 @@ sfiFormApp.run(['$rootScope', '$http', function($rootScope, $http) {
                     $rootScope.form.cs2.errors = response.data.cs2;
                     $rootScope.form.cs4.errors = response.data.cs4;;
                     $rootScope.form.cs6.errors = response.data.cs6;;
+                    $rootScope.setProgress();
 
                     $//rootScope.form.cs10.updatedAt = new Date(response.data.updateDate);
                 }

@@ -286,6 +286,8 @@ sfiFormApp
             _.each($scope.editItem, function(val, key){
                 $scope.project[key] = val;
             });
+            //$scope.project['startDate'] = new Date($scope.editItem['startDate']);
+
         }
 
         $scope.getProject = function(index){
