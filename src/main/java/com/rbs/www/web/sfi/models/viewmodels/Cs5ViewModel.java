@@ -14,11 +14,11 @@ import java.util.Set;
                 applyIf = "isOtherEnabled != null && isOtherEnabled",
                 message = "{cs5.otherText}"
         ),
-//        @SpELAssert(
-//                value = "projects != null && !projects.isEmpty()",
-//                applyIf = "isInPartnership != null && isInPartnership",
-//                message = "{cs5.isInPartnership}"
-//        )
+        @SpELAssert(
+                value = "projects != null && !projects.isEmpty()",
+                applyIf = "isInPartnership != null && isInPartnership",
+                message = "{cs5.isInPartnership}"
+        )
 })
 public class Cs5ViewModel extends BaseViewModel {
     private Integer id;
@@ -37,7 +37,7 @@ public class Cs5ViewModel extends BaseViewModel {
     private Boolean isInPartnership;
 
     @Valid
-    @CascadeIf("isInPartnership != null && isInPartnership")
+//    @CascadeIf("isInPartnership != null && isInPartnership")
     private Set<SfiPpFormCs3ViewModel> projects;
 
     private List<SfiPpFormCs5ViewModel> items;

@@ -28,15 +28,16 @@ public class FileUploadController {
                                                            HttpServletRequest request) {
         BlobNames fileNames = null;
         if (Objects.equals(form, "sic")){
+            String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/sic/";
+
             if (file != null && blobStoreHelper.isTypeOf(file.getOriginalFilename(), validExtensionsSic))
-                fileNames = blobStoreHelper.store(file, form, request.getSession()
-                        .getServletContext()
-                        .getRealPath("."));
+                fileNames = blobStoreHelper.store(file, form, originalPath);
+
         }else {
+            String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/sfi/";
+
             if (file != null && blobStoreHelper.isTypeOf(file.getOriginalFilename(), validExtensions))
-                fileNames = blobStoreHelper.store(file, form, request.getSession()
-                        .getServletContext()
-                        .getRealPath("."));
+                fileNames = blobStoreHelper.store(file, form, originalPath);
         }
 
         HttpStatus responseStatus = fileNames == null ? HttpStatus.BAD_REQUEST : HttpStatus.OK;

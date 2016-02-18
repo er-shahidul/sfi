@@ -4,6 +4,7 @@ import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormAllCountryViewModel;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @SpELAssert.List({
@@ -55,10 +56,15 @@ import java.util.Set;
 })
 public class Cs7ViewModel extends BaseViewModel {
     private Integer id;
+    @NotNull(message = "{cs7.emerIssuBioe}")
     private Boolean emerIssuBioe;
+    @NotNull(message = "{cs7.emerIssuCarb}")
     private Boolean emerIssuCarb;
+    @NotNull(message = "{cs7.emerIssuWate}")
     private Boolean emerIssuWate;
+    @NotNull(message = "{cs7.emerIssuClim}")
     private Boolean emerIssuClim;
+    @NotNull(message = "{cs7.emerIssuEcos}")
     private Boolean emerIssuEcos;
     private Boolean emerIssuOther;
     private String emerIssuOtherSpec;
@@ -77,10 +83,13 @@ public class Cs7ViewModel extends BaseViewModel {
     private String planInvestRes_ifPlan;
     private String planInvestRes_year;
 
+    @NotNull(message = "{cs7.emerIssuEurop}")
     private Boolean emerIssuEurop;
+    @NotNull(message = "{cs7.emerIssuBioConsrv}")
     private Boolean emerIssuBioConsrv;
     private String comments;
 
+    @NotNull(message = "{cs7.emerIssuIntMarket}")
     private Boolean emerIssuIntMarket;
     private Set<Integer> intMarketCountries;
     private String intMarketCountryOther;

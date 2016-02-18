@@ -6,6 +6,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Date;
 
 @Service
@@ -38,8 +40,9 @@ public class BlobStoreHelper {
     public BlobNames store(MultipartFile file, String folder, String path) {
         BlobNames fileNames = getNames(file.getOriginalFilename());
 
-        String originalPath = this.createDirectory(path, "uploads/" + folder);
-        originalPath += "/" + fileNames.getUniqueDocumentName();
+        Path path1 = Paths.get(path);
+//        String originalPath = this.createDirectory(path, "uploads/" + folder);
+        String originalPath = path1 + "/" + fileNames.getUniqueDocumentName() + "." + getFileExtension(file.getOriginalFilename());
 
         try {
             file.transferTo(new File(originalPath));
@@ -48,6 +51,12 @@ public class BlobStoreHelper {
         }
 
         return fileNames;
+    }
+
+    private static String getFileExtension(String fileName) {
+        if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+            return fileName.substring(fileName.lastIndexOf(".") + 1);
+        return "";
     }
 
     public boolean isTypeOf(String fileName, String[] extensions) {
