@@ -72,6 +72,8 @@ sfiFormApp
                     $scope.cs2Form.$setPristine();
                     $rootScope.form.cs2 = response.data;
                     $scope.cs2 = angular.copy($rootScope.form.cs2);
+                    $scope.errors = $rootScope.form.cs2.errors;
+
                     Message.success('Section successfully saved', '.msg-cont');
                     $rootScope.updateFormMeta();
                     $rootScope.setProgress();

@@ -28,6 +28,7 @@ sfiFormApp
 
                             Message.success('Section successfully saved', '.msg-cont', true);
                             $rootScope.updateFormMeta();
+                            $rootScope.updateCs1Error();
                             $rootScope.setProgress();
                         }
                        //console.log(go); //stp9
