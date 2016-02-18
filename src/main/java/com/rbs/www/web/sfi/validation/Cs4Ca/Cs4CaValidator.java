@@ -27,37 +27,23 @@ public class Cs4CaValidator implements ConstraintValidator<Cs4Ca, Cs4ViewModel> 
     }
 
     private boolean applyIf(UsaCaSelectorViewModel model) {
-        return !ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInCA())
-                && !ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInCA());
+        return ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInCA())
+                || ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInCA());
     }
 
     private boolean evaluate(Cs4ViewModel model) {
-        return model.getCaTotalHervArea() == null &&
-                model.getCaAvgHervArea() == null &&
-                model.getCaSeedTreeShelterWoodArea() == null &&
-                model.getCaSanitationArea() == null &&
-                model.getCaSelectionMethodArea() == null &&
-                model.getCaPlantingOneYr() == null &&
-                model.getCaPlantingTwoYr() == null &&
-                model.getCaPlantingTwoPlusYr() == null &&
-                model.getCaSeedingOneYr() == null &&
-                model.getCaSeedingTwoYr() == null &&
-                model.getCaSeedingTwoPlusYr() == null &&
-                model.getCaNatRegen2014() == null &&
-                model.getCaRegenPerc5Yr() == null &&
-                model.getCaGovRegulationExp() == null &&
-                model.getCaDiseaseInsectsExp() == null &&
-                model.getCaFireSalvageExp() == null &&
-                model.getCaWindthrowExp() == null &&
-                model.getCaHurricaneExp() == null &&
-                model.getCaIceStormExp() == null &&
-                model.getCaOthersExp() == null &&
-                model.getCaGovRegulation() == null &&
-                model.getCaDisResDiseaseInsects() == null &&
-                model.getCaDisResFireSalvage() == null &&
-                model.getCaDisResWindthrow() == null &&
-                model.getCaDisResHurricane() == null &&
-                model.getCaDisResIceStorm() == null &&
-                model.getCaOthersApply() == null;
+        return model.getCaTotalHervArea() != null &&
+                model.getCaAvgHervArea() != null &&
+                model.getCaSeedTreeShelterWoodArea() != null &&
+                model.getCaSanitationArea() != null &&
+                model.getCaSelectionMethodArea() != null &&
+                model.getCaPlantingOneYr() != null &&
+                model.getCaPlantingTwoYr() != null &&
+                model.getCaPlantingTwoPlusYr() != null &&
+                model.getCaSeedingOneYr() != null &&
+                model.getCaSeedingTwoYr() != null &&
+                model.getCaSeedingTwoPlusYr() != null &&
+                model.getCaNatRegen2014() != null &&
+                model.getCaRegenPerc5Yr() != null;
     }
 }
