@@ -26,22 +26,22 @@ public class Cs2CaValidator implements ConstraintValidator<Cs2Ca, Cs2ViewModel> 
     }
 
     private boolean applyIf(UsaCaSelectorViewModel model) {
-        return !ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInCA())
-                && !ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInCA());
+        return ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInCA())
+                || ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInCA());
     }
 
     private boolean evaluate(Cs2ViewModel model) {
-        return model.getCaCrownForestlandOwnMng() == null &&
-                model.getCaPrivateForestlandOwnMng() == null &&
-                model.getCaCrownTotalAreaOwnOrManage() == null &&
-                model.getCaCrownTotalAreaCertified() == null &&
-                model.getCaCrownAreaManagedForPublic() == null &&
-                model.getCaCrownAreaCertifiedForPublic() == null &&
-                model.getCaPrivateTotalAreaOwnOrManage() == null &&
-                model.getCaPrivateTotalAreaCertified() == null &&
-                model.getCaPrivateAreaManagedForPublic() == null &&
-                model.getCaPrivateAreaCertifiedForPublic() == null &&
-                model.getCaCrownForestlandOwnMngOther() == null &&
-                model.getCaPrivateForestlandOwnMngOther() == null;
+        return model.getCaCrownForestlandOwnMng() != null &&
+                model.getCaPrivateForestlandOwnMng() != null &&
+                model.getCaCrownTotalAreaOwnOrManage() != null &&
+                model.getCaCrownTotalAreaCertified() != null &&
+                model.getCaCrownAreaManagedForPublic() != null &&
+                model.getCaCrownAreaCertifiedForPublic() != null &&
+                model.getCaPrivateTotalAreaOwnOrManage() != null &&
+                model.getCaPrivateTotalAreaCertified() != null &&
+                model.getCaPrivateAreaManagedForPublic() != null &&
+                model.getCaPrivateAreaCertifiedForPublic() != null &&
+                model.getCaCrownForestlandOwnMngOther() != null &&
+                model.getCaPrivateForestlandOwnMngOther() != null;
     }
 }

@@ -26,12 +26,12 @@ public class Cs6UsaValidator implements ConstraintValidator<Cs6Usa, Cs6ViewModel
     }
 
     private boolean applyIf(UsaCaSelectorViewModel model) {
-        return !ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInUSA())
-                && !ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInUSA());
+        return ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInUSA())
+                || ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInUSA());
     }
 
     private boolean evaluate(Cs6ViewModel model) {
-         return model.getNumPrivateForeOwersUs() == null &&
-                 model.getNumPrivateLandOwersUs() == null;
+         return model.getNumPrivateForeOwersUs() != null &&
+                 model.getNumPrivateLandOwersUs() != null;
     }
 }
