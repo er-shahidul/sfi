@@ -26,11 +26,11 @@ public class Cs2OtherValidator implements ConstraintValidator<Cs2Other, Cs2ViewM
     }
 
     private boolean applyIf(UsaCaSelectorViewModel model) {
-        return !ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInOther())
-                && !ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInOther());
+        return ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInOther())
+                || ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInOther());
     }
 
     private boolean evaluate(Cs2ViewModel model) {
-        return ValidationHelper.isEmptyCollection(model.getOutsideCountries());
+        return !ValidationHelper.isEmptyCollection(model.getOutsideCountries());
     }
 }
