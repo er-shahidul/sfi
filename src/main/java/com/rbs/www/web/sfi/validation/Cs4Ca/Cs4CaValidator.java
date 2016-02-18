@@ -44,20 +44,6 @@ public class Cs4CaValidator implements ConstraintValidator<Cs4Ca, Cs4ViewModel> 
                 model.getCaSeedingTwoYr() != null &&
                 model.getCaSeedingTwoPlusYr() != null &&
                 model.getCaNatRegen2014() != null &&
-                model.getCaRegenPerc5Yr() != null &&
-                model.getCaGovRegulationExp() != null &&
-                model.getCaDiseaseInsectsExp() != null &&
-                model.getCaFireSalvageExp() != null &&
-                model.getCaWindthrowExp() != null &&
-                model.getCaHurricaneExp() != null &&
-                model.getCaIceStormExp() != null &&
-                model.getCaOthersExp() != null &&
-                model.getCaGovRegulation() != null &&
-                model.getCaDisResDiseaseInsects() != null &&
-                model.getCaDisResFireSalvage() != null &&
-                model.getCaDisResWindthrow() != null &&
-                model.getCaDisResHurricane() != null &&
-                model.getCaDisResIceStorm() != null &&
-                model.getCaOthersApply() != null;
+                model.getCaRegenPerc5Yr() != null;
     }
 }

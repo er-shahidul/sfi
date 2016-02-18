@@ -40,8 +40,6 @@ public class Cs2CaValidator implements ConstraintValidator<Cs2Ca, Cs2ViewModel> 
                 model.getCaPrivateTotalAreaOwnOrManage() != null &&
                 model.getCaPrivateTotalAreaCertified() != null &&
                 model.getCaPrivateAreaManagedForPublic() != null &&
-                model.getCaPrivateAreaCertifiedForPublic() != null &&
-                model.getCaCrownForestlandOwnMngOther() != null &&
-                model.getCaPrivateForestlandOwnMngOther() != null;
+                model.getCaPrivateAreaCertifiedForPublic() != null;
     }
 }

@@ -31,7 +31,6 @@ public class Cs6UsaValidator implements ConstraintValidator<Cs6Usa, Cs6ViewModel
     }
 
     private boolean evaluate(Cs6ViewModel model) {
-         return model.getNumPrivateForeOwersUs() != null &&
-                 model.getNumPrivateLandOwersUs() != null;
+         return model.getNumPrivateForeOwersUs() != null;
     }
 }
