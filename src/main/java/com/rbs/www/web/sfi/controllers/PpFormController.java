@@ -20,14 +20,20 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -209,4 +215,31 @@ public class PpFormController{
                 pdfContents, headers, HttpStatus.OK);
         return response;
     }
+
+//    @RequestMapping(value = "/sfiPpForm/sfi/{fileName}", method = RequestMethod.GET)
+//    public ResponseEntity<byte[]> downloadFile(@PathVariable("fileName") String fileName, HttpServletRequest request) throws Exception {
+////        String fileName = ServletRequestUtils.getRequiredStringParameter(request, "fileName");
+//        String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/sfi/"+fileName;
+//        Path path = Paths.get(originalPath);
+//        String ss = request.getSession().getServletContext().getRealPath("/")+"uploads/sfi/"+fileName;
+////        Path path = Paths.get(originalPath + fileName);
+//
+////        Files file = this.filesService.find(fileName);
+////
+////        response.setContentType(file.getType());
+////        response.setContentLength(file.getFile().length);
+////        Path path = Paths.get(originalPath+fileName+".pdf");
+//        byte[] pdfContents = null;
+//        try {
+//            pdfContents = Files.readAllBytes(path);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.add("content-disposition", "inline;filename=" + path);
+//        ResponseEntity<byte[]> response = new ResponseEntity<byte[]>(
+//                pdfContents, headers, HttpStatus.OK);
+//        return response;
+//    }
 }
