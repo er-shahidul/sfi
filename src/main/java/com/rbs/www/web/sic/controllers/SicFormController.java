@@ -17,11 +17,17 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -185,5 +191,29 @@ public class SicFormController{
         model.addAttribute("company", sicFormData.getCompany());
 
         return "admin/form/admin_form_sic";
+    }
+
+    private static String getFileExtension(String fileName) {
+        if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+            return fileName.substring(fileName.lastIndexOf(".") + 1);
+        return "";
+    }
+
+    @RequestMapping(value = "/sicForm/sic/{uniqueName}/{fileName:.+}", method = RequestMethod.GET)
+    public void getFile(@PathVariable String fileName, @PathVariable String uniqueName, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/sic/"+uniqueName+"."+getFileExtension(fileName);
+        // create full filename and get input stream
+        File file = new File (originalPath);
+        InputStream is = new FileInputStream(file);
+
+        // set file as attached data and copy file data to response output stream
+        response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+        FileCopyUtils.copy(is, response.getOutputStream());
+
+        // delete file on server file system
+//        licenseFile.delete();
+
+        // close stream and return to view
+        response.flushBuffer();
     }
 }
