@@ -71,13 +71,13 @@
                     </label>
                 </div>
                 <div style="padding-left: 25px; padding-top: 10px;" ng-class="{'has-error' : cs1Form.sicWebsite.$invalid }">
-                    <label class="form-inline">
+                    <div class="form-inline">
                         SIC Website:
                         <input readonly  type="text"  class="form-control" style="width: 450px;"
                             ng-model="cs1.sicWebsite" ng-maxlength="200" name="sicWebsite"
                             ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
                             pattern-msg="Please enter a valid url" customerror />
-                    </label>
+                    </div>
                 </div>
                 <br>
             </div>
@@ -506,19 +506,19 @@
                     <ng-form role="form" name="subCommitteeForm">
                         <div class="row" ng-repeat="committee in cs1.subCommittees" style="margin-top:12px;">
                             <div class="col-md-4">
-                                <p ng-if="$index == 0">Sub-Committee Name</p>
+                                <p ng-if="$index == 0"><b>Sub-Committee Name</b></p>
                                 <input readonly  type="text" class="form-control" ng-model="committee.name">
                             </div>
                             <div class="col-md-4">
-                                <p ng-if="$index == 0">Chair</p>
+                                <p ng-if="$index == 0"><b>Chair</b></p>
                                 <input readonly  type="text" class="form-control" ng-model="committee.chair">
                             </div>
                             <div class="col-md-4">
-                                <p ng-if="$index == 0">Email Address</p>
+                                <p ng-if="$index == 0"><b>Email Address</b></p>
                                 <input readonly  type="email" customerror class="form-control" ng-model="committee.email" requireds>
                             </div>
                         </div>
-                        <p style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()" class="myButton">+ Add Another Line</p>
+                        <p style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()" class="myButton"><b><u>+ Add Another Line</u></b></p>
 
                     </ng-form>
                 </div>
@@ -532,7 +532,7 @@
             <div class="col-lg-8">
                 <p>
                     <b>
-                        List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                        List dates and locations of meetings, conferences, or tradeshows or events in which your committee is participating this year and describe your involvement.
                     </b>
                 </p>
 
@@ -540,16 +540,16 @@
                     <ng-form role="form" name="meetingListForm">
                         <div class="row" ng-repeat="meeting in cs1.meetingList" style="margin-top:12px;">
                             <div class="col-md-6">
-                                <p ng-if="$index == 0">Meeting Type</p>
+                                <p ng-if="$index == 0"><b>Meeting Type</b></p>
                                 <select readonly  class="form-control" name="meetingType" ng-model="meeting.type">
-                                    <option ng-selected="!meeting.type">Select</option>
+                                    <option ng-selected="!meeting.type">Select a Meeting Type</option>
                                     <option value="1">In-person</option>
                                     <option value="2">Conference Call</option>
                                     <option value="3">Webinar</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <p ng-if="$index == 0">Date</p>
+                                <p ng-if="$index == 0"><b>Date</b></p>
                                 <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
                                     <input readonly type='text' class="form-control" customerror name="meetingDate"
                                            ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
@@ -560,7 +560,7 @@
                             </div>
                         </div>
 
-                        <p style="text-align: right;padding-top: 30px;padding-right: 100px;" ng-click="addMeeting()" class="myButton">+ Add Another Line</p>
+                        <p style="text-align: right;padding-top: 30px;padding-right: 100px;" ng-click="addMeeting()" class="myButton"><b><u>+ Add Another Line</u></b></p>
 
                     </ng-form>
                 </div>
@@ -582,24 +582,24 @@
                     <ng-form role="form" name="participatingMeetingForm">
                         <div class="row" ng-repeat="meeting in cs1.participatingMeetingList" style="margin-top:12px;">
                             <div class="col-lg-3">
-                                <p ng-if="$index == 0" class="margin-top-30">Meeting Name</p>
+                                <p ng-if="$index == 0" class="margin-top-30"><b>Meeting Name</b></p>
                                 <input readonly  type="text" class="form-control" ng-model="meeting.name">
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" class="margin-top-30">Date</p>
+                                <p ng-if="$index == 0" class="margin-top-30"><b>Date</b></p>
                                 <input readonly  type="date" datetimepicker class="form-control" ng-model="meeting.date">
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" class="margin-top-30">Location</p>
+                                <p ng-if="$index == 0" class="margin-top-30"><b>Location</b></p>
                                 <select readonly  class="form-control" ng-model="meeting.location">
-                                    <option ng-selected="!meeting.location">Select</option>
+                                    <option ng-selected="!meeting.location">State/Province</option>
                                     <option ng-repeat="region in regions">{{ region.name }}</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" style="padding-top:13px;">SIC involvement, if not a committee meeting?</p>
+                                <p ng-if="$index == 0" style="padding-top:13px;"><b>SIC involvement, if not a committee meeting?</b></p>
                                 <select readonly  class="form-control" ng-model="meeting.involvement" >
-                                    <option ng-selected="!meeting.involvement">Select</option>
+                                    <option ng-selected="!meeting.involvement">Involvement Type</option>
                                     <option value="1">Attending</option>
                                     <option value="2">Sponsoring</option>
                                     <option value="3">Exhibiting</option>
@@ -610,7 +610,7 @@
                         </div>
                         <br>
 
-                        <p style="text-align: right;padding-top: 30px;" ng-click="addParticipatingMeeting()" class="myButton">+ Add Another Line</p>
+                        <p style="text-align: right;padding-top: 30px;" ng-click="addParticipatingMeeting()" class="myButton"><b><u>+ Add Another Line</u></b></p>
 
                     </ng-form>
                 </div>
