@@ -1,7 +1,6 @@
 package com.rbs.www.web.sfi.controllers;
 
 import com.rbs.www.admin.services.UserService;
-import com.rbs.www.common.enums.FormStatus;
 import com.rbs.www.common.services.TypeConversionUtils;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -21,24 +19,17 @@ import org.springframework.security.web.servletapi.SecurityContextHolderAwareReq
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.ServletRequestUtils;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.Objects;
+import java.util.StringTokenizer;
 
 @Controller
 public class PpFormController{
@@ -216,30 +207,28 @@ public class PpFormController{
         return response;
     }
 
-//    @RequestMapping(value = "/sfiPpForm/sfi/{fileName}", method = RequestMethod.GET)
-//    public ResponseEntity<byte[]> downloadFile(@PathVariable("fileName") String fileName, HttpServletRequest request) throws Exception {
-////        String fileName = ServletRequestUtils.getRequiredStringParameter(request, "fileName");
-//        String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/sfi/"+fileName;
-//        Path path = Paths.get(originalPath);
-//        String ss = request.getSession().getServletContext().getRealPath("/")+"uploads/sfi/"+fileName;
-////        Path path = Paths.get(originalPath + fileName);
-//
-////        Files file = this.filesService.find(fileName);
-////
-////        response.setContentType(file.getType());
-////        response.setContentLength(file.getFile().length);
-////        Path path = Paths.get(originalPath+fileName+".pdf");
-//        byte[] pdfContents = null;
-//        try {
-//            pdfContents = Files.readAllBytes(path);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.add("content-disposition", "inline;filename=" + path);
-//        ResponseEntity<byte[]> response = new ResponseEntity<byte[]>(
-//                pdfContents, headers, HttpStatus.OK);
-//        return response;
-//    }
+    private static String getFileExtension(String fileName) {
+        if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+            return fileName.substring(fileName.lastIndexOf(".") + 1);
+        return "";
+    }
+
+    @RequestMapping(value = "/sfiPpForm/sfi/{uniqueName}/{fileName:.+}", method = RequestMethod.GET)
+    public void getFile(@PathVariable String fileName, @PathVariable String uniqueName, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/sfi/"+uniqueName+"."+getFileExtension(fileName);
+        // create full filename and get input stream
+        File file = new File (originalPath);
+        InputStream is = new FileInputStream(file);
+
+        // set file as attached data and copy file data to response output stream
+        response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+        FileCopyUtils.copy(is, response.getOutputStream());
+
+        // delete file on server file system
+//        licenseFile.delete();
+
+        // close stream and return to view
+        response.flushBuffer();
+    }
+
 }
