@@ -826,4 +826,25 @@ sfiFormApp.run(['$rootScope', '$http', function($rootScope, $http) {
 
             });
     }
+
+    $rootScope.updateCs1Error = function(){
+
+
+        var url = "/form/errors/" + $rootScope.form.cs10.id;
+        $http
+            .get(url)
+            .then(function(response){
+
+                if(response.data){
+
+                    $rootScope.form.cs2.errors = response.data.cs2;
+                    $rootScope.form.cs4.errors = response.data.cs4;;
+                    $rootScope.form.cs6.errors = response.data.cs6;;
+                    $rootScope.setProgress();
+
+                    $//rootScope.form.cs10.updatedAt = new Date(response.data.updateDate);
+                }
+
+            });
+    }
 }]);

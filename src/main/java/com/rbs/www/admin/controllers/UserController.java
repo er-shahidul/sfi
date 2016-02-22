@@ -366,7 +366,7 @@ public class UserController {
         model.addAttribute("company", user.getCompany());
         userService.updatePassword(user);
 
-        return "common/login";
+        return "redirect:/login";
     }
 
     @RequestMapping(value = "/user/password/set/{id}", method = RequestMethod.GET)

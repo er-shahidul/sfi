@@ -15,6 +15,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -97,7 +100,7 @@ public class PpResponseController {
         model.setErrors(null);
         formService.setSfiPpFormCs5Entities(model.getItems());
         formService.setCs5Entity(model);
-        formService.setCs5Entity(model); // reload for Set<String> in projects
+//        formService.setCs5Entity(model); // reload for Set<String> in projects
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
@@ -136,5 +139,15 @@ public class PpResponseController {
         model.setErrors(null);
         formService.setCs10Entity(model);
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/form/errors/{id}", method = RequestMethod.GET)
+    public ResponseEntity<String> getErrors(@PathVariable Integer id) {
+        final Map<String, List<String>> errors = new HashMap<>();
+        errors.put("cs2", validationService.validate(formService.getCs2ViewModel(id)).getErrors());
+        errors.put("cs4", validationService.validate(formService.getCs4ViewModel(id)).getErrors());
+        errors.put("cs6", validationService.validate(formService.getCs6ViewModel(id)).getErrors());
+
+        return new ResponseEntity<String>(Util.getAsString(errors), HttpStatus.OK);
     }
 }

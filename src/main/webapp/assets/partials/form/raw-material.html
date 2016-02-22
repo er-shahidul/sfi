@@ -225,7 +225,7 @@
             </div>
         </td>
 
-        <td align="center" ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item3.$invalid}">
+        <td align="center" ng-class="{'has-error' : innerForm.item3.$invalid}">
             <input type="text" class="form-control shorter" max="100" min="0" name="item3" ng-required="isSectionDirty(innerForm)"
                    ng-model="section.percDeliveredQualifiedLogging" ng-disabled="isDisabled(section)"
                    ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
