@@ -797,7 +797,7 @@
                             $<input type="text" class="" style="width: 100px;" name="incResFundingText"  customerror
                                    ng-model="project.incResFundingText"/>
                             </div>
-                            <div class="col-lg-10" padding-left: 0px;>
+                            <div class="col-lg-10" style="padding-left: 0px;">
                             <span>Portion of funds spent towards research-related contributions reported in the Research Funding table at the top of this page</span>
                             </div>
                         </div>
@@ -814,24 +814,36 @@
                             the areas of conservation and community engagement?</span><br/>
 
                         <div style="padding-left: 15px;">
-                            <input type="radio" name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>
+                            <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="1"/>
                             <span class="radioLabel">Share – with our organization’s name</span>
                         </div>
 
                         <div style="padding-left: 15px;">
-                            <input type="radio" name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />
+                            <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="2" />
                             <span class="radioLabel">Share – don’t use our organization’s name</span>
                         </div>
 
                         <div style="padding-left: 15px;">
-                            <input type="radio" name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>
-                            <span class="radioLabel">Please don’t share</span>
+                            <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="3"/>
+                            <span class="radioLabel">Please don’t share </span>
                         </div>
+                        <!-- -->
+                        <!--<div style="padding-left: 15px;">-->
+                            <!--<input type="radio" name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>-->
+                            <!--<span class="radioLabel">Share – with our organization’s name</span>-->
+                        <!--</div>-->
+
+                        <!--<div style="padding-left: 15px;">-->
+                            <!--<input type="radio" name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />-->
+                            <!--<span class="radioLabel">Share – don’t use our organization’s name</span>-->
+                        <!--</div>-->
+
+                        <!--<div style="padding-left: 15px;">-->
+                            <!--<input type="radio" name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>-->
+                            <!--<span class="radioLabel">Please don’t share</span>-->
+                        <!--</div>-->
 
                     </div>
-
-
-
 
                     <div class="form-group">
                         <input ng-model="validate" ng-hide="true">

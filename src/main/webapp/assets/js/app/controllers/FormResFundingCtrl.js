@@ -280,15 +280,15 @@ sfiFormApp
 
 
 
-        $scope.editProject = function(index){
-
-            $scope.editItem = $scope.getProject(index);
-            _.each($scope.editItem, function(val, key){
-                $scope.project[key] = val;
-            });
-            //$scope.project['startDate'] = new Date($scope.editItem['startDate']);
-
-        }
+        //$scope.editProject = function(index){
+        //
+        //    $scope.editItem = $scope.getProject(index);
+        //    _.each($scope.editItem, function(val, key){
+        //        $scope.project[key] = val;
+        //    });
+        //    //$scope.project['startDate'] = new Date($scope.editItem['startDate']);
+        //
+        //}
 
         $scope.getProject = function(index){
             return $scope.cs5.projects[index];
@@ -476,6 +476,21 @@ sfiFormApp
             return bucket;
         }
 
+        $scope.setShareOption = function() {
+            $scope.project.shareConceptData = ($scope.project.share == 1)?true:false;
+            $scope.project.shareConceptNoName = ($scope.project.share == 2)?true:false;
+            $scope.project.dontShare = ($scope.project.share == 3)?true:false;
+        }
 
 
-    }]);
+        $scope.editProject = function(index){
+
+            $scope.editItem = $scope.getProject(index);
+            _.each($scope.editItem, function(val, key){
+                $scope.project[key] = val;
+            });
+            $scope.project.share = $scope.project.shareConceptData?1:$scope.project.shareConceptNoName?2:3;
+            //$scope.project['startDate'] = new Date($scope.editItem['startDate']);
+        }
+
+            }]);
