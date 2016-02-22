@@ -66,7 +66,7 @@
         <div class="col-lg-12" ng-show="cs1.guideFiles.length">
             <div class="col-lg-8">
 
-                <p>Copy of organizational guidelines attached?</p>
+                <p><b>Copy of organizational guidelines attached?</b></p>
 
                 <label><input name="orgDocAttached" ng-value="true"  ng-model="cs1.orgDocAttached" ng-checked="!cs1.orgDocAttached" type="radio"> Yes</label>
                 <label><input name="orgDocAttached" ng-value="false" ng-model="cs1.orgDocAttached"  type="radio"> No</label>
@@ -78,13 +78,13 @@
                     </label>
                 </div>
                 <div style="padding-left: 25px; padding-top: 10px;" ng-class="{'has-error' : cs1Form.sicWebsite.$invalid }">
-                    <label class="form-inline">
+                    <div class="form-inline">
                         SIC Website:
                         <input type="text"  class="form-control" style="width: 450px;"
                             ng-model="cs1.sicWebsite" ng-maxlength="200" name="sicWebsite"
                             ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
                             pattern-msg="Please enter a valid url" customerror />
-                    </label>
+                    </div>
                 </div>
                 <br>
             </div>
@@ -95,7 +95,7 @@
             <div class="col-lg-8">
 
                 <div style="padding-bottom: 20px">
-                    <p>Please choose the best description of how the SFI Implementation Committee (SIC) is organized? (new!)</p>
+                    <p><b>Please choose the best description of how the SFI Implementation Committee (SIC) is organized? (new!)</b></p>
                     <select style="width: 560px;" class="form-control" ng-model="cs1.sicOrgDescription" name="sicOrgDescription">
                         <option ng-selected="!cs1.sicOrgDescription">Select</option>
                         <option value="1">Fully independent (IRS or state designated non-profit status)</option>
@@ -106,10 +106,11 @@
                 </div>
 
                 <div class="fileinput fileinput-new" data-provides="fileinput">
-                    <p>
+                    <p><b>
                         Attach a list of committee members and SIC Supporters, with full contact information, for
                         incorporating into SFI's contact database to ensure committee members get the latest SFI
                         information directly. Please use excel template provided by SFI Inc.
+                    </b>
                     </p>
 
                     <div class="input-group input-large"
@@ -145,9 +146,9 @@
 
         <div class="col-lg-12">
             <div class="col-lg-8">
-                <p>
+                <p><b>
                     Report the number of committee members and SIC Supporters for each of the following categories:
-                </p>
+                </b></p>
                 <table border="1" style="line-height: 30px;" class="table-bordered boxsize">
                     <tr>
                         <th>
@@ -219,9 +220,9 @@
                             <br>
                             <div style="padding-left: 25px; padding-top: 20px;">
                                 <div class="col-lg-4">
-                                <label class="form-inline">
+                                <div class="form-inline">
                                     Please Specify
-                                </label>
+                                </div>
                                 </div>
                                 <div class="col-lg-8">
                                 <input class="form-control pull-right" name="membersOtherSFISpecify" style="width: 450px; height: 30px;" type="text" ng-model="cs1.membersOtherSFISpecify">
@@ -339,9 +340,9 @@
                             <br>
                             <div style="padding-left: 25px; padding-top: 20px;">
                                 <div class="col-lg-4">
-                                    <label class="form-inline">
+                                    <div class="form-inline">
                                         Please Specify
-                                    </label>
+                                    </div>
                                 </div>
                                 <div class="col-lg-8">
                                     <input class="form-control pull-right" name="supporterOtherSpecify" style="width: 450px; height: 30px;" type="text" ng-model="cs1.supporterOtherSpecify">
@@ -359,7 +360,9 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Current SIC Chair
+                    <b>
+                        Current SIC Chair
+                    </b>
                 </p>
 
                 <div class="pading-botom">
@@ -435,7 +438,9 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Current SIC Coordinator (optional)
+                    <b>
+                        Current SIC Coordinator (optional)
+                    </b>
                 </p>
 
                 <div class="pading-botom">
@@ -511,26 +516,29 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Please list sub-committees and provide email address for sub-committee chair (if applicable):
+                    <b>
+                        Please list sub-committees and provide email address for sub-committee chair (if applicable):
+                    </b>
                 </p>
+
 
                 <div>
                     <ng-form role="form" name="subCommitteeForm">
                         <div class="row" ng-repeat="committee in cs1.subCommittees" style="margin-top:12px;">
                             <div class="col-md-4">
-                                <p ng-if="$index == 0">Sub-Committee Name</p>
+                                <p ng-if="$index == 0"><b>Sub-Committee Name</b></p>
                                 <input type="text" class="form-control" ng-model="committee.name">
                             </div>
                             <div class="col-md-4">
-                                <p ng-if="$index == 0">Chair</p>
+                                <p ng-if="$index == 0"><b>Chair</b></p>
                                 <input type="text" class="form-control" ng-model="committee.chair">
                             </div>
                             <div class="col-md-4">
-                                <p ng-if="$index == 0">Email Address</p>
+                                <p ng-if="$index == 0"><b>Email Address</b></p>
                                 <input type="email" customerror class="form-control" ng-model="committee.email" requireds>
                             </div>
                         </div>
-                        <p style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()" class="myButton">+ Add Another Line</p>
+                        <p style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()" class="myButton"><b><u>+ Add Another Line</u></b></p>
 
                     </ng-form>
                 </div>
@@ -543,23 +551,25 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                    <b>
+                        List dates and locations of meetings, conferences, or tradeshows or events in which your committee is participating this year and describe your involvement.
+                    </b>
                 </p>
 
                 <div>
                     <ng-form role="form" name="meetingListForm">
                         <div class="row" ng-repeat="meeting in cs1.meetingList" style="margin-top:12px;">
                             <div class="col-md-6">
-                                <p ng-if="$index == 0">Meeting Type</p>
+                                <p ng-if="$index == 0"><b>Meeting Type</b></p>
                                 <select class="form-control" name="meetingType" ng-model="meeting.type">
-                                    <option ng-selected="!meeting.type">Select</option>
+                                    <option ng-selected="!meeting.type">Select a Meeting Type</option>
                                     <option value="1">In-person</option>
                                     <option value="2">Conference Call</option>
                                     <option value="3">Webinar</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <p ng-if="$index == 0">Date</p>
+                                <p ng-if="$index == 0"><b>Date</b></p>
                                 <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
                                     <input type='text' class="form-control" customerror name="meetingDate"
                                            ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
@@ -570,7 +580,7 @@
                             </div>
                         </div>
 
-                        <p style="text-align: right;padding-top: 30px;padding-right: 100px;" class="myButton" ng-click="addMeeting()">+ Add Another Line</p>
+                        <p style="text-align: right;padding-top: 30px;padding-right: 100px;" class="myButton" ng-click="addMeeting()"><b><u>+ Add Another Line</U></b></p>
 
                     </ng-form>
                 </div>
@@ -583,18 +593,20 @@
         <div class="col-lg-12" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                    <b>
+                        List meeting type and dates of scheduled SFI Implementation Committee meetings this year.
+                    </b>
                 </p>
 
                 <div>
                     <ng-form role="form" name="participatingMeetingForm">
                         <div class="row" ng-repeat="meeting in cs1.participatingMeetingList" style="margin-top:12px;">
                             <div class="col-lg-3">
-                                <p ng-if="$index == 0" class="margin-top-30">Meeting Name</p>
+                                <p ng-if="$index == 0" class="margin-top-30"><b>Meeting Name</b></p>
                                 <input type="text" class="form-control" ng-model="meeting.name">
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" class="margin-top-30">Date</p>
+                                <p ng-if="$index == 0" class="margin-top-30"><b>Date</b></p>
 
                                 <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
                                     <input type='text' class="form-control" customerror
@@ -605,16 +617,16 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" class="margin-top-30">Location</p>
+                                <p ng-if="$index == 0" class="margin-top-30"><b>Location</b></p>
                                 <select class="form-control" ng-model="meeting.location">
-                                    <option ng-selected="!meeting.location">Select</option>
+                                    <option ng-selected="!meeting.location">State/Province</option>
                                     <option ng-repeat="region in regions">{{ region.name }}</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" style="padding-top:13px;">SIC involvement, if not a committee meeting?</p>
+                                <p ng-if="$index == 0" style="padding-top:13px;"><b>SIC involvement, if not a committee meeting?</b></p>
                                 <select class="form-control" ng-model="meeting.involvement" >
-                                    <option ng-selected="!meeting.involvement">Select</option>
+                                    <option ng-selected="!meeting.involvement">Involvement Type</option>
                                     <option value="1">Attending</option>
                                     <option value="2">Sponsoring</option>
                                     <option value="3">Exhibiting</option>
@@ -625,7 +637,7 @@
                         </div>
                         <br>
 
-                        <p style="text-align: right;padding-top: 30px;" ng-click="addParticipatingMeeting()" class="myButton">+ Add Another Line</p>
+                        <p style="text-align: right;padding-top: 30px;" ng-click="addParticipatingMeeting()" class="myButton"><b><u>+ Add Another Line</u></b></p>
 
                     </ng-form>
                 </div>
@@ -638,8 +650,10 @@
         <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Is the SIC willing to represent the SFI program, on SFI Inc.'s behalf, at local conferences,
-                    tradeshows and events, etc.?
+                    <b>
+                        Is the SIC willing to represent the SFI program, on SFI Inc.'s behalf, at local conferences,
+                        tradeshows and events, etc.?
+                    </b>
                 </p>
                 <label>
                     <input type="radio" name="sicRepresentSfi" ng-model="cs1.sicRepresentSfi" ng-value="true" ng-checked="cs1.sicRepresentSfi"> Yes
@@ -661,7 +675,9 @@
         <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Did your SIC recruit any new SFI Applicants or SFI Program Participants last year?
+                    <b>
+                        Did your SIC recruit any new SFI Applicants or SFI Program Participants last year?
+                    </b>
                 </p>
                 <label>
                     <input type="radio" name="sicRecruitSfi" ng-model="cs1.sicRecruitSfi" ng-value="true" ng-checked="cs1.sicRecruitSfi"> Yes
@@ -683,7 +699,9 @@
         <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
             <div class="col-lg-8">
                 <p>
-                    Does your SIC workplan/annual goals/annual activities include recruitment efforts this year?
+                    <b>
+                        Does your SIC workplan/annual goals/annual activities include recruitment efforts this year?
+                    </b>
                 </p>
                 <label>
                     <input type="radio" name="sicPlanRecruitment" ng-model="cs1.sicPlanRecruitment" ng-value="true" ng-checked="cs1.sicPlanRecruitment"> Yes
