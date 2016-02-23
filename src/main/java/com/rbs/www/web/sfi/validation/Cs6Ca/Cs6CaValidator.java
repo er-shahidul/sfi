@@ -26,8 +26,7 @@ public class Cs6CaValidator implements ConstraintValidator<Cs6Ca, Cs6ViewModel> 
     }
 
     private boolean applyIf(UsaCaSelectorViewModel model) {
-        return ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInCA())
-                || ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInCA());
+        return ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInCA());
     }
 
     private boolean evaluate(Cs6ViewModel model) {
