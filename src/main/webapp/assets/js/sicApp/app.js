@@ -944,6 +944,7 @@ sfiSicApp.run(['$rootScope', '$upload', '_', function($rootScope, $upload, _) {
 }]);
 
 sfiSicApp.run(['$rootScope', '$http', function($rootScope, $http) {
+
     $rootScope.updateFormMeta = function(){
 
         var url = "/sic/updateDate/" + $rootScope.formInfo.id;
@@ -954,7 +955,11 @@ sfiSicApp.run(['$rootScope', '$http', function($rootScope, $http) {
                 if(response.data){
                     $rootScope.formInfo.updatedAt = new Date(response.data.updateDate);
                 }
-
             });
     }
+
+    $rootScope.download = function(a, b){
+        window.location.href = "/sicForm/sic/"+  a + "/" + b;
+    }
+
 }]);

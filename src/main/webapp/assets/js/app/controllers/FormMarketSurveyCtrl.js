@@ -458,9 +458,26 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
                         }
 
                     });
+
+                return true;
             }
 
+            return false;
+
+
         }
+
+
+        $scope.saveAndSubmit = function(go){
+
+            if($scope.saveForm()){
+                $rootScope.submit();
+            }
+
+
+        }
+
+
 
 }]);
 

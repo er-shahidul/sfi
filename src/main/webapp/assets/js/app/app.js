@@ -846,5 +846,11 @@ sfiFormApp.run(['$rootScope', '$http', function($rootScope, $http) {
                 }
 
             });
+
     }
+
+    $rootScope.download = function(a, b){
+        window.location.href = "/sfiPpForm/sfi/"+  a + "/" + b;
+    }
+
 }]);
