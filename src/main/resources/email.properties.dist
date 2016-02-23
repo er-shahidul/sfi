@@ -1,4 +1,9 @@
-host=mailtrap.io
-port=2525
-user=4934098327f5dd6a8
-pass=adb528f2339154
+mail.transport.protocol=smtp
+mail.smtp.auth=true
+mail.smtp.starttls.enable=true
+mail.debug=true
+
+host=mx.poweredbyinsight.com
+port=587
+username=admin@reporting.sfiprogram.org
+password=srxc8kgay3fp
