@@ -17,27 +17,42 @@
                         <textarea rows="6" cols="70" ng-model="story.description"></textarea>
                     </div>
                     <form name="someForm">
-                    <div style="padding-top: 20px;">
-                        Upload File
-                        <div class="input-group input-large" style="width: 510px;"
-                             ng-file-select ng-model="story.myFiles"
-                             ng-file-change="fileSelected()"
-                             ng-multiple="false"
-                             ng-accept="'.pdf, .doc, .xls'" >
-                            <div class="form-control uneditable-input input-fixed input-medium">
-                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                <span class="fileinput-filename">{{ story.originalDocumentName }}</span>
+                        <div style="padding-top: 20px;">
+                            Upload File
+
+                            <div class="input-group input-large"
+                                 ng-file-select
+                                 ng-model="story.myFiles"
+                                 ng-file-change="fileSelected()"
+                                 ng-multiple="true"
+                                 ng-accept="'.pdf,.doc,.docx,.xls,.xlsx'">
+
+                                <div class="form-control uneditable-input input-fixed input-medium">
+                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                    <span class="fileinput-filename">{{ tempFile.originalDocumentName }}</span>
+                                </div>
+                                <span class="input-group-addon btn default btn-file">
+                                    <span ng-hide="tempFile.originalDocumentName" class="fileinput-new">Browse</span>
+                                    <span ng-show="tempFile.originalDocumentName" class="fileinput-exists">Change </span>
+                                </span>
+
                             </div>
 
-                            <span class="input-group-addon btn default btn-file">
-                                <span ng-hide="story.originalDocumentName" class="fileinput-new">Browse </span>
-                                <span ng-show="story.originalDocumentName" class="fileinput-exists">Change </span>
-                            </span>
-                            <a ng-click="story.originalDocumentName = null; story.uniqueDocumentName = null;" ng-show="story.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                            <p>Files can be one of the following formats: .pdf, .doc, .xls)</p>
+
+                            <div class="text-right" ng-show="tempFile.originalDocumentName">
+                                <a ng-click="tempFile.originalDocumentName =''; " href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                <input type="submit" class="btn default" value="Upload" ng-click="saveTmpFile()">
+                            </div>
+
+
+                            <div id="selectedItem" ng-show="story.originalDocumentName" >{{ story.originalDocumentName }}
+                                <button ng-click="story.originalDocumentName = '' ; story.uniqueDocumentName = '' ;" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            </div>
+
+
                         </div>
 
-                        Files can be one of the following formats: .pdf, .doc, .xls)
-                    </div>
                     </form>
                     <form name="storyForm">
                     <div style="padding-top: 20px;">

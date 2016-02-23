@@ -214,13 +214,14 @@ sfiFormApp
 
     }
 
+    $scope.tempFile = {};
     $scope.story = {};
     $scope.upload = {};
     $scope.story.myFiles = [];
 
     $scope.fileSelected = function() {
 
-        var type = '.pdf, .doc, .docx, .xls';
+        var type = '.pdf, .doc, .docx, .xls, .xlsx';
 
 
         for (var i = 0; i < $scope.story.myFiles.length; i++) {
@@ -244,16 +245,30 @@ sfiFormApp
                 data: $scope.cs9,
                 file: file
             }).progress(function(evt) {
-                    console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
+                    //console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
             }).success(function(data, status, headers, config) {
 
-                $scope.story.originalDocumentName = data.originalDocumentName;
-                $scope.story.uniqueDocumentName = data.uniqueDocumentName;
+                $scope.tempFile.originalDocumentName = data.originalDocumentName;
+                $scope.tempFile.uniqueDocumentName = data.uniqueDocumentName;
+
+                //$scope.story.originalDocumentName = data.originalDocumentName;
+                //$scope.story.uniqueDocumentName = data.uniqueDocumentName;
             }).error(function(data, status, headers, config){
                 alert("File upload failed, provide valid type file");
             });
+
         }
     }
+
+            $scope.saveTmpFile = function(){
+
+                $scope.story.originalDocumentName = $scope.tempFile.originalDocumentName;
+                $scope.story.uniqueDocumentName = $scope.tempFile.uniqueDocumentName;
+
+                $scope.tempFile = {};
+
+            }
+
 
 
 }]);
