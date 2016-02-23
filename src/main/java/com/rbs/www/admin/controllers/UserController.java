@@ -326,6 +326,7 @@ public class UserController {
 
             String subject = "SFI Annual Reporting & Survey Tool Password Reset";
             String message = "/user/password/" + randomUUIDString;
+//            String message = request.getLocalName() + "/user/password/" + randomUUIDString;
             String mailType = "reset";
             sendEmail(email, subject, message, user, mailType, request.getLocalName());
         }
@@ -445,6 +446,7 @@ public class UserController {
         String recipient = user.getEmail();
         String subject = "Welcome to SFI Annual Reporting & Survey Tool";
         String message = "/user/verification/" + randomUUIDString;
+//        String message = request.getLocalName() + "/user/verification/" + randomUUIDString;
         String mailType = "confirm";
 
         if (user.getSendInvitation()) {
