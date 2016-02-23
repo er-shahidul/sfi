@@ -56,15 +56,15 @@ import java.util.Set;
 })
 public class Cs7ViewModel extends BaseViewModel {
     private Integer id;
-    @NotNull(message = "{cs7.emerIssuBioe}")
+//    @NotNull(message = "{cs7.emerIssuBioe}")
     private Boolean emerIssuBioe;
-    @NotNull(message = "{cs7.emerIssuCarb}")
+//    @NotNull(message = "{cs7.emerIssuCarb}")
     private Boolean emerIssuCarb;
-    @NotNull(message = "{cs7.emerIssuWate}")
+//    @NotNull(message = "{cs7.emerIssuWate}")
     private Boolean emerIssuWate;
-    @NotNull(message = "{cs7.emerIssuClim}")
+//    @NotNull(message = "{cs7.emerIssuClim}")
     private Boolean emerIssuClim;
-    @NotNull(message = "{cs7.emerIssuEcos}")
+//    @NotNull(message = "{cs7.emerIssuEcos}")
     private Boolean emerIssuEcos;
     private Boolean emerIssuOther;
     private String emerIssuOtherSpec;
@@ -83,13 +83,13 @@ public class Cs7ViewModel extends BaseViewModel {
     private String planInvestRes_ifPlan;
     private String planInvestRes_year;
 
-    @NotNull(message = "{cs7.emerIssuEurop}")
+//    @NotNull(message = "{cs7.emerIssuEurop}")
     private Boolean emerIssuEurop;
-    @NotNull(message = "{cs7.emerIssuBioConsrv}")
+//    @NotNull(message = "{cs7.emerIssuBioConsrv}")
     private Boolean emerIssuBioConsrv;
     private String comments;
 
-    @NotNull(message = "{cs7.emerIssuIntMarket}")
+//    @NotNull(message = "{cs7.emerIssuIntMarket}")
     private Boolean emerIssuIntMarket;
     private Set<Integer> intMarketCountries;
     private String intMarketCountryOther;
