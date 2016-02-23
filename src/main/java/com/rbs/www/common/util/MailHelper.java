@@ -18,6 +18,7 @@ public class MailHelper
     public void sendMail(String to, String subject, String url, User user, String mailType, String path) {
         String form = "rachel.dierolf@sfiprogram.org";
         String msg = "https://reporting.sfiprogram.org"+url;
+//        String msg = " https://sfireportingv2.poweredbyinsight.com"+url;
 //        String msg = "http://"+url;
         try{
             MimeMessage message = mailSender.createMimeMessage();
@@ -36,6 +37,7 @@ public class MailHelper
 
     private void confirmBody(String msg, User user, MimeMessageHelper helper, String path) throws MessagingException {
             String imagePath = "https://reporting.sfiprogram.org/assets/images/u4.png";
+//            String imagePath = " https://sfireportingv2.poweredbyinsight.com/assets/images/u4.png";
 //            String imagePath = "http://" + path + "/assets/images/u4.png";
             helper.setText(
                 "<html><body>" +
@@ -101,6 +103,7 @@ public class MailHelper
 
     private void resetBody(String msg, User user, MimeMessageHelper helper, String path) throws MessagingException {
             String imagePath = "https://reporting.sfiprogram.org/assets/images/u4.png";
+//            String imagePath = " https://sfireportingv2.poweredbyinsight.com/assets/images/u4.png";
 //            String imagePath = "http://" + path + "/assets/images/u4.png";
             helper.setText(
                 "<html><body>" +
