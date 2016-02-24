@@ -22,7 +22,7 @@ public class Cs2OtherValidator implements ConstraintValidator<Cs2Other, Cs2ViewM
 
     @Override
     public boolean isValid(Cs2ViewModel model, ConstraintValidatorContext context) {
-        return !applyIf(formService.getUsaCaSelectorViewModel(model.getId())) || evaluate(model);
+        return !applyIf(formService.getUsaCaSelectorViewModel(model.getId())) || !evaluate(model);
     }
 
     private boolean applyIf(UsaCaSelectorViewModel model) {
@@ -30,6 +30,6 @@ public class Cs2OtherValidator implements ConstraintValidator<Cs2Other, Cs2ViewM
     }
 
     private boolean evaluate(Cs2ViewModel model) {
-        return !ValidationHelper.isEmptyCollection(model.getOutsideCountries());
+        return ValidationHelper.isEmptyCollection(model.getOutsideCountries());
     }
 }
