@@ -38,13 +38,12 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
 //                }
 //            }
 
-            if($rootScope.mode == "view"){
-                $rootScope.formProgress = 100;
-            }else{
+            //if($rootScope.mode == "view"){
+            //    $rootScope.formProgress = 100;
+            //}else{
                 $rootScope.formProgress += 10;
-            }
+            //}
         });
-
 
     }
 

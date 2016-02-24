@@ -1,6 +1,8 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.rbs.www.common.models.BaseViewModel;
+import com.rbs.www.common.util.JsonDateSerializer;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
 import com.rbs.www.web.sfi.validation.SfiPpFormCs3OrgList.SfiPpFormCs3OrgList;
 import org.hibernate.validator.constraints.Length;
@@ -237,6 +239,7 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.includeResearchFunding = includeResearchFunding;
     }
 
+    @JsonSerialize(using=JsonDateSerializer.class)
     public Date getStartDate() {
         return startDate;
     }
@@ -245,6 +248,7 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.startDate = startDate;
     }
 
+    @JsonSerialize(using=JsonDateSerializer.class)
     public Date getEndDate() {
         return endDate;
     }

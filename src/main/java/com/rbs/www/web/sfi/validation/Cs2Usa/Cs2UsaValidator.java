@@ -26,8 +26,7 @@ public class Cs2UsaValidator implements ConstraintValidator<Cs2Usa, Cs2ViewModel
     }
 
     private boolean applyIf(UsaCaSelectorViewModel model) {
-        return ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInUSA())
-                || ValidationHelper.isTruthy(model.getHasPrimaryOperMillsYards(), model.getHasPrimaryOperMillsYardsInUSA());
+        return ValidationHelper.isTruthy(model.getOwnsMngLands(), model.getOwnsMngLandsInUSA());
     }
 
     private boolean evaluate(Cs2ViewModel model) {
