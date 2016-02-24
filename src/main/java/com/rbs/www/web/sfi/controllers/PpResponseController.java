@@ -100,7 +100,7 @@ public class PpResponseController {
         model.setErrors(null);
         formService.setSfiPpFormCs5Entities(model.getItems());
         formService.setCs5Entity(model);
-//        formService.setCs5Entity(model); // reload for Set<String> in projects
+        formService.setCs5Entity(model); // reload for Set<String> in projects
         return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
     }
 
