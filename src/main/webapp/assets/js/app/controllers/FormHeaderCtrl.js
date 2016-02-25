@@ -132,20 +132,16 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
             return "Submit";
         }
 
-        return $rootScope.form.status == 3 ? "Submitted" : "Submit";
+        return $rootScope.formInfo.status.id == 2 ? "Submitted" : "Submit";
     }
 
     $scope.canSubmit = function(){
 
-//        var form = $rootScope.form;
-//
-//        if(!form.isSaved){
-//            return false;
-//        }
-//
-//        if(form.status == 3 && !form.isAdmin){
-//            return false;
-//        }
+        var form = $rootScope.formInfo;
+
+        if(form.status.id == 2 && !$rootScope.isAdmin){
+            return false;
+        }
 
         return true;
     }
