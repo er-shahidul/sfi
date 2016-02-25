@@ -666,7 +666,7 @@
                                 <div><small><u>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</u></small></div>
                             </div>
                             <div id="valdfil">
-                                <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted">&nbsp;{{ doc.projectOriginalDocumentName }}&nbsp;
+                                <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted" ng-click="download(doc.projectUniqueDocumentName, doc.projectOriginalDocumentName)" >&nbsp;{{ doc.projectOriginalDocumentName }}&nbsp;
                                     <button ng-click="delSupportDoc($index)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
                             </div>

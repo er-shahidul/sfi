@@ -39,7 +39,8 @@
                     <input type="submit" class="btn default" value="Upload" ng-click="mechanismDoc = saveUploadedFile(mechanismDoc, cs5.mechanismDoc, true)">
                 </div>
 
-                <div id="selectedItem" ng-show="cs5.mechanismDoc.originalDocumentName">{{ cs5.mechanismDoc.originalDocumentName }}
+                <div id="selectedItem" ng-show="cs5.mechanismDoc.originalDocumentName"
+                     ng-click="download(cs5.mechanismDoc.uniqueDocumentName, cs5.mechanismDoc.originalDocumentName)">{{ cs5.mechanismDoc.originalDocumentName }}
                     <button ng-click="cs5.mechanismDoc = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                 </div>
             </div>
@@ -346,7 +347,8 @@
                             </div>
 
 
-                            <div id="selectedItem" ng-show="standard2010.circumstancesDoc.originalDocumentName">{{ standard2010.circumstancesDoc.originalDocumentName }}
+                            <div id="selectedItem" ng-show="standard2010.circumstancesDoc.originalDocumentName"
+                                 ng-click="download(standard2010.circumstancesDoc.uniqueDocumentName, standard2010.circumstancesDoc.originalDocumentName)">{{ standard2010.circumstancesDoc.originalDocumentName }}
                                 <button ng-click="standard2010.circumstancesDoc = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                             <br/>

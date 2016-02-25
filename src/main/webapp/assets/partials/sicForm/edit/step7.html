@@ -76,7 +76,8 @@
                         </div>
 
 
-                        <div id="selectedItem" ng-show="cs7.bmpReportDoc.originalDocumentName">{{ cs7.bmpReportDoc.originalDocumentName }}
+                        <div id="selectedItem" ng-show="cs7.bmpReportDoc.originalDocumentName"
+                             ng-click="download(cs7.bmpReportDoc.uniqueDocumentName, cs7.bmpReportDoc.originalDocumentName)">{{ cs7.bmpReportDoc.originalDocumentName }}
                             <button ng-click="cs7.bmpReportDoc = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
                         <br/>

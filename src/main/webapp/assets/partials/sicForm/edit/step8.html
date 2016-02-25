@@ -420,7 +420,8 @@
                             <input type="submit" class="btn default" value="Upload" ng-click="supportDoc = saveUploadedFile(supportDoc, project.supportDocs)">
                         </div>
 
-                        <div id="selectedItem" ng-repeat="file in project.supportDocs">{{ file.originalDocumentName }}
+                        <div id="selectedItem" ng-repeat="file in project.supportDocs"
+                             ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                             <button ng-click="deleteByIndex($index, cs1.guideFiles)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         </div>
                     </div>

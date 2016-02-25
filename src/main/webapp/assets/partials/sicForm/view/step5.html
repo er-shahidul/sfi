@@ -34,7 +34,7 @@
                     <input type="submit" class="btn default" value="Upload" ng-click="mechanismDoc = saveUploadedFile(mechanismDoc, cs5.mechanismDoc, true)">
                 </div>
 
-                <div id="selectedItem" ng-show="cs5.mechanismDoc.originalDocumentName">{{ cs5.mechanismDoc.originalDocumentName }}</div>
+                <div id="selectedItem" ng-show="cs5.mechanismDoc.originalDocumentName" ng-click="download(cs5.mechanismDoc.uniqueDocumentName, cs5.mechanismDoc.originalDocumentName)">{{ cs5.mechanismDoc.originalDocumentName }}</div>
             </div>
             <br>
         </div>
@@ -285,7 +285,7 @@
                                 {{ item.circumstanceDescription }}
                             </div>
                             <br/>
-                            <div id="selectedItem" ng-show="item.circumstancesDoc.originalDocumentName">{{ item.circumstancesDoc.originalDocumentName }}</div>
+                            <div id="selectedItem" ng-show="item.circumstancesDoc.originalDocumentName" ng-click="download(item.circumstancesDoc.uniqueDocumentName, item.circumstancesDoc.originalDocumentName)">{{ item.circumstancesDoc.originalDocumentName }}</div>
                         </td>
                     </tr>
                     <tr>
@@ -337,7 +337,8 @@
                             </div>
 
 
-                            <div id="selectedItem" ng-show="standard2010.circumstancesDoc.originalDocumentName">{{ standard2010.circumstancesDoc.originalDocumentName }}
+                            <div id="selectedItem" ng-show="standard2010.circumstancesDoc.originalDocumentName"
+                                 ng-click="download(standard2010.circumstancesDoc.uniqueDocumentName, standard2010.circumstancesDoc.originalDocumentName)">{{ standard2010.circumstancesDoc.originalDocumentName }}
                             </div>
                             <br/>
                             <p class="myButton pull-right"  ng-click="standard2010 = addStandard('standard2010', standard2010, cs5.standardObjectives2010)"><b><u>+ Add Another Line</u></b></p>

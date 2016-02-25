@@ -46,7 +46,7 @@
                             </div>
 
 
-                            <div id="selectedItem" ng-show="story.originalDocumentName" >{{ story.originalDocumentName }}
+                            <div id="selectedItem" ng-show="story.originalDocumentName" ng-click="download(story.uniqueDocumentName, story.originalDocumentName)"  >{{ story.originalDocumentName }}
                                 <button ng-click="story.originalDocumentName = '' ; story.uniqueDocumentName = '' ;" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 

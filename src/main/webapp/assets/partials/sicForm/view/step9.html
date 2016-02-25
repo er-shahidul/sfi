@@ -63,7 +63,8 @@
                             </div>
                             <div class="text-right" ng-show="doc1.originalDocumentName"></div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrPrinted.originalDocumentName">{{ cs9.supportDocLastYrPrinted.originalDocumentName }}
+                            <div id="selectedItem" ng-show="cs9.supportDocLastYrPrinted.originalDocumentName"
+                                 ng-click="download(cs9.supportDocLastYrPrinted.uniqueDocumentName, cs9.supportDocLastYrPrinted.originalDocumentName)">{{ cs9.supportDocLastYrPrinted.originalDocumentName }}
                             </div>
                         </div>
                     </li>
@@ -103,7 +104,8 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="doc2 = saveUploadedFile(doc2, cs9.supportDocLastYrAdvTV, true)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvTV.originalDocumentName">{{ cs9.supportDocLastYrAdvTV.originalDocumentName }}
+                            <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvTV.originalDocumentName"
+                                 ng-click="download(cs9.supportDocLastYrAdvTV.uniqueDocumentName, cs9.supportDocLastYrAdvTV.originalDocumentName)">{{ cs9.supportDocLastYrAdvTV.originalDocumentName }}
                             </div>
                         </div>
                     </li>
@@ -143,7 +145,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="doc3 = saveUploadedFile(doc3, cs9.supportDocLastYrAdvPrinted, true)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvPrinted.originalDocumentName">{{ cs9.supportDocLastYrAdvPrinted.originalDocumentName }}
+                            <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvPrinted.originalDocumentName" ng-click="download(cs9.supportDocLastYrAdvPrinted.uniqueDocumentName, cs9.supportDocLastYrAdvPrinted.originalDocumentName)">{{ cs9.supportDocLastYrAdvPrinted.originalDocumentName }}
                             </div>
                         </div>
 
@@ -184,7 +186,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="doc4 = saveUploadedFile(doc4, cs9.supportDocLastYrTradeshow, true)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrTradeshow.originalDocumentName">{{ cs9.supportDocLastYrTradeshow.originalDocumentName }}
+                            <div id="selectedItem" ng-show="cs9.supportDocLastYrTradeshow.originalDocumentName" ng-click="download(cs9.supportDocLastYrTradeshow.uniqueDocumentName, cs9.supportDocLastYrTradeshow.originalDocumentName)">{{ cs9.supportDocLastYrTradeshow.originalDocumentName }}
                             </div>
                         </div>
                     </li>
@@ -224,7 +226,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="doc5 = saveUploadedFile(doc5, cs9.supportDocLastYrEventSponsor, true)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrEventSponsor.originalDocumentName" >{{ cs9.supportDocLastYrEventSponsor.originalDocumentName }}
+                            <div id="selectedItem" ng-show="cs9.supportDocLastYrEventSponsor.originalDocumentName" ng-click="download(cs9.supportDocLastYrEventSponsor.uniqueDocumentName, cs9.supportDocLastYrEventSponsor.originalDocumentName)">{{ cs9.supportDocLastYrEventSponsor.originalDocumentName }}
                             </div>
                         </div>
                     </li>
@@ -264,7 +266,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="doc6 = saveUploadedFile(doc6, cs9.supportDocLastYrSocialMedia, true)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrSocialMedia.originalDocumentName">{{ cs9.supportDocLastYrSocialMedia.originalDocumentName }}
+                            <div id="selectedItem" ng-show="cs9.supportDocLastYrSocialMedia.originalDocumentName" ng-click="download(cs9.supportDocLastYrSocialMedia.uniqueDocumentName, cs9.supportDocLastYrSocialMedia.originalDocumentName)">{{ cs9.supportDocLastYrSocialMedia.originalDocumentName }}
                             </div>
                         </div>
                     </li>
@@ -304,7 +306,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="doc7 = saveUploadedFile(doc7, cs9.supportDocLastYrVideo, true)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrVideo.originalDocumentName">{{ cs9.supportDocLastYrVideo.originalDocumentName }}
+                            <div id="selectedItem" ng-show="cs9.supportDocLastYrVideo.originalDocumentName" ng-click="download(cs9.supportDocLastYrVideo.uniqueDocumentName, cs9.supportDocLastYrVideo.originalDocumentName)">{{ cs9.supportDocLastYrVideo.originalDocumentName }}
                             </div>
                         </div>
                     </li>
@@ -345,7 +347,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="doc8 = saveUploadedFile(doc8, cs9.supportDocLastYrOther, true)">
                             </div>
 
-                            <div id="selectedItem" >{{ cs9.supportDocLastYrOther.originalDocumentName }}
+                            <div id="selectedItem" ng-click="download(cs9.supportDocLastYrOther.uniqueDocumentName, cs9.supportDocLastYrOther.originalDocumentName)">{{ cs9.supportDocLastYrOther.originalDocumentName }}
                             </div>
                         </div>
                     </li>
@@ -397,7 +399,7 @@
                             </div>
 
 
-                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrPrinted" >{{ file.originalDocumentName }}
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrPrinted" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                             </div>
 
 
@@ -439,7 +441,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc2 = saveUploadedFile(curDoc2, cs9.supportDocCurrentYrAdvTV )">
                             </div>
 
-                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrAdvTV" >{{ file.originalDocumentName }}
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrAdvTV" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                             </div>
 
 
@@ -481,7 +483,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc3 = saveUploadedFile(curDoc3, cs9.supportDocCurrentYrAdvPrinted )">
                             </div>
 
-                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrAdvPrinted" >{{ file.originalDocumentName }}
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrAdvPrinted" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                             </div>
 
 
@@ -524,7 +526,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc4 = saveUploadedFile(curDoc4, cs9.supportDocCurrentYrTradeshow )">
                             </div>
 
-                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrTradeshow" >{{ file.originalDocumentName }}
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrTradeshow" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)" >{{ file.originalDocumentName }}
                             </div>
 
                         </div>
@@ -566,7 +568,7 @@
                             </div>
 
 
-                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrEventSponsor" >{{ file.originalDocumentName }}
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrEventSponsor" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                             </div>
 
                         </div>
@@ -607,7 +609,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc6 = saveUploadedFile(curDoc6, cs9.supportDocCurrentYrSocialMedia )">
                             </div>
 
-                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrSocialMedia" >{{ file.originalDocumentName }}
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrSocialMedia" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
 
                             </div>
 
@@ -649,7 +651,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc7 = saveUploadedFile(curDoc7, cs9.supportDocCurrentYrVideo )">
                             </div>
 
-                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrVideo" >{{ file.originalDocumentName }}
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrVideo" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                             </div>
                         </div>
                     </li>
@@ -691,7 +693,7 @@
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc8 = saveUploadedFile(curDoc8, cs9.supportDocCurrentYrOther )">
                             </div>
 
-                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrOther" >{{ file.originalDocumentName }}
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrOther" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                                 
                             </div>
                         </div>

@@ -51,7 +51,7 @@
 
                 </div>
 
-                <div id="selectedItem" ng-repeat="file in cs1.guideFiles">{{ file.originalDocumentName }}</div>
+                <div id="selectedItem" ng-repeat="file in cs1.guideFiles"   ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}</div>
             </div>
         </div>
         <br>
@@ -126,7 +126,7 @@
                     <input readonly  type="submit" class="btn default" value="Upload" ng-click="contactFile = saveUploadedFile(contactFile, cs1.contactFiles)">
                 </div>
 
-                <div id="selectedItem" ng-repeat="file in cs1.contactFiles">{{ file.originalDocumentName }}
+                <div id="selectedItem" ng-repeat="file in cs1.contactFiles" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                     <button ng-click="deleteByIndex($index, cs1.contactFiles)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                 </div>
                 <br>
