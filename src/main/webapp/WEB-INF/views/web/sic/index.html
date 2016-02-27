@@ -52,14 +52,15 @@
             <div class="col-xs-3" id="formActions">
 
                 <div class="formActionsNotice" style="width:100%">
-                    <span th:if="${status.getId() != 1}">
-                       <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> days until form is due!</span>
-                        <!--<span ng-show="daysLeft &lt; 0" class="dueDate ng-cloak">Oh no! Your form is <span th:text=" - ${{ days_until }}"></span> days overdue!</span> days overdue!-->
+
+                    <span th:if="${status.getId() == 2}">
+                        <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> days until form is due!</span>
                         <span ng-show="daysLeft &lt; 0" class="dueDate">{{textDaysLeft}}</span>
                     </span>
-                     <span th:if="${status.getId() == 1}">
+
+                    <span th:if="${status.getId() == 1}">
                          <span>Due March 31 2016</span>
-                     </span>
+                    </span>
 
                     <br/>
                     <a href="mailto: amy.doty@sfiprogram.org" ng-class="{'dueDate':  daysLeft &lt; 0}">Need help?</a>
@@ -236,6 +237,7 @@
             $rootScope.company  = company;
             $rootScope.unit     = company.areaUnit.shortCode;
             $rootScope.form     = form;
+            $rootScope.isAdmin  = isAdmin;
             $rootScope.formInfo = formData;
             $rootScope.daysLeft = daysLeft;
             $rootScope.textDaysLeft = "Oh no! Your form is -"+ daysLeft+ " days overdue!";

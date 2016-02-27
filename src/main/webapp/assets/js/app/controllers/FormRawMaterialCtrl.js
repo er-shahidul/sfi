@@ -330,6 +330,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
                     $scope.isDataDirty = false;
                     $scope.cs6Form.$setPristine();
                     $rootScope.form.cs6 = response.data;
+                    $scope.errors = $rootScope.form.cs6.errors;
                     $scope.cs6 = angular.copy($rootScope.form.cs6);
                     $scope.init();
                     Message.success('Section successfully saved', '.msg-cont');

@@ -32,6 +32,7 @@ sfiFormApp
                     $scope.cs10Form.$setPristine();
                     $rootScope.form.cs10 = response.data;
                     $scope.cs10 = angular.copy($rootScope.form.cs10);
+                    $scope.errors = $rootScope.form.cs10.errors;
                     Message.success('Section successfully saved', '.msg-cont');
 
                     $rootScope.updateFormMeta();

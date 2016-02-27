@@ -118,15 +118,11 @@ sfiSicApp
 
     $scope.canSubmit = function(){
 
-//        var form = $rootScope.form;
-//
-//        if(!form.isSaved){
-//            return false;
-//        }
-//
-//        if(form.status == 3 && !form.isAdmin){
-//            return false;
-//        }
+        var form = $rootScope.formInfo;
+
+        if(form.status.id == 3 && !$rootScope.isAdmin){
+            return false;
+        }
 
         var form = $rootScope.formInfo;
         
