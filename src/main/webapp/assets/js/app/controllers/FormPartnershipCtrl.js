@@ -230,6 +230,7 @@ sfiFormApp
 
                 $rootScope.form = response.data;
                 $scope.cs3 = angular.copy($rootScope.form.cs3);
+                $scope.errors = $rootScope.form.cs3.errors;
                 $scope.errors = $scope.cs3.errors;
 
                 Message.success('Section successfully saved', '.msg-cont');

@@ -347,6 +347,7 @@ sfiFormApp
                         $scope.isDataDirty  = false;
                         $rootScope.form.cs5 = response.data;
                         $scope.cs5 = angular.copy($rootScope.form.cs5);
+                        $scope.errors = $rootScope.form.cs5.errors;
                         Message.success('Section successfully saved', '.msg-cont');
                         $rootScope.updateFormMeta();
                         $rootScope.setProgress();
