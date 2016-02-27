@@ -32,6 +32,7 @@ sfiFormApp.controller('FormEmergingIssuesCtrl',
                         $scope.cs7Form.$setPristine();
                         $rootScope.form.cs7 = response.data;
                         $scope.cs7 = angular.copy($rootScope.form.cs7);
+                        $scope.errors = $rootScope.form.cs7.errors;
                         Message.success('Section successfully saved', '.msg-cont');
 
                         $rootScope.updateFormMeta();

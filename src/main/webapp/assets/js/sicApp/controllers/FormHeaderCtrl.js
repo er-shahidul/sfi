@@ -124,6 +124,12 @@ sfiSicApp
             return false;
         }
 
+        var form = $rootScope.formInfo;
+        
+        if (form.status.id == 3 && !$rootScope.isAdmin){
+            return false;
+        }
+
         return true;
     }
 

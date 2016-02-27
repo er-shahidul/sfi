@@ -311,6 +311,7 @@
         };
 
         sfiFormApp.run(function($rootScope) {
+            $rootScope.isAdmin  = isAdmin;
             $rootScope.mode     = mode;
             $rootScope.company  = company;
             $rootScope.unit     = company.areaUnit.shortCode;
