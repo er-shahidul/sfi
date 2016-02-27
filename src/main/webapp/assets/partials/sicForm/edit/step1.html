@@ -421,7 +421,7 @@
                     </div>
                     <div class="col-lg-8 input-size">
                         <input class="form-control" type="text" ng-model="cs1.sicChairPhone"
-                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Please enter a valid phone number" customerror>
+                               ng-pattern="/^[0-9\-().\s]*$/" pattern-msg="Please enter a valid phone number" customerror>
                     </div>
                 </div>
                 <div class="pading-botom">
@@ -499,7 +499,7 @@
                     </div>
                     <div class="col-lg-8 input-size" ng-class="{'has-error' : cs1Form.sicCoordinatorPhone.$invalid }">
                         <input class="form-control" type="text" ng-model="cs1.sicCoordinatorPhone"
-                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Please enter a valid phone number" customerror>
+                               ng-pattern="/^[0-9\-().\s]*$/" pattern-msg="Please enter a valid phone number" customerror>
                     </div>
                 </div>
                 <div class="pading-botom">
