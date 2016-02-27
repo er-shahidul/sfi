@@ -20,14 +20,22 @@ sfiSicApp
             $scope.event = {}
         }
 
-        $scope.deleteNeighborEvents = function(index){
-            //alert(1);
-            console.log(index);
-            if(confirm("Are you sure you want to delete this entry?")){
-                $scope.cs2.sicNeighborEvents.splice(index, 1);
-            }
+        $scope.deleteNeighborIndex = null;
 
+        $scope.deleteNeighborEvents = function(index){
+
+            $('#delete1').modal();
+            $scope.deleteNeighborIndex = index;
         }
+
+        $scope.deleteNeighborConfirm = function(){
+
+            if($scope.deleteNeighborIndex != null){
+                $scope.cs2.sicNeighborEvents.splice($scope.deleteNeighborIndex, 1);
+                $scope.deleteNeighborIndex = null;
+            }
+        }
+
 
         $scope.cs2.supportCurrency   = $scope.cs2.supportCurrency || 1;
         $scope.cs2.committeeCurrency = $scope.cs2.committeeCurrency || 1;
