@@ -18,7 +18,7 @@ public class SicCs7ViewModel extends BaseViewModel {
     private String sfiFiberSourcingBmpSource;
     private String sfiForestManagementBmpSource;
     private String sfiNonCertifiedBmpSource;
-    @NotNull(message = "{sic.cs7.receiveInquiryLetter}")
+    @NotNull(message = "{sic.cs7.monitorBMPCompliance}")
     private Boolean monitorBMPCompliance;
     @NotNull(message = "{sic.cs7.sicProgramCertifiedDesignation}")
     private Boolean sicProgramCertifiedDesignation;

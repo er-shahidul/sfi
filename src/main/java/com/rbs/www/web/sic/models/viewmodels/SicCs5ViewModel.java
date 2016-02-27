@@ -37,7 +37,7 @@ public class SicCs5ViewModel extends BaseViewModel {
     @NotNull(message = "{sic.cs5.receiveInquiryPhone}")
     private Boolean receiveInquiryPhone;
     private Boolean receiveInquiryWebsite;
-    @NotNull(message = "{sic.cs5.receiveInquiryLetter}")
+//    @NotNull(message = "{sic.cs5.receiveInquiryLetter}")
     private Boolean receiveInquiryLetter;
     private Boolean receiveInquiryOther;
 

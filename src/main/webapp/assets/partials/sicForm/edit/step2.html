@@ -216,7 +216,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="Provide further details in Section 3">Other Youth Education/Outreach</span></td>
+                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title=" “Provide further details in Section 3.” ">Other Youth Education/Outreach</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending5.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending5" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending5">
                         </td>
@@ -236,7 +236,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="Provide further details in Section 3">Other Community outreach activities</span></td>
+                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title=" “Provide further details in Section 3.” ">Other Community outreach activities</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending6.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending6" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending6">
                         </td>
@@ -276,7 +276,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td> <span tooltip data-placement="top" data-container="body" data-html="true"  data-title="includes research, watershed protection, or water conservation projects”">Water Quality Protection</span></td>
+                        <td> <span tooltip data-placement="top" data-container="body" data-html="true"  data-title="“Includes research, watershed protection, or water conservation projects”">Water Quality Protection</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending8.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending8" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending8">
                         </td>
@@ -296,7 +296,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="Provide further details in Section 3">Conservation Research</span></td>
+                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="“Provide further details in Section 3.”">Conservation Research</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending9.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending9" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending9">
                         </td>
@@ -316,7 +316,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="Provide further details in Section 3">Other Research</span></td>
+                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="“Provide further details in Section 3.”">Other Research</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending10.$invalid }">
                             <input class="form-control" style="width: 80px;" name="directSpending10" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending10">
                         </td>
@@ -469,12 +469,12 @@
     </form>
         <ng-form name="eventForm">
         <div class="col-lg-12" style="padding-top: 30px;" ng-show="cs2.isSicNeighborEvents">
-            <div class="col-lg-8">
+            <div class="col-lg-8 fm-stl">
                 <div>
                     <div class="form-inline">
                         <label>Which SIC:</label>
                         <select class="form-control" ng-model="event.whichSic">
-                            <option ng-selected="!event.whichSic"><-select One-></option>
+                            <option ng-selected="!event.whichSic">< Select One ></option>
                             <option ng-repeat="sic in sicList | orderBy:'id':reverse" ng-value="1*$index"> {{ sic.value }}</option>
                         </select>
                     </div>

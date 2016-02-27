@@ -30,15 +30,17 @@ public class Cs2UsaValidator implements ConstraintValidator<Cs2Usa, Cs2ViewModel
     }
 
     private boolean evaluate(Cs2ViewModel model) {
-        return model.getUsaPublicForestlandOwnMng() != null &&
-                model.getUsaPrivateForestlandOwnMng() != null &&
-                model.getUsaPrivateTotalAreaOwnOrManage() != null &&
-                model.getUsaPrivateTotalAreaCertified() != null &&
-                model.getUsaPrivateAreaManagedForPublic() != null &&
-                model.getUsaPrivateAreaCertifiedForPublic() != null &&
+
+        return (model.getUsaPublicForestlandOwnMng() != null &&
                 model.getUsaPublicTotalAreaOwnOrManage() != null &&
                 model.getUsaPublicTotalAreaCertified() != null &&
                 model.getUsaPublicAreaManagedForPublic() != null &&
-                model.getUsaPublicAreaCertifiedForPublic() != null;
+                model.getUsaPublicAreaCertifiedForPublic() != null) ||
+
+                (model.getUsaPrivateForestlandOwnMng() != null &&
+                model.getUsaPrivateTotalAreaOwnOrManage() != null &&
+                model.getUsaPrivateTotalAreaCertified() != null &&
+                model.getUsaPrivateAreaManagedForPublic() != null &&
+                model.getUsaPrivateAreaCertifiedForPublic() != null) ;
     }
 }

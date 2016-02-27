@@ -13,7 +13,7 @@
             <div class="form-group"
                  ng-class="{'has-error has-feedback':  cs1Form.companyWebsite.$invalid}">
 
-                <label>Company website</label>
+                <label>Organization website (e.g. www.google.com)</label>
                 <input type="text" readonly name="companyWebsite" class="form-control"
                        ng-model="cs1.companyWebsite" ng-maxlength="200"
                        ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
@@ -23,7 +23,7 @@
             <!-- Number of employees -->
             <div class="form-group">
 
-                <label>Number of employees</label>
+                <label>Number of employees (enter a number)</label>
 
                 <!-- v2 -->
                 <div class="form-horizontal">
@@ -59,7 +59,7 @@
 
             <!-- Company description -->
             <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.companyDesc.$invalid}">
-                <label>Company description</label>
+                <label>Short organization profile: (max. 650 words)</label>
                 <textarea readonly  class="form-control" name="companyDesc"
                           ng-model="cs1.companyDesc" ng-maxlength="4000" max-word-count="650" customerror
                           tooltip data-placement="right" data-container="body"

@@ -1176,6 +1176,12 @@ display: -webkit-flex; /* Safari */
     display: flex;
     align-items: flex-start;
     }
+
+
+.tooltip-inner {
+    min-width:220px;
+}
+
 /*
 .tooltip-inner {
     background-color: #9A9A9A;
