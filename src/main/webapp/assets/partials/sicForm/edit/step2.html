@@ -474,7 +474,7 @@
                     <div class="form-inline">
                         <label>Which SIC:</label>
                         <select class="form-control" ng-model="event.whichSic">
-                            <option ng-selected="!event.whichSic"><-select One-></option>
+                            <option ng-selected="!event.whichSic">< Select One ></option>
                             <option ng-repeat="sic in sicList | orderBy:'id':reverse" ng-value="1*$index"> {{ sic.value }}</option>
                         </select>
                     </div>
