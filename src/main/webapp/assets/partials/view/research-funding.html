@@ -695,20 +695,35 @@
                             <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">May SFI use this project as an example in communications, to help convey the exemplary work of SFI Program Participants in
                                 the areas of conservation and community engagement?</span><br/>
 
-                            <div>
-                                <input type="radio" disabled   name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>
+                            <div style="padding-left: 15px;">
+                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="1"/>
                                 <span class="radioLabel">Share – with our organization’s name</span>
                             </div>
 
-                            <div>
-                                <input type="radio" disabled   name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />
+                            <div style="padding-left: 15px;">
+                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="2" />
                                 <span class="radioLabel">Share – don’t use our organization’s name</span>
                             </div>
 
-                            <div>
-                                <input type="radio" disabled   name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>
-                                <span class="radioLabel">Only use in aggregate</span>
+                            <div style="padding-left: 15px;">
+                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="3"/>
+                                <span class="radioLabel">Please don’t share </span>
                             </div>
+
+                            <!--<div>-->
+                                <!--<input type="radio" disabled   name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>-->
+                                <!--<span class="radioLabel">Share – with our organization’s name</span>-->
+                            <!--</div>-->
+
+                            <!--<div>-->
+                                <!--<input type="radio" disabled   name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />-->
+                                <!--<span class="radioLabel">Share – don’t use our organization’s name</span>-->
+                            <!--</div>-->
+
+                            <!--<div>-->
+                                <!--<input type="radio" disabled   name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>-->
+                                <!--<span class="radioLabel">Only use in aggregate</span>-->
+                            <!--</div>-->
 
                         </div>
 
