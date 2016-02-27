@@ -466,7 +466,7 @@
                 <div>
                     <div class="form-inline">
                         Which SIC:
-                        <select readonly  class="form-control" ng-model="event.whichSic">
+                        <select disabled   class="form-control" ng-model="event.whichSic">
                             <option ng-selected="!event.whichSic">< Select One ></option>
                             <option ng-repeat="sic in sicList" ng-value="1 * $index"> {{ sic }}</option>
                         </select>

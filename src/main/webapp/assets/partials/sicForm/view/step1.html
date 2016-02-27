@@ -89,7 +89,7 @@
 
                 <div style="padding-bottom: 20px">
                     <p><b>Please choose the best description of how the SFI Implementation Committee (SIC) is organized? (new!)</b></p>
-                    <select readonly  style="width: 560px;" class="form-control" ng-model="$scope.sicOrgDescription">
+                    <select disabled   style="width: 560px;" class="form-control" ng-model="$scope.sicOrgDescription">
                         <option ng-selected="!$scope.sicOrgDescription">Select</option>
                         <option value="1">Fully independent (IRS or state designated non-profit status)</option>
                         <option value="2">Semi-autonomous with services or support provided from local forestry association, i.e. independent sub-committee</option>
@@ -540,7 +540,7 @@
                         <div class="row" ng-repeat="meeting in cs1.meetingList" style="margin-top:12px;">
                             <div class="col-md-6">
                                 <p ng-if="$index == 0"><b>Meeting Type</b></p>
-                                <select readonly  class="form-control" name="meetingType" ng-model="meeting.type">
+                                <select disabled   class="form-control" name="meetingType" ng-model="meeting.type">
                                     <option ng-selected="!meeting.type">Select a Meeting Type</option>
                                     <option value="1">In-person</option>
                                     <option value="2">Conference Call</option>
@@ -589,14 +589,14 @@
                             </div>
                             <div class="col-md-3">
                                 <p ng-if="$index == 0" class="margin-top-30"><b>Location</b></p>
-                                <select readonly  class="form-control" ng-model="meeting.location">
+                                <select disabled   class="form-control" ng-model="meeting.location">
                                     <option ng-selected="!meeting.location">State/Province</option>
                                     <option ng-repeat="region in regions">{{ region.name }}</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <p ng-if="$index == 0" style="padding-top:13px;"><b>SIC involvement, if not a committee meeting?</b></p>
-                                <select readonly  class="form-control" ng-model="meeting.involvement" >
+                                <select disabled   class="form-control" ng-model="meeting.involvement" >
                                     <option ng-selected="!meeting.involvement">Involvement Type</option>
                                     <option value="1">Attending</option>
                                     <option value="2">Sponsoring</option>
