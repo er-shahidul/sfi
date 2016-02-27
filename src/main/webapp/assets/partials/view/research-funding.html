@@ -475,6 +475,7 @@
                                 <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
 
                                     <input type="text"
+                                           readonly
                                            class="form-control"
                                            name="organizationListConservation2"
                                            ng-model="conservationModel2"
@@ -594,6 +595,7 @@
                                 <div class="col-sm-8 nopadding">
                                     <div class='input-group date datetimepicker' datetimepicker>
                                         <input type='text' class="form-control datepicker" name="start_date"
+                                               readonly
                                                ng-required="isDirty()" customerror
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                                pattern-msg="Please enter a valid date(YYYY-MM-DD)"
@@ -612,6 +614,7 @@
                                 <div class="col-sm-8 nopadding">
                                     <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
                                         <input type='text' class="form-control" name="end_date" customerror
+                                               readonly
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                                pattern-msg="Please enter a valid date(YYYY-MM-DD)"
                                                ng-model="project.endDate">
@@ -696,17 +699,17 @@
                                 the areas of conservation and community engagement?</span><br/>
 
                             <div style="padding-left: 15px;">
-                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="1"/>
+                                <input disabled type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="1"/>
                                 <span class="radioLabel">Share – with our organization’s name</span>
                             </div>
 
                             <div style="padding-left: 15px;">
-                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="2" />
+                                <input disabled type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="2" />
                                 <span class="radioLabel">Share – don’t use our organization’s name</span>
                             </div>
 
                             <div style="padding-left: 15px;">
-                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="3"/>
+                                <input disabled type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="3"/>
                                 <span class="radioLabel">Please don’t share </span>
                             </div>
 
