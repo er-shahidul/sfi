@@ -167,7 +167,7 @@ sfiSicApp
             { id: 10 , value: 'Forestry Research, Science and Technology'},
             { id: 11 , value: 'Landowner Outreach'},
             { id: 12 , value: 'Legal and Requlatory Compliance'},
-            { id: 13 , value: 'Management of Visual Quslity and Recreation Benefits'},
+            { id: 13 , value: 'Management of Visual Quality and Recreation Benefits'},
             { id: 14 , value: 'Management Review and Continual Improvement'},
             { id: 15 , value: 'Protection and Maintenance of Water Resources'},
             { id: 16 , value: 'Protection of Special Sites'},
