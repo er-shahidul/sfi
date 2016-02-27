@@ -80,7 +80,7 @@
                  ng-class="{'has-error' : isDirty() && innerFrom.standardObject.$invalid }">
 
                 <label>SFI 2010-2014 Standard Objective most relevant to project (new!)</label>
-                <select class="form-control" name="standardObject"  customerror
+                <select disabled  class="form-control" name="standardObject"  customerror
                         ng-model="project.StandardObject">
                     <option value="0" ng-selected="!project.StandardObject">Please select</option>
                     <option ng-repeat="item in standObjective" value="{{item.cs3_sfiStandardObj}}">{{item.cs3_sfiStandardObjDesc}}</option>
@@ -89,7 +89,7 @@
 
             <div class="form-group">
                 <label>Select state(s)/province(s) for this project (new!)</label>
-                <select class="form-control" name="region"
+                <select disabled  class="form-control" name="region"
                         ng-model="project.regionItem" ng-change="addRegion()"
                         ng-options="region.name for region in regions track by region.id" >
                     <option value ng-selected="!project.regionItem">Please select</option>
@@ -208,7 +208,7 @@
                  ng-class="{'has-error' : isDirty() && innerFrom.estimated_cost.$invalid}">
 
                 <label>Estimated project cost</label>
-                <select class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
+                <select disabled  class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
                         ng-model="project.totalProjectCost">
                     <option value ng-selected="!project.totalProjectCost">Select estimated project cost</option>
                     <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>
@@ -224,7 +224,7 @@
                  ng-class="{'has-error' : isDirty() && innerFrom.org_contribution.$invalid}">
 
                 <label>Organization contribution</label>
-                <select class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
+                <select disabled  class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
                         ng-model="project.orgContribution">
                     <option value ng-selected="!project.orgContribution">Select organization contribution</option>
                     <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>

@@ -104,7 +104,7 @@
 
                                     <div class="padded" ng-show="cs1.ownsMngLandsInOther" ng-class="{'has-error has-feedback':  cs1.ownsMngLandsInOther && !cs1.ownsMngLandsOtherCountries.length}">
 
-                                        <select readonly class="form-control" ng-model="other1" ng-change="other1 = addOtherCountry(cs1.ownsMngLandsOtherCountries, other1)">
+                                        <select disabled  class="form-control" ng-model="other1" ng-change="other1 = addOtherCountry(cs1.ownsMngLandsOtherCountries, other1)">
                                             <option value="0">Select country</option>
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
@@ -148,7 +148,7 @@
 
                                     <div class="padded" ng-show="cs1.hasPrimaryOperMillsYardsInOther" ng-class="{'has-error has-feedback': cs1.hasPrimaryOperMillsYardsInOther && !cs1.primaryOperMillsYardsOtherCountries.length}">
 
-                                        <select readonly class="form-control" ng-model="other2" ng-change="other2 = addOtherCountry(cs1.primaryOperMillsYardsOtherCountries, other2)">
+                                        <select disabled  class="form-control" ng-model="other2" ng-change="other2 = addOtherCountry(cs1.primaryOperMillsYardsOtherCountries, other2)">
                                             <option value="0">Select country</option>
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
@@ -204,7 +204,7 @@
 
                                     <div class="padded" ng-show="cs1.hasSecondaryOperMillsYardsInOther" ng-class="{'has-error has-feedback':  cs1.hasSecondaryOperMillsYardsInOther && !cs1.secondaryOperMillsYardsOtherCountries.length}">
 
-                                        <select readonly class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs1.secondaryOperMillsYardsOtherCountries, other3)">
+                                        <select disabled  class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs1.secondaryOperMillsYardsOtherCountries, other3)">
                                             <option value="0">Select country</option>
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
@@ -229,7 +229,7 @@
                                data-title='Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products). This market information will help SFI identify organizations with a shared country interest whether to positively influence procurement policies and/or organize promotion of SFI products shipped outside the U.S.A. or Canada, e.g. to be featured in the 2020 Tokyo Games or the World Expo in Milan.'
                                 >Countries your organization sells into (new!)</label>
 
-                        <select readonly class="form-control"
+                        <select disabled  class="form-control"
                                 ng-model="other4"
                                 ng-change="other4 = addSellCountry(cs1.sellsCountries, other4)"
                                 tooltip data-placement="right" data-container="body"

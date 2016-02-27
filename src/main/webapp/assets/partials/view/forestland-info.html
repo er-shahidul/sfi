@@ -513,7 +513,7 @@
                 <tr ng-class="{'disabled' : !operateInOthers()}"  ng-repeat="other in cs2.outsideCountries" ng-form="innerForm">
 
                     <td ng-class="{'has-error': isDirty (other) && innerForm.otherItem1.$invalid}">
-                        <select readonly class="form-control" id="otherItem1" name="otherItem1" customerror
+                        <select disabled class="form-control" id="otherItem1" name="otherItem1" customerror
                                 ng-model="other.country.id"
                                 ng-disabled="!operateInOthers()">
                             <option value="" ng-selected="!other.country">Select Country</option>
@@ -548,7 +548,7 @@
                             <div class="floatright col-sm-7" ng-show="other.underCertifiedStandard"
                                  ng-class="{'has-error': isDirty (other) && innerForm.certificationBody.$invalid}">
 
-                                <select readonly class="form-control" name="standardType" ng-model="other.standardType"
+                                <select disabled class="form-control" name="standardType" ng-model="other.standardType"
                                         ng-disabled="!operateInOthers()"
                                         ng-required="other.underCertifiedStandard">
                                     <option value>Select Standard type</option>

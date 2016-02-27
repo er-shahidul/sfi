@@ -141,7 +141,7 @@
                                 <div ng-show="cs7.investResIfInve">
 
                                     <label>In what countries?</label>
-                                    <select readonly  class="form-control" name="select" disabled
+                                    <select  class="form-control" name="select" disabled
                                             ng-init="country1=0"
                                             ng-model="country1"
                                             ng-change="country1 = addCountry(cs7.investResCountries, country1)">
@@ -162,7 +162,7 @@
                             <br>
                             <div class="group2">
                                 <p>Anticipated year research will begin</p>
-                                <select readonly   class="form-control" disabled name="select" ng-model="cs7.planInvestRes_year">
+                                <select class="form-control" disabled name="select" ng-model="cs7.planInvestRes_year">
                                     <option value="0" ng-selected="!cs7.planInvestRes_year">Select Year</option>
                                     <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
                                             ng-value="{{year}}">{{year}}</option>
@@ -191,7 +191,7 @@
                                 <div ng-show="cs7.planInvestResIfPlan">
 
                                     <label>In what countries?</label>
-                                    <select readonly  class="form-control" name="select" disabled
+                                    <select class="form-control" name="select" disabled
                                             ng-init="country2=0"
                                             ng-model="country2"
                                             ng-change="country2 = addCountry(cs7.planInvestResCountries, country2)">
@@ -239,7 +239,7 @@
                                 <div class="group1" ng-show="cs7.planCommPlantIfPlanGE">
 
                                     <label>In what countries?</label>
-                                    <select readonly  class="form-control" name="select"
+                                    <select class="form-control" name="select"
                                             disabled
                                             ng-init="country3=0"
                                             ng-model="country3"

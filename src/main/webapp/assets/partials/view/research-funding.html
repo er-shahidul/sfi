@@ -365,7 +365,7 @@
                              ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
                             <span>SFI 2015-2019 Standard Objective most relevant to project</span>
-                            <select readonly  class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"
+                            <select disabled   class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"
                                     ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects)">
                                 <option value="0" ng-selected="!project.sfiStandard10">Please select</option>
                                 <option ng-repeat="item in standardObjects" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
@@ -381,7 +381,7 @@
                              ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
                             <span>SFI 2010-2014 Standard Objective most relevant to project</span>
-                            <select readonly  class="form-control" name="sfiStandard15" customerror ng-init="sfiStandard15 = 0"
+                            <select disabled   class="form-control" name="sfiStandard15" customerror ng-init="sfiStandard15 = 0"
                                     ng-model="sfiStandard15" ng-change="sfiStandard15 = addBucket(project.sfiStandard15, sfiStandard15, standardObjects)">
                                 <option value="0" ng-selected="!project.sfiStandard15">Please select</option>
                                 <option ng-repeat="item in standardObjects" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
@@ -394,7 +394,7 @@
 
                         <div class="form-group">
                             <span>Select state(s)/province(s) for this project (new!)</span>
-                            <select readonly  class="form-control" name="region" ng-init="regionModel = 0"
+                            <select disabled   class="form-control" name="region" ng-init="regionModel = 0"
                                     ng-model="regionModel" ng-change="regionModel = addBucket(project.projectLocations, regionModel, regions)">
                                 <option value="0" >Please select</option>
                                 <option ng-repeat="region in regions" ng-value={{region.id}}>{{region.name}}</option>
@@ -625,7 +625,7 @@
                              ng-class="{'has-error' : isDirty() && innerFrom.estimated_cost.$invalid}">
 
                             <span>Estimated project cost</span>
-                            <select readonly  class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
+                            <select disabled   class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
                                     ng-model="project.totalProjectCost">
                                 <option value ng-selected="!project.totalProjectCost">Select estimated project cost</option>
                                 <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>
@@ -641,7 +641,7 @@
                              ng-class="{'has-error' : isDirty() && innerFrom.org_contribution.$invalid}">
 
                             <span>Organization contribution</span>
-                            <select readonly  class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
+                            <select disabled   class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
                                     ng-model="project.orgContribution">
                                 <option value ng-selected="!project.orgContribution">Select organization contribution</option>
                                 <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>
