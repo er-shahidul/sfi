@@ -95,8 +95,8 @@
                     <option value ng-selected="!project.regionItem">Please select</option>
                 </select>
 
-                <div id="selectedItem" ng-repeat="regionId in project.locations">{{ regionName(regionId) }}
-                    <button ng-click="delRegion(regionId)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                <div id="selectedItem" ng-repeat="region in project.locations">{{ region.name }}
+                    <button ng-click="delRegion(region.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                 </div>
 
             </div>
