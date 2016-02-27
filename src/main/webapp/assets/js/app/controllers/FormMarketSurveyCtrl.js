@@ -254,7 +254,7 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
                 }
 
 
-                if(!$scope.producerIndex){
+                if($scope.producerIndex == null){
 
                     $scope.cs8.primaryProducers.push($scope.producer);
                 }
