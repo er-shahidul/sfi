@@ -777,7 +777,7 @@
                         <div id="valdfil">
                             <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted"
                                  ng-click="download(doc.projectUniqueDocumentName, doc.projectOriginalDocumentName)" >&nbsp;{{ doc.projectOriginalDocumentName }}&nbsp;
-                                <button ng-click="delSupportDoc($index)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="delSupportDoc($index);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
 

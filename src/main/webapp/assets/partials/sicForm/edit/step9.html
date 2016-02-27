@@ -76,7 +76,7 @@
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrPrinted.originalDocumentName"
                                  ng-click="download(cs9.supportDocLastYrPrinted.uniqueDocumentName, cs9.supportDocLastYrPrinted.originalDocumentName)">{{ cs9.supportDocLastYrPrinted.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrPrinted = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="cs9.supportDocLastYrPrinted = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -128,7 +128,7 @@
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvTV.originalDocumentName"
                                  ng-click="download(cs9.supportDocLastYrAdvTV.uniqueDocumentName, cs9.supportDocLastYrAdvTV.originalDocumentName)">{{ cs9.supportDocLastYrAdvTV.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrAdvTV = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="cs9.supportDocLastYrAdvTV = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -180,7 +180,7 @@
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvPrinted.originalDocumentName"
                                  ng-click="download(cs9.supportDocLastYrAdvPrinted.uniqueDocumentName, cs9.supportDocLastYrAdvPrinted.originalDocumentName)">{{ cs9.supportDocLastYrAdvPrinted.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrAdvPrinted = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="cs9.supportDocLastYrAdvPrinted = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
 
@@ -233,7 +233,7 @@
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrTradeshow.originalDocumentName"
                                  ng-click="download(cs9.supportDocLastYrTradeshow.uniqueDocumentName, cs9.supportDocLastYrTradeshow.originalDocumentName)">{{ cs9.supportDocLastYrTradeshow.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrTradeshow = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="cs9.supportDocLastYrTradeshow = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -285,7 +285,7 @@
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrEventSponsor.originalDocumentName"
                                  ng-click="download(cs9.supportDocLastYrEventSponsor.uniqueDocumentName, cs9.supportDocLastYrEventSponsor.originalDocumentName)">{{ cs9.supportDocLastYrEventSponsor.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrEventSponsor = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="cs9.supportDocLastYrEventSponsor = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -337,7 +337,7 @@
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrSocialMedia.originalDocumentName"
                                  ng-click="download(cs9.supportDocLastYrSocialMedia.uniqueDocumentName, cs9.supportDocLastYrSocialMedia.originalDocumentName)">{{ cs9.supportDocLastYrSocialMedia.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrSocialMedia = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="cs9.supportDocLastYrSocialMedia = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -389,7 +389,7 @@
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrVideo.originalDocumentName"
                                  ng-click="download(cs9.supportDocLastYrVideo.uniqueDocumentName, cs9.supportDocLastYrVideo.originalDocumentName)">{{ cs9.supportDocLastYrVideo.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrVideo = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="cs9.supportDocLastYrVideo = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -443,7 +443,7 @@
 
                             <div id="selectedItem" ng-show="cs9.supportDocLastYrOther.originalDocumentName"
                                  ng-click="download(cs9.supportDocLastYrOther.uniqueDocumentName, cs9.supportDocLastYrOther.originalDocumentName)">{{ cs9.supportDocLastYrOther.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrVideo = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="cs9.supportDocLastYrVideo = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
                             <!--<div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrOther" >{{ file.originalDocumentName }}-->
@@ -510,7 +510,7 @@
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrPrinted"
                                  ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrPrinted)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrPrinted);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
 
@@ -564,7 +564,7 @@
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrAdvTV"
                                  ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrAdvTV)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrAdvTV);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
 
@@ -618,7 +618,7 @@
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrAdvPrinted"
                                  ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrAdvPrinted)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrAdvPrinted);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
 
@@ -673,7 +673,7 @@
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrTradeshow"
                                  ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrTradeshow)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrTradeshow);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
                         </div>
@@ -726,7 +726,7 @@
 
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrEventSponsor" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrEventSponsor)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrEventSponsor);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
                         </div>
@@ -778,7 +778,7 @@
                             </div>
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrSocialMedia" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrSocialMedia)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrSocialMedia);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
                         </div>
@@ -830,7 +830,7 @@
                             </div>
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrVideo" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrVideo)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrVideo);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -881,7 +881,7 @@
                             </div>
 
                             <div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrOther" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrOther)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrOther);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>

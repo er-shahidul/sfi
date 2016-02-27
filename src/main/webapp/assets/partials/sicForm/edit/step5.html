@@ -41,7 +41,7 @@
 
                 <div id="selectedItem" ng-show="cs5.mechanismDoc.originalDocumentName"
                      ng-click="download(cs5.mechanismDoc.uniqueDocumentName, cs5.mechanismDoc.originalDocumentName)">{{ cs5.mechanismDoc.originalDocumentName }}
-                    <button ng-click="cs5.mechanismDoc = {}" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    <button ng-click="cs5.mechanismDoc = {}; $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                 </div>
             </div>
             <br>
