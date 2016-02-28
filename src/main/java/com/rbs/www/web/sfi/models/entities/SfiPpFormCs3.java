@@ -39,15 +39,15 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Type(type="text")
     private String projectDescr;
 
-    @OneToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective.class, fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective2015.class, fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
     @JoinTable(name = "sfi_pp_form_cs3_project_standard_objectives_sfiStandard10",
             joinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_projects_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_project_standard_objectives_id", referencedColumnName = "id")})
     private Set<SfiPpFormCs3ProjectStandardObjective2015> sfiStandard15;
 
-    @OneToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective2015.class, fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective.class, fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
     @JoinTable(name = "sfi_pp_form_cs3_project_standard_objectives_sfiStandard15",
             joinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_projects_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_project_standard_objectives_id", referencedColumnName = "id")})
