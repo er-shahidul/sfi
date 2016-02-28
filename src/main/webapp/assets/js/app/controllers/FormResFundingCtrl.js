@@ -164,6 +164,10 @@ sfiFormApp
                 item[key] = val;
             });
 
+            item.sfiStandard10 = _.sortBy(item.sfiStandard10, 'id');
+            item.sfiStandard15 = _.sortBy(item.sfiStandard15, 'id');
+
+
             if(!$scope.editItem){
                 $scope.cs5.projects.push(item);
             }
@@ -258,42 +262,18 @@ sfiFormApp
         $scope.editItem = null;
 
         $scope.deleteProject = function(index){
-
             $('#delete1').modal();
-            //if(confirm("Are you sure to delete this project ?")){
-            //    $scope.cs5.projects.splice(index, 1);
-            //}
         }
 
-                $scope.deleteConfirm = function(index){
+        $scope.deleteConfirm = function(index){
 
-                    $scope.cs5.projects.splice(index, 1);
+            $scope.cs5.projects.splice(index, 1);
 
-                }
-
-                //$scope.deleteCancel = function(){
-                //    $scope.cancelOther();
-                //    $scope.resetSection();
-                //}
-
-
-
-
-
-        //$scope.editProject = function(index){
-        //
-        //    $scope.editItem = $scope.getProject(index);
-        //    _.each($scope.editItem, function(val, key){
-        //        $scope.project[key] = val;
-        //    });
-        //    //$scope.project['startDate'] = new Date($scope.editItem['startDate']);
-        //
-        //}
+        }
 
         $scope.getProject = function(index){
             return $scope.cs5.projects[index];
         }
-
 
         $scope.delRegion = function(regionId){
 
@@ -304,7 +284,6 @@ sfiFormApp
 
         $rootScope.isSectionDirty = function(){
             return $scope.cs5Form.$dirty || $scope.isDataDirty ;
-
         }
 
         $scope.init();
@@ -317,7 +296,6 @@ sfiFormApp
 
         $scope.save = function(go){
 
-
             if($scope.cs5Form.$invalid){
                 return false;
             }
@@ -325,11 +303,6 @@ sfiFormApp
             if($scope.cs5.isInPartnership == true){
 
                 if ($scope.isDirty()){
-
-                    //if($scope.innerFrom.$invalid){
-                    //    return false;
-                    //}
-
                     $scope.addProject();
                 }
             }
@@ -489,7 +462,7 @@ sfiFormApp
                 $scope.project[key] = val;
             });
             $scope.project.share = $scope.project.shareConceptData?1:$scope.project.shareConceptNoName?2:3;
-            //$scope.project['startDate'] = new Date($scope.editItem['startDate']);
+
         }
 
-            }]);
+    }]);

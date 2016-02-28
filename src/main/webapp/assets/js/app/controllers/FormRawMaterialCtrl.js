@@ -381,22 +381,35 @@ sfiFormApp.controller('FormRawMaterialCtrl',
     }
 
     $scope.sections = [
-        {row : 1,  name : 'Fee and long-term lease', percDeliveredQualifiedLogging : ""},
-        {row : 2,  name : 'Direct purchase from TIMOs & REITs', percDeliveredQualifiedLogging : ""},
-        {row : 3,  name : 'Direct purchase from family forest owners', percDeliveredQualifiedLogging : ""},
-        {row : 4,  name : 'Direct purchase from Aboriginal/Tribal lands', percDeliveredQualifiedLogging : ""},
-        {row : 5,  name : 'Direct purchase from conservation lands', percDeliveredQualifiedLogging : ""},
+        {row : 1,  name : 'Fee and long-term lease'},
+        {row : 2,  name : 'Direct purchase from TIMOs & REITs'},
+        {row : 3,  name : 'Direct purchase from family forest owners'},
+        {row : 4,  name : 'Direct purchase from Aboriginal/Tribal lands'},
+        {row : 5,  name : 'Direct purchase from conservation lands'},
 
-        {row : 6,  name : 'All other direct purchase from private landowners', percDeliveredQualifiedLogging : ""},
+        {row : 6,  name : 'All other direct purchase from private landowners'},
 
-        {row : 7,  name : 'U.S. Federal lands', isUsa : true, percDeliveredQualifiedLogging : ""},
-        {row : 8,  name : 'All other U.S. public lands', isUsa : true, percDeliveredQualifiedLogging : ""},
-        {row : 9, name : 'Crown land', isCa : true , percDeliveredQualifiedLogging : ""},
-        {row : 10, name : 'Non-controlled crown land', isCa : true , percDeliveredQualifiedLogging : ""},
+        {row : 7,  name : 'U.S. Federal lands', isUsa : true},
+        {row : 8,  name : 'All other U.S. public lands', isUsa : true},
+        {row : 9, name : 'Crown land', isCa : true },
+        {row : 10, name : 'Non-controlled crown land', isCa : true },
 
-        {row : 11, name : 'Other sources', otherEnable : false , percDeliveredQualifiedLogging : ""},
+        {row : 11, name : 'Other sources', otherEnable : false},
     ];
 
+    _.each($scope.sections, function(section){
+
+        section.unit                                = "";
+        section.volume                              = "";
+        section.percATFSOnlyCertified               = "";
+        section.percCSAOnlyCertified                = "";
+        section.percFSCOnlyCertified                = "";
+        section.percSFIOnlyCertified                = "";
+        section.moreThanOneStandard                 = "";
+        section.percDeliveredQualifiedLogging       = "";
+        section.percDeliveredQualifiedLoggingReason = "";
+
+    });
 
     var tooltips = [
 
