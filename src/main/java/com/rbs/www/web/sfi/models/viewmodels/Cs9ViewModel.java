@@ -149,6 +149,7 @@ public class Cs9ViewModel extends BaseViewModel {
     private Set<Integer> conservationBiodiversity414Items2;
     private Set<Integer> indigenousPeoplesPublicItems1;
     private Set<Integer> indigenousPeoplesPrivateItems1;
+    private Set<Integer> indigenousPeoplesPrivateItems2;
     private Set<Integer> indigenousPeoplesForestItems1;
     private Set<Integer> trainingEducationItems1;
 
@@ -240,6 +241,14 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setIndigenousPeoplesPrivateItems1(Set<Integer> indigenousPeoplesPrivateItems1) {
         this.indigenousPeoplesPrivateItems1 = indigenousPeoplesPrivateItems1;
+    }
+
+    public Set<Integer> getIndigenousPeoplesPrivateItems2() {
+        return indigenousPeoplesPrivateItems2;
+    }
+
+    public void setIndigenousPeoplesPrivateItems2(Set<Integer> indigenousPeoplesPrivateItems2) {
+        this.indigenousPeoplesPrivateItems2 = indigenousPeoplesPrivateItems2;
     }
 
     public Set<Integer> getIndigenousPeoplesForestItems1() {

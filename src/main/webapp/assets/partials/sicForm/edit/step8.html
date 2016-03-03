@@ -108,6 +108,8 @@
                         <div class="col-lg-3">
                         <label class="control-label" style="margin-top: 7px;">
                             Project Description
+                        </label>
+                        <label class="control-label" style="margin-top: -7px;">
                             (max. 300 words)
                         </label>
                         </div>
@@ -122,6 +124,8 @@
                         <div class="col-lg-3">
                         <label class="control-label" style="margin-top: 7px;">
                             Project Partners
+                        </label>
+                        <label class="control-label" style="margin-top: -7px;">
                             (check all that apply)
                         </label>
                         </div>
@@ -305,7 +309,7 @@
 
                         <div ng-class="{'has-error' : projectForm.sfiStandardObjective.$invalid }">
                             <select class="form-control" name="sfiStandardObjective" ng-model="project.sfiStandardObjective" customerror ng-required="isProjectDirty()">
-                                <option ng-selected="!project.sfiStandardObjective"><-Select an SFI standard Objective-></option>
+                                <option ng-selected="!project.sfiStandardObjective">< Select an SFI Standard Objective ></option>
                                 <option ng-repeat="object in standardObjects" ng-value="object.id*1">{{ object.sfiStandardObjDesc }}</option>
                             </select>
                         </div>
@@ -319,7 +323,7 @@
                                     ng-init="region = 0"
                                     ng-model="region"
                                     ng-change="region = addBucket(project.regions, region, regions)">
-                                <option value="0" >Please select</option>
+                                <option value="0" >< Select all that apply ></option>
                                 <option ng-repeat="region in regions" ng-value={{region.id}}>{{region.name}}</option>
                             </select>
                             <div id="selectedItem" ng-repeat="region in project.regions">{{ region.name }}

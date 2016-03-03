@@ -241,6 +241,10 @@ public class Cs9 extends BaseEntityModel {
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> indigenousPeoplesPrivateItems1;
+    @Column(name = "cs9_indigenousPeoplesPrivateItems2", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> indigenousPeoplesPrivateItems2;
     @Column(name = "cs9_indigenousPeoplesForestItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -381,6 +385,14 @@ public class Cs9 extends BaseEntityModel {
 
     public void setIndigenousPeoplesPrivateItems1(Set<Integer> indigenousPeoplesPrivateItems1) {
         addAll(this.indigenousPeoplesPrivateItems1, indigenousPeoplesPrivateItems1);
+    }
+
+    public Set<Integer> getIndigenousPeoplesPrivateItems2() {
+        return indigenousPeoplesPrivateItems2;
+    }
+
+    public void setIndigenousPeoplesPrivateItems2(Set<Integer> indigenousPeoplesPrivateItems2) {
+        addAll(this.indigenousPeoplesPrivateItems2, indigenousPeoplesPrivateItems2);
     }
 
     public Set<Integer> getIndigenousPeoplesForestItems1() {
