@@ -45,6 +45,15 @@ sfiFormApp
     };
 
 
+    $scope.clearForm = function(){
+        $scope.cs10 = angular.copy($rootScope.form.cs10);
+
+        $scope.hasStory = {};
+        _.each($scope.cs10.stories, function(story){
+                $scope.hasStory[story.index] = true;
+        });
+    }
+
         var templatePath = $rootScope.mode == "edit" ?
                 '/assets/partials/form/share-story-modal.html' :
                     '/assets/partials/view/share-story-modal.html';

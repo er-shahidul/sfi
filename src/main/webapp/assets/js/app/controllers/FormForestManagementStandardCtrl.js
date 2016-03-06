@@ -83,6 +83,16 @@ sfiFormApp
         $rootScope.$form = $scope.cs9Form;
     }
 
+    $scope.clearForm = function(){
+        $scope.cs9 = angular.copy($rootScope.form.cs9);
+
+        $scope.hasStory = {};
+        _.each($scope.cs9.stories, function(story){
+                $scope.hasStory[story.index] = true;
+        });
+    }
+
+
     $scope.saveForm = function (go) {
 
         $http
