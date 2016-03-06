@@ -108,9 +108,13 @@ sfiFormApp
             });
     }
 
+    var templatePath = $rootScope.mode == "edit" ?
+            '/assets/partials/form/share-story-modal.html' :
+                '/assets/partials/view/share-story-modal.html';
+
     var shareStoryModal = $modal({
         scope: $scope,
-        template: '/assets/partials/form/share-story-modal.html',
+        template: templatePath,
         show: false
     });
 

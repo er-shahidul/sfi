@@ -81,8 +81,8 @@
         <tr>
             <th>Regions</th>
             <th>Raw Material Sources</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <!--<th>Edit</th>-->
+            <!--<th>Delete</th>-->
         </tr>
         </thead>
         <tbody>
@@ -91,8 +91,8 @@
             <td>{{ supply.region.name }}, {{ supply.region.country.country }}</td>
             <td>{{ usCanadaTitle(supply) }}</td>
 
-            <td><a href="" ng-click="editUsCanada(supply.region.id)">Edit</a></td>
-            <td><a href="" ng-click="deleteUsCanada(supply.region.id)">Delete</a></td>
+            <!--<td><a href="" ng-click="editUsCanada(supply.region.id)">Edit</a></td>-->
+            <!--<td><a href="" ng-click="deleteUsCanada(supply.region.id)">Delete</a></td>-->
         </tr>
         <!-- -->
 
@@ -100,8 +100,8 @@
         <tr ng-repeat="other in usOthers">
             <td>{{ other.country.country }}</td>
             <td>{{ usOtherTitle(other)}}</td>
-            <td><a href="" ng-click="editOther(other.country.id)">Edit</a></td>
-            <td><a href="" ng-click="deleteOther(other.country.id)">Delete</a></td>
+            <!--<td><a href="" ng-click="editOther(other.country.id)">Edit</a></td>-->
+            <!--<td><a href="" ng-click="deleteOther(other.country.id)">Delete</a></td>-->
         </tr>
         <!-- -->
 
