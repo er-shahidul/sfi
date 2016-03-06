@@ -1211,3 +1211,7 @@ display: -webkit-flex; /* Safari */
 .toolip h5:hover{
 color:#9A9A9A;
 }
+
+.alignment li label{
+  margin-left:17px;
+}
