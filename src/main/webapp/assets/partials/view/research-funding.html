@@ -317,16 +317,16 @@
                     <tr>
                         <th>Project Name</th>
                         <th>Project Objective</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <!--<th>Edit</th>-->
+                        <!--<th>Delete</th>-->
                     </tr>
                     </thead>
                     <tbody>
                     <tr ng-repeat="project in getProjects()">
                         <td>{{ project.projectNm }}</td>
                         <td>{{ project.projectObj }}</td>
-                        <td><a href="" ng-click="editProject($index)">Edit</a></td>
-                        <td><a href="" ng-click="deleteProject($index)">Delete</a></td>
+                        <!--<td><a href="" ng-click="editProject($index)">Edit</a></td>-->
+                        <!--<td><a href="" ng-click="deleteProject($index)">Delete</a></td>-->
                     </tr>
                     </tbody>
                 </table>
@@ -372,7 +372,6 @@
                             </select>
 
                             <div id="selectedItem" ng-repeat="item in project.sfiStandard10">{{ item.sfiStandardObjDesc }}
-                                <button ng-click="project.sfiStandard10 = deleteBucket(item.id, project.sfiStandard10)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
 
@@ -388,7 +387,7 @@
                             </select>
 
                             <div id="selectedItem" ng-repeat="item in project.sfiStandard15">{{ item.sfiStandardObjDesc }}
-                                <button ng-click="project.sfiStandard15 = deleteBucket(item.id, project.sfiStandard15)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <!--<button ng-click="project.sfiStandard15 = deleteBucket(item.id, project.sfiStandard15)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>-->
                             </div>
                         </div>
 
@@ -401,7 +400,7 @@
                             </select>
 
                             <div id="selectedItem" ng-repeat="region in project.projectLocations">{{ region.name }}
-                                <button ng-click="project.projectLocations = deleteBucket(region.id, project.projectLocations)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <!--<button ng-click="project.projectLocations = deleteBucket(region.id, project.projectLocations)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>-->
                             </div>
 
                         </div>
@@ -593,8 +592,8 @@
                                 <div class="col-sm-4 nopadding" style="line-height: 32px;">Start date</div>
 
                                 <div class="col-sm-8 nopadding">
-                                    <div class='input-group date datetimepicker' datetimepicker>
-                                        <input type='text' class="form-control datepicker" name="start_date"
+                                    <div class='input-group date ' >
+                                        <input type='text' class="form-control " name="start_date"
                                                readonly
                                                ng-required="isDirty()" customerror
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
@@ -612,7 +611,7 @@
                                     End date
                                 </div>
                                 <div class="col-sm-8 nopadding">
-                                    <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
+                                    <div class='input-group date ' id='datetimepicker2'>
                                         <input type='text' class="form-control" name="end_date" customerror
                                                readonly
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
@@ -670,7 +669,6 @@
                             </div>
                             <div id="valdfil">
                                 <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted" ng-click="download(doc.projectUniqueDocumentName, doc.projectOriginalDocumentName)" >&nbsp;{{ doc.projectOriginalDocumentName }}&nbsp;
-                                    <button ng-click="delSupportDoc($index)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
                             </div>
                         </div>
@@ -732,7 +730,7 @@
 
                         <div class="form-group">
                             <input ng-model="validate" ng-hide="true">
-                            <a href="" ng-click="addProject()" ng-show="cs5.isInPartnership">+ Add another project</a>
+                            <!--<a href="" ng-click="addProject()" ng-show="cs5.isInPartnership">+ Add another project</a>-->
                         </div>
 
                     </form>

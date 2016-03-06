@@ -514,8 +514,7 @@
 
                     <td ng-class="{'has-error': isDirty (other) && innerForm.otherItem1.$invalid}">
                         <select disabled class="form-control" id="otherItem1" name="otherItem1" customerror
-                                ng-model="other.country.id"
-                                ng-disabled="!operateInOthers()">
+                                ng-model="other.country.id">
                             <option value="" ng-selected="!other.country">Select Country</option>
                             <option ng-repeat="item in otherCountries"  ng-selected="other.country.id == item.id" value="{{ item.id }}">{{ item.country }}</option>
                         </select>
@@ -549,7 +548,6 @@
                                  ng-class="{'has-error': isDirty (other) && innerForm.certificationBody.$invalid}">
 
                                 <select disabled class="form-control" name="standardType" ng-model="other.standardType"
-                                        ng-disabled="!operateInOthers()"
                                         ng-required="other.underCertifiedStandard">
                                     <option value>Select Standard type</option>
                                     <option value="1" >PEFC endorsed standard</option>

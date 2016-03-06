@@ -14,81 +14,97 @@
                 <div class="form-group" style="padding-left: 20px">
                     <div>
                         Please Describe<br/>
-                        <textarea rows="6" cols="70" ng-model="story.description"></textarea>
+                        <textarea rows="6" readonly cols="70" ng-model="story.description"></textarea>
                     </div>
                     <form name="someForm">
-                    <div>
-                        <p>Upload File</p>
+                        <div style="padding-top: 20px;">
+                            Upload File
 
-                        <div class="input-group input-large" style="width: 510px;"
-                             ng-file-select ng-model="story.myFiles"
-                             ng-file-change="fileSelected(files)"
-                             ng-multiple="false"
-                             ng-accept="'image/*,application/pdf'" >
-                            <div class="form-control uneditable-input input-fixed input-medium">
-                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                <span class="fileinput-filename">{{ story.originalDocumentName }}</span>
+                            <div class="input-group input-large"
+                                 ng-model="story.myFiles"
+                                 ng-file-change="fileSelected()"
+                                 ng-multiple="true"
+                                 ng-accept="'.pdf,.doc,.docx,.xls,.xlsx'">
+
+                                <div class="form-control uneditable-input input-fixed input-medium">
+                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                    <span class="fileinput-filename">{{ tempFile.originalDocumentName }}</span>
+                                </div>
+                                <span class="input-group-addon btn default btn-file">
+                                    <span ng-hide="tempFile.originalDocumentName" class="fileinput-new">Browse</span>
+                                    <span ng-show="tempFile.originalDocumentName" class="fileinput-exists">Change </span>
+                                </span>
+
                             </div>
 
-                            <span class="input-group-addon btn default btn-file">
-                                <span ng-hide="story.originalDocumentName" class="fileinput-new">Select file </span>
-                                <span ng-show="story.originalDocumentName" class="fileinput-exists">Change </span>
-                            </span>
-                            <a ng-click="story.originalDocumentName = null; story.uniqueDocumentName = null;" ng-show="story.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                            <p>Files can be one of the following formats: .pdf, .doc, .xls)</p>
+
+                            <div class="text-right" ng-show="tempFile.originalDocumentName">
+                                <a ng-click="tempFile.originalDocumentName =''; " href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                <input type="submit" class="btn default" value="Upload" ng-click="saveTmpFile()">
+                            </div>
+
+
+                            <div id="selectedItem" ng-show="story.originalDocumentName" ng-click="download(story.uniqueDocumentName, story.originalDocumentName)"  >{{ story.originalDocumentName }}
+                            </div>
+
+
                         </div>
 
-                        Files can be one of the following formats: .pdf, .doc, .xls)
-                    </div>
                     </form>
                     <form name="storyForm">
-                    <div style="padding-top: 20px;">
-                        <p>
-                            Who is the communications lead if SFI has questions on this story?
-                        </p>
+                        <div style="padding-top: 20px;">
+                            <p>
+                                Who is the communications lead if SFI has questions on this story?
+                            </p>
 
-                        <div>
+                            <div>
 
                                 <div class="row">
                                     <div class="col-md-3" ng-class="{'has-error': storyForm.firstName.$invalid}">
                                         <p>First Name</p>
-                                        <input type="text"  name="firstName"  class="form-control" ng-model="story.firstName">
+                                        <input type="text" readonly   name="firstName"  class="form-control" ng-model="story.firstName">
                                     </div>
                                     <div class="col-md-3" ng-class="{'has-error' : storyForm.lastName.$invalid}">
                                         <p>Last Name</p>
-                                        <input type="text" name="lastName"  class="form-control" ng-model="story.lastName">
+                                        <input type="text" readonly  name="lastName"  class="form-control" ng-model="story.lastName">
                                     </div>
                                     <div class="col-md-5" ng-class="{'has-error':  storyForm.email.$invalid}">
                                         <p>Email</p>
-                                        <input type="email" name="email" class="form-control" ng-model="story.email">
+                                        <input type="email" readonly  name="email" class="form-control" ng-model="story.email">
                                     </div>
                                 </div>
 
+                            </div>
+                            <br>
                         </div>
-                        <br>
-                    </div>
-                    <div style="padding-top: 20px;">
-                        <p>Choose what SFI can do with your story</p>
+                        <div style="padding-top: 20px;">
+                            <p>Choose what SFI can do with your story</p>
 
-                        <div ng-class="{'error': !isStoryDirty() }">
-                            <label >
-                                <input icheck type="radio" ng-value=true name="shareOrgName" ng-model="story.shareOrgName" ng-checked="story.shareOrgName == true"/> Share – with our organization’s name
-                            </label>
-                            <br>
-                            <label>
-                                <input icheck type="radio" ng-value=true name="shareOrgName"  ng-model="story.shareNoUse" ng-checked="story.shareNoUse == true"/> Share – don't use our organization’s name
-                            </label>
-                            <br>
-                            <label>
-                                <input icheck type="radio" ng-value=true name="shareOrgName"  ng-model="story.shareUseAggregate" ng-checked="story.shareUseAggregate == true"/> Only use in aggregate
-                            </label>
+                            <div ng-class="{'story': !isStoryDirty() }">
+
+                                <input icheck type="radio" disabled   name="shareOrgName"  ng-value="1" ng-model="story.shareKey" /> Share – with our organization’s name<br>
+                                <input icheck type="radio" disabled   name="shareOrgName"  ng-value="2" ng-model="story.shareKey" /> Share – don't use our organization’s name<br>
+                                <input icheck type="radio" disabled   name="shareOrgName"  ng-value="3" ng-model="story.shareKey" /> Only use in aggregate
+
+                                <!--<input icheck type="radio" name="shareOrgName" ng-model="story.shareOrgName" /> Share – with our organization’s name-->
+
+                                <!--<br>-->
+
+                                <!--<input icheck type="radio" name="shareOrgName"  ng-model="story.shareNoUse" /> Share – don't use our organization’s name-->
+
+                                <!--<br>-->
+
+                                <!--<input icheck type="radio" name="shareOrgName"  ng-model="story.shareUseAggregate" /> Only use in aggregate-->
+
+                            </div>
                         </div>
-                    </div>
                     </form>
                     <br>
 
                     <div class="modal-footer">
                         <button type="button" data-dismiss="modal" class="btn" ng-click="cancelHistory()">Cancel</button>
-                        <button type="button" class="btn red" ng-click="saveHistory()">Add Story</button>
+                        <button type="button" class="btn red" ng-click="cancelHistory()">Add Story</button>
                     </div>
 
                 </div>
