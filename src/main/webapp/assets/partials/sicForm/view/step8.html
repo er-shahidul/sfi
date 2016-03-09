@@ -106,25 +106,25 @@
                                 <li>
                                     <label class="form-inline">
                                         <input type="checkbox" disabled  ng-model="project.partnerAcademic"> Academic
-                                        <input style="font-weight: normal;" placeholder="Please Specify"  ng-show="project.partnerAcademic" class="form-control pull-right" ng-model="project.partnerAcademicSpecify">
+                                        <input type="text" readonly style="font-weight: normal;" placeholder="Please Specify"  ng-show="project.partnerAcademic" class="form-control pull-right" ng-model="project.partnerAcademicSpecify">
                                     </label>
                                 </li>
                                 <li>
                                     <label class="form-inline">
                                         <input type="checkbox" disabled  ng-model="project.partnerResearch"> Research organization
-                                        <input style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerResearch" ng-model="project.partnerResearchSpecify">
+                                        <input type="text" readonly style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerResearch" ng-model="project.partnerResearchSpecify">
                                     </label>
                                 </li>
                                 <li>
                                     <label class="form-inline">
                                         <input type="checkbox" disabled  ng-model="project.partnerConservation">  Conservation organization
-                                        <input style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerConservation" ng-model="project.partnerConservationSpecify">
+                                        <input type="text" readonly style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-show="project.partnerConservation" ng-model="project.partnerConservationSpecify">
                                     </label>
                                 </li>
                                 <li>
                                     <label class="form-inline">
                                         <input type="checkbox" disabled  ng-model="project.partnerGovernment"> Government agency
-                                        <input style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerGovernmentSpecify" ng-show="project.partnerGovernment">
+                                        <input type="text" readonly style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerGovernmentSpecify" ng-show="project.partnerGovernment">
                                     </label>
                                 </li>
 
@@ -202,7 +202,7 @@
                                         <li>
                                             <label class="form-inline">
                                                 <input type="checkbox" disabled ng-model="project.partnerCommunityOther"> Other
-                                                <input style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerCommunityOtherSpecify" ng-show="project.partnerCommunityOther">
+                                                <input type="text" readonly style="font-weight: normal;" placeholder="Please Specify" class="form-control pull-right" ng-model="project.partnerCommunityOtherSpecify" ng-show="project.partnerCommunityOther">
                                             </label>
                                         </li>
                                     </ul>
@@ -306,8 +306,8 @@
 
                         <div class="col-lg-6">
                             <!--<div class="col-sm-4 nopadding" style="line-height: 32px;">Start date</div>-->
-                            <div class='input-group date datetimepicker' datetimepicker>
-                                <input type='text' placeholder="Start date" class="form-control datepicker" name="start_date"
+                            <div class='input-group date ' >
+                                <input type='text' placeholder="Start date" class="form-control " name="start_date"
                                                ng-required="isProjectDirty()" customerror
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                                pattern-msg="Please enter a valid date(YYYY-MM-DD)"
@@ -318,8 +318,8 @@
 
                         <div class="col-lg-6">
                             <!--<div class="col-sm-4 nopadding" style="line-height: 32px;">End date</div>-->
-                            <div class='input-group date datetimepicker' datetimepicker>
-                                <input type='text' placeholder="End date" class="form-control datepicker" name="end_date"
+                            <div class='input-group date ' >
+                                <input type='text' placeholder="End date" class="form-control " name="end_date"
                                                ng-required="isProjectDirty()" customerror
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                                pattern-msg="Please enter a valid date(YYYY-MM-DD)"
@@ -369,7 +369,7 @@
 
                             <div class="input-group input-large"
                                  ng-init="supportDoc = {}"
-                                 ng-file-select ng-model="uploadFile1"
+                                 ng-model="uploadFile1"
                                  ng-file-change="uploadFile(uploadFile1, supportDoc)"
                                  ng-multiple="false"
                                  ng-accept="'image/*,application/pdf'">

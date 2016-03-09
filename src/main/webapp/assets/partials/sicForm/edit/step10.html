@@ -94,12 +94,14 @@
                             <input type="checkbox" name="confirm" ng-model="cs10.confirmation">
                             I confirm the information provided herein is final and accurate to the best of my knowledge.
                         </label>
-                        <p>
-                            Please enter your full name
-                        </p>
-                        <label class="form-inline">
-                            <input style="font-weight: normal;" class="form-control" name="name" ng-model="cs10.fullName">  {{ today | date:'yyyy-MM-dd'}}
-                        </label>
+                        <div ng-show="cs10.confirmation">
+                            <p>
+                                Please enter your full name
+                            </p>
+                            <label class="form-inline" ng-class="{'has-error':  cs10Form.name.$invalid}">
+                                <input customerror ng-required="cs10.confirmation" style="font-weight: normal;" class="form-control" name="name" ng-model="cs10.fullName">  {{ today | date:'yyyy-MM-dd'}}
+                            </label>
+                        </div>
                     </li>
                 </ul>
                 <p>

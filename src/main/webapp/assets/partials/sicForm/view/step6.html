@@ -25,8 +25,7 @@
                         <option ng-repeat="items in fraItems" ng-value="$index">{{items}}</option>
                     </select>
 
-                    <div id="selectedItem" ng-repeat="programIndex in cs6.trainingPrograms ">{{ fraItems[programIndex] }}
-                        <button ng-click="deleteByIndex($index, cs6.trainingPrograms)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    <div id="selectedItem" ng-repeat="programIndex in cs6.trainingPrograms ">{{ fraItems[programIndex].value }}
                     </div>
 
 
