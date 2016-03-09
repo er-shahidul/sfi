@@ -2,17 +2,25 @@ package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.CascadeIf;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
 import javax.validation.Valid;
 import java.util.Set;
 
+@SpELAssert.List({
+        @SpELAssert(
+                value = "projects != null && !projects.isEmpty()",
+                applyIf = "inPartnershipProjects != null && inPartnershipProjects",
+                message = "{sic.cs8.inPartnershipProjects}"
+        )
+})
 public class SicCs8ViewModel extends BaseViewModel {
     private Integer id;
 
     private Boolean inPartnershipProjects;
 
     @Valid
-    @CascadeIf("inPartnershipProjects")
+//    @CascadeIf("inPartnershipProjects")
     private Set<SicCs8ProjectViewModel> projects;
 
     @Override
