@@ -1,12 +1,12 @@
 var cs8;
 sfiSicApp
-    .controller('SicCs8FormCtrl', ['$scope', '$rootScope', '$http', 'Message', 'standardObjects',
+    .controller('SicCs8FormCtrl', ['$scope', '$rootScope', '$http', 'Message', 'standardObjects2015',
         function ( $scope, $rootScope, $http, Message, standardObjects){
 
         cs8 = $scope;
 
         $scope.cs8 = angular.copy($rootScope.form.cs8);
-        $scope.standardObjects = standardObjects;
+        $scope.standardObjects2015 = standardObjects2015;
 
         $scope.project  = {}
         $scope.cs8.projects = $scope.cs8.projects || [];
