@@ -398,10 +398,10 @@
                                 ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects2015)">
                             <option value="0" ng-selected="!project.sfiStandard10">Please select</option>
                             <optgroup label="SFI 2015-2019 Forest Land Management Objectives">
-                                <option ng-repeat="item in standardObjects2015" ng-if="item.id <= 15" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                                <option ng-repeat="item in standardObjects2015" ng-if="item.id <= 15" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
                             </optgroup>
                             <optgroup label="SFI 2015-2019 Fiber Sourcing Objectives">
-                                <option ng-repeat="item in standardObjects2015" ng-if="item.id > 15" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                                <option ng-repeat="item in standardObjects2015" ng-if="item.id > 15" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
                             </optgroup>
                         </select>
 
@@ -418,7 +418,7 @@
                         <select class="form-control" name="sfiStandard15" customerror ng-init="sfiStandard15 = 0"
                                 ng-model="sfiStandard15" ng-change="sfiStandard15 = addBucket(project.sfiStandard15, sfiStandard15, standardObjects)">
                             <option value="0" ng-selected="!project.sfiStandard15">Please select</option>
-                            <option ng-repeat="item in standardObjects" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                            <option ng-repeat="item in standardObjects" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
                         </select>
 
                         <div id="selectedItem" ng-repeat="item in project.sfiStandard15">{{ item.sfiStandardObjDesc }}
@@ -432,7 +432,7 @@
                         <select class="form-control" name="region" ng-init="regionModel = 0"
                                 ng-model="regionModel" ng-change="regionModel = addBucket(project.projectLocations, regionModel, regions)">
                             <option value="0" >Please select</option>
-                            <option ng-repeat="region in regions" ng-value={{region.id}}>{{region.name}}</option>
+                            <option ng-repeat="region in regions" data-ng-value="region.id">{{region.name}}</option>
                         </select>
 
                         <div id="selectedItem" ng-repeat="region in project.projectLocations">{{ region.name }}
