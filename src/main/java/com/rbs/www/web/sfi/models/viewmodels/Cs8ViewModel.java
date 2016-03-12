@@ -1,7 +1,5 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
-import javax.validation.Valid;
-
 public class Cs8ViewModel {
     private Cs8PartialAViewModel cs8PartialAViewModel;
     private Cs8PartialBViewModel cs8PartialBViewModel;

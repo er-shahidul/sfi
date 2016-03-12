@@ -3,7 +3,6 @@ package com.rbs.www.web.sfi.models.viewmodels;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
 
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @SpELAssert.List({

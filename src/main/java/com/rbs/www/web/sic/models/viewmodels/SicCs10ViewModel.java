@@ -1,9 +1,6 @@
 package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.common.modules.validator.SpELAssert;
-
-import javax.validation.constraints.NotNull;
 
 //@SpELAssert.List({
 //        @SpELAssert(
