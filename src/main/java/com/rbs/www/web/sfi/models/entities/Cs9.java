@@ -295,21 +295,29 @@ public class Cs9 extends BaseEntityModel {
     private String conservation415Explain1_1;
     @Column(name = "cs9_conservation415Explain1_2", nullable = true)
     private String conservation415Explain1_2;
+
     @Column(name = "cs9_protectionMaintenanceRationale", nullable = true)
+    @Type(type="text")
     private String protectionMaintenanceRationale;
     @Column(name = "cs9_conservation413Rationale", nullable = true)
+    @Type(type="text")
     private String conservation413Rationale;
+
     @Column(name = "cs9_conservation414Rationale", nullable = true)
+    @Type(type="text")
     private String conservation414Rationale;
-    @Column(name = "cs9_conservation415Rationale", nullable = true)
-    private String conservation415Rationale;
     @Column(name = "cs9_indigenousPublicRationale", nullable = true)
+    @Type(type="text")
     private String indigenousPublicRationale;
     @Column(name = "cs9_indigenousPrivateRationale", nullable = true)
+    @Type(type="text")
     private String indigenousPrivateRationale;
     @Column(name = "cs9_indigenousForestPractice", nullable = true)
+    @Type(type="text")
     private String indigenousForestPractice;
 
+    @Column(name = "cs9_conservation415Rationale", nullable = true)
+    private String conservation415Rationale;
     @Column(name = "cs9_trainingEduRationale", nullable = true)
     @Type(type="text")
     private String trainingEduRationale;

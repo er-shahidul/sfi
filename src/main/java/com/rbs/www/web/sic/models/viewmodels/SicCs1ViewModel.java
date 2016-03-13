@@ -3,8 +3,8 @@ package com.rbs.www.web.sic.models.viewmodels;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.datamodels.BlobNames;
+import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @SpELAssert.List({
@@ -67,28 +67,28 @@ public class SicCs1ViewModel extends BaseViewModel {
     private String sicWebsite;
     private String membersOtherSFISpecify;
 
-    @NotNull(message = "{sic.cs1.sicChairCity}")
+    @NotEmpty(message = "{sic.cs1.sicChairCity}")
     private String sicChairCity;
 
-    @NotNull(message = "{sic.cs1.sicChairCompany}")
+    @NotEmpty(message = "{sic.cs1.sicChairCompany}")
     private String sicChairCompany;
 
-    @NotNull(message = "{sic.cs1.sicChairEmail}")
+    @NotEmpty(message = "{sic.cs1.sicChairEmail}")
     private String sicChairEmail;
 
-    @NotNull(message = "{sic.cs1.sicChairName}")
+    @NotEmpty(message = "{sic.cs1.sicChairName}")
     private String sicChairName;
 
-    @NotNull(message = "{sic.cs1.sicChairPhone}")
+    @NotEmpty(message = "{sic.cs1.sicChairPhone}")
     private String sicChairPhone;
 
-    @NotNull(message = "{sic.cs1.sicChairState}")
+    @NotEmpty(message = "{sic.cs1.sicChairState}")
     private String sicChairState;
 
-    @NotNull(message = "{sic.cs1.sicChairStreet}")
+    @NotEmpty(message = "{sic.cs1.sicChairStreet}")
     private String sicChairStreet;
 
-    @NotNull(message = "{sic.cs1.sicChairZip}")
+    @NotEmpty(message = "{sic.cs1.sicChairZip}")
     private String sicChairZip;
 
     private String sicCoordinatorCity;

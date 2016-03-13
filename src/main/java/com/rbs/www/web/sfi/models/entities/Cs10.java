@@ -120,6 +120,7 @@ public class Cs10 extends BaseEntityModel {
     private String biodiversityMechanismDescribe;
 
     @Column(name = "cs10_biodiversityNoDescribe", nullable = true)
+    @Type(type="text")
     private String biodiversityNoDescribe;
 
     @Column(name = "cs10_legalComplianceUsCanadaDescribe", nullable = true)
