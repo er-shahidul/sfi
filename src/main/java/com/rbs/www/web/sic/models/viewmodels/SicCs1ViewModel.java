@@ -22,42 +22,42 @@ import java.util.Set;
 public class SicCs1ViewModel extends BaseViewModel {
     private Integer id;
 
-    @NotNull(message = "{sic.cs1.membersConservationSFI}")
+//    @NotNull(message = "{sic.cs1.membersConservationSFI}")
     private Integer membersConservationSFI;
 
-    @NotNull(message = "{sic.cs1.membersGovernmentAgency}")
+//    @NotNull(message = "{sic.cs1.membersGovernmentAgency}")
     private Integer membersGovernmentAgency;
 
-    @NotNull(message = "{sic.cs1.membersIndustrySFI}")
+//    @NotNull(message = "{sic.cs1.membersIndustrySFI}")
     private Integer membersIndustrySFI;
     private Integer membersOtherSFIParticipant;
 
-    @NotNull(message = "{sic.cs1.membersSFIOrganization}")
+//    @NotNull(message = "{sic.cs1.membersSFIOrganization}")
     private Integer membersSFIOrganization;
 
-    @NotNull(message = "{sic.cs1.membersUniversitySFI}")
+//    @NotNull(message = "{sic.cs1.membersUniversitySFI}")
     private Integer membersUniversitySFI;
 
-    @NotNull(message = "{sic.cs1.supporterConservationOrg}")
+//    @NotNull(message = "{sic.cs1.supporterConservationOrg}")
     private Integer supporterConservationOrg;
 
-    @NotNull(message = "{sic.cs1.supporterConsultant}")
+//    @NotNull(message = "{sic.cs1.supporterConsultant}")
     private Integer supporterConsultant;
 
-    @NotNull(message = "{sic.cs1.supporterFamForestOwner}")
+//    @NotNull(message = "{sic.cs1.supporterFamForestOwner}")
     private Integer supporterFamForestOwner;
 
-    @NotNull(message = "{sic.cs1.supporterForestryAssoc}")
+//    @NotNull(message = "{sic.cs1.supporterForestryAssoc}")
     private Integer supporterForestryAssoc;
 
-    @NotNull(message = "{sic.cs1.supporterGovAgency}")
+//    @NotNull(message = "{sic.cs1.supporterGovAgency}")
     private Integer supporterGovAgency;
 
-    @NotNull(message = "{sic.cs1.supporterLogger}")
+//    @NotNull(message = "{sic.cs1.supporterLogger}")
     private Integer supporterLogger;
     private Integer supporterOther;
 
-    @NotNull(message = "{sic.cs1.supporterOtherLocal}")
+//    @NotNull(message = "{sic.cs1.supporterOtherLocal}")
     private Integer supporterOtherLocal;
     private Boolean orgDocAttached;
     private Boolean sicRecruitSfi;

@@ -953,7 +953,7 @@
             </p>
             <label style="margin-bottom:20px;">
                 <input type="radio" icheck name="indigenousPeoplesPublic" ng-model="cs9.indigenousPeoplesPublic" value=1>
-                N/A –we operate on public lands
+                N/A –we operate on private lands
             </label>
             <label>
                 <div>
@@ -1858,7 +1858,7 @@
         <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
         <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to Step 8</button>
         <!--<button type="button" class="btn btn-success" ng-click="clearForm()">Clear Data</button>-->
-        <a href="" ng-click="clearForm()"><u style="vertical-align: bottom;color: red;">Clear Data</u></a>
+        <a href="/sfiPpForm/clear/cs9/{{ cs9.id }}"><u style="vertical-align: bottom;color: red;">Clear Data</u></a>
     </div>
 </div>
 </div>

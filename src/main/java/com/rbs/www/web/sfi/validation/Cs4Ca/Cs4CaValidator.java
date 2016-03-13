@@ -4,7 +4,6 @@ import com.rbs.www.common.modules.validator.ValidationHelper;
 import com.rbs.www.web.sfi.models.viewmodels.Cs4ViewModel;
 import com.rbs.www.web.sfi.models.viewmodels.UsaCaSelectorViewModel;
 import com.rbs.www.web.sfi.services.FormService;
-import com.rbs.www.web.sfi.validation.Cs4Usa.Cs4Usa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 

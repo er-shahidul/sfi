@@ -1,7 +1,5 @@
 package com.rbs.www.web.sfi.validation.Cs4Ca;
 
-import com.rbs.www.web.sfi.validation.Cs4Usa.Cs4UsaValidator;
-
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Retention;
