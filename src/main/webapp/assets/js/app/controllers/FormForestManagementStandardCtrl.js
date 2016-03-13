@@ -275,15 +275,24 @@ sfiFormApp
         }
     }
 
-            $scope.saveTmpFile = function(){
+    $scope.saveTmpFile = function(){
+        $scope.story.originalDocumentName = $scope.tempFile.originalDocumentName;
+        $scope.story.uniqueDocumentName = $scope.tempFile.uniqueDocumentName;
+        $scope.tempFile = {};
+    }
 
-                $scope.story.originalDocumentName = $scope.tempFile.originalDocumentName;
-                $scope.story.uniqueDocumentName = $scope.tempFile.uniqueDocumentName;
 
-                $scope.tempFile = {};
 
-            }
+    $scope.clearConfirm = function(){
+        $('#clearConfirm').modal();
+    }
 
+    $scope.clearForm = function(){
+        window.location.href = "/sfiPpForm/clear/cs9/" + $scope.cs9.id;
+    }
+
+    $scope.clearCancel = function(){
+    }
 
 
 }]);
