@@ -442,8 +442,12 @@
             <br>
             <div style="padding-left: 25px;" ng-show="cs10.biodiversityFiberSourcing == 3">
                 Provide rationale
-                <div class="form-group">
-                    <textarea class="col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityNoDescribe"></textarea>
+                <div class="form-group" ng-class="{'has-error has-feedback':  cs10Form.biodiversityNoDescribe.$invalid}">
+                    <textarea class="form-control col-lg-11" rows="4" cols="70"
+                              pattern-msg="Maximum of 2000 characters"
+                              ng-maxlength="2000" customerror
+                              name="biodiversityNoDescribe"
+                              ng-model="cs10.biodiversityNoDescribe"></textarea>
                 </div>
             </div>
             <label style="padding-bottom:10px;">
@@ -453,7 +457,7 @@
             <div style="padding-left: 25px;" ng-show="cs10.biodiversityFiberSourcing == 4">
                 Describe the practice
                 <div class="form-group">
-                    <textarea class="col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityMechanismDescribe"></textarea>
+                    <textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityMechanismDescribe"></textarea>
                 </div>
             </div>
         </div>
@@ -557,8 +561,12 @@
             <br>
             <div style="padding-left: 25px;" ng-show="cs10.biodiversityManagement == 3">
                 Provide rationale
-                <div class="form-group">
-                    <textarea class="col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityManagementNoDescribe"></textarea>
+                <div class="form-group" ng-class="{'has-error has-feedback':  cs10Form.biodiversityManagementNoDescribe.$invalid}">
+                    <textarea class="form-control col-lg-11" rows="4" cols="70"
+                              pattern-msg="Maximum of 2000 characters"
+                              ng-maxlength="2000" customerror
+                              name="biodiversityManagementNoDescribe"
+                              ng-model="cs10.biodiversityManagementNoDescribe"></textarea>
                 </div>
             </div>
             <label style="padding-bottom:10px;">
@@ -569,7 +577,7 @@
             <div style="padding-left: 25px;" ng-show="cs10.biodiversityManagement == 4">
                 Describe the practice
                 <div class="form-group">
-                    <textarea class="col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityManagementMechanismDescribe"></textarea>
+                    <textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityManagementMechanismDescribe"></textarea>
                 </div>
             </div>
         </div>
@@ -650,8 +658,12 @@
             <br>
             <div style="padding-left: 25px;" ng-show="cs10.biodiversityTraining == 3">
                 Provide rationale
-                <div class="form-group">
-                    <textarea class="col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityTrainingNoDescribe"></textarea>
+                <div class="form-group" ng-class="{'has-error has-feedback':  cs10Form.biodiversityTrainingNoDescribe.$invalid}">
+                    <textarea class="form-control col-lg-11" rows="4" cols="70"
+                              pattern-msg="Maximum of 2000 characters"
+                              ng-maxlength="2000" customerror
+                              name="biodiversityTrainingNoDescribe"
+                              ng-model="cs10.biodiversityTrainingNoDescribe"></textarea>
                 </div>
             </div>
             <label style="padding-bottom:10px;">
@@ -662,7 +674,7 @@
             <div style="padding-left: 25px;" ng-show="cs10.biodiversityTraining == 4">
                 Describe the practice
                 <div class="form-group">
-                    <textarea class="col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityTrainingMechanismDescribe"></textarea>
+                    <textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityTrainingMechanismDescribe"></textarea>
                 </div>
             </div>
         </div>
@@ -710,7 +722,7 @@
             <div style="padding-left: 25px;" ng-show="cs10.legalComplianceUsCanada">
                 Please describe what you did to address this risk
                 <div class="form-group">
-                    <textarea class="col-lg-11" rows="4" cols="70" ng-model="cs10.legalComplianceUsCanadaDescribe"></textarea>
+                    <textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs10.legalComplianceUsCanadaDescribe"></textarea>
                 </div>
             </div>
         </div>
@@ -762,7 +774,7 @@
                     <div style="padding-left: 25px;" ng-show="isSelected(cs10.legalComplianceOutsideItems, 4)">
                         Please explain
                         <div class="form-group">
-                            <textarea class="col-lg-11" rows="4" cols="70" ng-model="cs10.legalComplianceOutsideOtherExplain"></textarea>
+                            <textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs10.legalComplianceOutsideOtherExplain"></textarea>
                         </div>
                     </div>
                 </li>
