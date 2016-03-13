@@ -788,8 +788,25 @@
     <div class="col-sm-6 col-sm-offset-4" style="padding-top: 20px;">
         <button type="button" class="btn btn-success" ng-click="saveForm()">Save</button>
         <button type="button" class="btn btn-success" ng-click="saveForm(true)">Save and Go to SFI Market Survey</button>
-        <!--<button type="button" class="btn btn-success" ng-click="clearForm()">Clear Data</button>-->
-        <a href="/sfiPpForm/clear/cs10/{{ cs10.id }}"><u style="vertical-align: bottom;color: red;">Clear Data</u></a>
+        <button type="button" class="btn btn-success" ng-click="clearConfirm()">Clear Data</button>
+        <!--<a href="/sfiPpForm/clear/cs10/{{ cs10.id }}"><u style="vertical-align: bottom;color: red;">Clear Data</u></a>-->
     </div>
 </div>
+</div>
+
+<div id="clearConfirm" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>
+            </div>
+            <div class="modal-body">
+                <p class="question-style">Are you sure to clear all data for this section ?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="clearForm()">Yes, clear this section</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn confirm" ng-click="clearCancel()">Cancel</a>
+            </div>
+        </div>
+    </div>
 </div>
