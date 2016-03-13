@@ -279,7 +279,12 @@
                         <div ng-class="{'has-error' : projectForm.sfiStandardObjective.$invalid }">
                             <select disabled  class="form-control" name="sfiStandardObjective" ng-model="project.sfiStandardObjective" customerror ng-required="isProjectDirty()">
                                 <option ng-selected="!project.sfiStandardObjective">< Select an SFI Standard Objective ></option>
-                                <option ng-repeat="object in standardObjects" ng-value="object.id*1">{{ object.sfiStandardObjDesc }}</option>
+                                <optgroup label="SFI 2015-2019 Forest Land Management Objectives">
+                                    <option ng-repeat="item in standardObjects2015" ng-if="item.id <= 15" ng-selected="project.sfiStandardObjective == item.id" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
+                                </optgroup>
+                                <optgroup label="SFI 2015-2019 Fiber Sourcing Objectives">
+                                    <option ng-repeat="item in standardObjects2015" ng-if="item.id > 15" ng-selected="project.sfiStandardObjective == item.id" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
+                                </optgroup>
                             </select>
                         </div>
                     </div>
