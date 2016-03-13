@@ -6,6 +6,7 @@ import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.models.entities.SfiPpFormData;
+import com.rbs.www.web.sfi.models.viewmodels.*;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,6 +29,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.StringTokenizer;
 
@@ -231,4 +234,156 @@ public class PpFormController{
         response.flushBuffer();
     }
 
+    @RequestMapping(value = {"/sfiPpForm/clear/cs10/{id}"}, method = RequestMethod.GET)
+    public String formCs10Clear(@PathVariable Integer id, SecurityContextHolderAwareRequestWrapper request) {
+        Cs10ViewModel model = formService.getCs10ViewModel(id);
+        cs10FieldClear(model);
+        formService.setCs10Entity(model);
+
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/company/pp/form/"+id+"#/fiber-sourcing-standard";
+        return "redirect:/sfiPpForm#/fiber-sourcing-standard";
+    }
+
+    private void cs10FieldClear(Cs10ViewModel model) {
+        model.setAcknowledge(null);
+        model.setLegalComplianceOutside(null);
+        model.setLegalComplianceUsCanada(null);
+        model.setBiodiversityFiberSourcing(null);
+        model.setBiodiversityManagement(null);
+        model.setBiodiversityTraining(null);
+        model.setLegalComplianceOutsideOtherExplain(null);
+        model.setTrainedWoodProducersChanged(null);
+        model.setBiodiversityManagementMechanismDescribe(null);
+        model.setBiodiversityTrainingMechanismDescribe(null);
+        model.setBiodiversityTrainingNoDescribe(null);
+        model.setBiodiversityManagementNoDescribe(null);
+        model.setBiodiversityMechanismDescribe(null);
+        model.setBiodiversityNoDescribe(null);
+        model.setLegalComplianceUsCanadaDescribe(null);
+        model.setCreatedAt(null);
+        model.setSubmittedAt(null);
+        model.setUpdatedAt(null);
+
+        model.setStories(new LinkedHashSet<SfiPpFormStoryCs10ViewModel>());
+        model.setBiodiversityItems1(new LinkedHashSet<Integer>());
+        model.setBiodiversityItems2(new LinkedHashSet<Integer>());
+        model.setBiodiversityManagementItems1(new LinkedHashSet<Integer>());
+        model.setBiodiversityManagementItems2(new LinkedHashSet<Integer>());
+        model.setBiodiversityNatureItems(new LinkedHashSet<Integer>());
+        model.setBiodiversityStateForestItems1(new LinkedHashSet<Integer>());
+        model.setBiodiversityStateForestItems2(new LinkedHashSet<Integer>());
+        model.setBiodiversityTrainingItems1(new LinkedHashSet<Integer>());
+        model.setBiodiversityTrainingItems2(new LinkedHashSet<Integer>());
+        model.setLegalComplianceOutsideItems(new LinkedHashSet<Integer>());
+    }
+
+    @RequestMapping(value = {"/sfiPpForm/clear/cs9/{id}"}, method = RequestMethod.GET)
+    public String formCs9Clear(@PathVariable Integer id, SecurityContextHolderAwareRequestWrapper request) {
+        Cs9ViewModel model = formService.getCs9ViewModel(id);
+        cs9FieldClear(model);
+        formService.setCs9Entity(model);
+
+        if (request.isUserInRole("ADMIN")) return "redirect:/admin/company/pp/form/"+id+"#/forest-management-standard";
+        return "redirect:/sfiPpForm#/forest-management-standard";
+    }
+
+    private void cs9FieldClear(Cs9ViewModel model) {
+        model.setAcknowledge(null);
+        model.setConvertForestCover(null);
+        model.setConvertForestLand(null);
+        model.setEcologicalImpactsLandscape(null);
+        model.setEcologicalImpactsSite(null);
+        model.setEconomicOther(null);
+        model.setEconomicProductivity(null);
+        model.setEconomicReasons(null);
+        model.setEconomicStandQuality(null);
+        model.setEnvironmentalHarmOther(null);
+        model.setMitigatingEnvironmentalHarm(null);
+        model.setRespondingDiseaseIssues(null);
+        model.setRespondingForestHealth(null);
+        model.setRespondingInsect(null);
+        model.setRespondingInvasiveSpecies(null);
+        model.setRespondingOther(null);
+        model.setRestorationForestCover(null);
+        model.setRestorationNativeForest(null);
+        model.setRestorationOther(null);
+        model.setRestorationRiparianProtection(null);
+        model.setStopWho1A1B(null);
+        model.setUseWho1A1B(null);
+        model.setConservationBiodiversity413(null);
+        model.setConservationBiodiversity414(null);
+        model.setConservationBiodiversity415(null);
+        model.setConvertForestLandExplain(null);
+        model.setEcologicalImpactsLandscapeArea(null);
+        model.setEcologicalImpactsSiteArea(null);
+        model.setEconomicOtherArea(null);
+        model.setEconomicOtherExplain(null);
+        model.setEconomicProductivityArea(null);
+        model.setEconomicStandArea(null);
+        model.setEnvironmentalHarmOtherArea(null);
+        model.setEnvironmentalHarmOtherExplain(null);
+        model.setIndigenousPeoplesForest(null);
+        model.setIndigenousPeoplesPrivate(null);
+        model.setIndigenousPeoplesPublic(null);
+        model.setProtectionMaintenanceWaterRes(null);
+        model.setRespondingDiseaseArea(null);
+        model.setRespondingInsectArea(null);
+        model.setRespondingInvasiveArea(null);
+        model.setRespondingOtherArea(null);
+        model.setRespondingOtherExplain(null);
+        model.setRestorationNativeArea(null);
+        model.setRestorationOtherArea(null);
+        model.setRestorationOtherExplain(null);
+        model.setRestorationRiparianArea(null);
+        model.setStopWho1A1BNote(null);
+        model.setTrainedWoodProducersChanged(null);
+        model.setTrainingEducation(null);
+        model.setUseWho1A1BNote(null);
+        model.setConservation413DataSource1_2(null);
+        model.setConservation413DataSource1_4(null);
+        model.setConservation413DataSource2_2(null);
+        model.setConservation413DataSource2_4(null);
+        model.setConservation414Explain1_1(null);
+        model.setConservation414Explain1_2(null);
+        model.setConservation414Explain1_5(null);
+        model.setConservation414Explain1_6(null);
+        model.setConservation414Explain2_1(null);
+        model.setConservation414Explain2_2(null);
+        model.setConservation414Explain2_5(null);
+        model.setConservation414Explain2_6(null);
+        model.setConservation415Explain1_1(null);
+        model.setConservation415Explain1_2(null);
+        model.setProtectionMaintenanceRationale(null);
+        model.setConservation413Rationale(null);
+        model.setConservation414Rationale(null);
+        model.setConservation415Rationale(null);
+        model.setIndigenousPublicRationale(null);
+        model.setIndigenousPrivateRationale(null);
+        model.setIndigenousForestPractice(null);
+        model.setTrainingEduRationale(null);
+        model.setConservationBiodiversity415Exp(null);
+
+//      start set type
+        model.setConservationBiodiversity413Items(new LinkedHashSet<Integer>());
+        model.setConservationBiodiversity414Items(new LinkedHashSet<Integer>());
+        model.setIndigenousPeoplesForestItems(new LinkedHashSet<Integer>());
+        model.setIndigenousPeoplesPrivateItems(new LinkedHashSet<Integer>());
+        model.setIndigenousPeoplesPublicItems(new LinkedHashSet<Integer>());
+        model.setTrainingEducationItems(new LinkedHashSet<Integer>());
+        model.setForestlandAreas(new LinkedHashSet<SfiPpFormForestlandAreaViewModel>());
+        model.setStories(new LinkedHashSet<SfiPpFormStoryViewModel>());
+        model.setProtectionMaintenanceWaterResItems1(new LinkedHashSet<Integer>());
+        model.setProtectionMaintenanceWaterResItems2(new LinkedHashSet<Integer>());
+        model.setConservationBiodiversity413Items1(new LinkedHashSet<Integer>());
+        model.setConservationBiodiversity414Items1(new LinkedHashSet<Integer>());
+        model.setIndigenousPeoplesPublicItems1(new LinkedHashSet<Integer>());
+        model.setIndigenousPeoplesPrivateItems1(new LinkedHashSet<Integer>());
+        model.setIndigenousPeoplesPrivateItems2(new LinkedHashSet<Integer>());
+        model.setIndigenousPeoplesForestItems1(new LinkedHashSet<Integer>());
+        model.setTrainingEducationItems1(new LinkedHashSet<Integer>());
+
+        model.setConservationBiodiversity413Items2(new LinkedHashSet<Integer>());
+        model.setConservationBiodiversity414Items2(new LinkedHashSet<Integer>());
+//      end set types
+    }
 }
