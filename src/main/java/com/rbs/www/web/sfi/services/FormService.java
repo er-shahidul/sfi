@@ -199,7 +199,7 @@ public class FormService {
     /************************* Cs9 : Begin ***********************/
     public Cs9ViewModel getCs9ViewModel(Integer id) {
         Cs9 entity = cs9Service.get(id);
-        return viewModelMapperService.convert(entity, Cs9ViewModel.class);
+        return validationService.validate(viewModelMapperService.convert(entity, Cs9ViewModel.class));
     }
 
     public void setCs9Entity(Cs9ViewModel model) {
