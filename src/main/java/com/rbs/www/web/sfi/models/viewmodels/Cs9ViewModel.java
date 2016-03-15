@@ -48,7 +48,7 @@ import java.util.Set;
         ),
         @SpELAssert(
                 value = "conservation414Rationale != null && !conservation414Rationale.isEmpty()",
-                applyIf = "conservationBiodiversity414 != null && conservationBiodiversity413.equals('3')",
+                applyIf = "conservationBiodiversity414 != null && conservationBiodiversity414.equals('3')",
                 message = "{cs9.conservation414Rationale}"
         ),
         @SpELAssert(
