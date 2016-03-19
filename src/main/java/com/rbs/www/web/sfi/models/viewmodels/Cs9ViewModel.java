@@ -48,7 +48,7 @@ import java.util.Set;
         ),
         @SpELAssert(
                 value = "conservation414Rationale != null && !conservation414Rationale.isEmpty()",
-                applyIf = "conservationBiodiversity414 != null && conservationBiodiversity413.equals('3')",
+                applyIf = "conservationBiodiversity414 != null && conservationBiodiversity414.equals('3')",
                 message = "{cs9.conservation414Rationale}"
         ),
         @SpELAssert(
@@ -624,7 +624,6 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setConservationBiodiversity413Items(Set<Integer> conservationBiodiversity413Items) {
         this.conservationBiodiversity413Items = conservationBiodiversity413Items;
-        this.conservationBiodiversity413Items2 = conservationBiodiversity413Items;
     }
 
     public Set<Integer> getConservationBiodiversity414Items() {
@@ -633,7 +632,6 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setConservationBiodiversity414Items(Set<Integer> conservationBiodiversity414Items) {
         this.conservationBiodiversity414Items = conservationBiodiversity414Items;
-        this.conservationBiodiversity414Items2 = conservationBiodiversity414Items;
     }
 
     public Set<Integer> getIndigenousPeoplesForestItems() {
@@ -922,7 +920,6 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setConservationBiodiversity413Items2(Set<Integer> conservationBiodiversity413Items2) {
         this.conservationBiodiversity413Items2 = conservationBiodiversity413Items2;
-        this.conservationBiodiversity413Items = conservationBiodiversity413Items2;
     }
 
     public Set<Integer> getConservationBiodiversity414Items2() {
@@ -931,6 +928,5 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setConservationBiodiversity414Items2(Set<Integer> conservationBiodiversity414Items2) {
         this.conservationBiodiversity414Items2 = conservationBiodiversity414Items2;
-        this.conservationBiodiversity414Items = conservationBiodiversity414Items2;
     }
 }
