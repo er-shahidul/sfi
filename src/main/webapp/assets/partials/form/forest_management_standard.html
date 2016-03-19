@@ -907,10 +907,16 @@
                     <input type="radio" icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity415" value=1>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicator
                     <div class="content-pading">
-                        <div class="form-group" ng-show="cs9.conservationBiodiversity415 == 1">
+                        <div class="form-group"
+                             ng-class="{'has-error has-feedback':  cs9Form.conservationBiodiversity415Exp.$invalid}"
+                             ng-show="cs9.conservationBiodiversity415 == 1">
                             Initiated practices to ensure conservation of significant species of concern (please explain and note
                             the species that are now addressed)<br/>
-                            <textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs9.conservationBiodiversity415Exp"></textarea>
+                            <textarea class="form-control col-lg-11" rows="4" cols="70"
+                                      name="conservationBiodiversity415Exp"
+                                      ng-maxlength="2000" customerror
+                                      pattern-msg="Maximum of 2000 characters"
+                                      ng-model="cs9.conservationBiodiversity415Exp"></textarea>
                         </div>
                     </div>
 
@@ -927,10 +933,16 @@
             </label>
 
             <div class="content-pading">
-                <div class="form-group" ng-show="cs9.conservationBiodiversity415 == 2">
+                <div class="form-group"
+                     ng-class="{'has-error has-feedback':  cs9Form.conservation415Explain1_1.$invalid}"
+                     ng-show="cs9.conservationBiodiversity415 == 2">
                     Initiated practices to ensure conservation of significant species of concern (please explain and note
                     the species that are now addressed)<br/>
-                    <textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs9.conservation415Explain1_1"></textarea>
+                    <textarea class="form-control col-lg-11" rows="4" cols="70"
+                              name="conservation415Explain1_1"
+                              ng-maxlength="2000" customerror
+                              pattern-msg="Maximum of 2000 characters"
+                              ng-model="cs9.conservation415Explain1_1"></textarea>
                 </div>
             </div>
 
@@ -938,6 +950,21 @@
                 <input type="radio" icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity415" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
+
+            <div class="content-pading">
+                <div class="form-group"
+                     ng-class="{'has-error has-feedback':  cs9Form.conservation415Explain1_2.$invalid}"
+                     ng-show="cs9.conservationBiodiversity415 == 3">
+                    Initiated practices to ensure conservation of significant species of concern (please explain and note
+                    the species that are now addressed)<br/>
+                    <textarea class="form-control col-lg-11" rows="4" cols="70"
+                              name="conservation415Explain1_2"
+                              ng-maxlength="2000" customerror
+                              pattern-msg="Maximum of 2000 characters"
+                              ng-model="cs9.conservation415Explain1_2"></textarea>
+                </div>
+            </div>
+
         </div>
         <br>
 
@@ -1163,7 +1190,9 @@
                 <input type="radio" icheck name="indigenousPeoplesPrivate" ng-model="cs9.indigenousPeoplesPrivate" value=4>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
-            <div style="padding-top: 5px;" class="form-group" ng-show="cs9.indigenousPeoplesPrivate == 4">
+            <div style="padding-top: 5px;" class="form-group"
+                 ng-class="{'has-error has-feedback':  cs9Form.indigenousPrivateRationale.$invalid}"
+                 ng-show="cs9.indigenousPeoplesPrivate == 4">
                 Provide rationale<br/>
                 <textarea class="form-control col-lg-11" rows="4" cols="70"
                           ng-maxlength="2000" customerror
@@ -1411,9 +1440,15 @@
                 <input type="radio" icheck name="trainingEducation" ng-model="cs9.trainingEducation" value=4>
                 We have another mechanism
             </label>
-            <div style="padding-top: 5px;" class="form-group" ng-show="cs9.trainingEducation == 4">
+            <div style="padding-top: 5px;" class="form-group"
+                 ng-class="{'has-error has-feedback':  cs9Form.trainingEduRationale_1.$invalid}"
+                 ng-show="cs9.trainingEducation == 4">
                 Describe the practice<br/>
-                <textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs9.trainingEduRationale"></textarea>
+                <textarea class="form-control col-lg-11" rows="4" cols="70"
+                          pattern-msg="Maximum of 2000 characters"
+                          ng-maxlength="2000" customerror
+                          name="trainingEduRationale_1"
+                          ng-model="cs9.trainingEduRationale_1"></textarea>
             </div>
         </div>
         <br>
