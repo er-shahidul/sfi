@@ -621,7 +621,10 @@ sfiFormApp.controller('FormRawMaterialCtrl',
 
             var content = '<div style="width:300px;">' +
                 'Why is this less than 100% and what is your organization doing to reach 100%? (optional)' +
-                '<textarea class="form-control"></textarea>' +
+                '<div>'+
+                '<textarea class="form-control" maxlength="4000"></textarea>' +
+                '<span class="small">Max 4000 characters</span>'+
+                '</div>'+
                 '<div class="col-sm-6 specialpadding alignleft"><button type="button" class="btn btn-cancel">Cancel</button></div>'+
                 '<div class="col-sm-6 specialpadding alignright"><button type="button" class="btn btn-success">Ok</button> </div>' +
             '</div>';
