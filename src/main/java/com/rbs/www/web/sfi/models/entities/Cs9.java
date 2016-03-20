@@ -321,6 +321,12 @@ public class Cs9 extends BaseEntityModel {
     @Column(name = "cs9_trainingEduRationale", nullable = true)
     @Type(type="text")
     private String trainingEduRationale;
+    @Column(name = "cs9_trainingEduRationaleAnother", nullable = true)
+    @Type(type="text")
+    private String trainingEduRationaleAnother;
+    @Column(name = "cs9_conservationBiodiversity415Rationale", nullable = true)
+    @Type(type="text")
+    private String conservationBiodiversity415Rationale;
 
     @Override
     public Integer getId() {
@@ -329,6 +335,22 @@ public class Cs9 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getTrainingEduRationaleAnother() {
+        return trainingEduRationaleAnother;
+    }
+
+    public void setTrainingEduRationaleAnother(String trainingEduRationaleAnother) {
+        this.trainingEduRationaleAnother = trainingEduRationaleAnother;
+    }
+
+    public String getConservationBiodiversity415Rationale() {
+        return conservationBiodiversity415Rationale;
+    }
+
+    public void setConservationBiodiversity415Rationale(String conservationBiodiversity415Rationale) {
+        this.conservationBiodiversity415Rationale = conservationBiodiversity415Rationale;
     }
 
     public String getConservationBiodiversity415Exp() {
