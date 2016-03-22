@@ -147,10 +147,13 @@ public class Cs9ViewModel extends BaseViewModel {
     private Set<Integer> conservationBiodiversity414Items1;
     private Set<Integer> conservationBiodiversity414Items2;
     private Set<Integer> indigenousPeoplesPublicItems1;
+    private Set<Integer> indigenousPeoplesPublicItems2;
     private Set<Integer> indigenousPeoplesPrivateItems1;
     private Set<Integer> indigenousPeoplesPrivateItems2;
     private Set<Integer> indigenousPeoplesForestItems1;
+    private Set<Integer> indigenousPeoplesForestItems2;
     private Set<Integer> trainingEducationItems1;
+    private Set<Integer> trainingEducationItems2;
 
     private String conservation413DataSource1_2;
     private String conservation413DataSource1_4;
@@ -184,6 +187,30 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<Integer> getIndigenousPeoplesPublicItems2() {
+        return indigenousPeoplesPublicItems2;
+    }
+
+    public void setIndigenousPeoplesPublicItems2(Set<Integer> indigenousPeoplesPublicItems2) {
+        this.indigenousPeoplesPublicItems2 = indigenousPeoplesPublicItems2;
+    }
+
+    public Set<Integer> getIndigenousPeoplesForestItems2() {
+        return indigenousPeoplesForestItems2;
+    }
+
+    public void setIndigenousPeoplesForestItems2(Set<Integer> indigenousPeoplesForestItems2) {
+        this.indigenousPeoplesForestItems2 = indigenousPeoplesForestItems2;
+    }
+
+    public Set<Integer> getTrainingEducationItems2() {
+        return trainingEducationItems2;
+    }
+
+    public void setTrainingEducationItems2(Set<Integer> trainingEducationItems2) {
+        this.trainingEducationItems2 = trainingEducationItems2;
     }
 
     public String getConservationBiodiversity415Exp() {

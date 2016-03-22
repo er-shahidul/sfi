@@ -237,6 +237,10 @@ public class Cs9 extends BaseEntityModel {
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> indigenousPeoplesPublicItems1;
+    @Column(name = "cs9_indigenousPeoplesPublicItems2", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> indigenousPeoplesPublicItems2;
     @Column(name = "cs9_indigenousPeoplesPrivateItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -249,10 +253,18 @@ public class Cs9 extends BaseEntityModel {
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> indigenousPeoplesForestItems1;
+    @Column(name = "cs9_indigenousPeoplesForestItems2", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> indigenousPeoplesForestItems2;
     @Column(name = "cs9_trainingEducationItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> trainingEducationItems1;
+    @Column(name = "cs9_trainingEducationItems2", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> trainingEducationItems2;
 
     @Column(name = "cs9_conservation413DataSource1_2", nullable = true)
     @Type(type="text")
@@ -329,6 +341,30 @@ public class Cs9 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<Integer> getIndigenousPeoplesPublicItems2() {
+        return indigenousPeoplesPublicItems2;
+    }
+
+    public void setIndigenousPeoplesPublicItems2(Set<Integer> indigenousPeoplesPublicItems2) {
+        addAll(this.indigenousPeoplesPublicItems2, indigenousPeoplesPublicItems2);
+    }
+
+    public Set<Integer> getIndigenousPeoplesForestItems2() {
+        return indigenousPeoplesForestItems2;
+    }
+
+    public void setIndigenousPeoplesForestItems2(Set<Integer> indigenousPeoplesForestItems2) {
+        addAll(this.indigenousPeoplesForestItems2, indigenousPeoplesForestItems2);
+    }
+
+    public Set<Integer> getTrainingEducationItems2() {
+        return trainingEducationItems2;
+    }
+
+    public void setTrainingEducationItems2(Set<Integer> trainingEducationItems2) {
+        addAll(this.trainingEducationItems2, trainingEducationItems2);
     }
 
     public String getConservationBiodiversity415Exp() {
