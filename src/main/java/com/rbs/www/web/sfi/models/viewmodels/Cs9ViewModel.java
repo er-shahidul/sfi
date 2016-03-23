@@ -179,6 +179,8 @@ public class Cs9ViewModel extends BaseViewModel {
     private String trainingEduRationale;
 
     private String conservationBiodiversity415Exp;
+    private String trainingEduRationaleAnother;
+    private String conservationBiodiversity415Rationale;
 
     @Override
     public Integer getId() {
@@ -211,6 +213,22 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setTrainingEducationItems2(Set<Integer> trainingEducationItems2) {
         this.trainingEducationItems2 = trainingEducationItems2;
+    }
+
+    public String getTrainingEduRationaleAnother() {
+        return trainingEduRationaleAnother;
+    }
+
+    public void setTrainingEduRationaleAnother(String trainingEduRationaleAnother) {
+        this.trainingEduRationaleAnother = trainingEduRationaleAnother;
+    }
+
+    public String getConservationBiodiversity415Rationale() {
+        return conservationBiodiversity415Rationale;
+    }
+
+    public void setConservationBiodiversity415Rationale(String conservationBiodiversity415Rationale) {
+        this.conservationBiodiversity415Rationale = conservationBiodiversity415Rationale;
     }
 
     public String getConservationBiodiversity415Exp() {

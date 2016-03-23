@@ -946,10 +946,23 @@
                 </div>
             </div>
 
+
+
             <label>
                 <input type="radio" icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity415" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
+
+            <div style="padding-top: 5px;" class="form-group"
+                 ng-class="{'has-error has-feedback':  cs9Form.conservationBiodiversity415Rationale.$invalid}"
+                 ng-show="cs9.conservationBiodiversity415 == 3">
+
+                Provide rationale<br/>
+                <textarea class="col-lg-11 form-control" rows="4" cols="70" name="conservationBiodiversity415Rationale"
+                          ng-maxlength="2000" customerror
+                          pattern-msg="Maximum of 2000 characters"
+                          ng-model="cs9.conservationBiodiversity415Rationale"></textarea>
+            </div>
 
             <div class="content-pading">
                 <div class="form-group"
@@ -1444,11 +1457,12 @@
                  ng-class="{'has-error has-feedback':  cs9Form.trainingEduRationale_1.$invalid}"
                  ng-show="cs9.trainingEducation == 4">
                 Describe the practice<br/>
-                <textarea class="form-control col-lg-11" rows="4" cols="70"
-                          pattern-msg="Maximum of 2000 characters"
-                          ng-maxlength="2000" customerror
-                          name="trainingEduRationale_1"
-                          ng-model="cs9.trainingEduRationale_1"></textarea>
+                <!--<textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs9.trainingEduRationaleAnother"></textarea>-->
+            <textarea class="form-control col-lg-11" rows="4" cols="70"
+                      pattern-msg="Maximum of 2000 characters"
+                      ng-maxlength="2000" customerror
+                      name="trainingEduRationaleAnother"
+                      ng-model="cs9.trainingEduRationaleAnother"></textarea>
             </div>
         </div>
         <br>
