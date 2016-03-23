@@ -583,10 +583,15 @@
                                 <p ng-if="$index == 0" class="margin-top-30"><b>Meeting Name</b></p>
                                 <input readonly  type="text" class="form-control" ng-model="meeting.name">
                             </div>
-                            <div class="col-md-3">
+
+                            <div class='col-md-3'>
                                 <p ng-if="$index == 0" class="margin-top-30"><b>Date</b></p>
-                                <input readonly  type="date"  class="form-control" ng-model="meeting.date">
+                                <input readonly class="form-control" customerror
+                                       ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
+                                       ng-model="meeting.date">
                             </div>
+
+
                             <div class="col-md-3">
                                 <p ng-if="$index == 0" class="margin-top-30"><b>Location</b></p>
                                 <select disabled   class="form-control" ng-model="meeting.location">
