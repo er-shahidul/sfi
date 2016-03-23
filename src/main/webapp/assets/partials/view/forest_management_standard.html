@@ -527,9 +527,13 @@
                 <input type="radio" disabled  icheck ng-model="cs9.protectionMaintenanceWaterRes" name="protectionMaintenanceWaterRes" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
-            <div class="form-group" ng-show="cs9.protectionMaintenanceWaterRes == 3">
-                Provide rationale<br/>
-                <textarea readonly  rows="4" cols="70" ng-model="cs9.protectionMaintenanceRationale"></textarea>
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs9.protectionMaintenanceWaterRes == 3">
+                    Provide rationale<br/>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                              ng-model="cs9.protectionMaintenanceRationale"></textarea>
+                </div>
             </div>
         </div>
         <br>
@@ -570,9 +574,12 @@
                                 </a>
                             </label>
 
-                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items1, 2)">
-                                Please list data sources<br/>
-                                <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation413DataSource1_2"></textarea>
+                            <div class="content-pading">
+                                <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items1, 2)">
+                                    Please list data sources<br/>
+                                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                                              ng-model="cs9.conservation413DataSource1_2"></textarea>
+                                </div>
                             </div>
                         </li>
                         <li>
@@ -595,13 +602,16 @@
                                 </a>
                             </label>
 
-                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items1, 4)">
-                                Please note the name of the collaborative effort if appropriate, or the lead organization for the collaborative<br/>
-                                <a style="text-decoration:underline;" ng-click="shareHistory(21, 'conservationBiodiversity413Items1_5', $event)" ng-show="isSelected(cs9.conservationBiodiversity413Items1, 5)">
-                                    <span ng-hide="hasStory[21]">Share Your Story</span>
-                                    <span ng-show="hasStory[21]">Edit Your Story</span>
-                                </a>
-                                <textarea readonly  rows="2" cols="70" ng-model="cs9.conservation413DataSource1_4"></textarea>
+                            <div class="content-pading">
+                                <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items1, 4)">
+                                    Please note the name of the collaborative effort if appropriate, or the lead organization for the collaborative<br/>
+                                    <a style="text-decoration:underline;" ng-click="shareHistory(21, 'conservationBiodiversity413Items1_5', $event)" ng-show="isSelected(cs9.conservationBiodiversity413Items1, 5)">
+                                        <span ng-hide="hasStory[21]">Share Your Story</span>
+                                        <span ng-show="hasStory[21]">Edit Your Story</span>
+                                    </a>
+                                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="2" cols="70"
+                                              ng-model="cs9.conservation413DataSource1_4"></textarea>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -633,9 +643,12 @@
                             </a>
                         </label>
 
-                        <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items2, 2)">
-                            Please list data sources<br/>
-                            <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation413DataSource2_2"></textarea>
+                        <div class="content-pading">
+                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items2, 2)">
+                                Please list data sources<br/>
+                                <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                                          ng-model="cs9.conservation413DataSource2_2"></textarea>
+                            </div>
                         </div>
                     </li>
                     <li>
@@ -658,13 +671,16 @@
                             </a>
                         </label>
 
-                        <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items2, 4)">
-                            Please note the name of the collaborative effort if appropriate, or the lead organization for the collaborative<br/>
-                            <a style="text-decoration:underline;" ng-click="shareHistory(26, 'conservationBiodiversity413Items2_5', $event)" ng-show="isSelected(cs9.conservationBiodiversity413Items2, 5)">
-                                <span ng-hide="hasStory[26]">Share Your Story</span>
-                                <span ng-show="hasStory[26]">Edit Your Story</span>
-                            </a>
-                            <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation413DataSource2_4"></textarea>
+                        <div class="content-pading">
+                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity413Items2, 4)">
+                                Please note the name of the collaborative effort if appropriate, or the lead organization for the collaborative<br/>
+                                <a style="text-decoration:underline;" ng-click="shareHistory(26, 'conservationBiodiversity413Items2_5', $event)" ng-show="isSelected(cs9.conservationBiodiversity413Items2, 5)">
+                                    <span ng-hide="hasStory[26]">Share Your Story</span>
+                                    <span ng-show="hasStory[26]">Edit Your Story</span>
+                                </a>
+                                <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                                          ng-model="cs9.conservation413DataSource2_4"></textarea>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -675,9 +691,13 @@
                 <input icheck type="radio" disabled  ng-model="cs9.conservationBiodiversity413" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
-            <div class="form-group" ng-show="cs9.conservationBiodiversity413 == 3">
-                Provide rationale<br/>
-                <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation413Rationale"></textarea>
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs9.conservationBiodiversity413 == 3">
+                    Provide rationale<br/>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                              ng-model="cs9.conservation413Rationale"></textarea>
+                </div>
             </div>
         </div>
         <br>
@@ -706,9 +726,12 @@
                                 </a>
                             </label>
 
-                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items1, 1)">
-                                <label>Please explain</label><br/>
-                                <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation414Explain1_1"></textarea>
+                            <div class="content-pading">
+                                <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items1, 1)">
+                                    <label>Please explain</label><br/>
+                                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                              ng-model="cs9.conservation414Explain1_1"></textarea>
+                                </div>
                             </div>
                         </li>
                         <li>
@@ -721,9 +744,12 @@
                                 </a>
                             </label>
 
-                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items1, 2)">
-                                <label>Please explain</label><br/>
-                                <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation414Explain1_2"></textarea>
+                            <div class="content-pading">
+                                <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items1, 2)">
+                                    <label>Please explain</label><br/>
+                                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                              ng-model="cs9.conservation414Explain1_2"></textarea>
+                                </div>
                             </div>
                         </li>
                         <li>
@@ -756,9 +782,12 @@
                                 </a>
                             </label>
 
-                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items1, 5)">
-                                <label>Please explain</label><br/>
-                                <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation414Explain1_5"></textarea>
+                            <div class="content-pading">
+                                <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items1, 5)">
+                                    <label>Please explain</label><br/>
+                                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                              ng-model="cs9.conservation414Explain1_5"></textarea>
+                                </div>
                             </div>
                         </li>
                         <li>
@@ -770,9 +799,13 @@
                                     <span ng-show="hasStory[32]">Edit Your Story</span>
                                 </a>
                             </label>
-                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items1, 6)">
-                                <label>Please explain</label><br/>
-                                <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation414Explain1_6"></textarea>
+
+                            <div class="content-pading">
+                                <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items1, 6)">
+                                    <label>Please explain</label><br/>
+                                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                              ng-model="cs9.conservation414Explain1_6"></textarea>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -794,9 +827,12 @@
                             </a>
                         </label>
 
-                        <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items2, 1)">
-                            <label>Please explain</label><br/>
-                            <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation414Explain2_1"></textarea>
+                        <div class="content-pading">
+                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items2, 1)">
+                                <label>Please explain</label><br/>
+                                <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                          ng-model="cs9.conservation414Explain2_1"></textarea>
+                            </div>
                         </div>
                     </li>
                     <li>
@@ -809,9 +845,12 @@
                             </a>
                         </label>
 
-                        <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items2, 2)">
-                            <label>Please explain</label><br/>
-                            <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation414Explain2_2"></textarea>
+                        <div class="content-pading">
+                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items2, 2)">
+                                <label>Please explain</label><br/>
+                                <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                          ng-model="cs9.conservation414Explain2_2"></textarea>
+                            </div>
                         </div>
                     </li>
                     <li>
@@ -844,9 +883,12 @@
                             </a>
                         </label>
 
-                        <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items2, 5)">
-                            <label>Please explain</label><br/>
-                            <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation414Explain2_5"></textarea>
+                        <div class="content-pading">
+                            <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items2, 5)">
+                                <label>Please explain</label><br/>
+                                <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                          ng-model="cs9.conservation414Explain2_5"></textarea>
+                            </div>
                         </div>
                     </li>
                     <li>
@@ -858,9 +900,14 @@
                                 <span ng-show="hasStory[38]">Edit Your Story</span>
                             </a>
                         </label>
-                        <div class="form-group" ng-show="isSelected(cs9.conservationBiodiversity414Items2, 6)">
-                            <label>Please explain</label><br/>
-                            <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation414Explain2_6"></textarea>
+
+                        <div class="content-pading">
+                            <div class="form-group"
+                                 ng-show="isSelected(cs9.conservationBiodiversity414Items2, 6)">
+                                <label>Please explain</label><br/>
+                                <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                          ng-model="cs9.conservation414Explain2_6"></textarea>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -869,10 +916,16 @@
                 <input type="radio" disabled  icheck name="conservationBiodiversity414" ng-model="cs9.conservationBiodiversity414" value=3>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
-            <div class="form-group" ng-show="cs9.conservationBiodiversity414 == 3">
-                Provide rationale<br/>
-                <textarea readonly  rows="4" cols="70" ng-model="cs9.conservation414Rationale"></textarea>
+
+            <div class="content-pading">
+                <div class="form-group"
+                     ng-show="cs9.conservationBiodiversity414 == 3">
+                    Provide rationale<br/>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                              ng-model="cs9.conservation414Rationale"></textarea>
+                </div>
             </div>
+
         </div>
         <br>
 
@@ -887,10 +940,12 @@
                         <input type="radio" disabled icheck name="conservationBiodiversity415" ng-model="cs9.conservationBiodiversity415" value=1>
                         Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicator
                         <div class="content-pading">
-                            <div class="form-group" ng-show="cs9.conservationBiodiversity415 == 1">
+                            <div class="form-group"
+                                 ng-show="cs9.conservationBiodiversity415 == 1">
                                 Initiated practices to ensure conservation of significant species of concern (please explain and note
                                 the species that are now addressed)<br/>
-                                <textarea class="col-lg-11" readonly  rows="4" cols="70" ng-model="cs9.conservationBiodiversity415Exp"></textarea>
+                                <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                          ng-model="cs9.conservationBiodiversity415Exp"></textarea>
                             </div>
                         </div>
 
@@ -910,7 +965,8 @@
                     <div class="form-group" ng-show="cs9.conservationBiodiversity415 == 2">
                         Initiated practices to ensure conservation of significant species of concern (please explain and note
                         the species that are now addressed)<br/>
-                        <textarea class="col-lg-11" readonly rows="4" cols="70" ng-model="cs9.conservation415Explain1_1"></textarea>
+                        <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                                  ng-model="cs9.conservation415Explain1_1"></textarea>
                     </div>
                 </div>
 
@@ -924,7 +980,7 @@
                          ng-show="cs9.conservationBiodiversity415 == 3">
                         Initiated practices to ensure conservation of significant species of concern (please explain and note
                         the species that are now addressed)<br/>
-                    <textarea class="form-control col-lg-11" rows="4" cols="70" readonly
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" rows="4" cols="70" readonly
                               name="conservationBiodiversity415Rationale"
                               ng-model="cs9.conservationBiodiversity415Rationale"></textarea>
                     </div>
@@ -1050,9 +1106,12 @@
                 Standard that address the above indicators.
             </label>
 
-            <div class="form-group" ng-show="cs9.indigenousPeoplesPublic == 4">
-                Provide rationale<br/>
-                <textarea readonly  rows="4" cols="70" ng-model="cs9.indigenousPublicRationale"></textarea>
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs9.indigenousPeoplesPublic == 4">
+                    Provide rationale<br/>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                               ng-model="cs9.indigenousPublicRationale"></textarea>
+                </div>
             </div>
         </div>
         <br>
@@ -1148,10 +1207,15 @@
                 <input type="radio" disabled  icheck name="indigenousPeoplesPrivate" ng-model="cs9.indigenousPeoplesPrivate" value=4>
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
-            <div class="form-group" ng-show="cs9.indigenousPeoplesPrivate == 4">
-                Provide rationale<br/>
-                <textarea readonly  rows="4" cols="70" ng-model="cs9.indigenousPrivateRationale"></textarea>
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs9.indigenousPeoplesPrivate == 4">
+                    Provide rationale<br/>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                              ng-model="cs9.indigenousPrivateRationale"></textarea>
+                </div>
             </div>
+
         </div>
         <br>
 
@@ -1271,10 +1335,14 @@
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019
                 Standard that address the above indicators.
             </label>
-            <div class="form-group" ng-show="cs9.indigenousPeoplesForest == 3">
-                Describe practice<br/>
-                <textarea readonly  rows="4" cols="70" ng-model="cs9.indigenousForestPractice"></textarea>
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs9.indigenousPeoplesForest == 3">
+                    Describe practice<br/>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                              ng-model="cs9.indigenousForestPractice"></textarea>
+                </div>
             </div>
+
         </div>
         <br>
 
@@ -1373,17 +1441,24 @@
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019
                 Standard that address the above indicators because:
             </label>
-            <div class="form-group" ng-show="cs9.trainingEducation == 3">
-                Provide rationale<br/>
-                <textarea readonly  rows="4" cols="70" ng-model="cs9.trainingEduRationale"></textarea>
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs9.trainingEducation == 3">
+                    Provide rationale<br/>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                              ng-model="cs9.trainingEduRationale"></textarea>
+                </div>
             </div>
             <label>
                 <input type="radio" disabled  icheck name="trainingEducation" ng-model="cs9.trainingEducation" value=4>
                 We have another mechanism
             </label>
-            <div class="form-group" ng-show="cs9.trainingEducation == 4">
-                Describe the practice<br/>
-                <textarea readonly  rows="4" cols="70" ng-model="cs9.trainingEduRationaleAnother"></textarea>
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs9.trainingEducation == 4">
+                    Describe the practice<br/>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                              ng-model="cs9.trainingEduRationaleAnother"></textarea>
+                </div>
             </div>
         </div>
         <br>
@@ -1448,8 +1523,11 @@
                     Please provide the name of the pesticide used and the rationale for why no other viable alternative was available.
                 </p>
 
-                <div class="form-group" ng-show="cs9.useWho1A1B">
-                    <textarea readonly  rows="2" cols="70" ng-model="cs9.useWho1A1BNote"></textarea>
+                <div class="content-pading">
+                    <div class="form-group" ng-show="cs9.useWho1A1B">
+                        <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="2" cols="70"
+                                  ng-model="cs9.useWho1A1BNote"></textarea>
+                    </div>
                 </div>
             </div>
 
@@ -1472,8 +1550,11 @@
                     Please provide the name of the pesticide that you stopped using.
                 </p>
 
-                <div class="form-group" ng-show="cs9.stopWho1A1B">
-                    <textarea readonly  rows="2" cols="70" ng-model="cs9.stopWho1A1BNote"></textarea>
+                <div class="content-pading">
+                    <div class="form-group" ng-show="cs9.stopWho1A1B">
+                        <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="2" cols="70"
+                                  ng-model="cs9.stopWho1A1BNote"></textarea>
+                    </div>
                 </div>
             </div>
 
@@ -1766,12 +1847,14 @@
                         <input icheck type="radio" disabled  name="convertForestLand" ng-model="cs9.convertForestLand" ng-value="false"> No
                     </label>
 
-
-                    <div class="form-group" ng-show="cs9.convertForestLand">
-                        <p>
-                            Please explain
-                        </p>
-                        <textarea readonly  rows="2" cols="70" ng-model="cs9.convertForestLandExplain"></textarea>
+                    <div class="content-pading">
+                        <div class="form-group" ng-show="cs9.convertForestLand">
+                            <p>
+                                Please explain
+                            </p>
+                            <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="2" cols="70"
+                                      ng-model="cs9.convertForestLandExplain"></textarea>
+                        </div>
                     </div>
                 </div>
 
