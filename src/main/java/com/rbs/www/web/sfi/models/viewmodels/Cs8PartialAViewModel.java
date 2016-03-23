@@ -301,6 +301,7 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     private String fscCocCertificationItemsWhy_2;
     private String fscDemandDeveloping_4;
+    private String fscDemandDeveloping_5;
 
     private Boolean whyChoseSFI20Other;
     private Boolean fscChainCustody1Other;
@@ -522,6 +523,14 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getFscDemandDeveloping_5() {
+        return fscDemandDeveloping_5;
+    }
+
+    public void setFscDemandDeveloping_5(String fscDemandDeveloping_5) {
+        this.fscDemandDeveloping_5 = fscDemandDeveloping_5;
     }
 
     public Integer getFscDemandDeveloping_13() {

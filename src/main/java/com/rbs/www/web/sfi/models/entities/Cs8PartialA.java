@@ -1225,6 +1225,9 @@ public class Cs8PartialA extends BaseEntityModel {
     @Column(name = "cs8_fscDemandDeveloping_4", columnDefinition = "TEXT", nullable = true)
     private String fscDemandDeveloping_4;
 
+    @Column(name = "cs8_fscDemandDeveloping_5", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_5;
+
     @Column(name = "cs8_fscDemandDeveloping_1_1", nullable = true)
     private Integer sfiLogoUseMotivation_1_1;
     @Column(name = "cs8_fscDemandDeveloping_1_2", nullable = true)
@@ -1534,6 +1537,14 @@ public class Cs8PartialA extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getFscDemandDeveloping_5() {
+        return fscDemandDeveloping_5;
+    }
+
+    public void setFscDemandDeveloping_5(String fscDemandDeveloping_5) {
+        this.fscDemandDeveloping_5 = fscDemandDeveloping_5;
     }
 
     public Integer getFscDemandDeveloping_13() {
