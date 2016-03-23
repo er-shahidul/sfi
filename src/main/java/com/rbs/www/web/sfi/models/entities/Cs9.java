@@ -229,10 +229,18 @@ public class Cs9 extends BaseEntityModel {
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> conservationBiodiversity413Items1;
+    @Column(name = "cs9_conservationBiodiversity413Items2", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> conservationBiodiversity413Items2;
     @Column(name = "cs9_conservationBiodiversity414Items1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> conservationBiodiversity414Items1;
+    @Column(name = "cs9_conservationBiodiversity414Items2", nullable = true)
+    @ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<Integer> conservationBiodiversity414Items2;
     @Column(name = "cs9_indigenousPeoplesPublicItems1", nullable = true)
     @ElementCollection
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -345,6 +353,22 @@ public class Cs9 extends BaseEntityModel {
 
     public Set<Integer> getIndigenousPeoplesPublicItems2() {
         return indigenousPeoplesPublicItems2;
+    }
+
+    public Set<Integer> getConservationBiodiversity413Items2() {
+        return conservationBiodiversity413Items2;
+    }
+
+    public void setConservationBiodiversity413Items2(Set<Integer> conservationBiodiversity413Items2) {
+        addAll(this.conservationBiodiversity413Items2, conservationBiodiversity413Items2);
+    }
+
+    public Set<Integer> getConservationBiodiversity414Items2() {
+        return conservationBiodiversity414Items2;
+    }
+
+    public void setConservationBiodiversity414Items2(Set<Integer> conservationBiodiversity414Items2) {
+        addAll(this.conservationBiodiversity414Items2, conservationBiodiversity414Items2);
     }
 
     public void setIndigenousPeoplesPublicItems2(Set<Integer> indigenousPeoplesPublicItems2) {
