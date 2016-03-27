@@ -794,12 +794,14 @@
                         <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements as it relates to the research requirement in the standard.</span>
 
                         <div class="form-group" ng-show="project.incResFunding">
-                            <div class="col-lg-2" style="padding-left: 0;">
-                            $<input type="text" class="" style="width: 100px;" name="incResFundingText"  customerror
-                                   ng-model="project.incResFundingText"/>
+                            <div class="col-lg-2" style="padding-left: 0;"  ng-class="{'has-error' : cs5Form.incResFundingText.$invalid}">
+                                $<input type="text" class="form-control shorter" style="width: 100px;"
+                                        name="incResFundingText"  customerror
+                                        ng-pattern="/^\d*$/"
+                                        ng-model="project.incResFundingText"/>
                             </div>
                             <div class="col-lg-10" style="padding-left: 0px;">
-                            <span>Portion of funds spent towards research-related contributions reported in the Research Funding table at the top of this page</span>
+                                <label>Portion of funds spent towards research-related contributions reported in the Research Funding table at the top of this page (Nearest whole number, no decimal points)</label>
                             </div>
                         </div>
                     </div>
