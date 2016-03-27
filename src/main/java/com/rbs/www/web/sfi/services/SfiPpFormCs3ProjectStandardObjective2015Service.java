@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Service
@@ -22,5 +23,9 @@ public class SfiPpFormCs3ProjectStandardObjective2015Service {
 
     public List<SfiPpFormCs3ProjectStandardObjective2015> getAll() {
         return repository.getAll();
+    }
+
+    public String getSfiStandardObjDesc(Serializable id) {
+        return repository.get(id).getSfiStandardObjDesc();
     }
 }

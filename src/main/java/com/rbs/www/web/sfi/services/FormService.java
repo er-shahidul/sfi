@@ -73,6 +73,11 @@ public class FormService {
     @Autowired
     private ValidationService validationService;
 
+    @Autowired
+    private SfiPpFormCs3ProjectStandardObjectiveService objectiveService;
+
+    @Autowired
+    private SfiPpFormCs3ProjectStandardObjective2015Service objective2015Service;
 
     /************************* Cs1 : Begin ***********************/
     public Cs1ViewModel getCs1ViewModel(Integer id) {
@@ -115,13 +120,17 @@ public class FormService {
     public Cs5ViewModel getCs5ViewModel(Integer id) {
         Cs5 entity = cs5Service.get(id);
         Cs5ViewModel model = viewModelMapperService.convert(entity, Cs5ViewModel.class);
+
         model.setItems(this.getSfiPpFormCs5ViewModels(id));
+        this.setReverseObjectiveStrings(model);
 
         return validationService.validate(model);
     }
 
     public void setCs5Entity(Cs5ViewModel model) {
         cs5Service.manualPopulation(model);
+        this.setObjectiveStrings(model);
+
         Cs5 entity = entityModelMapperService.convert(model, Cs5.class);
 
         for (SfiPpFormCs3ViewModel childModel : model.getProjects()) {
@@ -261,4 +270,32 @@ public class FormService {
         return model;
     }
     /************************* UpdateDate : End   ***********************/
+
+    private void setObjectiveStrings(Cs5ViewModel model) {
+        for (SfiPpFormCs3ViewModel project : model.getProjects()) {
+            for (SfiPpFormCs3ProjectStandardObjectiveViewModel objective : project.getSfiStandard10()) {
+                if (objective.getId() == null) continue;
+                objective.setSfiStandardObjDesc(objectiveService.getSfiStandardObjDesc(objective.getId()));
+            }
+
+            for (SfiPpFormCs3ProjectStandardObjective2015ViewModel objective : project.getSfiStandard15()) {
+                if (objective.getId() == null) continue;
+                objective.setSfiStandardObjDesc(objective2015Service.getSfiStandardObjDesc(objective.getId()));
+            }
+        }
+    }
+
+    private void setReverseObjectiveStrings(Cs5ViewModel model) {
+        for (SfiPpFormCs3ViewModel project : model.getProjects()) {
+            for (SfiPpFormCs3ProjectStandardObjectiveViewModel objective : project.getSfiStandard10()) {
+                if (objective.getId() == null) continue;
+                objective.setSfiStandardObjDesc(objective2015Service.getSfiStandardObjDesc(objective.getId()));
+            }
+
+            for (SfiPpFormCs3ProjectStandardObjective2015ViewModel objective : project.getSfiStandard15()) {
+                if (objective.getId() == null) continue;
+                objective.setSfiStandardObjDesc(objectiveService.getSfiStandardObjDesc(objective.getId()));
+            }
+        }
+    }
 }

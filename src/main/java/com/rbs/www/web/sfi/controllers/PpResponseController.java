@@ -101,7 +101,8 @@ public class PpResponseController {
         formService.setSfiPpFormCs5Entities(model.getItems());
         formService.setCs5Entity(model);
         formService.setCs5Entity(model); // reload for Set<String> in projects
-        return new ResponseEntity<String>(Util.getAsString(validationService.validate(model)), HttpStatus.OK);
+
+        return new ResponseEntity<String>(Util.getAsString(formService.getCs5ViewModel(model.getId())), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/form/cs6", method = RequestMethod.PUT, consumes = {APPLICATION_JSON_VALUE})

@@ -40,20 +40,20 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     private String projectDescr;
 
     @ManyToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective2015.class, fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
+            cascade = CascadeType.DETACH)
     @JoinTable(name = "sfi_pp_form_cs3_project_standard_objectives_sfiStandard10",
             joinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_projects_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_project_standard_objectives_id", referencedColumnName = "id")})
     private Set<SfiPpFormCs3ProjectStandardObjective2015> sfiStandard15;
 
     @ManyToMany(targetEntity = SfiPpFormCs3ProjectStandardObjective.class, fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
+            cascade = CascadeType.DETACH)
     @JoinTable(name = "sfi_pp_form_cs3_project_standard_objectives_sfiStandard15",
             joinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_projects_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "sfi_pp_form_cs3_project_standard_objectives_id", referencedColumnName = "id")})
     private Set<SfiPpFormCs3ProjectStandardObjective> sfiStandard10;
 
-    @ManyToMany(targetEntity = SfiPpFormRegion.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @ManyToMany(targetEntity = SfiPpFormRegion.class, cascade = {CascadeType.DETACH}, fetch = FetchType.EAGER)
     @JoinTable(name = "sfi_pp_form_cs3_project_locations",
             joinColumns = {@JoinColumn(name = "cs3_projectID")},
             inverseJoinColumns = {@JoinColumn(name = "cs3_project_locationID", referencedColumnName = "id")})

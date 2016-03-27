@@ -1,7 +1,10 @@
 package com.rbs.www.web.sfi.services;
 
 import com.rbs.www.web.sfi.models.entities.Cs5;
+import com.rbs.www.web.sfi.models.entities.SfiPpFormCs3ProjectStandardObjective2015;
 import com.rbs.www.web.sfi.models.viewmodels.Cs5ViewModel;
+import com.rbs.www.web.sfi.models.viewmodels.SfiPpFormCs3ProjectStandardObjective2015ViewModel;
+import com.rbs.www.web.sfi.models.viewmodels.SfiPpFormCs3ProjectStandardObjectiveViewModel;
 import com.rbs.www.web.sfi.models.viewmodels.SfiPpFormCs3ViewModel;
 import com.rbs.www.web.sfi.repositories.Cs5Repository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +27,7 @@ public class Cs5Service {
         setProjects(model);
     }
 
-    public void setProjects(Cs5ViewModel model) {
+    private void setProjects(Cs5ViewModel model) {
         Set<SfiPpFormCs3ViewModel> projects = model.getProjects();
 
         Integer counter = 1;
