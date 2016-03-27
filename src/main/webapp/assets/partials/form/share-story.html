@@ -1,0 +1,58 @@
+<div class="fileinput fileinput-new">
+    <p>
+        Attach a list of committee members and SIC Supporters, with full contact information, for incorporating into
+        SFI's contact database to ensure committee members get the latest SFI information directly. Please use excel
+        template provided by SFI Inc.
+    </p>
+
+    <div class="input-group input-large">
+        <div class="form-control uneditable-input input-fixed input-medium" data-trigger="fileinput">
+            <i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+                                                            </span>
+        </div>
+                                                        <span class="input-group-addon btn default btn-file">
+                                                        <span class="fileinput-new">
+                                                        Select file </span>
+                                                        <span class="fileinput-exists">
+                                                        Change </span>
+                                                        <input type="file" name="...">
+                                                        </span>
+    </div>
+
+    <p>Files can be one of the following formats: .pdf, .doc, .xls)</p>
+
+    <div class="text-right">
+        <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">
+            Remove </a>
+        <input type="submit" class="btn default" value="Upload">
+    </div>
+</div>
+
+
+<div class="fileinput fileinput-new" >
+    <p>Attach a copy of SIC organizational guidelines (charter, bylaws, etc.).</p>
+
+    <div class="input-group input-large"
+         ng-file-select ng-model="uploadFile1"
+         ng-file-change="uploadFile(uploadFile1, guideFile, 'image/*,application/pdf,.doc,.docx,.xls,.xlsx')"
+         ng-multiple="false"
+         ng-accept="'image/*,application/pdf,.doc,.docx,.xls,.xlsx'">
+
+        <div class="form-control uneditable-input input-fixed input-medium">
+            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+            <span class="fileinput-filename">{{ guideFile.originalDocumentName }}</span>
+        </div>
+                        <span class="input-group-addon btn default btn-file">
+                            <span ng-hide="guideFile.originalDocumentName" class="fileinput-new">Select file </span>
+                            <span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>
+                        </span>
+
+    </div>
+    <p>Files can be one of the following formats: .doc, .docx, .pdf, .xls, .xlsx)</p>
+
+    <div class="text-right">
+        <a ng-click="guideFile = {}; " ng-show="guideFile.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+        <input type="submit" class="btn default" value="Upload" ng-click="guideFile = saveUploadedFile(guideFile, cs1.guideFiles)">
+    </div>
+
+</div>

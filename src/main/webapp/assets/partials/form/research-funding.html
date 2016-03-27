@@ -361,22 +361,22 @@
                 <div style="margin-top:55px;" class="cs3-project" ng-show="cs5.isInPartnership">
                 <form name="innerFrom"  novalidate>
                     <div class="form-group">
-                    <div class="col-sm-2" style="padding-left: 0;"
+                    <div class="col-sm-2 col-xs-2" style="padding-left: 0;"
                          ng-class="{'has-error' : isDirty() && innerFrom.name.$invalid }">
 
                         <span>Project Name</span></div>
-                    <div class="col-sm-10" style="padding-right: 0px;">
+                    <div class="col-sm-10 col-xs-10" style="padding-right: 0px;">
                         <input type="text" class="form-control" name="name" ng-required="isDirty()" maxlength="200" customerror
                                tooltip data-placement="right" data-container="#secCont" data-title="If this is a partnership project with an official title, please provide the official project name."
                                ng-model="project.projectNm"/>
                     </div>
                 </div>
                     <div class="form-group">
-                    <div class="col-sm-2" style="padding-left:0;"
+                    <div class="col-sm-2 col-xs-2" style="padding-left:0;"
                          ng-class="{'has-error' : isDirty() && innerFrom.projectObj.$invalid }">
 
                         <span>Project Objective</span></div>
-                    <div class="col-sm-10" style="padding-right: 0px;">
+                    <div class="col-sm-10 col-xs-10" style="padding-right: 0px;">
                         <input type="text" class="form-control" name="projectObj" ng-required="isDirty()" maxlength="200" customerror
                                ng-model="project.projectObj"/>
                     </div>
@@ -657,12 +657,12 @@
 
 
                         <label style="line-height: 32px;font-weight:unset;">Estimated project dates</label>
-                        <div class="col-sm-4 nopadding" style="margin-left: 13.666667%;"
+                        <div class="col-sm-4 col-xs-4 nopadding" style="margin-left: 13.666667%;"
                              ng-class="{'has-error' : isDirty() && innerFrom.start_date.$invalid}">
 
-                            <div class="col-sm-4 nopadding" style="line-height: 32px;">Start date</div>
+                            <div class="col-sm-4 col-xs-4 nopadding" style="line-height: 32px;">Start date</div>
 
-                            <div class="col-sm-8 nopadding">
+                            <div class="col-sm-8 col-xs-8 nopadding">
                                 <div class='input-group date datetimepicker' datetimepicker>
                                     <input type='text' class="form-control datepicker" name="start_date"
                                            ng-required="isDirty()" customerror
@@ -675,12 +675,12 @@
 
                         </div>
 
-                        <div class="col-sm-4 nopadding" style="margin-left: 10.333333%;"
+                        <div class="col-sm-4  col-xs-4 nopadding" style="margin-left: 10.333333%;"
                              ng-class="{'has-error' : isDirty() && innerFrom.end_date.$invalid}">
-                            <div class="col-sm-4 nopadding" style="line-height: 32px;">
+                            <div class="col-sm-4 col-xs-4 nopadding" style="line-height: 32px;">
                                 End date
                             </div>
-                            <div class="col-sm-8 nopadding">
+                            <div class="col-sm-8 col-xs-8  nopadding">
                                 <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
                                     <input type='text' class="form-control" name="end_date" customerror
                                            ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
