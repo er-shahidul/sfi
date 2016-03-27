@@ -324,53 +324,31 @@
                         Who are the main contacts for your organization that should be receiving SFI related information? Please include your organization's Head of Communications.
                     </p>
                     <div>
-                        <table class="table table-striped" ng-show="cs8.primaryProducers.length">
-                            <thead>
-                            <tr>
-                                <th>Name of primary producer</th>
-                                <th>% of total annual purchased supply</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
 
-                            <tr ng-repeat="item in cs8.primaryProducers">
-                                <td class="ng-binding">{{ producers[item.source - 1] }}</td>
-                                <td class="ng-binding">{{ item.percPurchased }} </td>
+                        <div ng-repeat="producer in cs8.primaryProducers">
+                            <form name="producerForm">
+                                <p>
+                                    Select companies/manufacturers/mills from which you sourced SFI material in 2015:
+                                </p>
+                                <label class="form-inline">
+                                    SFI primary producers
 
-                                <td class="disabled"><a href="" ng-click="">Edit</a></td>
-                                <td class="disabled"><a href="" ng-click="">Delete</a></td>
-                            </tr>
-                            </tbody>
-                        </table><br/>
-                        <form name="producerForm">
-                            <p>
-                                Select companies/manufacturers/mills from which you sourced SFI material in 2015:
-                            </p>
-                            <label class="form-inline">
-                                SFI primary producers
+                                    <select disabled class="form-control" name="producerSource"
+                                            ng-model="producer.source">
 
-                                <!--<select readonly class="form-control" name="producerSource" ng-model="producer.source"-->
-                                        <!--ng-options="$index*1 + 1 as item for item in producers">-->
-                                    <!--<option ng-selected="!producer.source">Select</option>-->
+                                        <option ng-selected="!producer.source">Select</option>
+                                        <option ng-value="$index + 1" ng-repeat="item in producers" ng-selected="producer.source == $index + 1">{{item}}</option>
+                                    </select>
+                                </label>
 
-                                <!--</select>-->
+                                <label class="form-inline">
+                                    How much of your total annual purchased supply does this supplier represent (estimate)
+                                    <input type="number" readonly ng-model="producer.percPurchased" name="percPurchased" class="form-control" style="width: 60px;"> %
+                                </label>
 
-                                <select disabled class="form-control" name="producerSource"
-                                        ng-model="producer.source">
 
-                                    <option ng-selected="!producer.source">Select</option>
-                                    <option ng-value="$index + 1" ng-repeat="item in producers" ng-selected="producer.source == $index + 1">{{item}}</option>
-                                </select>
-                            </label>
-                            <label class="form-inline">
-                                How much of your total annual purchased supply does this supplier represent (estimate)
-                                <input type="number" readonly ng-model="producer.percPurchased" name="percPurchased" class="form-control" style="width: 60px;"> %
-                            </label>
-
-                        <!--<p style="text-align: right;padding-top: 10px;padding-right: 60px;" ng-click="addProducer()">+ Add Another</p>-->
-                        </form>
+                            </form>
+                        </div>
                     </div>
 
                 </div>
