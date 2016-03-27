@@ -1126,7 +1126,7 @@
                 N/A –we do not operate on public lands
             </label>
             <label>
-                <div>
+                <!--<div>-->
                     <input type="radio" disabled  icheck name="indigenousPeoplesPrivate" ng-model="cs9.indigenousPeoplesPrivate" value=2>
                     Yes, we have made changes based off the new Requirements in the SFI 2015-2019 Standard that address the following indicators.
 
@@ -1163,7 +1163,7 @@
                             </label>
                         </li>
                     </ul>
-                </div>
+                <!--</div>-->
             </label>
             <label>
                 <input type="radio" disabled  icheck name="indigenousPeoplesPrivate" ng-model="cs9.indigenousPeoplesPrivate" value=3>
@@ -1883,34 +1883,8 @@
                         <tr ng-repeat="forestlandArea in cs9.forestlandAreas">
                             <td class="col-lg-5">{{ forestlandArea.area }} AC</td>
                             <td class="col-lg-5">{{ forestlandArea.region.name }}</td>
-                            <!--<td class="col-lg-2">-->
-                                <!--<a style="text-align: right;padding-top: 10px;" ng-click="editRegionArea($index)">Edit</a> &nbsp; &nbsp;-->
-                                <!--<a style="text-align: right;padding-top: 10px;" ng-click="deleteRegionArea($index)">Delete</a>-->
-                            <!--</td>-->
                         </tr>
                         <tr></tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="number" readonly  name="area" ng-model="regionArea"> AC
-                                </label>
-                            </td>
-                            <td ng-init="regionId = 0" >
-                                <label>
-                                    <select disabled  class="col-lg-12" ng-model="regionId" id="regionId">
-                                        <option value=0>< Select Region ></option>
-                                        <option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
-                                    </select>
-                                </label>
-                            </td>
-                        </tr>
-                        <!--<tr>-->
-                            <!--<td></td>-->
-
-                            <!--<td style="text-align: right;">-->
-                                <!--&lt;!&ndash;<a ng-click="saveRegionArea()">+ Save Region</a>&ndash;&gt;-->
-                            <!--</td>-->
-                        <!--</tr>-->
                     </tbody>
                 </table>
 

@@ -312,51 +312,56 @@
                     </div>
                 </div>
 
-                <table class="table table-striped" ng-show="cs5.isInPartnership == true && getProjects().length">
-                    <thead>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Project Objective</th>
-                        <!--<th>Edit</th>-->
-                        <!--<th>Delete</th>-->
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="project in getProjects()">
-                        <td>{{ project.projectNm }}</td>
-                        <td>{{ project.projectObj }}</td>
-                        <!--<td><a href="" ng-click="editProject($index)">Edit</a></td>-->
-                        <!--<td><a href="" ng-click="deleteProject($index)">Delete</a></td>-->
-                    </tr>
-                    </tbody>
-                </table>
+                <!--<table class="table table-striped" ng-show="cs5.isInPartnership == true && getProjects().length">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th>Project Name</th>-->
+                        <!--<th>Project Objective</th>-->
+                        <!--&lt;!&ndash;<th>Edit</th>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<th>Delete</th>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<tr ng-repeat="project in getProjects()">-->
+                        <!--<td>{{ project.projectNm }}</td>-->
+                        <!--<td>{{ project.projectObj }}</td>-->
+                        <!--&lt;!&ndash;<td><a href="" ng-click="editProject($index)">Edit</a></td>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<td><a href="" ng-click="deleteProject($index)">Delete</a></td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
 
 
-                <div class="cs3-project" ng-show="cs5.isInPartnership">
+                <div style="margin-top:55px;" class="cs3-project" ng-show="cs5.isInPartnership" ng-repeat="project in getProjects()">
                     <form name="innerFrom"  novalidate>
+                        <div class="form-group">
 
-                        <div class="form-group"
-                             ng-class="{'has-error' : isDirty() && innerFrom.name.$invalid }">
+                            <div class="col-sm-2" style="padding-left: 0;"
+                                 ng-class="{'has-error' : isDirty() && innerFrom.name.$invalid }">
+                                <span>Project Name</span>
+                            </div>
 
-                            <span>Project Name</span>
-                            <input type="text" readonly  class="form-control" name="name" ng-required="isDirty()" maxlength="200" customerror
-                                   tooltip data-placement="right" data-container="#secCont" data-title="If this is a partnership project with an official title, please provide the official project name."
-                                   ng-model="project.projectNm"/>
+                            <div class="col-sm-10" style="padding-right: 0px;">
+                                <input type="text" class="form-control" name="name" ng-required="isDirty()" maxlength="200" customerror
+                                       tooltip data-placement="right" data-container="#secCont" data-title="If this is a partnership project with an official title, please provide the official project name."
+                                       ng-model="project.projectNm"/>
+                            </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-sm-2" style="padding-left:0;"
+                                 ng-class="{'has-error' : isDirty() && innerFrom.projectObj.$invalid }">
 
-                        <div class="form-group"
-                             ng-class="{'has-error' : isDirty() && innerFrom.projectObj.$invalid }">
-
-                            <span>Project Objective</span>
-                            <input type="text" readonly  class="form-control" name="projectObj" ng-required="isDirty()" maxlength="200" customerror
-                                   ng-model="project.projectObj"/>
+                                <span>Project Objective</span></div>
+                            <div class="col-sm-10" style="padding-right: 0px;">
+                                <input type="text" class="form-control" name="projectObj" ng-required="isDirty()" maxlength="200" customerror
+                                       ng-model="project.projectObj"/>
+                            </div>
                         </div>
-
                         <div class="form-group"
                              ng-class="{'has-error' : isDirty() && innerFrom.projectDescr.$invalid }">
 
                             <span>Short project description (include main point of contact and other relevant information - max. 650 words)</span>
-                        <textarea readonly  class="form-control" name="projectDescr" ng-required="isDirty()"
+                        <textarea class="form-control" name="projectDescr" ng-required="isDirty()"
                                   style="resize:none;" maxlength="4000" max-word-count="650" customerror
                                   ng-model="project.projectDescr"></textarea>
                         </div>
@@ -365,13 +370,19 @@
                              ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
                             <span>SFI 2015-2019 Standard Objective most relevant to project</span>
-                            <select disabled   class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"
-                                    ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects)">
+                            <select class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"
+                                    ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects2015)">
                                 <option value="0" ng-selected="!project.sfiStandard10">Please select</option>
-                                <option ng-repeat="item in standardObjects" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                                <optgroup label="SFI 2015-2019 Forest Land Management Objectives">
+                                    <option ng-repeat="item in standardObjects2015" ng-if="item.id <= 15" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
+                                </optgroup>
+                                <optgroup label="SFI 2015-2019 Fiber Sourcing Objectives">
+                                    <option ng-repeat="item in standardObjects2015" ng-if="item.id > 15" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
+                                </optgroup>
                             </select>
 
                             <div id="selectedItem" ng-repeat="item in project.sfiStandard10">{{ item.sfiStandardObjDesc }}
+                                <button ng-click="project.sfiStandard10 = deleteBucket(item.id, project.sfiStandard10)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
 
@@ -380,184 +391,191 @@
                              ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
                             <span>SFI 2010-2014 Standard Objective most relevant to project</span>
-                            <select disabled   class="form-control" name="sfiStandard15" customerror ng-init="sfiStandard15 = 0"
+                            <select class="form-control" name="sfiStandard15" customerror ng-init="sfiStandard15 = 0"
                                     ng-model="sfiStandard15" ng-change="sfiStandard15 = addBucket(project.sfiStandard15, sfiStandard15, standardObjects)">
                                 <option value="0" ng-selected="!project.sfiStandard15">Please select</option>
-                                <option ng-repeat="item in standardObjects" ng-value={{item.id}}>{{item.sfiStandardObjDesc}}</option>
+                                <option ng-repeat="item in standardObjects" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
                             </select>
 
                             <div id="selectedItem" ng-repeat="item in project.sfiStandard15">{{ item.sfiStandardObjDesc }}
-                                <!--<button ng-click="project.sfiStandard15 = deleteBucket(item.id, project.sfiStandard15)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>-->
+                                <button ng-click="project.sfiStandard15 = deleteBucket(item.id, project.sfiStandard15)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <span>Select state(s)/province(s) for this project (new!)</span>
-                            <select disabled   class="form-control" name="region" ng-init="regionModel = 0"
-                                    ng-model="regionModel" ng-change="regionModel = addBucket(project.projectLocations, regionModel, regions)">
-                                <option value="0" >Please select</option>
-                                <option ng-repeat="region in regions" ng-value={{region.id}}>{{region.name}}</option>
-                            </select>
+                            <div class="col-sm-5" style="padding-left: 0;">
+                                <span>Select state(s)/province(s) for this project</span>  </div>
+                            <div class="col-sm-7" style="padding-right: 0;">
+                                <select class="form-control" name="region" ng-init="regionModel = 0"
+                                        ng-model="regionModel" ng-change="regionModel = addBucket(project.projectLocations, regionModel, regions)">
+                                    <option value="0" >Please select</option>
+                                    <option ng-repeat="region in regions" data-ng-value="region.id">{{region.name}}</option>
+                                </select>
 
-                            <div id="selectedItem" ng-repeat="region in project.projectLocations">{{ region.name }}
-                                <!--<button ng-click="project.projectLocations = deleteBucket(region.id, project.projectLocations)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>-->
+                                <div id="selectedItem" ng-repeat="region in project.projectLocations">{{ region.name }}
+                                    <!--<button ng-click="project.projectLocations = deleteBucket(region.id, project.projectLocations)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>-->
+                                    <button ng-click="delRegion(region.id)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
                             </div>
-
                         </div>
-
+                        <br>
                         <!-- Org list -->
-                        <div class="form-group-hack">
+                        <div class="form-group" style="padding-left: 0;">
                             <span>Project Partners (enter details for at least one of the following)</span>
 
                             <span ng-show="isDirty() && !hasAnyOrg()" class="error">Enter details for at least one of the following</span>
 
-                            <div class="form-group-hack form-group">
-                                <div class="col-sm-2">
+                            <div class="form-group-hack form-group" style="padding-top: 15px;">
+                                <div class="col-sm-3">
                                     <span>University or College</span>
                                 </div>
-                                <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
+                                <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
 
                                     <input type="text"
-                                           readonly
                                            class="form-control"
                                            ng-model="academicModel2"
                                            name="organizationListAcademic2"
                                            placeholder="University or College"
-                                           ng-options="item for item in academicOptions"
+                                           ng-options="item.name for item in academicOptions"
                                            data-auto-select="true" watchOptions="true" bs-typeahead>
 
+
                                     <div id="selectedItem" ng-repeat="item in project.organizationListAcademic">{{ item }}
-                                        &nbsp;
+                                        <button ng-click="project.organizationListAcademic = withoutList(item, project.organizationListAcademic)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-1">
                                     <a style="text-decoration:underline;">
-                                        <label ng-show="academicModel2 && academicModel2.trim()"
+                                        <label ng-show="academicModel2"
                                                ng-click="project.organizationListAcademic = addList(project.organizationListAcademic, academicModel2) ; academicModel2 = null">+ Save</label>
                                     </a>
                                 </div>
 
                             </div>
 
-                            <div class="form-group-hack form-group" >
-                                <div class="col-sm-2">
+                            <div class="form-group-hack form-group" style="padding-top: 5px;">
+                                <div class="col-sm-3">
                                     <span>Research Institution</span>
                                 </div>
-                                <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListResearch.$invalid }">
+                                <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListResearch.$invalid }">
 
                                     <input type="text"
-                                           readonly
                                            class="form-control"
                                            name="organizationListResearch2"
                                            ng-model="researchModel2"
-                                           ng-options="item for item in researchList"
+                                           ng-options="item.name for item in researchList"
                                            placeholder="Research Institution"
                                            data-auto-select="true" watchOptions="true" bs-typeahead>
 
+
                                     <div id="selectedItem" ng-repeat="item in project.organizationListResearch">{{ item }}
-                                        &nbsp;
+                                        <button ng-click="project.organizationListResearch = withoutList(item, project.organizationListResearch)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-1">
                                     <a style="text-decoration:underline;">
-                                        <label ng-show="researchModel2 && researchModel2.trim()"
+                                        <label ng-show="researchModel2"
                                                ng-click="project.organizationListResearch = addList(project.organizationListResearch, researchModel2) ; researchModel2 = null">+ Save</label>
                                     </a>
                                 </div>
                             </div>
 
                             <div class="form-group-hack form-group">
-                                <div class="col-sm-2">
-                                    <span>Conservation Organisation</span>
+                                <div class="col-sm-3" style="padding-right:0;">
+                                    <span>Conservation Organization</span>
                                 </div>
-                                <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
+                                <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
 
                                     <input type="text"
-                                           readonly
                                            class="form-control"
                                            name="organizationListConservation2"
                                            ng-model="conservationModel2"
-                                           ng-options="item for item in conservationList"
-                                           placeholder="Conservation Organisation"
+                                           ng-options="item.name for item in conservationList"
+                                           placeholder="Conservation Organization"
                                            data-auto-select="true" watchOptions="true" bs-typeahead>
 
                                     <div id="selectedItem" ng-repeat="item in project.organizationListConservation">{{ item }}
-                                        &nbsp;
+                                        <button ng-click="project.organizationListConservation = withoutList(item, project.organizationListConservation)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-1">
                                     <a style="text-decoration:underline;">
-                                        <label ng-show="conservationModel2 && conservationModel2.trim()"
+                                        <label ng-show="conservationModel2"
                                                ng-click="project.organizationListConservation = addList(project.organizationListConservation, conservationModel2) ; conservationModel2 = null">+ Save</label>
                                     </a>
                                 </div>
                             </div>
 
                             <div class="form-group-hack form-group">
-                                <div class="col-sm-2">
+                                <div class="col-sm-3">
                                     <span>Government</span>
                                 </div>
-                                <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListGovernment.$invalid }">
+                                <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListGovernment.$invalid }">
 
                                     <input type="text"
-                                           readonly
                                            class="form-control"
                                            name="organizationListGovernment2"
                                            ng-model="governmentModel2"
-                                           ng-options="item for item in governmentList"
+                                           ng-options="item.name for item in governmentList"
                                            placeholder="Government"
                                            data-auto-select="true" watchOptions="true" bs-typeahead>
 
                                     <div id="selectedItem" ng-repeat="item in project.organizationListGovernment">{{ item }}
-                                        &nbsp;
+                                        <button ng-click="project.organizationListGovernment = withoutList(item, project.organizationListGovernment)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     </div>
 
                                 </div>
                                 <div class="col-sm-1">
                                     <a style="text-decoration:underline;">
-                                        <label ng-show="governmentModel2 && governmentModel2.trim()"
+                                        <label ng-show="governmentModel2"
                                                ng-click="project.organizationListGovernment = addList(project.organizationListGovernment, governmentModel2) ; governmentModel2 = null">+ Save</label>
                                     </a>
                                 </div>
                             </div>
 
                             <div class="form-group-hack form-group">
-                                <div class="col-sm-2">
+                                <div class="col-sm-3" style="padding-right: 0;">
                                     <span>Community Organization</span>
                                 </div>
-                                <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListCommunity.$invalid }">
+                                <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListCommunity.$invalid }">
 
 
                                     <input type="text"
-                                           readonly
                                            class="form-control" n
                                            ame="organizationListCommunity2"
                                            ng-model="communityModel2"
-                                           ng-options="item for item in communityList"
+                                           ng-options="item.name for item in communityList"
                                            placeholder="Community Organization"
                                            data-auto-select="true" data-watch-options="true" bs-typeahead>
 
+
+                                    <!--<select class="form-control"-->
+                                    <!--ng-model="communityModel2"-->
+                                    <!--name="organizationListCommunity2"-->
+                                    <!--ng-change="project.organizationListCommunity = addList(project.organizationListCommunity, communityModel2); communityModel2 = 0" >-->
+                                    <!--<option ng-selected="!communityList" value="0">Select</option>-->
+                                    <!--<option ng-repeat="item in communityList" value="{{item.name}}">{{ item.name }}</option>-->
+                                    <!--</select>-->
+
                                     <div id="selectedItem" ng-repeat="item in project.organizationListCommunity">{{ item }}
-                                        &nbsp;
+                                        <button ng-click="project.organizationListAcademic = withoutList(item, project.organizationListCommunity)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-1">
                                     <a style="text-decoration:underline;">
-                                        <label ng-show="communityModel2 && communityModel2.trim()"
+                                        <label ng-show="communityModel2"
                                                ng-click="project.organizationListCommunity = addList(project.organizationListCommunity, communityModel2) ; communityModel2 = null">+ Save</label>
                                     </a>
                                 </div>
                             </div>
 
                             <div class="form-group-hack form-group">
-                                <div class="col-sm-2">
+                                <div class="col-sm-3">
                                     <span>Other</span>
                                 </div>
-                                <div class="col-sm-9" ng-class="{'has-error' : isDirty() && innerFrom.organizationListOther.$invalid }">
+                                <div class="col-sm-8" ng-class="{'has-error' : isDirty() && innerFrom.organizationListOther.$invalid }">
 
                                     <input type="text"
-                                           readonly
                                            class="form-control"
                                            name="organizationListOther2"
                                            ng-model="otherModel2"
@@ -566,7 +584,7 @@
                                            data-auto-select="true" watchOptions="true" bs-typeahead>
 
                                     <div id="selectedItem" ng-repeat="item in project.organizationListOther">{{ item }}
-                                        &nbsp;
+                                        <button ng-click="project.organizationListOther = withoutList(item, project.organizationListOther);" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-1">
@@ -576,25 +594,21 @@
                                     </a>
                                 </div>
                             </div>
-
-
-
                         </div>
                         <!-- --/-- -->
 
                         <div class="form-group">
 
 
-                            <span>Estimated project dates</span>
-                            <div class="col-sm-4 nopadding"
+                            <label style="line-height: 32px;font-weight:unset;">Estimated project dates</label>
+                            <div class="col-sm-4 nopadding" style="margin-left: 13.666667%;"
                                  ng-class="{'has-error' : isDirty() && innerFrom.start_date.$invalid}">
 
                                 <div class="col-sm-4 nopadding" style="line-height: 32px;">Start date</div>
 
                                 <div class="col-sm-8 nopadding">
-                                    <div class='input-group date ' >
-                                        <input type='text' class="form-control " name="start_date"
-                                               readonly
+                                    <div class='input-group date datetimepicker' datetimepicker>
+                                        <input type='text' class="form-control datepicker" name="start_date"
                                                ng-required="isDirty()" customerror
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                                pattern-msg="Please enter a valid date(YYYY-MM-DD)"
@@ -605,15 +619,14 @@
 
                             </div>
 
-                            <div class="col-sm-4 col-sm-offset-2 nopadding"
+                            <div class="col-sm-4 nopadding" style="margin-left: 10.333333%;"
                                  ng-class="{'has-error' : isDirty() && innerFrom.end_date.$invalid}">
                                 <div class="col-sm-4 nopadding" style="line-height: 32px;">
                                     End date
                                 </div>
                                 <div class="col-sm-8 nopadding">
-                                    <div class='input-group date ' id='datetimepicker2'>
+                                    <div class='input-group date datetimepicker' datetimepicker id='datetimepicker2'>
                                         <input type='text' class="form-control" name="end_date" customerror
-                                               readonly
                                                ng-pattern="/^\d{4}\-\d{1,2}\-\d{1,2}.*$/"
                                                pattern-msg="Please enter a valid date(YYYY-MM-DD)"
                                                ng-model="project.endDate">
@@ -626,115 +639,127 @@
                         <div class="form-group"
                              ng-class="{'has-error' : isDirty() && innerFrom.estimated_cost.$invalid}">
 
-                            <span>Estimated project cost</span>
-                            <select disabled   class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
+                            <div class="col-sm-3 nopadding" style="line-height: 32px;">Estimated project cost</div>
+                            <select class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
                                     ng-model="project.totalProjectCost">
                                 <option value ng-selected="!project.totalProjectCost">Select estimated project cost</option>
                                 <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>
                             </select>
 
                             <u>
-                                <span class="currPop" id="currPop1"
-                                    ng-click="currPopPp('currPop1', 'totalProjectCostCurr')">{{ gerCurrText(project.totalProjectCostCurr) }}</span>
+                         <span class="currPop" id="currPop1"
+                               ng-click="currPopPp('currPop1', 'totalProjectCostCurr')">{{ gerCurrText(project.totalProjectCostCurr) }}</span>
                             </u>
                         </div>
 
                         <div class="form-group"
                              ng-class="{'has-error' : isDirty() && innerFrom.org_contribution.$invalid}">
 
-                            <span>Organization contribution</span>
-                            <select disabled   class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
+                            <div class="col-sm-3 nopadding" style="line-height: 32px;">Organization contribution</div>
+                            <select class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
                                     ng-model="project.orgContribution">
                                 <option value ng-selected="!project.orgContribution">Select organization contribution</option>
                                 <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>
                             </select>
                             <u>
-                            <span class="currPop" id="currPop2"
-                                  ng-click="currPopPp('currPop2', 'orgContributionCurr')">{{ gerCurrText(project.orgContributionCurr) }}</span>
+                    <span class="currPop" id="currPop2"
+                          ng-click="currPopPp('currPop2', 'orgContributionCurr')">{{ gerCurrText(project.orgContributionCurr) }}</span>
                             </u>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-5 nopadding">
-                                <span>Supporting documentation (optional)</span>
-                            </div>
-                            <div class="col-sm-7 nopadding"
-                                 style="cursor: pointer;"
-                                 ng-file-select ng-model="myFiles"
-                                 ng-file-change="fileSelected(files)"
-                                 ng-multiple="false"
-                                 ng-accept="'image/*,application/pdf'" >
-                                <div>Click to add files from your computer</div>
-                                <div><small><u>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</u></small></div>
-                            </div>
-                            <div id="valdfil">
-                                <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted" ng-click="download(doc.projectUniqueDocumentName, doc.projectOriginalDocumentName)" >&nbsp;{{ doc.projectOriginalDocumentName }}&nbsp;
+
+                        <!--start-->
+                        <div class="form-group" style="padding-left:0 ">
+
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="col-sm-3" style="padding-left:0 ">
+                                    <p>Supporting documentation (optional).</p>
+                                </div>
+                                <div class="col-sm-8" style="padding-left:0 ">
+                                    <div class="input-group input-large"
+                                         ng-file-select ng-model="myFiles"
+                                         ng-file-change="fileSelected(files)"
+                                         ng-multiple="false"
+                                         ng-accept="'image/*,application/pdf,.doc,.docx,.xls,.xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ file.originalDocumentName }}</span>
+                                        </div>
+                        <span class="input-group-addon btn default btn-file">
+                            <span class="fileinput-new">Browse </span>
+                            <!--<span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>-->
+                        </span>
+
+                                    </div>
+                                    <p>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</p>
+
+                                    <div id="valdfil">
+                                        <div id="selectedItem" ng-repeat="doc in project.supportDocs" ng-hide="doc.isDeleted"
+                                             ng-click="download(doc.projectUniqueDocumentName, doc.projectOriginalDocumentName)" >&nbsp;{{ doc.projectOriginalDocumentName }}&nbsp;
+                                            <button ng-click="delSupportDoc($index);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
 
+
+                        <!--end-->
+
                         <div class="form-group">
-                            <input type="checkbox" disabled   name="incResFunding" icheck ng-model="project.incResFunding"/>
-                            <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements.</span>
+                            <input type="checkbox" name="incResFunding" icheck ng-model="project.incResFunding" />
+
+                            <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of the funding for this project is included in your Research Funding dollars reported above to meet SFI Standard Requirements as it relates to the research requirement in the standard.</span>
+
                             <div class="form-group" ng-show="project.incResFunding">
                                 <div class="col-lg-2" style="padding-left: 0;">
-                                    $<input type="text" class="" style="width: 100px;" name="incResFundingText" readonly  customerror
+                                    $<input type="text" class="" style="width: 100px;" name="incResFundingText"  customerror
                                             ng-model="project.incResFundingText"/>
                                 </div>
-                                <div class="col-lg-10" padding-left: 0px;>
+                                <div class="col-lg-10" style="padding-left: 0px;">
                                     <span>Portion of funds spent towards research-related contributions reported in the Research Funding table at the top of this page</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="checkbox" disabled   name="incSFIConservation" icheck ng-model="project.incSFIConservation"/>
+                            <input type="checkbox" name="incSFIConservation" icheck ng-model="project.incSFIConservation"/>
                             <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if this project is part of a 2015 SFI Conservation or Community Grant.</span>
                         </div>
 
+
                         <div class="form-group">
-                            <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">May SFI use this project as an example in communications, to help convey the exemplary work of SFI Program Participants in
-                                the areas of conservation and community engagement?</span><br/>
+                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel question-style">May SFI use this project as an example in communications, to help convey the exemplary work of SFI Program Participants in
+                            the areas of conservation and community engagement?</span><br/>
 
                             <div style="padding-left: 15px;">
-                                <input disabled type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="1"/>
+                                <input type="radio"  name="concept{{$index}}" icheck ng-model="project.shareConceptData"  ng-checked="project.shareConceptData == true" ng-value="true"/>
                                 <span class="radioLabel">Share – with our organization’s name</span>
                             </div>
 
                             <div style="padding-left: 15px;">
-                                <input disabled type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="2" />
+                                <input type="radio" name="concept{{$index}}" icheck ng-model="project.shareConceptNoName"  ng-checked="project.shareConceptNoName == true" ng-value="true"/>
                                 <span class="radioLabel">Share – don’t use our organization’s name</span>
                             </div>
 
                             <div style="padding-left: 15px;">
-                                <input disabled type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="3"/>
-                                <span class="radioLabel">Please don’t share </span>
+                                <input type="radio" name="concept{{$index}}" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true" ng-value="true"/>
+                                <span class="radioLabel">Only use in aggregate</span>
                             </div>
-
-                            <!--<div>-->
-                                <!--<input type="radio" disabled   name="consent" icheck ng-model="project.shareConceptData" ng-checked="project.shareConceptData == true"/>-->
-                                <!--<span class="radioLabel">Share – with our organization’s name</span>-->
-                            <!--</div>-->
-
-                            <!--<div>-->
-                                <!--<input type="radio" disabled   name="consent" icheck ng-model="project.shareConceptNoName" ng-checked="project.shareConceptNoName == true" />-->
-                                <!--<span class="radioLabel">Share – don’t use our organization’s name</span>-->
-                            <!--</div>-->
-
-                            <!--<div>-->
-                                <!--<input type="radio" disabled   name="consent" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true"/>-->
-                                <!--<span class="radioLabel">Only use in aggregate</span>-->
-                            <!--</div>-->
-
                         </div>
 
-                        <div class="form-group">
-                            <input ng-model="validate" ng-hide="true">
-                            <!--<a href="" ng-click="addProject()" ng-show="cs5.isInPartnership">+ Add another project</a>-->
-                        </div>
+
+                        <!--<div class="form-group">-->
+                            <!--<input ng-model="validate" ng-hide="true">-->
+                            <!--<a href="" ng-click="addProject()" ng-show="cs5.isInPartnership" class="myButton">+ Add another project</a>-->
+                        <!--</div>-->
 
                     </form>
                 </div>
+
+
                 <br>
                 <h5>III. SIC Funding</h5>
                 <table class="table table-striped vert-align-middle">
