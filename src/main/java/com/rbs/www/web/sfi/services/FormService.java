@@ -274,10 +274,12 @@ public class FormService {
     private void setObjectiveStrings(Cs5ViewModel model) {
         for (SfiPpFormCs3ViewModel project : model.getProjects()) {
             for (SfiPpFormCs3ProjectStandardObjectiveViewModel objective : project.getSfiStandard10()) {
+                if (objective.getId() == null) continue;
                 objective.setSfiStandardObjDesc(objectiveService.getSfiStandardObjDesc(objective.getId()));
             }
 
             for (SfiPpFormCs3ProjectStandardObjective2015ViewModel objective : project.getSfiStandard15()) {
+                if (objective.getId() == null) continue;
                 objective.setSfiStandardObjDesc(objective2015Service.getSfiStandardObjDesc(objective.getId()));
             }
         }
@@ -286,10 +288,12 @@ public class FormService {
     private void setReverseObjectiveStrings(Cs5ViewModel model) {
         for (SfiPpFormCs3ViewModel project : model.getProjects()) {
             for (SfiPpFormCs3ProjectStandardObjectiveViewModel objective : project.getSfiStandard10()) {
+                if (objective.getId() == null) continue;
                 objective.setSfiStandardObjDesc(objective2015Service.getSfiStandardObjDesc(objective.getId()));
             }
 
             for (SfiPpFormCs3ProjectStandardObjective2015ViewModel objective : project.getSfiStandard15()) {
+                if (objective.getId() == null) continue;
                 objective.setSfiStandardObjDesc(objectiveService.getSfiStandardObjDesc(objective.getId()));
             }
         }
