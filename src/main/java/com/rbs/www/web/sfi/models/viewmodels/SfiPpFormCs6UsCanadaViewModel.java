@@ -154,17 +154,17 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
     private Float percDeliveredQualifiedLogging7;
     private Float percDeliveredQualifiedLogging8;
     private Float percDeliveredQualifiedLogging9;
-    private Float percDeliveredQualifiedLoggingReason10;
-    private Float percDeliveredQualifiedLoggingReason11;
-    private Float percDeliveredQualifiedLoggingReason1;
-    private Float percDeliveredQualifiedLoggingReason2;
-    private Float percDeliveredQualifiedLoggingReason3;
-    private Float percDeliveredQualifiedLoggingReason4;
-    private Float percDeliveredQualifiedLoggingReason5;
-    private Float percDeliveredQualifiedLoggingReason6;
-    private Float percDeliveredQualifiedLoggingReason7;
-    private Float percDeliveredQualifiedLoggingReason8;
-    private Float percDeliveredQualifiedLoggingReason9;
+    private String percDeliveredQualifiedLoggingReason10;
+    private String percDeliveredQualifiedLoggingReason11;
+    private String percDeliveredQualifiedLoggingReason1;
+    private String percDeliveredQualifiedLoggingReason2;
+    private String percDeliveredQualifiedLoggingReason3;
+    private String percDeliveredQualifiedLoggingReason4;
+    private String percDeliveredQualifiedLoggingReason5;
+    private String percDeliveredQualifiedLoggingReason6;
+    private String percDeliveredQualifiedLoggingReason7;
+    private String percDeliveredQualifiedLoggingReason8;
+    private String percDeliveredQualifiedLoggingReason9;
     private Float percFSCOnlyCertified10;
     private Float percFSCOnlyCertified11;
     private Float percFSCOnlyCertified1;
@@ -1373,91 +1373,91 @@ public class SfiPpFormCs6UsCanadaViewModel extends BaseViewModel {
         this.percDeliveredQualifiedLogging9 = percDeliveredQualifiedLogging9;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason10() {
+    public String getPercDeliveredQualifiedLoggingReason10() {
         return percDeliveredQualifiedLoggingReason10;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason10(Float percDeliveredQualifiedLoggingReason10) {
+    public void setPercDeliveredQualifiedLoggingReason10(String percDeliveredQualifiedLoggingReason10) {
         this.percDeliveredQualifiedLoggingReason10 = percDeliveredQualifiedLoggingReason10;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason11() {
+    public String getPercDeliveredQualifiedLoggingReason11() {
         return percDeliveredQualifiedLoggingReason11;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason11(Float percDeliveredQualifiedLoggingReason11) {
+    public void setPercDeliveredQualifiedLoggingReason11(String percDeliveredQualifiedLoggingReason11) {
         this.percDeliveredQualifiedLoggingReason11 = percDeliveredQualifiedLoggingReason11;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason1() {
+    public String getPercDeliveredQualifiedLoggingReason1() {
         return percDeliveredQualifiedLoggingReason1;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason1(Float percDeliveredQualifiedLoggingReason1) {
+    public void setPercDeliveredQualifiedLoggingReason1(String percDeliveredQualifiedLoggingReason1) {
         this.percDeliveredQualifiedLoggingReason1 = percDeliveredQualifiedLoggingReason1;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason2() {
+    public String getPercDeliveredQualifiedLoggingReason2() {
         return percDeliveredQualifiedLoggingReason2;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason2(Float percDeliveredQualifiedLoggingReason2) {
+    public void setPercDeliveredQualifiedLoggingReason2(String percDeliveredQualifiedLoggingReason2) {
         this.percDeliveredQualifiedLoggingReason2 = percDeliveredQualifiedLoggingReason2;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason3() {
+    public String getPercDeliveredQualifiedLoggingReason3() {
         return percDeliveredQualifiedLoggingReason3;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason3(Float percDeliveredQualifiedLoggingReason3) {
+    public void setPercDeliveredQualifiedLoggingReason3(String percDeliveredQualifiedLoggingReason3) {
         this.percDeliveredQualifiedLoggingReason3 = percDeliveredQualifiedLoggingReason3;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason4() {
+    public String getPercDeliveredQualifiedLoggingReason4() {
         return percDeliveredQualifiedLoggingReason4;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason4(Float percDeliveredQualifiedLoggingReason4) {
+    public void setPercDeliveredQualifiedLoggingReason4(String percDeliveredQualifiedLoggingReason4) {
         this.percDeliveredQualifiedLoggingReason4 = percDeliveredQualifiedLoggingReason4;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason5() {
+    public String getPercDeliveredQualifiedLoggingReason5() {
         return percDeliveredQualifiedLoggingReason5;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason5(Float percDeliveredQualifiedLoggingReason5) {
+    public void setPercDeliveredQualifiedLoggingReason5(String percDeliveredQualifiedLoggingReason5) {
         this.percDeliveredQualifiedLoggingReason5 = percDeliveredQualifiedLoggingReason5;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason6() {
+    public String getPercDeliveredQualifiedLoggingReason6() {
         return percDeliveredQualifiedLoggingReason6;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason6(Float percDeliveredQualifiedLoggingReason6) {
+    public void setPercDeliveredQualifiedLoggingReason6(String percDeliveredQualifiedLoggingReason6) {
         this.percDeliveredQualifiedLoggingReason6 = percDeliveredQualifiedLoggingReason6;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason7() {
+    public String getPercDeliveredQualifiedLoggingReason7() {
         return percDeliveredQualifiedLoggingReason7;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason7(Float percDeliveredQualifiedLoggingReason7) {
+    public void setPercDeliveredQualifiedLoggingReason7(String percDeliveredQualifiedLoggingReason7) {
         this.percDeliveredQualifiedLoggingReason7 = percDeliveredQualifiedLoggingReason7;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason8() {
+    public String getPercDeliveredQualifiedLoggingReason8() {
         return percDeliveredQualifiedLoggingReason8;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason8(Float percDeliveredQualifiedLoggingReason8) {
+    public void setPercDeliveredQualifiedLoggingReason8(String percDeliveredQualifiedLoggingReason8) {
         this.percDeliveredQualifiedLoggingReason8 = percDeliveredQualifiedLoggingReason8;
     }
 
-    public Float getPercDeliveredQualifiedLoggingReason9() {
+    public String getPercDeliveredQualifiedLoggingReason9() {
         return percDeliveredQualifiedLoggingReason9;
     }
 
-    public void setPercDeliveredQualifiedLoggingReason9(Float percDeliveredQualifiedLoggingReason9) {
+    public void setPercDeliveredQualifiedLoggingReason9(String percDeliveredQualifiedLoggingReason9) {
         this.percDeliveredQualifiedLoggingReason9 = percDeliveredQualifiedLoggingReason9;
     }
 

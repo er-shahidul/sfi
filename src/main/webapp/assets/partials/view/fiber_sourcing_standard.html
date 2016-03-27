@@ -440,10 +440,14 @@
                 the above indicator.
             </label>
             <br>
-            <div style="padding-left: 25px;" ng-show="cs10.biodiversityFiberSourcing == 3">
-                Provide rationale
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs10.biodiversityFiberSourcing == 3">
+                <span style="margin-left: 10px;">Provide rationale</span>
                 <div class="form-group">
-                    <textarea readonly  rows="4" cols="70" ng-model="cs10.biodiversityNoDescribe"></textarea>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                              ng-model="cs10.biodiversityNoDescribe"></textarea>
+                </div>
                 </div>
             </div>
             <label>
@@ -451,17 +455,18 @@
                 We have another mechanism
             </label>
             <br>
-            <div style="padding-left: 25px;" ng-show="cs10.biodiversityFiberSourcing == 4">
-                Describe the practice
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs10.biodiversityFiberSourcing == 4">
+                <span style="margin-left: 10px;">Describe the practice</span>
                 <div class="form-group">
-                    <textarea readonly  class="col-lg-11" rows="8" cols="70" ng-model="cs10.biodiversityMechanismDescribe"></textarea>
+                    <textarea readonly  class="form-control col-lg-11" style="font-weight: normal;" rows="4" cols="70"
+                              ng-model="cs10.biodiversityMechanismDescribe"></textarea>
+                </div>
                 </div>
             </div>
         </div>
         <br>
-
-
-
 
         <div>
             <h5>
@@ -556,10 +561,14 @@
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators.
             </label>
             <br>
-            <div style="padding-left: 25px;" ng-show="cs10.biodiversityManagement == 3">
-                Provide rationale
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs10.biodiversityManagement == 3">
+                <span style="margin-left: 10px;">Provide rationale></span>
                 <div class="form-group">
-                    <textarea readonly  class="col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityManagementNoDescribe"></textarea>
+                    <textarea readonly class="form-control col-lg-11" style="font-weight: normal;" rows="4" cols="70"
+                              ng-model="cs10.biodiversityManagementNoDescribe"></textarea>
+                </div>
                 </div>
             </div>
             <label>
@@ -567,10 +576,14 @@
                 We have another mechanism
             </label>
             <br>
-            <div style="padding-left: 25px;" ng-show="cs10.biodiversityManagement == 4">
-                Describe the practice
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs10.biodiversityManagement == 4">
+                 <span style="margin-left: 10px;">Describe the practice</span>
                 <div class="form-group">
-                    <textarea readonly  class="col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityManagementMechanismDescribe"></textarea>
+                    <textarea readonly class="form-control col-lg-11" style="font-weight: normal;" rows="4" cols="70"
+                              ng-model="cs10.biodiversityManagementMechanismDescribe"></textarea>
+                </div>
                 </div>
             </div>
         </div>
@@ -649,10 +662,14 @@
                 No, we have not made changes based off the new Requirements in the SFI 2015-2019 Standard that address the above indicators
             </label>
             <br>
-            <div style="padding-left: 25px;" ng-show="cs10.biodiversityTraining == 3">
-                Provide rationale
+
+            <div class="content-pading">
+                <div class="form-group"  ng-show="cs10.biodiversityTraining == 3">
+                <span style="margin-left: 10px;">Provide rationale</span>
                 <div class="form-group">
-                    <textarea readonly  rows="4" cols="70" ng-model="cs10.biodiversityTrainingNoDescribe"></textarea>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                              ng-model="cs10.biodiversityTrainingNoDescribe"></textarea>
+                </div>
                 </div>
             </div>
             <label>
@@ -660,11 +677,15 @@
                 We have another mechanism
             </label>
             <br>
-            <div style="padding-left: 25px;" ng-show="cs10.biodiversityTraining == 4">
-                Describe the practice
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs10.biodiversityTraining == 4">
+                <span style="margin-left: 10px;">Describe the practice</span>
                 <div class="form-group">
-                    <textarea readonly  class="col-lg-11" rows="4" cols="70" ng-model="cs10.biodiversityTrainingMechanismDescribe"></textarea>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly rows="4" cols="70"
+                              ng-model="cs10.biodiversityTrainingMechanismDescribe"></textarea>
                 </div>
+            </div>
             </div>
         </div>
         <br>
@@ -705,10 +726,14 @@
             <label>
                 <input type="radio" disabled disabled  icheck ng-model="cs10.legalComplianceUsCanada" value=0> No
             </label>
-            <div style="padding-left: 25px;" ng-show="cs10.legalComplianceUsCanada">
-                Please describe what you did to address this risk
+
+            <div class="content-pading">
+                <div class="form-group" ng-show="cs10.legalComplianceUsCanada">
+                <span style="margin-left: 10px;">Please describe what you did to address this risk</span>
                 <div class="form-group">
-                    <textarea readonly  rows="4" cols="70"></textarea>
+                    <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="4" cols="70"
+                              ng-model="cs10.legalComplianceUsCanadaDescribe"></textarea>
+                </div>
                 </div>
             </div>
         </div>
@@ -757,10 +782,15 @@
                         <input icheck type="checkbox" disabled disabled  checklist-model="cs10.legalComplianceOutsideItems" checklist-value="4">
                         Other
                     </label>
-                    <div style="padding-left: 25px;" ng-show="isSelected(cs10.legalComplianceOutsideItems, 4)">
-                        Please explain
+
+                    <div class="content-pading">
+                        <div class="form-group" ng-show="isSelected(cs10.legalComplianceOutsideItems, 4)">
+                        <span style="margin-left: 10px;">Please explain</span>
                         <div class="form-group">
-                            <textarea readonly  rows="4" cols="70" ng-model="cs10.legalComplianceOutsideOtherExplain"></textarea>
+                            <textarea class="form-control col-lg-11" style="font-weight: normal;"
+                                      readonly  rows="4" cols="70"
+                                      ng-model="cs10.legalComplianceOutsideOtherExplain"></textarea>
+                        </div>
                         </div>
                     </div>
                 </li>

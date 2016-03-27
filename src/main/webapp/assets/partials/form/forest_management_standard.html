@@ -953,15 +953,15 @@
 
             <div class="content-pading">
                 <div class="form-group"
-                     ng-class="{'has-error has-feedback':  cs9Form.conservation415Explain1_2.$invalid}"
+                     ng-class="{'has-error has-feedback':  cs9Form.conservationBiodiversity415Rationale.$invalid}"
                      ng-show="cs9.conservationBiodiversity415 == 3">
                     Initiated practices to ensure conservation of significant species of concern (please explain and note
                     the species that are now addressed)<br/>
                     <textarea class="form-control col-lg-11" rows="4" cols="70"
-                              name="conservation415Explain1_2"
+                              name="conservationBiodiversity415Rationale"
                               ng-maxlength="2000" customerror
                               pattern-msg="Maximum of 2000 characters"
-                              ng-model="cs9.conservation415Explain1_2"></textarea>
+                              ng-model="cs9.conservationBiodiversity415Rationale"></textarea>
                 </div>
             </div>
 
@@ -1444,11 +1444,12 @@
                  ng-class="{'has-error has-feedback':  cs9Form.trainingEduRationale_1.$invalid}"
                  ng-show="cs9.trainingEducation == 4">
                 Describe the practice<br/>
-                <textarea class="form-control col-lg-11" rows="4" cols="70"
-                          pattern-msg="Maximum of 2000 characters"
-                          ng-maxlength="2000" customerror
-                          name="trainingEduRationale_1"
-                          ng-model="cs9.trainingEduRationale_1"></textarea>
+                <!--<textarea class="form-control col-lg-11" rows="4" cols="70" ng-model="cs9.trainingEduRationaleAnother"></textarea>-->
+            <textarea class="form-control col-lg-11" rows="4" cols="70"
+                      pattern-msg="Maximum of 2000 characters"
+                      ng-maxlength="2000" customerror
+                      name="trainingEduRationaleAnother"
+                      ng-model="cs9.trainingEduRationaleAnother"></textarea>
             </div>
         </div>
         <br>

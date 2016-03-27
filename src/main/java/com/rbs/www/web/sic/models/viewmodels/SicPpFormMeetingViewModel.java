@@ -10,6 +10,7 @@ public class SicPpFormMeetingViewModel extends BaseViewModel {
     private String name;
     private String involvement;
     private Date date;
+    private String location;
 
     @Override
     public Integer getId() {
@@ -18,6 +19,14 @@ public class SicPpFormMeetingViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public Integer getSicPpForm() {

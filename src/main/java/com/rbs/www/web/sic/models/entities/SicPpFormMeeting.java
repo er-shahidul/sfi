@@ -1,9 +1,11 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.web.common.models.entities.SfiPpFormRegion;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "sic_pp_form_cs1_meeting")
@@ -24,6 +26,9 @@ public class SicPpFormMeeting extends BaseEntityModel {
     @Column(name = "date", nullable = true)
     private Date date;
 
+    @Column(name = "location", nullable = true)
+    private String location;
+
     @Override
     public Integer getId() {
         return id;
@@ -31,6 +36,14 @@ public class SicPpFormMeeting extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public Integer getSicPpForm() {

@@ -260,23 +260,18 @@ sfiFormApp
         /* Edit/ Delete project */
         $scope.deleteItem = null;
         $scope.editItem = null;
-        $scope.deleteProjectIndex = null;
-
+        $scope.delPrIndex = null;
 
         $scope.deleteProject = function(index){
-            $scope.deleteProjectIndex = index;
+            $scope.delPrIndex = index;
             $('#delete1').modal();
         }
 
         $scope.deleteConfirm = function(index){
-
-            if($scope.deleteProjectIndex !== null){
-                $scope.cs5.projects.splice($scope.deleteProjectIndex, 1);
-                $scope.deleteProjectIndex = null;
+            if($scope.delPrIndex !== null){
+                $scope.cs5.projects.splice($scope.delPrIndex, 1);
+                $scope.delPrIndex = null;
             }
-
-
-
         }
 
         $scope.getProject = function(index){
