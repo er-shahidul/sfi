@@ -4,17 +4,17 @@ import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.datamodels.BlobNames;
 
-import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @SpELAssert.List({
         @SpELAssert(
-                value = "receiveInquiryOtherSpecify == null",
+                value = "receiveInquiryOtherSpecify != null && !receiveInquiryOtherSpecify.isEmpty()",
                 applyIf = "receiveInquiryOther != null && receiveInquiryOther",
                 message = "{sic.cs5.receiveInquiryOtherSpecify}"
         ),
         @SpELAssert(
-                value = "advertiseOtherSpecify == null",
+                value = "advertiseOtherSpecify != null && !advertiseOtherSpecify.isEmpty()",
                 applyIf = "advertiseOther != null && advertiseOther",
                 message = "{sic.cs5.advertiseOtherSpecify}"
         )
@@ -34,7 +34,7 @@ public class SicCs5ViewModel extends BaseViewModel {
     private Integer totalInconsistentPractices;
     private Integer sfiStandardVersion;
 
-    @NotNull(message = "{sic.cs5.receiveInquiryPhone}")
+//    @NotNull(message = "{sic.cs5.receiveInquiryPhone}")
     private Boolean receiveInquiryPhone;
     private Boolean receiveInquiryWebsite;
 //    @NotNull(message = "{sic.cs5.receiveInquiryLetter}")
