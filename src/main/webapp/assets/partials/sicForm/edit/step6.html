@@ -23,7 +23,7 @@
                             ng-init="model1 = '0'"
                             ng-change="model1 = addFra(model1)">
                         <option ng-selected="model1 == '0' " value="0">Select</option>
-                        <option ng-repeat="items in fraItems | orderBy:'id':reverse" ng-value="$index">{{items.value}}</option>
+                        <option ng-repeat="items in fraItems | orderBy:'order':reverse" ng-value="$index">{{items.value}}</option>
                     </select>
 
                     <div id="selectedItem" ng-repeat="programIndex in cs6.trainingPrograms ">{{ fraItems[programIndex].value }}
