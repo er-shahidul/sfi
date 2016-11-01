@@ -541,13 +541,16 @@
                                 <p ng-if="$index == 0"><b>Sub-Committee Name</b></p>
                                 <input type="text" class="form-control" ng-model="committee.name">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <p ng-if="$index == 0"><b>Chair</b></p>
                                 <input type="text" class="form-control" ng-model="committee.chair">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <p ng-if="$index == 0"><b>Email Address</b></p>
                                 <input type="email" customerror class="form-control" ng-model="committee.email" requireds>
+                            </div>
+                            <div class="col-md-2" style="top: 7px;">
+                                <a  class="button" ng-if="$index != 0" ng-click="removeFromList($index,cs1.subCommittees)"  style="padding-top: 5px;color:#da4453" ><b><u>Delete row</u></b></a>
                             </div>
                         </div>
                         <p style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()" class="myButton"><b><u>+ Add Another Line</u></b></p>
@@ -589,6 +592,9 @@
                                     <span class="input-group-addon calender-color"><span class="glyphicon glyphicon-calendar"></span></span>
                                 </div>
                             </div>
+                            <div class="col-md-2" style="top: 7px;">
+                                <a  class="button" ng-if="$index != 0" ng-click="removeFromList($index,cs1.meetingList)"  style="padding-top: 5px;color:#da4453" ><b><u>Delete row</u></b></a>
+                            </div>
                         </div>
 
                         <p style="text-align: right;padding-top: 30px;padding-right: 100px;" class="myButton" ng-click="addMeeting()"><b><u>+ Add Another Line</U></b></p>
@@ -626,7 +632,7 @@
                                     <span class="input-group-addon calender-color"><span class="glyphicon glyphicon-calendar"></span></span>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <p ng-if="$index == 0" class="margin-top-30"><b>Location</b></p>
                                 <select class="form-control" ng-model="meeting.location">
                                     <option ng-selected="!meeting.location">State/Province</option>
@@ -641,6 +647,9 @@
                                     <option value="3">Exhibiting</option>
                                     <option value="4">Speaking</option>
                                 </select>
+                            </div>
+                            <div class="col-md-1" style="padding-left: 0px;padding-right: 0px;top: 7px;">
+                                <a  class="myButton" ng-click="removeFromList($index,cs1.participatingMeetingList)" ng-if="$index != 0" style="padding-top: 5px;color:#da4453" ><b><u>Delete row</u></b></a>
                             </div>
 
                         </div>

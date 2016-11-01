@@ -35,6 +35,10 @@ sfiSicApp
                 $scope.cs1.participatingMeetingList.push({});
             }
         }
+        $scope.removeFromList = function(index,list){
+
+            list.splice(index,1);
+        }
 
 
         $scope.init = function(){
