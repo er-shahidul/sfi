@@ -1,9 +1,13 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "sic_forms")
@@ -23,6 +27,14 @@ public class SicCs4 extends BaseEntityModel {
 
     @Column(name = "cs4_universityOutreach", nullable = true)
     private Boolean universityOutreach;
+
+    @Lob
+    @Column(name = "cs4_universityOutreachFiles", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] universityOutreachFilesArray;
+
+    @Lob
+    @Column(name = "cs4_legislatureOutreachFiles", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] legislatureOutreachFilesArray;
 
     @Column(name = "cs4_governmentSpecify", nullable = true)
     @Type(type="text")
@@ -47,6 +59,44 @@ public class SicCs4 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    private Byte[] getUniversityOutreachFilesArray() {
+        return universityOutreachFilesArray;
+    }
+
+    private void setUniversityOutreachFilesArray(Byte[] universityOutreachFilesArray) {
+        this.universityOutreachFilesArray = universityOutreachFilesArray;
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getUniversityOutreachFiles() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(universityOutreachFilesArray);
+    }
+
+    public void setUniversityOutreachFiles(HashSet<BlobNames> universityOutreachFiles) {
+        this.universityOutreachFilesArray = TypeConversionUtils.serialize(universityOutreachFiles);
+    }
+
+
+
+    private Byte[] getLegislatureOutreachFilesArray() {
+        return legislatureOutreachFilesArray;
+    }
+
+    private void setLegislatureOutreachFilesArray(Byte[] legislatureOutreachFilesArray) {
+        this.legislatureOutreachFilesArray = legislatureOutreachFilesArray;
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getLegislatureOutreachFiles() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(legislatureOutreachFilesArray);
+    }
+
+    public void setLegislatureOutreachFiles(HashSet<BlobNames> legislatureOutreachFiles) {
+        this.legislatureOutreachFilesArray = TypeConversionUtils.serialize(legislatureOutreachFiles);
     }
 
     public Boolean getGovernmentAgencyOutreach() {

@@ -2,6 +2,9 @@ package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
+
+import java.util.Set;
 
 @SpELAssert.List({
         @SpELAssert(
@@ -38,6 +41,9 @@ public class SicCs4ViewModel extends BaseViewModel {
     private String otherSpecify;
     private String universitySpecify;
 
+    private Set<BlobNames> universityOutreachFiles;
+    private Set<BlobNames> legislatureOutreachFiles;
+
     @Override
     public Integer getId() {
         return id;
@@ -45,6 +51,22 @@ public class SicCs4ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<BlobNames> getUniversityOutreachFiles() {
+        return universityOutreachFiles;
+    }
+
+    public void setUniversityOutreachFiles(Set<BlobNames> universityOutreachFiles) {
+        this.universityOutreachFiles = universityOutreachFiles;
+    }
+
+    public Set<BlobNames> getLegislatureOutreachFiles() {
+        return legislatureOutreachFiles;
+    }
+
+    public void setLegislatureOutreachFiles(Set<BlobNames> legislatureOutreachFiles) {
+        this.legislatureOutreachFiles = legislatureOutreachFiles;
     }
 
     public Boolean getGovernmentAgencyOutreach() {

@@ -23,6 +23,36 @@
                         </label>
                         <textarea  ng-show="cs4.universityOutreach" ng-model="cs4.universitySpecify" rows="3" cols="50" style="vertical-align: top; font-size:14px;position: relative;right: -20px;  border-radius: 4px; margin-bottom:10px;width: 400px;" placeholder="Please Specify"></textarea>
                         <p ng-show="cs4.universityOutreach" ng-model="cs4.universitySpecify" class="ng-hide" style="position: relative;left: 225px;margin-top: -10px;margin-bottom: 20px;"> "Maximum of 2000 characters"</p>
+                        <div ng-show="cs4.universityOutreach" class="fileinput fileinput-new" data-provides="fileinput">
+                            <p>Upload a file to provide more details</p>
+
+                            <div class="input-group input-large"
+                                 ng-file-select ng-model="uploadFile1"
+                                 ng-file-change="uploadFile(uploadFile1, universityOutreachFiles, '.doc, .docx, .pdf, .jpg')"
+                                 ng-multiple="true"
+                                 ng-accept="'.doc, .docx, .pdf, .jpg'">
+
+                                <div class="form-control uneditable-input input-fixed input-medium">
+                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                    <span class="fileinput-filename">{{ universityOutreachFiles.originalDocumentName }}</span>
+                                </div>
+                                <span class="input-group-addon btn default btn-file">
+                                    <span ng-hide="universityOutreachFiles.originalDocumentName" class="fileinput-new">Browse</span>
+                                    <span ng-show="universityOutreachFiles.originalDocumentName" class="fileinput-exists">Change </span>
+                                </span>
+                            </div>
+                            <p>(.doc, .docx, .pdf, .jpg)</p>
+
+                            <div class="text-right" ng-show="universityOutreachFiles.originalDocumentName">
+                                <a ng-click="universityOutreachFiles = {}; " ng-show="universityOutreachFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                <input type="submit" class="btn default" value="Upload" ng-click="universityOutreachFiles = saveUploadedFile(universityOutreachFiles, cs4.universityOutreachFiles)">
+                            </div>
+
+                        </div>
+                        <div ng-show="cs4.universityOutreach" id="selectedItem" ng-repeat="file in cs4.universityOutreachFiles"
+                             ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                            <button ng-click="deleteByIndex($index, cs4.universityOutreachFiles); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        </div>
                     </li>
                     <li>
                         <label style="width:190px;">
@@ -31,6 +61,36 @@
 
                         <textarea  ng-show="cs4.legislatureOutreach" ng-model="cs4.legislatureSpecify" rows="3" cols="50" style="vertical-align: top; font-size:14px;position: relative;right: -20px; border-radius: 4px; margin-bottom:10px;width: 400px;" placeholder="Please Specify"></textarea>
                         <p ng-show="cs4.legislatureOutreach" ng-model="cs4.legislatureSpecify" class="ng-hide" style="position: relative;left: 225px;margin-top: -10px;margin-bottom: 20px;"> "Maximum of 2000 characters"</p>
+                        <div ng-show="cs4.legislatureOutreach" class="fileinput fileinput-new" data-provides="fileinput">
+                            <p>Upload a file to provide more details</p>
+
+                            <div class="input-group input-large"
+                                 ng-file-select ng-model="uploadFile1"
+                                 ng-file-change="uploadFile(uploadFile1, legislatureOutreachFiles, '.doc, .docx, .pdf, .jpg')"
+                                 ng-multiple="true"
+                                 ng-accept="'.doc, .docx, .pdf, .jpg'">
+
+                                <div class="form-control uneditable-input input-fixed input-medium">
+                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                    <span class="fileinput-filename">{{ legislatureOutreachFiles.originalDocumentName }}</span>
+                                </div>
+                                <span class="input-group-addon btn default btn-file">
+                                    <span ng-hide="legislatureOutreachFiles.originalDocumentName" class="fileinput-new">Browse</span>
+                                    <span ng-show="legislatureOutreachFiles.originalDocumentName" class="fileinput-exists">Change </span>
+                                </span>
+                            </div>
+                            <p>(.doc, .docx, .pdf, .jpg)</p>
+
+                            <div class="text-right" ng-show="legislatureOutreachFiles.originalDocumentName">
+                                <a ng-click="legislatureOutreachFiles = {}; " ng-show="legislatureOutreachFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                <input type="submit" class="btn default" value="Upload" ng-click="legislatureOutreachFiles = saveUploadedFile(legislatureOutreachFiles, cs4.legislatureOutreachFiles)">
+                            </div>
+
+                        </div>
+                        <div ng-show="cs4.universityOutreach" id="selectedItem" ng-repeat="file in cs4.legislatureOutreachFiles"
+                             ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                            <button ng-click="deleteByIndex($index, cs4.legislatureOutreachFiles); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        </div>
                     </li>
                     <li>
                         <label style="width:190px;">
