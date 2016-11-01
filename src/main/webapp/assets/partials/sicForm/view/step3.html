@@ -23,6 +23,36 @@
                         </label>
                         <textarea  ng-show="cs3.workshop" ng-model="cs3.workshopSpecify" rows="3" cols="60" style="vertical-align: top; font-size:14px;position: relative;right: -20px; border-radius: 4px; margin-bottom:10px;width: 500px;" placeholder="Please Specify"></textarea>
                         <p ng-show="cs3.workshop" ng-model="cs3.workshopSpecify" class="ng-hide" style="position: relative;left: 135px;margin-top: -10px;margin-bottom: 20px;"> "Maximum of 2000 characters"</p>
+                        <div ng-show="cs3.workshop" class="fileinput fileinput-new" data-provides="fileinput">
+                            <p>Upload a file to provide more details</p>
+
+                            <div class="input-group input-large"
+                                 ng-file-select ng-model="uploadFile1"
+                                 ng-file-change="uploadFile(uploadFile1, workshopSpecifyFiles, '.doc, .docx, .pdf, .jpg')"
+                                 ng-multiple="true"
+                                 ng-accept="'.doc, .docx, .pdf, .jpg'">
+
+                                <div class="form-control uneditable-input input-fixed input-medium">
+                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                    <span class="fileinput-filename">{{ workshopSpecifyFiles.originalDocumentName }}</span>
+                                </div>
+                                <span class="input-group-addon btn default btn-file">
+                                    <span ng-hide="workshopSpecifyFiles.originalDocumentName" class="fileinput-new">Browse</span>
+                                    <span ng-show="workshopSpecifyFiles.originalDocumentName" class="fileinput-exists">Change </span>
+                                </span>
+                            </div>
+                            <p>(.doc, .docx, .pdf, .jpg)</p>
+
+                            <div class="text-right" ng-show="workshopSpecifyFiles.originalDocumentName">
+                                <a ng-click="workshopSpecifyFiles = {}; " ng-show="workshopSpecifyFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                <input type="submit" class="btn default" value="Upload" ng-click="workshopSpecifyFiles = saveUploadedFile(workshopSpecifyFiles, cs3.workshopSpecifyFiles)">
+                            </div>
+
+                        </div>
+                        <div id="selectedItem" ng-repeat="file in cs3.workshopSpecifyFiles"
+                             ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                        </div>
+
                     </li>
                     <li>
                         <label style="width:100px;">
@@ -30,7 +60,35 @@
                         </label>
                         <textarea  ng-show="cs3.brochure" ng-model="cs3.brochureSpecify" rows="3" cols="60" style="vertical-align: top; font-size:14px;position: relative;right: -20px; border-radius: 4px; margin-bottom:10px;width: 500px;" placeholder="Please Specify"></textarea>
                         <p ng-show="cs3.brochure" ng-model="cs3.brochureSpecify" class="ng-hide" style="position: relative;left: 135px;margin-top: -10px;margin-bottom: 20px;"> "Maximum of 2000 characters"</p>
+                        <div ng-show="cs3.brochure" class="fileinput fileinput-new" data-provides="fileinput">
+                            <p>Upload a file to provide more details</p>
 
+                            <div class="input-group input-large"
+                                 ng-file-select ng-model="uploadFile1"
+                                 ng-file-change="uploadFile(uploadFile1, brochureSpecifyFiles, '.doc, .docx, .pdf, .jpg')"
+                                 ng-multiple="true"
+                                 ng-accept="'.doc, .docx, .pdf, .jpg'">
+
+                                <div class="form-control uneditable-input input-fixed input-medium">
+                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                    <span class="fileinput-filename">{{ brochureSpecifyFiles.originalDocumentName }}</span>
+                                </div>
+                                <span class="input-group-addon btn default btn-file">
+                                    <span ng-hide="brochureSpecifyFiles.originalDocumentName" class="fileinput-new">Browse</span>
+                                    <span ng-show="brochureSpecifyFiles.originalDocumentName" class="fileinput-exists">Change </span>
+                                </span>
+                            </div>
+                            <p>(.doc, .docx, .pdf, .jpg)</p>
+
+                            <div class="text-right" ng-show="brochureSpecifyFiles.originalDocumentName">
+                                <a ng-click="brochureSpecifyFiles = {}; " ng-show="brochureSpecifyFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                <input type="submit" class="btn default" value="Upload" ng-click="brochureSpecifyFiles = saveUploadedFile(brochureSpecifyFiles, cs3.brochureSpecifyFiles)">
+                            </div>
+
+                        </div>
+                        <div id="selectedItem" ng-repeat="file in cs3.brochureSpecifyFiles"
+                             ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                        </div>
                     </li>
                     <li>
                         <label style="width:100px;">

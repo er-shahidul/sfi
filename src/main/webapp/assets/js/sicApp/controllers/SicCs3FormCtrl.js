@@ -3,6 +3,12 @@ sfiSicApp
 
         $scope.cs3 = angular.copy($rootScope.form.cs3);
 
+        $scope.brochureSpecifyFiles = {}
+        $scope.cs3.brochureSpecifyFiles = $scope.cs3.brochureSpecifyFiles || [];
+
+        $scope.workshopSpecifyFiles = {}
+        $scope.cs3.workshopSpecifyFiles = $scope.cs3.workshopSpecifyFiles || [];
+        
         $scope.saveForm = function(go){
 
             if($scope.cs3Form.$invalid){
