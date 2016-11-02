@@ -20,7 +20,7 @@ public class SicCs7ViewModel extends BaseViewModel {
     private String sfiNonCertifiedBmpSource;
     @NotNull(message = "{sic.cs7.monitorBMPCompliance}")
     private Boolean monitorBMPCompliance;
-    @NotNull(message = "{sic.cs7.sicProgramCertifiedDesignation}")
+//    @NotNull(message = "{sic.cs7.sicProgramCertifiedDesignation}")
     private Boolean sicProgramCertifiedDesignation;
     private BlobNames bmpReportDoc;
 
