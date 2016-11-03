@@ -50,6 +50,9 @@ public class SicCs1 extends BaseEntityModel {
     @Column(name = "cs1_supporterGovAgency", nullable = true)
     private Integer supporterGovAgency;
 
+    @Column(name = "cs1_universityForestryExtension", nullable = true)
+    private Integer universityForestryExtension;
+
     @Column(name = "cs1_supporterLogger", nullable = true)
     private Integer supporterLogger;
 
@@ -283,6 +286,14 @@ public class SicCs1 extends BaseEntityModel {
 
     public void setSupporterGovAgency(Integer supporterGovAgency) {
         this.supporterGovAgency = supporterGovAgency;
+    }
+
+    public Integer getUniversityForestryExtension() {
+        return universityForestryExtension;
+    }
+
+    public void setUniversityForestryExtension(Integer universityForestryExtension) {
+        this.universityForestryExtension = universityForestryExtension;
     }
 
     public Integer getSupporterLogger() {

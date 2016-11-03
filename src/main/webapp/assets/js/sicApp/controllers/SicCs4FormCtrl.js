@@ -3,6 +3,12 @@ sfiSicApp
 
         $scope.cs4 = angular.copy($rootScope.form.cs4);
 
+        $scope.universityOutreachFiles = {}
+        $scope.cs4.universityOutreachFiles = $scope.cs4.universityOutreachFiles || [];
+
+        $scope.legislatureOutreachFiles = {}
+        $scope.cs4.legislatureOutreachFiles = $scope.cs4.legislatureOutreachFiles || [];
+
         $scope.saveForm = function(go){
 
             if($scope.cs4Form.$invalid){

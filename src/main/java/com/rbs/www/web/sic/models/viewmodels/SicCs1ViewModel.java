@@ -53,6 +53,8 @@ public class SicCs1ViewModel extends BaseViewModel {
 //    @NotNull(message = "{sic.cs1.supporterGovAgency}")
     private Integer supporterGovAgency;
 
+    private Integer universityForestryExtension;
+
 //    @NotNull(message = "{sic.cs1.supporterLogger}")
     private Integer supporterLogger;
     private Integer supporterOther;
@@ -539,5 +541,13 @@ public class SicCs1ViewModel extends BaseViewModel {
 
     public void setSicRecruitmentOrgs(Set<Integer> sicRecruitmentOrgs) {
         this.sicRecruitmentOrgs = sicRecruitmentOrgs;
+    }
+
+    public Integer getUniversityForestryExtension() {
+        return universityForestryExtension;
+    }
+
+    public void setUniversityForestryExtension(Integer universityForestryExtension) {
+        this.universityForestryExtension = universityForestryExtension;
     }
 }

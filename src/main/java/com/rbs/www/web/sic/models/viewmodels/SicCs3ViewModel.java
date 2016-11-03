@@ -2,6 +2,9 @@ package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
+
+import java.util.Set;
 
 @SpELAssert.List({
         @SpELAssert(
@@ -38,6 +41,9 @@ public class SicCs3ViewModel extends BaseViewModel {
     private String toursSpecify;
     private String workshopSpecify;
 
+    private Set<BlobNames> brochureSpecifyFiles;
+    private Set<BlobNames> workshopSpecifyFiles;
+
     @Override
     public Integer getId() {
         return id;
@@ -45,6 +51,22 @@ public class SicCs3ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<BlobNames> getBrochureSpecifyFiles() {
+        return brochureSpecifyFiles;
+    }
+
+    public void setBrochureSpecifyFiles(Set<BlobNames> brochureSpecifyFiles) {
+        this.brochureSpecifyFiles = brochureSpecifyFiles;
+    }
+
+    public Set<BlobNames> getWorkshopSpecifyFiles() {
+        return workshopSpecifyFiles;
+    }
+
+    public void setWorkshopSpecifyFiles(Set<BlobNames> workshopSpecifyFiles) {
+        this.workshopSpecifyFiles = workshopSpecifyFiles;
     }
 
     public Boolean getBrochure() {
