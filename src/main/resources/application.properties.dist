@@ -1,49 +1,44 @@
-#
-# Local: Linux & MySQL
-#
+########### Local PC ##########
+#jdbc.driverClassName = com.mysql.jdbc.Driver
+#jdbc.url = jdbc:mysql://localhost:3306/spring_sfi7
+#jdbc.username =root
+#jdbc.password =1
+#hibernate.dialect = org.hibernate.dialect.MySQLDialect
+#hibernate.show_sql = true
+#hibernate.format_sql = true
 
-jdbc.driverClassName = com.mysql.jdbc.Driver
-jdbc.url = jdbc:mysql://127.0.1.1:3306/sfi_sfi
-jdbc.username = root
-jdbc.password = root
-hibernate.dialect = org.hibernate.dialect.MySQLDialect
+########### Our Server ##########
+#jdbc.driverClassName = com.microsoft.sqlserver.jdbc.SQLServerDriver
+#jdbc.url = jdbc:sqlserver://192.168.1.101:1433;databaseName=sfi_phase3
+#jdbc.username =sa
+#jdbc.password =commonRBS123
+#hibernate.dialect = org.hibernate.dialect.SQLServer2012Dialect
+#hibernate.show_sql = true
+#hibernate.format_sql = true
 
+########### dev Server ########## our server
+#jdbc.driverClassName = com.microsoft.sqlserver.jdbc.SQLServerDriver
+#jdbc.url = jdbc:sqlserver://10.10.25.60:1433;databaseName=sfi_dev3
+#jdbc.username =sfireportingdev
+#jdbc.password =6FkbHdWcT6ts2s47
+#hibernate.dialect = org.hibernate.dialect.SQLServer2012Dialect
+#hibernate.show_sql = true
+#hibernate.format_sql = true
 
-#
-# Local: Windows & SQL Server - 2012
-#
+########### Test Server ##########
+#jdbc.driverClassName = com.microsoft.sqlserver.jdbc.SQLServerDriver
+#jdbc.url = jdbc:sqlserver://10.10.25.60:1433;databaseName=sfi_phase3
+#jdbc.username =sfireportingdev
+#jdbc.password =6FkbHdWcT6ts2s47
+#hibernate.dialect = org.hibernate.dialect.SQLServer2012Dialect
+#hibernate.show_sql = true
+#hibernate.format_sql = true
 
-# jdbc.driverClassName = com.microsoft.sqlserver.jdbc.SQLServerDriver
-# jdbc.url = jdbc:sqlserver://172.16.229.246:1433;databaseName=SFI_SFI
-# jdbc.username = devuser
-# jdbc.password = devuser
-# hibernate.dialect = org.hibernate.dialect.SQLServer2012Dialect
-
-
-#
-# Test Server: Windows & SQL Server - 2012
-#
-
-# jdbc.driverClassName = com.microsoft.sqlserver.jdbc.SQLServerDriver
-# jdbc.url = jdbc:sqlserver://10.10.25.60:1433;databaseName=sfi_phase2
-# jdbc.username = sfiphase2live
-# jdbc.password = NEWPvcUcJZ9Jy8PraxJCA4
-# hibernate.dialect = org.hibernate.dialect.SQLServer2012Dialect
-
-
-#
-# Live Server: Windows & SQL Server - 2012
-#
-
-# jdbc.driverClassName = com.microsoft.sqlserver.jdbc.SQLServerDriver
-# jdbc.url = jdbc:sqlserver://10.10.25.34:1433;databaseName=sfi_phase2
-# jdbc.username = sfiphase2live
-# jdbc.password = NEWPvcUcJZ9Jy8PraxJCA4
-# hibernate.dialect = org.hibernate.dialect.SQLServer2012Dialect
-
-
-#
-# Common Config
-#
-hibernate.show_sql = true
-hibernate.format_sql = true
+########### production Server ##########
+#jdbc.driverClassName = com.microsoft.sqlserver.jdbc.SQLServerDriver
+#jdbc.url = jdbc:sqlserver://:1433;databaseName=
+#jdbc.username =
+#jdbc.password =
+#hibernate.dialect = org.hibernate.dialect.SQLServer2012Dialect
+#hibernate.show_sql = true
+#hibernate.format_sql = true
