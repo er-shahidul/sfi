@@ -1,4 +1,4 @@
-<div class="row section_background_5" id="row-cont">
+<div class="row section_background_5" id="row-cont" xmlns:th="http://www.thymeleaf.org">
     <div ng-init="errors = cs5.errors" ng-include="'/assets/partials/form/error.html'"></div>
     <form name="cs5Form" novalidate>
 
@@ -348,7 +348,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="project in getProjects()">
+                <tr ng-repeat="project in getProjects()" ng-if="project.shouldShow">
                     <td>{{ project.projectNm }}</td>
                     <td>{{ project.projectObj }}</td>
                     <td><a href="" ng-click="editProject($index)">Edit</a></td>

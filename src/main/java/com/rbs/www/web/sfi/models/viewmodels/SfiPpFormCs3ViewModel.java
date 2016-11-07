@@ -8,6 +8,7 @@ import com.rbs.www.web.sfi.validation.SfiPpFormCs3OrgList.SfiPpFormCs3OrgList;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
 
@@ -343,5 +344,14 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public void setCustomOrder(Integer customOrder) {
         this.customOrder = customOrder;
+    }
+
+    public Boolean getShouldShow(){
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, 2016);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+
+        return this.endDate.compareTo(cal.getTime()) < 0 ?  false : true;
     }
 }
