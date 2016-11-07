@@ -121,7 +121,7 @@ public class FormService {
         Cs5 entity = cs5Service.get(id);
         Cs5ViewModel model = viewModelMapperService.convert(entity, Cs5ViewModel.class);
 
-//        model.setItems(this.getSfiPpFormCs5ViewModels(id));
+        model.setItems(this.getSfiPpFormCs5ViewModels(id));
         this.setReverseObjectiveStrings(model);
 
         return validationService.validate(model);
