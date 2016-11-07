@@ -39,7 +39,7 @@ public class Cs5ViewModel extends BaseViewModel {
 //    @CascadeIf("isInPartnership != null && isInPartnership")
     private Set<SfiPpFormCs3ViewModel> projects;
 
-    private List<SfiPpFormCs5ViewModel> items;
+//    private List<SfiPpFormCs5ViewModel> items;
     private Integer fundSFIActivStateProviCa;
     private Integer fundSFIActivStateProviUs;
 
@@ -100,13 +100,13 @@ public class Cs5ViewModel extends BaseViewModel {
         this.projects = projects;
     }
 
-    public List<SfiPpFormCs5ViewModel> getItems() {
-        return items;
-    }
-
-    public void setItems(List<SfiPpFormCs5ViewModel> items) {
-        this.items = items;
-    }
+//    public List<SfiPpFormCs5ViewModel> getItems() {
+//        return items;
+//    }
+//
+//    public void setItems(List<SfiPpFormCs5ViewModel> items) {
+//        this.items = items;
+//    }
 
     public Set<String> getOrganizationListAcademic() {
         return organizationListAcademic;
