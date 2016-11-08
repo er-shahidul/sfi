@@ -395,23 +395,48 @@
                     </tbody>
                 </table>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('usanaturalRegen2014')}">
-                    <label>What was the Natural Regeneration - All types in 2016?</label>
-                    <input type="number" readonly  class="form-control required shortest" name="usanaturalRegen2014"
-                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                           ng-model="cs4.usaNatRegen2014"> {{ unit }}
-                </div>
+                <table class="col-sm-12">
+                    <tr>
+                        <td>
+                            <div class="form-group" ng-class="{'has-error' : hasError('usanaturalRegen2014')}">
+                                <label>What was the Natural Regeneration - All types in 2016?</label>
+                                <input style="width: 60%;" type="number" readonly  class="form-control required shortest" name="usanaturalRegen2014"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs4.usaNatRegen2014"> {{ unit }}
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group" ng-class="{'has-error' : hasError('usaharvestRegenPerc')}">
+                                <label tooltip data-placement="top" data-container="body" data-html="true"
+                                       data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
+                                >What was the percent of harvest units regenerated after 5 growing seasons?</label>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('usaharvestRegenPerc')}">
-                    <label tooltip data-placement="top" data-container="body" data-html="true"
-                           data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
-                        >What was the percent of harvest units regenerated after 5 growing seasons?</label>
+
+                                <input style="width: 60%;" type="number" readonly  class="form-control required shortest" name="usaharvestRegenPerc" max="100" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs4.usaRegenPerc5Yr"> %
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group" ng-class="{'has-error' : hasError('usaharvestRegenPerc')}">
+                                <label tooltip data-placement="top" data-container="body" data-html="true"
+                                       data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'>
+                                    What was the total area regenerated after five growing seasons? (HA or Acres)</label>
 
 
-                    <input type="number" readonly  class="form-control required shortest" name="usaharvestRegenPerc" max="100" min="0"
-                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                           ng-model="cs4.usaRegenPerc5Yr"> %
-                </div>
+                                Area <input style="width: 60%;" type="number" readonly  class="form-control required shortest" name="usaharvestRegenPerc" max="100" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs4.usaRegenPerc5YrHAAC"> HA/AC
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+
 
             </div >
             <!-- end -->
@@ -476,23 +501,44 @@
 
             <!-- end -->
 
+                <table class="col-sm-12">
+                    <tr>
+                        <td>
+                            <div class="form-group" ng-class="{'has-error' : hasError('naturalRegen2014')}">
+                                <label>What was the Natural Regeneration - All types in 2016?</label>
+                                <input style="width: 60%;" type="number" readonly  class="form-control required shortest" name="naturalRegen2014" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs4.caNatRegen2014"> {{ unit }}
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group" ng-class="{'has-error' : hasError('harvestRegenPerc')}">
+                                <label tooltip data-placement="top" data-container="body" data-html="true"
+                                       data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
+                                >What was the percent of harvest units regenerated after 5 growing seasons?</label>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('naturalRegen2014')}">
-                    <label>What was the Natural Regeneration - All types in 2016?</label>
-                    <input type="number" readonly  class="form-control required shortest" name="naturalRegen2014" min="0"
-                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                           ng-model="cs4.caNatRegen2014"> {{ unit }}
-                </div>
+                                <input style="width: 60%;" type="number" readonly  class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs4.caRegenPerc5Yr"> %
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group" ng-class="{'has-error' : hasError('harvestRegenPerc')}">
+                                <label tooltip data-placement="top" data-container="body" data-html="true"
+                                       data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'>
+                                    What was the total area regenerated after five growing seasons? (HA or Acres)</label>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('harvestRegenPerc')}">
-                    <label tooltip data-placement="top" data-container="body" data-html="true"
-                           data-title='Objective 2. Forest Productivity from SFI 2010-2014 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'
-                            >What was the percent of harvest units regenerated after 5 growing seasons?</label>
+                                Area <input style="width: 60%;" type="number" readonly  class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs4.caRegenPerc5YrHAAC"> HA/AC
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
-                    <input type="number" readonly  class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"
-                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                           ng-model="cs4.caRegenPerc5Yr"> %
-                </div>
             </div >
         </form>
 

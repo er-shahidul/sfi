@@ -65,6 +65,9 @@ public class Cs4ViewModel extends BaseViewModel {
     private Boolean caDisResIceStorm;
     private Boolean caOthersApply;
 
+    private Float usaRegenPerc5YrHAAC;
+    private Float caRegenPerc5YrHAAC;
+
     @Override
     public Integer getId() {
         return id;
@@ -504,5 +507,21 @@ public class Cs4ViewModel extends BaseViewModel {
 
     public void setCaRegenPerc5Yr(Float caRegenPerc5Yr) {
         this.caRegenPerc5Yr = caRegenPerc5Yr;
+    }
+
+    public Float getUsaRegenPerc5YrHAAC() {
+        return usaRegenPerc5YrHAAC;
+    }
+
+    public void setUsaRegenPerc5YrHAAC(Float usaRegenPerc5YrHAAC) {
+        this.usaRegenPerc5YrHAAC = usaRegenPerc5YrHAAC;
+    }
+
+    public Float getCaRegenPerc5YrHAAC() {
+        return caRegenPerc5YrHAAC;
+    }
+
+    public void setCaRegenPerc5YrHAAC(Float caRegenPerc5YrHAAC) {
+        this.caRegenPerc5YrHAAC = caRegenPerc5YrHAAC;
     }
 }

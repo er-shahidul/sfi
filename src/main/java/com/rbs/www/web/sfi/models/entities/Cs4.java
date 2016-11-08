@@ -185,8 +185,14 @@ public class Cs4 extends BaseEntityModel {
     @Column(name = "cs4_usa_percHarvUnitsRegen", nullable = true)
     private Float usaRegenPerc5Yr;
 
+    @Column(name = "cs4_usa_usaRegenPerc5YrHAAC", nullable = true)
+    private Float usaRegenPerc5YrHAAC;
+
     @Column(name = "cs4_ca_percHarvUnitsRegen", nullable = true)
     private Float caRegenPerc5Yr;
+
+    @Column(name = "cs4_ca_caRegenPerc5YrHAAC", nullable = true)
+    private Float caRegenPerc5YrHAAC;
 
     @Override
     public Integer getId() {
@@ -627,5 +633,21 @@ public class Cs4 extends BaseEntityModel {
 
     public void setCaRegenPerc5Yr(Float caRegenPerc5Yr) {
         this.caRegenPerc5Yr = caRegenPerc5Yr;
+    }
+
+    public Float getUsaRegenPerc5YrHAAC() {
+        return usaRegenPerc5YrHAAC;
+    }
+
+    public void setUsaRegenPerc5YrHAAC(Float usaRegenPerc5YrHAAC) {
+        this.usaRegenPerc5YrHAAC = usaRegenPerc5YrHAAC;
+    }
+
+    public Float getCaRegenPerc5YrHAAC() {
+        return caRegenPerc5YrHAAC;
+    }
+
+    public void setCaRegenPerc5YrHAAC(Float caRegenPerc5YrHAAC) {
+        this.caRegenPerc5YrHAAC = caRegenPerc5YrHAAC;
     }
 }
