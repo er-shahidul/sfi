@@ -67,4 +67,8 @@ public class BlobStoreHelper {
 
         return false;
     }
+
+    public boolean isSizeOf(Long size) {
+        return size > 10485760 ? false : true;
+    }
 }

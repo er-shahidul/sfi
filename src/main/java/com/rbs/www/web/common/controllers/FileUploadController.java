@@ -17,7 +17,7 @@ import java.util.Objects;
 public class FileUploadController {
 
     private final String[] validExtensions = { "pdf", "doc", "xls", "xlsx", "docx", "png","jpg" };
-    private final String[] validExtensionsSic = { "pdf", "doc", "xls", "xlsx", "docx" };
+    private final String[] validExtensionsSic = { "pdf", "doc", "xls", "xlsx", "docx","jpg" };
 
     @Autowired
     private BlobStoreHelper blobStoreHelper;
@@ -30,13 +30,13 @@ public class FileUploadController {
         if (Objects.equals(form, "sic")){
             String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/sic/";
 
-            if (file != null && blobStoreHelper.isTypeOf(file.getOriginalFilename(), validExtensionsSic))
+            if (file != null && blobStoreHelper.isTypeOf(file.getOriginalFilename(), validExtensionsSic) && blobStoreHelper.isSizeOf(file.getSize()))
                 fileNames = blobStoreHelper.store(file, form, originalPath);
 
         }else {
             String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/sfi/";
 
-            if (file != null && blobStoreHelper.isTypeOf(file.getOriginalFilename(), validExtensions))
+            if (file != null && blobStoreHelper.isTypeOf(file.getOriginalFilename(), validExtensions) && blobStoreHelper.isSizeOf(file.getSize()))
                 fileNames = blobStoreHelper.store(file, form, originalPath);
         }
 
