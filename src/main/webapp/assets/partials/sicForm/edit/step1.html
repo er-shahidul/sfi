@@ -641,8 +641,8 @@
                             </div>
                             <div class="col-md-2" style="padding-right: 0px;">
                                 <p ng-if="$index == 0" style="padding-top:13px;"><b>SIC involvement, if not a committee meeting?</b></p>
-                                <select class="form-control" ng-model="meeting.involvement" >
-                                    <option ng-selected="!meeting.involvement" value="1">Attending</option>
+                                <select multiple  ng-multiple="true" class="form-control" ng-model="meeting.involvement" >
+                                    <option  ng-selected="!meeting.involvement" value="1">Attending</option>
                                     <option value="2">Sponsoring</option>
                                     <option value="3">Exhibiting</option>
                                     <option value="4">Speaking</option>

@@ -29,6 +29,9 @@ sfiSicApp
         }
 
         $scope.cs1.participatingMeetingList = $scope.cs1.participatingMeetingList || [];
+        angular.forEach($scope.cs1.participatingMeetingList, function(value, index) {
+            value.involvement = value.involvement.split(',');
+        });
         $scope.addParticipatingMeeting = function(){
 
             if($scope.cs1Form.participatingMeetingForm.$valid){
@@ -54,6 +57,9 @@ sfiSicApp
 
         $scope.saveForm = function(go){
 
+            angular.forEach($scope.cs1.participatingMeetingList, function(value, index) {
+                value.involvement = value.involvement.toString();
+            });
             if($scope.cs1Form.$valid){
 
                 $http
