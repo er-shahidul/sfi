@@ -550,7 +550,7 @@
                                 <input type="email" customerror class="form-control" ng-model="committee.email" requireds>
                             </div>
                             <div class="col-md-2" style="top: 7px;">
-                                <a  class="button" ng-if="$index != 0" ng-click="removeFromList($index,cs1.subCommittees)"  style="padding-top: 5px;color:#da4453" ><b><u>Delete row</u></b></a>
+                                <a  class="button" ng-if="$index != 0" ng-click="removeFromList($index,cs1.subCommittees)"  style="padding-top: 5px;" ><b><u>Delete row</u></b></a>
                             </div>
                         </div>
                         <p style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()" class="myButton"><b><u>+ Add Another Line</u></b></p>
@@ -593,11 +593,11 @@
                                 </div>
                             </div>
                             <div class="col-md-2" style="top: 7px;">
-                                <a  class="button" ng-if="$index != 0" ng-click="removeFromList($index,cs1.meetingList)"  style="padding-top: 5px;color:#da4453" ><b><u>Delete row</u></b></a>
+                                <a  class="button" ng-if="$index != 0" ng-click="removeFromList($index,cs1.meetingList)"  style="padding-top: 5px;" ><b><u>Delete row</u></b></a>
                             </div>
                         </div>
 
-                        <p style="text-align: right;padding-top: 30px;padding-right: 100px;" class="myButton" ng-click="addMeeting()"><b><u>+ Add Another Line</U></b></p>
+                        <p style="text-align: right;padding-top: 30px;" class="myButton" ng-click="addMeeting()"><b><u>+ Add Another Line</U></b></p>
 
                     </ng-form>
                 </div>
@@ -608,7 +608,7 @@
         <br>
 
         <div class="col-lg-12" style="padding-top: 30px;">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <p>
                     <b>
                         For the CURRENT calendar year, list dates and locations of meetings, conferences, or tradeshows or events in which your committee is participating and describe your involvement.                    </b>
@@ -632,14 +632,14 @@
                                     <span class="input-group-addon calender-color"><span class="glyphicon glyphicon-calendar"></span></span>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2" style="padding-left: 0px;padding-right: 0px;">
                                 <p ng-if="$index == 0" class="margin-top-30"><b>Location</b></p>
                                 <select class="form-control" ng-model="meeting.location">
                                     <option ng-selected="!meeting.location">State/Province</option>
                                     <option ng-repeat="region in regions">{{ region.name }}</option>
                                 </select>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2" style="padding-right: 0px;">
                                 <p ng-if="$index == 0" style="padding-top:13px;"><b>SIC involvement, if not a committee meeting?</b></p>
                                 <select class="form-control" ng-model="meeting.involvement" >
                                     <option ng-selected="!meeting.involvement" value="1">Attending</option>
@@ -648,8 +648,8 @@
                                     <option value="4">Speaking</option>
                                 </select>
                             </div>
-                            <div class="col-md-1" style="padding-left: 0px;padding-right: 0px;top: 7px;">
-                                <a  class="myButton" ng-click="removeFromList($index,cs1.participatingMeetingList)" ng-if="$index != 0" style="padding-top: 5px;color:#da4453" ><b><u>Delete row</u></b></a>
+                            <div class="col-md-2" style="padding-right: 0px;top: 7px;">
+                                <a  class="myButton" ng-click="removeFromList($index,cs1.participatingMeetingList)" ng-if="$index != 0" style="padding-top: 5px;" ><b><u>Delete row</u></b></a>
                             </div>
 
                         </div>
