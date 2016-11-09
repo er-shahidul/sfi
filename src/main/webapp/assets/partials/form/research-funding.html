@@ -711,7 +711,7 @@
                     <div class="form-group"
                          ng-class="{'has-error' : isDirty() && innerFrom.org_contribution.$invalid}">
 
-                        <div class="col-sm-3 nopadding" style="line-height: 32px;">Your organization contribution in 2016:</div>
+                        <div class="col-sm-3 nopadding" style="line-height: 22px;">Your organization contribution in 2016:</div>
                         <select class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
                                 ng-model="project.orgContribution">
                             <option value ng-selected="!project.orgContribution">Select organization contribution</option>
@@ -791,7 +791,8 @@
                     <div class="form-group">
                         <input type="checkbox" name="incResFunding" icheck ng-model="project.incResFunding" />
 
-                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of your organization’s contribution in 2016 is included in your Research Funding dollars reported above to meet SFI Standard Requirements as it relates to the research requirement in the standard.</span>
+                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of your organization’s contribution in 2016 is included in your Research Funding dollars reported above to meet
+                            <br/><span style="margin-left: 17px;">SFI Standard Requirements as it relates to the research requirement in the standard.</span>
 
                         <div class="form-group" ng-show="project.incResFunding">
                             <div class="col-lg-2" style="padding-left: 0;"  ng-class="{'has-error' : cs5Form.incResFundingText.$invalid}">
