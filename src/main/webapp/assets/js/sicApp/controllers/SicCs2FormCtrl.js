@@ -5,8 +5,46 @@ sfiSicApp
             function ($rootScope , $scope, $http, Message, _, $, $popover){
 
         $scope.cs2 = angular.copy($rootScope.form.cs2);
+
         $scope.guideFile = {}
         $scope.cs2.guideFiles = $scope.cs2.guideFiles || [];
+
+        $scope.guideFile2 = {}
+        $scope.cs2.guideFiles2 = $scope.cs2.guideFiles2 || [];
+
+        $scope.guideFile3 = {}
+        $scope.cs2.guideFiles3 = $scope.cs2.guideFiles3 || [];
+
+        $scope.guideFile4 = {}
+        $scope.cs2.guideFiles4 = $scope.cs2.guideFiles4 || [];
+
+        $scope.guideFile5 = {}
+        $scope.cs2.guideFiles5 = $scope.cs2.guideFiles5 || [];
+
+        $scope.guideFile6 = {}
+        $scope.cs2.guideFiles6 = $scope.cs2.guideFiles6 || [];
+
+        $scope.guideFile7 = {}
+        $scope.cs2.guideFiles7 = $scope.cs2.guideFiles7 || [];
+
+        $scope.guideFile8 = {}
+        $scope.cs2.guideFiles8 = $scope.cs2.guideFiles8 || [];
+
+        $scope.guideFile9 = {}
+        $scope.cs2.guideFiles9 = $scope.cs2.guideFiles9 || [];
+
+        $scope.guideFile10 = {}
+        $scope.cs2.guideFiles10 = $scope.cs2.guideFiles10 || [];
+
+        $scope.guideFile11 = {}
+        $scope.cs2.guideFiles11 = $scope.cs2.guideFiles11 || [];
+
+        $scope.guideFile12 = {}
+        $scope.cs2.guideFiles12 = $scope.cs2.guideFiles12 || [];
+
+        $scope.guideFile13 = {}
+        $scope.cs2.guideFiles13 = $scope.cs2.guideFiles13 || [];
+
         cs2 = $scope;
 
         $scope.event = {}

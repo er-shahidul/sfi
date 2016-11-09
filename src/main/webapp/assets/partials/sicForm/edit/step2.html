@@ -176,7 +176,7 @@
 
                                 </div>
 
-                                <div id="selectedItem" ng-repeat="file in cs2.guideFiles"
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                                     <button ng-click="deleteByIndex($index, cs2.guideFiles); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
@@ -206,6 +206,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails2">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile2, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile2.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile2.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile2.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile2.originalDocumentName">
+                                        <a ng-click="guideFile2 = {}; " ng-show="guideFile2.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile2 = saveUploadedFile(guideFile2, cs2.guideFiles2)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles2"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles2); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -228,6 +262,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails3">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile3, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile3.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile3.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile3.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile3.originalDocumentName">
+                                        <a ng-click="guideFile3 = {}; " ng-show="guideFile3.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile3 = saveUploadedFile(guideFile3, cs2.guideFiles3)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles3"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles3); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -248,6 +316,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails4">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile4, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile4.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile4.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile4.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile4.originalDocumentName">
+                                        <a ng-click="guideFile4 = {}; " ng-show="guideFile4.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile4 = saveUploadedFile(guideFile4, cs2.guideFiles4)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles4"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles4); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -268,6 +370,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails5">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile5, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile5.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile5.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile5.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile5.originalDocumentName">
+                                        <a ng-click="guideFile5 = {}; " ng-show="guideFile5.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile5 = saveUploadedFile(guideFile5, cs2.guideFiles5)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles5"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles5); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -288,6 +424,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails6">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile6, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile6.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile6.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile6.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile6.originalDocumentName">
+                                        <a ng-click="guideFile6 = {}; " ng-show="guideFile6.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile6 = saveUploadedFile(guideFile6, cs2.guideFiles6)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles6"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles6); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -308,6 +478,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails7">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile7, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile7.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile7.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile7.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile7.originalDocumentName">
+                                        <a ng-click="guideFile7 = {}; " ng-show="guideFile7.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile7 = saveUploadedFile(guideFile7, cs2.guideFiles7)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles7"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles7); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -328,6 +532,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails8">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile8, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile8.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile8.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile8.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile8.originalDocumentName">
+                                        <a ng-click="guideFile8 = {}; " ng-show="guideFile8.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile8 = saveUploadedFile(guideFile8, cs2.guideFiles8)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles8"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles8); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -348,6 +586,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails9">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile9, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile9.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile9.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile9.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile9.originalDocumentName">
+                                        <a ng-click="guideFile9 = {}; " ng-show="guideFile9.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile9 = saveUploadedFile(guideFile9, cs2.guideFiles9)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles9"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles9); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -368,6 +640,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails10">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile10, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile10.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile10.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile10.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile10.originalDocumentName">
+                                        <a ng-click="guideFile10 = {}; " ng-show="guideFile10.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile10 = saveUploadedFile(guideFile10, cs2.guideFiles10)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles10"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles10); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -388,6 +694,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails11">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile11, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile11.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile11.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile11.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile11.originalDocumentName">
+                                        <a ng-click="guideFile11 = {}; " ng-show="guideFile11.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile11 = saveUploadedFile(guideFile11, cs2.guideFiles11)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles11"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles11); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -414,6 +754,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails12">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile12, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile12.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile12.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile12.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile12.originalDocumentName">
+                                        <a ng-click="guideFile12 = {}; " ng-show="guideFile12.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile12 = saveUploadedFile(guideFile12, cs2.guideFiles12)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles12"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles12); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -440,6 +814,40 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails13">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile13, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile13.originalDocumentName }}</span>
+                                        </div>
+                                        <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile13.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile13.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile13.originalDocumentName">
+                                        <a ng-click="guideFile13 = {}; " ng-show="guideFile13.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile13 = saveUploadedFile(guideFile13, cs2.guideFiles13)">
+                                    </div>
+
+                                </div>
+
+                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles13"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles13); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
                         </td>
                     </tr>
                     <tfoot>
