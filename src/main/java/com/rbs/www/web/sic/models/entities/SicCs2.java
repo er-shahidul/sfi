@@ -1,10 +1,13 @@
 package com.rbs.www.web.sic.models.entities;
 
 import com.rbs.www.common.models.BaseEntityModel;
+import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -229,6 +232,58 @@ public class SicCs2 extends BaseEntityModel {
 
     @Column(name = "cs2_inKindSupportText13", nullable = true)
     private String inKindSupportText13;
+
+    @Lob
+    @Column(name = "cs2_guideFiles", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray;
+
+    @Lob
+    @Column(name = "cs2_guideFiles2", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray2;
+
+    @Lob
+    @Column(name = "cs2_guideFiles3", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray3;
+
+    @Lob
+    @Column(name = "cs2_guideFiles4", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray4;
+
+    @Lob
+    @Column(name = "cs2_guideFiles5", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray5;
+
+    @Lob
+    @Column(name = "cs2_guideFiles6", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray6;
+
+    @Lob
+    @Column(name = "cs2_guideFiles7", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray7;
+
+    @Lob
+    @Column(name = "cs2_guideFiles8", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray8;
+
+    @Lob
+    @Column(name = "cs2_guideFiles9", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray9;
+
+    @Lob
+    @Column(name = "cs2_guideFiles10", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray10;
+
+    @Lob
+    @Column(name = "cs2_guideFiles11", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray11;
+
+    @Lob
+    @Column(name = "cs2_guideFiles12", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray12;
+
+    @Lob
+    @Column(name = "cs2_guideFiles13", length = Integer.MAX_VALUE - 1, nullable = true)
+    private Byte[] guideFilesAsByteArray13;
 
     @Override
     public Integer getId() {
@@ -805,5 +860,143 @@ public class SicCs2 extends BaseEntityModel {
 
     public void setDirectCurrency(Integer directCurrency) {
         this.directCurrency = directCurrency;
+    }
+
+    private Byte[] getGuideFilesAsByteArray() {
+        return guideFilesAsByteArray;
+    }
+
+    private void setGuideFilesAsByteArray(Byte[] guideFilesAsByteArray) {
+        this.guideFilesAsByteArray = guideFilesAsByteArray;
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray);
+    }
+
+    public void setGuideFiles(HashSet<BlobNames> guideFiles) {
+        this.guideFilesAsByteArray = TypeConversionUtils.serialize(guideFiles);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles13() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray13);
+    }
+
+    public void setGuideFiles13(HashSet<BlobNames> guideFiles13) {
+        this.guideFilesAsByteArray13 = TypeConversionUtils.serialize(guideFiles13);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles12() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray12);
+    }
+
+    public void setGuideFiles12(HashSet<BlobNames> guideFiles12) {
+        this.guideFilesAsByteArray12 = TypeConversionUtils.serialize(guideFiles12);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles11() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray11);
+    }
+
+    public void setGuideFiles11(HashSet<BlobNames> guideFiles11) {
+        this.guideFilesAsByteArray11 = TypeConversionUtils.serialize(guideFiles11);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles10() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray10);
+    }
+
+    public void setGuideFiles10(HashSet<BlobNames> guideFiles10) {
+        this.guideFilesAsByteArray10 = TypeConversionUtils.serialize(guideFiles10);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles9() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray9);
+    }
+
+    public void setGuideFiles9(HashSet<BlobNames> guideFiles9) {
+        this.guideFilesAsByteArray9 = TypeConversionUtils.serialize(guideFiles9);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles8() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray8);
+    }
+
+    public void setGuideFiles8(HashSet<BlobNames> guideFiles8) {
+        this.guideFilesAsByteArray8 = TypeConversionUtils.serialize(guideFiles8);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles7() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray7);
+    }
+
+    public void setGuideFiles7(HashSet<BlobNames> guideFiles7) {
+        this.guideFilesAsByteArray7 = TypeConversionUtils.serialize(guideFiles7);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles6() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray6);
+    }
+
+    public void setGuideFiles6(HashSet<BlobNames> guideFiles6) {
+        this.guideFilesAsByteArray6 = TypeConversionUtils.serialize(guideFiles6);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles5() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray5);
+    }
+
+    public void setGuideFiles5(HashSet<BlobNames> guideFiles5) {
+        this.guideFilesAsByteArray5 = TypeConversionUtils.serialize(guideFiles5);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles4() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray4);
+    }
+
+    public void setGuideFiles4(HashSet<BlobNames> guideFiles4) {
+        this.guideFilesAsByteArray4 = TypeConversionUtils.serialize(guideFiles4);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles3() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray3);
+    }
+
+    public void setGuideFiles3(HashSet<BlobNames> guideFiles3) {
+        this.guideFilesAsByteArray3 = TypeConversionUtils.serialize(guideFiles3);
+    }
+
+    @Transient
+    @SuppressWarnings("unchecked")
+    public Set<BlobNames> getGuideFiles2() {
+        return (Set<BlobNames>) TypeConversionUtils.deserialize(guideFilesAsByteArray2);
+    }
+
+    public void setGuideFiles2(HashSet<BlobNames> guideFiles2) {
+        this.guideFilesAsByteArray2 = TypeConversionUtils.serialize(guideFiles2);
     }
 }

@@ -5,6 +5,8 @@ sfiSicApp
             function ($rootScope , $scope, $http, Message, _, $, $popover){
 
         $scope.cs2 = angular.copy($rootScope.form.cs2);
+        $scope.guideFile = {}
+        $scope.cs2.guideFiles = $scope.cs2.guideFiles || [];
         cs2 = $scope;
 
         $scope.event = {}

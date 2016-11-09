@@ -2,6 +2,7 @@ package com.rbs.www.web.sic.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
+import com.rbs.www.web.common.models.datamodels.BlobNames;
 
 import javax.validation.constraints.NotNull;
 import java.util.Set;
@@ -123,6 +124,20 @@ public class SicCs2ViewModel extends BaseViewModel {
     private String inKindSupportText11;
     private String inKindSupportText12;
     private String inKindSupportText13;
+
+    private Set<BlobNames> guideFiles;
+    private Set<BlobNames> guideFiles2;
+    private Set<BlobNames> guideFiles3;
+    private Set<BlobNames> guideFiles4;
+    private Set<BlobNames> guideFiles5;
+    private Set<BlobNames> guideFiles6;
+    private Set<BlobNames> guideFiles7;
+    private Set<BlobNames> guideFiles8;
+    private Set<BlobNames> guideFiles9;
+    private Set<BlobNames> guideFiles10;
+    private Set<BlobNames> guideFiles11;
+    private Set<BlobNames> guideFiles12;
+    private Set<BlobNames> guideFiles13;
 
     @Override
     public Integer getId() {
@@ -699,5 +714,109 @@ public class SicCs2ViewModel extends BaseViewModel {
 
     public void setDirectCurrency(Integer directCurrency) {
         this.directCurrency = directCurrency;
+    }
+
+    public Set<BlobNames> getGuideFiles() {
+        return guideFiles;
+    }
+
+    public void setGuideFiles(Set<BlobNames> guideFiles) {
+        this.guideFiles = guideFiles;
+    }
+
+    public Set<BlobNames> getGuideFiles13() {
+        return guideFiles13;
+    }
+
+    public void setGuideFiles13(Set<BlobNames> guideFiles13) {
+        this.guideFiles13 = guideFiles13;
+    }
+
+    public Set<BlobNames> getGuideFiles12() {
+        return guideFiles12;
+    }
+
+    public void setGuideFiles12(Set<BlobNames> guideFiles12) {
+        this.guideFiles12 = guideFiles12;
+    }
+
+    public Set<BlobNames> getGuideFiles11() {
+        return guideFiles11;
+    }
+
+    public void setGuideFiles11(Set<BlobNames> guideFiles11) {
+        this.guideFiles11 = guideFiles11;
+    }
+
+    public Set<BlobNames> getGuideFiles10() {
+        return guideFiles10;
+    }
+
+    public void setGuideFiles10(Set<BlobNames> guideFiles10) {
+        this.guideFiles10 = guideFiles10;
+    }
+
+    public Set<BlobNames> getGuideFiles9() {
+        return guideFiles9;
+    }
+
+    public void setGuideFiles9(Set<BlobNames> guideFiles9) {
+        this.guideFiles9 = guideFiles9;
+    }
+
+    public Set<BlobNames> getGuideFiles8() {
+        return guideFiles8;
+    }
+
+    public void setGuideFiles8(Set<BlobNames> guideFiles8) {
+        this.guideFiles8 = guideFiles8;
+    }
+
+    public Set<BlobNames> getGuideFiles7() {
+        return guideFiles7;
+    }
+
+    public void setGuideFiles7(Set<BlobNames> guideFiles7) {
+        this.guideFiles7 = guideFiles7;
+    }
+
+    public Set<BlobNames> getGuideFiles6() {
+        return guideFiles6;
+    }
+
+    public void setGuideFiles6(Set<BlobNames> guideFiles6) {
+        this.guideFiles6 = guideFiles6;
+    }
+
+    public Set<BlobNames> getGuideFiles5() {
+        return guideFiles5;
+    }
+
+    public void setGuideFiles5(Set<BlobNames> guideFiles5) {
+        this.guideFiles5 = guideFiles5;
+    }
+
+    public Set<BlobNames> getGuideFiles4() {
+        return guideFiles4;
+    }
+
+    public void setGuideFiles4(Set<BlobNames> guideFiles4) {
+        this.guideFiles4 = guideFiles4;
+    }
+
+    public Set<BlobNames> getGuideFiles3() {
+        return guideFiles3;
+    }
+
+    public void setGuideFiles3(Set<BlobNames> guideFiles3) {
+        this.guideFiles3 = guideFiles3;
+    }
+
+    public Set<BlobNames> getGuideFiles2() {
+        return guideFiles2;
+    }
+
+    public void setGuideFiles2(Set<BlobNames> guideFiles2) {
+        this.guideFiles2 = guideFiles2;
     }
 }

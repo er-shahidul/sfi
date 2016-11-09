@@ -111,7 +111,7 @@
 
         <br>
         <div class="col-lg-12" style="padding-top: 30px;">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <p>
                     <b>
                         How much was spent on the following activities? (Based on the above reported total, please break down how funds were spent, as best possible)
@@ -124,8 +124,8 @@
                             Direct Spending
                          <u><span class="curency" id="directCurrency" ng-click="setCurrency('directCurrency', cs2)">{{ gerCurrency(cs2.directCurrency) }}</span></u>
                         </th>
-                        <th class="col-lg-3">In-Kind Support</th>
-                        <th class="col-lg-3">Details</th>
+                        <th class="col-lg-2">In-Kind Support</th>
+                        <th class="col-lg-5">Details</th>
                     </tr>
 
                     <tr>
@@ -148,6 +148,41 @@
                         </td>
                         <td>
                             <input class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails1">
+                            <br/>
+                            <div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="input-group input-large col-lg-10"
+                                         ng-file-select ng-model="uploadFile1"
+                                         ng-file-change="uploadFile(uploadFile1, guideFile, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                         ng-multiple="true"
+                                         ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                        <div class="form-control uneditable-input input-fixed input-medium">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ guideFile.originalDocumentName }}</span>
+                                        </div>
+                                    <span class="input-group-addon btn default btn-file">
+                                        <span ng-hide="guideFile.originalDocumentName" class="fileinput-new">Browse</span>
+                                        <span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>
+                                    </span>
+
+                                    </div>
+                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                    <div class="text-right" ng-show="guideFile.originalDocumentName">
+                                        <a ng-click="guideFile = {}; " ng-show="guideFile.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile = saveUploadedFile(guideFile, cs2.guideFiles)">
+                                    </div>
+
+                                </div>
+
+                                <div id="selectedItem" ng-repeat="file in cs2.guideFiles"
+                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    <button ng-click="deleteByIndex($index, cs2.guideFiles); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
+
+                            </div>
+
                         </td>
                     </tr>
 
