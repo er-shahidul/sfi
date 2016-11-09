@@ -70,16 +70,14 @@ sfiSicApp
              { id: 28 , value: 'South Carolina Timber Operations Professional Program', order:28},
              { id: 29 , value: 'Tennessee Master Logger Program', order:29},
              { id: 30 , value: 'Texas Pro Logger and Continuing Education Program', order:30},
-                 { id: 31 , value: 'Virginia SHARP Logger', order:32},
-                 { id: 32 , value: 'Washington Master Logger Program', order:33},
-                 { id: 33 , value: 'West Virginia Logger Training and Education', order:34},
-                 { id: 34 , value: 'Western Canada Basic Logger Training Requirements', order:35},
-                 { id: 35 , value: 'Wisconsin Logger Training and Education Program', order:36},
-                 { id: 36 , value: 'Other', order:37}, 
-                 { id: 37 , value: 'Vermont LEAP Program', order:31}
+             { id: 37 , value: 'Vermont LEAP Program', order:31},
+             { id: 31 , value: 'Virginia SHARP Logger', order:32},
+             { id: 32 , value: 'Washington Master Logger Program', order:33},
+             { id: 33 , value: 'West Virginia Logger Training and Education', order:34},
+             { id: 34 , value: 'Western Canada Basic Logger Training Requirements', order:35},
+             { id: 35 , value: 'Wisconsin Logger Training and Education Program', order:36},
+             { id: 36 , value: 'Other', order:37}
         ];
-
-
 
         $scope.setForms = function(){
             $rootScope.$form = $scope.cs6Form;
