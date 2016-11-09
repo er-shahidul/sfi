@@ -27,6 +27,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
@@ -66,10 +68,22 @@ public class UserController {
         return "common/access_denied";
     }
 
-    public void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
+    private void sendEmail(String recipient, String subject, String message, User user, String mailType, String path, HttpServletRequest request) {
         ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
         MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
-        mailHelper.sendMail(recipient, subject, message, user, mailType, path);
+        String url=null;
+        try {
+            url = getHost(request);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        mailHelper.sendMail(recipient, subject, message, user, mailType, path, url);
+    }
+
+    private String getHost(HttpServletRequest request) throws MalformedURLException {
+        URL url = new URL(request.getRequestURL().toString());
+        return url.getHost();
     }
 
     @RequestMapping("/admin/user/list")
@@ -215,7 +229,7 @@ public class UserController {
 //        String mailType = "confirm";
 //
 //        if(user.getSendInvitation()){
-//            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+//            sendEmail(recipient, subject, message, user, mailType, request.getLocalName(), request);
 //        }
 
         model.addAttribute("success", "User " + "" + " updated successfully");
@@ -328,7 +342,7 @@ public class UserController {
             String message = "/user/password/" + randomUUIDString;
 //            String message = request.getLocalName() + "/user/password/" + randomUUIDString;
             String mailType = "reset";
-            sendEmail(email, subject, message, user, mailType, request.getLocalName());
+            sendEmail(email, subject, message, user, mailType, request.getLocalName(), request);
         }
 
         return "redirect:/login?msg";
@@ -450,7 +464,7 @@ public class UserController {
         String mailType = "confirm";
 
         if (user.getSendInvitation()) {
-            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+            sendEmail(recipient, subject, message, user, mailType, request.getLocalName(), request);
         }
 
         model.addAttribute("success", "User " + "" + " has been registered successfully");

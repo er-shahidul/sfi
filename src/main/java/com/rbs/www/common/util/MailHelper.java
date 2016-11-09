@@ -15,11 +15,10 @@ public class MailHelper
         this.mailSender = mailSender;
     }
 
-    public void sendMail(String to, String subject, String url, User user, String mailType, String path) {
+    public void sendMail(String to, String subject, String token, User user, String mailType, String path, String url) {
+
         String form = "rachel.dierolf@sfiprogram.org";
-        String msg = "https://reporting.sfiprogram.org"+url;
-//        String msg = " https://sfireportingv2.poweredbyinsight.com"+url;
-//        String msg = "http://"+url;
+        String msg = url+token;
         try{
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -27,18 +26,16 @@ public class MailHelper
             helper.setTo(to);
             helper.setSubject(subject);
 
-            if(mailType == "confirm") confirmBody(msg, user, helper, path);
-            else if(mailType == "reset") resetBody(msg, user, helper, path);
+            if(mailType == "confirm") confirmBody(msg, user, helper, path, url);
+            else if(mailType == "reset") resetBody(msg, user, helper, path, url);
             else helper.setText("", true);
 
             mailSender.send(message);
         }catch(MessagingException e){e.printStackTrace();}
     }
 
-    private void confirmBody(String msg, User user, MimeMessageHelper helper, String path) throws MessagingException {
-            String imagePath = "https://reporting.sfiprogram.org/assets/images/u4.png";
-//            String imagePath = " https://sfireportingv2.poweredbyinsight.com/assets/images/u4.png";
-//            String imagePath = "http://" + path + "/assets/images/u4.png";
+    private void confirmBody(String msg, User user, MimeMessageHelper helper, String path, String url) throws MessagingException {
+            String imagePath = url+"/assets/images/u4.png";
             helper.setText(
                 "<html><body>" +
 
@@ -101,10 +98,8 @@ public class MailHelper
                 , true);
     }
 
-    private void resetBody(String msg, User user, MimeMessageHelper helper, String path) throws MessagingException {
-            String imagePath = "https://reporting.sfiprogram.org/assets/images/u4.png";
-//            String imagePath = " https://sfireportingv2.poweredbyinsight.com/assets/images/u4.png";
-//            String imagePath = "http://" + path + "/assets/images/u4.png";
+    private void resetBody(String msg, User user, MimeMessageHelper helper, String path, String url) throws MessagingException {
+            String imagePath = url+"/assets/images/u4.png";
             helper.setText(
                 "<html><body>" +
 
