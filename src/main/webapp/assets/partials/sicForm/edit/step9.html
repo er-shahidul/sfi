@@ -71,12 +71,12 @@
                                 File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc1.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc1 = saveUploadedFile(doc1, cs9.supportDocLastYrPrinted, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc1 = saveUploadedFile(doc1, cs9.supportDocLastYrPrinted)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrPrinted.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrPrinted.uniqueDocumentName, cs9.supportDocLastYrPrinted.originalDocumentName)">{{ cs9.supportDocLastYrPrinted.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrPrinted = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrPrinted"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrPrinted);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -123,12 +123,12 @@
                                 File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc2.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc2 = saveUploadedFile(doc2, cs9.supportDocLastYrAdvTV, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc2 = saveUploadedFile(doc2, cs9.supportDocLastYrAdvTV)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvTV.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrAdvTV.uniqueDocumentName, cs9.supportDocLastYrAdvTV.originalDocumentName)">{{ cs9.supportDocLastYrAdvTV.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrAdvTV = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrAdvTV"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrAdvTV);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -175,12 +175,12 @@
                                 File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc3.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc3 = saveUploadedFile(doc3, cs9.supportDocLastYrAdvPrinted, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc3 = saveUploadedFile(doc3, cs9.supportDocLastYrAdvPrinted)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvPrinted.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrAdvPrinted.uniqueDocumentName, cs9.supportDocLastYrAdvPrinted.originalDocumentName)">{{ cs9.supportDocLastYrAdvPrinted.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrAdvPrinted = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrAdvPrinted"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrAdvPrinted);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
 
@@ -228,12 +228,12 @@
                                 File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc4.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc4 = saveUploadedFile(doc4, cs9.supportDocLastYrTradeshow, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc4 = saveUploadedFile(doc4, cs9.supportDocLastYrTradeshow)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrTradeshow.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrTradeshow.uniqueDocumentName, cs9.supportDocLastYrTradeshow.originalDocumentName)">{{ cs9.supportDocLastYrTradeshow.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrTradeshow = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrTradeshow"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrTradeshow);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -280,12 +280,12 @@
                                 File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc5.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc5 = saveUploadedFile(doc5, cs9.supportDocLastYrEventSponsor, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc5 = saveUploadedFile(doc5, cs9.supportDocLastYrEventSponsor)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrEventSponsor.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrEventSponsor.uniqueDocumentName, cs9.supportDocLastYrEventSponsor.originalDocumentName)">{{ cs9.supportDocLastYrEventSponsor.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrEventSponsor = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrEventSponsor"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrEventSponsor);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -332,12 +332,12 @@
                                 File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc6.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc6 = saveUploadedFile(doc6, cs9.supportDocLastYrSocialMedia, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc6 = saveUploadedFile(doc6, cs9.supportDocLastYrSocialMedia)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrSocialMedia.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrSocialMedia.uniqueDocumentName, cs9.supportDocLastYrSocialMedia.originalDocumentName)">{{ cs9.supportDocLastYrSocialMedia.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrSocialMedia = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrSocialMedia"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrSocialMedia);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -384,12 +384,12 @@
                                 File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc7.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc7 = saveUploadedFile(doc7, cs9.supportDocLastYrVideo, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc7 = saveUploadedFile(doc7, cs9.supportDocLastYrVideo)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrVideo.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrVideo.uniqueDocumentName, cs9.supportDocLastYrVideo.originalDocumentName)">{{ cs9.supportDocLastYrVideo.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrVideo = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrVideo"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrVideo);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -437,13 +437,14 @@
                                 File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc8.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc8 = saveUploadedFile(doc8, cs9.supportDocLastYrOther, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc8 = saveUploadedFile(doc8, cs9.supportDocLastYrOther)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrOther.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrOther.uniqueDocumentName, cs9.supportDocLastYrOther.originalDocumentName)">{{ cs9.supportDocLastYrOther.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrVideo = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrOther"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrOther);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
+
                         </div>
                     </li>
                 </ul>
