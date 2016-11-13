@@ -30,7 +30,9 @@ sfiSicApp
 
         $scope.cs1.participatingMeetingList = $scope.cs1.participatingMeetingList || [];
         angular.forEach($scope.cs1.participatingMeetingList, function(value, index) {
-            value.involvement = value.involvement.split(',');
+            if(value.involvement){
+                value.involvement = value.involvement.split(',');
+            }
         });
         $scope.addParticipatingMeeting = function(){
 
