@@ -51,14 +51,14 @@ public class SicCs9ViewModel extends BaseViewModel {
     private Set<BlobNames> supportDocCurrentYrSocialMedia;
     private Set<BlobNames> supportDocCurrentYrTradeshow;
     private Set<BlobNames> supportDocCurrentYrVideo;
-    private BlobNames supportDocLastYrAdvPrinted;
-    private BlobNames supportDocLastYrAdvTV;
-    private BlobNames supportDocLastYrEventSponsor;
-    private BlobNames supportDocLastYrOther;
-    private BlobNames supportDocLastYrPrinted;
-    private BlobNames supportDocLastYrSocialMedia;
-    private BlobNames supportDocLastYrTradeshow;
-    private BlobNames supportDocLastYrVideo;
+    private Set<BlobNames> supportDocLastYrAdvPrinted;
+    private Set<BlobNames> supportDocLastYrAdvTV;
+    private Set<BlobNames> supportDocLastYrEventSponsor;
+    private Set<BlobNames> supportDocLastYrOther;
+    private Set<BlobNames> supportDocLastYrPrinted;
+    private Set<BlobNames> supportDocLastYrSocialMedia;
+    private Set<BlobNames> supportDocLastYrTradeshow;
+    private Set<BlobNames> supportDocLastYrVideo;
     private BlobNames supportDocPrinted;
 
     @Override
@@ -406,67 +406,67 @@ public class SicCs9ViewModel extends BaseViewModel {
         this.supportDocCurrentYrVideo = supportDocCurrentYrVideo;
     }
 
-    public BlobNames getSupportDocLastYrAdvPrinted() {
+    public Set<BlobNames> getSupportDocLastYrAdvPrinted() {
         return supportDocLastYrAdvPrinted;
     }
 
-    public void setSupportDocLastYrAdvPrinted(BlobNames supportDocLastYrAdvPrinted) {
+    public void setSupportDocLastYrAdvPrinted(Set<BlobNames> supportDocLastYrAdvPrinted) {
         this.supportDocLastYrAdvPrinted = supportDocLastYrAdvPrinted;
     }
 
-    public BlobNames getSupportDocLastYrAdvTV() {
+    public Set<BlobNames> getSupportDocLastYrAdvTV() {
         return supportDocLastYrAdvTV;
     }
 
-    public void setSupportDocLastYrAdvTV(BlobNames supportDocLastYrAdvTV) {
+    public void setSupportDocLastYrAdvTV(Set<BlobNames> supportDocLastYrAdvTV) {
         this.supportDocLastYrAdvTV = supportDocLastYrAdvTV;
     }
 
-    public BlobNames getSupportDocLastYrEventSponsor() {
+    public Set<BlobNames> getSupportDocLastYrEventSponsor() {
         return supportDocLastYrEventSponsor;
     }
 
-    public void setSupportDocLastYrEventSponsor(BlobNames supportDocLastYrEventSponsor) {
+    public void setSupportDocLastYrEventSponsor(Set<BlobNames> supportDocLastYrEventSponsor) {
         this.supportDocLastYrEventSponsor = supportDocLastYrEventSponsor;
     }
 
-    public BlobNames getSupportDocLastYrOther() {
+    public Set<BlobNames> getSupportDocLastYrOther() {
         return supportDocLastYrOther;
     }
 
-    public void setSupportDocLastYrOther(BlobNames supportDocLastYrOther) {
+    public void setSupportDocLastYrOther(Set<BlobNames> supportDocLastYrOther) {
         this.supportDocLastYrOther = supportDocLastYrOther;
     }
 
-    public BlobNames getSupportDocLastYrPrinted() {
+    public Set<BlobNames> getSupportDocLastYrPrinted() {
         return supportDocLastYrPrinted;
     }
 
-    public void setSupportDocLastYrPrinted(BlobNames supportDocLastYrPrinted) {
+    public void setSupportDocLastYrPrinted(Set<BlobNames> supportDocLastYrPrinted) {
         this.supportDocLastYrPrinted = supportDocLastYrPrinted;
     }
 
-    public BlobNames getSupportDocLastYrSocialMedia() {
+    public Set<BlobNames> getSupportDocLastYrSocialMedia() {
         return supportDocLastYrSocialMedia;
     }
 
-    public void setSupportDocLastYrSocialMedia(BlobNames supportDocLastYrSocialMedia) {
+    public void setSupportDocLastYrSocialMedia(Set<BlobNames> supportDocLastYrSocialMedia) {
         this.supportDocLastYrSocialMedia = supportDocLastYrSocialMedia;
     }
 
-    public BlobNames getSupportDocLastYrTradeshow() {
+    public Set<BlobNames> getSupportDocLastYrTradeshow() {
         return supportDocLastYrTradeshow;
     }
 
-    public void setSupportDocLastYrTradeshow(BlobNames supportDocLastYrTradeshow) {
+    public void setSupportDocLastYrTradeshow(Set<BlobNames> supportDocLastYrTradeshow) {
         this.supportDocLastYrTradeshow = supportDocLastYrTradeshow;
     }
 
-    public BlobNames getSupportDocLastYrVideo() {
+    public Set<BlobNames> getSupportDocLastYrVideo() {
         return supportDocLastYrVideo;
     }
 
-    public void setSupportDocLastYrVideo(BlobNames supportDocLastYrVideo) {
+    public void setSupportDocLastYrVideo(Set<BlobNames> supportDocLastYrVideo) {
         this.supportDocLastYrVideo = supportDocLastYrVideo;
     }
 
