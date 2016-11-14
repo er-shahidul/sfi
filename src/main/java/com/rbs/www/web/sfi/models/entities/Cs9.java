@@ -154,8 +154,8 @@ public class Cs9 extends BaseEntityModel {
     @Column(name = "cs9_restorationOtherArea", nullable = true)
     private String restorationOtherArea;
 
-    @Column(name = "cs9_trainedWoodProducersChanged", nullable = true)
-    private String trainedWoodProducersChanged;
+//    @Column(name = "cs9_trainedWoodProducersChanged", nullable = true)
+//    private String trainedWoodProducersChanged;
 
     @Column(name = "cs9_trainingEducation", nullable = true)
     private String trainingEducation;
@@ -973,13 +973,13 @@ public class Cs9 extends BaseEntityModel {
         this.restorationOtherArea = restorationOtherArea;
     }
 
-    public String getTrainedWoodProducersChanged() {
-        return trainedWoodProducersChanged;
-    }
-
-    public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
-        this.trainedWoodProducersChanged = trainedWoodProducersChanged;
-    }
+//    public String getTrainedWoodProducersChanged() {
+//        return trainedWoodProducersChanged;
+//    }
+//
+//    public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
+//        this.trainedWoodProducersChanged = trainedWoodProducersChanged;
+//    }
 
     public String getTrainingEducation() {
         return trainingEducation;

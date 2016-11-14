@@ -17,6 +17,7 @@ public class Cs6ViewModel extends BaseViewModel {
     private Boolean toAssistObj8;
     private Set<SfiPpFormCs6UsCanadaViewModel> usCanada;
     private Set<SfiPpFormCs6OtherViewModel> usOthers;
+    private String trainedWoodProducersChanged;
 
     @Override
     public Integer getId() {
@@ -81,5 +82,13 @@ public class Cs6ViewModel extends BaseViewModel {
 
     public void setUsOthers(Set<SfiPpFormCs6OtherViewModel> usOthers) {
         this.usOthers = usOthers;
+    }
+
+    public String getTrainedWoodProducersChanged() {
+        return trainedWoodProducersChanged;
+    }
+
+    public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
+        this.trainedWoodProducersChanged = trainedWoodProducersChanged;
     }
 }
