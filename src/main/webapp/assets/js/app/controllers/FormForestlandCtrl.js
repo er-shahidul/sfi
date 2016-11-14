@@ -35,6 +35,63 @@ sfiFormApp
         if(_.isEmpty($scope.cs2.outsideCountries)){
             $scope.addOther();
         }
+
+        $scope.hasRegionData = function(){
+            return $scope.regionId || $scope.regionArea;
+        }
+
+        $scope.saveRegionArea = function(){
+
+            if($scope.hasRegionData() && $scope.forestlandForm.$valid){
+
+                var forestlandArea = {
+                    region : $rootScope.getRegion($scope.regionId),
+                    area   : $scope.regionArea
+
+                };
+
+                if($scope.editIndex){
+                    $scope.cs2.forestlandAreas[$scope.editIndex] = forestlandArea;
+
+                }
+                else if($scope.editIndex == 0){
+                    $scope.cs2.forestlandAreas[$scope.editIndex] = forestlandArea;
+
+                }else{
+                    $scope.cs2.forestlandAreas.push(forestlandArea);
+
+                }
+
+                $scope.editIndex = null;
+                $scope.resetRegionArea();
+            }
+        }
+        $scope.editIndex = null;
+        $scope.editRegionArea = function(index){
+
+            $scope.editIndex = index;
+            var forestlandArea = $scope.cs2.forestlandAreas[index];
+
+            $scope.regionArea = forestlandArea.area;
+            $scope.regionId = forestlandArea.region.id;
+
+            return false;
+        }
+
+        $scope.deleteRegionArea = function(index){
+
+            $('#delete1').modal();
+        }
+        $scope.deleteConfirm = function(index){
+
+            $scope.cs2.forestlandAreas.splice(index, 1);
+
+        }
+
+        $scope.resetRegionArea = function(){
+            $scope.regionArea = null;
+            $scope.regionId = 0;
+        }
     }
 
     $scope.addOther = function(){

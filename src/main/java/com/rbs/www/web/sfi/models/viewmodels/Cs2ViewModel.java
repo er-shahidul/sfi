@@ -4,12 +4,30 @@ import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.web.sfi.validation.Cs2Ca.Cs2Ca;
 import com.rbs.www.web.sfi.validation.Cs2Other.Cs2Other;
 import com.rbs.www.web.sfi.validation.Cs2Usa.Cs2Usa;
+import com.rbs.www.common.modules.validator.SpELAssert;
 
 import java.util.Set;
 
 @Cs2Usa(message = "{usaEmpty}")
 @Cs2Ca(message = "{caEmpty}")
 @Cs2Other(message = "{otherEmpty}")
+@SpELAssert.List({
+        @SpELAssert(
+                value = "useWho1A1BNote != null && !useWho1A1BNote.isEmpty()",
+                applyIf = "useWho1A1B != null && useWho1A1B",
+                message = "{cs2.useWho1A1BNote}"
+        ),
+        @SpELAssert(
+                value = "stopWho1A1BNote != null && !stopWho1A1BNote.isEmpty()",
+                applyIf = "stopWho1A1B != null && stopWho1A1B",
+                message = "{cs2.stopWho1A1BNote}"
+        ),
+        @SpELAssert(
+                value = "convertForestLandExplain != null && !convertForestLandExplain.isEmpty()",
+                applyIf = "convertForestLand != null && convertForestLand",
+                message = "{cs9.convertForestLandExplain}"
+        )
+})
 public class Cs2ViewModel extends BaseViewModel {
     private Integer id;
 
@@ -44,6 +62,64 @@ public class Cs2ViewModel extends BaseViewModel {
     private Set<String> caPrivateRecreationCategories;
 
     private Set<SfiPpFormCs2OutsideUsaCaViewModel> outsideCountries;
+
+    private Boolean useWho1A1B;
+    private String useWho1A1BNote;
+    private Boolean stopWho1A1B;
+    private String stopWho1A1BNote;
+    private Boolean convertForestCover;
+
+    private Boolean restorationForestCover;
+    private Boolean restorationRiparianProtection;
+    private String restorationRiparianArea;
+    private Boolean restorationNativeForest;
+    private String restorationNativeArea;
+
+    private Boolean restorationOther;
+    private String restorationOtherArea;
+    private String restorationOtherExplain;
+
+    private Boolean respondingForestHealth;
+    private Boolean respondingInvasiveSpecies;
+    private String respondingInvasiveArea;
+    private Boolean respondingDiseaseIssues;
+    private String respondingDiseaseArea;
+
+    private Boolean respondingInsect;
+    private String respondingInsectArea;
+
+    private Boolean respondingOther;
+    private String respondingOtherArea;
+    private String respondingOtherExplain;
+
+    private Boolean mitigatingEnvironmentalHarm;
+
+    private Boolean ecologicalImpactsSite;
+    private String ecologicalImpactsSiteArea;
+
+    private Boolean ecologicalImpactsLandscape;
+    private String ecologicalImpactsLandscapeArea;
+
+    private Boolean environmentalHarmOther;
+    private String environmentalHarmOtherArea;
+    private String environmentalHarmOtherExplain;
+
+    private Boolean economicReasons;
+
+    private Boolean economicProductivity;
+    private String economicProductivityArea;
+
+    private Boolean economicStandQuality;
+    private String economicStandArea;
+
+    private Boolean economicOther;
+    private String economicOtherArea;
+    private String economicOtherExplain;
+
+    private Boolean convertForestLand;
+    private String convertForestLandExplain;
+
+    private Set<SfiPpFormForestlandAreaViewModel> forestlandAreas;
 
     @Override
     public Integer getId() {
@@ -284,5 +360,341 @@ public class Cs2ViewModel extends BaseViewModel {
 
     public void setOutsideCountries(Set<SfiPpFormCs2OutsideUsaCaViewModel> outsideCountries) {
         this.outsideCountries = outsideCountries;
+    }
+
+    public Boolean getUseWho1A1B() {
+        return useWho1A1B;
+    }
+
+    public void setUseWho1A1B(Boolean useWho1A1B) {
+        this.useWho1A1B = useWho1A1B;
+    }
+
+    public String getUseWho1A1BNote() {
+        return useWho1A1BNote;
+    }
+
+    public void setUseWho1A1BNote(String useWho1A1BNote) {
+        this.useWho1A1BNote = useWho1A1BNote;
+    }
+
+    public Boolean getStopWho1A1B() {
+        return stopWho1A1B;
+    }
+
+    public void setStopWho1A1B(Boolean stopWho1A1B) {
+        this.stopWho1A1B = stopWho1A1B;
+    }
+
+    public String getStopWho1A1BNote() {
+        return stopWho1A1BNote;
+    }
+
+    public void setStopWho1A1BNote(String stopWho1A1BNote) {
+        this.stopWho1A1BNote = stopWho1A1BNote;
+    }
+
+    public Boolean getConvertForestCover() {
+        return convertForestCover;
+    }
+
+    public void setConvertForestCover(Boolean convertForestCover) {
+        this.convertForestCover = convertForestCover;
+    }
+
+    public Boolean getRestorationForestCover() {
+        return restorationForestCover;
+    }
+
+    public void setRestorationForestCover(Boolean restorationForestCover) {
+        this.restorationForestCover = restorationForestCover;
+    }
+
+    public Boolean getRestorationRiparianProtection() {
+        return restorationRiparianProtection;
+    }
+
+    public void setRestorationRiparianProtection(Boolean restorationRiparianProtection) {
+        this.restorationRiparianProtection = restorationRiparianProtection;
+    }
+
+    public String getRestorationRiparianArea() {
+        return restorationRiparianArea;
+    }
+
+    public void setRestorationRiparianArea(String restorationRiparianArea) {
+        this.restorationRiparianArea = restorationRiparianArea;
+    }
+
+    public Boolean getRestorationNativeForest() {
+        return restorationNativeForest;
+    }
+
+    public void setRestorationNativeForest(Boolean restorationNativeForest) {
+        this.restorationNativeForest = restorationNativeForest;
+    }
+
+    public String getRestorationNativeArea() {
+        return restorationNativeArea;
+    }
+
+    public void setRestorationNativeArea(String restorationNativeArea) {
+        this.restorationNativeArea = restorationNativeArea;
+    }
+
+    public Boolean getRestorationOther() {
+        return restorationOther;
+    }
+
+    public void setRestorationOther(Boolean restorationOther) {
+        this.restorationOther = restorationOther;
+    }
+
+    public String getRestorationOtherArea() {
+        return restorationOtherArea;
+    }
+
+    public void setRestorationOtherArea(String restorationOtherArea) {
+        this.restorationOtherArea = restorationOtherArea;
+    }
+
+    public String getRestorationOtherExplain() {
+        return restorationOtherExplain;
+    }
+
+    public void setRestorationOtherExplain(String restorationOtherExplain) {
+        this.restorationOtherExplain = restorationOtherExplain;
+    }
+
+    public Boolean getRespondingForestHealth() {
+        return respondingForestHealth;
+    }
+
+    public void setRespondingForestHealth(Boolean respondingForestHealth) {
+        this.respondingForestHealth = respondingForestHealth;
+    }
+
+    public Boolean getRespondingInvasiveSpecies() {
+        return respondingInvasiveSpecies;
+    }
+
+    public void setRespondingInvasiveSpecies(Boolean respondingInvasiveSpecies) {
+        this.respondingInvasiveSpecies = respondingInvasiveSpecies;
+    }
+
+    public String getRespondingInvasiveArea() {
+        return respondingInvasiveArea;
+    }
+
+    public void setRespondingInvasiveArea(String respondingInvasiveArea) {
+        this.respondingInvasiveArea = respondingInvasiveArea;
+    }
+
+    public Boolean getRespondingDiseaseIssues() {
+        return respondingDiseaseIssues;
+    }
+
+    public void setRespondingDiseaseIssues(Boolean respondingDiseaseIssues) {
+        this.respondingDiseaseIssues = respondingDiseaseIssues;
+    }
+
+    public String getRespondingDiseaseArea() {
+        return respondingDiseaseArea;
+    }
+
+    public void setRespondingDiseaseArea(String respondingDiseaseArea) {
+        this.respondingDiseaseArea = respondingDiseaseArea;
+    }
+
+    public Boolean getRespondingInsect() {
+        return respondingInsect;
+    }
+
+    public void setRespondingInsect(Boolean respondingInsect) {
+        this.respondingInsect = respondingInsect;
+    }
+
+    public String getRespondingInsectArea() {
+        return respondingInsectArea;
+    }
+
+    public void setRespondingInsectArea(String respondingInsectArea) {
+        this.respondingInsectArea = respondingInsectArea;
+    }
+
+    public Boolean getRespondingOther() {
+        return respondingOther;
+    }
+
+    public void setRespondingOther(Boolean respondingOther) {
+        this.respondingOther = respondingOther;
+    }
+
+    public String getRespondingOtherArea() {
+        return respondingOtherArea;
+    }
+
+    public void setRespondingOtherArea(String respondingOtherArea) {
+        this.respondingOtherArea = respondingOtherArea;
+    }
+
+    public String getRespondingOtherExplain() {
+        return respondingOtherExplain;
+    }
+
+    public void setRespondingOtherExplain(String respondingOtherExplain) {
+        this.respondingOtherExplain = respondingOtherExplain;
+    }
+
+    public Boolean getMitigatingEnvironmentalHarm() {
+        return mitigatingEnvironmentalHarm;
+    }
+
+    public void setMitigatingEnvironmentalHarm(Boolean mitigatingEnvironmentalHarm) {
+        this.mitigatingEnvironmentalHarm = mitigatingEnvironmentalHarm;
+    }
+
+    public Boolean getEcologicalImpactsSite() {
+        return ecologicalImpactsSite;
+    }
+
+    public void setEcologicalImpactsSite(Boolean ecologicalImpactsSite) {
+        this.ecologicalImpactsSite = ecologicalImpactsSite;
+    }
+
+    public String getEcologicalImpactsSiteArea() {
+        return ecologicalImpactsSiteArea;
+    }
+
+    public void setEcologicalImpactsSiteArea(String ecologicalImpactsSiteArea) {
+        this.ecologicalImpactsSiteArea = ecologicalImpactsSiteArea;
+    }
+
+    public Boolean getEcologicalImpactsLandscape() {
+        return ecologicalImpactsLandscape;
+    }
+
+    public void setEcologicalImpactsLandscape(Boolean ecologicalImpactsLandscape) {
+        this.ecologicalImpactsLandscape = ecologicalImpactsLandscape;
+    }
+
+    public String getEcologicalImpactsLandscapeArea() {
+        return ecologicalImpactsLandscapeArea;
+    }
+
+    public void setEcologicalImpactsLandscapeArea(String ecologicalImpactsLandscapeArea) {
+        this.ecologicalImpactsLandscapeArea = ecologicalImpactsLandscapeArea;
+    }
+
+    public Boolean getEnvironmentalHarmOther() {
+        return environmentalHarmOther;
+    }
+
+    public void setEnvironmentalHarmOther(Boolean environmentalHarmOther) {
+        this.environmentalHarmOther = environmentalHarmOther;
+    }
+
+    public String getEnvironmentalHarmOtherArea() {
+        return environmentalHarmOtherArea;
+    }
+
+    public void setEnvironmentalHarmOtherArea(String environmentalHarmOtherArea) {
+        this.environmentalHarmOtherArea = environmentalHarmOtherArea;
+    }
+
+    public String getEnvironmentalHarmOtherExplain() {
+        return environmentalHarmOtherExplain;
+    }
+
+    public void setEnvironmentalHarmOtherExplain(String environmentalHarmOtherExplain) {
+        this.environmentalHarmOtherExplain = environmentalHarmOtherExplain;
+    }
+
+    public Boolean getEconomicReasons() {
+        return economicReasons;
+    }
+
+    public void setEconomicReasons(Boolean economicReasons) {
+        this.economicReasons = economicReasons;
+    }
+
+    public Boolean getEconomicProductivity() {
+        return economicProductivity;
+    }
+
+    public void setEconomicProductivity(Boolean economicProductivity) {
+        this.economicProductivity = economicProductivity;
+    }
+
+    public String getEconomicProductivityArea() {
+        return economicProductivityArea;
+    }
+
+    public void setEconomicProductivityArea(String economicProductivityArea) {
+        this.economicProductivityArea = economicProductivityArea;
+    }
+
+    public Boolean getEconomicStandQuality() {
+        return economicStandQuality;
+    }
+
+    public void setEconomicStandQuality(Boolean economicStandQuality) {
+        this.economicStandQuality = economicStandQuality;
+    }
+
+    public String getEconomicStandArea() {
+        return economicStandArea;
+    }
+
+    public void setEconomicStandArea(String economicStandArea) {
+        this.economicStandArea = economicStandArea;
+    }
+
+    public Boolean getEconomicOther() {
+        return economicOther;
+    }
+
+    public void setEconomicOther(Boolean economicOther) {
+        this.economicOther = economicOther;
+    }
+
+    public String getEconomicOtherArea() {
+        return economicOtherArea;
+    }
+
+    public void setEconomicOtherArea(String economicOtherArea) {
+        this.economicOtherArea = economicOtherArea;
+    }
+
+    public String getEconomicOtherExplain() {
+        return economicOtherExplain;
+    }
+
+    public void setEconomicOtherExplain(String economicOtherExplain) {
+        this.economicOtherExplain = economicOtherExplain;
+    }
+
+    public Boolean getConvertForestLand() {
+        return convertForestLand;
+    }
+
+    public void setConvertForestLand(Boolean convertForestLand) {
+        this.convertForestLand = convertForestLand;
+    }
+
+    public String getConvertForestLandExplain() {
+        return convertForestLandExplain;
+    }
+
+    public void setConvertForestLandExplain(String convertForestLandExplain) {
+        this.convertForestLandExplain = convertForestLandExplain;
+    }
+
+    public Set<SfiPpFormForestlandAreaViewModel> getForestlandAreas() {
+        return forestlandAreas;
+    }
+
+    public void setForestlandAreas(Set<SfiPpFormForestlandAreaViewModel> forestlandAreas) {
+        this.forestlandAreas = forestlandAreas;
     }
 }
