@@ -551,6 +551,62 @@
                 </div>
             </div>
 
+            <table>
+                <tr>
+                    <td>
+                        <div style="width: 250px;text-align: right;">
+                            Do you continue to use it?
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin-left: 20px;">
+                            <input icheck type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="true" > Yes
+                            <input icheck type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="false" > No
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="width: 250px;text-align: right;margin-top: 20px;" ng-show="cs2.continueToUseIt">
+                            Please explain
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group" ng-show="cs2.continueToUseIt" style="margin-top: 20px;margin-left: 20px;">
+                            <textarea class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.continueToUseItExplain"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="height: 20px;"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="width: 250px;text-align: right;">
+                            Do you have plans to stop using it?
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin-left: 20px;">
+                            <input icheck type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="true" > Yes
+                            <input icheck type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="false" > No
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="width: 250px;text-align: right;margin-top: 20px;" ng-show="cs2.plansToStopUsingIt">
+                            Please explain
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group" ng-show="cs2.plansToStopUsingIt" style="margin-top: 20px;margin-left: 20px;">
+                            <textarea class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.plansToStopUsingItExplain"></textarea>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
         </div>
         <br>
 

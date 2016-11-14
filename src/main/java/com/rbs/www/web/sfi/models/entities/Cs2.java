@@ -199,6 +199,20 @@ public class Cs2 extends BaseEntityModel {
     @Column(name = "cs9_economicReasons", nullable = true)
     private Boolean economicReasons;
 
+    @Column(name = "cs2_continueToUseIt", nullable = true)
+    private Boolean continueToUseIt;
+
+    @Column(name = "cs2_plansToStopUsingIt", nullable = true)
+    private Boolean plansToStopUsingIt;
+
+    @Column(name = "cs2_continueToUseItExplain", nullable = true)
+    @Type(type="text")
+    private String continueToUseItExplain;
+
+    @Column(name = "cs2_plansToStopUsingItExplain", nullable = true)
+    @Type(type="text")
+    private String plansToStopUsingItExplain;
+
     @Column(name = "cs9_economicProductivity", nullable = true)
     private Boolean economicProductivity;
 
@@ -807,5 +821,37 @@ public class Cs2 extends BaseEntityModel {
 
     public void setForestlandAreas(Set<SfiPpFormForestlandArea> forestlandAreas) {
         addAll(this.forestlandAreas, forestlandAreas);
+    }
+
+    public Boolean getContinueToUseIt() {
+        return continueToUseIt;
+    }
+
+    public void setContinueToUseIt(Boolean continueToUseIt) {
+        this.continueToUseIt = continueToUseIt;
+    }
+
+    public Boolean getPlansToStopUsingIt() {
+        return plansToStopUsingIt;
+    }
+
+    public void setPlansToStopUsingIt(Boolean plansToStopUsingIt) {
+        this.plansToStopUsingIt = plansToStopUsingIt;
+    }
+
+    public String getContinueToUseItExplain() {
+        return continueToUseItExplain;
+    }
+
+    public void setContinueToUseItExplain(String continueToUseItExplain) {
+        this.continueToUseItExplain = continueToUseItExplain;
+    }
+
+    public String getPlansToStopUsingItExplain() {
+        return plansToStopUsingItExplain;
+    }
+
+    public void setPlansToStopUsingItExplain(String plansToStopUsingItExplain) {
+        this.plansToStopUsingItExplain = plansToStopUsingItExplain;
     }
 }

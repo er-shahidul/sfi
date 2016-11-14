@@ -121,6 +121,11 @@ public class Cs2ViewModel extends BaseViewModel {
 
     private Set<SfiPpFormForestlandAreaViewModel> forestlandAreas;
 
+    private Boolean continueToUseIt;
+    private Boolean plansToStopUsingIt;
+    private String continueToUseItExplain;
+    private String plansToStopUsingItExplain;
+
     @Override
     public Integer getId() {
         return id;
@@ -696,5 +701,37 @@ public class Cs2ViewModel extends BaseViewModel {
 
     public void setForestlandAreas(Set<SfiPpFormForestlandAreaViewModel> forestlandAreas) {
         this.forestlandAreas = forestlandAreas;
+    }
+
+    public Boolean getContinueToUseIt() {
+        return continueToUseIt;
+    }
+
+    public void setContinueToUseIt(Boolean continueToUseIt) {
+        this.continueToUseIt = continueToUseIt;
+    }
+
+    public Boolean getPlansToStopUsingIt() {
+        return plansToStopUsingIt;
+    }
+
+    public void setPlansToStopUsingIt(Boolean plansToStopUsingIt) {
+        this.plansToStopUsingIt = plansToStopUsingIt;
+    }
+
+    public String getContinueToUseItExplain() {
+        return continueToUseItExplain;
+    }
+
+    public void setContinueToUseItExplain(String continueToUseItExplain) {
+        this.continueToUseItExplain = continueToUseItExplain;
+    }
+
+    public String getPlansToStopUsingItExplain() {
+        return plansToStopUsingItExplain;
+    }
+
+    public void setPlansToStopUsingItExplain(String plansToStopUsingItExplain) {
+        this.plansToStopUsingItExplain = plansToStopUsingItExplain;
     }
 }
