@@ -25,7 +25,7 @@ import java.util.Set;
         @SpELAssert(
                 value = "convertForestLandExplain != null && !convertForestLandExplain.isEmpty()",
                 applyIf = "convertForestLand != null && convertForestLand",
-                message = "{cs9.convertForestLandExplain}"
+                message = "{cs2.convertForestLandExplain}"
         )
 })
 public class Cs2ViewModel extends BaseViewModel {
