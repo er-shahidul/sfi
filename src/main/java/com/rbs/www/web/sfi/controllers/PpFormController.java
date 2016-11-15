@@ -336,7 +336,7 @@ public class PpFormController{
         model.setRestorationOtherExplain(null);
         model.setRestorationRiparianArea(null);
         model.setStopWho1A1BNote(null);
-        model.setTrainedWoodProducersChanged(null);
+//        model.setTrainedWoodProducersChanged(null);
         model.setTrainingEducation(null);
         model.setUseWho1A1BNote(null);
         model.setConservation413DataSource1_2(null);

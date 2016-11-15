@@ -7,6 +7,8 @@ import com.rbs.www.admin.models.entities.User;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
+import java.util.Objects;
+
 public class MailHelper
 {
     private JavaMailSender mailSender;
@@ -15,7 +17,7 @@ public class MailHelper
         this.mailSender = mailSender;
     }
 
-    public void sendMail(String to, String subject, String token, User user, String mailType, String path, String url) {
+    public void sendMail(String to, String subject, String token, User user, String mailType, String url) {
 
         String form = "rachel.dierolf@sfiprogram.org";
         String msg = url+token;
@@ -26,15 +28,15 @@ public class MailHelper
             helper.setTo(to);
             helper.setSubject(subject);
 
-            if(mailType == "confirm") confirmBody(msg, user, helper, path, url);
-            else if(mailType == "reset") resetBody(msg, user, helper, path, url);
+            if(Objects.equals(mailType, "confirm")) confirmBody(msg, user, helper, url);
+            else if(Objects.equals(mailType, "reset")) resetBody(msg, user, helper, url);
             else helper.setText("", true);
 
             mailSender.send(message);
         }catch(MessagingException e){e.printStackTrace();}
     }
 
-    private void confirmBody(String msg, User user, MimeMessageHelper helper, String path, String url) throws MessagingException {
+    private void confirmBody(String msg, User user, MimeMessageHelper helper, String url) throws MessagingException {
             String imagePath = url+"/assets/images/u4.png";
             helper.setText(
                 "<html><body>" +
@@ -98,7 +100,7 @@ public class MailHelper
                 , true);
     }
 
-    private void resetBody(String msg, User user, MimeMessageHelper helper, String path, String url) throws MessagingException {
+    private void resetBody(String msg, User user, MimeMessageHelper helper, String url) throws MessagingException {
             String imagePath = url+"/assets/images/u4.png";
             helper.setText(
                 "<html><body>" +

@@ -68,17 +68,12 @@ public class UserController {
         return "common/access_denied";
     }
 
-    private void sendEmail(String recipient, String subject, String message, User user, String mailType, String path, HttpServletRequest request) {
+    private void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
         ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
         MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
-        String url=null;
-        try {
-            url = getHost(request);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+        String url="https://"+path;
 
-        mailHelper.sendMail(recipient, subject, message, user, mailType, path, url);
+        mailHelper.sendMail(recipient, subject, message, user, mailType, url);
     }
 
     private String getHost(HttpServletRequest request) throws MalformedURLException {
@@ -229,7 +224,7 @@ public class UserController {
 //        String mailType = "confirm";
 //
 //        if(user.getSendInvitation()){
-//            sendEmail(recipient, subject, message, user, mailType, request.getLocalName(), request);
+//            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
 //        }
 
         model.addAttribute("success", "User " + "" + " updated successfully");
@@ -342,7 +337,7 @@ public class UserController {
             String message = "/user/password/" + randomUUIDString;
 //            String message = request.getLocalName() + "/user/password/" + randomUUIDString;
             String mailType = "reset";
-            sendEmail(email, subject, message, user, mailType, request.getLocalName(), request);
+            sendEmail(email, subject, message, user, mailType, request.getLocalName());
         }
 
         return "redirect:/login?msg";
@@ -464,7 +459,7 @@ public class UserController {
         String mailType = "confirm";
 
         if (user.getSendInvitation()) {
-            sendEmail(recipient, subject, message, user, mailType, request.getLocalName(), request);
+            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
         }
 
         model.addAttribute("success", "User " + "" + " has been registered successfully");

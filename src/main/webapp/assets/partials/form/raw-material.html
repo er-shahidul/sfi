@@ -35,6 +35,19 @@
                    ng-model="cs6.numPrivateForeOwersCa" ng-disabled="!operateInCa() || !hasPrimaryYards()" >
         </td>
     </tr>
+    <tr>
+        <td colspan="3" style="border: 0;">
+            <div style="margin-left: 35px;margin-top: 20px;">
+                <p class="question-style">
+                    In your opinion, has the number of trained wood producers in your region of your forestlands changed as
+                    compared with last year?
+                </p>
+                    <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
+                    <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
+                    <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
+            </div>
+        </td>
+    </tr>
     </tbody>
 </table>
 </form>

@@ -136,7 +136,7 @@ public class Cs9ViewModel extends BaseViewModel {
     private String restorationRiparianArea;
     private String stopWho1A1BNote;
 
-    private String trainedWoodProducersChanged;
+//    private String trainedWoodProducersChanged;
     private String trainingEducation;
     private String useWho1A1BNote;
 
@@ -935,13 +935,13 @@ public class Cs9ViewModel extends BaseViewModel {
         this.stopWho1A1BNote = stopWho1A1BNote;
     }
 
-    public String getTrainedWoodProducersChanged() {
-        return trainedWoodProducersChanged;
-    }
-
-    public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
-        this.trainedWoodProducersChanged = trainedWoodProducersChanged;
-    }
+//    public String getTrainedWoodProducersChanged() {
+//        return trainedWoodProducersChanged;
+//    }
+//
+//    public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
+//        this.trainedWoodProducersChanged = trainedWoodProducersChanged;
+//    }
 
     public String getTrainingEducation() {
         return trainingEducation;

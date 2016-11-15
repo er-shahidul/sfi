@@ -7,14 +7,14 @@ sfiSicApp
         $scope.bmpReportDoc = {};
         $scope.cs9.supportDocPrinted = $scope.cs9.supportDocPrinted || {};
 
-        $scope.cs9.supportDocLastYrPrinted = $scope.cs9.supportDocLastYrPrinted || {};
-        $scope.cs9.supportDocLastYrAdvTV = $scope.cs9.supportDocLastYrAdvTV || {};
-        $scope.cs9.supportDocLastYrAdvPrinted = $scope.cs9.supportDocLastYrAdvPrinted || {};
-        $scope.cs9.supportDocLastYrTradeshow = $scope.cs9.supportDocLastYrTradeshow || {};
-        $scope.cs9.supportDocLastYrEventSponsor = $scope.cs9.supportDocLastYrEventSponsor || {};
-        $scope.cs9.supportDocLastYrSocialMedia = $scope.cs9.supportDocLastYrSocialMedia || {};
-        $scope.cs9.supportDocLastYrVideo = $scope.cs9.supportDocLastYrVideo || {};
-        $scope.cs9.supportDocLastYrOther = $scope.cs9.supportDocLastYrOther || {};
+        $scope.cs9.supportDocLastYrPrinted = $scope.cs9.supportDocLastYrPrinted || [];
+        $scope.cs9.supportDocLastYrAdvTV = $scope.cs9.supportDocLastYrAdvTV || [];
+        $scope.cs9.supportDocLastYrAdvPrinted = $scope.cs9.supportDocLastYrAdvPrinted || [];
+        $scope.cs9.supportDocLastYrTradeshow = $scope.cs9.supportDocLastYrTradeshow || [];
+        $scope.cs9.supportDocLastYrEventSponsor = $scope.cs9.supportDocLastYrEventSponsor || [];
+        $scope.cs9.supportDocLastYrSocialMedia = $scope.cs9.supportDocLastYrSocialMedia || [];
+        $scope.cs9.supportDocLastYrVideo = $scope.cs9.supportDocLastYrVideo || [];
+        $scope.cs9.supportDocLastYrOther = $scope.cs9.supportDocLastYrOther || [];
 
         $scope.cs9.supportDocCurrentYrPrinted = $scope.cs9.supportDocCurrentYrPrinted || [];
         $scope.cs9.supportDocCurrentYrAdvTV = $scope.cs9.supportDocCurrentYrAdvTV || [];

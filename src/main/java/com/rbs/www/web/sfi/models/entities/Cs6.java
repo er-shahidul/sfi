@@ -35,6 +35,9 @@ public class Cs6 extends BaseEntityModel {
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SfiPpFormCs6Other> usOthers;
 
+    @Column(name = "cs9_trainedWoodProducersChanged", nullable = true)
+    private String trainedWoodProducersChanged;
+
     @Override
     public Integer getId() {
         return id;
@@ -98,5 +101,13 @@ public class Cs6 extends BaseEntityModel {
 
     public void setUsOthers(Set<SfiPpFormCs6Other> usOthers) {
         addAll(this.usOthers, usOthers);
+    }
+
+    public String getTrainedWoodProducersChanged() {
+        return trainedWoodProducersChanged;
+    }
+
+    public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
+        this.trainedWoodProducersChanged = trainedWoodProducersChanged;
     }
 }

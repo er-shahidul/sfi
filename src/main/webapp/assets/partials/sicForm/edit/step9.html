@@ -50,10 +50,10 @@
 
                                      ng-init="doc1 = {}"
                                      ng-file-select
-                                     ng-model="upload1"
-                                     ng-file-change="uploadFile(upload1, doc1, '.pdf, .doc, .xls')"
-                                     ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-model="uploadFile1"
+                                     ng-file-change="uploadFile(uploadFile1, doc1, '.pdf, .doc, .xls, .jpg')"
+                                     ng-multiple="true"
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -68,15 +68,15 @@
                                     <a ng-click="doc1 = {}; " ng-show="doc1.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc1.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc1 = saveUploadedFile(doc1, cs9.supportDocLastYrPrinted, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc1 = saveUploadedFile(doc1, cs9.supportDocLastYrPrinted)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrPrinted.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrPrinted.uniqueDocumentName, cs9.supportDocLastYrPrinted.originalDocumentName)">{{ cs9.supportDocLastYrPrinted.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrPrinted = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrPrinted"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrPrinted);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -102,10 +102,10 @@
 
                                      ng-init="doc2 = {}"
                                      ng-file-select
-                                     ng-model="upload2"
-                                     ng-file-change="uploadFile(upload2, doc2, '.pdf, .doc, .xls')"
-                                     ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-model="uploadFile1"
+                                     ng-file-change="uploadFile(uploadFile1, doc2, '.pdf, .doc, .xls, .jpg')"
+                                     ng-multiple="true"
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -120,15 +120,15 @@
                                     <a ng-click="doc2 = {}; " ng-show="doc2.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc2.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc2 = saveUploadedFile(doc2, cs9.supportDocLastYrAdvTV, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc2 = saveUploadedFile(doc2, cs9.supportDocLastYrAdvTV)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvTV.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrAdvTV.uniqueDocumentName, cs9.supportDocLastYrAdvTV.originalDocumentName)">{{ cs9.supportDocLastYrAdvTV.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrAdvTV = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrAdvTV"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrAdvTV);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -154,10 +154,10 @@
 
                                      ng-init="doc3 = {}"
                                      ng-file-select
-                                     ng-model="upload3"
-                                     ng-file-change="uploadFile(upload3, doc3, '.pdf, .doc, .xls')"
-                                     ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-model="uploadFile1"
+                                     ng-file-change="uploadFile(uploadFile1, doc3, '.pdf, .doc, .xls, .jpg')"
+                                     ng-multiple="true"
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -172,15 +172,15 @@
                                     <a ng-click="doc3 = {}; " ng-show="doc3.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc3.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc3 = saveUploadedFile(doc3, cs9.supportDocLastYrAdvPrinted, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc3 = saveUploadedFile(doc3, cs9.supportDocLastYrAdvPrinted)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrAdvPrinted.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrAdvPrinted.uniqueDocumentName, cs9.supportDocLastYrAdvPrinted.originalDocumentName)">{{ cs9.supportDocLastYrAdvPrinted.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrAdvPrinted = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrAdvPrinted"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrAdvPrinted);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
 
@@ -207,10 +207,10 @@
 
                                      ng-init="doc4 = {}"
                                      ng-file-select
-                                     ng-model="upload4"
-                                     ng-file-change="uploadFile(upload4, doc4, '.pdf, .doc, .xls')"
-                                     ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-model="uploadFile1"
+                                     ng-file-change="uploadFile(uploadFile1, doc4, '.pdf, .doc, .xls, .jpg')"
+                                     ng-multiple="true"
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -225,15 +225,15 @@
                                     <a ng-click="doc4 = {}; " ng-show="doc4.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc4.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc4 = saveUploadedFile(doc4, cs9.supportDocLastYrTradeshow, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc4 = saveUploadedFile(doc4, cs9.supportDocLastYrTradeshow)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrTradeshow.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrTradeshow.uniqueDocumentName, cs9.supportDocLastYrTradeshow.originalDocumentName)">{{ cs9.supportDocLastYrTradeshow.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrTradeshow = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrTradeshow"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrTradeshow);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -259,10 +259,10 @@
 
                                      ng-init="doc5 = {}"
                                      ng-file-select
-                                     ng-model="upload5"
-                                     ng-file-change="uploadFile(upload5, doc5, '.pdf, .doc, .xls')"
-                                     ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-model="uploadFile1"
+                                     ng-file-change="uploadFile(uploadFile1, doc5, '.pdf, .doc, .xls, .jpg')"
+                                     ng-multiple="true"
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -277,15 +277,15 @@
                                     <a ng-click="doc5 = {}; " ng-show="doc5.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc5.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc5 = saveUploadedFile(doc5, cs9.supportDocLastYrEventSponsor, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc5 = saveUploadedFile(doc5, cs9.supportDocLastYrEventSponsor)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrEventSponsor.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrEventSponsor.uniqueDocumentName, cs9.supportDocLastYrEventSponsor.originalDocumentName)">{{ cs9.supportDocLastYrEventSponsor.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrEventSponsor = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrEventSponsor"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrEventSponsor);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -311,10 +311,10 @@
 
                                      ng-init="doc6 = {}"
                                      ng-file-select
-                                     ng-model="upload6"
-                                     ng-file-change="uploadFile(upload6, doc6, '.pdf, .doc, .xls')"
-                                     ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-model="uploadFile1"
+                                     ng-file-change="uploadFile(uploadFile1, doc6, '.pdf, .doc, .xls, .jpg')"
+                                     ng-multiple="true"
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -329,15 +329,15 @@
                                     <a ng-click="doc6 = {}; " ng-show="doc6.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc6.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc6 = saveUploadedFile(doc6, cs9.supportDocLastYrSocialMedia, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc6 = saveUploadedFile(doc6, cs9.supportDocLastYrSocialMedia)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrSocialMedia.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrSocialMedia.uniqueDocumentName, cs9.supportDocLastYrSocialMedia.originalDocumentName)">{{ cs9.supportDocLastYrSocialMedia.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrSocialMedia = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrSocialMedia"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrSocialMedia);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -363,10 +363,10 @@
 
                                      ng-init="doc7 = {}"
                                      ng-file-select
-                                     ng-model="upload7"
-                                     ng-file-change="uploadFile(upload7, doc7, '.pdf, .doc, .xls')"
-                                     ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-model="uploadFile1"
+                                     ng-file-change="uploadFile(uploadFile1, doc7, '.pdf, .doc, .xls, .jpg')"
+                                     ng-multiple="true"
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -381,15 +381,15 @@
                                     <a ng-click="doc7 = {}; " ng-show="doc7.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc7.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc7 = saveUploadedFile(doc7, cs9.supportDocLastYrVideo, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc7 = saveUploadedFile(doc7, cs9.supportDocLastYrVideo)">
                             </div>
 
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrVideo.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrVideo.uniqueDocumentName, cs9.supportDocLastYrVideo.originalDocumentName)">{{ cs9.supportDocLastYrVideo.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrVideo = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrVideo"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrVideo);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
                         </div>
                     </li>
@@ -415,10 +415,10 @@
 
                                      ng-init="doc8 = {}"
                                      ng-file-select
-                                     ng-model="upload8"
-                                     ng-file-change="uploadFile(upload8, doc8, '.pdf, .doc, .xls')"
-                                     ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-model="uploadFile1"
+                                     ng-file-change="uploadFile(uploadFile1, doc8, '.pdf, .doc, .xls, .jpg')"
+                                     ng-multiple="true"
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -434,21 +434,17 @@
 
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="doc8.originalDocumentName">
-                                <input type="submit" class="btn default" value="Upload" ng-click="doc8 = saveUploadedFile(doc8, cs9.supportDocLastYrOther, true)">
+                                <input type="submit" class="btn default" value="Upload" ng-click="doc8 = saveUploadedFile(doc8, cs9.supportDocLastYrOther)">
                             </div>
 
-
-                            <div id="selectedItem" ng-show="cs9.supportDocLastYrOther.originalDocumentName"
-                                 ng-click="download(cs9.supportDocLastYrOther.uniqueDocumentName, cs9.supportDocLastYrOther.originalDocumentName)">{{ cs9.supportDocLastYrOther.originalDocumentName }}
-                                <button ng-click="cs9.supportDocLastYrVideo = {};$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <div id="selectedItem" ng-repeat="file in cs9.supportDocLastYrOther"
+                                 ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                <button ng-click="deleteByIndex($index, cs9.supportDocLastYrOther);$event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                             </div>
 
-                            <!--<div id="selectedItem" ng-repeat="file in cs9.supportDocCurrentYrOther" >{{ file.originalDocumentName }}-->
-                                <!--<button ng-click="deleteByIndex($index, cs9.supportDocCurrentYrOther)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>-->
-                            <!--</div>-->
                         </div>
                     </li>
                 </ul>
@@ -484,9 +480,9 @@
                                      ng-init="curDoc1 = {}"
                                      ng-file-select
                                      ng-model="curUpload1"
-                                     ng-file-change="uploadFile(curUpload1, curDoc1, '.pdf, .doc, .xls')"
+                                     ng-file-change="uploadFile(curUpload1, curDoc1, '.pdf, .doc, .xls, .jpg')"
                                      ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -501,7 +497,7 @@
                                     <a ng-click="curDoc1 = {}; " ng-show="curDoc1.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="curDoc1.originalDocumentName">
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc1 = saveUploadedFile(curDoc1, cs9.supportDocCurrentYrPrinted  )">
@@ -539,9 +535,9 @@
                                      ng-init="curDoc2 = {}"
                                      ng-file-select
                                      ng-model="curUpload2"
-                                     ng-file-change="uploadFile(curUpload2, curDoc2, '.pdf, .doc, .xls')"
+                                     ng-file-change="uploadFile(curUpload2, curDoc2, '.pdf, .doc, .xls, .jpg')"
                                      ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -556,7 +552,7 @@
                                     <a ng-click="curDoc2 = {}; " ng-show="curDoc2.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="curDoc2.originalDocumentName">
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc2 = saveUploadedFile(curDoc2, cs9.supportDocCurrentYrAdvTV )">
@@ -593,9 +589,9 @@
                                      ng-init="curDoc3 = {}"
                                      ng-file-select
                                      ng-model="curUpload3"
-                                     ng-file-change="uploadFile(curUpload3, curDoc3, '.pdf, .doc, .xls')"
+                                     ng-file-change="uploadFile(curUpload3, curDoc3, '.pdf, .doc, .xls, .jpg')"
                                      ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -610,7 +606,7 @@
                                     <a ng-click="curDoc3 = {}; " ng-show="curDoc3.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="curDoc3.originalDocumentName">
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc3 = saveUploadedFile(curDoc3, cs9.supportDocCurrentYrAdvPrinted )">
@@ -648,9 +644,9 @@
                                      ng-init="curDoc4 = {}"
                                      ng-file-select
                                      ng-model="curUpload4"
-                                     ng-file-change="uploadFile(curUpload4, curDoc4, '.pdf, .doc, .xls')"
+                                     ng-file-change="uploadFile(curUpload4, curDoc4, '.pdf, .doc, .xls, .jpg')"
                                      ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -665,7 +661,7 @@
                                     <a ng-click="curDoc4 = {}; " ng-show="curDoc4.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="curDoc4.originalDocumentName">
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc4 = saveUploadedFile(curDoc4, cs9.supportDocCurrentYrTradeshow )">
@@ -701,9 +697,9 @@
                                      ng-init="curDoc5 = {}"
                                      ng-file-select
                                      ng-model="curUpload5"
-                                     ng-file-change="uploadFile(curUpload5, curDoc5, '.pdf, .doc, .xls')"
+                                     ng-file-change="uploadFile(curUpload5, curDoc5, '.pdf, .doc, .xls, .jpg')"
                                      ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -718,7 +714,7 @@
                                     <a ng-click="curDoc5 = {}; " ng-show="curDoc5.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="curDoc5.originalDocumentName">
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc5 = saveUploadedFile(curDoc5, cs9.supportDocCurrentYrEventSponsor )">
@@ -754,9 +750,9 @@
                                      ng-init="curDoc6 = {}"
                                      ng-file-select
                                      ng-model="curUpload6"
-                                     ng-file-change="uploadFile(curUpload6, curDoc6, '.pdf, .doc, .xls')"
+                                     ng-file-change="uploadFile(curUpload6, curDoc6, '.pdf, .doc, .xls, .jpg')"
                                      ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -771,7 +767,7 @@
                                     <a ng-click="curDoc6 = {}; " ng-show="curDoc6.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="curDoc6.originalDocumentName">
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc6 = saveUploadedFile(curDoc6, cs9.supportDocCurrentYrSocialMedia )">
@@ -806,9 +802,9 @@
                                      ng-init="curDoc7 = {}"
                                      ng-file-select
                                      ng-model="curUpload7"
-                                     ng-file-change="uploadFile(curUpload7, curDoc7, '.pdf, .doc, .xls')"
+                                     ng-file-change="uploadFile(curUpload7, curDoc7, '.pdf, .doc, .xls, .jpg')"
                                      ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -823,7 +819,7 @@
                                     <a ng-click="curDoc7 = {}; " ng-show="curDoc7.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="curDoc7.originalDocumentName">
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc7 = saveUploadedFile(curDoc7, cs9.supportDocCurrentYrVideo )">
@@ -857,9 +853,9 @@
                                      ng-init="curDoc8 = {}"
                                      ng-file-select
                                      ng-model="curUpload8"
-                                     ng-file-change="uploadFile(curUpload8, curDoc8, '.pdf, .doc, .xls')"
+                                     ng-file-change="uploadFile(curUpload8, curDoc8, '.pdf, .doc, .xls, .jpg')"
                                      ng-multiple="false"
-                                     ng-accept="'.pdf, .doc, .xls'">
+                                     ng-accept="'.pdf, .doc, .xls, .jpg'">
 
                                     <div class="form-control uneditable-input input-fixed input-medium">
                                         <i class="fa fa-file fileinput-exists"></i>&nbsp;
@@ -874,7 +870,7 @@
                                     <a ng-click="curDoc8 = {}; " ng-show="curDoc8.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                 </div>
 
-                                File types accepted:(.pdf, .doc, .xls.)
+                                File types accepted:(.pdf, .doc, .xls, .jpg.)
                             </div>
                             <div class="text-right" ng-show="curDoc8.originalDocumentName">
                                 <input type="submit" class="btn default" value="Upload" ng-click="curDoc8 = saveUploadedFile(curDoc8, cs9.supportDocCurrentYrOther )">
