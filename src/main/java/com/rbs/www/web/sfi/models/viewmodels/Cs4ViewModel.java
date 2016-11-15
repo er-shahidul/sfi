@@ -68,6 +68,8 @@ public class Cs4ViewModel extends BaseViewModel {
     private Float usaRegenPerc5YrHAAC;
     private Float caRegenPerc5YrHAAC;
 
+    private Float harvesUnitCompleteLastYeaQualifyHAAC;
+
     @Override
     public Integer getId() {
         return id;
@@ -523,5 +525,13 @@ public class Cs4ViewModel extends BaseViewModel {
 
     public void setCaRegenPerc5YrHAAC(Float caRegenPerc5YrHAAC) {
         this.caRegenPerc5YrHAAC = caRegenPerc5YrHAAC;
+    }
+
+    public Float getHarvesUnitCompleteLastYeaQualifyHAAC() {
+        return harvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public void setHarvesUnitCompleteLastYeaQualifyHAAC(Float harvesUnitCompleteLastYeaQualifyHAAC) {
+        this.harvesUnitCompleteLastYeaQualifyHAAC = harvesUnitCompleteLastYeaQualifyHAAC;
     }
 }

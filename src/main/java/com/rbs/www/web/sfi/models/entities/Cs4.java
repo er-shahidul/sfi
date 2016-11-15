@@ -194,6 +194,9 @@ public class Cs4 extends BaseEntityModel {
     @Column(name = "cs4_ca_caRegenPerc5YrHAAC", nullable = true)
     private Float caRegenPerc5YrHAAC;
 
+    @Column(name = "cs4_harvesUnitCompleteLastYeaQualifyHAAC", nullable = true)
+    private Float harvesUnitCompleteLastYeaQualifyHAAC;
+
     @Override
     public Integer getId() {
         return id;
@@ -649,5 +652,13 @@ public class Cs4 extends BaseEntityModel {
 
     public void setCaRegenPerc5YrHAAC(Float caRegenPerc5YrHAAC) {
         this.caRegenPerc5YrHAAC = caRegenPerc5YrHAAC;
+    }
+
+    public Float getHarvesUnitCompleteLastYeaQualifyHAAC() {
+        return harvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public void setHarvesUnitCompleteLastYeaQualifyHAAC(Float harvesUnitCompleteLastYeaQualifyHAAC) {
+        this.harvesUnitCompleteLastYeaQualifyHAAC = harvesUnitCompleteLastYeaQualifyHAAC;
     }
 }
