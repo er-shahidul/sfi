@@ -12,19 +12,6 @@ sfiFormApp
 
         $rootScope.isSfiSecondary() && ($scope.cs1.hasSecondaryOperMillsYards = true);
 
-        $scope.addSellCountry = function(bucket, model){
-
-            angular.forEach(bucket, function(value, index) {
-                if(value.id == model){
-                    alert('Please select a region that has not already been selected.');
-                    return 0;
-                }
-            });
-
-            $rootScope.addSellCountry(bucket,model);
-        };
-
-
                 $scope.saveForm = function(go){
 
             if($scope.cs1Form.$valid){

@@ -672,7 +672,9 @@ sfiFormApp.run(['$rootScope', 'Countries', 'RegionList', function($rootScope, Co
         return "0";
     };
 
-    $rootScope.addSellCountry = function(bucket, model){
+    $rootScope.addSellCountry = function(bucket, model, msg){
+
+
 
         if(!(country = $rootScope.findCountry(bucket, model))){
 
@@ -680,6 +682,8 @@ sfiFormApp.run(['$rootScope', 'Countries', 'RegionList', function($rootScope, Co
                 bucket.push(country);
                 //bucket.push(country.id);
             }
+        }else if(msg) {
+            alert(msg);
         }
 
         return "0";
