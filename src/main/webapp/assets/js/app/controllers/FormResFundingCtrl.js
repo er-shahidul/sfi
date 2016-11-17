@@ -1,8 +1,8 @@
 var cs5;
 sfiFormApp
     .controller('FormResFundingCtrl',
-        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects', 'standardObjects2015',
-            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects, standardObjects2015){
+        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects', 'standardObjects2015','$modal',
+            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects, standardObjects2015,$modal){
 
         cs5 = $scope;
         $scope.validate = false;
@@ -289,6 +289,20 @@ sfiFormApp
             return $scope.cs5Form.$dirty || $scope.isDataDirty ;
         }
 
+        var lastYearResearchModal = $modal({
+            scope: $scope,
+            template: '/assets/partials/form/last-year-research-modal.html',
+            show: false
+        });
+
+        $scope.lastYearResearchPop = function(){
+            lastYearResearchModal.$promise.then(lastYearResearchModal.show);
+            return false;
+        }
+        $scope.lastYearResearchClose = function()
+        {
+            lastYearResearchModal.$promise.then(lastYearResearchModal.hide);
+        }
         $scope.init();
         $scope.resetProject();
 
