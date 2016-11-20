@@ -50,7 +50,7 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Date startDate;
 
     @NotNull(message = "{project.enddate}")
-    private Date endDate;
+    private String endDate;
 
     private Integer sfiPpForm;
 
@@ -251,12 +251,21 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.startDate = startDate;
     }
 
-    @JsonSerialize(using=JsonDateSerializer.class)
-    public Date getEndDate() {
+//    @JsonSerialize(using=JsonDateSerializer.class)
+//    public Date getEndDate() {
+//        return endDate;
+//    }
+//
+//    public void setEndDate(Date endDate) {
+//        this.endDate = endDate;
+//    }
+
+
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -350,12 +359,14 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
 
     public Boolean getShouldShow() throws Exception{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String dateString = sdf.format(this.endDate);
+        if (this.endDate == null) {
+            return false;
+        }
         Date compareDate = sdf.parse("2016-01-01");
-        Date endDate = sdf.parse(dateString);
-
+        Date endDate = sdf.parse(this.endDate);
 
         return getDifferenceDays(compareDate,endDate) >= 1;
+
     }
 
     public int getDifferenceDays(Date d1, Date d2) {

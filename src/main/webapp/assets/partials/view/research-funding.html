@@ -1,6 +1,5 @@
 <div class="row section_background_5" id="row-cont">
     <div ng-init="errors = cs5.errors" ng-include="'/assets/partials/form/error.html'"></div>
-    <form name="cs5Form" novalidate>
 
         <div class="col-sm-12">
             <h5>
@@ -106,7 +105,7 @@
 
         <div class="col-sm-12 margin-top-30">
 
-            <div class="col-sm-9">
+            <div class="col-sm-10">
 
                 <h5>II. Research, Conservation and Community Projects and Partnerships</h5>
 
@@ -125,28 +124,10 @@
                         <label class="checkboxLabel">No</label>
                     </div>
                 </div>
-
-                <table class="table table-striped" ng-show="cs5.isInPartnership == true && getProjects().length">
-                    <thead>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Project Objective</th>
-                        <th>Edit</th>
-                        <!--<th>Delete</th>-->
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="project in getProjects()" ng-if="project.shouldShow">
-                        <td>{{ project.projectNm }}</td>
-                        <td>{{ project.projectObj }}</td>
-                        <td><a href="" ng-click="editProject($index)">Edit</a></td>
-                        <!--<td><a href="" ng-click="deleteProject($index)">Delete</a></td>-->
-                    </tr>
-                    </tbody>
-                </table>
             </div>
 
-                <div style="margin-top:55px;" class="cs3-project" ng-show="cs5.isInPartnership">
+            <div class="col-sm-10">
+                <div style="margin-top:55px;" class="cs3-project" ng-show="cs5.isInPartnership" ng-repeat="project in getProjects()" ng-if="project.shouldShow">
                     <form name="innerFrom"  novalidate>
                         <div class="form-group">
                             <div class="col-sm-2 col-xs-2" style="padding-left: 0;"
@@ -427,10 +408,10 @@
                              ng-class="{'has-error' : isDirty() && innerFrom.estimated_cost.$invalid}">
 
                             <div class="col-sm-3 nopadding" style="line-height: 32px;">Estimated total project cost</div>
-                            <select class="form-control shorter" name="estimated_cost" ng-required="isDirty()" customerror
+                            <select class="form-control shorter" name="estimated_cost" customerror
                                     ng-model="project.totalProjectCost">
                                 <option value ng-selected="!project.totalProjectCost">Select estimated project cost</option>
-                                <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>
+                                <option ng-repeat="item in costOptions" ng-selected="project.totalProjectCost == item.id" value="{{item.id}}">{{item.name}}</option>
                             </select>
 
                             <u>
@@ -443,10 +424,11 @@
                              ng-class="{'has-error' : isDirty() && innerFrom.org_contribution.$invalid}">
 
                             <div class="col-sm-3 nopadding" style="line-height: 22px;">Your organization contribution in 2016:</div>
-                            <select class="form-control shorter" name="org_contribution" ng-required="isDirty()" customerror
+
+                            <select disabled class="form-control shorter" id="org_contribution" name="org_contribution" customerror
                                     ng-model="project.orgContribution">
-                                <option value ng-selected="!project.orgContribution">Select organization contribution</option>
-                                <option ng-repeat="item in costOptions" value="{{item.id}}">{{item.name}}</option>
+                                <option value="" ng-selected="!project.orgContribution">Select organization contribution</option>
+                                <option ng-repeat="item in costOptions" ng-selected="project.orgContribution == item.id" value="{{ item.id }}">{{ item.name }}</option>
                             </select>
                             <u>
                     <span class="currPop" id="currPop2"
@@ -522,25 +504,19 @@
                             the areas of conservation and community engagement?</span><br/>
 
                             <div style="padding-left: 15px;">
-                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="1"/>
+                                <input type="radio"  name="concept{{$index}}" icheck ng-model="project.shareConceptData"  ng-checked="project.shareConceptData == true" ng-value="true"/>
                                 <span class="radioLabel">Share – with our organization’s name</span>
                             </div>
 
                             <div style="padding-left: 15px;">
-                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="2" />
+                                <input type="radio" name="concept{{$index}}" icheck ng-model="project.shareConceptNoName"  ng-checked="project.shareConceptNoName == true" ng-value="true"/>
                                 <span class="radioLabel">Share – don’t use our organization’s name</span>
                             </div>
 
                             <div style="padding-left: 15px;">
-                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="3"/>
+                                <input type="radio" name="concept{{$index}}" icheck ng-model="project.dontShare" ng-checked="project.dontShare == true" ng-value="true"/>
                                 <span class="radioLabel">Only use in aggregate</span>
                             </div>
-
-                        </div>
-
-                        <div class="form-group">
-                            <input ng-model="validate" ng-hide="true">
-                            <a href="" ng-click="addProject()" ng-show="cs5.isInPartnership" class="myButton">+ Add another project</a>
                         </div>
 
                     </form>
@@ -578,6 +554,7 @@
                     </tbody>
                 </table>
             </div>
+        </div>
 
 </form>
     </div>
