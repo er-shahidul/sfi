@@ -25,15 +25,14 @@
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaTotalHervArea')}">
-                    <label tooltip data-html="true" data-placement="top"
-                           data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2014. This includes harvesting activities that were started in 2014 and completed in 2014, but not those that were still underway by the end of the 2014 calendar/fiscal year.">What is the total area of harvest units completed last year by clearcutting?</label>
+                    <label> What is the total area of final harvest units completed last year by clearcutting?</label>
                     <input type="number" readonly  class="form-control required shortest" name="usaTotalHervArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                            ng-model="cs4.usaTotalHervArea"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaAvgHervArea')}">
-                    <label>What was the average area of clear-cut (even-aged) harvest units?</label>
+                    <label>What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres):</label>
                     <input type="number" readonly  class="form-control required shortest" name="usaAvgHervArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                            ng-model="cs4.usaAvgHervArea" > {{ unit }}
@@ -41,7 +40,7 @@
 
                 <div class="form-group" ng-show="showExplCheckboxs('usa')">
 
-                    <label>Check all that apply and provide an explanation for each</label>
+                    <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
 
                     <div class="form-group">
 
@@ -122,6 +121,21 @@
                             <input type="text" readonly  class="form-control required shorter"
                                    ng-required="cs4.usaOthersApply" customerror
                                    ng-model="cs4.usaOthersExp">
+                        </div>
+
+                        <div>
+                            <div style="margin-bottom: 10px;margin-top: 30px;">What is the total area of final harvest units completed last year by other methods? (HA or Acres)</div>
+
+                            <div>Area
+                                <input type="number" class="form-control required shortest" name="harvesUnitCompleteLastYearMethodsHAAC" max="100" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-model="cs4.harvesUnitCompleteLastYearMethodsHAAC"> HA/AC
+                            </div>
+                            <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.harvesUnitCompleteLastYearMethodsHAAC">
+                                <textarea style="height: 60px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                                          ng-required="cs4.harvesUnitCompleteLastYearMethodsHAAC" customerror
+                                          ng-model="cs4.harvesUnitCompleteLastYearMethodsHAACExp"></textarea>
+                            </div>
                         </div>
 
                     </div>

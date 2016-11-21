@@ -24,15 +24,16 @@
                     </div>
                 </div>
 
+                <div ng-show="cs4.harvesUnitCompleteLastYeaQualifyHAAC">
                 <div class="form-group" ng-class="{'has-error' : hasError('usaTotalHervArea')}">
-                    <label> What is the total area of harvest units completed last year by clearcutting?</label>
+                    <label> What is the total area of final harvest units completed last year by clearcutting?</label>
                     <input type="number" class="form-control required shortest" name="usaTotalHervArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                            ng-model="cs4.usaTotalHervArea"> {{ unit }}
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaAvgHervArea')}">
-                    <label>What was the average area of clear-cut (even-aged) harvest units?</label>
+                    <label>What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres):</label>
                     <input type="number" class="form-control required shortest" name="usaAvgHervArea"
                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                            ng-model="cs4.usaAvgHervArea" > {{ unit }}
@@ -40,7 +41,7 @@
 
                 <div class="form-group" ng-show="showExplCheckboxs('usa')">
 
-                    <label>Check all that apply and provide an explanation for each</label>
+                    <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
 
                     <div class="form-group">
 
@@ -123,7 +124,23 @@
                                    ng-model="cs4.usaOthersExp">
                         </div>
 
+                        <div>
+                            <div style="margin-bottom: 10px;margin-top: 30px;">What is the total area of final harvest units completed last year by other methods? (HA or Acres)</div>
+
+                            <div>Area
+                                <input type="number" class="form-control required shortest" name="harvesUnitCompleteLastYearMethodsHAAC" max="100" min="0"
+                                      ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                      ng-model="cs4.harvesUnitCompleteLastYearMethodsHAAC"> HA/AC
+                            </div>
+                            <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.harvesUnitCompleteLastYearMethodsHAAC">
+                                <textarea style="height: 60px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                                       ng-required="cs4.harvesUnitCompleteLastYearMethodsHAAC" customerror
+                                       ng-model="cs4.harvesUnitCompleteLastYearMethodsHAACExp"></textarea>
+                            </div>
+                        </div>
+
                     </div>
+                </div>
                 </div>
 
                 <div class="form-group" ng-class="{'has-error' : hasError('usaSeedShelterWoodArea')}">
@@ -178,112 +195,132 @@
                     <h6><strong>Canada</strong> - Program Participant Land covered under the scope of your SFI certificate</h6>
                 </label>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('caTotalArea')}">
+                <div>
+                    <div style="margin-bottom: 10px;">What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
 
-                    <label>What is the total area of harvest units completed last year by clearcutting?</label>
-
-                    <input type="number" class="form-control required shortest" name="caTotalArea"
-                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                           ng-model="cs4.caTotalHervArea"> {{ unit }}
+                    <div style="margin-bottom: 10px;">Area <input type="number" class="form-control required shortest" name="caHarvestUnitCompleteLastYeaQualifyHAAC" max="100" min="0"
+                                                                  ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                                                  ng-model="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC"> HA/AC
+                    </div>
                 </div>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('caAverageArea')}">
-                    <label>What was the average area of clear-cut (even-aged) harvest units?</label>
-                    <input type="number" class="form-control required shortest" name="caAverageArea"
-                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                           ng-model="cs4.caAvgHervArea" > {{ unit }}
-                </div>
+                <div ng-show="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
+                    <div class="form-group" ng-class="{'has-error' : hasError('caTotalHervArea')}">
+                        <label> What is the total area of final harvest units completed last year by clearcutting?</label>
+                        <input type="number" class="form-control required shortest" name="caTotalHervArea"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-model="cs4.caTotalHervArea"> {{ unit }}
+                    </div>
 
-                <div class="form-group" ng-show="showExplCheckboxs('ca')">
+                    <div class="form-group" ng-class="{'has-error' : hasError('caAvgHervArea')}">
+                        <label>What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres):</label>
+                        <input type="number" class="form-control required shortest" name="caAvgHervArea"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-model="cs4.caAvgHervArea" > {{ unit }}
+                    </div>
 
-                    <label>Check all that apply and provide an explanation for each</label>
-
+                    <!--<div class="form-group" ng-show="showExplCheckboxs('ca')">-->
                     <div class="form-group">
 
+                        <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
 
-                        <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.caGovRegulation">
-                        <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
-                        <br>
-                        <div class="form-group" ng-show="cs4.caGovRegulation">
-                            <label>Explain</label>
-                            <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.caGovRegulation" customerror
-                                   ng-model="cs4.caGovRegulationExp">
+                        <div class="form-group">
+
+                            <input type="checkbox" class="form-group icheck" icheck ng-model="cs4.caGovRegulation">
+                            <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.caGovRegulation">
+                                <label>Explain</label>
+                                <input type="text" class="form-control required shorter"
+                                       ng-required="cs4.caGovRegulation" customerror
+                                       ng-model="cs4.caGovRegulationExp">
+                            </div>
+
+
+                            <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResDiseaseInsects">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.caDisResDiseaseInsects">
+                                <label>Explain</label>
+                                <input type="text" class="form-control required shorter"
+                                       ng-required="cs4.ucaDisResDiseaseInsects" customerror
+                                       ng-model="cs4.caDiseaseInsectsExp">
+                            </div>
+
+                            <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResFireSalvage">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.caDisResFireSalvage">
+                                <label>Explain</label>
+                                <input type="text" class="form-control required shorter"
+                                       ng-required="cs4.caDisResFireSalvage" customerror
+                                       ng-model="cs4.caFireSalvageExp">
+                            </div>
+
+
+                            <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResWindthrow">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.caDisResWindthrow">
+                                <label>Explain</label>
+                                <input type="text" class="form-control required shorter"
+                                       ng-required="cs4.caDisResWindthrow" customerror
+                                       ng-model="cs4.caWindthrowExp">
+                            </div>
+
+                            <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResHurricane">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.caDisResHurricane">
+                                <label>Explain</label>
+                                <input type="text" class="form-control required shorter"
+                                       ng-required="cs4.caDisResHurricane" customerror
+                                       ng-model="cs4.caHurricaneExp">
+                            </div>
+
+                            <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResIceStorm">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.caDisResIceStorm">
+                                <label>Explain</label>
+                                <input type="text" class="form-control required shorter"
+                                       ng-required="cs4.caDisResIceStorm" customerror
+                                       ng-model="cs4.caIceStormExp">
+                            </div>
+
+
+                            <input type="checkbox" class="icheck" icheck ng-model="cs4.caOthersApply">
+                            <label class="checkboxLabel"> &nbsp;Other</label>
+
+                            <div class="form-group" ng-show="cs4.caOthersApply">
+                                <label>Explain</label>
+                                <input type="text" class="form-control required shorter"
+                                       ng-required="cs4.caOthersApply" customerror
+                                       ng-model="cs4.caOthersExp">
+                            </div>
+
+                            <div>
+                                <div style="margin-bottom: 10px;margin-top: 30px;">What is the total area of final harvest units completed last year by other methods? (HA or Acres)</div>
+
+                                <div>Area
+                                    <input type="number" class="form-control required shortest" name="caHarvesUnitCompleteLastYearMethodsHAAC" max="100" min="0"
+                                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                           ng-model="cs4.caHarvesUnitCompleteLastYearMethodsHAAC"> HA/AC
+                                </div>
+                                <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.caHarvesUnitCompleteLastYearMethodsHAAC">
+                                <textarea style="height: 60px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                                          ng-required="cs4.caHarvesUnitCompleteLastYearMethodsHAAC" customerror
+                                          ng-model="cs4.caHarvesUnitCompleteLastYearMethodsHAACExp"></textarea>
+                                </div>
+                            </div>
+
                         </div>
-
-
-                        <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.caDisResDiseaseInsects">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
-                        <br>
-                        <div class="form-group" ng-show="cs4.caDisResDiseaseInsects">
-                            <label>Explain</label>
-                            <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.caDisResDiseaseInsects" customerror
-                                   ng-model="cs4.caDiseaseInsectsExp">
-                        </div>
-
-
-
-                        <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.caDisResFireSalvage">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
-                        <br>
-
-                        <div class="form-group" ng-show="cs4.caDisResFireSalvage">
-                            <label>Explain</label>
-                            <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.caDisResFireSalvage" customerror
-                                   ng-model="cs4.caFireSalvageExp">
-                        </div>
-
-
-                        <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.caDisResWindthrow">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
-                        <br>
-                        <div class="form-group" ng-show="cs4.caDisResWindthrow">
-                            <label>Explain</label>
-                            <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.caDisResWindthrow" customerror
-                                   ng-model="cs4.caWindthrowExp">
-                        </div>
-
-                        <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.caDisResHurricane">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
-                        <br>
-                        <div class="form-group" ng-show="cs4.caDisResHurricane">
-                            <label>Explain</label>
-                            <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.caDisResHurricane" customerror
-                                   ng-model="cs4.caHurricaneExp">
-                        </div>
-
-                        <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.caDisResIceStorm">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
-                        <br>
-                        <div class="form-group" ng-show="cs4.caDisResIceStorm">
-                            <label>Explain</label>
-                            <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.caDisResIceStorm" customerror
-                                   ng-model="cs4.caIceStormExp">
-                        </div>
-
-
-                        <input type="checkbox" class="icheck" icheck
-                               ng-model="cs4.caOthersApply">
-                        <label class="checkboxLabel"> &nbsp;Other</label>
-
-                        <div class="form-group" ng-show="cs4.caOthersApply">
-                            <label>Explain</label>
-                            <input type="text" class="form-control required shorter"
-                                   ng-required="cs4.caOthersApply" customerror
-                                   ng-model="cs4.caOthersExp">
-                        </div>
-
                     </div>
                 </div>
 
