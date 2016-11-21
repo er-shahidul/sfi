@@ -62,11 +62,12 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Column(name = "cs3_conservatonPartners", nullable = true)
     private String conservatonPartners;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "cs3_startDate", nullable = true)
     private Date startDate;
 
-    @Column(name = "cs3_endDate", nullable = true)
-    private Date endDate;
+    @Column(name = "cs3_endDate1", nullable = true)
+    private String endDate;
 
     @Column(name = "cs3_totalProjectCost", nullable = true)
     private Integer totalProjectCost;
@@ -299,11 +300,20 @@ public class SfiPpFormCs3 extends BaseEntityModel {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+//    public Date getEndDate() {
+//        return endDate;
+//    }
+//
+//    public void setEndDate(Date endDate) {
+//        this.endDate = endDate;
+//    }
+
+
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 

@@ -170,7 +170,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -223,7 +222,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles2"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles2); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -275,7 +273,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles3"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles3); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -325,7 +322,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles4"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles4); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -334,7 +330,7 @@
                     <tr>
                         <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="“Provide further details in Section 3.”">Other Youth Education/Outreach</span></td>
                         <td ng-class="{'has-error' : cs2Form.directSpending5.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending5" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending5">
+                            <input class="form-control" style="width: 80px;" name="directSpending5" readonly type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending5">
                         </td>
                         <td><div class="fm-stl">
                             <label>
@@ -375,7 +371,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles5"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles5); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -425,7 +420,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles6"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles6); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -475,7 +469,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles7"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles7); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -525,7 +518,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles8"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles8); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -575,7 +567,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles9"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles9); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -625,7 +616,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles10"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles10); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -675,7 +665,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles11"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles11); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -731,7 +720,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles12"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles12); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>
@@ -787,7 +775,6 @@
 
                                 <div class="selectedItem" ng-repeat="file in cs2.guideFiles13"
                                      ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                    <button ng-click="deleteByIndex($index, cs2.guideFiles13); $event.stopPropagation();" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
 
                             </div>

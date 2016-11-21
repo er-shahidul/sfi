@@ -549,8 +549,12 @@
                                 <p ng-if="$index == 0"><b>Email Address</b></p>
                                 <input type="email" customerror class="form-control" ng-model="committee.email" requireds>
                             </div>
-                            <div class="col-md-2" style="top: 7px;">
-                                <a  class="button" ng-if="$index != 0" ng-click="removeFromList($index,cs1.subCommittees)"  style="padding-top: 5px;" ><b><u>Delete row</u></b></a>
+                            <div class="col-md-2"   style="padding-top: 7px;" >
+                                <div ng-if="$index == 0"  style=" height: 28px;">
+                                    <br/>
+                                </div>
+                                <a  class="button" ng-if="cs1.subCommittees.length > 1" ng-click="removeFromList($index,cs1.subCommittees)"  style="padding-top: 5px;" ><b><u>Delete row</u></b></a>
+
                             </div>
                         </div>
                         <p style="text-align: right;padding-top: 30px;" ng-click="addSubCommittee()" class="myButton"><b><u>+ Add Another Line</u></b></p>
@@ -593,7 +597,10 @@
                                 </div>
                             </div>
                             <div class="col-md-2" style="top: 7px;">
-                                <a  class="button" ng-if="$index != 0" ng-click="removeFromList($index,cs1.meetingList)"  style="padding-top: 5px;" ><b><u>Delete row</u></b></a>
+                                <div ng-if="$index == 0" style=" height: 28px;" >
+                                    <br/>
+                                </div>
+                                <a  class="button" ng-if="cs1.meetingList.length > 1" ng-click="removeFromList($index,cs1.meetingList)"  style="padding-top: 5px;" ><b><u>Delete row</u></b></a>
                             </div>
                         </div>
 
@@ -649,7 +656,12 @@
                                 </select>
                             </div>
                             <div class="col-md-2" style="padding-right: 0px;top: 7px;">
-                                <a  class="myButton" ng-click="removeFromList($index,cs1.participatingMeetingList)" ng-if="$index != 0" style="padding-top: 5px;" ><b><u>Delete row</u></b></a>
+                                <div ng-if="$index == 0" >
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </div>
+                                <a  class="myButton"  ng-if="cs1.participatingMeetingList.length > 1" ng-click="removeFromList($index,cs1.participatingMeetingList)"  style="padding-top: 5px;" ><b><u>Delete row</u></b></a>
                             </div>
 
                         </div>

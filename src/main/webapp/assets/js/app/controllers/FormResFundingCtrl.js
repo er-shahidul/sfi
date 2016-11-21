@@ -169,6 +169,8 @@ sfiFormApp
 
 
             if(!$scope.editItem){
+                console.log(item);
+                item.shouldShow = (new Date(item.endDate).getTime() >= new Date('2016-01-01').getTime());
                 $scope.cs5.projects.push(item);
             }
 

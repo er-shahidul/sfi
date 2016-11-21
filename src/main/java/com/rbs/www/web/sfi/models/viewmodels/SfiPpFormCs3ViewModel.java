@@ -5,9 +5,11 @@ import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.util.JsonDateSerializer;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
 import com.rbs.www.web.sfi.validation.SfiPpFormCs3OrgList.SfiPpFormCs3OrgList;
+import javafx.util.Duration;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
@@ -48,7 +50,7 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Date startDate;
 
     @NotNull(message = "{project.enddate}")
-    private Date endDate;
+    private String endDate;
 
     private Integer sfiPpForm;
 
@@ -249,12 +251,21 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.startDate = startDate;
     }
 
-    @JsonSerialize(using=JsonDateSerializer.class)
-    public Date getEndDate() {
+//    @JsonSerialize(using=JsonDateSerializer.class)
+//    public Date getEndDate() {
+//        return endDate;
+//    }
+//
+//    public void setEndDate(Date endDate) {
+//        this.endDate = endDate;
+//    }
+
+
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -346,12 +357,23 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.customOrder = customOrder;
     }
 
-    public Boolean getShouldShow(){
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.YEAR, 2016);
-        cal.set(Calendar.MONTH, 1);
-        cal.set(Calendar.DAY_OF_MONTH, 1);
+    public Boolean getShouldShow() throws Exception{
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        if (this.endDate == null) {
+            return false;
+        }
+        Date compareDate = sdf.parse("2016-01-01");
+        Date endDate = sdf.parse(this.endDate);
 
-        return this.endDate.compareTo(cal.getTime()) < 0 ?  false : true;
+        return getDifferenceDays(compareDate,endDate) >= 1;
+
+    }
+
+    public int getDifferenceDays(Date d1, Date d2) {
+        int daysDiff=0;
+        long diff = d2.getTime() - d1.getTime();
+        long diffDays = diff / (24 * 60 * 60 * 1000)+1;
+        daysDiff = (int) diffDays;
+        return daysDiff;
     }
 }
