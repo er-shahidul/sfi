@@ -1,5 +1,5 @@
 
-var sfiFormApp = angular.module('sfiFormApp', ['ui.router', 'checklist-model',  'ngSanitize', 'mgcrea.ngStrap', 'angularFileUpload']);
+var sfiFormApp = angular.module('sfiFormApp', ['ui.router', 'checklist-model',  'ngSanitize', 'mgcrea.ngStrap', 'angularFileUpload','angular-carousel']);
 
 sfiFormApp.config(['$stateProvider', '$urlRouterProvider',  function($stateProvider, $urlRouterProvider){
 
