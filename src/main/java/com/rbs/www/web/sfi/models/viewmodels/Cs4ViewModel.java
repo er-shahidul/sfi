@@ -82,6 +82,30 @@ public class Cs4ViewModel extends BaseViewModel {
     private Boolean caGovRegulation;
     private String caGovRegulationExp;
 
+    private Boolean usaOtherMethod;
+    private Float usaOtherMethodHAAC;
+    private String usaOtherMethodHAACExp;
+    private Boolean caOtherMethod;
+    private Float caOtherMethodHAAC;
+    private String caOtherMethodHAACExp;
+
+    private Boolean caSanitation;
+    private String caSanitationExp;
+    private Boolean caSelectionMethod;
+    private String caSelectionMethodExp;
+    private Boolean caSeedTreeShelterWood;
+    private String caSeedTreeShelterWoodExp;
+
+    private Boolean usaSanitation;
+    private String usaSanitationExp;
+    private Boolean usaSelectionMethod;
+    private String usaSelectionMethodExp;
+    private Boolean usaSeedTreeShelterWood;
+    private String usaSeedTreeShelterWoodExp;
+
+    private Float usaFinalHarvestHAAC;
+    private Float caFinalHarvestHAAC;
+
     @Override
     public Integer getId() {
         return id;
@@ -609,5 +633,165 @@ public class Cs4ViewModel extends BaseViewModel {
 
     public void setCaHarvestUnitCompleteLastYearMethodsHAACExp(String caHarvestUnitCompleteLastYearMethodsHAACExp) {
         this.caHarvestUnitCompleteLastYearMethodsHAACExp = caHarvestUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public Boolean getUsaOtherMethod() {
+        return usaOtherMethod;
+    }
+
+    public void setUsaOtherMethod(Boolean usaOtherMethod) {
+        this.usaOtherMethod = usaOtherMethod;
+    }
+
+    public Float getUsaOtherMethodHAAC() {
+        return usaOtherMethodHAAC;
+    }
+
+    public void setUsaOtherMethodHAAC(Float usaOtherMethodHAAC) {
+        this.usaOtherMethodHAAC = usaOtherMethodHAAC;
+    }
+
+    public String getUsaOtherMethodHAACExp() {
+        return usaOtherMethodHAACExp;
+    }
+
+    public void setUsaOtherMethodHAACExp(String usaOtherMethodHAACExp) {
+        this.usaOtherMethodHAACExp = usaOtherMethodHAACExp;
+    }
+
+    public Boolean getCaOtherMethod() {
+        return caOtherMethod;
+    }
+
+    public void setCaOtherMethod(Boolean caOtherMethod) {
+        this.caOtherMethod = caOtherMethod;
+    }
+
+    public Float getCaOtherMethodHAAC() {
+        return caOtherMethodHAAC;
+    }
+
+    public void setCaOtherMethodHAAC(Float caOtherMethodHAAC) {
+        this.caOtherMethodHAAC = caOtherMethodHAAC;
+    }
+
+    public String getCaOtherMethodHAACExp() {
+        return caOtherMethodHAACExp;
+    }
+
+    public void setCaOtherMethodHAACExp(String caOtherMethodHAACExp) {
+        this.caOtherMethodHAACExp = caOtherMethodHAACExp;
+    }
+
+    public Boolean getCaSanitation() {
+        return caSanitation;
+    }
+
+    public void setCaSanitation(Boolean caSanitation) {
+        this.caSanitation = caSanitation;
+    }
+
+    public String getCaSanitationExp() {
+        return caSanitationExp;
+    }
+
+    public void setCaSanitationExp(String caSanitationExp) {
+        this.caSanitationExp = caSanitationExp;
+    }
+
+    public Boolean getCaSelectionMethod() {
+        return caSelectionMethod;
+    }
+
+    public void setCaSelectionMethod(Boolean caSelectionMethod) {
+        this.caSelectionMethod = caSelectionMethod;
+    }
+
+    public String getCaSelectionMethodExp() {
+        return caSelectionMethodExp;
+    }
+
+    public void setCaSelectionMethodExp(String caSelectionMethodExp) {
+        this.caSelectionMethodExp = caSelectionMethodExp;
+    }
+
+    public Boolean getCaSeedTreeShelterWood() {
+        return caSeedTreeShelterWood;
+    }
+
+    public void setCaSeedTreeShelterWood(Boolean caSeedTreeShelterWood) {
+        this.caSeedTreeShelterWood = caSeedTreeShelterWood;
+    }
+
+    public String getCaSeedTreeShelterWoodExp() {
+        return caSeedTreeShelterWoodExp;
+    }
+
+    public void setCaSeedTreeShelterWoodExp(String caSeedTreeShelterWoodExp) {
+        this.caSeedTreeShelterWoodExp = caSeedTreeShelterWoodExp;
+    }
+
+    public Boolean getUsaSanitation() {
+        return usaSanitation;
+    }
+
+    public void setUsaSanitation(Boolean usaSanitation) {
+        this.usaSanitation = usaSanitation;
+    }
+
+    public String getUsaSanitationExp() {
+        return usaSanitationExp;
+    }
+
+    public void setUsaSanitationExp(String usaSanitationExp) {
+        this.usaSanitationExp = usaSanitationExp;
+    }
+
+    public Boolean getUsaSelectionMethod() {
+        return usaSelectionMethod;
+    }
+
+    public void setUsaSelectionMethod(Boolean usaSelectionMethod) {
+        this.usaSelectionMethod = usaSelectionMethod;
+    }
+
+    public String getUsaSelectionMethodExp() {
+        return usaSelectionMethodExp;
+    }
+
+    public void setUsaSelectionMethodExp(String usaSelectionMethodExp) {
+        this.usaSelectionMethodExp = usaSelectionMethodExp;
+    }
+
+    public Boolean getUsaSeedTreeShelterWood() {
+        return usaSeedTreeShelterWood;
+    }
+
+    public void setUsaSeedTreeShelterWood(Boolean usaSeedTreeShelterWood) {
+        this.usaSeedTreeShelterWood = usaSeedTreeShelterWood;
+    }
+
+    public String getUsaSeedTreeShelterWoodExp() {
+        return usaSeedTreeShelterWoodExp;
+    }
+
+    public void setUsaSeedTreeShelterWoodExp(String usaSeedTreeShelterWoodExp) {
+        this.usaSeedTreeShelterWoodExp = usaSeedTreeShelterWoodExp;
+    }
+
+    public Float getUsaFinalHarvestHAAC() {
+        return usaFinalHarvestHAAC;
+    }
+
+    public void setUsaFinalHarvestHAAC(Float usaFinalHarvestHAAC) {
+        this.usaFinalHarvestHAAC = usaFinalHarvestHAAC;
+    }
+
+    public Float getCaFinalHarvestHAAC() {
+        return caFinalHarvestHAAC;
+    }
+
+    public void setCaFinalHarvestHAAC(Float caFinalHarvestHAAC) {
+        this.caFinalHarvestHAAC = caFinalHarvestHAAC;
     }
 }

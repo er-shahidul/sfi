@@ -140,49 +140,67 @@
                     </div>
                 </div>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('usaSeedShelterWoodArea')}">
-
-                    <label>What was the total area of harvest units completed last year by <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>seed tree</b> the cutting of all trees except for a small number of widely dispersed trees retained for seed production and to produce a new age class in fully exposed microenvironment —note seed trees are usually removed after regeneration is established (SAF dictionaryofforestry.org)'
-                    >seed tree</span> and <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>shelterwood</b> the cutting of most trees, leaving those needed to produce sufficient shade to produce a new age class in a moderated microenvironment —note the sequence of treatments can include three types of cuttings: (a) an optional preparatory cut to enhance conditions for seed production, (b) an establishment cut to prepare the seed bed and to create a new age class, and (c) a removal cut to release established regeneration from competition with the overwood; cutting may be done uniformly throughout the stand (uniform shelterwood), in groups or patches (group shelterwood), or in strips (strip shelterwood); in a strip shelterwood, regeneration cuttings may progress against the prevailing wind. (SAF dictionaryofforestry.org) '
-                    >shelterwood</span>?</label>
-
-
-
-                    <input readonly type="number" class="form-control required shortest" name="usaSeedShelterWoodArea"
-                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                           ng-model="cs4.usaSeedTreeShelterWoodArea"> {{ unit }}
+                <div>
+                    <div style="margin-bottom: 10px;">
+                        What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
+                    </div>
+                    <div style="margin-bottom: 10px;">Area <input readonly type="number" class="form-control required shortest" name="usaFinalHarvestHAAC" max="100" min="0"
+                                                                  ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                                                  ng-model="cs4.usaFinalHarvestHAAC"> HA/AC
+                    </div>
                 </div>
+                <div ng-show="cs4.usaFinalHarvestHAAC">
+                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSeedTreeShelterWood">
+                    <label class="checkboxLabel">Seed tree and shelterwood</label>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('usaSelectionMethodArea')}">
-                    <label>What was the total area of harvest units completed last year by <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>selection methods</b> regenerate and maintain a multiaged structure by removing some trees in all size classes either singly, in small groups, or in strips —synonym all-aged methods. (SAF dictionaryofforestry.org)'
-                    >selection methods</span>?</label>
+                    <div class="form-group" ng-show="cs4.usaSeedTreeShelterWood">
+                        <input readonly type="number" class="form-control required shortest" name="usaSeedTreeShelterWoodArea"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-model="cs4.usaSeedTreeShelterWoodArea">  HA/AC
 
-                    <input readonly type="number" class="form-control required shortest" name="usaSelectionMethodArea"
-                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                           ng-model="cs4.usaSelectionMethodArea"> {{ unit }}
+                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                               ng-required="cs4.usaSeedTreeShelterWood" customerror
+                               ng-model="cs4.usaSeedTreeShelterWoodExp"/>
+                    </div>
+                    <br/>
+                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSelectionMethod">
+                    <label class="checkboxLabel">selection methods</label>
+
+                    <div class="form-group" ng-show="cs4.usaSelectionMethod">
+                        <input readonly type="number" class="form-control required shortest" name="usaSelectionMethodArea"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-model="cs4.usaSelectionMethodArea"> HA/AC
+
+                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                               ng-required="cs4.usaSelectionMethod" customerror
+                               ng-model="cs4.usaSelectionMethodExp"/>
+                    </div>
+                    <br/>
+                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSanitation">
+                    <label class="checkboxLabel">thinning or sanitation salvage</label>
+                    <div class="form-group" ng-show="cs4.usaSanitation">
+                        <input readonly type="number" class="form-control required shortest" name="usaSanitationArea"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-model="cs4.usaSanitationArea"> HA/AC
+
+                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                               ng-required="cs4.usaSanitation" customerror
+                               ng-model="cs4.usaSanitationExp"/>
+                    </div>
+                    <br/>
+                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaOtherMethod">
+                    <label class="checkboxLabel">Other methods</label>
+
+                    <div class="form-group" ng-show="cs4.usaOtherMethod">
+                        <input readonly type="number" class="form-control shortest" name="usaOtherMethodHAAC"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaOtherMethod" customerror
+                               ng-model="cs4.usaOtherMethodHAAC"> HA/AC
+
+                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                               ng-required="cs4.usaOtherMethod" customerror
+                               ng-model="cs4.usaOtherMethodHAACExp"/>
+                    </div>
                 </div>
-
-                <div class="form-group" ng-class="{'has-error' : hasError('usaThinningSanitationArea')}">
-
-                    <label>What was the total area of harvest units completed last year by <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>Thinning</b> is a cultural treatment made to reduce stand density of trees primarily to improve growth, enhance forest health, or recover potential mortality; types of thinning include the following (SAF dictionaryofforestry.org)'
-                    >thinning</span> or <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>Sanitation salvage</b> is the removal of trees to improve stand health by stopping or reducing the actual or anticipated spread of insects and disease. (SAF dictionaryofforestry.org)'
-                    >sanitation salvage</span>? </label>
-
-                    <input readonly type="number" class="form-control required shortest" name="usasanitation salvageSanitationArea"
-                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                           ng-model="cs4.usaSanitationArea"> {{ unit }}
-                </div>
-
             </div>
             <!-- end -->
 
@@ -321,48 +339,68 @@
                     </div>
                 </div>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('caSeedShelterWoodArea')}">
-
-                    <label>What was the total area of harvest units completed last year by <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>seed tree</b> the cutting of all trees except for a small number of widely dispersed trees retained for seed production and to produce a new age class in fully exposed microenvironment —note seed trees are usually removed after regeneration is established (SAF dictionaryofforestry.org)'
-                    >seed tree</span> and <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>shelterwood</b> the cutting of most trees, leaving those needed to produce sufficient shade to produce a new age class in a moderated microenvironment —note the sequence of treatments can include three types of cuttings: (a) an optional preparatory cut to enhance conditions for seed production, (b) an establishment cut to prepare the seed bed and to create a new age class, and (c) a removal cut to release established regeneration from competition with the overwood; cutting may be done uniformly throughout the stand (uniform shelterwood), in groups or patches (group shelterwood), or in strips (strip shelterwood); in a strip shelterwood, regeneration cuttings may progress against the prevailing wind. (SAF dictionaryofforestry.org) '
-                    >shelterwood</span>?</label>
-
-
-                    <input readonly type="number" class="form-control required shortest" name="caSeedTreeShelterWoodArea"
-                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                           ng-model="cs4.caSeedTreeShelterWoodArea"> {{ unit }}
+                <div>
+                    <div style="margin-bottom: 10px;">
+                        What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
+                    </div>
+                    <div style="margin-bottom: 10px;">Area <input readonly type="number" class="form-control required shortest" name="caFinalHarvestHAAC" max="100" min="0"
+                                                                  ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                                                  ng-model="cs4.caFinalHarvestHAAC"> HA/AC
+                    </div>
                 </div>
+                <div ng-show="cs4.caFinalHarvestHAAC">
+                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSeedTreeShelterWood">
+                    <label class="checkboxLabel">Seed tree and shelterwood</label>
 
-                <div class="form-group" ng-class="{'has-error' : hasError('caSelectionMethodArea')}">
-                    <label>What was the total area of harvest units completed last year by <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>selection methods</b> regenerate and maintain a multiaged structure by removing some trees in all size classes either singly, in small groups, or in strips —synonym all-aged methods. (SAF dictionaryofforestry.org)'
-                    >selection methods</span>?</label>
+                    <div class="form-group" ng-show="cs4.caSeedTreeShelterWood">
+                        <input readonly type="number" class="form-control required shortest" name="caSeedTreeShelterWoodArea"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-model="cs4.caSeedTreeShelterWoodArea">  HA/AC
+
+                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                               ng-required="cs4.caSeedTreeShelterWood" customerror
+                               ng-model="cs4.caSeedTreeShelterWoodExp"/>
+                    </div>
+                    <br/>
+                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSelectionMethod">
+                    <label class="checkboxLabel">selection methods</label>
+
+                    <div class="form-group" ng-show="cs4.caSelectionMethod">
+                        <input readonly type="number" class="form-control required shortest" name="caSelectionMethodArea"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-model="cs4.caSelectionMethodArea"> HA/AC
+
+                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                               ng-required="cs4.caSelectionMethod" customerror
+                               ng-model="cs4.caSelectionMethodExp"/>
+                    </div>
+                    <br/>
+                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSanitation">
+                    <label class="checkboxLabel">thinning or sanitation salvage</label>
+                    <div class="form-group" ng-show="cs4.caSanitation">
+                        <input readonly type="number" class="form-control required shortest" name="caSanitationArea"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-model="cs4.caSanitationArea"> HA/AC
+
+                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                               ng-required="cs4.caSanitation" customerror
+                               ng-model="cs4.caSanitationExp"/>
+                    </div>
+                    <br/>
+                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.caOtherMethod">
+                    <label class="checkboxLabel">Other methods</label>
+
+                    <div class="form-group" ng-show="cs4.caOtherMethod">
+                        <input readonly type="number" class="form-control shortest" name="caOtherMethodHAAC"
+                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caOtherMethod" customerror
+                               ng-model="cs4.caOtherMethodHAAC"> HA/AC
 
 
-                    <input readonly type="number" class="form-control required shortest" name="caSelectionMethodArea"
-                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                           ng-model="cs4.caSelectionMethodArea"> {{ unit }}
+                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                               ng-required="cs4.caOtherMethod" customerror
+                               ng-model="cs4.caOtherMethodHAACExp"/>
+                    </div>
                 </div>
-
-                <div class="form-group" ng-class="{'has-error' : hasError('caThinningSanitationArea')}">
-                    <label>What was the total area of harvest units completed last year by <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>Thinning</b> is a cultural treatment made to reduce stand density of trees primarily to improve growth, enhance forest health, or recover potential mortality; types of thinning include the following (SAF dictionaryofforestry.org)'
-                    >thinning</span> or <span
-                            tooltip data-placement="top" data-container="body" data-html="true"
-                            data-title='<b>Sanitation salvage</b> is the removal of trees to improve stand health by stopping or reducing the actual or anticipated spread of insects and disease. (SAF dictionaryofforestry.org)'
-                    >sanitation salvage</span>? </label>
-
-                    <input readonly type="number" class="form-control required shortest" name="caSanitationArea"
-                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                           ng-model="cs4.caSanitationArea"> {{ unit }}
-                </div>
-
             </div>
             <!-- end -->
 

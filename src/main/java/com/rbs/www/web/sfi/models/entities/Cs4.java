@@ -224,6 +224,78 @@ public class Cs4 extends BaseEntityModel {
     @Type(type = "text")
     private String caHarvesUnitCompleteLastYearMethodsHAACExp;
 
+    @Column(name = "cs4_usaOtherMethod", nullable = true)
+    private Boolean usaOtherMethod;
+
+    @Column(name = "cs4_usaOtherMethodHAAC", nullable = true)
+    private Float usaOtherMethodHAAC;
+
+    @Column(name = "cs4_usaOtherMethodHAACExp", nullable = true)
+    @Type(type = "text")
+    private String usaOtherMethodHAACExp;
+
+    @Column(name = "cs4_caOtherMethod", nullable = true)
+    private Boolean caOtherMethod;
+
+    @Column(name = "cs4_caOtherMethodHAAC", nullable = true)
+    private Float caOtherMethodHAAC;
+
+    @Column(name = "cs4_caOtherMethodHAACExp", nullable = true)
+    @Type(type = "text")
+    private String caOtherMethodHAACExp;
+
+    @Column(name = "cs4_caSanitation", nullable = true)
+    private Boolean caSanitation;
+
+    @Column(name = "cs4_caSanitationExp", nullable = true)
+    @Type(type = "text")
+    private String caSanitationExp;
+
+    @Column(name = "cs4_caSelectionMethod", nullable = true)
+    private Boolean caSelectionMethod;
+
+    @Column(name = "cs4_caSelectionMethodExp", nullable = true)
+    @Type(type = "text")
+    private String caSelectionMethodExp;
+
+    @Column(name = "cs4_caSeedTreeShelterWood", nullable = true)
+    private Boolean caSeedTreeShelterWood;
+
+    @Column(name = "cs4_caSeedTreeShelterWoodExp", nullable = true)
+    @Type(type = "text")
+    private String caSeedTreeShelterWoodExp;
+
+
+
+
+    @Column(name = "cs4_usaSanitation", nullable = true)
+    private Boolean usaSanitation;
+
+    @Column(name = "cs4_usaSanitationExp", nullable = true)
+    @Type(type = "text")
+    private String usaSanitationExp;
+
+    @Column(name = "cs4_usaSelectionMethod", nullable = true)
+    private Boolean usaSelectionMethod;
+
+    @Column(name = "cs4_usaSelectionMethodExp", nullable = true)
+    @Type(type = "text")
+    private String usaSelectionMethodExp;
+
+    @Column(name = "cs4_usaSeedTreeShelterWood", nullable = true)
+    private Boolean usaSeedTreeShelterWood;
+
+    @Column(name = "cs4_usaSeedTreeShelterWoodExp", nullable = true)
+    @Type(type = "text")
+    private String usaSeedTreeShelterWoodExp;
+
+
+    @Column(name = "cs4_usaFinalHarvestHAAC", nullable = true)
+    private Float usaFinalHarvestHAAC;
+
+    @Column(name = "cs4_caFinalHarvestHAAC", nullable = true)
+    private Float caFinalHarvestHAAC;
+
     @Override
     public Integer getId() {
         return id;
@@ -751,5 +823,165 @@ public class Cs4 extends BaseEntityModel {
 
     public void setCaHarvesUnitCompleteLastYearMethodsHAACExp(String caHarvesUnitCompleteLastYearMethodsHAACExp) {
         this.caHarvesUnitCompleteLastYearMethodsHAACExp = caHarvesUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public Boolean getUsaOtherMethod() {
+        return usaOtherMethod;
+    }
+
+    public void setUsaOtherMethod(Boolean usaOtherMethod) {
+        this.usaOtherMethod = usaOtherMethod;
+    }
+
+    public Float getUsaOtherMethodHAAC() {
+        return usaOtherMethodHAAC;
+    }
+
+    public void setUsaOtherMethodHAAC(Float usaOtherMethodHAAC) {
+        this.usaOtherMethodHAAC = usaOtherMethodHAAC;
+    }
+
+    public String getUsaOtherMethodHAACExp() {
+        return usaOtherMethodHAACExp;
+    }
+
+    public void setUsaOtherMethodHAACExp(String usaOtherMethodHAACExp) {
+        this.usaOtherMethodHAACExp = usaOtherMethodHAACExp;
+    }
+
+    public Boolean getCaOtherMethod() {
+        return caOtherMethod;
+    }
+
+    public void setCaOtherMethod(Boolean caOtherMethod) {
+        this.caOtherMethod = caOtherMethod;
+    }
+
+    public Float getCaOtherMethodHAAC() {
+        return caOtherMethodHAAC;
+    }
+
+    public void setCaOtherMethodHAAC(Float caOtherMethodHAAC) {
+        this.caOtherMethodHAAC = caOtherMethodHAAC;
+    }
+
+    public String getCaOtherMethodHAACExp() {
+        return caOtherMethodHAACExp;
+    }
+
+    public void setCaOtherMethodHAACExp(String caOtherMethodHAACExp) {
+        this.caOtherMethodHAACExp = caOtherMethodHAACExp;
+    }
+
+    public Boolean getCaSanitation() {
+        return caSanitation;
+    }
+
+    public void setCaSanitation(Boolean caSanitation) {
+        this.caSanitation = caSanitation;
+    }
+
+    public String getCaSanitationExp() {
+        return caSanitationExp;
+    }
+
+    public void setCaSanitationExp(String caSanitationExp) {
+        this.caSanitationExp = caSanitationExp;
+    }
+
+    public Boolean getCaSelectionMethod() {
+        return caSelectionMethod;
+    }
+
+    public void setCaSelectionMethod(Boolean caSelectionMethod) {
+        this.caSelectionMethod = caSelectionMethod;
+    }
+
+    public String getCaSelectionMethodExp() {
+        return caSelectionMethodExp;
+    }
+
+    public void setCaSelectionMethodExp(String caSelectionMethodExp) {
+        this.caSelectionMethodExp = caSelectionMethodExp;
+    }
+
+    public Boolean getCaSeedTreeShelterWood() {
+        return caSeedTreeShelterWood;
+    }
+
+    public void setCaSeedTreeShelterWood(Boolean caSeedTreeShelterWood) {
+        this.caSeedTreeShelterWood = caSeedTreeShelterWood;
+    }
+
+    public String getCaSeedTreeShelterWoodExp() {
+        return caSeedTreeShelterWoodExp;
+    }
+
+    public void setCaSeedTreeShelterWoodExp(String caSeedTreeShelterWoodExp) {
+        this.caSeedTreeShelterWoodExp = caSeedTreeShelterWoodExp;
+    }
+
+    public Boolean getUsaSanitation() {
+        return usaSanitation;
+    }
+
+    public void setUsaSanitation(Boolean usaSanitation) {
+        this.usaSanitation = usaSanitation;
+    }
+
+    public String getUsaSanitationExp() {
+        return usaSanitationExp;
+    }
+
+    public void setUsaSanitationExp(String usaSanitationExp) {
+        this.usaSanitationExp = usaSanitationExp;
+    }
+
+    public Boolean getUsaSelectionMethod() {
+        return usaSelectionMethod;
+    }
+
+    public void setUsaSelectionMethod(Boolean usaSelectionMethod) {
+        this.usaSelectionMethod = usaSelectionMethod;
+    }
+
+    public String getUsaSelectionMethodExp() {
+        return usaSelectionMethodExp;
+    }
+
+    public void setUsaSelectionMethodExp(String usaSelectionMethodExp) {
+        this.usaSelectionMethodExp = usaSelectionMethodExp;
+    }
+
+    public Boolean getUsaSeedTreeShelterWood() {
+        return usaSeedTreeShelterWood;
+    }
+
+    public void setUsaSeedTreeShelterWood(Boolean usaSeedTreeShelterWood) {
+        this.usaSeedTreeShelterWood = usaSeedTreeShelterWood;
+    }
+
+    public String getUsaSeedTreeShelterWoodExp() {
+        return usaSeedTreeShelterWoodExp;
+    }
+
+    public void setUsaSeedTreeShelterWoodExp(String usaSeedTreeShelterWoodExp) {
+        this.usaSeedTreeShelterWoodExp = usaSeedTreeShelterWoodExp;
+    }
+
+    public Float getUsaFinalHarvestHAAC() {
+        return usaFinalHarvestHAAC;
+    }
+
+    public void setUsaFinalHarvestHAAC(Float usaFinalHarvestHAAC) {
+        this.usaFinalHarvestHAAC = usaFinalHarvestHAAC;
+    }
+
+    public Float getCaFinalHarvestHAAC() {
+        return caFinalHarvestHAAC;
+    }
+
+    public void setCaFinalHarvestHAAC(Float caFinalHarvestHAAC) {
+        this.caFinalHarvestHAAC = caFinalHarvestHAAC;
     }
 }
