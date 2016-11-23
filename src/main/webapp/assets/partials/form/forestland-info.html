@@ -595,12 +595,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="width: 250px;text-align: right;margin-top: 20px;" ng-show="cs2.plansToStopUsingIt">
+                        <div style="width: 250px;text-align: right;margin-top: 20px;" ng-show="cs2.plansToStopUsingIt != null">
                             Please explain
                         </div>
                     </td>
                     <td>
-                        <div class="form-group" ng-show="cs2.plansToStopUsingIt" style="margin-top: 20px;margin-left: 20px;">
+                        <div class="form-group" ng-show="cs2.plansToStopUsingIt != null" style="margin-top: 20px;margin-left: 20px;">
                             <textarea class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.plansToStopUsingItExplain"></textarea>
                         </div>
                     </td>
