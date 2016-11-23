@@ -1,8 +1,8 @@
 var cs8;
 sfiFormApp.controller('FormMarketSurveyCtrl',
-    ['$rootScope', '$scope', 'Countries',  '$http', '_', 'Message',
-        function ($rootScope , $scope, Countries, $http, _ , Message){
-
+    ['$rootScope', '$scope', 'Countries',  '$http', '_', 'Message', '$injector',
+        function ($rootScope , $scope, Countries, $http, _ , Message, i){
+console.log(i.has('carousel'));
         cs8 = $scope;
         $scope.cs8 = {} ;
         $scope.cs8Data = angular.copy($rootScope.form.cs8);
@@ -241,6 +241,18 @@ sfiFormApp.controller('FormMarketSurveyCtrl',
             "Zilkha Biomass Fuels I LLC"
 
         ];
+        $scope.myInterval = 2000;
+            $scope.carouselIndex2 = 0;
+        $scope.slides = [];
+            angular.forEach([1, 2, 3,4,5,6,7],function (value,index) {
+                $scope.slides.push(
+                    {
+                        'id':value,
+                        image: 'http://localhost:8080/assets/images/market-survey-carousel-image/Linking_to_the_Forests_'+value+'.jpg'
+                    }
+                );
+
+            });
 
         $scope.producers = _.unique($scope.producers);
 

@@ -300,12 +300,22 @@
 
                 </div>
             </div>
-            
+            <div class="carousel-demo">
+                <ul rn-carousel rn-carousel-index="carouselIndex2" rn-carousel-auto-slide rn-carousel-pause-on-hover rn-carousel-buffered class="carousel2">
+
+                    <li ng-repeat="n in slides">
+                        <img style="height: 340px;width: 900px;" ng-src="{{n.image}}">
+                    </li>
+                </ul>
+                <div class="rn-carousel-indicator custom-indicator">
+                    <span ng-repeat="slide in slides" ng-class="{active: $index==$parent.carouselIndex2}" ng-click="$parent.carouselIndex2 = $index">&bull;</span>
+                </div>
+            </div>
         <div class="col-lg-12 pading-botoms">
                 <div class="col-lg-12">
                     <div style="border: 1px solid #ddd;padding: 5px;">
 
-                    <img src="/assets/images/Section_9__Linking_to_the_Forests_v11.jpg" style="width: 100%;">
+                   <!-- <img src="/assets/images/Section_9__Linking_to_the_Forests_v11.jpg" style="width: 100%;">-->
 
                     <!--<p class="pading-botoms" style="padding-top: 25px;">-->
                         <!--Who are the main contacts for your organization that should be receiving SFI related information? Please include your organization's Head of Communications.-->
