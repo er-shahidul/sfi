@@ -611,12 +611,13 @@
                             </div>
                             <div class="col-md-3">
                                 <p ng-if="$index == 0" style="padding-top:13px;"><b>SIC involvement, if not a committee meeting?</b></p>
-                                <select disabled multiple  ng-multiple="true"  class="form-control" ng-model="meeting.involvement" >
-                                    <option ng-selected="!meeting.involvement" value="1">Attending</option>
-                                    <option value="2">Sponsoring</option>
-                                    <option value="3">Exhibiting</option>
-                                    <option value="4">Speaking</option>
+                                <select disabled class="form-control"
+                                         ng-model="involvement"
+                                         ng-change="region = addBucket(meeting.involvement, involvement, involvements)">
+                                    <option ng-repeat="involvement in involvements" data-ng-value="involvement.id">{{involvement.name}}</option>
                                 </select>
+                                <div id= "selectedItem" style="width: 95px;background-color: #86b253;margin: 2px;" ng-repeat="involvement in meeting.involvement" >{{ involvement.name }}
+                                </span>
                             </div>
 
                         </div>

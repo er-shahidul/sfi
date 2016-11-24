@@ -648,12 +648,14 @@
                             </div>
                             <div class="col-md-2" style="padding-right: 0px;">
                                 <p ng-if="$index == 0" style="padding-top:13px;"><b>SIC involvement, if not a committee meeting?</b></p>
-                                <select multiple  ng-multiple="true" class="form-control" ng-model="meeting.involvement" >
-                                    <option  ng-selected="!meeting.involvement" value="1">Attending</option>
-                                    <option value="2">Sponsoring</option>
-                                    <option value="3">Exhibiting</option>
-                                    <option value="4">Speaking</option>
+                                <select  class="form-control"
+                                         ng-model="involvement"
+                                         ng-change="region = addBucket(meeting.involvement, involvement, involvements)">
+                                    <option ng-repeat="involvement in involvements" data-ng-value="involvement.id">{{involvement.name}}</option>
                                 </select>
+                                <div id= "selectedItem" style="width: 101px;margin-top: 2px;margin-bottom:3px" ng-repeat="involvement in meeting.involvement track by $index" >{{ involvement.name }}
+                                    <button ng-click="deleteByIndex($index, meeting.involvement)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                </div>
                             </div>
                             <div class="col-md-2" style="padding-right: 0px;top: 7px;">
                                 <div ng-if="$index == 0" >
