@@ -300,15 +300,17 @@
 
                 </div>
             </div>
-            <div class="carousel-demo">
-                <ul rn-carousel rn-carousel-index="carouselIndex2" rn-carousel-auto-slide rn-carousel-pause-on-hover rn-carousel-buffered class="carousel2">
+            <div class="col-lg-12 pading-botoms">
+                <div class="carousel-demo">
+                    <ul rn-carousel rn-carousel-index="carouselIndex2" rn-carousel-auto-slide rn-carousel-pause-on-hover rn-carousel-buffered class="carousel2">
 
-                    <li ng-repeat="n in slides">
-                        <img style="height: 340px;width: 900px;" ng-src="{{n.image}}">
-                    </li>
-                </ul>
-                <div class="rn-carousel-indicator custom-indicator">
-                    <span ng-repeat="slide in slides" ng-class="{active: $index==$parent.carouselIndex2}" ng-click="$parent.carouselIndex2 = $index">&bull;</span>
+                        <li ng-repeat="n in slides">
+                            <img style="height: 340px;width: 100%;" ng-src="{{n.image}}">
+                        </li>
+                    </ul>
+                    <div class="rn-carousel-indicator custom-indicator">
+                        <span ng-repeat="slide in slides" ng-class="{active: $index==$parent.carouselIndex2}" ng-click="$parent.carouselIndex2 = $index">&bull;</span>
+                    </div>
                 </div>
             </div>
         <div class="col-lg-12 pading-botoms">
