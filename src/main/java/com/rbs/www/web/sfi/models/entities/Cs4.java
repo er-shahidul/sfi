@@ -194,6 +194,36 @@ public class Cs4 extends BaseEntityModel {
     @Column(name = "cs4_ca_caRegenPerc5YrHAAC", nullable = true)
     private Float caRegenPerc5YrHAAC;
 
+    @Column(name = "cs4_harvesUnitCompleteLastYeaQualifyHAAC", nullable = true)
+    private Float harvesUnitCompleteLastYeaQualifyHAAC;
+
+    @Column(name = "cs4_harvesUnitCompleteLastYearMethodsHAAC", nullable = true)
+    private Float harvesUnitCompleteLastYearMethodsHAAC;
+
+    @Column(name = "cs4_harvesUnitCompleteLastYearMethodsHAACExp", nullable = true)
+    @Type(type = "text")
+    private String harvesUnitCompleteLastYearMethodsHAACExp;
+
+    @Column(name = "cs4_ca_harvestUnitCompleteLastYeaQualifyHAAC", nullable = true)
+    private Float caHarvestUnitCompleteLastYeaQualifyHAAC;
+
+    @Column(name = "cs4_ca_harvestUnitCompleteLastYearMethodsHAAC", nullable = true)
+    private Float caHarvestUnitCompleteLastYearMethodsHAAC;
+
+    @Column(name = "cs4_ca_harvestUnitCompleteLastYearMethodsHAACExp", nullable = true)
+    @Type(type = "text")
+    private String caHarvestUnitCompleteLastYearMethodsHAACExp;
+
+    @Column(name = "cs4_caHarvesUnitCompleteLastYeaQualifyHAAC", nullable = true)
+    private Float caHarvesUnitCompleteLastYeaQualifyHAAC;
+
+    @Column(name = "cs4_caHarvesUnitCompleteLastYearMethodsHAAC", nullable = true)
+    private Float caHarvesUnitCompleteLastYearMethodsHAAC;
+
+    @Column(name = "cs4_caHarvesUnitCompleteLastYearMethodsHAACExp", nullable = true)
+    @Type(type = "text")
+    private String caHarvesUnitCompleteLastYearMethodsHAACExp;
+
     @Override
     public Integer getId() {
         return id;
@@ -649,5 +679,77 @@ public class Cs4 extends BaseEntityModel {
 
     public void setCaRegenPerc5YrHAAC(Float caRegenPerc5YrHAAC) {
         this.caRegenPerc5YrHAAC = caRegenPerc5YrHAAC;
+    }
+
+    public Float getHarvesUnitCompleteLastYeaQualifyHAAC() {
+        return harvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public void setHarvesUnitCompleteLastYeaQualifyHAAC(Float harvesUnitCompleteLastYeaQualifyHAAC) {
+        this.harvesUnitCompleteLastYeaQualifyHAAC = harvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public Float getHarvesUnitCompleteLastYearMethodsHAAC() {
+        return harvesUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public void setHarvesUnitCompleteLastYearMethodsHAAC(Float harvesUnitCompleteLastYearMethodsHAAC) {
+        this.harvesUnitCompleteLastYearMethodsHAAC = harvesUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public String getHarvesUnitCompleteLastYearMethodsHAACExp() {
+        return harvesUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public void setHarvesUnitCompleteLastYearMethodsHAACExp(String harvesUnitCompleteLastYearMethodsHAACExp) {
+        this.harvesUnitCompleteLastYearMethodsHAACExp = harvesUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public Float getCaHarvestUnitCompleteLastYeaQualifyHAAC() {
+        return caHarvestUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public void setCaHarvestUnitCompleteLastYeaQualifyHAAC(Float caHarvestUnitCompleteLastYeaQualifyHAAC) {
+        this.caHarvestUnitCompleteLastYeaQualifyHAAC = caHarvestUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public Float getCaHarvestUnitCompleteLastYearMethodsHAAC() {
+        return caHarvestUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public void setCaHarvestUnitCompleteLastYearMethodsHAAC(Float caHarvestUnitCompleteLastYearMethodsHAAC) {
+        this.caHarvestUnitCompleteLastYearMethodsHAAC = caHarvestUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public String getCaHarvestUnitCompleteLastYearMethodsHAACExp() {
+        return caHarvestUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public void setCaHarvestUnitCompleteLastYearMethodsHAACExp(String caHarvestUnitCompleteLastYearMethodsHAACExp) {
+        this.caHarvestUnitCompleteLastYearMethodsHAACExp = caHarvestUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public Float getCaHarvesUnitCompleteLastYeaQualifyHAAC() {
+        return caHarvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public void setCaHarvesUnitCompleteLastYeaQualifyHAAC(Float caHarvesUnitCompleteLastYeaQualifyHAAC) {
+        this.caHarvesUnitCompleteLastYeaQualifyHAAC = caHarvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public Float getCaHarvesUnitCompleteLastYearMethodsHAAC() {
+        return caHarvesUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public void setCaHarvesUnitCompleteLastYearMethodsHAAC(Float caHarvesUnitCompleteLastYearMethodsHAAC) {
+        this.caHarvesUnitCompleteLastYearMethodsHAAC = caHarvesUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public String getCaHarvesUnitCompleteLastYearMethodsHAACExp() {
+        return caHarvesUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public void setCaHarvesUnitCompleteLastYearMethodsHAACExp(String caHarvesUnitCompleteLastYearMethodsHAACExp) {
+        this.caHarvesUnitCompleteLastYearMethodsHAACExp = caHarvesUnitCompleteLastYearMethodsHAACExp;
     }
 }

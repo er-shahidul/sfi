@@ -50,23 +50,37 @@ public class Cs4ViewModel extends BaseViewModel {
     private Float caSeedingTwoPlusYr;
     private Float caNatRegen2014;
     private Float caRegenPerc5Yr;
-    private String caGovRegulationExp;
-    private String caDiseaseInsectsExp;
-    private String caFireSalvageExp;
-    private String caWindthrowExp;
-    private String caHurricaneExp;
-    private String caIceStormExp;
-    private String caOthersExp;
-    private Boolean caGovRegulation;
-    private Boolean caDisResDiseaseInsects;
-    private Boolean caDisResFireSalvage;
-    private Boolean caDisResWindthrow;
-    private Boolean caDisResHurricane;
-    private Boolean caDisResIceStorm;
-    private Boolean caOthersApply;
 
     private Float usaRegenPerc5YrHAAC;
     private Float caRegenPerc5YrHAAC;
+
+    private Float harvesUnitCompleteLastYeaQualifyHAAC;
+    private Float harvesUnitCompleteLastYearMethodsHAAC;
+    private String harvesUnitCompleteLastYearMethodsHAACExp;
+
+
+    private Float caHarvestUnitCompleteLastYeaQualifyHAAC;
+    private Float caHarvestUnitCompleteLastYearMethodsHAAC;
+    private String caHarvestUnitCompleteLastYearMethodsHAACExp;
+
+    private Float caHarvesUnitCompleteLastYeaQualifyHAAC;
+    private Float caHarvesUnitCompleteLastYearMethodsHAAC;
+    private String caHarvesUnitCompleteLastYearMethodsHAACExp;
+
+    private Boolean caOthersApply;
+    private String caOthersExp;
+    private Boolean caDisResIceStorm;
+    private String caIceStormExp;
+    private Boolean caDisResHurricane;
+    private String caHurricaneExp;
+    private Boolean caDisResWindthrow;
+    private String caWindthrowExp;
+    private Boolean caDisResFireSalvage;
+    private String caFireSalvageExp;
+    private Boolean caDisResDiseaseInsects;
+    private String caDiseaseInsectsExp;
+    private Boolean caGovRegulation;
+    private String caGovRegulationExp;
 
     @Override
     public Integer getId() {
@@ -523,5 +537,77 @@ public class Cs4ViewModel extends BaseViewModel {
 
     public void setCaRegenPerc5YrHAAC(Float caRegenPerc5YrHAAC) {
         this.caRegenPerc5YrHAAC = caRegenPerc5YrHAAC;
+    }
+
+    public Float getHarvesUnitCompleteLastYeaQualifyHAAC() {
+        return harvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public void setHarvesUnitCompleteLastYeaQualifyHAAC(Float harvesUnitCompleteLastYeaQualifyHAAC) {
+        this.harvesUnitCompleteLastYeaQualifyHAAC = harvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public Float getHarvesUnitCompleteLastYearMethodsHAAC() {
+        return harvesUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public void setHarvesUnitCompleteLastYearMethodsHAAC(Float harvesUnitCompleteLastYearMethodsHAAC) {
+        this.harvesUnitCompleteLastYearMethodsHAAC = harvesUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public String getHarvesUnitCompleteLastYearMethodsHAACExp() {
+        return harvesUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public void setHarvesUnitCompleteLastYearMethodsHAACExp(String harvesUnitCompleteLastYearMethodsHAACExp) {
+        this.harvesUnitCompleteLastYearMethodsHAACExp = harvesUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public Float getCaHarvesUnitCompleteLastYeaQualifyHAAC() {
+        return caHarvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public void setCaHarvesUnitCompleteLastYeaQualifyHAAC(Float caHarvesUnitCompleteLastYeaQualifyHAAC) {
+        this.caHarvesUnitCompleteLastYeaQualifyHAAC = caHarvesUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public Float getCaHarvesUnitCompleteLastYearMethodsHAAC() {
+        return caHarvesUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public void setCaHarvesUnitCompleteLastYearMethodsHAAC(Float caHarvesUnitCompleteLastYearMethodsHAAC) {
+        this.caHarvesUnitCompleteLastYearMethodsHAAC = caHarvesUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public String getCaHarvesUnitCompleteLastYearMethodsHAACExp() {
+        return caHarvesUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public void setCaHarvesUnitCompleteLastYearMethodsHAACExp(String caHarvesUnitCompleteLastYearMethodsHAACExp) {
+        this.caHarvesUnitCompleteLastYearMethodsHAACExp = caHarvesUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public Float getCaHarvestUnitCompleteLastYeaQualifyHAAC() {
+        return caHarvestUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public void setCaHarvestUnitCompleteLastYeaQualifyHAAC(Float caHarvestUnitCompleteLastYeaQualifyHAAC) {
+        this.caHarvestUnitCompleteLastYeaQualifyHAAC = caHarvestUnitCompleteLastYeaQualifyHAAC;
+    }
+
+    public Float getCaHarvestUnitCompleteLastYearMethodsHAAC() {
+        return caHarvestUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public void setCaHarvestUnitCompleteLastYearMethodsHAAC(Float caHarvestUnitCompleteLastYearMethodsHAAC) {
+        this.caHarvestUnitCompleteLastYearMethodsHAAC = caHarvestUnitCompleteLastYearMethodsHAAC;
+    }
+
+    public String getCaHarvestUnitCompleteLastYearMethodsHAACExp() {
+        return caHarvestUnitCompleteLastYearMethodsHAACExp;
+    }
+
+    public void setCaHarvestUnitCompleteLastYearMethodsHAACExp(String caHarvestUnitCompleteLastYearMethodsHAACExp) {
+        this.caHarvestUnitCompleteLastYearMethodsHAACExp = caHarvestUnitCompleteLastYearMethodsHAACExp;
     }
 }

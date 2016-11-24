@@ -60,85 +60,27 @@ import java.util.Set;
                 value = "trainingEduRationale != null && !trainingEduRationale.isEmpty()",
                 applyIf = "trainingEducation != null && trainingEducation.equals('3')",
                 message = "{cs9.trainingEduRationale}"
-        ),
-        @SpELAssert(
-                value = "useWho1A1BNote != null && !useWho1A1BNote.isEmpty()",
-                applyIf = "useWho1A1B != null && useWho1A1B",
-                message = "{cs9.useWho1A1BNote}"
-        ),
-        @SpELAssert(
-                value = "stopWho1A1BNote != null && !stopWho1A1BNote.isEmpty()",
-                applyIf = "stopWho1A1B != null && stopWho1A1B",
-                message = "{cs9.stopWho1A1BNote}"
-        ),
-        @SpELAssert(
-                value = "convertForestLandExplain != null && !convertForestLandExplain.isEmpty()",
-                applyIf = "convertForestLand != null && convertForestLand",
-                message = "{cs9.convertForestLandExplain}"
         )
 })
 public class Cs9ViewModel extends BaseViewModel {
     private Integer id;
     private Boolean acknowledge;
-    private Boolean convertForestCover;
-    private Boolean convertForestLand;
-    private Boolean ecologicalImpactsLandscape;
-    private Boolean ecologicalImpactsSite;
-    private Boolean economicOther;
-    private Boolean economicProductivity;
-    private Boolean economicReasons;
-    private Boolean economicStandQuality;
-    private Boolean environmentalHarmOther;
-    private Boolean mitigatingEnvironmentalHarm;
-    private Boolean respondingDiseaseIssues;
-    private Boolean respondingForestHealth;
-    private Boolean respondingInsect;
-    private Boolean respondingInvasiveSpecies;
-    private Boolean respondingOther;
-    private Boolean restorationForestCover;
-    private Boolean restorationNativeForest;
-    private Boolean restorationOther;
-    private Boolean restorationRiparianProtection;
-    private Boolean stopWho1A1B;
-    private Boolean useWho1A1B;
     private Set<Integer> conservationBiodiversity413Items;
     private Set<Integer> conservationBiodiversity414Items;
     private Set<Integer> indigenousPeoplesForestItems;
     private Set<Integer> indigenousPeoplesPrivateItems;
     private Set<Integer> indigenousPeoplesPublicItems;
     private Set<Integer> trainingEducationItems;
-    private Set<SfiPpFormForestlandAreaViewModel> forestlandAreas;
     private Set<SfiPpFormStoryViewModel> stories;
     private String conservationBiodiversity413;
     private String conservationBiodiversity414;
     private String conservationBiodiversity415;
-    private String convertForestLandExplain;
-    private String ecologicalImpactsLandscapeArea;
-    private String ecologicalImpactsSiteArea;
-    private String economicOtherArea;
-    private String economicOtherExplain;
-    private String economicProductivityArea;
-    private String economicStandArea;
-    private String environmentalHarmOtherArea;
-    private String environmentalHarmOtherExplain;
     private String indigenousPeoplesForest;
     private String indigenousPeoplesPrivate;
     private String indigenousPeoplesPublic;
     private String protectionMaintenanceWaterRes;
-    private String respondingDiseaseArea;
-    private String respondingInsectArea;
-    private String respondingInvasiveArea;
-    private String respondingOtherArea;
-    private String respondingOtherExplain;
-    private String restorationNativeArea;
-    private String restorationOtherArea;
-    private String restorationOtherExplain;
-    private String restorationRiparianArea;
-    private String stopWho1A1BNote;
 
-//    private String trainedWoodProducersChanged;
     private String trainingEducation;
-    private String useWho1A1BNote;
 
     private Set<Integer> protectionMaintenanceWaterResItems1;
     private Set<Integer> protectionMaintenanceWaterResItems2;
@@ -495,174 +437,6 @@ public class Cs9ViewModel extends BaseViewModel {
         this.acknowledge = acknowledge;
     }
 
-    public Boolean getConvertForestCover() {
-        return convertForestCover;
-    }
-
-    public void setConvertForestCover(Boolean convertForestCover) {
-        this.convertForestCover = convertForestCover;
-    }
-
-    public Boolean getConvertForestLand() {
-        return convertForestLand;
-    }
-
-    public void setConvertForestLand(Boolean convertForestLand) {
-        this.convertForestLand = convertForestLand;
-    }
-
-    public Boolean getEcologicalImpactsLandscape() {
-        return ecologicalImpactsLandscape;
-    }
-
-    public void setEcologicalImpactsLandscape(Boolean ecologicalImpactsLandscape) {
-        this.ecologicalImpactsLandscape = ecologicalImpactsLandscape;
-    }
-
-    public Boolean getEcologicalImpactsSite() {
-        return ecologicalImpactsSite;
-    }
-
-    public void setEcologicalImpactsSite(Boolean ecologicalImpactsSite) {
-        this.ecologicalImpactsSite = ecologicalImpactsSite;
-    }
-
-    public Boolean getEconomicOther() {
-        return economicOther;
-    }
-
-    public void setEconomicOther(Boolean economicOther) {
-        this.economicOther = economicOther;
-    }
-
-    public Boolean getEconomicProductivity() {
-        return economicProductivity;
-    }
-
-    public void setEconomicProductivity(Boolean economicProductivity) {
-        this.economicProductivity = economicProductivity;
-    }
-
-    public Boolean getEconomicReasons() {
-        return economicReasons;
-    }
-
-    public void setEconomicReasons(Boolean economicReasons) {
-        this.economicReasons = economicReasons;
-    }
-
-    public Boolean getEconomicStandQuality() {
-        return economicStandQuality;
-    }
-
-    public void setEconomicStandQuality(Boolean economicStandQuality) {
-        this.economicStandQuality = economicStandQuality;
-    }
-
-    public Boolean getEnvironmentalHarmOther() {
-        return environmentalHarmOther;
-    }
-
-    public void setEnvironmentalHarmOther(Boolean environmentalHarmOther) {
-        this.environmentalHarmOther = environmentalHarmOther;
-    }
-
-    public Boolean getMitigatingEnvironmentalHarm() {
-        return mitigatingEnvironmentalHarm;
-    }
-
-    public void setMitigatingEnvironmentalHarm(Boolean mitigatingEnvironmentalHarm) {
-        this.mitigatingEnvironmentalHarm = mitigatingEnvironmentalHarm;
-    }
-
-    public Boolean getRespondingDiseaseIssues() {
-        return respondingDiseaseIssues;
-    }
-
-    public void setRespondingDiseaseIssues(Boolean respondingDiseaseIssues) {
-        this.respondingDiseaseIssues = respondingDiseaseIssues;
-    }
-
-    public Boolean getRespondingForestHealth() {
-        return respondingForestHealth;
-    }
-
-    public void setRespondingForestHealth(Boolean respondingForestHealth) {
-        this.respondingForestHealth = respondingForestHealth;
-    }
-
-    public Boolean getRespondingInsect() {
-        return respondingInsect;
-    }
-
-    public void setRespondingInsect(Boolean respondingInsect) {
-        this.respondingInsect = respondingInsect;
-    }
-
-    public Boolean getRespondingInvasiveSpecies() {
-        return respondingInvasiveSpecies;
-    }
-
-    public void setRespondingInvasiveSpecies(Boolean respondingInvasiveSpecies) {
-        this.respondingInvasiveSpecies = respondingInvasiveSpecies;
-    }
-
-    public Boolean getRespondingOther() {
-        return respondingOther;
-    }
-
-    public void setRespondingOther(Boolean respondingOther) {
-        this.respondingOther = respondingOther;
-    }
-
-    public Boolean getRestorationForestCover() {
-        return restorationForestCover;
-    }
-
-    public void setRestorationForestCover(Boolean restorationForestCover) {
-        this.restorationForestCover = restorationForestCover;
-    }
-
-    public Boolean getRestorationNativeForest() {
-        return restorationNativeForest;
-    }
-
-    public void setRestorationNativeForest(Boolean restorationNativeForest) {
-        this.restorationNativeForest = restorationNativeForest;
-    }
-
-    public Boolean getRestorationOther() {
-        return restorationOther;
-    }
-
-    public void setRestorationOther(Boolean restorationOther) {
-        this.restorationOther = restorationOther;
-    }
-
-    public Boolean getRestorationRiparianProtection() {
-        return restorationRiparianProtection;
-    }
-
-    public void setRestorationRiparianProtection(Boolean restorationRiparianProtection) {
-        this.restorationRiparianProtection = restorationRiparianProtection;
-    }
-
-    public Boolean getStopWho1A1B() {
-        return stopWho1A1B;
-    }
-
-    public void setStopWho1A1B(Boolean stopWho1A1B) {
-        this.stopWho1A1B = stopWho1A1B;
-    }
-
-    public Boolean getUseWho1A1B() {
-        return useWho1A1B;
-    }
-
-    public void setUseWho1A1B(Boolean useWho1A1B) {
-        this.useWho1A1B = useWho1A1B;
-    }
-
     public Set<Integer> getConservationBiodiversity413Items() {
         return conservationBiodiversity413Items;
     }
@@ -711,14 +485,6 @@ public class Cs9ViewModel extends BaseViewModel {
         this.trainingEducationItems = trainingEducationItems;
     }
 
-    public Set<SfiPpFormForestlandAreaViewModel> getForestlandAreas() {
-        return forestlandAreas;
-    }
-
-    public void setForestlandAreas(Set<SfiPpFormForestlandAreaViewModel> forestlandAreas) {
-        this.forestlandAreas = forestlandAreas;
-    }
-
     public Set<SfiPpFormStoryViewModel> getStories() {
         return stories;
     }
@@ -749,78 +515,6 @@ public class Cs9ViewModel extends BaseViewModel {
 
     public void setConservationBiodiversity415(String conservationBiodiversity415) {
         this.conservationBiodiversity415 = conservationBiodiversity415;
-    }
-
-    public String getConvertForestLandExplain() {
-        return convertForestLandExplain;
-    }
-
-    public void setConvertForestLandExplain(String convertForestLandExplain) {
-        this.convertForestLandExplain = convertForestLandExplain;
-    }
-
-    public String getEcologicalImpactsLandscapeArea() {
-        return ecologicalImpactsLandscapeArea;
-    }
-
-    public void setEcologicalImpactsLandscapeArea(String ecologicalImpactsLandscapeArea) {
-        this.ecologicalImpactsLandscapeArea = ecologicalImpactsLandscapeArea;
-    }
-
-    public String getEcologicalImpactsSiteArea() {
-        return ecologicalImpactsSiteArea;
-    }
-
-    public void setEcologicalImpactsSiteArea(String ecologicalImpactsSiteArea) {
-        this.ecologicalImpactsSiteArea = ecologicalImpactsSiteArea;
-    }
-
-    public String getEconomicOtherArea() {
-        return economicOtherArea;
-    }
-
-    public void setEconomicOtherArea(String economicOtherArea) {
-        this.economicOtherArea = economicOtherArea;
-    }
-
-    public String getEconomicOtherExplain() {
-        return economicOtherExplain;
-    }
-
-    public void setEconomicOtherExplain(String economicOtherExplain) {
-        this.economicOtherExplain = economicOtherExplain;
-    }
-
-    public String getEconomicProductivityArea() {
-        return economicProductivityArea;
-    }
-
-    public void setEconomicProductivityArea(String economicProductivityArea) {
-        this.economicProductivityArea = economicProductivityArea;
-    }
-
-    public String getEconomicStandArea() {
-        return economicStandArea;
-    }
-
-    public void setEconomicStandArea(String economicStandArea) {
-        this.economicStandArea = economicStandArea;
-    }
-
-    public String getEnvironmentalHarmOtherArea() {
-        return environmentalHarmOtherArea;
-    }
-
-    public void setEnvironmentalHarmOtherArea(String environmentalHarmOtherArea) {
-        this.environmentalHarmOtherArea = environmentalHarmOtherArea;
-    }
-
-    public String getEnvironmentalHarmOtherExplain() {
-        return environmentalHarmOtherExplain;
-    }
-
-    public void setEnvironmentalHarmOtherExplain(String environmentalHarmOtherExplain) {
-        this.environmentalHarmOtherExplain = environmentalHarmOtherExplain;
     }
 
     public String getIndigenousPeoplesForest() {
@@ -855,108 +549,12 @@ public class Cs9ViewModel extends BaseViewModel {
         this.protectionMaintenanceWaterRes = protectionMaintenanceWaterRes;
     }
 
-    public String getRespondingDiseaseArea() {
-        return respondingDiseaseArea;
-    }
-
-    public void setRespondingDiseaseArea(String respondingDiseaseArea) {
-        this.respondingDiseaseArea = respondingDiseaseArea;
-    }
-
-    public String getRespondingInsectArea() {
-        return respondingInsectArea;
-    }
-
-    public void setRespondingInsectArea(String respondingInsectArea) {
-        this.respondingInsectArea = respondingInsectArea;
-    }
-
-    public String getRespondingInvasiveArea() {
-        return respondingInvasiveArea;
-    }
-
-    public void setRespondingInvasiveArea(String respondingInvasiveArea) {
-        this.respondingInvasiveArea = respondingInvasiveArea;
-    }
-
-    public String getRespondingOtherArea() {
-        return respondingOtherArea;
-    }
-
-    public void setRespondingOtherArea(String respondingOtherArea) {
-        this.respondingOtherArea = respondingOtherArea;
-    }
-
-    public String getRespondingOtherExplain() {
-        return respondingOtherExplain;
-    }
-
-    public void setRespondingOtherExplain(String respondingOtherExplain) {
-        this.respondingOtherExplain = respondingOtherExplain;
-    }
-
-    public String getRestorationNativeArea() {
-        return restorationNativeArea;
-    }
-
-    public void setRestorationNativeArea(String restorationNativeArea) {
-        this.restorationNativeArea = restorationNativeArea;
-    }
-
-    public String getRestorationOtherArea() {
-        return restorationOtherArea;
-    }
-
-    public void setRestorationOtherArea(String restorationOtherArea) {
-        this.restorationOtherArea = restorationOtherArea;
-    }
-
-    public String getRestorationOtherExplain() {
-        return restorationOtherExplain;
-    }
-
-    public void setRestorationOtherExplain(String restorationOtherExplain) {
-        this.restorationOtherExplain = restorationOtherExplain;
-    }
-
-    public String getRestorationRiparianArea() {
-        return restorationRiparianArea;
-    }
-
-    public void setRestorationRiparianArea(String restorationRiparianArea) {
-        this.restorationRiparianArea = restorationRiparianArea;
-    }
-
-    public String getStopWho1A1BNote() {
-        return stopWho1A1BNote;
-    }
-
-    public void setStopWho1A1BNote(String stopWho1A1BNote) {
-        this.stopWho1A1BNote = stopWho1A1BNote;
-    }
-
-//    public String getTrainedWoodProducersChanged() {
-//        return trainedWoodProducersChanged;
-//    }
-//
-//    public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
-//        this.trainedWoodProducersChanged = trainedWoodProducersChanged;
-//    }
-
     public String getTrainingEducation() {
         return trainingEducation;
     }
 
     public void setTrainingEducation(String trainingEducation) {
         this.trainingEducation = trainingEducation;
-    }
-
-    public String getUseWho1A1BNote() {
-        return useWho1A1BNote;
-    }
-
-    public void setUseWho1A1BNote(String useWho1A1BNote) {
-        this.useWho1A1BNote = useWho1A1BNote;
     }
 
     public Set<Integer> getConservationBiodiversity413Items2() {
