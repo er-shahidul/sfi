@@ -92,7 +92,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         if(usCanada){
             $scope.setRegion(0);
             $scope.resetSection();
-            return alert('Already has info for this region');
+            return alert('Please select a region that has not already been selected.');
         }
     }
 
