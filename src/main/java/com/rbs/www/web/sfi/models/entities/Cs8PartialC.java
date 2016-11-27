@@ -239,6 +239,66 @@ public class Cs8PartialC extends BaseEntityModel {
             inverseJoinColumns = {@JoinColumn(name = "country_id", referencedColumnName = "id")})
     private Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_13;
 
+    @Column(name = "cs8_printingWritingPaper1", nullable = true)
+    private String printingWritingPaper1;
+
+    @Column(name = "cs8_packaging1", nullable = true)
+    private String packaging1;
+
+    @Column(name = "cs8_printingWritingPaper2", nullable = true)
+    private String printingWritingPaper2;
+
+    @Column(name = "cs8_packaging2", nullable = true)
+    private String packaging2;
+
+    @Column(name = "cs8_printingWritingPaper3", nullable = true)
+    private String printingWritingPaper3;
+
+    @Column(name = "cs8_packaging3", nullable = true)
+    private String packaging3;
+
+    @Column(name = "cs8_printingWritingPaper4", nullable = true)
+    private String printingWritingPaper4;
+
+    @Column(name = "cs8_packaging4", nullable = true)
+    private String packaging4;
+
+    @Column(name = "cs8_printingWritingPaper5", nullable = true)
+    private String printingWritingPaper5;
+
+    @Column(name = "cs8_packaging5", nullable = true)
+    private String packaging5;
+
+    @Column(name = "cs8_printingWritingPaper6", nullable = true)
+    private String printingWritingPaper6;
+
+    @Column(name = "cs8_packaging6", nullable = true)
+    private String packaging6;
+
+    @Column(name = "cs8_printingWritingPaper7", nullable = true)
+    private String printingWritingPaper7;
+
+    @Column(name = "cs8_packaging7", nullable = true)
+    private String packaging7;
+
+    @Column(name = "cs8_printingWritingPaper8", nullable = true)
+    private String printingWritingPaper8;
+
+    @Column(name = "cs8_packaging8", nullable = true)
+    private String packaging8;
+
+    @Column(name = "cs8_printingWritingPaper9", nullable = true)
+    private String printingWritingPaper9;
+
+    @Column(name = "cs8_packaging9", nullable = true)
+    private String packaging9;
+
+    @Column(name = "cs8_printingWritingPaper10", nullable = true)
+    private String printingWritingPaper10;
+
+    @Column(name = "cs8_packaging10", nullable = true)
+    private String packaging10;
+
     @Override
     public Integer getId() {
         return id;
@@ -582,5 +642,165 @@ public class Cs8PartialC extends BaseEntityModel {
 
     public void setAlsoFSCLabelFSC_Country_13(Set<SfiPpFormAllCountry> alsoFSCLabelFSC_Country_13) {
         addAll(this.alsoFSCLabelFSC_Country_13, alsoFSCLabelFSC_Country_13);
+    }
+
+    public String getPrintingWritingPaper1() {
+        return printingWritingPaper1;
+    }
+
+    public void setPrintingWritingPaper1(String printingWritingPaper1) {
+        this.printingWritingPaper1 = printingWritingPaper1;
+    }
+
+    public String getPackaging1() {
+        return packaging1;
+    }
+
+    public void setPackaging1(String packaging1) {
+        this.packaging1 = packaging1;
+    }
+
+    public String getPrintingWritingPaper2() {
+        return printingWritingPaper2;
+    }
+
+    public void setPrintingWritingPaper2(String printingWritingPaper2) {
+        this.printingWritingPaper2 = printingWritingPaper2;
+    }
+
+    public String getPackaging2() {
+        return packaging2;
+    }
+
+    public void setPackaging2(String packaging2) {
+        this.packaging2 = packaging2;
+    }
+
+    public String getPrintingWritingPaper3() {
+        return printingWritingPaper3;
+    }
+
+    public void setPrintingWritingPaper3(String printingWritingPaper3) {
+        this.printingWritingPaper3 = printingWritingPaper3;
+    }
+
+    public String getPackaging3() {
+        return packaging3;
+    }
+
+    public void setPackaging3(String packaging3) {
+        this.packaging3 = packaging3;
+    }
+
+    public String getPrintingWritingPaper4() {
+        return printingWritingPaper4;
+    }
+
+    public void setPrintingWritingPaper4(String printingWritingPaper4) {
+        this.printingWritingPaper4 = printingWritingPaper4;
+    }
+
+    public String getPackaging4() {
+        return packaging4;
+    }
+
+    public void setPackaging4(String packaging4) {
+        this.packaging4 = packaging4;
+    }
+
+    public String getPrintingWritingPaper5() {
+        return printingWritingPaper5;
+    }
+
+    public void setPrintingWritingPaper5(String printingWritingPaper5) {
+        this.printingWritingPaper5 = printingWritingPaper5;
+    }
+
+    public String getPackaging5() {
+        return packaging5;
+    }
+
+    public void setPackaging5(String packaging5) {
+        this.packaging5 = packaging5;
+    }
+
+    public String getPrintingWritingPaper6() {
+        return printingWritingPaper6;
+    }
+
+    public void setPrintingWritingPaper6(String printingWritingPaper6) {
+        this.printingWritingPaper6 = printingWritingPaper6;
+    }
+
+    public String getPackaging6() {
+        return packaging6;
+    }
+
+    public void setPackaging6(String packaging6) {
+        this.packaging6 = packaging6;
+    }
+
+    public String getPrintingWritingPaper7() {
+        return printingWritingPaper7;
+    }
+
+    public void setPrintingWritingPaper7(String printingWritingPaper7) {
+        this.printingWritingPaper7 = printingWritingPaper7;
+    }
+
+    public String getPackaging7() {
+        return packaging7;
+    }
+
+    public void setPackaging7(String packaging7) {
+        this.packaging7 = packaging7;
+    }
+
+    public String getPrintingWritingPaper8() {
+        return printingWritingPaper8;
+    }
+
+    public void setPrintingWritingPaper8(String printingWritingPaper8) {
+        this.printingWritingPaper8 = printingWritingPaper8;
+    }
+
+    public String getPackaging8() {
+        return packaging8;
+    }
+
+    public void setPackaging8(String packaging8) {
+        this.packaging8 = packaging8;
+    }
+
+    public String getPrintingWritingPaper9() {
+        return printingWritingPaper9;
+    }
+
+    public void setPrintingWritingPaper9(String printingWritingPaper9) {
+        this.printingWritingPaper9 = printingWritingPaper9;
+    }
+
+    public String getPackaging9() {
+        return packaging9;
+    }
+
+    public void setPackaging9(String packaging9) {
+        this.packaging9 = packaging9;
+    }
+
+    public String getPrintingWritingPaper10() {
+        return printingWritingPaper10;
+    }
+
+    public void setPrintingWritingPaper10(String printingWritingPaper10) {
+        this.printingWritingPaper10 = printingWritingPaper10;
+    }
+
+    public String getPackaging10() {
+        return packaging10;
+    }
+
+    public void setPackaging10(String packaging10) {
+        this.packaging10 = packaging10;
     }
 }
