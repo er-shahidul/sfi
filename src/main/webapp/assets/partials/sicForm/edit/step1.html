@@ -526,7 +526,7 @@
         <br>
 
         <div class="col-lg-12" style="padding-top: 30px;">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <p>
                     <b>
                         Please list sub-committees and provide email address for sub-committee chair (if applicable):
@@ -568,7 +568,7 @@
         <br>
 
         <div class="col-lg-12" style="padding-top: 30px;">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <p>
                     <b>
                         For the CURRENT calendar year, list meeting type and dates of the scheduled SFI Implementation Committee meetings.                   </b>
@@ -615,7 +615,7 @@
         <br>
 
         <div class="col-lg-12" style="padding-top: 30px;">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <p>
                     <b>
                         For the CURRENT calendar year, list dates and locations of meetings, conferences, or tradeshows or events in which your committee is participating and describe your involvement.                    </b>
@@ -624,7 +624,7 @@
                 <div>
                     <ng-form role="form" name="participatingMeetingForm">
                         <div class="row" ng-repeat="meeting in cs1.participatingMeetingList" style="margin-top:12px;">
-                            <div class="col-lg-3">
+                            <div class="col-lg-2">
                                 <p ng-if="$index == 0" class="margin-top-30"><b>Meeting Name</b></p>
                                 <input type="text" class="form-control" ng-model="meeting.name">
                             </div>
@@ -646,7 +646,7 @@
                                     <option ng-repeat="region in regions">{{ region.name }}</option>
                                 </select>
                             </div>
-                            <div class="col-md-2" style="padding-right: 0px;">
+                            <div class="col-md-4" style="padding-right: 0px;">
                                 <p ng-if="$index == 0" style="padding-top:13px;"><b>SIC involvement, if not a committee meeting?</b></p>
                                 <select  class="form-control"
                                          ng-model="involvement"
@@ -657,7 +657,7 @@
                                     <button ng-click="deleteByIndex($index, meeting.involvement)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                 </div>
                             </div>
-                            <div class="col-md-2" style="padding-right: 0px;top: 7px;">
+                            <div class="col-md-1" style="padding-right: 0px;top: 7px;">
                                 <div ng-if="$index == 0" >
                                     <br/>
                                     <br/>
@@ -680,7 +680,7 @@
         <br>
 
         <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <p>
                     <b>
                         Is the SIC willing to represent the SFI program, on SFI Inc.'s behalf, at local conferences,
@@ -705,7 +705,7 @@
         <br>
 
         <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <p>
                     <b>
                         Did your SIC recruit any new SFI Applicants or SFI Program Participants last year?
@@ -729,7 +729,7 @@
         <br>
 
         <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <p>
                     <b>
                         Does your SIC workplan/annual goals/annual activities include recruitment efforts this year?
