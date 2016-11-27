@@ -727,6 +727,428 @@
                 </div>
             </div>
 
+            <div class="col-lg-12 pading-botoms" ng-show="cs8.productSegmentPrintingWritingPaper || cs8.productSegmentPackaging">
+                <div class="col-lg-12">
+                    <div style="margin-bottom: 20px;">
+                        <h5 class="content-header2" style="padding-top: 30px;">ENERGY, GHG, WATER USE AND WASTE MANAGEMENT</h5>
+                        Please answer the following questions for your product segment(s):
+                    </div>
+
+                    <div style="padding-left: 0;" class="col-sm-12">
+                    <p><strong>ENERGY USE</strong></p>
+                    </div>
+
+                    <div style="padding-left: 0;" class="col-sm-12">
+                        <strong>Total electric energy used by operations:</strong>
+                        What was the total net energy used (purchased plus self-generated minus sold) from the electricity that the operations/site/enterprise required to operate (all sources) regardless of use?
+                        <br>
+                        <br>
+                        <div class="pading-botoms padding-left-12">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Printing writing paper</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="printingWritingPaper1"
+                                               class="form-control col-sm-3" ng-model="cs8.printingWritingPaper1">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Packaging</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="packaging1"
+                                               class="form-control col-sm-3" ng-model="cs8.packaging1">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div style="padding-left: 0;" class="col-sm-12">
+                        <strong>Total fuel energy used by operations:</strong>
+                        What was the total net energy used (purchased plus self-generated minus sold) from the electricity that the operations/site/enterprise required to operate (all sources) regardless of use. For example: fuel oil, propane, natural gas, etc?
+                        <br>
+                        <br>
+                        <div class="pading-botoms padding-left-12">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Printing writing paper</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="printingWritingPaper2"
+                                               class="form-control col-sm-3" ng-model="cs8.printingWritingPaper2">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Packaging</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="packaging2"
+                                               class="form-control col-sm-3" ng-model="cs8.packaging2">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div style="padding-left: 0;" class="col-sm-12">
+                        <strong>Total renewable energy from biomass, solar, wind, water, etc. used by operations (GigaJoules):</strong>
+                        What was the total direct purchase of renewable energy AND the generated on site as part of operations under the producer’s control. The metric does NOT include renewable energy that is part of the typical supply from the electrical grid?
+                        <br>
+                        <br>
+                        <div class="pading-botoms padding-left-12">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Printing writing paper</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="printingWritingPaper3"
+                                               class="form-control col-sm-3" ng-model="cs8.printingWritingPaper3">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Packaging</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="packaging3"
+                                               class="form-control col-sm-3" ng-model="cs8.packaging3">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div style="padding-left: 0;" class="col-sm-12">
+                    <br/>
+                    <br/>
+                    <p><strong>GREENHOUSE GAS EMISSIONS</strong></p>
+                    Provide the following greenhouse gas emissions information for all corporate and operational locations:
+                    <br/>
+                    <br/>
+                    </div>
+                    <div style="padding-left: 0;" class="col-sm-12">
+                    <strong>Scope 1 GHG emissions:</strong>
+                    What was the total direct emissions from the combustion of onsite and mobile fuels, and other sources that occur at, or are associated with facilities and operations controlled by your company?
+                    <br>
+                    <br>
+                        <div class="pading-botoms padding-left-12">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Printing writing paper</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="printingWritingPaper4"
+                                               class="form-control col-sm-3" ng-model="cs8.printingWritingPaper4">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Packaging</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="packaging4"
+                                               class="form-control col-sm-3" ng-model="cs8.packaging4">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div style="padding-left: 0;" class="col-sm-12">
+                    <strong>Scope 2 GHG emissions:</strong>
+                    What was the total indirect emissions that occur off-site from the production of energy, such as electricity, which is then     purchased for use at facilities and operations controlled by your company?
+                    <br>
+                    <br>
+                        <div class="pading-botoms padding-left-12">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Printing writing paper</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="printingWritingPaper5"
+                                               class="form-control col-sm-3" ng-model="cs8.printingWritingPaper5">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Packaging</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="packaging5"
+                                               class="form-control col-sm-3" ng-model="cs8.packaging5">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div style="padding-left: 0;" class="col-sm-12">
+                    <br/>
+                    <br/>
+                    <p><strong>WATER USE</strong></p>
+                    Provide the following water data for all corporate and operational locations:
+                    <br/>
+                    <br/>
+                    </div>
+                    <div style="padding-left: 0;" class="col-sm-12">
+                    <strong>Total water used by operations:</strong>
+                    What was the total volume of water entering the site(s) from all sources that is needed for operations? For example: purchased from suppliers, pumped from rivers, lakes, wells, etc?
+                    <br>
+                    <br>
+                    <div class="pading-botoms padding-left-12">
+                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Printing writing paper</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input type="text" name="printingWritingPaper6"
+                                           class="form-control col-sm-3" ng-model="cs8.printingWritingPaper6">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
+                            </div>
+                            <br/>
+                        </div>
+                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Packaging</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input type="text" name="packaging6"
+                                           class="form-control col-sm-3" ng-model="cs8.packaging6">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <br/>
+                    <div style="padding-left: 0;" class="col-sm-12">
+                    <strong>Total water discharged by operations:</strong>
+                    What was the total volume of water leaving the site(s)? Water reused, recycled or recovered, it is not considered disposed?
+                    <br>
+                    <br>
+                    <div class="pading-botoms padding-left-12">
+                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Printing writing paper</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input type="text" name="printingWritingPaper7"
+                                           class="form-control col-sm-3" ng-model="cs8.printingWritingPaper7">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
+                            </div>
+                            <br/>
+                        </div>
+                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Packaging</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input type="text" name="packaging7"
+                                           class="form-control col-sm-3" ng-model="cs8.packaging7">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <br/>
+
+                    <div style="padding-left: 0;" class="col-sm-12">
+                        <br/>
+                        <br/>
+                        <p><strong>WASTE MANAGEMENT</strong></p>
+                        Provide the following waste data for all corporate and operational locations:
+                        <br/>
+                        <br/>
+                    </div>
+                    <div style="padding-left: 0;" class="col-sm-12">
+                        <strong>Non-hazardous waste disposed by operations:</strong>
+                        What was the total amount of non-hazardous waste landfilled, incinerated without energy recovery, or otherwise disposed? Includes solid waste and liquid waste in solid containers. Waste recycled, reused or recovered is not considered to be disposed.
+                        <br>
+                        <br>
+                        <div class="pading-botoms padding-left-12">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Printing writing paper</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="printingWritingPaper8"
+                                               class="form-control col-sm-3" ng-model="cs8.printingWritingPaper8">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Packaging</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="packaging8"
+                                               class="form-control col-sm-3" ng-model="cs8.packaging8">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div style="padding-left: 0;" class="col-sm-12">
+                        <strong>Hazardous waste disposed by operations:</strong>
+                        What was the total amount of hazardous waste landfilled, incinerated without energy recovery, or otherwise disposed? Waste recycled, reused or recovered is not considered to be disposed.
+                        <br>
+                        <br>
+                        <div class="pading-botoms padding-left-12">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Printing writing paper</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="printingWritingPaper9"
+                                               class="form-control col-sm-3" ng-model="cs8.printingWritingPaper9">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Packaging</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="packaging9"
+                                               class="form-control col-sm-3" ng-model="cs8.packaging9">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div style="padding-left: 0;" class="col-sm-12">
+                        <strong>Non-hazardous and hazardous waste recycled, reused or recovered:</strong>
+                        What was the total amount of all non-hazardous and hazardous waste recycled, reused or recovered?
+                        <br>
+                        <br>
+                        <div class="pading-botoms padding-left-12">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Printing writing paper</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="printingWritingPaper10"
+                                               class="form-control col-sm-3" ng-model="cs8.printingWritingPaper10">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Packaging</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="packaging10"
+                                               class="form-control col-sm-3" ng-model="cs8.packaging10">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+
+                    </div>
+                </div>
+
                 <div class="col-lg-12 fm-stl">
                     <h4 class="content-header">Communications</h4>
                     <p><b>
