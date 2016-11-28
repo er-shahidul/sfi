@@ -17,6 +17,7 @@ public class SicCs7ViewModel extends BaseViewModel {
     private Integer sfiNonCertifiedBmpRate;
     private String sfiFiberSourcingBmpSource;
     private String sfiForestManagementBmpSource;
+    private String monitoringBMPDetails;
     private String sfiNonCertifiedBmpSource;
     @NotNull(message = "{sic.cs7.monitorBMPCompliance}")
     private Boolean monitorBMPCompliance;
@@ -143,5 +144,13 @@ public class SicCs7ViewModel extends BaseViewModel {
 
     public void setBmpReportDoc(BlobNames bmpReportDoc) {
         this.bmpReportDoc = bmpReportDoc;
+    }
+
+    public String getMonitoringBMPDetails() {
+        return monitoringBMPDetails;
+    }
+
+    public void setMonitoringBMPDetails(String monitoringBMPDetails) {
+        this.monitoringBMPDetails = monitoringBMPDetails;
     }
 }

@@ -40,6 +40,9 @@ public class SicCs7 extends BaseEntityModel {
     @Column(name = "cs7_sfiFiberSourcingBmpSource", nullable = true)
     private String sfiFiberSourcingBmpSource;
 
+    @Column(name = "cs7_monitoringBMPDetails", nullable = true)
+    private String monitoringBMPDetails;
+
     @Column(name = "cs7_sfiForestManagementBmpSource", nullable = true)
     private String sfiForestManagementBmpSource;
 
@@ -184,5 +187,13 @@ public class SicCs7 extends BaseEntityModel {
 
     public void setBmpReportDoc(BlobNames bmpReportDoc) {
         this.bmpReportDocAsByteArray = TypeConversionUtils.serialize(bmpReportDoc);
+    }
+
+    public String getMonitoringBMPDetails() {
+        return monitoringBMPDetails;
+    }
+
+    public void setMonitoringBMPDetails(String monitoringBMPDetails) {
+        this.monitoringBMPDetails = monitoringBMPDetails;
     }
 }
