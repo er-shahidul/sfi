@@ -2,12 +2,11 @@
 
     <div ng-init="errors = cs2.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
-    <div class="col-sm-12" ng-class="{'disabled' : !isFieldsEnabled()}" >
-        <h5>2. Forestland Information</h5>
+    <div class="col-sm-12 sfiStep2TableHeader" ng-class="{'disabled' : !ownsForestLands()}">
+        <h5 class="section-header">2. Forestland Information</h5>
 
-        <form name="cs2Form" novalidate>
+        <form name="cs2Form" novalidate >
             <span>
-
                 Provide forestland information on all forests your organization owns/manages as well as forestland
                 included under the scope of your SFI certification.
             </span>
@@ -15,14 +14,16 @@
             <table class="table table-striped table-bordered" id="table1" border="1" style="margin-top: 6px;">
                 <thead>
                 <tr>
-                    <th style="min-width: 80px;"><span style="margin-top: -5px;">USA &</span> Canada <span tooltip data-placement="top" data-container="body" data-html="true"
-                                                       data-title='<b>A forested area</b> is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>Forestlands</span>
+                    <th style="min-width: 80px;"><span style="margin-top: -5px;">USA & </span><br/>Canada <span tooltip data-placement="top" data-container="body" data-html="true"
+                                                                                                                data-title='<b>A forested area</b> is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>Forestlands</span>
                     </th>
                     <th>USA & Canada Forestlands-Ownership /Management</th>
                     <th style="min-width: 155px;">Total area your organization owns/manages</th>
                     <th style="min-width: 155px;">
                         Total area certified to the SFI forest management standard<br/>
-                        <a ng-click="lastYear2Pop()">How we used your <br/>data last year</a>
+                        <u>
+                            <a ng-click="lastYear2Pop()">How we used your <br/>data last year</a>
+                        </u>
                     </th>
                     <th style="min-width: 155px;">
                         Area managed open to public for recreation<br/>
@@ -33,106 +34,107 @@
                             <a ng-click="lastYearPop()">How we used your <br/>data last year</a>
                         </u>
                     </th>
-                    <th width="24%">Check all recreation categories that<br/>apply to areas open to recreation on<br/>your managed land (new!)</th>
+                    <th width="24%">Check all recreation categories that<br/>apply to areas open to recreation on<br/>your managed land</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td style="text-align: left;" align="left" ng-class="{'disabled' : !operateInUsa()}">United States<br>(Private)</td>
+                    <td style="text-align: left;" align="left" ng-class="{'disabled' : !operateInUsa()}">United <br> States<br>(Private)</td>
 
                     <td style="text-align: left;" nowrap ng-class="{'disabled' : !operateInUsa()}">
                         <div >
                             <label class="checkboxLabel">Select One:</label>
                         </div>
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng1"    ng-model="cs2.usaPrivateForestlandOwnMng" value="1" icheck class="icheck">
-                            REIT/TIMO</label>
+                                <input readonly disabled type="radio" name="forestlandOwnMng1" ng-model="cs2.usaPrivateForestlandOwnMng" value="1" icheck class="icheck">
+                                REIT/TIMO</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                            <input type="radio" disabled  name="forestlandOwnMng1"    ng-model="cs2.usaPrivateForestlandOwnMng" value="2" icheck class="icheck" >
-                            Industrial</label>
+                                <input readonly disabled type="radio" name="forestlandOwnMng1" ng-model="cs2.usaPrivateForestlandOwnMng" value="2" icheck class="icheck" >
+                                Industrial</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                            <input type="radio" disabled  name="forestlandOwnMng1"    ng-model="cs2.usaPrivateForestlandOwnMng" value="3" icheck class="icheck">
-                            Conservation</label>
+                                <input readonly disabled type="radio" name="forestlandOwnMng1" ng-model="cs2.usaPrivateForestlandOwnMng" value="3" icheck class="icheck">
+                                Conservation</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                            <input type="radio" disabled  name="forestlandOwnMng1"    ng-model="cs2.usaPrivateForestlandOwnMng" value="4" icheck class="icheck">
-                            Family  Owned</label>
+                                <input readonly disabled type="radio" name="forestlandOwnMng1" ng-model="cs2.usaPrivateForestlandOwnMng" value="4" icheck class="icheck">
+                                Family  Owned</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                            <input type="radio" disabled  name="forestlandOwnMng1"    ng-model="cs2.usaPrivateForestlandOwnMng" value="5" icheck class="icheck">
-                            Tribal</label>
+                                <input readonly disabled type="radio" name="forestlandOwnMng1" ng-model="cs2.usaPrivateForestlandOwnMng" value="5" icheck class="icheck">
+                                Tribal</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                            <input type="radio" disabled  name="forestlandOwnMng1"    ng-model="cs2.usaPrivateForestlandOwnMng" value="6" icheck class="icheck">
-                            Non-profit</label>
+                                <input readonly disabled type="radio" name="forestlandOwnMng1" ng-model="cs2.usaPrivateForestlandOwnMng" value="6" icheck class="icheck">
+                                Non-profit</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                            <input type="radio" disabled  name="forestlandOwnMng1"    ng-model="cs2.usaPrivateForestlandOwnMng" value="7" icheck class="icheck">
-                            Other</label>
+                                <input readonly disabled type="radio" name="forestlandOwnMng1" ng-model="cs2.usaPrivateForestlandOwnMng" value="7" icheck class="icheck">
+                                Other</label>
                         </div>
-                        <input type="text" readonly class="form-control shorter" ng-show="cs2.usaPrivateForestlandOwnMng == 7" ng-model="cs2.usaPrivateForestlandOwnMngOther">
+                        <input readonly disabled type="text" class="form-control shorter" ng-show="cs2.usaPrivateForestlandOwnMng == 7" ng-model="cs2.usaPrivateForestlandOwnMngOther">
                     </td>
 
-                    <td ng-class="{'has-error has-feedback': error && cs2Form.item1.$invalid}">
+                    <td style="text-align: left;" ng-class="{'has-error has-feedback': error && cs2Form.item1.$invalid}">
 
-                        <input style="width:115px" type="number" readonly  class="form-control shorter"  min="0" name="item1"
+                        <input readonly disabled style="margin-top: 90px;width:115px" type="number" class="form-control shorter"  min="0" name="item1"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPrivateTotalAreaOwnOrManage"
-                               > {{ unit }}
+                               ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
-                    <td ng-class="{'has-error has-feedback': error && cs2Form.item2.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item2"
+                    <td style="text-align: left;" ng-class="{'has-error has-feedback': error && cs2Form.item2.$invalid}">
+                        <input readonly disabled style="margin-top: 90px;width:115px" type="number" class="form-control shorter" min="0" name="item2"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPrivateTotalAreaCertified"
-                               > {{ unit }}
+                               ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
-                    <td ng-class="{'has-error has-feedback': error && cs2Form.item3.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item3"
+                    <td style="text-align: left;" ng-class="{'has-error has-feedback': error && cs2Form.item3.$invalid}">
+                        <input readonly disabled style="margin-top: 90px;width:115px" type="number" class="form-control shorter" min="0" name="item3"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPrivateAreaManagedForPublic"
-                               > {{ unit }}
+                               ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
-                    <td ng-class="{'has-error has-feedback': error && cs2Form.item4.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item4"
+                    <td style="text-align: left;" ng-class="{'has-error has-feedback': error && cs2Form.item4.$invalid}">
+                        <input readonly disabled style="margin-top: 90px;width:115px" type="number" class="form-control shorter" min="0" name="item4"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPrivateAreaCertifiedForPublic"
-                               > {{ unit }}
+                               ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
-                    <td ng-class="{'disabled' : !operateInUsa()}">
+                    <td style="text-align: left;" ng-class="{'disabled' : !operateInUsa()}">
 
-                        <table width="90%" style="margin-left: 10px; min-width:225px;">
-
+                        <table width="90%" style="margin-top: 95px;margin-left: 10px; min-width:225px;">
                             <tr>
                                 <td>
-                                    <input type="checkbox" disabled  class="icheck" icheck name="item7"
-                                           checklist-model="cs2.usaPrivateRecreationCategories" checklist-value="'5'"
-                                           />
+                                    <div ng-disabled="!operateInUsa()">
+                                    <input disabled type="checkbox" class="icheck" icheck name="item7"
+                                           checklist-model="cs2.usaPrivateRecreationCategories" checklist-value="'5'"/>
                                     <label class="checkboxLabel" >Fee basis</label>
+                                    </div>
                                 </td>
 
                                 <td>
-                                    <input type="checkbox" disabled  class="icheck" icheck name="item8"
-                                           checklist-model="cs2.usaPrivateRecreationCategories" checklist-value="'6'"
-                                           />
+                                    <div ng-disabled="!operateInUsa()">
+                                    <input disabled type="checkbox" class="icheck" icheck name="item8"
+                                           checklist-model="cs2.usaPrivateRecreationCategories" checklist-value="'6'"/>
                                     <label class="checkboxLabel">No fee</label>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -142,86 +144,88 @@
                 </tr>
 
                 <tr>
-                    <td style="text-align: left;" align="left" ng-class="{'disabled' : !operateInUsa()}">United States<br>(Public)</td>
+                    <td align="left" ng-class="{'disabled' : !operateInUsa()}">United<br>States<br>(Public)</td>
                     <!-- v2 -->
-                    <td style="text-align: left;" nowrap ng-class="{'disabled' : !operateInUsa()}">
+                    <td nowrap ng-class="{'disabled' : !operateInUsa()}">
                         <div >
                             <label class="checkboxLabel">Select One:</label>
                         </div>
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng2"    ng-model="cs2.usaPublicForestlandOwnMng" value="1" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng2" ng-model="cs2.usaPublicForestlandOwnMng" value="1" icheck class="icheck">
                                 Federal</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng2"    ng-model="cs2.usaPublicForestlandOwnMng" value="2" icheck class="icheck" >
+                                <input readonly disabled type="radio" name="forestlandOwnMng2"  ng-model="cs2.usaPublicForestlandOwnMng" value="2" icheck class="icheck" >
                                 State</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng2"    ng-model="cs2.usaPublicForestlandOwnMng" value="3" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng2" ng-model="cs2.usaPublicForestlandOwnMng" value="3" icheck class="icheck">
                                 Country</label>
                         </div>
 
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInUsa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng2"    ng-model="cs2.usaPublicForestlandOwnMng" value="4" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng2" ng-model="cs2.usaPublicForestlandOwnMng" value="4" icheck class="icheck">
                                 Other</label>
                         </div>
-                        <input type="text" readonly class="form-control shorter" name="forestlandOwnMng2Other"
+                        <input readonly disabled type="text" class="form-control shorter" name="forestlandOwnMng2Other"
                                ng-show="cs2.usaPublicForestlandOwnMng == 4" ng-model="cs2.usaPublicForestlandOwnMngOther">
 
                     </td>
                     <!-- -/- -->
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item9.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item9"
+                        <input readonly disabled style="margin-top: 55px;width:115px" type="number" class="form-control shorter" min="0" name="item9"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPublicTotalAreaOwnOrManage"
-                               > {{ unit }}
+                               ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item10.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item10"
+                        <input readonly disabled style="margin-top: 55px;width:115px" type="number" class="form-control shorter" min="0" name="item10"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPublicTotalAreaCertified"
-                               > {{ unit }}
+                               ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item11.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item11"
+                        <input readonly disabled style="margin-top: 55px;width:115px" type="number" class="form-control shorter" min="0" name="item11"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPublicAreaManagedForPublic"
-                               > {{ unit }}
+                               ng-disabled="!operateInUsa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item12.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item12"
+                        <input readonly disabled style="margin-top: 55px;width:115px" type="number" class="form-control shorter" min="0" name="item12"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.usaPublicAreaCertifiedForPublic"
-                               >  {{ unit }}
+                               ng-disabled="!operateInUsa()">  {{ unit }}
 
                     </td>
 
                     <td ng-class="{'disabled' : !operateInUsa()}">
 
-                        <table width="90%" style="margin-left: 10px; min-width:225px;">
+                        <table width="90%" style="margin-top: 62px;margin-left: 10px; min-width:225px;">
                             <tr>
                                 <td>
-                                    <input type="checkbox" disabled  class="icheck" icheck name="item15"
-                                           checklist-model="cs2.usaPublicRecreationCategories" checklist-value="'5'"
-                                           />
+                                    <div ng-disabled="!operateInUsa()">
+                                    <input readonly disabled type="checkbox" class="icheck" icheck name="item15"
+                                           checklist-model="cs2.usaPublicRecreationCategories" checklist-value="'5'"/>
                                     <label class="checkboxLabel" >Fee basis</label>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input type="checkbox" disabled  class="icheck" icheck name="item16"
-                                           checklist-model="cs2.usaPublicRecreationCategories" checklist-value="'6'"
-                                           />
+                                    <div ng-disabled="!operateInUsa()">
+                                    <input readonly disabled type="checkbox" class="icheck" icheck name="item16"
+                                           checklist-model="cs2.usaPublicRecreationCategories" checklist-value="'6'"/>
                                     <label class="checkboxLabel">No fee</label>
+                                    </div>
                                 </td>
                             </tr>
                         </table>
@@ -231,87 +235,89 @@
 
 
                 <tr>
-                    <td style="text-align: left;" align="left" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Crown License)</td>
+                    <td align="left" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Crown <br>License)</td>
                     <!-- v2 -->
-                    <td style="text-align: left;" nowrap ng-class="{'disabled' : !operateInCa()}">
+                    <td nowrap ng-class="{'disabled' : !operateInCa()}">
                         <div >
                             <label class="checkboxLabel">Select One:</label>
                         </div>
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng3"    ng-model="cs2.caCrownForestlandOwnMng" value="1" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng3" ng-model="cs2.caCrownForestlandOwnMng" value="1" icheck class="icheck">
                                 Industrial</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng3"    ng-model="cs2.caCrownForestlandOwnMng" value="2" icheck class="icheck" >
+                                <input readonly disabled type="radio" name="forestlandOwnMng3" ng-model="cs2.caCrownForestlandOwnMng" value="2" icheck class="icheck" >
                                 Provincial</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng3"    ng-model="cs2.caCrownForestlandOwnMng" value="3" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng3" ng-model="cs2.caCrownForestlandOwnMng" value="3" icheck class="icheck">
                                 Federal</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng3"    ng-model="cs2.caCrownForestlandOwnMng" value="4" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng3" ng-model="cs2.caCrownForestlandOwnMng" value="4" icheck class="icheck">
                                 Aboriginal</label>
                         </div>
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng3"    ng-model="cs2.caCrownForestlandOwnMng" value="5" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng3" ng-model="cs2.caCrownForestlandOwnMng" value="5" icheck class="icheck">
                                 Other</label>
                         </div>
-                        <input type="text" readonly name="forestlandOwnMng3Other" class="form-control shorter"
+                        <input readonly disabled type="text" name="forestlandOwnMng3Other" class="form-control shorter"
                                ng-show="cs2.caCrownForestlandOwnMng == 5" ng-model="cs2.usaPrivateForestlandOwnMngOther">
                     </td>
                     <!-- -/- -->
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item17.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item17"
+                        <input readonly disabled style="margin-top: 55px;width:115px" type="number" class="form-control shorter" min="0" name="item17"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caCrownTotalAreaOwnOrManage"
-                               > {{ unit }}
+                               ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item18.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item18"
+                        <input readonly disabled style="margin-top: 55px;width:115px" type="number" class="form-control shorter" min="0" name="item18"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caCrownTotalAreaCertified"
-                               > {{ unit }}
+                               ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item19.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item19"
+                        <input readonly disabled style="margin-top: 55px;width:115px" type="number" class="form-control shorter" min="0" name="item19"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caCrownAreaManagedForPublic"
-                               > {{ unit }}
+                               ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item20.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item20"
+                        <input readonly disabled style="margin-top: 55px;width:115px" type="number" class="form-control shorter" min="0" name="item20"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caCrownAreaCertifiedForPublic"
-                               > {{ unit }}
+                               ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'disabled' : !operateInCa()}">
 
-                        <table width="90%" style="margin-left: 10px; min-width:225px;">
+                        <table width="90%" style="margin-top: 62px;margin-left: 10px; min-width:225px;">
                             <tr>
                                 <td>
-                                    <input type="checkbox" disabled  class="icheck" icheck name="item23"
-                                           checklist-model="cs2.caCrownRecreationCategories" checklist-value="'5'"
-                                           />
+                                    <div ng-disabled="!operateInCa()">
+                                    <input readonly disabled type="checkbox" class="icheck" icheck name="item23"
+                                           checklist-model="cs2.caCrownRecreationCategories" checklist-value="'5'"/>
                                     <label class="checkboxLabel" >Fee basis</label>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input type="checkbox" disabled  class="icheck" icheck name="item24"
-                                           checklist-model="cs2.caCrownRecreationCategories" checklist-value="'6'"
-                                           />
+                                    <div ng-disabled="!operateInCa()">
+                                    <input readonly disabled type="checkbox" class="icheck" icheck name="item24"
+                                           checklist-model="cs2.caCrownRecreationCategories" checklist-value="'6'"/>
                                     <label class="checkboxLabel">No fee</label>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -320,95 +326,97 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td style="text-align: left;" align="left" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Private Land)</td>
+                <tr class="active">
+                    <td align="left" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Private<br> Land)</td>
                     <!-- v2 -->
-                    <td style="text-align: left;" nowrap ng-class="{'disabled' : !operateInCa()}">
+                    <td nowrap ng-class="{'disabled' : !operateInCa()}">
                         <div >
                             <label class="checkboxLabel">Select One:</label>
                         </div>
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng4"    ng-model="cs2.caPrivateForestlandOwnMng" value="1" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng4" ng-model="cs2.caPrivateForestlandOwnMng" value="1" icheck class="icheck">
                                 Industrial</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng4"    ng-model="cs2.caPrivateForestlandOwnMng" value="2" icheck class="icheck" >
+                                <input readonly disabled type="radio" name="forestlandOwnMng4" ng-model="cs2.caPrivateForestlandOwnMng" value="2" icheck class="icheck" >
                                 Aboriginal</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng4"    ng-model="cs2.caPrivateForestlandOwnMng" value="3" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng4" ng-model="cs2.caPrivateForestlandOwnMng" value="3" icheck class="icheck">
                                 Family owned</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng4"    ng-model="cs2.caPrivateForestlandOwnMng" value="4" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng4" ng-model="cs2.caPrivateForestlandOwnMng" value="4" icheck class="icheck">
                                 Non-profit</label>
                         </div>
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng4"    ng-model="cs2.caPrivateForestlandOwnMng" value="5" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng4" ng-model="cs2.caPrivateForestlandOwnMng" value="5" icheck class="icheck">
                                 Conservation</label>
                         </div>
 
-                        <div class="radio">
+                        <div class="radio" style="margin-left: 12px;" ng-disabled="!operateInCa()">
                             <label class="checkboxLabel">
-                                <input type="radio" disabled  name="forestlandOwnMng4"    ng-model="cs2.caPrivateForestlandOwnMng" value="6" icheck class="icheck">
+                                <input readonly disabled type="radio" name="forestlandOwnMng4" ng-model="cs2.caPrivateForestlandOwnMng" value="6" icheck class="icheck">
                                 Other</label>
                         </div>
-                        <input type="text" readonly name="forestlandOwnMng4Other" class="form-control shorter"
+                        <input readonly disabled type="text" name="forestlandOwnMng4Other" class="form-control shorter"
                                ng-model="cs2.caPrivateForestlandOwnMngOther" ng-show="cs2.caPrivateForestlandOwnMng == 6">
                     </td>
                     <!-- -/- -->
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item25.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item25"
+                        <input readonly disabled style="margin-top: 65px;width:115px" type="number" class="form-control shorter" min="0" name="item25"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caPrivateTotalAreaOwnOrManage"
-                               > {{ unit }}
+                               ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item26.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item26"
+                        <input readonly disabled style="margin-top: 65px;width:115px" type="number" class="form-control shorter" min="0" name="item26"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caPrivateTotalAreaCertified"
-                               > {{ unit }}
+                               ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item27.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item27"
+                        <input readonly disabled style="margin-top: 65px;width:115px" type="number" class="form-control shorter" min="0" name="item27"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caPrivateAreaManagedForPublic"
-                               > {{ unit }}
+                               ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'has-error has-feedback': error && cs2Form.item28.$invalid}">
-                        <input style="width:115px" type="number" readonly  class="form-control shorter" min="0" name="item28"
+                        <input readonly disabled style="margin-top: 65px;width:115px" type="number" class="form-control shorter" min="0" name="item28"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
                                ng-model="cs2.caPrivateAreaCertifiedForPublic"
-                               > {{ unit }}
+                               ng-disabled="!operateInCa()"> {{ unit }}
                     </td>
 
                     <td ng-class="{'disabled' : !operateInCa()}">
 
-                        <table width="90%" style="margin-left: 10px; min-width:225px;">
+                        <table width="90%" style="margin-top: 70px;margin-left: 10px; min-width:225px;">
                             <tr>
-                                <td>
-                                    <input type="checkbox" disabled  class="icheck" icheck name="item31"
-                                           checklist-model="cs2.caPrivateRecreationCategories" checklist-value="'5'"
-                                           />
+                                <td style="margin-top: 65px;">
+                                    <div ng-disabled="!operateInCa()">
+                                    <input readonly disabled type="checkbox" class="icheck" icheck name="item31"
+                                           checklist-model="cs2.caPrivateRecreationCategories" checklist-value="'5'""/>
                                     <label class="checkboxLabel" >Fee basis</label>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input type="checkbox" disabled  class="icheck" icheck name="item32"
-                                           checklist-model="cs2.caPrivateRecreationCategories" checklist-value="'6'"
-                                           />
+                                    <div ng-disabled="!operateInCa()">
+                                    <input readonly disabled type="checkbox" class="icheck" icheck name="item32"
+                                           checklist-model="cs2.caPrivateRecreationCategories" checklist-value="'6'"/>
                                     <label class="checkboxLabel">No fee</label>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -420,56 +428,56 @@
             </table>
             <br><br>
 
-            <table class="table table-striped ">
+            <table class="table">
                 <thead>
                 <tr>
                     <th tooltip data-placement="top" data-container="body"
                         data-title="SFI is including this new question as it is helpful for SFI to know where companies have a presence so SFI can work together with program participants on emerging issues in different countries and relevant procurement policies.">
-                        Forestlands Outside USA & Canada (new!)
+                        Forestlands Outside USA & Canada
                     </th>
                     <th>Total area managed</th>
-                    <th width="50%">Is this area certified under a certification standard?</th>
+                    <th class="question-style" width="50%">Is this area certified under a certification standard?</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-class="{'disabled' : !operateInOthers()}"  ng-repeat="other in cs2.outsideCountries" ng-form="innerForm">
 
                     <td ng-class="{'has-error': isDirty (other) && innerForm.otherItem1.$invalid}">
-                        <select disabled class="form-control" id="otherItem1" name="otherItem1" customerror
+                        <div ng-disabled="!operateInOthers()">
+                        <select readonly disabled class="form-control" id="otherItem1" name="otherItem1" customerror
                                 ng-model="other.country.id">
                             <option value="" ng-selected="!other.country">Select Country</option>
                             <option ng-repeat="item in otherCountries"  ng-selected="other.country.id == item.id" value="{{ item.id }}">{{ item.country }}</option>
                         </select>
+                        </div>
                     </td>
 
                     <td ng-class="{'has-error': isDirty (other) && innerForm.otherItem2.$invalid}">
-                        <input type="number" readonly  class="form-control shorter" name="otherItem2"
+                        <div ng-disabled="!operateInOthers()">
+                        <input readonly disabled type="number" class="form-control shorter" name="otherItem2"
                                ng-pattern="/^\d*(\.\d{1,4})?$/"
                                ng-required="other.country.id"
                                pattern-msg="Enter decimal number up to 4 precision points" customerror
-                               ng-model="other.totalArea"
-                               ng-disabled="!operateInOthers()"> {{ unit }}
+                               ng-model="other.totalArea"> {{ unit }}
+                        </div>
                     </td>
                     <td>
-                        <div class="form-group hasRadioBoxes">
+                        <div class="form-group hasRadioBoxes" ng-disabled="!operateInOthers()">
 
-                            <input type="radio" disabled  ng-value="1" icheck name="otherItem{{$index}}3"
-                                   ng-model="other.underCertifiedStandard" ng-checked="true"
-                                   ng-disabled="!operateInOthers()">
+                            <input readonly disabled type="radio" ng-value="1" icheck name="otherItem{{$index}}3"
+                                   ng-model="other.underCertifiedStandard" ng-checked="true">
                             <label class="checkboxLabel">Yes</label>
-
                             &nbsp;&nbsp;&nbsp;
 
-                            <input type="radio" disabled  ng-value="0" class="icheck"
+                            <input readonly disabled type="radio" ng-value="0" class="icheck"
                                    ng-model="other.underCertifiedStandard"
-                                   ng-checked="!other.underCertifiedStandard"
-                                   ng-disabled="!operateInOthers()" icheck>
+                                   ng-checked="!other.underCertifiedStandard" icheck>
                             <label class="checkboxLabel">No</label>
 
                             <div class="floatright col-sm-7" ng-show="other.underCertifiedStandard"
                                  ng-class="{'has-error': isDirty (other) && innerForm.certificationBody.$invalid}">
 
-                                <select disabled class="form-control" name="standardType" ng-model="other.standardType"
+                                <select readonly disabled  class="form-control" name="standardType" ng-model="other.standardType"
                                         ng-required="other.underCertifiedStandard">
                                     <option value>Select Standard type</option>
                                     <option value="1" >PEFC endorsed standard</option>
@@ -481,7 +489,7 @@
                                 <div class="padded" ng-show="other.standardType == 4 "
                                      ng-class="{'has-error': isDirty (other) && innerForm.standardType.$invalid}">
                                     Specify standard &nbsp;&nbsp;&nbsp;
-                                    <input type="text" readonly name="certificationOther" class="form-control shorter" style="width: 50%;"
+                                    <input readonly disabled type="text" name="certificationOther" class="form-control shorter" style="width: 50%;"
                                            ng-maxlength="200" customerror
                                            ng-model="other.standardTypeOther"
                                            ng-required="other.underCertifiedStandard && other.standardType == 4">
@@ -492,59 +500,59 @@
                 </tr>
                 </tbody>
             </table>
-            <!--<a href="" ng-click="addOther()" ng-show="operateInOthers()">+ Add Another Country</a>-->
             <br><br>
 
 
         </form>
 
-        <div>
-            <h5>
-                Forest Conversion and Chemical Use
-            </h5>
+        <!--//// ok start ////-->
+        <form>
 
-            <p>
-                The 2015-2019 SFI Forest Management Standard has new performance measures related to forest conversion
-                and chemical use. These are important topics for brand owners and the conservation community, who are
-                seeking to reduce the perceived risks associated with forest conversion and chemical use. These new
-                requirements are
-                designed to help Program Participants identify and manage these risks. SFI would like to better
-                understand how Program Participants are managing these risks. We would also like to identify changes
-                that may have occurred to your forest management planning and/or operational practices.
-            </p>
+            <div>
+                <h5>
+                    Forest Conversion and Chemical Use
+                </h5>
+
+                <p>
+                    The 2015-2019 SFI Forest Management Standard has new performance measures related to forest conversion
+                    and chemical use. These are important topics for brand owners and the conservation community, who are
+                    seeking to reduce the perceived risks associated with forest conversion and chemical use. These new
+                    requirements are
+                    designed to help Program Participants identify and manage these risks. SFI would like to better
+                    understand how Program Participants are managing these risks. We would also like to identify changes
+                    that may have occurred to your forest management planning and/or operational practices.
+                </p>
+                <br>
+
+                <p>
+                    These specific questions will be asked year over year to understand perceived SFI programmatic risks.
+                </p>
+
+            </div>
             <br>
 
-            <p>
-                These specific questions will be asked year over year to understand perceived SFI programmatic risks.
-            </p>
+            <div>
+                <h5>
+                    Chemicals
+                </h5>
 
-        </div>
-        <br>
+                <p class="highlited-text question-style">
 
-        <div>
-            <h5>
-                Chemicals
-            </h5>
-
-            <p class="highlited-text">
-
-                Do you use a <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">WHO 1A</a> or <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">1B pesticide</a> in your operations?
-            </p>
-
-            <div class="content-pading">
-                <label>
-                    <input icheck type="radio" disabled  name="useWho1A1B" ng-model="cs2.useWho1A1B" ng-value="true" ng-checked="cs2.useWho1A1B"> Yes
-                    <input icheck type="radio" disabled  name="useWho1A1B" ng-model="cs2.useWho1A1B" ng-value="false" ng-checked="!cs2.useWho1A1B"> No
-                </label>
-
-                <p ng-show="cs2.useWho1A1B">
-                    Please provide the name of the pesticide used and the rationale for why no other viable alternative was available.
+                    Do you use a <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">WHO 1A or 1B pesticide</a> in your operations?
                 </p>
 
                 <div class="content-pading">
+                    <label>
+                        <input readonly disabled icheck type="radio" name="useWho1A1B" ng-model="cs2.useWho1A1B" ng-value="true" > Yes
+                        <input readonly disabled icheck type="radio" name="useWho1A1B" ng-model="cs2.useWho1A1B" ng-value="false" > No
+                    </label>
+
+                    <p ng-show="cs2.useWho1A1B">
+                        Please provide the name of the pesticide used and the rationale for why no other viable alternative was available.
+                    </p>
+
                     <div class="form-group" ng-show="cs2.useWho1A1B">
-                        <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="2" cols="70"
-                                  ng-model="cs2.useWho1A1BNote"></textarea>
+                        <textarea readonly disabled class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.useWho1A1BNote"></textarea>
                     </div>
                 </div>
 
@@ -557,8 +565,8 @@
                         </td>
                         <td>
                             <div style="margin-left: 20px;">
-                                <input icheck disabled type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="true" > Yes
-                                <input icheck disabled type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="false" > No
+                                <input readonly disabled icheck type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="true" > Yes
+                                <input readonly disabled icheck type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="false" > No
                             </div>
                         </td>
                     </tr>
@@ -570,7 +578,7 @@
                         </td>
                         <td>
                             <div class="form-group" ng-show="cs2.continueToUseIt" style="margin-top: 20px;margin-left: 20px;">
-                                <textarea disabled class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.continueToUseItExplain"></textarea>
+                                <textarea readonly disabled class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.continueToUseItExplain"></textarea>
                             </div>
                         </td>
                     </tr>
@@ -585,8 +593,8 @@
                         </td>
                         <td>
                             <div style="margin-left: 20px;">
-                                <input icheck disabled type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="true" > Yes
-                                <input icheck disabled type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="false" > No
+                                <input readonly disabled icheck type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="true" > Yes
+                                <input readonly disabled icheck type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="false" > No
                             </div>
                         </td>
                     </tr>
@@ -598,363 +606,356 @@
                         </td>
                         <td>
                             <div class="form-group" ng-show="cs2.plansToStopUsingIt != null" style="margin-top: 20px;margin-left: 20px;">
-                                <textarea disabled class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.plansToStopUsingItExplain"></textarea>
+                                <textarea readonly disabled class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.plansToStopUsingItExplain"></textarea>
                             </div>
                         </td>
                     </tr>
                 </table>
 
             </div>
+            <br>
 
-        </div>
-        <br>
-
-        <div>
-            <p class="highlited-text">
-                Did you stop using a <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">WHO 1A or 1B pesticide</a> in your operations due to requirements in the SFI 2015-2019 Forest Management Standard in 2016?
-            </p>
-
-            <div class="content-pading">
-                <label>
-                    <input icheck type="radio" disabled  name="stopWho1A1B" ng-model="cs2.stopWho1A1B" ng-value="true" ng-checked="cs2.stopWho1A1B"> Yes
-                    <input icheck type="radio" disabled  name="stopWho1A1B" ng-model="cs2.stopWho1A1B" ng-value="false" ng-checked="!cs2.stopWho1A1B"> No
-                </label>
-
-                <p ng-show="cs2.stopWho1A1B">
-                    Please provide the name of the pesticide that you stopped using.
+            <div>
+                <p class="highlited-text question-style">
+                    Did you stop using a <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">WHO 1A or 1B pesticide</a> in your operations due to requirements in the SFI 2015-2019 Forest Management Standard in 2016?
                 </p>
 
                 <div class="content-pading">
+                    <label>
+                        <input readonly disabled icheck type="radio" name="stopWho1A1B" ng-model="cs2.stopWho1A1B" ng-value="true" > Yes
+                        <input readonly disabled icheck type="radio" name="stopWho1A1B" ng-model="cs2.stopWho1A1B" ng-value="false" > No
+                    </label>
+
+                    <p ng-show="cs2.stopWho1A1B">
+                        Please provide the name of the pesticide that you stopped using.
+                    </p>
+
                     <div class="form-group" ng-show="cs2.stopWho1A1B">
-                        <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="2" cols="70"
-                                  ng-model="cs2.stopWho1A1BNote"></textarea>
+                        <textarea readonly disabled class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.stopWho1A1BNote"></textarea>
                     </div>
                 </div>
-            </div>
-
-        </div>
-        <br>
-
-        <div>
-            <h5>
-                Conversion
-            </h5>
-
-            <p class="highlited-text">
-                Did you convert one forest cover type to another forest cover type as defined by Indicator 1.2.1?
-            </p>
-
-            <div class="content-pading">
-                <label>
-                    <input icheck type="radio" disabled  name="convertForestCover" ng-model="cs2.convertForestCover" ng-value="true"  > Yes
-                    <input icheck type="radio" disabled  name="convertForestCover" ng-model="cs2.convertForestCover" ng-value="false" > No
-                </label>
-                <ul style="list-style-type: none" ng-show="cs2.convertForestCover">
-                    <p>Select all that apply</p>
-                    <li>
-                        <label>
-                            <input icheck type="checkbox" disabled  ng-model="cs2.restorationForestCover" value=1>
-                            Restoration of Historic Forest Cover.
-
-                        </label>
-                        <ul style="list-style-type: none" ng-show="cs2.restorationForestCover">
-                            <p>Select all that apply</p>
-
-                            <li>
-                                <label>
-                                    <input icheck type="checkbox" disabled  ng-model="cs2.restorationRiparianProtection" value=1>
-                                    <span tooltip title="Removal of loblolly-pine from riparian areas to allow re-establishment of hardwood species (US South); removal of alder from riparian areas to allow re-establishment of spruce species (PNW/BC) ">
-                                        Riparian protection
-                                    </span>
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.restorationRiparianProtection">
-                                    Area Converted
-                                    <select disabled style="width: 200px;" ng-mode="cs2.restorationRiparianArea">
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <input icheck type="checkbox" disabled  ng-model="cs2.restorationNativeForest" value=1>
-                                    <!--<div class="sub-content">-->
-                                        <span tooltip title="Re-establishment of longleaf pine from loblolly pine (US South); re-establishment of blister rust resistant western white pine (PNW)">
-                                            Native forest types
-                                        </span>
-                                    <!--</div>-->
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.restorationNativeForest">
-                                    Area Converted
-                                    <select disabled style="width: 200px;" ng-model="cs2.restorationNativeArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <input icheck type="checkbox" disabled  ng-model="cs2.restorationOther" value=1>
-                                    Other
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.restorationOther">
-                                    <p>Please explain</p>
-                                    <textarea readonly  rows="2" cols="38" ng-model="cs2.restorationOtherExplain"></textarea><br><br>
-                                    Area Converted
-                                    <select disabled style="width: 200px;" ng-model="cs2.restorationOtherArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <label>
-                            <input icheck type="checkbox" disabled  ng-model="cs2.respondingForestHealth" value=1>
-                            Responding to forest health concerns.
-                        </label>
-                        <ul style="list-style-type: none" ng-show="cs2.respondingForestHealth">
-
-                            <p>Select all that apply</p>
-                            <li>
-                                <label>
-                                    <input icheck type="checkbox" disabled  ng-model="cs2.respondingInvasiveSpecies">
-                                    <span tooltip title="Removal of non-native species like Empress tree (pawlonia spp.) (US South)">Invasive species</span>
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.respondingInvasiveSpecies">
-                                    Area Converted
-                                    <select disabled style="width: 200px;" ng-model="cs2.respondingInvasiveArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <input icheck type="checkbox" disabled  ng-model="cs2.respondingDiseaseIssues">
-                                    <span tooltip title="planting western red-cedar in areas with Douglas fir root rot; planting Douglas fir in areas with western white pine blister rust (PNW)">Disease issues</span>
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.respondingDiseaseIssues">
-                                    Area Converted
-                                    <select disabled style="width: 200px;" ng-model="cs2.respondingDiseaseArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" disabled  icheck ng-model="cs2.respondingInsect">
-                                    <span tooltip title="Establishing Douglas fir or spruce in areas severely impacted by mountain pine beetle (Western Canada and PNW/Rocky Mtn. States); establishing pine species in areas severely impacted by spruce bud-worm (New England and Maritimes)">Insect</span>
-
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.respondingInsect">
-                                    Area Converted
-                                    <select disabled style="width: 200px;" ng-model="cs2.respondingInsectArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" disabled  icheck ng-model="cs2.respondingOther">
-                                    Other
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.respondingOther">
-                                    <p>Please explain</p>
-                                    <textarea readonly  rows="2" cols="38" ng-model="cs2.respondingOtherExplain"></textarea><br><br>
-                                    Area Converted
-                                    <select disabled  style="width: 200px;" ng-model="cs2.respondingOtherArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <label>
-                            <input icheck type="checkbox" disabled  ng-model="cs2.mitigatingEnvironmentalHarm" value=1>
-                            Mitigating Present or Future Environmental Harm.
-                        </label>
-                        <ul style="list-style-type: none" ng-show="cs2.mitigatingEnvironmentalHarm">
-                            <p>Select all that apply</p>
-
-                            <li>
-                                <label>
-                                    <input type="checkbox" disabled  name="ecologicalImpactsSite" icheck ng-model="cs2.ecologicalImpactsSite">
-                                    <span tooltip  title="Establishing stands of more drought hardy species in regions of prolonged drought (US South and California); establishing stands with species that are more resistant to abiotic damage (US South); establishing species at the landscape level that are not prone to ungulate browse (PNW, BC)">Ecological impacts of conversion - review at the site level</span>
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.ecologicalImpactsSite">
-                                    Area Converted
-                                    <select disabled  style="width: 200px;" ng-model="cs2.ecologicalImpactsSiteArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" disabled  icheck ng-model="cs2.ecologicalImpactsLandscape">
-                                    <span tooltip title="Establishing stands of more drought hardy species in regions of prolonged drought (US South and California); establishing stands with species that are more resistant to abiotic damage; establishing species at the landscape level that are not prone to ungulate browse (PNW, BC)">Ecological impacts of conversion - review at the landscape scale</span>
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.ecologicalImpactsLandscape">
-                                    Area Converted
-                                    <select disabled  style="width: 200px;" ng-model="cs2.ecologicalImpactsLandscapeArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" disabled  icheck ng-model="cs2.environmentalHarmOther"> Other
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.environmentalHarmOther">
-                                    <p>Please explain</p>
-                                    <textarea readonly  rows="2" cols="38" ng-model="cs2.environmentalHarmOtherExplain"></textarea><br><br>
-                                    Area Converted
-                                    <select disabled  style="width: 200px;" ng-model="cs2.environmentalHarmOtherArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <label>
-                            <input icheck type="checkbox" disabled  ng-model="cs2.economicReasons">
-                            Economic reasons.
-                        </label>
-                        <ul style="list-style-type: none" ng-show="cs2.economicReasons">
-                            <p>Select all that apply</p>
-
-                            <li>
-                                <label>
-                                    <input type="checkbox" disabled  icheck ng-model="cs2.economicProductivity">
-                                    <span tooltip title="Removal of species considered as ‘off-site’ and therefore not achieving the potential of the site-index for the site e.g. Douglas fir planted on wetter sites (PNW, BC)">Productivity</span>
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.economicProductivity">
-                                    Area Converted
-                                    <select disabled  style="width: 200px;" ng-model="cs2.economicProductivityArea">
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" disabled  icheck ng-model="cs2.economicStandQuality">
-                                    <span tooltip title="Stand is exhibiting defects due to poor genetics that will result in reduced log quality – sinuosity or double leaders in Douglas fir, spruce, etc.">Stand quality</span>
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.economicStandQuality">
-                                    Area Converted
-                                    <select disabled  style="width: 200px;" ng-model="cs2.economicStandArea">
-                                        <option>
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                        </option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" disabled  icheck ng-model="cs2.economicOther">
-                                    Other
-                                </label>
-
-                                <div class="sub-content" ng-show="cs2.economicOther">
-                                    <p>Please explain</p>
-                                    <textarea readonly  rows="2" cols="38" ng-model="cs2.economicOtherExplain"></textarea><br><br>
-                                    Area Converted
-                                    <select disabled  style="width: 200px;" ng-model="cs2.economicOtherArea">
-                                        <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
-                                    </select>
-                                </div>
-                            </li>
-
-                        </ul>
-
-                    </li>
-                </ul>
 
             </div>
             <br>
 
             <div>
-                <p>
-                    Did you convert any forest lands not covered under the scope of your SFI certificate to other land
-                    uses in 2015 (e.g. agriculture)?
+                <h5>
+                    Conversion
+                </h5>
+
+                <p class="highlited-text question-style">
+                    Did you convert one forest cover type to another forest cover type as defined by Indicator 1.2.1?
                 </p>
 
                 <div class="content-pading">
                     <label>
-                        <input icheck type="radio" disabled  name="convertForestLand" ng-model="cs2.convertForestLand" ng-value="true"> Yes
-                        <input icheck type="radio" disabled  name="convertForestLand" ng-model="cs2.convertForestLand" ng-value="false"> No
+                        <input readonly disabled icheck type="radio" name="convertForestCover" ng-model="cs2.convertForestCover" ng-value="true"  > Yes
+                        <input readonly disabled icheck type="radio" name="convertForestCover" ng-model="cs2.convertForestCover" ng-value="false" > No
                     </label>
+                    <ul style="list-style-type: none;width:55%;" ng-show="cs2.convertForestCover">
+                        <p>Select all that apply</p>
+                        <li>
+                            <label>
+                                <input readonly disabled icheck type="checkbox" ng-model="cs2.restorationForestCover" value=1>
+                                Restoration of Historic Forest Cover.
+
+                            </label>
+                            <ul style="list-style-type: none" ng-show="cs2.restorationForestCover">
+                                <p>Select all that apply</p>
+
+                                <li>
+                                    <label>
+                                        <input readonly disabled icheck type="checkbox" ng-model="cs2.restorationRiparianProtection" value=1>
+                                    <span tooltip title="Removal of loblolly-pine from riparian areas to allow re-establishment of hardwood species (US South); removal of alder from riparian areas to allow re-establishment of spruce species (PNW/BC) ">
+                                        Riparian protection
+                                    </span>
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.restorationRiparianProtection">
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.restorationRiparianArea">
+                                            <option value="0" ng-selected="!cs2.restorationRiparianArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <label>
+                                        <input readonly disabled icheck type="checkbox" ng-model="cs2.restorationNativeForest" value=1>
+                                        <!--<div class="sub-content">-->
+                                        <span tooltip title="Re-establishment of longleaf pine from loblolly pine (US South); re-establishment of blister rust resistant western white pine (PNW)">
+                                            Native forest types
+                                        </span>
+                                        <!--</div>-->
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.restorationNativeForest">
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.restorationNativeArea">
+                                            <option value="0" ng-selected="!cs2.restorationNativeArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <label>
+                                        <input readonly disabled icheck type="checkbox" ng-model="cs2.restorationOther" value=1>
+                                        Other
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.restorationOther">
+                                        <p>Please explain</p>
+                                        <textarea readonly disabled rows="2" style="width: 100%;" ng-model="cs2.restorationOtherExplain"></textarea><br><br>
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.restorationOtherArea">
+                                            <option value="0" ng-selected="!cs2.restorationOtherArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input readonly disabled icheck type="checkbox" ng-model="cs2.respondingForestHealth" value=1>
+                                Responding to forest health concerns.
+                            </label>
+                            <ul style="list-style-type: none" ng-show="cs2.respondingForestHealth">
+
+                                <p>Select all that apply</p>
+                                <li>
+                                    <label>
+                                        <input readonly disabled icheck type="checkbox" ng-model="cs2.respondingInvasiveSpecies">
+                                        <span tooltip title="Removal of non-native species like Empress tree (pawlonia spp.) (US South)">Invasive species</span>
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.respondingInvasiveSpecies">
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.respondingInvasiveArea">
+                                            <option value="0" ng-selected="!cs2.respondingInvasiveArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+
+                                <li>
+                                    <label>
+                                        <input readonly disabled icheck type="checkbox" ng-model="cs2.respondingDiseaseIssues">
+                                        <span tooltip title="Planting western red-cedar in areas with Douglas fir root rot; planting Douglas fir in areas with western white pine blister rust (PNW)">Disease issues</span>
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.respondingDiseaseIssues">
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.respondingDiseaseArea">
+                                            <option value="0" ng-selected="!cs2.respondingDiseaseArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <label>
+                                        <input readonly disabled type="checkbox" icheck ng-model="cs2.respondingInsect">
+                                        <span tooltip title="Establishing Douglas fir or spruce in areas severely impacted by mountain pine beetle (Western Canada and PNW/Rocky Mtn. States); establishing pine species in areas severely impacted by spruce bud-worm (New England and Maritimes)">Insect</span>
+
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.respondingInsect">
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.respondingInsectArea">
+                                            <option value="0" ng-selected="!cs2.respondingInsectArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input readonly disabled type="checkbox" icheck ng-model="cs2.respondingOther">
+                                        Other
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.respondingOther">
+                                        <p>Please explain</p>
+                                        <textarea readonly disabled rows="2" style="width: 100%;" ng-model="cs2.respondingOtherExplain"></textarea><br><br>
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.respondingOtherArea">
+                                            <option value="0" ng-selected="!cs2.respondingOtherArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <label>
+                                <input readonly disabled icheck type="checkbox" ng-model="cs2.mitigatingEnvironmentalHarm" value=1>
+                                Mitigating Present or Future Environmental Harm.
+                            </label>
+                            <ul style="list-style-type: none" ng-show="cs2.mitigatingEnvironmentalHarm">
+                                <p>Select all that apply</p>
+                                <li>
+                                    <label>
+                                        <input readonly disabled type="checkbox" name="ecologicalImpactsSite" icheck ng-model="cs2.ecologicalImpactsSite">
+                                        <span tooltip  title="Establishing stands of more drought hardy species in regions of prolonged drought (US South and California); establishing stands with species that are more resistant to abiotic damage (US South); establishing species at the landscape level that are not prone to ungulate browse (PNW, BC)">Ecological impacts of conversion - review at the site level</span>
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.ecologicalImpactsSite">
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.ecologicalImpactsSiteArea">
+                                            <option value="0" ng-selected="!cs2.ecologicalImpactsSiteArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <label>
+                                        <input readonly disabled type="checkbox" icheck ng-model="cs2.ecologicalImpactsLandscape">
+                                        <span tooltip title="Establishing stands of more drought hardy species in regions of prolonged drought (US South and California); establishing stands with species that are more resistant to abiotic damage; establishing species at the landscape level that are not prone to ungulate browse (PNW, BC)">Ecological impacts of conversion - review at the landscape scale</span>
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.ecologicalImpactsLandscape">
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.ecologicalImpactsLandscapeArea">
+                                            <option value="0" ng-selected="!cs2.ecologicalImpactsLandscapeArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input readonly disabled type="checkbox" icheck ng-model="cs2.environmentalHarmOther"> Other
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.environmentalHarmOther">
+                                        <p>Please explain</p>
+                                        <textarea readonly disabled rows="2" style="width: 100%;" ng-model="cs2.environmentalHarmOtherExplain"></textarea><br><br>
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.environmentalHarmOtherArea">
+                                            <option value="0" ng-selected="!cs2.environmentalHarmOtherArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <label>
+                                <input readonly disabled icheck type="checkbox" ng-model="cs2.economicReasons">
+                                Economic reasons.
+                            </label>
+                            <ul style="list-style-type: none" ng-show="cs2.economicReasons">
+                                <p>Select all that apply</p>
+
+                                <li>
+                                    <label>
+                                        <input readonly disabled type="checkbox" icheck ng-model="cs2.economicProductivity">
+                                        <span tooltip title="Removal of species considered as ‘off-site’ and therefore not achieving the potential of the site-index for the site e.g. Douglas fir planted on wetter sites (PNW, BC)">Productivity</span>
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.economicProductivity">
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.economicProductivityArea">
+                                            <option value="0" ng-selected="!cs2.economicProductivityArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input readonly disabled type="checkbox" icheck ng-model="cs2.economicStandQuality">
+                                        <span tooltip title="Stand is exhibiting defects due to poor genetics that will result in reduced log quality – sinuosity or double leaders in Douglas fir, spruce, etc.">Stand quality</span>
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.economicStandQuality">
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.economicStandArea">
+                                            <option value="0" ng-selected="!cs2.economicStandArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <label>
+                                        <input readonly disabled type="checkbox" icheck ng-model="cs2.economicOther">
+                                        Other
+                                    </label>
+
+                                    <div class="sub-content" ng-show="cs2.economicOther">
+                                        <p>Please explain</p>
+                                        <textarea readonly disabled rows="2" style="width: 100%;" ng-model="cs2.economicOtherExplain"></textarea><br><br>
+                                        Area Converted
+                                        <select readonly disabled  style="width: 70%;" ng-model="cs2.economicOtherArea" >
+                                            <option value="0" ng-selected="!cs2.economicOtherArea">< Select One ></option>
+                                            <option value="1">0 - 10 acres</option><option value="2">11 - 100 acres</option><option value="3">Over 100 acres</option><option value="4">Over 1,000 acres</option>                                    </select>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </li>
+                    </ul>
+
+                </div>
+                <br>
+                <div>
+                    <p class="question-style">
+                        Did you convert any forest lands not covered under the scope of your SFI certificate to other land
+                        uses in 2015 (e.g. agriculture)?
+                    </p>
 
                     <div class="content-pading">
+                        <label>
+                            <input readonly disabled icheck type="radio" name="convertForestLand" ng-model="cs2.convertForestLand" ng-value="true"> Yes
+                            <input readonly disabled icheck type="radio" name="convertForestLand" ng-model="cs2.convertForestLand" ng-value="false"> No
+                        </label>
+
+
                         <div class="form-group" ng-show="cs2.convertForestLand">
                             <p>
                                 Please explain
                             </p>
-                            <textarea class="form-control col-lg-11" style="font-weight: normal;" readonly  rows="2" cols="70"
-                                      ng-model="cs2.convertForestLandExplain"></textarea>
+                            <textarea readonly disabled class="form-control col-lg-11" rows="2" cols="70" ng-model="cs2.convertForestLandExplain"></textarea>
                         </div>
                     </div>
+
                 </div>
 
             </div>
+            <br>
 
-        </div>
-        <br>
+
+
+
 
         </form>
         <form name="forestlandForm" >
 
-            <div class="col-lg-12 passage-bold">
+            <div class="passage-bold">
                 <p>
                     Provide the area of your managed forestland that was converted by region (state/province)
                 </p>
                 <br>
 
-                <div class="col-lg-12">
-                    <table class="table table-striped col-lg-12">
+                <div>
+                    <table class="table table-striped">
                         <thead>
                         <td><label>Acres converted of our managed forest land</label></td>
                         <td><label>Region</label></td>
-                        <td></td>
                         </thead>
                         <tbody>
                         <tr ng-repeat="forestlandArea in cs2.forestlandAreas">
                             <td class="col-lg-5">{{ forestlandArea.area }} AC</td>
                             <td class="col-lg-5">{{ forestlandArea.region.name }}</td>
                         </tr>
-                        <tr></tr>
                         </tbody>
                     </table>
 
@@ -962,6 +963,12 @@
             </div>
         </form>
         <br>
+
+
+
+
+
+
 
 
     </div>
