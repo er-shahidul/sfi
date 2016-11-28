@@ -4,7 +4,7 @@
     <form name="cs1Form"  novalidate>
 
         <div class="col-sm-7">
-            <h5>1. Profile</h5>
+            <h5 class="section-header">1. Profile</h5>
 
             <div class="form-group">
                 <label>Program participant: {{ company.name }}</label>
@@ -14,13 +14,13 @@
                  ng-class="{'has-error has-feedback':  cs1Form.companyWebsite.$invalid}">
 
                 <label>Organization website (e.g. www.google.com)</label>
-                <input type="text" readonly name="companyWebsite" class="form-control"
+                <input readonly disabled type="text" name="companyWebsite" class="form-control"
                        ng-model="cs1.companyWebsite" ng-maxlength="200"
                        ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
                        pattern-msg="Please enter a valid url" customerror>
             </div>
 
-            <!-- Number of employees -->
+            <!-- Number of employees  -->
             <div class="form-group">
 
                 <label>Number of employees (enter a number)</label>
@@ -28,27 +28,33 @@
                 <!-- v2 -->
                 <div class="form-horizontal">
                     <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.numberEmployeesUSA.$invalid}">
-                        <label class="col-sm-2 control-label">United States:</label>
+                        <div class="col-sm-3" style="padding-right: 0;line-height: 3;">
+                            <label class="control-label">United States:</label>
+                        </div>
                         <div class="col-sm-5">
-                            <input type="number" readonly class="form-control shorter" maxlength="200"
+                            <input readonly disabled type="number" class="form-control shorter" maxlength="200"
                                    name="numberEmployeesUSA" ng-model="cs1.numberEmployeesUSA">
                         </div>
                     </div>
 
                     <div>
                         <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.numberEmployeesCA.$invalid}">
-                            <label class="col-sm-2 control-label">Canada:</label>
+                            <div class="col-sm-3" style="padding-right: 0;line-height: 3;">
+                                <label class="control-label">Canada:</label>
+                            </div>
                             <div class="col-sm-5">
-                                <input type="number" readonly class="form-control shorter" maxlength="200"
+                                <input readonly disabled type="number" class="form-control shorter" maxlength="200"
                                        name="numberEmployeesCA" ng-model="cs1.numberEmployeesCA">
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.numberEmployeesOther.$invalid}">
-                            <label class="col-sm-2 control-label">Outside US/Canada:</label>
+                            <div class="col-sm-3" style="padding-right: 0;line-height: 3;">
+                                <label class="control-label">Outside US/Canada:</label>
+                            </div>
                             <div class="col-sm-5">
-                                <input type="number" readonly class="form-control shorter" maxlength="200"
+                                <input readonly disabled type="number" class="form-control shorter" maxlength="200"
                                        name="numberEmployeesOther" ng-model="cs1.numberEmployeesOther">
                             </div>
                         </div>
@@ -60,57 +66,60 @@
             <!-- Company description -->
             <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.companyDesc.$invalid}">
                 <label>SFI would like to feature your organization in an updated public certificate database and on the SFI website. In a short paragraph, please share what makes your organization unique. We invite you to involve your communications and marketing colleagues, if relevant.</label>
-                <textarea style="height: 165px;" readonly  class="form-control" name="companyDesc"
+                <textarea readonly disabled style="height: 165px;" class="form-control" name="companyDesc"
                           ng-model="cs1.companyDesc" ng-maxlength="4000" max-word-count="650" customerror
+                          pattern-msg="Provide text of max 4000 length (approx 650 words)"
                           tooltip data-placement="right" data-container="body"
                           data-title="Provide a short company description."></textarea>
             </div>
 
-            <div class="form-group">
+            <div class="form-group form-group-new">
                 <p>Please answer the following questions for ALL of your forestland and manufacturing operations/mills/log yards for your organization whether they fall under the scope of your SFI certificate or not:</p>
 
-                <label ng-if="!isSfiSecondary()">My company/organization:</label>
 
-                <div class="form-group">
+                <!-- label for primary -->
+                <label ng-if="!isSfiSecondary()">My company/organization:</label>
+                <!-- -/- -->
+
+                <div class="form-group form-group-new">
 
                     <!-- Owns and/or manages forest land -->
-                    <div class="form-group" ng-if="!isSfiSecondary()">
+                    <div class="form-group form-group-new" ng-if="!isSfiSecondary()">
 
 
-                        <input type="checkbox" disabled name="ownsMngLands" class="icheck" icheck ng-model="cs1.ownsMngLands"/>
+                        <input readonly disabled type="checkbox" name="ownsMngLands" class="icheck" icheck ng-model="cs1.ownsMngLands"/>
                         <label class="checkboxLabel"
                                tooltip data-placement="right" data-container="body"
                                data-title='A forested area is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>
-                            Owns and/or manages forest lands in:</label>
+                            Owns and/or manages forestlands in:</label>
 
                         <!-- V2 -->
-                        <div class="form-group" ng-show="cs1.ownsMngLands">
+                        <div class="form-group form-group-new" ng-show="cs1.ownsMngLands">
 
-                            <div class="form-group">
-                                <input type="checkbox" disabled name="ownsMngLandsInUSA" ng-model="cs1.ownsMngLandsInUSA" class="icheck" icheck />
+                            <div class="form-group form-group-new">
+                                <input readonly disabled type="checkbox" name="ownsMngLandsInUSA" ng-model="cs1.ownsMngLandsInUSA" class="icheck" icheck />
                                 <label class="checkboxLabel">United States</label>
                             </div>
 
-                            <div class="form-group">
-                                <input type="checkbox" disabled name="ownsMngLandsInCA" ng-model="cs1.ownsMngLandsInCA"  class="icheck" icheck />
+                            <div class="form-group form-group-new">
+                                <input readonly disabled type="checkbox" name="ownsMngLandsInCA" ng-model="cs1.ownsMngLandsInCA"  class="icheck" icheck />
                                 <label class="checkboxLabel">Canada</label>
                             </div>
 
-                            <div class="form-group">
-                                <input type="checkbox" disabled name="ownsMngLandsInOther" class="icheck" ng-model="cs1.ownsMngLandsInOther" icheck>
+                            <div class="form-group form-group-new">
+                                <input readonly disabled type="checkbox" name="ownsMngLandsInOther" class="icheck" ng-model="cs1.ownsMngLandsInOther" icheck>
                                 <label class="checkboxLabel">Other </label>
 
-                                <div class="form-group" ng-init="other1 = 0">
+                                <div class="form-group form-group-new" ng-init="other1 = 0">
 
                                     <div class="padded" ng-show="cs1.ownsMngLandsInOther" ng-class="{'has-error has-feedback':  cs1.ownsMngLandsInOther && !cs1.ownsMngLandsOtherCountries.length}">
 
-                                        <select disabled  class="form-control" ng-model="other1" ng-change="other1 = addOtherCountry(cs1.ownsMngLandsOtherCountries, other1)">
+                                        <select readonly disabled class="form-control" ng-model="other1" ng-change="other1 = addOtherCountry(cs1.ownsMngLandsOtherCountries, other1)">
                                             <option value="0">Select country</option>
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
 
-                                        <div ng-repeat="country in cs1.ownsMngLandsOtherCountries" id="selectedItem">{{country.country}}&nbsp;
-
+                                        <div ng-repeat="country in cs1.ownsMngLandsOtherCountries" id="selectedItem">{{country.country}}
                                         </div>
 
                                     </div>
@@ -121,40 +130,38 @@
 
 
                     <!-- Has primary manufacturing operations/mills/log yards located in -->
-                    <div class="form-group" ng-if="!isSfiSecondary()">
-
-                        <input type="checkbox" disabled name="hasPrimaryOperMillsYards"
+                    <div class="form-group form-group-new" ng-if="!isSfiSecondary()">
+                        <input readonly disabled type="checkbox" name="hasPrimaryOperMillsYards"
                                ng-model="cs1.hasPrimaryOperMillsYards" class="icheck" icheck />
                         <label class="checkboxLabel">Has primary manufacturing operations/mills/log yards located in</label>
 
                         <!-- V2 -->
-                        <div class="form-group" ng-show="cs1.hasPrimaryOperMillsYards">
+                        <div class="form-group form-group-new" ng-show="cs1.hasPrimaryOperMillsYards">
 
-                            <div class="form-group">
-                                <input type="checkbox" disabled name="hasPrimaryOperMillsYardsInUSA" ng-model="cs1.hasPrimaryOperMillsYardsInUSA" class="icheck" icheck />
+                            <div class="form-group form-group-new">
+                                <input readonly disabled type="checkbox" name="hasPrimaryOperMillsYardsInUSA" ng-model="cs1.hasPrimaryOperMillsYardsInUSA" class="icheck" icheck />
                                 <label class="checkboxLabel">United States</label>
                             </div>
 
-                            <div class="form-group">
-                                <input type="checkbox" disabled name="hasPrimaryOperMillsYardsInCA" ng-model="cs1.hasPrimaryOperMillsYardsInCA"  class="icheck" icheck />
+                            <div class="form-group form-group-new">
+                                <input readonly disabled type="checkbox" name="hasPrimaryOperMillsYardsInCA" ng-model="cs1.hasPrimaryOperMillsYardsInCA"  class="icheck" icheck />
                                 <label class="checkboxLabel">Canada</label>
                             </div>
 
-                            <div class="form-group">
-                                <input type="checkbox" disabled name="hasPrimaryOperMillsYardsInOther" class="icheck" ng-model="cs1.hasPrimaryOperMillsYardsInOther" icheck>
+                            <div class="form-group form-group-new">
+                                <input readonly disabled type="checkbox" name="hasPrimaryOperMillsYardsInOther" class="icheck" ng-model="cs1.hasPrimaryOperMillsYardsInOther" icheck>
                                 <label class="checkboxLabel">Other </label>
 
-                                <div class="form-group" ng-init="other2 = 0">
+                                <div class="form-group form-group-new" ng-init="other2 = 0">
 
                                     <div class="padded" ng-show="cs1.hasPrimaryOperMillsYardsInOther" ng-class="{'has-error has-feedback': cs1.hasPrimaryOperMillsYardsInOther && !cs1.primaryOperMillsYardsOtherCountries.length}">
 
-                                        <select disabled  class="form-control" ng-model="other2" ng-change="other2 = addOtherCountry(cs1.primaryOperMillsYardsOtherCountries, other2)">
+                                        <select readonly disabled class="form-control" ng-model="other2" ng-change="other2 = addOtherCountry(cs1.primaryOperMillsYardsOtherCountries, other2)">
                                             <option value="0">Select country</option>
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
 
-                                        <div ng-repeat="country in cs1.primaryOperMillsYardsOtherCountries" id="selectedItem">{{ country.country }}&nbsp;
-
+                                        <div ng-repeat="country in cs1.primaryOperMillsYardsOtherCountries" id="selectedItem">{{ country.country }}
                                         </div>
 
                                     </div>
@@ -166,51 +173,56 @@
 
 
                     <!-- Has secondary manufacturing facilities -->
-                    <div class="form-group">
+                    <div class="form-group form-group-new">
 
+                        <!-- label for primary -->
                         <div ng-hide="isSfiSecondary()">
-                            <input type="checkbox" disabled name="hasSecondaryOperMillsYards"
-                                   ng-model="cs1.hasSecondaryOperMillsYards" class="icheck" icheck />
+
+                            <input readonly disabled class="icheck"
+                                   type="checkbox"
+                                   name="hasSecondaryOperMillsYards"
+                                   ng-model="cs1.hasSecondaryOperMillsYards"  icheck />
 
                             <label class="checkboxLabel">Has manufacturing or processing facilities located in:</label>
+
                         </div>
+                        <!-- -/- -->
 
                         <!-- lable for secondary -->
                         <label ng-show="isSfiSecondary()">My company/organization has secondary manufacturing facilities located in:</label>
                         <!-- -/- -->
 
-                        <div class="form-group" ng-show="cs1.hasSecondaryOperMillsYards">
+                        <div class="form-group form-group-new" ng-show="cs1.hasSecondaryOperMillsYards">
 
-                            <div class="form-group">
-                                <input type="checkbox" disabled name="hasSecondaryOperMillsYardsInUSA"
+                            <div class="form-group form-group-new">
+                                <input readonly disabled type="checkbox" name="hasSecondaryOperMillsYardsInUSA"
                                        ng-model="cs1.hasSecondaryOperMillsYardsInUSA" class="icheck" icheck />
                                 <label class="checkboxLabel">United States</label>
                             </div>
 
-                            <div class="form-group">
-                                <input type="checkbox" disabled name="hasSecondaryOperMillsYardsInCA"
+                            <div class="form-group form-group-new">
+                                <input readonly disabled type="checkbox" name="hasSecondaryOperMillsYardsInCA"
                                        ng-model="cs1.hasSecondaryOperMillsYardsInCA"  class="icheck" icheck />
                                 <label class="checkboxLabel">Canada</label>
                             </div>
 
-                            <div class="form-group">
-                                <input type="checkbox" disabled name="hasSecondaryOperMillsYardsInOther" class="icheck"
+                            <div class="form-group form-group-new">
+                                <input readonly disabled type="checkbox" name="hasSecondaryOperMillsYardsInOther" class="icheck"
                                        ng-model="cs1.hasSecondaryOperMillsYardsInOther" icheck>
                                 <label class="checkboxLabel">Other </label>
 
 
 
-                                <div class="form-group" ng-init="other3 = 0">
+                                <div class="form-group form-group-new" ng-init="other3 = 0">
 
                                     <div class="padded" ng-show="cs1.hasSecondaryOperMillsYardsInOther" ng-class="{'has-error has-feedback':  cs1.hasSecondaryOperMillsYardsInOther && !cs1.secondaryOperMillsYardsOtherCountries.length}">
 
-                                        <select disabled  class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs1.secondaryOperMillsYardsOtherCountries, other3)">
+                                        <select readonly disabled class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs1.secondaryOperMillsYardsOtherCountries, other3)">
                                             <option value="0">Select country</option>
                                             <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
                                         </select>
 
-                                        <div ng-repeat="country in cs1.secondaryOperMillsYardsOtherCountries" id="selectedItem">{{ country.country }}&nbsp;
-
+                                        <div ng-repeat="country in cs1.secondaryOperMillsYardsOtherCountries" id="selectedItem">{{ country.country }}
                                         </div>
 
                                     </div>
@@ -221,17 +233,17 @@
                     </div>
 
                     <!-- Countries your organization sells into -->
-                    <div class="form-group" ng-init="other4 = 0"
+                    <div class="form-group " ng-init="other4 = 0"
                          ng-class="{'has-error has-feedback':  !cs1.sellsCountries}">
 
                         <label class="checkboxLabel"
                                tooltip data-placement="right" data-container="body"
                                data-title='Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products). This market information will help SFI identify organizations with a shared country interest whether to positively influence procurement policies and/or organize promotion of SFI products shipped outside the U.S.A. or Canada, e.g. to be featured in the 2020 Tokyo Games or the World Expo in Milan.'
-                                >Countries your organization sells into (new!)</label>
+                        >Countries your organization sells into </label>
 
-                        <select disabled  class="form-control"
+                        <select readonly disabled class="form-control"
                                 ng-model="other4"
-                                ng-change="other4 = addSellCountry(cs1.sellsCountries, other4)"
+                                ng-change="other4 = addSellCountry(cs1.sellsCountries, other4,'Please select a region that has not already been selected.')"
                                 tooltip data-placement="right" data-container="body"
                                 data-title="Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products)">
                             <option value="0">Select All that apply</option>
@@ -239,8 +251,7 @@
                         </select>
 
 
-                        <div id="selectedItem" ng-repeat="country in cs1.sellsCountries">{{ country.country }} &nbsp;
-
+                        <div id="selectedItem" ng-repeat="country in cs1.sellsCountries">{{ country.country }}
                         </div>
                     </div>
 
@@ -250,36 +261,34 @@
 
         </div>
 
-    <!-- RIGHT SECTION -->
-    <div class="col-sm-offset-1 col-sm-4 print-hide">
-        <div class="panel panel-success" style="width: 250px;">
-            <div class="panel-heading">
-                <h3 class="panel-title">About the Form</h3>
+        <!-- RIGHT SECTION -->
+        <div class="col-sm-offset-1 col-sm-4">
+            <div class="panel panel-success" style="width: 250px;">
+                <div class="panel-heading">
+                    <h3 class="panel-title">About the Form</h3>
+                </div>
+                <div class="panel-body">
+                    Thank you to all participants who submitted data last year! This year we are sharing key summary data points collected trhough this survey. Use the 'How we used your data last year' hyperlink to see additional data summaries.
+                </div>
             </div>
-            <div class="panel-body">
-                Thank you to all participants who submitted data last year! This year we are sharing key summary data points collected trhough this survey. Use the 'How we used your data last year' hyperlink to see additional data summaries.
+            <div class="panel panel-success" style="width: 250px;">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Quick Tips</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>Use section titles to navigate through the survey</li>
+                        <li>Use the 'Save' button to save your data</li>
+                        <li>Use the 'Submit' button to submit your survey</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <img src="/assets/images/SurveyImage_GlobalReach_2016.jpg" style="width: 250px;">
+                <div class="pading-botoms"></div>
             </div>
         </div>
-        <div class="panel panel-success" style="width: 250px;">
-            <div class="panel-heading">
-                <h3 class="panel-title">Quick Tips</h3>
-            </div>
-            <div class="panel-body">
-                <ul>
-                    <li>Use section titles to navigate through the survey</li>
-                    <li>Use the 'Save' button to save your data</li>
-                    <li>Use the 'Submit' button to submit your survey</li>
-                </ul>
-            </div>
-        </div>
-        <div>
-            <img src="/assets/images/SurveyImage_GlobalReach_2016.jpg" style="width: 250px;">
-            <div class="pading-botoms"></div>
-        </div>
-    </div>
-    <!-- -/- -->
-
-
+        <!-- -/- -->
     </form>
     {{setForms()}}
 
