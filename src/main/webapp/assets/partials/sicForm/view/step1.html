@@ -89,8 +89,8 @@
 
                 <div style="padding-bottom: 20px">
                     <p><b>Please choose the best description of how the SFI Implementation Committee (SIC) is organized?</b></p>
-                    <select disabled   style="width: 560px;" class="form-control" ng-model="$scope.sicOrgDescription">
-                        <option ng-selected="!$scope.sicOrgDescription">Select</option>
+                    <select disabled style="width: 560px;" class="form-control" ng-model="cs1.sicOrgDescription" name="sicOrgDescription">
+                        <option ng-selected="!cs1.sicOrgDescription">Select</option>
                         <option value="1">Fully independent (IRS or state designated non-profit status)</option>
                         <option value="2">Semi-autonomous with services or support provided from local forestry association, i.e. independent sub-committee</option>
                         <option value="3">Forestry association committee (with forestry association staffing)</option>
@@ -127,7 +127,6 @@
                 </div>
 
                 <div id="selectedItem" ng-repeat="file in cs1.contactFiles" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                    <button ng-click="deleteByIndex($index, cs1.contactFiles)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                 </div>
                 <br>
             </div>
@@ -580,7 +579,7 @@
         <br>
 
         <div class="col-lg-12" style="padding-top: 30px;">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <p>
                     <b>
                         For the CURRENT calendar year, list dates and locations of meetings, conferences, or tradeshows or events in which your committee is participating and describe your involvement.                    </b>
@@ -610,7 +609,7 @@
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <p ng-if="$index == 0" style="padding-top:13px;"><b>SIC involvement, if not a committee meeting?</b></p>
+                                <p ng-if="$index == 0" style="padding-top:13px;text-align: left;"><b>SIC involvement, if not a committee meeting?</b></p>
                                 <select disabled class="form-control"
                                          ng-model="involvement"
                                          ng-change="region = addBucket(meeting.involvement, involvement, involvements)">
