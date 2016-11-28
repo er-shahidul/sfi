@@ -1,878 +1,955 @@
 <div class="row">
-
+    <div ng-init="errors = cs2.errors" ng-include="'/assets/partials/form/error.html'"></div>
     <div class="col-sm-12">
         <form name="cs2Form">
-        <!--Right Side Start
-        -------------
-        -------------------------------
-        ----------------------------------->
-        <div class="passage-bold">
-            <div class="col-lg-8">
-                <h5>
-                    2. Funding & Expenditures
-                </h5>
-                <p>
-                    <b>
-                        What is your committee’s fee structure? (new!)
-                    </b>
-                </p>
-                <ul class="list-style fm-stl">
-                    <li>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="1">  Assessment on Production and/or acreage
-                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 1)" ng-model="cs2.committeeFeeSpecify1">
-                        </label>
-                    </li>
-                    <li>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="2">  Sliding Scale/Tiered approach
-                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 2)" ng-model="cs2.committeeFeeSpecify2">
-                        </label>
-                    </li>
-                    <li>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="3"> Flat Fee
-                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 3)" ng-model="cs2.committeeFeeSpecify3">
-                        </label>
-                    </li>
-                    <li>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="4"> Fundraising activities
-                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 4)" ng-model="cs2.committeeFeeSpecify4">
-                        </label>
-                    </li>
-                    <li>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="5"> In-kind contributions
-                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 5)" ng-model="cs2.committeeFeeSpecify5">
-                        </label>
-                    </li>
-                    <li>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled  name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="6"> Other
-                            <input style="font-weight:400;" class="form-control" type="text" readonly  placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 6)" ng-model="cs2.committeeFeeSpecify6">
-                        </label>
-                    </li>
-                </ul>
-                <br>
-                <div class="fm-stl">
+            <!--Right Side Start
+            -------------
+            -------------------------------
+            ----------------------------------->
+            <div class="col-lg-12">
+                <div class="col-lg-8">
+                    <h5>
+                        2. Funding & Expenditures
+                    </h5>
                     <p>
                         <b>
-                        Are fees only for SFI Program Participants and SFI Applicants?
+                            What is your committee’s fee structure? (new!)
                         </b>
                     </p>
-                    <label>
-                        <input type="radio" disabled  name="freesProgramApplicants" ng-model="cs2.freesProgramApplicants" ng-value="true" ng-checked="cs2.freesProgramApplicants">  Yes
-                    </label>
-                    <label>
-                        <input type="radio" disabled  name="freesProgramApplicants" ng-model="cs2.freesProgramApplicants" ng-value="false" ng-checked="!cs2.freesProgramApplicants">   No
-                    </label>
+                    <ul class="list-style fm-stl">
+                        <li>
+                            <label class="form-inline">
+                                <input readonly disabled type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="1">  Assessment on Production and/or acreage
+
+                            </label>
+                            <input readonly disabled style="font-weight:400; width: 50%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 1)" ng-model="cs2.committeeFeeSpecify1">
+                        </li>
+                        <li>
+                            <label class="form-inline">
+                                <input readonly disabled type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="2">  Sliding Scale/Tiered approach
+
+                            </label>
+                            <input readonly disabled style="font-weight:400;width: 60%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 2)" ng-model="cs2.committeeFeeSpecify2">
+                        </li>
+                        <li>
+                            <label class="form-inline">
+                                <input readonly disabled type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="3"> Flat Fee
+
+                            </label>
+                            <input readonly disabled style="font-weight:400; width: 80%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 3)" ng-model="cs2.committeeFeeSpecify3">
+                        </li>
+                        <li>
+                            <label class="form-inline">
+                                <input readonly disabled type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="4"> Fundraising activities
+                            </label>
+                            <input readonly disabled style="font-weight:400; width: 70%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 4)" ng-model="cs2.committeeFeeSpecify4">
+                        </li>
+                        <li>
+                            <label class="form-inline">
+                                <input readonly disabled type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="5"> In-kind contributions
+                            </label>
+                            <input readonly disabled style="font-weight:400; width: 70%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 5)" ng-model="cs2.committeeFeeSpecify5">
+                        </li>
+                        <li>
+                            <label class="form-inline">
+                                <input readonly disabled type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="6"> Other
+                            </label>
+                            <input readonly disabled style="font-weight:400; width: 85%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 6)" ng-model="cs2.committeeFeeSpecify6">
+
+                        </li>
+                    </ul>
+                    <br>
+                    <div class="fm-stl">
+                        <p>
+                            <b>
+                                Are fees only for SFI Program Participants and SFI Applicants?
+                            </b>
+                        </p>
+                        <label>
+                            <input readonly disabled type="radio" name="freesProgramApplicants" ng-model="cs2.freesProgramApplicants" ng-value="true" ng-checked="cs2.freesProgramApplicants">  Yes
+                        </label>
+                        <label>
+                            <input readonly disabled type="radio" name="freesProgramApplicants" ng-model="cs2.freesProgramApplicants" ng-value="false" ng-checked="!cs2.freesProgramApplicants">   No
+                        </label>
+                    </div>
+
+                    <div class="fm-stl">
+                        <p>
+                            <b>
+                                How much money was contributed last calendar year by SIC supporters and project partners for SFI Implementation Committee – sponsored activities and projects? (Please note: these are dollars raised outside of the committee’s fee structure, i.e. contributions made by non-SFI Program Participants and non-SFI Applicants.)
+                            </b>
+                        </p>
+                        <label class="form-inline">
+                            <b>Amount</b>
+                            <input readonly disabled class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  customerror ng-model="cs2.spentBySicSupporters">
+                            <u><span style="font-weight: normal;" class="curency" id="supportCurrency" ng-click="setCurrency('supportCurrency', cs2)">{{ gerCurrency(cs2.supportCurrency) }}</span></u>
+                        </label>
+
+                    </div>
+
+                    <br>
+
+                    <div class="fm-stl">
+                        <p>
+                            <b>
+                                How much money was spent last calendar year by your committee for SFI Implementation Committee-sponsored activities and projects?
+                            </b>
+                        </p>
+                        <label class="form-inline" ng-class="{'has-error' : cs2.spentByYourCommittee != getTotal() }">
+                            <b>Amount</b>
+                            <input readonly disabled class="form-control" name="spentByYourCommittee" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.spentByYourCommittee">
+                            <u><span style="font-weight: normal;" class="curency" id="committeeCurrency" ng-click="setCurrency('committeeCurrency', cs2)">{{ gerCurrency(cs2.committeeCurrency) }}</span></u>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="col-lg-4" style="text-align: right">
+                    <img style="width: 250px;" src="/assets/images/SICsec2_Image_Invested_2016.jpg">
                 </div>
             </div>
-            <div class="col-lg-4 print-hide" style="text-align: right; padding-right: 0;">
-                <img style="width: 275px;" src="/assets/images/SICsec2_Image_Invested_2016.jpg">
-            </div>
-        </div>
-        <br>
-        <div class="col-lg-12 fm-stl">
-            <div class="col-lg-8">
-                <p>
-                    <b>
-                        How much money was contributed last calendar year by SIC supporters and project partners for SFI Implementation Committee – sponsored activities and projects? (Please note: these are dollars raised outside of the committee’s fee structure, i.e. contributions made by non-SFI Program Participants and non-SFI Applicants.)
-                    </b>
-                </p>
-                <label class="form-inline">
-                    <b>Amount</b>
-                    <input class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  customerror ng-model="cs2.spentBySicSupporters">
-                    <u><span style="font-weight: normal;" class="curency" id="supportCurrency" >{{ gerCurrency(cs2.supportCurrency) }}</span></u>
-                </label>
+            <br>
 
-            </div>
-        </div>
-        <br>
-        <div class="col-lg-12 fm-stl" style="padding-top: 30px;">
-            <div class="col-lg-8">
-                <p>
-                    <b>
-                        How much money was spent last calendar year by your committee for SFI Implementation Committee-sponsored activities and projects?
-                    </b>
-                </p>
-                <label class="form-inline">
-                    <b>Amount</b>
-                    <input class="form-control" type="number" readonly  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.spentByYourCommittee">
-                    <u> <span style="font-weight: normal;" class="curency" id="committeeCurrency" >{{ gerCurrency(cs2.committeeCurrency) }}</span></u>
-                </label>
+            <br>
+            <div class="col-lg-12" style="padding-top: 30px;">
+                <div class="col-lg-12">
+                    <p>
+                        <b>
+                            How much was spent on the following activities? (Based on the above reported total, please break down how funds were spent, as best possible)
+                        </b>
+                    </p>
+                    <table border="1" style="line-height: 15px;" class="boxsize">
+                        <tr>
+                            <th class="col-lg-2">Activity or Project</th>
+                            <th class="col-lg-2">
+                                Direct Spending
+                                <u><span class="curency" id="directCurrency" ng-click="setCurrency('directCurrency', cs2)">{{ gerCurrency(cs2.directCurrency) }}</span></u>
+                            </th>
+                            <th class="col-lg-2">In-Kind Support</th>
+                            <th class="col-lg-5">Details</th>
+                        </tr>
 
-            </div>
-        </div>
-        <br>
-        <div class="col-lg-12" style="padding-top: 30px;">
-            <div class="col-lg-12">
-                <p>
-                    <b>
-                    How much was spent on the following activities? (Based on the above reported total, please break down how funds were spent, as best possible)
-                    </b>
-                </p>
-                <table border="1" style="line-height: 15px;" class="boxsize">
-                    <tr>
-                        <th class="col-lg-2">Activity or Project</th>
-                        <th class="col-lg-2">
-                            Direct Spending
-                            <u><span class="curency" id="directCurrency" >{{ gerCurrency(cs2.directCurrency) }}</span></u>
-                        </th>
-                        <th class="col-lg-2">In-Kind Support</th>
-                        <th class="col-lg-5">Details</th>
-                    </tr>
+                        <tr>
+                            <td>Logger training and education</td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending1.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending1" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending1">
+                            </td>
+                            <td>
+                                <div class="fm-stl">
+                                    <label>
+                                        <input readonly disabled type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="true" ng-checked="cs2.inKindSupport1">  Yes
+                                    </label>
+                                    <label>
+                                        <input readonly disabled type="radio" type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="false" ng-checked="!cs2.inKindSupport1">  No
+                                    </label>
+                                </div>
+                                <div ng-show="cs2.inKindSupport1">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText1" ng-model="cs2.inKindSupportText1" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails1">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
 
-                    <tr>
-                        <td>Logger training and education</td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending1.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending1" type="number" readonly ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending1">
-                        </td>
-                        <td>
-                            <div class="fm-stl">
-                                <label>
-                                    <input type="radio" disabled name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="true" ng-checked="cs2.inKindSupport1">  Yes
-                                </label>
-                                <label>
-                                    <input type="radio" disabled type="radio" name="inKindSupport1" ng-model="cs2.inKindSupport1" ng-value="false" ng-checked="!cs2.inKindSupport1">  No
-                                </label>
-                            </div>
-                            <div ng-show="cs2.inKindSupport1">
-                                <input type="text" readonly class="form-control" readonly name="inKindSupportText1" ng-model="cs2.inKindSupportText1" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" name="" readonly type="text" ng-model="cs2.spendActivityDetails1">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile.originalDocumentName }}</span>
-                                        </div>
-                                        <span class="input-group-addon btn default btn-file">
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile.originalDocumentName }}</span>
+                                            </div>
+                                    <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile.originalDocumentName">
-                                        <a ng-click="guideFile = {}; " ng-show="guideFile.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile = saveUploadedFile(guideFile, cs2.guideFiles)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Landowner outreach</td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending2.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending2" readonly type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending2">
-                        </td>
-                        <td>
-                            <div class="fm-stl">
-                                <label>
-                                    <input  type="radio"  disabled name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="true" ng-checked="cs2.inKindSupport2">  Yes
-                                </label>
-                                <label>
-                                    <input  type="radio" disabled  name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="false" ng-checked="!cs2.inKindSupport2">  No
-                                </label>
-                            </div>
-                            <div ng-show="cs2.inKindSupport2">
-                                <input type="text" class="form-control" readonly name="inKindSupportText2" ng-model="cs2.inKindSupportText2" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" name="" readonly type="text" ng-model="cs2.spendActivityDetails2">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile2.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile.originalDocumentName">
+                                            <a ng-click="guideFile = {}; " ng-show="guideFile.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile = saveUploadedFile(guideFile, cs2.guideFiles)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Landowner outreach</td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending2.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending2" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending2">
+                            </td>
+                            <td>
+                                <div class="fm-stl">
+                                    <label>
+                                        <input readonly disabled  type="radio"  name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="true" ng-checked="cs2.inKindSupport2">  Yes
+                                    </label>
+                                    <label>
+                                        <input readonly disabled  type="radio"  name="inKindSupport2" ng-model="cs2.inKindSupport2" ng-value="false" ng-checked="!cs2.inKindSupport2">  No
+                                    </label>
+                                </div>
+                                <div ng-show="cs2.inKindSupport2">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText2" ng-model="cs2.inKindSupportText2" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails2">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile2, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile2.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile2.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile2.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile2.originalDocumentName">
-                                        <a ng-click="guideFile2 = {}; " ng-show="guideFile2.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile2 = saveUploadedFile(guideFile2, cs2.guideFiles2)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles2"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>American Tree Farm System activities</td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending3.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending3" type="number" readonly ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending3">
-                        </td>
-                        <td>
-                            <div class="fm-stl">
-                                <label>
-                                    <input  type="radio"  disabled name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="true" ng-checked="cs2.inKindSupport3">  Yes
-                                </label>
-                                <label>
-                                    <input  type="radio" disabled name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="false" ng-checked="!cs2.inKindSupport3">  No
-                                </label>
-                            </div>
-                            <div ng-show="cs2.inKindSupport3">
-                                <input type="text" class="form-control" readonly name="inKindSupportText3" ng-model="cs2.inKindSupportText3" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" name="" readonly type="text" ng-model="cs2.spendActivityDetails3">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile3.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile2.originalDocumentName">
+                                            <a ng-click="guideFile2 = {}; " ng-show="guideFile2.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile2 = saveUploadedFile(guideFile2, cs2.guideFiles2)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles2"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>American Tree Farm System activities</td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending3.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending3" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending3">
+                            </td>
+                            <td>
+                                <div class="fm-stl">
+                                    <label>
+                                        <input readonly disabled  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="true" ng-checked="cs2.inKindSupport3">  Yes
+                                    </label>
+                                    <label>
+                                        <input readonly disabled  type="radio"  name="inKindSupport3" ng-model="cs2.inKindSupport3" ng-value="false" ng-checked="!cs2.inKindSupport3">  No
+                                    </label>
+                                </div>
+                                <div ng-show="cs2.inKindSupport3">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText3" ng-model="cs2.inKindSupportText3" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails3">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile3, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile3.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile3.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile3.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile3.originalDocumentName">
-                                        <a ng-click="guideFile3 = {}; " ng-show="guideFile3.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile3 = saveUploadedFile(guideFile3, cs2.guideFiles3)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles3"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Project Learning Tree activities</td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending4.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending4" readonly type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending4">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  name="inKindSupport4" disabled ng-model="cs2.inKindSupport4" ng-value="true" ng-checked="cs2.inKindSupport4">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio"  name="inKindSupport4" disabled ng-model="cs2.inKindSupport4" ng-value="false" ng-checked="!cs2.inKindSupport4">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport4">
-                                <input type="text" class="form-control" readonly name="inKindSupportText4" ng-model="cs2.inKindSupportText4" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" name="" type="text" readonly ng-model="cs2.spendActivityDetails4">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile4.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile3.originalDocumentName">
+                                            <a ng-click="guideFile3 = {}; " ng-show="guideFile3.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile3 = saveUploadedFile(guideFile3, cs2.guideFiles3)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles3"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Project Learning Tree activities</td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending4.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending4" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending4">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="true" ng-checked="cs2.inKindSupport4">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport4" ng-model="cs2.inKindSupport4" ng-value="false" ng-checked="!cs2.inKindSupport4">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport4">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText4" ng-model="cs2.inKindSupportText4" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails4">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile4, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile4.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile4.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile4.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile4.originalDocumentName">
-                                        <a ng-click="guideFile4 = {}; " ng-show="guideFile4.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile4 = saveUploadedFile(guideFile4, cs2.guideFiles4)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles4"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="“Provide further details in Section 3.”">Other Youth Education/Outreach</span></td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending5.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending5" readonly type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending5">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  disabled name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="true" ng-checked="cs2.inKindSupport5">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio" disabled name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="false" ng-checked="!cs2.inKindSupport5">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport5">
-                                <input type="text" readonly class="form-control" readonly name="inKindSupportText5" ng-model="cs2.inKindSupportText5" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" readonly name="" type="text" ng-model="cs2.spendActivityDetails5">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile5.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile4.originalDocumentName">
+                                            <a ng-click="guideFile4 = {}; " ng-show="guideFile4.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile4 = saveUploadedFile(guideFile4, cs2.guideFiles4)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles4"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title=" “Provide further details in Section 3.” ">Other Youth Education/Outreach</span></td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending5.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending5" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending5">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="true" ng-checked="cs2.inKindSupport5">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport5" ng-model="cs2.inKindSupport5" ng-value="false" ng-checked="!cs2.inKindSupport5">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport5">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText5" ng-model="cs2.inKindSupportText5" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails5">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile5, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile5.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile5.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile5.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile5.originalDocumentName">
-                                        <a ng-click="guideFile5 = {}; " ng-show="guideFile5.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile5 = saveUploadedFile(guideFile5, cs2.guideFiles5)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles5"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="“Provide further details in Section 3.”">Other Community outreach activities</span></td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending6.$invalid }">
-                            <input class="form-control" readonly style="width: 80px;" name="directSpending6" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending6">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  disabled name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="true" ng-checked="cs2.inKindSupport6">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio" disabled name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="false" ng-checked="!cs2.inKindSupport6">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport6">
-                                <input type="text" readonly class="form-control" readonly name="inKindSupportText6" ng-model="cs2.inKindSupportText6" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" readonly name="" type="text" ng-model="cs2.spendActivityDetails6">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile6.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile5.originalDocumentName">
+                                            <a ng-click="guideFile5 = {}; " ng-show="guideFile5.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile5 = saveUploadedFile(guideFile5, cs2.guideFiles5)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles5"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title=" “Provide further details in Section 3.” ">Other Community outreach activities</span></td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending6.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending6" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending6">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="true" ng-checked="cs2.inKindSupport6">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport6" ng-model="cs2.inKindSupport6" ng-value="false" ng-checked="!cs2.inKindSupport6">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport6">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText6" ng-model="cs2.inKindSupportText6" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails6">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile6, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile6.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile6.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile6.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile6.originalDocumentName">
-                                        <a ng-click="guideFile6 = {}; " ng-show="guideFile6.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile6 = saveUploadedFile(guideFile6, cs2.guideFiles6)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles6"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Communication/market outreach</td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending7.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending7" readonly type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending7">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  name="inKindSupport7" disabled  ng-model="cs2.inKindSupport7" ng-value="true" ng-checked="cs2.inKindSupport7">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio"  name="inKindSupport7" disabled ng-model="cs2.inKindSupport7" ng-value="false" ng-checked="!cs2.inKindSupport7">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport7">
-                                <input type="text" class="form-control" readonly name="inKindSupportText7" ng-model="cs2.inKindSupportText7" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" name="" type="text" readonly ng-model="cs2.spendActivityDetails7">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile7.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile6.originalDocumentName">
+                                            <a ng-click="guideFile6 = {}; " ng-show="guideFile6.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile6 = saveUploadedFile(guideFile6, cs2.guideFiles6)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles6"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Communication/market outreach</td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending7.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending7" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending7">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="true" ng-checked="cs2.inKindSupport7">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport7" ng-model="cs2.inKindSupport7" ng-value="false" ng-checked="!cs2.inKindSupport7">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport7">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText7" ng-model="cs2.inKindSupportText7" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails7">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile7, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile7.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile7.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile7.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile7.originalDocumentName">
-                                        <a ng-click="guideFile7 = {}; " ng-show="guideFile7.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile7 = saveUploadedFile(guideFile7, cs2.guideFiles7)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles7"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> <span tooltip data-placement="top" data-container="body" data-html="true"  data-title="“Includes research, watershed protection, or water conservation projects”">Water Quality Protection</span></td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending8.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending8" readonly type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending8">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  name="inKindSupport8" disabled  ng-model="cs2.inKindSupport8" ng-value="true" ng-checked="cs2.inKindSupport8">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio"  name="inKindSupport8" disabled ng-model="cs2.inKindSupport8" ng-value="false" ng-checked="!cs2.inKindSupport8">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport8">
-                                <input type="text" class="form-control" readonly name="inKindSupportText8" ng-model="cs2.inKindSupportText8" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" name="" readonly type="text" ng-model="cs2.spendActivityDetails8">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile8.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile7.originalDocumentName">
+                                            <a ng-click="guideFile7 = {}; " ng-show="guideFile7.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile7 = saveUploadedFile(guideFile7, cs2.guideFiles7)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles7"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span tooltip data-placement="top" data-container="body" data-html="true"  data-title="“Includes research, watershed protection, or water conservation projects”">Water Quality Protection</span></td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending8.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending8" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending8">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="true" ng-checked="cs2.inKindSupport8">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport8" ng-model="cs2.inKindSupport8" ng-value="false" ng-checked="!cs2.inKindSupport8">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport8">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText8" ng-model="cs2.inKindSupportText8" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails8">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile8, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile8.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile8.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile8.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile8.originalDocumentName">
-                                        <a ng-click="guideFile8 = {}; " ng-show="guideFile8.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile8 = saveUploadedFile(guideFile8, cs2.guideFiles8)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles8"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="“Provide further details in Section 3.”">Conservation Research</span></td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending9.$invalid }">
-                            <input class="form-control" readonly style="width: 80px;" name="directSpending9" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending9">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio" disabled name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="true" ng-checked="cs2.inKindSupport9">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio" disabled  name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="false" ng-checked="!cs2.inKindSupport9">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport9">
-                                <input type="text" disabled class="form-control" readonly name="inKindSupportText9" ng-model="cs2.inKindSupportText9" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" readonly name="" type="text" ng-model="cs2.spendActivityDetails9">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile9.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile8.originalDocumentName">
+                                            <a ng-click="guideFile8 = {}; " ng-show="guideFile8.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile8 = saveUploadedFile(guideFile8, cs2.guideFiles8)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles8"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="“Provide further details in Section 3.”">Conservation Research</span></td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending9.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending9" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending9">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="true" ng-checked="cs2.inKindSupport9">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport9" ng-model="cs2.inKindSupport9" ng-value="false" ng-checked="!cs2.inKindSupport9">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport9">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText9" ng-model="cs2.inKindSupportText9" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails9">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile9, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile9.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile9.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile9.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile9.originalDocumentName">
-                                        <a ng-click="guideFile9 = {}; " ng-show="guideFile9.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile9 = saveUploadedFile(guideFile9, cs2.guideFiles9)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles9"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="“Provide further details in Section 3.”">Other Research</span></td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending10.$invalid }">
-                            <input class="form-control" readonly style="width: 80px;" name="directSpending10" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending10">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  disabled name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="true" ng-checked="cs2.inKindSupport10">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio" disabled name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="false" ng-checked="!cs2.inKindSupport10">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport10">
-                                <input type="text" class="form-control" readonly name="inKindSupportText10" ng-model="cs2.inKindSupportText10" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" readonly name="" type="text" ng-model="cs2.spendActivityDetails10">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile10.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile9.originalDocumentName">
+                                            <a ng-click="guideFile9 = {}; " ng-show="guideFile9.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile9 = saveUploadedFile(guideFile9, cs2.guideFiles9)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles9"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span tooltip data-placement="top" data-container="body" data-html="true" data-title="“Provide further details in Section 3.”">Other Research</span></td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending10.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending10" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending10">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="true" ng-checked="cs2.inKindSupport10">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport10" ng-model="cs2.inKindSupport10" ng-value="false" ng-checked="!cs2.inKindSupport10">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport10">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText10" ng-model="cs2.inKindSupportText10" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails10">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile10, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile10.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile10.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile10.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile10.originalDocumentName">
-                                        <a ng-click="guideFile10 = {}; " ng-show="guideFile10.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile10 = saveUploadedFile(guideFile10, cs2.guideFiles10)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles10"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Administration</td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending11.$invalid }">
-                            <input class="form-control" readonly style="width: 80px;" name="directSpending11" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending11">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  disabled name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="true" ng-checked="cs2.inKindSupport11">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio" disabled name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="false" ng-checked="!cs2.inKindSupport11">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport11">
-                                <input type="text" class="form-control" readonly name="inKindSupportText11" ng-model="cs2.inKindSupportText11" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" name="" readonly type="text" ng-model="cs2.spendActivityDetails11">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile11.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile10.originalDocumentName">
+                                            <a ng-click="guideFile10 = {}; " ng-show="guideFile10.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile10 = saveUploadedFile(guideFile10, cs2.guideFiles10)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles10"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Administration</td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending11.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending11" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending11">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="true" ng-checked="cs2.inKindSupport11">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport11" ng-model="cs2.inKindSupport11" ng-value="false" ng-checked="!cs2.inKindSupport11">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport11">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText11" ng-model="cs2.inKindSupportText11" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails11">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile11, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile11.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile11.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile11.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile11.originalDocumentName">
-                                        <a ng-click="guideFile11 = {}; " ng-show="guideFile11.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile11 = saveUploadedFile(guideFile11, cs2.guideFiles11)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles11"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fm-stl">
-                            <label>
-                                <input  type="checkbox" id="activityOtherSpecify1" readonly
-                                        ng-model="cs2.activityOther1"
-                                        ng-change="getOtherValue('activityOtherSpecify1', cs2)" > Other
-                            </label>
-                        </td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending12.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending12" type="number" readonly ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending12">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  name="inKindSupport12" ng-model="cs2.inKindSupport12" disabled ng-value="true" ng-checked="cs2.inKindSupport12">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio"  name="inKindSupport12" ng-model="cs2.inKindSupport12" disabled ng-value="false" ng-checked="!cs2.inKindSupport12">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport12">
-                                <input type="text" class="form-control" readonly name="inKindSupportText12" readonly ng-model="cs2.inKindSupportText12" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" name="" readonly type="text" ng-model="cs2.spendActivityDetails12">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile12.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile11.originalDocumentName">
+                                            <a ng-click="guideFile11 = {}; " ng-show="guideFile11.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile11 = saveUploadedFile(guideFile11, cs2.guideFiles11)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles11"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="checkbox" id="activityOtherSpecify1"
+                                            ng-model="cs2.activityOther1"
+                                            ng-change="getOtherValue('activityOtherSpecify1', cs2)" > Other
+                                </label>
+                            </td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending12.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending12" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending12">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="true" ng-checked="cs2.inKindSupport12">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport12" ng-model="cs2.inKindSupport12" ng-value="false" ng-checked="!cs2.inKindSupport12">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport12">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText12" ng-model="cs2.inKindSupportText12" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails12">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile12, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile12.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
                                         <span ng-hide="guideFile12.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile12.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
-
-                                    <div class="text-right" ng-show="guideFile12.originalDocumentName">
-                                        <a ng-click="guideFile12 = {}; " ng-show="guideFile12.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile12 = saveUploadedFile(guideFile12, cs2.guideFiles12)">
-                                    </div>
-
-                                </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles12"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fm-stl">
-                            <label>
-                                <input  type="checkbox" id="activityOtherSpecify2" readonly
-                                        ng-model="cs2.activityOther2"
-                                        ng-change="getOtherValue('activityOtherSpecify2', cs2)" > Other
-                            </label>
-                        </td>
-                        <td ng-class="{'has-error' : cs2Form.directSpending13.$invalid }">
-                            <input class="form-control" style="width: 80px;" name="directSpending13" readonly type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending13">
-                        </td>
-                        <td><div class="fm-stl">
-                            <label>
-                                <input  type="radio"  name="inKindSupport13" ng-model="cs2.inKindSupport13" disabled ng-value="true" ng-checked="cs2.inKindSupport13">  Yes
-                            </label>
-                            <label>
-                                <input  type="radio"  name="inKindSupport13" ng-model="cs2.inKindSupport13" disabled ng-value="false" ng-checked="!cs2.inKindSupport13">  No
-                            </label></div>
-                            <div ng-show="cs2.inKindSupport13">
-                                <input type="text" class="form-control" readonly name="inKindSupportText13" ng-model="cs2.inKindSupportText13" />
-                            </div>
-                        </td>
-                        <td>
-                            <input class="form-control" name="" type="text" readonly ng-model="cs2.spendActivityDetails13">
-                            <br/>
-                            <div>
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="input-group input-large col-lg-10">
-
-                                        <div class="form-control uneditable-input input-fixed input-medium">
-                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                            <span class="fileinput-filename">{{ guideFile13.originalDocumentName }}</span>
                                         </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+
+                                        <div class="text-right" ng-show="guideFile12.originalDocumentName">
+                                            <a ng-click="guideFile12 = {}; " ng-show="guideFile12.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile12 = saveUploadedFile(guideFile12, cs2.guideFiles12)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles12"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="checkbox" id="activityOtherSpecify2"
+                                            ng-model="cs2.activityOther2"
+                                            ng-change="getOtherValue('activityOtherSpecify2', cs2)" > Other
+                                </label>
+                            </td>
+                            <td ng-class="{'has-error' : cs2Form.directSpending13.$invalid }">
+                                <input readonly disabled class="form-control" style="width: 80px;" name="directSpending13" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.directSpending13">
+                            </td>
+                            <td><div class="fm-stl">
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="true" ng-checked="cs2.inKindSupport13">  Yes
+                                </label>
+                                <label>
+                                    <input readonly disabled  type="radio"  name="inKindSupport13" ng-model="cs2.inKindSupport13" ng-value="false" ng-checked="!cs2.inKindSupport13">  No
+                                </label></div>
+                                <div ng-show="cs2.inKindSupport13">
+                                    <input readonly disabled type="text" class="form-control" name="inKindSupportText13" ng-model="cs2.inKindSupportText13" />
+                                </div>
+                            </td>
+                            <td>
+                                <input readonly disabled class="form-control" name="" type="text" ng-model="cs2.spendActivityDetails13">
+                                <br/>
+                                <div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large col-lg-10"
+                                             ng-file-select ng-model="uploadFile1"
+                                             ng-file-change="uploadFile(uploadFile1, guideFile13, '.doc, .docx, .pdf, .xls, .xlsx')"
+                                             ng-multiple="true"
+                                             ng-accept="'.doc, .docx, .pdf, .xls, .xlsx'">
+
+                                            <div class="form-control uneditable-input input-fixed input-medium">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                <span class="fileinput-filename">{{ guideFile13.originalDocumentName }}</span>
+                                            </div>
                                         <span class="input-group-addon btn default btn-file">
-                                        <span ng-hide="guideFile13.originalDocumentName" class="fileinput-new disabled">Browse</span>
+                                        <span ng-hide="guideFile13.originalDocumentName" class="fileinput-new">Browse</span>
                                         <span ng-show="guideFile13.originalDocumentName" class="fileinput-exists">Change </span>
                                     </span>
 
-                                    </div>
-                                    <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
+                                        </div>
+                                        <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
 
-                                    <div class="text-right" ng-show="guideFile13.originalDocumentName">
-                                        <a ng-click="guideFile13 = {}; " ng-show="guideFile13.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                        <input type="submit" class="btn default" value="Upload" ng-click="guideFile13 = saveUploadedFile(guideFile13, cs2.guideFiles13)">
+                                        <div class="text-right" ng-show="guideFile13.originalDocumentName">
+                                            <a ng-click="guideFile13 = {}; " ng-show="guideFile13.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
+                                            <input readonly disabled type="submit" class="btn default" value="Upload" ng-click="guideFile13 = saveUploadedFile(guideFile13, cs2.guideFiles13)">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="selectedItem" ng-repeat="file in cs2.guideFiles13"
+                                         ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                                     </div>
 
                                 </div>
-
-                                <div class="selectedItem" ng-repeat="file in cs2.guideFiles13"
-                                     ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                                </div>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tfoot>
-                    <tr>
-                        <td>
-                            TOTAL
-                        </td>
-                        <td>
-                            <input class="form-control" style="width: 80px;" value="{{ getTotal() }}" readonly>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    </tfoot>
-                </table>
-
+                            </td>
+                        </tr>
+                        <tfoot>
+                        <tr>
+                            <td>
+                                TOTAL
+                            </td>
+                            <td ng-class="{'has-error': cs2.spentByYourCommittee != getTotal()}">
+                                <input readonly disabled class="form-control" style="width: 80px;" value="{{ getTotal() }}" readonly>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <label class="error" ng-show="cs2.spentByYourCommittee != getTotal()">
+                        This total number must equal the total reported in previous question "How much money was spent last calendar year by your committee for SFI Implementation Committee-sponsored activities and projects?
+                    </label>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="col-lg-12" style="padding-top: 30px;">
-            <div class="col-lg-8 fm-stl">
-                <p style="padding-left:5px;" tooltip data-placement="top" data-container="body" data-html="true"
-                   data-title="Examples of SICs jointly supporting or organizing events or activities might include:<br/>-Collaboration on logger training program education materials and offerings,  e.g.  North and South Carolina’s logger training DVD.<br/>- Collaboration on community outreach projects, e.g. Minnesota & Wisconsin’s National Wild Turkey Federation; Save the Habitat; Save the Hunt; TV shows. ">
-                    <b>
-                        Did your SIC jointly support and/or organize any events or activities with neighboring SICs?
-                    </b>
-                </p>
+            <br>
+            <div class="col-lg-12" style="padding-top: 30px;">
+                <div class="col-lg-8 fm-stl">
+                    <p style="padding-left:5px;" tooltip data-placement="top" data-container="body" data-html="true"
+                       data-title="Examples of SICs jointly supporting or organizing events or activities might include:<br/>-Collaboration on logger training program education materials and offerings,  e.g.  North and South Carolina’s logger training DVD.<br/>- Collaboration on community outreach projects, e.g. Minnesota & Wisconsin’s National Wild Turkey Federation; Save the Habitat; Save the Hunt; TV shows. ">
+                        <b>
+                            Did your SIC jointly support and/or organize any events or activities with neighboring SICs?
+                        </b>
+                    </p>
 
 
-                <label>
-                    <input type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="true" >  Yes
-                </label>
-                <label>
-                    <input type="radio" disabled  name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" >  No
-                </label>
+                    <label>
+                        <input readonly disabled  type="radio" name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="true" >  Yes
+                    </label>
+                    <label>
+                        <input readonly disabled  type="radio" name="sicNeighborEvents" ng-model="cs2.isSicNeighborEvents" ng-value="false" >  No
+                    </label>
 
-                <div class="aditional-line" ng-repeat="event in cs2.sicNeighborEvents" style="margin-top: 10px;">
-                    <div style="padding: 10px;">
-                        <div class="col-lg-12">
-                            <div class="col-lg-10">
-                                <p>
-                                    Which SIC:
-                                    {{ whichSicText(event.whichSic) }}
-                                </p>
+                    <div class="aditional-line" ng-repeat="event in cs2.sicNeighborEvents" style="margin-top: 10px;">
+                        <div style="padding: 10px;">
+                            <div class="col-lg-12" style="padding-left: 0px;">
+                                <div class="col-lg-10" style="padding-left: 0px;">
+                                    <p>
+                                        <b>Which SIC:</b>
+                                        {{ whichSicText(event.whichSic) }}
+                                    </p>
+                                    <b>Highlights of project, event or activity:</b><br>
+                                    {{ event.comment }}
+                                </div>
+                                <div class="col-lg-2">
+
+
+                                </div>
                             </div>
-                            <div class="col-lg-2">
-                                <!--<button class="btn-group-sm btn-danger">-->
-                                    <!--<a  data-toggle="modal" >Delete</a>-->
-                                <!--</button>-->
-                            </div>
+
                         </div>
-                        Highlights of project, event or activity:<br>
-                        {{ event.comment }}
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <ng-form name="eventForm">
-        <div class="col-lg-12" style="padding-top: 30px;">
-            <div class="col-lg-8">
-                <div>
-                    <div class="form-inline">
-                        Which SIC:
-                        <select disabled   class="form-control" ng-model="event.whichSic">
-                            <option ng-selected="!event.whichSic">< Select One ></option>
-                            <option ng-repeat="sic in sicList" ng-value="1 * $index"> {{ sic }}</option>
-                        </select>
-                    </div>
-                    <br>
-                    <div class="form-group" ng-show="cs2.isSicNeighborEvents">
-                        <label>Highlights of project, event or activity:</label>
-                        <textarea readonly  class="form-control" rows="4" cols="74" ng-model="event.comment"></textarea>
-                    </div>
-                    <!--<p style="text-align: right;padding-top: 10px;" ng-click="addEvent()" class="myButton"><b><u>+ Add Another Line</u></b></p>-->
+            <div class="col-lg-12" style="padding-top: 30px;" ng-show="cs2.isSicNeighborEvents">
+                <div class="col-lg-8 fm-stl">
+                    <!--<div>-->
+                        <!--<div class="form-inline">-->
+                            <!--<label>Which SIC:</label>-->
+                            <!--<select class="form-control" ng-model="event.whichSic">-->
+                                <!--<option ng-selected="!event.whichSic">< Select One ></option>-->
+                                <!--<option ng-repeat="sic in sicList | orderBy:'id':reverse" ng-value="1*$index"> {{ sic.value }}</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                        <!--<br>-->
+
+                        <!--<div class="form-group" ng-show="cs2.isSicNeighborEvents == true">-->
+                            <!--<label>Highlights of project, event or activity:</label>-->
+                            <!--<textarea class="form-control" rows="4" cols="74" ng-model="event.comment"></textarea>-->
+                        <!--</div>-->
+                        <!--<p style="text-align: right;padding-top: 10px;" ng-click="addEvent()" class="myButton"><b><u>+ Add Another Line</u></b></p>-->
+                    <!--</div>-->
                 </div>
             </div>
-        </div>
         </ng-form>
     </div>
     <br>
-
 
     <script type="text/ng-template" id="calendar-item-popover.html">
         <div class="form-group">
             <label class="checkboxLabel">
                 {{ cs2.currency }}
-                <input type="radio" disabled  ng-value="1" name="currency" ng-model="po"  data-name="USD">USD
+                <input readonly disabled type="radio" ng-value="1" name="currency" ng-model="po" ng-change="setCurrency()" data-name="USD">USD
             </label>
             <label class="checkboxLabel">
                 {{ cs2.spentBySicSuppCurr }}
-                <input type="radio" disabled  ng-value="2" name="currency" ng-model="cs2.currency"  data-name="CAD">CAD
+                <input readonly disabled type="radio" ng-value="2" name="currency" ng-model="cs2.currency" ng-change="setCurrency()"  data-name="CAD">CAD
             </label>
         </div>
     </script>
+</div>
+
+
+<div id="delete1" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>
+            </div>
+            <div class="modal-body">
+                <p class="question-style">Are you sure you want to delete this entry?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteNeighborConfirm()">Yes, delete it!</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
+            </div>
+        </div>
+    </div>
 </div>

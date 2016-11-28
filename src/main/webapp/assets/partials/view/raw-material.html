@@ -180,8 +180,7 @@
 
                 <select disabled  class="form-control" name="item1"
                         ng-model="section.unit"
-                        ng-required="isSectionDirty(innerForm)"
-                          >
+                        ng-required="isSectionDirty(innerForm)">
 
                     <option value="" ng-selected="!section.unit" >Select Units</option>
                     <option ng-repeat="item in opt1" value="{{ item.id }}" >{{item.name}}</option>
@@ -294,22 +293,7 @@
     </tr>
     </tbody>
 
-
-
-
 </table>
-
-<!-- Form 1 buttons -->
-<div class="col-sm-4 col-sm-offset-8 alignright" ng-show="regionId > 0">
-    <button type="button" class="btn secondary" ng-click="cancelUsCanada()">Cancel</button>
-    <!-- v2 -->
-    <!-- button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save, and enter another region</button-->
-    <button type="button" class="btn btn-success" ng-click="saveUsCanada()">Enter another region</button>
-</div>
-<div class="control-group">&nbsp;</div>
-<!-- -->
-
-
 
 <!-- FORM 2 -->
 <div class="col-sm-12" ng-show="regionId == -1">
@@ -400,49 +384,6 @@
     <!-- -->
     </tbody>
 </table>
-
-<!-- Form2 button -->
-<div class="col-sm-4 col-sm-offset-8 alignright" ng-show="regionId == -1">
-    <button type="button" class="btn secondary" ng-click="cancelOther()">Cancel</button>
-    <button type="button" class="btn btn-success" ng-click="saveOther()">Save, and enter another region</button>
-</div>
-<!-- -->
-
-
-
-<!-- Modals -->
-<div id="delete1" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>
-            </div>
-            <div class="modal-body">
-                <p>Are you sure you want to delete <span id="region-text"></span> as a raw material supply?</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">ok</a>
-                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="confirm" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>
-            </div>
-            <div class="modal-body">
-                <p>Provide at least one source data</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="">Ok</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- -->
 
 </div>
 
