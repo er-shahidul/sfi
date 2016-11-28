@@ -110,7 +110,6 @@
 
                     <div th:if="${company.primary}" ng-show="isStepAllowed('cs5')"  class="formMenuItem section5" ng-click="goStep('cs5')">
                         <div class="circle {{ getClass('cs5') }}">5</div>
-                        <!-- V2 <span class="circleTxt {{ getClass('cs5') }}">Research Funding</span> -->
                         <span class="circleTxt {{ getClass('cs5') }}">Research, Conservation &amp; Community</span>
                     </div>
 
@@ -122,38 +121,15 @@
                         </span>
                     </div>
 
-                    <div th:if="${company.primary}" ng-show="isStepAllowed('cs9')"  class="formMenuItem section7" ng-click="goStep('cs9')">
-                        <div class="circle {{ getClass('cs9') }}">7</div>
-                        <span class="circleTxt {{ getClass('cs9') }}">
-                            <!-- Emerging Issues -->
-                            FM New<br/>
-                            Standard<br/>
-                            Impacts
-                        </span>
-                    </div>
-
-                    <div th:if="${company.primary}" ng-show="isStepAllowed('cs10')"  class="formMenuItem section8" ng-click="goStep('cs10')">
-                        <div class="circle {{ getClass('cs10') }}">8</div>
-                        <span class="circleTxt {{ getClass('cs10') }}">
-                            <!-- Market <br/>Survey (new!) -->
-                            FS New<br/>
-                            Standard<br/>
-                            Impacts
-                        </span>
-                    </div>
-
                     <div ng-show="isStepAllowed('cs8')"  class="formMenuItem section9" ng-click="goStep('cs8')">
-                        <!--<div class="circle {{ getClass('cs9') }}">9</div>-->
                         <div class=" {{ getClass('cs8') }}">&nbsp;</div>
                         <span class="circleTxt {{ getClass('cs8') }}" style="font-size: large;top: -12px">
-                            <!-- Forest <br/>Management <br/>Standard <br/>Questions (new!) -->
                             SFI<br/>
                             Market<br/>
                             Survey
                         </span>
                     </div>
-                    <div style="padding-left: 20px;position: absolute;right: 130px;top: 0px;" ng-show="isStepAllowed('cs8')"  class="formMenuItem section9" ng-click="goStep('cs8')">
-                        <!--<div class="circle {{ getClass('cs9') }}">9</div>-->
+                    <div style="position: absolute;right: 130px;top: 0px;" ng-show="isStepAllowed('cs8')"  class="formMenuItem section9" ng-click="goStep('cs8')">
                         <div class=" {{ getClass('cs8') }}">&nbsp;</div>
                         <span style="width: 200%;top: 0px" >
 
@@ -162,8 +138,7 @@
                     </div>
                     <br/>
 
-                    <div ng-show="isStepAllowed('cs10')" class="first-desc ng-cloak" style="width:560px;">SFI Annual Progress Report Survey</div>
-                    <div ng-show="isStepAllowed('cs10')" class="second-desc ng-cloak" style="width:175px;">2015 - 2019 Impacts</div>
+                    <div ng-show="isStepAllowed('cs10')" class="first-desc ng-cloak" style="width:680px;">SFI Annual Progress Report Survey</div>
                     <div ng-show="isStepAllowed('cs10')" class="second-desc ng-cloak" style="width:75px;">Optional</div>
                 </div>
 

@@ -40,7 +40,7 @@ sfiFormApp.controller('FormEmergingIssuesCtrl',
                     }
 
                     if(go){
-                        $rootScope.goStep("cs9")
+                        $rootScope.goStep("cs8");
                     }
 
                 });
