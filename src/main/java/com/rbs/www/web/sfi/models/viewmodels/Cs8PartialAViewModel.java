@@ -85,7 +85,7 @@ public class Cs8PartialAViewModel extends BaseViewModel {
     private Integer sfiChainCustody7;
     private Integer sfiChainCustody8;
     private Integer sfiChainCustody9;
-    private Integer FSCLandCertification;
+    private Integer fSCLandCertification;
     private Integer ChainOfCustody_FSCCertification;
 
     private Set<SfiPpFormAllCountryViewModel> sfiLabelProductGroupContainPEFC_Country_4;
@@ -301,7 +301,22 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     private String fscCocCertificationItemsWhy_2;
     private String fscDemandDeveloping_4;
+    private String fscDemandDeveloping_2;
+    private String fscDemandDeveloping_3;
+    private String fscDemandDeveloping_6;
+    private String fscDemandDeveloping_7;
+    private String fscDemandDeveloping_8;
+    private String fscDemandDeveloping_9;
+    private String fscDemandDeveloping_10;
+    private String fscDemandDeveloping_11;
+    private String fscDemandDeveloping_12;
     private String fscDemandDeveloping_5;
+
+    private Integer fscForestCertificationItems1;
+    private Integer fscForestCertificationItems2;
+
+    private Integer fscCocCertificationItems1;
+    private Integer fscCocCertificationItems2;
 
     private Boolean whyChoseSFI20Other;
     private Boolean fscChainCustody1Other;
@@ -2307,14 +2322,6 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     public void setFscCocCertificationItemsWhy_1(String fscCocCertificationItemsWhy_1) {
         this.fscCocCertificationItemsWhy_1 = fscCocCertificationItemsWhy_1;
-    }
-
-    public String getFscForestCertification() {
-        return fscForestCertification;
-    }
-
-    public void setFscForestCertification(String fscForestCertification) {
-        this.fscForestCertification = fscForestCertification;
     }
 
     public String getFscForestCertificationExplain() {
@@ -4413,12 +4420,12 @@ public class Cs8PartialAViewModel extends BaseViewModel {
         this.sfiLogoUseMotivation_13_10 = sfiLogoUseMotivation_13_10;
     }
 
-    public Integer getFSCLandCertification() {
-        return FSCLandCertification;
+    public Integer getfSCLandCertification() {
+        return fSCLandCertification;
     }
 
-    public void setFSCLandCertification(Integer FSCLandCertification) {
-        this.FSCLandCertification = FSCLandCertification;
+    public void setfSCLandCertification(Integer fSCLandCertification) {
+        this.fSCLandCertification = fSCLandCertification;
     }
 
     public Integer getChainOfCustody_FSCCertification() {
@@ -4435,5 +4442,117 @@ public class Cs8PartialAViewModel extends BaseViewModel {
 
     public void setSfiLogoUseMotivation_13_11(Integer sfiLogoUseMotivation_13_11) {
         this.sfiLogoUseMotivation_13_11 = sfiLogoUseMotivation_13_11;
+    }
+
+    public String getFscDemandDeveloping_2() {
+        return fscDemandDeveloping_2;
+    }
+
+    public void setFscDemandDeveloping_2(String fscDemandDeveloping_2) {
+        this.fscDemandDeveloping_2 = fscDemandDeveloping_2;
+    }
+
+    public String getFscDemandDeveloping_3() {
+        return fscDemandDeveloping_3;
+    }
+
+    public void setFscDemandDeveloping_3(String fscDemandDeveloping_3) {
+        this.fscDemandDeveloping_3 = fscDemandDeveloping_3;
+    }
+
+    public String getFscDemandDeveloping_6() {
+        return fscDemandDeveloping_6;
+    }
+
+    public void setFscDemandDeveloping_6(String fscDemandDeveloping_6) {
+        this.fscDemandDeveloping_6 = fscDemandDeveloping_6;
+    }
+
+    public String getFscDemandDeveloping_7() {
+        return fscDemandDeveloping_7;
+    }
+
+    public void setFscDemandDeveloping_7(String fscDemandDeveloping_7) {
+        this.fscDemandDeveloping_7 = fscDemandDeveloping_7;
+    }
+
+    public String getFscDemandDeveloping_8() {
+        return fscDemandDeveloping_8;
+    }
+
+    public void setFscDemandDeveloping_8(String fscDemandDeveloping_8) {
+        this.fscDemandDeveloping_8 = fscDemandDeveloping_8;
+    }
+
+    public String getFscDemandDeveloping_9() {
+        return fscDemandDeveloping_9;
+    }
+
+    public void setFscDemandDeveloping_9(String fscDemandDeveloping_9) {
+        this.fscDemandDeveloping_9 = fscDemandDeveloping_9;
+    }
+
+    public String getFscDemandDeveloping_10() {
+        return fscDemandDeveloping_10;
+    }
+
+    public void setFscDemandDeveloping_10(String fscDemandDeveloping_10) {
+        this.fscDemandDeveloping_10 = fscDemandDeveloping_10;
+    }
+
+    public String getFscDemandDeveloping_11() {
+        return fscDemandDeveloping_11;
+    }
+
+    public void setFscDemandDeveloping_11(String fscDemandDeveloping_11) {
+        this.fscDemandDeveloping_11 = fscDemandDeveloping_11;
+    }
+
+    public String getFscDemandDeveloping_12() {
+        return fscDemandDeveloping_12;
+    }
+
+    public void setFscDemandDeveloping_12(String fscDemandDeveloping_12) {
+        this.fscDemandDeveloping_12 = fscDemandDeveloping_12;
+    }
+
+    public String getFscForestCertification() {
+        return fscForestCertification;
+    }
+
+    public void setFscForestCertification(String fscForestCertification) {
+        this.fscForestCertification = fscForestCertification;
+    }
+
+    public Integer getFscForestCertificationItems1() {
+        return fscForestCertificationItems1;
+    }
+
+    public void setFscForestCertificationItems1(Integer fscForestCertificationItems1) {
+        this.fscForestCertificationItems1 = fscForestCertificationItems1;
+    }
+
+    public Integer getFscForestCertificationItems2() {
+        return fscForestCertificationItems2;
+    }
+
+    public void setFscForestCertificationItems2(Integer fscForestCertificationItems2) {
+        this.fscForestCertificationItems2 = fscForestCertificationItems2;
+    }
+
+    public Integer getFscCocCertificationItems1() {
+        return fscCocCertificationItems1;
+    }
+
+    public void setFscCocCertificationItems1(Integer fscCocCertificationItems1) {
+        this.fscCocCertificationItems1 = fscCocCertificationItems1;
+    }
+
+    public Integer getFscCocCertificationItems2() {
+        return fscCocCertificationItems2;
+    }
+
+    public void setFscCocCertificationItems2(Integer fscCocCertificationItems2) {
+        this.fscCocCertificationItems2 = fscCocCertificationItems2;
     }
 }

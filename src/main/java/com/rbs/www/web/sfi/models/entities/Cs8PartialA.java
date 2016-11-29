@@ -416,6 +416,18 @@ public class Cs8PartialA extends BaseEntityModel {
     @Column(name = "cs8_FSCLandCertification", nullable = true)
     private Integer FSCLandCertification;
 
+    @Column(name = "cs8_fscForestCertificationItems1", nullable = true)
+    private Integer fscForestCertificationItems1;
+
+    @Column(name = "cs8_fscForestCertificationItems2", nullable = true)
+    private Integer fscForestCertificationItems2;
+
+    @Column(name = "cs8_fscCocCertificationItems1", nullable = true)
+    private Integer fscCocCertificationItems1;
+
+    @Column(name = "cs8_fscCocCertificationItems2", nullable = true)
+    private Integer fscCocCertificationItems2;
+
     @Column(name = "cs8_ChainOfCustody_FSCCertification", nullable = true)
     private Integer ChainOfCustody_FSCCertification;
 
@@ -1227,6 +1239,33 @@ public class Cs8PartialA extends BaseEntityModel {
 
     @Column(name = "cs8_fscDemandDeveloping_5", columnDefinition = "TEXT", nullable = true)
     private String fscDemandDeveloping_5;
+
+    @Column(name = "cs8_fscDemandDeveloping_2", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_2;
+
+    @Column(name = "cs8_fscDemandDeveloping_3", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_3;
+
+    @Column(name = "cs8_fscDemandDeveloping_6", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_6;
+
+    @Column(name = "cs8_fscDemandDeveloping_7", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_7;
+
+    @Column(name = "cs8_fscDemandDeveloping_8", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_8;
+
+    @Column(name = "cs8_fscDemandDeveloping_9", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_9;
+
+    @Column(name = "cs8_fscDemandDeveloping_10", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_10;
+
+    @Column(name = "cs8_fscDemandDeveloping_11", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_11;
+
+    @Column(name = "cs8_fscDemandDeveloping_12", columnDefinition = "TEXT", nullable = true)
+    private String fscDemandDeveloping_12;
 
     @Column(name = "cs8_fscDemandDeveloping_1_1", nullable = true)
     private Integer sfiLogoUseMotivation_1_1;
@@ -5449,5 +5488,109 @@ public class Cs8PartialA extends BaseEntityModel {
 
     public void setSfiLogoUseMotivation_13_11(Integer sfiLogoUseMotivation_13_11) {
         this.sfiLogoUseMotivation_13_11 = sfiLogoUseMotivation_13_11;
+    }
+
+    public String getFscDemandDeveloping_2() {
+        return fscDemandDeveloping_2;
+    }
+
+    public void setFscDemandDeveloping_2(String fscDemandDeveloping_2) {
+        this.fscDemandDeveloping_2 = fscDemandDeveloping_2;
+    }
+
+    public String getFscDemandDeveloping_3() {
+        return fscDemandDeveloping_3;
+    }
+
+    public void setFscDemandDeveloping_3(String fscDemandDeveloping_3) {
+        this.fscDemandDeveloping_3 = fscDemandDeveloping_3;
+    }
+
+    public String getFscDemandDeveloping_6() {
+        return fscDemandDeveloping_6;
+    }
+
+    public void setFscDemandDeveloping_6(String fscDemandDeveloping_6) {
+        this.fscDemandDeveloping_6 = fscDemandDeveloping_6;
+    }
+
+    public String getFscDemandDeveloping_7() {
+        return fscDemandDeveloping_7;
+    }
+
+    public void setFscDemandDeveloping_7(String fscDemandDeveloping_7) {
+        this.fscDemandDeveloping_7 = fscDemandDeveloping_7;
+    }
+
+    public String getFscDemandDeveloping_8() {
+        return fscDemandDeveloping_8;
+    }
+
+    public void setFscDemandDeveloping_8(String fscDemandDeveloping_8) {
+        this.fscDemandDeveloping_8 = fscDemandDeveloping_8;
+    }
+
+    public String getFscDemandDeveloping_9() {
+        return fscDemandDeveloping_9;
+    }
+
+    public void setFscDemandDeveloping_9(String fscDemandDeveloping_9) {
+        this.fscDemandDeveloping_9 = fscDemandDeveloping_9;
+    }
+
+    public String getFscDemandDeveloping_10() {
+        return fscDemandDeveloping_10;
+    }
+
+    public void setFscDemandDeveloping_10(String fscDemandDeveloping_10) {
+        this.fscDemandDeveloping_10 = fscDemandDeveloping_10;
+    }
+
+    public String getFscDemandDeveloping_11() {
+        return fscDemandDeveloping_11;
+    }
+
+    public void setFscDemandDeveloping_11(String fscDemandDeveloping_11) {
+        this.fscDemandDeveloping_11 = fscDemandDeveloping_11;
+    }
+
+    public String getFscDemandDeveloping_12() {
+        return fscDemandDeveloping_12;
+    }
+
+    public void setFscDemandDeveloping_12(String fscDemandDeveloping_12) {
+        this.fscDemandDeveloping_12 = fscDemandDeveloping_12;
+    }
+
+    public Integer getFscForestCertificationItems1() {
+        return fscForestCertificationItems1;
+    }
+
+    public void setFscForestCertificationItems1(Integer fscForestCertificationItems1) {
+        this.fscForestCertificationItems1 = fscForestCertificationItems1;
+    }
+
+    public Integer getFscForestCertificationItems2() {
+        return fscForestCertificationItems2;
+    }
+
+    public void setFscForestCertificationItems2(Integer fscForestCertificationItems2) {
+        this.fscForestCertificationItems2 = fscForestCertificationItems2;
+    }
+
+    public Integer getFscCocCertificationItems1() {
+        return fscCocCertificationItems1;
+    }
+
+    public void setFscCocCertificationItems1(Integer fscCocCertificationItems1) {
+        this.fscCocCertificationItems1 = fscCocCertificationItems1;
+    }
+
+    public Integer getFscCocCertificationItems2() {
+        return fscCocCertificationItems2;
+    }
+
+    public void setFscCocCertificationItems2(Integer fscCocCertificationItems2) {
+        this.fscCocCertificationItems2 = fscCocCertificationItems2;
     }
 }
