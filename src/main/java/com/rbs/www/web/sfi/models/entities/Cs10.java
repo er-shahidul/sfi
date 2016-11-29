@@ -19,6 +19,9 @@ public class Cs10 extends BaseEntityModel {
     @Column(name = "cs10_acknowledge", nullable = true)
     private Boolean acknowledge;
 
+    @Column(name = "approved", nullable = true)
+    private Boolean approved;
+
     @Column(name = "cs10_legalComplianceOutside", nullable = true)
     private Boolean legalComplianceOutside;
 
@@ -369,5 +372,13 @@ public class Cs10 extends BaseEntityModel {
 
     public void setBiodiversityNoDescribe(String biodiversityNoDescribe) {
         this.biodiversityNoDescribe = biodiversityNoDescribe;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
     }
 }

@@ -63,6 +63,9 @@ public class SicCs10 extends BaseEntityModel {
     @Type(type="text")
     private String sfiWebinarDetail;
 
+    @Column(name = "approved", nullable = true)
+    private Boolean approved;
+
     @Override
     public Integer getId() {
         return id;
@@ -190,5 +193,13 @@ public class SicCs10 extends BaseEntityModel {
 
     public void setSfiWebinarDetail(String sfiWebinarDetail) {
         this.sfiWebinarDetail = sfiWebinarDetail;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
     }
 }

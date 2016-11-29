@@ -28,6 +28,8 @@ public class SicCs10ViewModel extends BaseViewModel {
     private String sfiWebContentDetail;
     private String sfiWebinarDetail;
 
+    private Boolean approved;
+
     @Override
     public Integer getId() {
         return id;
@@ -155,5 +157,13 @@ public class SicCs10ViewModel extends BaseViewModel {
 
     public void setSfiWebinarDetail(String sfiWebinarDetail) {
         this.sfiWebinarDetail = sfiWebinarDetail;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
     }
 }
