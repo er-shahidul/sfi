@@ -317,11 +317,6 @@
                 <div class="col-lg-12">
                     <div style="border: 1px solid #ddd;padding: 5px;">
 
-                   <!-- <img src="/assets/images/Section_9__Linking_to_the_Forests_v11.jpg" style="width: 100%;">-->
-
-                    <!--<p class="pading-botoms" style="padding-top: 25px;">-->
-                        <!--Who are the main contacts for your organization that should be receiving SFI related information? Please include your organization's Head of Communications.-->
-                    <!--</p>-->
                     <div class="margin-top-30">
 
                         <form name="producerForm">
@@ -356,13 +351,6 @@
                                     <option ng-selected="!producer.source">Select</option>
                                     <option ng-value="$index + 1" ng-repeat="item in producers" ng-selected="producer.source == $index + 1">{{item}}</option>
                                 </select>
-
-                                <!--ng-options="idx*1 + 1 as item for (idx, item) in producers'">-->
-                                <!--<select  class="form-control" name="producerSource" ng-model="producer.source"-->
-                                        <!--ng-options="$index*1 + 1 as item for item in producers">-->
-                                    <!--<option ng-selected="!producer.source">Select</option>-->
-
-                                <!--</select>-->
 
                             </div>
                             <br/>
@@ -511,28 +499,30 @@
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec10-demand-certified-product.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec11-demand-coc-product.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec12-sfi-forest-sourcing.html'" ></div>
-                <!--<div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec13-fsc-certification.html'" ></div>-->
-                <!--<div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec14-seeking-fsc-certificate.html'" ></div>-->
             </div>
             <br>
         </div>
 
-        <div class="col-lg-12 fm-stl" ng-if="!isSfiSecondary()">
+        <div class="col-lg-12 passage-bold pading-botoms">
+
+            <br>
+            <div class="col-lg-12 pading-botoms" ng-if="!isSfiSecondary()">
+
                 <label class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
                     <b>If you own or manage lands, have you ever considered seeking FSC land certification?</b>
                 </label>
                 <div class="padding-left-10 label_width">
                     <p>Choose one of the following</p>
                     <label class="form-inline">
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=1 icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=1 icheck>
                         We are satisfied with SFI certification and don't consider FSC certification
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=2 icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=2 icheck>
                         Yes, but decided against FSC certification
                     </label><br>
 
-                    <div class="padded-left" ng-show="cs8.FSCLandCertification == 2">
+                    <div class="padded-left" ng-show="cs8.fscForestCertification == 2">
                         <p><b>Please specify</b></p>
 
                         <div class="checkboxlist">
@@ -563,19 +553,19 @@
                     <div class="clear"></div>
 
                     <label class="form-inline">
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=3 icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=3 icheck>
                         Yes, and we are planning to become certified to both SFI and FSC in the future
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=4 icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=4 icheck>
                         We are already certified to both SFI and FSC
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=5 icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=5 icheck>
                         We were previously certified to FSC but dropped it after obtaining SFI certification, please specify
                     </label><br>
 
-                    <div class="padded-left" ng-show="cs8.FSCLandCertification == 5">
+                    <div class="padded-left" ng-show="cs8.fscForestCertification == 5">
                         <p><b>Please specify</b></p>
                         <div class="checkboxlist">
                             <p><input type="checkbox" name="temp47" ng-model="cs8.fscCost2" icheck> Cost</p>
@@ -606,14 +596,14 @@
                     <div class="clear"></div>
 
                     <label class="form-inline">
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value="6" icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value="6" icheck>
                         Yes, and we are considering dropping SFI once we have obtained FSC certification
                     </label><br>
                     <label>
-                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value="7" icheck>
+                        <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value="7" icheck>
                         Other<br/>
 
-                        <label style="padding-left: 15px;" ng-show="cs8.FSCLandCertification == 7">
+                        <label style="padding-left: 15px;" ng-show="cs8.fscForestCertification == 7">
                            <b>Explain</b>
                             <br>
                             <input  type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherExplain" icheck>
@@ -621,9 +611,9 @@
 
                     </label>
                 </div>
-        </div>
+            </div>
             <br>
-        <div class="col-lg-10 fm-stl">
+            <div class="col-lg-12 pading-botoms">
                 <label class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
                     <b>Have you ever considered obtaining FSC chain-of-custody certification?</b>
                 </label>
@@ -1146,8 +1136,8 @@
                     </div>
                     <br/>
 
-                    </div>
                 </div>
+            </div>
 
                 <div class="col-lg-12 fm-stl">
                     <h4 class="content-header">Communications</h4>

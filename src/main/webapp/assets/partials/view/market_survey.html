@@ -38,8 +38,6 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Position</th>
-                        <!--<th>Edit</th>-->
-                        <!--<th>Delete</th>-->
                     </tr>
                     </thead>
                     <tbody>
@@ -48,29 +46,6 @@
                         <td class="ng-binding">{{ contact.name }}</td>
                         <td class="ng-binding">{{ contact.email }} </td>
                         <td class="ng-binding">{{ contact.position }} </td>
-                        <!--<td><a href="" ng-click="editContact($index, contact)">Edit</a></td>-->
-                        <!--<td><a href="" ng-click="deleteContact($index)">Delete</a></td>-->
-                    </tr>
-                    <tr>
-
-                        <td>
-                            <div ng-class="{'has-error' : isContactDirty() && contactForm.name.$invalid}">
-                                <input placeholder="name" type="text" readonly required class="form-control" name="name" ng-model="contact.name">
-                            </div>
-                        </td>
-                        <td>
-                            <div ng-class="{'has-error' : isContactDirty() && contactForm.email.$invalid}">
-                                <input type="email" placeholder="email" required class="form-control" name="email" ng-model="contact.email">
-                            </div>
-                        </td>
-                        <td>
-                            <div>
-                                <input type="text" readonly placeholder="position" class="form-control" ng-model="contact.position">
-                            </div>
-                        </td>
-                        <!--<td colspan="2">-->
-                            <!--&lt;!&ndash;<p style="text-align: right;padding-top: 8px; cursor:pointer;" ng-click="addContact()">+ Add Contact</p>&ndash;&gt;-->
-                        <!--</td>-->
                     </tr>
                     </tbody>
                 </table>
@@ -300,37 +275,43 @@
 
                 </div>
             </div>
-            
-        <div class="col-lg-12 passage-bold pading-botoms">
-                <div class="col-lg-12">
-                    <img src="/assets/images/Section_9__Linking_to_the_Forests_v11.jpg" style="width: 650px;">
-                    <p class="pading-botoms" style="padding-top: 25px;">
-                        Who are the main contacts for your organization that should be receiving SFI related information? Please include your organization's Head of Communications.
-                    </p>
-                    <div>
+            <div class="col-lg-12 pading-botoms">
+                <div class="carousel-demo">
+                    <ul rn-carousel rn-carousel-index="carouselIndex2" rn-carousel-auto-slide="10" rn-carousel-duration="100" rn-carousel-auto-slide rn-carousel-pause-on-hover rn-carousel-buffered class="carousel2">
 
-                        <div ng-repeat="producer in cs8.primaryProducers">
+                        <li ng-repeat="n in slides">
+                            <img style="height: 340px;width: 100%;" ng-src="{{n.image}}">
+                        </li>
+                    </ul>
+                    <div class="rn-carousel-indicator custom-indicator">
+                        <span ng-repeat="slide in slides" ng-class="{active: $index==$parent.carouselIndex2}" ng-click="$parent.carouselIndex2 = $index">&bull;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 pading-botoms">
+                <div class="col-lg-12">
+                    <div style="border: 1px solid #ddd;padding: 5px;">
+
+                        <div class="margin-top-30">
                             <form name="producerForm">
                                 <p>
                                     Select companies/manufacturers/mills from which you sourced SFI material in 2015:
                                 </p>
-                                <label class="form-inline">
-                                    SFI primary producers
+                                <table  class="table table-striped" ng-show="cs8.primaryProducers.length">
+                                    <thead>
+                                    <tr>
+                                        <th>Name of primary producer</th>
+                                        <th>% of total annual purchased supply</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
 
-                                    <select disabled class="form-control" name="producerSource"
-                                            ng-model="producer.source">
-
-                                        <option ng-selected="!producer.source">Select</option>
-                                        <option ng-value="$index + 1" ng-repeat="item in producers" ng-selected="producer.source == $index + 1">{{item}}</option>
-                                    </select>
-                                </label>
-                                <br/>
-                                <label class="form-inline">
-                                    How much of your total annual purchased supply does this supplier represent (estimate)
-                                    <input type="number" readonly ng-model="producer.percPurchased" name="percPurchased" class="form-control" style="width: 60px;"> %
-                                </label>
-
-
+                                    <tr ng-repeat="item in cs8.primaryProducers">
+                                        <td class="ng-binding">{{ producers[item.source - 1] }}</td>
+                                        <td class="ng-binding">{{ item.percPurchased }} </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </form>
                         </div>
                     </div>
@@ -338,10 +319,9 @@
                 </div>
             </div>
 
-        <div class="col-lg-12 passage-bold pading-botoms">
+            <div class="col-lg-12 fm-stl">
 
-            <div class="col-lg-10 pading-botoms">
-                <label>Our organization is part of the following sector(s)</label>
+                <label><b>Our organization is part of the following sector(s)</b></label>
                 <p>This is a functional question that customizes the remainder of the form by product sector</p>
                 <div>
                     <div class="col-lg-4">
@@ -432,13 +412,11 @@
                         </div>
 
                     </div>
-
-                </div>
         </div>
 
         <!--Section 1-->
-        <div class="col-lg-12 passage-bold pading-botoms" ng-show="anySelect()">
-            <div class="col-lg-12">
+            <div class="col-lg-12 pading-botoms" ng-show="anySelect()">
+                <div class="col-lg-12">
                 <div class="content-header2">
                     <span data-toggle="tootltip" title="An SFI claim is a certified sourcing or chain of custody statement accompanying a product. An SFI label is an illustrative symbol that communicates an SFI claim on a product.">LABELS & CLAIMS:</span><br>
                     <p>
@@ -472,8 +450,6 @@
                 <div ng-show="anySelect()" ng-include="'/assets/partials/view/cs8/sec10-demand-certified-product.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/view/cs8/sec11-demand-coc-product.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/view/cs8/sec12-sfi-forest-sourcing.html'" ></div>
-                <!--<div ng-show="anySelect()" ng-include="'/assets/partials/view/cs8/sec13-fsc-certification.html'" ></div>-->
-                <!--<div ng-show="anySelect()" ng-include="'/assets/partials/view/cs8/sec14-seeking-fsc-certificate.html'" ></div>-->
             </div>
         </div>
 
@@ -481,140 +457,151 @@
 
             <br>
             <div class="col-lg-12 pading-botoms" ng-if="!isSfiSecondary()">
-                <label>
-                    If you own or manage forestland, have you ever considered seeking FSC Forest Management certification?
+
+                <label class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
+                    <b>If you own or manage lands, have you ever considered seeking FSC land certification?</b>
                 </label>
-                <div class="padding-left-10">
+                <div class="padding-left-10 label_width">
                     <p>Choose one of the following</p>
                     <label class="form-inline">
-                        <input type="radio" disabled icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=1 icheck>
+                        <input disabled readonly type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=1 icheck>
                         We are satisfied with SFI certification and don't consider FSC certification
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" disabled icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=2 icheck>
+                        <input disabled readonly type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=2 icheck>
                         Yes, but decided against FSC certification
                     </label><br>
-                    <div class="padded-left" ng-show="cs8.FSCLandCertification == 2">
+
+                    <div class="padded-left" ng-show="cs8.fscForestCertification == 2">
+                        <p><b>Please specify</b></p>
 
                         <div class="checkboxlist">
-                            <p><input disabled type="checkbox" name="temp47" ng-model="cs8.fscCost1" icheck> Cost</p>
-                            <p><input disabled type="checkbox" name="temp47" ng-model="cs8.fscLackOfResponse1" icheck> Lack of responsiveness</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCost1" icheck> Cost</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscUncertainty1" icheck> Uncertainty</p>
+
                         </div>
                         <div class="checkboxlist">
-                            <p><input disabled type="checkbox" name="temp47" ng-model="cs8.fscComplexity1" icheck> Complexity</p>
-                            <p><input disabled type="checkbox" name="temp47" ng-model="cs8.fscNoMarkerDemand1" icheck> No FSC market demand</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscLackOfResponse1" icheck> Lack of responsiveness</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscLackOfSupply1" icheck> Lack of FSC supply</p>
                         </div>
                         <div class="checkboxlist">
-                            <p><input disabled type="checkbox" name="temp47" ng-model="cs8.fscUncertainty1" icheck> Uncertainty</p>
-                            <p><input disabled type="checkbox" name="temp47" ng-model="cs8.fscLackOfSupply1" icheck> Lack of FSC supply</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscComplexity1" icheck> Complexity</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscInconsistent1" icheck> Inconsistent approaches</p>
                         </div>
                         <div class="checkboxlist">
-                            <p><input disabled type="checkbox" name="temp47" ng-model="cs8.fscInconsistent1" icheck> Inconsistent approaches</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscNoMarkerDemand1" icheck> No FSC market demand</p>
+
                             <p>
-                                <input disabled type="checkbox" name="temp47" ng-model="cs8.fscOther1" icheck> Other<br/>
+                                <input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscOther1" icheck> Other<br/>
                                 <label ng-show="cs8.fscOther1">
-                                    Please Specify
-                                    <input type="text" readonly class="form-control" name="temp47" ng-model="cs8.fscOtherSpecify1" icheck>
+                                    <b>Please specify</b>
+                                    <input disabled readonly type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherSpecify1" icheck>
                                 </label>
                             </p>
                         </div>
                     </div>
                     <div class="clear"></div>
 
-
                     <label class="form-inline">
-                        <input type="radio" disabled icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=3 icheck>
+                        <input disabled readonly type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=3 icheck>
                         Yes, and we are planning to become certified to both SFI and FSC in the future
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" disabled icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=4 icheck>
+                        <input disabled readonly type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=4 icheck>
                         We are already certified to both SFI and FSC
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" disabled icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=5 icheck>
+                        <input disabled readonly type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=5 icheck>
                         We were previously certified to FSC but dropped it after obtaining SFI certification, please specify
                     </label><br>
 
-                    <div class="padded-left" ng-show="cs8.FSCLandCertification == 5">
+                    <div class="padded-left" ng-show="cs8.fscForestCertification == 5">
+                        <p><b>Please specify</b></p>
+                        <div class="checkboxlist">
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCost2" icheck> Cost</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscUncertainty2" icheck> Uncertainty</p>
+
+                        </div>
 
                         <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCost2" icheck> Cost</p>
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscLackOfResponse2" icheck> Lack of responsiveness</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscLackOfResponse2" icheck> Lack of responsiveness</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscLackOfSupply2" icheck> Lack of FSC supply</p>
                         </div>
                         <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscComplexity2" icheck> Complexity</p>
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscNoMarkerDemand2" icheck> No FSC market demand</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscComplexity2" icheck> Complexity</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscInconsistent2" icheck> Inconsistent approaches</p>
                         </div>
                         <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscUncertainty2" icheck> Uncertainty</p>
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscLackOfSupply2" icheck> Lack of FSC supply</p>
-                        </div>
-                        <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscInconsistent2" icheck> Inconsistent approaches</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscNoMarkerDemand2" icheck> No FSC market demand</p>
+
                             <p>
-                                <input type="checkbox" disabled name="temp47" ng-model="cs8.fscOther2" icheck> Other<br/>
+                                <input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscOther2" icheck> Other<br/>
                                 <label ng-show="cs8.fscOther2">
-                                    Please Specify
-                                    <input type="text" readonly class="form-control" name="temp47" ng-model="cs8.fscOtherSpecify2" icheck>
+                                    <b>Please specify</b>
+                                    <input disabled readonly type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherSpecify2" icheck>
                                 </label>
                             </p>
                         </div>
                     </div>
                     <div class="clear"></div>
 
-
                     <label class="form-inline">
-                        <input type="radio" disabled icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=6 icheck>
+                        <input disabled readonly type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value="6" icheck>
                         Yes, and we are considering dropping SFI once we have obtained FSC certification
                     </label><br>
-                    <label class="form-inline">
-                        <input type="radio" disabled icheck  name="FSCLandCertification" ng-model="cs8.FSCLandCertification" value=7 icheck>
+                    <label>
+                        <input disabled readonly type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value="7" icheck>
                         Other<br/>
 
-                        <label ng-show="cs8.FSCLandCertification == 7">
-                            Please Explain
-                            <input type="text" readonly class="form-control" name="temp47" ng-model="cs8.fscOtherExplain" icheck>
+                        <label style="padding-left: 15px;" ng-show="cs8.fscForestCertification == 7">
+                            <b>Explain</b>
+                            <br>
+                            <input disabled readonly  type="text" class="form-control" name="temp47" ng-model="cs8.fscOtherExplain" icheck>
                         </label>
+
                     </label>
                 </div>
             </div>
             <br>
             <div class="col-lg-12 pading-botoms">
-                <label>
-                    Have you ever considered obtaining FSC chain-of-custody certification?
+                <label class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
+                    <b>Have you ever considered obtaining FSC chain-of-custody certification?</b>
                 </label>
-                <div class="padding-left-10">
+                <div class="padding-left-10 label_width">
                     <p>Choose one of the following</p>
                     <label class="form-inline">
-                        <input type="radio" disabled name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=1 icheck>
+                        <input disabled readonly type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=1 icheck>
                         We are satisfied with SFI certification and don't consider FSC certification
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" disabled name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=2 icheck>
+                        <input disabled readonly type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=2 icheck>
                         Yes, but decided against FSC certification
                     </label><br>
 
-                    <div class="padded-left" ng-show="cs8.ChainOfCustody_FSCCertification == 2">
+                    <div class="padded-left" ng-show="cs8.chainOfCustody_FSCCertification == 2">
+                        <p><b>Please specify</b></p>
+                        <div class="checkboxlist">
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocCost1" icheck> Cost</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocUncertainty1" icheck> Uncertainty</p>
+
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocLackOfResponse1" icheck> Lack of responsiveness</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocLackOfSupply1" icheck> Lack of FSC supply</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocComplexity1" icheck> Complexity</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocInconsistent1" icheck> Inconsistent approaches</p>
+
+                        </div>
 
                         <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocCost1" icheck> Cost</p>
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocLackOfResponse1" icheck> Lack of responsiveness</p>
-                        </div>
-                        <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocComplexity1" icheck> Complexity</p>
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocNoMarkerDemand1" icheck> No FSC market demand</p>
-                        </div>
-                        <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocUncertainty1" icheck> Uncertainty</p>
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocLackOfSupply1" icheck> Lack of FSC supply</p>
-                        </div>
-                        <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocInconsistent1" icheck> Inconsistent approaches</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocNoMarkerDemand1" icheck> No FSC market demand</p>
                             <p>
-                                <input type="checkbox" disabled  name="temp47" ng-model="cs8.fscCocOther1" icheck> Other<br/>
+                                <input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocOther1" icheck> Other<br/>
                                 <label ng-show="cs8.fscCocOther1">
-                                    Please Specify
-                                    <input type="text" readonly class="form-control" name="temp47" ng-model="cs8.fscCocOtherSpecify1" icheck>
+                                    <b>Please specify</b>
+                                    <input disabled readonly type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherSpecify1" icheck>
                                 </label>
                             </p>
                         </div>
@@ -622,39 +609,41 @@
                     <div class="clear"></div>
 
                     <label class="form-inline">
-                        <input type="radio" disabled name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=3 icheck>
+                        <input disabled readonly type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=3 icheck>
                         Yes, and we are planning to become certified to both SFI and FSC in the future
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" disabled name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=4 icheck>
+                        <input disabled readonly type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=4 icheck>
                         We are already certified to both SFI and FSC
                     </label><br>
                     <label class="form-inline">
-                        <input type="radio" disabled name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=5 icheck>
+                        <input disabled readonly type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=5 icheck>
                         We were previously certified to FSC but dropped it after obtaining SFI certification, please specify
                     </label><br>
 
-                    <div class="padded-left" ng-show="cs8.ChainOfCustody_FSCCertification == 5">
+                    <div class="padded-left" ng-show="cs8.chainOfCustody_FSCCertification == 5">
+                        <p><b>Please specify</b></p>
+                        <div class="checkboxlist">
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocCost2" icheck> Cost</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocUncertainty2" icheck> Uncertainty</p>
+
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocLackOfResponse2" icheck> Lack of responsiveness</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocLackOfSupply2" icheck> Lack of FSC supply</p>
+                        </div>
+                        <div class="checkboxlist">
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocComplexity2" icheck> Complexity</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocInconsistent2" icheck> Inconsistent approaches</p>
+                        </div>
 
                         <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocCost2" icheck> Cost</p>
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocLackOfResponse2" icheck> Lack of responsiveness</p>
-                        </div>
-                        <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocComplexity2" icheck> Complexity</p>
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocNoMarkerDemand2" icheck> No FSC market demand</p>
-                        </div>
-                        <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocUncertainty2" icheck> Uncertainty</p>
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocLackOfSupply2" icheck> Lack of FSC supply</p>
-                        </div>
-                        <div class="checkboxlist">
-                            <p><input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocInconsistent2" icheck> Inconsistent approaches</p>
+                            <p><input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocNoMarkerDemand2" icheck> No FSC market demand</p>
                             <p>
-                                <input type="checkbox" disabled name="temp47" ng-model="cs8.fscCocOther2" icheck> Other<br/>
-                                <label ng-show="cs8.fscOther2">
-                                    Please Specify
-                                    <input type="text" readonly class="form-control" name="temp47" ng-model="cs8.fscCocOtherSpecify2" icheck>
+                                <input disabled readonly type="checkbox" name="temp47" ng-model="cs8.fscCocOther2" icheck> Other<br/>
+                                <label ng-show="cs8.fscCocOther2">
+                                    <b>Please specify</b>
+                                    <input disabled readonly type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherSpecify2" icheck>
                                 </label>
                             </p>
                         </div>
@@ -662,17 +651,18 @@
                     <div class="clear"></div>
 
                     <label class="form-inline">
-                        <input type="radio" disabled name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=6 icheck>
+                        <input disabled readonly type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=6 icheck>
                         Yes, and we are considering dropping SFI once we have obtained FSC certification
                     </label><br>
-                    <label class="form-inline">
-                        <input type="radio" disabled name="ChainOfCustody_FSCCertification" ng-model="cs8.ChainOfCustody_FSCCertification" value=7 icheck>
+                    <label>
+                        <input disabled readonly type="radio" name="chainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=7 icheck>
                         Other<br/>
-
-                        <label ng-show="cs8.ChainOfCustody_FSCCertification == 7">
-                            Please Explain
-                            <input type="text" required class="form-control" name="temp47" ng-model="cs8.fscCocOtherExplain" icheck>
+                        <label style="padding-left: 15px;" ng-show="cs8.chainOfCustody_FSCCertification == 7">
+                            <b>Explain</b>
+                            <br>
+                            <input disabled readonly type="text" class="form-control" name="temp47" ng-model="cs8.fscCocOtherExplain" icheck>
                         </label>
+
                     </label>
                 </div>
             </div>
@@ -1094,166 +1084,176 @@
                             </div>
                         </div>
                     </div>
-                    <br/>
 
                 </div>
             </div>
 
-                <div class="col-lg-12">
-                    <h4 class="content-header">Communications</h4>
-                    <p class="pading-botoms">
-                        <span tooltip title="SFI would like to understand your organization's communications strategies, so that we can provide information about relevant topics."> To help us understand how you market your SFI certification, please tell us how you communicate your SFI certification externally (e.g. to customers) and/or internally (to employees)? </span>
-                    </p>
-                    <div class="pading-botoms padding-left-10">
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="1" ng-model="sfiMarket" >
-                            Annual reports
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="2" ng-model="sfiMarket" >
-                            Brochures & other promotional material
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="3" ng-model="sfiMarket" >
-                            Printing the SFI label on your materials on SFI material using an SFI COC printer
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="4" ng-model="sfiMarket" >
-                            Website
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="5" ng-model="sfiMarket" >
-                            Social media
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="6" ng-model="sfiMarket" >
-                            Newsletter
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="7" ng-model="sfiMarket" >
-                            Client area/extranet
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="8" ng-model="sfiMarket" >
-                            Other
-                        </label><br>
-                        <label class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 8)">
-                            Please Explain:
-                            <input class="form-control" type="text" readonly ng-model="cs8.sfiMarketExplain1">
-                        </label>
-                        <br ng-show="isSelected(cs8.sfiMarketExternally, 8)"/>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="9" ng-model="sfiMarket" >
-                            n/a we don’t  communicate SFI certified status
-                        </label><br/>
-                        <label class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 9)">
-                            Please Explain:
-                            <input class="form-control" type="text" readonly ng-model="cs8.sfiMarketExplain2">
-                        </label>
-                        <br ng-show="isSelected(cs8.sfiMarketExternally, 9)"/>
-                    </div>
 
 
-                    <p>
-                        <span tooltip title="SFI would like to ensure we are equipping you to tell your story effectively! If you have ideas that are not on this list, please let us know.">How could SFI help you in your external and internal communication activities?</span>
-                    </p>
 
-                    <div class="pading-botoms padding-left-10">
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="1" ng-model="sfiHelp" >
-                            Presentation materials (sales presentations, benefits of SFI certification, benefits of sustainable forest management)
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="2" ng-model="sfiHelp" >
-                            Brochures/factsheets explaining the relevance of SFI certification to specific industry sectors e.g. retail, brand owners, etc.
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="3" ng-model="sfiHelp" >
-                            Template press release announcing your (re)certification status
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="4" ng-model="sfiHelp" >
-                            Access to royalty free photos covering various aspects of sustainable forest management, forests certified to SFI and responsibly sourced/SFI labeled forest products
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="5" ng-model="sfiHelp" >
-                            Promotional items certified to SFI  (calendars, pens, USB sticks, stickers etc.)
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="6" ng-model="sfiHelp" >
-                            General articles on current forestry related topics (e.g. for employee newsletters)
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="7" ng-model="sfiHelp" >
-                            Posters or data visualizations (infographics) explaining the benefits of sustainable forest management/certification
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="8" ng-model="sfiHelp" >
-                            Brochures/factsheetswhich explain the benefits of sustainable forest management/certification
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="9" ng-model="sfiHelp" >
-                            In-house/online training on sustainable forest management, forest certification, benefits of SFI
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="10" ng-model="sfiHelp" >
-                            SFI speakers at our employee or customer events
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="11" ng-model="sfiHelp" >
-                            Providing more information on what being involved in the SFI program means for your organization
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="12" ng-model="sfiHelp" >
-                            Our organization would not benefit from any such materials/activities
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="13" ng-model="sfiHelp" >
-                            Other
-                        </label><br>
-                        <label class="form-inline" ng-show="isSelected(cs8.sfiHelpCommunication, 13)">
-                            Please Explain:
-                            <input class="form-control" type="text" readonly ng-model="cs8.sfiHelpCommunicationExplain">
-                        </label>
-                        <br>
-                    </div>
+            <div class="col-lg-12 fm-stl">
+                <h4 class="content-header">Communications</h4>
+                <p><b>
+                    <span class="question-style" tooltip title="SFI would like to understand your organization's communications strategies, so that we can provide information about relevant topics."> To help us understand how you market your SFI certification, please tell us how you communicate your SFI certification externally (e.g. to customers) and/or internally (to employees)? </span>
+                </b></p>
+                <div class="pading-botoms padding-left-10">
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="1" ng-model="sfiMarket" >
+                        Annual reports
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="2" ng-model="sfiMarket" >
+                        Brochures & other promotional material
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="3" ng-model="sfiMarket" >
+                        Printing the SFI label on your materials on SFI material using an SFI COC printer
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="4" ng-model="sfiMarket" >
+                        Website
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="5" ng-model="sfiMarket" >
+                        Social media
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="6" ng-model="sfiMarket" >
+                        Newsletter
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="7" ng-model="sfiMarket" >
+                        Client area/extranet
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="8" ng-model="sfiMarket" >
+                        Other
+                    </label><br/>
 
-                    <p>
-                        <span tooltip title="We hope your expectations have been met! If not, we would like to know that, too, so we can continue to improve.">  How can SFI serve you better?</span>
-                    </p>
+                    <label class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 8)">
+                        Please Explain:
+                        <input disabled readonly class="form-control" type="text" ng-model="cs8.sfiMarketExplain1">
+                    </label>
+                    <br ng-show="isSelected(cs8.sfiMarketExternally, 8)" />
 
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="9" ng-model="sfiMarket" >
+                        n/a we don’t  communicate SFI certified status
+                    </label><br/>
 
-                    <div class="pading-botoms padding-left-10">
-                        <p>Check all that apply</p>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="1" ng-model="sfiServe" >
-                            Collaboration opportunities with other SFI Program Participants
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="2" ng-model="sfiServe" >
-                            Collaboration opportunities with conservation organizations or social purpose organizations
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="3" ng-model="sfiServe" >
-                            Outreach to brand owners/customers
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="4" ng-model="sfiServe" >
-                            Facilitating information sharing more effectively among SFI Program Participants
-                        </label><br>
-                        <label class="form-inline">
-                            <input type="checkbox" disabled icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="5" ng-model="sfiServe" >
-                            Answers to commonly asked questions
-                        </label><br>
-                    </div>
-                    <div class="pading-botoms">
-                        <p>
-                            Please use this space to provide SFI with any additional comments:
-                        </p>
-                        <textarea readonly rows="3" class="form-control" ng-model="cs8.sfiServeComments"></textarea>
-                    </div>
-
+                    <label class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 9)">
+                        <br/>Please Explain:
+                        <input disabled readonly class="form-control" type="text" ng-model="cs8.sfiMarketExplain2">
+                    </label>
+                    <br ng-show="isSelected(cs8.sfiMarketExternally, 9)" />
                 </div>
+
+
+                <p><b>
+                    <span class="question-style" tooltip title="SFI would like to ensure we are equipping you to tell your story effectively! If you have ideas that are not on this list, please let us know.">How could SFI help you in your external and internal communication activities?</span>
+                </b></p>
+
+                <div class="padding-left-10">
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="1" ng-model="sfiHelp" >
+                        Presentation materials (sales presentations, benefits of SFI certification, benefits of sustainable forest management)
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="2" ng-model="sfiHelp" >
+                        Brochures/factsheets explaining the relevance of SFI certification to specific industry sectors e.g. retail, brand owners, etc.
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="3" ng-model="sfiHelp" >
+                        Template press release announcing your (re)certification status
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="4" ng-model="sfiHelp" >
+                        Access to royalty free photos covering various aspects of sustainable forest management, forests certified to SFI and responsibly sourced/SFI labeled forest products
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="5" ng-model="sfiHelp" >
+                        Promotional items certified to SFI  (calendars, pens, USB sticks, stickers etc.)
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="6" ng-model="sfiHelp" >
+                        General articles on current forestry related topics (e.g. for employee newsletters)
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="7" ng-model="sfiHelp" >
+                        Posters or data visualizations (infographics) explaining the benefits of sustainable forest management/certification
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="8" ng-model="sfiHelp" >
+                        Brochures/factsheetswhich explain the benefits of sustainable forest management/certification
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="9" ng-model="sfiHelp" >
+                        In-house/online training on sustainable forest management, forest certification, benefits of SFI
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="10" ng-model="sfiHelp" >
+                        SFI speakers at our employee or customer events
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="11" ng-model="sfiHelp" >
+                        Providing more information on what being involved in the SFI program means for your organization
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="12" ng-model="sfiHelp" >
+                        Our organization would not benefit from any such materials/activities
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="13" ng-model="sfiHelp" >
+                        Other
+                    </label><br>
+                    <label class="form-inline" ng-show="isSelected(cs8.sfiHelpCommunication, 13)">
+                        Please Explain:
+                        <input disabled readonly class="form-control" type="text" ng-model="cs8.sfiHelpCommunicationExplain">
+                    </label>
+
+                    <br>
+                </div>
+
+                <p>
+                    <span class="question-style" tooltip title="We hope your expectations have been met! If not, we would like to know that, too, so we can continue to improve.">  How can SFI serve you better?</span>
+                </p>
+
+
+                <div class="pading-botoms padding-left-10">
+                    <p>Check all that apply</p>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="1" ng-model="sfiServe" >
+                        Collaboration opportunities with other SFI Program Participants
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="2" ng-model="sfiServe" >
+                        Collaboration opportunities with conservation organizations or social purpose organizations
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="3" ng-model="sfiServe" >
+                        Outreach to brand owners/customers
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="4" ng-model="sfiServe" >
+                        Facilitating information sharing more effectively among SFI Program Participants
+                    </label><br>
+                    <label class="form-inline">
+                        <input disabled readonly type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="5" ng-model="sfiServe" >
+                        Answers to commonly asked questions
+                    </label><br>
+                </div>
+                <div class="pading-botoms">
+                    <p><b>
+                        Please use this space to provide SFI with any additional comments:
+                    </b></p>
+                    <textarea disabled readonly rows="3" class="form-control" ng-model="cs8.sfiServeComments"></textarea>
+                </div>
+
+            </div>
+
+
+
+
             </div>
         </form>
     </div>
