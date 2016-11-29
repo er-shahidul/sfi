@@ -1,0 +1,138 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #E4E4E4">
+                <p style="font-size: larger">
+                    Why are we asking? Please share your story if you have an interesting or compelling case example of
+                    how your organization improved management and best practices related to the new standard.
+                </p>
+            </div>
+            <div class="modal-body">
+
+                <h5>{{ story.label }}</h5>
+
+                <div class="form-group" style="padding-left: 0;">
+                    <div>
+                        <div class="col-sm-10 ">
+
+                 <span class="pull-right">Enter any organizations you worked with in 2016
+                    as part of the research funding reported. Please be as specific as</span>
+                        </div>
+                        <div class="col-sm-2 ">
+
+                            <button  type="button" class="btn btn-cancel" style="alignment: right;">X</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group-hack form-group" style="padding-top: 0px; margin-left:0px;">
+                        <div class="col-sm-12" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
+
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="academicModel2"
+                                   name="organizationListAcademic2"
+                                   placeholder="University or College"
+                                   ng-options="item.name for item in academicOptions"
+                                   data-auto-select="true" watchOptions="true" bs-typeahead>
+
+
+                            <div id="selectedItem" ng-repeat="item in project.organizationListAcademic">{{ item }}
+                                <button ng-click="project.organizationListAcademic = withoutList(item, project.organizationListAcademic)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group-hack form-group" style="padding-top: 0px; margin-left:0px;">
+                        <div class="col-sm-12" ng-class="{'has-error' : isDirty() && innerFrom.organizationListResearch.$invalid }">
+                            <input type="text"
+                                   class="form-control"
+                                   name="organizationListResearch2"
+                                   ng-model="researchModel2"
+                                   ng-options="item.name for item in researchList"
+                                   placeholder="Research Institution or Collaboratives"
+                                   data-auto-select="true" watchOptions="true" bs-typeahead>
+
+
+                            <div id="selectedItem" ng-repeat="item in project.organizationListResearch">{{ item }}
+                                <button ng-click="project.organizationListResearch = withoutList(item, project.organizationListResearch)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-hack form-group" style="padding-top: 0px; margin-left:0px;">
+                        <div class="col-sm-12" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
+                            <input type="text"
+                                   class="form-control"
+                                   name="organizationListConservation2"
+                                   ng-model="conservationModel2"
+                                   ng-options="item.name for item in conservationList"
+                                   placeholder="Conservation Organization"
+                                   data-auto-select="true" watchOptions="true" bs-typeahead>
+
+                            <div id="selectedItem" ng-repeat="item in project.organizationListConservation">{{ item }}
+                                <button ng-click="project.organizationListConservation = withoutList(item, project.organizationListConservation)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-hack form-group" style="padding-top: 0px; margin-left:0px;">
+                        <div class="col-sm-12" ng-class="{'has-error' : isDirty() && innerFrom.organizationListGovernment.$invalid }">
+                            <input type="text"
+                                   class="form-control"
+                                   name="organizationListGovernment2"
+                                   ng-model="governmentModel2"
+                                   ng-options="item.name for item in governmentList"
+                                   placeholder="Government"
+                                   data-auto-select="true" watchOptions="true" bs-typeahead>
+
+                            <div id="selectedItem" ng-repeat="item in project.organizationListGovernment">{{ item }}
+                                <button ng-click="project.organizationListGovernment = withoutList(item, project.organizationListGovernment)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group-hack form-group" style="padding-top: 0px; margin-left:0px;">
+                        <div class="col-sm-12" ng-class="{'has-error' : isDirty() && innerFrom.organizationListCommunity.$invalid }">
+
+                            <input type="text"
+                                   class="form-control" n
+                                   ame="organizationListCommunity2"
+                                   ng-model="communityModel2"
+                                   ng-options="item.name for item in communityList"
+                                   placeholder="Community Organization"
+                                   data-auto-select="true" data-watch-options="true" bs-typeahead>
+
+                            <div id="selectedItem" ng-repeat="item in project.organizationListCommunity">{{ item }}
+                                <button ng-click="project.organizationListAcademic = withoutList(item, project.organizationListCommunity)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group-hack form-group" style="padding-top: 0px; margin-left:0px;">
+                        <div class="col-sm-12" ng-class="{'has-error' : isDirty() && innerFrom.organizationListOther.$invalid }">
+                            <input type="text"
+                                   class="form-control"
+                                   name="organizationListOther2"
+                                   ng-model="otherModel2"
+                                   ng-options="item for item in otherList"
+                                   placeholder="Other"
+                                   data-auto-select="true" watchOptions="true" bs-typeahead>
+
+                            <div id="selectedItem" ng-repeat="item in project.organizationListOther">{{ item }}
+                                <button ng-click="project.organizationListOther = withoutList(item, project.organizationListOther);" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 specialpadding aligncenter"><button type="button" class="btn btn-cancel">Cancel</button></div>
+                    <div class="col-sm-6 specialpadding alignright"><button type="button" class="btn btn-success">Save</button> </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!--Modal Body End-->
+    </div>
+</div>

@@ -1,8 +1,8 @@
 var cs5;
 sfiFormApp
     .controller('FormResFundingCtrl',
-        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects', 'standardObjects2015','$modal',
-            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects, standardObjects2015,$modal){
+        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects', 'standardObjects2015','$modal','$compile',
+            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects, standardObjects2015,$modal,$compile){
 
         cs5 = $scope;
         $scope.validate = false;
@@ -10,8 +10,82 @@ sfiFormApp
         $scope.standardObjects = standardObjects;
         $scope.standardObjects2015 = standardObjects2015;
 
+        $scope.organizationListAcademic = [];
+        $scope.organizationListCommunity = [];
+        $scope.organizationListConservation = [];
+        $scope.organizationListGovernment = [];
+        $scope.organizationListResearch = [];
+        $scope.organizationListOther = [];
+
+
+
+
 
         $scope.cs5 = angular.copy($rootScope.form.cs5);
+        $scope.copypopOverData = function(index){
+            if(index == 0)
+                index='';
+            $scope.organizationListAcademic = angular.copy($scope.cs5['organizationListAcademic'+index]);
+            $scope.organizationListCommunity = angular.copy($scope.cs5['organizationListCommunity'+index]);
+            $scope.organizationListConservation = angular.copy($scope.cs5['organizationListConservation'+index]);
+            $scope.organizationListGovernment = angular.copy($scope.cs5['organizationListGovernment'+index]);
+            $scope.organizationListResearch = angular.copy($scope.cs5['organizationListResearch'+index]);
+            $scope.organizationListOther  = angular.copy($scope.cs5['organizationListOther'+index]);
+        }
+        $scope.checkpopOverData = function(index){
+
+            if($scope.cs5['organizationListAcademic'+index].length>0)
+                return true;
+            if($scope.cs5['organizationListCommunity'+index].length>0)
+                return true;
+            if($scope.cs5['organizationListConservation'+index].length>0)
+                return true;
+            if($scope.cs5['organizationListGovernment'+index].length>0)
+                return true;
+            if($scope.cs5['organizationListResearch'+index].length>0)
+                return true;
+            if($scope.cs5['organizationListOther'+index].length>0)
+                return true;
+
+           return false;
+
+        }
+        $scope.showEditText = function(index){
+            if(index!=0){
+                return $scope.checkpopOverData(index);
+            }else{
+                return $scope.checkpopOverData('');
+            }
+        }
+        $scope.showEditText0 = $scope.showEditText(0);
+        $scope.showEditText1 = $scope.showEditText(1);
+        $scope.showEditText2 = $scope.showEditText(2);
+        $scope.showEditText3 = $scope.showEditText(3);
+        $scope.showEditText4 = $scope.showEditText(4);
+        $scope.showEditText5 = $scope.showEditText(5);
+        $scope.showEditText6 = $scope.showEditText(6);
+        $scope.showEditText7 = $scope.showEditText(7);
+        $scope.showEditText8 = $scope.showEditText(8);
+        $scope.showEditText9 = $scope.showEditText(9);
+        $scope.showEditText10 = $scope.showEditText(10);
+        $scope.showEditText11 = $scope.showEditText(11);
+        $scope.showEditText12 = $scope.showEditText(12);
+
+        $scope.checkEditText = function(index){
+            $scope['showEditText'+index] = $scope.showEditText(index);
+
+        }
+
+        $scope.copyData = function(index){
+            if(index == 0)
+                index = '';
+            $scope.cs5['organizationListAcademic'+index] = angular.copy($scope.organizationListAcademic) ;
+            $scope.cs5['organizationListCommunity'+index] = angular.copy($scope.organizationListCommunity) ;
+            $scope.cs5['organizationListConservation'+index] = angular.copy($scope.organizationListConservation) ;
+            $scope.cs5['organizationListGovernment'+index] = angular.copy($scope.organizationListGovernment) ;
+            $scope.cs5['organizationListResearch'+index] = angular.copy($scope.organizationListResearch) ;
+            $scope.cs5['organizationListOther'+index] = angular.copy($scope.organizationListOther);
+        }
         //$scope.cs5.isOtherEnabled = ($scope.cs5.other) ? true: false;
 
         $scope.academicOptions = [
@@ -178,6 +252,42 @@ sfiFormApp
             $scope.isDataDirty = true;
 
             return true;
+        }
+        $scope.showPopUp2 = function(index){
+            $scope.showEditText(index);
+            $scope.copypopOverData(index);
+
+            var $el = $("#pop-link-" + index);
+
+            if(!$el.data('bs.popover')){
+                var content =  $('#research_funding_org_tpl').html();
+                content = content.replace("]]>", "");
+                $el.popover({
+                    trigger : 'manual',
+                    content : $compile($(content).contents())($scope),
+                    placement: 'top',
+                    html : true
+                });
+            }
+
+            $el.popover('show');
+            var $popover = $el.data('bs.popover');
+            var $text = $popover.$tip.find("textarea"),
+                $save = $popover.$tip.find(".btn-success");
+
+            $popover.$tip.css({width: 443});
+
+            $save.click(function(e){
+
+                e.preventDefault();
+
+                setTimeout(function () {
+                    $scope.$apply(function () {
+                        $scope.copyData(index);
+                        $scope.checkEditText(index);
+                    })
+                })
+            });
         }
 
         $scope.resetProject = function(){
@@ -465,6 +575,9 @@ sfiFormApp
         $scope.withoutList = function(item, bucket){
             bucket = _.without(bucket, item);
             return bucket;
+        }
+        $rootScope.deleteByIndex = function(index, bucket){
+            bucket.splice(index, 1);
         }
 
         $scope.setShareOption = function() {
