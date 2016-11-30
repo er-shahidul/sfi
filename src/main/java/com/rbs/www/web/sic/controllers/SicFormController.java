@@ -228,9 +228,8 @@ public class SicFormController{
     private void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
         ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
         MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
-        String url="https://"+path;
 
-        mailHelper.sendMail(recipient, subject, message, user, mailType, url);
+        mailHelper.sendMail(recipient, subject, message, user, mailType, path);
     }
 
     @RequestMapping(value = "/admin/company/sic/form/approve/{id}", method = RequestMethod.GET)
