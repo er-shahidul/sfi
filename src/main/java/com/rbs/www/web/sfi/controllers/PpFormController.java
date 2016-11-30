@@ -1,7 +1,9 @@
 package com.rbs.www.web.sfi.controllers;
 
+import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.common.util.MailHelper;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
@@ -10,6 +12,8 @@ import com.rbs.www.web.sfi.models.viewmodels.*;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -342,5 +346,38 @@ public class PpFormController{
         model.setConservationBiodiversity413Items2(new LinkedHashSet<Integer>());
         model.setConservationBiodiversity414Items2(new LinkedHashSet<Integer>());
 //      end set types
+    }
+
+    private void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
+        MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
+        String url="https://"+path;
+
+        mailHelper.sendMail(recipient, subject, message, user, mailType, url);
+    }
+
+    @RequestMapping(value = "/admin/company/pp/form/approve/{id}", method = RequestMethod.GET)
+    public ResponseEntity<String> adminSfiFormEdit(@PathVariable Integer id, HttpServletRequest request){
+        SfiPpFormData model1 = sfiPpFormDataService.get(id);
+        if(model1 != null){
+            Cs10ViewModel model10 = formService.getCs10ViewModel(id);
+            if(model10.getApproved() != null){
+                model10.setApproved(!model10.getApproved());
+            }else {
+                model10.setApproved(true);
+            }
+            formService.setCs10Entity(model10);
+
+            User user = userService.findByCompany(model1.getCompany());
+            String subject = "Successfully Submission of your SFI Annual Survey!";
+            String message = "-";
+            String mailType = "approved";
+
+            sendEmail(user.getEmail(), subject, message, user, mailType, request.getLocalName());
+
+            return new ResponseEntity<String>("Successfully Approved", HttpStatus.OK);
+        }else {
+            return new ResponseEntity<String>("Invalid Form", HttpStatus.OK);
+        }
     }
 }

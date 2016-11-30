@@ -1,5 +1,6 @@
 package com.rbs.www.admin.repositories;
 
+import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.admin.models.entities.User;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
@@ -67,5 +68,12 @@ public class UserRepository extends AbstractRepository<Integer, User> {
         User user = (User)criteria.uniqueResult();
 
         return user;
+    }
+
+    public User findByCompany(Company company) {
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("company", company));
+
+        return (User)criteria.uniqueResult();
     }
 }

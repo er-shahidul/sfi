@@ -1,16 +1,23 @@
 package com.rbs.www.web.sic.controllers;
 
+import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.common.util.MailHelper;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjective2015Service;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
+import com.rbs.www.web.sic.models.viewmodels.SicCs10ViewModel;
 import com.rbs.www.web.sic.services.*;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,10 +35,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Objects;
 
 import static com.rbs.www.common.util.Util.getCurrentUsername;
@@ -41,6 +45,9 @@ public class SicFormController{
 
     @Value("#{messages[endDate]}")
     private String endDate;
+
+    @Autowired
+    private SicFormService sicFormService;
 
     @Autowired
     UserService userService;
@@ -215,5 +222,38 @@ public class SicFormController{
 
         // close stream and return to view
         response.flushBuffer();
+    }
+
+    private void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
+        MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
+        String url="https://"+path;
+
+        mailHelper.sendMail(recipient, subject, message, user, mailType, url);
+    }
+
+    @RequestMapping(value = "/admin/company/sic/form/approve/{id}", method = RequestMethod.GET)
+    public ResponseEntity<String> adminSfiFormEdit(@PathVariable Integer id, HttpServletRequest request){
+        SicFormData model1 = sicFormDataService.get(id);
+        if(model1 != null){
+            SicCs10ViewModel model10 = sicFormService.getSicCs10ViewModel(id);
+            if(model10.getApproved() != null){
+                model10.setApproved(!model10.getApproved());
+            }else {
+                model10.setApproved(true);
+            }
+            sicFormService.setSicCs10Entity(model10);
+
+            User user = userService.findByCompany(model1.getCompany());
+            String subject = "Successfully Submission of your SFI Annual Survey!";
+            String message = "-";
+            String mailType = "approved";
+
+            sendEmail(user.getEmail(), subject, message, user, mailType, request.getLocalName());
+
+            return new ResponseEntity<String>("Successfully Approved", HttpStatus.OK);
+        }else {
+            return new ResponseEntity<String>("Invalid Form", HttpStatus.OK);
+        }
     }
 }
