@@ -322,7 +322,7 @@ public class Cs10ViewModel extends BaseViewModel {
     }
 
     public Boolean getApproved() {
-        return approved;
+        return approved !=null ? approved :false;
     }
 
     public void setApproved(Boolean approved) {
