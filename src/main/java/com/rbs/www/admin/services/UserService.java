@@ -1,5 +1,6 @@
 package com.rbs.www.admin.services;
 
+import com.rbs.www.admin.models.entities.Company;
 import com.rbs.www.admin.models.entities.Group;
 import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.admin.models.viewmodels.UserViewModel;
@@ -45,6 +46,12 @@ public class UserService {
             entity.setToken(true);
             userRepository.update(entity);
         }
+    }
+
+    public User findByCompany(Company company){
+        User user = userRepository.findByCompany(company);
+
+        return user;
     }
 
     public User findByID(Integer id) {

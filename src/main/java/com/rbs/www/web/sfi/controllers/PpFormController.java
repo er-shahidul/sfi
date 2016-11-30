@@ -1,7 +1,9 @@
 package com.rbs.www.web.sfi.controllers;
 
+import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.services.TypeConversionUtils;
+import com.rbs.www.common.util.MailHelper;
 import com.rbs.www.common.util.Util;
 import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
@@ -10,6 +12,8 @@ import com.rbs.www.web.sfi.models.viewmodels.*;
 import com.rbs.www.web.sfi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,20 +29,23 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Objects;
-import java.util.StringTokenizer;
 
 @Controller
 public class PpFormController{
 
     @Value("#{messages[endDate]}")
     private String endDate;
+    
+    @Value("#{messages[domain]}")
+    private String domain;
 
     @Autowired
     UserService userService;
@@ -227,10 +234,6 @@ public class PpFormController{
         response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
         FileCopyUtils.copy(is, response.getOutputStream());
 
-        // delete file on server file system
-//        licenseFile.delete();
-
-        // close stream and return to view
         response.flushBuffer();
     }
 
@@ -342,5 +345,43 @@ public class PpFormController{
         model.setConservationBiodiversity413Items2(new LinkedHashSet<Integer>());
         model.setConservationBiodiversity414Items2(new LinkedHashSet<Integer>());
 //      end set types
+    }
+
+    private void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
+        MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
+
+        mailHelper.sendMail(recipient, subject, message, user, mailType, path);
+    }
+
+    @RequestMapping(value = "/admin/company/pp/form/approve/{id}", method = RequestMethod.GET)
+    public ResponseEntity<String> adminSfiFormEdit(@PathVariable Integer id, HttpServletRequest request) throws MalformedURLException {
+        SfiPpFormData model1 = sfiPpFormDataService.get(id);
+        if(model1 != null){
+            Cs10ViewModel model10 = formService.getCs10ViewModel(id);
+            if(model10.getApproved() != null){
+                model10.setApproved(!model10.getApproved());
+            }else {
+                model10.setApproved(true);
+            }
+            formService.setCs10Entity(model10);
+
+            User user = userService.findByCompany(model1.getCompany());
+            String subject = "Successfully Submission of your SFI Annual Survey!";
+            String message = "-";
+            String mailType = "approved";
+
+            String domain = this.domain;
+
+            URL requestURL = new URL(request.getRequestURL().toString());
+            String port = requestURL.getPort() == -1 ? "" : ":" + requestURL.getPort();
+            String urlString =  requestURL.getProtocol() + "://" + requestURL.getHost() + port;
+
+            sendEmail(user.getEmail(), subject, message, user, mailType, urlString);
+
+            return new ResponseEntity<String>("Successfully Approved", HttpStatus.OK);
+        }else {
+            return new ResponseEntity<String>("Invalid Form", HttpStatus.OK);
+        }
     }
 }
