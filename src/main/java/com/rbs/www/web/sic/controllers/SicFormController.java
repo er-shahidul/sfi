@@ -35,6 +35,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.ParseException;
 import java.util.Objects;
 
@@ -45,6 +47,9 @@ public class SicFormController{
 
     @Value("#{messages[endDate]}")
     private String endDate;
+
+    @Value("#{messages[domain]}")
+    private String domain;
 
     @Autowired
     private SicFormService sicFormService;
@@ -217,10 +222,6 @@ public class SicFormController{
         response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
         FileCopyUtils.copy(is, response.getOutputStream());
 
-        // delete file on server file system
-//        licenseFile.delete();
-
-        // close stream and return to view
         response.flushBuffer();
     }
 
@@ -233,7 +234,7 @@ public class SicFormController{
     }
 
     @RequestMapping(value = "/admin/company/sic/form/approve/{id}", method = RequestMethod.GET)
-    public ResponseEntity<String> adminSfiFormEdit(@PathVariable Integer id, HttpServletRequest request){
+    public ResponseEntity<String> adminSfiFormEdit(@PathVariable Integer id, HttpServletRequest request) throws MalformedURLException {
         SicFormData model1 = sicFormDataService.get(id);
         if(model1 != null){
             SicCs10ViewModel model10 = sicFormService.getSicCs10ViewModel(id);
@@ -249,7 +250,13 @@ public class SicFormController{
             String message = "-";
             String mailType = "approved";
 
-            sendEmail(user.getEmail(), subject, message, user, mailType, request.getLocalName());
+            String domain = this.domain;
+
+            URL requestURL = new URL(request.getRequestURL().toString());
+            String port = requestURL.getPort() == -1 ? "" : ":" + requestURL.getPort();
+            String urlString =  requestURL.getProtocol() + "://" + requestURL.getHost() + port;
+
+            sendEmail(user.getEmail(), subject, message, user, mailType, urlString);
 
             return new ResponseEntity<String>("Successfully Approved", HttpStatus.OK);
         }else {

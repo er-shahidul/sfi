@@ -10,6 +10,7 @@ import com.rbs.www.admin.services.GroupService;
 import com.rbs.www.admin.services.UserService;
 import com.rbs.www.common.util.MailHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -37,6 +38,9 @@ import static com.rbs.www.common.util.Util.getCurrentUsername;
 
 @Controller
 public class UserController {
+
+    @Value("#{messages[domain]}")
+    private String domain;
 
     @Autowired
     GroupService groupService;
@@ -71,9 +75,9 @@ public class UserController {
     private void sendEmail(String recipient, String subject, String message, User user, String mailType, String path) {
         ApplicationContext context = new ClassPathXmlApplicationContext("email-context.xml");
         MailHelper mailHelper = (MailHelper) context.getBean("mailMail");
-        String url="https://"+path;
 
-        mailHelper.sendMail(recipient, subject, message, user, mailType, url);
+        String domain = this.domain;
+        mailHelper.sendMail(recipient, subject, message, user, mailType, path);
     }
 
     private String getHost(HttpServletRequest request) throws MalformedURLException {
@@ -201,7 +205,6 @@ public class UserController {
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
         boolean isInvalidEmail = !userService.isValidEmailUpdate(user.getEmail());
         boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
-//        boolean isWelcomeMsg = userService.welcomeMsg(user.getInvitationMsg());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail || isInvalidPassword) {
             redirect.addFlashAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
@@ -210,22 +213,7 @@ public class UserController {
             return "redirect:/admin/user/edit/" + user.getId();
         }
 
-//        if (isWelcomeMsg) {
-//            redirect.addFlashAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
-//            contentForNewUser(model);
-//            return "redirect:/admin/user/edit/" + user.getId();
-//        }
-
         userService.updateUser(user);
-
-//        String recipient = user.getEmail();
-//        String subject = "Email Verification";
-//        String message = "not implemented";
-//        String mailType = "confirm";
-//
-//        if(user.getSendInvitation()){
-//            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
-//        }
 
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/admin/user/list");
@@ -324,7 +312,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/forgot/password", method = RequestMethod.POST)
-    public String forgotPassword(@RequestParam("email") String email, HttpServletRequest request, ModelMap model) {
+    public String forgotPassword(@RequestParam("email") String email, HttpServletRequest request, ModelMap model) throws MalformedURLException {
         User user = userService.findByUsername(email);
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
@@ -333,11 +321,14 @@ public class UserController {
             user.setUserToken(randomUUIDString);
             userService.passwordResetTokenUpdate(user);
 
+            URL requestURL = new URL(request.getRequestURL().toString());
+            String port = requestURL.getPort() == -1 ? "" : ":" + requestURL.getPort();
+            String urlString =  requestURL.getProtocol() + "://" + requestURL.getHost() + port;
+
             String subject = "SFI Annual Reporting & Survey Tool Password Reset";
             String message = "/user/password/" + randomUUIDString;
-//            String message = request.getLocalName() + "/user/password/" + randomUUIDString;
             String mailType = "reset";
-            sendEmail(email, subject, message, user, mailType, request.getLocalName());
+            sendEmail(email, subject, message, user, mailType, urlString);
         }
 
         return "redirect:/login?msg";
@@ -407,7 +398,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/admin/user/new", method = RequestMethod.POST)
-    public String save(@Valid User user, BindingResult result, ModelMap model, HttpServletRequest request) {
+    public String save(@Valid User user, BindingResult result, ModelMap model, HttpServletRequest request) throws MalformedURLException {
 
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
@@ -421,7 +412,6 @@ public class UserController {
 
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
         boolean isInvalidEmail = !userService.isValidEmail(user.getEmail());
-//        boolean isWelcomeMsg = userService.welcomeMsg(user.getInvitationMsg());
 
         if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
             model.addAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
@@ -437,12 +427,6 @@ public class UserController {
             return "admin/user/new";
         }
 
-//        if (isWelcomeMsg) {
-//            model.addAttribute("welcomeMsg", isWelcomeMsg ? messageSource.getMessage("welcomeMsgError", new String[]{user.getInvitationMsg()}, Locale.getDefault()) : "");
-//            contentForNewUser(model);
-//            return "admin/user/new";
-//        }
-
         if (!userService.isUserEmailUnique(user.getId(), user.getEmail())) {
             FieldError ssoError = new FieldError("user", "email", messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
             result.addError(ssoError);
@@ -455,11 +439,14 @@ public class UserController {
         String recipient = user.getEmail();
         String subject = "Welcome to SFI Annual Reporting & Survey Tool";
         String message = "/user/verification/" + randomUUIDString;
-//        String message = request.getLocalName() + "/user/verification/" + randomUUIDString;
         String mailType = "confirm";
 
         if (user.getSendInvitation()) {
-            sendEmail(recipient, subject, message, user, mailType, request.getLocalName());
+            URL requestURL = new URL(request.getRequestURL().toString());
+            String port = requestURL.getPort() == -1 ? "" : ":" + requestURL.getPort();
+            String urlString =  requestURL.getProtocol() + "://" + requestURL.getHost() + port;
+
+            sendEmail(recipient, subject, message, user, mailType, urlString);
         }
 
         model.addAttribute("success", "User " + "" + " has been registered successfully");
