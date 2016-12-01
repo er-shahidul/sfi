@@ -234,17 +234,12 @@ public class SicFormController{
 
     @RequestMapping(value = "/admin/company/sic/form/approve/{id}", method = RequestMethod.GET)
     public ResponseEntity<String> adminSfiFormEdit(@PathVariable Integer id, HttpServletRequest request) throws MalformedURLException {
-        SicFormData model1 = sicFormDataService.get(id);
-        if(model1 != null){
-            SicCs10ViewModel model10 = sicFormService.getSicCs10ViewModel(id);
-            if(model10.getApproved() != null){
-                model10.setApproved(!model10.getApproved());
-            }else {
-                model10.setApproved(true);
-            }
-            sicFormService.setSicCs10Entity(model10);
+        SicFormData model = sicFormDataService.get(id);
+        if(model != null){
+            model.setApproved(!model.getApproved());
+            sicFormDataService.update(model);
 
-            User user = userService.findByCompany(model1.getCompany());
+            User user = userService.findByCompany(model.getCompany());
             String subject = "Successfully Submission of your SFI Annual Survey!";
             String message = "-";
             String mailType = "approved";

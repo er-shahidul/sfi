@@ -45,4 +45,8 @@ public class SfiPpForm2014Service {
         User user = userService.findByUsername(Util.getCurrentUsername());
         return repository.getByCompany(user.getCompany());
     }
+
+    public void update(SfiPpForm2014 sfiPpForm2014) {
+         repository.update(sfiPpForm2014);
+    }
 }

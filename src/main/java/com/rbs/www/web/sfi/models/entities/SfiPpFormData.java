@@ -45,6 +45,9 @@ public class SfiPpFormData extends BaseEntityModel {
     @Column(name = "isComplete", nullable = true)
     private Boolean isComplete;
 
+    @Column(name = "approved", nullable = true)
+    private Boolean approve;
+
     @Override
     public Integer getId() {
         return id;
@@ -116,5 +119,13 @@ public class SfiPpFormData extends BaseEntityModel {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Boolean getApprove() {
+        return this.approve !=null ? this.approve: false;
+    }
+
+    public void setApprove(Boolean approve) {
+        this.approve = approve;
     }
 }

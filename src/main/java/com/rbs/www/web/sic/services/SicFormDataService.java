@@ -81,4 +81,7 @@ public class SicFormDataService {
         SicFormData entity = repository.get(id);
         entity.setIsComplete(true);
     }
+    public void update(SicFormData sicFormData) {
+        repository.update(sicFormData);
+    }
 }
