@@ -56,6 +56,9 @@ public class FormService {
     private Cs10Service cs10Service;
 
     @Autowired
+    private SfiPpForm2014Service sfiPpForm2014Service;
+
+    @Autowired
     private SfiPpFormCs5Service sfiPpFormCs5Service;
 
     @Autowired
@@ -228,6 +231,17 @@ public class FormService {
         cs10Service.manualPopulation(model);
         Cs10 entity = entityModelMapperService.convert(model, Cs10.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
+    }
+    /************************* Cs10 : End   ***********************/
+
+    /************************* Cs10 : Begin ***********************/
+    public SfiPpForm2014ViewModel getSfiPpForm2014ViewModel(Integer id) {
+        SfiPpForm2014 entity = sfiPpForm2014Service.get(id);
+        return validationService.validate(viewModelMapperService.convert(entity, SfiPpForm2014ViewModel.class));
+    }
+
+    public void setSfiPpForm2014Entity(SfiPpForm2014ViewModel model) {
+        SfiPpForm2014 entity = entityModelMapperService.convert(model, SfiPpForm2014.class);
     }
     /************************* Cs10 : End   ***********************/
 

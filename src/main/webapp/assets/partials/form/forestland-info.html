@@ -22,7 +22,12 @@
                     <th style="min-width: 155px;">
                         Total area certified to the SFI forest management standard<br/>
                         <u>
-                        <a ng-click="lastYear2Pop()">How we used your <br/>data last year</a>
+                            <div ng-show="operateInUsa() || operateInCa() || operateInOthers()">
+                                <a ng-click="lastYear2Pop()">How we used your <br/>data last year</a>
+                            </div>
+                            <div ng-show="!operateInUsa() && !operateInCa() && !operateInOthers()">
+                                How we used your <br/>data last year
+                            </div>
                         </u>
                     </th>
                     <th style="min-width: 155px;">
@@ -31,7 +36,12 @@
                     <th style="min-width: 155px;">
                         Area certified to SFI<br/>standard open to public<br/>for recreation<br/>
                         <u>
-                            <a ng-click="lastYearPop()">How we used your <br/>data last year</a>
+                            <div ng-show="operateInUsa() || operateInCa() || operateInOthers()">
+                                <a ng-click="lastYearPop()">How we used your <br/>data last year</a>
+                            </div>
+                            <div ng-show="!operateInUsa() && !operateInCa() && !operateInOthers()">
+                                How we used your <br/>data last year
+                            </div>
                         </u>
                     </th>
                     <th width="24%">Check all recreation categories that<br/>apply to areas open to recreation on<br/>your managed land</th>

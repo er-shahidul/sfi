@@ -7,6 +7,7 @@ public class SfiPpForm2014ViewModel extends BaseViewModel {
     private Integer id;
     private CompanyViewModel company;
     private String fileName;
+    private Boolean approved;
 
     @Override
     public Integer getId() {
@@ -31,5 +32,13 @@ public class SfiPpForm2014ViewModel extends BaseViewModel {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
     }
 }

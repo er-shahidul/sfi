@@ -12,25 +12,25 @@
 <!-- Top section -->
 <form name="cs6Form">
 <table class="table table-striped vert-align-middle">
-    <thead>
+    <thead ng-show="operateInUsa() || operateInCa()">
     <tr>
         <th>Private Forest Landowners</th>
-        <th ng-class="{'disabled' : !operateInUsa()}">US</th>
-        <th ng-class="{'disabled' : !operateInCa()}" >Canada</th>
+        <th ng-class="{'disabled' : !operateInUsa()}" ng-show="operateInUsa()">US</th>
+        <th ng-class="{'disabled' : !operateInCa()}" ng-show="operateInCa()">Canada</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
+    <tr ng-show="operateInUsa() || operateInCa()">
         <td tooltip data-html="true" data-placement="top" data-container="body"
             data-title="Landowners selling timber directly to your organization” means those private landowners with which your organization has a contractual relationship to purchase or harvest timber (i.e., stumpage or logs)."
             >Number of private forest landowners selling timber (stumpage, logs or chips) directly to your organization last year.</td>
 
-        <td>
+        <td ng-show="operateInUsa()">
             <input type="number" readonly  class="form-control  shorter"
                    ng-model="cs6.numPrivateForeOwersUs" ng-class="{'disabled' : !operateInUsa()}">
         </td>
 
-        <td>
+        <td ng-show="operateInCa()">
             <input type="number" readonly  class="form-control  shorter"
                    ng-model="cs6.numPrivateForeOwersCa" ng-disabled="!operateInCa()" >
         </td>

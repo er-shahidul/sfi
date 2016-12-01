@@ -19,6 +19,9 @@ public class SfiPpForm2014 extends BaseEntityModel {
     @Column(name = "file_name", nullable = true)
     private String fileName;
 
+    @Column(name = "approved", nullable = true)
+    private Boolean approved;
+
     @Override
     public Integer getId() {
         return id;
@@ -42,5 +45,13 @@ public class SfiPpForm2014 extends BaseEntityModel {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
     }
 }
