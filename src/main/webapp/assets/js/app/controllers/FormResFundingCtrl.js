@@ -1,8 +1,8 @@
 var cs5;
 sfiFormApp
     .controller('FormResFundingCtrl',
-        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects', 'standardObjects2015','$modal','$compile',
-            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects, standardObjects2015,$modal,$compile){
+        ['$rootScope', '$scope', '$state', '$http', 'Countries', '_', 'Message', 'RegionList', '$upload', '$', 'standardObjects', 'standardObjects2015','$modal','$compile','$location',
+            function ($rootScope , $scope, $state, $http, Countries, _, Message, RegionList, $upload, $, standardObjects, standardObjects2015,$modal,$compile,$location){
 
         cs5 = $scope;
         $scope.validate = false;
@@ -260,7 +260,13 @@ sfiFormApp
             var $el = $("#pop-link-" + index);
 
             if(!$el.data('bs.popover')){
-                var content =  $('#research_funding_org_tpl').html();
+
+                var content='';
+                if($location.absUrl().toString().indexOf('view')>0){
+                    content =  $('#research_funding_org_view_tpl').html();
+                }else{
+                    content =  $('#research_funding_org_tpl').html();
+                }
                 content = content.replace("]]>", "");
                 $el.popover({
                     trigger : 'manual',

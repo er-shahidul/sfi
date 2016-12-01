@@ -559,6 +559,174 @@
 
          ]]>
     </script>
+    <script id="research_funding_org_view_tpl" type="text/template">
+
+        <![CDATA[
+        <div class="form-group" style="padding-left: 0;">
+            <div >
+            <button  style="position: absolute;top: 0px;right: 0px;margin:0;" type="button" class="btn btn-cancel" >X</button>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-10 ">
+
+                 <span class="pull-right">Enter any organizations you worked with in 2016
+                    as part of the research funding reported. Please be as specific as</span>
+                </div>
+                <div class="col-sm-2 ">
+
+
+                </div>
+            </div>
+
+            <div class="form-group-hack form-group" style="padding-top: 0px;">
+
+                <div class="col-sm-10" style="padding: 5px" ng-class="{'has-error' : isDirty() && innerFrom.organizationListAcademic.$invalid }">
+
+                    <input type="text"
+                           class="form-control"
+                           ng-model="academicModel2"
+                           disabled
+                           name="organizationListAcademic2"
+                           placeholder="University or College"
+                           ng-options="item.name for item in academicOptions"
+                           data-auto-select="true" watchOptions="true" bs-typeahead>
+
+
+                    <div id="selectedItem" ng-repeat="item in organizationListAcademic">{{ item }}
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <a style="text-decoration:underline;">
+                        <label ng-show="academicModel2"
+                               ng-click="organizationListAcademic = addList(organizationListAcademic, academicModel2) ; academicModel2 = null">+ Save</label>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="form-group-hack form-group" style="padding-top: 5px;">
+
+                <div class="col-sm-10" style="padding: 5px" ng-class="{'has-error' : isDirty() && innerFrom.organizationListResearch.$invalid }">
+
+                    <input type="text"
+                           class="form-control"
+                           name="organizationListResearch2"
+                           disabled
+                           ng-model="researchModel2"
+                           ng-options="item.name for item in researchList"
+                           placeholder="Research Institution or Collaboratives"
+                           data-auto-select="true" watchOptions="true" bs-typeahead>
+
+
+                    <div id="selectedItem" ng-repeat="item in organizationListResearch">{{ item }}
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <a style="text-decoration:underline;">
+                        <label ng-show="researchModel2"
+                               ng-click="organizationListResearch = addList(organizationListResearch, researchModel2) ; researchModel2 = null">+ Save</label>
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-group-hack form-group">
+
+                <div class="col-sm-10" style="padding: 5px" ng-class="{'has-error' : isDirty() && innerFrom.organizationListConservation.$invalid }">
+
+                    <input type="text"
+                           class="form-control"
+                           name="organizationListConservation2"
+                           disabled
+                           ng-model="conservationModel2"
+                           ng-options="item.name for item in conservationList"
+                           placeholder="Conservation Organization"
+                           data-auto-select="true" watchOptions="true" bs-typeahead>
+
+                    <div id="selectedItem" ng-repeat="item in organizationListConservation">{{ item }}</div>
+                </div>
+                <div class="col-sm-2">
+                    <a style="text-decoration:underline;">
+                        <label ng-show="conservationModel2"
+                               ng-click="organizationListConservation = addList(organizationListConservation, conservationModel2) ; conservationModel2 = null">+ Save</label>
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-group-hack form-group">
+
+                <div class="col-sm-10" style="padding: 5px" ng-class="{'has-error' : isDirty() && innerFrom.organizationListGovernment.$invalid }">
+
+                    <input type="text"
+                           class="form-control"
+                           name="organizationListGovernment2"
+                           disabled
+                           ng-model="governmentModel2"
+                           ng-options="item.name for item in governmentList"
+                           placeholder="Government"
+                           data-auto-select="true" watchOptions="true" bs-typeahead>
+
+                    <div id="selectedItem" ng-repeat="item in organizationListGovernment">{{ item }}</div>
+
+                </div>
+                <div class="col-sm-2">
+                    <a style="text-decoration:underline;">
+                        <label ng-show="governmentModel2"
+                               ng-click="organizationListGovernment = addList(organizationListGovernment, governmentModel2) ; governmentModel2 = null">+ Save</label>
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-group-hack form-group">
+
+                <div class="col-sm-10" style="padding: 5px" ng-class="{'has-error' : isDirty() && innerFrom.organizationListCommunity.$invalid }">
+
+
+                    <input type="text"
+                           class="form-control" n
+                           ame="organizationListCommunity2"
+                           disabled
+                           ng-model="communityModel2"
+                           ng-options="item.name for item in communityList"
+                           placeholder="Community Organization"
+                           data-auto-select="true" data-watch-options="true" bs-typeahead>
+
+                    <div id="selectedItem" ng-repeat="item in organizationListCommunity">{{ item }}</div>
+                </div>
+                <div class="col-sm-2">
+                    <a style="text-decoration:underline;">
+                        <label ng-show="communityModel2"
+                               ng-click="organizationListCommunity = addList(organizationListCommunity, communityModel2) ; communityModel2 = null">+ Save</label>
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-group-hack form-group">
+
+                <div class="col-sm-10" style="padding: 5px" ng-class="{'has-error' : isDirty() && innerFrom.organizationListOther.$invalid }">
+
+                    <input type="text"
+                           class="form-control"
+                           name="organizationListOther2"
+                           disabled
+                           ng-model="otherModel2"
+                           ng-options="item for item in otherList"
+                           placeholder="Other"
+                           data-auto-select="true" watchOptions="true" bs-typeahead>
+
+                    <div id="selectedItem" ng-repeat="item in organizationListOther">{{ item }}</div>
+                </div>
+                <div class="col-sm-2">
+                    <a style="text-decoration:underline;">
+                        <label ng-show="otherModel2 && otherModel2.trim()"
+                               ng-click="organizationListOther = addList(organizationListOther, otherModel2) ; otherModel2 = null">+ Save</label>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+         ]]>
+    </script>
 
 
     <script type="text/javascript">
