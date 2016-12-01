@@ -44,7 +44,7 @@
                                                     <th>Status</th>
                                                     <th>Last Updated</th>
                                                     <th>Actions</th>
-                                                    <th  sec:authorize="hasAnyRole('ROLE_ADMIN')">Approved</th>
+                                                   <!-- <th  sec:authorize="hasAnyRole('ROLE_ADMIN')">Approved</th>-->
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -84,11 +84,11 @@
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
-
+<!--
                                                     <td  sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
                                                         <a th:href="@{'/admin/company/pp/form/approve/' + ${sfiPpForm.id}}" style="display: none" />
                                                         <input type="checkbox" class="approve_button" />
-                                                    </td>
+                                                    </td>-->
 
                                                 </tr>
                                                 <tr th:each="sfiPpFormOld, iterationStatus : ${sfiPpFormsOld}">
@@ -105,11 +105,11 @@
                                                         <a th:href="@{'/sfiPpForm/pdf/' + ${sfiPpFormOld.fileName}}" target="_blank">
                                                             <u>Open PDF</u>
                                                         </a>
-                                                    </td>
+                                                    </td><!--
                                                     <td  sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
-                                                        <a th:href="@{'/admin/company/pp/form/approve/' + ${sfiPpFormOld.id}}" style="display: none" />
+                                                        <a th:href="@{'/admin/company/pp/form/2014/approve/' + ${sfiPpFormOld.id}}" style="display: none" />
                                                         <input type="checkbox" class="approve_button" />
-                                                    </td>
+                                                    </td>-->
                                                 </tr>
                                                 </tbody>
                                             </table>

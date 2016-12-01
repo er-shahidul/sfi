@@ -257,6 +257,7 @@ sfiFormApp
             $scope.showEditText(index);
             $scope.copypopOverData(index);
 
+            $('.popover').popover('hide');
             var $el = $("#pop-link-" + index);
 
             if(!$el.data('bs.popover')){

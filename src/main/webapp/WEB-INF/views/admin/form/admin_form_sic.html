@@ -44,7 +44,7 @@
                                                     <th>Status</th>
                                                     <th>Last Updated</th>
                                                     <th>Actions</th>
-                                                    <th  sec:authorize="hasAnyRole('ROLE_ADMIN')">Approved</th>
+                                                    <!--<th  sec:authorize="hasAnyRole('ROLE_ADMIN')">Approved</th>-->
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -82,10 +82,10 @@
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
-                                                    <td  th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
+                                                    <!--<td  th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
                                                         <a th:href="@{'/admin/company/sic/form/approve/' + ${sicPpForm.id}}" style="display: none" />
                                                         <input type="checkbox" class="approve_button" />
-                                                    </td>
+                                                    </td>-->
                                                 </tr>
                                                 </tbody>
                                             </table>
