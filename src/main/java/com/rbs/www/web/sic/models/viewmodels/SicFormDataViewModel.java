@@ -17,6 +17,7 @@ public class SicFormDataViewModel extends BaseViewModel {
     private Date updatedAt;
     private Boolean isSaved;
     private Boolean isComplete;
+    private Boolean approved;
 
     @Override
     public Integer getId() {
@@ -89,5 +90,13 @@ public class SicFormDataViewModel extends BaseViewModel {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
     }
 }

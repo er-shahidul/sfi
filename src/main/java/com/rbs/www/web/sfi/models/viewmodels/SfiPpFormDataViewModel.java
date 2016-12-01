@@ -17,6 +17,7 @@ public class SfiPpFormDataViewModel extends BaseViewModel {
     private Date updatedAt;
     private Boolean isSaved;
     private Boolean isComplete;
+    private Boolean approved;
 
     @Override
     public Integer getId() {
@@ -89,5 +90,13 @@ public class SfiPpFormDataViewModel extends BaseViewModel {
 
     public void setIsComplete(Boolean isComplete) {
         this.isComplete = isComplete;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
     }
 }

@@ -78,7 +78,6 @@ public class Cs10ViewModel extends BaseViewModel {
     private Set<SfiPpFormStoryCs10ViewModel> stories;
 
     private String legalComplianceUsCanadaDescribe;
-    private Boolean approved;
 
     @Override
     public Integer getId() {
@@ -319,13 +318,5 @@ public class Cs10ViewModel extends BaseViewModel {
 
     public void setBiodiversityNoDescribe(String biodiversityNoDescribe) {
         this.biodiversityNoDescribe = biodiversityNoDescribe;
-    }
-
-    public Boolean getApproved() {
-        return approved !=null ? approved :false;
-    }
-
-    public void setApproved(Boolean approved) {
-        this.approved = approved;
     }
 }
