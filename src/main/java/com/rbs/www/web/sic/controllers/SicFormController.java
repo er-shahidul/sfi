@@ -10,6 +10,7 @@ import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjective2015Service;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
 import com.rbs.www.web.sic.models.viewmodels.SicCs10ViewModel;
+import com.rbs.www.web.sic.models.viewmodels.SicFormDataViewModel;
 import com.rbs.www.web.sic.services.*;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -232,34 +233,31 @@ public class SicFormController{
         mailHelper.sendMail(recipient, subject, message, user, mailType, path);
     }
 
-    @RequestMapping(value = "/admin/company/sic/form/approve/{id}", method = RequestMethod.GET)
-    public ResponseEntity<String> adminSfiFormEdit(@PathVariable Integer id, HttpServletRequest request) throws MalformedURLException {
-        SicFormData model1 = sicFormDataService.get(id);
-        if(model1 != null){
-            SicCs10ViewModel model10 = sicFormService.getSicCs10ViewModel(id);
-            if(model10.getApproved() != null){
-                model10.setApproved(!model10.getApproved());
-            }else {
-                model10.setApproved(true);
-            }
-            sicFormService.setSicCs10Entity(model10);
-
-            User user = userService.findByCompany(model1.getCompany());
-            String subject = "Successfully Submission of your SFI Annual Survey!";
-            String message = "-";
-            String mailType = "approved";
-
-            String domain = this.domain;
-
-            URL requestURL = new URL(request.getRequestURL().toString());
-            String port = requestURL.getPort() == -1 ? "" : ":" + requestURL.getPort();
-            String urlString =  requestURL.getProtocol() + "://" + requestURL.getHost() + port;
-
-            sendEmail(user.getEmail(), subject, message, user, mailType, urlString);
-
-            return new ResponseEntity<String>("Successfully Approved", HttpStatus.OK);
-        }else {
-            return new ResponseEntity<String>("Invalid Form", HttpStatus.OK);
-        }
-    }
+//    @RequestMapping(value = "/admin/company/sic/form/approve/{id}", method = RequestMethod.GET)
+//    public ResponseEntity<String> adminSfiFormEdit(@PathVariable Integer id, HttpServletRequest request) throws MalformedURLException {
+//        SicFormData model = sicFormDataService.get(id);
+//
+//
+//            if(model.getApproved() != null){
+//                model.setApproved(!model.getApproved());
+//            }else {
+//                model.setApproved(true);
+//            }
+//            formService.setSicFormDataEntity(model);
+//
+//            User user = userService.findByCompany(model.getCompany());
+//            String subject = "Successfully Submission of your SFI Annual Survey!";
+//            String message = "-";
+//            String mailType = "approved";
+//
+//            String domain = this.domain;
+//
+//            URL requestURL = new URL(request.getRequestURL().toString());
+//            String port = requestURL.getPort() == -1 ? "" : ":" + requestURL.getPort();
+//            String urlString =  requestURL.getProtocol() + "://" + requestURL.getHost() + port;
+//
+//            sendEmail(user.getEmail(), subject, message, user, mailType, urlString);
+//
+//            return new ResponseEntity<String>("Successfully Approved", HttpStatus.OK);
+//    }
 }
