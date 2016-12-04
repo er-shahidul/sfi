@@ -255,20 +255,7 @@ public class PpFormController{
 
     private void cs10FieldClear(Cs10ViewModel model) {
         model.setAcknowledge(null);
-        model.setLegalComplianceOutside(null);
-        model.setLegalComplianceUsCanada(null);
-        model.setBiodiversityFiberSourcing(null);
-        model.setBiodiversityManagement(null);
-        model.setBiodiversityTraining(null);
-        model.setLegalComplianceOutsideOtherExplain(null);
-        model.setTrainedWoodProducersChanged(null);
-        model.setBiodiversityManagementMechanismDescribe(null);
-        model.setBiodiversityTrainingMechanismDescribe(null);
         model.setBiodiversityTrainingNoDescribe(null);
-        model.setBiodiversityManagementNoDescribe(null);
-        model.setBiodiversityMechanismDescribe(null);
-        model.setBiodiversityNoDescribe(null);
-        model.setLegalComplianceUsCanadaDescribe(null);
         model.setCreatedAt(null);
         model.setSubmittedAt(null);
         model.setUpdatedAt(null);
@@ -298,37 +285,9 @@ public class PpFormController{
 
     private void cs9FieldClear(Cs9ViewModel model) {
         model.setAcknowledge(null);
-        model.setConservationBiodiversity413(null);
-        model.setConservationBiodiversity414(null);
-        model.setConservationBiodiversity415(null);
-        model.setIndigenousPeoplesForest(null);
-        model.setIndigenousPeoplesPrivate(null);
-        model.setIndigenousPeoplesPublic(null);
-        model.setProtectionMaintenanceWaterRes(null);
-        model.setTrainingEducation(null);
-        model.setConservation413DataSource1_2(null);
-        model.setConservation413DataSource1_4(null);
-        model.setConservation413DataSource2_2(null);
-        model.setConservation413DataSource2_4(null);
-        model.setConservation414Explain1_1(null);
-        model.setConservation414Explain1_2(null);
-        model.setConservation414Explain1_5(null);
-        model.setConservation414Explain1_6(null);
-        model.setConservation414Explain2_1(null);
-        model.setConservation414Explain2_2(null);
-        model.setConservation414Explain2_5(null);
-        model.setConservation414Explain2_6(null);
-        model.setConservation415Explain1_1(null);
         model.setConservation415Explain1_2(null);
-        model.setProtectionMaintenanceRationale(null);
-        model.setConservation413Rationale(null);
-        model.setConservation414Rationale(null);
         model.setConservation415Rationale(null);
-        model.setIndigenousPublicRationale(null);
         model.setIndigenousPrivateRationale(null);
-        model.setIndigenousForestPractice(null);
-        model.setTrainingEduRationale(null);
-        model.setConservationBiodiversity415Exp(null);
 
 //      start set type
         model.setConservationBiodiversity413Items(new LinkedHashSet<Integer>());
