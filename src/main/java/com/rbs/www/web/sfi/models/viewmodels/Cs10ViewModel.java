@@ -1,54 +1,12 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.common.models.BaseViewModel;
-import com.rbs.www.common.modules.validator.SpELAssert;
-
 import java.util.Date;
 import java.util.Set;
 
-
-@SpELAssert.List({
-        @SpELAssert(
-                value = "biodiversityItems1 != null && !biodiversityItems1.isEmpty()",
-                applyIf = "biodiversityFiberSourcing != null && biodiversityFiberSourcing.equals('1')",
-                message = "{cs9.biodiversityItems1}"
-        ),
-        @SpELAssert(
-                value = "biodiversityItems2 != null && !biodiversityItems2.isEmpty()",
-                applyIf = "biodiversityFiberSourcing != null && biodiversityFiberSourcing.equals('2')",
-                message = "{cs9.biodiversityItems2}"
-        ),
-        @SpELAssert(
-                value = "biodiversityNoDescribe != null && !biodiversityNoDescribe.isEmpty()",
-                applyIf = "biodiversityFiberSourcing != null && biodiversityFiberSourcing.equals('3')",
-                message = "{cs9.biodiversityNoDescribe}"
-        ),
-        @SpELAssert(
-                value = "biodiversityMechanismDescribe != null && !biodiversityMechanismDescribe.isEmpty()",
-                applyIf = "biodiversityFiberSourcing != null && biodiversityFiberSourcing.equals('4')",
-                message = "{cs9.biodiversityMechanismDescribe}"
-        ),
-        @SpELAssert(
-                value = "biodiversityManagementItems1 != null && !biodiversityManagementItems1.isEmpty()",
-                applyIf = "biodiversityManagement != null && biodiversityManagement.equals('1')",
-                message = "{cs9.biodiversityManagementItems1}"
-        ),
-        @SpELAssert(
-                value = "biodiversityManagementItems2 != null && !biodiversityManagementItems2.isEmpty()",
-                applyIf = "biodiversityManagement != null && biodiversityManagement.equals('2')",
-                message = "{cs9.biodiversityManagementItems2}"
-        ),
-        @SpELAssert(
-                value = "biodiversityManagementNoDescribe != null && !biodiversityManagementNoDescribe.isEmpty()",
-                applyIf = "biodiversityManagement != null && biodiversityManagement.equals('3')",
-                message = "{cs9.biodiversityManagementNoDescribe}"
-        )
-})
 public class Cs10ViewModel extends BaseViewModel {
     private Integer id;
     private Boolean acknowledge;
-    private Boolean legalComplianceOutside;
-    private Boolean legalComplianceUsCanada;
     private Date createdAt;
     private Date submittedAt;
     private Date updatedAt;
@@ -62,22 +20,10 @@ public class Cs10ViewModel extends BaseViewModel {
     private Set<Integer> biodiversityTrainingItems1;
     private Set<Integer> biodiversityTrainingItems2;
     private Set<Integer> legalComplianceOutsideItems;
-    private String biodiversityFiberSourcing;
-    private String biodiversityManagement;
-    private String biodiversityTraining;
-    private String legalComplianceOutsideOtherExplain;
-    private String trainedWoodProducersChanged;
 
-    private String biodiversityManagementMechanismDescribe;
-    private String biodiversityTrainingMechanismDescribe;
     private String biodiversityTrainingNoDescribe;
-    private String biodiversityManagementNoDescribe;
-    private String biodiversityMechanismDescribe;
-    private String biodiversityNoDescribe;
 
     private Set<SfiPpFormStoryCs10ViewModel> stories;
-
-    private String legalComplianceUsCanadaDescribe;
 
     @Override
     public Integer getId() {
@@ -86,14 +32,6 @@ public class Cs10ViewModel extends BaseViewModel {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getLegalComplianceUsCanadaDescribe() {
-        return legalComplianceUsCanadaDescribe;
-    }
-
-    public void setLegalComplianceUsCanadaDescribe(String legalComplianceUsCanadaDescribe) {
-        this.legalComplianceUsCanadaDescribe = legalComplianceUsCanadaDescribe;
     }
 
     public Set<SfiPpFormStoryCs10ViewModel> getStories() {
@@ -176,22 +114,6 @@ public class Cs10ViewModel extends BaseViewModel {
         this.acknowledge = acknowledge;
     }
 
-    public Boolean getLegalComplianceOutside() {
-        return legalComplianceOutside;
-    }
-
-    public void setLegalComplianceOutside(Boolean legalComplianceOutside) {
-        this.legalComplianceOutside = legalComplianceOutside;
-    }
-
-    public Boolean getLegalComplianceUsCanada() {
-        return legalComplianceUsCanada;
-    }
-
-    public void setLegalComplianceUsCanada(Boolean legalComplianceUsCanada) {
-        this.legalComplianceUsCanada = legalComplianceUsCanada;
-    }
-
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -232,91 +154,11 @@ public class Cs10ViewModel extends BaseViewModel {
         this.legalComplianceOutsideItems = legalComplianceOutsideItems;
     }
 
-    public String getBiodiversityFiberSourcing() {
-        return biodiversityFiberSourcing;
-    }
-
-    public void setBiodiversityFiberSourcing(String biodiversityFiberSourcing) {
-        this.biodiversityFiberSourcing = biodiversityFiberSourcing;
-    }
-
-    public String getBiodiversityManagement() {
-        return biodiversityManagement;
-    }
-
-    public void setBiodiversityManagement(String biodiversityManagement) {
-        this.biodiversityManagement = biodiversityManagement;
-    }
-
-    public String getBiodiversityTraining() {
-        return biodiversityTraining;
-    }
-
-    public void setBiodiversityTraining(String biodiversityTraining) {
-        this.biodiversityTraining = biodiversityTraining;
-    }
-
-    public String getLegalComplianceOutsideOtherExplain() {
-        return legalComplianceOutsideOtherExplain;
-    }
-
-    public void setLegalComplianceOutsideOtherExplain(String legalComplianceOutsideOtherExplain) {
-        this.legalComplianceOutsideOtherExplain = legalComplianceOutsideOtherExplain;
-    }
-
-    public String getTrainedWoodProducersChanged() {
-        return trainedWoodProducersChanged;
-    }
-
-    public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
-        this.trainedWoodProducersChanged = trainedWoodProducersChanged;
-    }
-
-    public String getBiodiversityManagementMechanismDescribe() {
-        return biodiversityManagementMechanismDescribe;
-    }
-
-    public void setBiodiversityManagementMechanismDescribe(String biodiversityManagementMechanismDescribe) {
-        this.biodiversityManagementMechanismDescribe = biodiversityManagementMechanismDescribe;
-    }
-
-    public String getBiodiversityTrainingMechanismDescribe() {
-        return biodiversityTrainingMechanismDescribe;
-    }
-
-    public void setBiodiversityTrainingMechanismDescribe(String biodiversityTrainingMechanismDescribe) {
-        this.biodiversityTrainingMechanismDescribe = biodiversityTrainingMechanismDescribe;
-    }
-
     public String getBiodiversityTrainingNoDescribe() {
         return biodiversityTrainingNoDescribe;
     }
 
     public void setBiodiversityTrainingNoDescribe(String biodiversityTrainingNoDescribe) {
         this.biodiversityTrainingNoDescribe = biodiversityTrainingNoDescribe;
-    }
-
-    public String getBiodiversityManagementNoDescribe() {
-        return biodiversityManagementNoDescribe;
-    }
-
-    public void setBiodiversityManagementNoDescribe(String biodiversityManagementNoDescribe) {
-        this.biodiversityManagementNoDescribe = biodiversityManagementNoDescribe;
-    }
-
-    public String getBiodiversityMechanismDescribe() {
-        return biodiversityMechanismDescribe;
-    }
-
-    public void setBiodiversityMechanismDescribe(String biodiversityMechanismDescribe) {
-        this.biodiversityMechanismDescribe = biodiversityMechanismDescribe;
-    }
-
-    public String getBiodiversityNoDescribe() {
-        return biodiversityNoDescribe;
-    }
-
-    public void setBiodiversityNoDescribe(String biodiversityNoDescribe) {
-        this.biodiversityNoDescribe = biodiversityNoDescribe;
     }
 }

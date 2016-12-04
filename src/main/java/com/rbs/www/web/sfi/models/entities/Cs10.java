@@ -19,12 +19,6 @@ public class Cs10 extends BaseEntityModel {
     @Column(name = "cs10_acknowledge", nullable = true)
     private Boolean acknowledge;
 
-    @Column(name = "cs10_legalComplianceOutside", nullable = true)
-    private Boolean legalComplianceOutside;
-
-    @Column(name = "cs10_legalComplianceUsCanada", nullable = true)
-    private Boolean legalComplianceUsCanada;
-
     @Column(name = "created_at", nullable = true)
     private Date createdAt;
 
@@ -84,47 +78,9 @@ public class Cs10 extends BaseEntityModel {
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Integer> legalComplianceOutsideItems;
 
-    @Column(name = "cs10_biodiversityFiberSourcing", nullable = true)
-    private String biodiversityFiberSourcing;
-
-    @Column(name = "cs10_biodiversityManagement", nullable = true)
-    private String biodiversityManagement;
-
-    @Column(name = "cs10_biodiversityTraining", nullable = true)
-    private String biodiversityTraining;
-
-    @Column(name = "cs10_legalComplianceOutsideOtherExplain", nullable = true)
-    @Type(type="text")
-    private String legalComplianceOutsideOtherExplain;
-
-    @Column(name = "cs10_trainedWoodProducersChanged", nullable = true)
-    private String trainedWoodProducersChanged;
-
-    @Column(name = "cs10_biodiversityManagementMechanismDescribe", nullable = true)
-    @Type(type="text")
-    private String biodiversityManagementMechanismDescribe;
-
-    @Column(name = "cs10_biodiversityTrainingMechanismDescribe", nullable = true)
-    @Type(type="text")
-    private String biodiversityTrainingMechanismDescribe;
-
     @Column(name = "cs10_biodiversityTrainingNoDescribe", nullable = true)
     @Type(type="text")
     private String biodiversityTrainingNoDescribe;
-
-    @Column(name = "cs10_biodiversityManagementNoDescribe", nullable = true)
-    @Type(type="text")
-    private String biodiversityManagementNoDescribe;
-
-    @Column(name = "cs10_biodiversityMechanismDescribe", nullable = true)
-    private String biodiversityMechanismDescribe;
-
-    @Column(name = "cs10_biodiversityNoDescribe", nullable = true)
-    @Type(type="text")
-    private String biodiversityNoDescribe;
-
-    @Column(name = "cs10_legalComplianceUsCanadaDescribe", nullable = true)
-    private String legalComplianceUsCanadaDescribe;
 
     @OneToMany(targetEntity = SfiPpFormStoryCs10.class, fetch = FetchType.EAGER,
             cascade = CascadeType.ALL, orphanRemoval = true)
@@ -137,14 +93,6 @@ public class Cs10 extends BaseEntityModel {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getLegalComplianceUsCanadaDescribe() {
-        return legalComplianceUsCanadaDescribe;
-    }
-
-    public void setLegalComplianceUsCanadaDescribe(String legalComplianceUsCanadaDescribe) {
-        this.legalComplianceUsCanadaDescribe = legalComplianceUsCanadaDescribe;
     }
 
     public Set<SfiPpFormStoryCs10> getStories() {
@@ -227,22 +175,6 @@ public class Cs10 extends BaseEntityModel {
         this.acknowledge = acknowledge;
     }
 
-    public Boolean getLegalComplianceOutside() {
-        return legalComplianceOutside;
-    }
-
-    public void setLegalComplianceOutside(Boolean legalComplianceOutside) {
-        this.legalComplianceOutside = legalComplianceOutside;
-    }
-
-    public Boolean getLegalComplianceUsCanada() {
-        return legalComplianceUsCanada;
-    }
-
-    public void setLegalComplianceUsCanada(Boolean legalComplianceUsCanada) {
-        this.legalComplianceUsCanada = legalComplianceUsCanada;
-    }
-
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -283,91 +215,11 @@ public class Cs10 extends BaseEntityModel {
         addAll(this.legalComplianceOutsideItems, legalComplianceOutsideItems);
     }
 
-    public String getBiodiversityFiberSourcing() {
-        return biodiversityFiberSourcing;
-    }
-
-    public void setBiodiversityFiberSourcing(String biodiversityFiberSourcing) {
-        this.biodiversityFiberSourcing = biodiversityFiberSourcing;
-    }
-
-    public String getBiodiversityManagement() {
-        return biodiversityManagement;
-    }
-
-    public void setBiodiversityManagement(String biodiversityManagement) {
-        this.biodiversityManagement = biodiversityManagement;
-    }
-
-    public String getBiodiversityTraining() {
-        return biodiversityTraining;
-    }
-
-    public void setBiodiversityTraining(String biodiversityTraining) {
-        this.biodiversityTraining = biodiversityTraining;
-    }
-
-    public String getLegalComplianceOutsideOtherExplain() {
-        return legalComplianceOutsideOtherExplain;
-    }
-
-    public void setLegalComplianceOutsideOtherExplain(String legalComplianceOutsideOtherExplain) {
-        this.legalComplianceOutsideOtherExplain = legalComplianceOutsideOtherExplain;
-    }
-
-    public String getTrainedWoodProducersChanged() {
-        return trainedWoodProducersChanged;
-    }
-
-    public void setTrainedWoodProducersChanged(String trainedWoodProducersChanged) {
-        this.trainedWoodProducersChanged = trainedWoodProducersChanged;
-    }
-
-    public String getBiodiversityManagementMechanismDescribe() {
-        return biodiversityManagementMechanismDescribe;
-    }
-
-    public void setBiodiversityManagementMechanismDescribe(String biodiversityManagementMechanismDescribe) {
-        this.biodiversityManagementMechanismDescribe = biodiversityManagementMechanismDescribe;
-    }
-
-    public String getBiodiversityTrainingMechanismDescribe() {
-        return biodiversityTrainingMechanismDescribe;
-    }
-
-    public void setBiodiversityTrainingMechanismDescribe(String biodiversityTrainingMechanismDescribe) {
-        this.biodiversityTrainingMechanismDescribe = biodiversityTrainingMechanismDescribe;
-    }
-
     public String getBiodiversityTrainingNoDescribe() {
         return biodiversityTrainingNoDescribe;
     }
 
     public void setBiodiversityTrainingNoDescribe(String biodiversityTrainingNoDescribe) {
         this.biodiversityTrainingNoDescribe = biodiversityTrainingNoDescribe;
-    }
-
-    public String getBiodiversityManagementNoDescribe() {
-        return biodiversityManagementNoDescribe;
-    }
-
-    public void setBiodiversityManagementNoDescribe(String biodiversityManagementNoDescribe) {
-        this.biodiversityManagementNoDescribe = biodiversityManagementNoDescribe;
-    }
-
-    public String getBiodiversityMechanismDescribe() {
-        return biodiversityMechanismDescribe;
-    }
-
-    public void setBiodiversityMechanismDescribe(String biodiversityMechanismDescribe) {
-        this.biodiversityMechanismDescribe = biodiversityMechanismDescribe;
-    }
-
-    public String getBiodiversityNoDescribe() {
-        return biodiversityNoDescribe;
-    }
-
-    public void setBiodiversityNoDescribe(String biodiversityNoDescribe) {
-        this.biodiversityNoDescribe = biodiversityNoDescribe;
     }
 }
