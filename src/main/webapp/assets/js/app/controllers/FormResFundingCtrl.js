@@ -257,11 +257,16 @@ sfiFormApp
             $scope.showEditText(index);
             $scope.copypopOverData(index);
 
-            $('.popover').popover('hide');
+
             var $el = $("#pop-link-" + index);
 
-            if(!$el.data('bs.popover')){
+            if ($el.next('div.popover:visible').length) {
+                return;
+            } else {
+                $('.popover').popover('hide');
+            }
 
+            if(!$el.data('bs.popover')){
                 var content='';
                 if($location.absUrl().toString().indexOf('view')>0){
                     content =  $('#research_funding_org_view_tpl').html();
@@ -277,12 +282,15 @@ sfiFormApp
                 });
             }
 
+            setTimeout(function () {
+                $el.popover('show');
+            },10);
             $el.popover('show');
-            var $popover = $el.data('bs.popover');
-            var $text = $popover.$tip.find("textarea"),
-                $save = $popover.$tip.find(".btn-success");
 
+            var $popover = $el.data('bs.popover');
             $popover.$tip.css({width: 443});
+
+            var $save = $popover.$tip.find(".btn-success");
 
             $save.click(function(e){
 
