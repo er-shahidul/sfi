@@ -137,7 +137,7 @@
                     <div style="margin-bottom: 10px;">
                         What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
                     </div>
-                    <div style="margin-bottom: 10px;">Area <input readonly type="number" class="form-control required shortest" name="usaFinalHarvestHAAC" max="100" min="0"
+                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="usaFinalHarvestHAAC" max="100" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                                                   ng-model="cs4.usaFinalHarvestHAAC"> HA/AC
                     </div>
@@ -147,7 +147,7 @@
                     <label class="checkboxLabel">Seed tree and shelterwood</label>
 
                     <div class="form-group" ng-show="cs4.usaSeedTreeShelterWood">
-                        <input readonly type="number" class="form-control required shortest" name="usaSeedTreeShelterWoodArea"
+                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="usaSeedTreeShelterWoodArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaSeedTreeShelterWoodArea">  HA/AC
 
@@ -160,7 +160,7 @@
                     <label class="checkboxLabel">selection methods</label>
 
                     <div class="form-group" ng-show="cs4.usaSelectionMethod">
-                        <input readonly type="number" class="form-control required shortest" name="usaSelectionMethodArea"
+                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="usaSelectionMethodArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaSelectionMethodArea"> HA/AC
 
@@ -172,7 +172,7 @@
                     <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSanitation">
                     <label class="checkboxLabel">thinning or sanitation salvage</label>
                     <div class="form-group" ng-show="cs4.usaSanitation">
-                        <input readonly type="number" class="form-control required shortest" name="usaSanitationArea"
+                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="usaSanitationArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaSanitationArea"> HA/AC
 
@@ -185,7 +185,7 @@
                     <label class="checkboxLabel">Other methods</label>
 
                     <div class="form-group" ng-show="cs4.usaOtherMethod">
-                        <input readonly type="number" class="form-control shortest" name="usaOtherMethodHAAC"
+                        <input style="width: 15%;" readonly type="number" class="form-control shortest" name="usaOtherMethodHAAC"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaOtherMethod" customerror
                                ng-model="cs4.usaOtherMethodHAAC"> HA/AC
 
@@ -329,7 +329,7 @@
                     <div style="margin-bottom: 10px;">
                         What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
                     </div>
-                    <div style="margin-bottom: 10px;">Area <input readonly type="number" class="form-control required shortest" name="caFinalHarvestHAAC" max="100" min="0"
+                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="caFinalHarvestHAAC" max="100" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                                                   ng-model="cs4.caFinalHarvestHAAC"> HA/AC
                     </div>
@@ -339,7 +339,7 @@
                     <label class="checkboxLabel">Seed tree and shelterwood</label>
 
                     <div class="form-group" ng-show="cs4.caSeedTreeShelterWood">
-                        <input readonly type="number" class="form-control required shortest" name="caSeedTreeShelterWoodArea"
+                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="caSeedTreeShelterWoodArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caSeedTreeShelterWoodArea">  HA/AC
 
@@ -352,7 +352,7 @@
                     <label class="checkboxLabel">selection methods</label>
 
                     <div class="form-group" ng-show="cs4.caSelectionMethod">
-                        <input readonly type="number" class="form-control required shortest" name="caSelectionMethodArea"
+                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="caSelectionMethodArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caSelectionMethodArea"> HA/AC
 
@@ -364,7 +364,7 @@
                     <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSanitation">
                     <label class="checkboxLabel">thinning or sanitation salvage</label>
                     <div class="form-group" ng-show="cs4.caSanitation">
-                        <input readonly type="number" class="form-control required shortest" name="caSanitationArea"
+                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="caSanitationArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caSanitationArea"> HA/AC
 
@@ -377,7 +377,7 @@
                     <label class="checkboxLabel">Other methods</label>
 
                     <div class="form-group" ng-show="cs4.caOtherMethod">
-                        <input readonly type="number" class="form-control shortest" name="caOtherMethodHAAC"
+                        <input style="width: 15%;" readonly type="number" class="form-control shortest" name="caOtherMethodHAAC"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caOtherMethod" customerror
                                ng-model="cs4.caOtherMethodHAAC"> HA/AC
 

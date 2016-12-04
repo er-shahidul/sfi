@@ -72,6 +72,17 @@ public class SicFormService {
     }
     /************************* SicCs1 : End   ***********************/
 
+    /************************* SicCs1 : Begin ***********************/
+//    public SicFormDataViewModel getSicFormDataEntity(Integer id) {
+//        SicFormData entity = sicFormDataService.get(id);
+//        return validationService.validate(viewModelMapperService.convert(entity, SicFormDataViewModel.class));
+//    }
+//
+//    public void setSicFormDataEntity(SicFormDataViewModel model) {
+//        SicFormData entity = entityModelMapperService.convert(model, SicFormData.class);
+//    }
+    /************************* SicCs1 : End   ***********************/
+
     /************************* SicCs2 : Begin ***********************/
     public SicCs2ViewModel getSicCs2ViewModel(Integer id) {
         SicCs2 entity = sicCs2Service.get(id);

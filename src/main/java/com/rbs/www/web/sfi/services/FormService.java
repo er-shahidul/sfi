@@ -1,5 +1,6 @@
 package com.rbs.www.web.sfi.services;
 
+import com.rbs.www.common.enums.FormStatus;
 import com.rbs.www.common.modules.mapper.EntityModelMapperService;
 import com.rbs.www.common.modules.mapper.ViewModelMapperService;
 import com.rbs.www.web.common.models.datamodels.UpdateDate;
@@ -92,6 +93,17 @@ public class FormService {
         Cs1 entity = entityModelMapperService.convert(model, Cs1.class);
         sfiPpFormDataService.setAuditInfo(model.getId(), pending);
     }
+    /************************* Cs1 : End   ***********************/
+
+    /************************* Cs1 : Begin ***********************/
+//    public SfiPpFormDataViewModel getSfiPpFormDataEntity(Integer id) {
+//        SfiPpFormData entity = sfiPpFormDataService.get(id);
+//        return viewModelMapperService.convert(entity, SfiPpFormDataViewModel.class);
+//    }
+//
+//    public void setSfiPpFormDataEntity(SfiPpFormDataViewModel model) {
+//        SfiPpFormData entity = entityModelMapperService.convert(model, SfiPpFormData.class);
+//    }
     /************************* Cs1 : End   ***********************/
 
     /************************* Cs2 : Begin ***********************/
