@@ -129,12 +129,16 @@
                             Survey
                         </span>
                     </div>
+
                     <div style="position: absolute;right: 130px;top: 0px;" ng-show="isStepAllowed('cs8')"  class="formMenuItem section9" ng-click="goStep('cs8')">
                         <div class=" {{ getClass('cs8') }}">&nbsp;</div>
-                        <span style="width: 200%;top: 0px" >
 
-                            <img  src="/assets/images/nav/{{ImageName}}" align="right" alt="logo-placeholder"/>
-                        </span>
+                        <div th:if="${mode != 'view'}">
+                            <span style="width: 200%;top: 0px" >
+                                <img  src="/assets/images/nav/{{ImageName}}" align="right" alt="logo-placeholder"/>
+                            </span>
+                        </div>
+
                     </div>
                     <br/>
 
