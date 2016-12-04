@@ -128,4 +128,21 @@ public class SfiPpFormData extends BaseEntityModel {
     public void setApprove(Boolean approve) {
         this.approve = approve;
     }
+
+    public String getStatusText() {
+        if(getApprove() && status.getStatus().equals("submitted"))
+             return "Approved";
+        else
+            return  status.getStatus();
+
+    }
+
+    public boolean isApproveButtonEnable() {
+        if(!getApprove() && status.getStatus().equals("submitted"))
+             return true;
+        else
+            return  false;
+
+    }
+
 }

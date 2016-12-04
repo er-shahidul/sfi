@@ -44,7 +44,7 @@
                                                     <th>Status</th>
                                                     <th>Last Updated</th>
                                                     <th>Actions</th>
-                                                    <!--<th  sec:authorize="hasAnyRole('ROLE_ADMIN')">Approved</th>-->
+                                                    <th  sec:authorize="hasAnyRole('ROLE_ADMIN')">Approved</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -56,7 +56,7 @@
                                                             <th:block th:text="${#dates.format(sicPpForm.createdAt, 'yyyy-MM-dd')}"></th:block>
                                                         </th:block>
                                                     </td>
-                                                    <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.status.status}"></td>
+                                                    <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.statusText}"></td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'">
                                                         <th:block th:if="${sicPpForm.updatedAt}">
                                                             <th:block th:text="${#dates.format(sicPpForm.updatedAt, 'yyyy-MM-dd')}"></th:block>
@@ -82,10 +82,10 @@
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
-                                                    <!--<td  th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
+                                                    <td  th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
                                                         <a th:href="@{'/admin/company/sic/form/approve/' + ${sicPpForm.id}}" style="display: none" />
-                                                        <input type="checkbox" class="approve_button" />
-                                                    </td>-->
+                                                        <input th:disabled="${!sicPpForm.isApproveButtonEnable()}" th:checked="${sicPpForm.getApproved()}"  type="checkbox" class="sic_approve_button" />
+                                                    </td>
                                                 </tr>
                                                 </tbody>
                                             </table>

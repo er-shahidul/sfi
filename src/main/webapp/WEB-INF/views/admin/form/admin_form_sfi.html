@@ -44,7 +44,7 @@
                                                     <th>Status</th>
                                                     <th>Last Updated</th>
                                                     <th>Actions</th>
-                                                   <!-- <th  sec:authorize="hasAnyRole('ROLE_ADMIN')">Approved</th>-->
+                                                    <th  sec:authorize="hasAnyRole('ROLE_ADMIN')">Approved</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -58,7 +58,7 @@
                                                             <th:block th:text="${#dates.format(sfiPpForm.createdAt, 'yyyy-MM-dd')}"></th:block>
                                                         </th:block>
                                                     </td>
-                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.status.status}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'"  th:text="${sfiPpForm.getStatusText()}"></td>
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'">
                                                         <th:block th:if="${sfiPpForm.updatedAt}">
                                                             <th:block th:text="${#dates.format(sfiPpForm.updatedAt, 'yyyy-MM-dd')}"></th:block>
@@ -84,11 +84,10 @@
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
-<!--
                                                     <td  sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
                                                         <a th:href="@{'/admin/company/pp/form/approve/' + ${sfiPpForm.id}}" style="display: none" />
-                                                        <input type="checkbox" class="approve_button" />
-                                                    </td>-->
+                                                        <input th:disabled="${!sfiPpForm.isApproveButtonEnable()}" th:checked="${sfiPpForm.getApprove()}" type="checkbox" class="sfi_approve_button" />
+                                                    </td>
 
                                                 </tr>
                                                 <tr th:each="sfiPpFormOld, iterationStatus : ${sfiPpFormsOld}">
@@ -99,17 +98,17 @@
                                                     </td>
                                                     <td></td>
                                                     <td>2015-04-29</td>
-                                                    <td>Submitted</td>
+                                                    <td><span th:text="${sfiPpFormOld.getStatusText()}"></span></td>
                                                     <td>2015-04-29</td>
                                                     <td>
                                                         <a th:href="@{'/sfiPpForm/pdf/' + ${sfiPpFormOld.fileName}}" target="_blank">
                                                             <u>Open PDF</u>
                                                         </a>
-                                                    </td><!--
+                                                    </td>
                                                     <td  sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
                                                         <a th:href="@{'/admin/company/pp/form/2014/approve/' + ${sfiPpFormOld.id}}" style="display: none" />
-                                                        <input type="checkbox" class="approve_button" />
-                                                    </td>-->
+                                                        <input th:disabled="${sfiPpFormOld.getApproved()}" th:checked="${sfiPpFormOld.getApproved()}" type="checkbox" class="sfi_approve_button" />
+                                                    </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
