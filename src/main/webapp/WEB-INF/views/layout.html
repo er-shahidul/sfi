@@ -86,12 +86,27 @@
 
         });
 
-        $(document).on('click', '.approve_button', function () {
-            console.log('click');
+        $(document).on('click', '.sfi_approve_button', function () {
             var td = $(this).parent();
-            console.log(td);
-            console.log(td.find('a')[0].href);
             var url = td.find('a')[0].href;
+            $(td).parent().find('td').eq(4).text('Approved')
+            $(this).attr('disabled','disabled');
+            $.ajax({
+                url: url,
+                type: 'GET',
+                data: {},
+                success: function (data) {
+                    console.log(data);
+                    alert('Load was performed.');
+                }
+            });
+        });
+
+        $(document).on('click', '.sic_approve_button', function () {
+            var td = $(this).parent();
+            var url = td.find('a')[0].href;
+            $(td).parent().find('td').eq(3).text('Approved')
+            $(this).attr('disabled','disabled');
             $.ajax({
                 url: url,
                 type: 'GET',

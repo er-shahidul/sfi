@@ -122,10 +122,24 @@ public class SicFormData extends BaseEntityModel {
     }
 
     public Boolean getApproved() {
-        return approved;
+        return this.approved !=null ? this.approved : false;
     }
 
     public void setApproved(Boolean approved) {
         this.approved = approved;
+    }
+    public String getStatusText() {
+        if(getApproved() && status.getStatus().equals("submitted"))
+            return "Approved";
+        else
+            return  status.getStatus();
+
+    }
+    public boolean isApproveButtonEnable() {
+        if(!getApproved() && status.getStatus().equals("submitted"))
+            return true;
+        else
+            return  false;
+
     }
 }

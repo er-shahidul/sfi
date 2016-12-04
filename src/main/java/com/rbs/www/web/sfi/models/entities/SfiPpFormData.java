@@ -46,7 +46,7 @@ public class SfiPpFormData extends BaseEntityModel {
     private Boolean isComplete;
 
     @Column(name = "approved", nullable = true)
-    private Boolean approved;
+    private Boolean approve;
 
     @Override
     public Integer getId() {
@@ -121,11 +121,28 @@ public class SfiPpFormData extends BaseEntityModel {
         this.updatedAt = updatedAt;
     }
 
-    public Boolean getApproved() {
-        return approved;
+    public Boolean getApprove() {
+        return this.approve !=null ? this.approve: false;
     }
 
-    public void setApproved(Boolean approved) {
-        this.approved = approved;
+    public void setApprove(Boolean approve) {
+        this.approve = approve;
     }
+
+    public String getStatusText() {
+        if(getApprove() && status.getStatus().equals("submitted"))
+             return "Approved";
+        else
+            return  status.getStatus();
+
+    }
+
+    public boolean isApproveButtonEnable() {
+        if(!getApprove() && status.getStatus().equals("submitted"))
+             return true;
+        else
+            return  false;
+
+    }
+
 }

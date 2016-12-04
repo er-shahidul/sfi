@@ -48,10 +48,19 @@ public class SfiPpForm2014 extends BaseEntityModel {
     }
 
     public Boolean getApproved() {
-        return approved;
+        return this.approved !=null ? this.approved: false;
     }
 
     public void setApproved(Boolean approved) {
         this.approved = approved;
+    }
+
+
+    public String getStatusText() {
+        if(getApproved() )
+            return "Approved";
+        else
+            return  "Submitted";
+
     }
 }

@@ -93,4 +93,8 @@ public class SfiPpFormDataService {
         SfiPpFormData entity = repository.get(id);
         entity.setIsComplete(true);
     }
+
+    public void update(SfiPpFormData sfiPpFormData) {
+        repository.update(sfiPpFormData);
+    }
 }
