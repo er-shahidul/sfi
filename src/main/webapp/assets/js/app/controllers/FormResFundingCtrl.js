@@ -282,13 +282,10 @@ sfiFormApp
                 });
             }
 
-            setTimeout(function () {
-                $el.popover('show');
-            },10);
             $el.popover('show');
-
             var $popover = $el.data('bs.popover');
             $popover.$tip.css({width: 443});
+            $el.popover('show');
 
             var $save = $popover.$tip.find(".btn-success");
 
@@ -303,6 +300,7 @@ sfiFormApp
                     })
                 })
             });
+
         }
 
         $scope.resetProject = function(){
