@@ -100,9 +100,8 @@
                     </td>
 
                     <td align="center" class="ng-binding" >
-                        <u id="pop-link-{{$index}}">
-                            <a ng-show="!showEditText{{$index}}"  ng-click="showPopUp2($index)"  >Click to add organizations</a>
-                            <a ng-show="showEditText{{$index}}"  ng-click="showPopUp2($index)"  >Edit</a>
+                        <u>
+                            <a  id="pop-link-{{$index}}" ng-click="showPopUp2($index)" >{{getShowEditText($index)}}</a>
                         </u>
                     </td>
 
