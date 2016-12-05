@@ -1,3 +1,36 @@
+<style>
+    body{
+        font-size: 11pt;
+    }
+    label{
+        font-size: 11pt;
+    }
+    input{
+        font-size: 11pt;
+    }
+    text{
+        font-size: 11pt;
+    }
+    textarea{
+        font-size: 11pt;
+    }
+    select{
+        font-size: 11pt;
+    }
+    p{
+        font-size: 11pt;
+    }
+    span{
+        font-size: 11pt;
+    }
+    table{
+        font-size: 11pt;
+    }
+    .checkboxLabel{
+        font-size: 11pt;
+    }
+</style>
+
 <div class="row">
     <form name="cs4Form">
     <div class="col-sm-12">
@@ -7,7 +40,7 @@
         -------------------------------
         ----------------------------------->
         <div class="col-lg-12">
-            <div class="col-lg-8 toolip">
+            <div class="col-lg-10 toolip">
                 <h5>
                     4. <span tooltip data-placement="top" data-container="body" data-html="true"  data-title="From SIC Governance document – Informational Resources Core Mission Priority: Focus informational resource efforts on increasing SFI program recognition, awareness and support with groups, such as local opinion leaders and forestry resource professionals."> Informational Resources (Core Mission Priority)</span>
                 </h5>
@@ -21,32 +54,32 @@
                         </label>
                         <textarea disabled   ng-show="cs4.universityOutreach" ng-model="cs4.universitySpecify" rows="3" cols="50" style="vertical-align: top; font-size:14px;position: relative;right: -20px; border-radius: 4px; margin-bottom:10px;width: 400px;" placeholder="Please Specify"></textarea>
                         <p ng-show="cs4.universityOutreach" ng-model="cs4.universitySpecify" class="ng-hide" style="position: relative;left: 225px;margin-top: -10px;margin-bottom: 20px;"> "Maximum of 2000 characters"</p>
-                        <div ng-show="cs4.universityOutreach" class="fileinput fileinput-new" data-provides="fileinput">
-                            <p>Upload a file to provide more details</p>
+                        <!--<div ng-show="cs4.universityOutreach" class="fileinput fileinput-new" data-provides="fileinput">-->
+                            <!--<p>Upload a file to provide more details</p>-->
 
-                            <div class="input-group input-large"
-                                 ng-file-select ng-model="uploadFile1"
-                                 ng-file-change="uploadFile(uploadFile1, universityOutreachFiles, '.doc, .docx, .pdf, .jpg')"
-                                 ng-multiple="true"
-                                 ng-accept="'.doc, .docx, .pdf, .jpg'">
+                            <!--<div class="input-group input-large"-->
+                                 <!--ng-file-select ng-model="uploadFile1"-->
+                                 <!--ng-file-change="uploadFile(uploadFile1, universityOutreachFiles, '.doc, .docx, .pdf, .jpg')"-->
+                                 <!--ng-multiple="true"-->
+                                 <!--ng-accept="'.doc, .docx, .pdf, .jpg'">-->
 
-                                <div class="form-control uneditable-input input-fixed input-medium">
-                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                    <span class="fileinput-filename">{{ universityOutreachFiles.originalDocumentName }}</span>
-                                </div>
-                                <span class="input-group-addon btn default btn-file">
-                                    <span ng-hide="universityOutreachFiles.originalDocumentName" class="fileinput-new">Browse</span>
-                                    <span ng-show="universityOutreachFiles.originalDocumentName" class="fileinput-exists">Change </span>
-                                </span>
-                            </div>
-                            <p>(.doc, .docx, .pdf, .jpg)</p>
+                                <!--<div class="form-control uneditable-input input-fixed input-medium">-->
+                                    <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
+                                    <!--<span class="fileinput-filename">{{ universityOutreachFiles.originalDocumentName }}</span>-->
+                                <!--</div>-->
+                                <!--<span class="input-group-addon btn default btn-file">-->
+                                    <!--<span ng-hide="universityOutreachFiles.originalDocumentName" class="fileinput-new">Browse</span>-->
+                                    <!--<span ng-show="universityOutreachFiles.originalDocumentName" class="fileinput-exists">Change </span>-->
+                                <!--</span>-->
+                            <!--</div>-->
+                            <p>(.doc, .docx, .pdf, .jpg)</p><br/>
 
-                            <div class="text-right" ng-show="universityOutreachFiles.originalDocumentName">
-                                <a ng-click="universityOutreachFiles = {}; " ng-show="universityOutreachFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                <input type="submit" class="btn default" value="Upload" ng-click="universityOutreachFiles = saveUploadedFile(universityOutreachFiles, cs4.universityOutreachFiles)">
-                            </div>
+                            <!--<div class="text-right" ng-show="universityOutreachFiles.originalDocumentName">-->
+                                <!--<a ng-click="universityOutreachFiles = {}; " ng-show="universityOutreachFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>-->
+                                <!--<input type="submit" class="btn default" value="Upload" ng-click="universityOutreachFiles = saveUploadedFile(universityOutreachFiles, cs4.universityOutreachFiles)">-->
+                            <!--</div>-->
 
-                        </div>
+                        <!--</div>-->
                         <div id="selectedItem" ng-repeat="file in cs4.universityOutreachFiles"
                              ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                         </div>
@@ -57,32 +90,32 @@
                         </label>
                         <textarea disabled   ng-show="cs4.legislatureOutreach" ng-model="cs4.legislatureSpecify" rows="3" cols="50" style="vertical-align: top; font-size:14px;position: relative;right: -20px; border-radius: 4px; margin-bottom:10px;width: 400px;" placeholder="Please Specify"></textarea>
                         <p ng-show="cs4.legislatureOutreach" ng-model="cs4.legislatureSpecify" class="ng-hide" style="position: relative;left: 225px;margin-top: -10px;margin-bottom: 20px;"> "Maximum of 2000 characters"</p>
-                        <div ng-show="cs4.legislatureOutreach" class="fileinput fileinput-new" data-provides="fileinput">
-                            <p>Upload a file to provide more details</p>
+                        <!--<div ng-show="cs4.legislatureOutreach" class="fileinput fileinput-new" data-provides="fileinput">-->
+                            <!--<p>Upload a file to provide more details</p>-->
 
-                            <div class="input-group input-large"
-                                 ng-file-select ng-model="uploadFile1"
-                                 ng-file-change="uploadFile(uploadFile1, legislatureOutreachFiles, '.doc, .docx, .pdf, .jpg')"
-                                 ng-multiple="true"
-                                 ng-accept="'.doc, .docx, .pdf, .jpg'">
+                            <!--<div class="input-group input-large"-->
+                                 <!--ng-file-select ng-model="uploadFile1"-->
+                                 <!--ng-file-change="uploadFile(uploadFile1, legislatureOutreachFiles, '.doc, .docx, .pdf, .jpg')"-->
+                                 <!--ng-multiple="true"-->
+                                 <!--ng-accept="'.doc, .docx, .pdf, .jpg'">-->
 
-                                <div class="form-control uneditable-input input-fixed input-medium">
-                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                    <span class="fileinput-filename">{{ legislatureOutreachFiles.originalDocumentName }}</span>
-                                </div>
-                                <span class="input-group-addon btn default btn-file">
-                                    <span ng-hide="legislatureOutreachFiles.originalDocumentName" class="fileinput-new">Browse</span>
-                                    <span ng-show="legislatureOutreachFiles.originalDocumentName" class="fileinput-exists">Change </span>
-                                </span>
-                            </div>
-                            <p>(.doc, .docx, .pdf, .jpg)</p>
+                                <!--<div class="form-control uneditable-input input-fixed input-medium">-->
+                                    <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
+                                    <!--<span class="fileinput-filename">{{ legislatureOutreachFiles.originalDocumentName }}</span>-->
+                                <!--</div>-->
+                                <!--<span class="input-group-addon btn default btn-file">-->
+                                    <!--<span ng-hide="legislatureOutreachFiles.originalDocumentName" class="fileinput-new">Browse</span>-->
+                                    <!--<span ng-show="legislatureOutreachFiles.originalDocumentName" class="fileinput-exists">Change </span>-->
+                                <!--</span>-->
+                            <!--</div>-->
+                            <p>(.doc, .docx, .pdf, .jpg)</p><br/>
 
-                            <div class="text-right" ng-show="legislatureOutreachFiles.originalDocumentName">
-                                <a ng-click="legislatureOutreachFiles = {}; " ng-show="legislatureOutreachFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
-                                <input type="submit" class="btn default" value="Upload" ng-click="legislatureOutreachFiles = saveUploadedFile(legislatureOutreachFiles, cs4.legislatureOutreachFiles)">
-                            </div>
+                            <!--<div class="text-right" ng-show="legislatureOutreachFiles.originalDocumentName">-->
+                                <!--<a ng-click="legislatureOutreachFiles = {}; " ng-show="legislatureOutreachFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>-->
+                                <!--<input type="submit" class="btn default" value="Upload" ng-click="legislatureOutreachFiles = saveUploadedFile(legislatureOutreachFiles, cs4.legislatureOutreachFiles)">-->
+                            <!--</div>-->
 
-                        </div>
+                        <!--</div>-->
                         <div id="selectedItem" ng-repeat="file in cs4.legislatureOutreachFiles"
                              ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
                         </div>
@@ -104,23 +137,23 @@
                 </ul>
 
             </div>
-            <div class="col-lg-4 print-hide" style="width: 250px;padding-right: 0">
-                <div class="panel panel-success" style="padding-bottom: 1px;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Did You Know?</h3>
-                    </div>
-                    <div class="panel-body">
-                        USGBC LEED ACP Promotion:<br/>
-                        The Texas SFI Implementation Committee teamed up with WoodWorks and hosted an architects and engineers tour in East Texas to promote the use of wood products in homes and buildings.
-                        <br/>
-                        <br/>
-                        The Virginia SFI Implementation Committee partnered with Builders Exchange Association of Virginia to host their annual architects tour showcasing sustainable forest management practices, highlight wood as a green building material and discuss opportunities to earn green building certification credit for using wood products certified to the SFI Standards.
-                    </div>
-                    <div style="overflow:hidden; margin:10px">
-                        <!--<img style="width: 250px;padding-right: 0" src="/assets/images/u84.png">-->
-                    </div>
-                </div>
-            </div>
+            <!--<div class="col-lg-4 print-hide" style="width: 250px;padding-right: 0">-->
+                <!--<div class="panel panel-success" style="padding-bottom: 1px;">-->
+                    <!--<div class="panel-heading">-->
+                        <!--<h3 class="panel-title">Did You Know?</h3>-->
+                    <!--</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--USGBC LEED ACP Promotion:<br/>-->
+                        <!--The Texas SFI Implementation Committee teamed up with WoodWorks and hosted an architects and engineers tour in East Texas to promote the use of wood products in homes and buildings.-->
+                        <!--<br/>-->
+                        <!--<br/>-->
+                        <!--The Virginia SFI Implementation Committee partnered with Builders Exchange Association of Virginia to host their annual architects tour showcasing sustainable forest management practices, highlight wood as a green building material and discuss opportunities to earn green building certification credit for using wood products certified to the SFI Standards.-->
+                    <!--</div>-->
+                    <!--<div style="overflow:hidden; margin:10px">-->
+                        <!--&lt;!&ndash;<img style="width: 250px;padding-right: 0" src="/assets/images/u84.png">&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
             <br>
         </div>
 

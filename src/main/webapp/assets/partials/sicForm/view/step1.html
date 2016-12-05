@@ -1,3 +1,36 @@
+<style>
+    body{
+        font-size: 11pt;
+    }
+    label{
+        font-size: 11pt;
+    }
+    input{
+        font-size: 11pt;
+    }
+    text{
+        font-size: 11pt;
+    }
+    textarea{
+        font-size: 11pt;
+    }
+    select{
+        font-size: 11pt;
+    }
+    p{
+        font-size: 11pt;
+    }
+    span{
+        font-size: 11pt;
+    }
+    table{
+        font-size: 11pt;
+    }
+    .checkboxLabel{
+        font-size: 11pt;
+    }
+</style>
+
 <div class="row">
     <div ng-init="errors = cs1.errors" ng-include="'/assets/partials/form/error.html'"></div>
     <form name="cs1Form">
@@ -23,25 +56,25 @@
         -------------------------------
         ----------------------------------->
         <div class="col-lg-12 passage-bold">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <h5>
                     1. Committee Structure and Membership
                 </h5>
 
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                     <p><b>Attach a copy of SIC organizational guidelines (charter, bylaws, etc.).</b></p>
-                    <div class="input-group input-large">
+                    <!--<div class="input-group input-large">-->
 
-                        <div class="form-control uneditable-input input-fixed input-medium">
-                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                            <span class="fileinput-filename">{{ guideFile.originalDocumentName }}</span>
-                        </div>
-                        <span class="input-group-addon btn default btn-file">
-                            <span ng-hide="guideFile.originalDocumentName" class="fileinput-new disabled">Browse</span>
-                            <span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>
-                        </span>
+                        <!--<div class="form-control uneditable-input input-fixed input-medium">-->
+                            <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
+                            <!--<span class="fileinput-filename">{{ guideFile.originalDocumentName }}</span>-->
+                        <!--</div>-->
+                        <!--<span class="input-group-addon btn default btn-file">-->
+                            <!--<span ng-hide="guideFile.originalDocumentName" class="fileinput-new disabled">Browse</span>-->
+                            <!--<span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>-->
+                        <!--</span>-->
 
-                    </div>
+                    <!--</div>-->
                     <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
 
                     <div class="text-right" ng-show="guideFile.originalDocumentName">
@@ -57,7 +90,7 @@
         <br>
 
         <div class="col-lg-12 passage-bold" ng-show="cs1.guideFiles.length">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
 
                 <p><b>Copy of organizational guidelines attached?</b></p>
 
@@ -85,7 +118,7 @@
         <br>
 
         <div class="col-lg-12 passage-bold" style="padding-bottom: 20px;">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
 
                 <div style="padding-bottom: 20px">
                     <p><b>Please choose the best description of how the SFI Implementation Committee (SIC) is organized?</b></p>
@@ -107,18 +140,18 @@
                         </b>
                     </p>
 
-                    <div class="input-group input-large">
+                    <!--<div class="input-group input-large">-->
 
-                        <div class="form-control uneditable-input input-fixed input-medium">
-                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                            <span class="fileinput-filename">{{ contactFile.originalDocumentName }}</span>
-                        </div>
-                        <span class="input-group-addon btn default btn-file">
-                            <span ng-hide="contactFile.originalDocumentName" class="fileinput-new diabled">Browse</span>
-                            <span ng-show="contactFile.originalDocumentName" class="fileinput-exists">Change </span>
-                        </span>
+                        <!--<div class="form-control uneditable-input input-fixed input-medium">-->
+                            <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
+                            <!--<span class="fileinput-filename">{{ contactFile.originalDocumentName }}</span>-->
+                        <!--</div>-->
+                        <!--<span class="input-group-addon btn default btn-file">-->
+                            <!--<span ng-hide="contactFile.originalDocumentName" class="fileinput-new diabled">Browse</span>-->
+                            <!--<span ng-show="contactFile.originalDocumentName" class="fileinput-exists">Change </span>-->
+                        <!--</span>-->
 
-                    </div>
+                    <!--</div>-->
                     File types accepted:(.xls, .xlsx.)
                 </div>
                 <div class="text-right" ng-show="contactFile.originalDocumentName">
@@ -127,7 +160,6 @@
                 </div>
 
                 <div id="selectedItem" ng-repeat="file in cs1.contactFiles" ng-click="download(file.uniqueDocumentName, file.originalDocumentName)">{{ file.originalDocumentName }}
-                    <button ng-click="deleteByIndex($index, cs1.contactFiles)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                 </div>
                 <br>
             </div>
@@ -135,7 +167,7 @@
         <br>
 
         <div class="col-lg-12 passage-bold">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <p>
                     <b>
                         Report the number of committee members and SIC Supporters for each of the following categories:
@@ -220,19 +252,19 @@
                 </table>
 
             </div>
-            <div class="col-lg-4">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Did You Know?</h3>
-                    </div>
-                    <div class="panel-body">
-                        This unique grassroots network of close to 1,000 people includes private landowners, independent loggers, forestry professionals, local government agencies, academics, scientists and conservationists.
-                        <br/>
-                        <br/>
-                        The SFI program responds to local needs across North America through 34 SFI Implementation Committees at the state, provincial or regional level.
-                    </div>
-                </div>
-            </div>
+            <!--<div class="col-lg-4">-->
+                <!--<div class="panel panel-success">-->
+                    <!--<div class="panel-heading">-->
+                        <!--<h3 class="panel-title">Did You Know?</h3>-->
+                    <!--</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--This unique grassroots network of close to 1,000 people includes private landowners, independent loggers, forestry professionals, local government agencies, academics, scientists and conservationists.-->
+                        <!--<br/>-->
+                        <!--<br/>-->
+                        <!--The SFI program responds to local needs across North America through 34 SFI Implementation Committees at the state, provincial or regional level.-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
         <br>
 

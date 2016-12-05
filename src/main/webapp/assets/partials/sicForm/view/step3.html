@@ -1,3 +1,36 @@
+<style>
+    body{
+        font-size: 11pt;
+    }
+    label{
+        font-size: 11pt;
+    }
+    input{
+        font-size: 11pt;
+    }
+    text{
+        font-size: 11pt;
+    }
+    textarea{
+        font-size: 11pt;
+    }
+    select{
+        font-size: 11pt;
+    }
+    p{
+        font-size: 11pt;
+    }
+    span{
+        font-size: 11pt;
+    }
+    table{
+        font-size: 11pt;
+    }
+    .checkboxLabel{
+        font-size: 11pt;
+    }
+</style>
+
 <div class="row">
     <form name="cs3Form">
     <div class="col-sm-12">
@@ -7,7 +40,7 @@
         -------------------------------
         ----------------------------------->
         <div class="col-lg-12">
-            <div class="col-lg-8 toolip">
+            <div class="col-lg-10 toolip">
                 <h5>
                     3. <span data-toggle="tooltip" title="From SIC Governance document – Landowner outreach core mission priority:  Focus landowner outreach efforts on education and technology."> Landowner Outreach (Core Mission Priority)</span>
                 </h5>
@@ -26,22 +59,22 @@
                         <div ng-show="cs3.workshop" class="fileinput fileinput-new" data-provides="fileinput">
                             <p>Upload a file to provide more details</p>
 
-                            <div class="input-group input-large"
-                                 ng-file-select ng-model="uploadFile1"
-                                 ng-file-change="uploadFile(uploadFile1, workshopSpecifyFiles, '.doc, .docx, .pdf, .jpg')"
-                                 ng-multiple="true"
-                                 ng-accept="'.doc, .docx, .pdf, .jpg'">
+                            <!--<div class="input-group input-large"-->
+                                 <!--ng-file-select ng-model="uploadFile1"-->
+                                 <!--ng-file-change="uploadFile(uploadFile1, workshopSpecifyFiles, '.doc, .docx, .pdf, .jpg')"-->
+                                 <!--ng-multiple="true"-->
+                                 <!--ng-accept="'.doc, .docx, .pdf, .jpg'">-->
 
-                                <div class="form-control uneditable-input input-fixed input-medium">
-                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                    <span class="fileinput-filename">{{ workshopSpecifyFiles.originalDocumentName }}</span>
-                                </div>
-                                <span class="input-group-addon btn default btn-file">
-                                    <span ng-hide="workshopSpecifyFiles.originalDocumentName" class="fileinput-new">Browse</span>
-                                    <span ng-show="workshopSpecifyFiles.originalDocumentName" class="fileinput-exists">Change </span>
-                                </span>
-                            </div>
-                            <p>(.doc, .docx, .pdf, .jpg)</p>
+                                <!--<div class="form-control uneditable-input input-fixed input-medium">-->
+                                    <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
+                                    <!--<span class="fileinput-filename">{{ workshopSpecifyFiles.originalDocumentName }}</span>-->
+                                <!--</div>-->
+                                <!--<span class="input-group-addon btn default btn-file">-->
+                                    <!--<span ng-hide="workshopSpecifyFiles.originalDocumentName" class="fileinput-new">Browse</span>-->
+                                    <!--<span ng-show="workshopSpecifyFiles.originalDocumentName" class="fileinput-exists">Change </span>-->
+                                <!--</span>-->
+                            <!--</div>-->
+                            <p>(.doc, .docx, .pdf, .jpg)</p><br/>
 
                             <div class="text-right" ng-show="workshopSpecifyFiles.originalDocumentName">
                                 <a ng-click="workshopSpecifyFiles = {}; " ng-show="workshopSpecifyFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>
@@ -63,22 +96,22 @@
                         <div ng-show="cs3.brochure" class="fileinput fileinput-new" data-provides="fileinput">
                             <p>Upload a file to provide more details</p>
 
-                            <div class="input-group input-large"
-                                 ng-file-select ng-model="uploadFile1"
-                                 ng-file-change="uploadFile(uploadFile1, brochureSpecifyFiles, '.doc, .docx, .pdf, .jpg')"
-                                 ng-multiple="true"
-                                 ng-accept="'.doc, .docx, .pdf, .jpg'">
+                            <!--<div class="input-group input-large"-->
+                                 <!--ng-file-select ng-model="uploadFile1"-->
+                                 <!--ng-file-change="uploadFile(uploadFile1, brochureSpecifyFiles, '.doc, .docx, .pdf, .jpg')"-->
+                                 <!--ng-multiple="true"-->
+                                 <!--ng-accept="'.doc, .docx, .pdf, .jpg'">-->
 
-                                <div class="form-control uneditable-input input-fixed input-medium">
-                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                    <span class="fileinput-filename">{{ brochureSpecifyFiles.originalDocumentName }}</span>
-                                </div>
-                                <span class="input-group-addon btn default btn-file">
-                                    <span ng-hide="brochureSpecifyFiles.originalDocumentName" class="fileinput-new">Browse</span>
-                                    <span ng-show="brochureSpecifyFiles.originalDocumentName" class="fileinput-exists">Change </span>
-                                </span>
-                            </div>
-                            <p>(.doc, .docx, .pdf, .jpg)</p>
+                                <!--<div class="form-control uneditable-input input-fixed input-medium">-->
+                                    <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
+                                    <!--<span class="fileinput-filename">{{ brochureSpecifyFiles.originalDocumentName }}</span>-->
+                                <!--</div>-->
+                                <!--<span class="input-group-addon btn default btn-file">-->
+                                    <!--<span ng-hide="brochureSpecifyFiles.originalDocumentName" class="fileinput-new">Browse</span>-->
+                                    <!--<span ng-show="brochureSpecifyFiles.originalDocumentName" class="fileinput-exists">Change </span>-->
+                                <!--</span>-->
+                            <!--</div>-->
+                            <p>(.doc, .docx, .pdf, .jpg)</p><br/>
 
                             <div class="text-right" ng-show="brochureSpecifyFiles.originalDocumentName">
                                 <a ng-click="brochureSpecifyFiles = {}; " ng-show="brochureSpecifyFiles.originalDocumentName" href="javascript:;" class="btn red fileinput-exists">Remove </a>

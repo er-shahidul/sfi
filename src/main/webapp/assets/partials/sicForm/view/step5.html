@@ -1,3 +1,36 @@
+<style>
+    body{
+        font-size: 11pt;
+    }
+    label{
+        font-size: 11pt;
+    }
+    input{
+        font-size: 11pt;
+    }
+    text{
+        font-size: 11pt;
+    }
+    textarea{
+        font-size: 11pt;
+    }
+    select{
+        font-size: 11pt;
+    }
+    p{
+        font-size: 11pt;
+    }
+    span{
+        font-size: 11pt;
+    }
+    table{
+        font-size: 11pt;
+    }
+    .checkboxLabel{
+        font-size: 11pt;
+    }
+</style>
+
 <div class="row">
     <form name="cs5Form">
     <div class="col-sm-12">
@@ -16,18 +49,18 @@
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                     <p><b>What is the SIC’s mechanism in place to address concerns regarding Inconsistent Practices?</b></p>
 
-                    <div class="input-group input-large">
+                    <!--<div class="input-group input-large">-->
 
-                        <div class="form-control uneditable-input input-fixed input-medium">
-                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                            <span class="fileinput-filename">{{ mechanismDoc.originalDocumentName }}</span>
-                        </div>
-                        <span class="input-group-addon btn default btn-file">
-                            <span ng-hide="mechanismDoc.originalDocumentName" class="fileinput-new disabled">Browse</span>
-                            <span ng-show="mechanismDoc.originalDocumentName" class="fileinput-exists">Change </span>
-                        </span>
-                        <a ng-click="mechanismDoc = {}; " ng-show="mechanismDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
-                    </div>
+                        <!--<div class="form-control uneditable-input input-fixed input-medium">-->
+                            <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
+                            <!--<span class="fileinput-filename">{{ mechanismDoc.originalDocumentName }}</span>-->
+                        <!--</div>-->
+                        <!--<span class="input-group-addon btn default btn-file">-->
+                            <!--<span ng-hide="mechanismDoc.originalDocumentName" class="fileinput-new disabled">Browse</span>-->
+                            <!--<span ng-show="mechanismDoc.originalDocumentName" class="fileinput-exists">Change </span>-->
+                        <!--</span>-->
+                        <!--<a ng-click="mechanismDoc = {}; " ng-show="mechanismDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>-->
+                    <!--</div>-->
                     File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)
                 </div>
                 <div class="text-right" ng-show="mechanismDoc.originalDocumentName">
@@ -129,25 +162,25 @@
                         </td>
                         <td></td>
                     </tr>
-                    <tr>
+                    <!--<tr>-->
 
-                        <td width="35%">
-                            <select disabled   class="form-control" ng-model="forest2015.objective" ng-required="hasData(forest2015)" customerror>
-                                <option ng-selected="!forest2015.objective">Select</option>
-                                <option ng-selected="forest2015.objective == $index" ng-repeat="objective in forestObjectives" ng-value="$index">{{ objective }}</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input class="form-control" type="number" readonly  ng-required="hasData(forest2015)" name="forest2015resolved" ng-model="forest2015.resolved" customerror>
-                        </td>
-                        <td>
-                            <input class="form-control" type="number" readonly  ng-required="hasData(forest2015)" name="forest2015Unresolved" ng-model="forest2015.unresolved" customerror>
-                        </td>
-                        <td>
-                            <input class="form-control" type="number" readonly  ng-required="hasData(forest2015)" name="forest2015InconsistentPractice" ng-model="forest2015.inconsistentPractice" customerror>
-                        </td>
-                        <td></td>
-                    </tr>
+                        <!--<td width="35%">-->
+                            <!--<select disabled   class="form-control" ng-model="forest2015.objective" ng-required="hasData(forest2015)" customerror>-->
+                                <!--<option ng-selected="!forest2015.objective">Select</option>-->
+                                <!--<option ng-selected="forest2015.objective == $index" ng-repeat="objective in forestObjectives" ng-value="$index">{{ objective }}</option>-->
+                            <!--</select>-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--<input class="form-control" type="number" readonly  ng-required="hasData(forest2015)" name="forest2015resolved" ng-model="forest2015.resolved" customerror>-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--<input class="form-control" type="number" readonly  ng-required="hasData(forest2015)" name="forest2015Unresolved" ng-model="forest2015.unresolved" customerror>-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--<input class="form-control" type="number" readonly  ng-required="hasData(forest2015)" name="forest2015InconsistentPractice" ng-model="forest2015.inconsistentPractice" customerror>-->
+                        <!--</td>-->
+                        <!--<td></td>-->
+                    <!--</tr>-->
 
 
                 </tbody>
@@ -190,24 +223,24 @@
                         </td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td width="35%">
-                            <select disabled   class="form-control" ng-required="hasData(fiber2015)" customerror ng-model="fiber2015.objective">
-                                <option ng-selected="!fiber2015.objective">Select</option>
-                                <option ng-selected="fiber2015.objective == $index" ng-repeat="objective in fiberObjectives" ng-value="$index">{{ objective }}</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" readonly  name="forest2015resolved" ng-model="fiber2015.resolved" customerror>
-                        </td>
-                        <td>
-                            <input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" readonly  name="forest2015Unresolved" ng-model="fiber2015.unresolved" customerror>
-                        </td>
-                        <td>
-                            <input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" readonly  name="forest2015InconsistentPractice" ng-model="fiber2015.inconsistentPractice" customerror>
-                        </td>
-                        <td></td>
-                    </tr>
+                    <!--<tr>-->
+                        <!--<td width="35%">-->
+                            <!--<select disabled   class="form-control" ng-required="hasData(fiber2015)" customerror ng-model="fiber2015.objective">-->
+                                <!--<option ng-selected="!fiber2015.objective">Select</option>-->
+                                <!--<option ng-selected="fiber2015.objective == $index" ng-repeat="objective in fiberObjectives" ng-value="$index">{{ objective }}</option>-->
+                            <!--</select>-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--<input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" readonly  name="forest2015resolved" ng-model="fiber2015.resolved" customerror>-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--<input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" readonly  name="forest2015Unresolved" ng-model="fiber2015.unresolved" customerror>-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--<input class="form-control" ng-required="hasData(fiber2015)" customerror type="number" readonly  name="forest2015InconsistentPractice" ng-model="fiber2015.inconsistentPractice" customerror>-->
+                        <!--</td>-->
+                        <!--<td></td>-->
+                    <!--</tr>-->
                     </tbody>
                 </table>
                 </ng-form>
