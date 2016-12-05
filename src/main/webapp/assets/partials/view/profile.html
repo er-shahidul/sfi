@@ -1,9 +1,42 @@
+<style>
+    body{
+        font-size: 11pt;
+    }
+    label{
+        font-size: 11pt;
+    }
+    input{
+        font-size: 11pt;
+    }
+    text{
+        font-size: 11pt;
+    }
+    textarea{
+        font-size: 11pt;
+    }
+    select{
+        font-size: 11pt;
+    }
+    p{
+        font-size: 11pt;
+    }
+    span{
+        font-size: 11pt;
+    }
+    table{
+        font-size: 11pt;
+    }
+    .checkboxLabel{
+        font-size: 11pt;
+    }
+</style>
+
 <div class="row">
 
     <div ng-init="errors = cs1.errors" ng-include="'/assets/partials/form/error.html'"></div>
     <form name="cs1Form"  novalidate>
 
-        <div class="col-sm-7">
+        <div class="col-sm-10">
             <h5 class="section-header">1. Profile</h5>
 
             <div class="form-group">
@@ -66,7 +99,7 @@
             <!-- Company description -->
             <div class="form-group" ng-class="{'has-error has-feedback':  cs1Form.companyDesc.$invalid}">
                 <label>SFI would like to feature your organization in an updated public certificate database and on the SFI website. In a short paragraph, please share what makes your organization unique. We invite you to involve your communications and marketing colleagues, if relevant.</label>
-                <textarea readonly disabled style="height: 165px;" class="form-control" name="companyDesc"
+                <textarea readonly disabled style="height: 535px;" class="form-control" name="companyDesc"
                           ng-model="cs1.companyDesc" ng-maxlength="4000" max-word-count="650" customerror
                           pattern-msg="Provide text of max 4000 length (approx 650 words)"
                           tooltip data-placement="right" data-container="body"
@@ -114,10 +147,10 @@
 
                                     <div class="padded" ng-show="cs1.ownsMngLandsInOther" ng-class="{'has-error has-feedback':  cs1.ownsMngLandsInOther && !cs1.ownsMngLandsOtherCountries.length}">
 
-                                        <select readonly disabled class="form-control" ng-model="other1" ng-change="other1 = addOtherCountry(cs1.ownsMngLandsOtherCountries, other1)">
-                                            <option value="0">Select country</option>
-                                            <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
-                                        </select>
+                                        <!--<select readonly disabled class="form-control" ng-model="other1" ng-change="other1 = addOtherCountry(cs1.ownsMngLandsOtherCountries, other1)">-->
+                                            <!--<option value="0">Select country</option>-->
+                                            <!--<option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>-->
+                                        <!--</select>-->
 
                                         <div ng-repeat="country in cs1.ownsMngLandsOtherCountries" id="selectedItem">{{country.country}}
                                         </div>
@@ -156,10 +189,10 @@
 
                                     <div class="padded" ng-show="cs1.hasPrimaryOperMillsYardsInOther" ng-class="{'has-error has-feedback': cs1.hasPrimaryOperMillsYardsInOther && !cs1.primaryOperMillsYardsOtherCountries.length}">
 
-                                        <select readonly disabled class="form-control" ng-model="other2" ng-change="other2 = addOtherCountry(cs1.primaryOperMillsYardsOtherCountries, other2)">
-                                            <option value="0">Select country</option>
-                                            <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
-                                        </select>
+                                        <!--<select readonly disabled class="form-control" ng-model="other2" ng-change="other2 = addOtherCountry(cs1.primaryOperMillsYardsOtherCountries, other2)">-->
+                                            <!--<option value="0">Select country</option>-->
+                                            <!--<option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>-->
+                                        <!--</select>-->
 
                                         <div ng-repeat="country in cs1.primaryOperMillsYardsOtherCountries" id="selectedItem">{{ country.country }}
                                         </div>
@@ -217,10 +250,10 @@
 
                                     <div class="padded" ng-show="cs1.hasSecondaryOperMillsYardsInOther" ng-class="{'has-error has-feedback':  cs1.hasSecondaryOperMillsYardsInOther && !cs1.secondaryOperMillsYardsOtherCountries.length}">
 
-                                        <select readonly disabled class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs1.secondaryOperMillsYardsOtherCountries, other3)">
-                                            <option value="0">Select country</option>
-                                            <option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>
-                                        </select>
+                                        <!--<select readonly disabled class="form-control" ng-model="other3" ng-change="other2 = addOtherCountry(cs1.secondaryOperMillsYardsOtherCountries, other3)">-->
+                                            <!--<option value="0">Select country</option>-->
+                                            <!--<option ng-repeat="country in otherCountries" value="{{ country.id }}">{{country.country}}</option>-->
+                                        <!--</select>-->
 
                                         <div ng-repeat="country in cs1.secondaryOperMillsYardsOtherCountries" id="selectedItem">{{ country.country }}
                                         </div>
@@ -241,16 +274,16 @@
                                data-title='Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products). This market information will help SFI identify organizations with a shared country interest whether to positively influence procurement policies and/or organize promotion of SFI products shipped outside the U.S.A. or Canada, e.g. to be featured in the 2020 Tokyo Games or the World Expo in Milan.'
                         >Countries your organization sells into </label>
 
-                        <select readonly disabled class="form-control"
-                                ng-model="other4"
-                                ng-change="other4 = addSellCountry(cs1.sellsCountries, other4,'Please select a region that has not already been selected.')"
-                                tooltip data-placement="right" data-container="body"
-                                data-title="Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products)">
-                            <option value="0">Select All that apply</option>
-                            <option ng-repeat="country in sellCountries" value="{{country.id}}">{{country.country}}</option>
-                        </select>
+                        <!--<select readonly disabled class="form-control"-->
+                                <!--ng-model="other4"-->
+                                <!--ng-change="other4 = addSellCountry(cs1.sellsCountries, other4,'Please select a region that has not already been selected.')"-->
+                                <!--tooltip data-placement="right" data-container="body"-->
+                                <!--data-title="Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products)">-->
+                            <!--&lt;!&ndash;<option value="0">Select All that apply</option>&ndash;&gt;-->
+                            <!--<option ng-repeat="country in sellCountries" value="{{country.id}}">{{country.country}}</option>-->
+                        <!--</select>-->
 
-
+<br/>
                         <div id="selectedItem" ng-repeat="country in cs1.sellsCountries">{{ country.country }}
                         </div>
                     </div>
@@ -262,32 +295,32 @@
         </div>
 
         <!-- RIGHT SECTION -->
-        <div class="col-sm-offset-1 col-sm-4">
-            <div class="panel panel-success" style="width: 250px;">
-                <div class="panel-heading">
-                    <h3 class="panel-title">About the Form</h3>
-                </div>
-                <div class="panel-body">
-                    Thank you to all participants who submitted data last year! This year we are sharing key summary data points collected trhough this survey. Use the 'How we used your data last year' hyperlink to see additional data summaries.
-                </div>
-            </div>
-            <div class="panel panel-success" style="width: 250px;">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Quick Tips</h3>
-                </div>
-                <div class="panel-body">
-                    <ul>
-                        <li>Use section titles to navigate through the survey</li>
-                        <li>Use the 'Save' button to save your data</li>
-                        <li>Use the 'Submit' button to submit your survey</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <img src="/assets/images/SurveyImage_GlobalReach_2016.jpg" style="width: 250px;">
-                <div class="pading-botoms"></div>
-            </div>
-        </div>
+        <!--<div class="col-sm-offset-1 col-sm-4">-->
+            <!--<div class="panel panel-success" style="width: 250px;">-->
+                <!--<div class="panel-heading">-->
+                    <!--<h3 class="panel-title">About the Form</h3>-->
+                <!--</div>-->
+                <!--<div class="panel-body">-->
+                    <!--Thank you to all participants who submitted data last year! This year we are sharing key summary data points collected trhough this survey. Use the 'How we used your data last year' hyperlink to see additional data summaries.-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="panel panel-success" style="width: 250px;">-->
+                <!--<div class="panel-heading">-->
+                    <!--<h3 class="panel-title">Quick Tips</h3>-->
+                <!--</div>-->
+                <!--<div class="panel-body">-->
+                    <!--<ul>-->
+                        <!--<li>Use section titles to navigate through the survey</li>-->
+                        <!--<li>Use the 'Save' button to save your data</li>-->
+                        <!--<li>Use the 'Submit' button to submit your survey</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<img src="/assets/images/SurveyImage_GlobalReach_2016.jpg" style="width: 250px;">-->
+                <!--<div class="pading-botoms"></div>-->
+            <!--</div>-->
+        <!--</div>-->
         <!-- -/- -->
     </form>
     {{setForms()}}

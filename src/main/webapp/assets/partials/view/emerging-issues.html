@@ -1,8 +1,41 @@
+<style>
+    body{
+        font-size: 11pt;
+    }
+    label{
+        font-size: 11pt;
+    }
+    input{
+        font-size: 11pt;
+    }
+    text{
+        font-size: 11pt;
+    }
+    textarea{
+        font-size: 11pt;
+    }
+    select{
+        font-size: 11pt;
+    }
+    p{
+        font-size: 11pt;
+    }
+    span{
+        font-size: 11pt;
+    }
+    table{
+        font-size: 11pt;
+    }
+    .checkboxLabel{
+        font-size: 11pt;
+    }
+</style>
+
 <div class="row section_background_6">
 
     <div ng-init="errors = cs7.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
-    <div class="col-sm-8">
+    <div class="col-sm-10">
         <h5>6. Emerging Issues</h5>
 
         <form name="cs7Form">
@@ -141,14 +174,14 @@
                                 <div ng-show="cs7.investResIfInve">
 
                                     <label>In what countries?</label>
-                                    <select  class="form-control" name="select" disabled
-                                            ng-init="country1=0"
-                                            ng-model="country1"
-                                            ng-change="country1 = addCountry(cs7.investResCountries, country1)">
-                                        <option value="0">Select country</option>
-                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
-                                    </select>
-
+                                    <!--<select  class="form-control" name="select" disabled-->
+                                            <!--ng-init="country1=0"-->
+                                            <!--ng-model="country1"-->
+                                            <!--ng-change="country1 = addCountry(cs7.investResCountries, country1)">-->
+                                        <!--<option value="0">Select country</option>-->
+                                        <!--<option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>-->
+                                    <!--</select>-->
+<br/>
 
                                     <div id="selectedItem" ng-repeat="country in cs7.investResCountries ">{{country.country}}&nbsp;
                                     </div>
@@ -190,13 +223,14 @@
                                 <div ng-show="cs7.planInvestResIfPlan">
 
                                     <label>In what countries?</label>
-                                    <select class="form-control" name="select" disabled
-                                            ng-init="country2=0"
-                                            ng-model="country2"
-                                            ng-change="country2 = addCountry(cs7.planInvestResCountries, country2)">
-                                        <option value="0">Select country</option>
-                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
-                                    </select>
+                                    <!--<select class="form-control" name="select" disabled-->
+                                            <!--ng-init="country2=0"-->
+                                            <!--ng-model="country2"-->
+                                            <!--ng-change="country2 = addCountry(cs7.planInvestResCountries, country2)">-->
+                                        <!--<option value="0">Select country</option>-->
+                                        <!--<option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>-->
+                                    <!--</select>-->
+                                    <br/>
 
 
                                     <div id="selectedItem" ng-repeat="country in cs7.planInvestResCountries ">{{country.country}}&nbsp;
@@ -237,14 +271,15 @@
                                 <div class="group1" ng-show="cs7.planCommPlantIfPlanGE">
 
                                     <label>In what countries?</label>
-                                    <select class="form-control" name="select"
-                                            disabled
-                                            ng-init="country3=0"
-                                            ng-model="country3"
-                                            ng-change="country3 = addCountry(cs7.planCommPlantCountries, country3)">
-                                        <option value="0">Select country</option>
-                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
-                                    </select>
+                                    <!--<select class="form-control" name="select"-->
+                                            <!--disabled-->
+                                            <!--ng-init="country3=0"-->
+                                            <!--ng-model="country3"-->
+                                            <!--ng-change="country3 = addCountry(cs7.planCommPlantCountries, country3)">-->
+                                        <!--<option value="0">Select country</option>-->
+                                        <!--<option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>-->
+                                    <!--</select>-->
+                                    <br/>
 
 
                                     <div id="selectedItem" ng-repeat="country in cs7.planCommPlantCountries ">{{country.country}}&nbsp;
@@ -290,26 +325,26 @@
         {{ setForms() }}
 
     </div>
-    <div class="col-sm-3 print-hide" style="float: right;">
-        <div class="panel panel-success pull-right" style="width: 275px;">
-            <div class="panel-heading">
-                <h3 class="panel-title">Did you know?</h3>
-            </div>
-            <div class="panel-body">
-                <p>As commonly used, forest tree biotechnology encompasses structural and functional studies of genes
-                    and genomes (including development and application of genetic markers); various methods of
-                    vegetative reproduction such as micropropagation, tissue culture, and somatic embryogenesis; and
-                    genetic engineering (Genetically Engineered), which is the physical manipulation and asexual insertion of genes into
-                    organisms.
-                </p>
-                The use of forest tree biotechnology is an evolving issue and as federal and international laws,
-                regulations, agreements, treaties and market place recognition of the use of genetically engineered
-                trees via forest tree biotechnology change, SFI Inc. will proactively review and update standard
-                language and policy as necessary.
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-offset-1 col-sm-4">
+    <!--<div class="col-sm-3 print-hide" style="float: right;">-->
+        <!--<div class="panel panel-success pull-right" style="width: 275px;">-->
+            <!--<div class="panel-heading">-->
+                <!--<h3 class="panel-title">Did you know?</h3>-->
+            <!--</div>-->
+            <!--<div class="panel-body">-->
+                <!--<p>As commonly used, forest tree biotechnology encompasses structural and functional studies of genes-->
+                    <!--and genomes (including development and application of genetic markers); various methods of-->
+                    <!--vegetative reproduction such as micropropagation, tissue culture, and somatic embryogenesis; and-->
+                    <!--genetic engineering (Genetically Engineered), which is the physical manipulation and asexual insertion of genes into-->
+                    <!--organisms.-->
+                <!--</p>-->
+                <!--The use of forest tree biotechnology is an evolving issue and as federal and international laws,-->
+                <!--regulations, agreements, treaties and market place recognition of the use of genetically engineered-->
+                <!--trees via forest tree biotechnology change, SFI Inc. will proactively review and update standard-->
+                <!--language and policy as necessary.-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-sm-offset-1 col-sm-4">-->
 
-    </div>
+    <!--</div>-->
 </div>
