@@ -328,3 +328,45 @@ ul[rn-carousel] {
 }
 .rn-carousel-indicator span.active {
     color: #CCCCCC; }
+
+@media print {
+    body {
+        font-size: 11pt;
+    }
+
+    label {
+        font-size: 11pt;
+    }
+
+    input {
+        font-size: 11pt;
+    }
+
+    text {
+        font-size: 11pt;
+    }
+
+    textarea {
+        font-size: 11pt;
+    }
+
+    select {
+        font-size: 11pt;
+    }
+
+    p {
+        font-size: 11pt;
+    }
+
+    span {
+        font-size: 11pt;
+    }
+
+    table {
+        font-size: 11pt;
+    }
+
+    .checkboxLabel {
+        font-size: 11pt;
+    }
+}
