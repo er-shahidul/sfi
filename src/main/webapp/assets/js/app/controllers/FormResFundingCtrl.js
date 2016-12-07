@@ -35,19 +35,19 @@ sfiFormApp
         $scope.checkpopOverData = function(index){
 
             if($scope.cs5['organizationListAcademic'+index].length>0)
-                return true;
+                return "Edit";
             if($scope.cs5['organizationListCommunity'+index].length>0)
-                return true;
+                return "Edit";
             if($scope.cs5['organizationListConservation'+index].length>0)
-                return true;
+                return "Edit";
             if($scope.cs5['organizationListGovernment'+index].length>0)
-                return true;
+                return "Edit";
             if($scope.cs5['organizationListResearch'+index].length>0)
-                return true;
+                return "Edit";
             if($scope.cs5['organizationListOther'+index].length>0)
-                return true;
+                return "Edit";
 
-           return false;
+           return "Click to add organizations";
 
         }
         $scope.showEditText = function(index){
@@ -70,6 +70,10 @@ sfiFormApp
         $scope.showEditText10 = $scope.showEditText(10);
         $scope.showEditText11 = $scope.showEditText(11);
         $scope.showEditText12 = $scope.showEditText(12);
+
+        $scope.getShowEditText = function(index){
+            return $scope['showEditText'+index];
+        }
 
         $scope.checkEditText = function(index){
             $scope['showEditText'+index] = $scope.showEditText(index);
@@ -277,15 +281,13 @@ sfiFormApp
                 $el.popover({
                     trigger : 'manual',
                     content : $compile($(content).contents())($scope),
-                    placement: 'top',
+                    placement: 'bottom',
                     html : true
                 });
             }
 
             $el.popover('show');
             var $popover = $el.data('bs.popover');
-            $popover.$tip.css({width: 443});
-            $el.popover('show');
 
             var $save = $popover.$tip.find(".btn-success");
 
