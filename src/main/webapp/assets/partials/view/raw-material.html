@@ -1,7 +1,7 @@
 <div class="row section_background_4">
 <div ng-init="errors = cs6.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
-<div class="col-sm-12" ng-class="{'disabled' : !hasPrimaryYards()}">
+<div class="col-sm-12">
 <h5>4. Raw Material Supply</h5>
 <p>
     (The following questions should be answered for manufacturing facilities covered under the scope of your SFI 2015-2019 Fiber Sourcing Standard certificate)
@@ -14,8 +14,8 @@
     <thead ng-show="operateInUsa() || operateInCa()">
     <tr>
         <th>Private Forest Landowners</th>
-        <th ng-class="{'disabled' : !operateInUsa()}" ng-show="operateInUsa()">US</th>
-        <th ng-class="{'disabled' : !operateInCa()}" ng-show="operateInCa()">Canada</th>
+        <th ng-show="operateInUsa()">US</th>
+        <th ng-show="operateInCa()">Canada</th>
     </tr>
     </thead>
     <tbody>
@@ -26,12 +26,12 @@
 
         <td ng-show="operateInUsa()">
             <input type="number" readonly  class="form-control  shorter"
-                   ng-model="cs6.numPrivateForeOwersUs" ng-class="{'disabled' : !operateInUsa()}">
+                   ng-model="cs6.numPrivateForeOwersUs">
         </td>
 
         <td ng-show="operateInCa()">
             <input type="number" readonly  class="form-control  shorter"
-                   ng-model="cs6.numPrivateForeOwersCa" ng-disabled="!operateInCa()" >
+                   ng-model="cs6.numPrivateForeOwersCa">
         </td>
     </tr>
     <tr>
@@ -41,9 +41,9 @@
                     In your opinion, has the number of trained wood producers in your region of your forestlands changed as
                     compared with last year?
                 </p>
-                <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
-                <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
-                <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
+                <input icheck readonly disabled type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
+                <input icheck readonly disabled type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
+                <input icheck readonly disabled type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
             </div>
         </td>
     </tr>
@@ -62,12 +62,12 @@
             >Raw Material Supply -procured directly from the forest to your SFI manufacturing facilities (new!)</span>
     </label>
     (can now drill down to more specific regions for sourcing of fiber supply)
-    <div ng-show="hasPrimaryYards()">
+    <span ng-show="hasPrimaryYards()">
         <a style="text-decoration:underline;" ng-click="lastYear3Pop()">How we used your data last year</a>
-    </div>
-    <div ng-show="!hasPrimaryYards()">
+    </span>
+    <span ng-show="!hasPrimaryYards()">
         How we used your data last year
-    </div>
+    </span>
 
     <br/><br/>
     <span>

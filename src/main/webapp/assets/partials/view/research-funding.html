@@ -15,28 +15,28 @@
             <br/>
             <div class="col-sm-12">
                 <h5>I. Research Funding</h5>
-                <table class="table table-striped vert-align-middle table-bordered" >
+                <table class="table table-striped vert-align-middle table-bordered">
                     <thead>
                     <tr>
                         <th style="text-align: center;" width="500px;">Research Funding Category</th>
-                        <th style="text-align: center;" ng-class="{'disabled' : !operateInUsa()}">
+                        <th style="text-align: center;" ng-show="operateInUsa()">
                         <span tooltip data-title="Forest-related research within your organization " data-placement="top">
                             Internal USD
                         </span>
                         </th>
 
-                        <th style="text-align: center;" ng-class="{'disabled' : !operateInUsa()}">
+                        <th style="text-align: center;"  ng-show="operateInUsa()">
                         <span tooltip data-title="Forest-related research outside your organization" data-placement="top">
                         External USD
                         </span>
                         </th>
-                        <th style="text-align: center;" ng-class="{'disabled' : !operateInCa()}">
+                        <th style="text-align: center;"  ng-show="operateInCa()">
                         <span tooltip data-title="Forest-related research within your organization" data-placement="top">
                             Internal CAD
                         </span>
 
                         </th>
-                        <th style="text-align: center;" ng-class="{'disabled' : !operateInCa()}">
+                        <th style="text-align: center;"  ng-show="operateInCa()">
                         <span tooltip data-title="Forest-related research outside your organization" data-placement="top">
                         External CAD
                         </span>
@@ -67,7 +67,7 @@
 
 
 
-                        <td align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
+                        <td  ng-show="operateInUsa()" align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
                             <input readonly disabled type="number" readonly  class="form-control" min="0" name="internalUsd" style="width:115px;"
                                    ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    ng-maxlength="13" customerror
@@ -75,7 +75,7 @@
                                    ng-model="item.internalUsd" ng-disabled="!operateInUsa()"/>
                         </td>
 
-                        <td align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
+                        <td ng-show="operateInUsa()" align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
                             <input readonly disabled type="number" readonly  class="form-control" name="externalUsd" style="width:115px;"
                                    ng-pattern="/^\d*(\.\d{1,2})?$/"
                                    ng-maxlength="13" customerror
@@ -83,7 +83,7 @@
                                    ng-model="item.externalUsd" ng-disabled="!operateInUsa()">
                         </td>
 
-                        <td align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
+                        <td ng-show="operateInCa()" align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
                             <input readonly disabled type="number" readonly  class="form-control" name="internalCad" style="width:115px;"
                                    ng-maxlength="13" customerror
                                    ng-pattern="/^\d*(\.\d{1,2})?$/"
@@ -91,7 +91,7 @@
                                    ng-model="item.internalCad" ng-disabled="!operateInCa()">
                         </td>
 
-                        <td align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
+                        <td ng-show="operateInCa()" align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
                             <input readonly disabled type="number" readonly  class="form-control" name="externalCad" style="width:115px;"
                                    ng-maxlength="13" customerror
                                    ng-pattern="/^\d*(\.\d{1,2})?$/"
@@ -175,17 +175,16 @@
                              ng-class="{'has-error' : isDirty() && innerFrom.sfiStandard10.$invalid }">
 
                                 <span>SFI 2015-2019 Standard Objective most relevant to project</span>
-                            <!--<select class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"-->
-                                    <!--ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects2015)">-->
-                                <!--<option value="0" ng-selected="!project.sfiStandard10">Please select</option>-->
-                                <!--<optgroup label="SFI 2015-2019 Forest Land Management Objectives">-->
-                                    <!--<option ng-repeat="item in standardObjects2015" ng-if="item.id <= 15" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>-->
-                                <!--</optgroup>-->
-                                <!--<optgroup label="SFI 2015-2019 Fiber Sourcing Objectives">-->
-                                    <!--<option ng-repeat="item in standardObjects2015" ng-if="item.id > 15" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>-->
-                                <!--</optgroup>-->
-                            <!--</select>-->
-<br/>
+                            <select class="form-control" name="sfiStandard10" customerror ng-init="sfiStandard10 = 0"
+                                    ng-model="sfiStandard10" ng-change="sfiStandard10 = addBucket(project.sfiStandard10, sfiStandard10, standardObjects2015)">
+                                <option value="0" ng-selected="!project.sfiStandard10">Please select</option>
+                                <optgroup label="SFI 2015-2019 Forest Land Management Objectives">
+                                    <option ng-repeat="item in standardObjects2015" ng-if="item.id <= 15" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
+                                </optgroup>
+                                <optgroup label="SFI 2015-2019 Fiber Sourcing Objectives">
+                                    <option ng-repeat="item in standardObjects2015" ng-if="item.id > 15" data-ng-value="item.id">{{item.sfiStandardObjDesc}}</option>
+                                </optgroup>
+                            </select>
                             <div id="selectedItem" ng-repeat="item in project.sfiStandard10">{{ item.sfiStandardObjDesc }}
                             </div>
                         </div>
@@ -195,12 +194,11 @@
                                 <span>Select state(s)/province(s) for this project</span>
                             <!--</div>-->
                             <!--<div class="col-sm-7" style="padding-right: 0;">-->
-                                <!--<select class="form-control" name="region" ng-init="regionModel = 0"-->
-                                        <!--ng-model="regionModel" ng-change="regionModel = addBucket(project.projectLocations, regionModel, regions)">-->
-                                    <!--<option value="0" >Please select</option>-->
-                                    <!--<option ng-repeat="region in regions" data-ng-value="region.id">{{region.name}}</option>-->
-                                <!--</select>-->
-<br/>
+                                <select class="form-control" name="region" ng-init="regionModel = 0"
+                                        ng-model="regionModel" ng-change="regionModel = addBucket(project.projectLocations, regionModel, regions)">
+                                    <option value="0" >Please select</option>
+                                    <option ng-repeat="region in regions" data-ng-value="region.id">{{region.name}}</option>
+                                </select>
                                 <div id="selectedItem" ng-repeat="region in project.projectLocations">{{ region.name }}
                                 </div>
                             <!--</div>-->
@@ -447,17 +445,17 @@
                                     <p>Supporting documentation (optional).</p>
                                 </div>
                                 <div class="col-sm-8" style="padding-left:0 ">
-                                    <!--<div class="input-group">-->
+                                    <div class="input-group">
 
-                                        <!--&lt;!&ndash;<div class="form-control">&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<i class="fa fa-file fileinput-exists"></i>&nbsp;&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<span class="fileinput-filename">{{ file.originalDocumentName }}</span>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<span class="input-group-addon btn default btn-file">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<span class="fileinput-new">Browse </span>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                        <div class="form-control">
+                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                            <span class="fileinput-filename">{{ file.originalDocumentName }}</span>
+                                        </div>
+                                    <span class="input-group-addon btn default btn-file">
+                                        <span class="fileinput-new disabled">Browse </span>
+                                    </span>
 
-                                    <!--</div>-->
+                                    </div>
                                     <p>(file types can be: jpg, png, doc, docx, pdf, xls, xlsx with max.file size of 10MB)</p>
 
                                     <div id="valdfil">
@@ -526,8 +524,8 @@
                     <thead>
                     <tr>
                         <th></th>
-                        <th ng-class="{'disabled' : !operateInUsa()}" align="center">US</th>
-                        <th ng-class="{'disabled' : !operateInCa()}" >Canada</th>
+                        <th ng-show="operateInUsa()" align="center">US</th>
+                        <th ng-show="operateInCa()" align="center">Canada</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -539,12 +537,12 @@
                             (Support for US SICs in $US. Support for Canadian SICs in $CA.)
                         </td>
                         <td>
-                            <input readonly disabled  type="number"  class="form-control  shorter numberBox"
+                            <input readonly disabled ng-show="operateInUsa()"type="number"  class="form-control  shorter numberBox"
                                     ng-maxlength="11" customerror style="width:120px"
                                     ng-model="cs5.fundSFIActivStateProviUs" ng-class="!operateInUsa()" >
                         </td>
                         <td>
-                            <input readonly disabled type="number" class="form-control  shorter numberBox"
+                            <input readonly disabled ng-show="operateInCa()" type="number" class="form-control  shorter numberBox"
                                    ng-maxlength="11" customerror style="width:120px"
                                    ng-model="cs5.fundSFIActivStateProviCa" ng-disabled="!operateInCa()" >
                         </td>
