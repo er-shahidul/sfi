@@ -288,7 +288,7 @@ sfiFormApp
 
             $el.popover('show');
             var $popover = $el.data('bs.popover');
-
+            $popover.$tip.css({width: 443});
             var $save = $popover.$tip.find(".btn-success");
 
             $save.click(function(e){
