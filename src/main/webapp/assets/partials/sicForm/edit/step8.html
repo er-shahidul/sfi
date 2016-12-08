@@ -331,7 +331,7 @@
                                     ng-model="region"
                                     ng-change="region = addBucket(project.regions, region, regions)">
                                 <option value="0" >< Select all that apply ></option>
-                                <option ng-repeat="region in regions" ng-value={{region.id}}>{{region.name}}</option>
+                                <option ng-repeat="region in regions" ng-value=region.id>{{region.name}}</option>
                             </select>
                             <div id="selectedItem" ng-repeat="region in project.regions">{{ region.name }}
                                 <button ng-click="project.regions = deleteBucket(region.id, project.regions)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>

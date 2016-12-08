@@ -77,8 +77,12 @@
             >Raw Material Supply - procured directly from the forest to your SFI manufacturing facilities </span>
     </label>
     (can now drill down to more specific regions for sourcing of fiber supply)
-    <a style="text-decoration:underline;" ng-click="lastYear3Pop()">How we used your data last year</a>
-    <!--<a style="text-decoration:underline;" href="/assets/images/u588.png" target="_blank">How we used your data last year</a>-->
+    <span ng-show="hasPrimaryYards()">
+        <a style="text-decoration:underline;" ng-click="lastYear3Pop()">How we used your data last year</a>
+    </span>
+    <span ng-show="!hasPrimaryYards()">
+       How we used your data last year
+    </span>
 
     <br/><br/>
     <span>

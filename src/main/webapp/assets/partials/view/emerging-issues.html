@@ -1,46 +1,13 @@
-<style>
-    body{
-        font-size: 11pt;
-    }
-    label{
-        font-size: 11pt;
-    }
-    input{
-        font-size: 11pt;
-    }
-    text{
-        font-size: 11pt;
-    }
-    textarea{
-        font-size: 11pt;
-    }
-    select{
-        font-size: 11pt;
-    }
-    p{
-        font-size: 11pt;
-    }
-    span{
-        font-size: 11pt;
-    }
-    table{
-        font-size: 11pt;
-    }
-    .checkboxLabel{
-        font-size: 11pt;
-    }
-</style>
-
 <div class="row section_background_6">
 
     <div ng-init="errors = cs7.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
     <div class="col-sm-10">
-        <h5>6. Emerging Issues</h5>
+        <h5>6. Issues of Interest</h5>
 
         <form name="cs7Form">
             <div class="form-group">
-                <label>Select the emerging issues you are interested in. This way we can keep you informed on these topics.(new!)</label>
+                <label>Select the following Issues of Interest. This way we can keep you informed on these topics.</label>
 
                 <div class="form-group hasRadioBoxes nopadding">
 
@@ -174,13 +141,13 @@
                                 <div ng-show="cs7.investResIfInve">
 
                                     <label>In what countries?</label>
-                                    <!--<select  class="form-control" name="select" disabled-->
-                                            <!--ng-init="country1=0"-->
-                                            <!--ng-model="country1"-->
-                                            <!--ng-change="country1 = addCountry(cs7.investResCountries, country1)">-->
-                                        <!--<option value="0">Select country</option>-->
-                                        <!--<option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>-->
-                                    <!--</select>-->
+                                    <select  class="form-control" name="select" disabled
+                                            ng-init="country1=0"
+                                            ng-model="country1"
+                                            ng-change="country1 = addCountry(cs7.investResCountries, country1)">
+                                        <option value="0">Select country</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+                                    </select>
 <br/>
 
                                     <div id="selectedItem" ng-repeat="country in cs7.investResCountries ">{{country.country}}&nbsp;
@@ -223,13 +190,13 @@
                                 <div ng-show="cs7.planInvestResIfPlan">
 
                                     <label>In what countries?</label>
-                                    <!--<select class="form-control" name="select" disabled-->
-                                            <!--ng-init="country2=0"-->
-                                            <!--ng-model="country2"-->
-                                            <!--ng-change="country2 = addCountry(cs7.planInvestResCountries, country2)">-->
-                                        <!--<option value="0">Select country</option>-->
-                                        <!--<option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>-->
-                                    <!--</select>-->
+                                    <select class="form-control" name="select" disabled
+                                            ng-init="country2=0"
+                                            ng-model="country2"
+                                            ng-change="country2 = addCountry(cs7.planInvestResCountries, country2)">
+                                        <option value="0">Select country</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+                                    </select>
                                     <br/>
 
 
@@ -271,14 +238,14 @@
                                 <div class="group1" ng-show="cs7.planCommPlantIfPlanGE">
 
                                     <label>In what countries?</label>
-                                    <!--<select class="form-control" name="select"-->
-                                            <!--disabled-->
-                                            <!--ng-init="country3=0"-->
-                                            <!--ng-model="country3"-->
-                                            <!--ng-change="country3 = addCountry(cs7.planCommPlantCountries, country3)">-->
-                                        <!--<option value="0">Select country</option>-->
-                                        <!--<option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>-->
-                                    <!--</select>-->
+                                    <select class="form-control" name="select"
+                                            disabled
+                                            ng-init="country3=0"
+                                            ng-model="country3"
+                                            ng-change="country3 = addCountry(cs7.planCommPlantCountries, country3)">
+                                        <option value="0">Select country</option>
+                                        <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
+                                    </select>
                                     <br/>
 
 

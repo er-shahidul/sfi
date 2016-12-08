@@ -1,36 +1,3 @@
-<style>
-    body{
-        font-size: 11pt;
-    }
-    label{
-        font-size: 11pt;
-    }
-    input{
-        font-size: 11pt;
-    }
-    text{
-        font-size: 11pt;
-    }
-    textarea{
-        font-size: 11pt;
-    }
-    select{
-        font-size: 11pt;
-    }
-    p{
-        font-size: 11pt;
-    }
-    span{
-        font-size: 11pt;
-    }
-    table{
-        font-size: 11pt;
-    }
-    .checkboxLabel{
-        font-size: 11pt;
-    }
-</style>
-
 <div class="row">
     <div ng-init="errors = cs1.errors" ng-include="'/assets/partials/form/error.html'"></div>
     <form name="cs1Form">
@@ -63,18 +30,18 @@
 
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                     <p><b>Attach a copy of SIC organizational guidelines (charter, bylaws, etc.).</b></p>
-                    <!--<div class="input-group input-large">-->
+                    <div class="input-group input-large">
 
-                        <!--<div class="form-control uneditable-input input-fixed input-medium">-->
-                            <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
-                            <!--<span class="fileinput-filename">{{ guideFile.originalDocumentName }}</span>-->
-                        <!--</div>-->
-                        <!--<span class="input-group-addon btn default btn-file">-->
-                            <!--<span ng-hide="guideFile.originalDocumentName" class="fileinput-new disabled">Browse</span>-->
-                            <!--<span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>-->
-                        <!--</span>-->
+                        <div class="form-control uneditable-input input-fixed input-medium">
+                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                            <span class="fileinput-filename">{{ guideFile.originalDocumentName }}</span>
+                        </div>
+                        <span class="input-group-addon btn default btn-file">
+                            <span ng-hide="guideFile.originalDocumentName" class="fileinput-new disabled">Browse</span>
+                            <span ng-show="guideFile.originalDocumentName" class="fileinput-exists">Change </span>
+                        </span>
 
-                    <!--</div>-->
+                    </div>
                     <p>File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)</p>
 
                     <div class="text-right" ng-show="guideFile.originalDocumentName">
@@ -140,18 +107,18 @@
                         </b>
                     </p>
 
-                    <!--<div class="input-group input-large">-->
+                    <div class="input-group input-large">
 
-                        <!--<div class="form-control uneditable-input input-fixed input-medium">-->
-                            <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
-                            <!--<span class="fileinput-filename">{{ contactFile.originalDocumentName }}</span>-->
-                        <!--</div>-->
-                        <!--<span class="input-group-addon btn default btn-file">-->
-                            <!--<span ng-hide="contactFile.originalDocumentName" class="fileinput-new diabled">Browse</span>-->
-                            <!--<span ng-show="contactFile.originalDocumentName" class="fileinput-exists">Change </span>-->
-                        <!--</span>-->
+                        <div class="form-control uneditable-input input-fixed input-medium">
+                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                            <span class="fileinput-filename">{{ contactFile.originalDocumentName }}</span>
+                        </div>
+                        <span class="input-group-addon btn default btn-file">
+                            <span ng-hide="contactFile.originalDocumentName" class="fileinput-new diabled">Browse</span>
+                            <span ng-show="contactFile.originalDocumentName" class="fileinput-exists">Change </span>
+                        </span>
 
-                    <!--</div>-->
+                    </div>
                     File types accepted:(.xls, .xlsx.)
                 </div>
                 <div class="text-right" ng-show="contactFile.originalDocumentName">

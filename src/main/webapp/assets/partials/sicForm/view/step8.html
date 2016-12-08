@@ -1,36 +1,3 @@
-<style>
-    body{
-        font-size: 11pt;
-    }
-    label{
-        font-size: 11pt;
-    }
-    input{
-        font-size: 11pt;
-    }
-    text{
-        font-size: 11pt;
-    }
-    textarea{
-        font-size: 11pt;
-    }
-    select{
-        font-size: 11pt;
-    }
-    p{
-        font-size: 11pt;
-    }
-    span{
-        font-size: 11pt;
-    }
-    table{
-        font-size: 11pt;
-    }
-    .checkboxLabel{
-        font-size: 11pt;
-    }
-</style>
-
 <div class="row">
     <div class="col-sm-12 fm-stl">
 
@@ -401,24 +368,19 @@
                                 Supporting Documentation (optional)
                             </p>
 
-                            <!--<div class="input-group input-large"-->
-                                 <!--ng-init="supportDoc = {}"-->
-                                 <!--ng-model="uploadFile1"-->
-                                 <!--ng-file-change="uploadFile(uploadFile1, supportDoc)"-->
-                                 <!--ng-multiple="false"-->
-                                 <!--ng-accept="'image/*,application/pdf'">-->
+                            <div class="input-group input-large">
 
-                                <!--<div class="form-control uneditable-input input-fixed input-medium">-->
-                                    <!--<i class="fa fa-file fileinput-exists"></i>&nbsp;-->
-                                    <!--<span class="fileinput-filename">{{ supportDoc.originalDocumentName }}</span>-->
-                                <!--</div>-->
+                                <div class="form-control uneditable-input input-fixed input-medium">
+                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                    <span class="fileinput-filename">{{ supportDoc.originalDocumentName }}</span>
+                                </div>
 
-                                <!--<span class="input-group-addon btn default btn-file">-->
-                                    <!--<span ng-hide="supportDoc.originalDocumentName" class="fileinput-new">Browse</span>-->
-                                    <!--<span ng-show="supportDoc.originalDocumentName" class="fileinput-exists">Change </span>-->
-                                <!--</span>-->
-                                <!--<a ng-click="supportDoc = {}; " ng-show="supportDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>-->
-                            <!--</div>-->
+                                <span class="input-group-addon btn default btn-file">
+                                    <span ng-hide="supportDoc.originalDocumentName" class="fileinput-new disabled">Browse</span>
+                                    <span ng-show="supportDoc.originalDocumentName" class="fileinput-exists">Change </span>
+                                </span>
+                                <a ng-click="supportDoc = {}; " ng-show="supportDoc.originalDocumentName" href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                            </div>
 
                             File types accepted:(.doc, .docx, .pdf, .xls, .xlsx.)
                         </div>
