@@ -22,24 +22,24 @@
                 <thead>
                 <tr>
                     <th style="text-align: center;">Research Funding Category</th>
-                    <th style="text-align: center;width: 110px;" ng-class="{'disabled' : !operateInUsa()}">
+                    <th style="text-align: center;width: 110px;" ng-show="operateInUsa()">
                         <span tooltip data-title="Forest-related research within your organization" data-placement="top">
                             Internal USD
                         </span>
                     </th>
 
-                    <th style="text-align: center;width: 110px;" ng-class="{'disabled' : !operateInUsa()}">
+                    <th style="text-align: center;width: 110px;" ng-show="operateInUsa()">
                         <span tooltip data-title="Forest-related research outside your organization" data-placement="top">
                         External USD
                         </span>
                     </th>
-                    <th style="text-align: center;width: 110px;" ng-class="{'disabled' : !operateInCa()}">
+                    <th style="text-align: center;width: 110px;" ng-show="operateInCa()">
                         <span tooltip data-title="Forest-related research within your organization" data-placement="top">
                             Internal CAD
                         </span>
 
                     </th>
-                    <th style="text-align: center;width: 110px;" ng-class="{'disabled' : !operateInCa()}">
+                    <th style="text-align: center;width: 110px;" ng-show="operateInCa()">
                         <span tooltip data-title="Forest-related research outside your organization" data-placement="top">
                         External CAD
                         </span>
@@ -70,7 +70,7 @@
 
 
 
-                    <td align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
+                    <td ng-show="operateInUsa()" align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" min="0" name="internalUsd" style="width:115px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
@@ -78,21 +78,21 @@
                                ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInUsa()))"/>
                     </td>
 
-                    <td align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
+                    <td ng-show="operateInUsa()" align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalUsd" style="width:115px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
                                ng-model="item.externalUsd" ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInUsa()))">
                     </td>
 
-                    <td align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
+                    <td ng-show="operateInCa()" align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="internalCad" style="width:115px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
                                ng-model="item.internalCad" ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInCa()))">
                     </td>
 
-                    <td align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
+                    <td ng-show="operateInCa()" align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalCad" style="width:115px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
@@ -570,8 +570,8 @@
                     <thead>
                     <tr>
                         <th></th>
-                        <th ng-class="{'disabled' : !operateInUsa()}" align="center">US</th>
-                        <th ng-class="{'disabled' : !operateInCa()}" >Canada</th>
+                        <th ng-show="operateInUsa()" align="center">US</th>
+                        <th ng-show="operateInCa()" >Canada</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -582,15 +582,15 @@
                             Funding provided last year for SFI Implementation Committee activities at the state or provincial level<br/>
                             (Support for US SICs in $US. Support for Canadian SICs in $CA.)
                         </td>
-                        <td>
+                        <td ng-show="operateInUsa()" >
                             <input  type="number"  class="form-control  shorter "
                                     ng-maxlength="11" customerror style="width:120px"
-                                    ng-model="cs5.fundSFIActivStateProviUs" ng-class="{'disabled' : !operateInUsa()}" >
+                                    ng-model="cs5.fundSFIActivStateProviUs">
                         </td>
-                        <td>
+                        <td ng-show="operateInCa()">
                             <input type="number" class="form-control  shorter numberBox"
                                    ng-maxlength="11" customerror style="width:120px"
-                                   ng-model="cs5.fundSFIActivStateProviCa" ng-disabled="!operateInCa()" >
+                                   ng-model="cs5.fundSFIActivStateProviCa" >
                         </td>
                     </tr>
 

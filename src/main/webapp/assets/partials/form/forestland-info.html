@@ -6,12 +6,14 @@
         <h5 class="section-header">2. Forestland Information</h5>
 
         <form name="cs2Form" novalidate >
+        <div ng-show="operateInUsa() || operateInCa()">
             <span>
                 Provide forestland information on all forests your organization owns/manages as well as forestland
                 included under the scope of your SFI certification.
             </span>
 
             <table class="table table-striped table-bordered" id="table1" border="1" style="margin-top: 6px;">
+            <div ng-show="operateInUsa() || operateInCa()">
                 <thead>
                 <tr>
                     <th style="min-width: 80px;"><span style="margin-top: -5px;">USA & </span><br/>Canada <span tooltip data-placement="top" data-container="body" data-html="true"
@@ -22,10 +24,10 @@
                     <th style="min-width: 155px;">
                         Total area certified to the SFI forest management standard<br/>
                         <u>
-                            <div ng-show="operateInUsa() || operateInCa() || operateInOthers()">
+                            <div ng-show="operateInUsa() || operateInCa()">
                                 <a ng-click="lastYear2Pop()">How we used your <br/>data last year</a>
                             </div>
-                            <div ng-show="!operateInUsa() && !operateInCa() && !operateInOthers()">
+                            <div ng-show="!operateInUsa() && !operateInCa()">
                                 How we used your <br/>data last year
                             </div>
                         </u>
@@ -36,10 +38,10 @@
                     <th style="min-width: 155px;">
                         Area certified to SFI<br/>standard open to public<br/>for recreation<br/>
                         <u>
-                            <div ng-show="operateInUsa() || operateInCa() || operateInOthers()">
+                            <div ng-show="operateInUsa() || operateInCa()">
                                 <a ng-click="lastYearPop()">How we used your <br/>data last year</a>
                             </div>
-                            <div ng-show="!operateInUsa() && !operateInCa() && !operateInOthers()">
+                            <div ng-show="!operateInUsa() && !operateInCa()">
                                 How we used your <br/>data last year
                             </div>
                         </u>
@@ -47,8 +49,9 @@
                     <th width="24%">Check all recreation categories that<br/>apply to areas open to recreation on<br/>your managed land</th>
                 </tr>
                 </thead>
+            </div>
                 <tbody>
-                <tr>
+                <tr ng-show="operateInUsa()">
                     <td style="text-align: left;" align="left" ng-class="{'disabled' : !operateInUsa()}">United <br> States<br>(Private)</td>
 
                     <td style="text-align: left;" nowrap ng-class="{'disabled' : !operateInUsa()}">
@@ -151,7 +154,7 @@
                     </td>
                 </tr>
 
-                <tr>
+                <tr ng-show="operateInUsa()">
                     <td align="left" ng-class="{'disabled' : !operateInUsa()}">United<br>States<br>(Public)</td>
                     <!-- v2 -->
                     <td nowrap ng-class="{'disabled' : !operateInUsa()}">
@@ -240,7 +243,7 @@
                 </tr>
 
 
-                <tr>
+                <tr ng-show="operateInCa()">
                     <td align="left" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Crown <br>License)</td>
                     <!-- v2 -->
                     <td nowrap ng-class="{'disabled' : !operateInCa()}">
@@ -330,7 +333,7 @@
                     </td>
                 </tr>
 
-                <tr class="active">
+                <tr class="active" ng-show="operateInCa()">
                     <td align="left" ng-class="{'disabled' : !operateInCa()}">Canada<br>(Private<br> Land)</td>
                     <!-- v2 -->
                     <td nowrap ng-class="{'disabled' : !operateInCa()}">
@@ -429,8 +432,9 @@
                 </tbody>
             </table>
             <br><br>
+        </div>
 
-            <table class="table">
+            <table class="table" ng-show="operateInOthers()">
                 <thead>
                 <tr>
                     <th tooltip data-placement="top" data-container="body"
@@ -504,7 +508,7 @@
                 </tr>
                 </tbody>
             </table>
-            <a href="" class="myButton" ng-click="addOther()" ng-show="operateInOthers()">+ Add Another Country</a>
+            <a class="myButton" ng-click="addOther()" ng-show="operateInOthers()">+ Add Another Country</a>
             <br><br>
 
 

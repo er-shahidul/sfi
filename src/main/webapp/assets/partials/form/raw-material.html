@@ -15,8 +15,8 @@
     <thead>
     <tr>
         <th>Private Forest Landowners</th>
-        <th ng-class="{'disabled' : !operateInUsa() || !hasPrimaryYards()}">US</th>
-        <th ng-class="{'disabled' : !operateInCa() || !hasPrimaryYards()}" >Canada</th>
+        <th ng-show="operateInUsa()">US</th>
+        <th ng-show="operateInCa()">Canada</th>
     </tr>
     </thead>
     <tbody>
@@ -25,14 +25,14 @@
             data-title="Landowners selling timber directly to your organization” means those private landowners with which your organization has a contractual relationship to purchase or harvest timber (i.e., stumpage or logs)."
             >Number of private forest landowners selling timber (stumpage, logs or chips) directly to your organization last year.</td>
 
-        <td>
+        <td ng-show="operateInUsa()">
             <input type="number" class="form-control  shorter"
-                   ng-model="cs6.numPrivateForeOwersUs" ng-class="{'disabled' : !operateInUsa() || !hasPrimaryYards()}">
+                   ng-model="cs6.numPrivateForeOwersUs">
         </td>
 
-        <td>
+        <td ng-show="operateInCa()">
             <input type="number" class="form-control  shorter"
-                   ng-model="cs6.numPrivateForeOwersCa" ng-disabled="!operateInCa() || !hasPrimaryYards()" >
+                   ng-model="cs6.numPrivateForeOwersCa">
         </td>
     </tr>
     <tr>
