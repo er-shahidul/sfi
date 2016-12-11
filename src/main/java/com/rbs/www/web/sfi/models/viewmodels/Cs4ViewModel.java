@@ -4,8 +4,8 @@ import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.web.sfi.validation.Cs4Ca.Cs4Ca;
 import com.rbs.www.web.sfi.validation.Cs4Usa.Cs4Usa;
 
-@Cs4Usa(message = "{usaEmpty}")
-@Cs4Ca(message = "{caEmpty}")
+//@Cs4Usa(message = "{usaEmpty}")
+//@Cs4Ca(message = "{caEmpty}")
 public class Cs4ViewModel extends BaseViewModel {
     private Integer id;
 

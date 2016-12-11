@@ -19,7 +19,7 @@
                     <div style="margin-bottom: 10px;">What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
 
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control required shortest" name="harvesUnitCompleteLastYeaQualifyHAAC" max="100" min="0"
-                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number Only" customerror
                                 ng-model="cs4.harvesUnitCompleteLastYeaQualifyHAAC"> HA/AC
                     </div>
                 </div>
@@ -28,14 +28,14 @@
                     <div class="form-group" ng-class="{'has-error' : hasError('usaTotalHervArea')}">
                         <label> What is the total area of final harvest units completed last year by clearcutting?</label>
                         <input type="number" class="form-control required shortest" name="usaTotalHervArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaTotalHervArea"> {{ unit }}
                     </div>
 
                     <div class="form-group" ng-class="{'has-error' : hasError('usaAvgHervArea')}">
                         <label>What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres):</label>
                         <input type="number" class="form-control required shortest" name="usaAvgHervArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaAvgHervArea" > {{ unit }}
                     </div>
 
@@ -120,7 +120,7 @@
 
                             <div>Area
                                 <input type="number" class="form-control required shortest" name="harvesUnitCompleteLastYearMethodsHAAC" max="100" min="0"
-                                      ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                      ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                       ng-model="cs4.harvesUnitCompleteLastYearMethodsHAAC"> HA/AC
                             </div>
                             <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.harvesUnitCompleteLastYearMethodsHAAC">
@@ -138,7 +138,7 @@
                         What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
                     </div>
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control required shortest" name="usaFinalHarvestHAAC" max="100" min="0"
-                          ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                          ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                           ng-model="cs4.usaFinalHarvestHAAC"> HA/AC
                     </div>
                 </div>
@@ -148,7 +148,7 @@
 
                     <div class="form-group" ng-show="cs4.usaSeedTreeShelterWood">
                         <input style="width: 15%;" type="number" class="form-control required shortest" name="usaSeedTreeShelterWoodArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.usaSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaSeedTreeShelterWoodArea">  HA/AC
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
@@ -161,7 +161,7 @@
 
                     <div class="form-group" ng-show="cs4.usaSelectionMethod">
                         <input style="width: 15%;" type="number" class="form-control required shortest" name="usaSelectionMethodArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.usaSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaSelectionMethodArea"> HA/AC
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
@@ -173,7 +173,7 @@
                     <label class="checkboxLabel">Thinning or sanitation salvage</label>
                     <div class="form-group" ng-show="cs4.usaSanitation">
                         <input style="width: 15%;" type="number" class="form-control required shortest" name="usaSanitationArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.usaSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaSanitationArea"> HA/AC
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
@@ -186,7 +186,7 @@
 
                     <div class="form-group" ng-show="cs4.usaOtherMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="usaOtherMethodHAAC"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaOtherMethod" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.usaOtherMethod" customerror
                                ng-model="cs4.usaOtherMethodHAAC"> HA/AC
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
@@ -208,7 +208,7 @@
                     <div style="margin-bottom: 10px;">What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
 
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control required shortest" name="caHarvestUnitCompleteLastYeaQualifyHAAC" max="100" min="0"
-                                                                  ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                                                  ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                                                   ng-model="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC"> HA/AC
                     </div>
                 </div>
@@ -217,14 +217,14 @@
                     <div class="form-group" ng-class="{'has-error' : hasError('caTotalHervArea')}">
                         <label> What is the total area of final harvest units completed last year by clearcutting?</label>
                         <input type="number" class="form-control required shortest" name="caTotalHervArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caTotalHervArea"> {{ unit }}
                     </div>
 
                     <div class="form-group" ng-class="{'has-error' : hasError('caAvgHervArea')}">
                         <label>What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres):</label>
                         <input type="number" class="form-control required shortest" name="caAvgHervArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caAvgHervArea" > {{ unit }}
                     </div>
 
@@ -312,7 +312,7 @@
 
                                 <div>Area
                                     <input type="number" class="form-control required shortest" name="caHarvesUnitCompleteLastYearMethodsHAAC" max="100" min="0"
-                                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                           ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                            ng-model="cs4.caHarvesUnitCompleteLastYearMethodsHAAC"> HA/AC
                                 </div>
                                 <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.caHarvesUnitCompleteLastYearMethodsHAAC">
@@ -332,7 +332,7 @@
                         What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
                     </div>
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control required shortest" name="caFinalHarvestHAAC" max="100" min="0"
-                                                                  ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                                                  ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                                                   ng-model="cs4.caFinalHarvestHAAC"> HA/AC
                     </div>
                 </div>
@@ -342,7 +342,7 @@
 
                     <div class="form-group" ng-show="cs4.caSeedTreeShelterWood">
                         <input style="width: 15%;" type="number" class="form-control required shortest" name="caSeedTreeShelterWoodArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.caSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caSeedTreeShelterWoodArea">  HA/AC
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
@@ -356,7 +356,7 @@
 
                     <div class="form-group" ng-show="cs4.caSelectionMethod">
                         <input style="width: 15%;" type="number" class="form-control required shortest" name="caSelectionMethodArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.caSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caSelectionMethodArea"> HA/AC
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
@@ -368,7 +368,7 @@
                     <label class="checkboxLabel">Thinning or sanitation salvage</label>
                     <div class="form-group" ng-show="cs4.caSanitation">
                         <input style="width: 15%;" type="number" class="form-control required shortest" name="caSanitationArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.caSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caSanitationArea"> HA/AC
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
@@ -381,7 +381,7 @@
 
                     <div class="form-group" ng-show="cs4.caOtherMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="caOtherMethodHAAC"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caOtherMethod" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.caOtherMethod" customerror
                                ng-model="cs4.caOtherMethodHAAC"> HA/AC
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
@@ -424,17 +424,17 @@
 
                         <td ng-class="{'has-error' : hasError('usaPlantingOne')}">
                             <input type="number" class="form-control required shorter" name="usaPlantingOneYr"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.usaPlantingOneYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaPlantingTwo')}">
                             <input type="number" class="form-control required shorter" name="usaPlantingTwoYr"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.usaPlantingTwoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaPlantingTwoPlus')}">
                             <input type="number" class="form-control required shorter" name="usaPlantingTwoPlusYr"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.usaPlantingTwoPlusYr"> {{ unit }}</td>
 
                         <td class="vert-align-middle"> {{ getPlantingTotal('usa', 'planting') }} {{ unit }} </td>
@@ -445,17 +445,17 @@
 
                         <td ng-class="{'has-error' : hasError('usaSeedingOne')}">
                             <input type="number" class="form-control required shorter" name="usaSeedingOneYr"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.usaSeedingOneYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaSeedingTwo')}">
                             <input type="number" class="form-control required shorter" name="usaSeedingTwoYr"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.usaSeedingTwoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('usaSeedingTwoPlus')}">
                             <input type="number" class="form-control required shorter" name="usaSeedingTwoPlusYr"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.usaSeedingTwoPlusYr"> {{ unit }}</td>
 
                         <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('usa', 'seeding') }} {{ unit }} </td>
@@ -469,7 +469,7 @@
                             <div class="form-group" ng-class="{'has-error' : hasError('usanaturalRegen2014')}">
                                 <label>What was the Natural Regeneration - All types in 2016?</label>
                                 <input style="width: 60%;" type="number" class="form-control required shortest" name="usaNatRegen2014"
-                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                        ng-model="cs4.usaNatRegen2014"> {{ unit }}
                             </div>
                         </td>
@@ -483,7 +483,7 @@
 
 
                             <input style="width: 60%;" type="number" class="form-control required shortest" name="usaRegenPerc5Yr" max="100" min="0"
-                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                    ng-model="cs4.usaRegenPerc5Yr"> %
                         </div></td>
                         <td>
@@ -493,7 +493,7 @@
                                     What was the total area regenerated after five growing seasons? (HA or Acres)</label>
 
                                 <div style="margin-left: 60px;">Area <input style="width: 32%;" type="number" class="form-control required shortest" name="usaRegenPerc5YrHAAC" max="100" min="0"
-                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                       ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                        ng-model="cs4.usaRegenPerc5YrHAAC"> HA/AC
                                 </div>
                             </div>
@@ -524,17 +524,17 @@
                         <td>Artificial - Planting</td>
                         <td ng-class="{'has-error' : hasError('caPlantingOne')}">
                             <input type="number" class="form-control required shorter" name="caPlantingOne" min="0"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.caPlantingOneYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caPlantingTwo')}">
                             <input type="number" class="form-control required shorter" name="caPlantingTwo" min="0"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.caPlantingTwoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caPlantingTwoPlus')}">
                             <input type="number" class="form-control required shorter" name="caPlantingTwoPlus" min="0"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.caPlantingTwoPlusYr"> {{ unit }}</td>
 
                         <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('ca', 'planting') }} {{ unit }}</td>
@@ -544,17 +544,17 @@
                         <td>Artificial - Direct seeding</td>
                         <td ng-class="{'has-error' : hasError('caSeedingOne')}">
                             <input type="number" class="form-control required shorter" name="caSeedingOne" min="0"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.caSeedingOneYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caSeedingTwo')}">
                             <input type="number" class="form-control required shorter" name="caSeedingTwo" min="0"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.caSeedingTwoYr"> {{ unit }}</td>
 
                         <td ng-class="{'has-error' : hasError('caSeedingTwo')}">
                             <input type="number" class="form-control required shorter" name="caSeedingTwo" min="0"
-                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.caSeedingTwoPlusYr"> {{ unit }}</td>
 
                         <td class="mathTotal vert-align-middle"> {{ getPlantingTotal('ca', 'seeding') }} {{ unit }}</td>
@@ -570,7 +570,7 @@
                         <div class="form-group" ng-class="{'has-error' : hasError('naturalRegen2014')}">
                         <label>What was the Natural Regeneration - All types in 2016?</label>
                         <input style="width: 60%;" type="number" class="form-control required shortest" name="naturalRegen2014" min="0"
-                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                               ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                ng-model="cs4.caNatRegen2014"> {{ unit }}
                         </div>
                     </td>
@@ -584,7 +584,7 @@
                                 What was the percent of harvest units regenerated after 5 growing seasons?</label>
 
                             <input  style="width: 60%;" type="number" class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"
-                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                   ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                    ng-model="cs4.caRegenPerc5Yr"> %
                         </div>
                     </td>
@@ -595,7 +595,7 @@
                                 What was the total area regenerated after five growing seasons? (HA or Acres)</label>
 
                             <div style="margin-left: 60px;">Area <input style="width: 32%;" type="number" class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"
-                                        ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                        ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
                                         ng-model="cs4.caRegenPerc5YrHAAC"> HA/AC
                             </div>
                         </div>
