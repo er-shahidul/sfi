@@ -21,30 +21,30 @@
                 <table class="table table-striped vert-align-middle table-bordered" >
                 <thead>
                 <tr>
-                    <th style="text-align: center;">Research Funding Category</th>
-                    <th style="text-align: center;width: 110px;" ng-show="operateInUsa()">
+                    <th style="text-align: center;" ng-class="{'disabled' : !operateInUsa() && !operateInCa()}">Research Funding Category</th>
+                    <th style="text-align: center;width: 110px;" ng-class="{'disabled' : !operateInUsa()}">
                         <span tooltip data-title="Forest-related research within your organization" data-placement="top">
                             Internal USD
                         </span>
                     </th>
 
-                    <th style="text-align: center;width: 110px;" ng-show="operateInUsa()">
+                    <th style="text-align: center;width: 110px;" ng-class="{'disabled' : !operateInUsa()}">
                         <span tooltip data-title="Forest-related research outside your organization" data-placement="top">
                         External USD
                         </span>
                     </th>
-                    <th style="text-align: center;width: 110px;" ng-show="operateInCa()">
+                    <th style="text-align: center;width: 110px;" ng-class="{'disabled' : !operateInCa()}">
                         <span tooltip data-title="Forest-related research within your organization" data-placement="top">
                             Internal CAD
                         </span>
 
                     </th>
-                    <th style="text-align: center;width: 110px;" ng-show="operateInCa()">
+                    <th style="text-align: center;width: 110px;" ng-class="{'disabled' : !operateInCa()}">
                         <span tooltip data-title="Forest-related research outside your organization" data-placement="top">
                         External CAD
                         </span>
                     </th>
-                    <th style="text-align: left; width: 253px;">Enter any organizations you worked with in 2016
+                    <th style="text-align: left; width: 253px;" ng-class="{'disabled' : !operateInUsa() && !operateInCa()}">Enter any organizations you worked with in 2016
                     as part of the research funding reported. Please be as specific as
                     </th>
                 </tr>
@@ -60,7 +60,9 @@
                                ng-model="cs5.isOtherEnabled"
                                 />
 
+                        <span ng-class="{'disabled' : !operateInUsa() && !operateInCa()}">
                         {{ item.description }}
+                        </span>
                         <input type="text" class="form-control   shorter" name="otherText"
                                ng-disabled="(item.description == 'Other' && cs5.isOtherEnabled != true)" ng-model="cs5.otherText"
                                ng-required="cs5.isOtherEnabled" customerror
@@ -70,7 +72,7 @@
 
 
 
-                    <td ng-show="operateInUsa()" align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
+                    <td align="center" ng-class="{'has-error' : innerForm.internalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" min="0" name="internalUsd" style="width:115px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
@@ -78,30 +80,35 @@
                                ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInUsa()))"/>
                     </td>
 
-                    <td ng-show="operateInUsa()" align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
+                    <td align="center" ng-class="{'has-error' : innerForm.externalUsd.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalUsd" style="width:115px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
                                ng-model="item.externalUsd" ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInUsa()))">
                     </td>
 
-                    <td ng-show="operateInCa()" align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
+                    <td align="center" ng-class="{'has-error' : innerForm.internalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="internalCad" style="width:115px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
                                ng-model="item.internalCad" ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInCa()))">
                     </td>
 
-                    <td ng-show="operateInCa()" align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
+                    <td align="center" ng-class="{'has-error' : innerForm.externalCad.$invalid}">
                         <input type="number" class="form-control   shorter" name="externalCad" style="width:115px;"
                                ng-maxlength="11" customerror
                                ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Decimal number of max 11 length & 2 precision points" customerror
                                ng-model="item.externalCad" ng-disabled="((item.description == 'Other' && cs5.isOtherEnabled != true) || (!operateInCa()))">
                     </td>
 
-                    <td align="center" class="ng-binding" >
+                    <td align="center" class="ng-binding">
                         <u>
-                            <a  id="pop-link-{{$index}}" ng-click="showPopUp2($index)" >{{getShowEditText($index)}}</a>
+                            <span  ng-show="!operateInUsa() && !operateInCa()">
+                                <a style="color:#dddddd;">{{getShowEditText($index)}}</a>
+                            </span>
+                             <span ng-show="operateInUsa() || operateInCa()">
+                                <a id="pop-link-{{$index}}" ng-click="showPopUp2($index)">{{getShowEditText($index)}}</a>
+                             </span>
                         </u>
                     </td>
 
@@ -570,8 +577,8 @@
                     <thead>
                     <tr>
                         <th></th>
-                        <th ng-show="operateInUsa()" align="center">US</th>
-                        <th ng-show="operateInCa()" >Canada</th>
+                        <th ng-class="{'disabled' : !operateInUsa()}" align="center">US</th>
+                        <th ng-class="{'disabled' : !operateInCa()}" >Canada</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -582,15 +589,15 @@
                             Funding provided last year for SFI Implementation Committee activities at the state or provincial level<br/>
                             (Support for US SICs in $US. Support for Canadian SICs in $CA.)
                         </td>
-                        <td ng-show="operateInUsa()" >
+                        <td>
                             <input  type="number"  class="form-control  shorter "
                                     ng-maxlength="11" customerror style="width:120px"
-                                    ng-model="cs5.fundSFIActivStateProviUs">
+                                    ng-model="cs5.fundSFIActivStateProviUs" ng-class="{'disabled' : !operateInUsa()}" >
                         </td>
-                        <td ng-show="operateInCa()">
+                        <td>
                             <input type="number" class="form-control  shorter numberBox"
                                    ng-maxlength="11" customerror style="width:120px"
-                                   ng-model="cs5.fundSFIActivStateProviCa" >
+                                   ng-model="cs5.fundSFIActivStateProviCa" ng-disabled="!operateInCa()" >
                         </td>
                     </tr>
 
