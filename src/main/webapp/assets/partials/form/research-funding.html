@@ -55,10 +55,16 @@
 
                     <td align="right" ng-class="{'has-error' : innerForm.otherText.$invalid}">
 
-                        <input type="checkbox" name="otherEnable" class="icheck" icheck
-                               ng-if="item.description == 'Other'"
-                               ng-model="cs5.isOtherEnabled"
-                                />
+                        <span ng-show="operateInUsa() || operateInCa()">
+                            <input type="checkbox" name="otherEnable" class="icheck" icheck
+                                   ng-if="item.description == 'Other'"
+                                   ng-model="cs5.isOtherEnabled"/>
+                        </span>
+                        <span ng-show="!operateInUsa() && !operateInCa()">
+                            <input readonly disabled type="checkbox" name="otherEnable" class="icheck" icheck
+                                   ng-if="item.description == 'Other'"
+                                   ng-model="cs5.isOtherEnabled"/>
+                        </span>
 
                         <span ng-class="{'disabled' : !operateInUsa() && !operateInCa()}">
                         {{ item.description }}
@@ -584,7 +590,7 @@
                     <tbody>
 
                     <tr>
-                        <td tooltip data-html="true" data-placement="top" data-container="body"
+                        <td tooltip data-html="true" data-placement="top" data-container="body" ng-class="{'disabled' : !operateInUsa() && !operateInCa()}"
                             data-title="Include all funding your organization provided last year to SFI Implementation Committees and others for logger training and education and all other SFI program implementation activities at the state or provincial level.">
                             Funding provided last year for SFI Implementation Committee activities at the state or provincial level<br/>
                             (Support for US SICs in $US. Support for Canadian SICs in $CA.)
