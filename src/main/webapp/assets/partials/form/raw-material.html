@@ -68,8 +68,22 @@
     <thead>
     <tr>
         <th>Private Forest Landowners</th>
-        <th ng-show="operateInUsa()">US</th>
-        <th ng-show="operateInCa()">Canada</th>
+        <th>
+             <span ng-show="operateInUsa()">
+                US
+             </span>
+            <span ng-show="!operateInUsa()" ng-class="{'disabled' : !operateInUsa()}">
+                US
+            </span>
+        </th>
+        <th>
+             <span ng-show="operateInCa()">
+                  Canada
+             </span>
+             <span ng-show="!operateInCa()" ng-class="{'disabled' : !operateInCa()}" >
+                  Canada
+             </span>
+        </th>
     </tr>
     </thead>
     <tbody>
@@ -78,14 +92,26 @@
             data-title="Landowners selling timber directly to your organization” means those private landowners with which your organization has a contractual relationship to purchase or harvest timber (i.e., stumpage or logs)."
             >Number of private forest landowners selling timber (stumpage, logs or chips) directly to your organization last year.</td>
 
-        <td ng-show="operateInUsa()">
-            <input type="number" class="form-control  shorter"
-                   ng-model="cs6.numPrivateForeOwersUs">
+        <td ng-class="{'disabled' : !operateInUsa()}">
+            <span ng-show="operateInUsa()">
+                <input type="number" class="form-control  shorter"
+                       ng-model="cs6.numPrivateForeOwersUs">
+             </span>
+            <span ng-show="!operateInUsa()">
+                <input readonly disabled type="number" class="form-control  shorter"
+                       ng-model="cs6.numPrivateForeOwersUs">
+            </span>
         </td>
 
-        <td ng-show="operateInCa()">
-            <input type="number" class="form-control  shorter"
-                   ng-model="cs6.numPrivateForeOwersCa">
+        <td ng-class="{'disabled' : !operateInCa()}">
+             <span ng-show="operateInCa()">
+                <input type="number" class="form-control  shorter"
+                       ng-model="cs6.numPrivateForeOwersCa">
+             </span>
+             <span ng-show="!operateInCa()">
+                  <input readonly disabled type="number" class="form-control  shorter"
+                         ng-model="cs6.numPrivateForeOwersCa">
+             </span>
         </td>
     </tr>
     <tr>
@@ -95,9 +121,16 @@
                     In your opinion, has the number of trained wood producers in your region of your forestlands changed as
                     compared with last year?
                 </p>
+                 <span ng-show="operateInUsa() || operateInCa()">
                     <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
                     <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
                     <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
+                 </span>
+                 <span ng-show="!operateInUsa() && !operateInCa()">
+                    <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
+                    <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
+                    <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
+                 </span>
             </div>
         </td>
     </tr>
@@ -234,6 +267,7 @@
 <!-- FORM -->
 
 <tbody>
+
 
     <tr ng-repeat-start="section in sections" ng-if="section.row == 1">
         <th style="text-align: center;">Private</th>
