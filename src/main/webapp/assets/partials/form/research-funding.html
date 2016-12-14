@@ -122,11 +122,21 @@
                         <span ng-class="{'disabled' : !operateInUsa() && !operateInCa()}">
                         {{ item.description }}
                         </span>
-                        <input type="text" class="form-control   shorter" name="otherText"
-                               ng-disabled="(item.description == 'Other' && cs5.isOtherEnabled != true)" ng-model="cs5.otherText"
-                               ng-required="cs5.isOtherEnabled" customerror
-                               ng-if="item.description == 'Other'"
-                               customerror />
+                        <span ng-show="operateInUsa() || operateInCa()">
+                            <input type="text" class="form-control   shorter" name="otherText"
+                                   ng-disabled="(item.description == 'Other' && cs5.isOtherEnabled != true)" ng-model="cs5.otherText"
+                                   ng-required="cs5.isOtherEnabled" customerror
+                                   ng-if="item.description == 'Other'"
+                                   customerror />
+                                </span>
+                        <span ng-show="!operateInUsa() && !operateInCa()">
+                            <input  readonly disabled type="text" class="form-control shorter" name="otherText"
+                                   ng-disabled="(item.description == 'Other' && cs5.isOtherEnabled != true)" ng-model="cs5.otherText"
+                                   ng-required="cs5.isOtherEnabled" customerror
+                                   ng-if="item.description == 'Other'"
+                                   customerror />
+                                </span>
+                        </span>
                     </td>
 
 
