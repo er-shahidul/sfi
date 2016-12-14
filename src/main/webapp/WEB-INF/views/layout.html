@@ -67,6 +67,7 @@
     // <![CDATA[
 
     $(document).ready(function () {
+        var tr;
         var ppTable = $('#example').DataTable({
             'sDom': "<'row'<'col-sm-4'l><'col-sm-4 year-filter'><'col-sm-4'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-5'i><'col-sm-7'p>>"
         });
@@ -88,34 +89,50 @@
 
         $(document).on('click', '.sfi_approve_button', function () {
             var td = $(this).parent();
-            var url = td.find('a')[0].href;
-            $(td).parent().find('td').eq(4).text('Approved')
+            tr = $(this).parent().parent();
+            $('#confirm-submision').modal();
+            $('#confirm-submision a').eq(0).append(td.find('a'));
+            $('#company-name').text(tr.find('td').eq(1).text());
+            $(td).parent().find('td').eq(4).text('Approved');
             $(this).attr('disabled','disabled');
+        })
+
+        $(document).on('click', '#yes-button', function () {
+            var url = $(this).parent().find('a')[1].href;
             $.ajax({
                 url: url,
                 type: 'GET',
                 data: {},
                 success: function (data) {
                     console.log(data);
-                    alert('Load was performed.');
+                    $('#confirm-submision').modal('hide');
                 }
             });
+            $('#confirm-submision').modal('hide');
+        });
+        $(document).on('click', '.cancel-confirm', function () {
+            tr.find('td').eq(4).text('Submitted');
+            tr.find('td').eq(7).find('input.sfi_approve_button').removeAttr('disabled');
+            tr.find('td').eq(7).find('input.sfi_approve_button').attr('checked', false);
+            $('#confirm-submision').modal('hide');
+
+        });
+        $(document).on('click', '.sic-cancel-confirm', function () {
+            tr.find('td').eq(3).text('Submitted');
+            tr.find('td').eq(6).find('input.sic_approve_button').removeAttr('disabled');
+            tr.find('td').eq(6).find('input.sic_approve_button').attr('checked', false);
+            $('#confirm-submision').modal('hide');
+
         });
 
         $(document).on('click', '.sic_approve_button', function () {
             var td = $(this).parent();
-            var url = td.find('a')[0].href;
-            $(td).parent().find('td').eq(3).text('Approved')
+            tr = $(this).parent().parent();
+            $('#confirm-submision').modal();
+            $('#confirm-submision a').eq(0).append(td.find('a'));
+            $('#company-name').text(tr.find('td').eq(0).text());
+            $(td).parent().find('td').eq(3).text('Approved');
             $(this).attr('disabled','disabled');
-            $.ajax({
-                url: url,
-                type: 'GET',
-                data: {},
-                success: function (data) {
-                    console.log(data);
-                    alert('Load was performed.');
-                }
-            });
         });
     });
 
