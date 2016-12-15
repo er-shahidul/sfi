@@ -22,6 +22,9 @@ public class SfiPpForm2014 extends BaseEntityModel {
     @Column(name = "approved", nullable = true)
     private Boolean approved;
 
+    @Column(name = "year", nullable = true)
+    private String year;
+
     @Override
     public Integer getId() {
         return id;
@@ -62,5 +65,13 @@ public class SfiPpForm2014 extends BaseEntityModel {
         else
             return  "Submitted";
 
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 }

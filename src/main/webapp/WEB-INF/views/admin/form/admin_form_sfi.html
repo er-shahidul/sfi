@@ -92,7 +92,9 @@
                                                 </tr>
                                                 <tr th:each="sfiPpFormOld, iterationStatus : ${sfiPpFormsOld}">
 
-                                                    <td>2014</td>
+                                                    <td>
+                                                        <span th:text="${sfiPpFormOld.year}"></span>
+                                                    </td>
                                                     <td>
                                                         <span th:text="${sfiPpFormOld.company.name}"></span>
                                                     </td>
@@ -130,7 +132,7 @@
     </div>
     <div class="modal fade" id="confirm-submision" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="submit" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content" style="height: 180px;">
+            <div class="modal-content" style="height: 195px;">
                 <div class="modal-header">
                     <button type="button" class="close cancel-confirm" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title" id="myModalLabel">Confirm approval</h4>
