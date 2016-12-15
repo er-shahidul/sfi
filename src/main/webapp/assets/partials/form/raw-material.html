@@ -93,22 +93,22 @@
             >Number of private forest landowners selling timber (stumpage, logs or chips) directly to your organization last year.</td>
 
         <td ng-class="{'disabled' : !operateInUsa()}">
-            <span ng-show="operateInUsa()">
+            <span ng-show="operateInUsa() && hasPrimaryYards()">
                 <input type="number" class="form-control  shorter"
                        ng-model="cs6.numPrivateForeOwersUs">
              </span>
-            <span ng-show="!operateInUsa()">
+            <span ng-show="!operateInUsa() || !hasPrimaryYards()">
                 <input readonly disabled type="number" class="form-control  shorter"
                        ng-model="cs6.numPrivateForeOwersUs">
             </span>
         </td>
 
         <td ng-class="{'disabled' : !operateInCa()}">
-             <span ng-show="operateInCa()">
+             <span ng-show="operateInCa() && hasPrimaryYards()">
                 <input type="number" class="form-control  shorter"
                        ng-model="cs6.numPrivateForeOwersCa">
              </span>
-             <span ng-show="!operateInCa()">
+             <span ng-show="!operateInCa() || !hasPrimaryYards()">
                   <input readonly disabled type="number" class="form-control  shorter"
                          ng-model="cs6.numPrivateForeOwersCa">
              </span>
