@@ -3,6 +3,7 @@ package com.rbs.www.web.sic.models.viewmodels;
 import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.modules.validator.SpELAssert;
 import com.rbs.www.web.common.models.datamodels.BlobNames;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 import java.util.Set;
@@ -42,7 +43,6 @@ import java.util.Set;
 public class SicCs2ViewModel extends BaseViewModel {
     private Integer id;
 
-    @NotNull(message = "{sic.cs2.freesProgramApplicants}")
     private Boolean freesProgramApplicants;
     private Boolean inKindSupport1;
     private Boolean inKindSupport2;
