@@ -204,11 +204,18 @@ public class PpFormController{
         return "admin/form/admin_form_sfi";
     }
 
-    @RequestMapping(value = "/sfiPpForm/pdf/{fileName}", method = RequestMethod.GET, produces = "application/pdf")
-    public ResponseEntity<byte[]> viewPdf(@PathVariable String fileName, HttpServletRequest request) {
-        String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/pdf/";
+    @RequestMapping(value = "/sfiPpForm/pdf/{id}", method = RequestMethod.GET, produces = "application/pdf")
+    public ResponseEntity<byte[]> viewPdf(@PathVariable Integer id, HttpServletRequest request) {
+        SfiPpForm2014ViewModel model = formService.getSfiPpForm2014ViewModel(id);
+        String originalPath;
+        if(model.getYear().equals("2014")){
+            originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/pdf/2014/";
+        }else {
+            originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/pdf/2015/";
+        }
 
-        Path path = Paths.get(originalPath+fileName+".pdf");
+        Path path = Paths.get(originalPath+model.getFileName()+".pdf");
+
         byte[] pdfContents = null;
         try {
             pdfContents = Files.readAllBytes(path);
