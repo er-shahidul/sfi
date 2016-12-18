@@ -73,11 +73,20 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
 
                 if(response.data){
                     var form = response.data.form;
-                    if(form.status.id == 3){
-                        alert("Form submitted successfully");
-                    }else{
+                    var res = false;
+                    _.each($rootScope.form , function(cs, key){
+
+                        if(cs && cs.errors){
+                            if(Object.keys(cs.errors).length){
+                                res = true;
+                            }
+                        }
+                    });
+
+                    if(res){
                         alert("Please provide required information")
                     }
+
                 }
                 window.location.reload();
             })

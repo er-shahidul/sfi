@@ -416,7 +416,9 @@
                             <br/>
                             <div class="form-inline">
                                 How much of your total annual purchased supply does this supplier represent (estimate)
-                                <input type="number" ng-model="producer.percPurchased" name="percPurchased" value="0" class="form-control" style="width: 75px;"> %
+                                <input type="number" ng-model="producer.percPurchased" name="percPurchased" min="0" class="form-control shorter" style="width: 75px;"
+                                       ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number" customerror > %
+                                <small class="error" style="display: block;margin-left: 471px;">Must be a positive number</small>
                             </div>
 
                         <p class="myButton" style="text-align: right;padding-top: 10px;padding-right: 60px;" ng-click="addProducer()">+ Add Another</p>

@@ -74,7 +74,7 @@
 
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shorter" name="harvesUnitCompleteLastYeaQualifyHAAC" min="0"
                                 ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                                ng-model="cs4.harvesUnitCompleteLastYeaQualifyHAAC"> HA/AC
+                                ng-model="cs4.harvesUnitCompleteLastYeaQualifyHAAC"> {{ unit }}
                     </div>
                 </div>
 
@@ -175,7 +175,7 @@
                             <div>Area
                                 <input type="number" class="form-control shortest" name="harvesUnitCompleteLastYearMethodsHAAC" min="0"
                                        ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                                      ng-model="cs4.harvesUnitCompleteLastYearMethodsHAAC"> HA/AC
+                                      ng-model="cs4.harvesUnitCompleteLastYearMethodsHAAC"> {{ unit }}
                             </div>
                             <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.harvesUnitCompleteLastYearMethodsHAAC">
                                 <textarea style="height: 60px;" type="text" class="form-control required shorter" placeholder="please explain"
@@ -193,7 +193,7 @@
                     </div>
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shortest" name="usaFinalHarvestHAAC" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                          ng-model="cs4.usaFinalHarvestHAAC"> HA/AC
+                          ng-model="cs4.usaFinalHarvestHAAC"> {{ unit }}
                     </div>
                 </div>
                 <div ng-show="cs4.usaFinalHarvestHAAC">
@@ -203,7 +203,7 @@
                     <div class="form-group" ng-show="cs4.usaSeedTreeShelterWood">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="usaSeedTreeShelterWoodArea"
                                ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.usaSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                               ng-model="cs4.usaSeedTreeShelterWoodArea">  HA/AC
+                               ng-model="cs4.usaSeedTreeShelterWoodArea">  {{ unit }}
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.usaSeedTreeShelterWood" customerror
@@ -216,7 +216,7 @@
                     <div class="form-group" ng-show="cs4.usaSelectionMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="usaSelectionMethodArea"
                                ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.usaSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                               ng-model="cs4.usaSelectionMethodArea"> HA/AC
+                               ng-model="cs4.usaSelectionMethodArea"> {{ unit }}
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.usaSelectionMethod" customerror
@@ -228,7 +228,7 @@
                     <div class="form-group" ng-show="cs4.usaSanitation">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="usaSanitationArea"
                                ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.usaSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                               ng-model="cs4.usaSanitationArea"> HA/AC
+                               ng-model="cs4.usaSanitationArea"> {{ unit }}
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.usaSanitation" customerror
@@ -241,7 +241,7 @@
                     <div class="form-group" ng-show="cs4.usaOtherMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="usaOtherMethodHAAC"
                                ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.usaOtherMethod" customerror
-                               ng-model="cs4.usaOtherMethodHAAC"> HA/AC
+                               ng-model="cs4.usaOtherMethodHAAC"> {{ unit }}
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.usaOtherMethod" customerror
@@ -263,7 +263,7 @@
 
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shortest" name="caHarvestUnitCompleteLastYeaQualifyHAAC" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                                                                  ng-model="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC"> HA/AC
+                                                                  ng-model="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC"> {{ unit }}
                     </div>
                 </div>
 
@@ -367,7 +367,7 @@
                                 <div>Area
                                     <input type="number" class="form-control shortest" name="caHarvesUnitCompleteLastYearMethodsHAAC" min="0"
                                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                                           ng-model="cs4.caHarvesUnitCompleteLastYearMethodsHAAC"> HA/AC
+                                           ng-model="cs4.caHarvesUnitCompleteLastYearMethodsHAAC"> {{ unit }}
                                 </div>
                                 <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.caHarvesUnitCompleteLastYearMethodsHAAC">
                                 <textarea style="height: 60px;" type="text" class="form-control required shorter" placeholder="please explain"
@@ -387,7 +387,7 @@
                     </div>
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shortest" name="caFinalHarvestHAAC" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                                                                  ng-model="cs4.caFinalHarvestHAAC"> HA/AC
+                                                                  ng-model="cs4.caFinalHarvestHAAC"> {{ unit }}
                     </div>
                 </div>
                 <div ng-show="cs4.caFinalHarvestHAAC">
@@ -397,7 +397,7 @@
                     <div class="form-group" ng-show="cs4.caSeedTreeShelterWood">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="caSeedTreeShelterWoodArea"
                                ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.caSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                               ng-model="cs4.caSeedTreeShelterWoodArea">  HA/AC
+                               ng-model="cs4.caSeedTreeShelterWoodArea">  {{ unit }}
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.caSeedTreeShelterWood" customerror
@@ -411,7 +411,7 @@
                     <div class="form-group" ng-show="cs4.caSelectionMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="caSelectionMethodArea"
                                ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.caSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                               ng-model="cs4.caSelectionMethodArea"> HA/AC
+                               ng-model="cs4.caSelectionMethodArea"> {{ unit }}
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.caSelectionMethod" customerror
@@ -423,7 +423,7 @@
                     <div class="form-group" ng-show="cs4.caSanitation">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="caSanitationArea"
                                ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.caSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                               ng-model="cs4.caSanitationArea"> HA/AC
+                               ng-model="cs4.caSanitationArea"> {{ unit }}
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.caSanitation" customerror
@@ -436,7 +436,7 @@
                     <div class="form-group" ng-show="cs4.caOtherMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="caOtherMethodHAAC"
                                ng-pattern="/^\d{1,9}*(\.\d{1,4})?$/" ng-required="cs4.caOtherMethod" customerror
-                               ng-model="cs4.caOtherMethodHAAC"> HA/AC
+                               ng-model="cs4.caOtherMethodHAAC"> {{ unit }}
 
                         <input style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                               ng-required="cs4.caOtherMethod" customerror
@@ -548,7 +548,7 @@
 
                                 <div style="margin-left: 60px;">Area <input style="width: 32%;" type="number" class="form-control shortest" name="usaRegenPerc5YrHAAC" min="0"
                                                                             ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                                       ng-model="cs4.usaRegenPerc5YrHAAC"> HA/AC
+                                       ng-model="cs4.usaRegenPerc5YrHAAC"> {{ unit }}
                                 </div>
                             </div>
                         </td>
@@ -650,7 +650,7 @@
 
                             <div style="margin-left: 60px;">Area <input style="width: 32%;" type="number" class="form-control shortest" name="harvestRegenPerc" min="0"
                                                                         ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                                        ng-model="cs4.caRegenPerc5YrHAAC"> HA/AC
+                                        ng-model="cs4.caRegenPerc5YrHAAC"> {{ unit }}
                             </div>
                         </div>
                     </td>
