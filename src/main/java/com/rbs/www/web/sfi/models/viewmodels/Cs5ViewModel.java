@@ -138,6 +138,7 @@ public class Cs5ViewModel extends BaseViewModel {
     private String otherText;
 
     private Boolean isInPartnership;
+    private String isInPartnershipNoExp;
 
     @Valid
 //    @CascadeIf("isInPartnership != null && isInPartnership")
@@ -994,5 +995,13 @@ public class Cs5ViewModel extends BaseViewModel {
 
     public void setOther13(Set<String> other13) {
         this.other13 = other13;
+    }
+
+    public String getIsInPartnershipNoExp() {
+        return isInPartnershipNoExp;
+    }
+
+    public void setIsInPartnershipNoExp(String isInPartnershipNoExp) {
+        this.isInPartnershipNoExp = isInPartnershipNoExp;
     }
 }
