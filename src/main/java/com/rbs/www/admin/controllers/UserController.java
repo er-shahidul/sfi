@@ -204,16 +204,26 @@ public class UserController {
     public String update(@Valid User user, BindingResult result, ModelMap model, @PathVariable Integer id, RedirectAttributes redirect) {
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
         boolean isInvalidEmail = !userService.isValidEmailUpdate(user.getEmail());
-        boolean isInvalidPassword = !userService.isValidPassword(user.getPassword());
+        boolean isInvalidPassword =false;
+        if(user.getPassword() != null){
+            isInvalidPassword = !userService.isValidPassword(user.getPassword());
+        }
 
-        if (result.hasErrors() || isInvalidFirstName || isInvalidEmail || isInvalidPassword) {
+
+        if (result.hasErrors() || isInvalidFirstName || isInvalidEmail) {
             redirect.addFlashAttribute("errorFirstName", isInvalidFirstName ? messageSource.getMessage("firstName", new String[]{user.getFirstName()}, Locale.getDefault()) : "");
             redirect.addFlashAttribute("errorEmail", isInvalidEmail ? messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()) : "");
-            redirect.addFlashAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
+            if(user.getPassword() != null){
+                redirect.addFlashAttribute("errorPassword", isInvalidPassword ? messageSource.getMessage("NotEmpty.password", new String[]{user.getPassword()}, Locale.getDefault()) : "");
+            }
             return "redirect:/admin/user/edit/" + user.getId();
         }
 
-        userService.updateUser(user);
+        if(user.getPassword() == null){
+            userService.updateUser(user);
+        }else {
+            userService.updateUserWithPassword(user, user.getPassword());
+        }
 
         model.addAttribute("success", "User " + "" + " updated successfully");
         return ("redirect:/admin/user/list");

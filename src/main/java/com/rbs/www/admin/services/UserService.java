@@ -90,16 +90,27 @@ public class UserService {
     public void updateUser(User user) {
         User entity = userRepository.getByKey(user.getId());
         if(entity!=null){
-            entity.setPassword(passwordEncoder.encode(user.getPassword()));
-            entity.setGroup(user.getGroup());
-            entity.setFirstName(user.getFirstName());
-            entity.setLastName(user.getLastName());
-            entity.setCompany(user.getCompany());
-            entity.setUpdatedAt(Util.getCurrentDate());
-            entity.setUpdatedBy(Util.getCurrentUsername());
-            entity.setEnabled(user.getEnabled());
-            userRepository.update(entity);
+            updateField(user, entity);
         }
+    }
+
+    public void updateUserWithPassword(User user, String password) {
+        User entity = userRepository.getByKey(user.getId());
+        if(entity!=null){
+            entity.setPassword(passwordEncoder.encode(password));
+            updateField(user, entity);
+        }
+    }
+
+    private void updateField(User user, User entity) {
+        entity.setGroup(user.getGroup());
+        entity.setFirstName(user.getFirstName());
+        entity.setLastName(user.getLastName());
+        entity.setCompany(user.getCompany());
+        entity.setUpdatedAt(Util.getCurrentDate());
+        entity.setUpdatedBy(Util.getCurrentUsername());
+        entity.setEnabled(user.getEnabled());
+        userRepository.update(entity);
     }
 
 //    public void softDelete(User user) {
