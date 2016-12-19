@@ -70,7 +70,7 @@
                 </label>
 
                 <div>
-                    <div style="margin-bottom: 10px;">What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
+                    <div style="margin-bottom: 10px;">Total Final Harvest: What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
 
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shorter" name="harvesUnitCompleteLastYeaQualifyHAAC" min="0"
                                 ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
@@ -80,14 +80,14 @@
 
                 <div ng-show="cs4.harvesUnitCompleteLastYeaQualifyHAAC">
                     <div class="form-group" ng-class="{'has-error' : hasError('usaTotalHervArea')}">
-                        <label> What is the total area of final harvest units completed last year by clearcutting?</label>
+                        <label> Final Total Clearcut: What is the total area of final harvest units completed last year by clearcutting?</label>
                         <input type="number" class="form-control shortest" name="usaTotalHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaTotalHervArea"> {{ unit }}
                     </div>
 
                     <div class="form-group" ng-class="{'has-error' : hasError('usaAvgHervArea')}">
-                        <label>What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres):</label>
+                        <label>Average Clearcut: What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres)</label>
                         <input type="number" class="form-control shortest" name="usaAvgHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaAvgHervArea" > {{ unit }}
@@ -191,7 +191,7 @@
 
                 <div>
                     <div style="margin-bottom: 10px;">
-                        What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
+                        Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
                     </div>
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shortest" name="usaFinalHarvestHAAC" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
@@ -261,7 +261,7 @@
                 </label>
 
                 <div>
-                    <div style="margin-bottom: 10px;">What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
+                    <div style="margin-bottom: 10px;">Total Final Harvest: What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
 
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shortest" name="caHarvestUnitCompleteLastYeaQualifyHAAC" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
@@ -271,14 +271,14 @@
 
                 <div ng-show="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
                     <div class="form-group" ng-class="{'has-error' : hasError('caTotalHervArea')}">
-                        <label> What is the total area of final harvest units completed last year by clearcutting?</label>
+                        <label> Final Total Clearcut: What is the total area of final harvest units completed last year by clearcutting?</label>
                         <input type="number" class="form-control shortest" name="caTotalHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caTotalHervArea"> {{ unit }}
                     </div>
 
                     <div class="form-group" ng-class="{'has-error' : hasError('caAvgHervArea')}">
-                        <label>What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres):</label>
+                        <label>Average Clearcut: What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres)</label>
                         <input type="number" class="form-control shortest" name="caAvgHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caAvgHervArea" > {{ unit }}
@@ -387,7 +387,7 @@
 
                 <div>
                     <div style="margin-bottom: 10px;">
-                        What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
+                        Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
                     </div>
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shortest" name="caFinalHarvestHAAC" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
