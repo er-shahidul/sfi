@@ -61,40 +61,40 @@
 
             <!-- Section for USA -->
             <div ng-show="operateInUsa()" class="formSection">
-                <h6>HARVEST</h6>
-                <br/>
                 <label tooltip data-html="true" data-placement="top"
-                       data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2015. This includes harvesting activities that were started in 2014 and completed in 2015, but not those that were still underway by the end of the 2015 calendar/fiscal year.">
+                       data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2015. This includes harvesting activities that were started in 2015 and completed in 2016, but not those that were still underway by the end of the 2015 calendar/fiscal year.">
+                    <h6>HARVEST</h6>
                     <h6><strong>USA</strong> - Program Participant Land covered under the scope of your SFI certificate</h6>
                 </label>
 
                 <div>
-                    <div style="margin-bottom: 10px;">What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
+                    <div style="margin-bottom: 10px;">Total Final Harvest: What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
 
-                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="harvesUnitCompleteLastYeaQualifyHAAC" max="100" min="0"
-                                                                  ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly disabled type="number" class="form-control shorter" name="harvesUnitCompleteLastYeaQualifyHAAC" min="0"
+                                                                  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                                                   ng-model="cs4.harvesUnitCompleteLastYeaQualifyHAAC"> {{ unit }}
                     </div>
                 </div>
 
                 <div ng-show="cs4.harvesUnitCompleteLastYeaQualifyHAAC">
                     <div class="form-group" ng-class="{'has-error' : hasError('usaTotalHervArea')}">
-                        <label> What is the total area of final harvest units completed last year by clearcutting?</label>
+                        <label> Final Total Clearcut: What is the total area of final harvest units completed last year by clearcutting?</label>
                         <input readonly type="number" class="form-control required shortest" name="usaTotalHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaTotalHervArea"> {{ unit }}
                     </div>
 
                     <div class="form-group" ng-class="{'has-error' : hasError('usaAvgHervArea')}">
-                        <label>What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres):</label>
+                        <label>Average Clearcut: What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres)</label>
                         <input readonly type="number" class="form-control required shortest" name="usaAvgHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaAvgHervArea" > {{ unit }}
                     </div>
 
-                    <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
-
+                    <div ng-show="cs4.usaAvgHervArea > {{ unitHaAc }}">
                     <div class="form-group">
+
+                        <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
 
                         <input readonly disabled type="checkbox" class="form-group icheck" icheck ng-model="cs4.usaGovRegulation">
                         <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
@@ -172,8 +172,8 @@
                             <div style="margin-bottom: 10px;margin-top: 30px;">What is the total area of final harvest units completed last year by other methods? (HA or Acres)</div>
 
                             <div>Area
-                                <input readonly type="number" class="form-control required shortest" name="harvesUnitCompleteLastYearMethodsHAAC" max="100" min="0"
-                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                <input readonly disabled type="number" class="form-control shortest" name="harvesUnitCompleteLastYearMethodsHAAC" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                        ng-model="cs4.harvesUnitCompleteLastYearMethodsHAAC"> {{ unit }}
                             </div>
                             <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.harvesUnitCompleteLastYearMethodsHAAC">
@@ -182,16 +182,16 @@
                                           ng-model="cs4.harvesUnitCompleteLastYearMethodsHAACExp"></textarea>
                             </div>
                         </div>
-
+                    </div>
                     </div>
                 </div>
 
                 <div>
                     <div style="margin-bottom: 10px;">
-                        What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
+                        Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
                     </div>
-                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="usaFinalHarvestHAAC" max="100" min="0"
-                                                                  ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                    <div style="margin-bottom: 10px;">Area <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="usaFinalHarvestHAAC" min="0"
+                                                                  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                                                   ng-model="cs4.usaFinalHarvestHAAC"> {{ unit }}
                     </div>
                 </div>
@@ -252,35 +252,35 @@
 
             <!-- Section for Canada -->
             <div ng-show="operateInCa()">
-                <label tooltip data-html="true" data-placement="top" data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2015. This includes harvesting activities that were started in 2014 and completed in 2015, but not those that were still underway by the end of the 2015 calendar/fiscal year.">
+                <label tooltip data-html="true" data-placement="top" data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2015. This includes harvesting activities that were started in 2015 and completed in 2016, but not those that were still underway by the end of the 2015 calendar/fiscal year.">
                     <h6><strong>Canada</strong> - Program Participant Land covered under the scope of your SFI certificate</h6>
                 </label>
 
                 <div>
-                    <div style="margin-bottom: 10px;">What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
+                    <div style="margin-bottom: 10px;">Total Final Harvest: What is the total area of harvest units complete last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
 
-                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="caHarvestUnitCompleteLastYeaQualifyHAAC" max="100" min="0"
-                                                                  ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly disabled type="number" class="form-control shortest" name="caHarvestUnitCompleteLastYeaQualifyHAAC" min="0"
+                                                                  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                                                   ng-model="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC"> {{ unit }}
                     </div>
                 </div>
 
                 <div ng-show="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
                     <div class="form-group" ng-class="{'has-error' : hasError('caTotalHervArea')}">
-                        <label> What is the total area of final harvest units completed last year by clearcutting?</label>
+                        <label>Final Total Clearcut: What is the total area of final harvest units completed last year by clearcutting?</label>
                         <input readonly type="number" class="form-control required shortest" name="caTotalHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caTotalHervArea"> {{ unit }}
                     </div>
 
                     <div class="form-group" ng-class="{'has-error' : hasError('caAvgHervArea')}">
-                        <label>What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres):</label>
+                        <label>Average Clearcut: What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres)</label>
                         <input readonly type="number" class="form-control required shortest" name="caAvgHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caAvgHervArea" > {{ unit }}
                     </div>
 
-                    <!--<div class="form-group" ng-show="showExplCheckboxs('ca')">-->
+                    <div ng-show="cs4.caAvgHervArea > {{ unitHaAc }}">
                     <div class="form-group">
 
                         <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
@@ -363,8 +363,8 @@
                                 <div style="margin-bottom: 10px;margin-top: 30px;">What is the total area of final harvest units completed last year by other methods? (HA or Acres)</div>
 
                                 <div>Area
-                                    <input readonly type="number" class="form-control required shortest" name="caHarvesUnitCompleteLastYearMethodsHAAC" max="100" min="0"
-                                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                    <input readonly disabled type="number" class="form-control shortest" name="caHarvesUnitCompleteLastYearMethodsHAAC" min="0"
+                                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                            ng-model="cs4.caHarvesUnitCompleteLastYearMethodsHAAC"> {{ unit }}
                                 </div>
                                 <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.caHarvesUnitCompleteLastYearMethodsHAAC">
@@ -376,14 +376,15 @@
 
                         </div>
                     </div>
+                    </div>
                 </div>
 
                 <div>
                     <div style="margin-bottom: 10px;">
-                        What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
+                        Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)
                     </div>
-                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="caFinalHarvestHAAC" max="100" min="0"
-                                                                  ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                    <div style="margin-bottom: 10px;">Area <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="caFinalHarvestHAAC" min="0"
+                                                                  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                                                   ng-model="cs4.caFinalHarvestHAAC"> {{ unit }}
                     </div>
                 </div>
@@ -443,9 +444,12 @@
             </div>
             <!-- end -->
 
+            <br/>
+            <br/>
 
             <p>
-                REFORESTATION - activities and five year assessment for organizations managing forestlands. The following data is collected for your activities related to area under the scope of your SFI certification.
+                I. REFORESTATION <br/>
+                Activities and five year assessment for organizations managing forestlands. The following data is collected for your activities related to area under the scope of your SFI certification.
             </p>
             <p>
                 Replanting and Direct Seeding Timing. The replanting "clock" starts after the entire unit is harvested or the sale has been completed (see guidance under completed harvest units above). Do not include areas that were replanted due to poor seedling survival. "Failed plantation" data are ultimately captured in the five year regeneration success question.
@@ -519,8 +523,8 @@
                         <td>
                             <div class="form-group" ng-class="{'has-error' : hasError('usanaturalRegen2014')}">
                                 <label>What was the Natural Regeneration - All types in 2016?</label>
-                                <input readonly style="width: 60%;" type="number" class="form-control required shortest" name="usaNatRegen2014"
-                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                <input readonly disabled style="width: 60%;" type="number" class="form-control shortest" name="usaNatRegen2014" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                        ng-model="cs4.usaNatRegen2014"> {{ unit }}
                             </div>
                         </td>
@@ -533,8 +537,8 @@
                                 What was the percent of harvest units regenerated after 5 growing seasons?</label>
 
 
-                            <input readonly style="width: 60%;" type="number" class="form-control required shortest" name="usaRegenPerc5Yr" max="100" min="0"
-                                   ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                            <input readonly disabled style="width: 60%;" type="number" class="form-control shortest" name="usaRegenPerc5Yr" min="0"
+                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                    ng-model="cs4.usaRegenPerc5Yr"> %
                         </div></td>
                         <td>
@@ -543,8 +547,8 @@
                                        data-title='Objective 2. Forest Productivity from SFI 2010-2015 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'>
                                     What was the total area regenerated after five growing seasons? (HA or Acres)</label>
 
-                                <div style="margin-left: 60px;">Area <input readonly style="width: 32%;" type="number" class="form-control required shortest" name="usaRegenPerc5YrHAAC" max="100" min="0"
-                                                                            ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                <div style="margin-left: 60px;">Area <input readonly disabled style="width: 32%;" type="number" class="form-control shortest" name="usaRegenPerc5YrHAAC" min="0"
+                                                                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                                                             ng-model="cs4.usaRegenPerc5YrHAAC"> {{ unit }}
                                 </div>
                             </div>
@@ -620,8 +624,8 @@
                         <td>
                             <div class="form-group" ng-class="{'has-error' : hasError('naturalRegen2014')}">
                                 <label>What was the Natural Regeneration - All types in 2016?</label>
-                                <input readonly style="width: 60%;" type="number" class="form-control required shortest" name="naturalRegen2014" min="0"
-                                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                <input readonly disabled style="width: 60%;" type="number" class="form-control shortest" name="naturalRegen2014" min="0"
+                                       ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                        ng-model="cs4.caNatRegen2014"> {{ unit }}
                             </div>
                         </td>
@@ -634,8 +638,8 @@
                                        data-title='Objective 2. Forest Productivity from SFI 2010-2015 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'>
                                     What was the percent of harvest units regenerated after 5 growing seasons?</label>
 
-                                <input readonly  style="width: 60%;" type="number" class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"
-                                        ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                <input readonly disabled style="width: 60%;" type="number" class="form-control shortest" name="harvestRegenPerc" min="0"
+                                        ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                         ng-model="cs4.caRegenPerc5Yr"> %
                             </div>
                         </td>
@@ -645,8 +649,8 @@
                                        data-title='Objective 2. Forest Productivity from SFI 2010-2015 requires SFI Program Participants with forest land to promptly reforest after final harvest. (PM 2.1). Indicator 2. states: Reforestation, unless delayed for site-specific environmental or forest health considerations or legal requirements, through planting within two years or planting seasons, or by planned natural regeneration methods within  five  years.'>
                                     What was the total area regenerated after five growing seasons? (HA or Acres)</label>
 
-                                <div style="margin-left: 60px;">Area <input readonly style="width: 32%;" type="number" class="form-control required shortest" name="harvestRegenPerc" max="100" min="0" min="0"
-                                                                            ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                <div style="margin-left: 60px;">Area <input readonly disabled style="width: 32%;" type="number" class="form-control shortest" name="harvestRegenPerc" min="0"
+                                                                            ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                                                             ng-model="cs4.caRegenPerc5YrHAAC"> {{ unit }}
                                 </div>
                             </div>

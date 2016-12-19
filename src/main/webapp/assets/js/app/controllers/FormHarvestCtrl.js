@@ -4,6 +4,12 @@ sfiFormApp
             function ($rootScope , $scope, $state, $http, Countries, _, Message){
 
         $scope.cs4 = angular.copy($rootScope.form.cs4);
+                
+        if($rootScope.unit == "HA"){
+            $scope.unitHaAc = 50;
+        }else if($rootScope.unit == "AC"){
+            $scope.unitHaAc = 120;
+        }
 
         $scope.showExplCheckboxs = function(country){
 

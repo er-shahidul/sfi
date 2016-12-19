@@ -176,13 +176,13 @@ sfiFormApp
                 title : "This new question was added in response to the SFI ERP requesting more specific information on recreation area as compared with certified forest lands as well as details on examples of recreational activities on those lands."
             }));
 
-        $(this).children('td:eq(6)').tooltip($.extend(tooltip, {
-            placement : "left",
-            title : "1. Motorized: fee basis (e.g. hunting, fishing, snowmobiling, camping, etc.)<br/>" +
-                    "2. Motorized: no fee (e.g. motorized water activities, snowmobiling, camping, etc.)<br/>" +
-                    "3. Non-motorized: fee basis (e.g. hunting, fishing, camping, cross-country skiing, etc)<br/>" +
-                    "4. Non-motorized: no fee (e.g. hunting, fishing, bicycling, primitive camping, etc)"
-            }));
+        // $(this).children('td:eq(6)').tooltip($.extend(tooltip, {
+        //     placement : "left",
+        //     title : "1. Motorized: fee basis (e.g. hunting, fishing, snowmobiling, camping, etc.)<br/>" +
+        //             "2. Motorized: no fee (e.g. motorized water activities, snowmobiling, camping, etc.)<br/>" +
+        //             "3. Non-motorized: fee basis (e.g. hunting, fishing, camping, cross-country skiing, etc)<br/>" +
+        //             "4. Non-motorized: no fee (e.g. hunting, fishing, bicycling, primitive camping, etc)"
+        //     }));
 
     })
 
