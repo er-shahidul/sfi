@@ -541,6 +541,9 @@ public class Cs5 extends BaseEntityModel {
     @Column(name = "cs5_isInPartnership", nullable = true)
     private Boolean isInPartnership = false;
 
+    @Column(name = "cs5_isInPartnershipNoExp", nullable = true)
+    private String isInPartnershipNoExp;
+
     @Column(name = "cs5_isOtherEnabled", nullable = true)
     private Boolean isOtherEnabled;
 
@@ -1396,5 +1399,13 @@ public class Cs5 extends BaseEntityModel {
 
     public void setOther13(Set<String> other13) {
         this.other13 = other13;
+    }
+
+    public String getIsInPartnershipNoExp() {
+        return isInPartnershipNoExp;
+    }
+
+    public void setIsInPartnershipNoExp(String isInPartnershipNoExp) {
+        this.isInPartnershipNoExp = isInPartnershipNoExp;
     }
 }
