@@ -110,6 +110,7 @@ public class UserService {
         entity.setUpdatedAt(Util.getCurrentDate());
         entity.setUpdatedBy(Util.getCurrentUsername());
         entity.setEnabled(user.getEnabled());
+        entity.setInvitationMsg(user.getInvitationMsg());
         userRepository.update(entity);
     }
 
