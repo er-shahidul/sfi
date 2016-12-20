@@ -258,7 +258,7 @@ console.log(i.has('carousel'));
 
         $scope.addProducer = function(){
 
-            if($scope.cs8Form.producerSource.$valid && $scope.cs8Form.percPurchased.$valid){
+            // if($scope.cs8Form.producerSource.$valid && $scope.cs8Form.percPurchased.$valid){
 
 
                 if(!$scope.producer.source || !$scope.producer.percPurchased){
@@ -273,7 +273,7 @@ console.log(i.has('carousel'));
 
                 $scope.producerIndex = null;
                 $scope.producer = {};
-            }
+            // }
         }
 
         $scope.editProducer = function(index, producer){
