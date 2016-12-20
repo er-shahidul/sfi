@@ -71,9 +71,15 @@
                 <span class="glyphicon glyphicon-print print pull-right" aria-hidden="true"
                       tooltip="" data-container="body" data-title="Print this page only"
                       ng-click="printSection()"></span>
+                <div th:if="${mode == 'view'}">
+                    <button type="button" class="btn pull-right" data-trigger="hover"
+                            ng-class="btn-disabled" >{{ submitText() }}</button>
+                </div>
+                <div th:if="${mode != 'view'}">
                 <button type="button" class="btn pull-right" data-trigger="hover"
                         ng-class="canSubmit() ? 'btn-success' : 'btn-disabled' "
                         ng-click="canSubmit() &amp;&amp; submit()" >{{ submitText() }}</button>
+                </div>
             </div>
             <div class="modal fade" id="submit" tabindex="-1" role="dialog" aria-labelledby="submit" aria-hidden="true">
                 <div class="modal-dialog">
