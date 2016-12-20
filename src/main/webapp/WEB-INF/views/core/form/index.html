@@ -123,7 +123,8 @@
 
                     <div ng-show="isStepAllowed('cs8')"  class="formMenuItem section9" ng-click="goStep('cs8')">
                         <div class=" {{ getClass('cs8') }}">&nbsp;</div>
-                        <span class="circleTxt {{ getClass('cs8') }}" style="font-size: large;top: -12px">
+                        <span class="circleTxt {{ getClass('cs8') }}" style="padding-top: 10px;top: -12px">
+                            Optional<br/>
                             SFI<br/>
                             Market<br/>
                             Survey
@@ -140,10 +141,10 @@
                         </div>
 
                     </div>
-                    <br/>
+                    <!--<br/>-->
 
-                    <div ng-show="isStepAllowed('cs10')" class="first-desc ng-cloak" style="width:680px;">SFI Annual Progress Report Survey</div>
-                    <div ng-show="isStepAllowed('cs10')" class="second-desc ng-cloak" style="width:75px;">Optional</div>
+                    <!--<div ng-show="isStepAllowed('cs10')" class="first-desc ng-cloak" style="width:680px;">SFI Annual Progress Report Survey</div>-->
+                    <!--<div ng-show="isStepAllowed('cs10')" class="second-desc ng-cloak" style="width:75px;">Optional</div>-->
                 </div>
 
                 <div class="formContent" ui-view="{{mode}}Container">
