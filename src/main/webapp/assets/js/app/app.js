@@ -561,7 +561,7 @@ sfiFormApp.directive('customerror', [ '_', function(_){
 
 
 
-            //$el.keyup(validate)
+            $el.keyup(validate)
 
         }
     };
