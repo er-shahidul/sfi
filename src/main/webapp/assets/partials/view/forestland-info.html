@@ -603,16 +603,16 @@
                 </h5>
 
                 <p class="highlited-text question-style">
-                    <div ng-show="operateInUsa() || operateInCa() || operateInOthers()">
+                    <div ng-show="operateInUsa() || operateInCa() || operateInOthers()" style="font-weight: bold">
                         Do you use a <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">WHO 1A or 1B pesticide</a> in your operations?
                     </div>
-                    <div ng-show="!operateInUsa() && !operateInCa() && !operateInOthers()">
+                    <div ng-show="!operateInUsa() && !operateInCa() && !operateInOthers()" style="font-weight: bold">
                         Do you use a WHO 1A or 1B pesticide in your operations?
                     </div>
                 </p>
 
                 <div class="content-pading">
-                    <label>
+                    <label style="font-weight: normal">
                         <input readonly disabled icheck type="radio" name="useWho1A1B" ng-model="cs2.useWho1A1B" ng-value="true" > Yes
                         <input readonly disabled icheck type="radio" name="useWho1A1B" ng-model="cs2.useWho1A1B" ng-value="false" > No
                     </label>
@@ -687,16 +687,16 @@
 
             <div>
                 <p class="highlited-text question-style">
-                    <div ng-show="operateInUsa() || operateInCa() || operateInOthers()">
+                    <div ng-show="operateInUsa() || operateInCa() || operateInOthers()" style="font-weight: bold">
                         Did you stop using a <a class="link" href="http://www.who.int/ipcs/publications/pesticides_hazard/en/" target="__blank">WHO 1A or 1B pesticide</a> in your operations due to requirements in the SFI 2015-2019 Forest Management Standard in 2016?
                     </div>
-                    <div ng-show="!operateInUsa() && !operateInCa() && !operateInOthers()">
+                    <div ng-show="!operateInUsa() && !operateInCa() && !operateInOthers()" style="font-weight: bold">
                         Did you stop using a WHO 1A or 1B pesticide in your operations due to requirements in the SFI 2015-2019 Forest Management Standard in 2016?
                     </div>
                 </p>
 
                 <div class="content-pading">
-                    <label>
+                    <label style="font-weight: normal">
                         <input readonly disabled icheck type="radio" name="stopWho1A1B" ng-model="cs2.stopWho1A1B" ng-value="true" > Yes
                         <input readonly disabled icheck type="radio" name="stopWho1A1B" ng-model="cs2.stopWho1A1B" ng-value="false" > No
                     </label>
@@ -723,14 +723,14 @@
                 </p>
 
                 <div class="content-pading">
-                    <label>
+                    <label style="font-weight: normal">
                         <input readonly disabled icheck type="radio" name="convertForestCover" ng-model="cs2.convertForestCover" ng-value="true"  > Yes
                         <input readonly disabled icheck type="radio" name="convertForestCover" ng-model="cs2.convertForestCover" ng-value="false" > No
                     </label>
                     <ul style="list-style-type: none;width:55%;" ng-show="cs2.convertForestCover">
                         <p>Select all that apply</p>
                         <li>
-                            <label>
+                            <label style="font-weight: normal">
                                 <input readonly disabled icheck type="checkbox" ng-model="cs2.restorationForestCover" value=1>
                                 Restoration of Historic Forest Cover.
 
@@ -739,7 +739,7 @@
                                 <p>Select all that apply</p>
 
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled icheck type="checkbox" ng-model="cs2.restorationRiparianProtection" value=1>
                                     <span tooltip title="Removal of loblolly-pine from riparian areas to allow re-establishment of hardwood species (US South); removal of alder from riparian areas to allow re-establishment of spruce species (PNW/BC) ">
                                         Riparian protection
@@ -756,7 +756,7 @@
                                 </li>
 
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled icheck type="checkbox" ng-model="cs2.restorationNativeForest" value=1>
                                         <!--<div class="sub-content">-->
                                         <span tooltip title="Re-establishment of longleaf pine from loblolly pine (US South); re-establishment of blister rust resistant western white pine (PNW)">
@@ -775,7 +775,7 @@
                                 </li>
 
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled icheck type="checkbox" ng-model="cs2.restorationOther" value=1>
                                         Other
                                     </label>
@@ -795,7 +795,7 @@
                         </li>
 
                         <li>
-                            <label>
+                            <label style="font-weight: normal">
                                 <input readonly disabled icheck type="checkbox" ng-model="cs2.respondingForestHealth" value=1>
                                 Responding to forest health concerns.
                             </label>
@@ -803,7 +803,7 @@
 
                                 <p>Select all that apply</p>
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled icheck type="checkbox" ng-model="cs2.respondingInvasiveSpecies">
                                         <span tooltip title="Removal of non-native species like Empress tree (pawlonia spp.) (US South)">Invasive species</span>
                                     </label>
@@ -819,7 +819,7 @@
 
 
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled icheck type="checkbox" ng-model="cs2.respondingDiseaseIssues">
                                         <span tooltip title="Planting western red-cedar in areas with Douglas fir root rot; planting Douglas fir in areas with western white pine blister rust (PNW)">Disease issues</span>
                                     </label>
@@ -834,7 +834,7 @@
                                 </li>
 
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled type="checkbox" icheck ng-model="cs2.respondingInsect">
                                         <span tooltip title="Establishing Douglas fir or spruce in areas severely impacted by mountain pine beetle (Western Canada and PNW/Rocky Mtn. States); establishing pine species in areas severely impacted by spruce bud-worm (New England and Maritimes)">Insect</span>
 
@@ -849,7 +849,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled type="checkbox" icheck ng-model="cs2.respondingOther">
                                         Other
                                     </label>
@@ -869,14 +869,14 @@
                         </li>
 
                         <li>
-                            <label>
+                            <label style="font-weight: normal">
                                 <input readonly disabled icheck type="checkbox" ng-model="cs2.mitigatingEnvironmentalHarm" value=1>
                                 Mitigating Present or Future Environmental Harm.
                             </label>
                             <ul style="list-style-type: none" ng-show="cs2.mitigatingEnvironmentalHarm">
                                 <p>Select all that apply</p>
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled type="checkbox" name="ecologicalImpactsSite" icheck ng-model="cs2.ecologicalImpactsSite">
                                         <span tooltip  title="Establishing stands of more drought hardy species in regions of prolonged drought (US South and California); establishing stands with species that are more resistant to abiotic damage (US South); establishing species at the landscape level that are not prone to ungulate browse (PNW, BC)">Ecological impacts of conversion - review at the site level</span>
                                     </label>
@@ -891,7 +891,7 @@
                                 </li>
 
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled type="checkbox" icheck ng-model="cs2.ecologicalImpactsLandscape">
                                         <span tooltip title="Establishing stands of more drought hardy species in regions of prolonged drought (US South and California); establishing stands with species that are more resistant to abiotic damage; establishing species at the landscape level that are not prone to ungulate browse (PNW, BC)">Ecological impacts of conversion - review at the landscape scale</span>
                                     </label>
@@ -905,7 +905,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled type="checkbox" icheck ng-model="cs2.environmentalHarmOther"> Other
                                     </label>
 
@@ -922,7 +922,7 @@
                             </ul>
                         </li>
                         <li>
-                            <label>
+                            <label style="font-weight: normal">
                                 <input readonly disabled icheck type="checkbox" ng-model="cs2.economicReasons">
                                 Economic reasons.
                             </label>
@@ -930,7 +930,7 @@
                                 <p>Select all that apply</p>
 
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled type="checkbox" icheck ng-model="cs2.economicProductivity">
                                         <span tooltip title="Removal of species considered as ‘off-site’ and therefore not achieving the potential of the site-index for the site e.g. Douglas fir planted on wetter sites (PNW, BC)">Productivity</span>
                                     </label>
@@ -944,7 +944,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled type="checkbox" icheck ng-model="cs2.economicStandQuality">
                                         <span tooltip title="Stand is exhibiting defects due to poor genetics that will result in reduced log quality – sinuosity or double leaders in Douglas fir, spruce, etc.">Stand quality</span>
                                     </label>
@@ -959,7 +959,7 @@
                                 </li>
 
                                 <li>
-                                    <label>
+                                    <label style="font-weight: normal">
                                         <input readonly disabled type="checkbox" icheck ng-model="cs2.economicOther">
                                         Other
                                     </label>
@@ -988,7 +988,7 @@
                     </p>
 
                     <div class="content-pading">
-                        <label>
+                        <label style="font-weight: normal">
                             <input readonly disabled icheck type="radio" name="convertForestLand" ng-model="cs2.convertForestLand" ng-value="true"> Yes
                             <input readonly disabled icheck type="radio" name="convertForestLand" ng-model="cs2.convertForestLand" ng-value="false"> No
                         </label>
@@ -1020,8 +1020,8 @@
                 <div ng-show="operateInUsa() || operateInCa() || operateInOthers()">
                     <table class="table table-striped">
                         <thead>
-                        <td><label>Acres converted of our managed forest land</label></td>
-                        <td><label>Region</label></td>
+                        <td> <label style="font-weight: normal">Acres converted of our managed forest land</label></td>
+                        <td> <label style="font-weight: normal">Region</label></td>
                         </thead>
                         <tbody>
                         <tr ng-repeat="forestlandArea in cs2.forestlandAreas">
