@@ -13,7 +13,7 @@
                 </h5>
                 <form name="cs8Form">
                 <div style="padding-left: 10px;">
-                    <p>
+                    <p style="font-weight: bold;">
                         Is your SIC currently involved in, or supporting, any research, conservation and/or community partnership projects, either through the SFI Grant Program or otherwise?
                     </p>
                     <label>
@@ -395,21 +395,16 @@
 
                     <div class="col-lg-12 pading-botoms">
                         <div style="padding-left: 10px;">
-                            <p>
+                            <p style="font-weight: bold;">
                                 May SFI Inc. share this project partnership data externally, as part of a compiled summary across SFI Implementation Committees and SFI Program Participants, ensuring confidentiality?
                             </p>
                         </div>
+                        <label style="padding-left: 10px;">
+                            <input type="radio" disabled  name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > Yes
+                            <input type="radio" disabled  name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="false" > No
+                        </label>
                     </div>
                     <div class="col-lg-8 pading-botoms">
-                        <div style="padding-left: 10px;">
-                            <label>
-                                <input type="radio" disabled  name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="true" > Yes
-                            </label>
-                            <label>
-                                <input type="radio" disabled  name="sicSupportingResearch" ng-model="project.sicSupportingResearch" ng-value="false" > No
-                            </label>
-                        </div>
-
                     </div>
 
 
