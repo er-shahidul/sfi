@@ -796,13 +796,12 @@
                         <p><strong>ENERGY USE</strong></p>
                     </div>
 
-                    <div style="padding-left: 0;" class="col-sm-12">
+                    <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                         <strong>Total electric energy used by operations:
-                        What was the total net energy used (purchased plus self-generated minus sold) from the electricity that the operations/site/enterprise required to operate (all sources) regardless of use?
-                        </strong><br>
-                        <br>
+                            What was the total net energy used (purchased plus self-generated minus sold) from the electricity that the operations/site/enterprise required to operate (all sources) regardless of use?
+                        </strong>
                         <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -815,9 +814,8 @@
                                         Giga-Joules
                                     </div>
                                 </div>
-                                <br/>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -831,8 +829,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -846,106 +843,105 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Pulp</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="pulp1"
-                                           class="form-control col-sm-3" ng-model="cs8.pulp1">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Pulp</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Land Only</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="landOnly1"
-                                           class="form-control col-sm-3" ng-model="cs8.landOnly1">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="pulp1"
+                                               class="form-control col-sm-3" ng-model="cs8.pulp1">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="solidWoodProducts1"
-                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts1">
+                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Land Only</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperBroker1"
-                                           class="form-control col-sm-3" ng-model="cs8.paperBroker1">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="landOnly1"
+                                               class="form-control col-sm-3" ng-model="cs8.landOnly1">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paperboard Converter</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperboardConverter1"
-                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter1">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Furniture</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="furniture1"
-                                           class="form-control col-sm-3" ng-model="cs8.furniture1">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="solidWoodProducts1"
+                                               class="form-control col-sm-3" ng-model="cs8.solidWoodProducts1">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Towel/tissue</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="towel1"
-                                           class="form-control col-sm-3" ng-model="cs8.towel1">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperBroker1"
+                                               class="form-control col-sm-3" ng-model="cs8.paperBroker1">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paperboard Converter</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperboardConverter1"
+                                               class="form-control col-sm-3" ng-model="cs8.paperboardConverter1">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Furniture</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="furniture1"
+                                               class="form-control col-sm-3" ng-model="cs8.furniture1">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Towel/tissue</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="towel1"
+                                               class="form-control col-sm-3" ng-model="cs8.towel1">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -959,8 +955,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -974,8 +969,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -991,14 +985,12 @@
                             </div>
                         </div>
                     </div>
-                    <br/>
-                    <div style="padding-left: 0;" class="col-sm-12">
+                    <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                         <strong>Total fuel energy used by operations:
-                        What was the total net energy used (purchased plus self-generated minus sold) from the electricity that the operations/site/enterprise required to operate (all sources) regardless of use? For example: fuel oil, propane, natural gas, etc.
-                        </strong><br>
-                        <br>
+                            What was the total net energy used (purchased plus self-generated minus sold) from the electricity that the operations/site/enterprise required to operate (all sources) regardless of use? For example: fuel oil, propane, natural gas, etc.
+                        </strong>
                         <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -1011,9 +1003,8 @@
                                         Giga-Joules
                                     </div>
                                 </div>
-                                <br/>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -1027,8 +1018,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -1042,106 +1032,105 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Pulp</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="pulp2"
-                                           class="form-control col-sm-3" ng-model="cs8.pulp2">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Pulp</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Land Only</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="landOnly2"
-                                           class="form-control col-sm-3" ng-model="cs8.landOnly2">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="pulp2"
+                                               class="form-control col-sm-3" ng-model="cs8.pulp2">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="solidWoodProducts2"
-                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts2">
+                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Land Only</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperBroker2"
-                                           class="form-control col-sm-3" ng-model="cs8.paperBroker2">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="landOnly2"
+                                               class="form-control col-sm-3" ng-model="cs8.landOnly2">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paperboard Converter</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperboardConverter2"
-                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter2">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Furniture</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="furniture2"
-                                           class="form-control col-sm-3" ng-model="cs8.furniture2">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="solidWoodProducts2"
+                                               class="form-control col-sm-3" ng-model="cs8.solidWoodProducts2">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Towel/tissue</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="towel2"
-                                           class="form-control col-sm-3" ng-model="cs8.towel2">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperBroker2"
+                                               class="form-control col-sm-3" ng-model="cs8.paperBroker2">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paperboard Converter</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperboardConverter2"
+                                               class="form-control col-sm-3" ng-model="cs8.paperboardConverter2">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Furniture</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="furniture2"
+                                               class="form-control col-sm-3" ng-model="cs8.furniture2">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Towel/tissue</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="towel2"
+                                               class="form-control col-sm-3" ng-model="cs8.towel2">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -1155,8 +1144,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -1170,8 +1158,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -1187,14 +1174,12 @@
                             </div>
                         </div>
                     </div>
-                    <br/>
-                    <div style="padding-left: 0;" class="col-sm-12">
+                    <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                         <strong>Total renewable energy from biomass, solar, wind, water, etc. used by operations (GigaJoules):
-                        What was the total direct purchase of renewable energy AND the generated on site as part of operations under the producer’s control? The metric does NOT include renewable energy that is part of the typical supply from the electrical grid.
-                        </strong><br>
-                        <br>
+                            What was the total direct purchase of renewable energy AND the generated on site as part of operations under the producer’s control? The metric does NOT include renewable energy that is part of the typical supply from the electrical grid.
+                        </strong>
                         <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -1207,9 +1192,8 @@
                                         Giga-Joules
                                     </div>
                                 </div>
-                                <br/>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -1223,8 +1207,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -1238,106 +1221,105 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Pulp</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="pulp3"
-                                           class="form-control col-sm-3" ng-model="cs8.pulp3">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Pulp</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Land Only</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="landOnly3"
-                                           class="form-control col-sm-3" ng-model="cs8.landOnly3">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="pulp3"
+                                               class="form-control col-sm-3" ng-model="cs8.pulp3">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="solidWoodProducts3"
-                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts3">
+                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Land Only</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperBroker3"
-                                           class="form-control col-sm-3" ng-model="cs8.paperBroker3">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="landOnly3"
+                                               class="form-control col-sm-3" ng-model="cs8.landOnly3">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paperboard Converter</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperboardConverter3"
-                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter3">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Furniture</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="furniture3"
-                                           class="form-control col-sm-3" ng-model="cs8.furniture3">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="solidWoodProducts3"
+                                               class="form-control col-sm-3" ng-model="cs8.solidWoodProducts3">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Towel/tissue</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="towel3"
-                                           class="form-control col-sm-3" ng-model="cs8.towel3">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Giga-Joules
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperBroker3"
+                                               class="form-control col-sm-3" ng-model="cs8.paperBroker3">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paperboard Converter</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperboardConverter3"
+                                               class="form-control col-sm-3" ng-model="cs8.paperboardConverter3">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Furniture</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="furniture3"
+                                               class="form-control col-sm-3" ng-model="cs8.furniture3">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Towel/tissue</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="towel3"
+                                               class="form-control col-sm-3" ng-model="cs8.towel3">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Giga-Joules
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -1351,8 +1333,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -1366,8 +1347,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -1383,23 +1363,17 @@
                             </div>
                         </div>
                     </div>
-                    <br/>
 
-                    <div style="padding-left: 0;" class="col-sm-12">
-                        <br/>
-                        <br/>
+                    <div style="padding-left: 0;margin-bottom: 20px;" class="col-sm-12">
                         <p><strong>GREENHOUSE GAS EMISSIONS</strong></p>
                         Provide the following greenhouse gas emissions information for all corporate and operational locations:
-                        <br/>
-                        <br/>
                     </div>
-                    <div style="padding-left: 0;" class="col-sm-12">
+                    <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                         <strong>Scope 1 GHG emissions:
-                        What was the total direct emissions from the combustion of onsite and mobile fuels, and other sources that occur at, or are associated with facilities and operations controlled by your company?
-                        </strong><br>
-                        <br>
+                            What was the total direct emissions from the combustion of onsite and mobile fuels, and other sources that occur at, or are associated with facilities and operations controlled by your company?
+                        </strong>
                         <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -1412,9 +1386,8 @@
                                         Metric tonnes of CO2e
                                     </div>
                                 </div>
-                                <br/>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -1428,8 +1401,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -1443,106 +1415,105 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Pulp</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="pulp4"
-                                           class="form-control col-sm-3" ng-model="cs8.pulp4">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Pulp</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Land Only</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="landOnly4"
-                                           class="form-control col-sm-3" ng-model="cs8.landOnly4">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="pulp4"
+                                               class="form-control col-sm-3" ng-model="cs8.pulp4">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="solidWoodProducts4"
-                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts4">
+                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Land Only</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperBroker4"
-                                           class="form-control col-sm-3" ng-model="cs8.paperBroker4">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="landOnly4"
+                                               class="form-control col-sm-3" ng-model="cs8.landOnly4">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paperboard Converter</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperboardConverter4"
-                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter4">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Furniture</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="furniture4"
-                                           class="form-control col-sm-3" ng-model="cs8.furniture4">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="solidWoodProducts4"
+                                               class="form-control col-sm-3" ng-model="cs8.solidWoodProducts4">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Towel/tissue</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="towel4"
-                                           class="form-control col-sm-3" ng-model="cs8.towel4">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperBroker4"
+                                               class="form-control col-sm-3" ng-model="cs8.paperBroker4">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paperboard Converter</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperboardConverter4"
+                                               class="form-control col-sm-3" ng-model="cs8.paperboardConverter4">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Furniture</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="furniture4"
+                                               class="form-control col-sm-3" ng-model="cs8.furniture4">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Towel/tissue</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="towel4"
+                                               class="form-control col-sm-3" ng-model="cs8.towel4">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -1556,8 +1527,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -1571,8 +1541,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -1588,14 +1557,12 @@
                             </div>
                         </div>
                     </div>
-                    <br/>
-                    <div style="padding-left: 0;" class="col-sm-12">
+                    <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                         <strong>Scope 2 GHG emissions:
-                        What was the total indirect emissions that occur off-site from the production of energy, such as electricity, which is then     purchased for use at facilities and operations controlled by your company?
-                        </strong><br>
-                        <br>
+                            What was the total indirect emissions that occur off-site from the production of energy, such as electricity, which is then     purchased for use at facilities and operations controlled by your company?
+                        </strong>
                         <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -1608,9 +1575,8 @@
                                         Metric tonnes of CO2e
                                     </div>
                                 </div>
-                                <br/>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -1624,8 +1590,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -1639,106 +1604,105 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Pulp</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="pulp5"
-                                           class="form-control col-sm-3" ng-model="cs8.pulp5">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Pulp</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Land Only</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="landOnly5"
-                                           class="form-control col-sm-3" ng-model="cs8.landOnly5">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="pulp5"
+                                               class="form-control col-sm-3" ng-model="cs8.pulp5">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="solidWoodProducts5"
-                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts5">
+                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Land Only</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperBroker5"
-                                           class="form-control col-sm-3" ng-model="cs8.paperBroker5">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="landOnly5"
+                                               class="form-control col-sm-3" ng-model="cs8.landOnly5">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paperboard Converter</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperboardConverter5"
-                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter5">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Furniture</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="furniture5"
-                                           class="form-control col-sm-3" ng-model="cs8.furniture5">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="solidWoodProducts5"
+                                               class="form-control col-sm-3" ng-model="cs8.solidWoodProducts5">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Towel/tissue</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="towel5"
-                                           class="form-control col-sm-3" ng-model="cs8.towel5">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Metric tonnes of CO2e
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperBroker5"
+                                               class="form-control col-sm-3" ng-model="cs8.paperBroker5">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paperboard Converter</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperboardConverter5"
+                                               class="form-control col-sm-3" ng-model="cs8.paperboardConverter5">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Furniture</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="furniture5"
+                                               class="form-control col-sm-3" ng-model="cs8.furniture5">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Towel/tissue</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="towel5"
+                                               class="form-control col-sm-3" ng-model="cs8.towel5">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Metric tonnes of CO2e
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -1752,8 +1716,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -1767,8 +1730,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -1784,23 +1746,17 @@
                             </div>
                         </div>
                     </div>
-                    <br/>
 
-                    <div style="padding-left: 0;" class="col-sm-12">
-                        <br/>
-                        <br/>
+                    <div style="padding-left: 0;margin-bottom: 20px;" class="col-sm-12">
                         <p><strong>WATER USE</strong></p>
                         Provide the following water data for all corporate and operational locations:
-                        <br/>
-                        <br/>
                     </div>
-                    <div style="padding-left: 0;" class="col-sm-12">
+                    <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                         <strong>Total water used by operations:
-                        What was the total volume of water entering the site(s) from all sources that is needed for operations? For example: purchased from suppliers, pumped from rivers, lakes, wells, etc.
-                        </strong><br>
-                        <br>
+                            What was the total volume of water entering the site(s) from all sources that is needed for operations? For example: purchased from suppliers, pumped from rivers, lakes, wells, etc.
+                        </strong>
                         <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -1813,9 +1769,8 @@
                                         Cubic meters
                                     </div>
                                 </div>
-                                <br/>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -1829,8 +1784,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -1844,106 +1798,105 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Pulp</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="pulp6"
-                                           class="form-control col-sm-3" ng-model="cs8.pulp6">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Pulp</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Cubic meters
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Land Only</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="landOnly6"
-                                           class="form-control col-sm-3" ng-model="cs8.landOnly6">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Cubic meters
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="pulp6"
+                                               class="form-control col-sm-3" ng-model="cs8.pulp6">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Cubic meters
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="solidWoodProducts6"
-                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts6">
+                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Land Only</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Cubic meters
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperBroker6"
-                                           class="form-control col-sm-3" ng-model="cs8.paperBroker6">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Cubic meters
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="landOnly6"
+                                               class="form-control col-sm-3" ng-model="cs8.landOnly6">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Cubic meters
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Paperboard Converter</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="paperboardConverter6"
-                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter6">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Cubic meters
-                                </div>
-                            </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Furniture</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="furniture6"
-                                           class="form-control col-sm-3" ng-model="cs8.furniture6">
-                                </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Cubic meters
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="solidWoodProducts6"
+                                               class="form-control col-sm-3" ng-model="cs8.solidWoodProducts6">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Cubic meters
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                            <div class="col-sm-10">
-                                <label style="margin-left: 15px;">Towel/tissue</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="col-sm-3">
-                                    <input readonly disabled type="text" name="towel6"
-                                           class="form-control col-sm-3" ng-model="cs8.towel6">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                                 </div>
-                                <div class="col-sm-5" style="margin-top: 8px;">
-                                    Cubic meters
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperBroker6"
+                                               class="form-control col-sm-3" ng-model="cs8.paperBroker6">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Cubic meters
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Paperboard Converter</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="paperboardConverter6"
+                                               class="form-control col-sm-3" ng-model="cs8.paperboardConverter6">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Cubic meters
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Furniture</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="furniture6"
+                                               class="form-control col-sm-3" ng-model="cs8.furniture6">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Cubic meters
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                                <div class="col-sm-10">
+                                    <label style="margin-left: 15px;">Towel/tissue</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <input readonly disabled type="text" name="towel6"
+                                               class="form-control col-sm-3" ng-model="cs8.towel6">
+                                    </div>
+                                    <div class="col-sm-5" style="margin-top: 8px;">
+                                        Cubic meters
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -1957,8 +1910,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -1972,8 +1924,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -1990,14 +1941,12 @@
                         </div>
                     </div>
                 </div>
-                <br/>
-                <div style="padding-left: 0;" class="col-sm-12">
+                <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                     <strong>Total water discharged by operations:
-                    What was the total volume of water leaving the site(s)? Water reused, recycled or recovered, it is not considered disposed.
-                    </strong><br>
-                    <br>
+                        What was the total volume of water leaving the site(s)? Water reused, recycled or recovered, it is not considered disposed.
+                    </strong>
                     <div class="pading-botoms padding-left-12">
-                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printing writing paper</label>
                             </div>
@@ -2010,9 +1959,8 @@
                                     Cubic meters
                                 </div>
                             </div>
-                            <br/>
                         </div>
-                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Packaging</label>
                             </div>
@@ -2026,8 +1974,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Bioenergy</label>
                             </div>
@@ -2041,106 +1988,105 @@
                                 </div>
                             </div>
                         </div>
-                        <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Pulp</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="pulp7"
-                                       class="form-control col-sm-3" ng-model="cs8.pulp7">
+                        <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Pulp</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Cubic meters
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Land Only</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="landOnly7"
-                                       class="form-control col-sm-3" ng-model="cs8.landOnly7">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Cubic meters
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="pulp7"
+                                           class="form-control col-sm-3" ng-model="cs8.pulp7">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="solidWoodProducts7"
-                                       class="form-control col-sm-3" ng-model="cs8.solidWoodProducts7">
+                        <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Land Only</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Cubic meters
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="paperBroker7"
-                                       class="form-control col-sm-3" ng-model="cs8.paperBroker7">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Cubic meters
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="landOnly7"
+                                           class="form-control col-sm-3" ng-model="cs8.landOnly7">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Paperboard Converter</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="paperboardConverter7"
-                                       class="form-control col-sm-3" ng-model="cs8.paperboardConverter7">
+                        <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Cubic meters
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Furniture</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="furniture7"
-                                       class="form-control col-sm-3" ng-model="cs8.furniture7">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Cubic meters
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="solidWoodProducts7"
+                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts7">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Towel/tissue</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="towel7"
-                                       class="form-control col-sm-3" ng-model="cs8.towel7">
+                        <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Cubic meters
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="paperBroker7"
+                                           class="form-control col-sm-3" ng-model="cs8.paperBroker7">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Paperboard Converter</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="paperboardConverter7"
+                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter7">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Furniture</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="furniture7"
+                                           class="form-control col-sm-3" ng-model="cs8.furniture7">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Towel/tissue</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="towel7"
+                                           class="form-control col-sm-3" ng-model="cs8.towel7">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Cubic meters
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printer</label>
                             </div>
@@ -2154,8 +2100,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                             </div>
@@ -2169,8 +2114,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Other</label>
                             </div>
@@ -2187,25 +2131,19 @@
                     </div>
                 </div>
             </div>
-            <br/>
-            <div class="col-lg-12 pading-botoms" style="margin-bottom: 100px;" ng-show="cs8.productSegmentPrintingWritingPaper || cs8.productSegmentPackaging || cs8.productSegmentBioenergy || cs8.productSegmentPulp
+            <div class="col-lg-12 pading-botoms" style="margin-bottom: 100px;"  ng-show="cs8.productSegmentPrintingWritingPaper || cs8.productSegmentPackaging || cs8.productSegmentBioenergy || cs8.productSegmentPulp
             || cs8.productSegmentLand || cs8.productSegmentSolidWood || cs8.productSegmentPaperMerchant || cs8.productSegmentPaperBoard || s8.productSegmentPaperBoard ||
-            cs8.productSegmentTowelTissue || cs8.productSegmentPrinter || cs8.productSegmentWoodMerchant || cs8.productSegmentOther">
-                <div style="padding-left: 0;" class="col-sm-12">
-                    <br/>
-                    <br/>
+            cs8.productSegmentTowelTissue || cs8.productSegmentPrinter || cs8.productSegmentWoodMerchant || cs8.productSegmentOther" >
+                <div style="padding-left: 0;margin-bottom: 20px;" class="col-sm-12">
                     <p><strong>WASTE MANAGEMENT</strong></p>
                     Provide the following waste data for all corporate and operational locations:
-                    <br/>
-                    <br/>
                 </div>
-                <div style="padding-left: 0;" class="col-sm-12">
+                <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                     <strong>Non-hazardous waste disposed by operations:
-                    What was the total amount of non-hazardous waste landfilled, incinerated without energy recovery, or otherwise disposed? Includes solid waste and liquid waste in solid containers. Waste recycled, reused or recovered is not considered to be disposed.
-                    </strong><br>
-                    <br>
+                        What was the total amount of non-hazardous waste landfilled, incinerated without energy recovery, or otherwise disposed? Includes solid waste and liquid waste in solid containers. Waste recycled, reused or recovered is not considered to be disposed.
+                    </strong>
                     <div class="pading-botoms padding-left-12">
-                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printing writing paper</label>
                             </div>
@@ -2218,9 +2156,8 @@
                                     Metric tonnes
                                 </div>
                             </div>
-                            <br/>
                         </div>
-                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Packaging</label>
                             </div>
@@ -2234,8 +2171,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Bioenergy</label>
                             </div>
@@ -2249,106 +2185,105 @@
                                 </div>
                             </div>
                         </div>
-                        <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Pulp</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="pulp8"
-                                       class="form-control col-sm-3" ng-model="cs8.pulp8">
+                        <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Pulp</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Land Only</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="landOnly8"
-                                       class="form-control col-sm-3" ng-model="cs8.landOnly8">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="pulp8"
+                                           class="form-control col-sm-3" ng-model="cs8.pulp8">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="solidWoodProducts8"
-                                       class="form-control col-sm-3" ng-model="cs8.solidWoodProducts8">
+                        <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Land Only</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="paperBroker8"
-                                       class="form-control col-sm-3" ng-model="cs8.paperBroker8">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="landOnly8"
+                                           class="form-control col-sm-3" ng-model="cs8.landOnly8">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Paperboard Converter</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="paperboardConverter8"
-                                       class="form-control col-sm-3" ng-model="cs8.paperboardConverter8">
+                        <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Furniture</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="furniture8"
-                                       class="form-control col-sm-3" ng-model="cs8.furniture8">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="solidWoodProducts8"
+                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts8">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Towel/tissue</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="towel8"
-                                       class="form-control col-sm-3" ng-model="cs8.towel8">
+                        <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="paperBroker8"
+                                           class="form-control col-sm-3" ng-model="cs8.paperBroker8">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Paperboard Converter</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="paperboardConverter8"
+                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter8">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Furniture</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="furniture8"
+                                           class="form-control col-sm-3" ng-model="cs8.furniture8">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Towel/tissue</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="towel8"
+                                           class="form-control col-sm-3" ng-model="cs8.towel8">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printer</label>
                             </div>
@@ -2362,8 +2297,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                             </div>
@@ -2377,8 +2311,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Other</label>
                             </div>
@@ -2394,14 +2327,12 @@
                         </div>
                     </div>
                 </div>
-                <br/>
-                <div style="padding-left: 0;" class="col-sm-12">
+                <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                     <strong>Hazardous waste disposed by operations:
-                    What was the total amount of hazardous waste landfilled, incinerated without energy recovery, or otherwise disposed? Waste recycled, reused or recovered is not considered to be disposed.
-                    </strong><br>
-                    <br>
+                        What was the total amount of hazardous waste landfilled, incinerated without energy recovery, or otherwise disposed? Waste recycled, reused or recovered is not considered to be disposed.
+                    </strong>
                     <div class="pading-botoms padding-left-12">
-                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printing writing paper</label>
                             </div>
@@ -2414,9 +2345,8 @@
                                     Metric tonnes
                                 </div>
                             </div>
-                            <br/>
                         </div>
-                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Packaging</label>
                             </div>
@@ -2430,8 +2360,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Bioenergy</label>
                             </div>
@@ -2445,106 +2374,105 @@
                                 </div>
                             </div>
                         </div>
-                        <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Pulp</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="pulp9"
-                                       class="form-control col-sm-3" ng-model="cs8.pulp9">
+                        <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Pulp</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Land Only</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="landOnly9"
-                                       class="form-control col-sm-3" ng-model="cs8.landOnly9">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="pulp9"
+                                           class="form-control col-sm-3" ng-model="cs8.pulp9">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="solidWoodProducts9"
-                                       class="form-control col-sm-3" ng-model="cs8.solidWoodProducts9">
+                        <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Land Only</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="paperBroker9"
-                                       class="form-control col-sm-3" ng-model="cs8.paperBroker9">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="landOnly9"
+                                           class="form-control col-sm-3" ng-model="cs8.landOnly9">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Paperboard Converter</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="paperboardConverter9"
-                                       class="form-control col-sm-3" ng-model="cs8.paperboardConverter9">
+                        <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Furniture</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="furniture9"
-                                       class="form-control col-sm-3" ng-model="cs8.furniture9">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="solidWoodProducts9"
+                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts9">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Towel/tissue</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="towel9"
-                                       class="form-control col-sm-3" ng-model="cs8.towel9">
+                        <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="paperBroker9"
+                                           class="form-control col-sm-3" ng-model="cs8.paperBroker9">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Paperboard Converter</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="paperboardConverter9"
+                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter9">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Furniture</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="furniture9"
+                                           class="form-control col-sm-3" ng-model="cs8.furniture9">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Towel/tissue</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="towel9"
+                                           class="form-control col-sm-3" ng-model="cs8.towel9">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printer</label>
                             </div>
@@ -2558,8 +2486,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                             </div>
@@ -2573,8 +2500,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Other</label>
                             </div>
@@ -2590,14 +2516,12 @@
                         </div>
                     </div>
                 </div>
-                <br/>
-                <div style="padding-left: 0;" class="col-sm-12">
+                <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                     <strong>Non-hazardous and hazardous waste recycled, reused or recovered:
-                    What was the total amount of all non-hazardous and hazardous waste recycled, reused or recovered?
-                    </strong><br>
-                    <br>
+                        What was the total amount of all non-hazardous and hazardous waste recycled, reused or recovered?
+                    </strong>
                     <div class="pading-botoms padding-left-12">
-                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-bottom: 20px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printing writing paper</label>
                             </div>
@@ -2610,9 +2534,8 @@
                                     Metric tonnes
                                 </div>
                             </div>
-                            <br/>
                         </div>
-                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Packaging</label>
                             </div>
@@ -2626,8 +2549,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Bioenergy</label>
                             </div>
@@ -2641,106 +2563,105 @@
                                 </div>
                             </div>
                         </div>
-                        <br/><div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Pulp</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="pulp10"
-                                       class="form-control col-sm-3" ng-model="cs8.pulp10">
+                        <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Pulp</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Land Only</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="landOnly10"
-                                       class="form-control col-sm-3" ng-model="cs8.landOnly10">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="pulp10"
+                                           class="form-control col-sm-3" ng-model="cs8.pulp10">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="solidWoodProducts10"
-                                       class="form-control col-sm-3" ng-model="cs8.solidWoodProducts10">
+                        <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Land Only</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Paper Broker/Merchant</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="paperBroker10"
-                                       class="form-control col-sm-3" ng-model="cs8.paperBroker10">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="landOnly10"
+                                           class="form-control col-sm-3" ng-model="cs8.landOnly10">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Paperboard Converter</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="paperboardConverter10"
-                                       class="form-control col-sm-3" ng-model="cs8.paperboardConverter10">
+                        <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
-                            </div>
-                        </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Furniture</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="furniture10"
-                                       class="form-control col-sm-3" ng-model="cs8.furniture10">
-                            </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="solidWoodProducts10"
+                                           class="form-control col-sm-3" ng-model="cs8.solidWoodProducts10">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/><div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
-                        <div class="col-sm-10">
-                            <label style="margin-left: 15px;">Towel/tissue</label>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="col-sm-3">
-                                <input readonly disabled type="text" name="towel10"
-                                       class="form-control col-sm-3" ng-model="cs8.towel10">
+                        <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
-                            <div class="col-sm-5" style="margin-top: 8px;">
-                                Metric tonnes
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="paperBroker10"
+                                           class="form-control col-sm-3" ng-model="cs8.paperBroker10">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
                             </div>
                         </div>
-                    </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Paperboard Converter</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="paperboardConverter10"
+                                           class="form-control col-sm-3" ng-model="cs8.paperboardConverter10">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Furniture</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="furniture10"
+                                           class="form-control col-sm-3" ng-model="cs8.furniture10">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div class="col-sm-10">
+                                <label style="margin-left: 15px;">Towel/tissue</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <input readonly disabled type="text" name="towel10"
+                                           class="form-control col-sm-3" ng-model="cs8.towel10">
+                                </div>
+                                <div class="col-sm-5" style="margin-top: 8px;">
+                                    Metric tonnes
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printer</label>
                             </div>
@@ -2754,8 +2675,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                             </div>
@@ -2769,8 +2689,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-bottom: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Other</label>
                             </div>
@@ -2786,9 +2705,7 @@
                         </div>
                     </div>
                 </div>
-                <br/>
             </div>
-
 
         </div>
     </div>
