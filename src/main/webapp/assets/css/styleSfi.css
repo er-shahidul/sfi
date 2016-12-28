@@ -1284,3 +1284,7 @@ margin-top:2px;
 .boxsize-custom input[type=radio] {
 	height: 30px;
 }
+
+input.ng-invalid-number{
+	border: 1px solid #da4453 !important;
+}
