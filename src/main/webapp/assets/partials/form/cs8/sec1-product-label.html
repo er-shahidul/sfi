@@ -3,154 +3,136 @@
         My organization uses the following SFI label/claim on products that we sell:
     </span>
 </b></p>
-
-
-<div class="padding-left-50 fm-stl" ng-show="printingWritingPaper()">
-    <p><b>Printing writing paper</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_1" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_1" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_1" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_1" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_1, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_1">
+<div style="margin-bottom: 30px;">
+    <div class="padding-left-50 fm-stl" ng-show="printingWritingPaper()" style="margin-bottom: 20px;">
+        <p><b>Printing writing paper</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_1" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_1" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_1" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_1" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_1, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_1">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="packaging()" style="margin-bottom: 20px;">
+        <p><b>Packaging</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_2" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_2" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_2" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_2" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_2, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_2">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="bioenergy()" style="margin-bottom: 20px;">
+        <p><b>Bioenergy</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_3" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_3" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_3" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_3" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_3, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_3">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="pulp()" style="margin-bottom: 20px;">
+        <p><b>Pulp</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_4" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_4" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_4" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_4" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_4, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_4">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="land()" style="margin-bottom: 20px;">
+        <p><b>Land Only</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_5" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_5" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_5" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_5" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_5, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_5">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="solidWood()" style="margin-bottom: 20px;">
+        <p><b>Solid wood products (includes logs)</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_6" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_6" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_6" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_6" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_6, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_6">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="paperMerchant()" style="margin-bottom: 20px;">
+        <p><b>Paper Broker/Merchant</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_7" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_7" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_7" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_7" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_7, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_7">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="paperBoard()" style="margin-bottom: 20px;">
+        <p><b>Paperboard Converter</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_8" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_8" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_8" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_8" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_8, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_8">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="furniture()" style="margin-bottom: 20px;">
+        <p><b>Furniture</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_9" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_9" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_9" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_9" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_9, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_9">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="towelTissue()" style="margin-bottom: 20px;">
+        <p><b>Towel/tissue</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_10" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_10" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_10" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_10" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_10, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_10">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="printer()" style="margin-bottom: 20px;">
+        <p><b>Printer</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_11" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_11" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_11" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_11" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_11, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_11">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="woodMerchant()" style="margin-bottom: 20px;">
+        <p><b>Wood Broker/paperMerchant</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_12" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_12" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_12" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_12" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_12, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_12">
+        </div>
+    </div>
+    <div class="padding-left-50 fm-stl" ng-show="other()" style="margin-bottom: 20px;">
+        <p><b>Other</b></p>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_13" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_13" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_13" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
+        <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_13" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
+        <div ng-show="isSelected(cs8.sfiLabelProductSell_13, '4')" style="margin-bottom: 25px;">
+            Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_13">
+        </div>
     </div>
 </div>
-
-
-<div class="padding-left-50 fm-stl" ng-show="packaging()">
-    <p><b>Packaging</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_2" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_2" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_2" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_2" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_2, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_2">
-    </div>
-</div>
-
-<div class="padding-left-50 fm-stl" ng-show="bioenergy()">
-    <p><b>Bioenergy</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_3" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_3" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_3" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_3" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_3, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_3">
-    </div>
-</div>
-
-<div class="padding-left-50 fm-stl" ng-show="pulp()">
-    <p><b>Pulp</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_4" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_4" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_4" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_4" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_4, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_4">
-    </div>
-</div>
-
-<div class="padding-left-50 fm-stl" ng-show="land()">
-    <p><b>Land Only</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_5" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_5" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_5" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_5" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_5, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_5">
-    </div>
-</div>
-
-<div class="padding-left-50 fm-stl" ng-show="solidWood()">
-    <p><b>Solid wood products (includes logs)</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_6" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_6" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_6" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_6" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_6, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_6">
-    </div>
-</div>
-
-<div class="padding-left-50 fm-stl" ng-show="paperMerchant()">
-    <p><b>Paper Broker/Merchant</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_7" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_7" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_7" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_7" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_7, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_7">
-    </div>
-</div>
-
-<div class="padding-left-50 fm-stl" ng-show="paperBoard()">
-    <p><b>Paperboard Converter</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_8" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_8" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_8" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_8" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_8, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_8">
-    </div>
-</div>
-
-<div class="padding-left-50 fm-stl" ng-show="furniture()">
-    <p><b>Furniture</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_9" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_9" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_9" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_9" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_9, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_9">
-    </div>
-</div>
-
-<div class="padding-left-50 fm-stl" ng-show="towelTissue()">
-    <p><b>Towel/tissue</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_10" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_10" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_10" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_10" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_10, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_10">
-    </div>
-</div>
-
-
-<div class="padding-left-50 fm-stl" ng-show="printer()">
-    <p><b>Printer</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_11" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_11" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_11" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_11" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_11, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_11">
-    </div>
-</div>
-
-
-<div class="padding-left-50 fm-stl" ng-show="woodMerchant()">
-    <p><b>Wood Broker/paperMerchant</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_12" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_12" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_12" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_12" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_12, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_12">
-    </div>
-</div>
-
-<div class="padding-left-50 fm-stl" ng-show="other()">
-    <p><b>Other</b></p>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_13" checklist-value="'1'"> SFI Certified Sourcing</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_13" checklist-value="'2'"> SFI Chain-of-Custody – X% Certified Forest Content</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_13" checklist-value="'3'"> SFI Chain-of-Custody-Volume Credit</label><br/>
-    <label class="form-inline"><input type="checkbox" icheck  checklist-model="cs8.sfiLabelProductSell_13" checklist-value="'4'"> n/a - We don't use an SFI claim/label on SFI sourced material.</label><br/>
-    <div ng-show="isSelected(cs8.sfiLabelProductSell_13, '4')">
-        Please Explain: <input type="text" maxlength="255" class="form-control shorter" ng-model="cs8.sfiLabelProductSell_explain_13">
-    </div>
-</div>
-
-<br/>
-
 

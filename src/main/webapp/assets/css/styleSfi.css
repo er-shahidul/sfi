@@ -1277,3 +1277,10 @@ margin-top:2px;
 		font-size: 11pt;
 	}
 }
+
+.boxsize-custom >tbody>tr>td{
+	padding: 10px;
+}
+.boxsize-custom input[type=radio] {
+	height: 30px;
+}
