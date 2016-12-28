@@ -1277,3 +1277,7 @@ margin-top:2px;
 		font-size: 11pt;
 	}
 }
+
+input.ng-invalid-number{
+	border: 1px solid #da4453 !important;
+}
