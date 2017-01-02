@@ -122,16 +122,16 @@
     <tr>
         <td colspan="3" style="border: 0;">
             <div style="margin-left: 35px;margin-top: 20px;">
-                <p class="question-style">
+                 <p class="question-style">
                     In your opinion, has the number of trained wood producers in your region of your forestlands changed as
                     compared with last year?
-                </p>
-                 <span ng-show="operateInUsa() || operateInCa()">
+                 </p>
+                 <span ng-show="hasPrimaryYards() && (operateInUsa() || operateInCa())">
                     <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
                     <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
                     <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
                  </span>
-                 <span ng-show="!operateInUsa() && !operateInCa()">
+                 <span ng-show="!hasPrimaryYards()">
                     <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
                     <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
                     <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
