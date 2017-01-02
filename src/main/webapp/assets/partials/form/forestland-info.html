@@ -61,8 +61,11 @@
     <div ng-init="errors = cs2.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
     <div class="col-sm-12 sfiStep2TableHeader" ng-class="{'disabled' : !ownsForestLands()}">
-        <h5 class="section-header">2. Forestland Information</h5>
+        <h5 class="section-header">2. Forests, Chemicals & Conversion</h5>
 
+        <label>
+            <u><h6 style="font-weight: bold;">I. Forestland Information</h6></u>
+        </label>
         <form name="cs2Form" novalidate >
             <span>
                 Provide forestland information on all forests your organization owns/manages as well as forestland
@@ -604,9 +607,9 @@
         <form>
 
             <div>
-                <h5>
-                    Forest Conversion and Chemical Use
-                </h5>
+                <label>
+                    <u><h6 style="font-weight: bold;">II. Chemical Use and Forest Conversion</h6></u>
+                </label>
 
                 <p>
                     The 2015-2019 SFI Forest Management Standard has new performance measures related to forest conversion
