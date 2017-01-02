@@ -222,7 +222,10 @@
 <div class="form-group">
     <select ng-model="regionId" id="regionId" ng-change="isUsCanadaExist()" ng-disabled="!hasPrimaryYards()">
         <option value="0">&lt;Select the region of your fiber source&gt;</option>
-        <option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
+        <option readonly="readonly" disabled>All States (United States)</option>
+        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52>{{item.id}}">{{item.name}}</option>
+        <option readonly="readonly" disabled value="52">All Provinces (Canada)</option>
+        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52<{{item.id}}">{{item.name}}</option>
         <option ng-show="operateInOthers()" value="-1">Outside USA & Canada</option>
     </select>
 </div>
