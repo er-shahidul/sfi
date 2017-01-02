@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-                <div ng-show="cs4.harvesUnitCompleteLastYeaQualifyHAAC">
+                <div ng-show="cs4.harvesUnitCompleteLastYeaQualifyHAAC" style="margin-left: 29px;">
                     <div class="form-group" ng-class="{'has-error' : hasError('usaTotalHervArea')}">
                         <label> Final Total Clearcut: What is the total area of final harvest units completed last year by clearcutting?</label>
                         <input readonly type="number" class="form-control required shortest" name="usaTotalHervArea"
@@ -270,7 +270,7 @@
                     </div>
                 </div>
 
-                <div ng-show="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
+                <div ng-show="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC" style="margin-left: 29px;">
                     <div class="form-group" ng-class="{'has-error' : hasError('caTotalHervArea')}">
                         <label>Final Total Clearcut: What is the total area of final harvest units completed last year by clearcutting?</label>
                         <input readonly type="number" class="form-control required shortest" name="caTotalHervArea"
@@ -289,8 +289,6 @@
                     <div class="form-group">
 
                         <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
-
-                        <div class="form-group">
 
                             <input readonly disabled type="checkbox" class="form-group icheck" icheck ng-model="cs4.caGovRegulation">
                             <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
@@ -381,10 +379,6 @@
 
                         </div>
                     </div>
-                    </div>
-                </div>
-
-                <div>
                     <div style="margin-bottom: 10px;">
                         Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)?
                     </div>
