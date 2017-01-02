@@ -1277,3 +1277,13 @@ color:#9A9A9A;
 margin-top:2px;
 
 }
+
+.success-active{
+	text-decoration: underline;
+}
+.error-active{
+	text-decoration: underline;
+}
+.active{
+	text-decoration: underline;
+}

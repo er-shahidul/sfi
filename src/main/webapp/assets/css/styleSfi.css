@@ -1288,3 +1288,13 @@ margin-top:2px;
 input.ng-invalid-number{
 	border: 1px solid #da4453 !important;
 }
+
+.success-active{
+	text-decoration: underline;
+}
+.error-active{
+	text-decoration: underline;
+}
+.active{
+	text-decoration: underline;
+}
