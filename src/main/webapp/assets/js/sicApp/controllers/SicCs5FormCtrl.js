@@ -14,7 +14,6 @@ sfiSicApp
         $scope.forest2015 = {};
         $scope.fiber2015  = {};
         $scope.standard2010  = {
-            //circumstancesDoc : {}
         };
 
         $scope.standardDoc = {};
@@ -95,8 +94,6 @@ sfiSicApp
         $scope.getTotalInquiriesReceived = function(){
 
             var total = 0;
-            if($scope.cs5.sfiStandardVersion == 1){
-
                 _.each($scope.cs5.forestStandards2015, function(object){
                     total += object.resolved + object.unresolved;
                 });
@@ -105,20 +102,8 @@ sfiSicApp
                     total += object.resolved + object.unresolved;
                 });
 
-
-            }
-
-            if($scope.cs5.sfiStandardVersion == 2){
-
-                _.each($scope.cs5.standardObjectives2010, function(object){
-                    total += object.resolved + object.unresolved;
-                });
-
-
-            }
-
             return total;
-        }
+        };
 
         $scope.forestObjectives = [
             { id:1 , value:  'Objective 1. Forest Management Planning'},
@@ -204,12 +189,9 @@ sfiSicApp
                 });
         }
 
-
         $scope.setForms = function(){
             $rootScope.$form = $scope.csfForm;
         }
-
-
 
     }]);
 
