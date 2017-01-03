@@ -5,12 +5,10 @@ import com.rbs.www.common.models.BaseViewModel;
 import com.rbs.www.common.util.JsonDateSerializer;
 import com.rbs.www.web.common.models.viewmodels.SfiPpFormRegionViewModel;
 import com.rbs.www.web.sfi.validation.SfiPpFormCs3OrgList.SfiPpFormCs3OrgList;
-import javafx.util.Duration;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
 
@@ -50,7 +48,9 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Date startDate;
 
     @NotNull(message = "{project.enddate}")
-    private String endDate;
+    private Date endDate;
+
+    private String endDate1;
 
     private Integer sfiPpForm;
 
@@ -251,22 +251,21 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.startDate = startDate;
     }
 
-//    @JsonSerialize(using=JsonDateSerializer.class)
-//    public Date getEndDate() {
-//        return endDate;
-//    }
-//
-//    public void setEndDate(Date endDate) {
-//        this.endDate = endDate;
-//    }
-
-
-    public String getEndDate() {
+    @JsonSerialize(using=JsonDateSerializer.class)
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public String getEndDate1(Date endDate) {
+        return endDate1;
+    }
+
+    public void setEndDate1(String endDate1) {
+        this.endDate1 = endDate1;
     }
 
     public Integer getSfiPpForm() {
@@ -363,9 +362,8 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
             return false;
         }
         Date compareDate = sdf.parse("2016-01-01");
-        Date endDate = sdf.parse(this.endDate);
 
-        return getDifferenceDays(compareDate,endDate) >= 1;
+        return getDifferenceDays(compareDate,this.endDate) >= 1;
 
     }
 
