@@ -121,37 +121,37 @@ sfiSicApp
         }
 
         $scope.forestObjectives = [
-            { id:1 , value:  'Communications and Public Reporting'},
-            { id:2 , value:  'Community Involvement and Landowner Outreach'},
-            { id:3 , value:  'Conservation of Biological Diversity'},
-            { id:4 , value:  'Efficient Use of Fiber Resources'},
-            { id:5 , value:  'Forest Health and Productivity'},
-            { id:6 , value:  'Forest Management Planning'},
-            { id:7 , value:  'Forestry Research, Science and Technology'},
-            { id:8 , value:  'Legal and Regulatory Compliance'},
-            { id:9 , value:  'Management Review and Continual Improvement'},
-            { id:10 , value: 'Management of Visual Quality and Recreation Benefits'},
-            { id:11 , value: 'Protection and Maintenance of Water Resources'},
-            { id:12 , value: 'Protection of Special Sites'},
-            { id:13 , value: 'Public Land Management Responsibilities'},
-            { id:14 , value: 'Recognize and Respect Indigenous People\'s Right'},
-            { id:15 , value: 'Training and Education'}
+            { id:1 , value:  'Objective 1. Forest Management Planning'},
+            { id:2 , value:  'Objective 2. Forest Health and Productivity'},
+            { id:3 , value:  'Objective 3. Protection and Maintenance of Water Resources'},
+            { id:4 , value:  'Objective 4. Conservation of Biological Diversity'},
+            { id:5 , value:  'Objective 5. Management of Visual Quality and Recreational Benefits'},
+            { id:6 , value:  'Objective 6. Protection of Special Sites'},
+            { id:7 , value:  'Objective 7. Efficient Use of Fiber Resources'},
+            { id:8 , value:  'Objective 8. Recognize and Respect Indigenous People\'s Rights'},
+            { id:9 , value:  'Objective 9. Legal and Regulatory Compliance'},
+            { id:10 , value: 'Objective 10. Forestry Research, Science and Technology'},
+            { id:11 , value: 'Objective 11. Training and Education'},
+            { id:12 , value: 'Objective 12. Community Involvement and Landowner Outreach'},
+            { id:13 , value: 'Objective 13. Public Land Management Responsibilities'},
+            { id:14 , value: 'Objective 14. Communications and Public Reporting'},
+            { id:15 , value: 'Objective 15. Management Review and Continual Improvement'}
         ];
 
         $scope.fiberObjectives = [
-            { id:1 , value:  'Adherence to Best Management Practices'},
-            { id:2 , value:  'Avoidance of Controversial Sources including Fiber Sources from Areas without Effective Social Laws'},
-            { id:3 , value:  'Avoidance of Controversial Sources including Illegal Logging'},
-            { id:4 , value:  'Biodiversity in Fiber Sourcing'},
-            { id:5 , value:  'Communications and Public Reporting'},
-            { id:6 , value:  'Community Involvement and Landowner Outreach'},
-            { id:7 , value:  'Forestry Research, Science and Technology'},
-            { id:8 , value:  'Legal and Regulatory Compliance'},
-            { id:9 , value:  'Management Review and Continual Improvement'},
-            { id:10 , value: 'Promote Conservation of Biological Diversity, Biodiversity Hotspots and High-Biodiversity Wilderness Areas'},
-            { id:11 , value: 'Public Land Management Responsibilities'},
-            { id:12 , value: 'Training and Education'},
-            { id:13 , value: 'Use of Qualified Resources and Qualified Logging Professionals'}
+            { id:1 , value:  'Objective 1. Biodiversity in Fiber Sourcing'},
+            { id:2 , value:  'Objective 2. Adherence to Best Management Practices'},
+            { id:3 , value:  'Objective 3. Use of Qualified Resource and Qualified Logging Professionals'},
+            { id:4 , value:  'Objective 4. Legal and Regulatory Compliance'},
+            { id:5 , value:  'Objective 5. Forestry Research, Science and Technology'},
+            { id:6 , value:  'Objective 6. Training and Education'},
+            { id:7 , value:  'Objective 7. Community Involvement and Landowner Outreach'},
+            { id:8 , value:  'Objective 8. Public Land Management Responsibilities'},
+            { id:9 , value:  'Objective 9. Communications and Public Reporting'},
+            { id:10 , value: 'Objective 10. Management Review and Continual Improvement'},
+            { id:11 , value: 'Objective 11. Promote Conservation of Biological Diversity, Biodiversity Hotspots and High-Biodiversity Wilderness Areas'},
+            { id:12 , value: 'Objective 12. Avoidance of Controversial Sources including Illegal Logging'},
+            { id:13 , value: 'Objective 13. Avoidance of Controversial Sources including Fiber Sourced from Areas without Effective Social Laws'}
 
         ];
 
