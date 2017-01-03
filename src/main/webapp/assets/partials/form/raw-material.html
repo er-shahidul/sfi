@@ -182,7 +182,7 @@
 
     <br/><br/>
 
-    <table class="table table-striped" ng-show="usCanada.length || usOthers.length">
+    <table class="table table-striped" ng-show="(hasPrimaryYards() && (operateInUsa() || operateInCa())) && (usCanada.length || usOthers.length)">
         <thead>
         <tr>
             <th>Regions</th>
