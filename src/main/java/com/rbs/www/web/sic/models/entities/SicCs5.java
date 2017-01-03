@@ -48,7 +48,7 @@ public class SicCs5 extends BaseEntityModel {
     private Integer totalInquiriesReceived;
 
     @Column(name = "cs5_totalInconsistentPractices", nullable = true)
-    private Integer totalInconsistentPractices;
+    private Integer totalInconsistentPractices = 0;
 
     @Column(name = "cs5_sfiStandardVersion", nullable = true)
     private Integer sfiStandardVersion;

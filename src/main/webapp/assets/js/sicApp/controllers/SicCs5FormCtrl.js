@@ -23,6 +23,7 @@ sfiSicApp
         $scope.cs5.forestStandards2015    = $scope.cs5.forestStandards2015 || [];
         $scope.cs5.fiberSourcing2015      = $scope.cs5.fiberSourcing2015 || [];
         $scope.cs5.standardObjectives2010 = $scope.cs5.standardObjectives2010 || [];
+        $scope.cs5.totalInconsistentPractices = $scope.cs5.totalInconsistentPractices || 0;
 
 
         $scope.hasData = function(object){
