@@ -196,8 +196,8 @@
                 </div>
 
                 <div>
-                <div>
-                    <div style="margin-bottom: 10px;">
+                <div ng-show="cs4.harvesUnitCompleteLastYeaQualifyHAAC">
+                    <div>
                         Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)?
                     </div>
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shortest" name="usaFinalHarvestHAAC" min="0"
@@ -205,7 +205,7 @@
                           ng-model="cs4.usaFinalHarvestHAAC"> {{ unit }}
                     </div>
                 </div>
-                <div ng-show="cs4.usaFinalHarvestHAAC">
+                <div ng-show="cs4.usaFinalHarvestHAAC && cs4.harvesUnitCompleteLastYeaQualifyHAAC">
                     <input type="checkbox" class="icheck" icheck ng-model="cs4.usaSeedTreeShelterWood">
                     <label class="checkboxLabel">Seed tree and shelterwood</label>
 
@@ -386,7 +386,10 @@
                         </div>
                     </div>
                     </div>
-                    <div style="margin-bottom: 10px;">
+                </div>
+
+                <div ng-show="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
+                    <div>
                         Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)?
                     </div>
                     <div style="margin-bottom: 10px;">Area <input style="width: 15%;" type="number" class="form-control shortest" name="caFinalHarvestHAAC" min="0"
@@ -394,7 +397,7 @@
                                                                   ng-model="cs4.caFinalHarvestHAAC"> {{ unit }}
                     </div>
                 </div>
-                <div ng-show="cs4.caFinalHarvestHAAC">
+                <div ng-show="cs4.caFinalHarvestHAAC && cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
                     <input type="checkbox" class="icheck" icheck ng-model="cs4.caSeedTreeShelterWood">
                     <label class="checkboxLabel">Seed tree and shelterwood</label>
 

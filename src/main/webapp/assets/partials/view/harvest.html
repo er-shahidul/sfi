@@ -66,6 +66,7 @@
 
             <!-- Section for USA -->
             <div ng-show="operateInUsa()" class="formSection">
+
                 <label tooltip data-html="true" data-placement="top"
                        data-title="Completed harvest units: these questions are directed solely at harvest and regeneration activities on participant-owned lands, or lands under long-term lease to the participant, or lands for which the participant has forest management responsibilities. (A long-term lease is one that extends beyond a single rotation. If the number of years specified in or remaining on a lease is less than one rotation, the lands covered by such a lease would be considered “nonindustrial” lands for SFI program compliance and reporting requirements). Only refer to units where harvesting was completed in 2015. This includes harvesting activities that were started in 2015 and completed in 2016, but not those that were still underway by the end of the 2015 calendar/fiscal year.">
                     <u><h6 style="font-weight: bold;">I. HARVEST</h6></u>
@@ -75,7 +76,7 @@
                 <div>
                     <div style="margin-bottom: 10px;">Total Final Harvest: What is the total area of harvest units completed last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
 
-                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly disabled type="number" class="form-control shorter" name="harvesUnitCompleteLastYeaQualifyHAAC" min="0"
+                    <div style="margin-bottom: 10px;">Area <input readonly disabled style="width: 15%;" type="number" class="form-control shorter" name="harvesUnitCompleteLastYeaQualifyHAAC" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                                                   ng-model="cs4.harvesUnitCompleteLastYeaQualifyHAAC"> {{ unit }}
                     </div>
@@ -84,173 +85,178 @@
                 <div ng-show="cs4.harvesUnitCompleteLastYeaQualifyHAAC" style="margin-left: 29px;">
                     <div class="form-group" ng-class="{'has-error' : hasError('usaTotalHervArea')}">
                         <label> Final Total Clearcut: What is the total area of final harvest units completed last year by clearcutting?</label>
-                        <input readonly type="number" class="form-control required shortest" name="usaTotalHervArea"
+                        <input readonly disabled type="number" class="form-control shortest" name="usaTotalHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaTotalHervArea"> {{ unit }}
                     </div>
 
                     <div class="form-group" ng-class="{'has-error' : hasError('usaAvgHervArea')}">
                         <label>Average Clearcut: What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres)</label>
-                        <input readonly type="number" class="form-control required shortest" name="usaAvgHervArea"
+                        <input readonly disabled type="number" class="form-control shortest" name="usaAvgHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.usaAvgHervArea" > {{ unit }}
                     </div>
 
                     <div ng-show="cs4.usaAvgHervArea > {{ unitHaAc }}">
-                    <div class="form-group">
 
-                        <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
+                        <div class="form-group">
 
-                        <input readonly disabled type="checkbox" class="form-group icheck" icheck ng-model="cs4.usaGovRegulation">
-                        <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
-                        <br>
+                            <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
 
-                        <div class="form-group" ng-show="cs4.usaGovRegulation">
-                            <input placeholder="please explain" readonly type="text" class="form-control required shorter"
-                                   ng-required="cs4.usaGovRegulation" customerror
-                                   ng-model="cs4.usaGovRegulationExp">
-                        </div>
+                            <input readonly disabled type="checkbox" class="form-group icheck" icheck ng-model="cs4.usaGovRegulation">
+                            <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
+                            <br>
 
-
-                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResDiseaseInsects">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
-                        <br>
-
-                        <div class="form-group" ng-show="cs4.usaDisResDiseaseInsects">
-                            <input placeholder="please explain" readonly type="text" class="form-control required shorter"
-                                   ng-required="cs4.usaDisResDiseaseInsects" customerror
-                                   ng-model="cs4.usaDiseaseInsectsExp">
-                        </div>
-
-                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResFireSalvage">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
-                        <br>
-
-                        <div class="form-group" ng-show="cs4.usaDisResFireSalvage">
-                            <input placeholder="please explain" readonly type="text" class="form-control required shorter"
-                                   ng-required="cs4.usaDisResFireSalvage" customerror
-                                   ng-model="cs4.usaFireSalvageExp">
-                        </div>
-
-
-                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResWindthrow">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
-                        <br>
-
-                        <div class="form-group" ng-show="cs4.usaDisResWindthrow">
-                            <input placeholder="please explain" readonly type="text" class="form-control required shorter"
-                                   ng-required="cs4.usaDisResWindthrow" customerror
-                                   ng-model="cs4.usaWindthrowExp">
-                        </div>
-
-                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResHurricane">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
-                        <br>
-
-                        <div class="form-group" ng-show="cs4.usaDisResHurricane">
-                            <input placeholder="please explain" readonly type="text" class="form-control required shorter"
-                                   ng-required="cs4.usaDisResHurricane" customerror
-                                   ng-model="cs4.usaHurricaneExp">
-                        </div>
-
-                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResIceStorm">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
-                        <br>
-
-                        <div class="form-group" ng-show="cs4.usaDisResIceStorm">
-                            <input placeholder="please explain" readonly type="text" class="form-control required shorter"
-                                   ng-required="cs4.usaDisResIceStorm" customerror
-                                   ng-model="cs4.usaIceStormExp">
-                        </div>
-
-
-                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaOthersApply">
-                        <label class="checkboxLabel"> &nbsp;Other</label>
-
-                        <div class="form-group" ng-show="cs4.usaOthersApply">
-                            <input placeholder="please explain" readonly type="text" class="form-control required shorter"
-                                   ng-required="cs4.usaOthersApply" customerror
-                                   ng-model="cs4.usaOthersExp">
-                        </div>
-
-                        <div>
-                            <div style="margin-bottom: 10px;margin-top: 30px;">What is the total area of final harvest units completed last year by other methods? (HA or Acres)</div>
-
-                            <div>Area
-                                <input readonly disabled type="number" class="form-control shortest" name="harvesUnitCompleteLastYearMethodsHAAC" min="0"
-                                       ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                                       ng-model="cs4.harvesUnitCompleteLastYearMethodsHAAC"> {{ unit }}
+                            <div class="form-group" ng-show="cs4.usaGovRegulation">
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
+                                       ng-required="cs4.usaGovRegulation" customerror
+                                       ng-model="cs4.usaGovRegulationExp">
                             </div>
-                            <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.harvesUnitCompleteLastYearMethodsHAAC">
-                                <textarea readonly style="height: 60px;" type="text" class="form-control required shorter" placeholder="please explain"
+
+
+                            <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResDiseaseInsects">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.usaDisResDiseaseInsects">
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
+                                       ng-required="cs4.usaDisResDiseaseInsects" customerror
+                                       ng-model="cs4.usaDiseaseInsectsExp">
+                            </div>
+
+                            <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResFireSalvage">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.usaDisResFireSalvage">
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
+                                       ng-required="cs4.usaDisResFireSalvage" customerror
+                                       ng-model="cs4.usaFireSalvageExp">
+                            </div>
+
+
+                            <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResWindthrow">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.usaDisResWindthrow">
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
+                                       ng-required="cs4.usaDisResWindthrow" customerror
+                                       ng-model="cs4.usaWindthrowExp">
+                            </div>
+
+                            <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResHurricane">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.usaDisResHurricane">
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
+                                       ng-required="cs4.usaDisResHurricane" customerror
+                                       ng-model="cs4.usaHurricaneExp">
+                            </div>
+
+                            <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResIceStorm">
+                            <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
+                            <br>
+
+                            <div class="form-group" ng-show="cs4.usaDisResIceStorm">
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
+                                       ng-required="cs4.usaDisResIceStorm" customerror
+                                       ng-model="cs4.usaIceStormExp">
+                            </div>
+
+
+                            <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaOthersApply">
+                            <label class="checkboxLabel"> &nbsp;Other</label>
+
+                            <div class="form-group" ng-show="cs4.usaOthersApply">
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
+                                       ng-required="cs4.usaOthersApply" customerror
+                                       ng-model="cs4.usaOthersExp">
+                            </div>
+
+                            <div>
+                                <div style="margin-bottom: 10px;margin-top: 30px;">What is the total area of final harvest units completed last year by other methods? (HA or Acres)</div>
+
+                                <div>Area
+                                    <input readonly disabled type="number" class="form-control shortest" name="harvesUnitCompleteLastYearMethodsHAAC" min="0"
+                                           ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                           ng-model="cs4.harvesUnitCompleteLastYearMethodsHAAC"> {{ unit }}
+                                </div>
+                                <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.harvesUnitCompleteLastYearMethodsHAAC">
+                                <textarea readonly disabled style="height: 60px;" type="text" class="form-control required shorter" placeholder="please explain"
                                           ng-required="cs4.harvesUnitCompleteLastYearMethodsHAAC" customerror
                                           ng-model="cs4.harvesUnitCompleteLastYearMethodsHAACExp"></textarea>
+                                </div>
                             </div>
+
                         </div>
-                    </div>
                     </div>
                 </div>
 
                 <div>
-                    <div style="margin-bottom: 10px;">
-                        Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)?
+                    <div ng-show="cs4.harvesUnitCompleteLastYeaQualifyHAAC">
+                        <div>
+                            Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)?
+                        </div>
+                        <div style="margin-bottom: 10px;">Area <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="usaFinalHarvestHAAC" min="0"
+                                                                      ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                                                      ng-model="cs4.usaFinalHarvestHAAC"> {{ unit }}
+                        </div>
                     </div>
-                    <div style="margin-bottom: 10px;">Area <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="usaFinalHarvestHAAC" min="0"
-                                                                  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                                                                  ng-model="cs4.usaFinalHarvestHAAC"> {{ unit }}
+                    <div ng-show="cs4.usaFinalHarvestHAAC && cs4.harvesUnitCompleteLastYeaQualifyHAAC">
+                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSeedTreeShelterWood">
+                        <label class="checkboxLabel">Seed tree and shelterwood</label>
+
+                        <div class="form-group" ng-show="cs4.usaSeedTreeShelterWood">
+                            <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="usaSeedTreeShelterWoodArea"
+                                   ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.usaSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-model="cs4.usaSeedTreeShelterWoodArea">  {{ unit }}
+
+                            <input readonly disabled style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                                   ng-required="cs4.usaSeedTreeShelterWood" customerror
+                                   ng-model="cs4.usaSeedTreeShelterWoodExp"/>
+                        </div>
+                        <br/>
+                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSelectionMethod">
+                        <label class="checkboxLabel">Selection methods</label>
+
+                        <div class="form-group" ng-show="cs4.usaSelectionMethod">
+                            <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="usaSelectionMethodArea"
+                                   ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.usaSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-model="cs4.usaSelectionMethodArea"> {{ unit }}
+
+                            <input readonly disabled style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                                   ng-required="cs4.usaSelectionMethod" customerror
+                                   ng-model="cs4.usaSelectionMethodExp"/>
+                        </div>
+                        <br/>
+                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSanitation">
+                        <label class="checkboxLabel">Thinning or sanitation salvage</label>
+                        <div class="form-group" ng-show="cs4.usaSanitation">
+                            <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="usaSanitationArea"
+                                   ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.usaSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                                   ng-model="cs4.usaSanitationArea"> {{ unit }}
+
+                            <input readonly disabled style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                                   ng-required="cs4.usaSanitation" customerror
+                                   ng-model="cs4.usaSanitationExp"/>
+                        </div>
+                        <br/>
+                        <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaOtherMethod">
+                        <label class="checkboxLabel">Other methods</label>
+
+                        <div class="form-group" ng-show="cs4.usaOtherMethod">
+                            <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="usaOtherMethodHAAC"
+                                   ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.usaOtherMethod" customerror
+                                   ng-model="cs4.usaOtherMethodHAAC"> {{ unit }}
+
+                            <input readonly disabled style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                                   ng-required="cs4.usaOtherMethod" customerror
+                                   ng-model="cs4.usaOtherMethodHAACExp"/>
+                        </div>
                     </div>
-                </div>
-                <div ng-show="cs4.usaFinalHarvestHAAC">
-                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSeedTreeShelterWood">
-                    <label class="checkboxLabel">Seed tree and shelterwood</label>
 
-                    <div class="form-group" ng-show="cs4.usaSeedTreeShelterWood">
-                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="usaSeedTreeShelterWoodArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                               ng-model="cs4.usaSeedTreeShelterWoodArea">  {{ unit }}
-
-                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
-                               ng-required="cs4.usaSeedTreeShelterWood" customerror
-                               ng-model="cs4.usaSeedTreeShelterWoodExp"/>
-                    </div>
-                    <br/>
-                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSelectionMethod">
-                    <label class="checkboxLabel">selection methods</label>
-
-                    <div class="form-group" ng-show="cs4.usaSelectionMethod">
-                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="usaSelectionMethodArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                               ng-model="cs4.usaSelectionMethodArea"> {{ unit }}
-
-                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
-                               ng-required="cs4.usaSelectionMethod" customerror
-                               ng-model="cs4.usaSelectionMethodExp"/>
-                    </div>
-                    <br/>
-                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSanitation">
-                    <label class="checkboxLabel">thinning or sanitation salvage</label>
-                    <div class="form-group" ng-show="cs4.usaSanitation">
-                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="usaSanitationArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
-                               ng-model="cs4.usaSanitationArea"> {{ unit }}
-
-                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
-                               ng-required="cs4.usaSanitation" customerror
-                               ng-model="cs4.usaSanitationExp"/>
-                    </div>
-                    <br/>
-                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaOtherMethod">
-                    <label class="checkboxLabel">Other methods</label>
-
-                    <div class="form-group" ng-show="cs4.usaOtherMethod">
-                        <input style="width: 15%;" readonly type="number" class="form-control shortest" name="usaOtherMethodHAAC"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.usaOtherMethod" customerror
-                               ng-model="cs4.usaOtherMethodHAAC"> {{ unit }}
-
-                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
-                               ng-required="cs4.usaOtherMethod" customerror
-                               ng-model="cs4.usaOtherMethodHAACExp"/>
-                    </div>
                 </div>
             </div>
             <!-- end -->
@@ -264,7 +270,7 @@
                 <div>
                     <div style="margin-bottom: 10px;">Total Final Harvest: What is the total area of harvest units completed last year that would qualify as <strong>final harvest (the removal of the remaining crop trees in a stand. It is anticipated that the time between final harvests on a given unit would typically correspond to the economic rotation age of the crop species)?</strong> (HA or Acres)</div>
 
-                    <div style="margin-bottom: 10px;">Area <input style="width: 15%;" readonly disabled type="number" class="form-control shortest" name="caHarvestUnitCompleteLastYeaQualifyHAAC" min="0"
+                    <div style="margin-bottom: 10px;">Area <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="caHarvestUnitCompleteLastYeaQualifyHAAC" min="0"
                                                                   ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                                                   ng-model="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC"> {{ unit }}
                     </div>
@@ -272,30 +278,31 @@
 
                 <div ng-show="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC" style="margin-left: 29px;">
                     <div class="form-group" ng-class="{'has-error' : hasError('caTotalHervArea')}">
-                        <label>Final Total Clearcut: What is the total area of final harvest units completed last year by clearcutting?</label>
-                        <input readonly type="number" class="form-control required shortest" name="caTotalHervArea"
+                        <label> Final Total Clearcut: What is the total area of final harvest units completed last year by clearcutting?</label>
+                        <input readonly disabled type="number" class="form-control shortest" name="caTotalHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caTotalHervArea"> {{ unit }}
                     </div>
 
                     <div class="form-group" ng-class="{'has-error' : hasError('caAvgHervArea')}">
                         <label>Average Clearcut: What was the average area of final harvest units that were clear-cut (even-aged):? (HA or Acres)</label>
-                        <input readonly type="number" class="form-control required shortest" name="caAvgHervArea"
+                        <input readonly disabled type="number" class="form-control shortest" name="caAvgHervArea"
                                ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caAvgHervArea" > {{ unit }}
                     </div>
 
                     <div ng-show="cs4.caAvgHervArea > {{ unitHaAc }}">
-                    <div class="form-group">
 
-                        <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
+                        <div class="form-group">
+
+                            <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
 
                             <input readonly disabled type="checkbox" class="form-group icheck" icheck ng-model="cs4.caGovRegulation">
                             <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
                             <br>
 
                             <div class="form-group" ng-show="cs4.caGovRegulation">
-                                <input placeholder="please explain" readonly type="text" class="form-control required shorter"
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
                                        ng-required="cs4.caGovRegulation" customerror
                                        ng-model="cs4.caGovRegulationExp">
                             </div>
@@ -306,8 +313,8 @@
                             <br>
 
                             <div class="form-group" ng-show="cs4.caDisResDiseaseInsects">
-                                <input placeholder="please explain" readonly type="text" class="form-control required shorter"
-                                       ng-required="cs4.ucaDisResDiseaseInsects" customerror
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
+                                       ng-required="cs4.caDisResDiseaseInsects" customerror
                                        ng-model="cs4.caDiseaseInsectsExp">
                             </div>
 
@@ -316,7 +323,7 @@
                             <br>
 
                             <div class="form-group" ng-show="cs4.caDisResFireSalvage">
-                                <input placeholder="please explain" readonly type="text" class="form-control required shorter"
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
                                        ng-required="cs4.caDisResFireSalvage" customerror
                                        ng-model="cs4.caFireSalvageExp">
                             </div>
@@ -327,7 +334,7 @@
                             <br>
 
                             <div class="form-group" ng-show="cs4.caDisResWindthrow">
-                                <input placeholder="please explain" readonly type="text" class="form-control required shorter"
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
                                        ng-required="cs4.caDisResWindthrow" customerror
                                        ng-model="cs4.caWindthrowExp">
                             </div>
@@ -337,7 +344,7 @@
                             <br>
 
                             <div class="form-group" ng-show="cs4.caDisResHurricane">
-                                <input placeholder="please explain" readonly type="text" class="form-control required shorter"
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
                                        ng-required="cs4.caDisResHurricane" customerror
                                        ng-model="cs4.caHurricaneExp">
                             </div>
@@ -347,7 +354,7 @@
                             <br>
 
                             <div class="form-group" ng-show="cs4.caDisResIceStorm">
-                                <input placeholder="please explain" readonly type="text" class="form-control required shorter"
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
                                        ng-required="cs4.caDisResIceStorm" customerror
                                        ng-model="cs4.caIceStormExp">
                             </div>
@@ -357,7 +364,7 @@
                             <label class="checkboxLabel"> &nbsp;Other</label>
 
                             <div class="form-group" ng-show="cs4.caOthersApply">
-                                <input placeholder="please explain" readonly type="text" class="form-control required shorter"
+                                <input readonly disabled placeholder="please explain" type="text" class="form-control required shorter"
                                        ng-required="cs4.caOthersApply" customerror
                                        ng-model="cs4.caOthersExp">
                             </div>
@@ -371,15 +378,17 @@
                                            ng-model="cs4.caHarvesUnitCompleteLastYearMethodsHAAC"> {{ unit }}
                                 </div>
                                 <div style="margin-left: 9px;margin-top: 20px;" class="form-group" ng-show="cs4.caHarvesUnitCompleteLastYearMethodsHAAC">
-                                <textarea readonly style="height: 60px;" type="text" class="form-control required shorter" placeholder="please explain"
-                                          ng-required="cs4.caHarvesUnitCompleteLastYearMethodsHAAC" customerror
-                                          ng-model="cs4.caHarvesUnitCompleteLastYearMethodsHAACExp"></textarea>
+                            <textarea readonly disabled style="height: 60px;" type="text" class="form-control required shorter" placeholder="please explain"
+                                      ng-required="cs4.caHarvesUnitCompleteLastYearMethodsHAAC" customerror
+                                      ng-model="cs4.caHarvesUnitCompleteLastYearMethodsHAACExp"></textarea>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    <div style="margin-bottom: 10px;">
+                </div>
+
+                <div ng-show="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
+                    <div>
                         Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)?
                     </div>
                     <div style="margin-bottom: 10px;">Area <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="caFinalHarvestHAAC" min="0"
@@ -387,55 +396,55 @@
                                                                   ng-model="cs4.caFinalHarvestHAAC"> {{ unit }}
                     </div>
                 </div>
-                <div ng-show="cs4.caFinalHarvestHAAC">
-                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSeedTreeShelterWood">
+                <div ng-show="cs4.caFinalHarvestHAAC && cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
+                    <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSeedTreeShelterWood">
                     <label class="checkboxLabel">Seed tree and shelterwood</label>
 
                     <div class="form-group" ng-show="cs4.caSeedTreeShelterWood">
-                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="caSeedTreeShelterWoodArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                        <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="caSeedTreeShelterWoodArea"
+                               ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.caSeedTreeShelterWood" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caSeedTreeShelterWoodArea">  {{ unit }}
 
-                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                        <input readonly disabled style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.caSeedTreeShelterWood" customerror
                                ng-model="cs4.caSeedTreeShelterWoodExp"/>
                     </div>
+
                     <br/>
-                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSelectionMethod">
-                    <label class="checkboxLabel">selection methods</label>
+                    <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSelectionMethod">
+                    <label class="checkboxLabel">Selection methods</label>
 
                     <div class="form-group" ng-show="cs4.caSelectionMethod">
-                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="caSelectionMethodArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                        <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="caSelectionMethodArea"
+                               ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.caSelectionMethod" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caSelectionMethodArea"> {{ unit }}
 
-                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                        <input readonly disabled style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.caSelectionMethod" customerror
                                ng-model="cs4.caSelectionMethodExp"/>
                     </div>
                     <br/>
-                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSanitation">
-                    <label class="checkboxLabel">thinning or sanitation salvage</label>
+                    <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSanitation">
+                    <label class="checkboxLabel">Thinning or sanitation salvage</label>
                     <div class="form-group" ng-show="cs4.caSanitation">
-                        <input style="width: 15%;" readonly type="number" class="form-control required shortest" name="caSanitationArea"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
+                        <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="caSanitationArea"
+                               ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.caSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
                                ng-model="cs4.caSanitationArea"> {{ unit }}
 
-                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                        <input readonly disabled style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.caSanitation" customerror
                                ng-model="cs4.caSanitationExp"/>
                     </div>
                     <br/>
-                    <input disabled type="checkbox" class="icheck" icheck ng-model="cs4.caOtherMethod">
+                    <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.caOtherMethod">
                     <label class="checkboxLabel">Other methods</label>
 
                     <div class="form-group" ng-show="cs4.caOtherMethod">
-                        <input style="width: 15%;" readonly type="number" class="form-control shortest" name="caOtherMethodHAAC"
-                               ng-pattern="/^\d*(\.\d{1,4})?$/" ng-required="cs4.caOtherMethod" customerror
+                        <input readonly disabled style="width: 15%;" type="number" class="form-control shortest" name="caOtherMethodHAAC"
+                               ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.caOtherMethod" customerror
                                ng-model="cs4.caOtherMethodHAAC"> {{ unit }}
 
-
-                        <input readonly style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
+                        <input readonly disabled style="margin-left: 10px;" type="text" class="form-control required shorter" placeholder="Please explain"
                                ng-required="cs4.caOtherMethod" customerror
                                ng-model="cs4.caOtherMethodHAACExp"/>
                     </div>
