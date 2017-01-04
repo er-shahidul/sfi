@@ -1289,10 +1289,10 @@ input.ng-invalid-number{
 	border: 1px solid #da4453 !important;
 }
 
-.success-active{
+.circleTxt.success-active{
 	text-decoration: underline;
 }
-.error-active{
+.circleTxt.error-active{
 	text-decoration: underline;
 }
 .circleTxt.active{
