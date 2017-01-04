@@ -1278,10 +1278,10 @@ margin-top:2px;
 
 }
 
-.success-active{
+.circleTxt.success-active{
 	text-decoration: underline;
 }
-.error-active{
+.circleTxt.error-active{
 	text-decoration: underline;
 }
 .circleTxt.active{
