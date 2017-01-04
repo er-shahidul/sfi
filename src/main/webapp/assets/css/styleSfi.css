@@ -1295,6 +1295,6 @@ input.ng-invalid-number{
 .error-active{
 	text-decoration: underline;
 }
-.active{
+.circleTxt.active{
 	text-decoration: underline;
 }

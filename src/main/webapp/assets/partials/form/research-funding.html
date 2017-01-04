@@ -239,7 +239,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="project in getProjects()" ng-if="project.shouldShow">
+                <tr ng-repeat="project in getProjects()" ng-if="project.shouldShow && project.projectNm && project.projectObj && project.startDate">
                     <td>{{ project.projectNm }}</td>
                     <td>{{ project.projectObj }}</td>
                     <td><a href="" ng-click="editProject($index)">Edit</a></td>
