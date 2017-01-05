@@ -48,6 +48,11 @@
 		font-family: sans-serif;
 		font-size: 11pt;
 	}
+
+	b{
+		font-family: sans-serif;
+		font-size: 11pt;
+	}
 }
 
 body {
@@ -1280,4 +1285,14 @@ margin-top:2px;
 .datepicker th.picker-switch
 {
 	cursor: pointer;
+}
+
+.circleTxt.success-active{
+	text-decoration: underline;
+}
+.circleTxt.error-active{
+	text-decoration: underline;
+}
+.circleTxt.active{
+	text-decoration: underline;
 }

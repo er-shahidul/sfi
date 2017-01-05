@@ -1279,4 +1279,30 @@ margin-top:2px;
 		font-family: sans-serif;
 		font-size: 11pt;
 	}
+
+	b{
+		font-family: sans-serif;
+		font-size: 11pt;
+	}
+}
+
+.boxsize-custom >tbody>tr>td{
+	padding: 10px;
+}
+.boxsize-custom input[type=radio] {
+	height: 30px;
+}
+
+input.ng-invalid-number{
+	border: 1px solid #da4453 !important;
+}
+
+.circleTxt.success-active{
+	text-decoration: underline;
+}
+.circleTxt.error-active{
+	text-decoration: underline;
+}
+.circleTxt.active{
+	text-decoration: underline;
 }

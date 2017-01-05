@@ -50,6 +50,11 @@
             font-family: sans-serif;
             font-size: 11pt;
         }
+
+        b{
+            font-family: sans-serif;
+            font-size: 11pt;
+        }
     }
 </style>
 <div class="row section_background_4">
@@ -117,16 +122,16 @@
     <tr>
         <td colspan="3" style="border: 0;">
             <div style="margin-left: 35px;margin-top: 20px;">
-                <p class="question-style">
+                 <p class="question-style">
                     In your opinion, has the number of trained wood producers in your region of your forestlands changed as
                     compared with last year?
-                </p>
-                 <span ng-show="operateInUsa() || operateInCa()">
+                 </p>
+                 <span ng-show="hasPrimaryYards() && (operateInUsa() || operateInCa())">
                     <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
                     <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
                     <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
                  </span>
-                 <span ng-show="!operateInUsa() && !operateInCa()">
+                 <span ng-show="!hasPrimaryYards()">
                     <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
                     <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
                     <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
@@ -177,7 +182,7 @@
 
     <br/><br/>
 
-    <table class="table table-striped" ng-show="usCanada.length || usOthers.length">
+    <table class="table table-striped" ng-show="(hasPrimaryYards() && (operateInUsa() || operateInCa())) && (usCanada.length || usOthers.length)">
         <thead>
         <tr>
             <th>Regions</th>
@@ -217,7 +222,10 @@
 <div class="form-group">
     <select ng-model="regionId" id="regionId" ng-change="isUsCanadaExist()" ng-disabled="!hasPrimaryYards()">
         <option value="0">&lt;Select the region of your fiber source&gt;</option>
-        <option ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
+        <option readonly="readonly" disabled>All States (United States)</option>
+        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52>{{item.id}}">{{item.name}}</option>
+        <option readonly="readonly" disabled value="52">All Provinces (Canada)</option>
+        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52<{{item.id}}">{{item.name}}</option>
         <option ng-show="operateInOthers()" value="-1">Outside USA & Canada</option>
     </select>
 </div>

@@ -49,6 +49,11 @@
             font-family: sans-serif;
             font-size: 11pt;
         }
+
+        b{
+            font-family: sans-serif;
+            font-size: 11pt;
+        }
     }
 </style>
 <div class="row section_background_5" id="row-cont" xmlns:th="http://www.thymeleaf.org">
@@ -216,7 +221,7 @@
 
                 <div class="form-group col-sm-12" ng-show="cs5.isInPartnership == false">
                     <div class="col-sm-2" style="text-align: right;">
-                        Please explain :
+                        Please explain
                     </div>
                     <div class="col-sm-10">
                         <textarea type="text" class="form-control required " customerror
@@ -234,7 +239,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="project in getProjects()" ng-if="project.shouldShow">
+                <tr ng-repeat="project in getProjects()" ng-if="project.shouldShow && project.projectNm && project.projectObj && project.startDate">
                     <td>{{ project.projectNm }}</td>
                     <td>{{ project.projectObj }}</td>
                     <td><a href="" ng-click="editProject($index)">Edit</a></td>

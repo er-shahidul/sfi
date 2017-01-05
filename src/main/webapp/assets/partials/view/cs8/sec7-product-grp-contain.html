@@ -2,653 +2,697 @@
     If you use the SFI label on your products, does the product group also contain:
 </b></p>
 
-<div class="padding-left-50 fm-stl" ng-show="printingWritingPaper()">
+<div class="padding-left-50 fm-stl" ng-show="printingWritingPaper()" style="margin-bottom: 20px;">
 
     <p><b>Printing writing paper</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_1" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_1" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_1, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_1_1"
                 ng-change="country_1_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_1, country_1_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_1 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_1 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1" ng-click="cs8.sfiLabelProductGroupContainFSC_Country_1 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_1, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_1" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_1" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_1" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
-    <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_1, '4')" >
-        <select disabled readonly class="form-control"
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_1" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_1" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_1" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
+    <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_1, '4')">
+        <select readonly disabled class="form-control"
                 ng-model="country_1_2"
                 ng-change="country_1_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_1, country_1_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_1 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_1 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_1, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_1 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="packaging()">
+<div class="padding-left-50 fm-stl" ng-show="packaging()" style="margin-bottom: 20px;">
     <p><b>Packaging</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_2" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_2" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_2, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_2_1"
                 ng-change="country_2_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_2, country_2_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_2 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_2 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_2 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_2, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_2" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_2" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_2" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_2" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_2" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_2" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_2, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_2_2"
                 ng-change="country_2_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_2, country_2_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_2 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_2 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_2, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_2 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="bioenergy()">
+<div class="padding-left-50 fm-stl" ng-show="bioenergy()" style="margin-bottom: 20px;">
     <p><b>Bioenergy</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_3" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_3" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_3, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_3_1"
                 ng-change="country_3_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_3, country_3_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_3 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_3 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_3 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_3, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_3" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_3" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_3" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_3" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_3" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_3" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_3, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_3_2"
                 ng-change="country_3_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_3, country_3_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_3 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_3 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_3, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_3 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="pulp()">
+<div class="padding-left-50 fm-stl" ng-show="pulp()" style="margin-bottom: 20px;">
     <p><b>Pulp</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_4" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_4" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_4, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_4_1"
                 ng-change="country_4_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_4, country_4_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_4 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_4 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_4 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_4, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_4" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_4" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_4" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_4" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_4" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_4" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_4, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_4_2"
                 ng-change="country_4_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_4, country_4_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_4 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_4 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_4, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_4 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="land()">
+<div class="padding-left-50 fm-stl" ng-show="land()" style="margin-bottom: 20px;">
     <p><b>Land Only</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_5" checklist-value="'1'">
-        FSC certified forest content
-    </label>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_5" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_5, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_5_1"
                 ng-change="country_5_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_5, country_5_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_5 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_5 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_5 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_5, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_5" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_5" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_5" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_5" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_5" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_5" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_5, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_5_2"
                 ng-change="country_5_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_5, country_5_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_5 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_5 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_5, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_5 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="solidWood()">
+<div class="padding-left-50 fm-stl" ng-show="solidWood()" style="margin-bottom: 20px;">
     <p><b>Solid wood products (includes logs)</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_6" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_6" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_6, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_6_1"
                 ng-change="country_6_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_6, country_6_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
 
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_6 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_6 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_6 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_6, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_6" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_6" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_6" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_6" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_6" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_6" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_6, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_6_2"
                 ng-change="country_6_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_6, country_6_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_6 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_6 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_6, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_6 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="paperMerchant()">
+<div class="padding-left-50 fm-stl" ng-show="paperMerchant()" style="margin-bottom: 20px;">
     <p><b>Paper Broker/Merchant</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_7" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_7" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_7, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_7_1"
                 ng-change="country_7_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_7, country_7_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_7 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_7 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_7 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_7, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_7" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_7" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_7" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_7" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_7" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_7" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_7, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_7_2"
                 ng-change="country_7_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_7, country_7_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_7 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_7 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_7, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_7 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="paperBoard()">
+<div class="padding-left-50 fm-stl" ng-show="paperBoard()" style="margin-bottom: 20px;">
     <p><b>Paperboard Converter</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_8" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_8" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_8, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_8_1"
                 ng-change="country_8_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_8, country_8_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_8 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_8 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_8 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_8, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_8" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_8" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_8" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_8" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_8" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_8" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_8, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_8_2"
                 ng-change="country_8_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_8, country_8_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_8 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_8 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_8, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_8 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="furniture()">
+<div class="padding-left-50 fm-stl" ng-show="furniture()" style="margin-bottom: 20px;">
     <p><b>Furniture</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_9" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_9" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_9, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_9_1"
                 ng-change="country_9_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_9, country_9_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_9 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_9 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_9 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_9, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_9" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_9" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_9" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_9" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_9" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_9" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_9, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_9_2"
                 ng-change="country_9_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_9, country_9_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_9 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_9 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_9, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_9 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="towelTissue()">
+<div class="padding-left-50 fm-stl" ng-show="towelTissue()" style="margin-bottom: 20px;">
     <p><b>Towel/tissue</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_10" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_10" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_10, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_10_1"
                 ng-change="country_10_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_10, country_10_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_10 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_10 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_10 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_10, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_10" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_10" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_10" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_10" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_10" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_10" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_10, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_10_2"
                 ng-change="country_10_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_10, country_10_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_10 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_10 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_10, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_10 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="printer()">
+<div class="padding-left-50 fm-stl" ng-show="printer()" style="margin-bottom: 20px;">
     <p><b>Printer</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_11" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_11" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_11, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_11_1"
                 ng-change="country_11_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_11, country_11_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_11 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_11 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_11 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_11, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_11" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_11" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_11" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_11" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_11" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_11" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_11, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_11_2"
                 ng-change="country_11_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_11, country_11_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_11 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_11 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_11, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_11 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="woodMerchant()">
+<div class="padding-left-50 fm-stl" ng-show="woodMerchant()" style="margin-bottom: 20px;">
     <p><b>Wood Broker/paperMerchant</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_12" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_12" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_12, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_12_1"
                 ng-change="country_12_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_12, country_12_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_12 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_12 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_12 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_12, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_12" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_12" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_12" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_12" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_12" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_12" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_12, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_12_2"
                 ng-change="country_12_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_12, country_12_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_12 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_12 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_12, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_12 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 
-<div class="padding-left-50 fm-stl" ng-show="other()">
+<div class="padding-left-50 fm-stl" ng-show="other()" style="margin-bottom: 20px;">
     <p><b>Other</b></p>
 
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_13" checklist-value="'1'">
-        FSC certified forest content
-    </label>
-
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_13" checklist-value="'1'">
+            FSC certified forest content
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_13, '1')">
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_13_1"
                 ng-change="country_13_1 = addCountry(cs8.sfiLabelProductGroupContainFSC_Country_13, country_13_1)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
-
-        <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_13 ">{{country.country}}
+        <div style="margin-bottom: 0;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainFSC_Country_13 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainFSC_Country_13 = delCountry(cs8.sfiLabelProductGroupContainFSC_Country_13, country.id)">x</button>
         </div>
     </div>
-    <br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_13" checklist-value="'2'">
-        CSA certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_13" checklist-value="'3'">
-        ATFS certified forest content
-    </label><br/>
-
-    <label class="form-inline">
-        <input disabled readonly type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_13" checklist-value="'4'">
-        Other PEFC endorsed standards
-    </label><br/>
-
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_13" checklist-value="'2'">
+            CSA certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 10px;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_13" checklist-value="'3'">
+            ATFS certified forest content
+        </label>
+    </p>
+    <p style="margin-bottom: 0;">
+        <label class="form-inline">
+            <input readonly disabled type="checkbox" icheck  checklist-model="cs8.sfiLabelProductGroupContain_13" checklist-value="'4'">
+            Other PEFC endorsed standards
+        </label>
     <div ng-show="isSelected(cs8.sfiLabelProductGroupContain_13, '4')" >
-        <select disabled readonly class="form-control"
+        <select readonly disabled class="form-control"
                 ng-model="country_13_2"
                 ng-change="country_13_2 = addCountry(cs8.sfiLabelProductGroupContainPEFC_Country_13, country_13_2)">
             <option value="0">Select country</option>
             <option ng-repeat="country in countries" value="{{ country.id }}">{{country.country}}</option>
         </select>
+        <div style="margin-bottom: 25px;" id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_13 ">{{country.country}}
+            <button type="button" class="close" aria-hidden="1"
+                    ng-click="cs8.sfiLabelProductGroupContainPEFC_Country_13 = delCountry(cs8.sfiLabelProductGroupContainPEFC_Country_13, country.id)">x</button>
+        </div>
     </div>
-
-    <div id="selectedItem" ng-repeat="country in cs8.sfiLabelProductGroupContainPEFC_Country_13 ">{{country.country}}
-    </div>
-    <br/>
+    </p>
 </div>
 

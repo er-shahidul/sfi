@@ -49,6 +49,11 @@
             font-family: sans-serif;
             font-size: 11pt;
         }
+
+        b{
+            font-family: sans-serif;
+            font-size: 11pt;
+        }
     }
 </style>
 <div class="row section_background_5" id="row-cont">
@@ -192,7 +197,7 @@
 
                 <div class="form-group col-sm-12" ng-show="cs5.isInPartnership == false">
                     <div class="col-sm-2" style="text-align: right;">
-                        Please explain :
+                        Please explain
                     </div>
                     <div class="col-sm-10">
                         <textarea readonly disabled type="text" class="form-control required " customerror
@@ -203,7 +208,7 @@
             </div>
 
             <div class="col-sm-10">
-                <div style="margin-top:55px;" class="cs3-project" ng-show="cs5.isInPartnership" ng-repeat="project in getProjects()" ng-if="project.shouldShow">
+                <div style="margin-top:55px;" class="cs3-project" ng-show="cs5.isInPartnership" ng-repeat="project in getProjects()" ng-if="project.shouldShow && project.projectNm && project.projectObj && project.startDate">
                     <form name="innerFrom"  novalidate>
                         <div class="form-group">
                             <div class="col-sm-2 col-xs-2" style="padding-left: 0;"
