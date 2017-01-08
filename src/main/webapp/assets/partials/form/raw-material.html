@@ -126,15 +126,15 @@
                     In your opinion, has the number of trained wood producers in your region of your forestlands changed as
                     compared with last year?
                  </p>
-                 <span ng-show="hasPrimaryYards() && (operateInUsa() || operateInCa())">
-                    <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
-                    <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
-                    <input icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
+                 <span ng-if="hasPrimaryYards() && (operateInUsa() || operateInCa())">
+                    <input type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="1"> Increased
+                    <input type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="2"> Decreased
+                    <input type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="3"> Remained the same
                  </span>
-                 <span ng-show="!hasPrimaryYards()">
-                    <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=1> Increased
-                    <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=2> Decreased
-                    <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value=3> Remained the same
+                 <span ng-if="!hasPrimaryYards()">
+                    <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="1"> Increased
+                    <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="2"> Decreased
+                    <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="3"> Remained the same
                  </span>
             </div>
         </td>
