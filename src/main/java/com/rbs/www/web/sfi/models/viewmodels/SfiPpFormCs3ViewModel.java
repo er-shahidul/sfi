@@ -45,12 +45,10 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
     private Boolean includeResearchFunding;
 
     @NotNull(message = "{project.startdate}")
-    private Date startDate;
+    private String startDate;
 
     @NotNull(message = "{project.enddate}")
-    private Date endDate;
-
-    private String endDate1;
+    private String endDate;
 
     private Integer sfiPpForm;
 
@@ -242,30 +240,20 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
         this.includeResearchFunding = includeResearchFunding;
     }
 
-    @JsonSerialize(using=JsonDateSerializer.class)
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    @JsonSerialize(using=JsonDateSerializer.class)
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
-    }
-
-    public String getEndDate1(Date endDate) {
-        return endDate1;
-    }
-
-    public void setEndDate1(String endDate1) {
-        this.endDate1 = endDate1;
     }
 
     public Integer getSfiPpForm() {
@@ -362,8 +350,9 @@ public class SfiPpFormCs3ViewModel extends BaseViewModel {
             return false;
         }
         Date compareDate = sdf.parse("2016-01-01");
+        Date endDate = sdf.parse(this.endDate);
 
-        return getDifferenceDays(compareDate,this.endDate) >= 1;
+        return getDifferenceDays(compareDate,endDate) >= 1;
 
     }
 

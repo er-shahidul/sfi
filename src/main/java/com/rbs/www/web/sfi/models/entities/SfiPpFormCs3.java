@@ -62,16 +62,11 @@ public class SfiPpFormCs3 extends BaseEntityModel {
     @Column(name = "cs3_conservatonPartners", nullable = true)
     private String conservatonPartners;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "cs3_startDate", nullable = true)
-    private Date startDate;
-
-    @Temporal(TemporalType.DATE)
-    @Column(name = "cs3_endDate", nullable = true)
-    private Date endDate;
+    @Column(name = "cs3_startDate1", nullable = true)
+    private String startDate;
 
     @Column(name = "cs3_endDate1", nullable = true)
-    private String endDate1;
+    private String endDate;
 
     @Column(name = "cs3_totalProjectCost", nullable = true)
     private Integer totalProjectCost;
@@ -296,30 +291,6 @@ public class SfiPpFormCs3 extends BaseEntityModel {
         this.conservatonPartners = conservatonPartners;
     }
 
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public String getEndDate1() {
-        return endDate1;
-    }
-
-    public void setEndDate1(String endDate1) {
-        this.endDate1 = endDate1;
-    }
-
     public Integer getTotalProjectCost() {
         return totalProjectCost;
     }
@@ -430,5 +401,21 @@ public class SfiPpFormCs3 extends BaseEntityModel {
 
     public void setCustomOrder(Integer customOrder) {
         this.customOrder = customOrder;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 }
