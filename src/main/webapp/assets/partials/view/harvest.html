@@ -195,7 +195,7 @@
                 </div>
 
                 <div>
-                    <div ng-show="cs4.harvesUnitCompleteLastYeaQualifyHAAC">
+                    <div>
                         <div>
                             Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)?
                         </div>
@@ -204,7 +204,7 @@
                                                                       ng-model="cs4.usaFinalHarvestHAAC"> {{ unit }}
                         </div>
                     </div>
-                    <div ng-show="cs4.usaFinalHarvestHAAC && cs4.harvesUnitCompleteLastYeaQualifyHAAC">
+                    <div ng-show="cs4.usaFinalHarvestHAAC">
                         <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.usaSeedTreeShelterWood">
                         <label class="checkboxLabel">Seed tree and shelterwood</label>
 
@@ -387,7 +387,7 @@
                     </div>
                 </div>
 
-                <div ng-show="cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
+                <div>
                     <div>
                         Total Harvest NOT Classified as Final: What was the total area of harvest units complete last year NOT classified as <strong>final harvest</strong>? (HA or Acres)?
                     </div>
@@ -396,7 +396,7 @@
                                                                   ng-model="cs4.caFinalHarvestHAAC"> {{ unit }}
                     </div>
                 </div>
-                <div ng-show="cs4.caFinalHarvestHAAC && cs4.caHarvestUnitCompleteLastYeaQualifyHAAC">
+                <div ng-show="cs4.caFinalHarvestHAAC">
                     <input readonly disabled type="checkbox" class="icheck" icheck ng-model="cs4.caSeedTreeShelterWood">
                     <label class="checkboxLabel">Seed tree and shelterwood</label>
 
