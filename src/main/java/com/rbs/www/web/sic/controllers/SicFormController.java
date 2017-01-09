@@ -9,13 +9,16 @@ import com.rbs.www.web.common.services.SfiPpFormAllCountryService;
 import com.rbs.www.web.common.services.SfiPpFormRegionService;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjective2015Service;
 import com.rbs.www.web.sfi.services.SfiPpFormCs3ProjectStandardObjectiveService;
+import com.rbs.www.web.sic.models.entities.SicFormOld;
 import com.rbs.www.web.sic.models.viewmodels.SicCs10ViewModel;
+import com.rbs.www.web.sic.models.viewmodels.SicFormOldViewModel;
 import com.rbs.www.web.sic.services.*;
 import com.rbs.www.web.sic.models.entities.SicFormData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -37,6 +40,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.Objects;
 
@@ -53,6 +59,9 @@ public class SicFormController{
 
     @Autowired
     private SicFormService sicFormService;
+
+    @Autowired
+    SicFormOldService sicFormOldService;
 
     @Autowired
     UserService userService;
@@ -191,6 +200,7 @@ public class SicFormController{
     public String adminSicForm(ModelMap model) {
         model.addAttribute("title", "sic");
         model.addAttribute("sicPpForms", sicFormDataService.getAll());
+        model.addAttribute("sicFormsOld", sicFormOldService.getAll());
 
         return "admin/form/admin_form_sic";
     }
@@ -199,10 +209,34 @@ public class SicFormController{
     public String userSicForm(ModelMap model) {
         model.addAttribute("title", "sic");
         model.addAttribute("sicPpForms", sicFormDataService.createOrGetByCurrentUsersCompany());
+        model.addAttribute("sicFormsOld", sicFormOldService.createOrGetByCurrentUsersCompany());
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         model.addAttribute("company", sicFormData.getCompany());
 
         return "admin/form/admin_form_sic";
+    }
+
+    @RequestMapping(value = "/sicForm/pdf/{id}", method = RequestMethod.GET, produces = "application/pdf")
+    public ResponseEntity<byte[]> viewPdf(@PathVariable Integer id, HttpServletRequest request) {
+        SicFormOldViewModel model = formService.getSicFormOldViewModel(id);
+        String originalPath;
+
+        originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/pdf/sic/2015/";
+
+        Path path = Paths.get(originalPath+model.getFileName()+".pdf");
+
+        byte[] pdfContents = null;
+        try {
+            pdfContents = Files.readAllBytes(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("content-disposition", "inline;filename=" + path);
+        ResponseEntity<byte[]> response = new ResponseEntity<byte[]>(
+                pdfContents, headers, HttpStatus.OK);
+        return response;
     }
 
     private static String getFileExtension(String fileName) {
@@ -238,6 +272,32 @@ public class SicFormController{
         if(model != null){
             model.setApproved(!model.getApproved());
             sicFormDataService.update(model);
+
+            User user = userService.findByCompany(model.getCompany());
+            String subject = "Successfully Submission of your SFI Annual Survey!";
+            String message = "-";
+            String mailType = "approved";
+
+            String domain = this.domain;
+
+            URL requestURL = new URL(request.getRequestURL().toString());
+            String port = requestURL.getPort() == -1 ? "" : ":" + requestURL.getPort();
+            String urlString =  requestURL.getProtocol() + "://" + requestURL.getHost() + port;
+
+            sendEmail(user.getEmail(), subject, message, user, mailType, urlString);
+
+            return new ResponseEntity<String>("Successfully Approved", HttpStatus.OK);
+        }else {
+            return new ResponseEntity<String>("Invalid Form", HttpStatus.OK);
+        }
+    }
+
+    @RequestMapping(value = "/admin/company/sic/form/old/approve/{id}", method = RequestMethod.GET)
+    public ResponseEntity<String> adminSfiForm2014Edit(@PathVariable Integer id, HttpServletRequest request) throws MalformedURLException {
+        SicFormOld model = sicFormOldService.get(id);
+        if(model != null){
+            model.setApproved(!model.getApproved());
+            sicFormOldService.update(model);
 
             User user = userService.findByCompany(model.getCompany());
             String subject = "Successfully Submission of your SFI Annual Survey!";

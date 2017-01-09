@@ -87,6 +87,28 @@
                                                         <input th:disabled="${!sicPpForm.isApproveButtonEnable()}" th:checked="${sicPpForm.getApproved()}"  type="checkbox" class="sic_approve_button" />
                                                     </td>
                                                 </tr>
+                                                <tr th:each="sicFormOld, iterationStatus : ${sicFormsOld}">
+
+                                                    <td>
+                                                        <span th:text="${sicFormOld.year}"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span th:text="${sicFormOld.company.name}"></span>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>2015-04-29</td>
+                                                    <td><span th:text="${sicFormOld.getStatusText()}"></span></td>
+                                                    <td>2015-04-29</td>
+                                                    <td>
+                                                        <a th:href="@{'/sicForm/pdf/' + ${sicFormOld.id}}" target="_blank">
+                                                            <u>Open PDF</u>
+                                                        </a>
+                                                    </td>
+                                                    <td  sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
+                                                        <a th:href="@{'/admin/company/sic/form/old/approve/' + ${sicFormOld.id}}" style="display: none" />
+                                                        <input th:disabled="${sicFormOld.getApproved()}" th:checked="${sicFormOld.getApproved()}" type="checkbox" class="sfi_approve_button" />
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>

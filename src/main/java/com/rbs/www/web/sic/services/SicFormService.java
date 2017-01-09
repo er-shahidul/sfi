@@ -58,6 +58,8 @@ public class SicFormService {
     @Autowired
     private ValidationService validationService;
 
+    @Autowired
+    private SicFormOldService sicFormOldService;
 
     /************************* SicCs1 : Begin ***********************/
     public SicCs1ViewModel getSicCs1ViewModel(Integer id) {
@@ -202,4 +204,15 @@ public class SicFormService {
         return model;
     }
     /************************* UpdateDate : End   *******************/
+
+    /************************* SicFormOld : Begin *******************/
+    public SicFormOldViewModel getSicFormOldViewModel(Integer id) {
+        SicFormOld entity = sicFormOldService.get(id);
+        return validationService.validate(viewModelMapperService.convert(entity, SicFormOldViewModel.class));
+    }
+
+    public void setSicFormOldEntity(SicFormOldViewModel model) {
+        SicFormOld entity = entityModelMapperService.convert(model, SicFormOld.class);
+    }
+    /************************* SicFormOld : End   *******************/
 }
