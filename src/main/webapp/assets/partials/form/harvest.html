@@ -104,8 +104,8 @@
 
                         <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
 
-                        <input type="checkbox" class="form-group icheck" icheck ng-model="cs4.usaGovRegulation">
-                        <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
+                        <input id="usaGovRegulation" type="checkbox" class="form-group icheck" icheck ng-model="cs4.usaGovRegulation">
+                        <label for="usaGovRegulation" class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.usaGovRegulation">
@@ -115,8 +115,8 @@
                         </div>
 
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResDiseaseInsects">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
+                        <input id="usaDisResDiseaseInsects" type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResDiseaseInsects">
+                        <label for="usaDisResDiseaseInsects" class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.usaDisResDiseaseInsects">
@@ -125,8 +125,8 @@
                                    ng-model="cs4.usaDiseaseInsectsExp">
                         </div>
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResFireSalvage">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
+                        <input id="usaDisResFireSalvage" type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResFireSalvage">
+                        <label for="usaDisResFireSalvage" class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.usaDisResFireSalvage">
@@ -136,8 +136,8 @@
                         </div>
 
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResWindthrow">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
+                        <input id="usaDisResWindthrow" type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResWindthrow">
+                        <label for="usaDisResWindthrow" class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.usaDisResWindthrow">
@@ -146,8 +146,8 @@
                                    ng-model="cs4.usaWindthrowExp">
                         </div>
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResHurricane">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
+                        <input id="usaDisResHurricane" type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResHurricane">
+                        <label for="usaDisResHurricane" class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.usaDisResHurricane">
@@ -156,8 +156,8 @@
                                    ng-model="cs4.usaHurricaneExp">
                         </div>
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResIceStorm">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
+                        <input id="usaDisResIceStorm" type="checkbox" class="icheck" icheck ng-model="cs4.usaDisResIceStorm">
+                        <label for="usaDisResIceStorm" class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.usaDisResIceStorm">
@@ -167,8 +167,8 @@
                         </div>
 
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.usaOthersApply">
-                        <label class="checkboxLabel"> &nbsp;Other</label>
+                        <input id="usaOthersApply" type="checkbox" class="icheck" icheck ng-model="cs4.usaOthersApply">
+                        <label for="usaOthersApply" class="checkboxLabel"> &nbsp;Other</label>
 
                         <div class="form-group" ng-show="cs4.usaOthersApply">
                             <input placeholder="please explain" type="text" class="form-control required shorter"
@@ -206,8 +206,8 @@
                     </div>
                 </div>
                 <div ng-show="cs4.usaFinalHarvestHAAC">
-                    <input type="checkbox" class="icheck" icheck ng-model="cs4.usaSeedTreeShelterWood">
-                    <label class="checkboxLabel">Seed tree and shelterwood</label>
+                    <input id="usaSeedTreeShelterWood" type="checkbox" class="icheck" icheck ng-model="cs4.usaSeedTreeShelterWood">
+                    <label for="usaSeedTreeShelterWood" class="checkboxLabel">Seed tree and shelterwood</label>
 
                     <div class="form-group" ng-show="cs4.usaSeedTreeShelterWood">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="usaSeedTreeShelterWoodArea"
@@ -219,8 +219,8 @@
                                ng-model="cs4.usaSeedTreeShelterWoodExp"/>
                     </div>
                     <br/>
-                    <input type="checkbox" class="icheck" icheck ng-model="cs4.usaSelectionMethod">
-                    <label class="checkboxLabel">Selection methods</label>
+                    <input id="usaSelectionMethod" type="checkbox" class="icheck" icheck ng-model="cs4.usaSelectionMethod">
+                    <label for="usaSelectionMethod" class="checkboxLabel">Selection methods</label>
 
                     <div class="form-group" ng-show="cs4.usaSelectionMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="usaSelectionMethodArea"
@@ -232,8 +232,8 @@
                                ng-model="cs4.usaSelectionMethodExp"/>
                     </div>
                     <br/>
-                    <input type="checkbox" class="icheck" icheck ng-model="cs4.usaSanitation">
-                    <label class="checkboxLabel">Thinning or sanitation salvage</label>
+                    <input id="usaSanitation" type="checkbox" class="icheck" icheck ng-model="cs4.usaSanitation">
+                    <label for="usaSanitation" class="checkboxLabel">Thinning or sanitation salvage</label>
                     <div class="form-group" ng-show="cs4.usaSanitation">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="usaSanitationArea"
                                ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.usaSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
@@ -244,8 +244,8 @@
                                ng-model="cs4.usaSanitationExp"/>
                     </div>
                     <br/>
-                    <input type="checkbox" class="icheck" icheck ng-model="cs4.usaOtherMethod">
-                    <label class="checkboxLabel">Other methods</label>
+                    <input id="usaOtherMethod" type="checkbox" class="icheck" icheck ng-model="cs4.usaOtherMethod">
+                    <label for="usaOtherMethod" class="checkboxLabel">Other methods</label>
 
                     <div class="form-group" ng-show="cs4.usaOtherMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="usaOtherMethodHAAC"
@@ -298,8 +298,8 @@
 
                         <label>If greater than 50 hectares or 120 acres, check all that apply and provide an explanation for each:</label>
 
-                        <input type="checkbox" class="form-group icheck" icheck ng-model="cs4.caGovRegulation">
-                        <label class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
+                        <input id="caGovRegulation" type="checkbox" class="form-group icheck" icheck ng-model="cs4.caGovRegulation">
+                        <label for="caGovRegulation" class="checkboxLabel"> &nbsp;Government regulations requiring larger harvest areas</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.caGovRegulation">
@@ -309,8 +309,8 @@
                         </div>
 
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResDiseaseInsects">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
+                        <input id="caDisResDiseaseInsects" type="checkbox" class="icheck" icheck ng-model="cs4.caDisResDiseaseInsects">
+                        <label for="caDisResDiseaseInsects" class="checkboxLabel"> &nbsp;Response to natural disaster: Disease or Insects</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.caDisResDiseaseInsects">
@@ -319,8 +319,8 @@
                                    ng-model="cs4.caDiseaseInsectsExp">
                         </div>
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResFireSalvage">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
+                        <input id="caDisResFireSalvage" type="checkbox" class="icheck" icheck ng-model="cs4.caDisResFireSalvage">
+                        <label for="caDisResFireSalvage" class="checkboxLabel"> &nbsp;Response to natural disaster: Fire salvage</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.caDisResFireSalvage">
@@ -330,8 +330,8 @@
                         </div>
 
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResWindthrow">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
+                        <input id="caDisResWindthrow" type="checkbox" class="icheck" icheck ng-model="cs4.caDisResWindthrow">
+                        <label for="caDisResWindthrow" class="checkboxLabel"> &nbsp;Response to natural disaster: Windthrow</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.caDisResWindthrow">
@@ -340,8 +340,8 @@
                                    ng-model="cs4.caWindthrowExp">
                         </div>
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResHurricane">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
+                        <input id="caDisResHurricane" type="checkbox" class="icheck" icheck ng-model="cs4.caDisResHurricane">
+                        <label for="caDisResHurricane" class="checkboxLabel"> &nbsp;Response to natural disaster: Hurricane</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.caDisResHurricane">
@@ -350,8 +350,8 @@
                                    ng-model="cs4.caHurricaneExp">
                         </div>
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.caDisResIceStorm">
-                        <label class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
+                        <input id="caDisResIceStorm" type="checkbox" class="icheck" icheck ng-model="cs4.caDisResIceStorm">
+                        <label for="caDisResIceStorm" class="checkboxLabel"> &nbsp;Response to natural disaster: Ice Storms</label>
                         <br>
 
                         <div class="form-group" ng-show="cs4.caDisResIceStorm">
@@ -361,8 +361,8 @@
                         </div>
 
 
-                        <input type="checkbox" class="icheck" icheck ng-model="cs4.caOthersApply">
-                        <label class="checkboxLabel"> &nbsp;Other</label>
+                        <input id="caOthersApply" type="checkbox" class="icheck" icheck ng-model="cs4.caOthersApply">
+                        <label for="caOthersApply" class="checkboxLabel"> &nbsp;Other</label>
 
                         <div class="form-group" ng-show="cs4.caOthersApply">
                             <input placeholder="please explain" type="text" class="form-control required shorter"
@@ -398,8 +398,8 @@
                     </div>
                 </div>
                 <div ng-show="cs4.caFinalHarvestHAAC">
-                    <input type="checkbox" class="icheck" icheck ng-model="cs4.caSeedTreeShelterWood">
-                    <label class="checkboxLabel">Seed tree and shelterwood</label>
+                    <input id="caSeedTreeShelterWood" type="checkbox" class="icheck" icheck ng-model="cs4.caSeedTreeShelterWood">
+                    <label for="caSeedTreeShelterWood" class="checkboxLabel">Seed tree and shelterwood</label>
 
                     <div class="form-group" ng-show="cs4.caSeedTreeShelterWood">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="caSeedTreeShelterWoodArea"
@@ -412,8 +412,8 @@
                     </div>
 
                     <br/>
-                    <input type="checkbox" class="icheck" icheck ng-model="cs4.caSelectionMethod">
-                    <label class="checkboxLabel">Selection methods</label>
+                    <input id="caSelectionMethod" type="checkbox" class="icheck" icheck ng-model="cs4.caSelectionMethod">
+                    <label for="caSelectionMethod" class="checkboxLabel">Selection methods</label>
 
                     <div class="form-group" ng-show="cs4.caSelectionMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="caSelectionMethodArea"
@@ -425,8 +425,8 @@
                                ng-model="cs4.caSelectionMethodExp"/>
                     </div>
                     <br/>
-                    <input type="checkbox" class="icheck" icheck ng-model="cs4.caSanitation">
-                    <label class="checkboxLabel">Thinning or sanitation salvage</label>
+                    <input id="caSanitation" type="checkbox" class="icheck" icheck ng-model="cs4.caSanitation">
+                    <label for="caSanitation" class="checkboxLabel">Thinning or sanitation salvage</label>
                     <div class="form-group" ng-show="cs4.caSanitation">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="caSanitationArea"
                                ng-pattern="/^\d{1,9}(\.\d{1,4})?$/" ng-required="cs4.caSanitation" pattern-msg="Must be a positive number with up to 4 decimal points" customerror
@@ -437,8 +437,8 @@
                                ng-model="cs4.caSanitationExp"/>
                     </div>
                     <br/>
-                    <input type="checkbox" class="icheck" icheck ng-model="cs4.caOtherMethod">
-                    <label class="checkboxLabel">Other methods</label>
+                    <input id="caOtherMethod" type="checkbox" class="icheck" icheck ng-model="cs4.caOtherMethod">
+                    <label for="caOtherMethod" class="checkboxLabel">Other methods</label>
 
                     <div class="form-group" ng-show="cs4.caOtherMethod">
                         <input style="width: 15%;" type="number" class="form-control shortest" name="caOtherMethodHAAC"

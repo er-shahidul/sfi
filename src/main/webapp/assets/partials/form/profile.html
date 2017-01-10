@@ -146,8 +146,8 @@
                     <div class="form-group form-group-new" ng-if="!isSfiSecondary()">
 
 
-                        <input type="checkbox" name="ownsMngLands" class="icheck" icheck ng-model="cs1.ownsMngLands"/>
-                        <label class="checkboxLabel"
+                        <input id="ownsMngLands" type="checkbox" name="ownsMngLands" class="icheck" icheck ng-model="cs1.ownsMngLands"/>
+                        <label for="ownsMngLands" class="checkboxLabel"
                                tooltip data-placement="right" data-container="body"
                                data-title='A forested area is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>
                             Owns and/or manages forestlands in:</label>
@@ -156,18 +156,18 @@
                         <div class="form-group form-group-new" ng-show="cs1.ownsMngLands">
 
                             <div class="form-group form-group-new">
-                                <input type="checkbox" name="ownsMngLandsInUSA" ng-model="cs1.ownsMngLandsInUSA" class="icheck" icheck />
-                                <label class="checkboxLabel">United States</label>
+                                <input id="ownsMngLandsInUSA" type="checkbox" name="ownsMngLandsInUSA" ng-model="cs1.ownsMngLandsInUSA" class="icheck" icheck />
+                                <label for="ownsMngLandsInUSA" class="checkboxLabel">United States</label>
                             </div>
 
                             <div class="form-group form-group-new">
-                                <input type="checkbox" name="ownsMngLandsInCA" ng-model="cs1.ownsMngLandsInCA"  class="icheck" icheck />
-                                <label class="checkboxLabel">Canada</label>
+                                <input id="ownsMngLandsInCA" type="checkbox" name="ownsMngLandsInCA" ng-model="cs1.ownsMngLandsInCA"  class="icheck" icheck />
+                                <label for="ownsMngLandsInCA" class="checkboxLabel">Canada</label>
                             </div>
 
                             <div class="form-group form-group-new">
-                                <input type="checkbox" name="ownsMngLandsInOther" class="icheck" ng-model="cs1.ownsMngLandsInOther" icheck>
-                                <label class="checkboxLabel">Other </label>
+                                <input id="ownsMngLandsInOther" type="checkbox" name="ownsMngLandsInOther" class="icheck" ng-model="cs1.ownsMngLandsInOther" icheck>
+                                <label for="ownsMngLandsInOther" class="checkboxLabel">Other </label>
 
                                 <div class="form-group form-group-new" ng-init="other1 = 0">
 
@@ -191,26 +191,26 @@
 
                     <!-- Has primary manufacturing operations/mills/log yards located in -->
                     <div class="form-group form-group-new" ng-if="!isSfiSecondary()">
-                        <input type="checkbox" name="hasPrimaryOperMillsYards"
+                        <input id="hasPrimaryOperMillsYards" type="checkbox" name="hasPrimaryOperMillsYards"
                                ng-model="cs1.hasPrimaryOperMillsYards" class="icheck" icheck />
-                        <label class="checkboxLabel">Has primary manufacturing operations/mills/log yards located in</label>
+                        <label for="hasPrimaryOperMillsYards" class="checkboxLabel">Has primary manufacturing operations/mills/log yards located in</label>
 
                         <!-- V2 -->
                         <div class="form-group form-group-new" ng-show="cs1.hasPrimaryOperMillsYards">
 
                             <div class="form-group form-group-new">
-                                <input type="checkbox" name="hasPrimaryOperMillsYardsInUSA" ng-model="cs1.hasPrimaryOperMillsYardsInUSA" class="icheck" icheck />
-                                <label class="checkboxLabel">United States</label>
+                                <input id="hasPrimaryOperMillsYardsInUSA" type="checkbox" name="hasPrimaryOperMillsYardsInUSA" ng-model="cs1.hasPrimaryOperMillsYardsInUSA" class="icheck" icheck />
+                                <label for="hasPrimaryOperMillsYardsInUSA" class="checkboxLabel">United States</label>
                             </div>
 
                             <div class="form-group form-group-new">
-                                <input type="checkbox" name="hasPrimaryOperMillsYardsInCA" ng-model="cs1.hasPrimaryOperMillsYardsInCA"  class="icheck" icheck />
-                                <label class="checkboxLabel">Canada</label>
+                                <input id="hasPrimaryOperMillsYardsInCA" type="checkbox" name="hasPrimaryOperMillsYardsInCA" ng-model="cs1.hasPrimaryOperMillsYardsInCA"  class="icheck" icheck />
+                                <label for="hasPrimaryOperMillsYardsInCA" class="checkboxLabel">Canada</label>
                             </div>
 
                             <div class="form-group form-group-new">
-                                <input type="checkbox" name="hasPrimaryOperMillsYardsInOther" class="icheck" ng-model="cs1.hasPrimaryOperMillsYardsInOther" icheck>
-                                <label class="checkboxLabel">Other </label>
+                                <input id="hasPrimaryOperMillsYardsInOther" type="checkbox" name="hasPrimaryOperMillsYardsInOther" class="icheck" ng-model="cs1.hasPrimaryOperMillsYardsInOther" icheck>
+                                <label for="hasPrimaryOperMillsYardsInOther" class="checkboxLabel">Other </label>
 
                                 <div class="form-group form-group-new" ng-init="other2 = 0">
 
@@ -239,12 +239,12 @@
                         <!-- label for primary -->
                         <div ng-hide="isSfiSecondary()">
 
-                            <input class="icheck"
+                            <input id="hasSecondaryOperMillsYards" class="icheck"
                                    type="checkbox"
                                    name="hasSecondaryOperMillsYards"
                                    ng-model="cs1.hasSecondaryOperMillsYards"  icheck />
 
-                            <label class="checkboxLabel">Has manufacturing or processing facilities located in:</label>
+                            <label for="hasSecondaryOperMillsYards" class="checkboxLabel">Has manufacturing or processing facilities located in:</label>
 
                         </div>
                         <!-- -/- -->
@@ -256,21 +256,21 @@
                         <div class="form-group form-group-new" ng-show="cs1.hasSecondaryOperMillsYards">
 
                             <div class="form-group form-group-new">
-                                <input type="checkbox" name="hasSecondaryOperMillsYardsInUSA"
+                                <input id="hasSecondaryOperMillsYardsInUSA" type="checkbox" name="hasSecondaryOperMillsYardsInUSA"
                                        ng-model="cs1.hasSecondaryOperMillsYardsInUSA" class="icheck" icheck />
-                                <label class="checkboxLabel">United States</label>
+                                <label for="hasSecondaryOperMillsYardsInUSA" class="checkboxLabel">United States</label>
                             </div>
 
                             <div class="form-group form-group-new">
-                                <input type="checkbox" name="hasSecondaryOperMillsYardsInCA"
+                                <input id="hasSecondaryOperMillsYardsInCA" type="checkbox" name="hasSecondaryOperMillsYardsInCA"
                                        ng-model="cs1.hasSecondaryOperMillsYardsInCA"  class="icheck" icheck />
-                                <label class="checkboxLabel">Canada</label>
+                                <label for="hasSecondaryOperMillsYardsInCA" class="checkboxLabel">Canada</label>
                             </div>
 
                             <div class="form-group form-group-new">
-                                <input type="checkbox" name="hasSecondaryOperMillsYardsInOther" class="icheck"
+                                <input id="hasSecondaryOperMillsYardsInOther" type="checkbox" name="hasSecondaryOperMillsYardsInOther" class="icheck"
                                        ng-model="cs1.hasSecondaryOperMillsYardsInOther" icheck>
-                                <label class="checkboxLabel">Other </label>
+                                <label for="hasSecondaryOperMillsYardsInOther" class="checkboxLabel">Other </label>
 
 
 

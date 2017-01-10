@@ -603,10 +603,10 @@
                     <!--end-->
 
                     <div class="form-group">
-                        <input type="checkbox" name="incResFunding" icheck ng-model="project.incResFunding" />
-
+                        <label for="incResFunding" style="font-weight: normal;">
+                        <input id="incResFunding" type="checkbox" name="incResFunding" icheck ng-model="project.incResFunding" />
                         <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if any or all of your organization’s contribution in 2016 is included in your Research Funding dollars reported above to meet
-                            SFI Standard Requirements as it relates to the research requirement in the standard.</span>
+                            SFI Standard Requirements as it relates to the research requirement in the standard.</span></label>
 
                         <div class="form-group" ng-show="project.incResFunding">
                             <div class="col-lg-2" style="padding-left: 0;"  ng-class="{'has-error' : cs5Form.incResFundingText.$invalid}">
@@ -622,8 +622,9 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="checkbox" name="incSFIConservation" icheck ng-model="project.incSFIConservation"/>
-                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if this project is part of a 2016 SFI Conservation or Community Grant.</span>
+                        <label for="incSFIConservation" style="font-weight: normal;">
+                        <input id="incSFIConservation" type="checkbox" name="incSFIConservation" icheck ng-model="project.incSFIConservation"/>
+                        <span style="width: 600px; vertical-align: middle;" class="checkboxLabel">Check this box if this project is part of a 2016 SFI Conservation or Community Grant.</span></label>
                     </div>
 
 

@@ -300,7 +300,7 @@
 
             <input type="checkbox" name="otherEnable" id="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
                    ng-if="section.row == 11" ng-model="section.otherEnable"/>
-            {{section.name}}
+            <label for="otherEnable" style="font-weight: normal;">{{section.name}}</label>
 
 
             <div style="text-align: left;margin-top: 10px;" ng-show="section.otherEnable && otherLabel">
