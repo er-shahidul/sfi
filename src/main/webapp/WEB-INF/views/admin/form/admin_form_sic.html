@@ -38,6 +38,7 @@
                                             <table id="example_sic" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead style="background: #ccc;">
                                                 <tr>
+                                                    <th>Year</th>
                                                     <th>Company Name</th>
                                                     <th>Created By</th>
                                                     <th>Date Created</th>
@@ -49,6 +50,7 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr th:each="sicPpForm, iterationStatus : ${sicPpForms}">
+                                                    <td>2016</td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.company.name}"></td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.createdBy.username}"></td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'">
