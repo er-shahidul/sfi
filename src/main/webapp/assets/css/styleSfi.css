@@ -1109,7 +1109,15 @@ color :#8cc152;
 {
 	color: white;
 }
-
+.datepicker td.day,
+.datepicker td span.month,
+.datepicker td span.year,
+.datepicker th.prev,
+.datepicker th.next,
+.datepicker th.picker-switch
+{
+	cursor: pointer;
+}
 #u14 {
 	left: 490px;
 	top: 420px;

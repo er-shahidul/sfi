@@ -665,7 +665,15 @@ button.close {
 	line-height: 20px;
 	margin-bottom: 10px;
 }
-
+.datepicker td.day,
+.datepicker td span.month,
+.datepicker td span.year,
+.datepicker th.prev,
+.datepicker th.next,
+.datepicker th.picker-switch
+{
+    cursor: pointer;
+}
 #formNavigation {
 	overflow: hidden;
 }
