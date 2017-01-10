@@ -1277,6 +1277,15 @@ color:#9A9A9A;
 margin-top:2px;
 
 }
+.datepicker td.day,
+.datepicker td span.month,
+.datepicker td span.year,
+.datepicker th.prev,
+.datepicker th.next,
+.datepicker th.picker-switch
+{
+	cursor: pointer;
+}
 
 .circleTxt.success-active{
 	text-decoration: underline;
