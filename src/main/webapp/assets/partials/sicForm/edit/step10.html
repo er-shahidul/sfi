@@ -18,23 +18,20 @@
                 </p>
                 <ul class="list-style alignment">
                     <li>
-                        <p>
-                            <input type="checkbox" name="sfiCouldServe" ng-model="cs10.sfiCouldServeMarketing">
-                            Development of marketing materials<br/>
-                        </p>
+                            <input id="sfiCouldServeMarketing" type="checkbox" name="sfiCouldServeMarketing" ng-model="cs10.sfiCouldServeMarketing">
+                            <label for="sfiCouldServeMarketing" style="font-weight: normal;margin-left: 0;">Development of marketing materials</label><br/>
                         <label ng-show="cs10.sfiCouldServeMarketing">
                             Please Specify
                             <textarea  style="font-weight: normal;" rows="3" cols="80" class="form-control" ng-model="cs10.sfiMarketingDetail"></textarea>
                         </label>
                     </li>
                     <li>
-                        <p>
-                            <input style="float:left;margin-bottom: 3px;margin-right: 3px;" type="checkbox" name="sfiCouldServe" ng-model="cs10.sfiCouldServeEducation">
+                            <input style="float:left;margin-bottom: 3px;margin-right: 3px;" type="checkbox" id="sfiCouldServeEducation" name="sfiCouldServeEducation" ng-model="cs10.sfiCouldServeEducation">
+                            <label for="sfiCouldServeEducation" style="font-weight: normal;margin-left: 0;">
                             Development of presentation templates for training and educational purposes, i.e. SFI 101, It Starts at Home,
                             <br/>
                             SFI Standard Requirements, etc.
-                        </p>
-
+                            </label>
                         <label ng-show="cs10.sfiCouldServeEducation">
                             Please Specify
                             <textarea  style="font-weight: normal;"  rows="3" cols="80" class="form-control" ng-model="cs10.sfiEducationDetail"></textarea>
@@ -42,40 +39,32 @@
 
                     </li>
                     <li>
-                        <p>
-                            <input type="checkbox" name="sfiCouldServe" ng-model="cs10.sfiCouldServeInformation">
-                            Facilitating information sharing more effectively
-                        </p>
+                            <input id="sfiCouldServeInformation" type="checkbox" name="sfiCouldServeInformation" ng-model="cs10.sfiCouldServeInformation">
+                        <label for="sfiCouldServeInformation" style="font-weight: normal;margin-left: 0;">Facilitating information sharing more effectively</label>
                         <label ng-show="cs10.sfiCouldServeInformation">
                             Please Specify
                             <textarea  style="font-weight: normal;"  rows="3" cols="80" class="form-control" ng-model="cs10.sfiInformationDetail"></textarea>
                         </label>
                     </li>
                     <li>
-                        <p>
-                            <input type="checkbox" name="sfiCouldServe" ng-model="cs10.sfiCouldServeWebinar">
-                            Issue-specific webinars or discussions
-                        </p>
+                            <input id="sfiCouldServeWebinar" type="checkbox" name="sfiCouldServeWebinar" ng-model="cs10.sfiCouldServeWebinar">
+                        <label for="sfiCouldServeWebinar" style="font-weight: normal;margin-left: 0;">Issue-specific webinars or discussions</label>
                         <label ng-show="cs10.sfiCouldServeWebinar">
                             Please Specify
                             <textarea   style="font-weight: normal;" rows="3" cols="80" class="form-control" ng-model="cs10.sfiWebinarDetail"></textarea>
                         </label>
                     </li>
                     <li>
-                        <p>
-                            <input type="checkbox" name="sfiCouldServe" ng-model="cs10.sfiCouldServeWebContent">
-                            Assistance with website content and graphics
-                        </p>
+                            <input id="sfiCouldServeWebContent" type="checkbox" name="sfiCouldServeWebContent" ng-model="cs10.sfiCouldServeWebContent">
+                        <label for="sfiCouldServeWebContent" style="font-weight: normal;margin-left: 0;">Assistance with website content and graphics</label>
                         <label ng-show="cs10.sfiCouldServeWebContent">
                             Please Specify
                             <textarea  style="font-weight: normal;" rows="3" cols="80" class="form-control" ng-model="cs10.sfiWebContentDetail"></textarea>
                         </label>
                     </li>
                     <li>
-                        <p>
-                            <input type="checkbox" name="sfiCouldServe" ng-model="cs10.sfiCouldServeOther">
-                            Other
-                        </p>
+                            <input id="sfiCouldServeOther" type="checkbox" name="sfiCouldServeOther" ng-model="cs10.sfiCouldServeOther">
+                        <label for="sfiCouldServeOther" style="font-weight: normal;margin-left: 0;">Other</label>
                         <label ng-show="cs10.sfiCouldServeOther">
                             Please Specify
                             <textarea  style="font-weight: normal;" rows="3" cols="80" class="form-control" ng-model="cs10.sfiOtherDetail"></textarea>
