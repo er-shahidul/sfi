@@ -230,7 +230,221 @@
     </select>
 </div>
 
-<table class="table table-striped table-bordered" ng-show="regionId > 0">
+    <table ng-class="{disabled}" class="table table-striped table-bordered disabled" ng-if="regionId == 0">
+
+        <!-- Header -->
+        <thead>
+        <tr>
+            <th style="text-align:center;width: 120px;">Raw Material Sources</th>
+            <th style="width:175px; text-align:center;">Units &amp; Volume</th>
+
+            <th style="width:120px;  text-align:center;"
+                tooltip data-html="true" data-placement="top" data-container="body"
+                data-title="A person with specialized skills in timber harvesting gained through experience or formal training who has successfully completed wood producer training programs and continued education requirements recognized by SFI Implementation Committees."
+            >% Delivered by Qualified Logging Professionals</th>
+
+            <th style="width:120px; text-align:center;"
+                tooltip data-html="true" data-placement="top" data-container="body"
+                data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the SFI Standard."
+            >% from SFI only certified forests</th>
+
+            <th style="width:120px; text-align:center;"
+                tooltip data-html="true" data-placement="top" data-container="body"
+                data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the American Tree Farm Standard. <br/>Did you know ATFS has a verification certification database to help you determine ATFS certified and ATFS non-certified lands. For more information visit: www.treefarmsystem.org/ atfsverificationdatabase"
+            >% from ATFS only certified forests</th>
+            <th style="width:120px; text-align:center;"
+                tooltip data-html="true" data-placement="top" data-container="body"
+                data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the Canadian Standards Association standards."
+
+            >% from CSA only  certified forests</th>
+            <th style="width:120px; text-align:center;"
+                tooltip data-html="true" data-placement="top" data-container="body"
+                data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to Forest Stewardship Council Standards"
+            >% from FSC only certified forests </th>
+            <th style="width:180px; text-align:center;">Select standard combination if reporting volume certified to more than one standard </th>
+            <th style="width:120px; text-align:center;"
+                tooltip data-html="true" data-placement="top" data-container="body"
+                data-title="Your best estimate of fiber sourced from dual or triple certified forests. Note that material sourced from an area certified to only one standard should be reported in the relevant certification standard column."
+            >% certified forest to more than one standard </th>
+
+        </tr>
+        </thead>
+        <!-- -->
+
+
+        <!-- FORM -->
+
+        <tbody>
+
+
+        <tr ng-repeat-start="section in sections" ng-if="section.row == 1">
+            <th style="text-align: center;">Private</th>
+            <th colspan="8"></th>
+        </tr>
+
+        <tr ng-if="section.row == 7">
+            <th style="text-align: center;">Public</th>
+            <th colspan="8"></th>
+        </tr>
+
+        <tr ng-if="section.row == 11">
+            <th style="text-align: center;">Other Sources </th>
+            <th colspan="8"></th>
+        </tr>
+
+
+        <tr ng-repeat-end ng-form="innerForm">
+
+            <td style="text-align: right;" ng-init="section.form = innerForm" tooltip data-html="true" data-placement="top" data-container="body"
+                data-title="{{ section.tooltip }}">
+
+                <input disabled="disabled" readonly type="checkbox" name="otherEnable" id="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
+                       ng-if="section.row == 11" ng-model="section.otherEnable"/>
+                <label for="otherEnable" style="font-weight: normal;">{{section.name}}</label>
+
+
+                <div style="text-align: left;margin-top: 10px;" ng-show="section.otherEnable && otherLabel">
+                    <u><a ng-click="showPopUp3(section)">{{ otherLabel | limitTo: 20 }}</a></u>
+                </div>
+
+            </td>
+
+            <td>
+
+                <div ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item1.$invalid}">
+
+                    <select disabled="disabled" readonly class="form-control" name="item1"
+                            ng-model="section.unit"
+                            ng-required="isSectionDirty(innerForm)"
+                            ng-disabled="!isDisabled(section)"  >
+
+                        <option value="" ng-selected="!section.unit" >Select Units</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group padded alignright"
+                     ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item2.$invalid}" ng-show="section.unit > 0">
+
+                    Volume <input disabled="disabled" readonly type="text" style="width: 100px" class="form-control shortest2" name="item2" ng-required="isSectionDirty(innerForm)"
+                                  ng-disabled="isDisabled(section)" ng-model="section.volume"
+                                  ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror
+                                  ng-model-options="{allowInvalid:true}"  />
+                </div>
+            </td>
+
+            <td align="center" ng-class="{'has-error' : innerForm.item3.$invalid}">
+                <input readonly disabled type="text" class="form-control shorter" max="100" min="0" name="item3" ng-required="isSectionDirty(innerForm)"
+                       ng-model="section.percDeliveredQualifiedLogging" ng-disabled="isDisabled(section)"
+                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+
+                <div><u><small>Reason less than 100%</small></u></div>
+            </td>
+
+            <td align="center" ng-class="{'has-error' : innerForm.item4.$invalid}">
+                <input readonly disabled type="text" class="form-control shorter" name="item4"
+                       ng-disabled="isDisabled(section)" ng-model="section.percSFIOnlyCertified"
+                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+            </td>
+
+            <td align="center" ng-class="{'has-error' : innerForm.item5.$invalid}">
+                <input readonly disabled type="text" class="form-control  shorter" name="item5"
+                       ng-disabled="isDisabled(section)" ng-model="section.percATFSOnlyCertified"
+                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+            </td>
+
+            <td align="center" ng-class="{'has-error' : innerForm.item6.$invalid}">
+                <input readonly disabled type="text" class="form-control  shorter" name="item6"
+                       ng-disabled="isDisabled(section)" ng-model="section.percCSAOnlyCertified"
+                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+            </td>
+
+            <td align="center" ng-class="{'has-error' : innerForm.item7.$invalid}">
+                <input readonly disabled type="text" class="form-control  shorter" name="item7"
+                       ng-disabled="isDisabled(section)" ng-model="section.percFSCOnlyCertified"
+                       ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror>%
+            </td>
+
+            <td align="center">
+
+                <div ng-show="section.percCertifedMoreThanOneStandard1">
+                    <span>SFI/FSC</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard2">
+                    <span>SFI/ATFS</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard3">
+                    <span>SFI/CSA</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard4">
+                    <span>ATFS/FSC</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard5">
+                    <span>CSA/FSC</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard6">
+                    <span>SFI/ATFS/FSC</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard7">
+                    <span>SFI/CSA/FSC</span>
+                </div>
+
+                <u>
+                    Select Standards
+                    <span ng-show="isDisabled(section)">Select Standards</span>
+                </u>
+            </td>
+
+            <td align="center" ng-class="{'has-error' : innerForm.item8.$invalid}">
+
+                <!--<input type="hidden" ng-model="section.standardValues">-->
+                <!--<div ng-repeat="item in section.standardValues">-->
+                <!--<span ng-if="item">{{ item }}%</span>-->
+                <!--</div>-->
+
+                <div ng-show="section.percCertifedMoreThanOneStandard1">
+                    <span>{{ section.percCertifedMoreThanOneStandard1}} %</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard2">
+                    <span>{{ section.percCertifedMoreThanOneStandard2 }} %</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard3">
+                    <span>{{ section.percCertifedMoreThanOneStandard3 }} %</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard4">
+                    <span>{{ section.percCertifedMoreThanOneStandard4 }} %</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard5">
+                    <span>{{ section.percCertifedMoreThanOneStandard5 }} %</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard6">
+                    <span>{{ section.percCertifedMoreThanOneStandard6 }} %</span>
+                </div>
+                <div ng-show="section.percCertifedMoreThanOneStandard7">
+                    <span>{{ section.percCertifedMoreThanOneStandard7 }} %</span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+
+        <tr>
+            <td colspan="9">
+                <!-- Form 1 buttons -->
+                <div style="margin-top: 20px;" class="col-sm-5 col-sm-offset-7 alignright" ng-show="regionId > 0">
+                    <button type="button" class="btn secondary" ng-click="cancelUsCanada()">Cancel</button>
+                    <!-- v2 -->
+                    <!-- button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save, and enter another region</button-->
+                    <button type="button" class="btn btn-success" ng-click="saveUsCanada()">Save and enter another region</button>
+                </div>
+                <div class="control-group">&nbsp;</div>
+                <!-- -->
+            </td>
+        </tr>
+
+        <!-- Form End -->
+    </table>
+
+<table class="table table-striped table-bordered" ng-if="regionId > 0">
 
 <!-- Header -->
 <thead>
