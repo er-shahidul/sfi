@@ -10,8 +10,7 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
         }
 
         return false;
-    }
-
+    };
 
     $rootScope.setProgress = function(){
 
@@ -21,7 +20,6 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
             $rootScope.formProgress = $rootScope.hasSectionError(cs1) ? 0 : 100;
             return;
         }
-
 
         $rootScope.formProgress = 0;
 
@@ -45,13 +43,13 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
             //}
         });
 
-    }
+    };
 
     $rootScope.setProgress();
 
     $scope.progressClass = function(){
         return { width: $rootScope.formProgress + "%" };
-    }
+    };
 
     $scope.printDate = function(timestamp){
 
@@ -90,30 +88,30 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
                 }
                 window.location.reload();
             })
-    }
+    };
 
 
     $rootScope.printSection = function(){
 
         if($rootScope.mode == "view"){
-            return window.print();
+            return setTimeout(function(){ window.print() }, 4000);
         }
-
 
         var url = urlData.isAdmin ?
             "/admin/company/pp/form/view/" + formData.id + "?print#" + $location.$$path :
             "/sfiPpForm/view?print#" + $location.$$path;
 
-        var win = window.open(url, '_blank');
+        setTimeout(function(){ var win = window.open(url, '_blank'); }, 4000);
+
         win.focus();
-    }
+    };
 
     $rootScope.printAllSection = function(){
 
         if($rootScope.mode == "view"){
 
             if($state.is('print-all')){
-                return window.print();
+                return setTimeout(function(){ window.print() }, 4000);
             }
 
             $state.go('print-all');
@@ -129,11 +127,10 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
             "/admin/company/pp/form/view/" + formData.id + "?print#print-all" :
             "/sfiPpForm/view?print#print-all" ;
 
-        var win = window.open(url, '_blank');
+        setTimeout(function(){ var win = window.open(url, '_blank'); }, 4000);
+        
         win.focus();
-    }
-
-
+    };
 
     $scope.submitText = function(){
 
@@ -142,7 +139,7 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
         }
 
         return $rootScope.formInfo.status.id == 3 ? "Submitted" : "Submit";
-    }
+    };
 
     $scope.canSubmit = function(){
 

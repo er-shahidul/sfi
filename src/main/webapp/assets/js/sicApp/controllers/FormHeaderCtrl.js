@@ -22,17 +22,17 @@ sfiSicApp
         });
 
         $rootScope.formProgress = formProgress;
-    }
+    };
 
     $rootScope.setProgress();
 
     $scope.progress = function(){
         return $rootScope.form.progress;
-    }
+    };
 
     $scope.progressClass = function(){
         return { width: $rootScope.formProgress + "%" };
-    }
+    };
 
     $scope.printDate = function(timestamp){
 
@@ -71,30 +71,29 @@ sfiSicApp
                 }
                 window.location.reload();
             })
-    }
-
-
+    };
+        
     $rootScope.printSection = function(){
 
         if($rootScope.mode == "view"){
-            return window.print();
+            return setTimeout(function(){ window.print() }, 4000);
         }
 
         var url = urlData.isAdmin ?
             "/admin/company/sic/form/view/" + formData.id + "?print#" + $location.$$path :
             "/sicForm/view?print#" + $location.$$path;
 
-        var win = window.open(url, '_blank');
+        setTimeout(function(){ var win = window.open(url, '_blank'); }, 4000);
 
         win.focus();
-    }
+    };
 
     $rootScope.printAllSection = function(){
 
         if($rootScope.mode == "view"){
 
             if($state.is('print-all')){
-                return window.print();
+                return setTimeout(function(){ window.print() }, 4000);
             }
 
             $state.go('print-all');
@@ -105,15 +104,15 @@ sfiSicApp
 
             return;
         }
-
-
+        
         var url = urlData.isAdmin ?
             "/admin/company/sic/form/view/" + formData.id + "?print#print-all" :
             "/sicForm/view?print#print-all" ;
 
-        var win = window.open(url, '_blank');
+        setTimeout(function(){ var win = window.open(url, '_blank'); }, 4000);
+
         win.focus();
-    }
+    };
 
     $scope.submitText = function(){
 
@@ -122,7 +121,7 @@ sfiSicApp
         }
 
         return $rootScope.formInfo.status.id == 3 ? "Submitted" : "Submit";
-    }
+    };
 
     $scope.canSubmit = function(){
 
