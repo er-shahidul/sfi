@@ -109,7 +109,6 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         return false;
     }
 
-    $scope.result=(regionId == 0);
     $scope.saveUsCanada = function(){
 
         /** Check if atleast one valid section there */
