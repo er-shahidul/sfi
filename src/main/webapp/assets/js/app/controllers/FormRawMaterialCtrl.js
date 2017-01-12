@@ -109,6 +109,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         return false;
     }
 
+    $scope.result=(regionId == 0);
     $scope.saveUsCanada = function(){
 
         /** Check if atleast one valid section there */
@@ -130,7 +131,6 @@ sfiFormApp.controller('FormRawMaterialCtrl',
             $('#confirm').modal();
             return false;
         }
-
 
         var region   = $rootScope.getRegion($scope.regionId);
         var usCanada = $scope.usCanadaEdit ? $scope.usCanadaEdit : { sections : [] };
@@ -304,6 +304,11 @@ sfiFormApp.controller('FormRawMaterialCtrl',
     }
 
     $scope.save = function(go){
+        
+        if($scope.usCanada.length == 0 && $scope.usOthers.length == 0){
+            $('#confirm-without-region').modal();
+            return false;
+        }
 
         if($scope.cs6Form.$invalid){
             return false;
