@@ -78,9 +78,8 @@
     </thead>
     <tbody>
     <tr ng-show="operateInUsa() || operateInCa()">
-        <td tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="Landowners selling timber directly to your organization” means those private landowners with which your organization has a contractual relationship to purchase or harvest timber (i.e., stumpage or logs)."
-            >Number of private forest landowners selling timber (stumpage, logs or chips) directly to your organization last year.</td>
+        <td><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                  data-title="Landowners selling timber directly to your organization” means those private landowners with which your organization has a contractual relationship to purchase or harvest timber (i.e., stumpage or logs).">Number of private forest landowners selling timber (stumpage, logs or chips) directly to your organization last year.</span></td>
 
         <td ng-show="operateInUsa()">
             <input type="number" readonly  class="form-control  shorter"
@@ -115,9 +114,9 @@
 <!-- GRID Section 3 -->
 <div class="form-group">
 
-    <label><span tooltip data-html="true" data-placement="top" data-container="body"
-           data-title="Raw Material Consumption. In this question SFI Inc. is seeking the volume of raw material (roundwood and whole log chips) your manufacturing facilities (including log and chip exports) used sourced directly from the forest. Volumes do not have to be absolutely precise; they should be rounded to the nearest unit. Please specify the units (board feet, cubic feet, cords, tons, etc.) you are reporting in column 2. ANNEX 1, which can be found at the end of this document, contains the multipliers that are used by SFI Inc. staff to convert various volume units to “thousands of cubic feet” for reporting totals. If you are converting volumes for this report, please use the appropriate multiplier from the table in ANNEX 1, unless you have a more accurate multiplier or conversion factor for your specific region and species."
-            >Raw Material Supply -procured directly from the forest to your SFI manufacturing facilities (new!)</span>
+    <label><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+           data-title="Raw Material Consumption. In this question SFI Inc. is seeking the volume of raw material (roundwood and whole log chips) your manufacturing facilities (including log and chip exports) used sourced directly from the forest. Volumes do not have to be absolutely precise; they should be rounded to the nearest unit. Please specify the units (board feet, cubic feet, cords, tons, etc.) you are reporting in column 2. ANNEX 1, which can be found at the end of this document, contains the multipliers that are used by SFI Inc. staff to convert various volume units to “thousands of cubic feet” for reporting totals. If you are converting volumes for this report, please use the appropriate multiplier from the table in ANNEX 1, unless you have a more accurate multiplier or conversion factor for your specific region and species.">
+        Raw Material Supply -procured directly from the forest to your SFI manufacturing facilities (new!)</span>
     </label>
     (can now drill down to more specific regions for sourcing of fiber supply)
     <span ng-show="hasPrimaryYards()">
@@ -133,36 +132,11 @@
     </span>
 
     <br/><br/>
-
-    <!--<table class="table table-striped" ng-show="(hasPrimaryYards() && (operateInUsa() || operateInCa())) && (usCanada.length || usOthers.length)">-->
-        <!--<thead>-->
-        <!--<tr>-->
-            <!--<th>Regions</th>-->
-            <!--<th>Raw Material Sources</th>-->
-        <!--</tr>-->
-        <!--</thead>-->
-        <!--<tbody>-->
-        <!--&lt;!&ndash; Normal supply &ndash;&gt;-->
-        <!--<tr ng-repeat="supply in usCanada">-->
-            <!--<td>{{ supply.region.name }}, {{ supply.region.country.country }}</td>-->
-            <!--<td>{{ usCanadaTitle(supply) }}</td>-->
-        <!--</tr>-->
-        <!--&lt;!&ndash; &ndash;&gt;-->
-
-        <!--&lt;!&ndash; Other country supply &ndash;&gt;-->
-        <!--<tr ng-repeat="other in usOthers">-->
-            <!--<td>{{ other.country.country }}</td>-->
-            <!--<td>{{ usOtherTitle(other)}}</td>-->
-        <!--</tr>-->
-        <!--&lt;!&ndash; &ndash;&gt;-->
-
-        <!--</tbody>-->
-    <!--</table>-->
 </div>
 
 <!-- FORM 1 / Regional Supply -->
 
-<table class="table table-striped table-bordered" ng-init="titles = sections" ng-repeat="supply in usCanada" ng-show="(hasPrimaryYards() && (operateInUsa() || operateInCa())) && (usCanada.length || usOthers.length)">
+<table class="table table-striped table-bordered" ng-init="titles = sections" ng-repeat="supply in usCanada">
 
 <!-- Header -->
 <thead>
@@ -170,39 +144,26 @@
         <th>{{supply.region.name}}, {{supply.region.country.country}}</th>
         <th style="width:175px; text-align:center;">Units &amp; Volume</th>
 
-        <th style="width:120px;  text-align:center;"
-            tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="A person with specialized skills in timber harvesting gained through experience or formal training who has successfully completed wood producer training programs and continued education requirements recognized by SFI Implementation Committees."
-                >% Delivered by Qualified Logging Professionals</th>
+        <th style="width:120px;  text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                           data-title="A person with specialized skills in timber harvesting gained through experience or formal training who has successfully completed wood producer training programs and continued education requirements recognized by SFI Implementation Committees.">% Delivered by Qualified Logging Professionals</span></th>
 
-        <th style="width:120px; text-align:center;"
-            tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the SFI Standard."
-                >% from SFI only certified forests</th>
+        <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                          data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the SFI Standard.">% from SFI only certified forests</span></th>
 
-        <th style="width:120px; text-align:center;"
-            tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the American Tree Farm Standard. <br/>Did you know ATFS has a verification certification database to help you determine ATFS certified and ATFS non-certified lands. For more information visit: www.treefarmsystem.org/ atfsverificationdatabase"
-                >% from ATFS only certified forests</th>
-        <th style="width:120px; text-align:center;"
-            tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the Canadian Standards Association standards."
-
-                >% from CSA only  certified forests</th>
-        <th style="width:120px; text-align:center;"
-            tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to Forest Stewardship Council Standards"
-                >% from FSC only certified forests (new!)</th>
+        <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                          data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the American Tree Farm Standard. <br/>Did you know ATFS has a verification certification database to help you determine ATFS certified and ATFS non-certified lands. For more information visit: www.treefarmsystem.org/ atfsverificationdatabase">% from ATFS only certified forests</span></th>
+        <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                          data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the Canadian Standards Association standards.">% from CSA only  certified forests</span></th>
+        <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                          data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to Forest Stewardship Council Standards">% from FSC only certified forests (new!)</span></th>
         <th style="width:180px; text-align:center;">Select standard combination if reporting volume certified to more than one standard (new!)</th>
-        <th style="width:120px; text-align:center;"
-            tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="Your best estimate of fiber sourced from dual or triple certified forests. Note that material sourced from an area certified to only one standard should be reported in the relevant certification standard column."
-                >% certified forest to more than one standard (new!)</th>
+        <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                          data-title="Your best estimate of fiber sourced from dual or triple certified forests. Note that material sourced from an area certified to only one standard should be reported in the relevant certification standard column.">% certified forest to more than one standard (new!)</span></th>
 
     </tr>
 </thead>
 <!-- -->
-    <tbody ng-init="sections = supply.sections">
+    <tbody ng-init="section = supply.sections">
 
     <tr ng-repeat-start="section in sections track by $index" ng-if="section.row == 1">
         <th style="text-align: center;">Private</th>
@@ -222,18 +183,15 @@
 
     <tr ng-repeat-end ng-form="innerForm">
 
-        <td style="text-align: right;" ng-init="section.form = innerForm" tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="{{titles[$index].tooltip }}">
-
+        <td style="text-align: right;" ng-init="section.form = innerForm">
             <input type="checkbox" disabled name="otherEnable" id="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
                    ng-if="section.row == 11" ng-model="section.otherEnable"/>
-            {{titles[$index].name}}
-
+            <span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                  data-title="{{titles[$index].tooltip }}">{{titles[$index].name}}</span>
 
             <div style="text-align: left;margin-top: 10px;" ng-show="section.otherEnable && otherLabel">
                 <u><a ng-click="showPopUp3(section)">{{ otherLabel | limitTo: 20 }}</a></u>
             </div>
-
         </td>
 
         <td>
@@ -358,11 +316,6 @@
 </table>
 
 <!-- FORM 2 -->
-<div class="col-sm-12" ng-show="regionId == -1">
-    <div class="form-group">
-        <label>SFI Inc. is often asked for details on fiber supply and is interested in how much program participant fiber (used by manufacturing facilities in the US or Canada that are covered in the scope of SFI certification) is procured from outside the USA and Canada. The SFI definition of procurement is:  Acquisition of roundwood (sawlogs or pulpwood) and field-manufactured or primary-mill residual chips, pulp, and veneer to support a forest products manufacturing facility.</label>
-    </div>
-</div>
 
 <table class="table table-striped" ng-show="regionId == -1">
 

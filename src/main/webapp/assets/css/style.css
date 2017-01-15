@@ -1296,3 +1296,5 @@ margin-top:2px;
 .circleTxt.active{
 	text-decoration: underline;
 }
+span.underline {text-decoration: underline;}
+span:hover {text-decoration: none}

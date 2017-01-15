@@ -144,10 +144,9 @@
 
 
                         <input readonly disabled type="checkbox" name="ownsMngLands" class="icheck" icheck ng-model="cs1.ownsMngLands"/>
-                        <label class="checkboxLabel"
-                               tooltip data-placement="right" data-container="body"
-                               data-title='A forested area is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>
-                            Owns and/or manages forestlands in:</label>
+                        <label class="checkboxLabel">
+                            <span class="underline" tooltip data-placement="right" data-container="body"
+                                  data-title='A forested area is classified as "forestland" if it is at least one acre in size and contains ten percent tree cover.'>Owns and/or manages forestlands in:</span></label>
 
                         <!-- V2 -->
                         <div class="form-group form-group-new" ng-show="cs1.ownsMngLands">
@@ -292,10 +291,9 @@
                     <div class="form-group " ng-init="other4 = 0"
                          ng-class="{'has-error has-feedback':  !cs1.sellsCountries}">
 
-                        <label class="checkboxLabel"
-                               tooltip data-placement="right" data-container="body"
-                               data-title='Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products). This market information will help SFI identify organizations with a shared country interest whether to positively influence procurement policies and/or organize promotion of SFI products shipped outside the U.S.A. or Canada, e.g. to be featured in the 2020 Tokyo Games or the World Expo in Milan.'
-                        >Countries your organization sells into </label>
+                        <label class="checkboxLabel">
+                            <span class="underline" tooltip data-placement="right" data-container="body"
+                               data-title='Product sold includes raw and finished products (e.g. logs, chips, pulp, or finished products). This market information will help SFI identify organizations with a shared country interest whether to positively influence procurement policies and/or organize promotion of SFI products shipped outside the U.S.A. or Canada, e.g. to be featured in the 2020 Tokyo Games or the World Expo in Milan.'>Countries your organization sells into</span> </label>
 
                         <select readonly disabled class="form-control"
                                 ng-model="other4"

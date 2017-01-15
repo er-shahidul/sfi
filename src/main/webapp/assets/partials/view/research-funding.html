@@ -60,16 +60,18 @@
     <div ng-init="errors = cs5.errors" ng-include="'/assets/partials/form/error.html'"></div>
 
         <div class="col-sm-12">
-            <h5>
-                <span popover data-html="true" data-placement="right" data-content="The SFI ERP requested more information on research dollars spent by SFI Program Participants in a reporting year. This brings closer alignment between the research dollars and Standard requirements. The list of research funding categories included in this question are from the current SFI 2010-2014 Standard.<br/>DID YOU KNOW Internal and External Research Funding:<br/>List the amount of funding in $US your organization provided this year for forest-related research within your organization (internal) and outside your organization (external) through grants, in-kind assistance, cooperatives, etc. Internal research funding includes salaries for forest-related research staff. While it is difficult in many instances to identify to which category research funding should be allocated, use your best judgment as to the primary intent of the given research project. If you find it impossible to allocate funding to the categories listed, list the total funding you provided in the “other” category and note as such.">
+            <h5 class="section-header">
+                <span class="underline" tooltip  data-placement="right" data-title="The SFI ERP requested more information on research dollars spent by SFI Program Participants in a reporting year. This brings closer alignment between the research dollars and Standard requirements. The list of research funding categories included in this question are from the current SFI 2010-2015 Standard.
+                DID YOU KNOW Internal and External Research Funding:
+                List the amount of funding in $US your organization provided this year for forest-related research within your organization (internal) and outside your organization (external) through grants, in-kind assistance, cooperatives, etc. Internal research funding includes salaries for forest-related research staff. While it is difficult in many instances to identify to which category research funding should be allocated, use your best judgment as to the primary intent of the given research project. If you find it impossible to allocate funding to the categories listed, list the total funding you provided in the “other” category and note as such.">
                     5. Research, Conservation and Community
                 </span>
             </h5>
-
-            <span>Participants are required to support forest research to
-                improve forest health, productivity, and sustainable management of forest resources,
-                and the environmental benefits and performance of forest products.
-                Complete the following table with research funding dollars spent to meet this requirement.<u><a ng-click="lastYearResearchPop()">How we used your data last year</a></span>
+            <p>Participants are required to support forest research to improve forest health, productivity,
+                and sustainable management of forest resources, and the environmental benefits and
+                performance of forest products. Complete the following table with research funding dollars
+                spent to meet this requirement. <u><a ng-click="lastYearResearchPop()">How we used your data last year</a>
+                </u></p>
             <br/>
             <div class="col-sm-12">
                 <h5>I. Research Funding</h5>
@@ -600,10 +602,9 @@
                     <tbody>
 
                     <tr>
-                        <td tooltip data-html="true" data-placement="top" data-container="body"
-                            data-title="Include all funding your organization provided last year to SFI Implementation Committees and others for logger training and education and all other SFI program implementation activities at the state or provincial level.">
-                            Funding provided last year for SFI Implementation Committee activities at the state or provincial level<br/>
-                            (Support for US SICs in $US. Support for Canadian SICs in $CA.)
+                        <td ng-class="{'disabled' : !operateInUsa() && !operateInCa()}">
+                            <span class="underline" tooltip data-html="true" data-placement="top" data-container="body" data-title="Include all funding your organization provided last year to SFI Implementation Committees and others for logger training and education and all other SFI program implementation activities at the state or provincial level."> Funding provided last year for SFI Implementation Committee activities at the state or provincial level<br/>
+                            (Support for US SICs in $US. Support for Canadian SICs in $CA.)</span>
                         </td>
                         <td ng-show="operateInUsa()" >
                             <input readonly disabled type="number"  class="form-control  shorter numberBox"

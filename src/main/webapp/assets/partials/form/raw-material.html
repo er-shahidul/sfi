@@ -93,9 +93,8 @@
     </thead>
     <tbody>
     <tr>
-        <td tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="Landowners selling timber directly to your organization” means those private landowners with which your organization has a contractual relationship to purchase or harvest timber (i.e., stumpage or logs)."
-            >Number of private forest landowners selling timber (stumpage, logs or chips) directly to your organization last year.</td>
+        <td><span class="underline"tooltip data-html="true" data-placement="top" data-container="body"
+                  data-title="Landowners selling timber directly to your organization” means those private landowners with which your organization has a contractual relationship to purchase or harvest timber (i.e., stumpage or logs).">Number of private forest landowners selling timber (stumpage, logs or chips) directly to your organization last year.</span></td>
 
         <td ng-class="{'disabled' : !operateInUsa()}">
             <span ng-show="operateInUsa() && hasPrimaryYards()">
@@ -144,26 +143,13 @@
 </form>
 <!-- End Top Section -->
 
-
-
-<!-- YES/NO Section 2 -->
-<!--<div class="form-group">-->
-    <!--<label>To assist in implementing Objective 8 of the SFI Standard Principles and Objectives, our organization has clearly defined in writing, and distributed to loggers, chip suppliers, dealers and other raw material suppliers, our organization specific procurement policy, program or plan.</label>-->
-    <!--<div class="form-group hasRadioBoxes">-->
-        <!--<input type="radio" name="answer" name="toAssistObj8" ng-model="cs6.toAssistObj8" ng-value="1" class="icheck" icheck />-->
-        <!--<label class="checkboxLabel">Yes</label>-->
-        <!--&nbsp;&nbsp;&nbsp;-->
-        <!--<input type="radio" name="answer" name="toAssistObj8" ng-model="cs6.toAssistObj8" ng-value="0" class="icheck" icheck />-->
-        <!--<label class="checkboxLabel">No</label>-->
-    <!--</div>-->
-<!--</div>-->
 <br/><br/>
 <!-- -->
 
 <!-- GRID Section 3 -->
 <div class="form-group">
 
-    <label><span tooltip data-html="true" data-placement="top" data-container="body"
+    <label><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
            data-title="Raw Material Consumption. In this question SFI Inc. is seeking the volume of raw material (roundwood and whole log chips) your manufacturing facilities (including log and chip exports) used sourced directly from the forest. Volumes do not have to be absolutely precise; they should be rounded to the nearest unit. Please specify the units (board feet, cubic feet, cords, tons, etc.) you are reporting in column 2. ANNEX 1, which can be found at the end of this document, contains the multipliers that are used by SFI Inc. staff to convert various volume units to “thousands of cubic feet” for reporting totals. If you are converting volumes for this report, please use the appropriate multiplier from the table in ANNEX 1, unless you have a more accurate multiplier or conversion factor for your specific region and species."
             >Raw Material Supply - procured directly from the forest to your SFI manufacturing facilities </span>
     </label>
@@ -236,34 +222,15 @@
             <th style="text-align:center;width: 120px;">Raw Material Sources</th>
             <th style="width:175px; text-align:center;">Units &amp; Volume</th>
 
-            <th style="width:120px;  text-align:center;"
-                tooltip data-html="true" data-placement="top" data-container="body"
-                data-title="A person with specialized skills in timber harvesting gained through experience or formal training who has successfully completed wood producer training programs and continued education requirements recognized by SFI Implementation Committees."
-            >% Delivered by Qualified Logging Professionals</th>
+            <th style="width:120px;  text-align:center;">% Delivered by Qualified Logging Professionals</th>
 
-            <th style="width:120px; text-align:center;"
-                tooltip data-html="true" data-placement="top" data-container="body"
-                data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the SFI Standard."
-            >% from SFI only certified forests</th>
+            <th style="width:120px; text-align:center;">% from SFI only certified forests</th>
 
-            <th style="width:120px; text-align:center;"
-                tooltip data-html="true" data-placement="top" data-container="body"
-                data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the American Tree Farm Standard. <br/>Did you know ATFS has a verification certification database to help you determine ATFS certified and ATFS non-certified lands. For more information visit: www.treefarmsystem.org/ atfsverificationdatabase"
-            >% from ATFS only certified forests</th>
-            <th style="width:120px; text-align:center;"
-                tooltip data-html="true" data-placement="top" data-container="body"
-                data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the Canadian Standards Association standards."
-
-            >% from CSA only  certified forests</th>
-            <th style="width:120px; text-align:center;"
-                tooltip data-html="true" data-placement="top" data-container="body"
-                data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to Forest Stewardship Council Standards"
-            >% from FSC only certified forests </th>
+            <th style="width:120px; text-align:center;">% from ATFS only certified forests</th>
+            <th style="width:120px; text-align:center;">% from CSA only  certified forests</th>
+            <th style="width:120px; text-align:center;">% from FSC only certified forests </th>
             <th style="width:180px; text-align:center;">Select standard combination if reporting volume certified to more than one standard </th>
-            <th style="width:120px; text-align:center;"
-                tooltip data-html="true" data-placement="top" data-container="body"
-                data-title="Your best estimate of fiber sourced from dual or triple certified forests. Note that material sourced from an area certified to only one standard should be reported in the relevant certification standard column."
-            >% certified forest to more than one standard </th>
+            <th style="width:120px; text-align:center;">% certified forest to more than one standard </th>
 
         </tr>
         </thead>
@@ -292,12 +259,11 @@
 
         <tr ng-repeat-end ng-form="innerForm">
 
-            <td style="text-align: right;" ng-init="section.form = innerForm" tooltip data-html="true" data-placement="top" data-container="body"
-                data-title="{{ section.tooltip }}">
+            <td style="text-align: right;" ng-init="section.form = innerForm">
 
-                <input disabled="disabled" readonly type="checkbox" name="otherEnable" id="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
+                <input disabled="disabled" readonly type="checkbox" name="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
                        ng-if="section.row == 11" ng-model="section.otherEnable"/>
-                <label for="otherEnable" style="font-weight: normal;">{{section.name}}</label>
+                <label style="font-weight: normal;">{{section.name}}</label>
 
 
                 <div style="text-align: left;margin-top: 10px;" ng-show="section.otherEnable && otherLabel">
@@ -310,13 +276,11 @@
 
                 <div ng-class="{'has-error' : isSectionDirty(innerForm) && innerForm.item1.$invalid}">
 
-                    <select disabled="disabled" readonly class="form-control" name="item1"
+                    <select readonly class="form-control" name="item1"
                             ng-model="section.unit"
                             ng-required="isSectionDirty(innerForm)"
-                            ng-disabled="!isDisabled(section)"  >
-
+                            ng-disabled="!isDisabled(section)">
                         <option value="" ng-selected="!section.unit" >Select Units</option>
-
                     </select>
                 </div>
 
@@ -444,34 +408,21 @@
     <th style="text-align:center;width: 120px;">Raw Material Sources</th>
     <th style="width:175px; text-align:center;">Units &amp; Volume</th>
 
-    <th style="width:120px;  text-align:center;"
-        tooltip data-html="true" data-placement="top" data-container="body"
-        data-title="A person with specialized skills in timber harvesting gained through experience or formal training who has successfully completed wood producer training programs and continued education requirements recognized by SFI Implementation Committees."
-            >% Delivered by Qualified Logging Professionals</th>
+    <th style="width:120px;  text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                       data-title="A person with specialized skills in timber harvesting gained through experience or formal training who has successfully completed wood producer training programs and continued education requirements recognized by SFI Implementation Committees.">% Delivered by Qualified Logging Professionals</span></th>
 
-    <th style="width:120px; text-align:center;"
-        tooltip data-html="true" data-placement="top" data-container="body"
-        data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the SFI Standard."
-            >% from SFI only certified forests</th>
+    <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                   data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the SFI Standard.">% from SFI only certified forests</span></th>
 
-    <th style="width:120px; text-align:center;"
-        tooltip data-html="true" data-placement="top" data-container="body"
-        data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the American Tree Farm Standard. <br/>Did you know ATFS has a verification certification database to help you determine ATFS certified and ATFS non-certified lands. For more information visit: www.treefarmsystem.org/ atfsverificationdatabase"
-            >% from ATFS only certified forests</th>
-    <th style="width:120px; text-align:center;"
-        tooltip data-html="true" data-placement="top" data-container="body"
-        data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the Canadian Standards Association standards."
-
-            >% from CSA only  certified forests</th>
-    <th style="width:120px; text-align:center;"
-        tooltip data-html="true" data-placement="top" data-container="body"
-        data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to Forest Stewardship Council Standards"
-            >% from FSC only certified forests </th>
+    <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                      data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the American Tree Farm Standard. <br/>Did you know ATFS has a verification certification database to help you determine ATFS certified and ATFS non-certified lands. For more information visit: www.treefarmsystem.org/ atfsverificationdatabase">% from ATFS only certified forests</span></th>
+    <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                      data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to the Canadian Standards Association standards.">% from CSA only  certified forests</span></th>
+    <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                      data-title="Your best estimate of the percentage of raw materials that came from forests that have been certified to Forest Stewardship Council Standards">% from FSC only certified forests </span></th>
     <th style="width:180px; text-align:center;">Select standard combination if reporting volume certified to more than one standard </th>
-    <th style="width:120px; text-align:center;"
-        tooltip data-html="true" data-placement="top" data-container="body"
-        data-title="Your best estimate of fiber sourced from dual or triple certified forests. Note that material sourced from an area certified to only one standard should be reported in the relevant certification standard column."
-            >% certified forest to more than one standard </th>
+    <th style="width:120px; text-align:center;"><span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                                                      data-title="Your best estimate of fiber sourced from dual or triple certified forests. Note that material sourced from an area certified to only one standard should be reported in the relevant certification standard column.">% certified forest to more than one standard </span></th>
 
 </tr>
 </thead>
@@ -501,12 +452,13 @@
 
     <tr ng-repeat-end ng-form="innerForm">
 
-        <td style="text-align: right;" ng-init="section.form = innerForm" tooltip data-html="true" data-placement="top" data-container="body"
-            data-title="{{ section.tooltip }}">
+        <td style="text-align: right;" ng-init="section.form = innerForm">
 
             <input type="checkbox" name="otherEnable" id="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
                    ng-if="section.row == 11" ng-model="section.otherEnable"/>
-            <label for="otherEnable" style="font-weight: normal;">{{section.name}}</label>
+            <label for="otherEnable" style="font-weight: normal;">
+                <span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
+                      data-title="{{ section.tooltip }}">{{section.name}}</span></label>
 
 
             <div style="text-align: left;margin-top: 10px;" ng-show="section.otherEnable && otherLabel">
