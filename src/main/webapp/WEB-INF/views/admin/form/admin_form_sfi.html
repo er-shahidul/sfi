@@ -103,7 +103,7 @@
                                                     <td><span th:text="${sfiPpFormOld.getStatusText()}"></span></td>
                                                     <td><span th:text="${sfiPpFormOld.updatedAt}"></span></td>
                                                     <td>
-                                                        <a th:href="@{'/sfiPpForm/pdf/' + ${sfiPpFormOld.id}}" target="_blank">
+                                                        <a th:href="@{'/sfiPpForm/pdf/' + ${sfiPpFormOld.year} +'/'+ ${sfiPpFormOld.fileName}}" target="_blank">
                                                             <u>Open PDF</u>
                                                         </a>
                                                     </td>

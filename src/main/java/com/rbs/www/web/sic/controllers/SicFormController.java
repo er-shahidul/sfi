@@ -216,15 +216,11 @@ public class SicFormController{
         return "admin/form/admin_form_sic";
     }
 
-    @RequestMapping(value = "/sicForm/pdf/{id}", method = RequestMethod.GET, produces = "application/pdf")
-    public ResponseEntity<byte[]> viewPdf(@PathVariable Integer id, HttpServletRequest request) {
-        SicFormOldViewModel model = formService.getSicFormOldViewModel(id);
-        String originalPath;
+    @RequestMapping(value = "/sicForm/pdf/{year}/{fileName}", method = RequestMethod.GET, produces = "application/pdf")
+    public ResponseEntity<byte[]> viewPdf(@PathVariable String year, @PathVariable String fileName, HttpServletRequest request) {
+        String originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/pdf/sic/"+year+"/";
 
-        originalPath = request.getSession().getServletContext().getRealPath("/")+"uploads/pdf/sic/2015/";
-
-        Path path = Paths.get(originalPath+model.getFileName()+".pdf");
-
+        Path path = Paths.get(originalPath+fileName+".pdf");
         byte[] pdfContents = null;
         try {
             pdfContents = Files.readAllBytes(path);

@@ -102,7 +102,7 @@
                                                     <td><span th:text="${sicFormOld.getStatusText()}"></span></td>
                                                     <td><span th:text="${sicFormOld.updatedAt}"></span></td>
                                                     <td>
-                                                        <a th:href="@{'/sicForm/pdf/' + ${sicFormOld.id}}" target="_blank">
+                                                        <a th:href="@{'/sicForm/pdf/' + ${sicFormOld.year} +'/'+ ${sicFormOld.fileName}}" target="_blank">
                                                             <u>Open PDF</u>
                                                         </a>
                                                     </td>
