@@ -98,9 +98,9 @@
                                                         <span th:text="${sicFormOld.company.name}"></span>
                                                     </td>
                                                     <td></td>
-                                                    <td>2015-04-29</td>
+                                                    <td><span th:text="${sicFormOld.createdAt}"></span></td>
                                                     <td><span th:text="${sicFormOld.getStatusText()}"></span></td>
-                                                    <td>2015-04-29</td>
+                                                    <td><span th:text="${sicFormOld.updatedAt}"></span></td>
                                                     <td>
                                                         <a th:href="@{'/sicForm/pdf/' + ${sicFormOld.id}}" target="_blank">
                                                             <u>Open PDF</u>

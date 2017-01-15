@@ -99,9 +99,9 @@
                                                         <span th:text="${sfiPpFormOld.company.name}"></span>
                                                     </td>
                                                     <td></td>
-                                                    <td>2015-04-29</td>
+                                                    <td><span th:text="${sfiPpFormOld.createdAt}"></span></td>
                                                     <td><span th:text="${sfiPpFormOld.getStatusText()}"></span></td>
-                                                    <td>2015-04-29</td>
+                                                    <td><span th:text="${sfiPpFormOld.updatedAt}"></span></td>
                                                     <td>
                                                         <a th:href="@{'/sfiPpForm/pdf/' + ${sfiPpFormOld.id}}" target="_blank">
                                                             <u>Open PDF</u>

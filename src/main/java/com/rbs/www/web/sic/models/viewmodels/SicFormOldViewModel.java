@@ -9,6 +9,8 @@ public class SicFormOldViewModel extends BaseViewModel {
     private String fileName;
     private Boolean approved;
     private String year;
+    private String updatedAt;
+    private String createdAt;
 
     @Override
     public Integer getId() {
@@ -49,5 +51,21 @@ public class SicFormOldViewModel extends BaseViewModel {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }

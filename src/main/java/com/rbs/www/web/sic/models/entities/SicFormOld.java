@@ -25,6 +25,12 @@ public class SicFormOld extends BaseEntityModel {
     @Column(name = "year", nullable = true)
     private String year;
 
+    @Column(name = "updated_at", nullable = true)
+    private String updatedAt;
+
+    @Column(name = "created_at", nullable = true)
+    private String createdAt;
+
     @Override
     public Integer getId() {
         return id;
@@ -73,5 +79,21 @@ public class SicFormOld extends BaseEntityModel {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }
