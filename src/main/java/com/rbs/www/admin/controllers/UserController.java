@@ -205,7 +205,8 @@ public class UserController {
         boolean isInvalidFirstName = !userService.isValidFirstName(user.getFirstName());
         boolean isInvalidEmail = !userService.isValidEmailUpdate(user.getEmail());
         boolean isInvalidPassword =false;
-        if(user.getPassword() != null){
+        if (user.getPassword() == null) {
+        } else {
             isInvalidPassword = !userService.isValidPassword(user.getPassword());
         }
 
@@ -219,7 +220,7 @@ public class UserController {
             return "redirect:/admin/user/edit/" + user.getId();
         }
 
-        if(user.getPassword() == null){
+        if(isInvalidPassword){
             userService.updateUser(user);
         }else {
             userService.updateUserWithPassword(user, user.getPassword());
