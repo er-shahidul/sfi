@@ -101,7 +101,7 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
             "/admin/company/pp/form/view/" + formData.id + "?print#" + $location.$$path :
             "/sfiPpForm/view?print#" + $location.$$path;
 
-        setTimeout(function(){ var win = window.open(url, '_blank'); }, 4000);
+        var win = window.open(url, '_blank');
 
         win.focus();
     };
@@ -127,7 +127,7 @@ sfiFormApp.controller('FormHeaderCtrl', ['$rootScope', '$scope', '$http', '$loca
             "/admin/company/pp/form/view/" + formData.id + "?print#print-all" :
             "/sfiPpForm/view?print#print-all" ;
 
-        setTimeout(function(){ var win = window.open(url, '_blank'); }, 4000);
+        var win = window.open(url, '_blank');
         
         win.focus();
     };

@@ -83,7 +83,7 @@ sfiSicApp
             "/admin/company/sic/form/view/" + formData.id + "?print#" + $location.$$path :
             "/sicForm/view?print#" + $location.$$path;
 
-        setTimeout(function(){ var win = window.open(url, '_blank'); }, 4000);
+        var win = window.open(url, '_blank');
 
         win.focus();
     };
@@ -109,7 +109,7 @@ sfiSicApp
             "/admin/company/sic/form/view/" + formData.id + "?print#print-all" :
             "/sicForm/view?print#print-all" ;
 
-        setTimeout(function(){ var win = window.open(url, '_blank'); }, 4000);
+        var win = window.open(url, '_blank');
 
         win.focus();
     };
