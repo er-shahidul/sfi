@@ -113,20 +113,17 @@
 
                     <td align="right" ng-class="{'has-error' : innerForm.otherText.$invalid}">
 
-                        <span ng-show="operateInUsa() || operateInCa()">
+                        <label ng-show="operateInUsa() || operateInCa()" style="font-weight: normal;">
                             <input type="checkbox" name="otherEnable" class="icheck" icheck
                                    ng-if="item.description == 'Other'"
-                                   ng-model="cs5.isOtherEnabled"/>
-                        </span>
-                        <span ng-show="!operateInUsa() && !operateInCa()">
+                                   ng-model="cs5.isOtherEnabled"/> {{ item.description }}
+                        </label>
+                        <label ng-show="!operateInUsa() && !operateInCa()" ng-class="{'disabled' : !operateInUsa() && !operateInCa()}" style="font-weight: normal;">
                             <input readonly disabled type="checkbox" name="otherEnable" class="icheck" icheck
                                    ng-if="item.description == 'Other'"
-                                   ng-model="cs5.isOtherEnabled"/>
-                        </span>
+                                   ng-model="cs5.isOtherEnabled"/>{{ item.description }}
+                        </label>
 
-                        <span ng-class="{'disabled' : !operateInUsa() && !operateInCa()}">
-                        {{ item.description }}
-                        </span>
                         <span ng-show="operateInUsa() || operateInCa()">
                             <input type="text" class="form-control   shorter" name="otherText"
                                    ng-disabled="(item.description == 'Other' && cs5.isOtherEnabled != true)" ng-model="cs5.otherText"
