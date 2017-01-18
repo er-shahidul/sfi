@@ -293,10 +293,13 @@
     // <![CDATA[
 
         $( window ).load(function(){
+            console.log('load');
+            if(isPrint) {
+                setTimeout(function(){
+                    window.print();
 
-            setTimeout(function(){
-                isPrint && window.print()
-            }, 2000);
+                }, 10000);
+            }
         });
 
     // ]]>
