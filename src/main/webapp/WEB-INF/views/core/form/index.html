@@ -737,12 +737,15 @@
 
     // <![CDATA[
 
-        $( window ).load(function(){
-
+    $( window ).load(function(){
+        console.log('load');
+        if(isPrint) {
             setTimeout(function(){
-                isPrint && window.print()
-            }, 2000);
-        });
+                window.print();
+
+            }, 10000);
+        }
+    });
 
     // ]]>
     </script>
