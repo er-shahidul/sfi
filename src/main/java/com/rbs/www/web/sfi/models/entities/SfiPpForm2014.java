@@ -1,6 +1,7 @@
 package com.rbs.www.web.sfi.models.entities;
 
 import com.rbs.www.admin.models.entities.Company;
+import com.rbs.www.admin.models.entities.User;
 import com.rbs.www.common.models.BaseEntityModel;
 
 import javax.persistence.*;
@@ -11,6 +12,10 @@ public class SfiPpForm2014 extends BaseEntityModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @ManyToOne(targetEntity = User.class, optional = true)
+    @JoinColumn(name = "created_by", referencedColumnName = "id", nullable = true)
+    private User createdBy;
 
     @OneToOne(targetEntity = Company.class, optional = false)
     @JoinColumn(name = "company_id", referencedColumnName = "id", nullable = true)
@@ -95,5 +100,13 @@ public class SfiPpForm2014 extends BaseEntityModel {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public User getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(User createdBy) {
+        this.createdBy = createdBy;
     }
 }

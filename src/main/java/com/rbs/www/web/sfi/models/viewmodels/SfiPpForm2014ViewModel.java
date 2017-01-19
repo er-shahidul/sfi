@@ -1,10 +1,12 @@
 package com.rbs.www.web.sfi.models.viewmodels;
 
 import com.rbs.www.admin.models.viewmodels.CompanyViewModel;
+import com.rbs.www.admin.models.viewmodels.UserViewModel;
 import com.rbs.www.common.models.BaseViewModel;
 
 public class SfiPpForm2014ViewModel extends BaseViewModel {
     private Integer id;
+    private UserViewModel createdBy;
     private CompanyViewModel company;
     private String fileName;
     private Boolean approved;
@@ -67,5 +69,13 @@ public class SfiPpForm2014ViewModel extends BaseViewModel {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public UserViewModel getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(UserViewModel createdBy) {
+        this.createdBy = createdBy;
     }
 }
