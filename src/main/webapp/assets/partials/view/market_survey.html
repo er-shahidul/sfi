@@ -676,7 +676,7 @@
 
             <div style="margin-bottom: 20px;" class="col-lg-12">
                 <label style="font-weight: normal;" class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
-                    <b><span class="underline" Have you ever considered obtaining FSC chain-of-custody certification?</b></b>
+                    <b><span class="underline"> Have you ever considered obtaining FSC chain-of-custody certification?</span></b></b>
                 </label>
                 <div class="padding-left-10 label_width">
                     <p style="font-weight: normal;">Choose one of the following</p>
@@ -2708,49 +2708,49 @@
                 <span class="question-style underline" tooltip title="SFI would like to understand your organization's communications strategies, so that we can provide information about relevant topics."> To help us understand how you market your SFI certification, please tell us how you communicate your SFI certification externally (e.g. to customers) and/or internally (to employees)? </span>
             </b></p>
             <div class="padding-left-10" style="margin-bottom: 20px;">
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="1" ng-model="sfiMarket" >
                     Annual reports
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="2" ng-model="sfiMarket" >
                     Brochures & other promotional material
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="3" ng-model="sfiMarket" >
                     Printing the SFI label on your materials on SFI material using an SFI COC printer
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="4" ng-model="sfiMarket" >
                     Website
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="5" ng-model="sfiMarket" >
                     Social media
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="6" ng-model="sfiMarket" >
                     Newsletter
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="7" ng-model="sfiMarket" >
                     Client area/extranet
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="8" ng-model="sfiMarket" >
                     Other
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 8)">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 8)">
                     Please Explain:
                     <input readonly disabled style="font-weight: normal" class="form-control" type="text" ng-model="cs8.sfiMarketExplain1">
                 </label></p>
                 <br ng-show="isSelected(cs8.sfiMarketExternally, 8)" />
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="9" ng-model="sfiMarket" >
                     n/a we don’t  communicate SFI certified status
                 </label></p>
 
-                <p style="margin-bottom: 0;"><label class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 9)">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline" ng-show="isSelected(cs8.sfiMarketExternally, 9)">
                     Please Explain:
                     <input readonly disabled style="font-weight: normal" class="form-control" type="text" ng-model="cs8.sfiMarketExplain2">
                 </label></p>
@@ -2761,60 +2761,62 @@
                 <span class="question-style underline" tooltip title="SFI would like to ensure we are equipping you to tell your story effectively! If you have ideas that are not on this list, please let us know.">How could SFI help you in your external and internal communication activities?</span>
             </b></p>
 
+
+
             <div class="padding-left-10" style="margin-bottom: 20px;">
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="1" ng-model="sfiHelp" >
                     Presentation materials (sales presentations, benefits of SFI certification, benefits of sustainable forest management)
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="2" ng-model="sfiHelp" >
                     Brochures/factsheets explaining the relevance of SFI certification to specific industry sectors e.g. retail, brand owners, etc.
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="3" ng-model="sfiHelp" >
                     Template press release announcing your (re)certification status
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="4" ng-model="sfiHelp" >
                     Access to royalty free photos covering various aspects of sustainable forest management, forests certified to SFI and responsibly sourced/SFI labeled forest products
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="5" ng-model="sfiHelp" >
                     Promotional items certified to SFI  (calendars, pens, USB sticks, stickers etc.)
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="6" ng-model="sfiHelp" >
                     General articles on current forestry related topics (e.g. for employee newsletters)
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="7" ng-model="sfiHelp" >
                     Posters or data visualizations (infographics) explaining the benefits of sustainable forest management/certification
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="8" ng-model="sfiHelp" >
                     Brochures/factsheetswhich explain the benefits of sustainable forest management/certification
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="9" ng-model="sfiHelp" >
                     In-house/online training on sustainable forest management, forest certification, benefits of SFI
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="10" ng-model="sfiHelp" >
                     SFI speakers at our employee or customer events
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="11" ng-model="sfiHelp" >
                     Providing more information on what being involved in the SFI program means for your organization
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="12" ng-model="sfiHelp" >
                     Our organization would not benefit from any such materials/activities
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="13" ng-model="sfiHelp" >
                     Other
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline" ng-show="isSelected(cs8.sfiHelpCommunication, 13)">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline" ng-show="isSelected(cs8.sfiHelpCommunication, 13)">
                     Please Explain:
                     <input readonly disabled style="font-weight: normal" class="form-control" type="text" ng-model="cs8.sfiHelpCommunicationExplain">
                 </label></p>
@@ -2826,23 +2828,23 @@
 
             <div class="padding-left-10" style="margin-bottom: 20px;">
                 <p>Check all that apply</p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="1" ng-model="sfiServe" >
                     Collaboration opportunities with other SFI Program Participants
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="2" ng-model="sfiServe" >
                     Collaboration opportunities with conservation organizations or social purpose organizations
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="3" ng-model="sfiServe" >
                     Outreach to brand owners/customers
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="4" ng-model="sfiServe" >
                     Facilitating information sharing more effectively among SFI Program Participants
                 </label></p>
-                <p style="margin-bottom: 0;"><label class="form-inline">
+                <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input readonly disabled type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="5" ng-model="sfiServe" >
                     Answers to commonly asked questions
                 </label></p>

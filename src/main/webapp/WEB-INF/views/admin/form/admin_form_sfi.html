@@ -98,7 +98,7 @@
                                                     <td>
                                                         <span th:text="${sfiPpFormOld.company.name}"></span>
                                                     </td>
-                                                    <td></td>
+                                                    <td th:text="(${sfiPpFormOld.createdBy}) ? ${sfiPpFormOld.createdBy.username} : ''"></td>
                                                     <td><span th:text="${sfiPpFormOld.createdAt}"></span></td>
                                                     <td><span th:text="${sfiPpFormOld.getStatusText()}"></span></td>
                                                     <td><span th:text="${sfiPpFormOld.updatedAt}"></span></td>

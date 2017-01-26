@@ -546,6 +546,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         dest.countryID               = src.countryID || null;
         dest.standardValues          = src.standardValues || null;
         dest.percOtherReason         = src.percOtherReason || null;
+        dest.country                 = src.country || null;
 
         return dest;
 
@@ -572,8 +573,8 @@ sfiFormApp.controller('FormRawMaterialCtrl',
     }
 
     $scope.editOther = function(countryId){
-
         var item = $scope.getOther(countryId);
+        console.log(item);
 
 
         if(!item){
@@ -814,7 +815,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
             || other.percSFIFiberSourcing
             || other.volume
             || other.units
-            || other.countryID
+            || other.country
             || other.standardValues;
     }
 
