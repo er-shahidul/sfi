@@ -17,44 +17,44 @@
                     </b>
                 </p>
                 <ul class="list-style fm-stl">
-                    <li>
-                        <label class="form-inline">
+                    <li class="form-inline">
+                        <label class="form-inline no_right_margin" >
                             <input type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="1">  Assessment on Production and/or acreage
 
                         </label>
-                        <input style="font-weight:400; width: 50%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 1)" ng-model="cs2.committeeFeeSpecify1">
-                    </li>
-                    <li>
-                        <label class="form-inline">
+                        <input style="font-weight:400; width: 60%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 1)" ng-model="cs2.committeeFeeSpecify1">
+                    </li >
+                    <li class="form-inline">
+                        <label class="form-inline no_right_margin">
                             <input type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="2">  Sliding Scale/Tiered approach
 
                         </label>
                         <input style="font-weight:400;width: 60%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 2)" ng-model="cs2.committeeFeeSpecify2">
                     </li>
                     <li>
-                        <label class="form-inline">
+                        <label class="form-inline no_right_margin">
                             <input type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="3"> Flat Fee
 
                         </label>
-                        <input style="font-weight:400; width: 80%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 3)" ng-model="cs2.committeeFeeSpecify3">
+                        <input style="font-weight:400; width: 60%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 3)" ng-model="cs2.committeeFeeSpecify3">
                     </li>
                     <li>
-                        <label class="form-inline">
+                        <label class="form-inline no_right_margin">
                             <input type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="4"> Fundraising activities
                             </label>
-                        <input style="font-weight:400; width: 70%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 4)" ng-model="cs2.committeeFeeSpecify4">
+                        <input style="font-weight:400; width: 60%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 4)" ng-model="cs2.committeeFeeSpecify4">
                     </li>
                     <li>
-                        <label class="form-inline">
+                        <label class="form-inline no_right_margin">
                             <input type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="5"> In-kind contributions
                              </label>
-                        <input style="font-weight:400; width: 70%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 5)" ng-model="cs2.committeeFeeSpecify5">
+                        <input style="font-weight:400; width: 60%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 5)" ng-model="cs2.committeeFeeSpecify5">
                     </li>
                     <li>
-                        <label class="form-inline">
+                        <label class="form-inline no_right_margin">
                             <input type="checkbox" name="committeeFeeStructure" checklist-model="cs2.committeeFeeStructure" checklist-value="6"> Other
                              </label>
-                        <input style="font-weight:400; width: 85%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 6)" ng-model="cs2.committeeFeeSpecify6">
+                        <input style="font-weight:400; width: 60%;" class="form-control pull-right" type="text" placeholder="Please Specify" ng-show="isSelected(cs2.committeeFeeStructure, 6)" ng-model="cs2.committeeFeeSpecify6">
 
                     </li>
                 </ul>
@@ -80,7 +80,7 @@
                         </b>
                     </p>
                     <label class="form-inline">
-                        <b>Amount</b>
+                        Amount
                         <input class="form-control" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  customerror ng-model="cs2.spentBySicSupporters">
                         <u><span style="font-weight: normal;" class="curency" id="supportCurrency" ng-click="setCurrency('supportCurrency', cs2)">{{ gerCurrency(cs2.supportCurrency) }}</span></u>
                     </label>
@@ -96,7 +96,7 @@
                         </b>
                     </p>
                     <label class="form-inline" ng-class="{'has-error' : cs2.spentByYourCommittee != getTotal() }">
-                        <b>Amount</b>
+                        Amount
                         <input class="form-control" name="spentByYourCommittee" type="number" ng-pattern="/^\d*(\.\d{1,4})?$/" pattern-msg="Enter decimal number up to 4 precision points" customerror  ng-model="cs2.spentByYourCommittee">
                         <u><span style="font-weight: normal;" class="curency" id="committeeCurrency" ng-click="setCurrency('committeeCurrency', cs2)">{{ gerCurrency(cs2.committeeCurrency) }}</span></u>
                     </label>

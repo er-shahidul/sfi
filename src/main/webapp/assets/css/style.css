@@ -170,6 +170,9 @@ ul {
 #logoPlaceholder {
 	margin:5px 0 5px 0;
 }
+.no_right_margin{
+	margin-right:0px !important;
+}
 /*
 #companyInfoLeft {
 	width:160px;
