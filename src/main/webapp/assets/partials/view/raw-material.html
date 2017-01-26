@@ -373,24 +373,24 @@
         </td>
 
         <td ng-class="{'has-error' : innerForm.other6.$invalid}">
-            <input type="number" readonly  class="form-control shorter" name="other6" min="0" max="100"
+            <input type="number" readonly  class="form-control shorter"  name="other6" min="0" max="100"
                    ng-model="other.percPEFCFSCCertified" ng-pattern="/^\d*(\.\d{1,2})?$/"
                    pattern-msg="Enter decimal number up to 2 precision points" customerror>%
         </td>
 
         <td ng-class="{'has-error' : innerForm.other7.$invalid}">
-            <input type="number" readonly  class="form-control  shorter"  style="width: 85%;" name="other7" min="0" max="100"
+            <input type="number" readonly  class="form-control  shorter" style="width: 65px;" style="width: 85%;" name="other7" min="0" max="100"
                    ng-model="other.percSFIFiberSourcing" ng-pattern="/^\d*(\.\d{1,2})?$/"
                    pattern-msg="Enter decimal number up to 2 precision points" customerror>%
         </td>
 
         <td ng-class="{'has-error' : innerForm.other8.$invalid}">
 
-            <input type="number" readonly  class="form-control  shorter" name="other8" id="other8" min="0" max="100"
+            <input type="number" readonly  class="form-control  shorter" style="width: 65px;" name="other8" id="other8" min="0" max="100"
                    ng-model="other.percOther" ng-pattern="/^\d*(\.\d{1,2})?$/" ng-keyup="showPopUp4()" ng-click="showPopUp4()"
                    pattern-msg="Enter decimal number up to 2 precision points" customerror>%
 
-            <div ng-show="other.percOther && other.percOtherReason">
+            <div ng-show="other.percOther && other.percOtherReason" style="width: 100px;">
                 <a ng-click="showPopUp4()">Assurance responsible sources of supply</a>
             </div>
 
