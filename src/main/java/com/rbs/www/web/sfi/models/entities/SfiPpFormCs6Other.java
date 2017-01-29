@@ -36,8 +36,11 @@ public class SfiPpFormCs6Other extends BaseEntityModel {
     @Column(name = "cs6_otherCountries_percSFIFiberSourcing", nullable = true)
     private Float percSFIFiberSourcing;
 
-    @Column(name = "cs6_otherCountries_percOther", nullable = true)
-    private Boolean percOther;
+//    @Column(name = "cs6_otherCountries_percOther", nullable = true)
+//    private Boolean percOther;
+
+    @Column(name = "cs6_otherCountries_percOther_val", nullable = true)
+    private Float percOtherVal;
 
     @Column(name = "cs6_otherCountries_percOtherReason", nullable = true)
     private String percOtherReason;
@@ -115,13 +118,13 @@ public class SfiPpFormCs6Other extends BaseEntityModel {
         this.percSFIFiberSourcing = percSFIFiberSourcing;
     }
 
-    public Boolean getPercOther() {
-        return percOther;
-    }
-
-    public void setPercOther(Boolean percOther) {
-        this.percOther = percOther;
-    }
+//    public Boolean getPercOther() {
+//        return percOther;
+//    }
+//
+//    public void setPercOther(Boolean percOther) {
+//        this.percOther = percOther;
+//    }
 
     public String getPercOtherReason() {
         return percOtherReason;
@@ -129,5 +132,13 @@ public class SfiPpFormCs6Other extends BaseEntityModel {
 
     public void setPercOtherReason(String percOtherReason) {
         this.percOtherReason = percOtherReason;
+    }
+
+    public Float getPercOtherVal() {
+        return percOtherVal;
+    }
+
+    public void setPercOtherVal(Float percOtherVal) {
+        this.percOtherVal = percOtherVal;
     }
 }

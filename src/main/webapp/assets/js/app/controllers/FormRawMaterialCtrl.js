@@ -537,7 +537,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
     $scope.cloneOther = function(src, dest){
 
         dest.percFSCCertified        = src.percFSCCertified || null;
-        dest.percOther               = src.percOther  || null;
+        dest.percOtherVal               = src.percOtherVal  || null;
         dest.percPEFCCertified       = src.percPEFCCertified  || null;
         dest.percPEFCFSCCertified    = src.percPEFCFSCCertified  || null;
         dest.percSFIFiberSourcing    = src.percSFIFiberSourcing || null;
@@ -809,7 +809,7 @@ sfiFormApp.controller('FormRawMaterialCtrl',
         var other = $scope.other;
 
         return other.percFSCCertified
-            || other.percOther
+            || other.percOtherVal
             || other.percPEFCCertified
             || other.percPEFCFSCCertified
             || other.percSFIFiberSourcing

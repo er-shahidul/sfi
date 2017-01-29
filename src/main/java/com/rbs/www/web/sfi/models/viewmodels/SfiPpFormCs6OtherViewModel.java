@@ -12,7 +12,8 @@ public class SfiPpFormCs6OtherViewModel extends BaseViewModel {
     private Float percFSCCertified;
     private Float percPEFCFSCCertified;
     private Float percSFIFiberSourcing;
-    private Boolean percOther;
+//    private Boolean percOther;
+    private Float percOtherVal;
     private String percOtherReason;
 
     @Override
@@ -88,13 +89,13 @@ public class SfiPpFormCs6OtherViewModel extends BaseViewModel {
         this.percSFIFiberSourcing = percSFIFiberSourcing;
     }
 
-    public Boolean getPercOther() {
-        return percOther;
-    }
-
-    public void setPercOther(Boolean percOther) {
-        this.percOther = percOther;
-    }
+//    public Boolean getPercOther() {
+//        return percOther;
+//    }
+//
+//    public void setPercOther(Boolean percOther) {
+//        this.percOther = percOther;
+//    }
 
     public String getPercOtherReason() {
         return percOtherReason;
@@ -102,5 +103,13 @@ public class SfiPpFormCs6OtherViewModel extends BaseViewModel {
 
     public void setPercOtherReason(String percOtherReason) {
         this.percOtherReason = percOtherReason;
+    }
+
+    public Float getPercOtherVal() {
+        return percOtherVal;
+    }
+
+    public void setPercOtherVal(Float percOtherVal) {
+        this.percOtherVal = percOtherVal;
     }
 }
