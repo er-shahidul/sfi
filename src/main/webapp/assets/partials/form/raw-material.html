@@ -126,9 +126,15 @@
                     compared with last year?
                  </p>
                  <span ng-if="hasPrimaryYards() && (operateInUsa() || operateInCa())">
-                    <input type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="1"> Increased
-                    <input type="radio" style="margin-left: 25px;" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="2"> Decreased
-                    <input type="radio" style="margin-left: 25px;" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="3"> Remained the same
+                     <label style="font-weight: normal;">
+                        <input type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="1"> Increased
+                     </label>
+                     <label style="font-weight: normal;">
+                        <input type="radio" style="margin-left: 25px;" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="2"> Decreased
+                     </label>
+                     <label style="font-weight: normal;">
+                        <input type="radio" style="margin-left: 25px;" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="3"> Remained the same
+                     </label>
                  </span>
                  <span ng-if="!hasPrimaryYards()">
                     <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="1"> Increased

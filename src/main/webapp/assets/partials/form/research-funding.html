@@ -208,11 +208,13 @@
                 <div class="form-group hasRadioBoxes" >
 
                     <div>
-                        <input type="radio" name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == true" ng-model="cs5.isInPartnership" ng-value="true" icheck/>
-                        <label class="checkboxLabel">Yes</label>
+                        <label class="checkboxLabel">
+                            <input type="radio" name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == true" ng-model="cs5.isInPartnership" ng-value="true" icheck/>
+                        Yes</label>
                             &nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == false" ng-model="cs5.isInPartnership" ng-value="false" icheck/>
-                        <label class="checkboxLabel">No</label>
+                        <label class="checkboxLabel">
+                            <input type="radio" name="cs3_isInPartnership" ng-checked="cs5.isInPartnership == false" ng-model="cs5.isInPartnership" ng-value="false" icheck/>
+                        No</label>
                     </div>
                 </div>
 
@@ -630,18 +632,24 @@
                             the areas of conservation and community engagement?</span><br/>
 
                         <div style="padding-left: 15px;">
-                            <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="1"/>
-                            <span class="radioLabel">Share – with our organization’s name</span>
+                            <label style="font-weight: normal;">
+                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="1"/>
+                                <span class="radioLabel">Share – with our organization’s name</span>
+                            </label>
                         </div>
 
                         <div style="padding-left: 15px;">
-                            <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="2" />
-                            <span class="radioLabel">Share – don’t use our organization’s name</span>
+                            <label style="font-weight: normal;">
+                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="2" />
+                                <span class="radioLabel">Share – don’t use our organization’s name</span>
+                            </label>
                         </div>
 
                         <div style="padding-left: 15px;">
-                            <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="3"/>
-                            <span class="radioLabel">Only use in aggregate</span>
+                            <label style="font-weight: normal;">
+                                <input type="radio" name="consent" icheck ng-model="project.share" ng-change="setShareOption()" ng-value="3"/>
+                                <span class="radioLabel">Only use in aggregate</span>
+                            </label>
                         </div>
 
                     </div>
