@@ -1,5 +1,8 @@
 
 <style>
+    select optgroup[label]{
+        font-weight:100;
+    }
     @media print {
         body {
             font-family: sans-serif;
@@ -212,10 +215,12 @@
 <div class="form-group">
     <select ng-model="regionId" id="regionId" ng-change="isUsCanadaExist()" ng-disabled="!hasPrimaryYards()">
         <option value="0">&lt;Select the region of your fiber source&gt;</option>
-        <option ng-repeat="item in regions" readonly="readonly" disabled value="{{item.id}}" ng-show="1=={{item.id}}">{{item.name}}</option>
-        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52>{{item.id}} && 1!={{item.id}}">{{item.name}}</option>
-        <option ng-repeat="item in regions" readonly="readonly" disabled value="{{item.id}}" ng-show="52=={{item.id}}">{{item.name}}</option>
-        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52<{{item.id}} && 52!={{item.id}}">{{item.name}}</option>
+        <optgroup label="All States (United States)">
+            <option ng-repeat="item in regions" value="{{item.id}}" ng-if="item.id>1 && item.id < 52">{{item.name}}</option>
+        </optgroup>
+        <optgroup label="All Provinces (Canada)">
+            <option ng-if="item.id>52" ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
+        </optgroup>
         <option ng-show="operateInOthers()" value="-1">Outside USA & Canada</option>
     </select>
 </div>
