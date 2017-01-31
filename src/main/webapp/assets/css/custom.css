@@ -357,7 +357,7 @@ ul[rn-carousel] {
     text-overflow: clip;
     background: white;
 }
-
+/*
 .close-button::before {
     display: inline-block;
     -webkit-box-sizing: content-box;
@@ -400,7 +400,7 @@ ul[rn-carousel] {
     text-shadow: none;
     -webkit-transform: rotateZ(-45deg)   ;
     transform: rotateZ(-45deg)   ;
-}
+}*/
 @media print {
     body {
         font-family: sans-serif;
