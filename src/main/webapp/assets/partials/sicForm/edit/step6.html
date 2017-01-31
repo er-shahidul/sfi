@@ -13,7 +13,7 @@
                 <h5>
                     6. <span class="underline" tooltip data-placement="top" data-container="body" data-html="true" data-title="From SIC Governance document – Logger Training and Education core mission priority:  Establish criteria and identify delivery mechanisms for qualified logging professional, qualified resource professional and wood producer training. Establish criteria for recognition of logger certification professional programs, where they exist.">Logger Training and Education (Core Mission Priority)</span>
                 </h5>
-                <div style="padding-left: 10px;">
+                <div>
                     <p style="font-weight: bold">
                         Please select the SIC-recognized logger training and education program in your state/province.
                     </p>
@@ -26,7 +26,7 @@
                         <option ng-repeat="items in fraItems | orderBy:'order':reverse" ng-value="$index">{{items.value}}</option>
                     </select>
 
-                    <div id="selectedItem" ng-repeat="programIndex in cs6.trainingPrograms ">{{ fraItems[programIndex].value }}
+                    <div style="margin: 5px 5px 15px 0;" id="selectedItem" ng-repeat="programIndex in cs6.trainingPrograms ">{{ fraItems[programIndex].value }}
                         <button ng-click="deleteByIndex($index, cs6.trainingPrograms)" type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                     </div>
 

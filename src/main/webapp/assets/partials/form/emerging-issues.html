@@ -193,11 +193,13 @@
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
+                                    <label class="checkboxLabel">
                                     <input type="radio"   icheck name="test3" ng-model="cs7.investResIfInve" ng-value="true">
-                                    <label class="checkboxLabel">Yes</label>
+                                    Yes</label>
                                     &nbsp;&nbsp;&nbsp;
+                                    <label class="checkboxLabel">
                                     <input type="radio"   icheck name="test3" ng-model="cs7.investResIfInve" ng-value="false">
-                                    <label class="checkboxLabel">No</label>
+                                    No</label>
                                 </div>
                                 <p></p>
 
@@ -221,15 +223,20 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6" ng-show="cs7.investResIfInve" style="margin-top:15px;">
-                            <br>
-                            <div class="group3">
-                                <label>Anticipated year research will begin</label>
-                                <select  class="form-control" name="select" ng-model="cs7.planInvestRes_year">
-                                    <option value="0" ng-selected="!cs7.planInvestRes_year">Select Year</option>
-                                    <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
-                                            ng-value="{{year}}">{{year}}</option>
-                                </select>
+                        <div class="col-sm-6" ng-show="cs7.investResIfInve">
+                            <div class="form-group hasRadioBoxes">
+                                <div style="height: 27px;">
+
+                                </div>
+                                <p></p>
+                                <div class="group3">
+                                    <label>Anticipated year research will begin</label>
+                                    <select  class="form-control" name="select" ng-model="cs7.planInvestRes_year">
+                                        <option value="0" ng-selected="!cs7.planInvestRes_year">Select Year</option>
+                                        <option ng-repeat="year in ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030','2031','2032','2033','2034']"
+                                                ng-value="{{year}}">{{year}}</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </td>
@@ -243,11 +250,13 @@
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
+                                    <label class="checkboxLabel">
                                     <input type="radio"   icheck name="test2" ng-model="cs7.planInvestResIfPlan" ng-value="true">
-                                    <label class="checkboxLabel">Yes</label>
+                                    Yes</label>
                                     &nbsp;&nbsp;&nbsp;
+                                    <label class="checkboxLabel">
                                     <input type="radio"   icheck name="test2" ng-model="cs7.planInvestResIfPlan" ng-value="false">
-                                    <label class="checkboxLabel">No</label>
+                                    No</label>
                                 </div>
                                 <p></p>
 
@@ -271,16 +280,21 @@
                             </div>
                         </div>
                         <div class="col-sm-6" ng-show="cs7.planInvestResIfPlan">
-                            <br><br>
-                            <div class="group2" style="margin-top:-18px;">
+                            <div class="form-group hasRadioBoxes">
+                                <div style="height: 27px;">
 
-                                    <label>% of your current supply into US and Canadian mills from forest tree biotechnology</label>
-                                    <input type="number"  class="form-control shortest" max="100" min="0"
-                                           ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
-                                           ng-model="cs7.investResperc_currSupply"> %
+                                </div>
+                                <p></p>
+                                <div class="group2" style="margin-top:-18px;">
+
+                                        <label>% of your current supply into US and Canadian mills from forest tree biotechnology</label>
+                                        <input type="number"  class="form-control shortest" max="100" min="0"
+                                               ng-pattern="/^\d*(\.\d{1,2})?$/" pattern-msg="Enter decimal number up to 2 precision points" customerror
+                                               ng-model="cs7.investResperc_currSupply"> %
 
 
 
+                                </div>
                             </div>
                         </div>
                     </td>
@@ -294,11 +308,13 @@
                             <div class="form-group hasRadioBoxes">
 
                                 <div>
+                                    <label class="checkboxLabel">
                                     <input type="radio"   icheck name="test" ng-model="cs7.planCommPlantIfPlanGE" ng-value="true">
-                                    <label class="checkboxLabel">Yes</label>
+                                    Yes</label>
                                     &nbsp;&nbsp;&nbsp;
+                                    <label class="checkboxLabel">
                                     <input type="radio"   icheck name="test" ng-model="cs7.planCommPlantIfPlanGE" ng-value="false">
-                                    <label class="checkboxLabel">No</label>
+                                    No</label>
                                 </div>
                                 <p></p>
 
@@ -322,16 +338,21 @@
                             </div>
                         </div>
                         <div class="col-sm-6" ng-show="cs7.planCommPlantIfPlanGE">
-                            <div class="group1">
-                                <br><br>
-                                <label>Anticipated year of harvest</label>
-                                <select  class="form-control" name="select" ng-model="cs7.planCommPlant_year">
-                                    <option value="0" ng-selected="!cs7.planCommPlant_year">Select Year</option>
-                                    <option value="1">2015 to 2019</option>
-                                    <option value="2">2020 to 2024</option>
-                                    <option value="3">2025 to 2029</option>
-                                    <option value="4">2030 to 2034</option>
-                                </select>
+                            <div class="form-group hasRadioBoxes">
+                                <div style="height: 27px;">
+
+                                </div>
+                                <p></p>
+                                <div class="group1">
+                                    <label>Anticipated year of harvest</label>
+                                    <select  class="form-control" name="select" ng-model="cs7.planCommPlant_year">
+                                        <option value="0" ng-selected="!cs7.planCommPlant_year">Select Year</option>
+                                        <option value="1">2015 to 2019</option>
+                                        <option value="2">2020 to 2024</option>
+                                        <option value="3">2025 to 2029</option>
+                                        <option value="4">2030 to 2034</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="padded-left  group1" ng-show="cs7.planCommPlantIfPlanGE">

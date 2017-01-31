@@ -126,9 +126,15 @@
                     compared with last year?
                  </p>
                  <span ng-if="hasPrimaryYards() && (operateInUsa() || operateInCa())">
-                    <input type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="1"> Increased
-                    <input type="radio" style="margin-left: 25px;" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="2"> Decreased
-                    <input type="radio" style="margin-left: 25px;" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="3"> Remained the same
+                     <label style="font-weight: normal;">
+                        <input type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="1"> Increased
+                     </label>
+                     <label style="font-weight: normal;">
+                        <input type="radio" style="margin-left: 25px;" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="2"> Decreased
+                     </label>
+                     <label style="font-weight: normal;">
+                        <input type="radio" style="margin-left: 25px;" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="3"> Remained the same
+                     </label>
                  </span>
                  <span ng-if="!hasPrimaryYards()">
                     <input readonly disabled icheck type="radio" name="trainedWoodProducersChanged" ng-model="cs6.trainedWoodProducersChanged" value="1"> Increased
@@ -206,10 +212,10 @@
 <div class="form-group">
     <select ng-model="regionId" id="regionId" ng-change="isUsCanadaExist()" ng-disabled="!hasPrimaryYards()">
         <option value="0">&lt;Select the region of your fiber source&gt;</option>
-        <option readonly="readonly" disabled>All States (United States)</option>
-        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52>{{item.id}}">{{item.name}}</option>
-        <option readonly="readonly" disabled value="52">All Provinces (Canada)</option>
-        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52<{{item.id}}">{{item.name}}</option>
+        <option ng-repeat="item in regions" readonly="readonly" disabled value="{{item.id}}" ng-show="1=={{item.id}}">{{item.name}}</option>
+        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52>{{item.id}} && 1!={{item.id}}">{{item.name}}</option>
+        <option ng-repeat="item in regions" readonly="readonly" disabled value="{{item.id}}" ng-show="52=={{item.id}}">{{item.name}}</option>
+        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52<{{item.id}} && 52!={{item.id}}">{{item.name}}</option>
         <option ng-show="operateInOthers()" value="-1">Outside USA & Canada</option>
     </select>
 </div>
@@ -683,10 +689,10 @@
         <td ng-class="{'has-error' : innerForm.other8.$invalid}">
 
             <input type="number" class="form-control  shorter" style="width: 65px;" name="other8" id="other8" min="0" max="100"
-                   ng-model="other.percOther" ng-pattern="/^\d*(\.\d{1,2})?$/" ng-keyup="showPopUp4()" ng-click="showPopUp4()"
+                   ng-model="other.percOtherVal" ng-pattern="/^\d*(\.\d{1,2})?$/" ng-keyup="showPopUp4()" ng-click="showPopUp4()"
                    pattern-msg="Enter decimal number up to 2 precision points" customerror>%
 
-            <div ng-show="other.percOther && other.percOtherReason" style="width: 100px;">
+            <div ng-show="other.percOtherVal && other.percOtherReason" style="width: 100px;">
                 <a ng-click="showPopUp4()">Assurance responsible sources of supply</a>
             </div>
 

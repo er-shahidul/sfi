@@ -557,18 +557,20 @@
                     <td>
                         <div class="form-group hasRadioBoxes">
 
+                            <label class="checkboxLabel">
                             <input type="radio" ng-value="1" icheck name="otherItem{{$index}}3"
                                    ng-model="other.underCertifiedStandard" ng-checked="true"
                                    ng-disabled="!operateInOthers()">
-                            <label class="checkboxLabel">Yes</label>
+                            Yes</label>
 
                             &nbsp;&nbsp;&nbsp;
 
+                            <label class="checkboxLabel">
                             <input type="radio" ng-value="0" class="icheck"
                                    ng-model="other.underCertifiedStandard"
                                    ng-checked="!other.underCertifiedStandard"
                                    ng-disabled="!operateInOthers()" icheck>
-                            <label class="checkboxLabel">No</label>
+                            No</label>
 
                             <div class="floatright col-sm-7" ng-show="other.underCertifiedStandard"
                                  ng-class="{'has-error': isDirty (other) && innerForm.certificationBody.$invalid}">
@@ -646,6 +648,8 @@
                 <div class="content-pading">
                     <label style="font-weight: normal">
                         <input icheck type="radio" name="useWho1A1B" ng-model="cs2.useWho1A1B" ng-value="true" > Yes
+                    </label>
+                    <label style="font-weight: normal">
                         <input icheck type="radio" name="useWho1A1B" ng-model="cs2.useWho1A1B" ng-value="false" > No
                     </label>
 
@@ -667,8 +671,12 @@
                         </td>
                         <td>
                             <div style="margin-left: 20px;">
-                                <input icheck type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="true" > Yes
-                                <input icheck type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="false" > No
+                                <label style="font-weight: normal">
+                                    <input icheck type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="true" > Yes
+                                </label>
+                                <label style="font-weight: normal">
+                                    <input icheck type="radio" name="continueToUseIt" ng-model="cs2.continueToUseIt" ng-value="false" > No
+                                </label>
                             </div>
                         </td>
                     </tr>
@@ -695,8 +703,12 @@
                         </td>
                         <td>
                             <div style="margin-left: 20px;">
-                                <input icheck type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="true" > Yes
-                                <input icheck type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="false" > No
+                                <label style="font-weight: normal">
+                                    <input icheck type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="true" > Yes
+                                </label>
+                                <label style="font-weight: normal">
+                                    <input icheck type="radio" name="plansToStopUsingIt" ng-model="cs2.plansToStopUsingIt" ng-value="false" > No
+                                </label>
                             </div>
                         </td>
                     </tr>
@@ -730,6 +742,8 @@
                 <div class="content-pading">
                     <label style="font-weight: normal">
                         <input icheck type="radio" name="stopWho1A1B" ng-model="cs2.stopWho1A1B" ng-value="true" > Yes
+                    </label>
+                    <label style="font-weight: normal">
                         <input icheck type="radio" name="stopWho1A1B" ng-model="cs2.stopWho1A1B" ng-value="false" > No
                     </label>
 
@@ -757,6 +771,8 @@
                 <div class="content-pading">
                     <label style="font-weight: normal">
                         <input icheck type="radio" name="convertForestCover" ng-model="cs2.convertForestCover" ng-value="true"  > Yes
+                    </label>
+                    <label style="font-weight: normal">
                         <input icheck type="radio" name="convertForestCover" ng-model="cs2.convertForestCover" ng-value="false" > No
                     </label>
                     <ul style="list-style-type: none;width:55%;font-weight: normal;" ng-show="cs2.convertForestCover">
@@ -1022,6 +1038,8 @@
                     <div class="content-pading">
                         <label style="font-weight: normal">
                             <input icheck type="radio" name="convertForestLand" ng-model="cs2.convertForestLand" ng-value="true"> Yes
+                         </label>
+                        <label style="font-weight: normal">
                             <input icheck type="radio" name="convertForestLand" ng-model="cs2.convertForestLand" ng-value="false"> No
                         </label>
 
