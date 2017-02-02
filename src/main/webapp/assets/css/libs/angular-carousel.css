@@ -57,8 +57,10 @@ div.rn-carousel-indicator span.active {
 .rn-carousel-control.rn-carousel-control-prev {
   left: 0.5em; }
 .rn-carousel-control.rn-carousel-control-prev:before {
-  content: "<"; }
+  content: url(/assets/images/arrow-prev.png);
+}
 .rn-carousel-control.rn-carousel-control-next {
   right: 0.5em; }
 .rn-carousel-control.rn-carousel-control-next:before {
-  content: ">"; }
+  content: url(/assets/images/arrow-next.png);
+}

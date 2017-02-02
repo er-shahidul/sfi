@@ -242,7 +242,7 @@ console.log(i.has('carousel'));
 
         ];
         $scope.myInterval = 2000;
-            $scope.carouselIndex2 = 0;
+            $scope.carouselIndex = 0;
         $scope.slides = [];
             angular.forEach([1, 2, 3,4,5,6,7],function (value,index) {
                 $scope.slides.push(

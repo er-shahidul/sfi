@@ -84,14 +84,18 @@
 
             <div class="col-lg-12 pading-botoms">
                 <div class="carousel-demo">
-                    <ul rn-carousel rn-carousel-index="carouselIndex2" rn-carousel-auto-slide="10" rn-carousel-duration="100" rn-carousel-auto-slide rn-carousel-pause-on-hover rn-carousel-buffered class="carousel2">
+                    <ul rn-carousel rn-carousel-index="carouselIndex" rn-carousel-auto-slide="10" rn-carousel-duration="100" rn-carousel-auto-slide rn-carousel-pause-on-hover rn-carousel-controls rn-carousel-buffered class="carousel2">
 
                         <li ng-repeat="n in slides">
-                            <img style="height: 340px;width: 100%;" ng-src="{{n.image}}">
+                            <img style="height: 340px;width: 1050px;" ng-src="{{n.image}}">
                         </li>
                     </ul>
                     <div class="rn-carousel-indicator custom-indicator">
-                        <span ng-repeat="slide in slides" ng-class="{active: $index==$parent.carouselIndex2}" ng-click="$parent.carouselIndex2 = $index">&bull;</span>
+                        <span ng-repeat="slide in slides" ng-class="{active: $index==$parent.carouselIndex}" ng-click="$parent.carouselIndex = $index">&bull;</span>
+                    </div>
+                    <div class="rn-carousel-controls ng-scope">
+                        <!-- ngIf: carouselIndex > 0 || false --><span class="rn-carousel-control rn-carousel-control-prev ng-scope" ng-click="prevSlide()" ng-if="carouselIndex > 0 || false" style="height: 2px;"></span><!-- end ngIf: carouselIndex > 0 || false -->
+                        <!-- ngIf: carouselIndex < slides.length - 1 || false --><span class="rn-carousel-control rn-carousel-control-next ng-scope" ng-click="nextSlide()" ng-if="carouselIndex < slides.length - 1 || false" style="height: 2px;"></span><!-- end ngIf: carouselIndex < slides.length - 1 || false -->
                     </div>
                 </div>
             </div>
@@ -435,7 +439,8 @@
                 <br>
             </div>
 
-        <div class="col-lg-12 fm-stl" style="margin-bottom: 20px;">
+        <div class="col-lg-12 fm-stl"
+        >
 
                 <label><b>Our organization is part of the following sector(s)</b></label>
                 <p>This is a functional question that customizes the remainder of the form by product sector</p>
