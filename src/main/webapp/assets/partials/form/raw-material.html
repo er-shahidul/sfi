@@ -1,5 +1,8 @@
 
 <style>
+    select optgroup[label]{
+        font-weight:100;
+    }
     @media print {
         body {
             font-family: sans-serif;
@@ -212,10 +215,12 @@
 <div class="form-group">
     <select ng-model="regionId" id="regionId" ng-change="isUsCanadaExist()" ng-disabled="!hasPrimaryYards()">
         <option value="0">&lt;Select the region of your fiber source&gt;</option>
-        <option ng-repeat="item in regions" readonly="readonly" disabled value="{{item.id}}" ng-show="1=={{item.id}}">{{item.name}}</option>
-        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52>{{item.id}} && 1!={{item.id}}">{{item.name}}</option>
-        <option ng-repeat="item in regions" readonly="readonly" disabled value="{{item.id}}" ng-show="52=={{item.id}}">{{item.name}}</option>
-        <option ng-repeat="item in regions" value="{{item.id}}" ng-show="52<{{item.id}} && 52!={{item.id}}">{{item.name}}</option>
+        <optgroup label="All States (United States)">
+            <option ng-repeat="item in regions" value="{{item.id}}" ng-if="item.id>1 && item.id < 52">{{item.name}}</option>
+        </optgroup>
+        <optgroup label="All Provinces (Canada)">
+            <option ng-if="item.id>52" ng-repeat="item in regions" value="{{item.id}}">{{item.name}}</option>
+        </optgroup>
         <option ng-show="operateInOthers()" value="-1">Outside USA & Canada</option>
     </select>
 </div>
@@ -460,7 +465,7 @@
 
         <td style="text-align: right;" ng-init="section.form = innerForm">
 
-            <input type="checkbox" name="otherEnable" id="otherEnable" class="icheck" icheck value="0" ng-change="showPopUp3(section)"
+            <input type="checkbox" name="otherEnable" id="otherEnable" class="icheck" icheck value="section.otherEnable" ng-change="showPopUp3(section)"
                    ng-if="section.row == 11" ng-model="section.otherEnable"/>
             <label for="otherEnable" style="font-weight: normal;">
                 <span class="underline" tooltip data-html="true" data-placement="top" data-container="body"
@@ -625,14 +630,14 @@
     <!-- Header -->
     <thead>
     <tr>
-        <th>Outside Canada & USA</th>
-        <th width="15%">Units</th>
-        <th>Volume</th>
-        <th>% PEFC certified forest content </th>
-        <th>% FSC certified forest content </th>
-        <th>% Dual PEFC/FSC forest content </th>
-        <th>% SFI Fiber Sourcing </th>
-        <th>% Other </th>
+        <th width="16%">Outside Canada & USA</th>
+        <th width="18%">Units</th>
+        <th width="11%">Volume</th>
+        <th width="11%">% PEFC certified forest content </th>
+        <th width="11%">% FSC certified forest content </th>
+        <th width="11%">% Dual PEFC/FSC forest content </th>
+        <th width="11%">% SFI Fiber Sourcing </th>
+        <th width="11%">% Other </th>
     </tr>
     </thead>
 
@@ -681,14 +686,14 @@
         </td>
 
         <td ng-class="{'has-error' : innerForm.other7.$invalid}">
-            <input type="number" class="form-control  shorter" style="width: 65px;" name="other7" min="0" max="100"
+            <input type="number" class="form-control  shorter" name="other7" min="0" max="100"
                    ng-model="other.percSFIFiberSourcing" ng-pattern="/^\d*(\.\d{1,2})?$/"
                    pattern-msg="Enter decimal number up to 2 precision points" customerror>%
         </td>
 
         <td ng-class="{'has-error' : innerForm.other8.$invalid}">
 
-            <input type="number" class="form-control  shorter" style="width: 65px;" name="other8" id="other8" min="0" max="100"
+            <input type="number" class="form-control  shorter" name="other8" id="other8" min="0" max="100"
                    ng-model="other.percOtherVal" ng-pattern="/^\d*(\.\d{1,2})?$/" ng-keyup="showPopUp4()" ng-click="showPopUp4()"
                    pattern-msg="Enter decimal number up to 2 precision points" customerror>%
 

@@ -437,7 +437,6 @@
 
                 </div>
                 <br>
-            </div>
 
         <div class="col-lg-12 fm-stl"
         >
@@ -445,7 +444,7 @@
                 <label><b>Our organization is part of the following sector(s)</b></label>
                 <p>This is a functional question that customizes the remainder of the form by product sector</p>
                 <div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 padding-left-50">
                         <ul class="list-unstyled">
                             <li>
                                 <label>
@@ -533,6 +532,7 @@
                         </div>
 
                     </div>
+                </div>
         </div>
     </div>
 
@@ -541,10 +541,14 @@
         <div class="col-lg-12 pading-botoms" ng-show="anySelect()">
             <div class="col-lg-12">
                 <div class="content-header2">
-                    <span data-toggle="tootltip" title="An SFI claim is a certified sourcing or chain of custody statement accompanying a product. An SFI label is an illustrative symbol that communicates an SFI claim on a product.">LABELS & CLAIMS:</span><br>
-                    <p>
+                    <div>
+                        <span style="font-size: 18px;" data-toggle="tootltip" title="An SFI claim is a certified sourcing or chain of custody statement accompanying a product. An SFI label is an illustrative symbol that communicates an SFI claim on a product.">LABELS & CLAIMS:</span>
+                    </div>
+                    <div style="margin-top: 5px;">
+                        <span style="font-size: 12px;font-weight: normal;">
                         SFI would like to better understand your use of SFI label during the last 12 months and the value that the SFI label adds to your products.
-                    </p>
+                        </span>
+                    </div>
                 </div>
                 <br>
 
@@ -569,7 +573,7 @@
         <!--Section 2-->
         <div class="col-lg-12" ng-show="anySelect()">
             <div class="col-lg-12">
-                <h5 class="content-header2" style="padding-top: 30px;">CERTIFICATION & MARKET DEMAND</h5>
+                <h5 class="content-header2" style="padding-top: 33px;font-size: 18px;">CERTIFICATION & MARKET DEMAND</h5>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec9-demand-certified-product.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec10-demand-certified-product.html'" ></div>
                 <div ng-show="anySelect()" ng-include="'/assets/partials/form/cs8/sec11-demand-coc-product.html'" ></div>
@@ -584,7 +588,7 @@
                 <label class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
                     <b style=""><span class="underline">If you own or manage lands, have you ever considered seeking FSC land certification?</span></b>
                 </label>
-                <div class="padding-left-10 label_width" style="font-weight: normal;">
+                <div class="padding-left-50 label_width" style="font-weight: normal;">
                     <p style="font-weight: normal;">Choose one of the following</p>
                     <label class="form-inline" style="font-weight: normal;">
                         <input type="radio" icheck  name="FSCLandCertification" ng-model="cs8.fscForestCertification" value=1 icheck>
@@ -685,7 +689,7 @@
                 <label style="font-weight: normal;" class="question-style" tooltip title="SFI is asking these questions to better understand trends related to organizations pursuing dual certification. Your answers will be kept strictly confidential.">
                     <b><span class="underline">Have you ever considered obtaining FSC chain-of-custody certification?</span></b>
                 </label>
-                <div class="padding-left-10 label_width">
+                <div class="padding-left-50 label_width">
                     <p style="font-weight: normal;">Choose one of the following</p>
                     <label class="form-inline" style="font-weight: normal;">
                         <input type="radio" name="ChainOfCustody_FSCCertification" ng-model="cs8.chainOfCustody_FSCCertification" value=1 icheck>
@@ -780,16 +784,17 @@
                         </label>
                 </div>
             </div>
+        </div>
 
             <div class="col-lg-12" ng-show="cs8.productSegmentPrintingWritingPaper || cs8.productSegmentPackaging || cs8.productSegmentBioenergy || cs8.productSegmentPulp
             || cs8.productSegmentLand || cs8.productSegmentSolidWood || cs8.productSegmentPaperMerchant || cs8.productSegmentPaperBoard || s8.productSegmentPaperBoard ||
             cs8.productSegmentTowelTissue || cs8.productSegmentPrinter || cs8.productSegmentWoodMerchant || cs8.productSegmentOther">
-                <div class="col-lg-12">
-                    <div style="margin-bottom: 20px;">
-                        <h5 class="content-header2" style="padding-top: 30px;">ENERGY, GHG, WATER USE AND WASTE MANAGEMENT</h5>
+                    <!--Section 2-->
+                    <div class="col-lg-12">
+                        <h5 class="content-header2" style="padding-top: 33px;font-size: 18px;">ENERGY, GHG, WATER USE AND WASTE MANAGEMENT</h5>
                         Please answer the following questions for your product segment(s):
                     </div>
-
+                <div class="col-lg-12 passage-bold">
                     <div style="padding-left: 0;" class="col-sm-12">
                     <p><strong>ENERGY USE</strong></p>
                     </div>
@@ -798,8 +803,8 @@
                         <strong>Total electric energy used by operations:
                         What was the total net energy used (purchased plus self-generated minus sold) from the electricity that the operations/site/enterprise required to operate (all sources) regardless of use?
                         </strong>
-                        <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                        <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -813,7 +818,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -827,7 +832,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -841,7 +846,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Pulp</label>
                             </div>
@@ -855,7 +860,7 @@
                                 </div>
                             </div>
                             </div>
-                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Land Only</label>
                             </div>
@@ -869,7 +874,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
@@ -883,7 +888,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
@@ -897,7 +902,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paperboard Converter</label>
                             </div>
@@ -911,7 +916,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Furniture</label>
                             </div>
@@ -925,7 +930,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Towel/tissue</label>
                             </div>
@@ -939,7 +944,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printer</label>
                             </div>
@@ -953,7 +958,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                             </div>
@@ -967,7 +972,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -987,8 +992,8 @@
                         <strong>Total fuel energy used by operations:
                         What was the total net energy used (purchased plus self-generated minus sold) from the electricity that the operations/site/enterprise required to operate (all sources) regardless of use? For example: fuel oil, propane, natural gas, etc.
                         </strong>
-                        <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                        <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -1002,7 +1007,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -1016,7 +1021,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -1030,7 +1035,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Pulp</label>
                             </div>
@@ -1044,7 +1049,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Land Only</label>
                             </div>
@@ -1058,7 +1063,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
@@ -1072,7 +1077,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
@@ -1086,7 +1091,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paperboard Converter</label>
                             </div>
@@ -1100,7 +1105,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Furniture</label>
                             </div>
@@ -1114,7 +1119,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Towel/tissue</label>
                             </div>
@@ -1128,7 +1133,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -1142,7 +1147,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -1156,7 +1161,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -1176,8 +1181,8 @@
                         <strong>Total renewable energy from biomass, solar, wind, water, etc. used by operations (GigaJoules):
                         What was the total direct purchase of renewable energy AND the generated on site as part of operations under the producer’s control? The metric does NOT include renewable energy that is part of the typical supply from the electrical grid.
                         </strong>
-                        <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                        <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -1191,7 +1196,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -1205,7 +1210,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -1219,7 +1224,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Pulp</label>
                             </div>
@@ -1233,7 +1238,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Land Only</label>
                             </div>
@@ -1247,7 +1252,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
@@ -1261,7 +1266,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
@@ -1275,7 +1280,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paperboard Converter</label>
                             </div>
@@ -1289,7 +1294,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Furniture</label>
                             </div>
@@ -1303,7 +1308,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Towel/tissue</label>
                             </div>
@@ -1317,7 +1322,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -1331,7 +1336,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -1345,7 +1350,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -1362,16 +1367,18 @@
                         </div>
                     </div>
 
-                    <div style="padding-left: 0;margin-bottom: 20px;" class="col-sm-12">
+                    <div style="padding-left: 0;margin-bottom: 20px;" class="col-sm-12"></div>
+                </div>
+                <div class="col-lg-12 passage-bold">
                     <p><strong>GREENHOUSE GAS EMISSIONS</strong></p>
                     Provide the following greenhouse gas emissions information for all corporate and operational locations:
-                    </div>
+
                     <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                     <strong>Scope 1 GHG emissions:
                     What was the total direct emissions from the combustion of onsite and mobile fuels, and other sources that occur at, or are associated with facilities and operations controlled by your company?
                     </strong>
-                        <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                        <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -1385,7 +1392,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -1399,7 +1406,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -1413,7 +1420,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Pulp</label>
                             </div>
@@ -1427,7 +1434,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Land Only</label>
                             </div>
@@ -1441,7 +1448,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
@@ -1455,7 +1462,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
@@ -1469,7 +1476,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paperboard Converter</label>
                             </div>
@@ -1483,7 +1490,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Furniture</label>
                             </div>
@@ -1497,7 +1504,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Towel/tissue</label>
                             </div>
@@ -1511,7 +1518,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -1525,7 +1532,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -1539,7 +1546,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -1559,8 +1566,8 @@
                     <strong>Scope 2 GHG emissions:
                     What was the total indirect emissions that occur off-site from the production of energy, such as electricity, which is then     purchased for use at facilities and operations controlled by your company?
                     </strong>
-                        <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                        <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -1574,7 +1581,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -1588,7 +1595,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -1602,7 +1609,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Pulp</label>
                             </div>
@@ -1616,7 +1623,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Land Only</label>
                             </div>
@@ -1630,7 +1637,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
@@ -1644,7 +1651,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
@@ -1658,7 +1665,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paperboard Converter</label>
                             </div>
@@ -1672,7 +1679,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Furniture</label>
                             </div>
@@ -1686,7 +1693,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Towel/tissue</label>
                             </div>
@@ -1700,7 +1707,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -1714,7 +1721,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -1728,7 +1735,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -1744,7 +1751,8 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
+                <div class="col-lg-12 passage-bold">
                     <div style="padding-left: 0;margin-bottom: 20px;" class="col-sm-12">
                     <p><strong>WATER USE</strong></p>
                     Provide the following water data for all corporate and operational locations:
@@ -1753,8 +1761,8 @@
                     <strong>Total water used by operations:
                     What was the total volume of water entering the site(s) from all sources that is needed for operations? For example: purchased from suppliers, pumped from rivers, lakes, wells, etc.
                     </strong>
-                    <div class="pading-botoms padding-left-12">
-                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                    <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printing writing paper</label>
                             </div>
@@ -1768,7 +1776,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Packaging</label>
                             </div>
@@ -1782,7 +1790,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Bioenergy</label>
                             </div>
@@ -1796,7 +1804,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Pulp</label>
                         </div>
@@ -1810,7 +1818,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Land Only</label>
                         </div>
@@ -1824,7 +1832,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                         </div>
@@ -1838,7 +1846,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                         </div>
@@ -1852,7 +1860,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Paperboard Converter</label>
                         </div>
@@ -1866,7 +1874,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Furniture</label>
                         </div>
@@ -1880,7 +1888,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Towel/tissue</label>
                         </div>
@@ -1894,7 +1902,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printer</label>
                             </div>
@@ -1908,7 +1916,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                             </div>
@@ -1922,7 +1930,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Other</label>
                             </div>
@@ -1938,13 +1946,13 @@
                         </div>
                     </div>
                     </div>
-                    </div>
+
                     <div style="padding-left: 0;margin-bottom: 30px;" class="col-sm-12">
                     <strong>Total water discharged by operations:
                     What was the total volume of water leaving the site(s)? Water reused, recycled or recovered, it is not considered disposed.
                     </strong>
-                    <div class="pading-botoms padding-left-12">
-                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                    <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                        <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printing writing paper</label>
                             </div>
@@ -1958,7 +1966,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Packaging</label>
                             </div>
@@ -1972,7 +1980,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Bioenergy</label>
                             </div>
@@ -1986,7 +1994,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Pulp</label>
                         </div>
@@ -2000,7 +2008,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Land Only</label>
                         </div>
@@ -2014,7 +2022,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                         </div>
@@ -2028,7 +2036,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                         </div>
@@ -2042,7 +2050,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Paperboard Converter</label>
                         </div>
@@ -2056,7 +2064,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Furniture</label>
                         </div>
@@ -2070,7 +2078,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                         <div class="col-sm-10">
                             <label style="margin-left: 15px;">Towel/tissue</label>
                         </div>
@@ -2084,7 +2092,7 @@
                             </div>
                         </div>
                     </div>
-                        <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Printer</label>
                             </div>
@@ -2098,7 +2106,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                             </div>
@@ -2112,7 +2120,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                        <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Other</label>
                             </div>
@@ -2129,9 +2137,12 @@
                     </div>
                     </div>
                     </div>
+            </div>
+
             <div class="col-lg-12" ng-show="cs8.productSegmentPrintingWritingPaper || cs8.productSegmentPackaging || cs8.productSegmentBioenergy || cs8.productSegmentPulp
             || cs8.productSegmentLand || cs8.productSegmentSolidWood || cs8.productSegmentPaperMerchant || cs8.productSegmentPaperBoard || s8.productSegmentPaperBoard ||
             cs8.productSegmentTowelTissue || cs8.productSegmentPrinter || cs8.productSegmentWoodMerchant || cs8.productSegmentOther" >
+                <div class="col-lg-12 passage-bold">
                     <div style="padding-left: 0;margin-bottom: 20px;" class="col-sm-12">
                         <p><strong>WASTE MANAGEMENT</strong></p>
                         Provide the following waste data for all corporate and operational locations:
@@ -2140,8 +2151,8 @@
                         <strong>Non-hazardous waste disposed by operations:
                         What was the total amount of non-hazardous waste landfilled, incinerated without energy recovery, or otherwise disposed? Includes solid waste and liquid waste in solid containers. Waste recycled, reused or recovered is not considered to be disposed.
                         </strong>
-                        <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                        <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -2155,7 +2166,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -2169,7 +2180,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -2183,7 +2194,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Pulp</label>
                             </div>
@@ -2197,7 +2208,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Land Only</label>
                             </div>
@@ -2211,7 +2222,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
@@ -2225,7 +2236,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
@@ -2239,7 +2250,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paperboard Converter</label>
                             </div>
@@ -2253,7 +2264,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Furniture</label>
                             </div>
@@ -2267,7 +2278,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Towel/tissue</label>
                             </div>
@@ -2281,7 +2292,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -2295,7 +2306,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -2309,7 +2320,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -2329,8 +2340,8 @@
                         <strong>Hazardous waste disposed by operations:
                         What was the total amount of hazardous waste landfilled, incinerated without energy recovery, or otherwise disposed? Waste recycled, reused or recovered is not considered to be disposed.
                         </strong>
-                        <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                        <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -2344,7 +2355,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -2358,7 +2369,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -2372,7 +2383,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Pulp</label>
                             </div>
@@ -2386,7 +2397,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Land Only</label>
                             </div>
@@ -2400,7 +2411,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
@@ -2414,7 +2425,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
@@ -2428,7 +2439,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paperboard Converter</label>
                             </div>
@@ -2442,7 +2453,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Furniture</label>
                             </div>
@@ -2456,7 +2467,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Towel/tissue</label>
                             </div>
@@ -2470,7 +2481,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -2484,7 +2495,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -2498,7 +2509,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -2518,8 +2529,8 @@
                         <strong>Non-hazardous and hazardous waste recycled, reused or recovered:
                         What was the total amount of all non-hazardous and hazardous waste recycled, reused or recovered?
                         </strong>
-                        <div class="pading-botoms padding-left-12">
-                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-left: 30px;margin-top: 20px;" class="col-sm-10">
+                        <div class="pading-botoms padding-left-12" style="padding-left: 5px;">
+                            <div ng-show="cs8.productSegmentPrintingWritingPaper" style="margin-top: 20px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printing writing paper</label>
                                 </div>
@@ -2533,7 +2544,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPackaging" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPackaging" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Packaging</label>
                                 </div>
@@ -2547,7 +2558,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentBioenergy" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentBioenergy" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Bioenergy</label>
                                 </div>
@@ -2561,7 +2572,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentPulp" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPulp" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Pulp</label>
                             </div>
@@ -2575,7 +2586,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentLand" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentLand" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Land Only</label>
                             </div>
@@ -2589,7 +2600,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentSolidWood" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentSolidWood" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Solid wood products (includes logs)</label>
                             </div>
@@ -2603,7 +2614,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperMerchant" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paper Broker/Merchant</label>
                             </div>
@@ -2617,7 +2628,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPaperBoard" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Paperboard Converter</label>
                             </div>
@@ -2631,7 +2642,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentFurniture" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentFurniture" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Furniture</label>
                             </div>
@@ -2645,7 +2656,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentTowelTissue" style="margin-top: 30px;" class="col-sm-10">
                             <div class="col-sm-10">
                                 <label style="margin-left: 15px;">Towel/tissue</label>
                             </div>
@@ -2659,7 +2670,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div ng-show="cs8.productSegmentPrinter" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentPrinter" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Printer</label>
                                 </div>
@@ -2673,7 +2684,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentWoodMerchant" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Wood Broker/Merchant</label>
                                 </div>
@@ -2687,7 +2698,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="cs8.productSegmentOther" style="margin-left: 30px;margin-top: 30px;" class="col-sm-10">
+                            <div ng-show="cs8.productSegmentOther" style="margin-top: 30px;" class="col-sm-10">
                                 <div class="col-sm-10">
                                     <label style="margin-left: 15px;">Other</label>
                                 </div>
@@ -2702,19 +2713,21 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
     </div>
 
     <div class="col-sm-12">
+
         <div class="col-lg-12">
-            <h4 class="content-header">Communications</h4>
+            <h5 class="content-header2" style="padding-top: 33px;font-size: 18px;">COMMUNICATION</h5>
             <p><b>
                 <span class="question-style underline" tooltip title="SFI would like to understand your organization's communications strategies, so that we can provide information about relevant topics."> To help us understand how you market your SFI certification, please tell us how you communicate your SFI certification externally (e.g. to customers) and/or internally (to employees)? </span>
             </b></p>
-            <div class="padding-left-10" style="margin-bottom: 20px;">
+            <div class="padding-left-50" style="margin-bottom: 20px;">
                 <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input type="checkbox" icheck name="sfiMarketExternally" checklist-model="cs8.sfiMarketExternally" checklist-value="1" ng-model="sfiMarket" >
                     Annual reports
@@ -2770,7 +2783,7 @@
 
 
 
-            <div class="padding-left-10" style="margin-bottom: 20px;">
+            <div class="padding-left-50" style="margin-bottom: 20px;">
                 <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input type="checkbox" icheck name="sfiHelpCommunication" checklist-model="cs8.sfiHelpCommunication" checklist-value="1" ng-model="sfiHelp" >
                     Presentation materials (sales presentations, benefits of SFI certification, benefits of sustainable forest management)
@@ -2833,7 +2846,7 @@
                 <span class="question-style underline" tooltip data-placement="top" data-container="body" data-title="We hope your expectations have been met! If not, we would like to know that, too, so we can continue to improve.">  How can SFI serve you better?</span>
             </p>
 
-            <div class="padding-left-10" style="margin-bottom: 20px;">
+            <div class="padding-left-50" style="margin-bottom: 20px;">
                 <p>Check all that apply</p>
                 <p style="margin-bottom: 0;"><label style="font-weight: normal;" class="form-inline">
                     <input type="checkbox" icheck name="sfiServeBetter" checklist-model="cs8.sfiServeBetter" checklist-value="1" ng-model="sfiServe" >
@@ -2905,6 +2918,4 @@
             </div>
         </div>
     </div>
-</div>
-
 </div>
