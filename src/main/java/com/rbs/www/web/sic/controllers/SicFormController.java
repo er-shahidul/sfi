@@ -54,6 +54,9 @@ public class SicFormController{
     @Value("#{messages[endDate]}")
     private String endDate;
 
+    @Value("#{messages[end_date]}")
+    private String end_date;
+
     @Value("#{messages[domain]}")
     private String domain;
 
@@ -129,6 +132,8 @@ public class SicFormController{
 
         populateFormContent(model, sicFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("endDate", endDate);
+        model.addAttribute("end_date", end_date);
         model.addAttribute("mode", "edit");
         model.addAttribute("isAdmin", false);
         model.addAttribute("user", userService.findByUsername(getCurrentUsername()));
@@ -155,6 +160,8 @@ public class SicFormController{
         SicFormData sicFormData = sicFormDataService.createOrGetByCurrentUsersCompany();
         populateFormContent(model, sicFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("endDate", endDate);
+        model.addAttribute("end_date", end_date);
         model.addAttribute("mode", "view");
         model.addAttribute("isAdmin", false);
 
@@ -174,6 +181,8 @@ public class SicFormController{
         SicFormData sicFormData = sicFormDataService.get(id);
         populateFormContent(model, sicFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("endDate", endDate);
+        model.addAttribute("end_date", end_date);
         model.addAttribute("mode", "edit");
         model.addAttribute("isAdmin", true);
 
@@ -185,6 +194,8 @@ public class SicFormController{
         SicFormData sicFormData = sicFormDataService.get(id);
         populateFormContent(model, sicFormData);
         model.addAttribute("days_until", Util.getDiffDays(endDate));
+        model.addAttribute("endDate", endDate);
+        model.addAttribute("end_date", end_date);
         model.addAttribute("mode", "view");
         model.addAttribute("isAdmin", true);
 

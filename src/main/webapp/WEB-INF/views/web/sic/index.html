@@ -54,12 +54,12 @@
                 <div class="formActionsNotice" style="width:100%">
 
                     <span th:if="${status.getId() == 2}">
-                        <span ng-show="daysLeft >= 0 "><big th:text="${{ days_until }}"></big> days until form is due!</span>
-                        <span ng-show="daysLeft &lt; 0" class="dueDate">{{textDaysLeft}}</span>
+                        <span hidden="hidden" th:text="${ endDate }" id="end_date"></span>
+                        <span ng-show="daysLeft >= 0 "><big id="date-difference"></big> days until form is due!</span>
                     </span>
 
                     <span th:if="${status.getId() == 1}">
-                         <span>Due March 31st, 2017</span>
+                         <span th:text="${end_date}"></span>
                     </span>
 
                     <br/>
@@ -291,6 +291,15 @@
     <script type="text/javascript">
 
     // <![CDATA[
+
+    $(document).ready(function () {
+        var endDateString = $("#end_date").text();
+        console.log(endDateString);
+        var end = moment(endDateString);
+        var duration = moment.duration(end.diff(new Date()));
+        var days = Math.floor(duration.asDays());
+        document.getElementById("date-difference").innerHTML = days;
+    });
 
     $( window ).load(function(){
         console.log('load');
