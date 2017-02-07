@@ -50,7 +50,7 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr th:each="sicPpForm, iterationStatus : ${sicPpForms}">
-                                                    <td><span th:text="${#dates.format(sicPpForm.createdAt, 'yyyy')}"></span></td>
+                                                    <td><span>2016</span></td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.company.name}"></td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.createdBy.username}"></td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'">
