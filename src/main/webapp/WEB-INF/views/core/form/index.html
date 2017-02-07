@@ -737,11 +737,12 @@
     // <![CDATA[
     $(document).ready(function () {
         var endDateString = $("#end_date").text();
-        console.log(endDateString);
-        var end = moment(endDateString);
-        var duration = moment.duration(end.diff(new Date()));
-        var days = Math.floor(duration.asDays());
-        document.getElementById("date-difference").innerHTML = days;
+        var date1 = new Date();
+        var date2 = new Date(endDateString);
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        console.log(diffDays+1);
+        document.getElementById("date-difference").innerHTML = diffDays+1;
     });
 
     $( window ).load(function(){
