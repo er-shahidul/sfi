@@ -635,6 +635,11 @@ button.close {
 	display: inline-block;
 }
 
+.form-control.shorter1 {
+	width: 85%;
+	display: inline-block;
+}
+
 .form-control.shortest {
 	width: 30%;
 	display: inline-block;
