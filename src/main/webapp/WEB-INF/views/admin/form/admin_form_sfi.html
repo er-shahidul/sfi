@@ -84,7 +84,7 @@
                                                             <button th:text="Edit" style="width:47px;"></button>
                                                         </a>
                                                     </td>
-                                                    <td  sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" sec:authorize="hasAnyRole('ROLE_ADMIN')" style="text-align: center">
                                                         <a th:href="@{'/admin/company/pp/form/approve/' + ${sfiPpForm.id}}" style="display: none" />
                                                         <input th:disabled="${!sfiPpForm.isApproveButtonEnable()}" th:checked="${sfiPpForm.getApprove()}" type="checkbox" class="sfi_approve_button" />
                                                     </td>
