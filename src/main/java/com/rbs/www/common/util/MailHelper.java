@@ -19,7 +19,7 @@ public class MailHelper
 
     public void sendMail(String to, String subject, String token, User user, String mailType, String url) {
 
-        String form = "rachel.dierolf@sfiprogram.org";
+        String form = "SFIReporting@sfiprogram.org";
         String msg = url+token;
         try{
             MimeMessage message = mailSender.createMimeMessage();
@@ -77,7 +77,7 @@ public class MailHelper
                         "SFI Manager, Office of Label Use and Licensing<br />\n" +
                         "PEFC US Governing Body Secretary<br />\n" +
                         "tel: 613-274-0124<br />\n" +
-                        "email: rachel.dierolf@sfiprogram.org\n" +
+                        "email: SFIReporting@sfiprogram.org\n" +
                         "</p>\n" +
 
                         "</td>\n" +
@@ -141,7 +141,7 @@ public class MailHelper
                         "SFI Manager, Office of Label Use and Licensing<br />\n" +
                         "PEFC US Governing Body Secretary<br />\n" +
                         "tel: 613-274-0124<br />\n" +
-                        "email: rachel.dierolf@sfiprogram.org\n" +
+                        "email: SFIReporting@sfiprogram.org\n" +
                         "</p>\n" +
 
                         "</td>\n" +
@@ -203,7 +203,7 @@ public class MailHelper
                         "SFI Manager, Office of Label Use and Licensing<br />\n" +
                         "PEFC US Governing Body Secretary<br />\n" +
                         "tel: 613-274-0124<br />\n" +
-                        "email: rachel.dierolf@sfiprogram.org\n" +
+                        "email: SFIReporting@sfiprogram.org\n" +
                         "</p>\n" +
 
                         "</td>\n" +
