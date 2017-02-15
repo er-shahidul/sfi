@@ -248,7 +248,7 @@ console.log(i.has('carousel'));
                 $scope.slides.push(
                     {
                         'id':value,
-                        image: '/assets/images/market-survey-carousel-image/Linking_to_the_Forests_'+value+'.jpg'
+                        image: '/assets/images/market-survey-carousel-image/Linking_to_the_Forests_'+value+'.png'
                     }
                 );
 
