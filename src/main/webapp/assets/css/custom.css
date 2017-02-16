@@ -280,7 +280,7 @@ ul[rn-carousel] {
     width:100%;
     height:100%;
     font-size:30px;
-    background-color: #ccc;
+    background-color: #ECF0F1;
 }
 
 .carousel-demo {
@@ -356,6 +356,12 @@ ul[rn-carousel] {
     -o-text-overflow: clip;
     text-overflow: clip;
     background: white;
+}
+.rn-carousel-controls {
+    display:none;
+}
+.carousel-demo:hover .rn-carousel-controls {
+    display:block;
 }
 /*
 .close-button::before {

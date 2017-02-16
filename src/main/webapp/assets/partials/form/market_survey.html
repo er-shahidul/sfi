@@ -84,16 +84,16 @@
 
             <div class="col-lg-12 pading-botoms">
                 <div class="carousel-demo">
-                    <ul rn-carousel rn-carousel-index="carouselIndex" rn-carousel-auto-slide="10" rn-carousel-duration="100" rn-carousel-auto-slide rn-carousel-pause-on-hover rn-carousel-controls rn-carousel-buffered class="carousel2">
+                    <ul rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls rn-carousel-auto-slide="10" rn-carousel-duration="100"  rn-carousel-auto-slide rn-carousel-pause-on-hover rn-carousel-buffered class="carousel2">
 
                         <li ng-repeat="n in slides">
-                            <img style="height: 340px;width: 900px;margin-left: 50px;margin-right: 50px;" ng-src="{{n.image}}">
+                            <img style="height: 340px;width: 900px;margin-left: 50px;margin-right: 50px;" class="carousal-images" ng-src="{{n.image}}">
                         </li>
                     </ul>
                     <div class="rn-carousel-indicator custom-indicator">
                         <span ng-repeat="slide in slides" ng-class="{active: $index==$parent.carouselIndex}" ng-click="$parent.carouselIndex = $index">&bull;</span>
                     </div>
-                    <div class="rn-carousel-controls ng-scope">
+                    <div class="rn-carousel-controls ng-scope" id="indicator" style="display: none;">
                         <!-- ngIf: carouselIndex > 0 || false --><span class="rn-carousel-control rn-carousel-control-prev ng-scope" ng-click="prevSlide()" ng-if="carouselIndex > 0 || false" style="height: 2px;"></span><!-- end ngIf: carouselIndex > 0 || false -->
                         <!-- ngIf: carouselIndex < slides.length - 1 || false --><span class="rn-carousel-control rn-carousel-control-next ng-scope" ng-click="nextSlide()" ng-if="carouselIndex < slides.length - 1 || false" style="height: 2px;"></span><!-- end ngIf: carouselIndex < slides.length - 1 || false -->
                     </div>
