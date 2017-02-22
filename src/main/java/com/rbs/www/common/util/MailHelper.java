@@ -73,9 +73,9 @@ public class MailHelper
                         "<p></p>\n" +
                         "<p>Regards,</p>\n" +
                         "<p>\n" +
-                        "SFI's, Office of Label Use and Licensing<br /><br /><br />\n" +
+                        "SFI's Office of Label Use and Licensing<br /><br /><br />\n" +
                         "SFIReporting@sfiprogram.org<br/>\n" +
-                        "SFI, Office of Label Use and Licensing\n" +
+                        "SFI Office of Label Use and Licensing\n" +
                         "</p>\n" +
 
                         "</td>\n" +
@@ -135,9 +135,9 @@ public class MailHelper
                         "<p></p>\n" +
                         "<p>Regards,</p>\n" +
                         "<p>\n" +
-                        "SFI's, Office of Label Use and Licensing<br /><br /><br />\n" +
+                        "SFI's Office of Label Use and Licensing<br /><br /><br />\n" +
                         "SFIReporting@sfiprogram.org<br/>\n" +
-                        "SFI, Office of Label Use and Licensing\n" +
+                        "SFI Office of Label Use and Licensing\n" +
                         "</p>\n" +
 
                         "</td>\n" +
@@ -195,9 +195,9 @@ public class MailHelper
                         "<p></p>\n" +
                         "<p>Sincerely,</p>\n" +
                         "<p>\n" +
-                        "SFI's, Office of Label Use and Licensing<br /><br /><br />\n" +
+                        "SFI's Office of Label Use and Licensing<br /><br /><br />\n" +
                         "SFIReporting@sfiprogram.org<br/>\n" +
-                        "SFI, Office of Label Use and Licensing\n" +
+                        "SFI Office of Label Use and Licensing\n" +
                         "</p>\n" +
 
                         "</td>\n" +
