@@ -303,10 +303,12 @@ sfiFormApp.controller('FormRawMaterialCtrl',
     }
 
     $scope.save = function(go){
-        
-        if($scope.usCanada.length == 0 && $scope.usOthers.length == 0){
-            $('#confirm-without-region').modal();
-            return false;
+
+        if($rootScope.form.cs1.hasPrimaryOperMillsYards){
+            if($scope.usCanada.length == 0 && $scope.usOthers.length == 0){
+                $('#confirm-without-region').modal();
+                return false;
+            }
         }
 
         if($scope.cs6Form.$invalid){
