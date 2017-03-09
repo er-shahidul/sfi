@@ -440,8 +440,8 @@
 
 
                                 <input type="text"
-                                       class="form-control" n
-                                       ame="organizationListCommunity2"
+                                       class="form-control"
+                                       name="organizationListCommunity2"
                                        ng-model="communityModel2"
                                        ng-options="item.name for item in communityList"
                                        placeholder="Community Organization"
@@ -719,6 +719,56 @@
                 <a href="#" data-dismiss="modal" id="btnConfirm" class="btn confirm" ng-click="deleteConfirm()">OK</a>
                 <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
             </div>
+        </div>
+    </div>
+</div>
+<div id="confirm-smg" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>-->
+            </div>
+            <div class="modal-body">
+                <p>Cannot save until all mandatory fields have been completed</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" id="smgConfirm" class="btn confirm" ng-click="">OK</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="confirm-smg-without" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>-->
+            </div>
+            <div class="modal-body">
+                <p>Are you want to leave this page ? You have unsaved changes</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" id="smgConfirmWithout" class="btn confirm" ng-click="smgConfirmWithout()">OK</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="confirm-smg-without1" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>-->
+            </div>
+            <div class="modal-body">
+                <p>Are you want to leave this page ? You have unsaved changes</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" id="smgConfirmWithout1" class="btn confirm" ng-click="saveFull()">OK</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
+            </div>
+
         </div>
     </div>
 </div>
