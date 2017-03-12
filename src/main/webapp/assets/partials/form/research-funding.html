@@ -699,7 +699,7 @@
     </form>
         <div class="col-sm-6 col-sm-offset-4">
             <button type="button" class="btn btn-success" ng-click="save()">Save</button>
-            <button type="button" class="btn btn-success" ng-click="save(true)">Save and Go to Step 6</button>
+            <button type="button" class="btn btn-success" ng-click="saveAndGoto(true)">Save and Go to Step 6</button>
         </div>
     </div>
     <div class="col-sm-offset-1 col-sm-4">
@@ -729,7 +729,7 @@
                 <!--<a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>-->
             </div>
             <div class="modal-body">
-                <p>Cannot save until all mandatory fields have been completed</p>
+                <p>Cannot save until all mandatory fields have been completed.</p>
             </div>
             <div class="modal-footer">
                 <a href="#" data-dismiss="modal" id="smgConfirm" class="btn confirm" ng-click="">OK</a>
@@ -745,7 +745,7 @@
                 <!--<a href="#" data-dismiss="modal" aria-hidden="true" class="close">x</a>-->
             </div>
             <div class="modal-body">
-                <p>Are you want to leave this page ? You have unsaved changes</p>
+                <p>Are you want to leave this page ? You have unsaved changes.</p>
             </div>
             <div class="modal-footer">
                 <a href="#" data-dismiss="modal" id="smgConfirmWithout" class="btn confirm" ng-click="smgConfirmWithout()">OK</a>
@@ -765,7 +765,7 @@
                 <p>Are you want to leave this page ? You have unsaved changes</p>
             </div>
             <div class="modal-footer">
-                <a href="#" data-dismiss="modal" id="smgConfirmWithout1" class="btn confirm" ng-click="saveFull()">OK</a>
+                <a href="#" data-dismiss="modal" id="smgConfirmWithout1" class="btn confirm" ng-click="saveFull1(true)">OK</a>
                 <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary" ng-click="deleteCancel()">Cancel</a>
             </div>
 

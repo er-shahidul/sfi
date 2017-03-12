@@ -249,11 +249,35 @@ sfiFormApp
                 return false;
             }
 
-            if (!$scope.project.sfiStandard10 || !$scope.project.regionModel || !$scope.project.organizationListAcademic2 || !$scope.project.organizationListResearch2 || !$scope.project.organizationListConservation2 || !$scope.project.organizationListGovernment2 || !$scope.project.organizationListCommunity2 || !$scope.project.organizationListOther2 || !$scope.project.estimated_cost || !$scope.project.org_contribution || !$scope.project.myFiles || !$scope.project.incResFunding || !$scope.project.incSFIConservation || !$scope.project.consent) {
-                $('#confirm-smg-without').modal();
+            // if (!$scope.project.sfiStandard10 || !$scope.project.regionModel || !$scope.project.organizationListAcademic2 || !$scope.project.organizationListResearch2 || !$scope.project.organizationListConservation2 || !$scope.project.organizationListGovernment2 || !$scope.project.organizationListCommunity2 || !$scope.project.organizationListOther2 || !$scope.project.estimated_cost || !$scope.project.org_contribution || !$scope.project.myFiles || !$scope.project.incResFunding || !$scope.project.incSFIConservation || !$scope.project.consent) {
+            //     $('#confirm-smg-without').modal();
+            //
+            //     return false;
+            // }
+            // return true;
 
+            if (!$scope.isDirty()) {
                 return false;
             }
+
+            var item = $scope.editItem || {};
+
+            _.each($scope.project, function (val, key) {
+                item[key] = val;
+            });
+
+            item.sfiStandard10 = _.sortBy(item.sfiStandard10, 'id');
+            item.sfiStandard15 = _.sortBy(item.sfiStandard15, 'id');
+
+            if (!$scope.editItem) {
+                console.log(item);
+                item.shouldShow = (new Date(item.endDate).getTime() >= new Date('2016-01-01').getTime());
+                $scope.cs5.projects.push(item);
+            }
+
+            $scope.resetProject();
+            $scope.isDataDirty = true;
+
             return true;
         }
 
@@ -539,6 +563,83 @@ sfiFormApp
                 if($scope.cs5.isInPartnership == true){
 
                     if ($scope.isDirty()){
+                    }
+                }
+                $scope.saveFull();
+            }
+        }
+        $scope.saveAndGoto = function(go){
+
+            if(!$scope.project.endDate &&
+                !$scope.project.startDate &&
+                !$scope.project.projectNm &&
+                !$scope.project.projectObj &&
+                !$scope.project.projectDescr
+            ) {
+                if($scope.cs5Form.$invalid){
+                    return false;
+                }
+
+                if($scope.cs5.isInPartnership == true){
+
+                    if ($scope.isDirty()){
+                        $scope.addProject();
+                    }
+                }
+
+                $http
+                    .put("/form/cs5", $scope.cs5)
+                    .then(function(response){
+
+                        if(response.data){
+
+                            $scope.cs5Form.$setPristine();
+                            $scope.isDataDirty  = false;
+                            $rootScope.form.cs5 = response.data;
+                            $scope.cs5 = angular.copy($rootScope.form.cs5);
+                            $scope.errors = $rootScope.form.cs5.errors;
+                            Message.success('Section successfully saved', '.msg-cont');
+                            $rootScope.updateFormMeta();
+                            $rootScope.setProgress();
+
+                            $scope.init();
+                            $scope.resetProject();
+                        }
+
+                        if(go){
+                            $rootScope.goStep("cs7");
+                        }
+
+                    });
+            }else {
+                if (!$scope.project.endDate) {
+                    $('#confirm-smg').modal();
+                    return false;
+                }
+                if (!$scope.project.startDate) {
+                    $('#confirm-smg').modal();
+                    return false;
+                }
+                if (!$scope.project.projectNm) {
+                    $('#confirm-smg').modal();
+                    return false;
+                }
+                if (!$scope.project.projectObj) {
+                    $('#confirm-smg').modal();
+                    return false;
+                }
+                if (!$scope.project.projectDescr) {
+                    $('#confirm-smg').modal();
+                    return false;
+                }
+
+                if($scope.cs5Form.$invalid){
+                    return false;
+                }
+
+                if($scope.cs5.isInPartnership == true){
+
+                    if ($scope.isDirty()){
                         if (!$scope.project.sfiStandard10 || !$scope.project.regionModel || !$scope.project.organizationListAcademic2 || !$scope.project.organizationListResearch2 || !$scope.project.organizationListConservation2 || !$scope.project.organizationListGovernment2 || !$scope.project.organizationListCommunity2 || !$scope.project.organizationListOther2 || !$scope.project.estimated_cost || !$scope.project.org_contribution || !$scope.project.myFiles || !$scope.project.incResFunding || !$scope.project.incSFIConservation || !$scope.project.consent) {
                             $('#confirm-smg-without1').modal();
                             return false;
@@ -547,8 +648,35 @@ sfiFormApp
                 }
                 $scope.saveFull();
             }
-        }
+        };
                 
+        $scope.saveFull1 = function (go) {
+            $http
+                .put("/form/cs5", $scope.cs5)
+                .then(function(response){
+
+                    if(response.data){
+
+                        $scope.cs5Form.$setPristine();
+                        $scope.isDataDirty  = false;
+                        $rootScope.form.cs5 = response.data;
+                        $scope.cs5 = angular.copy($rootScope.form.cs5);
+                        $scope.errors = $rootScope.form.cs5.errors;
+                        Message.success('Section successfully saved', '.msg-cont');
+                        $rootScope.updateFormMeta();
+                        $rootScope.setProgress();
+
+                        $scope.init();
+                        $scope.resetProject();
+                    }
+
+                    if(go){
+                        $rootScope.goStep("cs7");
+                    }
+
+                });
+        };
+
         $scope.saveFull = function () {
             if (!$scope.isDirty()) {
                 return false;
