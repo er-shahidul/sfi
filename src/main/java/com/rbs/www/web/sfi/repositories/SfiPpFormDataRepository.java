@@ -31,6 +31,9 @@ public class SfiPpFormDataRepository extends BaseRepository<SfiPpFormData> {
     @SuppressWarnings("unchecked")
     public List<SfiPpFormData> getAllActiveForms(){
         return (List<SfiPpFormData>) getCriteria()
+                .createAlias("status", "status")
+                .createAlias("updatedBy", "updatedBy")
+                .createAlias("createdBy", "createdBy")
                 .createAlias("company", "company")
                 .add(Restrictions.eq("company.sfi", true))
                 .addOrder(Order.desc("id"))

@@ -31,6 +31,9 @@ public class SicFormDataRepository extends BaseRepository<SicFormData> {
     @SuppressWarnings("unchecked")
     public List<SicFormData> getAllActiveForms(){
         return (List<SicFormData>) getCriteria()
+                .createAlias("status", "status")
+                .createAlias("updatedBy", "updatedBy")
+                .createAlias("createdBy", "createdBy")
                 .createAlias("company", "company")
                 .add(Restrictions.eq("company.sci", true))
                 .addOrder(Order.desc("id"))
