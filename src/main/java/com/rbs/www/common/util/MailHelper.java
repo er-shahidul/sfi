@@ -19,7 +19,7 @@ public class MailHelper
 
     public void sendMail(String to, String subject, String token, User user, String mailType, String url) {
 
-        String form = "SFIReporting@sfiprogram.org";
+        String form = "admin@reporting.sfiprogram.org";
         String msg = url+token;
         try{
             MimeMessage message = mailSender.createMimeMessage();
