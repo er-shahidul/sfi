@@ -30,7 +30,8 @@
                 </div>
                 <div id="companyInfoRight">
                     <label th:text="${{ company.name }}"></label>
-                    <span th:text="(${form.createdBy.isActive} == true) ? ${form.createdBy.getFullname()} : 'User Deleted' "></span>
+                    <span th:text="${{ form.createdBy.getFullname() }}"></span>
+                    <!--<span th:text="(${form.createdBy.isActive} == true) ? ${form.createdBy.getFullname()} : 'User Deleted' "></span>-->
                     <span >[{{ form.cs10.createdAt | date: "dd-MMM, yyyy h:mma" }}]</span>
                     <span >[{{ form.cs10.updatedAt | date: "dd-MMM, yyyy h:mma"}}]</span>
                     <div class="progress">

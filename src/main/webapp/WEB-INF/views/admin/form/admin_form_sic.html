@@ -52,7 +52,8 @@
                                                 <tr th:each="sicPpForm, iterationStatus : ${sicPpForms}">
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" ><span>2016</span></td>
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.company.name}"></td>
-                                                    <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="(${sicPpForm.createdBy.isActive} == true) ? ${sicPpForm.createdBy.username} : 'User Deleted' "></td>
+                                                    <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="${sicPpForm.createdBy.username}"></td>
+                                                    <!--<td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'" th:text="(${sicPpForm.createdBy.isActive} == true) ? ${sicPpForm.createdBy.username} : 'User Deleted' "></td>-->
                                                     <td th:class="(${sicPpForm.company.getSci()} == true) ? '' : 'hidden'">
                                                         <th:block th:if="${sicPpForm.createdAt}">
                                                             <th:block th:text="${#dates.format(sicPpForm.createdAt, 'yyyy-MM-dd')}"></th:block>

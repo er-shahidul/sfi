@@ -31,7 +31,8 @@
                 </div>
                 <div id="companyInfoRight">
                     <label th:text="${{ company.name }}"></label>
-                    <span th:text="(${form.createdBy.isActive} == true) ? ${form.createdBy.getFullname()} : 'User Deleted' "></span>
+                    <span th:text="${{ form.createdBy.getFullname() }}"></span>
+                    <!--<span th:text="(${form.createdBy.isActive} == true) ? ${form.createdBy.getFullname()} : 'User Deleted' "></span>-->
                     <span >[{{ formInfo.createdAt | date: "dd-MMM, yyyy h:mma" }}]</span>
                     <span >[{{ formInfo.updatedAt | date: "dd-MMM, yyyy h:mma"}}]</span>
                     <!--
