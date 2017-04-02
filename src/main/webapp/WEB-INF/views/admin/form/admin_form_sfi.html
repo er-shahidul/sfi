@@ -39,7 +39,7 @@
                                                 <tr>
                                                     <th>Year</th>
                                                     <th>Company Name</th>
-                                                    <th>Created By</th>
+                                                    <th>Updated By</th>
                                                     <th>Date Created</th>
                                                     <th>Status</th>
                                                     <th>Last Updated</th>
@@ -52,7 +52,7 @@
 
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" ><span>2016</span></td>
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" th:text="${sfiPpForm.company.name}"></td>
-                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" th:text="${sfiPpForm.createdBy.username}"></td>
+                                                    <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" th:text="${sfiPpForm.updatedBy.username}"></td>
                                                     <!--<td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" th:text="(${sfiPpForm.createdBy.isActive} == true) ? ${sfiPpForm.createdBy.username} : 'User Deleted' "></td>-->
                                                     <td th:class="(${sfiPpForm.company.getSfi()} == true) ? '' : 'hidden'" >
                                                         <th:block th:if="${sfiPpForm.createdAt}">

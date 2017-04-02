@@ -24,14 +24,14 @@
             <div class="col-xs-7">
                 <div id="companyInfoLeft" class="pull-left">
                     <label>Company Name</label>
-                    <label>Creation by:</label>
+                    <label>Updated by:</label>
                     <label>Creation date:</label>
                     <label>Last updated:</label>
                     <label>Percent complete:</label>
                 </div>
                 <div id="companyInfoRight">
                     <label th:text="${{ company.name }}"></label>
-                    <span th:text="${{ form.createdBy.getFullname() }}"></span>
+                    <span th:text="${{ form.updatedBy.getFullname() }}"></span>
                     <!--<span th:text="(${form.createdBy.isActive} == true) ? ${form.createdBy.getFullname()} : 'User Deleted' "></span>-->
                     <span >[{{ formInfo.createdAt | date: "dd-MMM, yyyy h:mma" }}]</span>
                     <span >[{{ formInfo.updatedAt | date: "dd-MMM, yyyy h:mma"}}]</span>
